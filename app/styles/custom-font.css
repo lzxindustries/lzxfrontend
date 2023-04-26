@@ -1,13 +1,13 @@
 @font-face {
-  font-family: 'IBMPlexSerif';
+  font-family: 'Goldplay';
   font-display: swap;
   font-weight: 400;
-  src: url('./fonts/IBMPlexSerif-Text.woff2') format('woff2');
+  src: url('./fonts/GOLDPLAY-SEMIBOLD.OTF') format('otf');
 }
 @font-face {
-  font-family: 'IBMPlexSerif';
+  font-family: 'Goldplay';
   font-display: swap;
   font-weight: 400;
   font-style: italic;
-  src: url('./fonts/IBMPlexSerif-TextItalic.woff2') format('woff2');
+  src: url('./fonts/GOLDPLAY-SEMIBOLDIT.OTF') format('otf');
 }
