@@ -129,7 +129,7 @@ export default function Homepage() {
               return (
                 <ProductSwimlane
                   products={products.nodes}
-                  title="Featured Products"
+                  title="In Stock"
                   count={4}
                 />
               );
@@ -237,9 +237,12 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
   query homepageFeaturedProducts($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    products(first: 8) {
-      nodes {
-        ...ProductCard
+    collection(id: 125598728256)
+    {
+      products(first: 128) {
+        nodes {
+          ...ProductCard
+        }
       }
     }
   }
