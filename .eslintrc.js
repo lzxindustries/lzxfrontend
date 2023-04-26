@@ -2,7 +2,7 @@
  * @type {import("@types/eslint").Linter.BaseConfig}
  */
 module.exports = {
-  extends: ['plugin:hydrogen/recommended', 'plugin:hydrogen/typescript'],
+  extends: ['plugin:hydrogen/recommended', 'plugin:hydrogen/typescript', 'plugin:storybook/recommended'],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/naming-convention': 'off',
@@ -11,6 +11,6 @@ module.exports = {
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     'no-case-declarations': 'off',
     // TODO: Remove jest plugin from hydrogen/eslint-plugin
-    'jest/no-deprecated-functions': 'off',
-  },
+    'jest/no-deprecated-functions': 'off'
+  }
 };
