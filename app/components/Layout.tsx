@@ -28,6 +28,8 @@ import {Suspense, useEffect, useMemo} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 import type {LayoutData} from '../root';
+import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
+console.log(logo); // /logo.84287d09.png
 
 export function Layout({
   children,
@@ -45,7 +47,7 @@ export function Layout({
           </a>
         </div>
         <Header
-          title={layout?.shop.name ?? 'Hydrogen'}
+          title={layout?.shop.name ?? 'LZX Industries'}
           menu={layout?.headerMenu}
         />
         <main role="main" id="mainContent" className="flex-grow">
@@ -186,7 +188,7 @@ function MobileHeader({
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
+          ? 'bg-contrast/80 text-primary'
           : 'bg-contrast/80 text-primary'
       } flex lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`}
     >
@@ -211,7 +213,7 @@ function MobileHeader({
           <Input
             className={
               isHome
-                ? 'focus:border-contrast/20 dark:focus:border-primary/20'
+                ? 'focus:border-primary/20'
                 : 'focus:border-primary/20'
             }
             type="search"
@@ -226,12 +228,7 @@ function MobileHeader({
         className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
         to="/"
       >
-        <Heading
-          className="font-bold text-center leading-none"
-          as={isHome ? 'h1' : 'h2'}
-        >
-          {title}
-        </Heading>
+      <img className="min-h-8 max-h-8" src={logo} alt="Logo" />
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -260,17 +257,20 @@ function DesktopHeader({
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
+          ? 'bg-contrast/80 text-primary'
           : 'bg-contrast/80 text-primary'
       } ${
         !isHome && y > 50 && ' shadow-lightHeader'
       } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
     >
-      <div className="flex gap-12">
-        <Link className="font-bold" to="/" prefetch="intent">
-          {title}
-        </Link>
-        <nav className="flex gap-8">
+      <div className="flex gap-12 items-center justify-center">
+
+        <nav className="flex gap-8 items-center justify-center">
+        <Link to="/" prefetch="intent">
+         
+         <img className="h-8 min-h-8" src={logo} alt="Logo" />
+         </Link>
+         
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
             <Link
@@ -374,7 +374,7 @@ function Badge({
         <div
           className={`${
             dark
-              ? 'text-primary bg-contrast dark:text-contrast dark:bg-primary'
+              ? 'text-primary bg-primary dark:text-contrast dark:bg-primary'
               : 'text-contrast bg-primary'
           } absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
         >
