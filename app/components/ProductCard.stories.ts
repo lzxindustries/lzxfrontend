@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Link } from './Link';
+import { ProductCard } from './ProductCard';
 import {statusMessage} from '~/lib/utils';
 
 const meta = {
-    title: 'Example/Link',
-    component: Link,
+    title: 'Example/ProductCard',
+    component: ProductCard,
     tags: ['autodocs'],
     args:
     {
@@ -12,7 +12,7 @@ const meta = {
     argTypes: 
     {
     },
-} satisfies Meta<typeof Link>;
+} satisfies Meta<typeof ProductCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
