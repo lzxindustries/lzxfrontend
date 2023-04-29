@@ -1,0 +1,7 @@
+.frontpanel {
+  display: block;
+  position: absolute;
+  z-index: -10;
+  stroke: black;
+  stroke-width: 0;
+}
