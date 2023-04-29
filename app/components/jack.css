@@ -1,0 +1,11 @@
+.jack {
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+.jack:hover
+{
+  outline: 2px solid yellow;
+}
