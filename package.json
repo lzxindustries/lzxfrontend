@@ -26,6 +26,7 @@
     "@shopify/cli-hydrogen": "^4.1.1",
     "@shopify/hydrogen": "^2023.4.0",
     "@shopify/remix-oxygen": "^1.0.5",
+    "@storybook/addon-styling": "^1.0.5",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "graphql": "^16.6.0",
@@ -37,6 +38,7 @@
     "react-use": "^17.4.0",
     "schema-dts": "^1.1.0",
     "tiny-invariant": "^1.2.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typographic-base": "^1.0.4",
     "worktop": "^0.7.3"
   },
