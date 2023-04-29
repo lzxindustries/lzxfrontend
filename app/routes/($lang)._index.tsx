@@ -66,7 +66,7 @@ export async function loader({params, context}: LoaderArgs) {
         COLLECTION_HERO_QUERY,
         {
           variables: {
-            handle: 'backcountry',
+            handle: 'accessories',
             country,
             language,
           },
@@ -84,7 +84,7 @@ export async function loader({params, context}: LoaderArgs) {
         COLLECTION_HERO_QUERY,
         {
           variables: {
-            handle: 'winter-2022',
+            handle: 'modules',
             country,
             language,
           },
