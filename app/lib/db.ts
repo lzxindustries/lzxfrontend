@@ -288,109 +288,11 @@ export const db = {
       "price": "999.00"
     },
     {
-      "id": "gid://shopify/Product/1701843599424",
-      "title": "LZX Logo Vinyl Sticker",
-      "description": "Cover up holes in spacetime with this handy adhesive decal.",
-      "sku": "LZXLOGOVS",
-      "price": "3.00"
-    },
-    {
       "id": "gid://shopify/Product/1701868666944",
       "title": "Castle 001 DAC",
       "description": "﻿In stockDIY PCB & Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations. Bill of Materials (CSV)Schematics (PDF)",
       "sku": "LZXCSTL1",
       "price": "20.00"
-    },
-    {
-      "id": "gid://shopify/Product/1701898846272",
-      "title": "RCA Sync Cable",
-      "description": "﻿In stock.﻿ This cable is useful for syncing modules together via their rear RCA connections, but it performs well in other RCA applications, too!",
-      "sku": "BMMRCASYNC24",
-      "price": "8.99"
-    },
-    {
-      "id": "gid://shopify/Product/1701923323968",
-      "title": "RGB miniSNAKE Cable",
-      "description": "An RGB patch cable that conveniently channels red, green, and blue signals through your LZX system. Multiple lengths available. New! 5 inch cables are now back in stock.",
-      "sku": "BMMRGBSNAKE24",
-      "price": "9.99"
-    },
-    {
-      "id": "gid://shopify/Product/1701957402688",
-      "title": "Andor 1 Media Player",
-      "description": "A versatile standalone media player for video art, stage production, video walls, signage, NFT display, and other applications. Plays seamless video loops or shows still images. Media can be easily switched with a single key press on a USB keyboard, MIDI keyboard, or the optional remote control. Multiple units used together can wirelessly synchronize the playback of video files across multiple screens. The Andor 1 is incredibly simple to use, but packed with professional features like an integrated playlist editor that supports interactive playlists, video wall modes with bezel compensation, MIDI control, video rotation options, and built-in video color test patterns. It's small enough to easily fit behind most TVs and monitors, and in some cases it can be powered from a TV's USB port. The optional Andor 1 Deluxe Accessories Pack is highly recommended. It includes a wireless remote, USB drive, and all of the necessary cables to get you started. Andor 1 was developed by programmer, artist, and curator Paul Slocum and is based on more than a decade of exhibiting video and digital art at his own And/Or Gallery and at other museums and galleries internationally. User Manual (PDF) Effortless Looping and Synchronizing of Videos Just plug in a USB drive containing your video. The only configuration required is to ensure players are on the same sync channel (which they are by default), and sync still works even if your videos are slightly different lengths. Supports dozens of sync channels to avoid interference when multiple synchronized installations are operating in the same area. Built For Art and Other Creative Displays Boots and plays media in seconds with no text or logos. Truly seamless video looping. Native support for a variety of computer and TV monitor resolutions and aspect ratios. It does what artists always wish media players did. Powerful Playlist System The simple integrated playlist editor allows you to string together sequences of multiple videos or images. It even includes the ability to link playlist items to MIDI notes or keys on the remote control, allowing synchronized video loops to be triggered across multiple screens from a single remote or MIDI device. Dimensions: 3.75 x 2.5 x 1 inchesVideo Specification: up to 1080p @ 60fps, up to 40MbpsVideo Codecs: H264, MPEG4, MJPEG, VP6, VP8Video Containers: AVI, MOV, MP4, FLV, MKVAudio Formats: MP3, WAV, AIFF, FLACStill Image Formats: JPEG, PNG, TIFF, PSDA/V Outputs: HDMI, composite video, analog audioOther Ports: USB x 4, micro USB power inputSupported File Systems: FAT, NTFS, HFS+, EXTSupported Audio: AC3, DTS, 5.1Subtitle Support: SRT files Includes: Andor 1 Media Player Andor 1 User Manual 6 foot power cable Power supply with UK/Hong Kong & EU travel adapters An external USB keyboard will be required to adjust settings in the menu. LZX Industries Video Synthesis Compatibility Notes Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection. If you have any questions about interfacing before purchasing Andor 1, please contact us. Menu Screenshots",
-      "sku": "LZXAO1BASIC",
-      "price": "249.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702700220480",
-      "title": "Cadet Series Vinyl Sticker",
-      "description": "In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!",
-      "sku": "LZXCADTVS",
-      "price": "3.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702758350912",
-      "title": "Expedition Series Embroidered Patch",
-      "description": "A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.",
-      "sku": "LZXEXEP",
-      "price": "5.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702768705600",
-      "title": "Expedition Series Vinyl Sticker",
-      "description": "Possesses a lack of functionality embodied by similar decorative items.",
-      "sku": "LZXEXVS",
-      "price": "3.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702781059136",
-      "title": "Orion Series Vinyl Sticker",
-      "description": "Looks great on all models of safety helmet.",
-      "sku": "LZXORVS",
-      "price": "3.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702792855616",
-      "title": "Orion Series Embroidered Patch",
-      "description": "",
-      "sku": "LZXOREP",
-      "price": "5.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702816219200",
-      "title": "Castle Series Vinyl Sticker",
-      "description": "Out of stock.",
-      "sku": "LZXCSTLVS",
-      "price": "3.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702828408896",
-      "title": "Castle Series Embroidered Patch",
-      "description": "",
-      "sku": "LZXCSTLEP",
-      "price": "5.00"
-    },
-    {
-      "id": "gid://shopify/Product/1702838829120",
-      "title": "Vidiot Vinyl Sticker",
-      "description": "Essential for outwardly expressing your inner Vidiot.",
-      "sku": "LZXVIDVS",
-      "price": "3.00"
-    },
-    {
-      "id": "gid://shopify/Product/1725059989568",
-      "title": "LZX Industries Gift Card",
-      "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.",
-      "sku": "",
-      "price": "10.00"
-    },
-    {
-      "id": "gid://shopify/Product/1822429937728",
-      "title": "Vessel 208HP EuroRack Case",
-      "description": "﻿No longer in production. Vessel is a 208 HP EuroRack enclosure designed to meet the demands of video synthesis modular systems or any EuroRack system requiring laboratory grade performance. We wanted to create a EuroRack case which embodied the spirit of what we do at LZX Industries: highly functional, fun, and with careful attention to the details. 208HP of module mounting space with 2.5mm threaded inserts. 22.25 x 10.5 x 3.375 inches, exact dimensions without modules installed. When sizing transportation cases allow for up to 1 inch additional clearance for control knobs and other panel mounted components on LZX Industries modules. Mounting depth ranges between a minimum of 1.25 inches and a maximum of 2.5 inches. Powered by an LZX designed power supply High quality, precision mounting hardware, jacks and switches are utilized throughout the assembly. Side bumpers and feet are cast by hand at the LZX workshop out of industrial grade 85A polyurethane rubber. The same type of material is used to make roller skate wheels and traffic cones. Solid 1/16\" thick aluminum powder-coated boat enclosure with embedded standoffs and a wide range of mounting nuts. Two 40mm cooling fans (intake and exhaust) with wire finger guards and a separate power switch. Fans are user serviceable and may be upgraded or replaced with standard 40mm PC case fans. The fans are powered directly from the DC brick rather than the EuroRack power rails for noise free operation. Two RCA bulkheads on the right diagonal face allow connection to backplane RCA sync connections, so multiple cases can distribute video sync signals to each other. The bulkheads could be used for any desired signals, if video sync distribution is not needed. Internal 12VDC 2.1mm DC jack connector allows powering peripherals inside the case from the external power brick instead of the EuroRack power rails. This power output is compatible with Liquid TV. Two 3.5mm TRS jacks on the right diagonal face allow distribution of the EuroRack power rail's CV/Gate buses from case to case using readily available stereo 3.5mm cables.",
-      "sku": "LZXVESRED",
-      "price": "1199.00"
     },
     {
       "id": "gid://shopify/Product/1822438031424",
@@ -407,90 +309,6 @@ export const db = {
       "price": "299.00"
     },
     {
-      "id": "gid://shopify/Product/1974680092736",
-      "title": "Video Sync Distribution Cable",
-      "description": "In stock. Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules.",
-      "sku": "LZXVSDC",
-      "price": "19.00"
-    },
-    {
-      "id": "gid://shopify/Product/2008378769472",
-      "title": "Hours",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2008378867776",
-      "title": "PayPal Line Discount",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2008379031616",
-      "title": "PayPal Sales",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2008379260992",
-      "title": "PayPal Shipping",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2008379392064",
-      "title": "Sales",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2309394628672",
-      "title": "Custom",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2309395873856",
-      "title": "Hours",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/2309396201536",
-      "title": "Priority Mail",
-      "description": "",
-      "sku": "",
-      "price": "19.37"
-    },
-    {
-      "id": "gid://shopify/Product/2309396332608",
-      "title": "Sales",
-      "description": "",
-      "sku": "",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/3016384577600",
-      "title": "Gieskes 3trinsRGB+1c to LZX Adapter PCB",
-      "description": "No longer in production.This DIY project PCB can be used to add LZX Patchable Video format RGB outputs to the 3trinsRGB+1c video synthesizer. Download Assembly Diagram.pdf Download Schematic.pdf 3trinsRGB+1c RGB Output Expander BOM.csv",
-      "sku": "3TRINSPCB",
-      "price": "10.00"
-    },
-    {
-      "id": "gid://shopify/Product/3405727301696",
-      "title": "Televisionary",
-      "description": "Pre-order. Will most likely ship in 2030. LZX is beyond excited to introduce the newest addition to our expanding product line, the Televisionary. To produce this new monitor for video synthesis, we've thought of everything. The Televisionary uses a slimmer CRT tube to give an overall slimmer TV that is up to 40% thinner than a traditional CRT TV while delivering the better contrast and superior picture quality with built in Digital Black Stretch circuitry. You can enjoy and relax with the simple and easy GUI. Picture button on the remote control enables one-touch selection of various preset optimized image settings to suit different modes that will maximize your enjoyment of video feedback. Cabinets create bold and impressive look with dual colors, black and wine red. You can enhance audio experience with the selection as per your choice for Bass, Treble and Balance. Ultra Slim Line TV not only offers quality picture and sound performance, its timeless design will complement your home decor.LZX is only producing 7,000 Televisionaries (it was the minimum order from the factory), so be sure to pre-order before this limited production item sells out.",
-      "sku": "LZXTVARY",
-      "price": "15999.00"
-    },
-    {
       "id": "gid://shopify/Product/4254304174103",
       "title": "Topogram",
       "description": "﻿Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying range may be voltage controlled separately. Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges. Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch. Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center. The circuit is entirely analogue. Specifications Width, 16HP Mounting Depth, 32mm Power +12V @ 200mA Power -12V @ 200mA",
@@ -505,13 +323,6 @@ export const db = {
       "price": "79.00"
     },
     {
-      "id": "gid://shopify/Product/4295175766039",
-      "title": "Orion Tee Shirt",
-      "description": "Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.",
-      "sku": "ORIONTEE-S",
-      "price": "25.00"
-    },
-    {
       "id": "gid://shopify/Product/4319674761239",
       "title": "Chromagnon",
       "description": "Now taking pre-orders for delivery in 2023. Follow along with the Chromagnon project timeline HERE.We’re proud to announce the beginning of our third generation of analogue video synthesizers with the LZX Automata series. The Automata series instruments continue the precedent set forth by Vidiot as a holistic video synthesis instrument. Beginning with our first release, Chromagnon, each device will be capable of both standalone use or immediate integration into your EuroRack modular. Standalone and EuroRack out of the box. Includes an injection molded shell enclosure for standalone use. Power from EuroRack power header or any 12V DC wall wart. A holistic visual instrument or core module for EuroRack video synthesis. Includes video sync generation, video input w/frame synchronizer, video output interface, complex cartesian processor and quad waveform generators. Multi format visuals. Chromagnon supports several complete workflows within a simple interface: colorization, chroma keying, quadrilateral figure generation, and arbitrary raster generation for scan processing with ILDA lasers and XY displays. Third generation LZX analogue circuitry. High performance discrete wideband circuitry based on a decade of incremental research and development. Analog HD Video Interfaces. Video and sync generation up to 1080i60. Bring your existing LZX video synthesis system into a high resolution era. Width: 52HPMounting Depth: 42mmPower Consumption: TBDIncluded Items: 52HP EuroRack module with standalone enclosure and 12V DC wall wart power adapter, lab exercise manual, 5ft composite video cable, 2x 3.5mm patch cables, 12V DC power jumper cable, EuroRack power cable, club. Frontpanel artwork and enclosure renders are a work in progress and may change. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces. Promotional painting of \"Chromagnonfolk with Gary\" by Jason Wayne Barnett.",
@@ -519,60 +330,11 @@ export const db = {
       "price": "1599.00"
     },
     {
-      "id": "gid://shopify/Product/4329458597911",
-      "title": "Empty Product Box",
-      "description": "",
-      "sku": "",
-      "price": "1.00"
-    },
-    {
-      "id": "gid://shopify/Product/4394571333655",
-      "title": "Test Product 1",
-      "description": "",
-      "sku": "Test1",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/4394571497495",
-      "title": "Test Product 2",
-      "description": "",
-      "sku": "Test2",
-      "price": "0.00"
-    },
-    {
-      "id": "gid://shopify/Product/4397213286423",
-      "title": "Memory Palace with FREE Escher Sketch",
-      "description": "This promotion has sold out. Thank you to all who ordered. Buy a Memory Palace and get a free Escher Sketch. Invoking the lineage of computer video instruments from the 1980s and 1990s, the Orion Series Memory Palace introduces digital video transformations and frame buffer memory to the LZX video synthesis landscape. Width, 52HP Mounting Depth, 50mm Power +12V @ 550mA Power -12V @ 50mA Touch/stylus pen controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs as well as pressure and directional velocity sensing. Stylus pen included. Width, 36HP Mounting Depth, 50mm Power +12V @ 180mA Power -12V @ 30mA",
-      "sku": "LZXMPES",
-      "price": "1199.00"
-    },
-    {
       "id": "gid://shopify/Product/6543062171671",
       "title": "Video Logic",
       "description": "Currently not available.The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.6HP 60MA +/- 12V (estimated)",
       "sku": "",
       "price": "225.00"
-    },
-    {
-      "id": "gid://shopify/Product/6543083601943",
-      "title": "Video Logic NOS",
-      "description": "Sold out! Sorry you missed it.The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.6HP 60MA +/- 12V (estimated)",
-      "sku": "",
-      "price": "202.10"
-    },
-    {
-      "id": "gid://shopify/Product/6543088975895",
-      "title": "Visionary Video Logic",
-      "description": "Sold out! Sorry you missed it.The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.6HP 60MA +/- 12V (estimated)",
-      "sku": "",
-      "price": "202.10"
-    },
-    {
-      "id": "gid://shopify/Product/6543092383767",
-      "title": "LZX Video Logic",
-      "description": "Sold out! Sorry you missed it.The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.6HP 60MA +/- 12V (estimated)",
-      "sku": "",
-      "price": "202.10"
     },
     {
       "id": "gid://shopify/Product/6544601219095",
@@ -601,20 +363,6 @@ export const db = {
       "description": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
       "sku": "LZXDCDISTRO",
       "price": "150.00"
-    },
-    {
-      "id": "gid://shopify/Product/6552581832727",
-      "title": "2.1mm DC Jumper Cable",
-      "description": "For use with LZX modules and cases employing 2.1mm barrel jacks. A cable of 25cm in length can connect adjacent modules, while a 50cm cable can reach about 50HPRight-angled cables recommended for Orion modules offering auxiliary power inputs.",
-      "sku": "DCJUMPER12",
-      "price": "2.99"
-    },
-    {
-      "id": "gid://shopify/Product/6561694679063",
-      "title": "Capsule Power Kit",
-      "description": "Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions",
-      "sku": "LZXCAPSULEKIT",
-      "price": "499.00"
     },
     {
       "id": "gid://shopify/Product/6573392003095",
@@ -650,27 +398,6 @@ export const db = {
       "description": "DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges. LZX Gen3 Design Standards Long lifespan pots, jacks and mechanical switches. Active switching and gain control of the entire signal path. Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed. Specifications 12HP EuroRack Module Max Depth: 42mm +12V Power Consumption, 230mA ﻿Module Documentation https://lzxmodular.readthedocs.io/en/latest/dwo3.html",
       "sku": "LZXDWO3",
       "price": "499.00"
-    },
-    {
-      "id": "gid://shopify/Product/6628981997591",
-      "title": "Andor 1 Media Player Deluxe Accessories Pack",
-      "description": "For use with the Andor 1 Media Player, the Deluxe Accessory Pack Includes Wireless remote for navigating menus A/V cable for composite video and stereo RCA audio connections 8GB USB flash drive 6' HDMI cable Mounting screws",
-      "sku": "LZXAO1DAP",
-      "price": "99.00"
-    },
-    {
-      "id": "gid://shopify/Product/6658750185495",
-      "title": "DWF3 Dual Filter",
-      "description": "Pre-order. Please visit our production schedule for the latest information on availability before placing your pre-order.DWF3 Dual Filter is a dual wideband analog voltage controlled filter designed for image processing. It is capable of blurring and sharpening SD and HD images, as well as extracting left and right edges as independent signals. Based on the same discrete OTA core integrators as DWO3, the dual filter presents some new image processing tricks due to it's fully featured video sync subsystems. Due to it's lower frequency bands, it also functions as a voltage controlled slew for animation rate signals. Two identical discrete integrator cores with cutoff frequencies ranging from 2MHz down to several seconds. Four shaped outputs per channel: Low Pass (Blur), High Pass (Sharpen), Left Edge Extraction, and Right Edge Extraction. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges. LZX Gen3 Design Standards Long lifespan pots, jacks and mechanical switches. Active switching and gain control of the entire signal path. Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed. Specifications 12HP EuroRack Module Max Depth: 42mm",
-      "sku": "LZXDWF3",
-      "price": "399.00"
-    },
-    {
-      "id": "gid://shopify/Product/6690204811287",
-      "title": "LZX Black Expedition Replacement Panel",
-      "description": "Created out of necessity, these LZX black replacement panels generated so much interest that their availability to the wider world could not be suppressed. Thus, by popular demand, LZX is happy to present a front panel alternative for your Expedition modules. The matte black panels feature white printed text and are made from the same material as circuit boards (FR4). A specially modified nut driver is offered to help with panel replacement. Install at your own risk.",
-      "sku": "LZXEXPBLKPA",
-      "price": "10.00"
     },
     {
       "id": "gid://shopify/Product/6766668120087",
@@ -715,25 +442,11 @@ export const db = {
       "price": "149.00"
     },
     {
-      "id": "gid://shopify/Product/6782464294935",
-      "title": "Rack 84HP",
-      "description": "In stock.LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19\" rack cases and enclosures. Combine it with DC Distro 3A and be ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated* Vector rails with threaded M2.5 inserts* 100 M2.5 module mountings screws",
-      "sku": "LZXRACK84HP",
-      "price": "149.00"
-    },
-    {
       "id": "gid://shopify/Product/6782469046295",
       "title": "Contour",
       "description": "Contour is a triple VC high pass filter for extracting edge transitions from video signals and patterns. LZX Gen3 Design Standards Long lifespan pots, jacks and mechanical switches. Active switching and gain control of the entire signal path. Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 32mm max, with either power option installed. Specifications 8HP EuroRack Module Max Depth: 32mm Power +12V @ 150mA",
       "sku": "LZXCONTOUR",
       "price": "339.00"
-    },
-    {
-      "id": "gid://shopify/Product/6790368657431",
-      "title": "System 22 Modular Analog Video Synthesizer",
-      "description": "This 84HP modular system includes everything you need start experimenting with SD/HD analogue video synthesis.",
-      "sku": "LZXDSESYS",
-      "price": "1296.00"
     },
     {
       "id": "gid://shopify/Product/6856020394007",
@@ -748,13 +461,6 @@ export const db = {
       "description": "ANGLES is a 12HP ramp generator with 24 fixed outputs at 15 degree increments from 0 degrees (H-Ramp) to 345 degrees. It can also be used as a general purposed fixed ratio mixer by patching the inputs. It's a protractor for your patch! LZX Gen3 Design Standards Long lifespan jacks Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed. Specifications 12HP EuroRack Module Max Depth: 42mm +12V Power Consumption: 175mA Module Documentation https://lzxmodular.readthedocs.io/en/latest/angles.html",
       "sku": "LZXANGLES",
       "price": "329.00"
-    },
-    {
-      "id": "gid://shopify/Product/6884822614039",
-      "title": "Video Knob Enamel Pin",
-      "description": "Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.",
-      "sku": "",
-      "price": "8.00"
     },
     {
       "id": "gid://shopify/Product/6886906134551",
