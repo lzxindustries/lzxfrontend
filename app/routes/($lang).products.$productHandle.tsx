@@ -116,22 +116,37 @@ export async function loader({ params, request, context }: LoaderArgs) {
   );
 }
 
+export function renderPowerConsumption(index: number)
+{
+  var results = ''
+  for (let i = 0; i < db.modules[index].powerConsumption.length; i++) 
+  {
+    results += '<p>' + db.modules[index].powerConsumption[i].voltage + ' ' + db.modules[index].powerConsumption[i].voltageUnit + '</p>';
+    results += '<p>' + db.modules[index].powerConsumption[i].current + ' ' + db.modules[index].powerConsumption[i].currentUnit + '</p>';
+  }
+  return results
+};
+
 export default function Product() {
   const { product, shop, recommended } = useLoaderData<typeof loader>();
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
   var viewTitle = title;
-  var viewDescription = descriptionHtml;
-  var viewBrand = vendor;
+  var isModule = false;
+  var module = db.modules[0];
+  var it = 0;
+  var index = 0;
+  var numPowerConnector = 0;
 
   db.modules.map((module => {
     if (module.id == id) {
-      viewTitle = module.title
-      viewDescription = module.description
-      viewBrand = "LZX Industries"
+      isModule = true;
+      module = db.modules[it];
+      index = it;
+      numPowerConnector = module.powerConsumption.length
+      it = it + 1;
     }
-  }
-  ))
+  }))
 
   return (
     <>
@@ -144,16 +159,13 @@ export default function Product() {
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
               <div className="grid gap-2">
-
-                {viewBrand && (
-                  <Text className={'opacity-50 font-medium'}>{viewBrand}</Text>
-                )}
+                  <Text className={'opacity-50 font-medium'}>{isModule ? module.brand : vendor}</Text>
                 <Heading as="h1" className="whitespace-normal">
-                  {viewTitle}
+                  {isModule ? module.title : title}
                 </Heading>
               </div>
               <ProductForm />
-              <p>{viewDescription}</p>
+              {isModule ? renderPowerConsumption(index) : null}              
               {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
