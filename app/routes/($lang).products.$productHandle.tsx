@@ -1,6 +1,6 @@
-import {type ReactNode, useRef, Suspense, useMemo} from 'react';
-import {Disclosure, Listbox} from '@headlessui/react';
-import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
+import { type ReactNode, useRef, Suspense, useMemo } from 'react';
+import { Disclosure, Listbox } from '@headlessui/react';
+import { defer, type LoaderArgs } from '@shopify/remix-oxygen';
 import {
   useLoaderData,
   Await,
@@ -29,8 +29,8 @@ import {
   AddToCartButton,
   Button,
 } from '~/components';
-import {getExcerpt} from '~/lib/utils';
-import {seoPayload} from '~/lib/seo.server';
+import { getExcerpt } from '~/lib/utils';
+import { seoPayload } from '~/lib/seo.server';
 import invariant from 'tiny-invariant';
 import clsx from 'clsx';
 import type {
@@ -40,27 +40,27 @@ import type {
   Shop,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import type {Storefront} from '~/lib/type';
-import type {Product} from 'schema-dts';
-import {routeHeaders, CACHE_SHORT} from '~/data/cache';
-import {db} from '~/lib/db'
+import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
+import type { Storefront } from '~/lib/type';
+import type { Product } from 'schema-dts';
+import { routeHeaders, CACHE_SHORT } from '~/data/cache';
+import { db } from '~/lib/db'
 
 export const headers = routeHeaders;
 
-export async function loader({params, request, context}: LoaderArgs) {
-  const {productHandle} = params;
+export async function loader({ params, request, context }: LoaderArgs) {
+  const { productHandle } = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
 
   const searchParams = new URL(request.url).searchParams;
 
   const selectedOptions: SelectedOptionInput[] = [];
   searchParams.forEach((value, name) => {
-    selectedOptions.push({name, value});
+    selectedOptions.push({ name, value });
   });
 
-  const {shop, product} = await context.storefront.query<{
-    product: ProductType & {selectedVariant?: ProductVariant};
+  const { shop, product } = await context.storefront.query<{
+    product: ProductType & { selectedVariant?: ProductVariant };
     shop: Shop;
   }>(PRODUCT_QUERY, {
     variables: {
@@ -72,7 +72,7 @@ export async function loader({params, request, context}: LoaderArgs) {
   });
 
   if (!product?.id) {
-    throw new Response('product', {status: 404});
+    throw new Response('product', { status: 404 });
   }
 
   const recommended = getRecommendedProducts(context.storefront, product.id);
@@ -117,22 +117,22 @@ export async function loader({params, request, context}: LoaderArgs) {
 }
 
 export default function Product() {
-  const {product, shop, recommended} = useLoaderData<typeof loader>();
-  const {media, title, id, vendor, descriptionHtml} = product;
-  const {shippingPolicy, refundPolicy} = shop;
-  var powerConsumptionPositive12VoltsMilliamps = 0;
-  var powerConsumptionNegative12VoltsMilliamps = 0;
+  const { product, shop, recommended } = useLoaderData<typeof loader>();
+  const { media, title, id, descriptionHtml, vendor } = product;
+  const { shippingPolicy, refundPolicy } = shop;
+  var viewTitle = title;
+  var viewDescription = descriptionHtml;
+  var viewBrand = vendor;
 
-  db.modules.map((module =>
-    {
-      if(module['shopify-id'] == id)
-      {
-        powerConsumptionPositive12VoltsMilliamps = module['power-consumption']['positive-12-volts-milliamps'];
-        powerConsumptionNegative12VoltsMilliamps = module['power-consumption']['negative-12-volts-milliamps'];
-      }
+  db.modules.map((module => {
+    if (module.id == id) {
+      viewTitle = module.title
+      viewDescription = module.description
+      viewBrand = "LZX Industries"
     }
+  }
   ))
-    
+
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
@@ -144,20 +144,21 @@ export default function Product() {
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
               <div className="grid gap-2">
-                <Heading as="h1" className="whitespace-normal">
-                  {title}
-                </Heading>
-                {vendor && (
-                  <Text className={'opacity-50 font-medium'}>{vendor}</Text>
+
+                {viewBrand && (
+                  <Text className={'opacity-50 font-medium'}>{viewBrand}</Text>
                 )}
+                <Heading as="h1" className="whitespace-normal">
+                  {viewTitle}
+                </Heading>
               </div>
               <ProductForm />
-              {powerConsumptionPositive12VoltsMilliamps} {powerConsumptionNegative12VoltsMilliamps}
-              <div className="grid gap-4 py-4">
-                {descriptionHtml && (
+              <p>{viewDescription}</p>
+              {/* <div className="grid gap-4 py-4">
+                {viewDescription && (
                   <ProductDetail
-                    title="Product Details"
-                    content={descriptionHtml}
+                    title="Description"
+                    content={viewDescription}
                   />
                 )}
                 {shippingPolicy?.body && (
@@ -174,7 +175,7 @@ export default function Product() {
                     learnMore={`/policies/${refundPolicy.handle}`}
                   />
                 )}
-              </div>
+              </div> */}
             </section>
           </div>
         </div>
@@ -194,10 +195,9 @@ export default function Product() {
 }
 
 export function ProductForm() {
-  const {product, analytics, storeDomain} = useLoaderData<typeof loader>();
-
+  const { product, analytics, storeDomain } = useLoaderData<typeof loader>();
   const [currentSearchParams] = useSearchParams();
-  const {location} = useNavigation();
+  const { location } = useNavigation();
 
   /**
    * We update `searchParams` with in-flight request data from `location` (if available)
@@ -221,7 +221,7 @@ export function ProductForm() {
   const searchParamsWithDefaults = useMemo<URLSearchParams>(() => {
     const clonedParams = new URLSearchParams(searchParams);
 
-    for (const {name, value} of firstVariant.selectedOptions) {
+    for (const { name, value } of firstVariant.selectedOptions) {
       if (!searchParams.has(name)) {
         clonedParams.set(name, value);
       }
@@ -343,7 +343,7 @@ function ProductOptions({
               {option.values.length > 7 ? (
                 <div className="relative w-full">
                   <Listbox>
-                    {({open}) => (
+                    {({ open }) => (
                       <>
                         <Listbox.Button
                           ref={closeRef}
@@ -370,7 +370,7 @@ function ProductOptions({
                               key={`option-${option.name}-${value}`}
                               value={value}
                             >
-                              {({active}) => (
+                              {({ active }) => (
                                 <ProductOptionLink
                                   optionName={option.name}
                                   optionValue={value}
@@ -387,10 +387,10 @@ function ProductOptions({
                                   {value}
                                   {searchParamsWithDefaults.get(option.name) ===
                                     value && (
-                                    <span className="ml-2">
-                                      <IconCheck />
-                                    </span>
-                                  )}
+                                      <span className="ml-2">
+                                        <IconCheck />
+                                      </span>
+                                    )}
                                 </ProductOptionLink>
                               )}
                             </Listbox.Option>
@@ -443,7 +443,7 @@ function ProductOptionLink({
   children?: ReactNode;
   [key: string]: any;
 }) {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const isLangPathname = /\/[a-zA-Z]{2}-[a-zA-Z]{2}\//g.test(pathname);
   // fixes internalized pathname
   const path = isLangPathname
@@ -477,7 +477,7 @@ function ProductDetail({
 }) {
   return (
     <Disclosure key={title} as="div" className="grid w-full gap-2">
-      {({open}) => (
+      {({ open }) => (
         <>
           <Disclosure.Button className="text-left">
             <div className="flex justify-between">
@@ -496,7 +496,7 @@ function ProductDetail({
           <Disclosure.Panel className={'pb-4 pt-2 grid gap-2'}>
             <div
               className="prose dark:prose-invert"
-              dangerouslySetInnerHTML={{__html: content}}
+              dangerouslySetInnerHTML={{ __html: content }}
             />
             {learnMore && (
               <div className="">
@@ -633,7 +633,7 @@ async function getRecommendedProducts(
     recommended: ProductType[];
     additional: ProductConnection;
   }>(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: {productId, count: 12},
+    variables: { productId, count: 12 },
   });
 
   invariant(products, 'No data returned from Shopify API');
