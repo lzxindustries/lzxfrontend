@@ -44,6 +44,7 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import type {Storefront} from '~/lib/type';
 import type {Product} from 'schema-dts';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
+import {db} from '~/lib/db'
 
 export const headers = routeHeaders;
 
@@ -117,9 +118,21 @@ export async function loader({params, request, context}: LoaderArgs) {
 
 export default function Product() {
   const {product, shop, recommended} = useLoaderData<typeof loader>();
-  const {media, title, vendor, descriptionHtml} = product;
+  const {media, title, id, vendor, descriptionHtml} = product;
   const {shippingPolicy, refundPolicy} = shop;
+  var powerConsumptionPositive12VoltsMilliamps = 0;
+  var powerConsumptionNegative12VoltsMilliamps = 0;
 
+  db.modules.map((module =>
+    {
+      if(module['shopify-id'] == id)
+      {
+        powerConsumptionPositive12VoltsMilliamps = module['power-consumption']['positive-12-volts-milliamps'];
+        powerConsumptionNegative12VoltsMilliamps = module['power-consumption']['negative-12-volts-milliamps'];
+      }
+    }
+  ))
+    
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
@@ -139,6 +152,7 @@ export default function Product() {
                 )}
               </div>
               <ProductForm />
+              {powerConsumptionPositive12VoltsMilliamps} {powerConsumptionNegative12VoltsMilliamps}
               <div className="grid gap-4 py-4">
                 {descriptionHtml && (
                   <ProductDetail
