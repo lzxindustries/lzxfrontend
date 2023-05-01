@@ -6,6 +6,7 @@
 // } from '@shopify/hydrogen/storefront-api-types';
 // import invariant from 'tiny-invariant';
 import YouTube from 'react-youtube';
+import { Grid } from '~/components'
 import { db } from '~/lib/db'
 import {
   PageHeader,
@@ -78,32 +79,39 @@ export const headers = routeHeaders;
 export default function Patches() {
   return (
     <>
-      <PageHeader heading="Patches" />
-      {
-        db.patches.map((patch) => {
-          return (
-            <>
-              <Section>
-                  <h3>{patch.title}</h3>
-                  <p>{patch.notes}</p>
-                  <p><img src={patch.diagram} /></p>
-                  {patch.videos.map((video) => {
-                    return <p><YouTube videoId={video.youtube} /></p>
-                  })}
-                  <p><b>Artists </b>
-                    {patch.artists.map((artist) => {
-                      return (<>{artist.name + ', '}</>)
+      <Section className="py-0">
+        <Grid layout='patches' className="py-0">
+          {
+            db.patches.map((patch) => {
+              return (
+                <>
+                  <div>
+                    <Text as="h3" className="w-full" color="primary"><b>{patch.title}</b></Text>
+                    {patch.videos.map((video) => {
+                      return <YouTube className="aspect-video" opts={{ height: 90, width: 160, playerVars: { autoplay: 1 } }} iframeClassName="aspect-video" videoId={video.youtube} />
                     })}
-                  </p>
-                  <p><b>Modules </b>
-                    {patch.modules.map((module) => {
-                      return (<><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link>, </>)
-                    })}
-                  </p>
-              </Section>
-            </>)
-        })
-      }
+                    <Link target="_blank" to={patch.diagram}><img className="h-16" src={patch.diagram} /></Link>
+                    <p><Text color="primary">Artists </Text>
+                      <Text color="subtle">
+                        {patch.artists.map((artist) => {
+                          return (<>{artist.name + ''}</>)
+                        })}
+                      </Text>
+                    </p>
+                    <p><Text color="primary">Modules </Text>
+                      <Text color="subtle">
+                        {patch.modules.map((module) => {
+                          return (<><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link> </>)
+                        })}
+                      </Text>
+                    </p>
+                    <p className="w-full">{patch.notes}</p>
+                  </div>
+                </>)
+            })
+          }
+        </Grid>
+      </Section>
     </>
   );
 }
