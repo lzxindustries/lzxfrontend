@@ -6892,7 +6892,27 @@ export const db = {
     "subtitle": "3-Bit Digitizer",
     "connectors": [
       {
-        "description": "Connector 1",
+        "description": "Center CV",
+        "direction": "Input",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J10",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Span CV",
+        "direction": "Input",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J11",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Enable",
         "direction": "Input",
         "location": "Front",
         "type": "3.5mm Jack",
@@ -6900,14 +6920,121 @@ export const db = {
         "x": 0,
         "y": 0,
         "xyUnit": "in"
+      },
+      {
+        "description": "Disable",
+        "direction": "Input",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J2",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "ADC",
+        "direction": "Input",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J3",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "DAC",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J4",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "DAC Inverted",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J5",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Window Key",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J6",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "D0",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J7",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "D1",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J8",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "D2",
+        "direction": "Output",
+        "location": "Front",
+        "type": "3.5mm Jack",
+        "referenceDesignator": "J9",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
       }
     ],
     "controls": [
       {
-        "description": "Control 1",
+        "description": "Center",
         "location": "Front",
         "type": "Video Knob Solid",
         "referenceDesignator": "P1",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Center CV Depth",
+        "location": "Front",
+        "type": "Video Knob Outline",
+        "referenceDesignator": "P2",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Span",
+        "location": "Front",
+        "type": "Video Knob Solid",
+        "referenceDesignator": "P3",
+        "x": 0,
+        "y": 0,
+        "xyUnit": "in"
+      },
+      {
+        "description": "Span CV Depth",
+        "location": "Front",
+        "type": "Video Knob Outline",
+        "referenceDesignator": "P4",
         "x": 0,
         "y": 0,
         "xyUnit": "in"

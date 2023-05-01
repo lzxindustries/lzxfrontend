@@ -7,6 +7,8 @@ export function ModuleDetails({
 }: {
   moduleIndex: number;
 }) {
+  var it = 0;
+  var it2 = 0;
   return (
     <div>
       {/* <div className="inline-block w-full h-4"></div> */}
@@ -42,31 +44,43 @@ export function ModuleDetails({
       <Text size="copy" color="subtle">{db.modules[moduleIndex].videoSync.length ? "" : "This module does not require any connection to your system's video sync generator."}</Text>
       <div className="inline-block w-full h-2"></div>
       <Heading as="h3" format size="copy" className="uppercase">Inputs & Outputs</Heading>
+
       {db.modules[moduleIndex].connectors.map((conn, it) => {
+        it = it + 1
         return (
           <>
             <div className="w-full inline-block">
-              <div className="inline-block w-1/12">
-                {conn.referenceDesignator}
+              <div className="w-1/12 inline-block">
+                <Text color="subtle">
+                  J{it}
+                </Text>
               </div>
-              <td className="inline-block w-11/12">
-                {conn.description}
-              </td>
+              <div className="w-11/12 inline-block">
+                <Text color="subtle">
+                  {conn.description} {conn.direction}
+                </Text>
+              </div>
             </div>
           </>)
       })}
       <div className="inline-block w-full h-2"></div>
       <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
+
       {db.modules[moduleIndex].controls.map((ctrl, it) => {
+        it2 = it2 + 1
         return (
           <>
             <div className="w-full inline-block">
-              <div className="inline-block w-1/12">
-                {ctrl.referenceDesignator}
+              <div className="w-1/12 inline-block">
+                <Text color="subtle">
+                  P{it2}
+                </Text>
               </div>
-              <td className="inline-block w-11/12">
-                {ctrl.description}
-              </td>
+              <div className="w-11/12 inline-block">
+                <Text color="subtle">
+                  {ctrl.description}
+                </Text>
+              </div>
             </div>
           </>)
       })}
