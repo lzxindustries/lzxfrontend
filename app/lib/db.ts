@@ -6316,7 +6316,7 @@ export const db = {
     },
     "id": "gid://shopify/Product/6886906560535",
     "title": "Stacker",
-    "description": "Stacker is a triple quadrilateral key generator and priority compositor. LZX Gen3 Design Standards Long lifespan jacks Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed. Specifications 8HP EuroRack Module Max Depth: 32mm +12V Power Consumption: 120mA Module Documentation https://lzxmodular.readthedocs.io/en/latest/stacker.html",
+    "description": "Stacker is a triple quadrilateral key generator and priority compositor.",
     "sku": "LZXSTACKER",
     "price": "279.00",
     "brand": "LZX Industries",
