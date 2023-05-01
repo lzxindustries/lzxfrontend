@@ -165,6 +165,7 @@ export default function Product() {
                 </Heading>
               </div>
               <ProductForm />
+              {isModule ? module.description : descriptionHtml}   
               {isModule ? renderPowerConsumption(index) : null}              
               {/* <div className="grid gap-4 py-4">
                 {viewDescription && (

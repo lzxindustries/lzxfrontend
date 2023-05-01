@@ -1,4 +1,17 @@
 export const db = {
+  "brands": [{
+    "_id": {
+      "$oid": "644eff1d404d699366427117"
+    },
+    "name": "LZX Industries",
+    "nickname": "LZX"
+  }, {
+    "_id": {
+      "$oid": "644eff3f404d699366427118"
+    },
+    "name": "Video Headroom Systems",
+    "nickname": "VH.S"
+  }],
   "modules": [{
     "_id": {
       "$oid": "644eddc3404d6993664270c8"
