@@ -167,10 +167,7 @@ export default function Product() {
                 <ProductForm />
               </div>
             </div>
-            <div className="inline-block w-full h-4"></div>
-            <Text size="copy">{isModule ? module.description : descriptionHtml}</Text>
-            <div className="inline-block w-full h-4"></div>
-            {isModule ? <ModuleDetails moduleIndex={index} /> : null}
+            {isModule ? <ModuleDetails moduleIndex={index} /> : <Text>{descriptionHtml}</Text>}
             {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
