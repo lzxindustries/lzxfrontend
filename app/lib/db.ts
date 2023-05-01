@@ -4503,7 +4503,7 @@ export const db = {
     },
     "id": "gid://shopify/Product/6876230025239",
     "title": "Angles",
-    "description": "ANGLES is a 12HP ramp generator with 24 fixed outputs at 15 degree increments from 0 degrees (H-Ramp) to 345 degrees. It can also be used as a general purposed fixed ratio mixer by patching the inputs. It's a protractor for your patch! LZX Gen3 Design Standards Long lifespan jacks Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed. Specifications 12HP EuroRack Module Max Depth: 42mm +12V Power Consumption: 175mA Module Documentation https://lzxmodular.readthedocs.io/en/latest/angles.html",
+    "description": "ANGLES is a 12HP ramp generator with 24 fixed outputs at 15 degree increments from 0 degrees (H-Ramp) to 345 degrees. It can also be used as a general purposed fixed ratio mixer by patching the inputs. It's a protractor for your patch! LZX Gen3 Design Standards Long lifespan jacks Integrated ultra low noise power supplies. Powered via 12V DC barrel or EuroRack power header. Mounting depth 42mm max, with either power option installed.",
     "sku": "LZXANGLES",
     "price": "329.00",
     "brand": "LZX Industries",
@@ -4511,7 +4511,7 @@ export const db = {
       {
         "voltage": 12,
         "voltageUnit": "V",
-        "current": 0,
+        "current": 175,
         "currentUnit": "mA",
         "connectors": [
           {
@@ -4525,25 +4525,12 @@ export const db = {
             "profile": "Vertical"
           }
         ]
-      },
-      {
-        "voltage": -12,
-        "voltageUnit": "V",
-        "current": 0,
-        "currentUnit": "mA",
-        "connectors": [
-          {
-            "type": "EuroRack 16 Pin",
-            "location": "Rear",
-            "profile": "Vertical"
-          }
-        ]
       }
     ],
     "dimensions": {
-      "width": 1,
+      "width": 12,
       "widthUnit": "HP",
-      "depth": 1,
+      "depth": 42,
       "depthUnit": "mm"
     },
     "videoSync": {
@@ -4554,7 +4541,7 @@ export const db = {
           "location": "Rear",
           "profile": "Vertical",
           "terminateSwitch": false,
-          "syncRef": false
+          "syncRef": true
         },
         {
           "direction": "Output",
@@ -4565,14 +4552,15 @@ export const db = {
         }
       ]
     },
-    "releaseDate": "2012-04-23"
+    "releaseDate": "2023-03-01"
   }, {
     "_id": {
       "$oid": "644eddc3404d69936642710a"
     },
     "id": "gid://shopify/Product/6886906134551",
     "title": "Ribbons",
-    "description": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video. Features Hard edged binary 3-bit ADC and Window Key outputs Positive and negative 3-bit DAC outputs provide stepped analog waveforms Center and Span controls and CV inputs allow modulation of sampling offset and scale Enable and Disable inputs extend utility for masking and compositing in the patch Legacy Our first 3-bit digitizer module was 2012's 8 Stage Video Quantizer & Sequencer, which was loosely inspired by the Amplitude Classifier module from the Sandin Image Processor. In 2018, we released Castle 000 ADC and Castle 001 DAC as part of the Castle DIY module series In 2019, we released Fortress, the first module to integrate ADC and DAC capabilities in the same module. Specifications 8HP EuroRack Module Powered via 12V DC barrel or EuroRack power header Max Depth: 32mm +12V Power Consumption: 120mA",
+    "subtitle": "3-Bit Digitizer",
+    "description": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video. Features Hard edged binary 3-bit ADC and Window Key outputs Positive and negative 3-bit DAC outputs provide stepped analog waveforms Center and Span controls and CV inputs allow modulation of sampling offset and scale Enable and Disable inputs extend utility for masking and compositing in the patch Legacy Our first 3-bit digitizer module was 2012's 8 Stage Video Quantizer & Sequencer, which was loosely inspired by the Amplitude Classifier module from the Sandin Image Processor. In 2018, we released Castle 000 ADC and Castle 001 DAC as part of the Castle DIY module series In 2019, we released Fortress, the first module to integrate ADC and DAC capabilities in the same module.",
     "sku": "LZXRIBBONS",
     "price": "299.00",
     "brand": "LZX Industries",
@@ -4580,7 +4568,7 @@ export const db = {
       {
         "voltage": 12,
         "voltageUnit": "V",
-        "current": 0,
+        "current": 120,
         "currentUnit": "mA",
         "connectors": [
           {
@@ -4594,47 +4582,15 @@ export const db = {
             "profile": "Vertical"
           }
         ]
-      },
-      {
-        "voltage": -12,
-        "voltageUnit": "V",
-        "current": 0,
-        "currentUnit": "mA",
-        "connectors": [
-          {
-            "type": "EuroRack 16 Pin",
-            "location": "Rear",
-            "profile": "Vertical"
-          }
-        ]
       }
     ],
     "dimensions": {
-      "width": 1,
+      "width": 8,
       "widthUnit": "HP",
-      "depth": 1,
+      "depth": 32,
       "depthUnit": "mm"
     },
-    "videoSync": {
-      "connectors": [
-        {
-          "direction": "Input",
-          "type": "RCA",
-          "location": "Rear",
-          "profile": "Vertical",
-          "terminateSwitch": false,
-          "syncRef": false
-        },
-        {
-          "direction": "Output",
-          "type": "RCA",
-          "location": "Rear",
-          "profile": "Vertical",
-          "syncGen": false
-        }
-      ]
-    },
-    "releaseDate": "2012-04-23"
+    "releaseDate": "2023-04-27"
   }, {
     "_id": {
       "$oid": "644eddc3404d69936642710b"

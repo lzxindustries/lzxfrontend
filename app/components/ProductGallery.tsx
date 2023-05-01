@@ -56,7 +56,7 @@ export function ProductGallery({
                     ? '(min-width: 48em) 60vw, 90vw'
                     : '(min-width: 48em) 30vw, 90vw'
                 }
-                className="object-cover w-full h-full aspect-square fadeIn"
+                className="object-cover w-full (max-height: 32em) aspect-square fadeIn"
               />
             )}
           </div>

@@ -29,9 +29,9 @@ export type AppliedFilter = {
 export type SortParam =
   | 'price-low-high'
   | 'price-high-low'
-  | 'best-selling'
-  | 'newest'
-  | 'featured';
+  | 'name'
+  | 'eldest'
+  | 'newest';
 
 type Props = {
   filters: Filter[];
@@ -359,22 +359,25 @@ function filterInputToParams(
 
 export default function SortMenu() {
   const items: {label: string; key: SortParam}[] = [
-    {label: 'Featured', key: 'featured'},
-    {
-      label: 'Price: Low - High',
-      key: 'price-low-high',
-    },
-    {
-      label: 'Price: High - Low',
-      key: 'price-high-low',
-    },
-    {
-      label: 'Best Selling',
-      key: 'best-selling',
-    },
     {
       label: 'Newest',
       key: 'newest',
+    },    
+    {
+      label: 'Eldest',
+      key: 'eldest',
+    },
+    {
+      label: 'Name',
+      key: 'name',
+    },
+    {
+      label: 'Lowest Price',
+      key: 'price-low-high',
+    },
+    {
+      label: 'Highest Price',
+      key: 'price-high-low',
     },
   ];
   const [params] = useSearchParams();
