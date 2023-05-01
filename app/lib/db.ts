@@ -1,16 +1,444 @@
 export const db = {
-  "brands": [{
+  "patches": [{
     "_id": {
-      "$oid": "644eff1d404d699366427117"
+      "$oid": "645013d1114038a6ffe06741"
     },
-    "name": "LZX Industries",
-    "nickname": "LZX"
+    "notes": "Exploring Contour & Keychain feedback.",
+    "title": "Feedback Cartoon",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681272888071x622725508691688300/2023-04-11%2010-00-06.jpg",
+    "videos": [
+      {
+        "youtube": "T14e2JiKZEI"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
   }, {
     "_id": {
-      "$oid": "644eff3f404d699366427118"
+      "$oid": "645013d1114038a6ffe06742"
     },
-    "name": "Video Headroom Systems",
-    "nickname": "VH.S"
+    "notes": "Creating overlapping horizontal and vertical lines keyed by DSG3.",
+    "title": "Zebra",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681275107302x411913822408960260/2023-04-11%2010-35-39.jpg",
+    "videos": [
+      {
+        "youtube": "fJMAkK-VzYY"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06743"
+    },
+    "notes": "Exploring DWO3 as color source.",
+    "title": "Color Oscillator",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681276142596x280624665560203800/2023-04-11%2011-26-08.jpg",
+    "videos": [
+      {
+        "youtube": "5IXxYaPWat4"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06744"
+    },
+    "notes": "Sweeping thru gradients provided by Angles.",
+    "title": "Angular Color Wave",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681276208495x590876127203740800/2023-04-11%2012-41-23.jpg",
+    "videos": [
+      {
+        "youtube": "T4DlXBnW_YQ"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06745"
+    },
+    "notes": "",
+    "title": "Cymatic Scan",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681278366756x779611994364783000/12.16.40%20ss4.png",
+    "videos": [
+      {
+        "youtube": "H5rYpd6UOOM"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06746"
+    },
+    "notes": "",
+    "title": "Acid Rain",
+    "diagram": "https://s3.amazonaws.com/appforest_uf/f1681332192450x310316376888196900/acid%20rain%20%281%29.png",
+    "videos": [
+      {
+        "youtube": "SIOpCoaiOrA"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06747"
+    },
+    "notes": "",
+    "title": "Budget Tiles",
+    "diagram": "https://lzx.cdn.bubble.io/f1681495556596x594579242100777900/budget%20tiles.jpg",
+    "videos": [
+      {
+        "youtube": "jP8BYgzt4z4"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06748"
+    },
+    "notes": "",
+    "title": "Seabed",
+    "diagram": "",
+    "videos": [
+      {
+        "youtube": "Bui1koeHEVQ"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06749"
+    },
+    "notes": "",
+    "title": "Sawtooth Shuffle",
+    "diagram": "",
+    "videos": [
+      {
+        "youtube": "p6b1xnYNz-g"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674a"
+    },
+    "notes": "",
+    "title": "Gain Stager",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502478454x231527926050115740/gain_stager.PNG",
+    "videos": [
+      {
+        "youtube": "LBcLzL3HHjQ"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674b"
+    },
+    "notes": "",
+    "title": "Logo Cycle",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502464879x489590041294261300/logo_cycle.PNG",
+    "videos": [
+      {
+        "youtube": "P5OrjcE2X3c"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674c"
+    },
+    "notes": "",
+    "title": "Luxury Tiles",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502505530x350088190064405060/luxury%20tiles.jpg",
+    "videos": [
+      {
+        "youtube": "JWqCks3QC6g"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674d"
+    },
+    "notes": "",
+    "title": "Slip And Slide",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502293479x265687848179547260/slip_and_slide.PNG",
+    "videos": [
+      {
+        "youtube": "_zK0S52I2BY"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674e"
+    },
+    "notes": "",
+    "title": "Ripplestream",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502522072x184357613773534560/ripplestream.jpg",
+    "videos": [
+      {
+        "youtube": "O24ZML5JkJU"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe0674f"
+    },
+    "notes": "CROSSFADE used for downstream luma feedback.",
+    "title": "Aurora Bands",
+    "diagram": "",
+    "videos": [
+      {
+        "youtube": "LB7J5b2mGcA"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06750"
+    },
+    "notes": "",
+    "title": "Unstable Transmission",
+    "diagram": "",
+    "videos": [
+      {
+        "youtube": "7f5z2k0vNzU"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06751"
+    },
+    "notes": "",
+    "title": "Full Spectrum Rorschach",
+    "diagram": "",
+    "videos": [
+      {
+        "youtube": "M1yUAuHJFMQ"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06752"
+    },
+    "notes": "",
+    "title": "Purple",
+    "diagram": "https://lzx.cdn.bubble.io/f1681502639195x446962503648137500/11.06.12%20ss3.png",
+    "videos": [
+      {
+        "youtube": "N17Gfmmgtp0"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06753"
+    },
+    "notes": "",
+    "title": "Checkered Flag",
+    "diagram": "https://lzx.cdn.bubble.io/f1681504390332x554976030034671360/checkered%20flag.jpg",
+    "videos": [
+      {
+        "youtube": "3Kr-9yfkOhs"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
+  }, {
+    "_id": {
+      "$oid": "645013d1114038a6ffe06754"
+    },
+    "notes": "",
+    "title": "Zipper",
+    "diagram": "https://lzx.cdn.bubble.io/f1681512513575x480456744146710000/zipper.jpg",
+    "videos": [
+      {
+        "youtube": "Mj_gEZjstE4"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Ribbons"
+      }
+    ],
+    "artists": [
+      {
+        "name": "Unknown"
+      }
+    ]
   }],
   "modules": [{
     "_id": {
@@ -146,7 +574,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d4"
     },
@@ -280,7 +708,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270cc"
     },
@@ -414,7 +842,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270dc"
     },
@@ -548,7 +976,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ed"
     },
@@ -682,7 +1110,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f1"
     },
@@ -816,7 +1244,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f5"
     },
@@ -950,7 +1378,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270fa"
     },
@@ -1084,7 +1512,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f3"
     },
@@ -1218,7 +1646,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427102"
     },
@@ -1352,7 +1780,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270cf"
     },
@@ -1486,7 +1914,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d2"
     },
@@ -1620,7 +2048,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d6"
     },
@@ -1754,7 +2182,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d9"
     },
@@ -1888,7 +2316,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e2"
     },
@@ -2022,7 +2450,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ee"
     },
@@ -2156,7 +2584,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427103"
     },
@@ -2290,7 +2718,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270c9"
     },
@@ -2424,7 +2852,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270db"
     },
@@ -2558,7 +2986,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270cd"
     },
@@ -2692,7 +3120,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270c8"
     },
@@ -2826,7 +3254,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d8"
     },
@@ -2960,7 +3388,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ea"
     },
@@ -3094,7 +3522,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270fd"
     },
@@ -3228,7 +3656,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ff"
     },
@@ -3362,7 +3790,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427109"
     },
@@ -3496,7 +3924,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270cb"
     },
@@ -3630,7 +4058,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d5"
     },
@@ -3764,7 +4192,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ec"
     },
@@ -3898,7 +4326,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270da"
     },
@@ -4032,7 +4460,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427104"
     },
@@ -4166,7 +4594,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e0"
     },
@@ -4300,7 +4728,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ce"
     },
@@ -4434,7 +4862,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ca"
     },
@@ -4568,7 +4996,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270df"
     },
@@ -4702,7 +5130,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d0"
     },
@@ -4836,7 +5264,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d3"
     },
@@ -4970,7 +5398,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d1"
     },
@@ -5104,7 +5532,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e3"
     },
@@ -5238,7 +5666,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270ef"
     },
@@ -5372,7 +5800,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f8"
     },
@@ -5506,7 +5934,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f7"
     },
@@ -5640,7 +6068,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270fe"
     },
@@ -5774,7 +6202,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f6"
     },
@@ -5908,7 +6336,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f9"
     },
@@ -6042,7 +6470,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e5"
     },
@@ -6176,7 +6604,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427107"
     },
@@ -6310,7 +6738,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d69936642710c"
     },
@@ -6444,7 +6872,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270dd"
     },
@@ -6578,7 +7006,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e7"
     },
@@ -6712,7 +7140,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427106"
     },
@@ -6846,7 +7274,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d69936642710a"
     },
@@ -7100,7 +7528,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d69936642710b"
     },
@@ -7234,7 +7662,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270d7"
     },
@@ -7368,7 +7796,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270de"
     },
@@ -7502,7 +7930,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e6"
     },
@@ -7636,7 +8064,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e8"
     },
@@ -7770,7 +8198,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f0"
     },
@@ -7904,7 +8332,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270fb"
     },
@@ -8038,7 +8466,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f2"
     },
@@ -8172,7 +8600,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270f4"
     },
@@ -8306,7 +8734,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427100"
     },
@@ -8440,7 +8868,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427105"
     },
@@ -8574,7 +9002,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427108"
     },
@@ -8708,7 +9136,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e1"
     },
@@ -8842,7 +9270,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270e4"
     },
@@ -8976,7 +9404,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270eb"
     },
@@ -9110,7 +9538,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d6993664270fc"
     },
@@ -9244,7 +9672,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644eddc3404d699366427101"
     },
@@ -9378,7 +9806,7 @@ export const db = {
         ]
       }
     ]
-  },{
+  }, {
     "_id": {
       "$oid": "644f00a8404d69936642711d"
     },
