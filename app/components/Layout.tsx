@@ -267,7 +267,30 @@ function DesktopHeader({
 
             <img className="h-8 min-h-8" src={logo} alt="Logo" />
           </Link>
-
+          <Link
+              // key={item.id}
+              to="/"
+              // target={item.target}
+              prefetch="intent"
+              // className={({ isActive }) =>
+              //   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+              // }
+              className='pb-1'
+            >
+              Catalog
+            </Link>
+            <Link
+              // key={item.id}
+              to="/patches"
+              // target={item.target}
+              prefetch="intent"
+              // className={({ isActive }) =>
+              //   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+              // }
+              className='pb-1'
+            >
+              Patches
+            </Link>
           {/* Top level menu items */}
           {/* {(menu?.items || []).map((item) => (
             <Link
