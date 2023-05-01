@@ -152,17 +152,26 @@ export default function Product() {
           />
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
-            <section className="flex flex-col w-full gap-8 p-6">
-              <div className="grid gap-1">
-                <Text className={'opacity-50 font-medium'}>{isModule ? module.brand : vendor}</Text>
+
+            <div className="inline-block w-1/2 align-top py-4">
+              <div className="inline-block align-top w-full">
+                {/* <Text size="lead">{isModule ? module.brand : vendor}</Text> */}
                 <Heading as="h1" className="uppercase">
                   {isModule ? module.title : title}
                 </Heading>
+                <Text size="lead" color="subtle" className="uppercase">{isModule ? module.subtitle : null}</Text>
               </div>
-              <ProductForm />
-              {isModule ? module.description : descriptionHtml}
-              {isModule ? <ModuleDetails moduleIndex={index} /> : null}
-              {/* <div className="grid gap-4 py-4">
+            </div>
+            <div className="inline-block w-1/2 align-top py-4">
+              <div className="inline-block align-top w-full h-full">
+                <ProductForm />
+              </div>
+            </div>
+            <div className="inline-block w-full h-4"></div>
+            <Text size="copy">{isModule ? module.description : descriptionHtml}</Text>
+            <div className="inline-block w-full h-4"></div>
+            {isModule ? <ModuleDetails moduleIndex={index} /> : null}
+            {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
                     title="Description"
@@ -184,7 +193,6 @@ export default function Product() {
                   />
                 )}
               </div> */}
-            </section>
           </div>
         </div>
       </Section>
@@ -194,7 +202,7 @@ export default function Product() {
           resolve={recommended}
         >
           {(products) => (
-            <ProductSwimlane title="Related Products" products={products} />
+            <ProductSwimlane title="Patching Partners" products={products} />
           )}
         </Await>
       </Suspense>
@@ -257,7 +265,7 @@ export function ProductForm() {
   };
 
   return (
-    <div className="grid gap-10">
+    <div className="grid gap-2">
       <div className="grid gap-4">
         <ProductOptions
           options={product.options}
@@ -267,7 +275,7 @@ export function ProductForm() {
           <div className="grid items-stretch gap-4">
             {isOutOfStock ? (
               <Button variant="secondary" disabled>
-                <Text>Sold out</Text>
+                <Text>Sold Out</Text>
               </Button>
             ) : (
               <AddToCartButton
@@ -288,7 +296,7 @@ export function ProductForm() {
                   as="span"
                   className="flex items-center justify-center gap-2"
                 >
-                  <span>Add to Bag</span> <span>·</span>{' '}
+                  <span>Add to Cart</span> <span>·</span>{' '}
                   <Money
                     withoutTrailingZeros
                     data={selectedVariant?.price!}
@@ -305,13 +313,13 @@ export function ProductForm() {
                 </Text>
               </AddToCartButton>
             )}
-            {!isOutOfStock && (
+            {/* {!isOutOfStock && (
               <ShopPayButton
                 width="100%"
                 variantIds={[selectedVariant?.id!]}
                 storeDomain={storeDomain}
               />
-            )}
+            )} */}
           </div>
         )}
       </div>
@@ -474,54 +482,54 @@ function ProductOptionLink({
   );
 }
 
-function ProductDetail({
-  title,
-  content,
-  learnMore,
-}: {
-  title: string;
-  content: string;
-  learnMore?: string;
-}) {
-  return (
-    <Disclosure key={title} as="div" className="grid w-full gap-2">
-      {({ open }) => (
-        <>
-          <Disclosure.Button className="text-left">
-            <div className="flex justify-between">
-              <Text size="lead" as="h4">
-                {title}
-              </Text>
-              <IconClose
-                className={clsx(
-                  'transition-transform transform-gpu duration-200',
-                  !open && 'rotate-[45deg]',
-                )}
-              />
-            </div>
-          </Disclosure.Button>
+// function ProductDetail({
+//   title,
+//   content,
+//   learnMore,
+// }: {
+//   title: string;
+//   content: string;
+//   learnMore?: string;
+// }) {
+//   return (
+//     <Disclosure key={title} as="div" className="grid w-full gap-2">
+//       {({ open }) => (
+//         <>
+//           <Disclosure.Button className="text-left">
+//             <div className="flex justify-between">
+//               <Text size="lead" as="h4">
+//                 {title}
+//               </Text>
+//               <IconClose
+//                 className={clsx(
+//                   'transition-transform transform-gpu duration-200',
+//                   !open && 'rotate-[45deg]',
+//                 )}
+//               />
+//             </div>
+//           </Disclosure.Button>
 
-          <Disclosure.Panel className={'pb-4 pt-2 grid gap-2'}>
-            <div
-              className="prose dark:prose-invert"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-            {learnMore && (
-              <div className="">
-                <Link
-                  className="pb-px border-b border-primary/30 text-primary/50"
-                  to={learnMore}
-                >
-                  Learn more
-                </Link>
-              </div>
-            )}
-          </Disclosure.Panel>
-        </>
-      )}
-    </Disclosure>
-  );
-}
+//           <Disclosure.Panel className={'pb-4 pt-2 grid gap-2'}>
+//             <div
+//               className="prose dark:prose-invert"
+//               dangerouslySetInnerHTML={{ __html: content }}
+//             />
+//             {learnMore && (
+//               <div className="">
+//                 <Link
+//                   className="pb-px border-b border-primary/30 text-primary/50"
+//                   to={learnMore}
+//                 >
+//                   Learn more
+//                 </Link>
+//               </div>
+//             )}
+//           </Disclosure.Panel>
+//         </>
+//       )}
+//     </Disclosure>
+//   );
+// }
 
 const PRODUCT_VARIANT_FRAGMENT = `#graphql
   fragment ProductVariantFragment on ProductVariant {

@@ -8,17 +8,15 @@ export function ModuleDetails({
 }) {
   return (
     <div>
-      <div className="inline-block w-1/2 h-auto">
+      <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy">Dimensions</Heading>
-          <div></div>
           <ul>
             <li><Text size="copy" color="subtle">{'Width, ' + db.modules[moduleIndex].dimensions.width + db.modules[moduleIndex].dimensions.widthUnit}</Text></li>
             <li><Text size="copy" color="subtle">{'Mounting Depth, ' + db.modules[moduleIndex].dimensions.depth + db.modules[moduleIndex].dimensions.depthUnit}</Text></li>
           </ul>
       </div>
-      <div className="inline-block w-1/2 h-auto">
+      <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy">Power Consumption</Heading>
-          <div></div>
           <ul>
           {db.modules[moduleIndex].powerConsumption.map((conn, it) => {
             return <li><Text size="copy" color="subtle">{conn.current + conn.currentUnit + ' @ ' + conn.voltage + conn.voltageUnit}</Text></li>
