@@ -1,6 +1,6 @@
 import { db } from '~/lib/db'
 import { Heading, Text } from './Text'
-import { IconCheck } from './Icon'
+import { IconTV } from './Icon'
 
 export function ModuleDetails({
   moduleIndex
@@ -18,8 +18,8 @@ export function ModuleDetails({
         {db.modules[moduleIndex].features.map((feature, it) => {
           return (
             <>
-              <div className="inline-block w-full h-2"><IconCheck className="inline-block align-middle" /> <Text format size="lead" className="inline-block align-middle">{feature.title}</Text></div>
-              <div className="inline-block w-full h-2"><Text size="copy" color="subtle">{feature.description}</Text></div>
+              <div className="inline-block w-full"><IconTV className="inline-block align-middle"/> <Text size="lead" className="align-middle">{feature.title}</Text></div>
+              <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
               <div className="inline-block w-full h-2"></div>
             </>)
         })}
