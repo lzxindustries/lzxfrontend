@@ -5,6 +5,7 @@
 //   Collection,
 // } from '@shopify/hydrogen/storefront-api-types';
 // import invariant from 'tiny-invariant';
+import YouTube from 'react-youtube';
 import { db } from '~/lib/db'
 import {
   PageHeader,
@@ -75,39 +76,34 @@ export const headers = routeHeaders;
 // }
 
 export default function Patches() {
-
-
-
   return (
     <>
       <PageHeader heading="Patches" />
-      <Section>
-        {
-          db.patches.map((patch, it) => {
-            it = it + 1
-            return (
-              <>
-                <div className="flex">
-                  <Text as="h3">{patch.title}</Text>
-                  <Text as="p">{patch.notes}</Text>
-                  <Text as="p">{patch.diagram}</Text>
+      {
+        db.patches.map((patch) => {
+          return (
+            <>
+              <Section>
+                  <h3>{patch.title}</h3>
+                  <p>{patch.notes}</p>
+                  <p><img src={patch.diagram} /></p>
                   {patch.videos.map((video) => {
-                    return <Text as="p"><Link to={'https://www.youtube.com/watch?v=' + video.youtube} >Video</Link></Text>
-                  }
-                  )}
-                  {patch.artists.map((artist) => {
-                    return <Text as="p">{artist.name}</Text>
-                  }
-                  )}
-                  {patch.modules.map((module) => {
-                    return <Text as="p"><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link>, </Text>
-                  }
-                  )}
-                </div>
-              </>)
-          })
-        }
-      </Section>
+                    return <p><YouTube videoId={video.youtube} /></p>
+                  })}
+                  <p><b>Artists </b>
+                    {patch.artists.map((artist) => {
+                      return (<>{artist.name + ', '}</>)
+                    })}
+                  </p>
+                  <p><b>Modules </b>
+                    {patch.modules.map((module) => {
+                      return (<><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link>, </>)
+                    })}
+                  </p>
+              </Section>
+            </>)
+        })
+      }
     </>
   );
 }
