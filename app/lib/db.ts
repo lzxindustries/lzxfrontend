@@ -6878,7 +6878,7 @@ export const db = {
       }
     ],
     "dimensions": {
-      "width": 12,
+      "width": 8,
       "widthUnit": "HP",
       "depth": 32,
       "depthUnit": "mm"
