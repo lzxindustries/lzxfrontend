@@ -8,6 +8,9 @@ export function ModuleDetails({
 }) {
   return (
     <div>
+      {/* <div className="inline-block w-full h-4"></div> */}
+      <Text size="copy">{db.modules[moduleIndex].description}</Text>
+      <div className="inline-block w-full h-4"></div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy">Dimensions</Heading>
           <ul>

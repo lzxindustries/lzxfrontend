@@ -6852,10 +6852,11 @@ export const db = {
     },
     "id": "gid://shopify/Product/6886906134551",
     "title": "Ribbons",
-    "description": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video. Features Hard edged binary 3-bit ADC and Window Key outputs Positive and negative 3-bit DAC outputs provide stepped analog waveforms Center and Span controls and CV inputs allow modulation of sampling offset and scale Enable and Disable inputs extend utility for masking and compositing in the patch Legacy Our first 3-bit digitizer module was 2012's 8 Stage Video Quantizer & Sequencer, which was loosely inspired by the Amplitude Classifier module from the Sandin Image Processor. In 2018, we released Castle 000 ADC and Castle 001 DAC as part of the Castle DIY module series In 2019, we released Fortress, the first module to integrate ADC and DAC capabilities in the same module. Specifications 8HP EuroRack Module Powered via 12V DC barrel or EuroRack power header Max Depth: 32mm +12V Power Consumption: 120mA",
+    "description": "Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s.",
     "sku": "LZXRIBBONS",
     "price": "299.00",
     "brand": "LZX Industries",
+    "lineage": "Our first 3-bit digitizer module was 2012's 8 Stage Video Quantizer & Sequencer, which was loosely inspired by the Amplitude Classifier module from the Sandin Image Processor. In 2018, we released Castle 000 ADC and Castle 001 DAC as part of the Castle DIY module series In 2019, we released Fortress, the first module to integrate ADC and DAC capabilities in the same module.",
     "powerConsumption": [
       {
         "voltage": 12,
@@ -6918,7 +6919,7 @@ export const db = {
     "brandId": {
       "$oid": "644eff1d404d699366427117"
     },
-    "subtitle": "Function Subtitle",
+    "subtitle": "3-Bit Digitizer",
     "connectors": [
       {
         "description": "Connector 1",
@@ -6944,12 +6945,34 @@ export const db = {
     ],
     "features": [
       {
-        "title": "Feature 1",
-        "description": "This feature is an essential part of this module's workflow.",
+        "title": "Digital Depth in Analog Space",
+        "description": "Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video.",
         "images": [
           {
-            "fileName": "moduleFeature.jpg",
-            "description": "The feature in action."
+          }
+        ]
+      },
+      {
+        "title": "Digital and Analog Outputs",
+        "description": "Hard edged binary 3-bit ADC and Window Key outputs Positive and negative 3-bit DAC outputs provide stepped analog waveforms",
+        "images": [
+          {
+          }
+        ]
+      },
+      {
+        "title": "Modulation Window Processor",
+        "description": "Center and Span controls and CV inputs allow modulation of sampling offset and scale ",
+        "images": [
+          {
+          }
+        ]
+      },
+      {
+        "title": "Compositing Functions",
+        "description": "Enable and Disable inputs extend utility for masking and compositing in the patch ",
+        "images": [
+          {
           }
         ]
       }
