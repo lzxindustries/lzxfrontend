@@ -44,7 +44,8 @@ import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
 import type { Storefront } from '~/lib/type';
 import type { Product } from 'schema-dts';
 import { routeHeaders, CACHE_SHORT } from '~/data/cache';
-import { db } from '~/lib/db'
+import { db } from '~/lib/db';
+import { ModuleDetails } from '~/components/ModuleDetails';
 
 export const headers = routeHeaders;
 
@@ -116,16 +117,6 @@ export async function loader({ params, request, context }: LoaderArgs) {
   );
 }
 
-export function renderPowerConsumption(index: number)
-{
-  var results = ''
-  for (let i = 0; i < db.modules[index].powerConsumption.length; i++) 
-  {
-    results += '<p>' + db.modules[index].powerConsumption[i].voltage + ' ' + db.modules[index].powerConsumption[i].voltageUnit + '</p>';
-    results += '<p>' + db.modules[index].powerConsumption[i].current + ' ' + db.modules[index].powerConsumption[i].currentUnit + '</p>';
-  }
-  return results
-};
 
 export default function Product() {
   const { product, shop, recommended } = useLoaderData<typeof loader>();
@@ -138,35 +129,39 @@ export default function Product() {
   var index = 0;
   var numPowerConnector = 0;
 
-  db.modules.map((module => {
-    if (module.id == id) {
+  db.modules.map((moduleInst => {
+    if (moduleInst.id == id) {
       isModule = true;
-      module = db.modules[it];
       index = it;
+      module = moduleInst;
+      console.log('selected module: ' + index)
       numPowerConnector = module.powerConsumption.length
-      it = it + 1;
     }
+    it = it + 1;
   }))
+
+  console.log('selected module: ' + index)
 
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
-        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
-            className="w-full lg:col-span-2"
+            className="w-full lg:col-span-1"
           />
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
-            <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
-              <div className="grid gap-2">
-                  <Text className={'opacity-50 font-medium'}>{isModule ? module.brand : vendor}</Text>
-                <Heading as="h1" className="whitespace-normal">
+            {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
+            <section className="flex flex-col w-full gap-8 p-6">
+              <div className="grid gap-1">
+                <Text className={'opacity-50 font-medium'}>{isModule ? module.brand : vendor}</Text>
+                <Heading as="h1" className="uppercase">
                   {isModule ? module.title : title}
                 </Heading>
               </div>
               <ProductForm />
-              {isModule ? module.description : descriptionHtml}   
-              {isModule ? renderPowerConsumption(index) : null}              
+              {isModule ? module.description : descriptionHtml}
+              {isModule ? <ModuleDetails moduleIndex={index} /> : null}
               {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
