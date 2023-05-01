@@ -6861,7 +6861,7 @@ export const db = {
       {
         "voltage": 12,
         "voltageUnit": "V",
-        "current": 0,
+        "current": 130,
         "currentUnit": "mA",
         "connectors": [
           {
@@ -6875,47 +6875,17 @@ export const db = {
             "profile": "Vertical"
           }
         ]
-      },
-      {
-        "voltage": -12,
-        "voltageUnit": "V",
-        "current": 0,
-        "currentUnit": "mA",
-        "connectors": [
-          {
-            "type": "EuroRack 16 Pin",
-            "location": "Rear",
-            "profile": "Vertical"
-          }
-        ]
       }
     ],
     "dimensions": {
-      "width": 1,
+      "width": 12,
       "widthUnit": "HP",
-      "depth": 1,
+      "depth": 32,
       "depthUnit": "mm"
     },
     "videoSync": {
-      "connectors": [
-        {
-          "direction": "Input",
-          "type": "RCA",
-          "location": "Rear",
-          "profile": "Vertical",
-          "terminateSwitch": false,
-          "syncRef": false
-        },
-        {
-          "direction": "Output",
-          "type": "RCA",
-          "location": "Rear",
-          "profile": "Vertical",
-          "syncGen": false
-        }
-      ]
     },
-    "releaseDate": "2012-04-23",
+    "releaseDate": "2023-04-27",
     "brandId": {
       "$oid": "644eff1d404d699366427117"
     },
@@ -6953,7 +6923,7 @@ export const db = {
         ]
       },
       {
-        "title": "Digital and Analog Outputs",
+        "title": "Binary and Quantized Outputs",
         "description": "Hard edged binary 3-bit ADC and Window Key outputs Positive and negative 3-bit DAC outputs provide stepped analog waveforms",
         "images": [
           {
@@ -6961,7 +6931,7 @@ export const db = {
         ]
       },
       {
-        "title": "Modulation Window Processor",
+        "title": "Modulation Window",
         "description": "Center and Span controls and CV inputs allow modulation of sampling offset and scale ",
         "images": [
           {
