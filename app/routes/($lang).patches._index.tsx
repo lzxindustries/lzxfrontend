@@ -1,4 +1,6 @@
 import YouTube from 'react-youtube';
+import ModalImage from "react-modal-image";
+import ModalVideo from "react-modal-video";
 import { db } from '~/lib/db'
 import {
   Section,
@@ -6,6 +8,7 @@ import {
   Button,
   Text,
   Link,
+  Modal
 } from '~/components';
 
 export default function Patches() {
@@ -14,20 +17,15 @@ export default function Patches() {
       <Section className="py-0">
         <Grid layout='patches' className="py-0">
           {
-            db.patches.map((patch) => {
+            db.patches.map((patch, it) => {
               return (
                 <>
                   <div>
                     <Text size="lead" className="w-full uppercase" color="primary">{patch.title}</Text>
                     {patch.videos.map((video) => {
                       return <Link to={'https://www.youtube.com/watch?v=' + video.youtube} target="_blank"><img src={'https://img.youtube.com/vi/' + video.youtube + '/0.jpg'} /></Link>
-                      //return <YouTube className="aspect-video" opts={{ height: 90, width: 160, playerVars: { autoplay: 1 } }} iframeClassName="aspect-video" videoId={video.youtube} />
                     })}
-                    {/* <Link target="_blank" to={patch.diagram}><img className="h-16" src={patch.diagram} /></Link> */}
                     <div className="w-full h-2" />
-                    {
-                      patch.diagram && <Link target="_blank" to={patch.diagram}><Button width="full" variant="secondary">Diagram</Button></Link>
-                    }
                     {
                       patch.artists && (patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
                         <Text color="subtle">
@@ -72,6 +70,9 @@ export default function Patches() {
                     }
                     {
                       patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
+                    }
+                    {
+                      patch.diagram && <ModalImage className="opacity-100 h-8 align-middle" smallSrcSet={patch.diagram} hideDownload={true} hideZoom={true} small={patch.diagram} large={patch.diagram} alt={patch.title + ' Patch Diagram'}/>
                     }
                   </div>
                 </>)

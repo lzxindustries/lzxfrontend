@@ -256,9 +256,9 @@ function CartLineItem({line}: {line: CartLine}) {
 
           <div className="grid pb-2">
             {(merchandise?.selectedOptions || []).map((option) => (
-              <Text color="subtle" key={option.name}>
+              option.name != 'Title' && (<Text color="subtle" key={option.name}>
                 {option.name}: {option.value}
-              </Text>
+              </Text>)
             ))}
           </div>
 
