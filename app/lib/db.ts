@@ -12,13 +12,12 @@ export const db = {
       }
     ],
     "modules": [
-      {
-        "title": "Ribbons"
+      { "title": "Contour"
       }
     ],
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -33,14 +32,10 @@ export const db = {
         "youtube": "fJMAkK-VzYY"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -55,14 +50,10 @@ export const db = {
         "youtube": "5IXxYaPWat4"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -77,14 +68,10 @@ export const db = {
         "youtube": "T4DlXBnW_YQ"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -99,14 +86,10 @@ export const db = {
         "youtube": "H5rYpd6UOOM"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -121,14 +104,10 @@ export const db = {
         "youtube": "SIOpCoaiOrA"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Chad Allen"
       }
     ]
   }, {
@@ -143,14 +122,10 @@ export const db = {
         "youtube": "jP8BYgzt4z4"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -165,14 +140,9 @@ export const db = {
         "youtube": "Bui1koeHEVQ"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Lars Larsen"
       }
     ]
   }, {
@@ -187,14 +157,10 @@ export const db = {
         "youtube": "p6b1xnYNz-g"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Lars Larsen"
       }
     ]
   }, {
@@ -209,14 +175,10 @@ export const db = {
         "youtube": "LBcLzL3HHjQ"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -231,14 +193,10 @@ export const db = {
         "youtube": "P5OrjcE2X3c"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -253,14 +211,10 @@ export const db = {
         "youtube": "JWqCks3QC6g"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -275,14 +229,10 @@ export const db = {
         "youtube": "_zK0S52I2BY"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Lars Larsen"
       }
     ]
   }, {
@@ -297,14 +247,10 @@ export const db = {
         "youtube": "O24ZML5JkJU"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -319,14 +265,10 @@ export const db = {
         "youtube": "LB7J5b2mGcA"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -341,14 +283,10 @@ export const db = {
         "youtube": "7f5z2k0vNzU"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -363,14 +301,10 @@ export const db = {
         "youtube": "M1yUAuHJFMQ"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -385,14 +319,10 @@ export const db = {
         "youtube": "N17Gfmmgtp0"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Nick Ciontea"
       }
     ]
   }, {
@@ -407,14 +337,10 @@ export const db = {
         "youtube": "3Kr-9yfkOhs"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }, {
@@ -429,14 +355,10 @@ export const db = {
         "youtube": "Mj_gEZjstE4"
       }
     ],
-    "modules": [
-      {
-        "title": "Ribbons"
-      }
-    ],
+
     "artists": [
       {
-        "name": "Unknown"
+        "name": "Andrew Dobbels"
       }
     ]
   }],
