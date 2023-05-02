@@ -1,3 +1,5 @@
+import React from 'react'
+import { useLocation } from 'react-router-dom';
 import {
   type EnhancedMenu,
   type EnhancedMenuItem,
@@ -249,6 +251,10 @@ function DesktopHeader({
   menu?: EnhancedMenu;
   title: string;
 }) {
+  const location = useLocation()
+  const isPatches = location.pathname.includes('/patches');
+  const isCatalog = !isPatches;
+
   const params = useParams();
   const { y } = useWindowScroll();
   return (
@@ -272,24 +278,19 @@ function DesktopHeader({
               to="/"
               // target={item.target}
               prefetch="intent"
-              // className={({ isActive }) =>
-              //   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-              // }
-              className='pb-1'
+              className={isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'}
+              
             >
-              Catalog
+              <Text color={isCatalog ? 'primary' : 'subtle'}>Catalog</Text>
             </Link>
             <Link
               // key={item.id}
               to="/patches"
               // target={item.target}
               prefetch="intent"
-              // className={({ isActive }) =>
-              //   isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-              // }
-              className='pb-1'
+              className={isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'}
             >
-              Patches
+              <Text color={isPatches ? 'primary' : 'subtle'}>Patches</Text>
             </Link>
           {/* Top level menu items */}
           {/* {(menu?.items || []).map((item) => (
