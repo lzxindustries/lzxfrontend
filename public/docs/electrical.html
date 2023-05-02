@@ -1,0 +1,54 @@
+< <html>
+
+  <header>
+  </header>
+
+  <body>
+<div class="document" id="electrical">
+<h1 class="title">Electrical</h1>
+
+<p>LZX Modular proposes an interface specification for wide bandwidth analog computing instruments. It is optimized for, but not limited to: (1) generating and processing analog RGB video graphics in SD/HD resolutions, (2) affordable devices which are accessible to working artists and not just big studios, and (3) maximum patchability via a universal DC voltage range and high impedance connections.</p>
+<div class="section" id="patchable-signals">
+<h1>Patchable Signals</h1>
+<p>Waveform generators, video sources, boolean logic, and control voltages all share the same voltage ranges and IO connectors.  Cross patching different signal types is an encouraged use of the system.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Connectors:</th><td class="field-body">3.5mm mono jacks</td>
+</tr>
+<tr class="field"><th class="field-name">Cables:</th><td class="field-body">3.5mm patch cables</td>
+</tr>
+<tr class="field"><th class="field-name">Unipolar Scale:</th><td class="field-body">0 to +1V DC</td>
+</tr>
+<tr class="field"><th class="field-name">Bipolar Scale:</th><td class="field-body">+/-1V DC</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Minimum Bandwidth:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body">10 MHz</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">Input Impedance:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body">100K ohms</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="video">
+<h2>Video</h2>
+<p>0 IRE (Black Level) and 100 IRE (White Level) are scaled to the patchable unipolar range.</p>
+</div>
+<div class="section" id="logic">
+<h2>Logic</h2>
+<p>Inputs to logic gates, multiplexer controls, and other CMOS functions must have an analog voltage comparator frontend, for converting any voltage into a binary signal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Comparator Threshold:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body">0.5V DC</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

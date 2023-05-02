@@ -149,7 +149,7 @@ function MenuMobileNav({
 }) {
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
-  const isGettingStarted = location.pathname.includes('/getting-started');
+  const isGettingStarted = location.pathname.includes('/docs/getting-started');
   const isCatalog = !isPatches && !isGettingStarted;
 
   return (
@@ -183,7 +183,7 @@ function MenuMobileNav({
         </span>
         <span className="block">
           <Link
-            to="/getting-started"
+            to="/docs/getting-started"
             onClick={onClose}
             className={
               isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'
@@ -298,7 +298,7 @@ function DesktopHeader({
 }) {
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
-  const isGettingStarted = location.pathname.includes('/getting-started');
+  const isGettingStarted = location.pathname.includes('/docs/getting-started');
   const isCatalog = !isPatches && !isGettingStarted;
 
   const params = useParams();
@@ -340,7 +340,7 @@ function DesktopHeader({
             </Link>
             <Link
               // key={item.id}
-              to="/getting-started"
+              to="/docs/getting-started"
               // target={item.target}
               prefetch="intent"
               className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
