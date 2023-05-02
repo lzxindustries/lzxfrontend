@@ -22,7 +22,7 @@ export function Grid({
       items === 3 && 'sm:grid-cols-3'
     } ${items > 3 && 'md:grid-cols-3'} ${items >= 4 && 'lg:grid-cols-4'}`,
     products: `sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12'} `,
-    patches: `sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12'} `,
+    patches: `sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-9'} `,
     auto: 'auto-cols-auto',
     blog: 'grid-cols-1 md:grid-cols-2',
   };
