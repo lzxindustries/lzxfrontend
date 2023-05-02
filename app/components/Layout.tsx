@@ -147,10 +147,55 @@ function MenuMobileNav({
   menu: EnhancedMenu;
   onClose: () => void;
 }) {
+  const location = useLocation()
+  const isPatches = location.pathname.includes('/patches');
+  const isGettingStarted = location.pathname.includes('/getting-started');
+  const isCatalog = !isPatches && !isGettingStarted;
+
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
       {/* Top level menu items */}
-      {(menu?.items || []).map((item) => (
+      <span className="block">
+          <Link
+            to="/"
+            onClick={onClose}
+            className={
+              isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'
+            }
+          >
+            <Text color={isCatalog ? 'primary' : 'subtle'} as="span" size="copy">
+              Catalog
+            </Text>
+          </Link>
+        </span>
+        <span className="block">
+          <Link
+            to="/patches"
+            onClick={onClose}
+            className={
+              isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'
+            }
+          >
+            <Text color={isPatches ? 'primary' : 'subtle'}  as="span" size="copy">
+              Patches
+            </Text>
+          </Link>
+        </span>
+        <span className="block">
+          <Link
+            to="/getting-started"
+            onClick={onClose}
+            className={
+              isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'
+            }
+          >
+            <Text color={isGettingStarted ? 'primary' : 'subtle'}  as="span" size="copy">
+              Getting Started
+            </Text>
+          </Link>
+        </span>
+
+      {/* {(menu?.items || []).map((item) => (
         <span key={item.id} className="block">
           <Link
             to={item.to}
@@ -165,7 +210,7 @@ function MenuMobileNav({
             </Text>
           </Link>
         </span>
-      ))}
+      ))} */}
     </nav>
   );
 }
@@ -253,7 +298,8 @@ function DesktopHeader({
 }) {
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
-  const isCatalog = !isPatches;
+  const isGettingStarted = location.pathname.includes('/getting-started');
+  const isCatalog = !isPatches && !isGettingStarted;
 
   const params = useParams();
   const { y } = useWindowScroll();
@@ -291,6 +337,15 @@ function DesktopHeader({
               className={isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'}
             >
               <Text color={isPatches ? 'primary' : 'subtle'}>Patches</Text>
+            </Link>
+            <Link
+              // key={item.id}
+              to="/getting-started"
+              // target={item.target}
+              prefetch="intent"
+              className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
+            >
+              <Text color={isGettingStarted ? 'primary' : 'subtle'}>Getting Started</Text>
             </Link>
           {/* Top level menu items */}
           {/* {(menu?.items || []).map((item) => (
