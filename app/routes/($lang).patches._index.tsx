@@ -29,13 +29,16 @@ export default function Patches() {
                       patch.diagram && <Link target="_blank" to={patch.diagram}><Button width="full" variant="secondary">Diagram</Button></Link>
                     }
                     {
-                      patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
+                      patch.artists && (patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
                         <Text color="subtle">
-                          {patch.artists.map((artist) => {
-                            return (<>{artist.name + ''}</>)
+                          {patch.artists.map((artist, index) => {
+                            return (<>
+                              {(index != patch.artists.length - 1) ?
+                              artist.name + ', ' : artist.name}
+                            </>)
                           })}
                         </Text>
-                      </p>
+                      </p>)
                     }
                     {
                       patch.artists.length == 1 && <p><Text color="primary">Artist </Text>
@@ -44,11 +47,25 @@ export default function Patches() {
                         </Text>
                       </p>
                     }
-                    {
+                    {/* {
                       patch.modules && (<p><Text color="primary">Modules </Text>
                         <Text color="subtle">
                           {patch.modules.map((module) => {
                             return (<><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link> </>)
+                          })}
+                        </Text>
+                      </p>)
+                    } */}
+                    {
+                      patch.modules && (patch.modules.length > 0 && <p><Text color="primary">Modules </Text>
+                        <Text color="subtle">
+                          {patch.modules.map((module, index) => {
+                            return (<>
+                              <Link to={'/products/' + module.title.toLowerCase()} >
+                                {(index != patch.modules.length - 1) ?
+                                module.title + ', ' : module.title}
+                              </Link>
+                            </>)
                           })}
                         </Text>
                       </p>)
