@@ -12,7 +12,11 @@ export const db = {
       }
     ],
     "modules": [
-      { "title": "Contour"
+      { 
+        "title": "Contour"
+      },
+      { 
+        "title": "Keychain"
       }
     ],
     "artists": [
