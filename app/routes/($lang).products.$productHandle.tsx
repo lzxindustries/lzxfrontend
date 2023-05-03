@@ -46,6 +46,7 @@ import type { Product } from 'schema-dts';
 import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 import { db } from '~/lib/db';
 import { ModuleDetails } from '~/components/ModuleDetails';
+import { getModules, getModule } from "~/lib/modules.server";
 
 export const headers = routeHeaders;
 
@@ -95,8 +96,13 @@ export async function loader({ params, request, context }: LoaderArgs) {
     url: request.url,
   });
 
+  const moduleData = await getModule(product.title)
+  // console.log(product.title)
+  // console.log(moduleData)
+
   return defer(
     {
+      moduleData,
       product,
       shop,
       storeDomain: shop.primaryDomain.url,
@@ -119,7 +125,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
 
 
 export default function Product() {
-  const { product, shop, recommended } = useLoaderData<typeof loader>();
+  const { moduleData, product, shop, recommended } = useLoaderData<typeof loader>();
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
   var viewTitle = title;
@@ -128,6 +134,8 @@ export default function Product() {
   var it = 0;
   var index = 0;
   var numPowerConnector = 0;
+  console.log(JSON.stringify(moduleData))
+  //module = JSON.parse(moduleData)
 
   db.modules.map((moduleInst => {
     if (moduleInst.id == id) {
