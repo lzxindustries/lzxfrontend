@@ -193,4 +193,4 @@ export enum ModuleVideoSyncConnectorType {
     Rca = "RCA",
 }
 
-export const APIBaseURL = 'http://localhost:5050';
+export const APIBaseURL = 'http://api.lzxindustries.net:5050';
