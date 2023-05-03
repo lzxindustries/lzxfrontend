@@ -1,21 +1,16 @@
-import React from "react";
-import { json } from "@shopify/remix-oxygen";
-import { Module } from './api.types'
-
+import { Module, APIBaseURL } from './api.types'
 
 export async function getModules() {
     const res = await fetch(
-        'http://localhost:5050/modules/'
+        APIBaseURL + '/modules/'
     ).then((res) => res.json());
-
     return res as Module[]
 };
 
 export async function getModule(title: string) {
     console.log(title)
     const res = await fetch(
-        'http://localhost:5050/modules/' + title
+        APIBaseURL + '/modules/' + title
     ).then((res) => res.json());
-
     return res as Module
 }

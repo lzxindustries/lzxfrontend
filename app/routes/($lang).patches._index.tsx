@@ -1,23 +1,29 @@
-import YouTube from 'react-youtube';
 import ModalImage from "react-modal-image";
-import ModalVideo from "react-modal-video";
-import { db } from '~/lib/db'
 import {
   Section,
   Grid,
-  Button,
   Text,
   Link,
-  Modal
 } from '~/components';
+import { getPatches } from '~/lib/patches.server';
+import { LoaderArgs } from '@shopify/remix-oxygen';
+import { useLoaderData } from '@remix-run/react';
+
+
+export async function loader({ params, request, context }: LoaderArgs) {
+  const patchData = await getPatches()
+  return patchData;
+}
 
 export default function Patches() {
+  const patchData = useLoaderData<typeof loader>()
+
   return (
     <>
       <Section className="py-0">
         <Grid layout='patches' className="py-0">
           {
-            db.patches.map((patch, it) => {
+            patchData.map((patch, it) => {
               return (
                 <>
                   <div>
@@ -60,8 +66,8 @@ export default function Patches() {
                           {patch.modules.map((module, index) => {
                             return (<>
                               <Link to={'/products/' + module.title.toLowerCase()} >
-                                {(index != patch.modules.length - 1) ?
-                                module.title + ', ' : module.title}
+                                {/* {(index != patch.modules.length - 1) ?
+                                module.title + ', ' : module.title} */}
                               </Link>
                             </>)
                           })}
