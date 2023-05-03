@@ -14,7 +14,7 @@ export const loader = async () => {
 
 export default function Apitest() {
   const { data } = useLoaderData() as LoaderData;
-  //console.log(data)
+  console.log(data)
   
   return (
     <main className="mx-auto max-w-4xl">
