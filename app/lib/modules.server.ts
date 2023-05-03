@@ -1,19 +1,14 @@
 import React from "react";
 import { json } from "@shopify/remix-oxygen";
+import { Module } from './api.types'
 
 
 export async function getModules() {
     const res = await fetch(
         'http://localhost:5050/modules/'
     ).then((res) => res.json());
-    //console.log(res)
 
-    //return res.results;
-    return res
-//   return {
-//     name: name,
-//     img: res.sprites.front_default,
-//   };
+    return res as Module[]
 };
 
 export async function getModule(title: string) {
@@ -21,12 +16,6 @@ export async function getModule(title: string) {
     const res = await fetch(
         'http://localhost:5050/modules/' + title
     ).then((res) => res.json());
-    //console.log(res)
 
-    //return res.results;
-    return res
-//   return {
-//     name: name,
-//     img: res.sprites.front_default,
-//   };
-};
+    return res as Module
+}

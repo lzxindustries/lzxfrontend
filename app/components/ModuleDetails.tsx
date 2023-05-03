@@ -1,21 +1,22 @@
 import { db } from '~/lib/db'
 import { Heading, Text } from './Text'
 import { IconTV } from './Icon'
+import {Module} from '~/lib/api.types'
 
 export function ModuleDetails({
-  moduleIndex
+  moduleData
 }: {
-  moduleIndex: number;
+  moduleData: Module;
 }) {
   var it = 0;
   var it2 = 0;
   return (
     <div>
       {/* <div className="inline-block w-full h-4"></div> */}
-      <Text size="copy">{db.modules[moduleIndex].description}</Text>
+      <Text size="copy">{moduleData.description}</Text>
       <div className="inline-block w-full h-2"></div>
       <div className="inline-block w-full align-top">
-        {db.modules[moduleIndex].features.map((feature, it) => {
+        {moduleData.features.map((feature, it) => {
           return (
             <>
               <div className="inline-block w-full"><IconTV className="inline-block align-middle"/> <Text size="lead" className="align-middle">{feature.title}</Text></div>
@@ -27,25 +28,25 @@ export function ModuleDetails({
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Dimensions</Heading>
         <ul>
-          <li><Text size="copy" color="subtle">{'Width, ' + db.modules[moduleIndex].dimensions.width + db.modules[moduleIndex].dimensions.widthUnit}</Text></li>
-          <li><Text size="copy" color="subtle">{'Mounting Depth, ' + db.modules[moduleIndex].dimensions.depth + db.modules[moduleIndex].dimensions.depthUnit}</Text></li>
+          <li><Text size="copy" color="subtle">{'Width, ' + moduleData.dimensions?.width + moduleData.dimensions?.widthUnit}</Text></li>
+          <li><Text size="copy" color="subtle">{'Mounting Depth, ' + moduleData.dimensions?.depth + moduleData.dimensions?.depthUnit}</Text></li>
         </ul>
       </div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Power Consumption</Heading>
         <ul>
-          {db.modules[moduleIndex].powerConsumption.map((conn, it) => {
+          {moduleData.powerConsumption?.map((conn, it) => {
             return <li><Text size="copy" color="subtle">{conn.current + conn.currentUnit + ' @ ' + conn.voltage + conn.voltageUnit}</Text></li>
           })}
         </ul>
       </div>
       <div className="inline-block w-full h-2"></div>
       <Heading as="h3" format size="copy" className="uppercase">VIDEO SYNC</Heading>
-      <Text size="copy" color="subtle">{db.modules[moduleIndex].videoSync.length ? "" : "This module does not require any connection to your system's video sync generator."}</Text>
+      {/* <Text size="copy" color="subtle">{moduleData.videoSync?.length ? "" : "This module does not require any connection to your system's video sync generator."}</Text> */}
       <div className="inline-block w-full h-2"></div>
       <Heading as="h3" format size="copy" className="uppercase">Inputs & Outputs</Heading>
 
-      {db.modules[moduleIndex].connectors.map((conn, it) => {
+      {moduleData.connectors.map((conn, it) => {
         it = it + 1
         return (
           <>
@@ -66,7 +67,7 @@ export function ModuleDetails({
       <div className="inline-block w-full h-2"></div>
       <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
 
-      {db.modules[moduleIndex].controls.map((ctrl, it) => {
+      {moduleData.controls.map((ctrl, it) => {
         it2 = it2 + 1
         return (
           <>

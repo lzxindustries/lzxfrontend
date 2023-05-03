@@ -1,5 +1,6 @@
 import { type ReactNode, useRef, Suspense, useMemo } from 'react';
 import { Disclosure, Listbox } from '@headlessui/react';
+import { json } from '@shopify/remix-oxygen';
 import { defer, type LoaderArgs } from '@shopify/remix-oxygen';
 import {
   useLoaderData,
@@ -47,6 +48,7 @@ import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 import { db } from '~/lib/db';
 import { ModuleDetails } from '~/components/ModuleDetails';
 import { getModules, getModule } from "~/lib/modules.server";
+import { Module } from '~/lib/api.types'
 
 export const headers = routeHeaders;
 
@@ -97,8 +99,6 @@ export async function loader({ params, request, context }: LoaderArgs) {
   });
 
   const moduleData = await getModule(product.title)
-  // console.log(product.title)
-  // console.log(moduleData)
 
   return defer(
     {
@@ -128,27 +128,8 @@ export default function Product() {
   const { moduleData, product, shop, recommended } = useLoaderData<typeof loader>();
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
-  var viewTitle = title;
-  var isModule = false;
-  var module = db.modules[0];
-  var it = 0;
-  var index = 0;
-  var numPowerConnector = 0;
-  console.log(JSON.stringify(moduleData))
-  //module = JSON.parse(moduleData)
-
-  db.modules.map((moduleInst => {
-    if (moduleInst.id == id) {
-      isModule = true;
-      index = it;
-      module = moduleInst;
-      console.log('selected module: ' + index)
-      numPowerConnector = module.powerConsumption.length
-    }
-    it = it + 1;
-  }))
-
-  console.log('selected module: ' + index)
+  var isModule = true;
+  let moduleStruct = moduleData as unknown as Module;
 
   return (
     <>
@@ -163,11 +144,11 @@ export default function Product() {
 
             <div className="inline-block w-1/2 align-top py-4">
               <div className="inline-block align-top w-full">
-                {/* <Text size="lead">{isModule ? module.brand : vendor}</Text> */}
+                {/* <Text size="lead">{isModule ? moduleStruct.brand : vendor}</Text> */}
                 <Heading as="h1" className="uppercase">
-                  {isModule ? module.title : title}
+                  {isModule ? moduleStruct.title : title}
                 </Heading>
-                <Text size="lead" color="subtle" className="uppercase">{isModule ? module.subtitle : null}</Text>
+                <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleStruct.subtitle : null}</Text>
               </div>
             </div>
             <div className="inline-block w-1/2 align-top py-4">
@@ -175,7 +156,7 @@ export default function Product() {
                 <ProductForm />
               </div>
             </div>
-            {isModule ? <ModuleDetails moduleIndex={index} /> : <Text>{descriptionHtml}</Text>}
+            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <Text>{descriptionHtml}</Text>} 
             {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
