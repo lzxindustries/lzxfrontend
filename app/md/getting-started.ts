@@ -1,3 +1,4 @@
+export const gettingStarted = `
 # Getting Started
 
 ## What Is A Video Synthesizer?
@@ -74,3 +75,4 @@ Patch any three of DSG3's eight outputs to your ESG3's Red, Green & Blue input j
 Next, let's make the geometry of your pattern capable of more complex results through series processing. Patch two outputs from DSG3's first shape generator, to the inputs of it's second shape generator. Now take your RGB pattern from the second shape generator's outputs.
 
 ![/media/GettingStartedPatch02.jpg](/media/GettingStartedPatch02.jpg) ![/media/GettingStartedPatch03.jpg](/media/GettingStartedPatch03.jpg)
+`
