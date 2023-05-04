@@ -34,7 +34,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
 
 export default function DocPage() {
   const { docHandle } = useLoaderData<typeof loader>();
-  const __html = getMarkdownToHTML('/docs/' + docHandle + '.md')
+  const __html = getMarkdownToHTML('/docs/markdown/' + docHandle + '.md')
 
   return (
     <>
