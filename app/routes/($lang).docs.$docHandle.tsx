@@ -1,20 +1,10 @@
-import { db } from '~/lib/db'
 import {
-  Section,
-  Grid,
-  Button,
-  Text,
-  PageHeader,
-  Heading,
-  Link,
-  Modal
+  Section
 } from '~/components';
-import { useEffect } from 'react';
-import { useState}  from 'react'
-import { useLocation } from 'react-use';
 import { LoaderArgs } from '@shopify/remix-oxygen';
 import { json } from '@shopify/remix-oxygen';
 import { useLoaderData } from '@remix-run/react';
+import { getMarkdownToHTML } from '~/lib/markdown';
 
 export async function loader({params, request, context}: LoaderArgs) {
   const {docHandle} = params;
@@ -26,23 +16,13 @@ export async function loader({params, request, context}: LoaderArgs) {
 }
 
 export default function GettingStarted() {
-  const {docHandle} =
-    useLoaderData<typeof loader>();
-  
-  const location = useLocation()
-  
-  const [contentHTML,setContentHTML] = useState("")
-  useEffect(()=>{
-    fetch('../..//public/docs/' + docHandle + '.html').then((res)=>res.text()).then((data)=>{
-      setContentHTML(data)
-     })
-     
-  },[])
+  const {docHandle} = useLoaderData<typeof loader>();
+  const __html = getMarkdownToHTML('/docs/' + docHandle + '.md')
   
   return (
     <>
       <Section>
-        <div dangerouslySetInnerHTML={{ __html: contentHTML }} ></div>
+        <div dangerouslySetInnerHTML={{ __html }} ></div>
       </Section>
     </>
   );
