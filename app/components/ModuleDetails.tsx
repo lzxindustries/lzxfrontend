@@ -1,7 +1,7 @@
 import { db } from '~/lib/db'
 import { Heading, Text } from './Text'
 import { IconTV } from './Icon'
-import {Module} from '~/lib/api.types'
+import {Module} from '~/lib/db.common.types'
 
 export function ModuleDetails({
   moduleData

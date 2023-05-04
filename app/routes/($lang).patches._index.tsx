@@ -5,13 +5,13 @@ import {
   Text,
   Link,
 } from '~/components';
-import { getPatches } from '~/lib/patches.server';
+import { getPatches } from '~/lib/db.patch.server';
 import { LoaderArgs } from '@shopify/remix-oxygen';
 import { useLoaderData } from '@remix-run/react';
 
 
 export async function loader({ params, request, context }: LoaderArgs) {
-  const patchData = await getPatches()
+  const patchData = await getPatches(context)
   return patchData;
 }
 
