@@ -73,6 +73,9 @@ export function ProductCard({
 
   const bgpattern = "bg-sine-waves";
 
+  const { currencyNarrowSymbol, withoutTrailingZerosAndCurrency } =
+    useMoney(firstVariant.price);
+
   return (
     <div className="flex flex-col gap-2">
       <Link
@@ -106,22 +109,19 @@ export function ProductCard({
           </div>
           <div className="grid gap-1">
             <Text
-              className="w-full overflow-hidden whitespace-nowrap text-ellipsis "
-              as="h3"
+              className="w-full font-semibold text-center overflow-hidden whitespace-nowrap text-ellipsis top-0"
+              as="p"
+              size="copy"
             >
               {product.title}
             </Text>
-            <div className="flex gap-4">
-              <Text className="flex gap-4">
-                <Money withoutTrailingZeros data={price!} />
-                {isDiscounted(price as MoneyV2, compareAtPrice as MoneyV2) && (
-                  <CompareAtPrice
-                    className={'opacity-50'}
-                    data={compareAtPrice as MoneyV2}
-                  />
-                )}
-              </Text>
-            </div>
+            <Text
+              className="w-full font-medium text-center overflow-hidden whitespace-nowrap text-ellipsis top-0 mt-0 pt-0"
+              as="p"
+              size="copy"
+            >
+              {currencyNarrowSymbol}{withoutTrailingZerosAndCurrency}
+            </Text>
           </div>
         </div>
       </Link>
