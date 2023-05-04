@@ -127,7 +127,7 @@ export default function Product() {
   const { moduleData, product, shop, recommended } = useLoaderData<typeof loader>();
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
-  var isModule = true;
+  var isModule = Boolean(moduleData);
   let moduleStruct = moduleData;
 
   return (
