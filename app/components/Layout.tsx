@@ -31,7 +31,9 @@ import { useIsHydrated } from '~/hooks/useIsHydrated';
 import { useCartFetchers } from '~/hooks/useCartFetchers';
 import type { LayoutData } from '../root';
 import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
+import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 console.log(logo); // /logo.84287d09.png
+console.log(logodark); // /logo.84287d09.png
 
 export function Layout({
   children,
@@ -149,7 +151,7 @@ function MenuMobileNav({
 }) {
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
-  const isGettingStarted = location.pathname.includes('/docs/getting-started');
+  const isGettingStarted = location.pathname.includes('/getting-started');
   const isCatalog = !isPatches && !isGettingStarted;
 
   return (
@@ -183,7 +185,7 @@ function MenuMobileNav({
         </span>
         <span className="block">
           <Link
-            to="/docs/getting-started"
+            to="/getting-started"
             onClick={onClose}
             className={
               isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'
@@ -229,6 +231,7 @@ function MobileHeader({
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
 
   const params = useParams();
+  const isDark = false;
 
   return (
     <header
@@ -274,7 +277,10 @@ function MobileHeader({
         className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
         to="/"
       >
-        <img className="min-h-8 max-h-8" src={logo} alt="Logo" />
+        
+          
+        <img className="h-8 min-h-8 dark:hidden" src={logo} alt="Logo" />
+        <img className="h-8 min-h-8 light:hidden" src={logodark} alt="Logo" />
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -298,9 +304,9 @@ function DesktopHeader({
 }) {
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
-  const isGettingStarted = location.pathname.includes('/docs/getting-started');
+  const isGettingStarted = location.pathname.includes('/getting-started');
   const isCatalog = !isPatches && !isGettingStarted;
-
+  const isDark = false;
   const params = useParams();
   const { y } = useWindowScroll();
   return (
@@ -317,7 +323,8 @@ function DesktopHeader({
         <nav className="flex gap-8 items-center justify-center">
           <Link to="/" prefetch="intent">
 
-            <img className="h-8 min-h-8" src={logo} alt="Logo" />
+            <img className="h-8 min-h-8 dark:hidden" src={logo} alt="Logo" />
+            <img className="h-8 min-h-8 light:hidden" src={logodark} alt="Logo" />
           </Link>
           <Link
               // key={item.id}
@@ -340,7 +347,7 @@ function DesktopHeader({
             </Link>
             <Link
               // key={item.id}
-              to="/docs/getting-started"
+              to="/getting-started"
               // target={item.target}
               prefetch="intent"
               className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
