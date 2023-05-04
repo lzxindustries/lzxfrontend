@@ -1,30 +1,4 @@
-import React from 'react'
-
-export type Patch = {
-    _id:      ID;
-    notes:    string;
-    title:    string;
-    diagram:  string;
-    videos:   PatchVideo[];
-    modules?: PatchModule[];
-    artists:  PatchArtist[];
-}
-
-export type ID = {
-    $oid: string;
-}
-
-export type PatchArtist = {
-    name: string;
-}
-
-export type PatchModule = {
-    title: string;
-}
-
-export type PatchVideo = {
-    youtube: string;
-}
+import { ID, Unit } from './db.common.types'
 
 export type Module = {
     _id:               ID;
@@ -45,7 +19,6 @@ export type Module = {
     features:          ModuleFeature[];
     assemblies:        ModuleAssembly[];
 }
-
 
 export type ModuleAssembly = {
     partNumber: string;
@@ -83,14 +56,6 @@ export enum ModuleAssemblyPartSide {
 
 export enum ModuleAssemblyPartType {
     Resistor = "Resistor",
-}
-
-export enum Unit {
-    Mm = "mm",
-    HP = "HP",
-    In = "in",
-    V = "V",
-    MA = "mA",
 }
 
 export type ModuleControl = {
@@ -193,4 +158,12 @@ export enum ModuleVideoSyncConnectorType {
     Rca = "RCA",
 }
 
-export const APIBaseURL = 'http://api.lzxindustries.net:5050';
+export type ModuleCollection = 
+{
+    documents: Module[]
+}
+
+export type ModuleDocument = 
+{
+    document: Module
+}

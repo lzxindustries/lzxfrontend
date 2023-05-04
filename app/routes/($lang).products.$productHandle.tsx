@@ -45,10 +45,9 @@ import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
 import type { Storefront } from '~/lib/type';
 import type { Product } from 'schema-dts';
 import { routeHeaders, CACHE_SHORT } from '~/data/cache';
-import { db } from '~/lib/db';
 import { ModuleDetails } from '~/components/ModuleDetails';
-import { getModules, getModule } from "~/lib/modules.server";
-import { Module } from '~/lib/api.types'
+import { getModules, getModule } from "~/lib/db.module.server";
+import { Module } from '~/lib/db.module.types'
 
 export const headers = routeHeaders;
 
@@ -98,7 +97,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
     url: request.url,
   });
 
-  const moduleData = await getModule(product.title)
+  const moduleData = await getModule(context, product.title)
 
   return defer(
     {
@@ -129,7 +128,7 @@ export default function Product() {
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
   var isModule = true;
-  let moduleStruct = moduleData as unknown as Module;
+  let moduleStruct = moduleData;
 
   return (
     <>
