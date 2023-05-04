@@ -22,6 +22,10 @@ declare global {
     PUBLIC_STOREFRONT_API_VERSION: string;
     PUBLIC_STORE_DOMAIN: string;
     PUBLIC_STOREFRONT_ID: string;
+    DATA_API_KEY: string;
+    DATA_API_BASE_URL: string;
+    CLUSTER_NAME: string;
+    DATABASE_NAME: string;
   }
 }
 
