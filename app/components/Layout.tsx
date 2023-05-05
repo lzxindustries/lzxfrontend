@@ -279,8 +279,8 @@ function MobileHeader({
       >
         
           
-        <img className="h-8 min-h-8 dark:hidden" src={logo} alt="Logo" />
-        <img className="h-8 min-h-8 light:hidden" src={logodark} alt="Logo" />
+        <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
+        <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
       </Link>
 
       <div className="flex items-center justify-end w-full gap-4">
@@ -323,8 +323,8 @@ function DesktopHeader({
         <nav className="flex gap-8 items-center justify-center">
           <Link to="/" prefetch="intent">
 
-            <img className="h-8 min-h-8 dark:hidden" src={logo} alt="Logo" />
-            <img className="h-8 min-h-8 light:hidden" src={logodark} alt="Logo" />
+          <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
+        <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
           </Link>
           <Link
               // key={item.id}
