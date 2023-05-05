@@ -71,10 +71,16 @@ export function ProductCard({
     quantity: 1,
   };
 
-  const bgpattern = "bg-sine-waves";
 
   const { currencyNarrowSymbol, withoutTrailingZerosAndCurrency } =
     useMoney(firstVariant.price);
+
+  var imageLocal = ''
+  product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
+  product.title == 'Chromagnon' ? imageLocal = '/images/chromagnon-front-panel.png' : ''
+
+  var is2Cols = false
+  product.title == 'Chromagnon' ? is2Cols = true : ''
 
   return (
     <div className="flex flex-col gap-2">
@@ -84,28 +90,20 @@ export function ProductCard({
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
+          <div className="card-image aspect-square bg-primary/5">
 
-          {/* <div className="absolute w-full h-full">
-            <ProductCardBackgroundSVG />
-          </div> */}
-          <div className={"card-image aspect-[4/5] bg-primary/5 " + bgpattern}>
-            {image && (
-              <Image
-                className="object-cover w-full fadeIn px-2 py-2"
-                sizes="(min-width: 64em) 25vw, (min-width: 48em) 30vw, 45vw"
-                aspectRatio="4/5"
-                data={image}
-                alt={image.altText || `Picture of ${product.title}`}
-                loading={loading}
+            {image && !imageLocal && (
+              <img
+                src={image.url}
+                alt={`Picture of ${product.title}`}
               />
             )}
-            {/* <Text
-              as="label"
-              size="fine"
-              className="absolute top-0 right-0 m-4 text-right text-notice"
-            >
-              {cardLabel}
-            </Text> */}
+            {imageLocal && (
+              <img
+                src={imageLocal}
+                alt={`Picture of ${product.title}`}
+              />
+            )}
           </div>
           <div className="grid gap-1">
             <Text
