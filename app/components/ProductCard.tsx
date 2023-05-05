@@ -76,11 +76,11 @@ export function ProductCard({
     useMoney(firstVariant.price);
 
   var imageLocal = ''
-  product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
-  product.title == 'Chromagnon' ? imageLocal = '/images/chromagnon-front-panel.png' : ''
+  // product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
+  // product.title == 'Chromagnon' ? imageLocal = '/images/chromagnon-front-panel.png' : ''
 
-  var is2Cols = false
-  product.title == 'Chromagnon' ? is2Cols = true : ''
+  // var is2Cols = false
+  // product.title == 'Chromagnon' ? is2Cols = true : ''
 
   return (
     <div className="flex flex-col gap-2">
