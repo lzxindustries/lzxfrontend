@@ -21,6 +21,7 @@ export interface ModuleInterface {
   is_sync_ref_required: boolean;
   hp: number;
   mounting_depth_mm: number;
+  is_hidden: boolean;
   // releaseDate: Date;
   // discontinuedDate: Date;
   subtitle: string;
