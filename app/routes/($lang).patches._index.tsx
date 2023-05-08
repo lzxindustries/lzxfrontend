@@ -82,10 +82,10 @@ export default function Patches() {
                       </p>)
                      */}
                     {
-                      patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
+                      patch.diagram && <ModalImage className="opacity-100 w-full align-middle" smallSrcSet={'/diagrams/' + patch.diagram} hideDownload={true} hideZoom={true} small={'/diagrams/' + patch.diagram} large={'/diagrams/' + patch.diagram} alt={patch.name + ' Patch Diagram'} />
                     }
                     {
-                      patch.diagram && <ModalImage className="opacity-100 h-8 align-middle" smallSrcSet={'/diagrams/' + patch.diagram} hideDownload={true} hideZoom={true} small={'/diagrams/' + patch.diagram} large={'/diagrams/' + patch.diagram} alt={patch.name + ' Patch Diagram'} />
+                      patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
                     }
                   </div>
                 </>)
