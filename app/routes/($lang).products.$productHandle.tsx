@@ -155,7 +155,7 @@ export default function Product() {
                 <ProductForm />
               </div>
             </div>
-            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <Text>{descriptionHtml}</Text>} 
+            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />} 
             {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail

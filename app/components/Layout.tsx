@@ -158,44 +158,44 @@ function MenuMobileNav({
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
       {/* Top level menu items */}
       <span className="block">
-          <Link
-            to="/"
-            onClick={onClose}
-            className={
-              isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'
-            }
-          >
-            <Text color={isCatalog ? 'primary' : 'subtle'} as="span" size="copy">
-              Catalog
-            </Text>
-          </Link>
-        </span>
-        <span className="block">
-          <Link
-            to="/patches"
-            onClick={onClose}
-            className={
-              isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'
-            }
-          >
-            <Text color={isPatches ? 'primary' : 'subtle'}  as="span" size="copy">
-              Patches
-            </Text>
-          </Link>
-        </span>
-        <span className="block">
-          <Link
-            to="/getting-started"
-            onClick={onClose}
-            className={
-              isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'
-            }
-          >
-            <Text color={isGettingStarted ? 'primary' : 'subtle'}  as="span" size="copy">
-              Getting Started
-            </Text>
-          </Link>
-        </span>
+        <Link
+          to="/"
+          onClick={onClose}
+          className={
+            isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'
+          }
+        >
+          <Text color={isCatalog ? 'primary' : 'subtle'} as="span" size="copy">
+            Catalog
+          </Text>
+        </Link>
+      </span>
+      <span className="block">
+        <Link
+          to="/patches"
+          onClick={onClose}
+          className={
+            isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'
+          }
+        >
+          <Text color={isPatches ? 'primary' : 'subtle'} as="span" size="copy">
+            Patches
+          </Text>
+        </Link>
+      </span>
+      <span className="block">
+        <Link
+          to="/getting-started"
+          onClick={onClose}
+          className={
+            isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'
+          }
+        >
+          <Text color={isGettingStarted ? 'primary' : 'subtle'} as="span" size="copy">
+            Getting Started
+          </Text>
+        </Link>
+      </span>
 
       {/* {(menu?.items || []).map((item) => (
         <span key={item.id} className="block">
@@ -237,8 +237,8 @@ function MobileHeader({
     <header
       role="banner"
       className={`${isHome
-          ? 'bg-contrast/80 text-primary'
-          : 'bg-contrast/80 text-primary'
+        ? 'bg-contrast/80 text-primary'
+        : 'bg-contrast/80 text-primary'
         } flex lg:hidden items-center sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`}
     >
       <div className="flex items-center justify-start w-full gap-4">
@@ -277,8 +277,8 @@ function MobileHeader({
         className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
         to="/"
       >
-        
-          
+
+
         <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
         <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
       </Link>
@@ -313,61 +313,38 @@ function DesktopHeader({
     <header
       role="banner"
       className={`${isHome
-          ? 'bg-contrast/80 text-primary'
-          : 'bg-contrast/80 text-primary'
+        ? 'bg-contrast/80 text-primary'
+        : 'bg-contrast/80 text-primary'
         } ${!isHome && y > 50 && ' shadow-lightHeader'
         } hidden lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-4`}
     >
       <div className="flex gap-12 items-center justify-center">
-
         <nav className="flex gap-8 items-center justify-center">
           <Link to="/" prefetch="intent">
-
-          <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
-        <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
+            <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
+            <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
           </Link>
           <Link
-              // key={item.id}
-              to="/"
-              // target={item.target}
-              prefetch="intent"
-              className={isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'}
-              
-            >
-              <Text color={isCatalog ? 'primary' : 'subtle'}>Catalog</Text>
-            </Link>
-            <Link
-              // key={item.id}
-              to="/patches"
-              // target={item.target}
-              prefetch="intent"
-              className={isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'}
-            >
-              <Text color={isPatches ? 'primary' : 'subtle'}>Patches</Text>
-            </Link>
-            <Link
-              // key={item.id}
-              to="/getting-started"
-              // target={item.target}
-              prefetch="intent"
-              className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
-            >
-              <Text color={isGettingStarted ? 'primary' : 'subtle'}>Getting Started</Text>
-            </Link>
-          {/* Top level menu items */}
-          {/* {(menu?.items || []).map((item) => (
-            <Link
-              key={item.id}
-              to={item.to}
-              target={item.target}
-              prefetch="intent"
-              className={({ isActive }) =>
-                isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-              }
-            >
-              {item.title}
-            </Link>
-          ))} */}
+            to="/"
+            prefetch="intent"
+            className={isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'}
+          >
+            <Text color={isCatalog ? 'primary' : 'subtle'}>Catalog</Text>
+          </Link>
+          <Link
+            to="/patches"
+            prefetch="intent"
+            className={isPatches ? 'pb-1 border-b -mb-px' : 'pb-1'}
+          >
+            <Text color={isPatches ? 'primary' : 'subtle'}>Patches</Text>
+          </Link>
+          <Link
+            to="/getting-started"
+            prefetch="intent"
+            className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
+          >
+            <Text color={isGettingStarted ? 'primary' : 'subtle'}>Getting Started</Text>
+          </Link>
         </nav>
       </div>
       <div className="flex items-center gap-1">
@@ -456,8 +433,8 @@ function Badge({
         <IconBag />
         <div
           className={`${dark
-              ? 'text-primary bg-primary dark:text-contrast dark:bg-primary'
-              : 'text-contrast bg-primary'
+            ? 'text-primary bg-primary dark:text-contrast dark:bg-primary'
+            : 'text-contrast bg-primary'
             } absolute bottom-1 right-1 text-[0.625rem] font-medium subpixel-antialiased h-3 min-w-[0.75rem] flex items-center justify-center leading-none text-center rounded-full w-auto px-[0.125rem] pb-px`}
         >
           <span>{count || 0}</span>
