@@ -22,11 +22,24 @@ export default function Product() {
     <>
       <Section>
         <table className="w-2/3 text-left">
-          <tr><th>Module</th><th>+12V</th><th>-12V</th></tr>
+          <tr>
+            <th>Module</th>
+            <th>+12V Current</th>
+            <th>-12V Current</th>
+            <th>Generates Sync?</th>
+            <th>Sync Input Required?</th>
+          </tr>
           {modules.map((module) => {
             var showModule = module.max_pos_12v_ma > 0 && module.is_hidden == false ? true : false;
             return (
-              showModule ? <><tr><td><Link to={'/products/' + module.name.toLowerCase()}>{module.name}</Link></td><td>{module.max_pos_12v_ma}mA</td><td>{module.max_neg_12v_ma}mA</td></tr></> : ''
+              showModule ? <>
+                <tr>
+                  <td><Link className="underline" to={'/products/' + module.name.toLowerCase()}>{module.name}</Link></td>
+                  <td>{module.max_pos_12v_ma}mA</td>
+                  <td>{module.max_neg_12v_ma}mA</td>
+                  <td className={module.is_sync_generator ? 'text-green-500' : ''}>{module.is_sync_generator ? 'Yes' : 'No'}</td>
+                  <td className={module.is_sync_ref_required ? 'text-green-500' : ''}>{module.is_sync_ref_required ? 'Yes' : 'No'}</td>
+                </tr></> : ''
             )
           })
           }
