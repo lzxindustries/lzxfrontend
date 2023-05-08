@@ -30,6 +30,13 @@ export default function Patches() {
                     <Text size="lead" className="w-full uppercase" color="primary">{patch.name}</Text>
                     <Link to={'https://www.youtube.com/watch?v=' + patch.youtube} target="_blank"><img src={'https://img.youtube.com/vi/' + patch.youtube + '/0.jpg'} /></Link>
                     <div className="w-full h-2" />
+                    {patch.artist_name ? 
+                    <p><Text color="primary">Artist </Text>
+                      <Text color="subtle">
+                        {patch.artist_name}
+                      </Text>
+                    </p>
+                    : ''}
                     {/* {
                       patch.artists && (patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
                         <Text color="subtle">
@@ -74,7 +81,7 @@ export default function Patches() {
                       patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
                     }
                     {
-                      patch.diagram && <ModalImage className="opacity-100 h-8 align-middle" smallSrcSet={patch.diagram} hideDownload={true} hideZoom={true} small={patch.diagram} large={patch.diagram} alt={patch.title + ' Patch Diagram'}/>
+                      patch.diagram && <ModalImage className="opacity-100 h-8 align-middle" smallSrcSet={patch.diagram} hideDownload={true} hideZoom={true} small={patch.diagram} large={patch.diagram} alt={patch.title + ' Patch Diagram'} />
                     }
                   </div>
                 </>)

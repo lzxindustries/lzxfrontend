@@ -1,13 +1,14 @@
-import Mongoose from 'mongoose';
+// import Mongoose from 'mongoose';
 
-interface ArtistInterface {
+export interface ArtistInterface {
+  _id: string;
   name: string;
 }
 
-const ArtistSchema = new Mongoose.Schema({
-  name: String
-}, {
-  timestamps: false,
-});
+// const ArtistSchema = new Mongoose.Schema({
+//   name: String
+// }, {
+//   timestamps: false,
+// });
 
-export { ArtistInterface, ArtistSchema };
+// export { ArtistInterface, ArtistSchema };

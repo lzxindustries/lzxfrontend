@@ -24,9 +24,9 @@ export default function Product() {
         <table className="w-2/3 text-left">
           <tr><th>Module</th><th>+12V</th><th>-12V</th></tr>
           {modules.map((module) => {
-            var hasPowerSpecs = module.max_pos_12v_ma > 0 ? true : false;
+            var showModule = module.max_pos_12v_ma > 0 && module.is_hidden == false ? true : false;
             return (
-              hasPowerSpecs ? <><tr><td><Link to={'/products/' + module.name}>{module.name}</Link></td><td>{module.max_pos_12v_ma}mA</td><td>{module.max_neg_12v_ma}mA</td></tr></> : ''
+              showModule ? <><tr><td><Link to={'/products/' + module.name.toLowerCase()}>{module.name}</Link></td><td>{module.max_pos_12v_ma}mA</td><td>{module.max_neg_12v_ma}mA</td></tr></> : ''
             )
           })
           }

@@ -3,7 +3,8 @@
 export interface PatchInterface {
   name: string;
   diagram: string;
-  // artist: { type: Mongoose.Schema.Types.ObjectId, ref: 'artist' };
+  artist: string;
+  artist_name: string;
   youtube: string;
   notes: string;
 }
