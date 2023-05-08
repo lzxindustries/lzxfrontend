@@ -97,7 +97,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
     url: request.url,
   });
 
-  const moduleData = await getModule(context, product.title)
+  const moduleData = await getModule(context, product.id)
 
   return defer(
     {
@@ -145,7 +145,7 @@ export default function Product() {
               <div className="inline-block align-top w-full">
                 {/* <Text size="lead">{isModule ? moduleStruct.brand : vendor}</Text> */}
                 <Heading as="h1" className="uppercase">
-                  {isModule ? moduleStruct.title : title}
+                  {isModule ? moduleStruct.name : title}
                 </Heading>
                 <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleStruct.subtitle : null}</Text>
               </div>

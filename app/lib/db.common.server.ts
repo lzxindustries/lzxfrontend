@@ -23,7 +23,7 @@ export async function getDataCollection(context: AppLoadContext, collection: str
   }
   
   const url = context.env.DATA_API_BASE_URL + "/action/aggregate"
-  var data = {}
+  var data = { "documents": [{}]}
 
   try {
     data = await fetch(url, config).then((response) => response.json());
@@ -33,7 +33,7 @@ export async function getDataCollection(context: AppLoadContext, collection: str
     console.log('There was an error', error);
   }
 
-  return data
+  return data.documents
 }
 
 export async function getDataDocument(context: AppLoadContext, collection: string, filter: any)
@@ -61,7 +61,7 @@ export async function getDataDocument(context: AppLoadContext, collection: strin
   
   const url = context.env.DATA_API_BASE_URL + "/action/findOne"
 
-  var data = {}
+  var data = { "document": {}}
 
   try {
     data = await fetch(url, config).then((response) => response.json());
@@ -71,5 +71,5 @@ export async function getDataDocument(context: AppLoadContext, collection: strin
     console.log('There was an error', error);
   }
 
-  return data
+  return data.document
 }
