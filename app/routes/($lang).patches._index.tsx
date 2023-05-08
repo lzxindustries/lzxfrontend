@@ -86,7 +86,7 @@ export default function Patches() {
                     }
                     {
                       patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
-                    }
+                    } 
                   </div>
                 </>)
             })
