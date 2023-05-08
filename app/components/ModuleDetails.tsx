@@ -1,21 +1,21 @@
-import { db } from '~/lib/db'
 import { Heading, Text } from './Text'
 import { IconTV } from './Icon'
-import {Module} from '~/lib/db.common.types'
+import { ModuleInterface } from '~/models/module'
 
 export function ModuleDetails({
   moduleData
 }: {
-  moduleData: Module;
+  moduleData: ModuleInterface;
 }) {
   var it = 0;
   var it2 = 0;
+
   return (
     <div>
       {/* <div className="inline-block w-full h-4"></div> */}
       <Text size="copy">{moduleData.description}</Text>
       <div className="inline-block w-full h-2"></div>
-      <div className="inline-block w-full align-top">
+      {/* <div className="inline-block w-full align-top">
         {moduleData.features.map((feature, it) => {
           return (
             <>
@@ -24,27 +24,74 @@ export function ModuleDetails({
               <div className="inline-block w-full h-2"></div>
             </>)
         })}
-      </div>
+      </div> */}
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Dimensions</Heading>
         <ul>
-          <li><Text size="copy" color="subtle">{'Width, ' + moduleData.dimensions?.width + moduleData.dimensions?.widthUnit}</Text></li>
-          <li><Text size="copy" color="subtle">{'Mounting Depth, ' + moduleData.dimensions?.depth + moduleData.dimensions?.depthUnit}</Text></li>
+          <li><Text size="copy" color="subtle">{'Width, ' + moduleData.hp + 'HP'}</Text></li>
+          <li><Text size="copy" color="subtle">{'Mounting Depth, ' + moduleData.mounting_depth_mm + 'mm'}</Text></li>
         </ul>
+
+        <div className="inline-block w-full h-2"></div>
+        <Heading as="h3" format size="copy" className="uppercase">Video Sync</Heading>
+        <ul>
+          {moduleData.has_rear_video_sync_input == true ?
+            <li><Text size="copy" color="subtle">Rear RCA Sync Input Jack</Text></li> : ''
+          }
+          {moduleData.has_rear_video_sync_output == true ?
+            <li><Text size="copy" color="subtle">Rear RCA Sync Output Jack</Text></li> : ''
+          }
+          {moduleData.has_front_video_sync_input == true ?
+            <li><Text size="copy" color="subtle">Front RCA Sync Input Jack</Text></li> : ''
+          }
+          {moduleData.has_front_video_sync_output == true ?
+            <li><Text size="copy" color="subtle">Front RCA Sync Output Jack</Text></li> : ''
+          }
+          {moduleData.has_eurorack_power_sync_input == true ?
+            <li><Text size="copy" color="subtle">Rear EuroRack Power Header Sync Input (CV/Gate Bus)</Text></li> : ''
+          }
+          {moduleData.has_eurorack_power_sync_output == true ?
+            <li><Text size="copy" color="subtle">Rear EuroRack Power Header Sync Output (CV/Gate Bus)</Text></li> : ''
+          }
+          {moduleData.has_rear_14_pin_sync_input == true ?
+            <li><Text size="copy" color="subtle">Rear 14 Pin Header Sync Input</Text></li> : ''
+          }
+          {moduleData.has_rear_14_pin_sync_output == true ?
+            <li><Text size="copy" color="subtle">Rear 14 Pin Header Sync Output</Text></li> : ''
+          }
+        </ul>
+        <div className="inline-block w-full h-2"></div>
+          {moduleData.is_sync_ref_required == true ?
+            <Text size="copy" color="subtle">Connecting the video sync input to a video sync generator module is required to use this module.</Text> :
+            <Text size="copy" color="subtle">Video sync connections are not required to use this module.</Text>
+          }
       </div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Power Consumption</Heading>
         <ul>
-          {moduleData.powerConsumption?.map((conn, it) => {
-            return <li><Text size="copy" color="subtle">{conn.current + conn.currentUnit + ' @ ' + conn.voltage + conn.voltageUnit}</Text></li>
-          })}
+          {moduleData.max_pos_12v_ma !== 0 ?
+            <li><Text size="copy" color="subtle">{'+12V @ ' + moduleData.max_pos_12v_ma + 'mA'}</Text></li> : ''
+          }
+          {moduleData.max_neg_12v_ma !== 0 ?
+            <li><Text size="copy" color="subtle">{'-12V @ ' + moduleData.max_neg_12v_ma + 'mA'}</Text></li> : ''
+          }
         </ul>
+        <div className="inline-block w-full h-2"></div>
+        <Heading as="h3" format size="copy" className="uppercase">Power Entry</Heading>
+        <ul>
+          {moduleData.has_dc_barrel_power_entry == true ?
+            <li><Text size="copy" color="subtle">Rear DC Barrel Jack</Text></li> : ''
+          }
+          {moduleData.has_eurorack_power_entry == true ?
+            <li><Text size="copy" color="subtle">Rear EuroRack 16 Pin Header</Text></li> : ''
+          }
+        </ul>
+
       </div>
-      <div className="inline-block w-full h-2"></div>
-      <Heading as="h3" format size="copy" className="uppercase">VIDEO SYNC</Heading>
-      {/* <Text size="copy" color="subtle">{moduleData.videoSync?.length ? "" : "This module does not require any connection to your system's video sync generator."}</Text> */}
-      <div className="inline-block w-full h-2"></div>
-      <Heading as="h3" format size="copy" className="uppercase">Inputs & Outputs</Heading>
+
+
+
+      {/* <Heading as="h3" format size="copy" className="uppercase">Inputs & Outputs</Heading>
 
       {moduleData.connectors.map((conn, it) => {
         it = it + 1
@@ -64,8 +111,8 @@ export function ModuleDetails({
             </div>
           </>)
       })}
-      <div className="inline-block w-full h-2"></div>
-      <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
+      <div className="inline-block w-full h-2"></div> */}
+      {/* <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
 
       {moduleData.controls.map((ctrl, it) => {
         it2 = it2 + 1
@@ -84,7 +131,7 @@ export function ModuleDetails({
               </div>
             </div>
           </>)
-      })}
+      })} */}
       <div className="inline-block w-full h-2"></div>
     </div>
   )
