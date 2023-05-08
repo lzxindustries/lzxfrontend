@@ -152,7 +152,8 @@ function MenuMobileNav({
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
   const isGettingStarted = location.pathname.includes('/getting-started');
-  const isCatalog = !isPatches && !isGettingStarted;
+  const isModules = location.pathname.includes('/modules');
+  const isCatalog = !isPatches && !isGettingStarted && !isModules;
 
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
@@ -196,7 +197,19 @@ function MenuMobileNav({
           </Text>
         </Link>
       </span>
-
+      <span className="block">
+        <Link
+          to="/modules"
+          onClick={onClose}
+          className={
+            isModules ? 'pb-1 border-b -mb-px' : 'pb-1'
+          }
+        >
+          <Text color={isModules ? 'primary' : 'subtle'} as="span" size="copy">
+            Module List
+          </Text>
+        </Link>
+      </span>
       {/* {(menu?.items || []).map((item) => (
         <span key={item.id} className="block">
           <Link
@@ -305,7 +318,8 @@ function DesktopHeader({
   const location = useLocation()
   const isPatches = location.pathname.includes('/patches');
   const isGettingStarted = location.pathname.includes('/getting-started');
-  const isCatalog = !isPatches && !isGettingStarted;
+  const isModules = location.pathname.includes('/modules');
+  const isCatalog = !isPatches && !isGettingStarted && !isModules;
   const isDark = false;
   const params = useParams();
   const { y } = useWindowScroll();
@@ -331,6 +345,7 @@ function DesktopHeader({
           >
             <Text color={isCatalog ? 'primary' : 'subtle'}>Catalog</Text>
           </Link>
+
           <Link
             to="/patches"
             prefetch="intent"
@@ -344,6 +359,13 @@ function DesktopHeader({
             className={isGettingStarted ? 'pb-1 border-b -mb-px' : 'pb-1'}
           >
             <Text color={isGettingStarted ? 'primary' : 'subtle'}>Getting Started</Text>
+          </Link>
+          <Link
+            to="/modules"
+            prefetch="intent"
+            className={isModules ? 'pb-1 border-b -mb-px' : 'pb-1'}
+          >
+            <Text color={isModules ? 'primary' : 'subtle'}>Module List</Text>
           </Link>
         </nav>
       </div>
