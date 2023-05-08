@@ -27,12 +27,10 @@ export default function Patches() {
               return (
                 <>
                   <div>
-                    <Text size="lead" className="w-full uppercase" color="primary">{patch.title}</Text>
-                    {patch.videos.map((video) => {
-                      return <Link to={'https://www.youtube.com/watch?v=' + video.youtube} target="_blank"><img src={'https://img.youtube.com/vi/' + video.youtube + '/0.jpg'} /></Link>
-                    })}
+                    <Text size="lead" className="w-full uppercase" color="primary">{patch.name}</Text>
+                    <Link to={'https://www.youtube.com/watch?v=' + patch.youtube} target="_blank"><img src={'https://img.youtube.com/vi/' + patch.youtube + '/0.jpg'} /></Link>
                     <div className="w-full h-2" />
-                    {
+                    {/* {
                       patch.artists && (patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
                         <Text color="subtle">
                           {patch.artists.map((artist, index) => {
@@ -50,7 +48,7 @@ export default function Patches() {
                           {patch.artists[0].name}
                         </Text>
                       </p>
-                    }
+                    } */}
                     {/* {
                       patch.modules && (<p><Text color="primary">Modules </Text>
                         <Text color="subtle">
@@ -60,20 +58,18 @@ export default function Patches() {
                         </Text>
                       </p>)
                     } */}
-                    {
+                    {/*
                       patch.modules && (patch.modules.length > 0 && <p><Text color="primary">Modules </Text>
                         <Text color="subtle">
                           {patch.modules.map((module, index) => {
                             return (<>
                               <Link to={'/products/' + module.title.toLowerCase()} >
-                                {/* {(index != patch.modules.length - 1) ?
-                                module.title + ', ' : module.title} */}
                               </Link>
                             </>)
                           })}
                         </Text>
                       </p>)
-                    }
+                     */}
                     {
                       patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>
                     }
