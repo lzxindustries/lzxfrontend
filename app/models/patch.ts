@@ -6,6 +6,7 @@ export interface PatchInterface {
   artist: string;
   artist_name: string;
   youtube: string;
+  gif: string;
   notes: string;
 }
 

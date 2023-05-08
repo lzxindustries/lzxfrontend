@@ -19,6 +19,7 @@ export interface ModuleInterface {
   has_front_video_sync_input: boolean;
   has_front_video_sync_output: boolean;
   is_sync_ref_required: boolean;
+  is_sync_generator: boolean;
   hp: number;
   mounting_depth_mm: number;
   is_hidden: boolean;
