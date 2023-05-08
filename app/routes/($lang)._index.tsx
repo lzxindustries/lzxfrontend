@@ -137,6 +137,8 @@ export default function Home() {
 
   return (
     <>
+    
+    <img src="/clips/we_make_video_synthesizers.gif" className='w-full'/>
       <Section padding="x">
         <SortFilter
           
