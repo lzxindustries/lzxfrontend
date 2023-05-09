@@ -4,6 +4,7 @@ import { LoaderArgs } from "@shopify/remix-oxygen";
 import { getModules } from "~/lib/db.module.server";
 import { Section } from "~/components/Text";
 import { Link } from "@remix-run/react";
+import IconLink from "~/components/IconLink";
 
 export async function loader({ params, request, context }: LoaderArgs) {
   const modules = await getModules(context)
@@ -14,13 +15,12 @@ export async function loader({ params, request, context }: LoaderArgs) {
   );
 }
 
-
 export default function Product() {
   const { modules } = useLoaderData<typeof loader>();
 
   return (
     <>
-      <Section className="flex flex-auto justify-center">  
+      <Section className="flex flex-auto justify-center">
         <table className="max-w-5xl w-auto">
           <tr>
             <th className="px-2">Company</th>
@@ -38,7 +38,10 @@ export default function Product() {
               showModule ? <>
                 <tr>
                   <td className="px-2">{module.company_name}</td>
-                  <td className="px-2"><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g,'')}>{module.name}</Link></td>
+                  {
+                    module.external_url ? <td className="px-2"><Link className="underline" target="_blank" to={module.external_url}>{module.name}<IconLink className="inline-block"/></Link></td> :
+                      <td className="px-2"><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '')}>{module.name}</Link></td>
+                  }
                   <td className="px-2">{module.hp}HP</td>
                   <td className="px-2">{module.mounting_depth_mm}mm</td>
                   <td className="px-2">{module.max_pos_12v_ma}mA</td>
