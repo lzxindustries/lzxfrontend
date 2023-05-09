@@ -33,6 +33,7 @@ import type { LayoutData } from '../root';
 import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
 import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 import FooterMenu from './FooterMenu'
+import NewsletterSignup from './NewsletterSignup'
 console.log(logo); // /logo.84287d09.png
 console.log(logodark); // /logo.84287d09.png
 
@@ -493,20 +494,22 @@ function Footer({ menu }: { menu?: EnhancedMenu }) {
     : [];
 
   return (
-    <Section
-      divider={isHome ? 'none' : 'top'}
-      as="footer"
-      role="contentinfo"
-      className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
-        bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-    >
-      <FooterMenu /> 
-      <CountrySelector />
-      <div
-        className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
-      >
-        &copy; {new Date().getFullYear()} LZX Industries LLC
-      </div>
+    // <Section
+    //   divider={isHome ? 'none' : 'top'}
+    //   as="footer"
+    //   role="contentinfo"
+    //   className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
+    //     bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
+    // >
+    <Section>
+      {/* <div className="grid grid-flow-row"> */}
+        <div className="inline-block w-128"><FooterMenu /></div>
+        <div className="inline-block w-128"><NewsletterSignup /></div>
+        <div className="inline-block w-128"><CountrySelector /></div>
+      {/* </div> */}
+
+      <div className={`self-end pt-8 opacity-50 col-span-3`}> &copy; {new Date().getFullYear()} LZX Industries LLC</div>
+
     </Section>
   );
 }
