@@ -9,15 +9,19 @@ import { Link } from './Link';
 
 export default function FooterMenu() {
   return (
-    <div className="grid gap-4">
-      {/* <div className="grid gap-4"> <Link target="_blank" to="https://community.lzxindustries.net"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX Community Forum </Text></Link></div>
-      <div className="grid gap-4"> <Link target="_blank" to="https://us11.campaign-archive.com/home/?u=7da8b11822c70e5b64240e14f&id=352bd533b6"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX Newsletter Archive </Text></Link></div> */}
-      <div className="grid gap-4"> <Link target="_blank" to="https://www.instagram.com/lzxindustries"><IconInstagram className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Instagram </Text></Link></div>
-      <div className="grid gap-4"> <Link target="_blank" to="https://www.facebook.com/lzxindustries"><IconFacebook className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Facebook </Text></Link></div>
-      <div className="grid gap-4"> <Link target="_blank" to="https://www.youtube.com/lzxindustries"><IconYoutube className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on YouTube </Text></Link></div>
-      <div className="grid gap-4"> <Link target="_blank" to="https://discord.gg/KxGAnSVw2J"><IconDiscord className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Discord </Text></Link></div>
-      <div className="grid gap-4"> <Link target="_blank" to="https://community.lzxindustries.net"><IconTwitch className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Twitch </Text></Link></div>
-    </div>
+    <>
+      <div className="grid gap-4">
+        <div className="grid gap-4"> <Link target="_blank" to="https://www.instagram.com/lzxindustries"><IconInstagram className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Instagram </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://www.facebook.com/lzxindustries"><IconFacebook className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Facebook </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://www.youtube.com/lzxindustries"><IconYoutube className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on YouTube </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://discord.gg/KxGAnSVw2J"><IconDiscord className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Discord </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://community.lzxindustries.net"><IconTwitch className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX on Twitch </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://community.lzxindustries.net"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX Community Forum </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="https://us11.campaign-archive.com/home/?u=7da8b11822c70e5b64240e14f&id=352bd533b6"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">LZX Newsletter Archive </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="/policies/terms-of-service"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">Terms of Service </Text></Link></div>
+        <div className="grid gap-4"> <Link target="_blank" to="/policies/refund-policy"><IconHelp className="inline-block align-middle" /> <Text className="inline-block align-middle">Refund Policy </Text></Link></div>
+      </div>
+    </>
   );
 }
 
