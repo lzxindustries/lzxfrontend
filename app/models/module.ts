@@ -5,7 +5,9 @@ export interface ModuleInterface {
   description: string;
   sku: string;
   price: number;
-  // company: { type: Mongoose.Schema.Types.ObjectId, ref: 'company' };
+  company: string;
+  company_name: string;
+  company_legalName: string;
   max_pos_12v_ma: number;
   max_neg_12v_ma: number;
   has_dc_barrel_power_entry: boolean;
@@ -23,9 +25,5 @@ export interface ModuleInterface {
   hp: number;
   mounting_depth_mm: number;
   is_hidden: boolean;
-  // releaseDate: Date;
-  // discontinuedDate: Date;
   subtitle: string;
 }
-
-// export { ModuleInterface };

@@ -1,14 +1,5 @@
-import Mongoose from 'mongoose';
-
-interface CompanyInterface {
+export interface CompanyInterface {
+  _id: string;
   name: string;
+  legalName: string;
 }
-
-const CompanySchema = new Mongoose.Schema({
-  name: String,
-}, {
-  timestamps: false,
-});
-
-export { CompanyInterface, CompanySchema };
-
