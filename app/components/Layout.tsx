@@ -34,6 +34,7 @@ import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this
 import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 import FooterMenu from './FooterMenu'
 import NewsletterSignup from './NewsletterSignup'
+import IconLink from './IconLink';
 console.log(logo); // /logo.84287d09.png
 console.log(logodark); // /logo.84287d09.png
 
@@ -503,12 +504,18 @@ function Footer({ menu }: { menu?: EnhancedMenu }) {
     // >
     <Section>
       {/* <div className="grid grid-flow-row"> */}
-        <div className="inline-block w-128"><FooterMenu /></div>
-        <div className="inline-block w-128"><NewsletterSignup /></div>
-        <div className="inline-block w-128"><CountrySelector /></div>
+      <div className="inline-block w-128"><FooterMenu /></div>
+      <div className="inline-block w-128"><NewsletterSignup /></div>
+      <div className="inline-block w-128">
+        <Text size="lead">Contact Us</Text>
+        <div className="grid gap-4 pt-4">
+          <div className="grid gap-4"> <Link target="_blank" to="mailto:sales@lzxindustries.net"><Text className="inline-block align-middle">sales@lzxindustries.net </Text></Link></div>
+          <div className="grid gap-4"> <Link target="_blank" to="mailto:support@lzxindustries.net"><Text className="inline-block align-middle">support@lzxindustries.net </Text></Link></div>
+        </div></div>
+      <div className="inline-block w-128"><CountrySelector /></div>
       {/* </div> */}
 
-      <div className={`self-end pt-8 opacity-50 col-span-3`}> &copy; {new Date().getFullYear()} LZX Industries LLC</div>
+      <div className={`self-end pt-8 opacity-50 col-span-4`}> &copy; {new Date().getFullYear()} LZX Industries LLC</div>
 
     </Section>
   );
