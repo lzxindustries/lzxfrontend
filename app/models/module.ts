@@ -26,4 +26,5 @@ export interface ModuleInterface {
   mounting_depth_mm: number;
   is_hidden: boolean;
   subtitle: string;
+  external_url: string;
 }
