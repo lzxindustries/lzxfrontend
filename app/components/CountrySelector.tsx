@@ -6,6 +6,7 @@ import {Localizations, Locale, CartAction} from '~/lib/type';
 import {DEFAULT_LOCALE} from '~/lib/utils';
 import clsx from 'clsx';
 import {CartBuyerIdentityInput} from '@shopify/hydrogen/storefront-api-types';
+import { Text } from '~/components';
 
 export function CountrySelector() {
   const [root] = useMatches();
@@ -50,9 +51,9 @@ export function CountrySelector() {
       className="grid w-full gap-4"
       onMouseLeave={closeDropdown}
     >
-      <Heading size="lead" className="cursor-default" as="h3">
+      <Text size="lead" className="cursor-default">
         Country
-      </Heading>
+      </Text>
       <div className="relative">
         <details
           className="absolute w-full border rounded border-contrast/30 dark:border-white open:round-b-none overflow-clip"

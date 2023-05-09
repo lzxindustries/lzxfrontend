@@ -1,5 +1,5 @@
 import * as React from "react"
-const IconTalkHappy = (props) => (
+const IconHelp = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
@@ -21,4 +21,4 @@ const IconTalkHappy = (props) => (
     />
   </svg>
 )
-export default IconTalkHappy
+export default IconHelp
