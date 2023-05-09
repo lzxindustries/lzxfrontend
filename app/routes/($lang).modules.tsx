@@ -25,6 +25,8 @@ export default function Product() {
           <tr>
             <th className="px-2">Company</th>
             <th className="px-2">Module</th>
+            <th className="px-2">HP</th>
+            <th className="px-2">Depth</th>
             <th className="px-2">+12V Current</th>
             <th className="px-2">-12V Current</th>
             <th className="px-2">Generates Sync?</th>
@@ -35,12 +37,14 @@ export default function Product() {
             return (
               showModule ? <>
                 <tr>
-                  <td>{module.company_name}</td>
-                  <td><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g,'')}>{module.name}</Link></td>
-                  <td>{module.max_pos_12v_ma}mA</td>
-                  <td>{module.max_neg_12v_ma}mA</td>
-                  <td className={module.is_sync_generator ? 'text-green-500' : ''}>{module.is_sync_generator ? 'Yes' : 'No'}</td>
-                  <td className={module.is_sync_ref_required ? 'text-green-500' : ''}>{module.is_sync_ref_required ? 'Yes' : 'No'}</td>
+                  <td className="px-2">{module.company_name}</td>
+                  <td className="px-2"><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g,'')}>{module.name}</Link></td>
+                  <td className="px-2">{module.hp}HP</td>
+                  <td className="px-2">{module.mounting_depth_mm}mm</td>
+                  <td className="px-2">{module.max_pos_12v_ma}mA</td>
+                  <td className="px-2">{module.max_neg_12v_ma}mA</td>
+                  <td className={module.is_sync_generator ? 'text-green-500 px-2' : 'px-2'}>{module.is_sync_generator ? 'Yes' : 'No'}</td>
+                  <td className={module.is_sync_ref_required ? 'text-green-500 px-2' : 'px-2'}>{module.is_sync_ref_required ? 'Yes' : 'No'}</td>
                 </tr></> : ''
             )
           })
