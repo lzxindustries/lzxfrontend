@@ -11,8 +11,3 @@ export async function getArtist(context: AppLoadContext, id: string) {
     const result = await getDataDocument(context, "Artist", {id}) as ArtistInterface
     return result
 }
-
-export async function getArtistName(context: AppLoadContext, id: string) {
-    const result = await getDataDocument(context, "Artist", {id}) as ArtistInterface
-    return result.name
-}
