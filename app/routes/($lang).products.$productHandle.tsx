@@ -99,7 +99,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
 
   const id = product.id;
 
-  const moduleData = await getModuleDetails(context, {id})
+  const moduleData = await getModuleDetails(context, { id })
 
   return defer(
     {
@@ -157,7 +157,7 @@ export default function Product() {
                 <ProductForm />
               </div>
             </div>
-            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />} 
+            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
             {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
