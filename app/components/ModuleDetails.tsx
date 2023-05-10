@@ -19,7 +19,7 @@ export function ModuleDetails({
         {moduleData.features.map((feature) => {
           return (
             <>
-              <div className="inline-block w-full"><IconTV className="inline-block align-middle"/> <Text size="lead" className="align-middle">{feature.name}</Text></div>
+              <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
               <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
               <div className="inline-block w-full h-2"></div>
             </>)
@@ -61,10 +61,10 @@ export function ModuleDetails({
           }
         </ul>
         <div className="inline-block w-full h-2"></div>
-          {moduleData.is_sync_ref_required == true ?
-            <Text size="copy" color="subtle">Connecting the video sync input to a video sync generator module is required to use this module.</Text> :
-            <Text size="copy" color="subtle">Video sync connections are not required to use this module.</Text>
-          }
+        {moduleData.is_sync_ref_required == true ?
+          <Text size="copy" color="subtle">Connection to a video sync ref is required to use this module.</Text> :
+          <Text size="copy" color="subtle">No video sync connections are required to use this module.</Text>
+        }
       </div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Power Consumption</Heading>
@@ -86,47 +86,50 @@ export function ModuleDetails({
             <li><Text size="copy" color="subtle">Rear EuroRack 16 Pin Header</Text></li> : ''
           }
         </ul>
-
       </div>
-
-
-
-      <Heading as="h3" format size="copy" className="uppercase">Connectors</Heading>
-
-      {moduleData.connectors.map((conn, it) => {
+      {moduleData.legend ? <div className="inline-block w-full h-2"></div> : null}
+      {moduleData.legend ? <Heading as="h3" format size="copy" className="uppercase">Legend</Heading> : null}
+      {moduleData.legend ? <img className="w-1/2 max-w-96" src={'/images/' + moduleData.legend}/> : null}
+      {moduleData.connectors.length > 0 ? <div className="inline-block w-full h-2"></div> : null}
+      {moduleData.connectors.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Connectors</Heading> : null}
+      {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn, it) => {
         it = it + 1
         return (
           <>
             <div className="w-full inline-block">
+              <div className="w-1/12 inline-block">
+                <Text color="subtle">
+                  {conn.refDes}
+                </Text>
+              </div>
               <div className="w-11/12 inline-block">
                 <Text color="subtle">
-                  {conn.name}
+                  {conn.name} {conn.is_input ? 'Input' : 'Output'}
                 </Text>
               </div>
             </div>
           </>)
-      })}
-      <div className="inline-block w-full h-2"></div> 
-       <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
-
-      {moduleData.controls.map((ctrl, it) => {
+      }) : null}
+      {moduleData.controls.length > 0 ? <div className="inline-block w-full h-2"></div> : null}
+      {moduleData.controls.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Controls</Heading> : null}
+      {moduleData.controls.length > 0 ? moduleData.controls.map((ctrl, it) => {
         it2 = it2 + 1
         return (
           <>
             <div className="w-full inline-block">
-              {/* <div className="w-1/12 inline-block">
+              <div className="w-1/12 inline-block">
                 <Text color="subtle">
-                  P{it2}
+                  {ctrl.refDes} 
                 </Text>
-              </div> */}
-              <div className="w-12/12 inline-block">
+              </div>
+              <div className="w-11/12 inline-block">
                 <Text color="subtle">
                   {ctrl.name}
                 </Text>
               </div>
             </div>
           </>)
-      })}
+      }) : null}
       <div className="inline-block w-full h-2"></div>
     </div>
   )
