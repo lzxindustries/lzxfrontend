@@ -1,16 +1,33 @@
 import { Heading, Text } from './Text'
 import { ModuleView } from '~/views/module';
 import { IconTV } from './Icon';
-import { FrontpanelLegend } from './FrontpanelLegend';
+import { LegendRefDes } from './LegendRefDes';
 import { FrontpanelMaterial } from './Frontpanel';
+import { useState } from 'react';
 
 export function ModuleDetails({
   moduleData
 }: {
   moduleData: ModuleView;
 }) {
-  var it = 0;
-  var it2 = 0;
+  const [activeRefDes, setActiveRefDes] = useState("")
+  const [isHoverRefDes, setHoverRefDes] = useState(false)
+  const pixelsPerHP = 25;
+  const hpScale = 5.08; // millimeters
+  const pixelsPerMm = pixelsPerHP / hpScale;
+  const pixelsPerInch = pixelsPerHP * 5;
+  const frontpanelHeight = 128.5 * pixelsPerMm; // millimeters
+  const frontpanelWidth = moduleData.hp * pixelsPerHP;
+  const xCenter = frontpanelWidth / 2;
+  const yCenter = frontpanelHeight / 2;
+
+  // return (
+  //   <div className="App">
+  //     <button
+  //       onMouseEnter={() => setIsShown(true)}
+  //       onMouseLeave={() => setIsShown(false)}>
+  //       Hover over me!
+  //     </button>
 
   return (
     <div>
@@ -92,46 +109,91 @@ export function ModuleDetails({
       <div className="inline-block w-full h-2"></div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Legend</Heading>
-        <FrontpanelLegend pixelsPerHP={20} module={moduleData} />
+        <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
+          <img className="absolute top-0 left-0" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.frontpanel} />
+          {moduleData.connectors.map((obj) => {
+            const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
+            const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
+            return <div style={{ top: yPos, left: xPos }}
+              className="w-full inline-block align-top cursor-pointer absolute"
+              onMouseEnter={() => {
+                setHoverRefDes(true)
+                setActiveRefDes(obj.refDes)
+              }}
+              onMouseLeave={() => {
+                setHoverRefDes(false)
+                setActiveRefDes("")
+              }}
+            ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
+            </div>
+          })}
+          {moduleData.controls.map((obj) => {
+            const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
+            const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
+            return <div style={{ top: yPos, left: xPos }}
+              className="w-full inline-block align-top cursor-pointer absolute"
+              onMouseEnter={() => {
+                setHoverRefDes(true)
+                setActiveRefDes(obj.refDes)
+              }}
+              onMouseLeave={() => {
+                setHoverRefDes(false)
+                setActiveRefDes("")
+              }}
+            ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
+            </div>
+          })}
+        </div>
       </div>
       <div className="inline-block w-1/2 align-top">
-        {/* {moduleData.legend ? <img className="w-1/2 max-w-96" src={'/images/' + moduleData.legend}/> : null} */}
-        {/* {moduleData.legend ? <img className="w-1/2 max-w-96" src={'/images/' + moduleData.legend}/> : null} */}
         {moduleData.connectors.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Connectors</Heading> : null}
-        {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn, it) => {
-          it = it + 1
+        {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
           return (
             <>
-              <div className="w-full inline-block">
+              <div
+                className={"w-full inline-block align-top cursor-pointer " +
+                  (activeRefDes == conn.refDes ? " font-bold bg-yellow-500 text-black bg-opacity-100" : " font-normal text-gray-400 bg-opacity-0")
+                }
+                onMouseEnter={() => {
+                  setHoverRefDes(true)
+                  setActiveRefDes(conn.refDes)
+                }}
+                onMouseLeave={() => {
+                  setHoverRefDes(false)
+                  setActiveRefDes("")
+                }}
+              >
                 <div className="w-1/12 inline-block">
-                  <Text color="subtle">
-                    {conn.refDes}
-                  </Text>
+                  {conn.refDes}
                 </div>
                 <div className="w-11/12 inline-block">
-                  <Text color="subtle">
-                    {conn.name} {conn.is_input ? 'Input' : 'Output'}
-                  </Text>
+                  {conn.name} {conn.is_input ? 'Input' : 'Output'}
                 </div>
               </div>
             </>)
         }) : null}
         {moduleData.connectors.length > 0 ? <div className="inline-block w-full h-2"></div> : null}
         {moduleData.controls.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Controls</Heading> : null}
-        {moduleData.controls.length > 0 ? moduleData.controls.map((ctrl, it) => {
-          it2 = it2 + 1
+        {moduleData.controls.length > 0 ? moduleData.controls.map((ctrl) => {
           return (
             <>
-              <div className="w-full inline-block align-top">
+              <div
+                className={"w-full inline-block align-top cursor-pointer " +
+                  (activeRefDes == ctrl.refDes ? "font-bold bg-yellow-500 text-black bg-opacity-100" : " font-normal text-gray-400 bg-opacity-0")
+                }
+                onMouseEnter={() => {
+                  setHoverRefDes(true)
+                  setActiveRefDes(ctrl.refDes)
+                }}
+                onMouseLeave={() => {
+                  setHoverRefDes(false)
+                  setActiveRefDes("")
+                }}>
                 <div className="w-1/12 inline-block align-top">
-                  <Text color="subtle">
-                    {ctrl.refDes + " "} 
-                  </Text>
+                  {ctrl.refDes + " "}
                 </div>
                 <div className="w-11/12 inline-block align-top">
-                  <Text color="subtle">
-                    {" " + ctrl.name}
-                  </Text>
+                  {" " + ctrl.name}
                 </div>
               </div>
             </>)
