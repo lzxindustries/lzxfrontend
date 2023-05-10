@@ -1,11 +1,10 @@
 import { Heading, Text } from './Text'
-import { IconTV } from './Icon'
-import { ModuleInterface } from '~/models/module'
+import { ModuleView } from '~/views/module';
 
 export function ModuleDetails({
   moduleData
 }: {
-  moduleData: ModuleInterface;
+  moduleData: ModuleView;
 }) {
   var it = 0;
   var it2 = 0;
