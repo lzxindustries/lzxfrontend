@@ -46,8 +46,8 @@ import type { Storefront } from '~/lib/type';
 import type { Product } from 'schema-dts';
 import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 import { ModuleDetails } from '~/components/ModuleDetails';
-import { getModules, getModule } from "~/lib/db.module.server";
-import { Module } from '~/lib/db.module.types'
+import { ModuleView } from '~/views/module';
+import { getModuleView } from '~/controllers/module';
 
 export const headers = routeHeaders;
 
@@ -97,7 +97,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
     url: request.url,
   });
 
-  const moduleData = await getModule(context, product.id)
+  const moduleData = {} as ModuleView
 
   return defer(
     {

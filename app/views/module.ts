@@ -1,8 +1,13 @@
-export interface ModuleInterface {
+import { ModuleConnectorView } from "./module_connector";
+import { ModuleControlView } from "./module_control";
+import { ModuleFeatureView } from "./module_feature";
+import { CompanyView } from "./company";
+
+export type ModuleView = {
   id: string;
   name: string;
   description: string;
-  company: string;
+  company: CompanyView;
   has_eurorack_power_entry: boolean;
   has_rear_video_sync_input: boolean;
   has_rear_video_sync_output: boolean;
@@ -24,4 +29,7 @@ export interface ModuleInterface {
   has_rear_14_pin_sync_output: boolean;
   is_sync_generator: boolean;
   external_url: string;
+  connectors: Array<ModuleConnectorView>;
+  controls: Array<ModuleControlView>;
+  features: Array<ModuleFeatureView>;
 }

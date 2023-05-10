@@ -1,6 +1,6 @@
 import { LoaderArgs } from "@shopify/remix-oxygen";
 import { useLoaderData } from "@remix-run/react";
-import { getDataCollection } from "~/lib/db.common.server";
+import { getDataCollection } from "~/lib/db.server";
 import { getMarkdownToHTML } from "~/lib/markdown";
 //import raw from "raw.macro";
 //const markdown = raw("../../public/docs/beginner-patches.md");
