@@ -5,14 +5,14 @@ import {
   Text,
   Link,
 } from '~/components';
-import { getPatchView } from "~/controllers/patch";
+import { getAllPatches } from "~/controllers/get_all_patches";
 import { PatchView } from "~/views/patch";
 import { LoaderArgs } from '@shopify/remix-oxygen';
 import { useLoaderData } from '@remix-run/react';
 
 
 export async function loader({ params, request, context }: LoaderArgs) {
-  const patchData = {} as PatchView[]
+  const patchData = await getAllPatches(context)
   return patchData;
 }
 
@@ -35,10 +35,10 @@ export default function Patches() {
                     <ModalImage className="opacity-100 w-full align-middle" smallSrcSet={'/clips/' + patch.gif} hideDownload={true} hideZoom={true} small={'/clips/' + patch.gif} large={'/clips/' + patch.gif} alt={patch.name + ' Clip'} />
                      : '' }
                     <div className="w-full h-2" />
-                    {patch.artist_name ?
+                    {patch.artist.name ?
                       <p><Text color="primary">Artist </Text>
                         <Text color="subtle">
-                          {patch.artist_name}
+                          {patch.artist.name}
                         </Text>
                       </p>
                       : ''}

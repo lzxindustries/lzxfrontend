@@ -1,12 +1,13 @@
 import { AppLoadContext } from "@shopify/remix-oxygen";
 
-export async function getDataCollection(context: AppLoadContext, collection: string, filter: any = {})
+export async function getDataCollection(context: AppLoadContext, collection: string)
 {
+  const pipeline = [{ $limit: 256 }]
   const body = JSON.stringify({
     collection,
     database: context.env.DATABASE_NAME,
     dataSource: context.env.CLUSTER_NAME,
-    filter
+    pipeline
   })
 
   const headers = new Headers([
@@ -32,6 +33,7 @@ export async function getDataCollection(context: AppLoadContext, collection: str
     console.log('There was an error', error);
   }
 
+  // console.log(data)
   return data.documents
 }
 
@@ -70,5 +72,6 @@ export async function getDataDocument(context: AppLoadContext, collection: strin
     console.log('There was an error', error);
   }
 
+  // console.log(data)
   return data.document
 }

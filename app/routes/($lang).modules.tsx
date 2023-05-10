@@ -1,14 +1,14 @@
 
 import { useLoaderData } from "@remix-run/react";
 import { LoaderArgs } from "@shopify/remix-oxygen";
-import { getModuleView } from "~/controllers/module";
+import { getAllModules } from "~/controllers/get_all_modules";
 import { ModuleView } from "~/views/module";
 import { Section } from "~/components/Text";
 import { Link } from "@remix-run/react";
 import IconLink from "~/components/IconLink";
 
 export async function loader({ params, request, context }: LoaderArgs) {
-  const modules = {} as ModuleView[]
+  const modules = await getAllModules(context)
   return (
     {
       modules
@@ -37,7 +37,7 @@ export default function Product() {
             return (
               showModule ? <>
                 <tr>
-                  <td className="px-2">{module.company_name}</td>
+                  <td className="px-2">{module.company.name}</td>
                   {
                     module.external_url ? <td className="px-2"><Link className="underline" target="_blank" to={module.external_url}>{module.name}<IconLink className="inline-block" /></Link></td> :
                       <td className="px-2"><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '')}>{module.name}</Link></td>
