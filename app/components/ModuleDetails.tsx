@@ -1,5 +1,6 @@
 import { Heading, Text } from './Text'
 import { ModuleView } from '~/views/module';
+import { IconTV } from './Icon';
 
 export function ModuleDetails({
   moduleData
@@ -14,16 +15,16 @@ export function ModuleDetails({
       {/* <div className="inline-block w-full h-4"></div> */}
       <Text size="copy">{moduleData.description}</Text>
       <div className="inline-block w-full h-2"></div>
-      {/* <div className="inline-block w-full align-top">
-        {moduleData.features.map((feature, it) => {
+      <div className="inline-block w-full align-top">
+        {moduleData.features.map((feature) => {
           return (
             <>
-              <div className="inline-block w-full"><IconTV className="inline-block align-middle"/> <Text size="lead" className="align-middle">{feature.title}</Text></div>
+              <div className="inline-block w-full"><IconTV className="inline-block align-middle"/> <Text size="lead" className="align-middle">{feature.name}</Text></div>
               <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
               <div className="inline-block w-full h-2"></div>
             </>)
         })}
-      </div> */}
+      </div>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Dimensions</Heading>
         <ul>
@@ -90,47 +91,42 @@ export function ModuleDetails({
 
 
 
-      {/* <Heading as="h3" format size="copy" className="uppercase">Inputs & Outputs</Heading>
+      <Heading as="h3" format size="copy" className="uppercase">Connectors</Heading>
 
       {moduleData.connectors.map((conn, it) => {
         it = it + 1
         return (
           <>
             <div className="w-full inline-block">
-              <div className="w-1/12 inline-block">
-                <Text color="subtle">
-                  J{it}
-                </Text>
-              </div>
               <div className="w-11/12 inline-block">
                 <Text color="subtle">
-                  {conn.description} {conn.direction}
+                  {conn.name}
                 </Text>
               </div>
             </div>
           </>)
       })}
-      <div className="inline-block w-full h-2"></div> */}
-      {/* <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
+      <div className="inline-block w-full h-2"></div> 
+       <Heading as="h3" format size="copy" className="uppercase">Controls</Heading>
 
       {moduleData.controls.map((ctrl, it) => {
         it2 = it2 + 1
         return (
           <>
             <div className="w-full inline-block">
-              <div className="w-1/12 inline-block">
+              {/* <div className="w-1/12 inline-block">
                 <Text color="subtle">
                   P{it2}
                 </Text>
-              </div>
-              <div className="w-11/12 inline-block">
+              </div> */}
+              <div className="w-12/12 inline-block">
                 <Text color="subtle">
-                  {ctrl.description}
+                  {ctrl.name}
                 </Text>
               </div>
             </div>
           </>)
-      })} */}
+      })}
       <div className="inline-block w-full h-2"></div>
     </div>
   )
