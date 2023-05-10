@@ -1,13 +1,12 @@
 import { AppLoadContext } from "@shopify/remix-oxygen";
 
-export async function getDataCollection(context: AppLoadContext, collection: string, maxLimit: number = 100)
+export async function getDataCollection(context: AppLoadContext, collection: string, filter: any = {})
 {
-  const pipeline = [{ $limit: maxLimit }]
   const body = JSON.stringify({
     collection,
     database: context.env.DATABASE_NAME,
     dataSource: context.env.CLUSTER_NAME,
-    pipeline
+    filter
   })
 
   const headers = new Headers([

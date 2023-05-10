@@ -5,13 +5,14 @@ import {
   Text,
   Link,
 } from '~/components';
-import { getPatches } from '~/lib/db.patch.server';
+import { getPatchView } from "~/controllers/patch";
+import { PatchView } from "~/views/patch";
 import { LoaderArgs } from '@shopify/remix-oxygen';
 import { useLoaderData } from '@remix-run/react';
 
 
 export async function loader({ params, request, context }: LoaderArgs) {
-  const patchData = await getPatches(context)
+  const patchData = {} as PatchView[]
   return patchData;
 }
 
