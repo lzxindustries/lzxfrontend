@@ -110,7 +110,7 @@ export function ModuleDetails({
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Legend</Heading>
         <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
-          <img className="absolute top-0 left-0" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.frontpanel} />
+          <img className="absolute top-0 left-0" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.legend} />
           {moduleData.connectors.map((obj) => {
             const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
             const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);

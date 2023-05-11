@@ -20,6 +20,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
+    selected: false,
+    refDes: "J1"
+  },
+};
+
+export const Selected: Story = {
+  args: {
+    selected: true,
     refDes: "J1"
   },
 };
