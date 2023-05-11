@@ -11,11 +11,10 @@ import { ModulePartView } from "~/views/module_part";
 import { ModuleVideoInterface } from "~/models/module_video";
 import { VideoInterface } from "~/models/video";
 
-export async function getModuleDetails(context: AppLoadContext, filters: any = {}) {
-
+export async function getModuleDetails(context: AppLoadContext, id: string) {
+    const filters = {id}
     const module_data = await getDataDocument(context, "Module", filters) as ModuleInterface;
     const company_data = await getDataCollection(context, "Company") as CompanyInterface[];
-
     const module_videos_data = await getDataCollection(context, "ModuleVideo") as ModuleVideoInterface[]
     const videos_data = await getDataCollection(context, "Video") as VideoInterface[]
     const controls_data = await getDataCollection(context, "ModuleControl") as ModuleControlInterface[]

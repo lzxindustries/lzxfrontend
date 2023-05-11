@@ -70,5 +70,5 @@ export default {
       },
     },
   },
-  plugins: [formsPlugin, typographyPlugin],
+  plugins: [formsPlugin, typographyPlugin, require("daisyui")],
 };
