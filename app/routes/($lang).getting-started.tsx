@@ -205,7 +205,6 @@ Products released before 2020 supported 2 video sync formats.
 *   PAL
 
 # Troubleshooting
-===============
 
 _I suspect something is not working. What are some good troubleshooting steps to follow?_
 
