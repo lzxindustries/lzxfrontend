@@ -227,6 +227,19 @@ function MenuMobileNav({
           </Text>
         </Link>
       </span>
+      <span className="block">
+        <Link
+          to="https://lzxmodular.rtfd.io"
+          target="_blank"
+          className={
+             'pb-1'
+          }
+        >
+          <Text color={'subtle'} as="span" size="copy">
+            Docs
+          </Text>
+        </Link>
+      </span>
       {/* {(menu?.items || []).map((item) => (
         <span key={item.id} className="block">
           <Link
@@ -391,6 +404,13 @@ function DesktopHeader({
             className={isModules ? 'pb-1 border-b -mb-px' : 'pb-1'}
           >
             <Text color={isModules ? 'primary' : 'subtle'}>Module List</Text>
+          </Link>
+          <Link
+            to="https://lzxmodular.rtfd.io"
+            target="_blank"
+            className={'pb-1'}
+          >
+            <Text color={'subtle'}>Docs</Text>
           </Link>
         </nav>
       </div>
