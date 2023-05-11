@@ -44,11 +44,11 @@ import type {
 import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
 import type { Storefront } from '~/lib/type';
 import type { Product } from 'schema-dts';
-import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 import { ModuleDetails } from '~/components/ModuleDetails';
 import { ModuleView } from '~/views/module';
 import { getModuleDetails } from '~/controllers/get_module_details';
 import { ModuleGallery } from '~/components/ModuleGallery';
+import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 export const headers = routeHeaders;
 
 export async function loader({ params, request, context }: LoaderArgs) {
@@ -133,7 +133,7 @@ export default function Product() {
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
   const isModule = moduleData.hp > 0 ? true : false;
-  
+
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
