@@ -122,7 +122,7 @@ export function ModuleDetails({
               }}
               onMouseLeave={() => {
                 setHoverRefDes(false)
-                setActiveRefDes("")
+                
               }}
             ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
             </div>
@@ -138,7 +138,7 @@ export function ModuleDetails({
               }}
               onMouseLeave={() => {
                 setHoverRefDes(false)
-                setActiveRefDes("")
+                
               }}
             ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
             </div>
