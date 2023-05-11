@@ -98,8 +98,11 @@ export async function loader({ params, request, context }: LoaderArgs) {
   });
 
   const id = product.id;
+  const moduleData: ModuleView = await getModuleDetails(context, id)
 
-  const moduleData = await getModuleDetails(context, { id })
+  // if (!id || !moduleData) {
+  //   throw new Response('product', { status: 404 });
+  // }
 
   return defer(
     {
@@ -129,9 +132,8 @@ export default function Product() {
   const { moduleData, product, shop, recommended } = useLoaderData<typeof loader>();
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
-  var isModule = Boolean(moduleData);
-  let moduleStruct = moduleData;
-
+  const isModule = moduleData.hp > 0 ? true : false;
+  
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
@@ -143,11 +145,11 @@ export default function Product() {
 
             <div className="inline-block w-1/2 align-top py-4">
               <div className="inline-block align-top w-full">
-                {/* <Text size="lead">{isModule ? moduleStruct.brand : vendor}</Text> */}
+                {/* <Text size="lead">{isModule ? moduleData.brand : vendor}</Text> */}
                 <Heading as="h1" className="uppercase">
-                  {isModule ? moduleStruct.name : title}
+                  {isModule ? moduleData.name : title}
                 </Heading>
-                <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleStruct.subtitle : null}</Text>
+                <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleData.subtitle : null}</Text>
               </div>
             </div>
             <div className="inline-block w-1/2 align-top py-4">
@@ -155,7 +157,7 @@ export default function Product() {
                 <ProductForm />
               </div>
             </div>
-            {isModule ? <ModuleDetails moduleData={moduleStruct} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
+            {isModule ? <ModuleDetails moduleData={moduleData} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
             {/* <div className="grid gap-4 py-4">
                 {viewDescription && (
                   <ProductDetail
@@ -639,7 +641,7 @@ async function getRecommendedProducts(
 
   invariant(products, 'No data returned from Shopify API');
 
-  const mergedProducts = products.recommended
+  const mergedProducts: ProductType[] = products.recommended
     .concat(products.additional.nodes)
     .filter(
       (value, index, array) =>
