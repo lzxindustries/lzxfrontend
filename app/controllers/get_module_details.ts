@@ -17,8 +17,8 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
     const company_data = await getDataCollection(context, "Company") as CompanyInterface[];
     const module_videos_data = await getDataCollection(context, "ModuleVideo") as ModuleVideoInterface[]
     const videos_data = await getDataCollection(context, "Video") as VideoInterface[]
-    const controls_data = await getDataCollection(context, "ModuleControl") as ModuleControlInterface[]
-    const connectors_data = await getDataCollection(context, "ModuleConnector") as ModuleConnectorInterface[]
+    const controls_data = await getDataCollection(context, "ModuleControl", [{$limit: 256}, {$sort: {"refDes": 1}}]) as ModuleControlInterface[]
+    const connectors_data = await getDataCollection(context, "ModuleConnector", [{$limit: 256}, {$sort: {"refDes": 1}}]) as ModuleConnectorInterface[]
     const features_data = await getDataCollection(context, "ModuleFeature") as ModuleFeatureInterface[]
     const parts_data = await getDataCollection(context, "Part") as PartInterface[]
 

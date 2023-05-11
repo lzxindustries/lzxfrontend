@@ -29,8 +29,8 @@ export default function Patches() {
                 <>
                   <div>
                     <Text size="lead" className="w-full uppercase" color="primary">{patch.name}</Text>
-                    {patch.youtube ? 
-                    <Link to={'https://www.youtube.com/watch?v=' + patch.youtube} target="_blank"><img src={'https://img.youtube.com/vi/' + patch.youtube + '/0.jpg'} /></Link> : '' }
+                    {patch.youtube ? <iframe className="w-full aspect-video" src={"https://www.youtube.com/embed/" + patch.youtube + "?autoplay=1&loop=1"} title={patch.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : '' }
+                   
                     {(patch.gif && !patch.youtube) ? 
                     <ModalImage className="opacity-100 w-full align-middle" smallSrcSet={'/clips/' + patch.gif} hideDownload={true} hideZoom={true} small={'/clips/' + patch.gif} large={'/clips/' + patch.gif} alt={patch.name + ' Clip'} />
                      : '' }
