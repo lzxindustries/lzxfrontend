@@ -8,12 +8,16 @@ import { PartInterface } from "~/models/part";
 import { getDataCollection, getDataDocument } from "~/lib/db.server";
 import { AppLoadContext } from "@shopify/remix-oxygen";
 import { ModulePartView } from "~/views/module_part";
+import { ModuleVideoInterface } from "~/models/module_video";
+import { VideoInterface } from "~/models/video";
 
 export async function getModuleDetails(context: AppLoadContext, filters: any = {}) {
 
     const module_data = await getDataDocument(context, "Module", filters) as ModuleInterface;
     const company_data = await getDataCollection(context, "Company") as CompanyInterface[];
 
+    const module_videos_data = await getDataCollection(context, "ModuleVideo") as ModuleVideoInterface[]
+    const videos_data = await getDataCollection(context, "Video") as VideoInterface[]
     const controls_data = await getDataCollection(context, "ModuleControl") as ModuleControlInterface[]
     const connectors_data = await getDataCollection(context, "ModuleConnector") as ModuleConnectorInterface[]
     const features_data = await getDataCollection(context, "ModuleFeature") as ModuleFeatureInterface[]
@@ -51,7 +55,8 @@ export async function getModuleDetails(context: AppLoadContext, filters: any = {
         },
         connectors: [],
         features: [],
-        controls: []
+        controls: [],
+        videos: []
     }
 
     company_data.map((company) => {
@@ -120,10 +125,24 @@ export async function getModuleDetails(context: AppLoadContext, filters: any = {
             module_view.features.push(
                 {
                     name: feature.name,
-                    description: feature.description
+                    description: feature.description,
+                    topic: feature.topic
                 }
             )
             : null
+    })
+
+    // videos
+    module_videos_data.map((module_video) => {
+        module_video.module == module_data._id ?
+            videos_data.map((video) => {
+                video._id == module_video.video ? module_view.videos.push(
+                    {
+                        name: video.name,
+                        youtube: video.youtube,
+                        gif: video.gif
+                    }) : null
+            }) : null
     })
 
     return module_view
