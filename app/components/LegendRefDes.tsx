@@ -11,7 +11,7 @@ export const LegendRefDes = ({
   ...props
 }: LegendRefDesProps) => {
   return (
-    <div className={(selected ? "font-bold bg-yellow-500 text-black " : "font-normal bg-gray-700 text-white " ) + " text-sm rounded-full text-center w-7 h-7"}>
+    <div className={(selected ? "font-semibold bg-yellow-500 text-black border-black border-2 " : "font-semibold bg-white border-black text-black border-2 " ) + " text-sm rounded-full text-center w-8 h-8"}>
       <span className="inline-block py-1">{refDes}</span>
     </div>
   );

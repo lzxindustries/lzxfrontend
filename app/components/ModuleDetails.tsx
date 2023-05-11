@@ -152,7 +152,7 @@ export function ModuleDetails({
             <>
               <div
                 className={"w-full inline-block align-top cursor-pointer " +
-                  (activeRefDes == conn.refDes ? " font-bold bg-yellow-500 text-black bg-opacity-100" : " font-normal text-gray-400 bg-opacity-0")
+                  (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
                 }
                 onMouseEnter={() => {
                   setHoverRefDes(true)
@@ -174,26 +174,27 @@ export function ModuleDetails({
         }) : null}
         {moduleData.connectors.length > 0 ? <div className="inline-block w-full h-2"></div> : null}
         {moduleData.controls.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Controls</Heading> : null}
-        {moduleData.controls.length > 0 ? moduleData.controls.map((ctrl) => {
+        {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
           return (
             <>
               <div
                 className={"w-full inline-block align-top cursor-pointer " +
-                  (activeRefDes == ctrl.refDes ? "font-bold bg-yellow-500 text-black bg-opacity-100" : " font-normal text-gray-400 bg-opacity-0")
+                  (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
                 }
                 onMouseEnter={() => {
                   setHoverRefDes(true)
-                  setActiveRefDes(ctrl.refDes)
+                  setActiveRefDes(conn.refDes)
                 }}
                 onMouseLeave={() => {
                   setHoverRefDes(false)
                   setActiveRefDes("")
-                }}>
-                <div className="w-1/12 inline-block align-top">
-                  {ctrl.refDes + " "}
+                }}
+              >
+                <div className="w-1/12 inline-block">
+                  {conn.refDes}
                 </div>
-                <div className="w-11/12 inline-block align-top">
-                  {" " + ctrl.name}
+                <div className="w-11/12 inline-block">
+                  {conn.name}
                 </div>
               </div>
             </>)
