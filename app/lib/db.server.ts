@@ -1,8 +1,7 @@
 import { AppLoadContext } from "@shopify/remix-oxygen";
 
-export async function getDataCollection(context: AppLoadContext, collection: string)
+export async function getDataCollection(context: AppLoadContext, collection: string, pipeline: any = [{ $limit: 256 }])
 {
-  const pipeline = [{ $limit: 256 }]
   const body = JSON.stringify({
     collection,
     database: context.env.DATABASE_NAME,

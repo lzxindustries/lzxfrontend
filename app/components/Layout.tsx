@@ -156,7 +156,8 @@ function MenuMobileNav({
   const isPatches = location.pathname.includes('/patches');
   const isGettingStarted = location.pathname.includes('/getting-started');
   const isModules = location.pathname.includes('/modules');
-  const isCatalog = !isPatches && !isGettingStarted && !isModules;
+  const isInStock = location.search.includes('available=true');
+  const isCatalog = !isPatches && !isGettingStarted && !isModules && !isInStock;
 
   return (
     <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
@@ -171,6 +172,19 @@ function MenuMobileNav({
         >
           <Text color={isCatalog ? 'primary' : 'subtle'} as="span" size="copy">
             Catalog
+          </Text>
+        </Link>
+      </span>
+      <span className="block">
+        <Link
+          to="/?available=true"
+          onClick={onClose}
+          className={
+            isInStock ? 'pb-1 border-b -mb-px' : 'pb-1'
+          }
+        >
+          <Text color={isInStock ? 'primary' : 'subtle'} as="span" size="copy">
+            In Stock
           </Text>
         </Link>
       </span>
@@ -322,7 +336,8 @@ function DesktopHeader({
   const isPatches = location.pathname.includes('/patches');
   const isGettingStarted = location.pathname.includes('/getting-started');
   const isModules = location.pathname.includes('/modules');
-  const isCatalog = !isPatches && !isGettingStarted && !isModules;
+  const isInStock = location.search.includes('available=true');
+  const isCatalog = !isPatches && !isGettingStarted && !isModules && !isInStock;
   const isDark = false;
   const params = useParams();
   const { y } = useWindowScroll();
@@ -347,6 +362,13 @@ function DesktopHeader({
             className={isCatalog ? 'pb-1 border-b -mb-px' : 'pb-1'}
           >
             <Text color={isCatalog ? 'primary' : 'subtle'}>Catalog</Text>
+          </Link>
+          <Link
+            to="/?available=true"
+            prefetch="intent"
+            className={isInStock ? 'pb-1 border-b -mb-px' : 'pb-1'}
+          >
+            <Text color={isInStock ? 'primary' : 'subtle'}>In Stock</Text>
           </Link>
 
           <Link
