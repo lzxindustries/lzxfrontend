@@ -6,8 +6,11 @@ import { ModuleView } from "~/views/module";
 import { Section } from "~/components/Text";
 import { Link } from "@remix-run/react";
 import IconLink from "~/components/IconLink";
+import { routeHeaders, CACHE_SHORT } from '~/data/cache';
+export const headers = routeHeaders;
 
 export async function loader({ params, request, context }: LoaderArgs) {
+  
   const modules = await getAllModules(context)
   return (
     {
@@ -33,7 +36,7 @@ export default function Product() {
             <th className="px-2">Sync Input Required?</th>
           </tr>
           {modules.map((module) => {
-            var showModule = module.max_pos_12v_ma > 0 && module.is_hidden == false ? true : false;
+            var showModule = module.max_pos_12v_ma > 0 && module.is_hidden == false && module.hp > 0 ? true : false;
             return (
               showModule ? <>
                 <tr>
