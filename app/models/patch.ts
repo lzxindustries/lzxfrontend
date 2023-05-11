@@ -1,4 +1,5 @@
 export interface PatchInterface {
+  _id: string;
   notes: string;
   name: string;
   diagram: string;

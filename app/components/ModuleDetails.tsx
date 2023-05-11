@@ -36,12 +36,12 @@ export function ModuleDetails({
       <div className="inline-block w-full h-2"></div>
       <div className="inline-block w-full align-top">
         {moduleData.features.map((feature) => {
-          return (
+          return feature.topic == "Main" ? (
             <>
               <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
               <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
               <div className="inline-block w-full h-2"></div>
-            </>)
+            </>) : null
         })}
       </div>
       <div className="inline-block w-1/2 align-top">
@@ -106,7 +106,14 @@ export function ModuleDetails({
           }
         </ul>
       </div>
+      {/* <div className="inline-block w-full h-2"></div>
+      {
+        moduleData.videos.map((video) => {
+          return video.youtube ? <iframe className="w-full aspect-video" src={"https://www.youtube.com/embed/" + video.youtube} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : null
+        })
+      } */}
       <div className="inline-block w-full h-2"></div>
+      <Heading as="h2" className="uppercase">Connectors & Controls</Heading>
       <div className="inline-block w-1/2 align-top">
         <Heading as="h3" format size="copy" className="uppercase">Legend</Heading>
         <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
@@ -122,7 +129,7 @@ export function ModuleDetails({
               }}
               onMouseLeave={() => {
                 setHoverRefDes(false)
-                
+
               }}
             ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
             </div>
@@ -138,7 +145,7 @@ export function ModuleDetails({
               }}
               onMouseLeave={() => {
                 setHoverRefDes(false)
-                
+
               }}
             ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
             </div>
@@ -201,6 +208,29 @@ export function ModuleDetails({
         }) : null}
       </div>
       <div className="inline-block w-full h-2"></div>
+
+      <Heading as="h2" className="uppercase">Patching Tips</Heading>
+      <div className="inline-block w-full align-top">
+        {moduleData.features.map((feature) => {
+          return feature.topic == "Patch" ? (
+            <>
+              <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
+              <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
+              <div className="inline-block w-full h-2"></div>
+            </>) : null
+        })}
+      </div>
+      <Heading as="h2" className="uppercase">System Building Tips</Heading>
+      <div className="inline-block w-full align-top">
+        {moduleData.features.map((feature, it) => {
+          return feature.topic == "System" ? (
+            <>
+              <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
+              <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
+              <div className="inline-block w-full h-2"></div>
+            </>) : null
+        })}
+      </div>
     </div>
   )
 };

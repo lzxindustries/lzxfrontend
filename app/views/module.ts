@@ -2,6 +2,7 @@ import { ModuleConnectorView } from "./module_connector";
 import { ModuleControlView } from "./module_control";
 import { ModuleFeatureView } from "./module_feature";
 import { CompanyView } from "./company";
+import { ModuleVideoView } from "./module_video";
 
 export type ModuleView = {
   id: string;
@@ -32,4 +33,5 @@ export type ModuleView = {
   connectors: Array<ModuleConnectorView>;
   controls: Array<ModuleControlView>;
   features: Array<ModuleFeatureView>;
+  videos: Array<ModuleVideoView>;
 }
