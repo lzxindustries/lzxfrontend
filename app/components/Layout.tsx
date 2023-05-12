@@ -35,6 +35,14 @@ import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file 
 import FooterMenu from './FooterMenu'
 import NewsletterSignup from './NewsletterSignup'
 import IconLink from './IconLink';
+import { FaInstagram } from 'react-icons/fa';
+import { FaDiscord } from 'react-icons/fa';
+import { FaTwitch } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import { Footer } from './Footer'
+import { Header } from './Header'
+
 console.log(logo); // /logo.84287d09.png
 console.log(logodark); // /logo.84287d09.png
 
@@ -45,6 +53,7 @@ export function Layout({
   children: React.ReactNode;
   layout: LayoutData;
 }) {
+  const location = useLocation()
   return (
     <>
       <div className="flex flex-col min-h-screen">
@@ -53,63 +62,63 @@ export function Layout({
             Skip to content
           </a>
         </div>
-        <Header
-          title={layout?.shop.name ?? 'LZX Industries'}
-          menu={layout?.headerMenu}
+        <Header cartCount={0} url={location.pathname + "/" + location.search}
+          // title={layout?.shop.name ?? 'LZX Industries'}
+          // menu={layout?.headerMenu}
         />
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
       </div>
-      <Footer menu={layout?.footerMenu} />
+      <Footer />
     </>
   );
 }
 
-function Header({ title, menu }: { title: string; menu?: EnhancedMenu }) {
-  const isHome = useIsHomePath();
+// function Header({ title, menu }: { title: string; menu?: EnhancedMenu }) {
+//   const isHome = useIsHomePath();
 
-  const {
-    isOpen: isCartOpen,
-    openDrawer: openCart,
-    closeDrawer: closeCart,
-  } = useDrawer();
+//   const {
+//     isOpen: isCartOpen,
+//     openDrawer: openCart,
+//     closeDrawer: closeCart,
+//   } = useDrawer();
 
-  const {
-    isOpen: isMenuOpen,
-    openDrawer: openMenu,
-    closeDrawer: closeMenu,
-  } = useDrawer();
+//   const {
+//     isOpen: isMenuOpen,
+//     openDrawer: openMenu,
+//     closeDrawer: closeMenu,
+//   } = useDrawer();
 
-  const addToCartFetchers = useCartFetchers('ADD_TO_CART');
+//   const addToCartFetchers = useCartFetchers('ADD_TO_CART');
 
-  // toggle cart drawer when adding to cart
-  useEffect(() => {
-    if (isCartOpen || !addToCartFetchers.length) return;
-    openCart();
-  }, [addToCartFetchers, isCartOpen, openCart]);
+//   // toggle cart drawer when adding to cart
+//   useEffect(() => {
+//     if (isCartOpen || !addToCartFetchers.length) return;
+//     openCart();
+//   }, [addToCartFetchers, isCartOpen, openCart]);
 
-  return (
-    <>
-      <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
-      {menu && (
-        <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu} />
-      )}
-      <DesktopHeader
-        isHome={isHome}
-        title={title}
-        menu={menu}
-        openCart={openCart}
-      />
-      <MobileHeader
-        isHome={isHome}
-        title={title}
-        openCart={openCart}
-        openMenu={openMenu}
-      />
-    </>
-  );
-}
+//   return (
+//     <>
+//       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
+//       {menu && (
+//         <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu} />
+//       )}
+//       <DesktopHeader
+//         isHome={isHome}
+//         title={title}
+//         menu={menu}
+//         openCart={openCart}
+//       />
+//       <MobileHeader
+//         isHome={isHome}
+//         title={title}
+//         openCart={openCart}
+//         openMenu={openMenu}
+//       />
+//     </>
+//   );
+// }
 
 function CartDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [root] = useMatches();
@@ -528,37 +537,3 @@ function Badge({
   );
 }
 
-function Footer({ menu }: { menu?: EnhancedMenu }) {
-  const isHome = useIsHomePath();
-  const itemsCount = menu
-    ? menu?.items?.length + 1 > 4
-      ? 4
-      : menu?.items?.length + 1
-    : [];
-
-  return (
-    // <Section
-    //   divider={isHome ? 'none' : 'top'}
-    //   as="footer"
-    //   role="contentinfo"
-    //   className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
-    //     bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-    // >
-    <Section>
-      {/* <div className="grid grid-flow-row"> */}
-      <div className="inline-block w-128"><FooterMenu /></div>
-      <div className="inline-block w-128"><NewsletterSignup /></div>
-      <div className="inline-block w-128">
-        <Text size="lead">Contact Us</Text>
-        <div className="grid gap-4 pt-4">
-          <div className="grid gap-4"> <Link target="_blank" to="mailto:sales@lzxindustries.net"><Text className="inline-block align-middle">sales@lzxindustries.net </Text></Link></div>
-          <div className="grid gap-4"> <Link target="_blank" to="mailto:support@lzxindustries.net"><Text className="inline-block align-middle">support@lzxindustries.net </Text></Link></div>
-        </div></div>
-      <div className="inline-block w-128"><CountrySelector /></div>
-      {/* </div> */}
-
-      <div className={`self-end pt-8 opacity-50 col-span-4`}> &copy; {new Date().getFullYear()} LZX Industries LLC</div>
-
-    </Section>
-  );
-}

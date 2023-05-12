@@ -22,18 +22,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    variant: 'primary'
+    variant: 'primary',
+    children: ["Button"]
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary'
+    variant: 'secondary',
+    children: ["Button"]
   },
 };
 
 export const Inline: Story = {
   args: {
-    variant: 'inline'
+    variant: 'inline',
+    children: ["Button"]
   },
 };
