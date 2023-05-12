@@ -5,7 +5,7 @@ import {Blog} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section} from '~/components';
 import {seoPayload} from '~/lib/seo.server';
-import styles from '../styles/custom-font.css';
+// import styles from '../styles/custom-font.css';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
 
 const BLOG_HANDLE = 'journal';
