@@ -1,8 +1,5 @@
 import { forwardRef } from 'react';
 import { Link } from '@remix-run/react';
-import clsx from 'clsx';
-
-import { missingClass } from '~/lib/utils';
 
 export const Button = forwardRef(
   (
@@ -23,13 +20,10 @@ export const Button = forwardRef(
   ) => {
     const Component = props?.to ? Link : as;
 
-    const baseButtonClasses =
-      'inline-block rounded font-medium text-center py-3 px-6';
-
     const variants = {
-      primary: `${baseButtonClasses} bg-primary text-contrast`,
-      secondary: `${baseButtonClasses} border border-primary/10 bg-contrast text-primary`,
-      inline: 'border-b border-primary/10 leading-none pb-1',
+      primary: `btn btn-primary`,
+      secondary: `btn btn-secondary`,
+      inline: 'btn btn-link',
     };
 
     const widths = {
@@ -37,17 +31,9 @@ export const Button = forwardRef(
       full: 'w-full',
     };
 
-    const styles = clsx(
-      missingClass(className, 'bg-') && variants[variant],
-      missingClass(className, 'w-') && widths[width],
-      className,
-    );
-
     return (
       <Component
-        // @todo: not supported until react-router makes it into Remix.
-        // preventScrollReset={true}
-        className={styles}
+        className={className + ' ' + variants[variant] + ' ' + widths[width]}
         {...props}
         ref={ref}
       />

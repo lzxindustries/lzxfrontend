@@ -8,7 +8,7 @@
       url('../../public/fonts/GoldplayAlt-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -17,7 +17,7 @@
       url('../../public/fonts/GoldplayAlt-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -26,7 +26,7 @@
       url('../../public/fonts/GoldplayAlt-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -35,7 +35,7 @@
       url('../../public/fonts/GoldplayAlt-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -44,7 +44,7 @@
       url('../../public/fonts/GoldplayAlt-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -53,7 +53,7 @@
       url('../../public/fonts/GoldplayAlt-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -62,7 +62,7 @@
       url('../../public/fonts/GoldplayAlt-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -71,7 +71,7 @@
       url('../../public/fonts/GoldplayAlt-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -80,7 +80,7 @@
       url('../../public/fonts/GoldplayAlt-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -89,7 +89,7 @@
       url('../../public/fonts/GoldplayAlt-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -98,7 +98,7 @@
       url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -107,7 +107,7 @@
       url('../../public/fonts/GoldplayAlt-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -116,7 +116,7 @@
       url('../../public/fonts/GoldplayAlt-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -125,7 +125,7 @@
       url('../../public/fonts/Goldplay-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -134,7 +134,7 @@
       url('../../public/fonts/GoldplayAlt-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -143,7 +143,7 @@
       url('../../public/fonts/Goldplay-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -152,7 +152,7 @@
       url('../../public/fonts/Goldplay-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -161,7 +161,7 @@
       url('../../public/fonts/Goldplay-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -170,7 +170,7 @@
       url('../../public/fonts/Goldplay-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -179,7 +179,7 @@
       url('../../public/fonts/Goldplay-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -188,7 +188,7 @@
       url('../../public/fonts/Goldplay-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -197,7 +197,7 @@
       url('../../public/fonts/Goldplay-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -206,7 +206,7 @@
       url('../../public/fonts/Goldplay-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -215,7 +215,7 @@
       url('../../public/fonts/Goldplay-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -224,7 +224,7 @@
       url('../../public/fonts/Goldplay-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -233,7 +233,7 @@
       url('../../public/fonts/Goldplay-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -242,7 +242,7 @@
       url('../../public/fonts/Goldplay-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
 @font-face {
@@ -251,52 +251,72 @@
       url('../../public/fonts/Goldplay-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
-  font-display: swap;
+  font-display: initial;
 }
 
+@layer base{
+  /* h1 {
+    @apply text-2xl font-black uppercase
+  }
+  
+  h2 {
+    @apply text-xl font-bold uppercase
+  }
+  
+  h3 {
+    @apply text-lg font-semibold uppercase
+  }
+
+  h4 {
+    @apply text-base font-medium uppercase
+  }
+
+  p {
+    @apply text-base font-normal
+  } */
+  
+}
 
 /* Tokens */
-:root {
-  --color-primary: 20 20 20; /* Text, buttons, etc. */
-  --color-contrast: 250 250 249; /* Backgrounds, borders, etc. */
-  --color-accent: 191 72 0; /* Labels like "On sale" */
-  --font-size-fine: 0.75rem; /* text-xs */
-  --font-size-copy: 1rem; /* text-base */
-  --font-size-lead: 1.125rem; /* text-lg */
-  --font-size-heading: 2rem; /* text-2xl */
-  --font-size-display: 3rem; /* text-4xl */
-  --color-shop-pay: #5a31f4;
-  --shop-pay-button--width: 100%; /* Sets the width for the shop-pay-button web component */
-  --height-nav: 3rem;
+/* :root { */
+  /* --color-primary: 20 20 20; 
+  --color-contrast: 250 250 249; 
+  --color-accent: 191 72 0; Labels like "On sale" 
+  --font-size-fine: 0.75rem; 
+  --font-size-copy: 1rem; 
+  --font-size-lead: 1.125rem;
+  --font-size-heading: 2rem;
+  --font-size-display: 3rem;*/
+  /* --height-nav: 3rem;
   --screen-height: 100vh;
-  --screen-height-dynamic: 100vh;
+  --screen-height-dynamic: 100vh; */
 
-  @media (min-width: 32em) {
+  /* @media (min-width: 32em) {
     --height-nav: 4rem;
-  }
-  @media (min-width: 48em) {
+  } */
+  /* @media (min-width: 48em) {
     --height-nav: 6rem;
-    --font-size-heading: 2.25rem; /* text-4xl */
-    --font-size-display: 3.75rem; /* text-6xl */
-  }
-  @supports (height: 100svh) {
+    --font-size-heading: 2.25rem;
+    --font-size-display: 3.75rem;
+  } */
+  /* @supports (height: 100svh) {
     --screen-height: 100svh;
   }
   @supports (height: 100dvh) {
     --screen-height-dynamic: 100dvh;
-  }
-}
+  } */
+/* } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: 250 250 250;
     --color-contrast: 50 50 50;
     --color-accent: 235 86 40;
   }
-}
+} */
 
-@layer base {
-  * {
+/* @layer base { */
+  /* * {
     font-variant-ligatures: none;
   }
 
@@ -306,7 +326,7 @@
 
   html {
     scroll-padding-top: 10rem;
-  }
+  } */
 
   /* model-viewer::part(default-progress-mask) {
     display: none;
@@ -316,7 +336,7 @@
     display: none;
   } */
 
-  input[type='search']::-webkit-search-decoration,
+  /* input[type='search']::-webkit-search-decoration,
   input[type='search']::-webkit-search-cancel-button,
   input[type='search']::-webkit-search-results-button,
   input[type='search']::-webkit-search-results-decoration {
@@ -325,7 +345,7 @@
 
   a.active {
     @apply border-b;
-  }
+  } */
 
   /* .prose {
     h1,
@@ -340,7 +360,7 @@
     }
   } */
 
-  .docs {
+  /* .docs {
     h1 {
       @apply text-2xl font-black py-1
     }
@@ -359,21 +379,20 @@
     ul {
       @apply text-copy list-disc px-6 py-1
     }
-  }
-  
-}
+  } */
+/* } */
 
-@keyframes fadeInAnimation {
+/* @keyframes fadeInAnimation {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
+  } */
+/* } */
 
-@layer utilities {
-  .fadeIn {
+/* @layer utilities { */
+  /* .fadeIn {
     opacity: 0;
     animation: fadeInAnimation ease 500ms forwards;
   }
@@ -401,12 +420,12 @@
       @apply max-h-full p-2;
     }
  
-    /* -webkit-animation:330s scroll infinite linear;
+    -webkit-animation:330s scroll infinite linear;
     -moz-animation:330s scroll infinite linear;
     -o-animation:330s scroll infinite linear;
     -ms-animation:330s scroll infinite linear;
-    animation:330s scroll infinite linear; */
-  }
+    animation:330s scroll infinite linear; 
+  } */
   
   
 /* @-webkit-keyframes scroll{
@@ -454,7 +473,7 @@
       box-shadow: 0.5px 0.5px 0px 0.5px rgb(var(--color-contrast));
     }
   } */
-}
+/* } */
 
 
 

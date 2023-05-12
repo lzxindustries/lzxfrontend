@@ -29,6 +29,7 @@
     "@storybook/addon-styling": "^1.0.5",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
+    "daisyui": "^2.51.6",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "graphviz-react": "^1.2.5",
