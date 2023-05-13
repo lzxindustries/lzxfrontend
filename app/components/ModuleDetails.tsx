@@ -186,10 +186,10 @@ export function ModuleDetails({
                     setHoverRefDes(false)
                   }}
                 >
-                  <div className="w-1/12 inline-block">
+                  <div className="w-1/5 inline-block">
                     {conn.refDes}
                   </div>
-                  <div className="w-11/12 inline-block">
+                  <div className="w-4/5 inline-block">
                     {conn.name} {conn.is_input ? 'Input' : 'Output'}
                   </div>
                 </div>
@@ -210,10 +210,10 @@ export function ModuleDetails({
                   onMouseLeave={() => {
                     setHoverRefDes(false)
                   }}>
-                  <div className="w-1/12 inline-block">
+                  <div className="w-1/5 inline-block">
                     {conn.refDes}
                   </div>
-                  <div className="w-11/12 inline-block">
+                  <div className="w-4/5 inline-block">
                     {conn.name}
                   </div>
                 </div>
