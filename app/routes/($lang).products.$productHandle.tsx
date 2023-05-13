@@ -135,7 +135,9 @@ export default function Product() {
   const isModule = moduleData.hp > 0 ? true : false;
 
   return (
-    <ModuleDetails moduleData={moduleData} />
+    <ModuleDetails moduleData={moduleData}>
+    <ProductForm />
+    </ModuleDetails>
   );
 }
 
