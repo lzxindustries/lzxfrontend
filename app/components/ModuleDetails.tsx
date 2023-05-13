@@ -1,8 +1,6 @@
-import { Heading, Text } from './Text'
-import { ModuleView } from '~/views/module';
-import { IconTV } from './Icon';
-import { LegendRefDes } from './LegendRefDes';
 import { useState } from 'react';
+import { ModuleView } from '~/views/module';
+import { ModuleLegendPanel } from './ModuleLegendPanel';
 
 export function ModuleDetails({
   moduleData
@@ -10,19 +8,9 @@ export function ModuleDetails({
   moduleData: ModuleView;
 }) {
   const [activeRefDes, setActiveRefDes] = useState("")
-  const pixelsPerHP = 12;
-  const hpScale = 5.08; // millimeters
-  const pixelsPerMm = pixelsPerHP / hpScale;
-  const pixelsPerInch = pixelsPerHP * 5;
-  const frontpanelHeight = 128.5 * pixelsPerMm; // millimeters
-  const frontpanelWidth = moduleData.hp * pixelsPerHP;
-  const xCenter = frontpanelWidth / 2;
-  const yCenter = frontpanelHeight / 2;
-
   var hasMainFeatures = false
   var hasPatchFeatures = false
   var hasSystemFeatures = false
-
   {
     moduleData.features.map((feature) => {
       feature.topic == "Main" ? hasMainFeatures = true : null
@@ -32,14 +20,14 @@ export function ModuleDetails({
   }
   
   return (
-    <div className="flex flex-wrap flex-row justify-center">
+    <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div className="basis-[100%] md:basis-1/2 card-image flex flex-row justify-center">
         {/* <div className={"bg-opacity-100 bg-contain bg-center"} style={{backgroundImage: "url('/images/" + moduleData.frontpanel +"')"}}></div> */}
         {/* <div className="p-4 h-[500px]"><img width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.frontpanel} /></div> */}
         <div className="px-8 py-4"><img style={{width: "auto", height: "85vh"}} src={"/images/" + moduleData.frontpanel} /></div>
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
-        <article className="prose max-w-none px-8">
+        <article key="ModuleDetailsArticle" className="prose max-w-none px-8">
           <h1>{moduleData.name}</h1> 
           {/* <h2>{moduleData.subtitle}</h2> */}
           <p>{moduleData.description}</p>
@@ -123,43 +111,19 @@ export function ModuleDetails({
               </ul>
             </div>
           {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
-            <div className="basis-[100%] md:basis-1/2">
+            <div className="basis-[100%] lg:basis-1/2">
               <h3>Legend</h3>
-              <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
-                <img className="" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.legend} />
-                {moduleData.connectors.map((obj) => {
-                  const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
-                  const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
-                  return <div style={{ top: yPos, left: xPos }}
-                    className="cursor-pointer absolute"
-                    onMouseEnter={() => {
-                      setActiveRefDes(obj.refDes)
-                    }}
-                  ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
-                  </div>
-                })}
-                {moduleData.controls.map((obj) => {
-                  const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
-                  const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
-                  return <div style={{ top: yPos, left: xPos }}
-                    className="cursor-pointer absolute"
-                    onMouseEnter={() => {
-                      setActiveRefDes(obj.refDes)
-                    }}
-                  ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
-                  </div>
-                })}
-              </div>
+              <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={20} />
             </div>
             }
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
-            <div className="basis-[100%] md:basis-1/2">
+            <div className="basis-[100%] lg:basis-1/2">
               {moduleData.connectors.length > 0 ? <h3>Connectors</h3> : null}
               {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
                 return (
                   
                     <div
-                      className={"cursor-pointer " +
+                      className={"flex flex-row cursor-pointer " +
                         (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
                       }
                       onMouseEnter={() => {
@@ -167,9 +131,7 @@ export function ModuleDetails({
                       }}
                     >
                       
-                        {conn.refDes} {conn.name} {conn.is_input ? 'Input' : 'Output'}
-                      
-                      
+                      <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name} {conn.is_input ? 'Input' : 'Output'}</div>
                     </div>
                   )
               }) : null}
@@ -177,13 +139,13 @@ export function ModuleDetails({
               {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
                 return (
                   
-                    <div className={"cursor-pointer " +
+                    <div className={"flex flex-row cursor-pointer " +
                         (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
                       }
                       onMouseEnter={() => {
                         setActiveRefDes(conn.refDes)
                       }}>
-                        {conn.refDes} {conn.name}
+                      <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name}</div>
                     </div>
                   )
               }) : null}
