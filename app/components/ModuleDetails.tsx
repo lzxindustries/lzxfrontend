@@ -3,8 +3,10 @@ import { ModuleView } from '~/views/module';
 import { ModuleLegendPanel } from './ModuleLegendPanel';
 
 export function ModuleDetails({
+  children,
   moduleData
 }: {
+  children?: React.ReactNode;
   moduleData: ModuleView;
 }) {
   const [activeRefDes, setActiveRefDes] = useState("")
@@ -28,8 +30,12 @@ export function ModuleDetails({
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <article key="ModuleDetailsArticle" className="prose max-w-none px-8">
-          <h1>{moduleData.name}</h1> 
-          {/* <h2>{moduleData.subtitle}</h2> */}
+          
+          <div className="flex flex-row flex-wrap w-full"><div className="w-[1/2]"><h1>{moduleData.name}</h1>
+          {/* <h4 className="top-0">{moduleData.subtitle}</h4> */}
+          </div>
+          <div className="w-[1/2]">{children}</div></div>
+          
           <p>{moduleData.description}</p>
           {hasMainFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "Main" ? (
@@ -111,13 +117,13 @@ export function ModuleDetails({
               </ul>
             </div>
           {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
-            <div className="basis-[100%] lg:basis-1/2">
+            <div className="basis-[100%] xl:basis-1/2 z-0">
               <h3>Legend</h3>
               <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={20} />
             </div>
             }
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
-            <div className="basis-[100%] lg:basis-1/2">
+            <div className="basis-[100%] xl:basis-1/2">
               {moduleData.connectors.length > 0 ? <h3>Connectors</h3> : null}
               {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
                 return (
