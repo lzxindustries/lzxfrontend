@@ -138,7 +138,7 @@ export default function Product() {
     <>
       <Section className="px-0 md:px-8 lg:px-12">
         <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
-        {isModule ? <ModuleGallery module={moduleData} /> : <ProductGallery media={media.nodes} className="w-full lg:col-span-1"/>
+        {isModule ? <ModuleGallery module={moduleData} /> : <ProductGallery media={media.nodes} className="w-full"/>
         }
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
@@ -146,9 +146,9 @@ export default function Product() {
             <div className="inline-block w-1/2 align-top py-4">
               <div className="inline-block align-top w-full">
                 {/* <Text size="lead">{isModule ? moduleData.brand : vendor}</Text> */}
-                <Heading as="h1" className="uppercase">
+                <h1>
                   {isModule ? moduleData.name : title}
-                </Heading>
+                </h1>
                 <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleData.subtitle : null}</Text>
               </div>
             </div>

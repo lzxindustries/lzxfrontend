@@ -29,7 +29,7 @@ export default function Patches() {
                 <>
                   <div>
                     <Text size="lead" className="w-full uppercase" color="primary">{patch.name}</Text>
-                    {patch.youtube ? <iframe className="w-full aspect-video" src={"https://www.youtube.com/embed/" + patch.youtube + "?autoplay=1&loop=1"} title={patch.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : '' }
+                    {patch.youtube ? <iframe className="w-full aspect-video" src={"https://www.youtube.com/embed/" + patch.youtube + "?loop=1"} title={patch.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : '' }
                    
                     {(patch.gif && !patch.youtube) ? 
                     <ModalImage className="opacity-100 w-full align-middle" smallSrcSet={'/clips/' + patch.gif} hideDownload={true} hideZoom={true} small={'/clips/' + patch.gif} large={'/clips/' + patch.gif} alt={patch.name + ' Clip'} />
@@ -83,7 +83,7 @@ export default function Patches() {
                       </p>)
                      */}
                     {
-                      patch.diagram && <ModalImage className="opacity-100 w-full align-middle" smallSrcSet={'/diagrams/' + patch.diagram} hideDownload={true} hideZoom={true} small={'/diagrams/' + patch.diagram} large={'/diagrams/' + patch.diagram} alt={patch.name + ' Patch Diagram'} />
+                      patch.diagram && <a href={'/diagrams/' + patch.diagram} target="_blank"><img src={'/diagrams/' + patch.diagram} alt={patch.name + ' Patch Diagram'} /></a>
                     }
                     {
                       patch.notes && <Text size="fine" color="subtle" format>{patch.notes}</Text>

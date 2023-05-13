@@ -5,7 +5,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Black.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Black.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: initial;
@@ -14,7 +14,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-BlackIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-BlackIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: initial;
@@ -23,7 +23,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Bold.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Bold.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -32,7 +32,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-BoldIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-BoldIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -41,7 +41,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Light.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Light.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: initial;
@@ -50,7 +50,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-LightIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-LightIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: initial;
@@ -59,7 +59,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Medium.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Medium.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -68,7 +68,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Regular.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Regular.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: initial;
@@ -77,7 +77,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-MediumIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-MediumIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -86,7 +86,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-RegularIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-RegularIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: initial;
@@ -95,7 +95,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-display: initial;
@@ -104,7 +104,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-SemiBold.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-SemiBold.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: initial;
@@ -113,7 +113,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-Thin.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-Thin.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: initial;
@@ -122,7 +122,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Black.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Black.woff') format('woff');
+    url('../../public/fonts/Goldplay-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: initial;
@@ -131,7 +131,7 @@
 @font-face {
   font-family: 'GoldplayAlt';
   src: url('../../public/fonts/GoldplayAlt-ThinIt.woff2') format('woff2'),
-      url('../../public/fonts/GoldplayAlt-ThinIt.woff') format('woff');
+    url('../../public/fonts/GoldplayAlt-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: initial;
@@ -140,7 +140,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Bold.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Bold.woff') format('woff');
+    url('../../public/fonts/Goldplay-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -149,7 +149,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-BoldIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-BoldIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -158,7 +158,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-BlackIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-BlackIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: initial;
@@ -167,7 +167,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Light.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Light.woff') format('woff');
+    url('../../public/fonts/Goldplay-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: initial;
@@ -176,7 +176,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Medium.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Medium.woff') format('woff');
+    url('../../public/fonts/Goldplay-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -185,7 +185,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-LightIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-LightIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: initial;
@@ -194,7 +194,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-MediumIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-MediumIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -203,7 +203,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Regular.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Regular.woff') format('woff');
+    url('../../public/fonts/Goldplay-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: initial;
@@ -212,7 +212,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-RegularIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-RegularIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: initial;
@@ -221,7 +221,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-SemiBold.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-SemiBold.woff') format('woff');
+    url('../../public/fonts/Goldplay-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: initial;
@@ -230,7 +230,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-Thin.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-Thin.woff') format('woff');
+    url('../../public/fonts/Goldplay-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: initial;
@@ -239,7 +239,7 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-SemiBoldIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-SemiBoldIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-display: initial;
@@ -248,48 +248,48 @@
 @font-face {
   font-family: 'Goldplay';
   src: url('../../public/fonts/Goldplay-ThinIt.woff2') format('woff2'),
-      url('../../public/fonts/Goldplay-ThinIt.woff') format('woff');
+    url('../../public/fonts/Goldplay-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: initial;
 }
 
-@layer base{
-  /* h1 {
-    @apply text-2xl font-black uppercase
+@layer base {
+  h1 {
+    @apply text-3xl font-black uppercase
   }
-  
+
   h2 {
-    @apply text-xl font-bold uppercase
+    @apply text-xl font-bold 
   }
-  
+
   h3 {
-    @apply text-lg font-semibold uppercase
+    @apply text-lg font-semibold 
   }
 
   h4 {
-    @apply text-base font-medium uppercase
+    @apply text-base font-medium 
   }
 
   p {
     @apply text-base font-normal
-  } */
-  
+  }
+
 }
 
 /* Tokens */
-/* :root { */
-  /* --color-primary: 20 20 20; 
-  --color-contrast: 250 250 249; 
-  --color-accent: 191 72 0; Labels like "On sale" 
-  --font-size-fine: 0.75rem; 
-  --font-size-copy: 1rem; 
+:root {
+  /* --color-primary: 20 20 20;  */
+  /* --color-contrast: 250 250 249;  */
+  /* --color-accent: 191 72 0; Labels like "On sale"  */
+  --font-size-fine: 0.75rem;
+  --font-size-copy: 1rem;
   --font-size-lead: 1.125rem;
   --font-size-heading: 2rem;
-  --font-size-display: 3rem;*/
-  /* --height-nav: 3rem;
+  --font-size-display: 3rem;
+  /* --height-nav: 3rem; */
   --screen-height: 100vh;
-  --screen-height-dynamic: 100vh; */
+  --screen-height-dynamic: 100vh;
 
   /* @media (min-width: 32em) {
     --height-nav: 4rem;
@@ -299,24 +299,26 @@
     --font-size-heading: 2.25rem;
     --font-size-display: 3.75rem;
   } */
-  /* @supports (height: 100svh) {
+  @supports (height: 100svh) {
     --screen-height: 100svh;
   }
+
   @supports (height: 100dvh) {
     --screen-height-dynamic: 100dvh;
-  } */
-/* } */
+  }
 
-/* @media (prefers-color-scheme: dark) {
+  /* } */
+
+  /* @media (prefers-color-scheme: dark) {
   :root {
     --color-primary: 250 250 250;
     --color-contrast: 50 50 50;
     --color-accent: 235 86 40;
-  }
-} */
+  }*/
+}
 
 /* @layer base { */
-  /* * {
+/* * {
     font-variant-ligatures: none;
   }
 
@@ -328,7 +330,7 @@
     scroll-padding-top: 10rem;
   } */
 
-  /* model-viewer::part(default-progress-mask) {
+/* model-viewer::part(default-progress-mask) {
     display: none;
   }
 
@@ -336,7 +338,7 @@
     display: none;
   } */
 
-  /* input[type='search']::-webkit-search-decoration,
+/* input[type='search']::-webkit-search-decoration,
   input[type='search']::-webkit-search-cancel-button,
   input[type='search']::-webkit-search-results-button,
   input[type='search']::-webkit-search-results-decoration {
@@ -347,7 +349,7 @@
     @apply border-b;
   } */
 
-  /* .prose {
+/* .prose {
     h1,
     h2,
     h3,
@@ -360,7 +362,7 @@
     }
   } */
 
-  /* .docs {
+/* .docs {
     h1 {
       @apply text-2xl font-black py-1
     }
@@ -382,23 +384,25 @@
   } */
 /* } */
 
-/* @keyframes fadeInAnimation {
+@keyframes fadeInAnimation {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
-  } */
-/* } */
+  }
+}
 
-/* @layer utilities { */
-  /* .fadeIn {
+@layer utilities {
+  .fadeIn {
     opacity: 0;
     animation: fadeInAnimation ease 500ms forwards;
   }
 
   .hiddenScroll {
     scrollbar-width: none;
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -412,54 +416,57 @@
     background-repeat: repeat;
     background-image: url("data:image/svg+xml,%3Csvg id='patternId' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='a' patternUnits='userSpaceOnUse' width='26.55' height='25' patternTransform='scale(1) rotate(0)'%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='hsla(0, 0%25, 100%25, 0)'/%3E%3Cpath d='M0 10.86v3.22c2.7.08 4.9 2.31 4.9 5.03V25h3.2v-5.9c0-4.48-3.63-8.16-8.1-8.24ZM18.17 25h3.21v-5.9a5.05 5.05 0 0 1 5.03-5.02h.14v-3.21h-.14a8.27 8.27 0 0 0-8.24 8.24zm3.21-25h-3.21v1.64a5.05 5.05 0 0 1-5.03 5.02A5.05 5.05 0 0 1 8.1 1.64V0H4.89v1.64c0 4.53 3.7 8.24 8.25 8.24 4.53 0 8.24-3.7 8.24-8.24z' stroke-width='1' stroke='none' fill='hsla(259, 0%25, 52%25, 0.11)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='800%25' height='800%25' transform='translate(0,0)' fill='url(%23a)'/%3E%3C/svg%3E");
     @apply relative flex items-center justify-center overflow-clip rounded;
+
     &::before {
       content: ' ';
       @apply absolute top-0 left-0 z-10 block h-full rounded shadow-border;
     }
+
     img {
       @apply max-h-full p-2;
     }
- 
-    -webkit-animation:330s scroll infinite linear;
+
+    /* -webkit-animation:330s scroll infinite linear;
     -moz-animation:330s scroll infinite linear;
     -o-animation:330s scroll infinite linear;
     -ms-animation:330s scroll infinite linear;
-    animation:330s scroll infinite linear; 
-  } */
-  
-  
-/* @-webkit-keyframes scroll{
-  100%{
-    background-position:-2400px -2400px;
+    animation:330s scroll infinite linear; */
   }
-}
 
-@-moz-keyframes scroll{
-  100%{
-    background-position:-2400px -2400px;
+
+  @-webkit-keyframes scroll {
+    100% {
+      background-position: -2400px -2400px;
+    }
   }
-}
 
-@-o-keyframes scroll{
-  100%{
-    background-position:-2400px -2400px;
+  @-moz-keyframes scroll {
+    100% {
+      background-position: -2400px -2400px;
+    }
   }
-}
 
-@-ms-keyframes scroll{
-  100%{
-    background-position:-2400px -2400px;
+  @-o-keyframes scroll {
+    100% {
+      background-position: -2400px -2400px;
+    }
   }
-}
 
-@keyframes scroll{
-  100%{
-    background-position:-2400px -2400px;
+  @-ms-keyframes scroll {
+    100% {
+      background-position: -2400px -2400px;
+    }
   }
-} */
 
-  /* .strike { 
+  @keyframes scroll {
+    100% {
+      background-position: -2400px -2400px;
+    }
+  }
+
+  .strike {
     position: relative;
+
     &::before {
       content: '';
       display: block;
@@ -472,13 +479,13 @@
       background: rgb(var(--color-primary));
       box-shadow: 0.5px 0.5px 0px 0.5px rgb(var(--color-contrast));
     }
-  } */
-/* } */
+  }
+}
 
 
 
-/* @layer components {
-  .article {
+@layer components {
+  /* .article {
     h2,
     h3,
     h4,
@@ -503,9 +510,9 @@
         width: calc(100% + 8rem);
       }
     }
-  }
+  } */
 
   .swimlane {
     @apply grid w-full snap-x snap-mandatory scroll-px-6 grid-flow-col justify-start gap-4 overflow-x-scroll px-6 pb-4;
   }
-} */
+}
