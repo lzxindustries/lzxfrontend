@@ -39,7 +39,7 @@ export function ModuleDetails({
         <div className="px-8 py-4"><img style={{width: "auto", height: "85vh"}} src={"/images/" + moduleData.frontpanel} /></div>
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
-        <article className="prose px-8">
+        <article className="prose max-w-none px-8">
           <h1>{moduleData.name}</h1> 
           {/* <h2>{moduleData.subtitle}</h2> */}
           <p>{moduleData.description}</p>
