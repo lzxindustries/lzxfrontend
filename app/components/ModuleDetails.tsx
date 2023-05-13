@@ -12,7 +12,7 @@ export function ModuleDetails({
 }) {
   const [activeRefDes, setActiveRefDes] = useState("")
   const [isHoverRefDes, setHoverRefDes] = useState(false)
-  const pixelsPerHP = 25;
+  const pixelsPerHP = 18;
   const hpScale = 5.08; // millimeters
   const pixelsPerMm = pixelsPerHP / hpScale;
   const pixelsPerInch = pixelsPerHP * 5;
@@ -108,7 +108,7 @@ export function ModuleDetails({
         }
       </div>
 
-      <div className="inline-block w-1/2 align-top">
+      <div className="inline-block w-1/2 align-top"> 
         <Heading as="h3" format size="copy" className="uppercase">Power Consumption</Heading>
         <ul>
           {moduleData.max_pos_12v_ma !== 0 ?
@@ -132,7 +132,7 @@ export function ModuleDetails({
 
       <div className="inline-block w-full h-2"></div>
       {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : <>
-        <div className="inline-block w-1/2 align-top">
+        <div className="inline-block align-top" style={{ width: (frontpanelWidth + 10) }}>
           <Heading as="h3" format size="copy" className="uppercase">Legend</Heading>
           <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
             <img className="absolute top-0 left-0" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.legend} />
@@ -143,7 +143,7 @@ export function ModuleDetails({
               return <div style={{ top: yPos, left: xPos }}
                 className="w-full inline-block align-top cursor-pointer absolute"
                 onMouseEnter={() => {
-                  setHoverRefDes(true) 
+                  setHoverRefDes(true)
                   setActiveRefDes(obj.refDes)
                 }}
                 onMouseLeave={() => {
@@ -200,8 +200,7 @@ export function ModuleDetails({
           {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
             return (
               <>
-                <div
-                  className={"w-full inline-block align-top cursor-pointer " +
+                <div className={"w-full inline-block align-top cursor-pointer " +
                     (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
                   }
                   onMouseEnter={() => {
@@ -210,8 +209,7 @@ export function ModuleDetails({
                   }}
                   onMouseLeave={() => {
                     setHoverRefDes(false)
-                  }}
-                >
+                  }}>
                   <div className="w-1/12 inline-block">
                     {conn.refDes}
                   </div>
@@ -222,7 +220,6 @@ export function ModuleDetails({
               </>)
           }) : null}
         </div></>}
-
       <div className="inline-block w-full h-2"></div>
       {hasPatchFeatures ? <><Heading as="h2" className="uppercase">Patching Tips</Heading>
         <div className="inline-block w-full align-top">
