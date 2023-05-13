@@ -52,9 +52,9 @@ export function CountrySelector() {
       className="grid w-full gap-4"
       onMouseLeave={closeDropdown}
     >
-      <Text size="lead" className="cursor-default">
+      {/* <Text size="lead" className="cursor-default">
         Country
-      </Text>
+      </Text> */}
       <div className="relative">
         <details
           className="absolute w-full border rounded border-contrast/30 dark:border-white open:round-b-none overflow-clip"
