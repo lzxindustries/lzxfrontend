@@ -7,6 +7,7 @@ import { TbRectangleFilled } from 'react-icons/tb'
 import { TbTriangleFilled } from 'react-icons/tb'
 import { TbTriangleInvertedFilled } from 'react-icons/tb';
 import { TbCircleFilled } from 'react-icons/tb'
+import { AddToCartButton } from '.';
 
 export function ModuleDetails({
   children,
@@ -35,11 +36,16 @@ export function ModuleDetails({
         <div className="px-8 py-4"><img style={{width: "auto", height: "85vh"}} src={"/images/" + moduleData.frontpanel} /></div>
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
-        <article key="ModuleDetailsArticle" className="prose prose-sm max-w-none px-8">
-          <div className="flex flex-row flex-wrap w-full"><div className="w-[1/2]"><h1>{moduleData.name}</h1>
-          {/* <h4 className="top-0">{moduleData.subtitle}</h4> */}
+          <div className="flex flex-wrap flex-row px-8">
+            <div className="basis-[100%] md:basis-1/2">
+              <div className="font-sans font-bold text-3xl uppercase pb-8">{moduleData.name}</div>
+              <div className="font-sans font-semibold text-base uppercase pb-8">{moduleData.subtitle}</div>
+            </div>
+            <div className="basis-[100%] md:basis-1/2">
+              {children}
+            </div>
           </div>
-          <div className="w-[1/2]">{children}</div></div>
+        <article key="ModuleDetailsArticle" className="prose prose-sm max-w-none px-8">
           <p>{moduleData.description}</p>
           {hasMainFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "Main" ? (
