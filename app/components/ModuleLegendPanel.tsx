@@ -1,6 +1,5 @@
 import { ModuleView } from '~/views/module';
 import { LegendRefDes } from './LegendRefDes';
-import useTailwindBreakpoint from '~/lib/useTailwindBreakpoint'
 
 export function ModuleLegendPanel({
   moduleData,
