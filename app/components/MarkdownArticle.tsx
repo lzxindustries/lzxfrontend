@@ -12,7 +12,9 @@ export const MarkdownArticle = ({
     return (
         <>
             <div className="flex flex-auto justify-center">
-                <div className="max-w-5xl px-4 docs" dangerouslySetInnerHTML={{ __html }} ></div>
+                <article className="prose max-w-prose-wide px-8">
+                    <div dangerouslySetInnerHTML={{ __html }} ></div>
+                </article>
             </div>
         </>
     );

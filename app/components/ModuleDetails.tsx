@@ -1,38 +1,25 @@
-import { Heading, Text } from './Text'
-import { ModuleView } from '~/views/module';
-import { IconTV } from './Icon';
-import { LegendRefDes } from './LegendRefDes';
-import { FrontpanelMaterial } from './Frontpanel';
 import { useState } from 'react';
+import { ModuleView } from '~/views/module';
+import { ModuleLegendPanel } from './ModuleLegendPanel';
+import { FaArrowRight } from 'react-icons/fa';
+import { BsFillArrowRightSquareFill } from 'react-icons/bs'
+import { TbRectangleFilled } from 'react-icons/tb'
+import { TbTriangleFilled } from 'react-icons/tb'
+import { TbTriangleInvertedFilled } from 'react-icons/tb';
+import { TbCircleFilled } from 'react-icons/tb'
+import { AddToCartButton } from '.';
 
 export function ModuleDetails({
+  children,
   moduleData
 }: {
+  children?: React.ReactNode;
   moduleData: ModuleView;
 }) {
   const [activeRefDes, setActiveRefDes] = useState("")
-  const [isHoverRefDes, setHoverRefDes] = useState(false)
-  const pixelsPerHP = 18;
-  const hpScale = 5.08; // millimeters
-  const pixelsPerMm = pixelsPerHP / hpScale;
-  const pixelsPerInch = pixelsPerHP * 5;
-  const frontpanelHeight = 128.5 * pixelsPerMm; // millimeters
-  const frontpanelWidth = moduleData.hp * pixelsPerHP;
-  const xCenter = frontpanelWidth / 2;
-  const yCenter = frontpanelHeight / 2;
-
-  // return (
-  //   <div className="App">
-  //     <button
-  //       onMouseEnter={() => setIsShown(true)}
-  //       onMouseLeave={() => setIsShown(false)}>
-  //       Hover over me!
-  //     </button>
-
   var hasMainFeatures = false
   var hasPatchFeatures = false
   var hasSystemFeatures = false
-
   {
     moduleData.features.map((feature) => {
       feature.topic == "Main" ? hasMainFeatures = true : null
@@ -40,213 +27,199 @@ export function ModuleDetails({
       feature.topic == "System" ? hasSystemFeatures = true : null
     })
   }
-
+  
   return (
-    <div>
-      {/* <div className="inline-block w-full h-4"></div> */}
-      <Text size="copy">{moduleData.description}</Text>
-      <div className="inline-block w-full h-2"></div>
-      <div className="inline-block w-full align-top">
-        {moduleData.features.map((feature) => {
-          return feature.topic == "Main" ? (
-            <>
-              <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
-              <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
-              <div className="inline-block w-full h-2"></div>
-            </>) : null
-        })}
-      </div>
-      <div className="inline-block w-1/2 align-top">
-        <Heading as="h3" format size="copy" className="uppercase">Dimensions</Heading>
-        <ul>
-          <li><Text size="copy" color="subtle">{'Width, ' + moduleData.hp + 'HP'}</Text></li>
-          <li><Text size="copy" color="subtle">{'Mounting Depth, ' + moduleData.mounting_depth_mm + 'mm'}</Text></li>
-        </ul>
-
-        <div className="inline-block w-full h-2"></div>
-
-        {(moduleData.has_rear_video_sync_input !== true &&
-          moduleData.has_rear_video_sync_output !== true &&
-          moduleData.has_front_video_sync_input !== true &&
-          moduleData.has_front_video_sync_output !== true &&
-          moduleData.has_eurorack_power_sync_input !== true &&
-          moduleData.has_eurorack_power_sync_output !== true &&
-          moduleData.has_rear_14_pin_sync_input !== true &&
-          moduleData.has_rear_14_pin_sync_output !== true) ? '' : <>
-
-          <Heading as="h3" format size="copy" className="uppercase">Video Sync</Heading>
-          <ul>
-            {moduleData.has_rear_video_sync_input == true ?
-              <li><Text size="copy" color="subtle">Rear RCA Sync Input Jack</Text></li> : ''
-            }
-            {moduleData.has_rear_video_sync_output == true ?
-              <li><Text size="copy" color="subtle">Rear RCA Sync Output Jack</Text></li> : ''
-            }
-            {moduleData.has_front_video_sync_input == true ?
-              <li><Text size="copy" color="subtle">Front RCA Sync Input Jack</Text></li> : ''
-            }
-            {moduleData.has_front_video_sync_output == true ?
-              <li><Text size="copy" color="subtle">Front RCA Sync Output Jack</Text></li> : ''
-            }
-            {moduleData.has_eurorack_power_sync_input == true ?
-              <li><Text size="copy" color="subtle">Rear EuroRack Power Header Sync Input (CV/Gate Bus)</Text></li> : ''
-            }
-            {moduleData.has_eurorack_power_sync_output == true ?
-              <li><Text size="copy" color="subtle">Rear EuroRack Power Header Sync Output (CV/Gate Bus)</Text></li> : ''
-            }
-            {moduleData.has_rear_14_pin_sync_input == true ?
-              <li><Text size="copy" color="subtle">Rear 14 Pin Header Sync Input</Text></li> : ''
-            }
-            {moduleData.has_rear_14_pin_sync_output == true ?
-              <li><Text size="copy" color="subtle">Rear 14 Pin Header Sync Output</Text></li> : ''
-            }
-          </ul>
-        </>}
-        {moduleData.is_sync_ref_required == true ?
-          <Text size="copy" color="subtle">Connection to a video sync ref is required to use this module.</Text> :
-          <Text size="copy" color="subtle">No video sync connections are required to use this module.</Text>
+    <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
+      <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
+        <div className="px-8 py-4"><img style={{width: "auto", height: "85vh"}} src={"/images/" + moduleData.frontpanel} /></div>
+        {
+          moduleData.videos.map((video) => {
+            return video.youtube ? <iframe className="basis-[100%] aspect-video w-full p-8" src={"https://www.youtube.com/embed/" + video.youtube} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : null
+          })
         }
       </div>
-
-      <div className="inline-block w-1/2 align-top"> 
-        <Heading as="h3" format size="copy" className="uppercase">Power Consumption</Heading>
-        <ul>
-          {moduleData.max_pos_12v_ma !== 0 ?
-            <li><Text size="copy" color="subtle">{'+12V @ ' + moduleData.max_pos_12v_ma + 'mA'}</Text></li> : ''
-          }
-          {moduleData.max_neg_12v_ma !== 0 ?
-            <li><Text size="copy" color="subtle">{'-12V @ ' + moduleData.max_neg_12v_ma + 'mA'}</Text></li> : ''
-          }
-        </ul>
-        <div className="inline-block w-full h-2"></div>
-        <Heading as="h3" format size="copy" className="uppercase">Power Entry</Heading>
-        <ul>
-          {moduleData.has_dc_barrel_power_entry == true ?
-            <li><Text size="copy" color="subtle">Rear DC Barrel Jack</Text></li> : ''
-          }
-          {moduleData.has_eurorack_power_entry == true ?
-            <li><Text size="copy" color="subtle">Rear EuroRack 16 Pin Header</Text></li> : ''
-          }
-        </ul>
-      </div>
-
-      <div className="inline-block w-full h-2"></div>
-      {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : <>
-        <div className="inline-block align-top" style={{ width: (frontpanelWidth + 10) }}>
-          <Heading as="h3" format size="copy" className="uppercase">Legend</Heading>
-          <div className="relative" style={{ width: frontpanelWidth, height: frontpanelHeight }}>
-            <img className="absolute top-0 left-0" width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.legend} />
-
-            {moduleData.connectors.map((obj) => {
-              const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
-              const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
-              return <div style={{ top: yPos, left: xPos }}
-                className="w-full inline-block align-top cursor-pointer absolute"
-                onMouseEnter={() => {
-                  setHoverRefDes(true)
-                  setActiveRefDes(obj.refDes)
-                }}
-                onMouseLeave={() => {
-                  setHoverRefDes(false)
-                }}
-              ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
-              </div>
-            })}
-            {moduleData.controls.map((obj) => {
-              const xPos = xCenter - 28 + ((obj.x / 1000) * pixelsPerInch);
-              const yPos = yCenter + ((obj.y / 1000) * pixelsPerInch);
-              return <div style={{ top: yPos, left: xPos }}
-                className="w-full inline-block align-top cursor-pointer absolute"
-                onMouseEnter={() => {
-                  setHoverRefDes(true)
-                  setActiveRefDes(obj.refDes)
-                }}
-                onMouseLeave={() => {
-                  setHoverRefDes(false)
-                }}
-              ><LegendRefDes selected={activeRefDes == obj.refDes ? true : false} refDes={obj.refDes} />
-              </div>
-            })}
+      <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
+          <div className="flex flex-wrap flex-row px-8">
+            <div className="basis-[100%] md:basis-1/2 pb-8">
+              <div className="font-sans font-bold text-3xl uppercase">{moduleData.name}</div>
+              <div className="font-sans font-semibold text-base uppercase">{moduleData.subtitle}</div>
+            </div>
+            <div className="basis-[100%] md:basis-1/2 pb-8">
+              {children}
+            </div>
           </div>
-        </div>
-        <div className="inline-block w-1/2 align-top">
-          {moduleData.connectors.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Connectors</Heading> : null}
-          {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
-            return (
-              <>
-                <div
-                  className={"w-full inline-block align-top cursor-pointer " +
-                    (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+        <article key="ModuleDetailsArticle" className="prose prose-sm max-w-none px-8">
+          <p>{moduleData.description}</p>
+          {hasMainFeatures ? moduleData.features.map((feature) => {
+            return feature.topic == "Main" ? (
+              <div>
+                <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">{feature.name}</span></h2>
+                <p>{feature.description}</p>
+              </div>) : ''
+          }) : ''}
+          <div className="flex flex-wrap flex-row">
+            <div className="basis-[100%] md:basis-1/2">
+              <h3>Dimensions</h3>
+              {/* <ul className="list-none"> */}
+                <p>{'Width, ' + moduleData.hp + 'HP'}<br/>
+                {'Mounting Depth, ' + moduleData.mounting_depth_mm + 'mm'}</p>
+              {/* </ul> */}
+            </div>
+            <div className="basis-[100%] md:basis-1/2">
+            {(moduleData.has_rear_video_sync_input !== true &&
+              moduleData.has_rear_video_sync_output !== true &&
+              moduleData.has_front_video_sync_input !== true &&
+              moduleData.has_front_video_sync_output !== true &&
+              moduleData.has_eurorack_power_sync_input !== true &&
+              moduleData.has_eurorack_power_sync_output !== true &&
+              moduleData.has_rear_14_pin_sync_input !== true &&
+              moduleData.has_rear_14_pin_sync_output !== true) ? '' :
+                <>
+                <h3>Video Sync</h3>
+                <p>
+                  {moduleData.has_rear_video_sync_input == true ?
+                    <>Rear RCA Sync Input Jack<br/></> : ''
                   }
-                  onMouseEnter={() => {
-                    setHoverRefDes(true)
-                    setActiveRefDes(conn.refDes)
-                  }}
-                  onMouseLeave={() => {
-                    setHoverRefDes(false)
-                  }}
-                >
-                  <div className="w-1/5 inline-block">
-                    {conn.refDes}
-                  </div>
-                  <div className="w-4/5 inline-block">
-                    {conn.name} {conn.is_input ? 'Input' : 'Output'}
-                  </div>
-                </div>
-              </>)
-          }) : null}
-          {moduleData.connectors.length > 0 ? <div className="inline-block w-full h-2"></div> : null}
-          {moduleData.controls.length > 0 ? <Heading as="h3" format size="copy" className="uppercase">Controls</Heading> : null}
-          {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
-            return (
-              <>
-                <div className={"w-full inline-block align-top cursor-pointer " +
-                    (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+                  {moduleData.has_rear_video_sync_output == true ?
+                    <>Rear RCA Sync Output Jack<br/></> : ''
                   }
-                  onMouseEnter={() => {
-                    setHoverRefDes(true)
-                    setActiveRefDes(conn.refDes)
-                  }}
-                  onMouseLeave={() => {
-                    setHoverRefDes(false)
-                  }}>
-                  <div className="w-1/5 inline-block">
-                    {conn.refDes}
-                  </div>
-                  <div className="w-4/5 inline-block">
-                    {conn.name}
-                  </div>
-                </div>
-              </>)
-          }) : null}
-        </div></>}
-      <div className="inline-block w-full h-2"></div>
-      {hasPatchFeatures ? <><Heading as="h2" className="uppercase">Patching Tips</Heading>
-        <div className="inline-block w-full align-top">
-          {moduleData.features.map((feature) => {
+                  {moduleData.has_front_video_sync_input == true ?
+                    <>Front RCA Sync Input Jack<br/></> : ''
+                  }
+                  {moduleData.has_front_video_sync_output == true ?
+                    <>Front RCA Sync Output Jack<br/></> : ''
+                  }
+                  {moduleData.has_eurorack_power_sync_input == true ?
+                    <>Rear EuroRack Power Header Sync Input (CV/Gate Bus)<br/></> : ''
+                  }
+                  {moduleData.has_eurorack_power_sync_output == true ?
+                    <>Rear EuroRack Power Header Sync Output (CV/Gate Bus)<br/></> : ''
+                  }
+                  {moduleData.has_rear_14_pin_sync_input == true ?
+                    <>Rear 14 Pin Header Sync Input<br/></> : ''
+                  }
+                  {moduleData.has_rear_14_pin_sync_output == true ?
+                    <>Rear 14 Pin Header Sync Output<br/></> : ''
+                  }
+                </p>
+                </>
+            }
+            </div>
+            <div className="basis-[100%] md:basis-1/2">
+              <h3>Power Consumption</h3>
+              <p>
+                {moduleData.max_pos_12v_ma !== 0 ?
+                  <>{'+12V @ ' + moduleData.max_pos_12v_ma + 'mA'}<br/></> : ''
+                }
+                {moduleData.max_neg_12v_ma !== 0 ?
+                  <>{'-12V @ ' + moduleData.max_neg_12v_ma + 'mA'}<br/></> : ''
+                }
+              </p>
+            </div>
+            <div className="basis-[100%] md:basis-1/2">
+              <h3>Power Entry</h3>
+              <p>
+                {moduleData.has_dc_barrel_power_entry == true ?
+                  <>Rear DC Barrel Jack<br/></> : ''
+                }
+                {moduleData.has_eurorack_power_entry == true ?
+                  <>Rear EuroRack 16 Pin Header<br/></> : ''
+                }
+              </p>
+            </div>
+          {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
+            <div className="basis-[100%] xl:basis-1/2 z-0">
+              <h3>Legend</h3>
+              <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={20} />
+            </div>
+            }
+            {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' : 
+            <div className="basis-[100%] xl:basis-1/2">
+              {moduleData.connectors.length > 0 ? <h3>Connectors</h3> : null}
+              <p>
+              {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
+                return (
+                    <div 
+                      className={"flex flex-row cursor-pointer " +
+                        (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+                      }
+                      onMouseEnter={() => {
+                        setActiveRefDes(conn.refDes)
+                      }}
+                    >
+                      <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name} {conn.is_input ? 'Input' : 'Output'}</div>
+                    </div>
+                  )
+              }) : null}
+              {moduleData.controls.length > 0 ? <h3>Controls</h3> : null}
+              {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
+                return (
+                  
+                    <div className={"flex flex-row cursor-pointer " +
+                        (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+                      }
+                      onMouseEnter={() => {
+                        setActiveRefDes(conn.refDes)
+                      }}>
+                      <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name}</div>
+                    </div>
+                  )
+              }) : null}
+              </p>
+            </div>}
+          </div>
+          {hasPatchFeatures ?
+            <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">Patching Tips</span></h2> : ''}
+          {hasPatchFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "Patch" ? (
-              <>
-                <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
-                <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
-                <div className="inline-block w-full h-2"></div>
-              </>) : null
-          })}
-        </div></> : null
-      }
-      {hasSystemFeatures ? <><Heading as="h2" className="uppercase">System Building Tips</Heading>
-        <div className="inline-block w-full align-top">
-          {moduleData.features.map((feature, it) => {
+              <div>
+                <h3>{feature.name}</h3>
+                <p>{feature.description}</p>
+              </div>) : ''
+          }) : ''}
+          {hasSystemFeatures ?
+            <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">System Building Tips</span></h2> : ''}
+          {hasSystemFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "System" ? (
-              <>
-                <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
-                <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
-                <div className="inline-block w-full h-2"></div>
-              </>) : null
-          })}
-        </div></> : null
-      }
+              <div>
+                <h3>{feature.name}</h3>
+                <p>{feature.description}</p>
+              </div>) : ''
+          }) : ''}
+        </article>
+      </div>
     </div>
   )
 };
 
+
+
+    //   <div className="inline-block w-full h-2"></div>
+    
+    //   <div className="inline-block w-full h-2"></div>
+    //   {hasPatchFeatures ? <><Heading as="h2" className="uppercase">Patching Tips</Heading>
+    //     <div className="inline-block w-full align-top">
+    //       {moduleData.features.map((feature) => {
+    //         return feature.topic == "Patch" ? (
+    //           <>
+    //             <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
+    //             <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
+    //             <div className="inline-block w-full h-2"></div>
+    //           </>) : null
+    //       })}
+    //     </div></> : null
+    //   }
+    //   {hasSystemFeatures ? <><Heading as="h2" className="uppercase">System Building Tips</Heading>
+    //     <div className="inline-block w-full align-top">
+    //       {moduleData.features.map((feature, it) => {
+    //         return feature.topic == "System" ? (
+    //           <>
+    //             <div className="inline-block w-full"><IconTV className="inline-block align-middle" /> <Text size="lead" className="align-middle">{feature.name}</Text></div>
+    //             <div className="inline-block w-full"><Text size="copy" color="subtle">{feature.description}</Text></div>
+    //             <div className="inline-block w-full h-2"></div>
+    //           </>) : null
+    //       })}
+    //     </div></> : null
+    //   }
+    // </div>
 
