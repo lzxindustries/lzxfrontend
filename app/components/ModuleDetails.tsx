@@ -30,18 +30,21 @@ export function ModuleDetails({
   
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
-      <div className="basis-[100%] md:basis-1/2 card-image flex flex-row justify-center">
-        {/* <div className={"bg-opacity-100 bg-contain bg-center"} style={{backgroundImage: "url('/images/" + moduleData.frontpanel +"')"}}></div> */}
-        {/* <div className="p-4 h-[500px]"><img width={frontpanelWidth} height={frontpanelHeight} src={"/images/" + moduleData.frontpanel} /></div> */}
+      <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
         <div className="px-8 py-4"><img style={{width: "auto", height: "85vh"}} src={"/images/" + moduleData.frontpanel} /></div>
+        {
+          moduleData.videos.map((video) => {
+            return video.youtube ? <iframe className="basis-[100%] aspect-video w-full p-8" src={"https://www.youtube.com/embed/" + video.youtube} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : null
+          })
+        }
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
           <div className="flex flex-wrap flex-row px-8">
-            <div className="basis-[100%] md:basis-1/2">
-              <div className="font-sans font-bold text-3xl uppercase pb-8">{moduleData.name}</div>
-              <div className="font-sans font-semibold text-base uppercase pb-8">{moduleData.subtitle}</div>
+            <div className="basis-[100%] md:basis-1/2 pb-8">
+              <div className="font-sans font-bold text-3xl uppercase">{moduleData.name}</div>
+              <div className="font-sans font-semibold text-base uppercase">{moduleData.subtitle}</div>
             </div>
-            <div className="basis-[100%] md:basis-1/2">
+            <div className="basis-[100%] md:basis-1/2 pb-8">
               {children}
             </div>
           </div>
@@ -62,6 +65,7 @@ export function ModuleDetails({
                 {'Mounting Depth, ' + moduleData.mounting_depth_mm + 'mm'}</p>
               {/* </ul> */}
             </div>
+            <div className="basis-[100%] md:basis-1/2">
             {(moduleData.has_rear_video_sync_input !== true &&
               moduleData.has_rear_video_sync_output !== true &&
               moduleData.has_front_video_sync_input !== true &&
@@ -70,7 +74,7 @@ export function ModuleDetails({
               moduleData.has_eurorack_power_sync_output !== true &&
               moduleData.has_rear_14_pin_sync_input !== true &&
               moduleData.has_rear_14_pin_sync_output !== true) ? '' :
-              <div className="basis-[100%] md:basis-1/2">
+                <>
                 <h3>Video Sync</h3>
                 <p>
                   {moduleData.has_rear_video_sync_input == true ?
@@ -98,11 +102,9 @@ export function ModuleDetails({
                     <>Rear 14 Pin Header Sync Output<br/></> : ''
                   }
                 </p>
-              </div>}
-            {/* {moduleData.is_sync_ref_required == true ?
-              <p>Connection to a video sync ref is required to use this module.</p> :
-              <p>No video sync connections are required to use this module.</p>
-            } */}
+                </>
+            }
+            </div>
             <div className="basis-[100%] md:basis-1/2">
               <h3>Power Consumption</h3>
               <p>
