@@ -135,68 +135,71 @@ export default function Product() {
   const isModule = moduleData.hp > 0 ? true : false;
 
   return (
-    <>
-      <Section className="px-0 md:px-8 lg:px-12">
-        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
-        {isModule ? <ModuleGallery module={moduleData} /> : <ProductGallery media={media.nodes} className="w-full"/>
-        }
-          <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
-            {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
-
-            <div className="inline-block w-1/2 align-top py-4">
-              <div className="inline-block align-top w-full">
-                {/* <Text size="lead">{isModule ? moduleData.brand : vendor}</Text> */}
-                <h1>
-                  {isModule ? moduleData.name : title}
-                </h1>
-                <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleData.subtitle : null}</Text>
-              </div>
-            </div>
-            <div className="inline-block w-1/2 align-top py-4">
-              <div className="inline-block align-top w-full h-full">
-                <ProductForm />
-              </div>
-            </div>
-            {isModule ? <ModuleDetails moduleData={moduleData} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
-            {/* <div className="grid gap-4 py-4">
-                {viewDescription && (
-                  <ProductDetail
-                    title="Description"
-                    content={viewDescription}
-                  />
-                )}
-                {shippingPolicy?.body && (
-                  <ProductDetail
-                    title="Shipping"
-                    content={getExcerpt(shippingPolicy.body)}
-                    learnMore={`/policies/${shippingPolicy.handle}`}
-                  />
-                )}
-                {refundPolicy?.body && (
-                  <ProductDetail
-                    title="Returns"
-                    content={getExcerpt(refundPolicy.body)}
-                    learnMore={`/policies/${refundPolicy.handle}`}
-                  />
-                )}
-              </div> */}
-          </div>
-        </div>
-      </Section>
-      {/* <Suspense fallback={<Skeleton className="h-32" />}>
-        <Await
-          errorElement="There was a problem loading related products"
-          resolve={recommended}
-        >
-          {(products) => (
-            <ProductSwimlane title="Patching Partners" products={products} />
-          )}
-        </Await>
-      </Suspense> */}
-    </>
+    <ModuleDetails moduleData={moduleData}>
+    <ProductForm />
+    </ModuleDetails>
   );
 }
 
+
+
+// <Section className="px-0 md:px-8 lg:px-12">
+// <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
+// {isModule ? <ModuleGallery module={moduleData} /> : <ProductGallery media={media.nodes} className="w-full"/>
+// }
+//   <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
+//     {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
+
+//     <div className="inline-block w-1/2 align-top py-4">
+//       <div className="inline-block align-top w-full">
+//         {/* <Text size="lead">{isModule ? moduleData.brand : vendor}</Text> */}
+//         <h1>
+//           {isModule ? moduleData.name : title}
+//         </h1>
+//         <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleData.subtitle : null}</Text>
+//       </div>
+//     </div>
+//     <div className="inline-block w-1/2 align-top py-4">
+//       <div className="inline-block align-top w-full h-full">
+//         <ProductForm />
+//       </div>
+//     </div>
+//     {isModule ? <ModuleDetails moduleData={moduleData} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
+//     {/* <div className="grid gap-4 py-4">
+//         {viewDescription && (
+//           <ProductDetail
+//             title="Description"
+//             content={viewDescription}
+//           />
+//         )}
+//         {shippingPolicy?.body && (
+//           <ProductDetail
+//             title="Shipping"
+//             content={getExcerpt(shippingPolicy.body)}
+//             learnMore={`/policies/${shippingPolicy.handle}`}
+//           />
+//         )}
+//         {refundPolicy?.body && (
+//           <ProductDetail
+//             title="Returns"
+//             content={getExcerpt(refundPolicy.body)}
+//             learnMore={`/policies/${refundPolicy.handle}`}
+//           />
+//         )}
+//       </div> */}
+//   </div>
+// </div>
+// </Section>
+// {/* <Suspense fallback={<Skeleton className="h-32" />}>
+// <Await
+//   errorElement="There was a problem loading related products"
+//   resolve={recommended}
+// >
+//   {(products) => (
+//     <ProductSwimlane title="Patching Partners" products={products} />
+//   )}
+// </Await>
+// </Suspense> */}
 export function ProductForm() {
   const { product, analytics, storeDomain } = useLoaderData<typeof loader>();
   const [currentSearchParams] = useSearchParams();
