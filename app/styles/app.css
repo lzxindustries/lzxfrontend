@@ -256,15 +256,15 @@
 
 @layer base {
   h1 {
-    @apply text-3xl font-black uppercase
+    @apply text-3xl font-semibold uppercase
   }
 
   h2 {
-    @apply text-xl font-bold 
+    @apply text-xl font-semibold 
   }
 
   h3 {
-    @apply text-lg font-semibold 
+    @apply text-base font-medium uppercase 
   }
 
   h4 {
