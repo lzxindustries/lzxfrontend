@@ -27,11 +27,14 @@ export function ModuleDetails({
       feature.topic == "System" ? hasSystemFeatures = true : null
     })
   }
+  const portraitAspect = moduleData.hp >= 25
 
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
-        <div className="px-8 py-4"><img style={{ width: "auto", height: "85vh" }} src={"/images/" + moduleData.frontpanel} /></div>
+        {portraitAspect ? 
+          <div className="px-8 py-4"><img style={{ width: "auto", height: "auto" }} src={"/images/" + moduleData.frontpanel} /></div>
+        : <div className="px-8 py-4"><img style={{ width: "auto", height: "80vh" }} src={"/images/" + moduleData.frontpanel} /></div> }
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
