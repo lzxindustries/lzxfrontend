@@ -103,7 +103,7 @@ export function ModuleDetails({
                 </>
               }
             </div>
-            <div className="basis-[100%] md:basis-1/2">
+            <div className={"basis-[100%] md:basis-1/2"}>
               {(moduleData.max_pos_12v_ma > 0 || moduleData.max_neg_12v_ma > 0) ? <><h3>Power Consumption</h3>
                 <p>
                   {moduleData.max_pos_12v_ma !== 0 ?
@@ -126,9 +126,9 @@ export function ModuleDetails({
                 </p></> : ''}
             </div>
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
-              <div className="basis-[100%] xl:basis-1/2 z-0">
+              <div className={portraitAspect ? "basis-[100%] z-0" : "basis-[100%] xl:basis-1/2 z-0"}>
                 <h3>Legend</h3>
-                <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={20} />
+                <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={portraitAspect ? 16 : 20} />
               </div>
             }
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
