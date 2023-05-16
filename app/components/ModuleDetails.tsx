@@ -131,8 +131,8 @@ export function ModuleDetails({
                 <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={portraitAspect ? 16 : 20} />
               </div>
             }
-            {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
-              <div className="basis-[100%] xl:basis-1/2">
+            {(portraitAspect == false && moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
+              <><div className="basis-[100%] xl:basis-1/2">
                 {moduleData.connectors.length > 0 ? <h3>Connectors</h3> : null}
                 <p>
                   {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
@@ -149,6 +149,8 @@ export function ModuleDetails({
                       </div>
                     )
                   }) : null}
+                </p>
+                <p>
                   {moduleData.controls.length > 0 ? <h3>Controls</h3> : null}
                   {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
                     return (
@@ -163,8 +165,49 @@ export function ModuleDetails({
                       </div>
                     )
                   }) : null}
-                </p>
-              </div>}
+                </p> 
+              </div>
+              </>
+              }
+                         {(portraitAspect == true && moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
+              <><div className="basis-[100%] xl:basis-1/2">
+                {moduleData.connectors.length > 0 ? <h3>Connectors</h3> : null}
+                <p>
+                  {moduleData.connectors.length > 0 ? moduleData.connectors.map((conn) => {
+                    return (
+                      <div
+                        className={"flex flex-row cursor-pointer " +
+                          (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+                        }
+                        onMouseEnter={() => {
+                          setActiveRefDes(conn.refDes)
+                        }}
+                      >
+                        <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name} {conn.is_input ? 'Input' : 'Output'}</div>
+                      </div>
+                    )
+                  }) : null}
+                </p></div>
+                <div className="basis-[100%] xl:basis-1/2">
+                <p>
+                  {moduleData.controls.length > 0 ? <h3>Controls</h3> : null}
+                  {moduleData.controls.length > 0 ? moduleData.controls.map((conn) => {
+                    return (
+
+                      <div className={"flex flex-row cursor-pointer " +
+                        (activeRefDes == conn.refDes ? " bg-yellow-500 text-black bg-opacity-100" : "bg-black text-primary/50 bg-opacity-0")
+                      }
+                        onMouseEnter={() => {
+                          setActiveRefDes(conn.refDes)
+                        }}>
+                        <div className="shrink-0 grow-0 w-10">{conn.refDes}</div><div className="">{conn.name}</div>
+                      </div>
+                    )
+                  }) : null}
+                </p> 
+              </div>
+              </>
+              }
           </div>
 
           {moduleData.assets.length > 0 ?
