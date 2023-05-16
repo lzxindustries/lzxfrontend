@@ -9,18 +9,22 @@ import { getDataCollection, getDataDocument } from "~/lib/db.server";
 import { AppLoadContext } from "@shopify/remix-oxygen";
 import { ModulePartView } from "~/views/module_part";
 import { ModuleVideoInterface } from "~/models/module_video";
+import { ModuleAssetInterface } from "~/models/module_asset";
 import { VideoInterface } from "~/models/video";
+import { AssetInterface } from "~/models/asset";
 
 export async function getModuleDetails(context: AppLoadContext, id: string) {
     const filters = {id}
     const module_data = await getDataDocument(context, "Module", filters) as ModuleInterface;
     const company_data = await getDataCollection(context, "Company") as CompanyInterface[];
     const module_videos_data = await getDataCollection(context, "ModuleVideo") as ModuleVideoInterface[]
+    const module_assets_data = await getDataCollection(context, "ModuleAsset") as ModuleAssetInterface[]
     const videos_data = await getDataCollection(context, "Video") as VideoInterface[]
     const controls_data = await getDataCollection(context, "ModuleControl", [{$limit: 256}, {$sort: {"refDes": 1}}]) as ModuleControlInterface[]
     const connectors_data = await getDataCollection(context, "ModuleConnector", [{$limit: 256}, {$sort: {"refDes": 1}}]) as ModuleConnectorInterface[]
     const features_data = await getDataCollection(context, "ModuleFeature") as ModuleFeatureInterface[]
     const parts_data = await getDataCollection(context, "Part") as PartInterface[]
+    const assets_data = await getDataCollection(context, "Asset") as AssetInterface[]
 
     const module_view: ModuleView = {
         id: module_data.id,
@@ -55,7 +59,8 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
         connectors: [],
         features: [],
         controls: [],
-        videos: []
+        videos: [],
+        assets: []
     }
 
     company_data.map((company) => {
@@ -140,6 +145,19 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
                         name: video.name,
                         youtube: video.youtube,
                         gif: video.gif
+                    }) : null
+            }) : null
+    })
+
+    // assets
+    module_assets_data.map((module_asset) => {
+        module_asset.module == module_data._id ?
+            assets_data.map((asset) => {
+                asset._id == module_asset.asset ? module_view.assets.push(
+                    {
+                        name: asset.name,
+                        file_name: asset.file_name,
+                        file_type: asset.file_type
                     }) : null
             }) : null
     })

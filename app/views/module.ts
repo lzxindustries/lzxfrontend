@@ -3,6 +3,7 @@ import { ModuleControlView } from "./module_control";
 import { ModuleFeatureView } from "./module_feature";
 import { CompanyView } from "./company";
 import { ModuleVideoView } from "./module_video";
+import { ModuleAssetView } from "./module_asset";
 
 export type ModuleView = {
   id: string;
@@ -34,4 +35,5 @@ export type ModuleView = {
   controls: Array<ModuleControlView>;
   features: Array<ModuleFeatureView>;
   videos: Array<ModuleVideoView>;
+  assets: Array<ModuleAssetView>;
 }
