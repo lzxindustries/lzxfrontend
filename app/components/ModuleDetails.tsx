@@ -32,11 +32,6 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
         <div className="px-8 py-4"><img style={{ width: "auto", height: "85vh" }} src={"/images/" + moduleData.frontpanel} /></div>
-        {
-          moduleData.videos.map((video) => {
-            return video.youtube ? <iframe className="basis-[100%] aspect-video w-full p-8" src={"https://www.youtube.com/embed/" + video.youtube} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : null
-          })
-        }
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
@@ -168,17 +163,25 @@ export function ModuleDetails({
                 </p>
               </div>}
           </div>
-          
+
           {moduleData.assets.length > 0 ?
             <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">Downloads</span></h2> : ''}
           <p>
             {moduleData.assets.map((asset) => {
               return (
-                <><a target="_blank" href={"/assets/" + asset.file_name}>{asset.name} ({asset.file_type.toUpperCase()})</a><br/></>
+                <><a target="_blank" href={"/assets/" + asset.file_name}>{asset.name} ({asset.file_type.toUpperCase()})</a><br /></>
               )
             })}
           </p>
-          
+
+          {moduleData.videos.length > 0 ?
+            <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">Videos</span></h2> : ''}
+          {
+            moduleData.videos.map((video) => {
+              return video.youtube ? <iframe className="basis-[100%] aspect-video w-full" src={"https://www.youtube.com/embed/" + video.youtube} title={video.name} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : null
+            })
+          }
+
           {hasPatchFeatures ?
             <h2><TbRectangleFilled className="inline-block align-middle" /> <span className="align-middle">Patching Tips</span></h2> : ''}
           {hasPatchFeatures ? moduleData.features.map((feature) => {
