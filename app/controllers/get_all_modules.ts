@@ -42,7 +42,9 @@ export async function getAllModules(context: AppLoadContext) {
             },
             connectors: [],
             features: [],
-            controls: []
+            controls: [],
+            assets: [],
+            videos: []
         }
 
         company_datas.forEach((company_data) => {
