@@ -253,8 +253,8 @@ function getSortValuesFromParam(sortParam: SortParam | null) {
       };
     default:
       return {
-        sortKey: 'CREATED',
-        reverse: true,
+        sortKey: 'MANUAL',
+        reverse: false,
         // sortKey: 'RELEVANCE',
         // reverse: false,
       };
