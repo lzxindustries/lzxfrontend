@@ -46,7 +46,7 @@ export function ModuleDetails({
             {children}
           </div>
         </div>
-        <article key="ModuleDetailsArticle" className="prose prose-sm max-w-none px-8">
+        <article key="ModuleDetailsArticle" className="prose prose-md px-8">
           <p dangerouslySetInnerHTML={{ __html: moduleData.description }}></p>
           {hasMainFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "Main" ? (
