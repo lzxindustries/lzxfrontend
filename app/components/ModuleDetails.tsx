@@ -34,7 +34,7 @@ export function ModuleDetails({
       <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
         {portraitAspect ?
           <div className="px-8 py-4"><img style={{ width: "auto", height: "auto" }} src={"/images/" + moduleData.frontpanel} /></div>
-          : <div className="px-8 py-4"><img style={{ width: "auto", height: "80vh" }} src={"/images/" + moduleData.frontpanel} /></div>}
+          : <div className="px-8 py-4"><img className="w-auto max-h-[80vh]" src={"/images/" + moduleData.frontpanel} /></div>}
       </div>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
@@ -46,7 +46,7 @@ export function ModuleDetails({
             {children}
           </div>
         </div>
-        <article key="ModuleDetailsArticle" className="prose prose-md px-8">
+        <article key="ModuleDetailsArticle" className="prose px-8">
           <p dangerouslySetInnerHTML={{ __html: moduleData.description }}></p>
           {hasMainFeatures ? moduleData.features.map((feature) => {
             return feature.topic == "Main" ? (
@@ -128,7 +128,7 @@ export function ModuleDetails({
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
               <div className={portraitAspect ? "basis-[100%] z-0" : "basis-[100%] xl:basis-1/2 z-0"}>
                 <h3>Legend</h3>
-                <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={portraitAspect ? 16 : 20} />
+                <ModuleLegendPanel moduleData={moduleData} setActiveRefDes={setActiveRefDes} activeRefDes={activeRefDes} pixelsPerHP={portraitAspect ? 8 : 20} />
               </div>
             }
             {(moduleData.connectors.length == 0 && moduleData.controls.length == 0) ? '' :
