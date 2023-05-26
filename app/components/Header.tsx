@@ -5,6 +5,12 @@ import { FaList } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaDiscord } from 'react-icons/fa';
+import { FaTwitch } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import { MdForum } from 'react-icons/md';
 
 export function Header(
   {
@@ -23,8 +29,9 @@ export function Header(
   const isAccount = url.includes('/account')
   const isSearch = url.includes('/search')
   const isGettingStarted = url.includes('/getting-started')
+  const isDealers = url.includes('/dealers')
   const isInStock = url.includes('/?available=true')
-  const isCatalog = !isPatches && !isModules && !isCart && !isAccount && !isSearch && !isGettingStarted && !isInStock;
+  const isCatalog = !isPatches && !isModules && !isCart && !isAccount && !isSearch && !isGettingStarted && !isInStock && !isDealers;
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -45,11 +52,18 @@ export function Header(
               <ul className="p-2"> */}
             <li><a className={isGettingStarted ? "active" : ""} href="/getting-started">Getting Started</a></li>
             <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
+            <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
             {/* </ul>
             </li> */}
           </ul>
         </div>
         <a className="px-2" href="/"><Logo size={logoSize} /></a>
+        <a className="px-2" target="_blank" href="https://community.lzxindustries.net"><MdForum size={iconSize} /></a>
+        <a className="px-2" target="_blank" href="https://www.facebook.com/lzxindustries"><FaFacebook size={iconSize} /></a>
+        <a className="px-2"  target="_blank" href="https://www.instagram.com/lzxindustries"><FaInstagram size={iconSize} /></a>
+        <a className="px-2"  target="_blank" href="https://discord.gg/KxGAnSVw2J"><FaDiscord size={iconSize} /></a>
+        <a className="px-2"  target="_blank" href="https://www.twitch.com/lzxindustries"><FaTwitch size={iconSize} /></a>
+        <a className="px-2"  target="_blank" href="https://www.youtube.com/lzxindustries"><FaYoutube size={iconSize} /></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-2">
@@ -64,6 +78,7 @@ export function Header(
             <ul className="p-2"> */}
           <li><a className={isGettingStarted ? "active" : ""} href="/getting-started">Getting Started</a></li>
           <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
+          <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
           {/* </ul>
           </li> */}
         </ul>
@@ -72,7 +87,9 @@ export function Header(
         {/* <div className="form-control px-2">
           <input type="text" placeholder="Search" className="input input-bordered px-6" />
         </div> */}
+
         <ul className="menu menu-horizontal px-2">
+
           <li><a className={(isSearch ? "active" : "")} href="/search"><FaSearch size={iconSize} /></a></li>
           <li><a className={(isAccount ? "active" : "")} href="/account"><FaUser size={iconSize} /></a></li>
           <li><a className={(isCart ? " active" : "")} href="/cart"><FaShoppingCart size={iconSize} /></a></li>

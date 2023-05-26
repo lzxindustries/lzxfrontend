@@ -31,12 +31,13 @@ export default function Product() {
               <tr>
                 <th >Company</th>
                 <th >Module</th>
+                <th >Status</th>
                 <th >HP</th>
                 <th >Depth</th>
-                <th >+12V Current</th>
-                <th >-12V Current</th>
-                <th >Generates Sync?</th>
-                <th >Sync Input Required?</th>
+                <th >+12V mA</th>
+                <th >-12V mA</th>
+                <th >Sync Gen?</th>
+                <th >Sync Required?</th>
               </tr>
             </thead>
             <tbody>
@@ -48,8 +49,9 @@ export default function Product() {
                       <td >{module.company.name}</td>
                       {
                         module.external_url ? <td ><Link className="underline" target="_blank" to={module.external_url}>{module.name}<IconLink className="inline-block" /></Link></td> :
-                          <td ><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '')}>{module.name}</Link></td>
+                          module.is_active_product ? <td ><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '')}>{module.name}</Link></td> : <td >{module.name}</td>
                       }
+                      <td className={module.is_active_product ? 'text-green-500' : 'text-yellow-500'}>{module.is_active_product ? 'Active' : 'Legacy'}</td>
                       <td >{module.hp}HP</td>
                       <td >{module.mounting_depth_mm}mm</td>
                       <td >{module.max_pos_12v_ma > 0 ? module.max_pos_12v_ma + "mA" : ''}</td>
