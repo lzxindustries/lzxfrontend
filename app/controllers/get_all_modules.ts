@@ -5,7 +5,7 @@ import { getDataCollection } from "~/lib/db.server";
 import { AppLoadContext } from "@shopify/remix-oxygen";
 
 export async function getAllModules(context: AppLoadContext) {
-    const module_datas = await getDataCollection(context, "Module") as ModuleInterface[];
+    const module_datas = await getDataCollection(context, "Module", [{ $limit: 1024 }, { $sort: { "is_active_product": -1 } }]) as ModuleInterface[];
     const company_datas = await getDataCollection(context, "Company") as CompanyInterface[];
     const module_views: ModuleView[] = [];
 
@@ -35,6 +35,9 @@ export async function getAllModules(context: AppLoadContext) {
             has_rear_14_pin_sync_output: module_data.has_rear_14_pin_sync_output,
             is_sync_generator: module_data.is_sync_generator,
             external_url: module_data.external_url,
+            is_active_product: module_data.is_active_product,
+            is_oem_product: module_data.is_oem_product,
+            in_stock_count: module_data.in_stock_count,
             company: 
             {
                 name: "Unknown",

@@ -25,4 +25,7 @@ export interface ModuleInterface {
   has_rear_14_pin_sync_output: boolean;
   is_sync_generator: boolean;
   external_url: string;
+  is_active_product: boolean;
+  is_oem_product: boolean;
+  in_stock_count: number;
 }
