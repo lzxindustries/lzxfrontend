@@ -38,7 +38,7 @@ export default function Patches() {
 
                   </div>
                   <div className="inline-block w-1/2 align-top">
-                    <a href={"https://" + dealer.url} target="_blank"><img src={"/dealers/" + dealer.logo} /></a>
+                    <a href={"https://" + dealer.url} target="_blank"><img className="max-w-xs" src={"/dealers/" + dealer.logo} /></a>
                   </div>
                 </>)
             })
