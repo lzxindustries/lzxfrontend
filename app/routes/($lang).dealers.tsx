@@ -31,7 +31,7 @@ export default function Patches() {
                   <div className="inline-block w-1/2 align-top">
                     <h2>{dealer.name}</h2>
                     <p>
-                      {dealer.city}, {dealer.state}<br />
+                      {dealer.city}{dealer.state ? ", " + dealer.state : ''}<br />
                       {dealer.country}<br />
                       <a href={"https://" + dealer.url} target="_blank">{dealer.url}</a><br />
                     </p>
