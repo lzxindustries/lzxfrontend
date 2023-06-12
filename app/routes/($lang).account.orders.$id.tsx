@@ -4,6 +4,7 @@ import {json, redirect, type LoaderArgs} from '@shopify/remix-oxygen';
 import {useLoaderData, type V2_MetaFunction} from '@remix-run/react';
 import {Money, Image, flattenConnection} from '@shopify/hydrogen';
 import {statusMessage} from '~/lib/utils';
+import { MoneyV2 } from '@shopify/hydrogen/storefront-api-types';
 import type {
   Order,
   OrderLineItem,
@@ -199,13 +200,13 @@ export default function OrderRoute() {
                       <Text>Discounts</Text>
                     </th>
                     <td className="pt-6 pl-3 pr-4 font-medium text-right text-green-700 md:pr-3">
-                      {discountPercentage ? (
+                      {/* {discountPercentage ? (
                         <span className="text-sm">
                           -{discountPercentage}% OFF
                         </span>
                       ) : (
                         discountValue && <Money data={discountValue!} />
-                      )}
+                      )} */}
                     </td>
                   </tr>
                 )}
@@ -224,7 +225,7 @@ export default function OrderRoute() {
                     <Text>Subtotal</Text>
                   </th>
                   <td className="pt-6 pl-3 pr-4 text-right md:pr-3">
-                    <Money data={order.subtotalPriceV2!} />
+                    {/* <Money data={order.subtotalPriceV2!} /> */}
                   </td>
                 </tr>
                 <tr>
@@ -242,7 +243,7 @@ export default function OrderRoute() {
                     <Text>Tax</Text>
                   </th>
                   <td className="pt-4 pl-3 pr-4 text-right md:pr-3">
-                    <Money data={order.totalTaxV2!} />
+                    {/* <Money data={order.totalTaxV2!} /> */}
                   </td>
                 </tr>
                 <tr>
@@ -260,7 +261,7 @@ export default function OrderRoute() {
                     <Text>Total</Text>
                   </th>
                   <td className="pt-4 pl-3 pr-4 font-semibold text-right md:pr-3">
-                    <Money data={order.totalPriceV2!} />
+                    {/* <Money data={order.totalPriceV2!} /> */}
                   </td>
                 </tr>
               </tfoot>
