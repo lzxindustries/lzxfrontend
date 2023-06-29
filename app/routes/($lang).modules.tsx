@@ -49,7 +49,7 @@ export default function Product() {
                       <td >{module.company.name}</td>
                       {
                         module.external_url ? <td ><Link className="underline" target="_blank" to={module.external_url}>{module.name}<IconLink className="inline-block" /></Link></td> :
-                          module.is_active_product ? <td ><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '')}>{module.name}</Link></td> : <td >{module.name}</td>
+                          module.is_active_product ? <td ><Link className="underline" to={'/products/' + module.name.toLowerCase().replace(/\//g, '').replace(/\s/g, '-')}>{module.name}</Link></td> : <td >{module.name}</td>
                       }
                       <td className={module.is_active_product ? 'text-green-500' : 'text-yellow-500'}>{module.is_active_product ? 'Active' : 'Legacy'}</td>
                       <td >{module.hp}HP</td>
