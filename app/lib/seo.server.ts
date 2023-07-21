@@ -29,7 +29,7 @@ function root({
   url: Request['url'];
 }): SeoConfig<Organization> {
   return {
-    title: shop?.name, 
+    title: shop?.name,
     titleTemplate: '%s | LZX Industries',
     description: truncate(shop?.description ?? ''),
     handle: '@shopify',
@@ -154,7 +154,7 @@ function product({
   url: Request['url'];
 }): SeoConfig<SeoProduct | BreadcrumbList> {
   const description = truncate(
-    product?.seo?.description ?? product?.description ?? '', 
+    product?.seo?.description ?? product?.description ?? '',
   );
   return {
     title: product?.seo?.title ?? product?.title,

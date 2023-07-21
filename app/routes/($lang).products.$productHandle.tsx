@@ -94,7 +94,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
   const seo = seoPayload.product({
     product,  // Note: I looked at this value and there is a field in here for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there. 
     selectedVariant,
-    url: request.url
+    url: request.url,
   });
 
 
