@@ -29,7 +29,7 @@ function root({
   url: Request['url'];
 }): SeoConfig<Organization> {
   return {
-    title: shop?.name,
+    title: shop?.name, 
     titleTemplate: '%s | LZX Industries',
     description: truncate(shop?.description ?? ''),
     handle: '@shopify',
@@ -62,9 +62,9 @@ function root({
 
 function home(): SeoConfig<WebPage> {
   return {
-    title: 'Home',
+    title: 'Analog / Digital Video Synthesizers - Video Art', // Home page title tag update
     titleTemplate: '%s | LZX Industries',
-    description: 'Creative tools for video synthesis and analog image processing',
+    description: 'Creative tools for video synthesis and analog image processing. Analog and digital video equipment manufactured in Portland, Oregon.', // update home page meta description
     robots: {
       noIndex: false,
       noFollow: false,
@@ -154,7 +154,7 @@ function product({
   url: Request['url'];
 }): SeoConfig<SeoProduct | BreadcrumbList> {
   const description = truncate(
-    product?.seo?.description ?? product?.description ?? '',
+    product?.seo?.description ?? product?.description ?? '', 
   );
   return {
     title: product?.seo?.title ?? product?.title,
