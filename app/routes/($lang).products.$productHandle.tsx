@@ -136,7 +136,7 @@ export default function Product() {
 
   return (
     <ModuleDetails moduleData={moduleData}>
-    <ProductForm />
+      <ProductForm />
     </ModuleDetails>
   );
 }
@@ -243,7 +243,7 @@ export function ProductForm() {
    */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-
+  const isPreorder = selectedVariant?.availableForSale && selectedVariant?.quantityAvailable ? selectedVariant?.quantityAvailable >= 0 : false;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -267,7 +267,8 @@ export function ProductForm() {
               <Button variant="secondary" disabled>
                 <Text>Sold Out</Text>
               </Button>
-            ) : (
+            ) : null}
+            {(!isOutOfStock && !isPreorder) ? (
               <AddToCartButton
                 lines={[
                   {
@@ -302,7 +303,44 @@ export function ProductForm() {
                   )}
                 </Text>
               </AddToCartButton>
-            )}
+            ) : null}
+
+            {(!isOutOfStock && isPreorder) ? (
+              <AddToCartButton
+                lines={[
+                  {
+                    merchandiseId: selectedVariant.id,
+                    quantity: 1,
+                  },
+                ]}
+                variant="primary"
+                data-test="add-to-cart"
+                analytics={{
+                  products: [productAnalytics],
+                  totalValue: parseFloat(productAnalytics.price),
+                }}
+              >
+                <Text
+                  as="span"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <span>Preorder Now</span> <span>·</span>{' '}
+                  <Money
+                    withoutTrailingZeros
+                    data={selectedVariant?.price!}
+                    as="span"
+                  />
+                  {isOnSale && (
+                    <Money
+                      withoutTrailingZeros
+                      data={selectedVariant?.compareAtPrice!}
+                      as="span"
+                      className="opacity-50 strike"
+                    />
+                  )}
+                </Text>
+              </AddToCartButton>
+            ) : null}
             {/* {!isOutOfStock && (
               <ShopPayButton
                 width="100%"
