@@ -243,7 +243,7 @@ export function ProductForm() {
    */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-  const isPreorder = selectedVariant?.quantityAvailable ? (selectedVariant?.quantityAvailable < 1) : false;
+  const isPreorder = selectedVariant?.quantityAvailable ? selectedVariant?.quantityAvailable < 2 : false;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -563,6 +563,7 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
   fragment ProductVariantFragment on ProductVariant {
     id
     availableForSale
+    quantityAvailable
     selectedOptions {
       name
       value
