@@ -92,10 +92,11 @@ export async function loader({ params, request, context }: LoaderArgs) {
   };
 
   const seo = seoPayload.product({
-    product,
+    product,  // Note: there is a field in this value for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there. 
     selectedVariant,
     url: request.url,
   });
+
 
   const id = product.id;
   const moduleData: ModuleView = await getModuleDetails(context, id)
