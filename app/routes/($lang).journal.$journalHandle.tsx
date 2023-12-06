@@ -1,27 +1,27 @@
-import {json, type LinksFunction, type LoaderArgs} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
-import {Image} from '@shopify/hydrogen';
-import {Blog} from '@shopify/hydrogen/storefront-api-types';
+import { json, type LinksFunction, type LoaderArgs } from '@shopify/remix-oxygen';
+import { useLoaderData } from '@remix-run/react';
+import { Image } from '@shopify/hydrogen';
+import { Blog } from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
-import {PageHeader, Section} from '~/components';
-import {seoPayload} from '~/lib/seo.server';
+import { PageHeader, Section } from '~/components';
+import { seoPayload } from '~/lib/seo.server';
 // import styles from '../styles/custom-font.css';
-import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import { routeHeaders, CACHE_LONG } from '~/data/cache';
 
-const BLOG_HANDLE = 'journal';
+const BLOG_HANDLE = 'Journal';
 
 export const headers = routeHeaders;
 
-export const links: LinksFunction = () => {
-  return [{rel: 'stylesheet', href: styles}];
-};
+// export const links: LinksFunction = () => {
+//   return [{rel: 'stylesheet', href: styles}];
+// };
 
-export async function loader({request, params, context}: LoaderArgs) {
-  const {language, country} = context.storefront.i18n;
+export async function loader({ request, params, context }: LoaderArgs) {
+  const { language, country } = context.storefront.i18n;
 
   invariant(params.journalHandle, 'Missing journal handle');
 
-  const {blog} = await context.storefront.query<{
+  const { blog } = await context.storefront.query<{
     blog: Blog;
   }>(ARTICLE_QUERY, {
     variables: {
@@ -32,7 +32,7 @@ export async function loader({request, params, context}: LoaderArgs) {
   });
 
   if (!blog?.articleByHandle) {
-    throw new Response(null, {status: 404});
+    throw new Response(null, { status: 404 });
   }
 
   const article = blog.articleByHandle;
@@ -43,10 +43,10 @@ export async function loader({request, params, context}: LoaderArgs) {
     day: 'numeric',
   }).format(new Date(article?.publishedAt!));
 
-  const seo = seoPayload.article({article, url: request.url});
+  const seo = seoPayload.article({ article, url: request.url });
 
   return json(
-    {article, formattedDate, seo},
+    { article, formattedDate, seo },
     {
       headers: {
         'Cache-Control': CACHE_LONG,
@@ -56,9 +56,9 @@ export async function loader({request, params, context}: LoaderArgs) {
 }
 
 export default function Article() {
-  const {article, formattedDate} = useLoaderData<typeof loader>();
+  const { article, formattedDate } = useLoaderData<typeof loader>();
 
-  const {title, image, contentHtml, author} = article;
+  const { title, image, contentHtml, author } = article;
 
   return (
     <>
@@ -71,15 +71,16 @@ export default function Article() {
         {image && (
           <Image
             data={image}
-            className="w-full mx-auto mt-8 md:mt-16 max-w-7xl"
+            className="w-full mx-auto mt-8 md:mt-16 max-w-3xl"
             sizes="90vw"
             loading="eager"
           />
         )}
-        <div
-          dangerouslySetInnerHTML={{__html: contentHtml}}
-          className="article"
-        />
+        <div className="flex flex-auto justify-center">
+          <article className="prose max-w-prose-wide px-8">
+            <div dangerouslySetInnerHTML={{ __html: contentHtml }} ></div>
+          </article>
+        </div>
       </Section>
     </>
   );
