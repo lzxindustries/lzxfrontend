@@ -3,7 +3,7 @@
 //   type EnhancedMenuItem,
 //   useIsHomePath,
 // } from '~/lib/utils';
-// import {
+import {
 //   Drawer,
 //   useDrawer,
 //   Text,
@@ -17,16 +17,16 @@
 //   IconCaret,
 //   Section,
 //   CountrySelector,
-//   Cart,
-//   CartLoading,
+   Cart,
+   CartLoading,
 //   Link,
-// } from '~/components';
-// import { useParams, Form, Await, useMatches } from '@remix-run/react';
+} from '~/components';
+import { useParams, Form, Await, useMatches } from '@remix-run/react';
 // import { useWindowScroll } from 'react-use';
 // import { Disclosure } from '@headlessui/react';
-// import { Suspense, useEffect, useMemo } from 'react';
+import { Suspense, useEffect, useMemo } from 'react';
 // import { useIsHydrated } from '~/hooks/useIsHydrated';
-// import { useCartFetchers } from '~/hooks/useCartFetchers';
+import { useCartFetchers } from '~/hooks/useCartFetchers';
 // import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
 // import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 // import FooterMenu from './FooterMenu'
@@ -54,7 +54,9 @@ export function Layout({
   children: React.ReactNode;
   // layout: LayoutData;
 }) {
-  const location = useLocation()
+  const [root] = useMatches();
+  const location = useLocation();
+
   return (
     <>
       <div className="flex flex-col min-h-screen">
@@ -63,7 +65,11 @@ export function Layout({
             Skip to content
           </a>
         </div>
-        <Header cartCount={0} url={location.pathname + "/" + location.search} />
+        <Suspense>
+          <Await resolve={root.data?.cart}>
+            {(cart) => <Header cartCount={cart?.totalQuantity || 0} url={location.pathname + "/" + location.search} />}
+          </Await>
+        </Suspense>
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
