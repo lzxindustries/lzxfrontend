@@ -32,7 +32,6 @@
     "daisyui": "^2.51.6",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "graphviz-react": "^1.2.5",
     "isbot": "^3.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
