@@ -29,6 +29,7 @@ export function Footer() {
           <span className="footer-title">Contact Us</span>
           <a className="link link-hover" target="_blank" href="mailto:sales@lzxindustries.net">sales@lzxindustries.net</a>
           <a className="link link-hover" target="_blank" href="mailto:support@lzxindustries.net">support@lzxindustries.net</a>
+          <a className="link link-hover" target="_blank" href="https://wkf.ms/4aEUIm3">Service Request</a>
         </div>
         <div>
           <span className="footer-title">Policies</span>
