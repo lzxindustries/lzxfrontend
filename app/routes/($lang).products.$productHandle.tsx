@@ -134,6 +134,7 @@ export default function Product() {
   const { media, title, id, descriptionHtml, vendor } = product;
   const { shippingPolicy, refundPolicy } = shop;
   const isModule = moduleData.hp > 0 ? true : false;
+  moduleData.description = product.descriptionHtml
 
   return (
     <ModuleDetails moduleData={moduleData}>
