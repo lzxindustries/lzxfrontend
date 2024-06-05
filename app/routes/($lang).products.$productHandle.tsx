@@ -245,7 +245,7 @@ export function ProductForm() {
    */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-  const isPreorder = selectedVariant?.quantityAvailable ? selectedVariant?.quantityAvailable < 2 : false;
+  const isPreorder = selectedVariant?.quantityAvailable <= 0 ? true : false;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
