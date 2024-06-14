@@ -55,7 +55,7 @@ export function Header(
             <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
             <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
             <li><a className={isJournal ? "active" : ""} href="/journal">Journal</a></li>
-            <li><a className={""} href="https://github.com/lzxindustries/lzxfirmware">Firmware</a></li>
+            <li><a className={""} href="https://github.com/lzxindustries/firmware">Firmware</a></li>
             {/* </ul>
             </li> */}
           </ul>
@@ -83,7 +83,7 @@ export function Header(
           <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
           <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
           <li><a className={isJournal ? "active" : ""} href="/journal">Journal</a></li>
-          <li><a className={""} href="https://github.com/lzxindustries/lzxfirmware">Firmware</a></li>
+          <li><a className={""} href="https://github.com/lzxindustries/firmware">Firmware</a></li>
           {/* </ul>
           </li> */}
         </ul>
