@@ -55,7 +55,7 @@ export function Footer() {
           <div className="grid grid-flow-col gap-4">
             <a target="_blank" href="https://www.facebook.com/lzxindustries"><FaFacebook size={iconSize} /></a>
             <a target="_blank" href="https://www.instagram.com/lzxindustries"><FaInstagram size={iconSize} /></a>
-            <a target="_blank" href="https://discord.gg/3FqKuKWS"><FaDiscord size={iconSize} /></a>
+            <a target="_blank" href="https://discord.gg/7xzD4XzhGn"><FaDiscord size={iconSize} /></a>
             <a target="_blank" href="https://www.twitch.com/lzxindustries"><FaTwitch size={iconSize} /></a>
             <a target="_blank" href="https://www.youtube.com/lzxindustries"><FaYoutube size={iconSize} /></a>
           </div>
