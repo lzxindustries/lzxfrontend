@@ -30,9 +30,9 @@ export function Header(
   const isSearch = url.includes('/search')
   const isGettingStarted = url.includes('/getting-started')
   const isDealers = url.includes('/dealers')
-  const isJournal = url.includes('/journal')
+  const isBlog = url.includes('https://docs.lzxindustries.net/blog')
   const isInStock = url.includes('/?available=true')
-  const isCatalog = !isPatches && !isModules && !isCart && !isAccount && !isSearch && !isGettingStarted && !isInStock && !isDealers && !isJournal;
+  const isCatalog = !isPatches && !isModules && !isCart && !isAccount && !isSearch && !isGettingStarted && !isInStock && !isDealers && !isBlog;
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -54,7 +54,7 @@ export function Header(
             <li><a className={isGettingStarted ? "active" : ""} href="/getting-started">Getting Started</a></li>
             <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
             <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
-            <li><a className={isJournal ? "active" : ""} href="/journal">Journal</a></li>
+            <li><a className={isBlog ? "active" : ""} href="https://docs.lzxindustries.net/blog">Blog</a></li>
             <li><a className={""} href="https://github.com/lzxindustries/firmware">Firmware</a></li>
             {/* </ul>
             </li> */}
@@ -82,7 +82,7 @@ export function Header(
           <li><a className={isGettingStarted ? "active" : ""} href="/getting-started">Getting Started</a></li>
           <li><a className={isModules ? "active" : ""} href="/modules">Module List</a></li>
           <li><a className={isDealers ? "active" : ""} href="/dealers">Dealers</a></li>
-          <li><a className={isJournal ? "active" : ""} href="/journal">Journal</a></li>
+          <li><a className={isBlog ? "active" : ""} href="https://docs.lzxindustries.net/blog">Blog</a></li>
           <li><a className={""} href="https://github.com/lzxindustries/firmware">Firmware</a></li>
           {/* </ul>
           </li> */}
