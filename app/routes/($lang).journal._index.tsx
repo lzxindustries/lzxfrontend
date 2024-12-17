@@ -46,6 +46,7 @@ export const loader = async ({ request, context: { storefront } }: LoaderArgs) =
     {
       headers: {
         'Cache-Control': CACHE_LONG,
+        'Oxygen-Cache-Control': 'public, max-age=3600, stale-while-revalidate=600'
       },
     },
   );

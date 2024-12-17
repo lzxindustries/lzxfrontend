@@ -43,6 +43,7 @@ export async function loader({request, params, context}: LoaderArgs) {
     {
       headers: {
         'Cache-Control': CACHE_LONG,
+        'Oxygen-Cache-Control': 'public, max-age=3600, stale-while-revalidate=600'
       },
     },
   );
