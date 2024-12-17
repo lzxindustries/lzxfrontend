@@ -6,7 +6,7 @@ import { ModuleView } from "~/views/module";
 import { Section } from "~/components/Text";
 import { Link } from "@remix-run/react";
 import IconLink from "~/components/IconLink";
-import { routeHeaders, CACHE_SHORT } from '~/data/cache';
+import { routeHeaders, CACHE_LONG } from '~/data/cache';
 import { BsCheckSquareFill } from "react-icons/bs";
 export const headers = routeHeaders;
 

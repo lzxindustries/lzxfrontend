@@ -17,7 +17,7 @@ import {
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
-import {routeHeaders, CACHE_SHORT} from '~/data/cache';
+import {routeHeaders, CACHE_LONG} from '~/data/cache';
 
 const PAGE_BY = 8;
 
@@ -65,7 +65,7 @@ export async function loader({request, context: {storefront}}: LoaderArgs) {
     },
     {
       headers: {
-        'Cache-Control': CACHE_SHORT,
+        'Cache-Control': CACHE_LONG,
       },
     },
   );

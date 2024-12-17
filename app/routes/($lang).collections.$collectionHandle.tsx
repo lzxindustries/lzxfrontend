@@ -10,7 +10,7 @@ import invariant from 'tiny-invariant';
 import {PageHeader, Section, Text, SortFilter} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {CACHE_SHORT, routeHeaders} from '~/data/cache';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
 import type {AppliedFilter, SortParam} from '~/components/SortFilter';
 
@@ -125,7 +125,7 @@ export async function loader({params, request, context}: LoaderArgs) {
     },
     {
       headers: {
-        'Cache-Control': CACHE_SHORT,
+        'Cache-Control': CACHE_LONG,
       },
     },
   );
