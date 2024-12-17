@@ -16,7 +16,7 @@ import {
 } from '~/components';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
-import {CACHE_SHORT, routeHeaders} from '~/data/cache';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {Image} from '@shopify/hydrogen';
 
 const PAGINATION_SIZE = 8;
@@ -44,7 +44,7 @@ export const loader = async ({request, context: {storefront}}: LoaderArgs) => {
     {collections, seo},
     {
       headers: {
-        'Cache-Control': CACHE_SHORT,
+        'Cache-Control': CACHE_LONG,
       },
     },
   );
