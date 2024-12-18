@@ -48,7 +48,7 @@ import { ModuleDetails } from '~/components/ModuleDetails';
 import { ModuleView } from '~/views/module';
 import { getModuleDetails } from '~/controllers/get_module_details';
 import { ModuleGallery } from '~/components/ModuleGallery';
-import { routeHeaders, CACHE_LONG } from '~/data/cache';
+import { routeHeaders, CACHE_SHORT } from '~/data/cache';
 export const headers = routeHeaders;
 
 export async function loader({ params, request, context }: LoaderArgs) {
