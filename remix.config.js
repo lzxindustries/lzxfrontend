@@ -19,6 +19,7 @@ module.exports = {
   future: {
     unstable_postcss: true,
     unstable_tailwind: true,
+    v2_dev: true,
     v2_meta: true,
     v2_routeConvention: true,
     v2_errorBoundary: true,
