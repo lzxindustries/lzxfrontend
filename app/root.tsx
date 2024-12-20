@@ -10,7 +10,6 @@ import {
   Meta,
   Outlet,
   Scripts,
-  LiveReload,
   ScrollRestoration,
   useLoaderData,
   useMatches,
@@ -95,7 +94,6 @@ export default function App() {
         </Layout>
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
@@ -144,7 +142,6 @@ export function ErrorBoundary({error}: {error: Error}) {
           )}
         </Layout>
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
