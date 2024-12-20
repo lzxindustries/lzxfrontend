@@ -42,7 +42,7 @@ export default {
         publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
         privateStorefrontToken: env.PRIVATE_STOREFRONT_API_TOKEN,
         storeDomain: `https://${env.PUBLIC_STORE_DOMAIN}`,
-        storefrontApiVersion: env.PUBLIC_STOREFRONT_API_VERSION || '2023-04',
+        storefrontApiVersion: env.PUBLIC_STOREFRONT_API_VERSION || '2023-07',
         storefrontId: env.PUBLIC_STOREFRONT_ID,
         storefrontHeaders: getStorefrontHeaders(request),
       });
@@ -74,7 +74,7 @@ export default {
       }
 
       response.headers.set('Cache-Control', CACHE_SHORT);
-      response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=82800');
+      response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=259200');
       response.headers.set('Vary', 'Accept-Encoding'); 
 
       return response;
