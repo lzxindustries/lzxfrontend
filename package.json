@@ -27,6 +27,7 @@
     "@shopify/hydrogen": "^2023.4.0",
     "@shopify/remix-oxygen": "^1.0.5",
     "@storybook/addon-styling": "^1.0.5",
+    "cli-hydrogen": "^0.0.1-security",
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
     "daisyui": "^2.51.6",

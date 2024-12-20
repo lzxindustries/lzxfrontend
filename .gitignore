@@ -6,3 +6,5 @@ node_modules
 /.mf
 .env
 .vscode
+.hydrogen
+.shopify
