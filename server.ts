@@ -60,7 +60,6 @@ export default {
           storefront,
           env,
         }),
-        poweredByHeader: false,
       });
 
       const response = await handleRequest(request);
