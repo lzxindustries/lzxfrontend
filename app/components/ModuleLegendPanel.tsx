@@ -9,7 +9,7 @@ export function ModuleLegendPanel({
 }: {
   moduleData: ModuleView;
   activeRefDes: string;
-  setActiveRefDes: Function;
+  setActiveRefDes: (refDes: string) => void;
   pixelsPerHP: number;
 }) {
   const hpScale = 5.08; // millimeters
