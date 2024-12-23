@@ -30,7 +30,13 @@ export async function getDataCollection(
   try {
     data = await fetch(url, config).then((response) => response.json());
   } catch (error) {
-    console.log('There was an error', error);
+    if (context.NODE_ENV === 'development') {
+      if (error instanceof Error) {
+        throw new Error(`There was an error: ${error.message}`);
+      } else {
+        throw new Error('There was an unknown error');
+      }
+    }
   }
 
   // console.log(data)
@@ -70,7 +76,13 @@ export async function getDataDocument(
   try {
     data = await fetch(url, config).then((response) => response.json());
   } catch (error) {
-    console.log('There was an error', error);
+    if (context.NODE_ENV === 'development') {
+      if (error instanceof Error) {
+        throw new Error(`There was an error: ${error.message}`);
+      } else {
+        throw new Error('There was an unknown error');
+      }
+    }
   }
 
   // console.log(data)
