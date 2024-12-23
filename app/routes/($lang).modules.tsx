@@ -45,75 +45,75 @@ export default function Product() {
                     ? true
                     : false;
                 return showModule ? (
-                  <>
-                    <tr>
-                      <td>{module.company.name}</td>
-                      {module.external_url ? (
-                        <td>
-                          <Link
-                            className="underline"
-                            target="_blank"
-                            to={module.external_url}
-                          >
-                            {module.name}
-                            <IconLink className="inline-block" />
-                          </Link>
-                        </td>
-                      ) : module.is_active_product ? (
-                        <td>
-                          <Link
-                            className="underline"
-                            to={
-                              '/products/' +
-                              module.name
-                                .toLowerCase()
-                                .replace(/\//g, '')
-                                .replace(/\s/g, '-')
-                            }
-                          >
-                            {module.name}
-                          </Link>
-                        </td>
-                      ) : (
-                        <td>{module.name}</td>
-                      )}
-                      <td
-                        className={
-                          module.is_active_product
-                            ? 'text-green-500'
-                            : 'text-yellow-500'
-                        }
-                      >
-                        {module.is_active_product ? 'Active' : 'Legacy'}
-                      </td>
-                      <td>{module.hp}HP</td>
-                      <td>{module.mounting_depth_mm}mm</td>
+                  <tr
+                    key={`${module.company.name}-${module.name}-${module.id}`}
+                  >
+                    <td>{module.company.name}</td>
+                    {module.external_url ? (
                       <td>
-                        {module.max_pos_12v_ma > 0
-                          ? module.max_pos_12v_ma + 'mA'
-                          : ''}
+                        <Link
+                          className="underline"
+                          target="_blank"
+                          to={module.external_url}
+                        >
+                          {module.name}
+                          <IconLink className="inline-block" />
+                        </Link>
                       </td>
+                    ) : module.is_active_product ? (
                       <td>
-                        {module.max_neg_12v_ma > 0
-                          ? module.max_neg_12v_ma + 'mA'
-                          : ''}
+                        <Link
+                          className="underline"
+                          to={
+                            '/products/' +
+                            module.name
+                              .toLowerCase()
+                              .replace(/\//g, '')
+                              .replace(/\s/g, '-')
+                          }
+                        >
+                          {module.name}
+                        </Link>
                       </td>
-                      <td
-                        className={
-                          module.is_sync_generator ? 'text-green-500' : ''
-                        }
-                      >
-                        {module.is_sync_generator ? 'Yes' : ''}
-                      </td>
-                      <td
-                        className={
-                          module.is_sync_ref_required ? 'text-green-500' : ''
-                        }
-                      >
-                        {module.is_sync_ref_required ? 'Yes' : ''}
-                      </td>
-                    </tr>
-                  </>
+                    ) : (
+                      <td>{module.name}</td>
+                    )}
+                    <td
+                      className={
+                        module.is_active_product
+                          ? 'text-green-500'
+                          : 'text-yellow-500'
+                      }
+                    >
+                      {module.is_active_product ? 'Active' : 'Legacy'}
+                    </td>
+                    <td>{module.hp}HP</td>
+                    <td>{module.mounting_depth_mm}mm</td>
+                    <td>
+                      {module.max_pos_12v_ma > 0
+                        ? module.max_pos_12v_ma + 'mA'
+                        : ''}
+                    </td>
+                    <td>
+                      {module.max_neg_12v_ma > 0
+                        ? module.max_neg_12v_ma + 'mA'
+                        : ''}
+                    </td>
+                    <td
+                      className={
+                        module.is_sync_generator ? 'text-green-500' : ''
+                      }
+                    >
+                      {module.is_sync_generator ? 'Yes' : ''}
+                    </td>
+                    <td
+                      className={
+                        module.is_sync_ref_required ? 'text-green-500' : ''
+                      }
+                    >
+                      {module.is_sync_ref_required ? 'Yes' : ''}
+                    </td>
+                  </tr>
                 ) : (
                   ''
                 );

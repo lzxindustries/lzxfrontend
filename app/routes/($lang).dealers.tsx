@@ -20,7 +20,9 @@ export default function Patches() {
         <article className="prose max-w-prose-wide px-8">
           {dealerData.map((dealer, it) => {
             return (
-              <>
+              <div
+                key={`${dealer.name}-${dealer.city}-${dealer.state}-${dealer.country}`}
+              >
                 <div className="inline-block w-1/2 align-top">
                   <h2>{dealer.name}</h2>
                   <p>
@@ -52,7 +54,7 @@ export default function Patches() {
                     />
                   </a>
                 </div>
-              </>
+              </div>
             );
           })}
         </article>
