@@ -22,7 +22,6 @@
 //   );
 // }
 
-
 // // const FooterLink = ({ item }: { item: EnhancedMenuItem }) => {
 // //   if (item.to.startsWith('http')) {
 // //     return (

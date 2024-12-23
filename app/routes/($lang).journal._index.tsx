@@ -1,19 +1,19 @@
-import { json, type LoaderArgs } from '@shopify/remix-oxygen';
-import { useLoaderData } from '@remix-run/react';
-import { flattenConnection, Image } from '@shopify/hydrogen';
-import type { Article, Blog } from '@shopify/hydrogen/storefront-api-types';
-import { Grid, PageHeader, Section, Link } from '~/components';
-import { getImageLoadingPriority, PAGINATION_SIZE } from '~/lib/const';
-import { seoPayload } from '~/lib/seo.server';
-import { CACHE_LONG, routeHeaders } from '~/data/cache';
+import {json, type LoaderArgs} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
+import {flattenConnection, Image} from '@shopify/hydrogen';
+import type {Article, Blog} from '@shopify/hydrogen/storefront-api-types';
+import {Grid, PageHeader, Section, Link} from '~/components';
+import {getImageLoadingPriority, PAGINATION_SIZE} from '~/lib/const';
+import {seoPayload} from '~/lib/seo.server';
+import {CACHE_LONG, routeHeaders} from '~/data/cache';
 
 const BLOG_HANDLE = 'Journal';
 
 export const headers = routeHeaders;
 
-export const loader = async ({ request, context: { storefront } }: LoaderArgs) => {
-  const { language, country } = storefront.i18n;
-  const { blog } = await storefront.query<{
+export const loader = async ({request, context: {storefront}}: LoaderArgs) => {
+  const {language, country} = storefront.i18n;
+  const {blog} = await storefront.query<{
     blog: Blog;
   }>(BLOGS_QUERY, {
     variables: {
@@ -24,11 +24,11 @@ export const loader = async ({ request, context: { storefront } }: LoaderArgs) =
   });
 
   if (!blog?.articles) {
-    throw new Response('Not found', { status: 404 });
+    throw new Response('Not found', {status: 404});
   }
 
   const articles = flattenConnection(blog.articles).map((article: Article) => {
-    const { publishedAt } = article;
+    const {publishedAt} = article;
     return {
       ...article,
       publishedAt: new Intl.DateTimeFormat(`${language}-${country}`, {
@@ -39,21 +39,22 @@ export const loader = async ({ request, context: { storefront } }: LoaderArgs) =
     };
   });
 
-  const seo = seoPayload.blog({ blog, url: request.url });
+  const seo = seoPayload.blog({blog, url: request.url});
 
   return json(
-    { articles, seo },
+    {articles, seo},
     {
       headers: {
         'Cache-Control': CACHE_LONG,
-        'Oxygen-Cache-Control': 'public, max-age=3600, stale-while-revalidate=600'
+        'Oxygen-Cache-Control':
+          'public, max-age=3600, stale-while-revalidate=600',
       },
     },
   );
 };
 
 export default function Journals() {
-  const { articles } = useLoaderData<typeof loader>();
+  const {articles} = useLoaderData<typeof loader>();
 
   return (
     <>
@@ -99,7 +100,9 @@ function ArticleCard({
           </div>
         )}
         <h2 className="mt-4 font-medium">{article.title}</h2>
-        <span className="block mt-1">{article.publishedAt} by {article.author.name}</span>
+        <span className="block mt-1">
+          {article.publishedAt} by {article.author.name}
+        </span>
       </Link>
     </li>
   );

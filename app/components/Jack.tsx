@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react';
+import React, {MouseEvent} from 'react';
 import './jack.css';
 
 interface JackProps {
@@ -20,7 +20,7 @@ export const Jack = ({
   const pixelsPerInch = pixelsPerHP * 5;
   return (
     <>
-      <div className="jack" style={{ top: yPosition, left: xPosition }}>
+      <div className="jack" style={{top: yPosition, left: xPosition}}>
         <svg
           width={pixelsPerInch * 0.3211}
           height={pixelsPerInch * 0.3211}
@@ -224,124 +224,124 @@ export const Jack = ({
               <stop offset={0.92} stopColor="#2d2b2c" />
               <stop offset={1} stopColor="#393839" />
             </radialGradient>
-            <style>{".cls-15{fill:none}"}</style>
+            <style>{'.cls-15{fill:none}'}</style>
           </defs>
           <g id="components">
             <g
               id="Jack"
               style={{
-                clipPath: "url(#clippath)",
+                clipPath: 'url(#clippath)',
               }}
             >
               <g
                 style={{
-                  clipPath: "url(#clippath-1)",
+                  clipPath: 'url(#clippath-1)',
                 }}
               >
                 <g
                   style={{
-                    clipPath: "url(#clippath-2)",
+                    clipPath: 'url(#clippath-2)',
                   }}
                 >
                   <path
                     d="M0 0h23.12v23.12H0z"
                     style={{
-                      fill: "url(#radial-gradient)",
+                      fill: 'url(#radial-gradient)',
                     }}
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-3)",
+                    clipPath: 'url(#clippath-3)',
                   }}
                 >
                   <path
                     d="M-.14-3.99h23.41v19.18H-.14z"
                     style={{
-                      fill: "url(#linear-gradient)",
+                      fill: 'url(#linear-gradient)',
                     }}
                     transform="rotate(-30.29 11.554 5.586)"
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-4)",
+                    clipPath: 'url(#clippath-4)',
                   }}
                 >
                   <path
                     d="M-.16 7.89h23.44v19.22H-.16z"
                     style={{
-                      fill: "url(#linear-gradient-2)",
+                      fill: 'url(#linear-gradient-2)',
                     }}
                     transform="rotate(-30.29 11.56 17.503)"
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-5)",
+                    clipPath: 'url(#clippath-5)',
                   }}
                 >
                   <path
                     d="M-.9-.9h24.92v24.92H-.9z"
                     style={{
-                      fill: "url(#linear-gradient-3)",
+                      fill: 'url(#linear-gradient-3)',
                     }}
                     transform="rotate(-45 11.56 11.562)"
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-6)",
+                    clipPath: 'url(#clippath-6)',
                   }}
                 >
                   <path
                     d="M3.31 3.31h16.51v16.51H3.31z"
                     style={{
-                      fill: "url(#linear-gradient-4)",
+                      fill: 'url(#linear-gradient-4)',
                     }}
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-7)",
+                    clipPath: 'url(#clippath-7)',
                   }}
                 >
                   <path
                     d="M.64.64h21.84v21.84H.64z"
                     style={{
-                      fill: "url(#linear-gradient-5)",
+                      fill: 'url(#linear-gradient-5)',
                     }}
                     transform="rotate(-45 11.56 11.562)"
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-8)",
+                    clipPath: 'url(#clippath-8)',
                   }}
                 >
                   <path
                     d="M2.46 2.46h18.21v18.21H2.46z"
                     style={{
-                      fill: "url(#linear-gradient-6)",
+                      fill: 'url(#linear-gradient-6)',
                     }}
                     transform="rotate(-45 11.56 11.562)"
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-9)",
+                    clipPath: 'url(#clippath-9)',
                   }}
                 >
                   <path
                     d="M6.5 6.51h10.11v10.11H6.5z"
                     style={{
-                      fill: "url(#radial-gradient-2)",
+                      fill: 'url(#radial-gradient-2)',
                     }}
                   />
                 </g>
                 <g
                   style={{
-                    clipPath: "url(#clippath-10)",
+                    clipPath: 'url(#clippath-10)',
                   }}
                 >
                   <g
@@ -351,18 +351,18 @@ export const Jack = ({
                   >
                     <g
                       style={{
-                        clipPath: "url(#clippath-11)",
+                        clipPath: 'url(#clippath-11)',
                       }}
                     >
                       <g
                         style={{
-                          clipPath: "url(#clippath-12)",
+                          clipPath: 'url(#clippath-12)',
                         }}
                       >
                         <path
                           d="M7.3 7.63h3.4v7.86H7.3z"
                           style={{
-                            fill: "url(#linear-gradient-7)",
+                            fill: 'url(#linear-gradient-7)',
                           }}
                         />
                       </g>

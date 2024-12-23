@@ -1,5 +1,5 @@
-import { Remarkable } from 'remarkable';
-import { useEffect, useState } from "react";
+import {Remarkable} from 'remarkable';
+import {useEffect, useState} from 'react';
 
 export function getMarkdownURLToHTML(url: string) {
   const [markdownString, setMarkdownString] = useState('');
@@ -12,12 +12,12 @@ export function getMarkdownURLToHTML(url: string) {
   }, []);
 
   const markdownRenderer = new Remarkable();
-  const response = markdownRenderer.render(markdownString)
-  return response
+  const response = markdownRenderer.render(markdownString);
+  return response;
 }
 
 export function getMarkdownToHTML(markdownString: string) {
   const markdownRenderer = new Remarkable();
-  const response = markdownRenderer.render(markdownString)
-  return response
+  const response = markdownRenderer.render(markdownString);
+  return response;
 }

@@ -3,4 +3,3 @@ export interface ModuleVideoInterface {
   module: string;
   video: string;
 }
-
