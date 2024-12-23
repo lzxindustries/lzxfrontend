@@ -45,7 +45,11 @@ export default function Patches() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <img className="max-w-xs" src={'/dealers/' + dealer.logo} />
+                    <img
+                      className="max-w-xs"
+                      src={'/dealers/' + dealer.logo}
+                      alt={`${dealer.name} logo`}
+                    />
                   </a>
                 </div>
               </>
