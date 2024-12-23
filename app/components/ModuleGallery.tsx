@@ -15,6 +15,7 @@ export function ModuleGallery({
         <img
           className="inline-block h-full w-auto"
           src={'/images/' + module.frontpanel}
+          alt={`${module.name} front panel`}
         />
       </div>
       <div className="inline-block w-full h-2"></div>
