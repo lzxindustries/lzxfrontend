@@ -30,12 +30,14 @@ export function ModuleLegendPanel({
         width={frontpanelWidth}
         height={frontpanelHeight}
         src={'/images/' + moduleData.legend}
+        alt="Module Legend"
       />
       {moduleData.connectors.map((obj) => {
         const xPos = xCenter - 28 + (obj.x / 1000) * pixelsPerInch;
         const yPos = yCenter + (obj.y / 1000) * pixelsPerInch;
         return (
           <div
+            key={obj.name}
             style={{top: yPos, left: xPos}}
             className="cursor-pointer absolute"
             onMouseEnter={() => {
@@ -54,6 +56,7 @@ export function ModuleLegendPanel({
         const yPos = yCenter + (obj.y / 1000) * pixelsPerInch;
         return (
           <div
+            key={obj.name}
             style={{top: yPos, left: xPos}}
             className="cursor-pointer absolute"
             onMouseEnter={() => {
