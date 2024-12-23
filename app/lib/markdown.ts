@@ -9,7 +9,7 @@ export function useGetMarkdownURLToHTML(url: string) {
       .then((text) => {
         setMarkdownString(text);
       });
-  }, []);
+  }, [url]);
 
   const markdownRenderer = new Remarkable();
   const response = markdownRenderer.render(markdownString);
