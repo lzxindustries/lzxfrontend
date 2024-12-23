@@ -23,7 +23,7 @@
     "@prisma/client": "^4.13.0",
     "@remix-run/react": "1.19.1",
     "@shopify/cli": "3.45.0",
-    "@shopify/cli-hydrogen": "^5.5.1",
+    "@shopify/cli-hydrogen": "^7.1.2",
     "@shopify/hydrogen": "2023.7.13",
     "@shopify/remix-oxygen": "^1.1.8",
     "@storybook/addon-styling": "^1.0.5",
