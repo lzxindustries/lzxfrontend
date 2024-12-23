@@ -43,20 +43,17 @@ export function Header({
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <button className="btn btn-ghost lg:hidden">
             <FaList size={iconSize} />
-          </label>
-          <ul
-            tabIndex={1}
-            className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
+          </button>
+          <ul className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52">
+            <li key="catalog">
               <a className={isCatalog ? 'active' : ''} href="/">
                 Catalog
               </a>
             </li>
             {/* <li><a className={isInStock ? "active" : ""} href="/?available=true">In Stock</a></li> */}
-            <li>
+            <li key="patches">
               <a className={isPatches ? 'active' : ''} href="/patches">
                 Patches
               </a>
@@ -67,7 +64,7 @@ export function Header({
                 <FaAngleRight size={iconSize} />
               </a>
               <ul className="p-2"> */}
-            <li>
+            <li key="getting-started">
               <a
                 className={isGettingStarted ? 'active' : ''}
                 href="/getting-started"
@@ -75,17 +72,17 @@ export function Header({
                 Getting Started
               </a>
             </li>
-            <li>
+            <li key="modules">
               <a className={isModules ? 'active' : ''} href="/modules">
                 Module List
               </a>
             </li>
-            <li>
+            <li key="dealers">
               <a className={isDealers ? 'active' : ''} href="/dealers">
                 Dealers
               </a>
             </li>
-            <li>
+            <li key="blog">
               <a
                 className={isBlog ? 'active' : ''}
                 href="https://docs.lzxindustries.net/blog"
@@ -93,7 +90,7 @@ export function Header({
                 Blog
               </a>
             </li>
-            <li>
+            <li key="firmware">
               <a
                 className={''}
                 href="https://github.com/lzxindustries/firmware"
