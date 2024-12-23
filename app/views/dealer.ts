@@ -5,4 +5,4 @@ export type DealerView = {
   city: string;
   logo: string;
   state: string;
-}
+};

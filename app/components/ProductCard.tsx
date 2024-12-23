@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import clsx from 'clsx';
 import {
   flattenConnection,
   ShopifyAnalyticsProduct,
   useMoney,
 } from '@shopify/hydrogen';
-import { Text, Link, AddToCartButton } from '~/components';
-import { isDiscounted, isNewArrival } from '~/lib/utils';
-import { getProductPlaceholder } from '~/lib/placeholders';
-import type { MoneyV2, Product } from '@shopify/hydrogen/storefront-api-types';
+import {Text, Link, AddToCartButton} from '~/components';
+import {isDiscounted, isNewArrival} from '~/lib/utils';
+import {getProductPlaceholder} from '~/lib/placeholders';
+import type {MoneyV2, Product} from '@shopify/hydrogen/storefront-api-types';
 
 export function ProductCardBackgroundSVG() {
   return (
@@ -20,10 +20,9 @@ export function ProductCardBackgroundSVG() {
       </defs>
 
       <rect fill="url(#Pattern)" stroke="black" width="100" height="18" />
-    </svg >
-  )
+    </svg>
+  );
 }
-
 
 export function ProductCard({
   product,
@@ -61,7 +60,7 @@ export function ProductCard({
   const firstVariant = flattenConnection(cardProduct.variants)[0];
 
   if (!firstVariant) return null;
-  const { image, price, compareAtPrice } = firstVariant;
+  const {image, price, compareAtPrice} = firstVariant;
 
   if (label) {
     cardLabel = label;
@@ -81,11 +80,11 @@ export function ProductCard({
     quantity: 1,
   };
 
+  const {currencyNarrowSymbol, withoutTrailingZerosAndCurrency} = useMoney(
+    firstVariant.price,
+  );
 
-  const { currencyNarrowSymbol, withoutTrailingZerosAndCurrency } =
-    useMoney(firstVariant.price);
-
-  var imageLocal = ''
+  const imageLocal = '';
   // product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
   // product.title == 'Chromagnon' ? imageLocal = '/images/chromagnon-front-panel.png' : ''
 
@@ -104,7 +103,7 @@ export function ProductCard({
           <div className="card-image aspect-square bg-primary/5 relative">
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-white/50 z-10">
-                <div className="loader border-8 border-primary border-t-transparent rounded-full w-14 h-14 animate-spin"/>
+                <div className="loader border-8 border-primary border-t-transparent rounded-full w-14 h-14 animate-spin" />
               </div>
             )}
             {image && (
@@ -128,7 +127,8 @@ export function ProductCard({
               as="p"
               size="copy"
             >
-              {currencyNarrowSymbol}{withoutTrailingZerosAndCurrency}
+              {currencyNarrowSymbol}
+              {withoutTrailingZerosAndCurrency}
             </Text>
           </div>
         </div>
@@ -160,7 +160,7 @@ function CompareAtPrice({
   data: MoneyV2;
   className?: string;
 }) {
-  const { currencyNarrowSymbol, withoutTrailingZerosAndCurrency } =
+  const {currencyNarrowSymbol, withoutTrailingZerosAndCurrency} =
     useMoney(data);
 
   const styles = clsx('strike', className);

@@ -4,7 +4,7 @@ import {json, redirect, type LoaderArgs} from '@shopify/remix-oxygen';
 import {useLoaderData, type V2_MetaFunction} from '@remix-run/react';
 import {Money, Image, flattenConnection} from '@shopify/hydrogen';
 import {statusMessage} from '~/lib/utils';
-import { MoneyV2 } from '@shopify/hydrogen/storefront-api-types';
+import {MoneyV2} from '@shopify/hydrogen/storefront-api-types';
 import type {
   Order,
   OrderLineItem,

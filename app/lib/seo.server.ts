@@ -64,7 +64,8 @@ function home(): SeoConfig<WebPage> {
   return {
     title: 'Analog / Digital Video Synthesizers - Video Art', // Home page title tag update
     titleTemplate: '%s | LZX Industries',
-    description: 'Creative tools for video synthesis and analog image processing. Analog and digital video equipment manufactured in Portland, Oregon.', // update home page meta description
+    description:
+      'Creative tools for video synthesis and analog image processing. Analog and digital video equipment manufactured in Portland, Oregon.', // update home page meta description
     robots: {
       noIndex: false,
       noFollow: false,

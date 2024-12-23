@@ -3,4 +3,3 @@ export interface ModuleAssetInterface {
   module: string;
   asset: string;
 }
-

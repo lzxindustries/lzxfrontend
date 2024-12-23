@@ -4,29 +4,29 @@
 //   useIsHomePath,
 // } from '~/lib/utils';
 import {
-//   Drawer,
-//   useDrawer,
-//   Text,
-//   Input,
-//   IconLogin,
-//   IconAccount,
-//   IconBag,
-//   IconSearch,
-//   Heading,
-//   IconMenu,
-//   IconCaret,
-//   Section,
-//   CountrySelector,
-   Cart,
-   CartLoading,
-//   Link,
+  //   Drawer,
+  //   useDrawer,
+  //   Text,
+  //   Input,
+  //   IconLogin,
+  //   IconAccount,
+  //   IconBag,
+  //   IconSearch,
+  //   Heading,
+  //   IconMenu,
+  //   IconCaret,
+  //   Section,
+  //   CountrySelector,
+  Cart,
+  CartLoading,
+  //   Link,
 } from '~/components';
-import { useParams, Form, Await, useMatches } from '@remix-run/react';
+import {useParams, Form, Await, useMatches} from '@remix-run/react';
 // import { useWindowScroll } from 'react-use';
 // import { Disclosure } from '@headlessui/react';
-import { Suspense, useEffect, useMemo } from 'react';
+import {Suspense, useEffect, useMemo} from 'react';
 // import { useIsHydrated } from '~/hooks/useIsHydrated';
-import { useCartFetchers } from '~/hooks/useCartFetchers';
+import {useCartFetchers} from '~/hooks/useCartFetchers';
 // import logo from '../../public/logo.svg'; // Tell webpack this JS file uses this image
 // import logodark from '../../public/logo-dark.svg'; // Tell webpack this JS file uses this image
 // import FooterMenu from './FooterMenu'
@@ -41,16 +41,15 @@ import { useCartFetchers } from '~/hooks/useCartFetchers';
 // console.log(logodark); // /logo.84287d09.png
 
 // import type { LayoutData } from '../root';
-import React from 'react'
-import { useLocation } from 'react-router-dom';
-import { Footer } from './Footer'
-import { Header } from './Header'
-
+import React from 'react';
+import {useLocation} from 'react-router-dom';
+import {Footer} from './Footer';
+import {Header} from './Header';
 
 export function Layout({
   children,
-  // layout,
-}: {
+}: // layout,
+{
   children: React.ReactNode;
   // layout: LayoutData;
 }) {
@@ -67,7 +66,12 @@ export function Layout({
         </div>
         <Suspense>
           <Await resolve={root.data?.cart}>
-            {(cart) => <Header cartCount={cart?.totalQuantity || 0} url={location.pathname + "/" + location.search} />}
+            {(cart) => (
+              <Header
+                cartCount={cart?.totalQuantity || 0}
+                url={location.pathname + '/' + location.search}
+              />
+            )}
           </Await>
         </Suspense>
         <main role="main" id="mainContent" className="flex-grow">
@@ -334,7 +338,6 @@ export function Layout({
 //         to="/"
 //       >
 
-
 //         <img className="h-8 min-h-8 dark:hidden light:visible" src={logo} alt="Logo" />
 //         <img className="h-8 min-h-8 light:hidden dark:visible" src={logodark} alt="Logo" />
 //       </Link>
@@ -540,4 +543,3 @@ export function Layout({
 //     </Link>
 //   );
 // }
-

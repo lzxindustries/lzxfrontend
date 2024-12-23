@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 const IconDiscord = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -28,5 +28,5 @@ const IconDiscord = (props) => (
       d="M8.5 14c-.828 0-1.5-.895-1.5-2s.672-2 1.5-2 1.5.895 1.5 2-.672 2-1.5 2zm7 0c-.828 0-1.5-.895-1.5-2s.672-2 1.5-2 1.5.895 1.5 2-.672 2-1.5 2z"
     />
   </svg>
-)
-export default IconDiscord
+);
+export default IconDiscord;
