@@ -56,11 +56,10 @@ export const dot = `digraph structs {node [shape=record];
   esg:co -> "main out"
   
   }}`;
-  
-import Graphviz from 'graphviz-react'
-const GraphvizPage = () => {
 
+import Graphviz from 'graphviz-react';
+const GraphvizPage = () => {
   return <Graphviz dot={dot} />;
-}
+};
 
 export default GraphvizPage;

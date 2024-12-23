@@ -1,4 +1,4 @@
-import { ModulePartView } from "./module_part";
+import {ModulePartView} from './module_part';
 
 export type ModuleConnectorView = {
   refDes: string;
@@ -8,4 +8,4 @@ export type ModuleConnectorView = {
   is_output: boolean;
   x: number;
   y: number;
-}
+};

@@ -1,4 +1,4 @@
-import { ModulePartView } from "./module_part";
+import {ModulePartView} from './module_part';
 
 export type ModuleControlView = {
   refDes: string;
@@ -8,4 +8,4 @@ export type ModuleControlView = {
   is_bias: boolean;
   x: number;
   y: number;
-}
+};
