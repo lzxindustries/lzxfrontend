@@ -64,11 +64,11 @@ export const Frontpanel = ({
         <defs>
           <linearGradient id="bg-gradient" x1="0" x2="0" y1="0" y2="1">
             <stop
-              stop-color={getMaterialGradientColorTop(material)}
+              stopColor={getMaterialGradientColorTop(material)}
               offset="0%"
             />
             <stop
-              stop-color={getMaterialGradientColorBottom(material)}
+              stopColor={getMaterialGradientColorBottom(material)}
               offset="100%"
             />
           </linearGradient>
@@ -87,14 +87,24 @@ export const Frontpanel = ({
               frontpanelHeight - mountingHoleDiameter,
               mountingHoleRadius,
             ) +
-            hpWidth >= 8 ? (renderMountingHole(frontpanelWidth - (1.5 * hpScale), mountingHoleDiameter, mountingHoleRadius) +
+            (hpWidth >= 8
+              ? renderMountingHole(
+                  frontpanelWidth - 1.5 * hpScale,
+                  mountingHoleDiameter,
+                  mountingHoleRadius,
+                ) +
                 renderMountingHole(
                   frontpanelWidth - 1.5 * hpScale,
                   frontpanelHeight - mountingHoleDiameter,
                   mountingHoleRadius,
                 )
               : null) +
-            hpWidth == 52 ? (renderMountingHole(((1.5 + 16) * hpScale), mountingHoleDiameter, mountingHoleRadius) +
+            (hpWidth == 52
+              ? renderMountingHole(
+                  (1.5 + 16) * hpScale,
+                  mountingHoleDiameter,
+                  mountingHoleRadius,
+                ) +
                 renderMountingHole(
                   (1.5 + 16) * hpScale,
                   frontpanelHeight - mountingHoleDiameter,
