@@ -139,7 +139,11 @@ export default function Home() {
 
   return (
     <>
-      <img src="/clips/home_banner_2024_Q1.gif" className="w-full" />
+      <img
+        src="/clips/home_banner_2024_Q1.gif"
+        className="w-full"
+        alt="Home Banner"
+      />
       <Section padding="x">
         <SortFilter
           filters={collection.products.filters as Filter[]}
