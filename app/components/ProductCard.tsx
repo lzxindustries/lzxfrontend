@@ -1,8 +1,7 @@
+import { useState } from 'react';
 import clsx from 'clsx';
 import {
   flattenConnection,
-  Image,
-  Money,
   ShopifyAnalyticsProduct,
   useMoney,
 } from '@shopify/hydrogen';
@@ -41,6 +40,17 @@ export function ProductCard({
   onClick?: () => void;
   quickAdd?: boolean;
 }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleOnClick = () => {
+    setIsLoading(true);
+    if (onClick) {
+      onClick();
+    }
+    // Simulate loading completion (e.g., API call completion)
+    setTimeout(() => setIsLoading(false), 10000); // Replace with actual logic
+  };
+
   let cardLabel;
 
   const cardProduct: Product = product?.variants
@@ -85,23 +95,23 @@ export function ProductCard({
   return (
     <div className="flex flex-col gap-2">
       <Link
-        onClick={onClick}
+        onClick={handleOnClick}
         to={`/products/${product.handle}`}
         prefetch="intent"
+        className="relative"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-square bg-primary/5">
-
-            {image && !imageLocal && (
+          <div className="card-image aspect-square bg-primary/5 relative">
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white/50 z-10">
+                <div className="loader border-8 border-primary border-t-transparent rounded-full w-14 h-14 animate-spin"/>
+              </div>
+            )}
+            {image && (
               <img
                 src={image.url}
                 alt={`Picture of ${product.title}`}
-              />
-            )}
-            {imageLocal && (
-              <img
-                src={imageLocal}
-                alt={`Picture of ${product.title}`}
+                className="absolute inset-0 w-full h-full object-cover"
               />
             )}
           </div>
@@ -133,10 +143,6 @@ export function ProductCard({
           ]}
           variant="secondary"
           className="mt-2"
-          analytics={{
-            products: [productAnalytics],
-            totalValue: parseFloat(productAnalytics.price),
-          }}
         >
           <Text as="span" className="flex items-center justify-center gap-2">
             Add to Bag

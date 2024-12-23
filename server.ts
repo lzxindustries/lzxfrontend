@@ -60,7 +60,6 @@ export default {
           storefront,
           env,
         }),
-        poweredByHeader: false,
       });
 
       const response = await handleRequest(request);
@@ -75,7 +74,7 @@ export default {
       }
 
       response.headers.set('Cache-Control', CACHE_SHORT);
-      response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=82800');
+      response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=259200');
       response.headers.set('Vary', 'Accept-Encoding'); 
 
       return response;
