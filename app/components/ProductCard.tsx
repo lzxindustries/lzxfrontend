@@ -55,11 +55,18 @@ export function ProductCard({
   const cardProduct: Product = product?.variants
     ? (product as Product)
     : getProductPlaceholder();
+
+  const variants = flattenConnection(cardProduct?.variants);
+  const firstVariant = variants.length ? variants[0] : null;
+
+  const {currencyNarrowSymbol, withoutTrailingZerosAndCurrency} = useMoney(
+    firstVariant?.price || {amount: '0', currencyCode: 'USD'},
+  );
+
   if (!cardProduct?.variants?.nodes?.length) return null;
 
-  const firstVariant = flattenConnection(cardProduct.variants)[0];
-
   if (!firstVariant) return null;
+
   const {image, price, compareAtPrice} = firstVariant;
 
   if (label) {
@@ -79,10 +86,6 @@ export function ProductCard({
     price: firstVariant.price.amount,
     quantity: 1,
   };
-
-  const {currencyNarrowSymbol, withoutTrailingZerosAndCurrency} = useMoney(
-    firstVariant.price,
-  );
 
   const imageLocal = '';
   // product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
@@ -109,7 +112,7 @@ export function ProductCard({
             {image && (
               <img
                 src={image.url}
-                alt={`Picture of ${product.title}`}
+                alt={`${product.title} product`}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}
