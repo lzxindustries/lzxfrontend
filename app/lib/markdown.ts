@@ -1,7 +1,7 @@
 import {Remarkable} from 'remarkable';
 import {useEffect, useState} from 'react';
 
-export function getMarkdownURLToHTML(url: string) {
+export function useGetMarkdownURLToHTML(url: string) {
   const [markdownString, setMarkdownString] = useState('');
   useEffect(() => {
     fetch(url)
