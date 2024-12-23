@@ -37,6 +37,7 @@ export function ModuleDetails({
             <img
               style={{width: 'auto', height: 'auto'}}
               src={'/images/' + moduleData.frontpanel}
+              alt={`${moduleData.name} front panel`}
             />
           </div>
         ) : (
@@ -44,6 +45,7 @@ export function ModuleDetails({
             <img
               className="w-auto max-h-[80vh]"
               src={'/images/' + moduleData.frontpanel}
+              alt={`${moduleData.name} front panel`}
             />
           </div>
         )}
@@ -266,6 +268,7 @@ export function ModuleDetails({
                       ? moduleData.connectors.map((conn) => {
                           return (
                             <div
+                              key={conn.name}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -294,6 +297,7 @@ export function ModuleDetails({
                       ? moduleData.controls.map((conn) => {
                           return (
                             <div
+                              key={conn.name}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -332,6 +336,7 @@ export function ModuleDetails({
                       ? moduleData.connectors.map((conn) => {
                           return (
                             <div
+                              key={conn.name}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -361,6 +366,7 @@ export function ModuleDetails({
                       ? moduleData.controls.map((conn) => {
                           return (
                             <div
+                              key={conn.name}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
