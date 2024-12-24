@@ -1,13 +1,15 @@
 import Logo from './Logo';
-import {FaList} from 'react-icons/fa';
-import {FaShoppingCart} from 'react-icons/fa';
-import {FaSearch} from 'react-icons/fa';
-import {FaUser} from 'react-icons/fa';
-import {FaInstagram} from 'react-icons/fa';
-import {FaDiscord} from 'react-icons/fa';
-import {FaTwitch} from 'react-icons/fa';
-import {FaYoutube} from 'react-icons/fa';
-import {FaFacebook} from 'react-icons/fa';
+import {
+  FaList,
+  FaShoppingCart,
+  FaSearch,
+  FaUser,
+  FaInstagram,
+  FaDiscord,
+  FaTwitch,
+  FaYoutube,
+  FaFacebook,
+} from 'react-icons/fa';
 import {MdForum} from 'react-icons/md';
 
 export function Header({

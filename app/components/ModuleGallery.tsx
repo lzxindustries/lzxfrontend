@@ -1,4 +1,4 @@
-import {ModuleView} from '~/views/module';
+import type {ModuleView} from '~/views/module';
 
 export function ModuleGallery({
   className,

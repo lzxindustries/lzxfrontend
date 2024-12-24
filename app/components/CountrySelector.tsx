@@ -1,12 +1,12 @@
 import {useFetcher, useLocation, useMatches} from '@remix-run/react';
-import {Heading, Button, IconCheck} from '~/components';
+import {Heading, Button, IconCheck, Text} from '~/components';
 import {useCallback, useEffect, useRef} from 'react';
 import {useInView} from 'react-intersection-observer';
-import {Localizations, Locale, CartAction} from '~/lib/type';
+import type {Localizations, Locale} from '~/lib/type';
+import {CartAction} from '~/lib/type';
 import {DEFAULT_LOCALE} from '~/lib/utils';
 import clsx from 'clsx';
-import {CartBuyerIdentityInput} from '@shopify/hydrogen/storefront-api-types';
-import {Text} from '~/components';
+import type {CartBuyerIdentityInput} from '@shopify/hydrogen/storefront-api-types';
 import IconPolicy from '~/components/IconPolicy';
 
 export function CountrySelector() {

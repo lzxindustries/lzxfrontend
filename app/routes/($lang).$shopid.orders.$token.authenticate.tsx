@@ -1,4 +1,4 @@
-import {Shop} from '@shopify/hydrogen/storefront-api-types';
+import type {Shop} from '@shopify/hydrogen/storefront-api-types';
 import {redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {Button, PageHeader} from '~/components';

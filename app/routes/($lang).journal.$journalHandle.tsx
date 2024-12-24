@@ -5,7 +5,7 @@ import {
 } from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
-import {Blog} from '@shopify/hydrogen/storefront-api-types';
+import type {Blog} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section} from '~/components';
 import {seoPayload} from '~/lib/seo.server';

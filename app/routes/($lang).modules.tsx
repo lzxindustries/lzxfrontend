@@ -1,9 +1,8 @@
-import {useLoaderData} from '@remix-run/react';
-import {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {useLoaderData, Link} from '@remix-run/react';
+import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {getAllModules} from '~/controllers/get_all_modules';
 import {ModuleView} from '~/views/module';
 import {Section} from '~/components/Text';
-import {Link} from '@remix-run/react';
 import IconLink from '~/components/IconLink';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
 import {BsCheckSquareFill} from 'react-icons/bs';
