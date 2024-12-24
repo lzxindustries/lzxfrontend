@@ -4,13 +4,13 @@
 
 import type { WithCache } from '@shopify/hydrogen';
 import type { Storefront } from '~/lib/type';
-import type { HydrogenSession } from '~/lib/session.server';
+import type { AppSession } from '~/lib/session.server';
 
 declare global {
   /**
    * A global `process` object is only available during build to access NODE_ENV.
    */
-  const process: { env: { NODE_ENV: 'production' | 'development' } };
+  const process: {env: {NODE_ENV: 'production' | 'development'}};
 
   /**
    * Declare expected Env parameter in fetch handler.
@@ -35,7 +35,7 @@ declare global {
 declare module '@shopify/remix-oxygen' {
   export interface AppLoadContext {
     waitUntil: ExecutionContext['waitUntil'];
-    session: HydrogenSession;
+    session: AppSession;
     storefront: Storefront;
     env: Env;
   }
