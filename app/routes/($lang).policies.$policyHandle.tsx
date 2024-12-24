@@ -1,4 +1,8 @@
-import {json, type MetaFunction, type LoaderArgs} from '@shopify/remix-oxygen';
+import {
+  json,
+  type MetaFunction,
+  type LoaderFunctionArgs,
+} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {PageHeader, Section, Button} from '~/components';
 import invariant from 'tiny-invariant';
@@ -8,7 +12,7 @@ import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 
-export async function loader({request, params, context}: LoaderArgs) {
+export async function loader({request, params, context}: LoaderFunctionArgs) {
   invariant(params.policyHandle, 'Missing policy handle');
   const handle = params.policyHandle;
 

@@ -1,7 +1,7 @@
 import {type ReactNode, useRef, Suspense, useMemo} from 'react';
 import {Disclosure, Listbox} from '@headlessui/react';
 import {json} from '@shopify/remix-oxygen';
-import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
+import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {
   useLoaderData,
   Await,
@@ -49,7 +49,7 @@ import {ModuleView} from '~/views/module';
 import {getModuleDetails} from '~/controllers/get_module_details';
 import {ModuleGallery} from '~/components/ModuleGallery';
 
-export async function loader({params, request, context}: LoaderArgs) {
+export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
 

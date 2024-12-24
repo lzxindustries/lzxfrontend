@@ -1,4 +1,4 @@
-import {json, type LoaderArgs} from '@shopify/remix-oxygen';
+import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
@@ -8,7 +8,10 @@ import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 
-export async function loader({request, context: {storefront}}: LoaderArgs) {
+export async function loader({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) {
   const data = await storefront.query<{
     shop: Record<string, ShopPolicy>;
   }>(POLICIES_QUERY);
