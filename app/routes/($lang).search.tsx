@@ -1,6 +1,6 @@
 import {
   defer,
-  type LoaderArgs,
+  type LoaderFunctionArgs,
   type SerializeFrom,
 } from '@shopify/remix-oxygen';
 import {flattenConnection} from '@shopify/hydrogen';
@@ -27,7 +27,10 @@ import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 
-export async function loader({request, context: {storefront}}: LoaderArgs) {
+export async function loader({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) {
   const searchParams = new URL(request.url).searchParams;
   const cursor = searchParams.get('cursor')!;
   const searchTerm = searchParams.get('q')!;
@@ -177,7 +180,7 @@ const SEARCH_QUERY = `#graphql
 `;
 
 export async function getNoResultRecommendations(
-  storefront: LoaderArgs['context']['storefront'],
+  storefront: LoaderFunctionArgs['context']['storefront'],
 ) {
   const data = await storefront.query<{
     featuredCollections: CollectionConnection;

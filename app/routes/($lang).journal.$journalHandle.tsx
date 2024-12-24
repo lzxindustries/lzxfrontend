@@ -1,4 +1,8 @@
-import {json, type LinksFunction, type LoaderArgs} from '@shopify/remix-oxygen';
+import {
+  json,
+  type LinksFunction,
+  type LoaderFunctionArgs,
+} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import {Blog} from '@shopify/hydrogen/storefront-api-types';
@@ -16,7 +20,7 @@ export const headers = routeHeaders;
 //   return [{rel: 'stylesheet', href: styles}];
 // };
 
-export async function loader({request, params, context}: LoaderArgs) {
+export async function loader({request, params, context}: LoaderFunctionArgs) {
   const {language, country} = context.storefront.i18n;
 
   invariant(params.journalHandle, 'Missing journal handle');

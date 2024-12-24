@@ -28,7 +28,7 @@ import {
   json,
   defer,
   redirect,
-  type LoaderArgs,
+  type LoaderFunctionArgs,
   type AppLoadContext,
 } from '@shopify/remix-oxygen';
 import {flattenConnection} from '@shopify/hydrogen';
@@ -43,7 +43,7 @@ type TmpRemixFix = ReturnType<typeof defer<{isAuthenticated: false}>>;
 
 export const headers = routeHeaders;
 
-export async function loader({request, context, params}: LoaderArgs) {
+export async function loader({request, context, params}: LoaderFunctionArgs) {
   const {pathname} = new URL(request.url);
   const lang = params.lang;
   const customerAccessToken = await context.session.get('customerAccessToken');
