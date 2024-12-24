@@ -2,7 +2,7 @@ import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 
 function withOpacityValue(variable) {
-  return ({ opacityValue }) => {
+  return ({opacityValue}) => {
     if (opacityValue === undefined) {
       return `rgb(var(${variable}))`;
     }
@@ -27,12 +27,12 @@ export default {
         lg: '64em',
         xl: '80em',
         '2xl': '96em',
-        'sm-max': { max: '48em' },
-        'sm-only': { min: '32em', max: '48em' },
-        'md-only': { min: '48em', max: '64em' },
-        'lg-only': { min: '64em', max: '80em' },
-        'xl-only': { min: '80em', max: '96em' },
-        '2xl-only': { min: '96em' },
+        'sm-max': {max: '48em'},
+        'sm-only': {min: '32em', max: '48em'},
+        'md-only': {min: '48em', max: '64em'},
+        'lg-only': {min: '64em', max: '80em'},
+        'xl-only': {min: '80em', max: '96em'},
+        '2xl-only': {min: '96em'},
       },
       // spacing: {
       //   nav: 'var(--height-nav)',
@@ -49,7 +49,7 @@ export default {
       // },
       fontFamily: {
         sans: ['Goldplay', 'sans-serif'],
-        serif: ['GoldplayAlt', 'serif']
+        serif: ['GoldplayAlt', 'serif'],
       },
       fontSize: {
         display: ['var(--font-size-display)', '1.1'],
@@ -69,9 +69,40 @@ export default {
       },
     },
   },
-  plugins: [formsPlugin, typographyPlugin, require("daisyui")],
+  plugins: [formsPlugin, typographyPlugin, require('daisyui')],
   daisyui: {
-    themes: ["lofi", "black", "light", "dark", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"],
+    themes: [
+      'lofi',
+      'black',
+      'light',
+      'dark',
+      'cupcake',
+      'bumblebee',
+      'emerald',
+      'corporate',
+      'synthwave',
+      'retro',
+      'cyberpunk',
+      'valentine',
+      'halloween',
+      'garden',
+      'forest',
+      'aqua',
+      'lofi',
+      'pastel',
+      'fantasy',
+      'wireframe',
+      'luxury',
+      'dracula',
+      'cmyk',
+      'autumn',
+      'business',
+      'acid',
+      'lemonade',
+      'night',
+      'coffee',
+      'winter',
+    ],
     // styled: true,
     // themes: true,
     // base: true,
@@ -79,6 +110,6 @@ export default {
     // logs: true,
     // rtl: false,
     // prefix: "",
-    darkTheme: "light",
+    darkTheme: 'light',
   },
 };

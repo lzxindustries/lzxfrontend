@@ -7,4 +7,3 @@ export interface PatchInterface {
   artist: string;
   gif: string;
 }
-
