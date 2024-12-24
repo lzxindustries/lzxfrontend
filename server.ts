@@ -74,11 +74,13 @@ export default {
       }
 
       response.headers.set('Cache-Control', CACHE_SHORT);
-      response.headers.set(
-        'Oxygen-Cache-Control',
-        'public, max-age=3600, stale-while-revalidate=259200',
-      );
-      response.headers.set('Vary', 'Accept-Encoding');
+      if (new URL(request.url).pathname.endsWith('/cart')) {
+        response.headers.set(
+          'Oxygen-Cache-Control',
+          'public, max-age=3600, stale-while-revalidate=259200',
+        );
+        response.headers.set('Vary', 'Accept-Encoding');
+      }
 
       return response;
     } catch (error) {
