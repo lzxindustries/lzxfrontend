@@ -3,13 +3,14 @@ import {
   type SessionStorage,
   type Session,
 } from '@shopify/remix-oxygen';
+import {type HydrogenSession} from '@shopify/hydrogen';
 
 /**
  * This is a custom session implementation for your Hydrogen shop.
  * Feel free to customize it to your needs, add helper methods, or
  * swap out the cookie-based implementation with something else!
  */
-export class HydrogenSession {
+export class AppSession implements HydrogenSession {
   constructor(
     private sessionStorage: SessionStorage,
     private session: Session,
