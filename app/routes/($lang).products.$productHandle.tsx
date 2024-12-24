@@ -1,7 +1,7 @@
-import { type ReactNode, useRef, Suspense, useMemo } from 'react';
-import { Disclosure, Listbox } from '@headlessui/react';
-import { json } from '@shopify/remix-oxygen';
-import { defer, type LoaderArgs } from '@shopify/remix-oxygen';
+import {type ReactNode, useRef, Suspense, useMemo} from 'react';
+import {Disclosure, Listbox} from '@headlessui/react';
+import {json} from '@shopify/remix-oxygen';
+import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
 import {
   useLoaderData,
   Await,
@@ -30,8 +30,8 @@ import {
   AddToCartButton,
   Button,
 } from '~/components';
-import { getExcerpt } from '~/lib/utils';
-import { seoPayload } from '~/lib/seo.server';
+import {getExcerpt} from '~/lib/utils';
+import {seoPayload} from '~/lib/seo.server';
 import invariant from 'tiny-invariant';
 import clsx from 'clsx';
 import type {
@@ -41,27 +41,27 @@ import type {
   Shop,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
-import type { Storefront } from '~/lib/type';
-import type { Product } from 'schema-dts';
-import { ModuleDetails } from '~/components/ModuleDetails';
-import { ModuleView } from '~/views/module';
-import { getModuleDetails } from '~/controllers/get_module_details';
-import { ModuleGallery } from '~/components/ModuleGallery';
+import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import type {Storefront} from '~/lib/type';
+import type {Product} from 'schema-dts';
+import {ModuleDetails} from '~/components/ModuleDetails';
+import {ModuleView} from '~/views/module';
+import {getModuleDetails} from '~/controllers/get_module_details';
+import {ModuleGallery} from '~/components/ModuleGallery';
 
-export async function loader({ params, request, context }: LoaderArgs) {
-  const { productHandle } = params;
+export async function loader({params, request, context}: LoaderArgs) {
+  const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
 
   const searchParams = new URL(request.url).searchParams;
 
   const selectedOptions: SelectedOptionInput[] = [];
   searchParams.forEach((value, name) => {
-    selectedOptions.push({ name, value });
+    selectedOptions.push({name, value});
   });
 
-  const { shop, product } = await context.storefront.query<{
-    product: ProductType & { selectedVariant?: ProductVariant };
+  const {shop, product} = await context.storefront.query<{
+    product: ProductType & {selectedVariant?: ProductVariant};
     shop: Shop;
   }>(PRODUCT_QUERY, {
     variables: {
@@ -73,7 +73,7 @@ export async function loader({ params, request, context }: LoaderArgs) {
   });
 
   if (!product?.id) {
-    throw new Response('product', { status: 404 });
+    throw new Response('product', {status: 404});
   }
 
   const recommended = getRecommendedProducts(context.storefront, product.id);
@@ -90,44 +90,41 @@ export async function loader({ params, request, context }: LoaderArgs) {
   };
 
   const seo = seoPayload.product({
-    product,  // Note: there is a field in this value for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there. 
+    product, // Note: there is a field in this value for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there.
     selectedVariant,
     url: request.url,
   });
 
-
   const id = product.id;
-  const moduleData: ModuleView = await getModuleDetails(context, id)
+  const moduleData: ModuleView = await getModuleDetails(context, id);
 
   // if (!id || !moduleData) {
   //   throw new Response('product', { status: 404 });
   // }
 
-  return defer(
-    {
-      moduleData,
-      product,
-      shop,
-      storeDomain: shop.primaryDomain.url,
-      recommended,
-      analytics: {
-        pageType: AnalyticsPageType.product,
-        resourceId: product.id,
-        products: [productAnalytics],
-        totalValue: parseFloat(selectedVariant.price.amount),
-      },
-      seo,
-    }
-  );
+  return defer({
+    moduleData,
+    product,
+    shop,
+    storeDomain: shop.primaryDomain.url,
+    recommended,
+    analytics: {
+      pageType: AnalyticsPageType.product,
+      resourceId: product.id,
+      products: [productAnalytics],
+      totalValue: parseFloat(selectedVariant.price.amount),
+    },
+    seo,
+  });
 }
 
-
 export default function Product() {
-  const { moduleData, product, shop, recommended } = useLoaderData<typeof loader>();
-  const { media, title, id, descriptionHtml, vendor } = product;
-  const { shippingPolicy, refundPolicy } = shop;
+  const {moduleData, product, shop, recommended} =
+    useLoaderData<typeof loader>();
+  const {media, title, id, descriptionHtml, vendor} = product;
+  const {shippingPolicy, refundPolicy} = shop;
   const isModule = moduleData.hp > 0 ? true : false;
-  moduleData.description = descriptionHtml
+  moduleData.description = descriptionHtml;
 
   return (
     <ModuleDetails moduleData={moduleData}>
@@ -135,8 +132,6 @@ export default function Product() {
     </ModuleDetails>
   );
 }
-
-
 
 // <Section className="px-0 md:px-8 lg:px-12">
 // <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
@@ -196,9 +191,9 @@ export default function Product() {
 // </Await>
 // </Suspense> */}
 export function ProductForm() {
-  const { product, analytics, storeDomain } = useLoaderData<typeof loader>();
+  const {product, analytics, storeDomain} = useLoaderData<typeof loader>();
   const [currentSearchParams] = useSearchParams();
-  const { location } = useNavigation();
+  const {location} = useNavigation();
 
   /**
    * We update `searchParams` with in-flight request data from `location` (if available)
@@ -222,7 +217,7 @@ export function ProductForm() {
   const searchParamsWithDefaults = useMemo<URLSearchParams>(() => {
     const clonedParams = new URLSearchParams(searchParams);
 
-    for (const { name, value } of firstVariant.selectedOptions) {
+    for (const {name, value} of firstVariant.selectedOptions) {
       if (!searchParams.has(name)) {
         clonedParams.set(name, value);
       }
@@ -263,7 +258,7 @@ export function ProductForm() {
                 <Text>Sold Out</Text>
               </Button>
             ) : null}
-            {(!isOutOfStock && !isPreorder) ? (
+            {!isOutOfStock && !isPreorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -300,7 +295,7 @@ export function ProductForm() {
               </AddToCartButton>
             ) : null}
 
-            {(!isOutOfStock && isPreorder) ? (
+            {!isOutOfStock && isPreorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -382,7 +377,7 @@ function ProductOptions({
               {option.values.length > 7 ? (
                 <div className="relative w-full">
                   <Listbox>
-                    {({ open }) => (
+                    {({open}) => (
                       <>
                         <Listbox.Button
                           ref={closeRef}
@@ -409,7 +404,7 @@ function ProductOptions({
                               key={`option-${option.name}-${value}`}
                               value={value}
                             >
-                              {({ active }) => (
+                              {({active}) => (
                                 <ProductOptionLink
                                   optionName={option.name}
                                   optionValue={value}
@@ -426,10 +421,10 @@ function ProductOptions({
                                   {value}
                                   {searchParamsWithDefaults.get(option.name) ===
                                     value && (
-                                      <span className="ml-2">
-                                        <IconCheck />
-                                      </span>
-                                    )}
+                                    <span className="ml-2">
+                                      <IconCheck />
+                                    </span>
+                                  )}
                                 </ProductOptionLink>
                               )}
                             </Listbox.Option>
@@ -482,7 +477,7 @@ function ProductOptionLink({
   children?: ReactNode;
   [key: string]: any;
 }) {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
   const isLangPathname = /\/[a-zA-Z]{2}-[a-zA-Z]{2}\//g.test(pathname);
   // fixes internalized pathname
   const path = isLangPathname
@@ -673,7 +668,7 @@ async function getRecommendedProducts(
     recommended: ProductType[];
     additional: ProductConnection;
   }>(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: { productId, count: 12 },
+    variables: {productId, count: 12},
   });
 
   invariant(products, 'No data returned from Shopify API');

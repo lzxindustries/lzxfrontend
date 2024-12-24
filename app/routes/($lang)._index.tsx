@@ -126,7 +126,8 @@ export async function loader({request, context}: LoaderArgs) {
     {
       headers: {
         'Cache-Control': CACHE_LONG,
-        'Oxygen-Cache-Control': 'public, max-age=3600, stale-while-revalidate=600'
+        'Oxygen-Cache-Control':
+          'public, max-age=3600, stale-while-revalidate=600',
       },
     },
   );
@@ -138,11 +139,13 @@ export default function Home() {
 
   return (
     <>
-    
-    <img src="/clips/home_banner_2024_Q1.gif" className='w-full'/>
+      <img
+        src="/clips/home_banner_2024_Q1.gif"
+        className="w-full"
+        alt="Home Banner"
+      />
       <Section padding="x">
         <SortFilter
-          
           filters={collection.products.filters as Filter[]}
           appliedFilters={appliedFilters}
           collections={collections as CollectionType[]}

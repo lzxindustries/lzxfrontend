@@ -7,7 +7,7 @@ import {
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {HydrogenSession} from '~/lib/session.server';
 import {getLocaleFromRequest} from '~/lib/utils';
-import { CACHE_SHORT } from '~/data/cache';
+import {CACHE_SHORT} from '~/data/cache';
 
 /**
  * Export a fetch handler in module format.
@@ -74,8 +74,11 @@ export default {
       }
 
       response.headers.set('Cache-Control', CACHE_SHORT);
-      response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=259200');
-      response.headers.set('Vary', 'Accept-Encoding'); 
+      response.headers.set(
+        'Oxygen-Cache-Control',
+        'public, max-age=3600, stale-while-revalidate=259200',
+      );
+      response.headers.set('Vary', 'Accept-Encoding');
 
       return response;
     } catch (error) {

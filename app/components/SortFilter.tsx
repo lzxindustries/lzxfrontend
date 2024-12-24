@@ -362,7 +362,7 @@ export default function SortMenu() {
     {
       label: 'Newest',
       key: 'newest',
-    },    
+    },
     {
       label: 'Eldest',
       key: 'eldest',

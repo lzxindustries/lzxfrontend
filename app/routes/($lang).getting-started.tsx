@@ -1,4 +1,4 @@
-import { MarkdownArticle } from '~/components/MarkdownArticle';
+import {MarkdownArticle} from '~/components/MarkdownArticle';
 
 export const content = `
 # Getting Started
@@ -327,7 +327,7 @@ a module which has both a key generator and a fader or switcher
 ## linear colorizer / multi level keyer
 
 combines multiple faders with a multi level key generator function to produce a transition across more than two inputs
-`
+`;
 
 export default function GettingStarted() {
   return (
@@ -336,4 +336,3 @@ export default function GettingStarted() {
     </>
   );
 }
-

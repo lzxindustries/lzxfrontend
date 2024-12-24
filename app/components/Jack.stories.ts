@@ -1,14 +1,12 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Jack } from './Jack';
+import type {Meta, StoryObj} from '@storybook/react';
+import {Jack} from './Jack';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
   title: 'Example/Jack',
   component: Jack,
   tags: ['autodocs'],
-  argTypes: 
-  {
-  },
+  argTypes: {},
 } satisfies Meta<typeof Jack>;
 
 export default meta;

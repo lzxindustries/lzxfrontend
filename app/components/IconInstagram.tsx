@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 const IconInstagram = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -26,5 +26,5 @@ const IconInstagram = (props) => (
       d="m17.5 6.51.01-.011"
     />
   </svg>
-)
-export default IconInstagram
+);
+export default IconInstagram;
