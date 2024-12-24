@@ -10,12 +10,8 @@ import {
   useNavigation,
 } from '@remix-run/react';
 
-import {
-  AnalyticsPageType,
-  Money,
-  ShopifyAnalyticsProduct,
-  ShopPayButton,
-} from '@shopify/hydrogen';
+import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
+import {AnalyticsPageType, Money, ShopPayButton} from '@shopify/hydrogen';
 import {
   Heading,
   IconCaret,
@@ -45,7 +41,7 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import type {Storefront} from '~/lib/type';
 import type {Product} from 'schema-dts';
 import {ModuleDetails} from '~/components/ModuleDetails';
-import {ModuleView} from '~/views/module';
+import type {ModuleView} from '~/views/module';
 import {getModuleDetails} from '~/controllers/get_module_details';
 import {ModuleGallery} from '~/components/ModuleGallery';
 

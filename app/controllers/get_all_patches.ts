@@ -1,12 +1,12 @@
-import {PatchView} from '~/views/patch';
-import {PatchInterface} from '~/models/patch';
-import {ArtistInterface} from '~/models/artist';
+import type {PatchView} from '~/views/patch';
+import type {PatchInterface} from '~/models/patch';
+import type {ArtistInterface} from '~/models/artist';
 import {getDataCollection} from '~/lib/db.server';
-import {AppLoadContext} from '@shopify/remix-oxygen';
-import {VideoInterface} from '~/models/video';
-import {PatchVideoInterface} from '~/models/patch_video';
-import {PatchModuleInterface} from '~/models/patch_module';
-import {ModuleInterface} from '~/models/module';
+import type {AppLoadContext} from '@shopify/remix-oxygen';
+import type {VideoInterface} from '~/models/video';
+import type {PatchVideoInterface} from '~/models/patch_video';
+import type {PatchModuleInterface} from '~/models/patch_module';
+import type {ModuleInterface} from '~/models/module';
 
 export async function getAllPatches(context: AppLoadContext) {
   const patch_datas = (await getDataCollection(

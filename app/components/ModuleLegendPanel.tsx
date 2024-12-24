@@ -1,4 +1,4 @@
-import {ModuleView} from '~/views/module';
+import type {ModuleView} from '~/views/module';
 import {LegendRefDes} from './LegendRefDes';
 
 export function ModuleLegendPanel({
