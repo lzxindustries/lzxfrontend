@@ -73,8 +73,8 @@ export default {
         return storefrontRedirect({request, response, storefront});
       }
 
-      response.headers.set('Cache-Control', CACHE_SHORT);
-      if (new URL(request.url).pathname.endsWith('/cart')) {
+      if (!new URL(request.url).pathname.endsWith('/cart')) {
+        response.headers.set('Cache-Control', CACHE_SHORT);
         response.headers.set(
           'Oxygen-Cache-Control',
           'public, max-age=3600, stale-while-revalidate=259200',
