@@ -1,13 +1,13 @@
 import clsx from 'clsx';
-import type {SerializeFrom} from '@shopify/remix-oxygen';
-import {MediaFile} from '@shopify/hydrogen';
+import type { SerializeFrom } from '@shopify/remix-oxygen';
+import { MediaFile } from '@shopify/hydrogen';
 import type {
   MediaImage,
   Media,
   Metafield,
   Video as MediaVideo,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Heading, Text, Link} from '~/components';
+import { Heading, Text, Link } from '~/components';
 
 export interface CollectionHero {
   byline: Metafield;
@@ -25,66 +25,76 @@ export interface CollectionHero {
  * Hero component that renders metafields attached to collection resources
  **/
 export function Hero({
-  byline,
-  cta,
-  handle,
-  heading,
-  height,
-  loading,
-  spread,
-  spreadSecondary,
-  top,
+  // byline,
+  // cta,
+  // handle,
+  // heading,
+  // height,
+  // loading,
+  // spread,
+  // spreadSecondary,
+  // top,
 }: SerializeFrom<CollectionHero>) {
   return (
-    <Link to={`/collections/${handle}`}>
-      <section
-        className={clsx(
-          'relative justify-end flex flex-col w-full',
-          top && '-mt-nav',
-          height === 'full'
-            ? 'h-screen'
-            : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]',
-        )}
-      >
-        <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
-          {spread?.reference && (
-            <div>
-              <SpreadMedia
-                sizes={
-                  spreadSecondary?.reference
-                    ? '(min-width: 48em) 50vw, 100vw'
-                    : '100vw'
-                }
-                data={spread.reference as Media}
-                loading={loading}
-              />
-            </div>
-          )}
-          {spreadSecondary?.reference && (
-            <div className="hidden md:block">
-              <SpreadMedia
-                sizes="50vw"
-                data={spreadSecondary.reference as Media}
-                loading={loading}
-              />
-            </div>
-          )}
-        </div>
-        <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
-          {heading?.value && (
-            <Heading format as="h2" size="display" className="max-w-md">
-              {heading.value}
-            </Heading>
-          )}
-          {byline?.value && (
-            <Text format width="narrow" as="p" size="lead">
-              {byline.value}
-            </Text>
-          )}
-          {cta?.value && <Text size="lead">{cta.value}</Text>}
-        </div>
-      </section>
-    </Link>
+    <section
+      className="px-4 w-full"
+    >
+      <Heading format as="h2" size="display" className="w-full max-w-max">
+        Welcome to LZX Industries
+      </Heading>
+      <Text format as="p" size="lead" className="w-full max-w-max">
+        We make standalone instruments and EuroRack format synthesizer modules for video synthesis and image processing.  We're glad you are here! <Link className={" underline text-blue-500"} to={`/patches`}>Visit our patch gallery</Link> to see what that looks like. Check out our <Link className={" underline text-blue-500"} to={`/products/double-vision-system`}>Double Vision System</Link> for a complete system available now.  Get <Link className={" underline text-blue-500"} to={`/products/esg3`}>our ESG3 module</Link> to add video output to your EuroRack audio synthesizer  When you'd like to engage with our community, visit out our <Link className={" underline text-blue-500"} to={`https://community.lzxindustries.net`}>forum</Link>, <Link className={" underline text-blue-500"}  to={`https://discord.gg/7xzD4XzhGn`}>chat on Discord</Link> or <Link className={" underline text-blue-500"}  to={`mailto:sales@lzxindustries.net`}>write us an e-mail</Link>!
+      </Text>
+    </section>
+    // <Link to={`/collections/${handle}`}>
+    //   <section
+    //     className={clsx(
+    //       'relative justify-end flex flex-col w-full',
+    //       '-mt-nav',
+    //       height === 'full'
+    //         ? 'h-screen'
+    //         : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]',
+    //     )}
+    //   >
+    //     <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
+    //       {spread?.reference && (
+    //         <div>
+    //           <SpreadMedia
+    //             sizes={
+    //               spreadSecondary?.reference
+    //                 ? '(min-width: 48em) 50vw, 100vw'
+    //                 : '100vw'
+    //             }
+    //             data={spread.reference as Media}
+    //             loading={loading}
+    //           />
+    //         </div>
+    //       )}
+    //       {spreadSecondary?.reference && (
+    //         <div className="hidden md:block">
+    //           <SpreadMedia
+    //             sizes="50vw"
+    //             data={spreadSecondary.reference as Media}
+    //             loading={loading}
+    //           />
+    //         </div>
+    //       )}
+    //     </div>
+    //     <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
+    //       {heading?.value && (
+    //         <Heading format as="h2" size="display" className="max-w-md">
+    //           {heading.value}
+    //         </Heading>
+    //       )}
+    //       {byline?.value && (
+    //         <Text format width="narrow" as="p" size="lead">
+    //           {byline.value}
+    //         </Text>
+    //       )}
+    //       {cta?.value && <Text size="lead">{cta.value}</Text>}
+    //     </div>
+    //   </section>
+    // </Link>
   );
 }
 
@@ -94,7 +104,7 @@ interface SpreadMediaProps {
   sizes: string;
 }
 
-function SpreadMedia({data, loading, sizes}: SpreadMediaProps) {
+function SpreadMedia({ data, loading, sizes }: SpreadMediaProps) {
   return (
     <MediaFile
       data={data}
@@ -106,7 +116,7 @@ function SpreadMedia({data, loading, sizes}: SpreadMediaProps) {
           loop: true,
           playsInline: true,
           autoPlay: true,
-          previewImageOptions: {src: data.previewImage?.url ?? ''},
+          previewImageOptions: { src: data.previewImage?.url ?? '' },
         },
         image: {
           loading,

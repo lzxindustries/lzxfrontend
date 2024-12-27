@@ -7,7 +7,7 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
-import {PageHeader, Section, Text, SortFilter} from '~/components';
+import {PageHeader, Section, Text, SortFilter, Hero} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
@@ -139,11 +139,12 @@ export default function Home() {
 
   return (
     <>
-      <img
+      {/* <img
         src="/clips/home_banner_2024_Q1.gif"
         className="w-full"
         alt="Home Banner"
-      />
+      /> */}
+      <Hero/>
       <Section padding="x">
         <SortFilter
           filters={collection.products.filters as Filter[]}
