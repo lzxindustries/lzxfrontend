@@ -110,6 +110,6 @@ export default {
     // logs: true,
     // rtl: false,
     // prefix: "",
-    darkTheme: 'light',
+    darkTheme: 'lofi',
   },
 };
