@@ -449,7 +449,7 @@ function ProductOptions({
                           searchParams={searchParamsWithDefaults}
                           className={clsx(
                             'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
-                            checked ? 'border-primary/50' : 'border-primary/0',
+                            checked ? 'font-extrabold' : 'font-normal',
                           )}
                         />
                       </Text>
