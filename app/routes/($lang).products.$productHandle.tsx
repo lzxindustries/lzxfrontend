@@ -395,7 +395,7 @@ function ProductOptions({
                         </Listbox.Button>
                         <Listbox.Options
                           className={clsx(
-                            'border-primary bg-contrast absolute bottom-12 z-30 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
+                            'border-primary bg-white absolute bottom-12 z-50 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
                             open ? 'max-h-48' : 'max-h-0',
                           )}
                         >
