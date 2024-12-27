@@ -1,7 +1,7 @@
-import {type ReactNode, useRef, Suspense, useMemo} from 'react';
-import {Disclosure, Listbox} from '@headlessui/react';
-import {json} from '@shopify/remix-oxygen';
-import {defer, type LoaderArgs} from '@shopify/remix-oxygen';
+import { type ReactNode, useRef, Suspense, useMemo } from 'react';
+import { Disclosure, Listbox } from '@headlessui/react';
+import { json } from '@shopify/remix-oxygen';
+import { defer, type LoaderArgs } from '@shopify/remix-oxygen';
 import {
   useLoaderData,
   Await,
@@ -30,8 +30,8 @@ import {
   AddToCartButton,
   Button,
 } from '~/components';
-import {getExcerpt} from '~/lib/utils';
-import {seoPayload} from '~/lib/seo.server';
+import { getExcerpt } from '~/lib/utils';
+import { seoPayload } from '~/lib/seo.server';
 import invariant from 'tiny-invariant';
 import clsx from 'clsx';
 import type {
@@ -41,27 +41,27 @@ import type {
   Shop,
   ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import type {Storefront} from '~/lib/type';
-import type {Product} from 'schema-dts';
-import {ModuleDetails} from '~/components/ModuleDetails';
-import {ModuleView} from '~/views/module';
-import {getModuleDetails} from '~/controllers/get_module_details';
-import {ModuleGallery} from '~/components/ModuleGallery';
+import { MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT } from '~/data/fragments';
+import type { Storefront } from '~/lib/type';
+import type { Product } from 'schema-dts';
+import { ModuleDetails } from '~/components/ModuleDetails';
+import { ModuleView } from '~/views/module';
+import { getModuleDetails } from '~/controllers/get_module_details';
+import { ModuleGallery } from '~/components/ModuleGallery';
 
-export async function loader({params, request, context}: LoaderArgs) {
-  const {productHandle} = params;
+export async function loader({ params, request, context }: LoaderArgs) {
+  const { productHandle } = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
 
   const searchParams = new URL(request.url).searchParams;
 
   const selectedOptions: SelectedOptionInput[] = [];
   searchParams.forEach((value, name) => {
-    selectedOptions.push({name, value});
+    selectedOptions.push({ name, value });
   });
 
-  const {shop, product} = await context.storefront.query<{
-    product: ProductType & {selectedVariant?: ProductVariant};
+  const { shop, product } = await context.storefront.query<{
+    product: ProductType & { selectedVariant?: ProductVariant };
     shop: Shop;
   }>(PRODUCT_QUERY, {
     variables: {
@@ -73,7 +73,7 @@ export async function loader({params, request, context}: LoaderArgs) {
   });
 
   if (!product?.id) {
-    throw new Response('product', {status: 404});
+    throw new Response('product', { status: 404 });
   }
 
   const recommended = getRecommendedProducts(context.storefront, product.id);
@@ -119,10 +119,10 @@ export async function loader({params, request, context}: LoaderArgs) {
 }
 
 export default function Product() {
-  const {moduleData, product, shop, recommended} =
+  const { moduleData, product, shop, recommended } =
     useLoaderData<typeof loader>();
-  const {media, title, id, descriptionHtml, vendor} = product;
-  const {shippingPolicy, refundPolicy} = shop;
+  const { media, title, id, descriptionHtml, vendor } = product;
+  const { shippingPolicy, refundPolicy } = shop;
   const isModule = moduleData.hp > 0 ? true : false;
   moduleData.description = descriptionHtml;
 
@@ -191,9 +191,9 @@ export default function Product() {
 // </Await>
 // </Suspense> */}
 export function ProductForm() {
-  const {product, analytics, storeDomain} = useLoaderData<typeof loader>();
+  const { product, analytics, storeDomain } = useLoaderData<typeof loader>();
   const [currentSearchParams] = useSearchParams();
-  const {location} = useNavigation();
+  const { location } = useNavigation();
 
   /**
    * We update `searchParams` with in-flight request data from `location` (if available)
@@ -217,7 +217,7 @@ export function ProductForm() {
   const searchParamsWithDefaults = useMemo<URLSearchParams>(() => {
     const clonedParams = new URLSearchParams(searchParams);
 
-    for (const {name, value} of firstVariant.selectedOptions) {
+    for (const { name, value } of firstVariant.selectedOptions) {
       if (!searchParams.has(name)) {
         clonedParams.set(name, value);
       }
@@ -233,7 +233,9 @@ export function ProductForm() {
    */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-  const isPreorder = selectedVariant?.quantityAvailable <= 0 ? true : false;
+  const isPreorder = product.id == "gid://shopify/Product/4319674761239";
+  const isBackorder = selectedVariant?.quantityAvailable <= 0 && !isPreorder ? true : false;
+  const productQty = selectedVariant?.quantityAvailable;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -258,7 +260,7 @@ export function ProductForm() {
                 <Text>Sold Out</Text>
               </Button>
             ) : null}
-            {!isOutOfStock && !isPreorder ? (
+            {!isOutOfStock && !isPreorder && !isBackorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -294,8 +296,7 @@ export function ProductForm() {
                 </Text>
               </AddToCartButton>
             ) : null}
-
-            {!isOutOfStock && isPreorder ? (
+            {!isOutOfStock && isPreorder && !isBackorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -331,6 +332,68 @@ export function ProductForm() {
                 </Text>
               </AddToCartButton>
             ) : null}
+
+            {!isOutOfStock && isBackorder && !isPreorder ? (
+              <AddToCartButton
+                lines={[
+                  {
+                    merchandiseId: selectedVariant.id,
+                    quantity: 1,
+                  },
+                ]}
+                variant="primary"
+                data-test="add-to-cart"
+                analytics={{
+                  products: [productAnalytics],
+                  totalValue: parseFloat(productAnalytics.price),
+                }}
+              >
+                <Text
+                  as="span"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <span>Backorder Now</span> <span>·</span>{' '}
+                  <Money
+                    withoutTrailingZeros
+                    data={selectedVariant?.price!}
+                    as="span"
+                  />
+                  {isOnSale && (
+                    <Money
+                      withoutTrailingZeros
+                      data={selectedVariant?.compareAtPrice!}
+                      as="span"
+                      className="opacity-50 strike"
+                    />
+                  )}
+                </Text>
+              </AddToCartButton>
+            ) : null}
+
+            {!isOutOfStock && !isPreorder && !isBackorder ? (
+              <Text
+                as="span"
+              >{productQty} in stock.</Text>
+            ) : null}
+
+            {isOutOfStock ? (
+              <Text
+                as="span"
+              >Out of stock. Please <Link to={'mailto:sales@lzxindustries.net'}>contact us</Link> to let us know about your interest in this item!</Text>
+            ) : null}
+
+            {!isOutOfStock && isPreorder && !isBackorder ? (
+              <Text
+                as="span"
+              >This product is not shipping, but is available for preorder. Please place your order only if you are prepared to wait.</Text>
+            ) : null}
+
+            {!isOutOfStock && isBackorder && !isPreorder ? (
+              <Text
+                as="span"
+              >Backorders ship within 4-6 weeks.</Text>
+            ) : null}
+
             {/* {!isOutOfStock && (
               <ShopPayButton
                 width="100%"
@@ -377,7 +440,7 @@ function ProductOptions({
               {option.values.length > 7 ? (
                 <div className="relative w-full">
                   <Listbox>
-                    {({open}) => (
+                    {({ open }) => (
                       <>
                         <Listbox.Button
                           ref={closeRef}
@@ -404,7 +467,7 @@ function ProductOptions({
                               key={`option-${option.name}-${value}`}
                               value={value}
                             >
-                              {({active}) => (
+                              {({ active }) => (
                                 <ProductOptionLink
                                   optionName={option.name}
                                   optionValue={value}
@@ -421,10 +484,10 @@ function ProductOptions({
                                   {value}
                                   {searchParamsWithDefaults.get(option.name) ===
                                     value && (
-                                    <span className="ml-2">
-                                      <IconCheck />
-                                    </span>
-                                  )}
+                                      <span className="ml-2">
+                                        <IconCheck />
+                                      </span>
+                                    )}
                                 </ProductOptionLink>
                               )}
                             </Listbox.Option>
@@ -477,7 +540,7 @@ function ProductOptionLink({
   children?: ReactNode;
   [key: string]: any;
 }) {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const isLangPathname = /\/[a-zA-Z]{2}-[a-zA-Z]{2}\//g.test(pathname);
   // fixes internalized pathname
   const path = isLangPathname
@@ -668,7 +731,7 @@ async function getRecommendedProducts(
     recommended: ProductType[];
     additional: ProductConnection;
   }>(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: {productId, count: 12},
+    variables: { productId, count: 12 },
   });
 
   invariant(products, 'No data returned from Shopify API');
