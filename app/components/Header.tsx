@@ -105,56 +105,10 @@ export function Header({
         <a className="px-2" href="/">
           <Logo size={logoSize} />
         </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://community.lzxindustries.net"
-          rel="noreferrer"
-        >
-          <MdForum size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.facebook.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaFacebook size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.instagram.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaInstagram size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://discord.gg/7xzD4XzhGn"
-          rel="noreferrer"
-        >
-          <FaDiscord size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.twitch.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaTwitch size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.youtube.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaYoutube size={iconSize} />
-        </a>
+
       </div>
       <div className="navbar-center hidden lg:flex">
+
         <ul className="menu menu-horizontal px-2">
           <li>
             <a className={isCatalog ? 'active' : ''} href="/">
@@ -207,6 +161,54 @@ export function Header({
           {/* </ul>
           </li> */}
         </ul>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://community.lzxindustries.net"
+          rel="noreferrer"
+        >
+          <MdForum size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://www.facebook.com/lzxindustries"
+          rel="noreferrer"
+        >
+          <FaFacebook size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://www.instagram.com/lzxindustries"
+          rel="noreferrer"
+        >
+          <FaInstagram size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://discord.gg/7xzD4XzhGn"
+          rel="noreferrer"
+        >
+          <FaDiscord size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://www.twitch.com/lzxindustries"
+          rel="noreferrer"
+        >
+          <FaTwitch size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://www.youtube.com/lzxindustries"
+          rel="noreferrer"
+        >
+          <FaYoutube size={iconSize} />
+        </a>
       </div>
       <div className="navbar-end">
         {/* <div className="form-control px-2">
