@@ -110,7 +110,7 @@ export function ProductCard({
               <img
                 src={image.url}
                 alt={`${product.title} product`}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="inset-0 w-full h-full object-cover"
               />
             )}
           </div>
