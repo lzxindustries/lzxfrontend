@@ -2,6 +2,7 @@ import {
   json,
   type MetaFunction,
   type LoaderFunctionArgs,
+  MetaArgs,
 } from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {PageHeader, Section, Button} from '~/components';
@@ -9,6 +10,7 @@ import invariant from 'tiny-invariant';
 import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
+import { getSeoMeta, SeoConfig } from '@shopify/hydrogen';
 
 export const headers = routeHeaders;
 
@@ -53,6 +55,10 @@ export async function loader({request, params, context}: LoaderFunctionArgs) {
     },
   );
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Policies() {
   const {policy} = useLoaderData<typeof loader>();

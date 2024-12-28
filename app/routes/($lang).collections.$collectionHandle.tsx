@@ -1,11 +1,16 @@
-import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json, MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {
   Collection as CollectionType,
   CollectionConnection,
   Filter,
 } from '@shopify/hydrogen/storefront-api-types';
-import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
+import {
+  flattenConnection,
+  AnalyticsPageType,
+  SeoConfig,
+  getSeoMeta,
+} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section, Text, SortFilter} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
@@ -132,6 +137,10 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     },
   );
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Collection() {
   const {collection, collections, appliedFilters} =

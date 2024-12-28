@@ -1,4 +1,4 @@
-import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json, MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {
   Collection,
@@ -17,7 +17,7 @@ import {
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
-import {Image} from '@shopify/hydrogen';
+import {Image, SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 
 const PAGINATION_SIZE = 8;
 
@@ -53,6 +53,10 @@ export const loader = async ({
       },
     },
   );
+};
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
 };
 
 export default function Collections() {

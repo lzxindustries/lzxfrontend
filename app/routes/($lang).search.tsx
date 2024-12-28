@@ -1,9 +1,10 @@
 import {
   defer,
+  MetaArgs,
   type LoaderFunctionArgs,
   type SerializeFrom,
 } from '@shopify/remix-oxygen';
-import {flattenConnection} from '@shopify/hydrogen';
+import {flattenConnection, getSeoMeta, SeoConfig} from '@shopify/hydrogen';
 import {Await, Form, useLoaderData} from '@remix-run/react';
 import type {
   Collection,
@@ -80,6 +81,10 @@ export async function loader({
       : Promise.resolve(null),
   });
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Search() {
   const {searchTerm, products, noResultRecommendations} =
