@@ -1,10 +1,11 @@
 import {
   json,
+  MetaArgs,
   type LinksFunction,
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {Image} from '@shopify/hydrogen';
+import {getSeoMeta, Image, SeoConfig} from '@shopify/hydrogen';
 import type {Blog} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section} from '~/components';
@@ -58,6 +59,10 @@ export async function loader({request, params, context}: LoaderFunctionArgs) {
     },
   );
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Article() {
   const {article, formattedDate} = useLoaderData<typeof loader>();

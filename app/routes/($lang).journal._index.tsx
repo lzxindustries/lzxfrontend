@@ -56,6 +56,10 @@ export const loader = async ({
   );
 };
 
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
+
 export default function Journals() {
   const {articles} = useLoaderData<typeof loader>();
 

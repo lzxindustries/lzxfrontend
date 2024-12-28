@@ -1,6 +1,6 @@
 import {type ReactNode, useRef, Suspense, useMemo} from 'react';
 import {Disclosure, Listbox} from '@headlessui/react';
-import {json} from '@shopify/remix-oxygen';
+import {json, MetaArgs} from '@shopify/remix-oxygen';
 import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {
   useLoaderData,
@@ -10,8 +10,8 @@ import {
   useNavigation,
 } from '@remix-run/react';
 
-import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
-import {AnalyticsPageType, Money, ShopPayButton} from '@shopify/hydrogen';
+import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton} from '@shopify/hydrogen';
 import {
   Heading,
   IconCaret,
@@ -113,6 +113,10 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     seo,
   });
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Product() {
   const {moduleData, product, shop, recommended} =
