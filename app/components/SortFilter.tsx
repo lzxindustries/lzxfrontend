@@ -385,7 +385,7 @@ export default function SortMenu() {
   const activeItem = items.find((item) => item.key === params.get('sort'));
 
   return (
-    <Menu as="div" className="relative z-40">
+    <Menu as="div" className="relative z-50">
       <Menu.Button className="flex items-center">
         <span className="px-2">
           <span className="px-2 font-medium">Sort by:</span>
@@ -396,7 +396,7 @@ export default function SortMenu() {
 
       <Menu.Items
         as="nav"
-        className="absolute right-0 flex flex-col p-4 text-right rounded-sm bg-contrast"
+        className="absolute z-50 bg-white right-0 flex flex-col p-4 text-right rounded-sm"
       >
         {items.map((item) => (
           <Menu.Item key={item.label}>
