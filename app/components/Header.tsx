@@ -45,10 +45,13 @@ export function Header({
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <button className="btn btn-ghost lg:hidden">
+          <button tabIndex={-1} className="btn btn-ghost lg:hidden">
             <FaList size={iconSize} />
           </button>
-          <ul className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52">
+          <ul
+            tabIndex={-1}
+            className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
+          >
             <li key="catalog">
               <a className={isCatalog ? 'active' : ''} href="/">
                 Catalog
