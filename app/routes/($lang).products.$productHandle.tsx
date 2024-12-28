@@ -229,7 +229,10 @@ export function ProductForm() {
    */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
-  const isPreorder = selectedVariant?.quantityAvailable <= 0 ? true : false;
+  const isPreorder = product.id == 'gid://shopify/Product/4319674761239';
+  const isBackorder =
+    selectedVariant?.quantityAvailable <= 0 && !isPreorder ? true : false;
+  const productQty = selectedVariant?.quantityAvailable;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -254,7 +257,7 @@ export function ProductForm() {
                 <Text>Sold Out</Text>
               </Button>
             ) : null}
-            {!isOutOfStock && !isPreorder ? (
+            {!isOutOfStock && !isPreorder && !isBackorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -290,8 +293,7 @@ export function ProductForm() {
                 </Text>
               </AddToCartButton>
             ) : null}
-
-            {!isOutOfStock && isPreorder ? (
+            {!isOutOfStock && isPreorder && !isBackorder ? (
               <AddToCartButton
                 lines={[
                   {
@@ -327,6 +329,67 @@ export function ProductForm() {
                 </Text>
               </AddToCartButton>
             ) : null}
+
+            {!isOutOfStock && isBackorder && !isPreorder ? (
+              <AddToCartButton
+                lines={[
+                  {
+                    merchandiseId: selectedVariant.id,
+                    quantity: 1,
+                  },
+                ]}
+                variant="primary"
+                data-test="add-to-cart"
+                analytics={{
+                  products: [productAnalytics],
+                  totalValue: parseFloat(productAnalytics.price),
+                }}
+              >
+                <Text
+                  as="span"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <span>Backorder Now</span> <span>·</span>{' '}
+                  <Money
+                    withoutTrailingZeros
+                    data={selectedVariant?.price!}
+                    as="span"
+                  />
+                  {isOnSale && (
+                    <Money
+                      withoutTrailingZeros
+                      data={selectedVariant?.compareAtPrice!}
+                      as="span"
+                      className="opacity-50 strike"
+                    />
+                  )}
+                </Text>
+              </AddToCartButton>
+            ) : null}
+
+            {!isOutOfStock && !isPreorder && !isBackorder ? (
+              <Text as="span">{productQty} in stock.</Text>
+            ) : null}
+
+            {isOutOfStock ? (
+              <Text as="span">
+                Out of stock. Please{' '}
+                <Link to={'mailto:sales@lzxindustries.net'}>contact us</Link> to
+                let us know about your interest in this item!
+              </Text>
+            ) : null}
+
+            {!isOutOfStock && isPreorder && !isBackorder ? (
+              <Text as="span">
+                This product is not shipping, but is available for preorder.
+                Please place your order only if you are prepared to wait.
+              </Text>
+            ) : null}
+
+            {!isOutOfStock && isBackorder && !isPreorder ? (
+              <Text as="span">Backorders ship within 4-6 weeks.</Text>
+            ) : null}
+
             {/* {!isOutOfStock && (
               <ShopPayButton
                 width="100%"
@@ -391,7 +454,7 @@ function ProductOptions({
                         </Listbox.Button>
                         <Listbox.Options
                           className={clsx(
-                            'border-primary bg-contrast absolute bottom-12 z-30 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
+                            'border-primary bg-white absolute bottom-12 z-50 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
                             open ? 'max-h-48' : 'max-h-0',
                           )}
                         >
@@ -445,7 +508,7 @@ function ProductOptions({
                           searchParams={searchParamsWithDefaults}
                           className={clsx(
                             'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
-                            checked ? 'border-primary/50' : 'border-primary/0',
+                            checked ? 'font-extrabold' : 'font-normal',
                           )}
                         />
                       </Text>
