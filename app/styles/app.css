@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Black.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Black.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Black.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: initial;
@@ -13,8 +13,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-BlackIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-BlackIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-BlackIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: initial;
@@ -22,8 +22,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Bold.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Bold.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Bold.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -31,8 +31,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-BoldIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-BoldIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-BoldIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -40,8 +40,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Light.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Light.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Light.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: initial;
@@ -49,8 +49,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-LightIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-LightIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-LightIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: initial;
@@ -58,8 +58,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Medium.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Medium.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Medium.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -67,8 +67,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Regular.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Regular.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Regular.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: initial;
@@ -76,8 +76,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-MediumIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-MediumIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-MediumIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -85,8 +85,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-RegularIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-RegularIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-RegularIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: initial;
@@ -94,8 +94,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-SemiBoldIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-SemiBoldIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-display: initial;
@@ -103,8 +103,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-SemiBold.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-SemiBold.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-SemiBold.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: initial;
@@ -112,8 +112,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-Thin.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-Thin.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-Thin.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: initial;
@@ -121,8 +121,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Black.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Black.woff') format('woff');
+  src: url('../../fonts/Goldplay-Black.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: initial;
@@ -130,8 +130,8 @@
 
 @font-face {
   font-family: 'GoldplayAlt';
-  src: url('../../public/fonts/GoldplayAlt-ThinIt.woff2') format('woff2'),
-    url('../../public/fonts/GoldplayAlt-ThinIt.woff') format('woff');
+  src: url('../../fonts/GoldplayAlt-ThinIt.woff2') format('woff2'),
+    url('../../fonts/GoldplayAlt-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: initial;
@@ -139,8 +139,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Bold.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Bold.woff') format('woff');
+  src: url('../../fonts/Goldplay-Bold.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Bold.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -148,8 +148,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-BoldIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-BoldIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-BoldIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-BoldIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -157,8 +157,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-BlackIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-BlackIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-BlackIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-BlackIt.woff') format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: initial;
@@ -166,8 +166,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Light.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Light.woff') format('woff');
+  src: url('../../fonts/Goldplay-Light.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: initial;
@@ -175,8 +175,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Medium.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Medium.woff') format('woff');
+  src: url('../../fonts/Goldplay-Medium.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: initial;
@@ -184,8 +184,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-LightIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-LightIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-LightIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-LightIt.woff') format('woff');
   font-weight: 300;
   font-style: italic;
   font-display: initial;
@@ -193,8 +193,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-MediumIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-MediumIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-MediumIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-MediumIt.woff') format('woff');
   font-weight: 500;
   font-style: italic;
   font-display: initial;
@@ -202,8 +202,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Regular.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Regular.woff') format('woff');
+  src: url('../../fonts/Goldplay-Regular.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: initial;
@@ -211,8 +211,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-RegularIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-RegularIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-RegularIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-RegularIt.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: initial;
@@ -220,8 +220,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-SemiBold.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-SemiBold.woff') format('woff');
+  src: url('../../fonts/Goldplay-SemiBold.woff2') format('woff2'),
+    url('../../fonts/Goldplay-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: initial;
@@ -229,8 +229,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-Thin.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-Thin.woff') format('woff');
+  src: url('../../fonts/Goldplay-Thin.woff2') format('woff2'),
+    url('../../fonts/Goldplay-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: initial;
@@ -238,8 +238,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-SemiBoldIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-SemiBoldIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-SemiBoldIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-SemiBoldIt.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-display: initial;
@@ -247,8 +247,8 @@
 
 @font-face {
   font-family: 'Goldplay';
-  src: url('../../public/fonts/Goldplay-ThinIt.woff2') format('woff2'),
-    url('../../public/fonts/Goldplay-ThinIt.woff') format('woff');
+  src: url('../../fonts/Goldplay-ThinIt.woff2') format('woff2'),
+    url('../../fonts/Goldplay-ThinIt.woff') format('woff');
   font-weight: 100;
   font-style: italic;
   font-display: initial;
@@ -256,25 +256,24 @@
 
 @layer base {
   h1 {
-    @apply text-3xl font-semibold uppercase
+    @apply text-3xl font-semibold uppercase;
   }
 
   h2 {
-    @apply text-xl font-semibold 
+    @apply text-xl font-semibold;
   }
 
   h3 {
-    @apply text-base font-medium uppercase 
+    @apply text-base font-medium uppercase;
   }
 
   h4 {
-    @apply text-base font-medium 
+    @apply text-base font-medium;
   }
 
   p {
-    @apply text-base font-normal
+    @apply text-base font-normal;
   }
-
 }
 
 /* Tokens */
@@ -433,7 +432,6 @@
     animation:330s scroll infinite linear; */
   }
 
-
   @-webkit-keyframes scroll {
     100% {
       background-position: -2400px -2400px;
@@ -481,8 +479,6 @@
     }
   }
 }
-
-
 
 @layer components {
   /* .article {
