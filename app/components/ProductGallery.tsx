@@ -1,6 +1,8 @@
 import {Image} from '@shopify/hydrogen';
-import type {MediaEdge} from '@shopify/hydrogen/storefront-api-types';
-import type {MediaImage} from '@shopify/hydrogen/storefront-api-types';
+import type {
+  MediaEdge,
+  MediaImage,
+} from '@shopify/hydrogen/storefront-api-types';
 
 /**
  * A client component that defines a media gallery for hosting images, 3D models, and videos of products

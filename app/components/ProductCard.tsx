@@ -1,10 +1,7 @@
 import {useState} from 'react';
 import clsx from 'clsx';
-import {
-  flattenConnection,
-  ShopifyAnalyticsProduct,
-  useMoney,
-} from '@shopify/hydrogen';
+import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
+import {flattenConnection, useMoney} from '@shopify/hydrogen';
 import {Text, Link, AddToCartButton} from '~/components';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
 import {getProductPlaceholder} from '~/lib/placeholders';

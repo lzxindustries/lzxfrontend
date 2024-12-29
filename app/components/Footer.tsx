@@ -1,9 +1,11 @@
 import Logo from './Logo';
-import {FaInstagram} from 'react-icons/fa';
-import {FaDiscord} from 'react-icons/fa';
-import {FaTwitch} from 'react-icons/fa';
-import {FaYoutube} from 'react-icons/fa';
-import {FaFacebook} from 'react-icons/fa';
+import {
+  FaInstagram,
+  FaDiscord,
+  FaTwitch,
+  FaYoutube,
+  FaFacebook,
+} from 'react-icons/fa';
 import {CountrySelector} from './CountrySelector';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 

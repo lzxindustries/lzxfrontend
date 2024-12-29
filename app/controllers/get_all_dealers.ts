@@ -1,7 +1,7 @@
 import {getDataCollection} from '~/lib/db.server';
-import {AppLoadContext} from '@shopify/remix-oxygen';
-import {DealerInterface} from '~/models/dealer';
-import {DealerView} from '~/views/dealer';
+import type {AppLoadContext} from '@shopify/remix-oxygen';
+import type {DealerInterface} from '~/models/dealer';
+import type {DealerView} from '~/views/dealer';
 
 export async function getAllDealers(context: AppLoadContext) {
   const dealer_datas = (await getDataCollection(

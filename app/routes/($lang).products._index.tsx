@@ -1,4 +1,9 @@
-import {json, type LoaderArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
+  ActionFunctionArgs,
+  type LoaderFunctionArgs,
+} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {
   ProductConnection,
@@ -18,12 +23,17 @@ import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {getSeoMeta} from '@shopify/hydrogen';
 
 const PAGE_BY = 8;
 
 export const headers = routeHeaders;
 
-export async function loader({request, context: {storefront}}: LoaderArgs) {
+export async function loader({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) {
   const variables = getPaginationVariables(request, PAGE_BY);
 
   const data = await storefront.query<{
@@ -72,6 +82,10 @@ export async function loader({request, context: {storefront}}: LoaderArgs) {
     },
   );
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function AllProducts() {
   const {products} = useLoaderData<typeof loader>();

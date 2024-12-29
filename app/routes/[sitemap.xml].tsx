@@ -1,6 +1,6 @@
 import {flattenConnection} from '@shopify/hydrogen';
-import type {LoaderArgs} from '@shopify/remix-oxygen';
-import {
+import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {
   CollectionConnection,
   PageConnection,
   ProductConnection,
@@ -26,7 +26,10 @@ interface ProductEntry {
   };
 }
 
-export async function loader({request, context: {storefront}}: LoaderArgs) {
+export async function loader({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) {
   const data = await storefront.query<SitemapQueryData>(SITEMAP_QUERY, {
     variables: {
       urlLimits: MAX_URLS,

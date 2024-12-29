@@ -1,17 +1,17 @@
-import {ModuleView} from '~/views/module';
-import {ModuleInterface} from '~/models/module';
-import {ModuleControlInterface} from '~/models/module_control';
-import {ModuleConnectorInterface} from '~/models/module_connector';
-import {ModuleFeatureInterface} from '~/models/module_feature';
-import {CompanyInterface} from '~/models/company';
-import {PartInterface} from '~/models/part';
+import type {ModuleView} from '~/views/module';
+import type {ModuleInterface} from '~/models/module';
+import type {ModuleControlInterface} from '~/models/module_control';
+import type {ModuleConnectorInterface} from '~/models/module_connector';
+import type {ModuleFeatureInterface} from '~/models/module_feature';
+import type {CompanyInterface} from '~/models/company';
+import type {PartInterface} from '~/models/part';
 import {getDataCollection, getDataDocument} from '~/lib/db.server';
-import {AppLoadContext} from '@shopify/remix-oxygen';
-import {ModulePartView} from '~/views/module_part';
-import {ModuleVideoInterface} from '~/models/module_video';
-import {ModuleAssetInterface} from '~/models/module_asset';
-import {VideoInterface} from '~/models/video';
-import {AssetInterface} from '~/models/asset';
+import type {AppLoadContext} from '@shopify/remix-oxygen';
+import type {ModulePartView} from '~/views/module_part';
+import type {ModuleVideoInterface} from '~/models/module_video';
+import type {ModuleAssetInterface} from '~/models/module_asset';
+import type {VideoInterface} from '~/models/video';
+import type {AssetInterface} from '~/models/asset';
 
 export async function getModuleDetails(context: AppLoadContext, id: string) {
   const filters = {id};
@@ -96,103 +96,94 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
     assets: [],
   };
 
-  company_data.map((company) => {
-    module_data.company == company._id
-      ? (module_view.company.name = company.name)
-      : null;
-    module_data.company == company._id
-      ? (module_view.company.legalName = company.legalName)
-      : null;
+  company_data.forEach((company) => {
+    if (module_data.company == company._id)
+      module_view.company.name = company.name;
+    if (module_data.company == company._id)
+      module_view.company.legalName = company.legalName;
   });
 
   // connectors
-  connectors_data.map((connector) => {
+  connectors_data.forEach((connector) => {
     const part_view: ModulePartView = {
       name: 'Unknown',
       image: 'None',
     };
 
-    parts_data.map((part) => {
-      connector.part == part._id ? (part_view.name = part.name) : null;
-      connector.part == part._id ? (part_view.image = part.image) : null;
+    parts_data.forEach((part) => {
+      if (connector.part == part._id) part_view.name = part.name;
+      if (connector.part == part._id) part_view.image = part.image;
     });
 
-    connector.module == module_data._id
-      ? module_view.connectors.push({
-          is_input: connector.is_input,
-          is_output: connector.is_output,
-          name: connector.name,
-          refDes: connector.refDes,
-          x: connector.x,
-          y: connector.y,
-          part: part_view,
-        })
-      : null;
+    if (connector.module == module_data._id)
+      module_view.connectors.push({
+        is_input: connector.is_input,
+        is_output: connector.is_output,
+        name: connector.name,
+        refDes: connector.refDes,
+        x: connector.x,
+        y: connector.y,
+        part: part_view,
+      });
   });
 
-  controls_data.map((control) => {
+  controls_data.forEach((control) => {
     const part_view: ModulePartView = {
       name: 'Unknown',
       image: 'None',
     };
 
-    parts_data.map((part) => {
-      control.part == part._id ? (part_view.name = part.name) : null;
-      control.part == part._id ? (part_view.image = part.image) : null;
+    parts_data.forEach((part) => {
+      if (control.part == part._id) part_view.name = part.name;
+      if (control.part == part._id) part_view.image = part.image;
     });
 
-    control.module == module_data._id
-      ? module_view.controls.push({
-          is_gain: control.is_gain,
-          is_bias: control.is_bias,
-          name: control.name,
-          refDes: control.refDes,
-          x: control.x,
-          y: control.y,
-          part: part_view,
-        })
-      : null;
+    if (control.module == module_data._id)
+      module_view.controls.push({
+        is_gain: control.is_gain,
+        is_bias: control.is_bias,
+        name: control.name,
+        refDes: control.refDes,
+        x: control.x,
+        y: control.y,
+        part: part_view,
+      });
   });
 
   // features
-  features_data.map((feature) => {
-    feature.module == module_data._id
-      ? module_view.features.push({
-          name: feature.name,
-          description: feature.description,
-          topic: feature.topic,
-        })
-      : null;
+  features_data.forEach((feature) => {
+    if (feature.module == module_data._id)
+      module_view.features.push({
+        name: feature.name,
+        description: feature.description,
+        topic: feature.topic,
+      });
   });
 
   // videos
-  module_videos_data.map((module_video) => {
-    module_video.module == module_data._id
-      ? videos_data.map((video) => {
-          video._id == module_video.video
-            ? module_view.videos.push({
-                name: video.name,
-                youtube: video.youtube,
-                gif: video.gif,
-              })
-            : null;
-        })
-      : null;
+  module_videos_data.forEach((module_video) => {
+    if (module_video.module == module_data._id)
+      videos_data.forEach((video) => {
+        if (video._id == module_video.video)
+          module_view.videos.push({
+            name: video.name,
+            youtube: video.youtube,
+            gif: video.gif,
+          });
+      });
   });
 
   // assets
-  module_assets_data.map((module_asset) => {
-    module_asset.module == module_data._id
-      ? assets_data.map((asset) => {
-          asset._id == module_asset.asset
-            ? module_view.assets.push({
-                name: asset.name,
-                file_name: asset.file_name,
-                file_type: asset.file_type,
-              })
-            : null;
-        })
-      : null;
+  module_assets_data.forEach((module_asset) => {
+    if (module_asset.module == module_data._id)
+      assets_data.forEach((asset) => {
+        if (asset._id == module_asset.asset)
+          module_view.assets.push({
+            name: asset.name,
+            file_name: asset.file_name,
+            file_type: asset.file_type,
+          });
+      });
   });
 
   return module_view;

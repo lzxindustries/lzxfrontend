@@ -8,3 +8,4 @@ node_modules
 .vscode
 .hydrogen
 .yarn
+storefrontapi.generated.d.ts

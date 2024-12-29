@@ -1,4 +1,4 @@
-import {json, type LoaderArgs} from '@shopify/remix-oxygen';
+import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {flattenConnection, Image} from '@shopify/hydrogen';
 import type {Article, Blog} from '@shopify/hydrogen/storefront-api-types';
@@ -11,7 +11,10 @@ const BLOG_HANDLE = 'Journal';
 
 export const headers = routeHeaders;
 
-export const loader = async ({request, context: {storefront}}: LoaderArgs) => {
+export const loader = async ({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) => {
   const {language, country} = storefront.i18n;
   const {blog} = await storefront.query<{
     blog: Blog;
@@ -51,6 +54,10 @@ export const loader = async ({request, context: {storefront}}: LoaderArgs) => {
       },
     },
   );
+};
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
 };
 
 export default function Journals() {

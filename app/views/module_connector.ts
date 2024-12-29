@@ -1,4 +1,4 @@
-import {ModulePartView} from './module_part';
+import type {ModulePartView} from './module_part';
 
 export type ModuleConnectorView = {
   refDes: string;

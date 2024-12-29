@@ -1,7 +1,13 @@
-import {json, type LinksFunction, type LoaderArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
+  type LinksFunction,
+  type LoaderFunctionArgs,
+} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {Image} from '@shopify/hydrogen';
-import {Blog} from '@shopify/hydrogen/storefront-api-types';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {getSeoMeta, Image} from '@shopify/hydrogen';
+import type {Blog} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section} from '~/components';
 import {seoPayload} from '~/lib/seo.server';
@@ -16,7 +22,7 @@ export const headers = routeHeaders;
 //   return [{rel: 'stylesheet', href: styles}];
 // };
 
-export async function loader({request, params, context}: LoaderArgs) {
+export async function loader({request, params, context}: LoaderFunctionArgs) {
   const {language, country} = context.storefront.i18n;
 
   invariant(params.journalHandle, 'Missing journal handle');
@@ -54,6 +60,10 @@ export async function loader({request, params, context}: LoaderArgs) {
     },
   );
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Article() {
   const {article, formattedDate} = useLoaderData<typeof loader>();

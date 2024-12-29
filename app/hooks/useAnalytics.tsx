@@ -1,14 +1,17 @@
 import {useLocation, useFetchers, useMatches} from '@remix-run/react';
+import type {
+  ShopifyAddToCartPayload,
+  ShopifyPageViewPayload,
+} from '@shopify/hydrogen';
 import {
   AnalyticsEventName,
   getClientBrowserParameters,
   sendShopifyAnalytics,
-  ShopifyAddToCartPayload,
-  ShopifyPageViewPayload,
   useShopifyCookies,
 } from '@shopify/hydrogen';
 import {useEffect} from 'react';
-import {CartAction, I18nLocale} from '../lib/type';
+import type {I18nLocale} from '../lib/type';
+import {CartAction} from '../lib/type';
 
 export function useAnalytics(hasUserConsent: boolean, locale: I18nLocale) {
   useShopifyCookies({hasUserConsent});
@@ -71,7 +74,7 @@ export function useAnalytics(hasUserConsent: boolean, locale: I18nLocale) {
  *   useDataFromMatches
  * } from '@shopify/hydrogen';
  *
- * export async function loader({request, context}: LoaderArgs) {
+ * export async function loader({request, context}: LoaderFunctionArgs) {
  *   return defer({
  *     analytics: {
  *       shopId: 'gid://shopify/Shop/1',
