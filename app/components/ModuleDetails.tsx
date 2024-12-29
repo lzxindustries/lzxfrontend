@@ -22,13 +22,11 @@ export function ModuleDetails({
   let hasMainFeatures = false;
   let hasPatchFeatures = false;
   let hasSystemFeatures = false;
-  {
-    moduleData.features.map((feature) => {
-      feature.topic == 'Main' ? (hasMainFeatures = true) : null;
-      feature.topic == 'Patch' ? (hasPatchFeatures = true) : null;
-      feature.topic == 'System' ? (hasSystemFeatures = true) : null;
-    });
-  }
+  moduleData.features.forEach((feature) => {
+    if (feature.topic === 'Main') hasMainFeatures = true;
+    if (feature.topic === 'Patch') hasPatchFeatures = true;
+    if (feature.topic === 'System') hasSystemFeatures = true;
+  });
   const portraitAspect = moduleData.hp >= 25;
 
   return (
