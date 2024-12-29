@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "shopify hydrogen dev --codegen",
     "dev-legacy": "shopify hydrogen dev --codegen --legacy-runtime",
-    "preview": "yarn run build && shopify hydrogen preview",
-    "preview-legacy": "yarn run build && shopify hydrogen preview --legacy-runtime",
+    "preview": "shopify hydrogen preview --build",
+    "preview-legacy": "shopify hydrogen preview --build --legacy-runtime",
     "codegen": "shopify hydrogen codegen",
     "build": "shopify hydrogen build --codegen",
     "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
