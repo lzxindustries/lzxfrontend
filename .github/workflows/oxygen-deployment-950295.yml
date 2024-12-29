@@ -19,6 +19,10 @@ jobs:
         with:
           node-version: lts/*
           check-latest: true
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Install configured package manager
+        run: corepack install
       - name: Set yarn version to 4.5.3
         run: yarn set version 4.5.3
       - name: Verify Yarn version
