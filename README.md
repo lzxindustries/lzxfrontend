@@ -40,7 +40,7 @@ Run development server on local network:
 yarn run dev --host
 ```
 
-Build and run preview server
+Build and run preview server:
 
 ```
 yarn run preview
