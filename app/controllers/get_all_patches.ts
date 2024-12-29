@@ -51,37 +51,32 @@ export async function getAllPatches(context: AppLoadContext) {
     };
 
     artist_datas.map((artist_data) => {
-      patch_data.artist == artist_data._id
-        ? (patch_view.artist.name = artist_data.name)
-        : null;
+      if (patch_data.artist == artist_data._id)
+        patch_view.artist.name = artist_data.name;
     });
 
     // videos
-    patch_videos_data.map((patch_video) => {
-      patch_video.video == patch_data._id
-        ? videos_data.map((video) => {
-            video._id == patch_video.video
-              ? patch_view.videos.push({
-                  name: video.name,
-                  youtube: video.youtube,
-                  gif: video.gif,
-                })
-              : null;
-          })
-        : null;
+    patch_videos_data.forEach((patch_video) => {
+      if (patch_video.video == patch_data._id)
+        videos_data.forEach((video) => {
+          if (video._id == patch_video.video)
+            patch_view.videos.push({
+              name: video.name,
+              youtube: video.youtube,
+              gif: video.gif,
+            });
+        });
     });
 
     // modules
-    patch_modules_data.map((patch_module) => {
-      patch_module.module == patch_data._id
-        ? modules_data.map((module) => {
-            module._id == patch_module.module
-              ? patch_view.modules.push({
-                  name: module.name,
-                })
-              : null;
-          })
-        : null;
+    patch_modules_data.forEach((patch_module) => {
+      if (patch_module.module == patch_data._id)
+        modules_data.forEach((module) => {
+          if (module._id == patch_module.module)
+            patch_view.modules.push({
+              name: module.name,
+            });
+        });
     });
 
     patch_views.push(patch_view);

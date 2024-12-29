@@ -1,11 +1,12 @@
-import {
-  json,
+import {json} from '@shopify/remix-oxygen';
+import type {
   MetaArgs,
   type LinksFunction,
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {getSeoMeta, Image, SeoConfig} from '@shopify/hydrogen';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {getSeoMeta, Image} from '@shopify/hydrogen';
 import type {Blog} from '@shopify/hydrogen/storefront-api-types';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section} from '~/components';

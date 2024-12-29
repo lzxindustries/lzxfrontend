@@ -1,7 +1,7 @@
-import {
-  ActionFunctionArgs,
-  json,
+import {json} from '@shopify/remix-oxygen';
+import type {
   MetaArgs,
+  ActionFunctionArgs,
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
@@ -23,7 +23,8 @@ import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
-import {getSeoMeta, SeoConfig} from '@shopify/hydrogen';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {getSeoMeta} from '@shopify/hydrogen';
 
 const PAGE_BY = 8;
 

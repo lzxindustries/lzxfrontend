@@ -1,15 +1,16 @@
-import {json, MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
+import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import type {
   Collection as CollectionType,
   CollectionConnection,
   Filter,
 } from '@shopify/hydrogen/storefront-api-types';
+import type {SeoConfig} from '@shopify/hydrogen';
 import {
   flattenConnection,
   AnalyticsPageType,
   getSeoMeta,
-  SeoConfig,
 } from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section, Text, SortFilter, Hero} from '~/components';
