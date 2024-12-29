@@ -45,13 +45,14 @@ import React from 'react';
 import {useLocation} from 'react-router-dom';
 import {Footer} from './Footer';
 import {Header} from './Header';
+import {LayoutData} from '~/root';
 
 export function Layout({
   children,
-}: // layout,
-{
+  layout,
+}: {
   children: React.ReactNode;
-  // layout: LayoutData;
+  layout: LayoutData;
 }) {
   const [root] = useMatches();
   const location = useLocation();
