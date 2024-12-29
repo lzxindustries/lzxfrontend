@@ -1,13 +1,13 @@
 import clsx from 'clsx';
-import type { SerializeFrom } from '@shopify/remix-oxygen';
-import { MediaFile } from '@shopify/hydrogen';
+import type {SerializeFrom} from '@shopify/remix-oxygen';
+import {MediaFile} from '@shopify/hydrogen';
 import type {
   MediaImage,
   Media,
   Metafield,
   Video as MediaVideo,
 } from '@shopify/hydrogen/storefront-api-types';
-import { Heading, Text, Link } from '~/components';
+import {Heading, Text, Link} from '~/components';
 
 export interface CollectionHero {
   byline: Metafield;
@@ -25,25 +25,61 @@ export interface CollectionHero {
  * Hero component that renders metafields attached to collection resources
  **/
 export function Hero({
-  // byline,
-  // cta,
-  // handle,
-  // heading,
-  // height,
-  // loading,
-  // spread,
-  // spreadSecondary,
-  // top,
-}: SerializeFrom<CollectionHero>) {
+  byline,
+  cta,
+  handle,
+  heading,
+  height,
+  loading,
+  spread,
+  spreadSecondary,
+  top,
+}: CollectionHero) {
   return (
-    <section
-      className="px-4 w-full"
-    >
+    <section className="px-4 w-full">
       <Heading format as="h2" size="display" className="w-full max-w-max">
         Welcome to LZX Industries
       </Heading>
       <Text format as="p" size="lead" className="w-full max-w-max">
-        We make standalone instruments and EuroRack format synthesizer modules for video generation and processing.  <Link className={" underline text-blue-500"} to={`/patches`}>Visit our patch gallery</Link> to see what that looks like. Check out our <Link className={" underline text-blue-500"} to={`/products/double-vision-system`}>Double Vision System</Link> for a complete system available now.  Get <Link className={" underline text-blue-500"} to={`/products/esg3`}>our ESG3 module</Link> to add video output to your EuroRack audio synthesizer.  When you'd like to engage with our community, visit our <Link className={" underline text-blue-500"} to={`https://community.lzxindustries.net`}>forum</Link>, <Link className={" underline text-blue-500"}  to={`https://discord.gg/7xzD4XzhGn`}>chat on Discord</Link> or <Link className={" underline text-blue-500"}  to={`mailto:sales@lzxindustries.net`}>write us an e-mail</Link>.  
+        We make standalone instruments and EuroRack format synthesizer modules
+        for video generation and processing.{' '}
+        <Link className={' underline text-blue-500'} to={`/patches`}>
+          Visit our patch gallery
+        </Link>{' '}
+        to see what that looks like. Check out our{' '}
+        <Link
+          className={' underline text-blue-500'}
+          to={`/products/double-vision-system`}
+        >
+          Double Vision System
+        </Link>{' '}
+        for a complete system available now. Get{' '}
+        <Link className={' underline text-blue-500'} to={`/products/esg3`}>
+          our ESG3 module
+        </Link>{' '}
+        to add video output to your EuroRack audio synthesizer. When you&apos;d
+        like to engage with our community, visit our{' '}
+        <Link
+          className={' underline text-blue-500'}
+          to={`https://community.lzxindustries.net`}
+        >
+          forum
+        </Link>
+        ,{' '}
+        <Link
+          className={' underline text-blue-500'}
+          to={`https://discord.gg/7xzD4XzhGn`}
+        >
+          chat on Discord
+        </Link>{' '}
+        or{' '}
+        <Link
+          className={' underline text-blue-500'}
+          to={`mailto:sales@lzxindustries.net`}
+        >
+          write us an e-mail
+        </Link>
+        .
       </Text>
     </section>
     // <Link to={`/collections/${handle}`}>
@@ -104,7 +140,7 @@ interface SpreadMediaProps {
   sizes: string;
 }
 
-function SpreadMedia({ data, loading, sizes }: SpreadMediaProps) {
+function SpreadMedia({data, loading, sizes}: SpreadMediaProps) {
   return (
     <MediaFile
       data={data}
@@ -116,7 +152,7 @@ function SpreadMedia({ data, loading, sizes }: SpreadMediaProps) {
           loop: true,
           playsInline: true,
           autoPlay: true,
-          previewImageOptions: { src: data.previewImage?.url ?? '' },
+          previewImageOptions: {src: data.previewImage?.url ?? ''},
         },
         image: {
           loading,

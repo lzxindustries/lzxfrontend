@@ -1,9 +1,11 @@
-import {
-  defer,
-  type LoaderArgs,
+import {defer} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
+  type LoaderFunctionArgs,
   type SerializeFrom,
 } from '@shopify/remix-oxygen';
-import {flattenConnection} from '@shopify/hydrogen';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
 import {Await, Form, useLoaderData} from '@remix-run/react';
 import type {
   Collection,
@@ -27,7 +29,10 @@ import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 
-export async function loader({request, context: {storefront}}: LoaderArgs) {
+export async function loader({
+  request,
+  context: {storefront},
+}: LoaderFunctionArgs) {
   const searchParams = new URL(request.url).searchParams;
   const cursor = searchParams.get('cursor')!;
   const searchTerm = searchParams.get('q')!;
@@ -77,6 +82,10 @@ export async function loader({request, context: {storefront}}: LoaderArgs) {
       : Promise.resolve(null),
   });
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
 
 export default function Search() {
   const {searchTerm, products, noResultRecommendations} =
@@ -177,7 +186,7 @@ const SEARCH_QUERY = `#graphql
 `;
 
 export async function getNoResultRecommendations(
-  storefront: LoaderArgs['context']['storefront'],
+  storefront: LoaderFunctionArgs['context']['storefront'],
 ) {
   const data = await storefront.query<{
     featuredCollections: CollectionConnection;

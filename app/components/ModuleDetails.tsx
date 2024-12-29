@@ -1,12 +1,14 @@
 import {useState} from 'react';
-import {ModuleView} from '~/views/module';
+import type {ModuleView} from '~/views/module';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import {FaArrowRight} from 'react-icons/fa';
 import {BsFillArrowRightSquareFill} from 'react-icons/bs';
-import {TbRectangleFilled} from 'react-icons/tb';
-import {TbTriangleFilled} from 'react-icons/tb';
-import {TbTriangleInvertedFilled} from 'react-icons/tb';
-import {TbCircleFilled} from 'react-icons/tb';
+import {
+  TbRectangleFilled,
+  TbTriangleFilled,
+  TbTriangleInvertedFilled,
+  TbCircleFilled,
+} from 'react-icons/tb';
 import {AddToCartButton} from '.';
 
 export function ModuleDetails({
@@ -20,13 +22,11 @@ export function ModuleDetails({
   let hasMainFeatures = false;
   let hasPatchFeatures = false;
   let hasSystemFeatures = false;
-  {
-    moduleData.features.map((feature) => {
-      feature.topic == 'Main' ? (hasMainFeatures = true) : null;
-      feature.topic == 'Patch' ? (hasPatchFeatures = true) : null;
-      feature.topic == 'System' ? (hasSystemFeatures = true) : null;
-    });
-  }
+  moduleData.features.forEach((feature) => {
+    if (feature.topic === 'Main') hasMainFeatures = true;
+    if (feature.topic === 'Patch') hasPatchFeatures = true;
+    if (feature.topic === 'System') hasSystemFeatures = true;
+  });
   const portraitAspect = moduleData.hp >= 25;
 
   return (
@@ -67,7 +67,7 @@ export function ModuleDetails({
           {hasMainFeatures
             ? moduleData.features.map((feature) => {
                 return feature.topic == 'Main' ? (
-                  <div>
+                  <div key={`${moduleData.name}-${feature.name}`}>
                     <h2>
                       <TbRectangleFilled className="inline-block align-middle" />{' '}
                       <span className="align-middle">{feature.name}</span>
@@ -265,10 +265,10 @@ export function ModuleDetails({
                   ) : null}
                   <p>
                     {moduleData.connectors.length > 0
-                      ? moduleData.connectors.map((conn) => {
+                      ? moduleData.connectors.map((conn, index) => {
                           return (
                             <div
-                              key={conn.name}
+                              key={`${moduleData.name}-${conn.part}-${conn.name}-${conn.refDes}-${index}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -294,10 +294,10 @@ export function ModuleDetails({
 
                   <p>
                     {moduleData.controls.length > 0
-                      ? moduleData.controls.map((conn) => {
+                      ? moduleData.controls.map((conn, index) => {
                           return (
                             <div
-                              key={conn.name}
+                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -333,10 +333,10 @@ export function ModuleDetails({
                   ) : null}
                   <p>
                     {moduleData.connectors.length > 0
-                      ? moduleData.connectors.map((conn) => {
+                      ? moduleData.connectors.map((conn, index) => {
                           return (
                             <div
-                              key={conn.name}
+                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -363,10 +363,10 @@ export function ModuleDetails({
                   {moduleData.controls.length > 0 ? <h3>Controls</h3> : null}
                   <p>
                     {moduleData.controls.length > 0
-                      ? moduleData.controls.map((conn) => {
+                      ? moduleData.controls.map((conn, index) => {
                           return (
                             <div
-                              key={conn.name}
+                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -404,7 +404,9 @@ export function ModuleDetails({
           <p>
             {moduleData.assets.map((asset) => {
               return (
-                <>
+                <div
+                  key={`${moduleData.company}-${moduleData.name}-${asset.name}`}
+                >
                   <a
                     target="_blank"
                     href={'/assets/' + asset.file_name}
@@ -413,7 +415,7 @@ export function ModuleDetails({
                     {asset.name} ({asset.file_type.toUpperCase()})
                   </a>
                   <br />
-                </>
+                </div>
               );
             })}
           </p>
@@ -429,6 +431,7 @@ export function ModuleDetails({
           {moduleData.videos.map((video) => {
             return video.youtube ? (
               <iframe
+                key={video.name}
                 className="basis-[100%] aspect-video w-full"
                 src={'https://www.youtube.com/embed/' + video.youtube}
                 title={video.name}
@@ -448,7 +451,9 @@ export function ModuleDetails({
           {hasPatchFeatures
             ? moduleData.features.map((feature) => {
                 return feature.topic == 'Patch' ? (
-                  <div>
+                  <div
+                    key={`${moduleData.company}-${moduleData.name}-${feature.name}`}
+                  >
                     <h3>{feature.name}</h3>
                     <p
                       dangerouslySetInnerHTML={{__html: feature.description}}
@@ -470,7 +475,9 @@ export function ModuleDetails({
           {hasSystemFeatures
             ? moduleData.features.map((feature) => {
                 return feature.topic == 'System' ? (
-                  <div>
+                  <div
+                    key={`${moduleData.company}-${moduleData.name}-${feature.name}`}
+                  >
                     <h3>{feature.name}</h3>
                     <p
                       dangerouslySetInnerHTML={{__html: feature.description}}

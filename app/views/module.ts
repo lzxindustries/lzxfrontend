@@ -1,9 +1,9 @@
-import {ModuleConnectorView} from './module_connector';
-import {ModuleControlView} from './module_control';
-import {ModuleFeatureView} from './module_feature';
-import {CompanyView} from './company';
-import {ModuleVideoView} from './module_video';
-import {ModuleAssetView} from './module_asset';
+import type {ModuleConnectorView} from './module_connector';
+import type {ModuleControlView} from './module_control';
+import type {ModuleFeatureView} from './module_feature';
+import type {CompanyView} from './company';
+import type {ModuleVideoView} from './module_video';
+import type {ModuleAssetView} from './module_asset';
 
 export type ModuleView = {
   id: string;

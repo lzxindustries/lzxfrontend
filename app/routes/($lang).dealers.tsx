@@ -2,11 +2,11 @@ import ModalImage from 'react-modal-image';
 import {Section, Grid, Text, Link} from '~/components';
 import {getAllDealers} from '~/controllers/get_all_dealers';
 import {DealerView} from '~/views/dealer';
-import {LoaderArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import Article from './($lang).journal.$journalHandle';
 
-export async function loader({params, request, context}: LoaderArgs) {
+export async function loader({params, request, context}: LoaderFunctionArgs) {
   const dealerData = await getAllDealers(context);
   return dealerData;
 }

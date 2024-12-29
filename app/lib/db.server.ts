@@ -1,4 +1,4 @@
-import {AppLoadContext} from '@shopify/remix-oxygen';
+import type {AppLoadContext} from '@shopify/remix-oxygen';
 
 export async function getDataCollection(
   context: AppLoadContext,

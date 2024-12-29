@@ -1,7 +1,8 @@
-import {
-  defer,
+import {defer} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
   type LinksFunction,
-  type LoaderArgs,
+  type LoaderFunctionArgs,
   type AppLoadContext,
 } from '@shopify/remix-oxygen';
 import {
@@ -15,12 +16,17 @@ import {
   useMatches,
   useRouteError,
 } from '@remix-run/react';
-import {ShopifySalesChannel, Seo} from '@shopify/hydrogen';
+import {
+  ShopifySalesChannel,
+  Seo,
+  getSeoMeta,
+  SeoConfig,
+} from '@shopify/hydrogen';
 import {Layout} from '~/components';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
-import styles from './styles/app.css';
-import favicon from '../public/favicon.svg';
+import styles from './styles/app.css?url';
+import favicon from '~/assets/favicon.svg';
 import {seoPayload} from '~/lib/seo.server';
 import {
   DEFAULT_LOCALE,
@@ -29,9 +35,9 @@ import {
   type EnhancedMenu,
 } from './lib/utils';
 import invariant from 'tiny-invariant';
-import {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
+import type {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
 import {useAnalytics} from './hooks/useAnalytics';
-
+import type {MetaFunction} from '@remix-run/react';
 export const links: LinksFunction = () => {
   return [
     {rel: 'stylesheet', href: styles},
@@ -47,7 +53,7 @@ export const links: LinksFunction = () => {
   ];
 };
 
-export async function loader({request, context}: LoaderArgs) {
+export async function loader({request, context}: LoaderFunctionArgs) {
   const cartId = getCartId(request);
   const [customerAccessToken, layout] = await Promise.all([
     context.session.get('customerAccessToken'),
@@ -81,7 +87,6 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <Seo />
         <Meta />
         <Links />
       </head>
@@ -98,6 +103,10 @@ export default function App() {
     </html>
   );
 }
+
+export const meta = ({matches}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(...matches.map((match) => (match.data as any)?.seo));
+};
 
 export function ErrorBoundary({error}: {error: Error}) {
   const [root] = useMatches();

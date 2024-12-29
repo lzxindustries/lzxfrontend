@@ -3,9 +3,9 @@
  */
 module.exports = {
   extends: [
+    '@remix-run/eslint-config',
     'plugin:hydrogen/recommended',
     'plugin:hydrogen/typescript',
-    'plugin:storybook/recommended',
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
@@ -14,7 +14,6 @@ module.exports = {
     'no-useless-escape': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     'no-case-declarations': 'off',
-    // TODO: Remove jest plugin from hydrogen/eslint-plugin
-    'jest/no-deprecated-functions': 'off',
+    'no-console': ['warn', {allow: ['warn', 'error']}],
   },
 };

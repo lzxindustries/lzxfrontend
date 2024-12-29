@@ -1,4 +1,4 @@
-import {redirect, type LoaderArgs} from '@shopify/remix-oxygen';
+import {redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {cartCreate} from './($lang).cart';
 
 /**
@@ -20,7 +20,7 @@ import {cartCreate} from './($lang).cart';
  * ```
  * @preserve
  */
-export async function loader({request, context, params}: LoaderArgs) {
+export async function loader({request, context, params}: LoaderFunctionArgs) {
   const {storefront} = context;
 
   const session = context.session;

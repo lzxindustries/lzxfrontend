@@ -1,43 +1,47 @@
-# Hydrogen template: Demo Store
+# LZX Frontend
 
-Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **full-featured setup** of components, queries and tooling to get started with Hydrogen.
+## Development
 
-[Check out Hydrogen docs](https://shopify.dev/custom-storefronts/hydrogen)
-[Get familiar with Remix](https://remix.run/docs/en/v1)
+### Requirements
 
-## What's included
+- Node >=18.19 (https://nodejs.org)
+- Yarn 4.5.3 (https://yarnpkg.com/)
 
-- Remix
-- Hydrogen
-- Oxygen
-- Shopify CLI
-- ESLint
-- Prettier
-- GraphQL generator
-- TypeScript and JavaScript flavors
-- Tailwind CSS (via PostCSS)
-- Full-featured setup of components and routes
+### Getting Started
 
-## Getting started
+Set required environment variables:
 
-**Requirements:**
+- `SESSION_SECRET`
+- `PUBLIC_STOREFRONT_API_TOKEN`
+- `PRIVATE_STOREFRONT_API_TOKEN`
+- `PUBLIC_STORE_DOMAIN`
+- `PUBLIC_STOREFRONT_ID`
+- `CLUSTER_NAME`
+- `DATA_API_BASE_URL`
+- `DATA_API_KEY`
+- `DATABASE_NAME`
+- `DATABASE_URL`
 
-- Node.js version 16.14.0 or higher
+Install dependencies:
 
-```bash
-npm create @shopify/hydrogen@latest -- --template demo-store
+```
+yarn install
 ```
 
-Remember to update `.env` with your shop's domain and Storefront API token!
+Run development server:
 
-## Building for production
-
-```bash
-npm run build
+```
+yarn run dev
 ```
 
-## Local development
+Run development server on local network:
 
-```bash
-npm run dev
+```
+yarn run dev --host
+```
+
+Build and run preview server:
+
+```
+yarn run preview
 ```

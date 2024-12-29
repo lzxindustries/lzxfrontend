@@ -9,7 +9,8 @@ import type {
 // @ts-expect-error types not available
 import typographicBase from 'typographic-base';
 import {countries} from '~/data/countries';
-import {I18nLocale, Locale} from './type';
+import type {I18nLocale} from './type';
+import {Locale} from './type';
 
 export interface EnhancedMenuItem extends MenuItem {
   to: string;
@@ -140,7 +141,6 @@ function resolveToFromType(
 function parseItem(customPrefixes = {}) {
   return function (item: MenuItem): EnhancedMenuItem {
     if (!item?.url || !item?.type) {
-      // eslint-disable-next-line no-console
       console.warn('Invalid menu item.  Must include a url and type.');
       // @ts-ignore
       return;
@@ -185,7 +185,6 @@ function parseItem(customPrefixes = {}) {
 */
 export function parseMenu(menu: Menu, customPrefixes = {}): EnhancedMenu {
   if (!menu?.items) {
-    // eslint-disable-next-line no-console
     console.warn('Invalid menu passed to parseMenu');
     // @ts-ignore
     return menu;

@@ -41,17 +41,17 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 // console.log(logodark); // /logo.84287d09.png
 
 // import type { LayoutData } from '../root';
-import React from 'react';
 import {useLocation} from 'react-router-dom';
 import {Footer} from './Footer';
 import {Header} from './Header';
+import type {LayoutData} from '~/root';
 
 export function Layout({
   children,
-}: // layout,
-{
+  layout,
+}: {
   children: React.ReactNode;
-  // layout: LayoutData;
+  layout: LayoutData;
 }) {
   const [root] = useMatches();
   const location = useLocation();
