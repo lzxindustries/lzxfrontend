@@ -57,12 +57,10 @@ export async function getAllModules(context: AppLoadContext) {
     };
 
     company_datas.forEach((company_data) => {
-      module_data.company == company_data._id
-        ? (module_view.company.name = company_data.name)
-        : null;
-      module_data.company == company_data._id
-        ? (module_view.company.legalName = company_data.legalName)
-        : null;
+      if (module_data.company == company_data._id)
+        module_view.company.name = company_data.name;
+      if (module_data.company == company_data._id)
+        module_view.company.legalName = company_data.legalName;
     });
     module_views.push(module_view);
   });

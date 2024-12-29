@@ -1,7 +1,7 @@
 import {type ReactNode, useRef, Suspense, useMemo} from 'react';
 import {Disclosure, Listbox} from '@headlessui/react';
-import {json, MetaArgs} from '@shopify/remix-oxygen';
-import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {json, defer} from '@shopify/remix-oxygen';
 import {
   useLoaderData,
   Await,
@@ -11,7 +11,12 @@ import {
 } from '@remix-run/react';
 
 import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
-import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton} from '@shopify/hydrogen';
+import {
+  AnalyticsPageType,
+  getSeoMeta,
+  Money,
+  ShopPayButton,
+} from '@shopify/hydrogen';
 import {
   Heading,
   IconCaret,

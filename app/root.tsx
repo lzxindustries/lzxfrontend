@@ -1,9 +1,9 @@
-import {
-  defer,
+import {defer} from '@shopify/remix-oxygen';
+import type {
+  MetaArgs,
   type LinksFunction,
   type LoaderFunctionArgs,
   type AppLoadContext,
-  MetaArgs,
 } from '@shopify/remix-oxygen';
 import {
   isRouteErrorResponse,

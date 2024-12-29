@@ -1,10 +1,11 @@
-import {
-  defer,
+import {defer} from '@shopify/remix-oxygen';
+import type {
   MetaArgs,
   type LoaderFunctionArgs,
   type SerializeFrom,
 } from '@shopify/remix-oxygen';
-import {flattenConnection, getSeoMeta, SeoConfig} from '@shopify/hydrogen';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
 import {Await, Form, useLoaderData} from '@remix-run/react';
 import type {
   Collection,

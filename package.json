@@ -20,6 +20,7 @@
   ],
   "prettier": "@shopify/prettier-config",
   "dependencies": {
+    "@babel/core": "^7.26.0",
     "@headlessui/react": "^1.7.2",
     "@remix-run/react": "2.9.2",
     "@remix-run/server-runtime": "2.9.2",
@@ -44,6 +45,7 @@
     "worktop": "^0.7.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
     "@remix-run/dev": "2.9.2",
     "@remix-run/eslint-config": "2.9.2",
     "@shopify/cli": "3.61.2",
@@ -53,6 +55,7 @@
     "@shopify/prettier-config": "^1.1.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/babel__preset-env": "^7",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "@types/react-mailchimp-subscribe": "^2.1.1",
