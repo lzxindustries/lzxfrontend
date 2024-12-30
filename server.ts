@@ -1,10 +1,11 @@
-// @ts-ignore
-// Virtual entry point for the app
 import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {
   createRequestHandler,
   getStorefrontHeaders,
 } from '@shopify/remix-oxygen';
+// @ts-ignore
+// Virtual entry point for the app
+// eslint-disable-next-line import/no-unresolved
 import * as remixBuild from 'virtual:remix/server-build';
 import {CACHE_SHORT} from '~/data/cache';
 import {AppSession} from '~/lib/session.server';
