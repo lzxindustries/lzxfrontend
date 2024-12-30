@@ -105,7 +105,9 @@ export async function action({request, context}: ActionFunctionArgs) {
       invariant(cartId, 'Missing cartId');
 
       const formDiscountCode = formData.get('discountCode');
-      const discountCodes = ([formDiscountCode] || ['']) as string[];
+      const discountCodes = formDiscountCode
+        ? [String(formDiscountCode)]
+        : ([''] as string[]);
 
       result = await cartDiscountCodesUpdate({
         cartId,
