@@ -1,4 +1,4 @@
-import {Form, useActionData, type V2_MetaFunction} from '@remix-run/react';
+import {Form, useActionData, type MetaFunction} from '@remix-run/react';
 import type {CustomerRecoverPayload} from '@shopify/hydrogen/storefront-api-types';
 import {
   json,
@@ -52,7 +52,7 @@ export const action: ActionFunction = async ({request, context}) => {
   }
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{title: 'Recover Password'}];
 };
 

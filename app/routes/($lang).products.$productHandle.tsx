@@ -5,7 +5,11 @@ import {
   useNavigation,
   useSearchParams,
 } from '@remix-run/react';
-import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
+import type {
+  SeoConfig,
+  ShopifyAnalyticsProduct,
+  Storefront,
+} from '@shopify/hydrogen';
 import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
 import type {
   ProductConnection,
@@ -17,7 +21,7 @@ import type {
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
-import {type ReactNode, useRef} from 'react';
+import {type ReactNode, useMemo, useRef} from 'react';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
@@ -220,7 +224,9 @@ export function ProductForm() {
   const isOutOfStock = !selectedVariant?.availableForSale;
   const isPreorder = product.id == 'gid://shopify/Product/4319674761239';
   const isBackorder =
-    selectedVariant?.quantityAvailable <= 0 && !isPreorder ? true : false;
+    (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder
+      ? true
+      : false;
   const productQty = selectedVariant?.quantityAvailable;
   const isOnSale =
     selectedVariant?.price?.amount &&

@@ -6,7 +6,7 @@ import type {
   CollectionConnection,
 } from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {Button} from '~/components/Button';
 import {Grid} from '~/components/Grid';
 import {Link} from '~/components/Link';

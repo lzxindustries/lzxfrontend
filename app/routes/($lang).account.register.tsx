@@ -1,4 +1,4 @@
-import {Form, useActionData, type V2_MetaFunction} from '@remix-run/react';
+import {Form, useActionData, type MetaFunction} from '@remix-run/react';
 import type {CustomerCreatePayload} from '@shopify/hydrogen/storefront-api-types';
 import {
   redirect,
@@ -87,7 +87,7 @@ export const action: ActionFunction = async ({request, context, params}) => {
   }
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{title: 'Register'}];
 };
 

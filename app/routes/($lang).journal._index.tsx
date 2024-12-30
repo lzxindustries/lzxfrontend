@@ -1,5 +1,7 @@
+import type {MetaArgs} from '@remix-run/react';
 import {useLoaderData} from '@remix-run/react';
-import {flattenConnection, Image} from '@shopify/hydrogen';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {flattenConnection, getSeoMeta, Image} from '@shopify/hydrogen';
 import type {Article, Blog} from '@shopify/hydrogen/storefront-api-types';
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {Grid} from '~/components/Grid';
