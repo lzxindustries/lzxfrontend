@@ -9,30 +9,23 @@ import type {VideoInterface} from '~/models/video';
 import type {PatchView} from '~/views/patch';
 
 export async function getAllPatches(context: AppLoadContext) {
-  const patch_datas = (await getDataCollection(
-    context,
-    'Patch',
-  )) as PatchInterface[];
-  const artist_datas = (await getDataCollection(
-    context,
-    'Artist',
-  )) as ArtistInterface[];
-  const patch_videos_data = (await getDataCollection(
-    context,
-    'PatchVideo',
-  )) as PatchVideoInterface[];
-  const patch_modules_data = (await getDataCollection(
-    context,
-    'PatchModule',
-  )) as PatchModuleInterface[];
-  const modules_data = (await getDataCollection(
-    context,
-    'PatchModule',
-  )) as ModuleInterface[];
-  const videos_data = (await getDataCollection(
-    context,
-    'Video',
-  )) as VideoInterface[];
+  const [
+    patch_datas,
+    artist_datas,
+    patch_videos_data,
+    patch_modules_data,
+    modules_data,
+    videos_data,
+  ] = await Promise.all([
+    getDataCollection(context, 'Patch') as Promise<PatchInterface[]>,
+    getDataCollection(context, 'Artist') as Promise<ArtistInterface[]>,
+    getDataCollection(context, 'PatchVideo') as Promise<PatchVideoInterface[]>,
+    getDataCollection(context, 'PatchModule') as Promise<
+      PatchModuleInterface[]
+    >,
+    getDataCollection(context, 'PatchModule') as Promise<ModuleInterface[]>,
+    getDataCollection(context, 'Video') as Promise<VideoInterface[]>,
+  ]);
 
   const patch_views: PatchView[] = [];
 
