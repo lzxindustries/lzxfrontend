@@ -47,7 +47,7 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div
         ref={containerRef}
-        className="basis-[100%] md:basis-1/2 card-image relative flex flex-col justify-center items-center"
+        className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center"
         style={{height: fixedHeight ? fixedHeight : 'auto'}}
       >
         <div className="flex flex-row items-center justify-center w-full">
@@ -78,7 +78,7 @@ export function ModuleDetails({
           </button>
         </div>
       </div>
-      <div className="w-full flex justify-center mt-4">
+      {/* <div className="w-full flex justify-center mt-4">
         <div className="flex flex-row space-x-2">
           {media.map((_, index) => (
             <button
@@ -90,7 +90,7 @@ export function ModuleDetails({
             />
           ))}
         </div>
-      </div>
+      </div> */}
       {/* <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
         {portraitAspect ? (
           <div className="px-8 py-4">
