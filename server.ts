@@ -75,7 +75,12 @@ export default {
         return storefrontRedirect({request, response, storefront});
       }
 
-      if (!new URL(request.url).pathname.endsWith('/cart')) {
+      const urlPathname = new URL(request.url).pathname;
+      if (
+        !urlPathname.endsWith('/cart') &&
+        !urlPathname.endsWith('/account') &&
+        !urlPathname.includes('/account/')
+      ) {
         response.headers.set('Cache-Control', CACHE_SHORT);
         response.headers.set(
           'Oxygen-Cache-Control',
