@@ -51,7 +51,7 @@ export function ModuleDetails({
               {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
-                  className="w-full h-full"
+                  className="object-contain"
                   src={media[currentSlide].src}
                   alt={moduleData.name}
                   loading="lazy"
