@@ -15,47 +15,39 @@ import type {ModulePartView} from '~/views/module_part';
 
 export async function getModuleDetails(context: AppLoadContext, id: string) {
   const filters = {id};
-  const module_data = (await getDataDocument(
-    context,
-    'Module',
-    filters,
-  )) as ModuleInterface;
-  const company_data = (await getDataCollection(
-    context,
-    'Company',
-  )) as CompanyInterface[];
-  const module_videos_data = (await getDataCollection(
-    context,
-    'ModuleVideo',
-  )) as ModuleVideoInterface[];
-  const module_assets_data = (await getDataCollection(
-    context,
-    'ModuleAsset',
-  )) as ModuleAssetInterface[];
-  const videos_data = (await getDataCollection(
-    context,
-    'Video',
-  )) as VideoInterface[];
-  // const controls_data = await getDataCollection(context, "ModuleControl", [{ $limit: 1024 }, { $sort: { "refDes": 1 } }]) as ModuleControlInterface[]
-  // const connectors_data = await getDataCollection(context, "ModuleConnector", [{ $limit: 1024 }, { $sort: { "refDes": 1 } }]) as ModuleConnectorInterface[]
-  const controls_data = (await getDataCollection(context, 'ModuleControl', [
-    {$limit: 1024},
-  ])) as ModuleControlInterface[];
-  const connectors_data = (await getDataCollection(context, 'ModuleConnector', [
-    {$limit: 1024},
-  ])) as ModuleConnectorInterface[];
-  const features_data = (await getDataCollection(
-    context,
-    'ModuleFeature',
-  )) as ModuleFeatureInterface[];
-  const parts_data = (await getDataCollection(
-    context,
-    'Part',
-  )) as PartInterface[];
-  const assets_data = (await getDataCollection(
-    context,
-    'Asset',
-  )) as AssetInterface[];
+  const [
+    module_data,
+    company_data,
+    module_videos_data,
+    module_assets_data,
+    videos_data,
+    controls_data,
+    connectors_data,
+    features_data,
+    parts_data,
+    assets_data,
+  ] = await Promise.all([
+    getDataDocument(context, 'Module', filters) as Promise<ModuleInterface>,
+    getDataCollection(context, 'Company') as Promise<CompanyInterface[]>,
+    getDataCollection(context, 'ModuleVideo') as Promise<
+      ModuleVideoInterface[]
+    >,
+    getDataCollection(context, 'ModuleAsset') as Promise<
+      ModuleAssetInterface[]
+    >,
+    getDataCollection(context, 'Video') as Promise<VideoInterface[]>,
+    getDataCollection(context, 'ModuleControl', [{$limit: 1024}]) as Promise<
+      ModuleControlInterface[]
+    >,
+    getDataCollection(context, 'ModuleConnector', [{$limit: 1024}]) as Promise<
+      ModuleConnectorInterface[]
+    >,
+    getDataCollection(context, 'ModuleFeature') as Promise<
+      ModuleFeatureInterface[]
+    >,
+    getDataCollection(context, 'Part') as Promise<PartInterface[]>,
+    getDataCollection(context, 'Asset') as Promise<AssetInterface[]>,
+  ]);
 
   const module_view: ModuleView = {
     id: module_data.id,
