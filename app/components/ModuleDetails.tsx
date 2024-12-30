@@ -34,35 +34,14 @@ export function ModuleDetails({
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [fixedHeight, setFixedHeight] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setFixedHeight(containerRef.current.offsetHeight);
-    }
-  }, []);
-
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
-      <div
-        // ref={containerRef}
-        // className="basis-[100%] lg:basis-1/2 card-image flex flex-wrap flex-col justify-center items-center"
-        className="w-full lg:w-1/2 card-image"
-        style={
-          {
-            // width: fixedHeight ? fixedHeight : 'auto',
-            // height: fixedHeight ? fixedHeight : 'auto',
-          }
-        }
-      >
+      <div className="w-full lg:w-1/2 card-image">
         <div className="flex-row">
-          {/* <div className="w-full card-image relative aspect-square"> */}
-
           <div className="flex items-center relative aspect-square px-4">
             <button
               onClick={prevSlide}
-              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 focus:outline-none md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
+              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
               aria-label="Previous Slide"
             >
               {'<'}
@@ -81,8 +60,6 @@ export function ModuleDetails({
                 <div className="w-full h-full">
                   <div className="aspect-video">
                     <iframe
-                      // width="1600px"
-                      // height="900px"
                       className="w-full h-full mt-[33%]"
                       src={media[currentSlide].src}
                       title="Video Slide"
@@ -92,18 +69,9 @@ export function ModuleDetails({
                 </div>
               )}
             </div>
-            {/* <button
-              onClick={nextSlide}
-              // className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 text-white rounded-full z-10"
-              // className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 text-white rounded-full z-10"
-              aria-label="Next Slide"
-            >
-              {'>'}
-            </button> */}
-
             <button
               onClick={nextSlide}
-              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
+              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
               aria-label="Next Slide"
             >
               {'>'}
