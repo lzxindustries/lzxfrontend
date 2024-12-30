@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import type {ModuleView} from '~/views/module';
@@ -34,9 +34,22 @@ export function ModuleDetails({
   const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [fixedHeight, setFixedHeight] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      setFixedHeight(containerRef.current.offsetHeight);
+    }
+  }, []);
+
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
-      <div className="basis-[100%] md:basis-1/2 card-image flex flex-col items-center">
+      <div
+        ref={containerRef}
+        className="basis-[100%] md:basis-1/2 card-image flex flex-col items-center"
+        style={{height: fixedHeight ? fixedHeight : 'auto'}}
+      >
         <div className="relative flex flex-row items-center">
           <button onClick={prevSlide} className="mx-2">
             {'<'}
