@@ -92,7 +92,7 @@ export default function Policies() {
 }
 
 const POLICY_CONTENT_QUERY = `#graphql
-  fragment Policy on ShopPolicy {
+  fragment PolicyContent on ShopPolicy {
     body
     handle
     id
@@ -109,16 +109,16 @@ const POLICY_CONTENT_QUERY = `#graphql
   ) @inContext(language: $language) {
     shop {
       privacyPolicy @include(if: $privacyPolicy) {
-        ...Policy
+        ...PolicyContent
       }
       shippingPolicy @include(if: $shippingPolicy) {
-        ...Policy
+        ...PolicyContent
       }
       termsOfService @include(if: $termsOfService) {
-        ...Policy
+        ...PolicyContent
       }
       refundPolicy @include(if: $refundPolicy) {
-        ...Policy
+        ...PolicyContent
       }
     }
   }
