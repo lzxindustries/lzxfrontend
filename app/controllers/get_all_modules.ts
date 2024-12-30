@@ -5,15 +5,13 @@ import type {ModuleInterface} from '~/models/module';
 import type {ModuleView} from '~/views/module';
 
 export async function getAllModules(context: AppLoadContext) {
-  const module_datas = (await getDataCollection(context, 'Module', [
-    {$limit: 1024},
-    {$sort: {is_active_product: -1}},
-  ])) as ModuleInterface[];
-  const company_datas = (await getDataCollection(
-    context,
-    'Company',
-  )) as CompanyInterface[];
-  const module_views: ModuleView[] = [];
+  const [module_datas, company_datas] = await Promise.all([
+    getDataCollection(context, 'Module', [
+      {$limit: 1024},
+      {$sort: {is_active_product: -1}},
+    ]) as Promise<ModuleInterface[]>,
+    getDataCollection(context, 'Company') as Promise<CompanyInterface[]>,
+  ]);
 
   module_datas.forEach((module_data) => {
     const module_view: ModuleView = {
