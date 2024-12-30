@@ -2,7 +2,7 @@ import {
   Form,
   useActionData,
   useLoaderData,
-  type V2_MetaFunction,
+  type MetaFunction,
 } from '@remix-run/react';
 import type {CustomerAccessTokenCreatePayload} from '@shopify/hydrogen/storefront-api-types';
 import {
@@ -83,7 +83,7 @@ export const action: ActionFunction = async ({request, context, params}) => {
   }
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{title: 'Login'}];
 };
 

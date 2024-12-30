@@ -3,7 +3,7 @@ import type {SeoConfig} from '@shopify/hydrogen';
 import {getSeoMeta} from '@shopify/hydrogen';
 import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {Link} from '~/components/Link';
 import {Heading, Section, PageHeader} from '~/components/Text';

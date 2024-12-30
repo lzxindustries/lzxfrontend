@@ -11,7 +11,7 @@ import type {
   Filter,
 } from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {Hero} from '~/components/Hero';
 import {ProductGrid} from '~/components/ProductGrid';
