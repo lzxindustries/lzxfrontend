@@ -47,14 +47,17 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div
         ref={containerRef}
-        className="basis-[100%] md:basis-1/2 card-image flex flex-col items-center"
+        className="basis-[100%] md:basis-1/2 card-image relative flex flex-col justify-center items-center"
         style={{height: fixedHeight ? fixedHeight : 'auto'}}
       >
-        <div className="relative flex flex-row items-center">
+        <div className="flex flex-row items-center justify-center w-full">
           <button onClick={prevSlide} className="mx-2">
             {'<'}
           </button>
-          <div className="px-8 py-4">
+          <div
+            className="flex justify-center items-center"
+            style={{width: '80%'}}
+          >
             {media[currentSlide].type === 'image' ? (
               <img
                 className="w-auto max-h-[80vh]"
@@ -74,7 +77,9 @@ export function ModuleDetails({
             {'>'}
           </button>
         </div>
-        <div className="flex flex-row space-x-2 mt-2">
+      </div>
+      <div className="w-full flex justify-center mt-4">
+        <div className="flex flex-row space-x-2">
           {media.map((_, index) => (
             <button
               key={index}
