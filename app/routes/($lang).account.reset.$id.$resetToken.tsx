@@ -1,8 +1,8 @@
+import {Form, useActionData, type MetaFunction} from '@remix-run/react';
+import type {CustomerResetPayload} from '@shopify/hydrogen/storefront-api-types';
 import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
-import {Form, useActionData, type V2_MetaFunction} from '@remix-run/react';
 import {useRef, useState} from 'react';
 import {getInputStyleClasses} from '~/lib/utils';
-import type {CustomerResetPayload} from '@shopify/hydrogen/storefront-api-types';
 
 type ActionData = {
   formError?: string;
@@ -76,7 +76,7 @@ export const action: ActionFunction = async ({
       },
     });
   } catch (error: any) {
-    if (storefront.isApiError(error)) {
+    if (error.errors || error.extensions) {
       return badRequest({
         formError: 'Something went wrong. Please try again later.',
       });
@@ -92,7 +92,7 @@ export const action: ActionFunction = async ({
   }
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{title: 'Reset Password'}];
 };
 
