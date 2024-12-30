@@ -13,6 +13,8 @@ export async function getAllModules(context: AppLoadContext) {
     getDataCollection(context, 'Company') as Promise<CompanyInterface[]>,
   ]);
 
+  const module_views: ModuleView[] = [];
+
   module_datas.forEach((module_data) => {
     const module_view: ModuleView = {
       id: module_data.id,
