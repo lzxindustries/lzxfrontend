@@ -46,36 +46,41 @@ export function ModuleDetails({
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div
-        ref={containerRef}
+        // ref={containerRef}
         className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center"
-        style={{height: fixedHeight ? fixedHeight : 'auto'}}
+        style={{
+          width: fixedHeight ? fixedHeight : 'auto',
+          height: fixedHeight ? fixedHeight : 'auto',
+        }}
       >
-        <div className="flex flex-row items-center justify-center w-full">
-          <button onClick={prevSlide} className="mx-2">
-            {'<'}
-          </button>
-          <div
-            className="flex justify-center items-center"
-            style={{width: '80%'}}
-          >
-            {media[currentSlide].type === 'image' ? (
-              <img
-                className="w-auto max-h-[80vh]"
-                src={media[currentSlide].src}
-                alt={moduleData.name}
-              />
-            ) : (
-              <iframe
-                className="w-auto max-h-[80vh]"
-                src={media[currentSlide].src}
-                title="Video Slide"
-                allowFullScreen
-              />
-            )}
+        <div>
+          <div className="flex flex-row items-center justify-center w-full">
+            <button onClick={prevSlide} className="mx-10">
+              {'<'}
+            </button>
+            <div
+              className="flex justify-center items-center md:basis"
+              style={{width: '80%'}}
+            >
+              {media[currentSlide].type === 'image' ? (
+                <img
+                  className="w-auto max-h-[100vh]"
+                  src={media[currentSlide].src}
+                  alt={moduleData.name}
+                />
+              ) : (
+                <iframe
+                  className="w-auto max-h-[100vh]"
+                  src={media[currentSlide].src}
+                  title="Video Slide"
+                  allowFullScreen
+                />
+              )}
+            </div>
+            <button onClick={nextSlide} className="mx-10">
+              {'>'}
+            </button>
           </div>
-          <button onClick={nextSlide} className="mx-2">
-            {'>'}
-          </button>
         </div>
       </div>
       {/* <div className="w-full flex justify-center mt-4">
