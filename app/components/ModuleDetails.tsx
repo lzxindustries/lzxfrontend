@@ -47,37 +47,65 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div
         // ref={containerRef}
-        className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center"
-        style={{
-          width: fixedHeight ? fixedHeight : 'auto',
-          height: fixedHeight ? fixedHeight : 'auto',
-        }}
+        // className="basis-[100%] lg:basis-1/2 card-image flex flex-wrap flex-col justify-center items-center"
+        className="w-full lg:w-1/2 card-image"
+        style={
+          {
+            // width: fixedHeight ? fixedHeight : 'auto',
+            // height: fixedHeight ? fixedHeight : 'auto',
+          }
+        }
       >
-        <div>
-          <div className="flex flex-row items-center justify-center w-full">
-            <button onClick={prevSlide} className="mx-10">
+        <div className="flex-row">
+          {/* <div className="w-full card-image relative aspect-square"> */}
+
+          <div className="flex items-center relative aspect-square px-4">
+            <button
+              onClick={prevSlide}
+              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 focus:outline-none md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
+              aria-label="Previous Slide"
+            >
               {'<'}
             </button>
-            <div
-              className="flex justify-center items-center md:basis"
-              style={{width: '80%'}}
-            >
+
+            <div className="flex justify-center items-center w-full h-full overflow-hidden">
+              {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
-                  className="w-auto max-h-[100vh]"
+                  className="w-full h-full"
                   src={media[currentSlide].src}
                   alt={moduleData.name}
+                  loading="lazy"
                 />
               ) : (
-                <iframe
-                  className="w-auto max-h-[100vh]"
-                  src={media[currentSlide].src}
-                  title="Video Slide"
-                  allowFullScreen
-                />
+                <div className="w-full h-full">
+                  <div className="aspect-video">
+                    <iframe
+                      // width="1600px"
+                      // height="900px"
+                      className="w-full h-full mt-[33%]"
+                      src={media[currentSlide].src}
+                      title="Video Slide"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
               )}
             </div>
-            <button onClick={nextSlide} className="mx-10">
+            {/* <button
+              onClick={nextSlide}
+              // className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 text-white rounded-full z-10"
+              // className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-700 text-white rounded-full z-10"
+              aria-label="Next Slide"
+            >
+              {'>'}
+            </button> */}
+
+            <button
+              onClick={nextSlide}
+              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
+              aria-label="Next Slide"
+            >
               {'>'}
             </button>
           </div>
