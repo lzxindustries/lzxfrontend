@@ -79,7 +79,7 @@ export default {
       if (
         !urlPathname.endsWith('/cart') &&
         !urlPathname.endsWith('/account') &&
-        !urlPathname.endsWith('/checkout')
+        !urlPathname.includes('/account/')
       ) {
         response.headers.set('Cache-Control', CACHE_SHORT);
         response.headers.set(
