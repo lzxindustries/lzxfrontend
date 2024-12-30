@@ -1,15 +1,7 @@
 import {useState} from 'react';
-import type {ModuleView} from '~/views/module';
+import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
-import {FaArrowRight} from 'react-icons/fa';
-import {BsFillArrowRightSquareFill} from 'react-icons/bs';
-import {
-  TbRectangleFilled,
-  TbTriangleFilled,
-  TbTriangleInvertedFilled,
-  TbCircleFilled,
-} from 'react-icons/tb';
-import {AddToCartButton} from '.';
+import type {ModuleView} from '~/views/module';
 
 export function ModuleDetails({
   children,

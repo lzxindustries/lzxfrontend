@@ -1,14 +1,15 @@
-// @ts-ignore
-// Virtual entry point for the app
-import * as remixBuild from 'virtual:remix/server-build';
+import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
 import {
   createRequestHandler,
   getStorefrontHeaders,
 } from '@shopify/remix-oxygen';
-import {createStorefrontClient, storefrontRedirect} from '@shopify/hydrogen';
+// @ts-ignore
+// Virtual entry point for the app
+// eslint-disable-next-line import/no-unresolved
+import * as remixBuild from 'virtual:remix/server-build';
+import {CACHE_SHORT} from '~/data/cache';
 import {AppSession} from '~/lib/session.server';
 import {getLocaleFromRequest} from '~/lib/utils';
-import {CACHE_SHORT} from '~/data/cache';
 
 /**
  * Export a fetch handler in module format.

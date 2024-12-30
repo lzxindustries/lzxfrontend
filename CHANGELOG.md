@@ -22,24 +22,24 @@
 
   ### `v2_meta` migration steps
 
-  1. For any routes that you used `meta` route export, convert it to the `V2_MetaFunction` equivalent. Notice that the package name in the import statement has also changed to `'@remix-run/react'`:
+  1. For any routes that you used `meta` route export, convert it to the `MetaFunction` equivalent. Notice that the package name in the import statement has also changed to `'@remix-run/react'`:
 
      ```diff
      - import {type MetaFunction} from '@shopify/remix-oxygen';
-     + import {type V2_MetaFunction} from '@remix-run/react';
+     + import {type MetaFunction} from '@remix-run/react';
 
      - export const meta: MetaFunction = () => {
-     + export const meta: V2_MetaFunction = () => {
+     + export const meta: MetaFunction = () => {
      -   return {title: 'Login'};
      +   return [{title: 'Login'}];
        };
      ```
 
-  2. If you are using data from loaders, pass the loader type to the `V2_MetaFunction` generic:
+  2. If you are using data from loaders, pass the loader type to the `MetaFunction` generic:
 
      ```diff
      - export const meta: MetaFunction = ({data}) => {
-     + export const meta: V2_MetaFunction<typeof loader> = ({data}) => {
+     + export const meta: MetaFunction<typeof loader> = ({data}) => {
      -   return {title: `Order ${data?.order?.name}`};
      +   return [{title: `Order ${data?.order?.name}`}];
        };

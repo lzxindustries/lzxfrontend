@@ -6,6 +6,7 @@ module.exports = {
     '@remix-run/eslint-config',
     'plugin:hydrogen/recommended',
     'plugin:hydrogen/typescript',
+    'plugin:import/recommended',
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
@@ -15,5 +16,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     'no-case-declarations': 'off',
     'no-console': ['warn', {allow: ['warn', 'error']}],
+    'import/order': ['warn', {alphabetize: {order: 'asc'}}],
+    'no-unused-vars': 'warn',
   },
 };

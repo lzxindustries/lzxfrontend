@@ -1,54 +1,38 @@
-import {type ReactNode, useRef, Suspense, useMemo} from 'react';
-import {Disclosure, Listbox} from '@headlessui/react';
-import type {MetaArgs, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {json, defer} from '@shopify/remix-oxygen';
+import {Listbox} from '@headlessui/react';
 import {
   useLoaderData,
-  Await,
-  useSearchParams,
   useLocation,
   useNavigation,
+  useSearchParams,
 } from '@remix-run/react';
-
-import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
-import {
-  AnalyticsPageType,
-  getSeoMeta,
-  Money,
-  ShopPayButton,
-} from '@shopify/hydrogen';
-import {
-  Heading,
-  IconCaret,
-  IconCheck,
-  IconClose,
-  ProductGallery,
-  ProductSwimlane,
-  Section,
-  Skeleton,
-  Text,
-  Link,
-  AddToCartButton,
-  Button,
-} from '~/components';
-import {getExcerpt} from '~/lib/utils';
-import {seoPayload} from '~/lib/seo.server';
-import invariant from 'tiny-invariant';
-import clsx from 'clsx';
 import type {
+  SeoConfig,
+  ShopifyAnalyticsProduct,
+  Storefront,
+} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
+import type {
+  ProductConnection,
+  Product as ProductType,
   ProductVariant,
   SelectedOptionInput,
-  Product as ProductType,
   Shop,
-  ProductConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import type {Storefront} from '~/lib/type';
-import type {Product} from 'schema-dts';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
+import {defer} from '@shopify/remix-oxygen';
+import clsx from 'clsx';
+import {type ReactNode, useMemo, useRef} from 'react';
+import invariant from 'tiny-invariant';
+import {AddToCartButton} from '~/components/AddToCartButton';
+import {Button} from '~/components/Button';
+import {IconCaret, IconCheck} from '~/components/Icon';
+import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
-import type {ModuleView} from '~/views/module';
+import {Heading, Text} from '~/components/Text';
 import {getModuleDetails} from '~/controllers/get_module_details';
-import {ModuleGallery} from '~/components/ModuleGallery';
+import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {seoPayload} from '~/lib/seo.server.js';
+import type {ModuleView} from '~/views/module.js';
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
@@ -240,7 +224,9 @@ export function ProductForm() {
   const isOutOfStock = !selectedVariant?.availableForSale;
   const isPreorder = product.id == 'gid://shopify/Product/4319674761239';
   const isBackorder =
-    selectedVariant?.quantityAvailable <= 0 && !isPreorder ? true : false;
+    (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder
+      ? true
+      : false;
   const productQty = selectedVariant?.quantityAvailable;
   const isOnSale =
     selectedVariant?.price?.amount &&

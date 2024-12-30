@@ -1,8 +1,8 @@
+import {Form, useActionData, type MetaFunction} from '@remix-run/react';
+import type {CustomerActivatePayload} from '@shopify/hydrogen/storefront-api-types';
 import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
-import {Form, useActionData, type V2_MetaFunction} from '@remix-run/react';
 import {useRef, useState} from 'react';
 import {getInputStyleClasses} from '~/lib/utils';
-import type {CustomerActivatePayload} from '@shopify/hydrogen/storefront-api-types';
 
 type ActionData = {
   formError?: string;
@@ -79,7 +79,7 @@ export const action: ActionFunction = async ({
       },
     });
   } catch (error: any) {
-    if (storefront.isApiError(error)) {
+    if (error?.message?.includes('GraphQL error')) {
       return badRequest({
         formError: 'Something went wrong. Please try again later.',
       });
@@ -95,7 +95,7 @@ export const action: ActionFunction = async ({
   }
 };
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{title: 'Activate Account'}];
 };
 
