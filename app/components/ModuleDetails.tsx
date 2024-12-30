@@ -21,9 +21,59 @@ export function ModuleDetails({
   });
   const portraitAspect = moduleData.hp >= 25;
 
+  const media: MediaItem[] = [
+    {type: 'image', src: '/images/' + moduleData.frontpanel},
+    {
+      type: 'video',
+      src: 'https://www.youtube.com/embed/' + moduleData.videos[0].youtube,
+    },
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
+
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
-      <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
+      <div className="basis-[100%] md:basis-1/2 card-image flex flex-col items-center">
+        <div className="relative flex flex-row items-center">
+          <button onClick={prevSlide} className="mx-2">
+            {'<'}
+          </button>
+          <div className="px-8 py-4">
+            {media[currentSlide].type === 'image' ? (
+              <img
+                className="w-auto max-h-[80vh]"
+                src={media[currentSlide].src}
+                alt={moduleData.name}
+              />
+            ) : (
+              <iframe
+                className="w-auto max-h-[80vh]"
+                src={media[currentSlide].src}
+                title="Video Slide"
+                allowFullScreen
+              />
+            )}
+          </div>
+          <button onClick={nextSlide} className="mx-2">
+            {'>'}
+          </button>
+        </div>
+        <div className="flex flex-row space-x-2 mt-2">
+          {media.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 w-2 rounded-full ${
+                index === currentSlide ? 'bg-black' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+      {/* <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
         {portraitAspect ? (
           <div className="px-8 py-4">
             <img
@@ -41,7 +91,7 @@ export function ModuleDetails({
             />
           </div>
         )}
-      </div>
+      </div> */}
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
           <div className="basis-[100%] md:basis-1/2 pb-8">
