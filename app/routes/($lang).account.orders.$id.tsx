@@ -1,18 +1,18 @@
-import invariant from 'tiny-invariant';
-import clsx from 'clsx';
-import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {useLoaderData, type V2_MetaFunction} from '@remix-run/react';
-import {Money, Image, flattenConnection} from '@shopify/hydrogen';
-import {statusMessage} from '~/lib/utils';
-import {MoneyV2} from '@shopify/hydrogen/storefront-api-types';
+import {useLoaderData, type MetaFunction} from '@remix-run/react';
+import {Image, Money, flattenConnection} from '@shopify/hydrogen';
 import type {
+  DiscountApplicationConnection,
   Order,
   OrderLineItem,
-  DiscountApplicationConnection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Link, Heading, PageHeader, Text} from '~/components';
+import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import clsx from 'clsx';
+import invariant from 'tiny-invariant';
+import {Link} from '~/components/Link';
+import {Heading, PageHeader, Text} from '~/components/Text';
+import {statusMessage} from '~/lib/utils';
 
-export const meta: V2_MetaFunction<typeof loader> = ({data}) => {
+export const meta: MetaFunction<typeof loader> = ({data}) => {
   return [{title: `Order ${data?.order?.name}`}];
 };
 
