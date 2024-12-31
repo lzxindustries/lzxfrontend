@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import type {ModuleView} from '~/views/module';
+import ImageCroppedByTransparency from './ImageCroppedByTransparency';
 
 interface MediaItem {
   name: string;
@@ -63,43 +64,36 @@ export function ModuleDetails({
       <div className="w-full lg:w-1/2 card-image">
         <div className="flex-row">
           <div className="flex items-center relative aspect-square p-1 lg:p-2">
-            {media.length > 1 && (
-              <button
-                onClick={prevSlide}
-                className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
-                aria-label="Next Slide"
+            <button
+              onClick={prevSlide}
+              className="mb-0 p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+              aria-label="Next Slide"
+              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-12 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={3}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
-              </button>
-            )}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
             <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
               {/* <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
-                <img
-                  className="object-cover"
-                  src={media[currentSlide].src}
-                  alt={moduleData.name}
-                  loading="lazy"
-                  onLoad={(e) => {
-                    const img = e.target as HTMLImageElement;
-                    if (img.naturalWidth > img.naturalHeight) {
-                      img.className = 'object-contain';
-                    }
-                  }}
-                />
+                <div className="object-contain">
+                  <ImageCroppedByTransparency
+                    src={media[currentSlide].src}
+                    alt="Cropped Module Image"
+                  />
+                </div>
               ) : (
                 <div className="w-full ">
                   <div className="relative inset-y-[25%]">
@@ -113,37 +107,37 @@ export function ModuleDetails({
                 </div>
               )}
             </div>
-            {media.length > 1 && (
-              <>
-                <button
-                  onClick={nextSlide}
-                  className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
-                  aria-label="Next Slide"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-12 w-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </button>
-              </>
-            )}
+            <button
+              onClick={nextSlide}
+              className="mb-0 p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+              aria-label="Next Slide"
+              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
           {media.length > 1 && (
-            <div className="flex justify-center items-center mb-2">
-              <div className="inline-flex justify-center items-center mt-4 bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
+            <div
+              className="flex justify-center items-center mb-2 mt-0 pt-0"
+              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
+            >
+              <div className="inline-flex justify-center items-center bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
                 {media.map((_, index) => (
                   <button
-                    key={moduleData.videos[index].name}
+                    key={media.length > 1 ? media[index].name : ''}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
                       index === currentSlide ? 'bg-black' : 'bg-gray-300'
