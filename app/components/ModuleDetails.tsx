@@ -3,6 +3,11 @@ import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import type {ModuleView} from '~/views/module';
 
+interface MediaItem {
+  type: 'image' | 'video';
+  src: string;
+}
+
 export function ModuleDetails({
   children,
   moduleData,
@@ -23,11 +28,14 @@ export function ModuleDetails({
 
   const media: MediaItem[] = [
     {type: 'image', src: '/images/' + moduleData.frontpanel},
-    {
+  ];
+  moduleData.videos.forEach((video) =>
+    media.push({
       type: 'video',
       src: 'https://www.youtube.com/embed/' + moduleData.videos[0].youtube,
-    },
-  ];
+    }),
+  );
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
@@ -38,32 +46,45 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div className="w-full lg:w-1/2 card-image">
         <div className="flex-row">
-          <div className="flex items-center relative aspect-square px-4">
+          <div className="flex items-center relative aspect-square px-2">
             <button
               onClick={prevSlide}
-              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
-              aria-label="Previous Slide"
+              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-1"
+              aria-label="Next Slide"
             >
-              {'<'}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
             </button>
 
             <div className="flex justify-center items-center w-full h-full overflow-hidden">
               {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
-                  className="object-contain"
+                  className=""
                   src={media[currentSlide].src}
                   alt={moduleData.name}
                   loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full">
-                  <div className="aspect-video">
+                  <div className="object-contain aspect-video">
                     <iframe
-                      className="w-full h-full mt-[33%]"
+                      className="w-full h-full mt-[36%] mb-[36%]"
                       src={media[currentSlide].src}
                       title="Video Slide"
-                      allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
                     />
                   </div>
                 </div>
@@ -71,14 +92,42 @@ export function ModuleDetails({
             </div>
             <button
               onClick={nextSlide}
-              className="p-2 bg-black text-white rounded-full hover:bg-gray-600 active:bg-gray-900 transition-colors duration-200 md:p-3 md:text-lg lg:p-4 lg:text-xl m-2"
+              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-1"
               aria-label="Next Slide"
             >
-              {'>'}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </button>
           </div>
         </div>
+        <div className="flex justify-center items-center mb-2">
+          <div className="inline-flex justify-center items-center mt-4 bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
+            {media.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
+                  index === currentSlide ? 'bg-black' : 'bg-gray-300'
+                }`}
+                aria-label={`Slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
       {/* <div className="w-full flex justify-center mt-4">
         <div className="flex flex-row space-x-2">
           {media.map((_, index) => (
