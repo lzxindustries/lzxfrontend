@@ -143,7 +143,7 @@ export function ModuleDetails({
               <div className="inline-flex justify-center items-center mt-4 bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
                 {media.map((_, index) => (
                   <button
-                    key={index}
+                    key={moduleData.videos[index].name}
                     onClick={() => setCurrentSlide(index)}
                     className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
                       index === currentSlide ? 'bg-black' : 'bg-gray-300'
@@ -156,39 +156,6 @@ export function ModuleDetails({
           )}
         </div>
       </div>
-
-      {/* <div className="w-full flex justify-center mt-4">
-        <div className="flex flex-row space-x-2">
-          {media.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 w-2 rounded-full ${
-                index === currentSlide ? 'bg-black' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div>
-      </div> */}
-      {/* <div className="basis-[100%] md:basis-1/2 card-image flex flex-wrap flex-row justify-center">
-        {portraitAspect ? (
-          <div className="px-8 py-4">
-            <img
-              style={{width: 'auto', height: 'auto'}}
-              src={'/images/' + moduleData.frontpanel}
-              alt={`${moduleData.name} front panel`}
-            />
-          </div>
-        ) : (
-          <div className="px-8 py-4">
-            <img
-              className="w-auto max-h-[80vh]"
-              src={'/images/' + moduleData.frontpanel}
-              alt={`${moduleData.name} front panel`}
-            />
-          </div>
-        )}
-      </div> */}
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
           <div className="basis-[100%] md:basis-1/2 pb-8">
@@ -409,7 +376,7 @@ export function ModuleDetails({
                       ? moduleData.connectors.map((conn, index) => {
                           return (
                             <div
-                              key={`${moduleData.name}-${conn.part}-${conn.name}-${conn.refDes}-${index}`}
+                              key={`${conn.x}-${conn.y}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -438,7 +405,7 @@ export function ModuleDetails({
                       ? moduleData.controls.map((conn, index) => {
                           return (
                             <div
-                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
+                              key={`${conn.x}-${conn.y}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -477,7 +444,7 @@ export function ModuleDetails({
                       ? moduleData.connectors.map((conn, index) => {
                           return (
                             <div
-                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
+                              key={`${conn.x}-${conn.y}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -507,7 +474,7 @@ export function ModuleDetails({
                       ? moduleData.controls.map((conn, index) => {
                           return (
                             <div
-                              key={`${moduleData.name}-${conn.name}-${conn.refDes}-${index}`}
+                              key={`${conn.x}-${conn.y}`}
                               className={
                                 'flex flex-row cursor-pointer ' +
                                 (activeRefDes == conn.refDes
@@ -560,26 +527,6 @@ export function ModuleDetails({
               );
             })}
           </p>
-
-          {/* {moduleData.videos.length > 0 ? (
-            <h2>
-              <TbRectangleFilled className="inline-block align-middle" />{' '}
-              <span className="align-middle">Videos</span>
-            </h2>
-          ) : (
-            ''
-          )}
-          {moduleData.videos.map((video) => {
-            return video.youtube ? (
-              <iframe
-                key={video.name}
-                className="basis-[100%] aspect-video w-full"
-                src={'https://www.youtube.com/embed/' + video.youtube}
-                title={video.name}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-            ) : null;
-          })} */}
 
           {hasPatchFeatures ? (
             <h2>
