@@ -86,6 +86,12 @@ export function ModuleDetails({
                   src={media[currentSlide].src}
                   alt={moduleData.name}
                   loading="lazy"
+                  onLoad={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    if (img.naturalWidth > img.naturalHeight) {
+                      img.className = 'object-contain';
+                    }
+                  }}
                 />
               ) : (
                 <div className="w-full ">
