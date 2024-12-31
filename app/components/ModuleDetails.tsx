@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
 import type {ModuleView} from '~/views/module';
@@ -20,6 +20,14 @@ export function ModuleDetails({
     if (feature.topic === 'System') hasSystemFeatures = true;
   });
   const portraitAspect = moduleData.hp >= 25;
+
+  const [screenWidth, setScreenWidth] = useState<number>(0);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
@@ -242,7 +250,9 @@ export function ModuleDetails({
                   moduleData={moduleData}
                   setActiveRefDes={setActiveRefDes}
                   activeRefDes={activeRefDes}
-                  pixelsPerHP={portraitAspect ? 8 : 20}
+                  pixelsPerHP={
+                    portraitAspect ? (screenWidth < 400 ? 6 : 8) : 20
+                  }
                 />
               </div>
             )}
