@@ -46,10 +46,10 @@ export function ModuleDetails({
     <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
       <div className="w-full lg:w-1/2 card-image">
         <div className="flex-row">
-          <div className="flex items-center relative aspect-square px-2">
+          <div className="flex items-center relative aspect-square p-1 lg:p-2">
             <button
               onClick={prevSlide}
-              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-1"
+              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
               aria-label="Next Slide"
             >
               <svg
@@ -68,11 +68,10 @@ export function ModuleDetails({
               </svg>
             </button>
 
-            <div className="flex justify-center items-center w-full h-full overflow-hidden">
+            <div className="flex justify-center items-center w-full h-full p-1 lg:p-2 overflow-hidden ">
               {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
-                  className=""
                   src={media[currentSlide].src}
                   alt={moduleData.name}
                   loading="lazy"
@@ -92,7 +91,7 @@ export function ModuleDetails({
             </div>
             <button
               onClick={nextSlide}
-              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-1"
+              className="p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
               aria-label="Next Slide"
             >
               <svg
@@ -111,19 +110,19 @@ export function ModuleDetails({
               </svg>
             </button>
           </div>
-        </div>
-        <div className="flex justify-center items-center mb-2">
-          <div className="inline-flex justify-center items-center mt-4 bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
-            {media.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
-                  index === currentSlide ? 'bg-black' : 'bg-gray-300'
-                }`}
-                aria-label={`Slide ${index + 1}`}
-              />
-            ))}
+          <div className="flex justify-center items-center mb-2">
+            <div className="inline-flex justify-center items-center mt-4 bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
+              {media.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
+                    index === currentSlide ? 'bg-black' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
