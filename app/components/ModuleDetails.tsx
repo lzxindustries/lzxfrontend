@@ -70,9 +70,8 @@ export function ModuleDetails({
                 />
               </svg>
             </button>
-
             <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
-              {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
+              {/* <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
                   className="object-cover"
