@@ -116,7 +116,7 @@ function Country({
         className={clsx([
           'text-contrast dark:text-primary border-none',
           'bg-primary dark:bg-contrast w-full rounded-none p-2 transition flex justify-start',
-          'items-center text-left cursor-pointer py-2 px-4',
+          'items-center text-left cursor-pointer py-2 px-4 hover:bg-gray-300',
         ])}
         type="submit"
         variant="primary"
