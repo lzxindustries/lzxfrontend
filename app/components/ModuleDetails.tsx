@@ -43,7 +43,10 @@ export function ModuleDetails({
     setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
 
   return (
-    <div key="ModuleDetails" className="flex flex-wrap flex-row justify-center">
+    <div
+      key="ModuleDetails"
+      className="flex flex-wrap flex-row justify-center p-0 m-0"
+    >
       <div className="w-full lg:w-1/2 card-image">
         <div className="flex-row">
           <div className="flex items-center relative aspect-square p-1 lg:p-2">
@@ -68,10 +71,11 @@ export function ModuleDetails({
               </svg>
             </button>
 
-            <div className="flex justify-center items-center w-full h-full p-1 lg:p-2 overflow-hidden ">
+            <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
               {/* <div className="flex justify-center items-center w-full h-[400px] sm:h-[500px] :h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
               {media[currentSlide].type === 'image' ? (
                 <img
+                  className="object-cover"
                   src={media[currentSlide].src}
                   alt={moduleData.name}
                   loading="lazy"
