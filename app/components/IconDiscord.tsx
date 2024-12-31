@@ -1,5 +1,6 @@
 import * as React from 'react';
-const IconDiscord = (props) => (
+import { JSX } from 'react/jsx-runtime';
+const IconDiscord = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={24}
