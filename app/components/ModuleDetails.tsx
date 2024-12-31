@@ -78,10 +78,10 @@ export function ModuleDetails({
                   loading="lazy"
                 />
               ) : (
-                <div className="w-full h-full">
-                  <div className="object-contain aspect-video">
+                <div className="w-full ">
+                  <div className="relative inset-y-[25%]">
                     <iframe
-                      className="w-full h-full mt-[36%] mb-[36%]"
+                      className="aspect-video w-full "
                       src={media[currentSlide].src}
                       title="Video Slide"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
