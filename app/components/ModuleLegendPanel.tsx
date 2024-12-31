@@ -37,7 +37,7 @@ export function ModuleLegendPanel({
         const yPos = yCenter + (obj.y / 1000) * pixelsPerInch;
         return (
           <div
-            key={obj.name}
+            key={`${obj.x}-${obj.y}`}
             style={{top: yPos, left: xPos}}
             className="cursor-pointer absolute"
             onMouseEnter={() => {
@@ -56,7 +56,7 @@ export function ModuleLegendPanel({
         const yPos = yCenter + (obj.y / 1000) * pixelsPerInch;
         return (
           <div
-            key={obj.name}
+            key={`${obj.x}-${obj.y}`}
             style={{top: yPos, left: xPos}}
             className="cursor-pointer absolute"
             onMouseEnter={() => {
