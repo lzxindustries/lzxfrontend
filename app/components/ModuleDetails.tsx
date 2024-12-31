@@ -532,7 +532,7 @@ export function ModuleDetails({
             })}
           </p>
 
-          {moduleData.videos.length > 0 ? (
+          {/* {moduleData.videos.length > 0 ? (
             <h2>
               <TbRectangleFilled className="inline-block align-middle" />{' '}
               <span className="align-middle">Videos</span>
@@ -550,7 +550,7 @@ export function ModuleDetails({
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             ) : null;
-          })}
+          })} */}
 
           {hasPatchFeatures ? (
             <h2>
