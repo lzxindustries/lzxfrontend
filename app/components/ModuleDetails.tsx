@@ -66,7 +66,7 @@ export function ModuleDetails({
           <div className="flex items-center relative aspect-square p-1 lg:p-2">
             <button
               onClick={prevSlide}
-              className="mb-0 p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+              className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
               aria-label="Next Slide"
               style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
             >
@@ -109,7 +109,7 @@ export function ModuleDetails({
             </div>
             <button
               onClick={nextSlide}
-              className="mb-0 p-0 text-black rounded-full bg-white hover:bg-black hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+              className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
               aria-label="Next Slide"
               style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
             >
@@ -134,12 +134,12 @@ export function ModuleDetails({
               className="flex justify-center items-center mb-2 mt-0 pt-0"
               style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
             >
-              <div className="inline-flex justify-center items-center bg-white rounded-full hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
+              <div className="inline-flex justify-center items-center bg-white rounded-full any-hover:hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
                 {media.map((_, index) => (
                   <button
                     key={media.length > 1 ? media[index].name : ''}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 mx-1 rounded-full hover:bg-black ${
+                    className={`w-3 h-3 mx-1 rounded-full any-hover:hover:bg-black ${
                       index === currentSlide ? 'bg-black' : 'bg-gray-300'
                     }`}
                     aria-label={`Slide ${index + 1}`}
