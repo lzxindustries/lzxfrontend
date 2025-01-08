@@ -316,3 +316,117 @@ export function getCartId(request: Request) {
   const cookies = parseCookie(request.headers.get('Cookie') || '');
   return cookies.cart ? `gid://shopify/Cart/${cookies.cart}` : undefined;
 }
+
+export function cropImageByTransparency(src: string): Promise<string> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return resolve(src);
+      ctx.drawImage(img, 0, 0);
+      const {data, width, height} = ctx.getImageData(
+        0,
+        0,
+        canvas.width,
+        canvas.height,
+      );
+
+      const hasAtleastOneTransparentCorner = () => {
+        const topLeft = data[3];
+        const topRight = data[(width - 1) * 4 + 3];
+        const bottomLeft = data[(height - 1) * width * 4 + 3];
+        const bottomRight = data[((height - 1) * width + (width - 1)) * 4 + 3];
+        return (
+          topLeft === 0 ||
+          topRight === 0 ||
+          bottomLeft === 0 ||
+          bottomRight === 0
+        );
+      };
+
+      if (!hasAtleastOneTransparentCorner()) {
+        resolve(src);
+        return;
+      }
+
+      const hasAtleastOneTransparentEdge = () => {
+        let topTransparent = true;
+        for (let x = 0; x < width; x++) {
+          if (data[x * 4 + 3] !== 0) {
+            topTransparent = false;
+            break;
+          }
+        }
+        if (topTransparent) return true;
+        let bottomTransparent = true;
+        for (let x = 0; x < width; x++) {
+          if (data[(x + (height - 1) * width) * 4 + 3] !== 0) {
+            bottomTransparent = false;
+            break;
+          }
+        }
+        if (bottomTransparent) return true;
+        let leftTransparent = true;
+        for (let y = 0; y < height; y++) {
+          if (data[y * width * 4 + 3] !== 0) {
+            leftTransparent = false;
+            break;
+          }
+        }
+        if (leftTransparent) return true;
+        let rightTransparent = true;
+        for (let y = 0; y < height; y++) {
+          if (data[(width - 1 + y * width) * 4 + 3] !== 0) {
+            rightTransparent = false;
+            break;
+          }
+        }
+        if (rightTransparent) return true;
+        return false;
+      };
+
+      if (!hasAtleastOneTransparentEdge()) {
+        resolve(src);
+        return;
+      }
+
+      let top = height,
+        left = width,
+        right = 0,
+        bottom = 0;
+      for (let i = 3; i < data.length; i += 4) {
+        if (data[i] !== 0) {
+          const x = (i / 4) % width;
+          const y = Math.floor(i / 4 / width);
+          if (x < left) left = x;
+          if (x > right) right = x;
+          if (y < top) top = y;
+          if (y > bottom) bottom = y;
+        }
+      }
+
+      const croppedWidth = right - left + 1;
+      const croppedHeight = bottom - top + 1;
+      if (croppedWidth > 0 && croppedHeight > 0) {
+        const croppedData = ctx.getImageData(
+          left,
+          top,
+          croppedWidth,
+          croppedHeight,
+        );
+        const croppedCanvas = document.createElement('canvas');
+        croppedCanvas.width = croppedWidth;
+        croppedCanvas.height = croppedHeight;
+        croppedCanvas.getContext('2d')?.putImageData(croppedData, 0, 0);
+        return resolve(croppedCanvas.toDataURL());
+      }
+      resolve(src);
+    };
+    img.onerror = () => resolve(src);
+    img.src = src;
+  });
+}
