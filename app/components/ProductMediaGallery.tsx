@@ -4,8 +4,8 @@ import type {
   ExternalVideo,
   MediaImage,
 } from '@shopify/hydrogen/storefront-api-types';
-import React, {useState} from 'react';
-import ImageCroppedByTransparency from './ImageCroppedByTransparency';
+import React, {useEffect, useMemo, useState} from 'react';
+import {cropImageByTransparency} from '~/lib/utils';
 
 enum MediaGalleryItemType {
   IMAGE = 'IMAGE',
@@ -36,43 +36,59 @@ function getLastPathSegment(url: string): string | null {
   }
 }
 
+const croppedCache: Record<string, string> = {};
+
+function cropImageWithCache(src: string): Promise<string> {
+  if (croppedCache[src]) {
+    return Promise.resolve(croppedCache[src]);
+  }
+  return cropImageByTransparency(src).then((cropped: string) => {
+    croppedCache[src] = cropped;
+    return cropped;
+  });
+}
+
 const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({
   product,
   moduleData,
 }) => {
-  const mediaGalleryItems: MediaGalleryItem[] = [];
+  const mediaGalleryItems: MediaGalleryItem[] = useMemo(() => {
+    const items: MediaGalleryItem[] = [];
+    const seenYoutubeIds = new Set<string>();
 
-  const seenYoutubeIds = new Set<string>();
-  product.media.nodes.forEach((item: Media, index) => {
-    if (item.mediaContentType === 'IMAGE') {
-      const shopifyImage = item as MediaImage;
-      if (!shopifyImage.image) return;
-      mediaGalleryItems.push({
-        name: shopifyImage.image.altText || `${moduleData.name} image`,
-        src: shopifyImage.image.url,
-        type: MediaGalleryItemType.IMAGE,
-      } as MediaGalleryItem);
-    } else if (item.mediaContentType === 'EXTERNAL_VIDEO') {
-      const shopifyExternalVideo = item as ExternalVideo;
-      const youtubeId = getLastPathSegment(shopifyExternalVideo.embedUrl);
-      if (!youtubeId) return;
-      seenYoutubeIds.add(youtubeId);
-      mediaGalleryItems.push({
-        name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
-        src: shopifyExternalVideo.embedUrl,
+    product.media.nodes.forEach((item: Media, index) => {
+      if (item.mediaContentType === 'IMAGE') {
+        const shopifyImage = item as MediaImage;
+        if (!shopifyImage.image) return;
+        items.push({
+          name: shopifyImage.image.altText || `${moduleData.name} image`,
+          src: shopifyImage.image.url,
+          type: MediaGalleryItemType.IMAGE,
+        } as MediaGalleryItem);
+      } else if (item.mediaContentType === 'EXTERNAL_VIDEO') {
+        const shopifyExternalVideo = item as ExternalVideo;
+        const youtubeId = getLastPathSegment(shopifyExternalVideo.embedUrl);
+        if (!youtubeId) return;
+        seenYoutubeIds.add(youtubeId);
+        items.push({
+          name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
+          src: shopifyExternalVideo.embedUrl,
+          type: MediaGalleryItemType.VIDEO,
+        } as MediaGalleryItem);
+      }
+    });
+
+    moduleData.videos.forEach((video: any) => {
+      if (seenYoutubeIds.has(video.youtube)) return;
+      items.push({
+        name: video.name,
+        src: `https://www.youtube.com/embed/${video.youtube}`,
         type: MediaGalleryItemType.VIDEO,
       } as MediaGalleryItem);
-    }
-  });
+    });
 
-  moduleData.videos.forEach((video: any) => {
-    if (seenYoutubeIds.has(video.youtube)) return;
-    mediaGalleryItems.push({
-      name: video.name,
-      src: `https://www.youtube.com/embed/${video.youtube}`,
-      type: MediaGalleryItemType.VIDEO,
-    } as MediaGalleryItem);
-  });
+    return items;
+  }, [product.media.nodes, moduleData]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () =>
@@ -82,6 +98,51 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({
       (prev) =>
         (prev - 1 + mediaGalleryItems.length) % mediaGalleryItems.length,
     );
+
+  const [preCroppedImages, setPreCroppedImages] = useState<(string | null)[]>(
+    [],
+  );
+
+  useEffect(() => {
+    let isMounted = true;
+    setPreCroppedImages(Array(mediaGalleryItems.length).fill(null));
+
+    (async function processImages() {
+      // Crop item first
+      const currentItem = mediaGalleryItems[currentSlide];
+      if (currentItem && currentItem.type === MediaGalleryItemType.IMAGE) {
+        const croppedSrc = await cropImageWithCache(currentItem.src);
+        if (isMounted) {
+          setPreCroppedImages((prev) => {
+            const next = [...prev];
+            next[currentSlide] = croppedSrc;
+            return next;
+          });
+        }
+      }
+      // Crop other items
+      const otherIndices = mediaGalleryItems
+        .map((_, idx) => idx)
+        .filter((idx) => idx !== currentSlide);
+      for (const idx of otherIndices) {
+        const item = mediaGalleryItems[idx];
+        if (item.type === MediaGalleryItemType.IMAGE) {
+          const croppedSrc = await cropImageWithCache(item.src);
+          if (isMounted) {
+            setPreCroppedImages((prev) => {
+              const next = [...prev];
+              next[idx] = croppedSrc;
+              return next;
+            });
+          }
+        }
+      }
+    })();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [mediaGalleryItems, currentSlide]);
 
   return (
     <div className="w-full lg:w-1/2 card-image">
@@ -113,17 +174,13 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({
           <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
             {mediaGalleryItems[currentSlide].type ===
             MediaGalleryItemType.IMAGE ? (
-              <div className="object-contain">
-                <ImageCroppedByTransparency
-                  src={mediaGalleryItems[currentSlide].src}
+              preCroppedImages[currentSlide] ? (
+                <img
+                  className="w-full h-full object-contain"
+                  src={preCroppedImages[currentSlide]}
                   alt={mediaGalleryItems[currentSlide].name}
                 />
-                {/* <img
-                  className="w-full h-full object-contain"
-                  src={mediaGalleryItems[currentSlide].src}
-                  alt={mediaGalleryItems[currentSlide].name}
-                /> */}
-              </div>
+              ) : null
             ) : mediaGalleryItems[currentSlide].type ===
               MediaGalleryItemType.VIDEO ? (
               <div className="w-full ">
