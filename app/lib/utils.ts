@@ -317,7 +317,7 @@ export function getCartId(request: Request) {
   return cookies.cart ? `gid://shopify/Cart/${cookies.cart}` : undefined;
 }
 
-export function cropImageByTransparency(src: string): Promise<string> {
+export async function cropImageByTransparency(src: string): Promise<string> {
   return new Promise((resolve) => {
     const img = new Image();
     img.crossOrigin = 'Anonymous';
