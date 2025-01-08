@@ -1,8 +1,9 @@
+import type {Product} from '@shopify/hydrogen/dist/storefront-api-types';
 import React, {useState, useEffect} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
+import ProductMediaGallery from './ProductMediaGallery';
 import type {ModuleView} from '~/views/module';
-import ImageCroppedByTransparency from './ImageCroppedByTransparency';
 
 interface MediaItem {
   name: string;
@@ -13,9 +14,11 @@ interface MediaItem {
 export function ModuleDetails({
   children,
   moduleData,
+  product,
 }: {
   children?: React.ReactNode;
   moduleData: ModuleView;
+  product: Product;
 }) {
   const [activeRefDes, setActiveRefDes] = useState('');
   let hasMainFeatures = false;
@@ -43,12 +46,6 @@ export function ModuleDetails({
     }),
   );
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
-  const prevSlide = () =>
-    setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
-  const [screenWidth, setScreenWidth] = useState<number>(0);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -61,95 +58,10 @@ export function ModuleDetails({
       key="ModuleDetails"
       className="flex flex-wrap flex-row justify-center p-0 m-0"
     >
-      <div className="w-full lg:w-1/2 card-image">
-        <div className="flex-row">
-          <div className="flex items-center relative aspect-square p-1 lg:p-2">
-            <button
-              onClick={prevSlide}
-              className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
-              aria-label="Next Slide"
-              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-            <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
-              {/* <div className="flex justify-center w-full h-[400px] sm:h-[500px] md:h-[800px] lg:h-[800px] xl:h-[1100px]"> */}
-              {media[currentSlide].type === 'image' ? (
-                <div className="object-contain">
-                  <ImageCroppedByTransparency
-                    src={media[currentSlide].src}
-                    alt="Cropped Module Image"
-                  />
-                </div>
-              ) : (
-                <div className="w-full ">
-                  <div className="relative inset-y-[25%]">
-                    <iframe
-                      className="aspect-video w-full "
-                      src={media[currentSlide].src}
-                      title="Video Slide"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <button
-              onClick={nextSlide}
-              className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
-              aria-label="Next Slide"
-              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={3}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-          {media.length > 1 && (
-            <div
-              className="flex justify-center items-center mb-2 mt-0 pt-0"
-              style={{visibility: media.length <= 1 ? 'hidden' : 'visible'}}
-            >
-              <div className="inline-flex justify-center items-center bg-white rounded-full any-hover:hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
-                {media.map((_, index) => (
-                  <button
-                    key={media.length > 1 ? media[index].name : ''}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 mx-1 rounded-full any-hover:hover:bg-black ${
-                      index === currentSlide ? 'bg-black' : 'bg-gray-300'
-                    }`}
-                    aria-label={`Slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+      <ProductMediaGallery
+        product={product}
+        moduleData={moduleData}
+      ></ProductMediaGallery>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
           <div className="basis-[100%] md:basis-1/2 pb-8">
