@@ -116,7 +116,7 @@ export default function Product() {
   moduleData.description = descriptionHtml;
 
   return (
-    <ModuleDetails moduleData={moduleData}>
+    <ModuleDetails moduleData={moduleData} product={product}>
       <ProductForm />
     </ModuleDetails>
   );
