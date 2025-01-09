@@ -46,6 +46,7 @@ export function ModuleDetails({
     }),
   );
 
+  const [screenWidth, setScreenWidth] = useState<number>(0);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const handleResize = () => setScreenWidth(window.innerWidth);
