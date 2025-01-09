@@ -1,15 +1,76 @@
-import type {Product} from '@shopify/hydrogen/dist/storefront-api-types';
-import React, {useState, useEffect} from 'react';
+import type {
+  Product,
+  Media,
+  ExternalVideo,
+  MediaImage,
+} from '@shopify/hydrogen/storefront-api-types';
+import React, {useState, useEffect, useMemo} from 'react';
 import {TbRectangleFilled} from 'react-icons/tb';
 import {ModuleLegendPanel} from './ModuleLegendPanel';
-import ProductMediaGallery from './ProductMediaGallery';
+import ProductMediaGallery, {
+  type MediaGalleryItem,
+  MediaGalleryItemType,
+} from './ProductMediaGallery';
 import type {ModuleView} from '~/views/module';
 
-interface MediaItem {
-  name: string;
-  type: 'image' | 'video';
-  src: string;
-}
+const getLastPathSegment = (url: string): string | null => {
+  try {
+    const parsedUrl = new URL(url);
+    const segments = parsedUrl.pathname
+      .split('/')
+      .filter((segment) => segment.length > 0);
+    return segments.length > 0 ? segments[segments.length - 1] : null;
+  } catch (error) {
+    console.error('Invalid URL:', error);
+    return null;
+  }
+};
+
+const getGalleryMedia = (
+  product: Product,
+  moduleData: {
+    name: string;
+    videos: {youtube: string; name: string}[];
+  },
+): MediaGalleryItem[] => {
+  const items: MediaGalleryItem[] = [];
+  const seenYoutubeIds = new Set<string>();
+
+  product.media.nodes.forEach((item: Media, index) => {
+    if (item.mediaContentType === 'IMAGE') {
+      const shopifyImage = item as MediaImage;
+      if (!shopifyImage.image) return;
+      items.push({
+        name: shopifyImage.image.altText || `${moduleData.name} image`,
+        src: shopifyImage.image.url,
+        type: MediaGalleryItemType.IMAGE,
+      } as MediaGalleryItem);
+    } else if (item.mediaContentType === 'EXTERNAL_VIDEO') {
+      const shopifyExternalVideo = item as ExternalVideo;
+      const youtubeId = getLastPathSegment(shopifyExternalVideo.embedUrl);
+      if (!youtubeId) return;
+      if (seenYoutubeIds.has(youtubeId)) return;
+      seenYoutubeIds.add(youtubeId);
+      items.push({
+        name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
+        src: shopifyExternalVideo.embedUrl,
+        type: MediaGalleryItemType.VIDEO,
+      } as MediaGalleryItem);
+    }
+  });
+
+  moduleData.videos.forEach((video: any) => {
+    if (seenYoutubeIds.has(video.youtube.trim())) return;
+    seenYoutubeIds.add(video.youtube.trim());
+    items.push({
+      name: video.name,
+      src: `https://www.youtube.com/embed/${video.youtube}`,
+      type: MediaGalleryItemType.VIDEO,
+    } as MediaGalleryItem);
+  });
+
+  return items;
+};
 
 export function ModuleDetails({
   children,
@@ -31,20 +92,9 @@ export function ModuleDetails({
   });
   const portraitAspect = moduleData.hp >= 25;
 
-  const media: MediaItem[] = [
-    {
-      name: 'Front Panel',
-      type: 'image',
-      src: '/images/' + moduleData.frontpanel,
-    },
-  ];
-  moduleData.videos.forEach((video) =>
-    media.push({
-      name: video.name,
-      type: 'video',
-      src: 'https://www.youtube.com/embed/' + video.youtube,
-    }),
-  );
+  const media: MediaGalleryItem[] = useMemo(() => {
+    return getGalleryMedia(product, moduleData);
+  }, [product, moduleData]);
 
   const [screenWidth, setScreenWidth] = useState<number>(0);
   useEffect(() => {
@@ -59,10 +109,7 @@ export function ModuleDetails({
       key="ModuleDetails"
       className="flex flex-wrap flex-row justify-center p-0 m-0"
     >
-      <ProductMediaGallery
-        product={product}
-        moduleData={moduleData}
-      ></ProductMediaGallery>
+      <ProductMediaGallery media={media}></ProductMediaGallery>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
         <div className="flex flex-wrap flex-row px-8">
           <div className="basis-[100%] md:basis-1/2 pb-8">
