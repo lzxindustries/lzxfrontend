@@ -7,83 +7,20 @@ import type {
 import React, {useEffect, useMemo, useState} from 'react';
 import {cropImageByTransparency} from '~/lib/utils';
 
-enum MediaGalleryItemType {
+export enum MediaGalleryItemType {
   IMAGE = 'IMAGE',
   VIDEO = 'VIDEO',
 }
 
-interface MediaGalleryItem {
+export interface MediaGalleryItem {
   name: string;
   src: string;
   type: MediaGalleryItemType;
 }
 
 interface ProductMediaGalleryProps {
-  product: Product;
-  moduleData: ModuleData;
+  media: MediaGalleryItem[];
 }
-
-interface ModuleData {
-  name: string;
-  videos: {youtube: string; name: string}[];
-}
-
-const getGalleryMedia = (
-  product: Product,
-  moduleData: {
-    name: string;
-    videos: {youtube: string; name: string}[];
-  },
-): MediaGalleryItem[] => {
-  const items: MediaGalleryItem[] = [];
-  const seenYoutubeIds = new Set<string>();
-
-  product.media.nodes.forEach((item: Media, index) => {
-    if (item.mediaContentType === 'IMAGE') {
-      const shopifyImage = item as MediaImage;
-      if (!shopifyImage.image) return;
-      items.push({
-        name: shopifyImage.image.altText || `${moduleData.name} image`,
-        src: shopifyImage.image.url,
-        type: MediaGalleryItemType.IMAGE,
-      } as MediaGalleryItem);
-    } else if (item.mediaContentType === 'EXTERNAL_VIDEO') {
-      const shopifyExternalVideo = item as ExternalVideo;
-      const youtubeId = getLastPathSegment(shopifyExternalVideo.embedUrl);
-      if (!youtubeId) return;
-      seenYoutubeIds.add(youtubeId);
-      items.push({
-        name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
-        src: shopifyExternalVideo.embedUrl,
-        type: MediaGalleryItemType.VIDEO,
-      } as MediaGalleryItem);
-    }
-  });
-
-  moduleData.videos.forEach((video: any) => {
-    if (seenYoutubeIds.has(video.youtube)) return;
-    items.push({
-      name: video.name,
-      src: `https://www.youtube.com/embed/${video.youtube}`,
-      type: MediaGalleryItemType.VIDEO,
-    } as MediaGalleryItem);
-  });
-
-  return items;
-};
-
-const getLastPathSegment = (url: string): string | null => {
-  try {
-    const parsedUrl = new URL(url);
-    const segments = parsedUrl.pathname
-      .split('/')
-      .filter((segment) => segment.length > 0);
-    return segments.length > 0 ? segments[segments.length - 1] : null;
-  } catch (error) {
-    console.error('Invalid URL:', error);
-    return null;
-  }
-};
 
 const croppedCache: Record<string, string> = {};
 
@@ -97,14 +34,7 @@ const cropImageWithCache = (src: string): Promise<string> => {
   });
 };
 
-const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({
-  product,
-  moduleData,
-}) => {
-  const media: MediaGalleryItem[] = useMemo(() => {
-    return getGalleryMedia(product, moduleData);
-  }, [product, moduleData]);
-
+const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
   const prevSlide = () =>
@@ -136,7 +66,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({
     return () => {
       isMounted = false;
     };
-  }, [media, currentSlide]);
+  }, [currentSlide, media]);
 
   return (
     <div className="w-full lg:w-1/2 card-image">
