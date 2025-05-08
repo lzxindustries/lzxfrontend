@@ -382,7 +382,7 @@ export function ProductForm() {
             ) : null}
 
             {!isOutOfStock && isBackorder && !isPreorder ? (
-              <Text as="span">Backorders ship within 4-6 weeks.</Text>
+              <Text as="span">Backorder delays may be variable as we transition our supply chain in response to new tariffs.</Text>
             ) : null}
 
             {/* {!isOutOfStock && (
