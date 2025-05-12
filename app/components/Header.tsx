@@ -78,7 +78,7 @@ export function Header({
               </a>
             </li>
             <li key="modules">
-              <a className={isModules ? 'active' : ''} href="/modules">
+              <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
                 Module List
               </a>
             </li>
@@ -139,7 +139,7 @@ export function Header({
             </a>
           </li>
           <li>
-            <a className={isModules ? 'active' : ''} href="/modules">
+            <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
               Module List
             </a>
           </li>
