@@ -59,14 +59,6 @@ export function Footer() {
           >
             support@lzxindustries.net
           </a>
-          <a
-            className="link link-hover"
-            target="_blank"
-            href="https://wkf.ms/4aEUIm3"
-            rel="noreferrer"
-          >
-            Service Request
-          </a>
         </div>
         <div>
           <span className="footer-title">Policies</span>
