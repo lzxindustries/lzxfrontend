@@ -26,7 +26,7 @@ export function Header({
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
   const isSearch = url.includes('/search');
-  const isGettingStarted = url.includes('/getting-started');
+  const isGettingStarted = url.includes('https://docs.lzxindustries.net');
   const isDealers = url.includes('/dealers');
   const isBlog = url.includes('https://docs.lzxindustries.net/blog');
   const isInStock = url.includes('/?available=true');
@@ -72,16 +72,16 @@ export function Header({
             <li key="getting-started">
               <a
                 className={isGettingStarted ? 'active' : ''}
-                href="/getting-started"
+                href="https://docs.lzxindustries.net"
               >
-                Getting Started
+                Docs
               </a>
             </li>
-            <li key="modules">
+            {/* <li key="modules">
               <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
                 Module List
               </a>
-            </li>
+            </li> */}
             <li key="dealers">
               <a className={isDealers ? 'active' : ''} href="/dealers">
                 Dealers
@@ -95,14 +95,14 @@ export function Header({
                 Blog
               </a>
             </li>
-            <li key="firmware">
+            {/* <li key="firmware">
               <a
                 className={''}
                 href="https://github.com/lzxindustries/firmware"
               >
                 Firmware
               </a>
-            </li>
+            </li> */}
             {/* </ul>
             </li> */}
           </ul>
@@ -133,16 +133,16 @@ export function Header({
           <li>
             <a
               className={isGettingStarted ? 'active' : ''}
-              href="/getting-started"
+              href="https://docs.lzxindustries.net"
             >
-              Getting Started
+              Docs
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
               Module List
             </a>
-          </li>
+          </li> */}
           <li>
             <a className={isDealers ? 'active' : ''} href="/dealers">
               Dealers
@@ -156,11 +156,11 @@ export function Header({
               Blog
             </a>
           </li>
-          <li>
+          {/* <li>
             <a className={''} href="https://github.com/lzxindustries/firmware">
               Firmware
             </a>
-          </li>
+          </li> */}
           {/* </ul>
           </li> */}
         </ul>
