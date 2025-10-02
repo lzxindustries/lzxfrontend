@@ -27,6 +27,7 @@ import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
 import {IconCaret, IconCheck} from '~/components/Icon';
 import {Link} from '~/components/Link';
+import {ProductGallery} from '~/components/ProductGallery';
 import {Heading, Text} from '~/components/Text';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server.js';
@@ -103,10 +104,11 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 
 export default function Product() {
   const {product, shop, recommended} = useLoaderData<typeof loader>();
-  const {descriptionHtml} = product;
+  const {descriptionHtml, media} = product;
 
   return (
     <div className="grid gap-8 p-6 md:p-8 lg:p-12">
+      <ProductGallery media={media.nodes} className="w-full" />
       <div className="grid md:grid-cols-2 gap-8">
         <div>
           <Heading as="h1">{product.title}</Heading>
