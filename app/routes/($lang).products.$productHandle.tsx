@@ -6,10 +6,11 @@ import {
   useSearchParams,
 } from '@remix-run/react';
 import type {
+  SeoConfig,
   ShopifyAnalyticsProduct,
   Storefront,
 } from '@shopify/hydrogen';
-import {AnalyticsPageType, Money} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
 import type {
   ProductConnection,
   Product as ProductType,
@@ -17,7 +18,7 @@ import type {
   SelectedOptionInput,
   Shop,
 } from '@shopify/hydrogen/storefront-api-types';
-import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
 import {type ReactNode, useMemo, useRef} from 'react';
@@ -134,6 +135,11 @@ export default function Product() {
         </div>
       </>
     )
+  );
+}
+    <ModuleDetails moduleData={moduleData} product={product}>
+      <ProductForm />
+    </ModuleDetails>
   );
 }
 
