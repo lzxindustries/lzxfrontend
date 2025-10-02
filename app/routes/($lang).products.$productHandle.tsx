@@ -27,12 +27,9 @@ import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
 import {IconCaret, IconCheck} from '~/components/Icon';
 import {Link} from '~/components/Link';
-import {ModuleDetails} from '~/components/ModuleDetails';
 import {Heading, Text} from '~/components/Text';
-import {getModuleDetails} from '~/controllers/get_module_details';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server.js';
-import type {ModuleView} from '~/views/module.js';
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
@@ -85,15 +82,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  const id = product.id;
-  const moduleData = await getModuleDetails(context, id);
-
-  if (!moduleData) {
-    throw new Response('Module data not found', {status: 404});
-  }
-
   return defer({
-    moduleData,
     product,
     shop,
     storeDomain: shop.primaryDomain.url,
@@ -113,21 +102,24 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Product() {
-  const {moduleData, product, shop, recommended} =
-    useLoaderData<typeof loader>();
+  const {product, shop, recommended} = useLoaderData<typeof loader>();
   const {descriptionHtml} = product;
-  const isModule = (moduleData?.hp ?? 0) > 0 ? true : false;
-
-  // Create a copy of moduleData to avoid mutating loader data
-  const moduleDataWithDescription = {
-    ...moduleData,
-    description: descriptionHtml,
-  };
 
   return (
-    <ModuleDetails moduleData={moduleDataWithDescription} product={product}>
-      <ProductForm />
-    </ModuleDetails>
+    <div className="grid gap-8 p-6 md:p-8 lg:p-12">
+      <div className="grid md:grid-cols-2 gap-8">
+        <div>
+          <Heading as="h1">{product.title}</Heading>
+          <ProductForm />
+        </div>
+        <div>
+          <div
+            className="prose"
+            dangerouslySetInnerHTML={{__html: descriptionHtml}}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
