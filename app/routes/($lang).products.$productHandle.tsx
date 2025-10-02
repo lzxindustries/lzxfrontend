@@ -86,7 +86,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   });
 
   const id = product.id;
-  const moduleData: ModuleView = await getModuleDetails(context, id);
+  const moduleData = await getModuleDetails(context, id);
 
   if (!moduleData) {
     throw new Response('Module data not found', {status: 404});
