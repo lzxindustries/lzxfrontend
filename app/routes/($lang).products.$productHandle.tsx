@@ -62,7 +62,12 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   }
 
   const recommended = getRecommendedProducts(context.storefront, product.id);
-  const firstVariant = product.variants.nodes[0];
+  const firstVariant = product.variants?.nodes?.[0];
+
+  if (!firstVariant) {
+    throw new Response('No variants available', {status: 404});
+  }
+
   const selectedVariant = product.selectedVariant ?? firstVariant;
 
   const productAnalytics: ShopifyAnalyticsProduct = {
@@ -83,9 +88,9 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   const id = product.id;
   const moduleData: ModuleView = await getModuleDetails(context, id);
 
-  // if (!id || !moduleData) {
-  //   throw new Response('product', { status: 404 });
-  // }
+  if (!moduleData) {
+    throw new Response('Module data not found', {status: 404});
+  }
 
   return defer({
     moduleData,
@@ -110,13 +115,17 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 export default function Product() {
   const {moduleData, product, shop, recommended} =
     useLoaderData<typeof loader>();
-  const {media, title, id, descriptionHtml, vendor} = product;
-  const {shippingPolicy, refundPolicy} = shop;
-  const isModule = moduleData.hp > 0 ? true : false;
-  moduleData.description = descriptionHtml;
+  const {descriptionHtml} = product;
+  const isModule = (moduleData?.hp ?? 0) > 0 ? true : false;
+
+  // Create a copy of moduleData to avoid mutating loader data
+  const moduleDataWithDescription = {
+    ...moduleData,
+    description: descriptionHtml,
+  };
 
   return (
-    <ModuleDetails moduleData={moduleData} product={product}>
+    <ModuleDetails moduleData={moduleDataWithDescription} product={product}>
       <ProductForm />
     </ModuleDetails>
   );
@@ -195,7 +204,7 @@ export function ProductForm() {
       : currentSearchParams;
   }, [currentSearchParams, location]);
 
-  const firstVariant = product.variants.nodes[0];
+  const firstVariant = product.variants?.nodes?.[0];
 
   /**
    * We're making an explicit choice here to display the product options
@@ -206,14 +215,20 @@ export function ProductForm() {
   const searchParamsWithDefaults = useMemo<URLSearchParams>(() => {
     const clonedParams = new URLSearchParams(searchParams);
 
-    for (const {name, value} of firstVariant.selectedOptions) {
-      if (!searchParams.has(name)) {
-        clonedParams.set(name, value);
+    if (firstVariant?.selectedOptions) {
+      for (const {name, value} of firstVariant.selectedOptions) {
+        if (!searchParams.has(name)) {
+          clonedParams.set(name, value);
+        }
       }
     }
 
     return clonedParams;
-  }, [searchParams, firstVariant.selectedOptions]);
+  }, [searchParams, firstVariant?.selectedOptions]);
+
+  if (!firstVariant) {
+    return <div>No variants available</div>;
+  }
 
   /**
    * Likewise, we're defaulting to the first variant for purposes
@@ -382,7 +397,10 @@ export function ProductForm() {
             ) : null}
 
             {!isOutOfStock && isBackorder && !isPreorder ? (
-              <Text as="span">Backorder delays may be variable as we transition our supply chain in response to new tariffs.</Text>
+              <Text as="span">
+                Backorder delays may be variable as we transition our supply
+                chain in response to new tariffs.
+              </Text>
             ) : null}
 
             {/* {!isOutOfStock && (
