@@ -81,12 +81,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   });
 
   const id = product.id;
-  let moduleData: ModuleView | null = await getModuleDetails(context, id);
-
-  // If moduleData is an empty object or missing required properties, set to null
-  if (!moduleData || Object.keys(moduleData).length === 0 || typeof moduleData.hp === 'undefined') {
-    moduleData = null;
-  }
+  const moduleData: ModuleView = await getModuleDetails(context, id);
 
   // if (!id || !moduleData) {
   //   throw new Response('product', { status: 404 });
@@ -107,36 +102,20 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     seo,
   });
 }
+
+export const meta = ({data}: MetaArgs<typeof loader>) => {
+  return getSeoMeta(data!.seo as SeoConfig);
+};
+
 export default function Product() {
   const {moduleData, product, shop, recommended} =
     useLoaderData<typeof loader>();
   const {media, title, id, descriptionHtml, vendor} = product;
   const {shippingPolicy, refundPolicy} = shop;
-  const isModule = moduleData && moduleData.hp > 0 ? true : false;
-
-  // Only set description if moduleData exists
-  if (moduleData) {
-    moduleData.description = descriptionHtml;
-  }
+  const isModule = moduleData.hp > 0 ? true : false;
+  moduleData.description = descriptionHtml;
 
   return (
-    moduleData ? (
-      <ModuleDetails moduleData={moduleData} product={product}>
-        <ProductForm />
-      </ModuleDetails>
-    ) : (
-      <>
-        {/* Fallback UI if no moduleData exists */}
-        <div className="product-details-fallback">
-          <h1>{title}</h1>
-          <Text size="lead" color="subtle" className="uppercase">{vendor}</Text>
-          <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
-          <ProductForm />
-        </div>
-      </>
-    )
-  );
-}
     <ModuleDetails moduleData={moduleData} product={product}>
       <ProductForm />
     </ModuleDetails>
