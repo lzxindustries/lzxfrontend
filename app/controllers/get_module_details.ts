@@ -13,7 +13,10 @@ import type {VideoInterface} from '~/models/video';
 import type {ModuleView} from '~/views/module';
 import type {ModulePartView} from '~/views/module_part';
 
-export async function getModuleDetails(context: AppLoadContext, id: string) {
+export async function getModuleDetails(
+  context: AppLoadContext,
+  id: string,
+): Promise<ModuleView | null> {
   const filters = {id};
   const [
     module_data,
@@ -48,6 +51,11 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
     getDataCollection(context, 'Part') as Promise<PartInterface[]>,
     getDataCollection(context, 'Asset') as Promise<AssetInterface[]>,
   ]);
+
+  // Check if module_data is valid
+  if (!module_data || !module_data.id) {
+    return null;
+  }
 
   const module_view: ModuleView = {
     id: module_data.id,
