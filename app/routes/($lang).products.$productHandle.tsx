@@ -108,15 +108,17 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Product() {
-  const {moduleData, product, shop, recommended} =
+  // const {moduleData, product, shop, recommended} =
+  const {product, shop, recommended} =
     useLoaderData<typeof loader>();
   const {media, title, id, descriptionHtml, vendor} = product;
   const {shippingPolicy, refundPolicy} = shop;
-  const isModule = moduleData.hp > 0 ? true : false;
-  moduleData.description = descriptionHtml;
+  // const isModule = moduleData.hp > 0 ? true : false;
+  // moduleData.description = descriptionHtml;
 
   return (
-    <ModuleDetails moduleData={moduleData} product={product}>
+    // <ModuleDetails moduleData={moduleData} product={product}>
+    <ModuleDetails product={product}>
       <ProductForm />
     </ModuleDetails>
   );
