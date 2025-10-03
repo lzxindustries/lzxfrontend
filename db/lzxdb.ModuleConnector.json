@@ -1,0 +1,6467 @@
+[{
+  "_id": {
+    "$oid": "645bc40cb2568df0622ecda5"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "__v": 0,
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "name": "Horizontal 1",
+  "x": -500,
+  "y": 875,
+  "refDes": "J1"
+},
+{
+  "_id": {
+    "$oid": "645bed34b2568df0622ece3f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Horizontal Ramp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": -1875,
+  "__v": 0,
+  "refDes": "J1"
+},
+{
+  "_id": {
+    "$oid": "645bf5acb2568df0622ece9d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J2",
+  "name": "Vertical Ramp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf5c0b2568df0622ecec0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J3",
+  "name": "Inverted Horizontal Ramp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf5cfb2568df0622ecee3"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J4",
+  "name": "Inverted Vertical Ramp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf604b2568df0622ecf06"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J5",
+  "name": "A",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf60db2568df0622ecf29"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J6",
+  "name": "B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf617b2568df0622ecf4c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J7",
+  "name": "C",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf622b2568df0622ecf6f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J8",
+  "name": "D",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 900,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf669b2568df0622ecf92"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J9",
+  "name": "0 Degrees (100% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf686b2568df0622ecfb5"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J10",
+  "name": "90 Degrees (100% B)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf69bb2568df0622ecfd8"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J11",
+  "name": "180 Degrees (100% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf6b3b2568df0622ecffb"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J12",
+  "name": "270 Degrees (100% D)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf6d9b2568df0622ed01e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J13",
+  "name": "15 Degrees (83.33% A + 16.67% B)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": -125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf6efb2568df0622ed041"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J14",
+  "name": "105 Degrees (83.33% B + 16.67% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": -125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf717b2568df0622ed064"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J15",
+  "name": "195 Degrees (83.33% C + 16.67% D)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": -125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf736b2568df0622ed087"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J16",
+  "name": "285 Degrees (83.33% D + 16.67% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf813b2568df0622ed108"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J17",
+  "name": "30 Degrees (66.67% A + 33.33% B)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf828b2568df0622ed12f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J18",
+  "name": "120 Degrees (66.67% B + 33.33% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf83fb2568df0622ed156"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J19",
+  "name": "210 Degrees (66.67% B + 33.33% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf855b2568df0622ed17d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J20",
+  "name": "300 Degrees (66.67% D + 33.33% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf884b2568df0622ed1a4"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J21",
+  "name": "45 Degrees (50% A + 50% B)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": true,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf89eb2568df0622ed1cb"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J22",
+  "name": "135 Degrees (50% B + 50% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf8c7b2568df0622ed1f2"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J24",
+  "name": "315 Degrees (50% D + 50% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf904b2568df0622ed219"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J25",
+  "name": "60 Degrees (33.33% A + 66.67% B)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf925b2568df0622ed240"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J26",
+  "name": "150 Degrees (33.33% B + 66.67% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf944b2568df0622ed267"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J27",
+  "name": "240 Degrees (33.33% C + 66.67% D)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf95fb2568df0622ed28e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J28",
+  "name": "330 Degrees (33.33% D + 66.67% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf9a4b2568df0622ed2dc"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J29",
+  "name": "165 Degrees (16.67% B + 83.33% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf9cdb2568df0622ed303"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J30",
+  "name": "165 Degrees (16.67% B + 83.33% C)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf9e5b2568df0622ed32a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J31",
+  "name": "255 Degrees (16.67% C + 83.33% D)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bf9f9b2568df0622ed351"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J32",
+  "name": "345 Degrees (16.67% D + 83.33% A)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c21cfa36a6f14425dbf01"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "refDes": "J23",
+  "name": "225 Degrees (50% C + 50% D)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3e38c5d1bc137934e0cc"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J1",
+  "name": "Center CV",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3e90c5d1bc137934e0e3"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J2",
+  "name": "Span CV",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3ebdc5d1bc137934e102"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J3",
+  "name": "Enable",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3edac5d1bc137934e121"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J4",
+  "name": "DAC",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3eecc5d1bc137934e140"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J5",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f17c5d1bc137934e15f"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J6",
+  "name": "Disable",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f2fc5d1bc137934e183"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J7",
+  "name": "Inverted DAC",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f46c5d1bc137934e1a5"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J6",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f5cc5d1bc137934e1c4"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J9",
+  "name": "ADC",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f7ec5d1bc137934e1e3"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "J10",
+  "name": "Window Key",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3f89c5d1bc137934e202"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J7",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c425dc5d1bc137934e44d"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J2",
+  "name": "Vertical 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4281c5d1bc137934e488"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J3",
+  "name": "Quadrilateral Key 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4297c5d1bc137934e4bb"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J4",
+  "name": "Horizontal 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c42b4c5d1bc137934e4ee"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J5",
+  "name": "Vertical 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c42e3c5d1bc137934e536"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J6",
+  "name": "Quadrilateral Key 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c42f1c5d1bc137934e56d"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J9",
+  "name": "Quadrilateral Key 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c430dc5d1bc137934e5ac"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J7",
+  "name": "Horizontal 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c431ec5d1bc137934e5e7"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "J8",
+  "name": "Vertical 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4a412fb492ad27ead973"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J1",
+  "name": "Y",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4a552fb492ad27ead97c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J2",
+  "name": "Y",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4ac72fb492ad27ead99f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J3",
+  "name": "I+",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -400,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4ad22fb492ad27ead9b8"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J4",
+  "name": "I+",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4af12fb492ad27ead9d6"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J5",
+  "name": "I-",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4afa2fb492ad27ead9ef"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J6",
+  "name": "I-",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4b122fb492ad27eada08"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J7",
+  "name": "Q+",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -400,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4b1e2fb492ad27eada21"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J8",
+  "name": "Q+",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4b362fb492ad27eada3a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J9",
+  "name": "Q-",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4b482fb492ad27eada53"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J10",
+  "name": "Q+",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4c582fb492ad27eada73"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J11",
+  "name": "R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4c7d2fb492ad27eada95"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J12",
+  "name": "R Over",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4c8a2fb492ad27eadab2"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J13",
+  "name": "R Clamp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4c992fb492ad27eadacf"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J16",
+  "name": "G Clamp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4ca72fb492ad27eadaec"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J19",
+  "name": "B Clamp",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4cc42fb492ad27eadb07"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J15",
+  "name": "G Over",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4cd12fb492ad27eadb28"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J18",
+  "name": "B Over",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4cf62fb492ad27eadb52"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J14",
+  "name": "G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4d012fb492ad27eadb77"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "refDes": "J17",
+  "name": "B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4f4b2fb492ad27eadcd3"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J1",
+  "name": "Cutoff CV 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4f5d2fb492ad27eadcde"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J4",
+  "name": "Cutoff CV 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4f6d2fb492ad27eadd0b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J7",
+  "name": "Cutoff CV 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4f8b2fb492ad27eadd38"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J2",
+  "name": "Filter 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4f952fb492ad27eadd65"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J5",
+  "name": "Filter 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4fa32fb492ad27eadd92"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J8",
+  "name": "Filter 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4fb22fb492ad27eaddbf"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J3",
+  "name": "Filter 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4fc42fb492ad27eaddf1"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J6",
+  "name": "Filter 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4fd42fb492ad27eade1e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "J9",
+  "name": "Filter 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51472fb492ad27eadf96"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J1",
+  "name": "A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d516a2fb492ad27eadfa1"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J2",
+  "name": "A1 & B1 Average",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51762fb492ad27eadfda"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J3",
+  "name": "B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d518e2fb492ad27eae013"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J4",
+  "name": "A2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d519c2fb492ad27eae04c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J5",
+  "name": "A2 & B2 Average",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51b62fb492ad27eae085"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J6",
+  "name": "B2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51c32fb492ad27eae0be"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J7",
+  "name": "A3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51d42fb492ad27eae0f7"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J8",
+  "name": "A3 & B3 Average",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51e02fb492ad27eae130"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "J9",
+  "name": "B3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54322fb492ad27eae2e0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J1",
+  "name": "A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54452fb492ad27eae2eb"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J2",
+  "name": "B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54582fb492ad27eae330"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J3",
+  "name": "Proc 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54712fb492ad27eae375"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J4",
+  "name": "A2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54832fb492ad27eae3ba"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J5",
+  "name": "B2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54932fb492ad27eae3ff"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J6",
+  "name": "Proc 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54a72fb492ad27eae444"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J7",
+  "name": "A3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54ba2fb492ad27eae489"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J8",
+  "name": "B3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d54ca2fb492ad27eae4ce"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "J9",
+  "name": "Proc 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d64822fb492ad27eae6c7"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J3",
+  "name": "R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d64cf2fb492ad27eae6d2"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J4",
+  "name": "2X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d650f2fb492ad27eae727"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J5",
+  "name": "4X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d652d2fb492ad27eae77c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J6",
+  "name": "G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d65442fb492ad27eae7d1"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J7",
+  "name": "8X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d65532fb492ad27eae826"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J8",
+  "name": "16X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d65662fb492ad27eae87b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J9",
+  "name": "B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d65782fb492ad27eae8d0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J10",
+  "name": "32X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d658c2fb492ad27eae925"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J11",
+  "name": "64X",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d67682fb492ad27eae9f0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J1",
+  "name": "Steps CV",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": -400,
+  "y": 125,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "645d68832fb492ad27eaea27"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "J2",
+  "name": "Phase CV",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6ced2fb492ad27eaec5a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J1",
+  "name": "Threshold CV 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d002fb492ad27eaec65"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J4",
+  "name": "Threshold CV 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d102fb492ad27eaecca"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J7",
+  "name": "Threshold CV 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d292fb492ad27eaed2f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J2",
+  "name": "Key 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d3d2fb492ad27eaed94"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J5",
+  "name": "Key 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d5f2fb492ad27eaedfe"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J8",
+  "name": "Key 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d752fb492ad27eaee63"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J9",
+  "name": "Key 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d862fb492ad27eaeec8"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J6",
+  "name": "Key 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6d952fb492ad27eaef2d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "J3",
+  "name": "Key 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6ea32fb492ad27eaef9e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J1",
+  "name": "Sum A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6eb72fb492ad27eaefa9"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J2",
+  "name": "Sum B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6ec32fb492ad27eaf012"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J3",
+  "name": "Sum C1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6edf2fb492ad27eaf07b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J4",
+  "name": "Sum 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6ef92fb492ad27eaf0e4"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J5",
+  "name": "Sum A2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6f042fb492ad27eaf14d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J6",
+  "name": "Sum B2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6f2b2fb492ad27eaf1b6"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J7",
+  "name": "Sum C2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6f3c2fb492ad27eaf21f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J8",
+  "name": "Sum 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 900,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6f892fb492ad27eaf297"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J9",
+  "name": "Sum A3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6f9a2fb492ad27eaf304"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J10",
+  "name": "Sum B3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6fac2fb492ad27eaf371"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J11",
+  "name": "Sum C3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6fc22fb492ad27eaf3de"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J12",
+  "name": "Sum 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6fda2fb492ad27eaf44b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J13",
+  "name": "Sum A4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6fe92fb492ad27eaf4b8"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J14",
+  "name": "Sum B4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6ffd2fb492ad27eaf525"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J15",
+  "name": "Sum C4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70192fb492ad27eaf592"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J16",
+  "name": "Sum 4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70792fb492ad27eaf5ff"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J17",
+  "name": "Dist 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d708d2fb492ad27eaf66c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J18",
+  "name": "Dist A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d709d2fb492ad27eaf6d9"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J19",
+  "name": "Dist B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70b42fb492ad27eaf746"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J20",
+  "name": "Dist C1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70c92fb492ad27eaf7b3"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J21",
+  "name": "Dist 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70dc2fb492ad27eaf820"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J22",
+  "name": "Dist A2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d70f92fb492ad27eaf88d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J23",
+  "name": "Dist B2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d710e2fb492ad27eaf8fa"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J24",
+  "name": "Dist C2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71502fb492ad27eaf95e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J25",
+  "name": "Dist 3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71652fb492ad27eaf9cf"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J26",
+  "name": "Dist A3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71742fb492ad27eafa40"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J27",
+  "name": "Dist B3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d718e2fb492ad27eafab1"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J28",
+  "name": "Dist C3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71a52fb492ad27eafb22"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J29",
+  "name": "Dist 4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71ba2fb492ad27eafb93"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J30",
+  "name": "Dist A4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71cc2fb492ad27eafc04"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J31",
+  "name": "Dist B4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d71dd2fb492ad27eafc75"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "refDes": "J32",
+  "name": "Dist C4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d78512fb492ad27eaff2d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J1",
+  "name": "Frequency CV 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d78612fb492ad27eaff38"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J2",
+  "name": "Frequency CV 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d791e2fb492ad27eaffb5"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J3",
+  "name": "Reset 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d79372fb492ad27eb0032"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J4",
+  "name": "Aux Frequency CV 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d795b2fb492ad27eb00af"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J5",
+  "name": "Reset 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d796f2fb492ad27eb012c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J6",
+  "name": "Aux Frequency CV 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7a472fb492ad27eb01c6"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J7",
+  "name": "Sine 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7a922fb492ad27eb024c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J8",
+  "name": "Square 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7aa32fb492ad27eb02cd"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J9",
+  "name": "Sine 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7ac92fb492ad27eb034e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J10",
+  "name": "Square 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7b7c2fb492ad27eb03f4"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J11",
+  "name": "Double Saw 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7b8a2fb492ad27eb03fd"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J12",
+  "name": "Triangle 1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7b9e2fb492ad27eb0406"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J13",
+  "name": "Double Saw 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7bae2fb492ad27eb040f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "J14",
+  "name": "Triangle 2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7d2f2fb492ad27eb04d4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J1",
+  "name": "H 1",
+  "is_input": true,
+  "x": -900,
+  "y": 875,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "645d7d3f2fb492ad27eb04df"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J2",
+  "name": "V 1",
+  "part": null,
+  "is_input": true,
+  "x": -300,
+  "y": 875,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "645d7d4f2fb492ad27eb04f0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J3",
+  "name": "H 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7d5a2fb492ad27eb0501"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J4",
+  "name": "V 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7da72fb492ad27eb053b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J5",
+  "name": "Average 1",
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7dc82fb492ad27eb0546"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J6",
+  "name": "Minimum 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7dd62fb492ad27eb055b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J7",
+  "name": "Average 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7de62fb492ad27eb0570"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J8",
+  "name": "Minimum 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7dfd2fb492ad27eb0585"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J9",
+  "name": "Maximum 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7e212fb492ad27eb059a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J10",
+  "name": "Absolute 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7e2c2fb492ad27eb05af"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J11",
+  "name": "Maximum 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7e3f2fb492ad27eb05c4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "J12",
+  "name": "Absolute 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da6512fb492ad27eb05f8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J1",
+  "name": "Sync",
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da6682fb492ad27eb0603"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J2",
+  "name": "Sync",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -600,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da6bb2fb492ad27eb062b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J3",
+  "name": "Y/Gs 1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": -1000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da74b2fb492ad27eb0640"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J4",
+  "name": "Y/Gs 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -600,
+  "y": -1000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da85e2fb492ad27eb0655"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J5",
+  "name": "Pb/B 1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da8742fb492ad27eb066a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J6",
+  "name": "Pb/B 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -600,
+  "y": -375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da88b2fb492ad27eb067f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J7",
+  "name": "Pr/R 1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da89a2fb492ad27eb0694"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J8",
+  "name": "Pr/R 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -600,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da8b52fb492ad27eb06a9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J15",
+  "name": "CVBS 1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da8c12fb492ad27eb06be"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J16",
+  "name": "CVBS 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -600,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da8da2fb492ad27eb06d3"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J20",
+  "name": "YC 1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1200,
+  "y": 1500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645da8e52fb492ad27eb06e8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J21",
+  "name": "YC 2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -600,
+  "y": 1500,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daa392fb492ad27eb0797"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J9",
+  "name": "MIDI",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daa5a2fb492ad27eb07b0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J10",
+  "name": "Y 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 600,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daa662fb492ad27eb07c9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J11",
+  "name": "Y 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 1200,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dab012fb492ad27eb0802"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J12",
+  "name": "MIDI",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dab112fb492ad27eb081f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J13",
+  "name": "R 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 600,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dab1c2fb492ad27eb083c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J14",
+  "name": "R 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 1200,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dabc02fb492ad27eb089e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J17",
+  "name": "USB",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dabd62fb492ad27eb08bf"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J18",
+  "name": "G 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 600,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dabe62fb492ad27eb08e0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J19",
+  "name": "G 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 1200,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dac202fb492ad27eb091b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J22",
+  "name": "Trigger",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dac3e2fb492ad27eb0940"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J23",
+  "name": "B 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 600,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dac4b2fb492ad27eb0965"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J24",
+  "name": "B 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 1200,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dad022fb492ad27eb0a1a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "J25",
+  "name": "MicroSD",
+  "is_input": true,
+  "is_output": false,
+  "x": 1400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0112fb492ad27eb0c4e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J1",
+  "name": "R",
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0352fb492ad27eb0c59"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J2",
+  "name": "CVBS",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0522fb492ad27eb0c8a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J3",
+  "name": "G",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0772fb492ad27eb0cbb"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J4",
+  "name": "B",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0912fb492ad27eb0cec"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J5",
+  "name": "Y/Gs",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0c22fb492ad27eb0d1d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J6",
+  "name": "Pb/B",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db0db2fb492ad27eb0d54"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "J7",
+  "name": "Pr/R",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db22f2fb492ad27eb0fd2"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J1",
+  "name": "A1",
+  "is_input": true,
+  "x": -900,
+  "y": 875,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "645db2472fb492ad27eb0fe4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J2",
+  "name": "B1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2532fb492ad27eb1025"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J3",
+  "name": "C1",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2692fb492ad27eb1066"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J4",
+  "name": "Mixer 1",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db27b2fb492ad27eb10a7"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J5",
+  "name": "A2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db28b2fb492ad27eb10e8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J6",
+  "name": "B2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2992fb492ad27eb1129"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J7",
+  "name": "C2",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2aa2fb492ad27eb116a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J8",
+  "name": "Mixer 2",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2c82fb492ad27eb11ab"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J9",
+  "name": "A3",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2d42fb492ad27eb11ec"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J10",
+  "name": "B3",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2e12fb492ad27eb122d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J11",
+  "name": "C3",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2f22fb492ad27eb126e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "J12",
+  "name": "Mixer 3",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8082fb492ad27eb14a5"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J3",
+  "name": "R BG",
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8272fb492ad27eb14b7"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J1",
+  "name": "Threshold CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db83a2fb492ad27eb1500"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J2",
+  "name": "Softness CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8552fb492ad27eb1549"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J4",
+  "name": "R FG",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8672fb492ad27eb1592"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J5",
+  "name": "R Key",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8862fb492ad27eb15db"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J6",
+  "name": "R",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8952fb492ad27eb1624"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J10",
+  "name": "G",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8ae2fb492ad27eb166d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J14",
+  "name": "B",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8c72fb492ad27eb16b6"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J13",
+  "name": "B Key",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8d62fb492ad27eb16ff"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J12",
+  "name": "B FG",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db8f32fb492ad27eb1748"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J11",
+  "name": "B BG",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db9032fb492ad27eb1791"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J7",
+  "name": "G BG",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db9812fb492ad27eb1811"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J8",
+  "name": "G FG",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db98f2fb492ad27eb185e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "J9",
+  "name": "G Key",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645ead5d66a3f9d04bd77ee2"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "refDes": "J1",
+  "name": null,
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645ead7566a3f9d04bd77ee9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J4",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645ead9266a3f9d04bd77ef0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "refDes": "J3",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eada866a3f9d04bd77ef7"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "refDes": "J4",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eaf8866a3f9d04bd77f31"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J1",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eaf9e66a3f9d04bd77f38"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J2",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eafc966a3f9d04bd77f3f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J3",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eafe066a3f9d04bd77f46"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J4",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": -250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eb00966a3f9d04bd77f4d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J5",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eb05c66a3f9d04bd77f54"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J6",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eb06f66a3f9d04bd77f5b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J7",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645eb08266a3f9d04bd77f62"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "refDes": "J8",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630014331f479d216235df"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J1",
+  "name": "ILDA",
+  "is_input": true,
+  "x": -4800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646301c4331f479d21623600"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J2",
+  "name": "CVBS",
+  "part": null,
+  "is_input": true,
+  "x": -4100,
+  "y": -1875,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "646301e0331f479d21623612"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J3",
+  "name": "Y",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -4100,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646301f9331f479d21623624"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J4",
+  "name": "Pb",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -4100,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630203331f479d21623631"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J6",
+  "name": "R",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -3400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630328331f479d216236b0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J7",
+  "name": "G",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -3400,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630335331f479d216236c1"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J8",
+  "name": "B",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -3400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463035c331f479d216236da"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J5",
+  "name": "Pr",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -4100,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630433331f479d2162375d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J12",
+  "name": "Key",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -2900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630443331f479d2162377a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J13",
+  "name": "Motion",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -2900,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646304c5331f479d2162379f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J14",
+  "name": "Mod Distance CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -2000,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646304e9331f479d216237c8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J15",
+  "name": "X Position CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1500,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646304ff331f479d216237ed"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J16",
+  "name": "Y Position CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -1000,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630525331f479d21623812"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J17",
+  "name": "Mod Angle CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b389331f479d21623cac"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J9",
+  "name": "Luma",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": -3400,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b41a331f479d21623cc1"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J10",
+  "name": "X",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -2900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b428331f479d21623cd6"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J11",
+  "name": "Y",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": -2900,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b45a331f479d21623ceb"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J18",
+  "name": "Edge CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b476331f479d21623d00"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J19",
+  "name": "Rotation CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 500,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b487331f479d21623d15"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J20",
+  "name": "Size CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 1000,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b4a1331f479d21623d2a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J21",
+  "name": "Skew CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 1500,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b4b0331f479d21623d3f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J22",
+  "name": "Curve CV",
+  "part": null,
+  "is_input": true,
+  "is_output": false,
+  "x": 2000,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b4d4331f479d21623d54"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J23",
+  "name": "X",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 2900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b4e1331f479d21623d69"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J24",
+  "name": "Y",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 2900,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b4f6331f479d21623d7e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J25",
+  "name": "Shape",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 2900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b517331f479d21623d98"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J26",
+  "name": "H",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 2900,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b52e331f479d21623dad"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J27",
+  "name": "R",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 3400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b54c331f479d21623dc2"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J28",
+  "name": "G",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 3400,
+  "y": -1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b558331f479d21623dd7"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J29",
+  "name": "B",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 3400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b566331f479d21623dec"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J30",
+  "name": "V",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 3400,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b593331f479d21623e01"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J31",
+  "name": "CVBS",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 4100,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b5bd331f479d21623e1b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J33",
+  "name": "Pb",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 4100,
+  "y": -625,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b5d5331f479d21623e30"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J34",
+  "name": "Pr",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 4100,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b625331f479d21623e61"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J32",
+  "name": "Y",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 4100,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b643331f479d21623e82"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "J35",
+  "name": "ILDA",
+  "part": null,
+  "is_input": false,
+  "is_output": true,
+  "x": 4800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d74685ed4d302836f988"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J7",
+  "name": "1R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -1500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d75d85ed4d302836f991"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J8",
+  "name": "2R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d76d85ed4d302836f9d4"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J9",
+  "name": "3R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d77985ed4d302836fa17"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J10",
+  "name": "4R",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d7a785ed4d302836fa60"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J11",
+  "name": "AR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d7b585ed4d302836faa3"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J12",
+  "name": "BR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 1500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d8c885ed4d302836fb58"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J1",
+  "name": "Select A0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -1500,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d8d885ed4d302836fba1"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J2",
+  "name": "Select A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d8e685ed4d302836fbef"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J3",
+  "name": "Select B0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d8f085ed4d302836fc36"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J4",
+  "name": "Select B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d90185ed4d302836fc85"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J5",
+  "name": "Disable A",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d90e85ed4d302836fccc"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J6",
+  "name": "Disable B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 1500,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d93785ed4d302836fd35"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J13",
+  "name": "1G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -1500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d94585ed4d302836fd85"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J14",
+  "name": "2G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d95785ed4d302836fdd0"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J15",
+  "name": "3G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9b285ed4d302836fe1f"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J16",
+  "name": "4G",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9c685ed4d302836fe71"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J17",
+  "name": "AG",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9d685ed4d302836febc"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J18",
+  "name": "BG",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 1500,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9ed85ed4d302836ff0d"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J19",
+  "name": "1B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -1500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9fd85ed4d302836ff58"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J20",
+  "name": "2B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dabf85ed4d302836ffac"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J1",
+  "name": "Clock",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": false,
+  "x": 0,
+  "y": -1750,
+  "__v": 0,
+  "is_input": true
+},
+{
+  "_id": {
+    "$oid": "6463daed85ed4d302836ffb9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "J2",
+  "name": "VC",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463daff85ed4d302836ffc4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "J1",
+  "name": "Sync",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463db1685ed4d302836ffd1"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J21",
+  "name": "3B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463db2285ed4d3028370029"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J22",
+  "name": "4B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463db3e85ed4d302837007e"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J23",
+  "name": "AB",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463db5385ed4d30283700d1"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "J24",
+  "name": "BB",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 1500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dfa685ed4d302837051d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J1",
+  "name": "Clock",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": -1750,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "6463dfb985ed4d3028370524"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J3",
+  "name": "Reset",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": -750,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "6463dfcd85ed4d302837052b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J3",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": -750,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "6463dfee85ed4d3028370532"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J4",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": -250,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "6463e00d85ed4d302837053c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J5",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "x": 0,
+  "y": 250,
+  "__v": 0,
+  "is_output": false
+},
+{
+  "_id": {
+    "$oid": "6463e01e85ed4d3028370543"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J6",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0,
+  "is_input": false
+},
+{
+  "_id": {
+    "$oid": "6463e03785ed4d302837054a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J7",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e06885ed4d3028370567"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J8",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e0e785ed4d302837058c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J2",
+  "name": "Up/Down",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e13d85ed4d302837059d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J4",
+  "name": "RCO (Ripple Carry Output)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": -250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e1f185ed4d30283705dd"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J8",
+  "name": "D3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e21b85ed4d30283705e7"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J1",
+  "name": "A1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e22d85ed4d30283705ee"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J2",
+  "name": "B1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e24085ed4d30283705f5"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J3",
+  "name": "OUT1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": -750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e25685ed4d30283705fc"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J4",
+  "name": "A2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e26785ed4d3028370603"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J5",
+  "name": "B2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e28685ed4d302837060a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J6",
+  "name": "OUT2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e2b985ed4d3028370611"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J7",
+  "name": "B1 / OUT2 Combination output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e2ee85ed4d3028370621"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "refDes": "J8",
+  "name": "A2 / OUT1 Combination output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e33a85ed4d302837062c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J1",
+  "name": "A",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e34b85ed4d3028370633"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J2",
+  "name": "B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e36085ed4d302837063a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J3",
+  "name": "XNOR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": -750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e37185ed4d3028370641"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J4",
+  "name": "XOR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": -250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e38285ed4d3028370648"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J5",
+  "name": "NOR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e39485ed4d302837064f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J6",
+  "name": "OR",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e40185ed4d3028370656"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J7",
+  "name": "NAND",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e41385ed4d302837065d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "refDes": "J8",
+  "name": "AND",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e4af85ed4d3028370676"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J2",
+  "name": "Data",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e4c685ed4d302837067d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J3",
+  "name": "Reset",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e51485ed4d3028370693"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J5",
+  "name": "D1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e53d85ed4d302837069a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J6",
+  "name": "D2",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e54e85ed4d30283706a1"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "refDes": "J7",
+  "name": "D3",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e5b185ed4d30283706b4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "refDes": "J2",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e66085ed4d30283706d2"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "refDes": "J5",
+  "name": "D0",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e6a085ed4d30283706dc"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J1",
+  "name": "Clock",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e6b485ed4d30283706e3"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "refDes": "J2",
+  "name": "Reset",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463e70585ed4d30283706ed"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "J3",
+  "name": "Clock",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 0,
+  "y": 1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646524fd180127004c0ed3e8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "1",
+  "name": "Logic Input A (0-1 VDC)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652740180127004c0ed431"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "3",
+  "name": "Rectifier Input (0-1 VDC)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652766180127004c0ed438"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "4",
+  "name": "Logic Input B",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6465279a180127004c0ed43f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "5",
+  "name": "Rectifier Mirror Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646527c8180127004c0ed446"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "6",
+  "name": "Logic Minimum (OR) Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646527ec180127004c0ed44d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "7",
+  "name": "Rectifier Darks Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652814180127004c0ed454"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "8",
+  "name": "Logic Maximum (AND) Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652839180127004c0ed45b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "9",
+  "name": "Rectifier Lights Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6465289e180127004c0ed462"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "10",
+  "name": "Logic Absolute (XOR) Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646528d2180127004c0ed469"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "11",
+  "name": "Gamma Input (0-1 VDC)",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652a81180127004c0ed470"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "12",
+  "name": "Logic Intersection Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652ac1180127004c0ed47b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "14",
+  "name": "Gamma Square (Exponential) Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652ade180127004c0ed482"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "15",
+  "name": "Logic Clip Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652b0c180127004c0ed489"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "16",
+  "name": "Gamma Logarithm Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_output": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ee770389b067df837ec02f"
+  },
+  "module": {
+    "$oid": "64d177ac2086f856c3bdd9b5"
+  },
+  "refDes": "J1",
+  "name": "CV1",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -500,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65402ed5d0213a8edfed1ed4"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J1",
+  "name": "Phase 1 CV Input",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": -800,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65402eecd0213a8edfed1edf"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J2",
+  "name": "Phase 2 CV Input",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": true,
+  "is_output": false,
+  "x": 800,
+  "y": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654031e0d0213a8edfed1ef8"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J3",
+  "name": "LFO 1A Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540320bd0213a8edfed1f09"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J4",
+  "name": "LFO 1B Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540324dd0213a8edfed1f25"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J5",
+  "name": "LFO 2A Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654032b8d0213a8edfed1f3b"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J6",
+  "name": "LFO 2B Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654032e9d0213a8edfed1f57"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J7",
+  "name": "Ramp 1 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403304d0213a8edfed1f6e"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J8",
+  "name": "Pulse 1 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403320d0213a8edfed1f85"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J9",
+  "name": "Ramp 2 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403335d0213a8edfed1f9c"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J10",
+  "name": "Pulse 2 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1375,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403382d0213a8edfed1fd2"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J11",
+  "name": "Saw 1 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -900,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540339ad0213a8edfed1fed"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J12",
+  "name": "Tri 1 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": -300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654033aad0213a8edfed2008"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J13",
+  "name": "Saw 2 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654033bdd0213a8edfed2023"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "J14",
+  "name": "Tri 2 Output",
+  "part": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "is_input": false,
+  "is_output": true,
+  "x": 900,
+  "y": 1875,
+  "__v": 0
+}]

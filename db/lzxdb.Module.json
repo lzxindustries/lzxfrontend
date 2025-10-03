@@ -1,0 +1,3104 @@
+[{
+  "_id": {
+    "$oid": "645596e634e3e71f1fe4921a"
+  },
+  "id": "gid://shopify/Product/1692916252736",
+  "name": "Navigator",
+  "description": "﻿Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner's Manual (PDF)User Reference Card (PDF)",
+  "sku": "LZXNV",
+  "price": "529.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 16,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 100,
+  "max_pos_12v_ma": 130,
+  "mounting_depth_mm": 32,
+  "subtitle": "Linear Position & Rotation Processor",
+  "discontinuedDate": {
+    "$date": "2020-01-01T08:00:00.000Z"
+  },
+  "frontpanel": "navigator-front-panel.jpg",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2016-01-01T08:00:00.000Z"
+  },
+  "is_hidden": true,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d4"
+  },
+  "id": "gid://shopify/Product/1692913336384",
+  "name": "Cadet VI Fader",
+  "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.\n\n",
+  "sku": "LZXCADT6",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 4,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 20,
+  "max_pos_12v_ma": 20,
+  "mounting_depth_mm": 45,
+  "subtitle": "Wide Bandwidth Crossfader",
+  "discontinuedDate": {
+    "$date": "2020-01-01T08:00:00.000Z"
+  },
+  "frontpanel": "cadet-6-front-panel.jpg",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2015-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VI%20Fader",
+  "has_dc_barrel_power_entry": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270cc"
+  },
+  "id": "gid://shopify/Product/1692912484416",
+  "name": "Cadet II RGB Encoder",
+  "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
+  "sku": "LZXCADT2",
+  "price": "36.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20II%20RGB%20Encoder",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 29,
+  "max_pos_12v_ma": 65,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270dc"
+  },
+  "id": "gid://shopify/Product/1692914221120",
+  "name": "Castle 101 Quad Gate",
+  "description": null,
+  "sku": "LZXCSTL5",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 55,
+  "max_pos_12v_ma": 31,
+  "mounting_depth_mm": 51,
+  "frontpanel": "castle-101-front-panel.png",
+  "legend": "castle-101-front-panel.png",
+  "subtitle": "Quad Single Function Logic",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ed"
+  },
+  "id": "gid://shopify/Product/1692917071936",
+  "name": "Prismatic Ray",
+  "description": "﻿No longer available. Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Width, 16HP Mounting Depth, 32mm Power +12V @ 120mA Power -12V @ 90mA Owner's Manual (PDF)User Reference Card (PDF)",
+  "sku": "LZXPR",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f1"
+  },
+  "id": "gid://shopify/Product/1701868666944",
+  "name": "Castle 001 DAC",
+  "description": null,
+  "sku": "LZXCSTL1",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_eurorack_power_entry": true,
+  "hp": 4,
+  "max_neg_12v_ma": 4,
+  "max_pos_12v_ma": 3,
+  "mounting_depth_mm": 42,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "frontpanel": "castle-001-front-panel.png",
+  "legend": "castle-001-front-panel.png",
+  "subtitle": "Dual Digital to Analog Converter",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f5"
+  },
+  "id": "gid://shopify/Product/4256056410135",
+  "name": "TBC2 Expander",
+  "description": null,
+  "sku": "LZXOTBC2X",
+  "price": "79.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": null,
+  "frontpanel": "tbc2-expander-front-panel-square.png",
+  "hp": 4,
+  "mounting_depth_mm": 42,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "is_active_product": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270fa"
+  },
+  "id": "gid://shopify/Product/6544603349015",
+  "name": "Video Waveform Generator",
+  "description": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range vco with 6 selectable frequency ranges from 30 seconds to 2mhz, coarse and fine tuning controls. expanded hard sync circuit designed for accurate synchronization to video sync signals. selection switch allows normalization to sync bus signals distributed through the power header from the lzx visionary video sync generator module. precision video op-amps used in all circuitry for accurate high speed frequency and waveshape modulation. five simultaneous waveform outputs: triangle, sawtooth, square, pulse (rectangle) & shaped sine. two independent waveshapers with cv inputs, cv attenuverters and bias controls: pulsewidth modulator & sine shaper. control pulsewidth and sine shape from 0% to 100%. two frequency cv inputs with cv attenuverters. jumper-configurable options for input scaling (visionary or 1v/oct standard) and linear or exponential input. attenuversion controls on all signal inputs allow attenuation and inversion of any input signal. frequency notification led. no external +5v power rail necessary, user configurable jumper allows selection between onboard +5v regulator or +5v rail on standard power header. Specifications: width: 16hp maximum current draw: 140ma",
+  "sku": "",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-visionary-series-legacy/1352/2",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": true,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": true,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": false,
+  "hp": 16,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_pos_12v_ma": 140
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f3"
+  },
+  "id": "gid://shopify/Product/1933726187584",
+  "name": "Sensory Translator",
+  "description": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five channels of CV control over your patch. Listen to the room. The Sensory Translator comes equipped with an omnidirectional microphone that can hear more than you can! Specs and features: Omnidirectional electret microphone mounted on front panel Three preamp gain settings External audio input selectable between line and modular level voltages 2-input mixer including EQ with Bass and Treble levels Five 4-Pole precision bandpass filters Each bandpass filter has a 2-Octave bandwidth Five envelope followers with three decay speed settings Dedicated LED indicators for each channel Selectable Impulse mode for Beat-to-Trigger detection 16 HP Current draw 80mA +12V, 70mA -12V",
+  "sku": "LZXST",
+  "price": "299.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "id": "gid://shopify/Product/6766670315543",
+  "name": "Keychain",
+  "description": null,
+  "sku": "LZXKEYCHAIN",
+  "price": "279.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "frontpanel": "keychain-front-panel.png",
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 110,
+  "mounting_depth_mm": 32,
+  "subtitle": "Triple Hard Key Generator",
+  "is_hidden": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "legend": "keychain-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270cf"
+  },
+  "id": "gid://shopify/Product/1692912746560",
+  "name": "War Of The Ants",
+  "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)",
+  "sku": "LZXTX",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true,
+  "discontinuedDate": null,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 16,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 100,
+  "max_pos_12v_ma": 110,
+  "mounting_depth_mm": 32,
+  "external_url": "https://community.lzxindustries.net/t/all-about-war-of-the-ants/1291"
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d6"
+  },
+  "id": "gid://shopify/Product/1692913500224",
+  "name": "Cadet VIII Hard Key Generator",
+  "description": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level. ",
+  "sku": "LZXCADT8",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VIII%20Hard%20Key%20Generator",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "id": "gid://shopify/Product/1692913860672",
+  "name": "Castle 010 Clock VCO",
+  "description": null,
+  "sku": "LZXCSTL2",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": true,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 7,
+  "max_pos_12v_ma": 9,
+  "mounting_depth_mm": 51,
+  "frontpanel": "castle-010-front-panel.png",
+  "legend": "castle-010-front-panel.png",
+  "subtitle": "Voltage Controlled Clock Oscillator",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e2"
+  },
+  "id": "gid://shopify/Product/1692915269696",
+  "name": "Doorway",
+  "description": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)",
+  "sku": "LZXDW",
+  "price": "249.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-doorway/1307",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 10,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 80,
+  "max_pos_12v_ma": 80,
+  "mounting_depth_mm": 32
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ee"
+  },
+  "id": "gid://shopify/Product/1692917661760",
+  "name": "Shapechanger",
+  "description": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)",
+  "sku": "LZXSH",
+  "price": "599.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "id": "gid://shopify/Product/6766671396887",
+  "name": "Stairs",
+  "description": null,
+  "sku": "LZXSTAIRS",
+  "price": "279.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 210,
+  "mounting_depth_mm": 32,
+  "subtitle": "6 Stage Wavefolder",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "stairs-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "stairs-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270c9"
+  },
+  "id": "gid://shopify/Product/1692912058432",
+  "name": "Bridge",
+  "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
+  "sku": "LZXBR",
+  "price": "199.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-bridge/1295",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 30,
+  "max_pos_12v_ma": 30,
+  "mounting_depth_mm": 32,
+  "subtitle": "Scaler, Fader, Mixer, Mult"
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270db"
+  },
+  "id": "gid://shopify/Product/1692914090048",
+  "name": "Castle 100 Multi Gate",
+  "description": null,
+  "sku": "LZXCSTL4",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 28,
+  "mounting_depth_mm": 58,
+  "frontpanel": "castle-100-front-panel.png",
+  "legend": "castle-100-front-panel.png",
+  "subtitle": "2 Input Logic Unit",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270cd"
+  },
+  "id": "gid://shopify/Product/1692912582720",
+  "name": "Visual Cortex",
+  "description": "Core module with all required functions for EuroRack modular video synthesis. \nThe Sync Generator section is a broadcast specification video sync generator which can operate in NTSC/480i or PAL/576i timing formats. It can provide the master timing reference for an entire video synthesizer system, and its timing may be synchronized to an external video source.\nInput Decoder is an analogue video input amplifier and colorspace converter. This section accepts YPbPr analogue component video, and processes it for patching internally inside a video synthesis system. The Y input can be used with Composite video signals if only grayscale operation is desired.\nOutput Encoder section takes the output of the Colourizer & Compositor section, converting signals inside your video synthesizer into standard video signals which may be displayed and recorded.\nAnimation & Key Generator is a multi-function control voltage generator, designed specifically for controlling transitions between two video images. It can function as a manual controller with slew, a flip-flop based envelope generator, or a low frequency oscillator. The key function enables a high-speed comparator, which generates a hard key image suitable for shape generation or luma keying.\nColorizer & Compositor is a voltage controlled analogue video mixer. It features two RGB input channels, individual RGB controls and several advanced colour processing effects. We designed this section to be capable of addressing all the essential colour mixing required for a small to medium sized modular video synthesis system.\nRamp Generator is a dual synchronized waveform generator. It generates grayscale gradients in horizontal and vertical outputs, with selectable output waveshapes. These signals provide the basis for many shape and pattern generation techniques.\nVisual Cortex contains many connectors accessible via the rear of the module. LZX Industries will not offer technical support or service for use of these headers, but savvy users may be able to tap into them and find them useful for custom applications.",
+  "sku": "LZXVC",
+  "price": "849.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-visual-cortex/1314",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": true,
+  "has_front_video_sync_input": true,
+  "has_front_video_sync_output": true,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 26,
+  "is_sync_generator": true,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 220,
+  "max_pos_12v_ma": 180,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "id": "gid://shopify/Product/1692911730752",
+  "name": "Arch",
+  "description": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements. 1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output. 1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them. ",
+  "sku": "LZXEAR",
+  "price": "179.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-arch/1305",
+  "has_eurorack_power_entry": true,
+  "hp": 8,
+  "max_neg_12v_ma": 65,
+  "max_pos_12v_ma": 65,
+  "mounting_depth_mm": 32,
+  "subtitle": "Nonlinear Functions",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "id": "gid://shopify/Product/1692913729600",
+  "name": "Castle 000 ADC",
+  "description": null,
+  "sku": "LZXCSTL0",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 28,
+  "max_pos_12v_ma": 21,
+  "mounting_depth_mm": 56,
+  "frontpanel": "castle-000-front-panel.png",
+  "legend": "castle-000-front-panel.png",
+  "subtitle": "Analog to Digital Converter",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ea"
+  },
+  "id": "gid://shopify/Product/1692916645952",
+  "name": "Passage",
+  "description": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA",
+  "sku": "LZXPS",
+  "price": "219.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "id": "gid://shopify/Product/6575222685719",
+  "name": "SMX3",
+  "description": null,
+  "sku": "LZXSMX3",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 175,
+  "mounting_depth_mm": 42,
+  "subtitle": "3x3 Matrix Mixer",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "smx3-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "legend": "smx3-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "id": "gid://shopify/Product/6576427204631",
+  "name": "DSG3",
+  "description": null,
+  "sku": "LZXDSG3",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 350,
+  "mounting_depth_mm": 42,
+  "subtitle": "Dual Shape Generator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "dsg3-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "dsg3-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "id": "gid://shopify/Product/6876230025239",
+  "name": "Angles",
+  "description": null,
+  "sku": "LZXANGLES",
+  "price": "329.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 175,
+  "mounting_depth_mm": 32,
+  "subtitle": "360 Degree Ramps Generator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "angles-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "angles-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270cb"
+  },
+  "id": "gid://shopify/Product/1692912353344",
+  "name": "Cadet I Sync Generator",
+  "description": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.",
+  "sku": "LZXCADT1",
+  "price": "35.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20I%20Sync%20Generator",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": true,
+  "has_front_video_sync_output": true,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": true,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 10,
+  "max_pos_12v_ma": 30,
+  "mounting_depth_mm": 58
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d5"
+  },
+  "id": "gid://shopify/Product/1692913401920",
+  "name": "Cadet VII Processor",
+  "description": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications. ",
+  "sku": "LZXCADT7",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VII%20Processor",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ec"
+  },
+  "id": "gid://shopify/Product/1692916908096",
+  "name": "Polar Fringe",
+  "description": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)",
+  "sku": "LZXPF",
+  "price": "449.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270da"
+  },
+  "id": "gid://shopify/Product/1692914024512",
+  "name": "Castle 011 Shift Register",
+  "description": null,
+  "sku": "LZXCSTL3",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 43,
+  "max_pos_12v_ma": 21,
+  "mounting_depth_mm": 51,
+  "frontpanel": "castle-011-front-panel.png",
+  "legend": "castle-011-front-panel.png",
+  "subtitle": "4-Bit Shift Register",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "id": "gid://shopify/Product/6766673068055",
+  "name": "Proc",
+  "description": null,
+  "sku": "LZXPROC",
+  "price": "259.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 110,
+  "mounting_depth_mm": 32,
+  "subtitle": "Triple Voltage Processor",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "proc-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "proc-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e0"
+  },
+  "id": "gid://shopify/Product/1692914909248",
+  "name": "Curtain",
+  "description": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.",
+  "sku": "LZXCN",
+  "price": "249.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-curtain/1306",
+  "has_dc_barrel_power_entry": false,
+  "hp": 10,
+  "max_neg_12v_ma": 70,
+  "max_pos_12v_ma": 70,
+  "mounting_depth_mm": 32,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ce"
+  },
+  "id": "gid://shopify/Product/1692912648256",
+  "name": "Cadet III Video Input",
+  "description": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.",
+  "sku": "LZXCADT3",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20III%20Video%20Input",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": true,
+  "has_front_video_sync_output": true,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 16,
+  "max_pos_12v_ma": 30,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ca"
+  },
+  "id": "gid://shopify/Product/1692912222272",
+  "name": "Vidiot",
+  "description": "Vidiot production has been discontinued, but LZX will continue to support this powerful all-in-one video synth. Chromagnon is the new LZX standalone analog video synthesizer. Visit the All About Vidiot post on the LZX Community forum for information on this legacy product.",
+  "sku": "LZXVID",
+  "price": "799.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270df"
+  },
+  "id": "gid://shopify/Product/1692914843712",
+  "name": "Color Chords",
+  "description": "Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other.",
+  "sku": "LZXCC",
+  "price": "299.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-color-chords/1297",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 16,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 60,
+  "max_pos_12v_ma": 60,
+  "mounting_depth_mm": 32
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d0"
+  },
+  "id": "gid://shopify/Product/1692912844864",
+  "name": "Cadet IV Dual Ramp Generator",
+  "description": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace. ",
+  "sku": "LZXCADT4",
+  "price": "16.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20IV%20Dual%20Ramp%20Generator",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 29,
+  "max_pos_12v_ma": 48,
+  "mounting_depth_mm": 65
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d3"
+  },
+  "id": "gid://shopify/Product/1692913172544",
+  "name": "Cadet V Scaler",
+  "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions. ",
+  "sku": "LZXCADT5",
+  "price": "12.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20V%20Scaler",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 10,
+  "max_pos_12v_ma": 10,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d1"
+  },
+  "id": "gid://shopify/Product/1692912975936",
+  "name": "Cadet IX VCO",
+  "description": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.",
+  "sku": "LZXCADT9",
+  "price": "25.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20IX%20Voltage%20Controlled%20Oscillator",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 65
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e3"
+  },
+  "id": "gid://shopify/Product/1692915368000",
+  "name": "Escher Sketch",
+  "description": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.",
+  "sku": "LZXOES",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-escher-sketch/1345",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 36,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 30,
+  "max_pos_12v_ma": 180,
+  "mounting_depth_mm": 50
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270ef"
+  },
+  "id": "gid://shopify/Product/1692918054976",
+  "name": "Staircase",
+  "description": "Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that grows with you as you build your video synthesis system. Width, 10HP Mounting Depth, 32mm Power +12V @ 70mA Power -12V @ 70mA Owner's Manual (PDF)User Reference Card (PDF)",
+  "sku": "LZXSC",
+  "price": "259.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f8"
+  },
+  "id": "gid://shopify/Product/6544601219095",
+  "name": "Triple Video Fader & Key Generator",
+  "description": "The Triple Video Fader & Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of purposes such as crossfading, multiplication, luma keying, chroma keying, window comparison, simple comparison and amplitude classification. control voltage inputs and bias controls: control voltage (cv) inputs have corresponding level/inversion controls, allowing both addition or subtraction of the input signal from the additional 1v bias controls. once the cv input and bias level are summed, they control the key generator’s comparator threshold. depending on the crossfader control source mode, they may also directly control the corresponding crossfader. faders: signal inputs to a and b channels of the voltage-controlled crossfaders are accessible via the frontpanel. mode switches allow selection of the control voltage source for the crossfaders. the fade mode enables the summed cv & bias voltages to control the crossfader directly. the key mode enables the the corresponding key generator output to control the crossfader directly. the and mode enables a logical and generated from all three key generators to control the crossfader directly. in addition, crossfaders 2 & 3 can select crossfader 1’s control source for use as a master control. crossfader outputs are accessible on the right side of the frontpanel. Voltage-controlled crossfader with two inputs and one output. When control source is at 0 Volt, channel A is completely on. When control source is at 1 Volt, channel B is completely on. Voltage levels between 0 Volt and 1 Volt represent a proportional mix of channels A & B. With signal inserted to channel B only, the fader behaves as a traditional voltage-controlled amplifier. KEY GENERATOR High speed voltage comparator serving as a key generation source. When the key generator input is greater than the voltage represented by the sum of the CV input and bias controls, the key output is 1 Volt (on). Otherwise, the output is 0 Volt (off). Inversion switches select between non-inverted and inverted versions of this logic signal. CONTROL SOURCE Control voltage (CV) inputs are processed by level and inversion controls and then summed with a variable 0 to 1 Volt bias. This sum serves as the threshold level for the key Generator, and as the control source for the fader while in FADE mode.",
+  "sku": "",
+  "price": "599.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 16,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_pos_12v_ma": 135,
+  "mounting_depth_mm": null
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f7"
+  },
+  "id": "gid://shopify/Product/6543062171671",
+  "name": "Video Logic",
+  "description": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.",
+  "sku": "",
+  "price": "225.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 6,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 60,
+  "max_pos_12v_ma": 60,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "id": "gid://shopify/Product/6576385884183",
+  "name": "ESG3",
+  "description": null,
+  "sku": "LZXESG3",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 300,
+  "mounting_depth_mm": 42,
+  "subtitle": "Encoder & Sync Generator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "esg3-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": true,
+  "legend": "esg3-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "id": "gid://shopify/Product/4319674761239",
+  "name": "Chromagnon",
+  "description": null,
+  "sku": "LZXCHROMAGNON",
+  "price": "1599.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 52,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 1500,
+  "mounting_depth_mm": 55,
+  "subtitle": "Video Synthesizer",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "chromagnon-front-panel.PNG",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": null
+  },
+  "is_hidden": false,
+  "legend": "chromagnon-front-panel.PNG",
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": true,
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f9"
+  },
+  "id": "gid://shopify/Product/6544602726423",
+  "name": "Video Blending Matrix",
+  "description": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:each mixer has five dc-coupled signal inputs which can be used for any type of signal, from low frequency modulation to full bandwidth video. four have associated level/inversion controls and inversion mode switches, the remaining one is a direct summing input for chained operation between multiple vbm modules. with the combination of the level/inversion control and inversion mode switches, three different variable input functions are possible: addition, subtraction, and inverted addition. with no signal input, each control can function as a variable 1v bias control. mix outputs:two separate mix output functions are available for each mixer: sum and absolute. the sum output is the sum of all input signals. the absolute output is the absolute value of the sum (negative signals are inverted and become positive.) the absolute outputs enable techniques such as frequency multiplication and the creation of solarization and color difference effects. matrix operation:matrix configuration is achieved through the normalization of input columns between the three independent signal mixers. with a single signal patched into the topmost input of mixer 1, this signal is applied to the corresponding input on mixers 2 & 3. within a patch utilizing triple colorspace (such as red, green, and blue channels), this feature allows a single signal to be mixed in varying amounts to each channel.",
+  "sku": "",
+  "price": "599.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 22,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_pos_12v_ma": 220
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e5"
+  },
+  "id": "gid://shopify/Product/1692915761216",
+  "name": "Liquid TV",
+  "description": "Limited stock. Liquid TV is a compact color video monitor and preview driver for modular video synthesizers. Monitoring key elements of an intricate video synth composition enables a new level of control in your patches. Width, 16HP Mounting Depth, 32mm Power +12V @ 210mA Power -12V @ 30mA User Reference Card (PDF)",
+  "sku": "LZXTV",
+  "price": "299.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "id": "gid://shopify/Product/6782469046295",
+  "name": "Contour",
+  "description": null,
+  "sku": "LZXCONTOUR",
+  "price": "339.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 110,
+  "mounting_depth_mm": 32,
+  "subtitle": "Triple VC High Pass Filter",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "contour-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "contour-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "id": "gid://shopify/Product/6886906560535",
+  "name": "Stacker",
+  "description": null,
+  "sku": "LZXSTACKER",
+  "price": "279.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 95,
+  "mounting_depth_mm": 32,
+  "subtitle": "Triple Quadrilateral Key Generator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "stacker-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "stacker-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270dd"
+  },
+  "id": "gid://shopify/Product/1692914286656",
+  "name": "Castle 110 Counter",
+  "description": null,
+  "sku": "LZXCSTL6",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 39,
+  "max_pos_12v_ma": 39,
+  "mounting_depth_mm": 51,
+  "frontpanel": "castle-110-front-panel.png",
+  "legend": "castle-110-front-panel.png",
+  "subtitle": "4-Bit Up/Down Counter",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e7"
+  },
+  "id": "gid://shopify/Product/1692916023360",
+  "name": "Marble Index",
+  "description": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)",
+  "sku": "LZXMI",
+  "price": "599.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427106"
+  },
+  "id": "gid://shopify/Product/6778221133847",
+  "name": "DC Distro 3A",
+  "description": null,
+  "sku": "LZXDCDISTRO3A",
+  "price": "149.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "frontpanel": "dc-distro-3a-front-panel.png",
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "mounting_depth_mm": 42,
+  "subtitle": "DC Power Distributor"
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "id": "gid://shopify/Product/6886906134551",
+  "name": "Ribbons",
+  "description": null,
+  "sku": "LZXRIBBONS",
+  "price": "299.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 125,
+  "mounting_depth_mm": 32,
+  "subtitle": "3-Bit Digitizer",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "ribbons-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "ribbons-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "id": "gid://shopify/Product/6886906396695",
+  "name": "Switcher",
+  "description": null,
+  "sku": "LZXSWITCHER",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 18,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 210,
+  "mounting_depth_mm": 32,
+  "subtitle": "Dual RGB Multiplexer",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "switcher-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "switcher-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270d7"
+  },
+  "id": "gid://shopify/Product/1692913565760",
+  "name": "Cadet X Multiplier",
+  "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
+  "sku": "LZXCADT10",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20X%20Multiplier",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 45
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270de"
+  },
+  "id": "gid://shopify/Product/1692914483264",
+  "name": "Castle 111 D Flip Flops",
+  "description": null,
+  "sku": "LZXCSTL7",
+  "price": "20.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 51,
+  "frontpanel": "castle-111-front-panel.png",
+  "legend": "castle-111-front-panel.png",
+  "subtitle": "Triple D Type Flip Flops",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e6"
+  },
+  "id": "gid://shopify/Product/1692915925056",
+  "name": "Mapper",
+  "description": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA",
+  "sku": "LZXMP",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e8"
+  },
+  "id": "gid://shopify/Product/1692916154432",
+  "name": "Memory Palace",
+  "description": "Temporarily unavailable. Invoking the lineage of computer video instruments from the 1980s and 1990s, the Orion Series Memory Palace introduces digital video transformations and frame buffer memory to the LZX video synthesis landscape. Width, 52HP Mounting Depth, 50mm Power +12V @ 550mA Power -12V @ 50mA View the Owner's Manual on the LZX Community Forum Download the User Reference Card [PDF] Video Feedback Cornucopia An HSV proc amp, multi-mode soft key generator, variable frame delay, 2D transformation engine and flexible compositing pathways provide a workflow designed for a wide range of video feedback techniques. The perfect post-processor for your analog textures. Dedicated Digital Hardware Not just just a computer hiding behind the control panel. Dedicated FPGA blocks provide hardware acceleration for powerful real time video processing. Flexible video outputs include 1V YRGB, Composite, S-Video, and DVI-D connections. Performance Focused Controls 13 voltage controlled parameters with CV input attenuators and high quality faders for accurate positioning and smooth transitions. 13 broadcast-style illuminated pushbutton controls for satisfying button mashing. In frame buffer feedback mode, spatial effects are placed in the feedback path between the keyer and frame buffer memory. The video feed is mapped and multiplied across space and time into endless universes of recursive transformation. Memory Palace's painting mode allows you to draw onto the digital memory canvas using external shapes, patterns or even video sources as your paintbrush. Designed for use with the LZX Escher Sketch stylus pad controller or any voltage control source that generates XY voltages. Spatial Processor Functions Memory Palace's spatial processor is modeled after classic broadcast Digital Video Effects (DVE) processors from the 1980's and 1990's. The spatial processor uses digital frame memory to reinterpret the input image, adjusting its positioning, size, aspect ratio, and rotation angle in a nonlinear fashion. Multiple selectable modes: Feedback mode places the spatial effects in the processing chain after the keyer. Painting mode places the spatial effects on the input before the keyer. X & Y Position displace the input image horizontally and vertically. Zoom scales the size of the input image larger or smaller than its original size. Stretch adjusts the horizontal / vertical aspect ratio of the image. Rotation rotates the entire image 360 degrees clockwise or counter-clockwise. Tile mode repeats the buffer image multiple times depending on Zoom and Stretch settings. Kaleidoscopic effects are possible when combined with the rotation control. Mosaic mode allows extension of the effects beyond the borders of the input frame. Mirror X & Mirror Y functions mirror the entire image across the horizontal and vertical axes. X & Y Scroll functions enable continuous movement of the image in any direction, with sliders controlling movement speed. Spin function enables continuous clockwise or counter-clockwise rotation of the image with the slider controlling spinning speed. Soft Keyer Functions Memory Palace's soft keyer allows smooth linear transitions from the incoming video and the image stored in the internal video frame buffer. It may source its key mask from luma and chroma keying modes, or may also be used as an alpha channel processor for external ramp gradients and keys. Multiple selectable modes: Luma Key, Chroma Key, Alpha Processor, and Window Key. Threshold controls the cutoff of the internal key generator, with behavior determined by the selected keyer mode. Softness controls the softness of the key edge used when compositing the buffer with the incoming image. Color Processor Functions Memory Palace's color processor can function as a video proc-amp or psychedelic colorizer. When used in feedback mode, it serves as a way to modify each repeat of the buffer image incrementally, creating seamless gradients across time. Multiple selectable modes: Proc Amp, Colorize. Hue controls a shift in the angle of the image's hue, without effecting brightness or saturation. Cycle mode allows hue to shift continuously, with the Hue slider setting the speed of color rotation. Saturation controls an increment or decrement of the image's saturation level. In a feedback loop, it can gradually saturate or desaturate an image with each successive pass. Frame Buffer Memory Functions Memory Palace includes uncompressed video memory which stores a stack of the most recent frames it has processed. Delay selects the number of frames to delay the image within its feedback loop, allowing complex echoing. While the image is frozen, delay can be used to scan the output across frames in the recent past using the slider or external voltage control. [Designer Note: We have not yet determined the maximum length of frame delay, but it will likely be 2-3 seconds. Since the delay reiterates into the buffer, the actual visual effect of the delay is much longer across time.] Feedback controls the amplitude of the buffer memory as it is fed back into the background of the Soft Keyer. Above its center point, the image will blow out to white, and below its center point, the image will fade to black. Freeze button freezes the entire buffer, disabling any writing into it. The frozen image will be held at the output until the frame is unfrozen. Freeze frames can be strobed with the external trigger input. Clear button clears the image to black. Useful in painting mode when you want to erase the current drawing and start a new one. Front Interface DVI-D/HDMI video output supporting 480p/576p SD progressive output. DVI-D to HDMI connector adapter included. [Designer Note: We plan to enable other output video format options on the DVI-D connector.] USB input for firmware update and future expansion. Composite & S-Video (Y/C) video output supporting 480i/576i SD modes. Five 1V DC patchable video inputs for Aux, Alpha, Red, Green & Blue channels at 480i/576i SD resolutions. The alpha input is an external soft key input for external masks and shapes, and the aux channel may be used as a modulation source. Four 1V DC patchable video outputs for Luma, Red, Green & Blue channels at 480i/576i SD resolutions. All video inputs and outputs can be used simultaneously. External trigger/gate input with assignable function via settings menu. Standard MIDI in and MIDI thru via 3.5mm TRS connectors. Switches on module rear support both Type A and Type B MIDI TRS connections. 1.5 inch RGB OLED display for settings menu, with four tact switches for settings adjustment and navigation. 13 external voltage control inputs with buffered attenuators for all primary parameters. Switchable from LZX 1V DC to EuroRack 5V DC voltage scales from the settings menu. 13 high quality ALPS slide potentiometers, dedicated for each main parameter primary control. Response curve and lag time user adjustable via settings menu. 13 high quality NKK illuminated pushbuttons to control performance modes and functions. Rear Interface Video Sync/Genlock input and loop thru on RCA connectors. Loop through/terminate switch located near these connectors. Video Sync/Genlock output for on RCA connector for use as system master video sync generator. Switches for MIDI in/thru pinout mode, for use with alternate pinout connectors. EuroRack power connector for standard +/-12V power supplies. 2.1mm barrel 12V DC auxiliary power connector optionally supplies power to Memory Palace’s onboard computer to reduce drain on your EuroRack power supply. This can be used with the LZX Vessel case, or with a 1A 12V DC wall-wart power adapter in cases which will not support Memory Palace’s power load.",
+  "sku": "LZXOMP",
+  "price": "1199.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "id": "gid://shopify/Product/1692918218816",
+  "name": "TBC2",
+  "description": null,
+  "sku": "LZXOTBC2",
+  "price": "999.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 16,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 600,
+  "mounting_depth_mm": 55,
+  "subtitle": "Dual Video Input",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "tbc2-mk2-front-panel.png",
+  "has_front_video_sync_output": true,
+  "has_front_video_sync_input": true,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": true,
+  "legend": "tbc2-mk2-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270fb"
+  },
+  "id": "gid://shopify/Product/6552562794519",
+  "name": "DC Distro 5A",
+  "description": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
+  "sku": "LZXDCDISTRO",
+  "price": "150.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "mounting_depth_mm": 42
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f2"
+  },
+  "id": "gid://shopify/Product/1822438031424",
+  "name": "Cyclops",
+  "description": "﻿No longer available. ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V",
+  "sku": "LZXILDA",
+  "price": "249.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270f4"
+  },
+  "id": "gid://shopify/Product/4254304174103",
+  "name": "Topogram",
+  "description": "﻿Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying range may be voltage controlled separately. Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges. Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch. Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center. The circuit is entirely analogue. Specifications Width, 16HP Mounting Depth, 32mm Power +12V @ 200mA Power -12V @ 200mA",
+  "sku": "LZXTP",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "id": "gid://shopify/Product/6576427565079",
+  "name": "DWO3",
+  "description": null,
+  "sku": "LZXDWO3",
+  "price": "499.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 230,
+  "mounting_depth_mm": 42,
+  "subtitle": "Dual Wideband Oscillator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "dwo3-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "dwo3-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "id": "gid://shopify/Product/6766673952791",
+  "name": "Matte",
+  "description": null,
+  "sku": "LZXMATTE",
+  "price": "239.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 50,
+  "mounting_depth_mm": 32,
+  "subtitle": "Static Offset Generator",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "matte-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "matte-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427108"
+  },
+  "id": "gid://shopify/Product/6856020394007",
+  "name": "Swatch",
+  "description": null,
+  "sku": "LZXSWATCH",
+  "price": "249.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 100,
+  "mounting_depth_mm": 32,
+  "subtitle": "Dual Colorspace Converter",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "swatch-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "is_hidden": false,
+  "has_rear_14_pin_sync_input": false,
+  "is_sync_generator": false,
+  "legend": "swatch-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e1"
+  },
+  "id": "gid://shopify/Product/1692915138624",
+  "name": "Diver",
+  "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator. ",
+  "sku": "LZXODIVER",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-diver/1455",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 16,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 10,
+  "max_pos_12v_ma": 80,
+  "mounting_depth_mm": 32
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270e4"
+  },
+  "id": "gid://shopify/Product/1692915695680",
+  "name": "Fortress",
+  "description": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory. The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics. Features Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns. Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators. An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation. 4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR., 16 Stage Shift Register Delay Line with 8 selectable output taps. 32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets. 48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps. 9-bit RGB DACs with palette memory and 8 selectable color palettes.",
+  "sku": "LZXOFT",
+  "price": "699.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": false,
+  "external_url": "https://community.lzxindustries.net/t/all-about-fortress/1392",
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 22,
+  "is_sync_generator": false,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 110,
+  "max_pos_12v_ma": 180,
+  "mounting_depth_mm": 32
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270eb"
+  },
+  "id": "gid://shopify/Product/1692916809792",
+  "name": "Pendulum",
+  "description": "﻿Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 65mA Info Sheet (PDF)User Reference Card (PDF)",
+  "sku": "LZXPN",
+  "price": "219.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "id": "gid://shopify/Product/6573392003095",
+  "name": "FKG3",
+  "description": null,
+  "sku": "LZXFKG3",
+  "price": "399.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 200,
+  "mounting_depth_mm": 42,
+  "subtitle": "Luma & Chroma Keyer",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "fkg3-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "legend": "fkg3-front-panel.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "644eddc3404d699366427101"
+  },
+  "id": "gid://shopify/Product/6766668120087",
+  "name": "Sum/Dist",
+  "description": null,
+  "sku": "LZXSUMDIST",
+  "price": "249.00",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_eurorack_power_sync_output": false,
+  "has_eurorack_power_sync_input": false,
+  "hp": 12,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 200,
+  "mounting_depth_mm": 32,
+  "subtitle": "Summing & Distribution Amplifier",
+  "discontinuedDate": {
+    "$date": null
+  },
+  "frontpanel": "sumdist-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "releaseDate": {
+    "$date": "2022-01-01T08:00:00.000Z"
+  },
+  "has_rear_14_pin_sync_input": false,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "legend": "sumdist-front-line-art.png",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645ac732937ce4dfe4132fee"
+  },
+  "description": null,
+  "company": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "__v": 0,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_hidden": false,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 120,
+  "mounting_depth_mm": 32,
+  "name": "SUBMIXER",
+  "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/submixer",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645ac7ec937ce4dfe413300e"
+  },
+  "name": "CHANNEL",
+  "description": null,
+  "company": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 120,
+  "mounting_depth_mm": 32,
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "__v": 0,
+  "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/channel",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645ac8d64ebb6c863da00e06"
+  },
+  "name": "CROSSFADE",
+  "description": null,
+  "company": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 120,
+  "mounting_depth_mm": 32,
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "__v": 0,
+  "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/crossfade",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645ac8e34ebb6c863da00e0d"
+  },
+  "name": "SCANNERS",
+  "description": null,
+  "company": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 125,
+  "mounting_depth_mm": 32,
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "__v": 0,
+  "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/scanners",
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645accde4ebb6c863da00e2c"
+  },
+  "name": "BAJA",
+  "description": null,
+  "company": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 6,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 40,
+  "max_pos_12v_ma": 40,
+  "mounting_depth_mm": 32,
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/baja",
+  "__v": 0,
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "645d1aa697492fb3c0646de3"
+  },
+  "id": "gid://shopify/Product/6884822614039",
+  "name": "Video Knob Pin",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "frontpanel": "video-knob-pin.png"
+},
+{
+  "_id": {
+    "$oid": "645d292897492fb3c0646ec6"
+  },
+  "id": "gid://shopify/Product/6782464294935",
+  "name": "Rack 84HP",
+  "__v": 0,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "description": null,
+  "frontpanel": "rack-84.png"
+},
+{
+  "_id": {
+    "$oid": "645d29c997492fb3c0646ee4"
+  },
+  "id": "gid://shopify/Product/6628981997591",
+  "name": "Andor 1 Media Player Deluxe Accessories Pack",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": "<p>For use with the Andor 1 Media Player.</p>\n<h3> Included items: </h3>\n<p>Wireless remote for navigating menus<br/>\nA/V cable for composite video and stereo RCA audio connections<br/>\n8GB USB flash drive<br/>\n6' HDMI cable<br/>\nMounting screws<br/>\n</p>\n",
+  "frontpanel": "andor-1-accessories.png",
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "645d2a1b97492fb3c0646efb"
+  },
+  "id": "gid://shopify/Product/1701957402688",
+  "name": "Andor 1",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": null,
+  "frontpanel": "andor_blk_tp1.png",
+  "subtitle": "Media Player"
+},
+{
+  "_id": {
+    "$oid": "645d2aff97492fb3c0646f14"
+  },
+  "id": "gid://shopify/Product/6552581832727",
+  "name": "DC Power Cable",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": null,
+  "frontpanel": "dc-power-cable-group.png"
+},
+{
+  "_id": {
+    "$oid": "645d2ba197492fb3c0646f2c"
+  },
+  "id": "gid://shopify/Product/1725059989568",
+  "name": "Gift Card",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": null,
+  "frontpanel": "gift-card.png"
+},
+{
+  "_id": {
+    "$oid": "645d2c5e97492fb3c0646f43"
+  },
+  "id": "gid://shopify/Product/1701923323968",
+  "name": "RGB Patch Cable",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": null,
+  "frontpanel": "rgb-patch-cable-group.png"
+},
+{
+  "_id": {
+    "$oid": "645d2ca997492fb3c0646f5a"
+  },
+  "id": "gid://shopify/Product/1701898846272",
+  "name": "RCA Sync Cable",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "description": null,
+  "frontpanel": "rca-sync-cable-group.png",
+  "has_dc_barrel_power_entry": null
+},
+{
+  "_id": {
+    "$oid": "646441d785ed4d3028370709"
+  },
+  "name": "Blank Panel",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 2,
+  "mounting_depth_mm": 0,
+  "frontpanel": "blank-panels.png",
+  "is_hidden": false,
+  "__v": 0,
+  "id": "gid://shopify/Product/6890094067735",
+  "has_eurorack_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "is_sync_generator": false,
+  "is_sync_ref_required": false
+},
+{
+  "_id": {
+    "$oid": "6465729d180127004c0ed4c1"
+  },
+  "id": "gid://shopify/Product/6890355163159",
+  "name": "Double Vision System",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 84,
+  "mounting_depth_mm": 42,
+  "subtitle": "Modular Video Instrument",
+  "frontpanel": "double-vision-system-square.png",
+  "__v": 0,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_front_video_sync_input": false,
+  "has_front_video_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "is_hidden": false,
+  "is_sync_generator": true,
+  "is_sync_ref_required": false,
+  "is_active_product": true,
+  "is_oem_product": false
+},
+{
+  "_id": {
+    "$oid": "6465a5a0180127004c0ed503"
+  },
+  "id": "gid://shopify/Product/6890363125783",
+  "name": "Patch Cable",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "frontpanel": "patch-cable-group.png",
+  "is_hidden": true
+},
+{
+  "_id": {
+    "$oid": "6465a5c6180127004c0ed50b"
+  },
+  "id": "gid://shopify/Product/6890363158551",
+  "name": "RCA Video Cable",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "frontpanel": "rca-video-cable-group.png"
+},
+{
+  "_id": {
+    "$oid": "6465a5fd180127004c0ed513"
+  },
+  "id": "gid://shopify/Product/6890363289623",
+  "name": "Video Knob",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0,
+  "frontpanel": "video-knob-solid.png"
+},
+{
+  "_id": {
+    "$oid": "6465a67d180127004c0ed51c"
+  },
+  "id": "gid://shopify/Product/6890363879447",
+  "name": "Power Entry 8HP",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "__v": 0,
+  "frontpanel": "psu8-and-rear-panel.png"
+},
+{
+  "_id": {
+    "$oid": "646649c3180127004c0ed52b"
+  },
+  "id": "gid://shopify/Product/1974680092736",
+  "name": "14 Pin Sync Cable",
+  "description": null,
+  "frontpanel": "14-pin-video-sync-distribution-cable.png",
+  "is_hidden": true,
+  "__v": 0,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  }
+},
+{
+  "_id": {
+    "$oid": "6466e7963f4a6889c55fa079"
+  },
+  "id": "gid://shopify/Product/6890556129303",
+  "name": "12V DC Adapter 3A",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "frontpanel": "12v-dc-wall-wart-adapter-set.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6466eb3b3f4a6889c55fa093"
+  },
+  "id": "gid://shopify/Product/6890556915735",
+  "name": "Power & Sync Entry 12HP",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 12,
+  "is_sync_ref_required": false,
+  "frontpanel": "fpga12-and-rear-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6470f4e7cd94f9d5dc64ad33"
+  },
+  "id": "gid://shopify/Product/6690204811287",
+  "name": "Alternate Frontpanel",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "frontpanel": "expedition-black-panels-group.png",
+  "is_active_product": true,
+  "is_oem_product": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "id": "gid://shopify/Product/6925034356759",
+  "name": "Scrolls",
+  "description": "\n",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 12,
+  "is_sync_ref_required": true,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 150,
+  "mounting_depth_mm": 32,
+  "subtitle": "Motion Controlled Dual Ramp Generator",
+  "frontpanel": "scrolls-frontpanel.png",
+  "legend": "scrolls-legend.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "in_stock_count": 0,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ee781889b067df837ec03d"
+  },
+  "id": "gid://shopify/Product/6921420800023",
+  "name": "Factors",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_pos_12v_ma": 100,
+  "mounting_depth_mm": 32,
+  "subtitle": "Triple Four-Quadrant Modulator",
+  "frontpanel": "factors-frontpanel.png",
+  "legend": "factors-legend.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "in_stock_count": 36,
+  "__v": 0,
+  "max_neg_12v_ma": 0
+},
+{
+  "_id": {
+    "$oid": "6644dc221d668386eaf5e3ab"
+  },
+  "id": "gid://shopify/Product/7171710189591",
+  "name": "Vessel 168",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 168,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 10000,
+  "subtitle": "168HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution",
+  "frontpanel": "vessel168_photo_top_square2.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0,
+  "mounting_depth_mm": 65,
+  "description": null
+},
+{
+  "_id": {
+    "$oid": "6644dd3a1d668386eaf5e3b5"
+  },
+  "id": "gid://shopify/Product/7171722870807",
+  "name": "TBC2 Mk2 Fan Upgrade Kit",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 0,
+  "is_active_product": true,
+  "is_oem_product": true,
+  "__v": 0,
+  "frontpanel": "tbc2_mk2_fan_kit.png",
+  "description": null
+},
+{
+  "_id": {
+    "$oid": "6644deab1d668386eaf5e3c3"
+  },
+  "name": "Chromagnon Patch",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "external_url": "gid://shopify/Product/7171731587095",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6644deed1d668386eaf5e3ca"
+  },
+  "id": "gid://shopify/Product/7171732733975",
+  "name": "Chromagnon Sticker",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e3b65716a97f087adb939"
+  },
+  "id": "gid://shopify/Product/7214185316375",
+  "name": "Vessel 208",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 208,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 10000,
+  "mounting_depth_mm": 65,
+  "subtitle": "208HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e3b8b716a97f087adb940"
+  },
+  "id": "gid://shopify/Product/7214160281623",
+  "name": "TBC2 Mk1 Fan Upgrade Kit",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 0,
+  "frontpanel": "tbc2_mk2_fan_kit.png",
+  "is_active_product": true,
+  "is_oem_product": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e3bb7716a97f087adb947"
+  },
+  "id": "gid://shopify/Product/7214168244247",
+  "name": "Vessel 84",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 84,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 10000,
+  "mounting_depth_mm": 65,
+  "subtitle": "84HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e3bfb716a97f087adb94e"
+  },
+  "id": "gid://shopify/Product/7214197440535",
+  "name": "Vessel EuroRack PSU Expander",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 104,
+  "mounting_depth_mm": 22,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665e3cb4716a97f087adb95b"
+  },
+  "id": "gid://shopify/Product/7214169489431",
+  "name": "Bus 168 DIY Kit",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 84,
+  "is_active_product": true,
+  "is_oem_product": true,
+  "__v": 0,
+  "frontpanel": "bus208_photo_top.png",
+  "mounting_depth_mm": 20
+},
+{
+  "_id": {
+    "$oid": "665e3d6d716a97f087adb963"
+  },
+  "id": "gid://shopify/Product/7214199439383",
+  "name": "8GB MicroSD Card",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "hp": 0,
+  "frontpanel": "8gb_microsd_card.png",
+  "is_active_product": true,
+  "is_oem_product": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66f72f749cc707c134c9fe59"
+  },
+  "id": "gid://shopify/Product/7352095211543",
+  "name": "Vidiot",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 36,
+  "is_sync_ref_required": false,
+  "mounting_depth_mm": 80,
+  "subtitle": "Patchable Analog Video Instrument",
+  "frontpanel": "vidiot.PNG",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": true,
+  "is_active_product": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673cd57d66ee4449f04bf9c3"
+  },
+  "id": "gid://shopify/Product/7414310109207",
+  "name": "PGO",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 50,
+  "mounting_depth_mm": 42,
+  "subtitle": "Programmable Gain & Offset",
+  "frontpanel": "pgo-front-panel.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "673e77512513c3c7021496fb"
+  },
+  "id": "gid://shopify/Product/7415503781911",
+  "name": "Double Vision 168",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 168,
+  "is_sync_ref_required": false,
+  "mounting_depth_mm": 42,
+  "subtitle": "Modular Video Instrument",
+  "frontpanel": "double-vision-system-168-square.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": true,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6740c7354399258b09fe2279"
+  },
+  "id": "gid://shopify/Product/7415503716375",
+  "name": "Double Vision Expander",
+  "description": null,
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": true,
+  "has_rear_video_sync_output": true,
+  "hp": 168,
+  "is_sync_ref_required": false,
+  "mounting_depth_mm": 42,
+  "subtitle": "Modular Video Instrument Expander",
+  "frontpanel": "double-vision-expander-168-square.png",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": true,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d32e40d56c5ea59b88c3e4"
+  },
+  "id": "gid://shopify/Product/7540894138391",
+  "name": "LNK",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "mounting_depth_mm": 42,
+  "subtitle": "Passive Links",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d33571d56c5ea59b88c3ea"
+  },
+  "id": "gid://shopify/Product/7540996833303",
+  "name": "MLT",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 8,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "mounting_depth_mm": 42,
+  "subtitle": "Passive Multiples",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d336a5d56c5ea59b88c3f0"
+  },
+  "id": "gid://shopify/Product/7541009842199",
+  "name": "P",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 2,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 0,
+  "mounting_depth_mm": 42,
+  "subtitle": "Passive Potentiometer",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": false,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d33830d56c5ea59b88c3fa"
+  },
+  "id": "gid://shopify/Product/7541021147159",
+  "name": "PRM",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 75,
+  "mounting_depth_mm": 42,
+  "subtitle": "Programmable Rectifier & Multiplier",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d33922d56c5ea59b88c400"
+  },
+  "id": "gid://shopify/Product/7541032321047",
+  "name": "PAB",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": true,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": false,
+  "hp": 4,
+  "is_sync_ref_required": false,
+  "max_neg_12v_ma": 0,
+  "max_pos_12v_ma": 50,
+  "mounting_depth_mm": 42,
+  "subtitle": "Programmable Active Buffers",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": false,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d9b4b151e3ffd4afb5ba1c"
+  },
+  "id": "gid://shopify/Product/8186914373655",
+  "name": "Videomancer",
+  "company": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "has_eurorack_power_entry": false,
+  "has_rear_video_sync_input": false,
+  "has_rear_video_sync_output": true,
+  "is_sync_ref_required": false,
+  "max_pos_12v_ma": 750,
+  "mounting_depth_mm": null,
+  "subtitle": "Video Effects Console",
+  "has_front_video_sync_output": false,
+  "has_front_video_sync_input": false,
+  "is_hidden": false,
+  "has_dc_barrel_power_entry": true,
+  "has_eurorack_power_sync_input": false,
+  "has_eurorack_power_sync_output": false,
+  "has_rear_14_pin_sync_input": false,
+  "has_rear_14_pin_sync_output": false,
+  "is_sync_generator": true,
+  "is_active_product": true,
+  "is_oem_product": false,
+  "__v": 0,
+  "max_neg_12v_ma": 0
+}]

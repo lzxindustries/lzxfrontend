@@ -1,0 +1,372 @@
+[{
+  "_id": {
+    "$oid": "645bc38eb2568df0622ecd84"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "name": "Generate Squares, Rectangles & Rhombi",
+  "__v": 0,
+  "topic": "Main",
+  "description": "A quadrilateral key generator has 2 inputs (for horizontal and vertical reference waveforms and 4 thresholds (for the top, right, bottom, left borders.) Ratio & Size controls quickly define the 4 thresholds as a group."
+},
+{
+  "_id": {
+    "$oid": "645bf0dcb2568df0622ece4f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Break outside the HV box",
+  "description": "Horizontal and vertical waveform generators are an essential ingredient in most generative patches. Due to this, many patches may feel constrained within a box, with the dimensions of shapes and patterns either oriented at 0 or 90 degrees. Angles offers ratio mixes from 0 to 345 degrees in 15 degree increments across 24 ouputs – that’s over 500 different alternatives to HV. Instead of patching HV, you can now pick any 2 angles.",
+  "__v": 0,
+  "topic": "Main"
+},
+{
+  "_id": {
+    "$oid": "645bf0f3b2568df0622ece55"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "A protractor for your patch",
+  "description": "In order to synthesize visual elements with complex geometries, such as vanishing point illusions or polygons, one needs parallel access to separate angles at fixed ratios on independent outputs. For this purpose, a single crossfader or mixer does not go very far, and Angles becomes very powerful.",
+  "__v": 0,
+  "topic": "Main"
+},
+{
+  "_id": {
+    "$oid": "645bfedeb2568df0622ed38a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Waveshape Expander",
+  "description": "Patch your Dual Oscillator outputs or Dual Shape Generator outputs into Angles’ inputs to expand the number of available waveforms.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bfeefb2568df0622ed3b4"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Spatial Reference",
+  "description": "Patch any 2 outputs from Angles into your Dual Shape Generator to completely change the orientation of its generated patterns.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bff01b2568df0622ed3de"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Oscillator Protractor",
+  "description": "Patch outputs from Angles into your Dual Oscillator CV inputs to modulate its’ waveforms at different angles.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bff10b2568df0622ed408"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Complex Color Field",
+  "description": "Patch any 3 outputs from Angles into RGB to create a complex color gradient for use as a background or modulation source.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bff1fb2568df0622ed432"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Quadrature Expander",
+  "description": "Patch the +/-Sin/Cos outputs from a quadrature oscillator into Angles’ four inputs to create a full spread of 24 different output phases.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bff32b2568df0622ed45c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Hierarchichal Spatial Reference",
+  "description": "Patch any 4 outputs from one Angles to the 4 input on a second Angles module to get a completely different set of 24 perspectives.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "645bff47b2568df0622ed486"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427109"
+  },
+  "name": "Pairs well with",
+  "description": "Angles is a great support module to add after your system includes one or more of the following modules: Dual Shape Generator, Dual Wideband Oscillator, Stairs, Keychain. It really shines in 4+ module systems where its outputs can be distributed throughout the patch to multiple destinations.",
+  "__v": 0,
+  "topic": "System"
+},
+{
+  "_id": {
+    "$oid": "645d1e5997492fb3c0646e0a"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "name": "Compose Priority Layered Sprites & Glyphs",
+  "topic": "Main",
+  "__v": 0,
+  "description": "Each key output is subtracted from the lower layers. This nesting doll effect allows programming of simple letterforms and icons."
+},
+{
+  "_id": {
+    "$oid": "645d1e9597492fb3c0646e1a"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "name": "Extract Foreground Fragments From Complex Sources",
+  "__v": 0,
+  "topic": "Main",
+  "description": "When fed horizontal and vertical references from wave shapers, video cameras, and other complex sources, Stacker serves as a tool for extracting foreground details, tiles and mosaics."
+},
+{
+  "_id": {
+    "$oid": "6462e705331f479d21623544"
+  },
+  "module": {
+    "$oid": "645d2a1b97492fb3c0646efb"
+  },
+  "name": "Video Synth Compatibility",
+  "topic": "System",
+  "description": "Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6466a4b23f4a6889c55fa011"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "name": "Route Four Sources to Two Outputs",
+  "topic": "Main",
+  "description": "A  control block familiar to anyone who has used broadcast consoles and video mixers.  Illuminated pushbuttons allow fast manual selection.  Patch the two outputs to FKG3 to complete an A/B switching workflow -- or think outside the box and define the signal path in any way you choose.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6466a5cf3f4a6889c55fa017"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "name": "Make Multi Pane Masks With Video Rate Control",
+  "topic": "Main",
+  "description": "Behind Switcher's six control inputs are dedicated hard key generators that slice the input signals at 50% gray level.   Use ramps, shapes, and video sources to control the multiplexers and explore a world of multi-panel compositions and texture collages.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6466a6fc3f4a6889c55fa01d"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "name": "Programmable Routing For Any Part Of The Patch",
+  "topic": "Main",
+  "description": "When interpreted in arbitrary ways, Switcher can handle many tasks besides switching RGB signals.  Use it to select variations of a modulation bus between oscillators, cycle thru ramp generator angles or wave shapes, or different return paths from a feedback loop.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566401def43bbc5239972be"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Motion Control In Two Dimensions",
+  "topic": "Main",
+  "description": "Most analog video synthesis patches begin with horizontal and vertical ramp waveforms.  These generators provide the synthesist with a method of identifying 2D coordinates on the screen.  With motion controlled ramps, these 2D coordinates can be repositioned and animated at their source – causing the entire resulting video art pattern to animate.  ",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65664035ef43bbc5239972c4"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Dedicated Low Frequency Outputs",
+  "topic": "Main",
+  "description": "In addition to motion control over the internal video waveforms, Scrolls presents four dedicated low frequency waveform generators.  These signals are synchronous with the movement of the internal ramps, and provide ways to animate other parts of your patch in tempo with the video pattern.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566404def43bbc5239972ca"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Autonomous Animation Paths",
+  "topic": "Main",
+  "description": "Random and Journey modes provide methods for generating the illusion of autonomous entities within the space of your video composition.  Watch your video pattern slowly explore around the screen at random directions, or teleport in strobing patterns of random phases.  In all of these modes, the synthesist has control over a basic clock speed, which allows even chaos to step to the beat.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656640e5ef43bbc5239972d0"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "HH. Double Horizontal Mode",
+  "topic": "Patch",
+  "description": "Both waveform generators are <b>horizontal</b> ramps with separate phase controls.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65664112ef43bbc5239972d6"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "VV. Double Vertical Mode",
+  "description": "Both waveform generators are <b>vertical</b> ramps with separate phase controls.",
+  "__v": 0,
+  "topic": "Patch"
+},
+{
+  "_id": {
+    "$oid": "65664174ef43bbc5239972e4"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "HV. Horizontal & Vertical Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656641b2ef43bbc5239972ea"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "PP. Ping Pong Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.  The motion control algorithm uses triangle waveforms, for the bouncing DVD player logo effect.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566422bef43bbc5239972f8"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "O. Orbital Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.  The motion control algorithm uses a quadrature sine wave generator to animate the ramps in an elliptical orbit.  Phase1 controls motion speed and Phase2 controls motion depth.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65664276ef43bbc5239972fe"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "J. Journey Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.  The motion control algorithm is similar to HV mode, but the manner in which the speed and direction of movement is based on polar instead of cartesian coordinates.  Phase1 controls motion angle and Phase2 controls motion velocity.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656642bbef43bbc523997304"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "C. Corner Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.  The motion control algorithm is similar to O mode, but utilizes trapezoidal rather than sinusoidal waveforms.  Phase1 controls motion speed and Phase2 controls motion depth.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566436fef43bbc52399730a"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "R?. Random Mode",
+  "topic": "Patch",
+  "description": "The first ramp generator is <b>horizontal</b> and the second ramp generator is <b>vertical</b>.  The motion control algorithm is different depending on whether Phase2 is counter-clockwise or clockwise from it's midpoint. The clockwise position is <b>random position and speed</b> and the counter-clockwise position is <b> random angle of movement</b>.  Phase1 controls motion speed and Phase2 controls motion depth.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65664a8eef43bbc523997320"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Speed Mode",
+  "topic": "Patch",
+  "description": "There are three motion speed modes.  From toggle switch positions, left to right: Motion Disabled, Slow Range, Fast Range.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65664badef43bbc523997326"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Waveform Mode",
+  "topic": "Patch",
+  "description": "There are three waveform modes. From toggle switch positions, left to right: Wrap, Blank, and Mirror.  In Wrap mode, the ramp phase scrolls continuously, repeating across the screen.  In Blank mode, the ramp phase may be moved entirely off screen.  In Mirror mode, the ramp phase inverts on even numbered cycles, creating an oversized quadrilateral space that is 2x2 screens in size. When used in HD timing formats, there will be a 20ns black line present when the ramp reflects from positive to negative slopes.  This is expected behavior.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656f944cbfd0ae830b2ac4d9"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "name": "Should I Update My Firmware?",
+  "topic": "System",
+  "description": "If your serial number is below #50, you should update your firmware to version 1.0.1, available for download on this page.  This will fix compatibility issues with progressive sync timings. Firmware update instructions are included in the download.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65cfa0f4d2d5c68a40a57ba6"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "name": "Default Control Positions",
+  "topic": "System",
+  "description": "With nothing patched to the inputs, and all knobs in their center position, the output will be close to black.  When the mute/blanking switches are engaged, there should be a minimal brightness shift in the output.  If Contrast knobs are fully counter-clockwise, at their zero position, the output will be near 50% gray level.",
+  "__v": 0
+}]

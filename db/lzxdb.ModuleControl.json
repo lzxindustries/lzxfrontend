@@ -1,0 +1,2211 @@
+[{
+  "_id": {
+    "$oid": "645bc11db2568df0622ecd6a"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P1",
+  "name": "Ratio 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3fc4c5d1bc137934e229"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "P1",
+  "name": "Center",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3fd6c5d1bc137934e234"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "P2",
+  "name": "Span",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c3feac5d1bc137934e259"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "P3",
+  "name": "Center CV Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4001c5d1bc137934e27e"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  },
+  "refDes": "P4",
+  "name": "Span CV Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": true,
+  "is_bias": false,
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c41e1c5d1bc137934e363"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P2",
+  "name": "Size 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c41f3c5d1bc137934e38e"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P3",
+  "name": "Ratio 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c41ffc5d1bc137934e3b9"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P4",
+  "name": "Size 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4213c5d1bc137934e3e4"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P5",
+  "name": "Ratio 3",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4223c5d1bc137934e40f"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710c"
+  },
+  "refDes": "P6",
+  "name": "Size 3",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4e522fb492ad27eadbf3"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P1",
+  "name": "Cutoff CV Depth 1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4e6d2fb492ad27eadbfc"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P2",
+  "name": "Cutoff 1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4e7a2fb492ad27eadc25"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P4",
+  "name": "Cutoff 2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4e862fb492ad27eadc4e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P6",
+  "name": "Cutoff 3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4e9c2fb492ad27eadc77"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P3",
+  "name": "Cutoff CV Depth 2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d4ea72fb492ad27eadca0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427107"
+  },
+  "refDes": "P5",
+  "name": "Cutoff CV Depth 3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d50902fb492ad27eade59"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P1",
+  "name": "A1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d509f2fb492ad27eade64"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P2",
+  "name": "B1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d50ae2fb492ad27eade95"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P3",
+  "name": "A2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d50d52fb492ad27eaded0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P4",
+  "name": "B2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d50e92fb492ad27eadf05"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P5",
+  "name": "A3",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d51002fb492ad27eadf3a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427105"
+  },
+  "refDes": "P6",
+  "name": "B3",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d52b22fb492ad27eae178"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P1",
+  "name": "B1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d52f92fb492ad27eae183"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P2",
+  "name": "C1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d53662fb492ad27eae1c9"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P3",
+  "name": "B2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": null,
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d53802fb492ad27eae20a"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P4",
+  "name": "C2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d53ac2fb492ad27eae24b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P5",
+  "name": "B3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": null,
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d53eb2fb492ad27eae28c"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427104"
+  },
+  "refDes": "P6",
+  "name": "C3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": null,
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d64002fb492ad27eae5c2"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "P1",
+  "name": "Steps",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d641c2fb492ad27eae5cd"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "P2",
+  "name": "Phase",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d64342fb492ad27eae61e"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "P3",
+  "name": "Steps CV Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d64442fb492ad27eae66f"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427103"
+  },
+  "refDes": "P4",
+  "name": "Phase CV Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6baa2fb492ad27eaea8d"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P1",
+  "name": "Threshold CV Depth 1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6bc42fb492ad27eaea98"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P2",
+  "name": "Threshold 1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6c592fb492ad27eaeaef"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P3",
+  "name": "Threshold CV Depth 2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6c692fb492ad27eaeb50"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P4",
+  "name": "Threshold 2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6c812fb492ad27eaebb1"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P5",
+  "name": "Threshold CV Depth 3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": -400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d6c8f2fb492ad27eaec12"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427102"
+  },
+  "refDes": "P6",
+  "name": "Threshold 3",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "x": 400,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77362fb492ad27eafd1b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "P1",
+  "name": "Frequency 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77512fb492ad27eafd22"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "P2",
+  "name": "Frequency 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77822fb492ad27eafd2b"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "P3",
+  "name": "Frequency CV Depth 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": -800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77a92fb492ad27eafda0"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "S1",
+  "name": "Range 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 0,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77c32fb492ad27eafe15"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "P4",
+  "name": "Frequency CV Depth 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d77ef2fb492ad27eafe92"
+  },
+  "module": {
+    "$oid": "644eddc3404d699366427100"
+  },
+  "refDes": "S2",
+  "name": "Range 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "x": 0,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c202fb492ad27eb041e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S1",
+  "name": "H Invert 1",
+  "x": -900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c2c2fb492ad27eb0427"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S2",
+  "name": "V Invert 1",
+  "part": null,
+  "x": -300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c372fb492ad27eb0434"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S3",
+  "name": "H Invert 2",
+  "part": null,
+  "x": 300,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c432fb492ad27eb0441"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S4",
+  "name": "V Invert 2",
+  "part": null,
+  "x": 900,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c652fb492ad27eb044e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S5",
+  "name": "H Fold 1",
+  "part": null,
+  "x": -900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c792fb492ad27eb045b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S6",
+  "name": "V Fold 1",
+  "part": null,
+  "x": -300,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c892fb492ad27eb0468"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S7",
+  "name": "H Fold 2",
+  "part": null,
+  "x": 300,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7c992fb492ad27eb0475"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S8",
+  "name": "V Fold 2",
+  "part": null,
+  "x": 900,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7cbb2fb492ad27eb0482"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S9",
+  "name": "H Curve 1",
+  "part": null,
+  "x": -900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7ccb2fb492ad27eb048f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S10",
+  "name": "V Curve 1",
+  "part": null,
+  "x": -300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7cd92fb492ad27eb049c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S11",
+  "name": "H Curve 2",
+  "part": null,
+  "x": 300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645d7ce62fb492ad27eb04a9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270ff"
+  },
+  "refDes": "S12",
+  "name": "V Curve 2",
+  "part": null,
+  "x": 900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dac912fb492ad27eb098e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "S1",
+  "name": "Cancel",
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dacae2fb492ad27eb0999"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "S2",
+  "name": "Up",
+  "part": null,
+  "x": 400,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dacba2fb492ad27eb09c2"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "S3",
+  "name": "Down",
+  "part": null,
+  "x": 800,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dacd22fb492ad27eb09eb"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f0"
+  },
+  "refDes": "S4",
+  "name": "Confirm",
+  "part": null,
+  "x": 1200,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dae7c2fb492ad27eb0a5e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P1",
+  "name": "R Contrast",
+  "x": -800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dae8b2fb492ad27eb0a67"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P2",
+  "name": "G Contrast",
+  "part": null,
+  "x": 0,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dae972fb492ad27eb0a94"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P3",
+  "name": "B Contrast",
+  "part": null,
+  "x": 800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daeaa2fb492ad27eb0ac1"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P4",
+  "name": "R Brightness",
+  "part": null,
+  "x": -800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daeb42fb492ad27eb0aee"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P5",
+  "name": "G Brightness",
+  "part": null,
+  "x": 0,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daec12fb492ad27eb0b1b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "P6",
+  "name": "G Brightness",
+  "part": null,
+  "x": 800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daf2c2fb492ad27eb0b48"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "S1",
+  "name": "Invert/Blank All",
+  "part": null,
+  "x": -900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daf462fb492ad27eb0b75"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "S2",
+  "name": "R Invert/Blank",
+  "part": null,
+  "x": -300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daf822fb492ad27eb0bcf"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "S3",
+  "name": "G Invert/Blank",
+  "part": null,
+  "x": 300,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645daf912fb492ad27eb0bfc"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "S4",
+  "name": "B Invert/Blank",
+  "part": null,
+  "x": 900,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db11e2fb492ad27eb0d99"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fe"
+  },
+  "refDes": "S5",
+  "name": "Format Select",
+  "part": null,
+  "x": 0,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1822fb492ad27eb0ddd"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P1",
+  "name": "A1",
+  "x": -800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db19b2fb492ad27eb0de6"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P2",
+  "name": "B1",
+  "part": null,
+  "x": 0,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1ab2fb492ad27eb0e23"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P3",
+  "name": "C1",
+  "part": null,
+  "x": 800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1bb2fb492ad27eb0e60"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P4",
+  "name": "A2",
+  "part": null,
+  "x": -800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1cb2fb492ad27eb0e9d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P5",
+  "name": "B2",
+  "part": null,
+  "x": 0,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1db2fb492ad27eb0eda"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P6",
+  "name": "C2",
+  "part": null,
+  "x": 800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db1f22fb492ad27eb0f17"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P7",
+  "name": "A3",
+  "part": null,
+  "x": -800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db2022fb492ad27eb0f54"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P8",
+  "name": "B3",
+  "part": null,
+  "x": 0,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db20f2fb492ad27eb0f91"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fd"
+  },
+  "refDes": "P9",
+  "name": "C3",
+  "part": null,
+  "x": 800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db38c2fb492ad27eb12e1"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "S1",
+  "name": "Edge Mode",
+  "x": -800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db74d2fb492ad27eb12f4"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "P1",
+  "name": "Threshold",
+  "part": null,
+  "x": 0,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db75f2fb492ad27eb1339"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "P2",
+  "name": "Softness",
+  "part": null,
+  "x": 800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db77b2fb492ad27eb137e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "S2",
+  "name": "Source Mode",
+  "part": null,
+  "x": -800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db78f2fb492ad27eb13c3"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "P3",
+  "name": "Threshold CV Depth",
+  "part": null,
+  "x": 0,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db79c2fb492ad27eb1408"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "P4",
+  "name": "Softness CV Depth",
+  "part": null,
+  "x": 800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645db7b82fb492ad27eb144d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "refDes": "S3",
+  "name": "Key Mode",
+  "part": null,
+  "x": -800,
+  "y": 125,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645dbe0d2fb492ad27eb1940"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "name": "Bias",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_bias": true,
+  "x": 0,
+  "y": -1750,
+  "__v": 0,
+  "refDes": "P1"
+},
+{
+  "_id": {
+    "$oid": "645dbe4f2fb492ad27eb194e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d8"
+  },
+  "name": "Gain",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": true,
+  "x": 0,
+  "y": -750,
+  "__v": 0,
+  "refDes": "P2"
+},
+{
+  "_id": {
+    "$oid": "64630a4e331f479d21623865"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P1",
+  "name": "X Position",
+  "x": -2000,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630a5f331f479d2162386e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P2",
+  "name": "Y Position",
+  "part": null,
+  "x": -1000,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630aa4331f479d21623897"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P3",
+  "name": "Edge",
+  "part": null,
+  "x": 0,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630ac2331f479d216238c0"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P4",
+  "name": "Size",
+  "part": null,
+  "x": 1000,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630ad0331f479d216238e9"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P5",
+  "name": "Skew",
+  "part": null,
+  "x": 2000,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b00331f479d21623912"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P6",
+  "name": "X Position CV Depth",
+  "part": null,
+  "x": -2000,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b10331f479d2162393b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P7",
+  "name": "Y Position CV Depth",
+  "part": null,
+  "x": -1000,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b1e331f479d21623964"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P8",
+  "name": "Edge CV Depth",
+  "part": null,
+  "x": 0,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b2d331f479d2162398d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P9",
+  "name": "Size CV Depth",
+  "part": null,
+  "x": 1000,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b3f331f479d216239b6"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P10",
+  "name": "Skew CV Depth",
+  "part": null,
+  "x": 2000,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630b5a331f479d216239df"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P11",
+  "name": "Speed",
+  "part": null,
+  "x": -3000,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630c14331f479d21623a1e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P12",
+  "name": "Mod Distance CV Depth",
+  "part": null,
+  "is_gain": null,
+  "x": -2000,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630c23331f479d21623a4b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P13",
+  "name": "Mod Angle CV Depth",
+  "part": null,
+  "is_gain": null,
+  "x": -500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630c34331f479d21623a78"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P14",
+  "name": "Rotation CV Depth",
+  "part": null,
+  "is_gain": null,
+  "x": 500,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630c53331f479d21623aa5"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P15",
+  "name": "Curve CV Depth",
+  "part": null,
+  "is_gain": null,
+  "x": 2000,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630cb6331f479d21623aec"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P16",
+  "name": "Mod Distance",
+  "part": null,
+  "is_gain": null,
+  "x": -2000,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630cc5331f479d21623b1d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P17",
+  "name": "Mod Angle",
+  "part": null,
+  "is_gain": null,
+  "x": -500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630cd0331f479d21623b4e"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P18",
+  "name": "Rotation",
+  "part": null,
+  "is_gain": null,
+  "x": 500,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64630ce2331f479d21623b7f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "P19",
+  "name": "Curve",
+  "part": null,
+  "is_gain": null,
+  "x": 2000,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b767331f479d21623f19"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S6",
+  "name": "Position Mod",
+  "part": null,
+  "x": -4800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b77f331f479d21623f3a"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S2",
+  "name": "Flip",
+  "part": null,
+  "x": -4300,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b791331f479d21623f5b"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S3",
+  "name": "Cycle",
+  "part": null,
+  "x": -3800,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b7a8331f479d21623f7c"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S4",
+  "name": "Fold",
+  "part": null,
+  "x": -1250,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b7b6331f479d21623f9d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S5",
+  "name": "Split",
+  "part": null,
+  "x": 1250,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b85c331f479d21624003"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S7",
+  "name": "Size Mod",
+  "part": null,
+  "x": -4300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b875331f479d21624028"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S8",
+  "name": "Edge Mod",
+  "part": null,
+  "x": -3800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b88c331f479d2162404d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S9",
+  "name": "Rotation Mod",
+  "part": null,
+  "x": -3300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b8a0331f479d21624072"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S10",
+  "name": "Curve Mod",
+  "part": null,
+  "x": -2800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b8d2331f479d216240bc"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S12",
+  "name": "Rotation Spin",
+  "part": null,
+  "x": 1250,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b8f7331f479d216240eb"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S11",
+  "name": "Mod Spin",
+  "part": null,
+  "x": -1250,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b935331f479d21624114"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S13",
+  "name": "HV Mode",
+  "part": null,
+  "x": 2800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b953331f479d2162413d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S14",
+  "name": "XY Mode",
+  "part": null,
+  "x": 3300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b968331f479d21624166"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S15",
+  "name": "Luma Mode",
+  "part": null,
+  "x": 3800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b976331f479d2162418f"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S16",
+  "name": "Chroma Mode",
+  "part": null,
+  "x": 4300,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463b982331f479d216241b8"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S17",
+  "name": "Composite Mode",
+  "part": null,
+  "x": 4800,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463ba2d331f479d21624235"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270f6"
+  },
+  "refDes": "S1",
+  "name": "Source Select",
+  "part": null,
+  "x": -4800,
+  "y": 875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9b485ed4d302836fe44"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "P1",
+  "name": "Frequency",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_bias": true,
+  "x": 0,
+  "y": -1750,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463d9de85ed4d302836fefe"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "P2",
+  "name": "VC Level",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": true,
+  "x": 0,
+  "y": -1000,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463da3f85ed4d302836ff93"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "S1",
+  "name": "Range",
+  "part": {
+    "$oid": "6455a68132ee5320a1c85dcd"
+  },
+  "x": 0,
+  "y": -250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463da7d85ed4d302836ff9d"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270d9"
+  },
+  "refDes": "S2",
+  "name": "Sync",
+  "part": {
+    "$oid": "6455a68132ee5320a1c85dcd"
+  },
+  "x": 0,
+  "y": 250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc6185ed4d302837014d"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S1",
+  "name": "A1",
+  "x": -1200,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc7885ed4d3028370163"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S2",
+  "name": "A2",
+  "part": null,
+  "x": -400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc8685ed4d30283701bf"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S3",
+  "name": "A3",
+  "part": null,
+  "x": 400,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc9485ed4d302837021c"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S4",
+  "name": "A4",
+  "part": null,
+  "x": 1200,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dcec85ed4d3028370289"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S5",
+  "name": "B1",
+  "part": null,
+  "x": -1200,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dcfb85ed4d30283702e0"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S6",
+  "name": "B2",
+  "part": null,
+  "x": -400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dd0c85ed4d3028370337"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S7",
+  "name": "B3",
+  "part": null,
+  "x": 400,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dd1985ed4d302837039b"
+  },
+  "module": {
+    "$oid": "644eddc3404d69936642710b"
+  },
+  "refDes": "S8",
+  "name": "B4",
+  "part": null,
+  "x": 1200,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "646526ca180127004c0ed418"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "2",
+  "name": "Logic Negative",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64652709180127004c0ed428"
+  },
+  "module": {
+    "$oid": "644eddc3404d6993664270c8"
+  },
+  "refDes": "13",
+  "name": "Gamma Negative",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ee75c489b067df837ec009"
+  },
+  "module": {
+    "$oid": "64d177ac2086f856c3bdd9b5"
+  },
+  "refDes": "J1",
+  "name": "CV1 Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": true,
+  "x": -400,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ee75df89b067df837ec014"
+  },
+  "module": {
+    "$oid": "64d177ac2086f856c3bdd9b5"
+  },
+  "refDes": "J2",
+  "name": "In1 Depth",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": true,
+  "x": 400,
+  "y": 1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540363ed0213a8edfed2044"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "P1",
+  "name": "Phase 1",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": -800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403676d0213a8edfed204f"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "P2",
+  "name": "Phase 2",
+  "part": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": 800,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654036a7d0213a8edfed206e"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "P3",
+  "name": "Phase CV Depth 1",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": -800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654036b3d0213a8edfed208d"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "P4",
+  "name": "Phase CV Depth 2",
+  "part": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "is_gain": false,
+  "is_bias": true,
+  "x": 800,
+  "y": -875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65403701d0213a8edfed20b4"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "S1",
+  "name": "Speed Mode",
+  "x": 0,
+  "y": -1875,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540372ad0213a8edfed20bf"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "S2",
+  "name": "Waveform Mode",
+  "part": null,
+  "x": 0,
+  "y": -1250,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6540373ad0213a8edfed20e2"
+  },
+  "module": {
+    "$oid": "64ee71bc89b067df837ebff5"
+  },
+  "refDes": "S3",
+  "name": "Primary Mode",
+  "part": null,
+  "x": 0,
+  "y": 0,
+  "__v": 0
+}]

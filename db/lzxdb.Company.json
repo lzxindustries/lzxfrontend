@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "6455856734e3e71f1fe4920e"
+  },
+  "name": "LZX",
+  "legalName": "LZX Industries"
+},
+{
+  "_id": {
+    "$oid": "64558ba534e3e71f1fe49213"
+  },
+  "name": "VH.S",
+  "legalName": "Video Headroom Systems"
+}]

@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "6455a4e832ee5320a1c85dc7"
+  },
+  "description": "3.5mm Jack",
+  "name": "Input 1",
+  "is_input": true,
+  "is_output": false,
+  "rotation_mm": -33,
+  "side": "top",
+  "x_mm": -440,
+  "y_mm": 203.122,
+  "module": {
+    "$oid": "644eddc3404d69936642710a"
+  }
+},
+{
+  "_id": {
+    "$oid": "6455e1035677faa3ffcf05df"
+  },
+  "name": "Red Output",
+  "module": {
+    "$oid": "644eddc3404d6993664270fc"
+  },
+  "is_output": true,
+  "__v": 0
+}]

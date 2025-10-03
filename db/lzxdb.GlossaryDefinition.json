@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "64e59b2ccbf7d153788b5850"
+  },
+  "glossary_term": {
+    "$oid": "64e59af5cbf7d153788b5845"
+  },
+  "description": "A keyer is a composite function, including both key generation and crossfading functions.",
+  "__v": 0
+}]
