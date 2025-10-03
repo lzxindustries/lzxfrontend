@@ -1,0 +1,243 @@
+[{
+  "_id": {
+    "$oid": "6462ddaa331f479d216234c6"
+  },
+  "name": "Andor 1 User Manual",
+  "file_name": "andor-1-user-manual.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463a049331f479d21623bea"
+  },
+  "name": "Castle 000 Schematic RevE",
+  "file_name": "castle-000-schematic_RevE.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463a336331f479d21623bf7"
+  },
+  "name": "TBC2 Firmware 1.0",
+  "file_name": "tbc2-firmware_1.0.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463a342331f479d21623c00"
+  },
+  "name": "TBC2 Firmware 1.0.1",
+  "file_name": "tbc2-firmware_1.0.1.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463a389331f479d21623c13"
+  },
+  "name": "Castle 001 BOM RevD",
+  "file_name": "castle-001-bom_RevD.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463a3a1331f479d21623c1c"
+  },
+  "name": "Castle 001 Schematic RevD",
+  "file_name": "castle-001-schematic_RevD.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463db9285ed4d3028370122"
+  },
+  "name": "Castle 010 Schematic RevE",
+  "file_name": "castle-010-schematic_RevE.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc2985ed4d302837013e"
+  },
+  "name": "Castle 011 Schematic RevD",
+  "file_name": "castle-011-schematic_RevD.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc6c85ed4d3028370158"
+  },
+  "name": "Castle 100 Schematic RevE",
+  "file_name": "castle-100-schematic_RevE.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dc8685ed4d30283701ba"
+  },
+  "name": "Castle 101 Schematic RevE",
+  "file_name": "castle-101-schematic_RevE.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dcc685ed4d3028370273"
+  },
+  "name": "Castle 110 Schematic RevD",
+  "file_name": "castle-110-schematic_RevD.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dce785ed4d302837027e"
+  },
+  "name": "Castle 111 Schematic RevD",
+  "file_name": "castle-111-schematic_RevD.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dd1685ed4d302837038e"
+  },
+  "name": "Castle 010 BOM RevE",
+  "file_name": "castle-010-bom_RevE.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463dd5085ed4d3028370404"
+  },
+  "name": "Castle 001 Schematic RevD",
+  "file_name": "castle-001-schematic_RevD.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de0385ed4d3028370431"
+  },
+  "name": "Castle 000 BOM RevE",
+  "file_name": "castle-000-bom_RevE.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de2485ed4d3028370440"
+  },
+  "name": "Castle 011 BOM RevD",
+  "file_name": "castle-011-bom_RevD.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de5485ed4d3028370458"
+  },
+  "name": "Castle 100 BOM RevE",
+  "file_name": "castle-100-bom_RevE.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de6985ed4d3028370467"
+  },
+  "name": "Castle 101 BOM RevE",
+  "file_name": "castle-101-bom_RevE.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de7c85ed4d3028370476"
+  },
+  "name": "Castle 110 BOM RevD",
+  "file_name": "castle-110-bom_RevD.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6463de9385ed4d3028370485"
+  },
+  "name": "Castle 111 BOM RevD",
+  "file_name": "castle-111-bom_RevD.csv",
+  "file_type": "CSV",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6504c5f5a2f2af078e5cd5a2"
+  },
+  "name": "TBC2 Firmware 1.0.2-mk1 (Orion Panel)",
+  "file_name": "tbc2-firmware_1.0.2-mk1.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6504c634a2f2af078e5cd5bb"
+  },
+  "name": "TBC2 Firmware 1.0.2-mk2 (Gen3 Panel)",
+  "file_name": "tbc2-firmware_1.0.2-mk2.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "656a221c6ffc7f8276db3644"
+  },
+  "name": "Scrolls Firmware 1.0.1",
+  "file_name": "scrolls-1.0.1-stm32f411rc.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "666ca601f0bd5720ac51ba4d"
+  },
+  "name": "TBC2 Firmware 1.0.3",
+  "file_name": "tbc2-firmware_1.0.3.zip",
+  "file_type": "ZIP",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "667b019befbe133c63d56a38"
+  },
+  "name": "TBC2 Mk1 Fan Upgrade Kit Instructions",
+  "file_name": "940020-D0001-tbc2-mk1-low-noise-fan-upgrade-kit-instructions.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "667b01d0efbe133c63d56a4a"
+  },
+  "name": "TBC2 Mk2 Fan Upgrade Kit Instructions",
+  "file_name": "940010-D0001-tbc2-mk2-low-noise-fan-upgrade-kit-instructions.pdf",
+  "file_type": "PDF",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6780117dfbd1aa4cee7272cd"
+  },
+  "name": "Bus 168 Shield Dimensional Drawing RevB",
+  "file_name": "BUS168-SHIELD-REVB.pdf",
+  "file_type": "PDF",
+  "__v": 0
+}]

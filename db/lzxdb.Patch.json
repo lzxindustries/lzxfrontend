@@ -1,0 +1,318 @@
+[{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4921c"
+  },
+  "notes": "Exploring Contour & Keychain feedback.",
+  "name": "Feedback Cartoon",
+  "diagram": "andrew_feedback_cartoon.png",
+  "youtube": "T14e2JiKZEI",
+  "modules": [
+    {
+      "$oid": "645013d1114038a6ffe06741"
+    }
+  ],
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4921d"
+  },
+  "notes": "Creating overlapping horizontal and vertical lines keyed by DSG3.",
+  "name": "Zebra",
+  "diagram": "andrew_zebra.png",
+  "youtube": "fJMAkK-VzYY",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4921e"
+  },
+  "notes": "Exploring DWO3 as color source.",
+  "name": "Color Oscillator",
+  "diagram": "andrew_color_oscillator.png",
+  "youtube": "5IXxYaPWat4",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4921f"
+  },
+  "notes": "Sweeping thru gradients provided by Angles.",
+  "name": "Angular Color Wave",
+  "diagram": "andrew_angular_color_wave.png",
+  "youtube": "T4DlXBnW_YQ",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49220"
+  },
+  "notes": "",
+  "name": "Cymatic Scan",
+  "diagram": "nick_cymatic_scan.png",
+  "youtube": "H5rYpd6UOOM",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49221"
+  },
+  "notes": "",
+  "name": "Acid Rain",
+  "diagram": "chad_acid_rain_diagram.png",
+  "youtube": null,
+  "artist": {
+    "$oid": "6455981e9ffad45093e2222d"
+  },
+  "gif": "chad_acid_rain.gif"
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49222"
+  },
+  "notes": "",
+  "name": "Budget Tiles",
+  "diagram": "andrew_budget_tiles.png",
+  "youtube": "jP8BYgzt4z4",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49223"
+  },
+  "notes": "",
+  "name": "Seabed",
+  "diagram": "",
+  "youtube": "Bui1koeHEVQ",
+  "artist": {
+    "$oid": "645552777e816fc52df1b9fc"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49224"
+  },
+  "notes": "",
+  "name": "Sawtooth Shuffle",
+  "diagram": "",
+  "youtube": "p6b1xnYNz-g",
+  "artist": {
+    "$oid": "645552777e816fc52df1b9fc"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49225"
+  },
+  "notes": "",
+  "name": "Gain Stager",
+  "diagram": "nick_gain_stager.png",
+  "youtube": "LBcLzL3HHjQ",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49226"
+  },
+  "notes": "",
+  "name": "Logo Cycle",
+  "diagram": "nick_logo_cycle.png",
+  "youtube": "P5OrjcE2X3c",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49227"
+  },
+  "notes": "",
+  "name": "Luxury Tiles",
+  "diagram": "andrew_luxury_tiles.png",
+  "youtube": "JWqCks3QC6g",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49228"
+  },
+  "notes": "",
+  "name": "Slip And Slide",
+  "diagram": "lars_slip_and_slide.png",
+  "youtube": "_zK0S52I2BY",
+  "artist": {
+    "$oid": "645552777e816fc52df1b9fc"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe49229"
+  },
+  "notes": "",
+  "name": "Ripplestream",
+  "diagram": "andrew_ripplestream.png",
+  "youtube": "O24ZML5JkJU",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922a"
+  },
+  "notes": "CROSSFADE used for downstream luma feedback.",
+  "name": "Aurora Bands",
+  "diagram": "",
+  "youtube": "LB7J5b2mGcA",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922b"
+  },
+  "notes": "",
+  "name": "Unstable Transmission",
+  "diagram": "",
+  "youtube": "7f5z2k0vNzU",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922c"
+  },
+  "notes": "",
+  "name": "Full Spectrum Rorschach",
+  "diagram": "",
+  "youtube": "M1yUAuHJFMQ",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922d"
+  },
+  "notes": "",
+  "name": "Purple",
+  "diagram": "nick_purple.png",
+  "youtube": "N17Gfmmgtp0",
+  "artist": {
+    "$oid": "645598079ffad45093e2221b"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922e"
+  },
+  "notes": "",
+  "name": "Checkered Flag",
+  "diagram": "andrew_checkered_flag.png",
+  "youtube": "3Kr-9yfkOhs",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645597d334e3e71f1fe4922f"
+  },
+  "notes": "",
+  "name": "Zipper",
+  "diagram": "andrew_zipper.png",
+  "youtube": "Mj_gEZjstE4",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "645970a1c7b6fc31987465bc"
+  },
+  "name": "Arjeebee",
+  "diagram": "chad_arjeebee_diagram.png",
+  "artist": {
+    "$oid": "6455981e9ffad45093e2222d"
+  },
+  "gif": "chad_arjeebee.gif",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645970cec7b6fc31987465ca"
+  },
+  "name": "Ecto Cooler",
+  "diagram": "chad_ecto_cooler_diagram.png",
+  "artist": {
+    "$oid": "6455981e9ffad45093e2222d"
+  },
+  "gif": "chad_ecto_cooler.gif",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653fdc30d0213a8edfed1ea1"
+  },
+  "name": "Pumpkin Patch",
+  "diagram": "pumpkin_patch.PNG",
+  "youtube": "38606AUAAzg",
+  "artist": {
+    "$oid": "653fdbd5d0213a8edfed1e90"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a87886e93c67d4a60390ab"
+  },
+  "name": "Box Cutter",
+  "diagram": "andrew_box_cutter.png",
+  "youtube": "0lqjyFhDaew",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a879afe93c67d4a60390b7"
+  },
+  "name": "Rougher Diamond",
+  "diagram": "andrew_rougher_diamond.png",
+  "youtube": "ApR1pyi4cX4",
+  "__v": 0,
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  }
+},
+{
+  "_id": {
+    "$oid": "65a879d1e93c67d4a60390c3"
+  },
+  "name": "Channel X",
+  "diagram": "andrew_channel_x.png",
+  "youtube": "pMqfYI4iyuo",
+  "artist": {
+    "$oid": "645598159ffad45093e22224"
+  },
+  "__v": 0
+}]

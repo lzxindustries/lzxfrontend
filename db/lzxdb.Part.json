@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6455a68132ee5320a1c85dcd"
+  },
+  "partNumber": "PART1",
+  "name": "R0603_1K"
+},
+{
+  "_id": {
+    "$oid": "645bc10eb2568df0622ecd68"
+  },
+  "name": "Control Knob Solid Arrow",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645bc448b2568df0622ecdc6"
+  },
+  "name": "Vertical 3.5mm Jack",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645c4133c5d1bc137934e328"
+  },
+  "name": "Control Knob Outline Arrow",
+  "__v": 0
+}]

@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "645552777e816fc52df1b9fc"
+  },
+  "name": "Lars Larsen"
+},
+{
+  "_id": {
+    "$oid": "645598079ffad45093e2221b"
+  },
+  "name": "Nick Ciontea",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "645598159ffad45093e22224"
+  },
+  "name": "Andrew Dobbels",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6455981e9ffad45093e2222d"
+  },
+  "name": "Chad Allen",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653fdbd5d0213a8edfed1e90"
+  },
+  "name": "Jonah Lange",
+  "__v": 0
+}]
