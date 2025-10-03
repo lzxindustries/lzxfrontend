@@ -27,11 +27,11 @@ const getLastPathSegment = (url: string): string | null => {
 };
 
 const getGalleryMedia = (
-  product: Product,
-  moduleData: {
-    name: string;
-    videos: {youtube: string; name: string}[];
-  },
+  product: Product//,
+  // moduleData: {
+  //   name: string;
+  //   videos: {youtube: string; name: string}[];
+  // },
 ): MediaGalleryItem[] => {
   const items: MediaGalleryItem[] = [];
   const seenYoutubeIds = new Set<string>();
@@ -41,7 +41,8 @@ const getGalleryMedia = (
       const shopifyImage = item as MediaImage;
       if (!shopifyImage.image) return;
       items.push({
-        name: shopifyImage.image.altText || `${moduleData.name} image`,
+        // name: shopifyImage.image.altText || `${moduleData.name} image`,
+        name: shopifyImage.image.altText,
         src: shopifyImage.image.url,
         type: MediaGalleryItemType.IMAGE,
       } as MediaGalleryItem);
@@ -52,49 +53,51 @@ const getGalleryMedia = (
       if (seenYoutubeIds.has(youtubeId)) return;
       seenYoutubeIds.add(youtubeId);
       items.push({
-        name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
+//        name: `${moduleData.name} video (${shopifyExternalVideo.host})`,
+        name: `video (${shopifyExternalVideo.host})`,
         src: shopifyExternalVideo.embedUrl,
         type: MediaGalleryItemType.VIDEO,
       } as MediaGalleryItem);
     }
   });
 
-  moduleData.videos.forEach((video: any) => {
-    if (seenYoutubeIds.has(video.youtube.trim())) return;
-    seenYoutubeIds.add(video.youtube.trim());
-    items.push({
-      name: video.name,
-      src: `https://www.youtube.com/embed/${video.youtube}`,
-      type: MediaGalleryItemType.VIDEO,
-    } as MediaGalleryItem);
-  });
+  // moduleData.videos.forEach((video: any) => {
+  //   if (seenYoutubeIds.has(video.youtube.trim())) return;
+  //   seenYoutubeIds.add(video.youtube.trim());
+  //   items.push({
+  //     name: video.name,
+  //     src: `https://www.youtube.com/embed/${video.youtube}`,
+  //     type: MediaGalleryItemType.VIDEO,
+  //   } as MediaGalleryItem);
+  // });
 
   return items;
 };
 
 export function ModuleDetails({
   children,
-  moduleData,
+  // moduleData,
   product,
 }: {
   children?: React.ReactNode;
-  moduleData: ModuleView;
+  // moduleData: ModuleView;
   product: Product;
 }) {
   const [activeRefDes, setActiveRefDes] = useState('');
   let hasMainFeatures = false;
   let hasPatchFeatures = false;
   let hasSystemFeatures = false;
-  moduleData.features.forEach((feature) => {
-    if (feature.topic === 'Main') hasMainFeatures = true;
-    if (feature.topic === 'Patch') hasPatchFeatures = true;
-    if (feature.topic === 'System') hasSystemFeatures = true;
-  });
-  const portraitAspect = moduleData.hp >= 25;
+  // moduleData.features.forEach((feature) => {
+  //   if (feature.topic === 'Main') hasMainFeatures = true;
+  //   if (feature.topic === 'Patch') hasPatchFeatures = true;
+  //   if (feature.topic === 'System') hasSystemFeatures = true;
+  // });
+  // const portraitAspect = moduleData.hp >= 25;
+  const portraitAspect = true;
 
   const media: MediaGalleryItem[] = useMemo(() => {
-    return getGalleryMedia(product, moduleData);
-  }, [product, moduleData]);
+    return getGalleryMedia(product);
+  }, [product]);
 
   const [screenWidth, setScreenWidth] = useState<number>(0);
   useEffect(() => {
@@ -114,17 +117,17 @@ export function ModuleDetails({
         <div className="flex flex-wrap flex-row px-8">
           <div className="basis-[100%] md:basis-1/2 pb-8">
             <div className="font-sans font-bold text-3xl uppercase">
-              {moduleData.name}
+              {product.title}
             </div>
-            <div className="font-sans font-semibold text-base uppercase">
+            {/* <div className="font-sans font-semibold text-base uppercase">
               {moduleData.subtitle}
-            </div>
+            </div> */}
           </div>
           <div className="basis-[100%] md:basis-1/2 pb-8">{children}</div>
         </div>
         <article key="ModuleDetailsArticle" className="prose px-8">
-          <p dangerouslySetInnerHTML={{__html: moduleData.description}}></p>
-          {hasMainFeatures
+          <p dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></p>
+          {/* {hasMainFeatures
             ? moduleData.features.map((feature) => {
                 return feature.topic == 'Main' ? (
                   <div key={`${moduleData.name}-${feature.name}`}>
@@ -529,7 +532,7 @@ export function ModuleDetails({
                   ''
                 );
               })
-            : ''}
+            : ''} */}
         </article>
       </div>
     </div>
