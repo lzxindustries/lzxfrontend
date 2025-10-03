@@ -40,6 +40,15 @@ jobs:
         run: yarn
       - name: Build and Publish to Oxygen
         id: deploy
-        run: yarn run shopify hydrogen deploy --build-command "yarn run build"
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            FLAGS=""
+          elif [ "${GITHUB_REF_NAME}" = "staging" ]; then
+            FLAGS="--env-branch staging"
+          else
+            FLAGS="--preview"
+          fi
+          yarn run shopify hydrogen deploy --build-command "yarn run build" $FLAGS
         env:
           SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: '${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}'
+          DEPLOY_FLAGS: ${{ github.ref_name == 'staging' && '--env-branch staging' || (github.ref_name != 'main' && '--preview') || '' }}
