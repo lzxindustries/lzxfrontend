@@ -81,14 +81,14 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   });
 
   const id = product.id;
-  const moduleData: ModuleView = await getModuleDetails(context, id);
+  // const moduleData: ModuleView = await getModuleDetails(context, id);
 
   // if (!id || !moduleData) {
   //   throw new Response('product', { status: 404 });
   // }
 
   return defer({
-    moduleData,
+    // moduleData,
     product,
     shop,
     storeDomain: shop.primaryDomain.url,
