@@ -51,4 +51,5 @@ jobs:
           yarn run shopify hydrogen deploy --build-command "yarn run build" $FLAGS
         env:
           SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: '${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}'
-          DEPLOY_FLAGS: ${{ github.ref_name == 'staging' && '--env-branch staging' || (github.ref_name != 'main' && '--preview') || '' }}
+      - name: Print deployment log
+        run: cat h2_deploy_log.json
