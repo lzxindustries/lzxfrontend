@@ -1,10 +1,6 @@
-import {Listbox} from '@headlessui/react';
 import {
   Await,
   useLoaderData,
-  useLocation,
-  useNavigation,
-  useSearchParams,
   useRouteError,
   isRouteErrorResponse,
 } from '@remix-run/react';
@@ -13,7 +9,7 @@ import type {
   ShopifyAnalyticsProduct,
   Storefront,
 } from '@shopify/hydrogen';
-import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton, VariantSelector} from '@shopify/hydrogen';
 import type {
   ProductConnection,
   Product as ProductType,
@@ -24,12 +20,11 @@ import type {
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
-import {type ReactNode, Suspense, useMemo, useRef, useState} from 'react';
+import {Suspense, useState} from 'react';
 import {FaHeart, FaRegHeart} from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
-import {IconCaret, IconCheck} from '~/components/Icon';
 import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
@@ -147,45 +142,8 @@ export default function Product() {
 
 export function ProductForm() {
   const {product, analytics, storeDomain} = useLoaderData<typeof loader>();
-  const [currentSearchParams] = useSearchParams();
-  const {location} = useNavigation();
-
-  /**
-   * We update `searchParams` with in-flight request data from `location` (if available)
-   * to create an optimistic UI, e.g. check the product option before the
-   * request has completed.
-   */
-  const searchParams = useMemo(() => {
-    return location
-      ? new URLSearchParams(location.search)
-      : currentSearchParams;
-  }, [currentSearchParams, location]);
 
   const firstVariant = product.variants.nodes[0];
-
-  /**
-   * We're making an explicit choice here to display the product options
-   * UI with a default variant, rather than wait for the user to select
-   * options first. Developers are welcome to opt-out of this behavior.
-   * By default, the first variant's options are used.
-   */
-  const searchParamsWithDefaults = useMemo<URLSearchParams>(() => {
-    const clonedParams = new URLSearchParams(searchParams);
-
-    for (const {name, value} of firstVariant.selectedOptions) {
-      if (!searchParams.has(name)) {
-        clonedParams.set(name, value);
-      }
-    }
-
-    return clonedParams;
-  }, [searchParams, firstVariant.selectedOptions]);
-
-  /**
-   * Likewise, we're defaulting to the first variant for purposes
-   * of add to cart if there is none returned from the loader.
-   * A developer can opt out of this, too.
-   */
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
   const isPreorder = product.id == 'gid://shopify/Product/4319674761239';
@@ -209,10 +167,41 @@ export function ProductForm() {
   return (
     <div className="grid gap-2">
       <div className="grid gap-4">
-        <ProductOptions
+        <VariantSelector
+          handle={product.handle}
           options={product.options}
-          searchParamsWithDefaults={searchParamsWithDefaults}
-        />
+          variants={product.variants}
+        >
+          {({option}) => (
+            <div
+              key={option.name}
+              className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
+            >
+              <Heading as="legend" size="lead" className="min-w-[4rem]">
+                {option.name}
+              </Heading>
+              <div className="flex flex-wrap items-baseline gap-4">
+                {option.values.map(({value, isAvailable, isActive, to}) => (
+                  <Text key={option.name + value}>
+                    <Link
+                      to={to}
+                      preventScrollReset
+                      prefetch="intent"
+                      replace
+                      className={clsx(
+                        'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
+                        isActive ? 'font-extrabold' : 'font-normal',
+                        !isAvailable && 'opacity-50 line-through',
+                      )}
+                    >
+                      {value}
+                    </Link>
+                  </Text>
+                ))}
+              </div>
+            </div>
+          )}
+        </VariantSelector>
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
             <label htmlFor="quantity" className="text-sm font-medium">Qty</label>
@@ -468,161 +457,6 @@ function WishlistButton({
   );
 }
 
-function ProductOptions({
-  options,
-  searchParamsWithDefaults,
-}: {
-  options: ProductType['options'];
-  searchParamsWithDefaults: URLSearchParams;
-}) {
-  const closeRef = useRef<HTMLButtonElement>(null);
-  return (
-    <>
-      {options
-        .filter((option) => option.values.length > 1)
-        .map((option) => (
-          <div
-            key={option.name}
-            className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
-          >
-            <Heading as="legend" size="lead" className="min-w-[4rem]">
-              {option.name}
-            </Heading>
-            <div className="flex flex-wrap items-baseline gap-4">
-              {/**
-               * First, we render a bunch of <Link> elements for each option value.
-               * When the user clicks one of these buttons, it will hit the loader
-               * to get the new data.
-               *
-               * If there are more than 7 values, we render a dropdown.
-               * Otherwise, we just render plain links.
-               */}
-              {option.values.length > 7 ? (
-                <div className="relative w-full">
-                  <Listbox>
-                    {({open}) => (
-                      <>
-                        <Listbox.Button
-                          ref={closeRef}
-                          className={clsx(
-                            'flex items-center justify-between w-full py-3 px-4 border border-primary',
-                            open
-                              ? 'rounded-b md:rounded-t md:rounded-b-none'
-                              : 'rounded',
-                          )}
-                        >
-                          <span>
-                            {searchParamsWithDefaults.get(option.name)}
-                          </span>
-                          <IconCaret direction={open ? 'up' : 'down'} />
-                        </Listbox.Button>
-                        <Listbox.Options
-                          className={clsx(
-                            'border-primary bg-white absolute bottom-12 z-50 grid h-48 w-full overflow-y-scroll rounded-t border px-2 py-2 transition-[max-height] duration-150 sm:bottom-auto md:rounded-b md:rounded-t-none md:border-t-0 md:border-b',
-                            open ? 'max-h-48' : 'max-h-0',
-                          )}
-                        >
-                          {option.values.map((value) => (
-                            <Listbox.Option
-                              key={`option-${option.name}-${value}`}
-                              value={value}
-                            >
-                              {({active}) => (
-                                <ProductOptionLink
-                                  optionName={option.name}
-                                  optionValue={value}
-                                  className={clsx(
-                                    'text-primary w-full p-2 transition rounded flex justify-start items-center text-left cursor-pointer',
-                                    active && 'bg-primary/10',
-                                  )}
-                                  searchParams={searchParamsWithDefaults}
-                                  onClick={() => {
-                                    if (!closeRef?.current) return;
-                                    closeRef.current.click();
-                                  }}
-                                >
-                                  {value}
-                                  {searchParamsWithDefaults.get(option.name) ===
-                                    value && (
-                                    <span className="ml-2">
-                                      <IconCheck />
-                                    </span>
-                                  )}
-                                </ProductOptionLink>
-                              )}
-                            </Listbox.Option>
-                          ))}
-                        </Listbox.Options>
-                      </>
-                    )}
-                  </Listbox>
-                </div>
-              ) : (
-                <>
-                  {option.values.map((value) => {
-                    const checked =
-                      searchParamsWithDefaults.get(option.name) === value;
-                    const id = `option-${option.name}-${value}`;
-
-                    return (
-                      <Text key={id}>
-                        <ProductOptionLink
-                          optionName={option.name}
-                          optionValue={value}
-                          searchParams={searchParamsWithDefaults}
-                          className={clsx(
-                            'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
-                            checked ? 'font-extrabold' : 'font-normal',
-                          )}
-                        />
-                      </Text>
-                    );
-                  })}
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-    </>
-  );
-}
-
-function ProductOptionLink({
-  optionName,
-  optionValue,
-  searchParams,
-  children,
-  ...props
-}: {
-  optionName: string;
-  optionValue: string;
-  searchParams: URLSearchParams;
-  children?: ReactNode;
-  [key: string]: any;
-}) {
-  const {pathname} = useLocation();
-  const isLangPathname = /\/[a-zA-Z]{2}-[a-zA-Z]{2}\//g.test(pathname);
-  // fixes internalized pathname
-  const path = isLangPathname
-    ? `/${pathname.split('/').slice(2).join('/')}`
-    : pathname;
-
-  const clonedSearchParams = new URLSearchParams(searchParams);
-  clonedSearchParams.set(optionName, optionValue);
-
-  return (
-    <Link
-      {...props}
-      preventScrollReset
-      prefetch="intent"
-      replace
-      to={`${path}?${clonedSearchParams.toString()}`}
-    >
-      {children ?? optionValue}
-    </Link>
-  );
-}
-
 // function ProductDetail({
 //   title,
 //   content,
@@ -737,7 +571,7 @@ const PRODUCT_QUERY = `#graphql
           ...Media
         }
       }
-      variants(first: 1) {
+      variants(first: 250) {
         nodes {
           ...ProductVariantFragment
         }
@@ -745,6 +579,17 @@ const PRODUCT_QUERY = `#graphql
       seo {
         description
         title
+      }
+      metafields(identifiers: [
+        {namespace: "custom", key: "specs"},
+        {namespace: "custom", key: "features"},
+        {namespace: "custom", key: "compatibility"},
+        {namespace: "descriptors", key: "subtitle"},
+      ]) {
+        key
+        namespace
+        value
+        type
       }
     }
     shop {

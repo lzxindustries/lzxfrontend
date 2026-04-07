@@ -22,6 +22,8 @@ import type {
   AppLoadContext,
 } from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
+import {useCallback, useState} from 'react';
+import {CookieConsent} from './components/CookieConsent';
 import {GenericError} from './components/GenericError';
 import {NotFound} from './components/NotFound';
 import {useAnalytics} from './hooks/useAnalytics';
@@ -75,7 +77,11 @@ export async function loader({request, context}: LoaderFunctionArgs) {
 export default function App() {
   const data = useLoaderData<typeof loader>();
   const locale = data.selectedLocale ?? DEFAULT_LOCALE;
-  const hasUserConsent = true;
+  const [hasUserConsent, setHasUserConsent] = useState(false);
+
+  const handleConsent = useCallback((consent: boolean) => {
+    setHasUserConsent(consent);
+  }, []);
 
   useAnalytics(hasUserConsent, locale);
 
@@ -94,6 +100,7 @@ export default function App() {
         >
           <Outlet />
         </Layout>
+        <CookieConsent onConsent={handleConsent} />
         <ScrollRestoration />
         <Scripts />
       </body>

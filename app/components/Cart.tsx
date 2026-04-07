@@ -1,5 +1,5 @@
 import {useFetcher} from '@remix-run/react';
-import {flattenConnection, Image, Money} from '@shopify/hydrogen';
+import {flattenConnection, Image, Money, OptimisticInput} from '@shopify/hydrogen';
 import type {
   Cart as CartType,
   CartCost,
@@ -392,6 +392,7 @@ function UpdateCartButton({
     <fetcher.Form action="/cart" method="post">
       <input type="hidden" name="cartAction" value={CartAction.UPDATE_CART} />
       <input type="hidden" name="lines" value={JSON.stringify(lines)} />
+      <OptimisticInput id={lines[0]?.id} data={{quantity: lines[0]?.quantity}} />
       <div className={fetcher.state !== 'idle' ? 'opacity-50 pointer-events-none' : ''}>
         {children}
       </div>

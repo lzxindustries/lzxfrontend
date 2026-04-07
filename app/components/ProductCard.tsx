@@ -1,4 +1,4 @@
-import {flattenConnection, useMoney} from '@shopify/hydrogen';
+import {flattenConnection, Image, useMoney} from '@shopify/hydrogen';
 import type {MoneyV2, Product} from '@shopify/hydrogen/storefront-api-types';
 import clsx from 'clsx';
 import {AddToCartButton} from '~/components/AddToCartButton';
@@ -85,10 +85,11 @@ export function ProductCard({
               </div>
             )}
             {image && (
-              <img
-                src={image.url}
+              <Image
+                data={image}
                 alt={`${product.title} product`}
                 className="inset-0 w-full h-full object-cover"
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             )}
           </div>

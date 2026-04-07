@@ -11,9 +11,12 @@ import {
   FaFacebook,
   FaTiktok,
   FaTwitter,
+  FaTimes,
 } from 'react-icons/fa';
 import {MdForum} from 'react-icons/md';
+import {useState} from 'react';
 import Logo from './Logo';
+import {PredictiveSearch} from './PredictiveSearch';
 
 export function Header({
   cartCount = 13,
@@ -28,12 +31,12 @@ export function Header({
 }) {
   const iconSize = 16;
   const logoSize = 24;
+  const [searchOpen, setSearchOpen] = useState(false);
   const isHome = url === '/' || url === '';
   const isVideomancer = url.includes('/products/videomancer');
   const isCatalog = url.includes('/catalog');
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
-  const isSearch = url.includes('/search');
   const isGettingStarted = url.includes('https://docs.lzxindustries.net');
   const isBlog = url.includes('https://docs.lzxindustries.net/blog');
 
@@ -212,11 +215,12 @@ export function Header({
           <FaTwitter size={iconSize} />
         </a>
       </div>
-      <div className="navbar-end">\n        <ul className="menu menu-horizontal px-2">
+      <div className="navbar-end">
+        <ul className="menu menu-horizontal px-2">
           <li>
-            <a className={isSearch ? 'active' : ''} href="/search" aria-label="Search">
+            <button onClick={() => setSearchOpen(true)} aria-label="Search">
               <FaSearch size={iconSize} />
-            </a>
+            </button>
           </li>
           <li>
             <a className={isAccount ? 'active' : ''} href="/account" aria-label={isLoggedIn ? 'My Account' : 'Sign in'}>
@@ -231,9 +235,26 @@ export function Header({
             >
               <FaShoppingCart size={iconSize} />
             </button>
-          </li>\n          <span className="badge badge-sm indicator-item">{cartCount}</span>
+          </li>
+          <span className="badge badge-sm indicator-item">{cartCount}</span>
         </ul>
       </div>
+      {searchOpen && (
+        <div className="fixed inset-0 z-[90] bg-black/50 flex items-start justify-center pt-20">
+          <div className="w-full max-w-lg mx-4">
+            <div className="flex justify-end mb-2">
+              <button
+                onClick={() => setSearchOpen(false)}
+                className="btn btn-ghost btn-sm btn-circle"
+                aria-label="Close search"
+              >
+                <FaTimes size={iconSize} />
+              </button>
+            </div>
+            <PredictiveSearch onClose={() => setSearchOpen(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
