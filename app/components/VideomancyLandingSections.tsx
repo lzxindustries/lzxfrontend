@@ -241,7 +241,7 @@ export function VideomancyLandingSections() {
               as="h2"
               className="vm-reveal mx-auto font-display text-xl font-black uppercase tracking-[0.1em] text-moonwax md:text-3xl"
             >
-              What the artists already know
+              Why Videomancer?
             </Heading>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
               {proofCards.map((card, index) => (
@@ -264,7 +264,7 @@ export function VideomancyLandingSections() {
 
           <aside className="vm-reveal vm-reveal-delay-3 flex flex-col justify-center rounded-2xl border border-mystic/30 bg-[#12101c] p-7">
             <h3 className="font-display text-xl font-bold uppercase tracking-[0.1em] text-moonwax md:text-3xl">
-              We saved you a seat
+              We've been expecting you
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-white/65">
               Pick up the instrument. We built the docs, the programs, and the
