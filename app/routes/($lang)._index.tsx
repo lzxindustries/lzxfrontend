@@ -11,7 +11,6 @@ import invariant from 'tiny-invariant';
 import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
 import {ProductCard} from '~/components/ProductCard';
-import {SocialProof} from '~/components/SocialProof';
 import {Section, PageHeader} from '~/components/Text';
 import {VideomancyLandingSections} from '~/components/VideomancyLandingSections';
 import {CACHE_LONG} from '~/data/cache';
@@ -89,7 +88,6 @@ export default function Home() {
           ))}
         </Grid>
       </Section>
-      <SocialProof />
     </>
   );
 }
