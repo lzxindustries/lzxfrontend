@@ -20,7 +20,7 @@ import type {
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
-import {Suspense, useState} from 'react';
+import {Suspense, useEffect, useRef, useState} from 'react';
 import {FaHeart, FaRegHeart} from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
@@ -120,7 +120,7 @@ export default function Product() {
     useLoaderData<typeof loader>();
 
   return (
-    <>
+    <div className="pb-16 md:pb-0">
       <ModuleDetails product={product}>
         <ProductForm />
       </ModuleDetails>
@@ -136,7 +136,7 @@ export default function Product() {
           }
         </Await>
       </Suspense>
-    </>
+    </div>
   );
 }
 
@@ -151,7 +151,6 @@ export function ProductForm() {
     (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder
       ? true
       : false;
-  const isVideomancer = product.handle === 'videomancer';
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -164,9 +163,61 @@ export function ProductForm() {
 
   const [quantity, setQuantity] = useState(1);
 
+  // Sticky mobile bar: track when the main CTA scrolls out of view
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const el = ctaRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowStickyBar(!entry.isIntersecting),
+      {threshold: 0},
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Determine button label
+  const buttonLabel = isOutOfStock
+    ? 'Sold Out'
+    : isPreorder
+      ? 'Preorder Now'
+      : isBackorder
+        ? 'Backorder Now'
+        : 'Add to Cart';
+
+  // Determine shipping/status message
+  const statusMessage = isOutOfStock ? (
+    <Text as="span" className="text-sm">
+      Out of stock. Please{' '}
+      <Link to={'mailto:sales@lzxindustries.net'}>contact us</Link> to
+      let us know about your interest in this item!
+    </Text>
+  ) : isPreorder ? (
+    <Text as="span" className="text-sm">
+      This product is not shipping, but is available for preorder.
+      Please place your order only if you are prepared to wait.
+    </Text>
+  ) : isBackorder ? (
+    <Text as="span" className="text-sm text-primary/70">Ships in 4-6 weeks.</Text>
+  ) : (
+    <Text as="span" className="text-sm text-green-700">Ships in 24 hours.</Text>
+  );
+
+  // Low stock warning (single source of truth)
+  const showLowStock =
+    !isOutOfStock &&
+    !isPreorder &&
+    !isBackorder &&
+    selectedVariant?.quantityAvailable != null &&
+    selectedVariant.quantityAvailable > 0 &&
+    selectedVariant.quantityAvailable < 5;
+
   return (
-    <div className="grid gap-2">
-      <div className="grid gap-4">
+    <>
+      <div className="grid gap-6">
+        {/* Variant Selector — pill buttons */}
         <VariantSelector
           handle={product.handle}
           options={product.options}
@@ -175,33 +226,56 @@ export function ProductForm() {
           {({option}) => (
             <div
               key={option.name}
-              className="flex flex-col flex-wrap mb-4 gap-y-2 last:mb-0"
+              className="flex flex-col gap-2"
             >
               <Heading as="legend" size="lead" className="min-w-[4rem]">
                 {option.name}
               </Heading>
-              <div className="flex flex-wrap items-baseline gap-4">
+              <div className="flex flex-wrap gap-2">
                 {option.values.map(({value, isAvailable, isActive, to}) => (
-                  <Text key={option.name + value}>
-                    <Link
-                      to={to}
-                      preventScrollReset
-                      prefetch="intent"
-                      replace
-                      className={clsx(
-                        'leading-none py-1 border-b-[1.5px] cursor-pointer transition-all duration-200',
-                        isActive ? 'font-extrabold' : 'font-normal',
-                        !isAvailable && 'opacity-50 line-through',
-                      )}
-                    >
-                      {value}
-                    </Link>
-                  </Text>
+                  <Link
+                    key={option.name + value}
+                    to={to}
+                    preventScrollReset
+                    prefetch="intent"
+                    replace
+                    className={clsx(
+                      'px-4 py-2 text-sm rounded-full border transition-all duration-200 cursor-pointer min-h-[40px] flex items-center',
+                      isActive
+                        ? 'bg-black text-white border-black font-semibold'
+                        : 'bg-white text-primary border-primary/30 hover:border-primary/60',
+                      !isAvailable && 'opacity-40 line-through pointer-events-none',
+                    )}
+                  >
+                    {value}
+                  </Link>
                 ))}
               </div>
             </div>
           )}
         </VariantSelector>
+
+        {/* Price display */}
+        {selectedVariant && (
+          <div className="flex items-baseline gap-3">
+            <Money
+              withoutTrailingZeros
+              data={selectedVariant.price!}
+              as="span"
+              className="text-2xl font-bold"
+            />
+            {isOnSale && (
+              <Money
+                withoutTrailingZeros
+                data={selectedVariant.compareAtPrice!}
+                as="span"
+                className="text-lg text-primary/40 line-through"
+              />
+            )}
+          </div>
+        )}
+
+        {/* Quantity selector */}
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
             <label htmlFor="quantity" className="text-sm font-medium">Qty</label>
@@ -235,183 +309,104 @@ export function ProductForm() {
             </div>
           </div>
         )}
-        {selectedVariant && selectedVariant.quantityAvailable && selectedVariant.quantityAvailable > 0 && selectedVariant.quantityAvailable < 5 && !isPreorder && !isBackorder && (
-          <div className="p-3 bg-yellow-100/20 border border-yellow-600/30 rounded text-yellow-800 text-sm">
-            <Text className="font-medium">Only {selectedVariant.quantityAvailable} left in stock</Text>
+
+        {/* Low stock warning */}
+        {showLowStock && (
+          <div className="p-3 bg-yellow-50 border border-yellow-300 rounded text-yellow-800 text-sm font-medium">
+            Only {selectedVariant!.quantityAvailable} left in stock
           </div>
         )}
-        {selectedVariant && (
-          <div className="grid items-stretch gap-4">
-            {isOutOfStock ? (
-              <Button variant="secondary" disabled>
-                <Text>Sold Out</Text>
-              </Button>
-            ) : null}
-            {!isOutOfStock && !isPreorder && !isBackorder ? (
-              <AddToCartButton
-                lines={[
-                  {
-                    merchandiseId: selectedVariant.id,
-                    quantity,
-                  },
-                ]}
-                variant="primary"
-                data-test="add-to-cart"
-                analytics={{
-                  products: [productAnalytics],
-                  totalValue: parseFloat(productAnalytics.price),
-                }}
-              >
-                <Text
-                  as="span"
-                  className="flex items-center justify-center gap-2"
+
+        {/* Action buttons + status messages */}
+        <div ref={ctaRef} className="grid gap-3">
+          {selectedVariant && (
+            <>
+              {isOutOfStock ? (
+                <Button variant="secondary" disabled>
+                  <Text>Sold Out</Text>
+                </Button>
+              ) : (
+                <AddToCartButton
+                  lines={[
+                    {
+                      merchandiseId: selectedVariant.id,
+                      quantity,
+                    },
+                  ]}
+                  variant="primary"
+                  data-test="add-to-cart"
+                  analytics={{
+                    products: [productAnalytics],
+                    totalValue: parseFloat(productAnalytics.price),
+                  }}
                 >
-                  <span>Add to Cart</span> <span>·</span>{' '}
-                  <Money
-                    withoutTrailingZeros
-                    data={selectedVariant?.price!}
+                  <Text
                     as="span"
-                  />
-                  {isOnSale && (
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <span>{buttonLabel}</span> <span>·</span>{' '}
                     <Money
                       withoutTrailingZeros
-                      data={selectedVariant?.compareAtPrice!}
+                      data={selectedVariant.price!}
                       as="span"
-                      className="opacity-50 strike"
                     />
-                  )}
-                </Text>
-              </AddToCartButton>
-            ) : null}
-            {!isOutOfStock && isPreorder && !isBackorder ? (
-              <AddToCartButton
-                lines={[
-                  {
-                    merchandiseId: selectedVariant.id,
-                    quantity,
-                  },
-                ]}
-                variant="primary"
-                data-test="add-to-cart"
-                analytics={{
-                  products: [productAnalytics],
-                  totalValue: parseFloat(productAnalytics.price),
-                }}
-              >
-                <Text
-                  as="span"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <span>Preorder Now</span> <span>·</span>{' '}
-                  <Money
-                    withoutTrailingZeros
-                    data={selectedVariant?.price!}
-                    as="span"
-                  />
-                  {isOnSale && (
-                    <Money
-                      withoutTrailingZeros
-                      data={selectedVariant?.compareAtPrice!}
-                      as="span"
-                      className="opacity-50 strike"
-                    />
-                  )}
-                </Text>
-              </AddToCartButton>
-            ) : null}
-
-            {!isOutOfStock && isBackorder && !isPreorder ? (
-              <AddToCartButton
-                lines={[
-                  {
-                    merchandiseId: selectedVariant.id,
-                    quantity,
-                  },
-                ]}
-                variant="primary"
-                data-test="add-to-cart"
-                analytics={{
-                  products: [productAnalytics],
-                  totalValue: parseFloat(productAnalytics.price),
-                }}
-              >
-                <Text
-                  as="span"
-                  className="flex items-center justify-center gap-2"
-                >
-                  <span>Backorder Now</span> <span>·</span>{' '}
-                  <Money
-                    withoutTrailingZeros
-                    data={selectedVariant?.price!}
-                    as="span"
-                  />
-                  {isOnSale && (
-                    <Money
-                      withoutTrailingZeros
-                      data={selectedVariant?.compareAtPrice!}
-                      as="span"
-                      className="opacity-50 strike"
-                    />
-                  )}
-                </Text>
-              </AddToCartButton>
-            ) : null}
-
-            {!isOutOfStock && !isPreorder && !isBackorder ? (
-              <Text as="span">
-                {isVideomancer
-                  ? 'Ships in 24 hours.'
-                  : 'Ships in 24 hours.'}
-              </Text>
-            ) : null}
-
-            {!isOutOfStock &&
-              !isBackorder &&
-              selectedVariant?.quantityAvailable != null &&
-              selectedVariant.quantityAvailable > 0 &&
-              selectedVariant.quantityAvailable <= 5 && (
-                <Text as="span" className="text-red-500 font-medium">
-                  Only {selectedVariant.quantityAvailable} left in stock
-                </Text>
+                  </Text>
+                </AddToCartButton>
               )}
 
-            {isOutOfStock ? (
-              <Text as="span">
-                Out of stock. Please{' '}
-                <Link to={'mailto:sales@lzxindustries.net'}>contact us</Link> to
-                let us know about your interest in this item!
-              </Text>
-            ) : null}
+              {/* Status message */}
+              {statusMessage}
 
-            {!isOutOfStock && isPreorder && !isBackorder ? (
-              <Text as="span">
-                This product is not shipping, but is available for preorder.
-                Please place your order only if you are prepared to wait.
-              </Text>
-            ) : null}
+              {!isOutOfStock && (
+                <ShopPayButton
+                  width="100%"
+                  variantIds={[selectedVariant.id!]}
+                  storeDomain={storeDomain}
+                />
+              )}
 
-            {!isOutOfStock && isBackorder && !isPreorder ? (
-              <Text as="span">Ship in 4-6 weeks.</Text>
-            ) : null}
-
-            {!isOutOfStock && (
-              <ShopPayButton
-                width="100%"
-                variantIds={[selectedVariant?.id!]}
-                storeDomain={storeDomain}
+              <WishlistButton
+                handle={product.handle}
+                title={product.title}
+                variantId={selectedVariant.id ?? ''}
+                image={selectedVariant.image?.url}
+                price={selectedVariant.price?.amount}
               />
-            )}
-            <WishlistButton
-              handle={product.handle}
-              title={product.title}
-              variantId={selectedVariant?.id ?? ''}
-              image={selectedVariant?.image?.url}
-              price={selectedVariant?.price?.amount}
-            />
-          </div>
-        )}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* Sticky mobile Add to Cart bar */}
+      {selectedVariant && !isOutOfStock && showStickyBar && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] px-4 py-3 md:hidden">
+          <div className="flex items-center gap-3 max-w-lg mx-auto">
+            <div className="flex-1 min-w-0">
+              <div className="text-sm font-semibold truncate">{product.title}</div>
+              <Money
+                withoutTrailingZeros
+                data={selectedVariant.price!}
+                as="div"
+                className="text-sm font-bold"
+              />
+            </div>
+            <AddToCartButton
+              lines={[{merchandiseId: selectedVariant.id, quantity}]}
+              variant="primary"
+              width="auto"
+              analytics={{
+                products: [productAnalytics],
+                totalValue: parseFloat(productAnalytics.price),
+              }}
+            >
+              <Text as="span" className="text-sm whitespace-nowrap">
+                {buttonLabel}
+              </Text>
+            </AddToCartButton>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

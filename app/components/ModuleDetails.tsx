@@ -3,7 +3,9 @@ import type {
   Media,
   ExternalVideo,
   MediaImage,
+  Metafield,
 } from '@shopify/hydrogen/storefront-api-types';
+import {Disclosure} from '@headlessui/react';
 import React, {useMemo} from 'react';
 import ProductMediaGallery, {
   type MediaGalleryItem,
@@ -157,6 +159,26 @@ export function ModuleDetails({
     return getGalleryMedia(product);
   }, [product]);
 
+  const metafields = (product as any).metafields as (Metafield | null)[] | undefined;
+  const specs = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'specs')?.value;
+  const features = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'features')?.value;
+  const compatibility = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'compatibility')?.value;
+
+  const sections: {title: string; content: string; defaultOpen?: boolean}[] = [];
+
+  if (product.descriptionHtml) {
+    sections.push({title: 'Description', content: product.descriptionHtml, defaultOpen: true});
+  }
+  if (specs) {
+    sections.push({title: 'Specs', content: specs});
+  }
+  if (features) {
+    sections.push({title: 'Features', content: features});
+  }
+  if (compatibility) {
+    sections.push({title: 'Compatibility', content: compatibility});
+  }
+
   return (
     <div
       key="ModuleDetails"
@@ -164,17 +186,44 @@ export function ModuleDetails({
     >
       <ProductMediaGallery media={media}></ProductMediaGallery>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
-        <div className="flex flex-wrap flex-row px-8">
-          <div className="basis-[100%] md:basis-1/2 pb-8">
-            <div className="font-sans font-bold text-3xl uppercase">
-              {product.title}
-            </div>
-          </div>
-          <div className="basis-[100%] md:basis-1/2 pb-8">{children}</div>
+        <div className="flex flex-col gap-6 px-8 pt-4 pb-8">
+          <h1 className="font-sans font-bold text-3xl md:text-4xl uppercase">
+            {product.title}
+          </h1>
+          <div>{children}</div>
         </div>
-        <article key="ModuleDetailsArticle" className="prose px-8">
-          <p dangerouslySetInnerHTML={{__html: product.descriptionHtml}}></p>
-        </article>
+        {sections.length > 0 && (
+          <div className="border-t border-primary/10 px-8">
+            {sections.map((section) => (
+              <Disclosure key={section.title} defaultOpen={section.defaultOpen}>
+                {({open}) => (
+                  <div className="border-b border-primary/10">
+                    <Disclosure.Button className="flex w-full items-center justify-between py-4 text-left">
+                      <span className="text-base font-semibold uppercase tracking-wide">
+                        {section.title}
+                      </span>
+                      <svg
+                        className={`h-5 w-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="pb-4">
+                      <div
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{__html: section.content}}
+                      />
+                    </Disclosure.Panel>
+                  </div>
+                )}
+              </Disclosure>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

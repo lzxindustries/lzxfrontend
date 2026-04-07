@@ -5,7 +5,7 @@ import type {
   MediaImage,
 } from '@shopify/hydrogen/storefront-api-types';
 import {Image} from '@shopify/hydrogen';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {cropImageByTransparency} from '~/lib/utils';
 
 export enum MediaGalleryItemType {
@@ -35,6 +35,16 @@ const cropImageWithCache = (src: string): Promise<string> => {
   });
 };
 
+const getYoutubeIdFromEmbed = (embedUrl: string): string | null => {
+  try {
+    const url = new URL(embedUrl);
+    const segments = url.pathname.split('/').filter(Boolean);
+    return segments.length > 0 ? segments[segments.length - 1] : null;
+  } catch {
+    return null;
+  }
+};
+
 const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
@@ -44,6 +54,8 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const [preCroppedImages, setPreCroppedImages] = useState<(string | null)[]>(
     [],
   );
+
+  const thumbnailContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -68,6 +80,16 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
       isMounted = false;
     };
   }, [media]);
+
+  // Scroll active thumbnail into view
+  useEffect(() => {
+    const container = thumbnailContainerRef.current;
+    if (!container) return;
+    const activeThumb = container.children[currentSlide] as HTMLElement | undefined;
+    if (activeThumb) {
+      activeThumb.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+    }
+  }, [currentSlide]);
 
   return (
     <div className="w-full lg:w-1/2 card-image">
@@ -98,14 +120,12 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
           </button>
           <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
             {media[currentSlide].type === MediaGalleryItemType.IMAGE ? (
-              preCroppedImages[currentSlide] ? (
-                <Image
-                  src={preCroppedImages[currentSlide] ?? undefined}
-                  alt={media[currentSlide].name}
-                  className="w-full h-full object-contain"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                />
-              ) : null
+              <Image
+                src={preCroppedImages[currentSlide] ?? media[currentSlide].src}
+                alt={media[currentSlide].name}
+                className="w-full h-full object-contain"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
             ) : media[currentSlide].type === MediaGalleryItemType.VIDEO ? (
               <div className="w-full ">
                 <div className="relative inset-y-[25%]">
@@ -145,23 +165,51 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
         </div>
         {media.length > 1 && (
           <div
-            className="flex justify-center items-center mb-2 mt-0 pt-0"
-            style={{
-              visibility: media.length <= 1 ? 'hidden' : 'visible',
-            }}
+            ref={thumbnailContainerRef}
+            className="flex gap-2 px-2 py-2 overflow-x-auto snap-x snap-mandatory hiddenScroll"
           >
-            <div className="inline-flex justify-center items-center bg-white rounded-full any-hover:hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
-              {media.map((_, index) => (
-                <button
-                  key={`slide-${index}`}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 mx-1 rounded-full any-hover:hover:bg-black ${
-                    index === currentSlide ? 'bg-black' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Slide ${index + 1}`}
-                />
-              ))}
-            </div>
+            {media.map((item, index) => (
+              <button
+                key={`thumb-${index}`}
+                onClick={() => setCurrentSlide(index)}
+                className={`relative flex-shrink-0 w-16 h-16 rounded overflow-hidden snap-start transition-all duration-200 ${
+                  index === currentSlide
+                    ? 'ring-2 ring-black ring-offset-1'
+                    : 'ring-1 ring-gray-300 opacity-70 hover:opacity-100'
+                }`}
+                aria-label={`View ${item.name}`}
+              >
+                {item.type === MediaGalleryItemType.IMAGE ? (
+                  <img
+                    src={preCroppedImages[index] ?? item.src}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                    {(() => {
+                      const ytId = getYoutubeIdFromEmbed(item.src);
+                      return ytId ? (
+                        <img
+                          src={`https://img.youtube.com/vi/${ytId}/default.jpg`}
+                          alt={item.name}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      ) : null;
+                    })()}
+                    <svg
+                      className="absolute inset-0 m-auto w-6 h-6 text-white drop-shadow-md"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                )}
+              </button>
+            ))}
           </div>
         )}
       </div>

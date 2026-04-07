@@ -337,6 +337,7 @@ export async function cropImageByTransparency(src: string): Promise<string> {
     const img = new Image();
     img.crossOrigin = 'Anonymous';
     img.onload = () => {
+      try {
       const canvas = document.createElement('canvas');
       canvas.width = img.width;
       canvas.height = img.height;
@@ -440,6 +441,9 @@ export async function cropImageByTransparency(src: string): Promise<string> {
         return resolve(croppedCanvas.toDataURL());
       }
       resolve(src);
+      } catch {
+        resolve(src);
+      }
     };
     img.onerror = () => resolve(src);
     img.src = src;
