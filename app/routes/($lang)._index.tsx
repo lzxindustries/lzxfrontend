@@ -105,7 +105,7 @@ const ACTIVE_COLLECTION_QUERY = `#graphql
     collection(handle: $handle) {
       id
       handle
-      products(first: $pageBy, sortKey: BEST_SELLING) {
+      products(first: $pageBy) {
         nodes {
           ...ProductCard
         }
