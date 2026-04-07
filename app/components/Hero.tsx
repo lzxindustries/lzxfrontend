@@ -44,7 +44,7 @@ export function Hero() {
             as="p"
             className="vm-reveal vm-reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
           >
-            Videomancer is a real-time FPGA video effects instrument for live performance, glitch art,
+            Videomancer is a hardware video effects console for live performance, glitch art,
             format conversion, and audio-reactive workflows.
           </Text>
 
