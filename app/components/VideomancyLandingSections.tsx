@@ -63,8 +63,8 @@ const sourcePairs = [
   {
     title: 'Signal Scramble',
     program: 'scramble',
-    source: '/images/before-after/scramble_fruit_source.png',
-    processed: '/images/before-after/scramble_fruit_processed.png',
+    source: '/images/before-after/scramble_sunset_source.png',
+    processed: '/images/before-after/scramble_sunset_processed.png',
   },
   {
     title: 'Scanimate Warp',
@@ -112,7 +112,7 @@ export function VideomancyLandingSections() {
               Watch closely
             </Heading>
             <Text as="p" className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-white/60 md:text-lg">
-              Same source. Same instrument. One program between ordinary and extraordinary.
+              One instrument. One program between ordinary and extraordinary.
             </Text>
           </div>
 
