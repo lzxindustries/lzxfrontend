@@ -21,8 +21,8 @@ export function Grid({
     default: `grid-cols-1 ${items === 2 && 'md:grid-cols-2'}  ${
       items === 3 && 'sm:grid-cols-3'
     } ${items > 3 && 'md:grid-cols-3'} ${items >= 4 && 'lg:grid-cols-4'}`,
-    products: `sm:grid-cols-4 md:grid-cols-8 lg:grid-cols-12`,
-    patches: `sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-9`,
+    products: `sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8`,
+    patches: `sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6`,
     auto: 'auto-cols-auto',
     blog: 'grid-cols-1 md:grid-cols-2',
   };
