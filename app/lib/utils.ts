@@ -142,8 +142,13 @@ function parseItem(customPrefixes = {}) {
   return function (item: MenuItem): EnhancedMenuItem {
     if (!item?.url || !item?.type) {
       console.warn('Invalid menu item.  Must include a url and type.');
-      // @ts-ignore
-      return;
+      return {
+        ...item,
+        isExternal: false,
+        target: '_self',
+        to: '/',
+        items: [],
+      } as EnhancedMenuItem;
     }
 
     // extract path from url because we don't need the origin on internal to attributes

@@ -45,7 +45,7 @@ export function ModuleLegendPanel({
             }}
           >
             <LegendRefDes
-              selected={activeRefDes == obj.refDes ? true : false}
+              selected={activeRefDes === obj.refDes ? true : false}
               refDes={obj.refDes}
             />
           </div>
@@ -64,7 +64,7 @@ export function ModuleLegendPanel({
             }}
           >
             <LegendRefDes
-              selected={activeRefDes == obj.refDes ? true : false}
+              selected={activeRefDes === obj.refDes ? true : false}
               refDes={obj.refDes}
             />
           </div>

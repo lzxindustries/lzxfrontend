@@ -44,11 +44,12 @@ function root({
       name: shop.name,
       logo: shop.brand?.logo?.image?.url,
       sameAs: [
-        'https://twitter.com/shopify',
-        'https://facebook.com/shopify',
-        'https://instagram.com/shopify',
-        'https://youtube.com/shopify',
-        'https://tiktok.com/@shopify',
+        'https://www.facebook.com/lzxindustries',
+        'https://www.instagram.com/lzxindustries',
+        'https://www.youtube.com/lzxindustries',
+        'https://community.lzxindustries.net',
+        'https://x.com/laboratlzx',
+        'https://www.tiktok.com/@lzxindustries',
       ],
       url,
       potentialAction: {
@@ -62,10 +63,10 @@ function root({
 
 function home(): SeoConfig<WebPage> {
   return {
-    title: 'Analog / Digital Video Synthesizers - Video Art', // Home page title tag update
-    titleTemplate: '%s | LZX Industries',
+    title: 'LZX Industries — Video Synthesis Instruments',
+    titleTemplate: '%s',
     description:
-      'Creative tools for video synthesis and analog image processing. Analog and digital video equipment manufactured in Portland, Oregon.', // update home page meta description
+      'Real-time FPGA video effects for live performance, glitch art, format conversion, and audio-reactive visuals. Connect your video source and start creating.',
     robots: {
       noIndex: false,
       noFollow: false,
@@ -77,7 +78,23 @@ function home(): SeoConfig<WebPage> {
     },
   };
 }
-
+function catalog(): SeoConfig<WebPage> {
+  return {
+    title: 'Catalog',
+    titleTemplate: '%s | LZX Industries',
+    description:
+      'Browse the full LZX Industries product catalog. Video synthesis instruments, modules, and accessories.',
+    robots: {
+      noIndex: false,
+      noFollow: false,
+    },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Catalog',
+    },
+  };
+}
 function productJsonLd({
   product,
   selectedVariant,
@@ -421,6 +438,7 @@ function policies({
 export const seoPayload = {
   article,
   blog,
+  catalog,
   collection,
   home,
   listCollections,

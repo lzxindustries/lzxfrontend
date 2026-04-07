@@ -108,6 +108,11 @@ export function ProductCard({
                 <div className="loader border-8 border-primary border-t-transparent rounded-full w-14 h-14 animate-spin" />
               </div>
             )}
+            {firstVariant?.quantityAvailable != null && firstVariant.quantityAvailable > 0 && (
+              <div className="absolute top-2 right-2 z-10 bg-green-600 text-white text-xs font-normal px-2 py-1 rounded">
+                Ready to Ship
+              </div>
+            )}
             {image && (
               <img
                 src={image.url}

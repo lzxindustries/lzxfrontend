@@ -42,6 +42,7 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
     title
     publishedAt
     handle
+    availableForSale
     variants(first: 1) {
       nodes {
         id
@@ -59,6 +60,7 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
           amount
           currencyCode
         }
+        quantityAvailable
         selectedOptions {
           name
           value

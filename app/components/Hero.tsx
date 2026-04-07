@@ -1,167 +1,96 @@
-import {MediaFile} from '@shopify/hydrogen';
-import type {
-  MediaImage,
-  Media,
-  Metafield,
-  Video as MediaVideo,
-} from '@shopify/hydrogen/storefront-api-types';
-import type {SerializeFrom} from '@shopify/remix-oxygen';
-import clsx from 'clsx';
 import {Link} from '~/components/Link';
 import {Heading, Text} from '~/components/Text';
 
-export interface CollectionHero {
-  byline: Metafield;
-  cta: Metafield;
-  handle: string;
-  heading: Metafield;
-  height?: 'full';
-  loading?: 'eager' | 'lazy';
-  spread: Metafield;
-  spreadSecondary: Metafield;
-  top?: boolean;
-}
-
-/**
- * Hero component that renders metafields attached to collection resources
- **/
-export function Hero({
-  byline,
-  cta,
-  handle,
-  heading,
-  height,
-  loading,
-  spread,
-  spreadSecondary,
-  top,
-}: SerializeFrom<CollectionHero>) {
+export function Hero() {
   return (
-    <section className="px-4 w-full">
-      <Heading format as="h2" size="display" className="w-full max-w-max">
-        Welcome to LZX Industries
-      </Heading>
-      <Text format as="p" size="lead" className="w-full max-w-max">
-        We make standalone instruments and EuroRack format synthesizer modules
-        for video generation and processing.{' '}
-        <Link className={' underline text-blue-500'} to={`/patches`}>
-          Visit our patch gallery
-        </Link>{' '}
-        to see what that looks like. Check out our{' '}
-        <Link
-          className={' underline text-blue-500'}
-          to={`/products/double-vision-system`}
+    <section className="relative isolate min-h-[100svh] lg:h-[100svh] overflow-hidden bg-black">
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/media/hero_poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-35"
+      >
+        <source src="/media/hero_loop.webm" type="video/webm" />
+        <source src="/media/hero_loop.mp4" type="video/mp4" />
+      </video>
+
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(80,76,159,0.5)_0%,_transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+
+      <div className="relative z-10 mx-auto grid min-h-[100svh] lg:h-full w-full max-w-7xl items-center gap-8 px-6 py-16 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-12">
+        <div className="flex flex-col justify-center">
+          <p className="vm-reveal mb-5 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-mystic-light backdrop-blur-sm">
+            Video Effects Console
+          </p>
+
+          <Heading
+            as="h1"
+            className="vm-reveal vm-reveal-delay-1 font-display max-w-[14ch] text-3xl font-black uppercase leading-[1.02] tracking-[0.06em] text-moonwax sm:text-4xl md:text-5xl lg:text-6xl"
+          >
+            Something remarkable is about to happen to your video signal
+          </Heading>
+
+          <p className="vm-reveal vm-reveal-delay-2 font-hand mt-4 text-lg text-moonwax/75 md:text-xl lg:text-2xl">
+            Built for the stage. Built for the studio. Built for the dark room at midnight.
+          </p>
+
+          <Text
+            as="p"
+            className="vm-reveal vm-reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
+          >
+            Real-time FPGA video effects for live performance, glitch art,
+            format conversion, and audio-reactive workflows.
+          </Text>
+
+          <div className="vm-reveal vm-reveal-delay-3 mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
+            <Link
+              to="/products/videomancer"
+              className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
+            >
+              Shop now
+            </Link>
+            <Link
+              to="https://docs.lzxindustries.net/docs/instruments/videomancer"
+              className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
+            >
+              See docs
+            </Link>
+          </div>
+
+          <p className="vm-reveal vm-reveal-delay-3 mt-4 text-xs uppercase tracking-[0.18em] text-white/50">
+            Ships in 24 hours
+          </p>
+        </div>
+
+        {/* Floating product image */}
+        <div className="flex items-center justify-center">
+          <img
+            src="/images/videomancer/hero-product.png"
+            alt="Videomancer — FPGA video synthesis instrument"
+            className="vm-reveal vm-reveal-delay-4 w-full max-w-[280px] drop-shadow-[0_0_60px_rgba(80,76,159,0.4)] sm:max-w-[340px] lg:max-w-[480px]"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 motion-reduce:hidden">
+        <svg
+          className="h-6 w-6 animate-bounce text-white/40"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
         >
-          Double Vision System
-        </Link>{' '}
-        for a complete system available now. Get{' '}
-        <Link className={' underline text-blue-500'} to={`/products/esg3`}>
-          our ESG3 module
-        </Link>{' '}
-        to add video output to your EuroRack audio synthesizer. When you&apos;d
-        like to engage with our community, visit our{' '}
-        <Link
-          className={' underline text-blue-500'}
-          to={`https://community.lzxindustries.net`}
-        >
-          forum
-        </Link>
-        ,{' '}
-        <Link
-          className={' underline text-blue-500'}
-          to={`https://discord.gg/7xzD4XzhGn`}
-        >
-          chat on Discord
-        </Link>{' '}
-        or{' '}
-        <Link
-          className={' underline text-blue-500'}
-          to={`mailto:sales@lzxindustries.net`}
-        >
-          write us an e-mail
-        </Link>
-        .
-      </Text>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
+        </svg>
+      </div>
     </section>
-    // <Link to={`/collections/${handle}`}>
-    //   <section
-    //     className={clsx(
-    //       'relative justify-end flex flex-col w-full',
-    //       '-mt-nav',
-    //       height === 'full'
-    //         ? 'h-screen'
-    //         : 'aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]',
-    //     )}
-    //   >
-    //     <div className="absolute inset-0 grid flex-grow grid-flow-col pointer-events-none auto-cols-fr -z-10 content-stretch overflow-clip">
-    //       {spread?.reference && (
-    //         <div>
-    //           <SpreadMedia
-    //             sizes={
-    //               spreadSecondary?.reference
-    //                 ? '(min-width: 48em) 50vw, 100vw'
-    //                 : '100vw'
-    //             }
-    //             data={spread.reference as Media}
-    //             loading={loading}
-    //           />
-    //         </div>
-    //       )}
-    //       {spreadSecondary?.reference && (
-    //         <div className="hidden md:block">
-    //           <SpreadMedia
-    //             sizes="50vw"
-    //             data={spreadSecondary.reference as Media}
-    //             loading={loading}
-    //           />
-    //         </div>
-    //       )}
-    //     </div>
-    //     <div className="flex flex-col items-baseline justify-between gap-4 px-6 py-8 sm:px-8 md:px-12 bg-gradient-to-t dark:from-contrast/60 dark:text-primary from-primary/60 text-contrast">
-    //       {heading?.value && (
-    //         <Heading format as="h2" size="display" className="max-w-md">
-    //           {heading.value}
-    //         </Heading>
-    //       )}
-    //       {byline?.value && (
-    //         <Text format width="narrow" as="p" size="lead">
-    //           {byline.value}
-    //         </Text>
-    //       )}
-    //       {cta?.value && <Text size="lead">{cta.value}</Text>}
-    //     </div>
-    //   </section>
-    // </Link>
-  );
-}
-
-interface SpreadMediaProps {
-  data: Media | MediaImage | MediaVideo;
-  loading?: HTMLImageElement['loading'];
-  sizes: string;
-}
-
-function SpreadMedia({data, loading, sizes}: SpreadMediaProps) {
-  return (
-    <MediaFile
-      data={data}
-      className="block object-cover w-full h-full"
-      mediaOptions={{
-        video: {
-          controls: false,
-          muted: true,
-          loop: true,
-          playsInline: true,
-          autoPlay: true,
-          previewImageOptions: {src: data.previewImage?.url ?? ''},
-        },
-        image: {
-          loading,
-          crop: 'center',
-          sizes,
-          alt: data.alt || '',
-        },
-      }}
-    />
   );
 }

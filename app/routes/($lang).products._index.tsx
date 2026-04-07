@@ -98,7 +98,14 @@ export default function AllProducts() {
             nextLinkRef,
             isLoading,
           }) => {
-            const itemsMarkup = nodes.map((product, i) => (
+            const sortedNodes = [...nodes].sort((a, b) => {
+              const aQty = a.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+              const bQty = b.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+              const aInStock = aQty > 0 ? 1 : 0;
+              const bInStock = bQty > 0 ? 1 : 0;
+              return bInStock - aInStock;
+            });
+            const itemsMarkup = sortedNodes.map((product, i) => (
               <ProductCard
                 key={product.id}
                 product={product}

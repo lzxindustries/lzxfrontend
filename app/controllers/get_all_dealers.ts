@@ -11,7 +11,7 @@ export async function getAllDealers(context: AppLoadContext) {
 
   const dealer_views: DealerView[] = [];
 
-  dealer_datas.map((dealer_data) => {
+  dealer_datas.forEach((dealer_data) => {
     const dealer_view: DealerView = {
       name: dealer_data.name,
       url: dealer_data.url,

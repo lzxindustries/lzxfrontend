@@ -8,6 +8,8 @@ import {
   FaTwitch,
   FaYoutube,
   FaFacebook,
+  FaTiktok,
+  FaTwitter,
 } from 'react-icons/fa';
 import {MdForum} from 'react-icons/md';
 import Logo from './Logo';
@@ -21,25 +23,16 @@ export function Header({
 }) {
   const iconSize = 16;
   const logoSize = 24;
-  const isPatches = url.includes('/patches');
+  const isHome = url === '/' || url === '';
   const isModules = url.includes('/modules');
+  const isVideomancer = url.includes('/products/videomancer');
+  const isCatalog = url.includes('/catalog');
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
   const isSearch = url.includes('/search');
   const isGettingStarted = url.includes('https://docs.lzxindustries.net');
   const isDealers = url.includes('/dealers');
   const isBlog = url.includes('https://docs.lzxindustries.net/blog');
-  const isInStock = url.includes('/?available=true');
-  const isCatalog =
-    !isPatches &&
-    !isModules &&
-    !isCart &&
-    !isAccount &&
-    !isSearch &&
-    !isGettingStarted &&
-    !isInStock &&
-    !isDealers &&
-    !isBlog;
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -52,15 +45,26 @@ export function Header({
             tabIndex={-1}
             className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li key="catalog">
-              <a className={isCatalog ? 'active' : ''} href="/">
-                Catalog
+            <li key="home">
+              <a
+                className={isHome ? 'active' : ''}
+                href="/"
+              >
+                Home
               </a>
             </li>
-            {/* <li><a className={isInStock ? "active" : ""} href="/?available=true">In Stock</a></li> */}
-            <li key="patches">
-              <a className={isPatches ? 'active' : ''} href="/patches">
-                Patches
+            <li key="videomancer">
+              <a
+                className={isVideomancer ? 'active' : ''}
+                href="/products/videomancer"
+                style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
+              >
+                Videomancer
+              </a>
+            </li>
+            <li key="catalog">
+              <a className={isCatalog ? 'active' : ''} href="/catalog">
+                Shop
               </a>
             </li>
             {/* <li tabIndex={0}>
@@ -95,6 +99,15 @@ export function Header({
                 Blog
               </a>
             </li>
+            <li key="community">
+              <a
+                target="_blank"
+                href="https://community.lzxindustries.net"
+                rel="noreferrer"
+              >
+                Community
+              </a>
+            </li>
             {/* <li key="firmware">
               <a
                 className={''}
@@ -114,14 +127,22 @@ export function Header({
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-2">
           <li>
-            <a className={isCatalog ? 'active' : ''} href="/">
-              Catalog
+            <a className={isHome ? 'active' : ''} href="/">
+              Home
             </a>
           </li>
-          {/* <li><a className={isInStock ? "active" : ""} href="/?available=true">In Stock</a></li> */}
           <li>
-            <a className={isPatches ? 'active' : ''} href="/patches">
-              Patches
+            <a
+              className={isVideomancer ? 'active' : ''}
+              href="/products/videomancer"
+              style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
+            >
+              Videomancer
+            </a>
+          </li>
+          <li>
+            <a className={isCatalog ? 'active' : ''} href="/catalog">
+              Shop
             </a>
           </li>
           {/* <li tabIndex={0}>
@@ -199,7 +220,7 @@ export function Header({
         <a
           className="px-2"
           target="_blank"
-          href="https://www.twitch.com/lzxindustries"
+          href="https://www.twitch.tv/lzxindustries"
           rel="noreferrer"
         >
           <FaTwitch size={iconSize} />
@@ -211,6 +232,22 @@ export function Header({
           rel="noreferrer"
         >
           <FaYoutube size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://www.tiktok.com/@lzxindustries"
+          rel="noreferrer"
+        >
+          <FaTiktok size={iconSize} />
+        </a>
+        <a
+          className="px-2"
+          target="_blank"
+          href="https://x.com/lzxindustries"
+          rel="noreferrer"
+        >
+          <FaTwitter size={iconSize} />
         </a>
       </div>
       <div className="navbar-end">

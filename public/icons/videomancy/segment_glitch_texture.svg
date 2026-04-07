@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Videomancy Web Campaign — Segment Icon: Glitch & Texture
+  Template: Editable placeholder — replace paths with final design
+  Spec: 64×64, Moonwax #FCF3D0, abstract glitch/shatter motif
+  Copyright (C) 2026 LZX Industries LLC. All Rights Reserved.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gt-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FCF3D0"/>
+      <stop offset="100%" stop-color="#FCF3D0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Shattered diamond grid — glitch aesthetic -->
+  <g fill="none" stroke="url(#gt-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer frame displaced / fragmented -->
+    <path d="M16 12 L48 12 L52 16 L52 48 L48 52 L16 52 L12 48 L12 16 Z"/>
+
+    <!-- Interior fracture lines (glitch) -->
+    <line x1="12" y1="28" x2="28" y2="24"/>
+    <line x1="28" y1="24" x2="36" y2="32"/>
+    <line x1="36" y1="32" x2="52" y2="28"/>
+
+    <line x1="20" y1="52" x2="28" y2="36"/>
+    <line x1="36" y1="36" x2="44" y2="52"/>
+
+    <!-- Displaced fragment (shifted piece) -->
+    <rect x="22" y="14" width="12" height="8" rx="1" opacity="0.6" transform="translate(2, 2)"/>
+  </g>
+
+  <!-- Texture dots (noise pattern) -->
+  <g fill="#FCF3D0" opacity="0.4">
+    <circle cx="18" cy="20" r="1.5"/>
+    <circle cx="42" cy="18" r="1"/>
+    <circle cx="38" cy="42" r="1.5"/>
+    <circle cx="24" cy="44" r="1"/>
+    <circle cx="46" cy="38" r="1"/>
+  </g>
+</svg>

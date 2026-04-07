@@ -29,8 +29,8 @@ export async function loader({
   context: {storefront},
 }: LoaderFunctionArgs) {
   const searchParams = new URL(request.url).searchParams;
-  const cursor = searchParams.get('cursor')!;
-  const searchTerm = searchParams.get('q')!;
+  const cursor = searchParams.get('cursor') ?? undefined;
+  const searchTerm = searchParams.get('q') ?? '';
 
   const data = await storefront.query<{
     products: ProductConnection;

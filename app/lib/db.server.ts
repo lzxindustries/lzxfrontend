@@ -28,19 +28,20 @@ export async function getDataCollection(
   let data = {documents: [{}]};
 
   try {
-    data = await fetch(url, config).then((response) => response.json());
-  } catch (error) {
-    if (context.NODE_ENV === 'development') {
-      if (error instanceof Error) {
-        throw new Error(`There was an error: ${error.message}`);
-      } else {
-        throw new Error('There was an unknown error');
-      }
+    const response = await fetch(url, config);
+    if (!response.ok) {
+      throw new Error(`MongoDB Data API error: ${response.status} ${response.statusText}`);
     }
+    data = await response.json();
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Data API error (${collection}): ${error.message}`);
+    }
+    throw new Error(`Data API unknown error (${collection})`);
   }
 
   // console.log(data)
-  return data.documents;
+  return data.documents ?? [];
 }
 
 export async function getDataDocument(
@@ -74,17 +75,18 @@ export async function getDataDocument(
   let data = {document: {}};
 
   try {
-    data = await fetch(url, config).then((response) => response.json());
-  } catch (error) {
-    if (context.NODE_ENV === 'development') {
-      if (error instanceof Error) {
-        throw new Error(`There was an error: ${error.message}`);
-      } else {
-        throw new Error('There was an unknown error');
-      }
+    const response = await fetch(url, config);
+    if (!response.ok) {
+      throw new Error(`MongoDB Data API error: ${response.status} ${response.statusText}`);
     }
+    data = await response.json();
+  } catch (error) {
+    if (error instanceof Error) {
+      throw new Error(`Data API error (${collection}): ${error.message}`);
+    }
+    throw new Error(`Data API unknown error (${collection})`);
   }
 
   // console.log(data)
-  return data.document;
+  return data.document ?? {};
 }

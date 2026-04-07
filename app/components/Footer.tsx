@@ -4,6 +4,8 @@ import {
   FaTwitch,
   FaYoutube,
   FaFacebook,
+  FaTiktok,
+  FaTwitter,
 } from 'react-icons/fa';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {CountrySelector} from './CountrySelector';
@@ -24,6 +26,25 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Resources</span>
+          <a className="link link-hover" href="/products/videomancer">
+            Videomancer Product Page
+          </a>
+          <a
+            className="link link-hover"
+            target="_blank"
+            href="https://docs.lzxindustries.net/docs/instruments/videomancer"
+            rel="noreferrer"
+          >
+            Videomancer Docs
+          </a>
+          <a
+            className="link link-hover"
+            target="_blank"
+            href="https://docs.lzxindustries.net/blog"
+            rel="noreferrer"
+          >
+            Blog
+          </a>
           <a
             className="link link-hover"
             target="_blank"
@@ -83,7 +104,7 @@ export function Footer() {
         <div className="items-center grid-flow-col">
           <Logo size={iconSize} />
           <p>
-            © 2023 LZX Industries LLC <br />
+            © 2026 LZX Industries LLC <br />
             Creative instruments for video synthesis and analog image
             processing.
           </p>
@@ -113,7 +134,7 @@ export function Footer() {
             </a>
             <a
               target="_blank"
-              href="https://www.twitch.com/lzxindustries"
+              href="https://www.twitch.tv/lzxindustries"
               rel="noreferrer"
             >
               <FaTwitch size={iconSize} />
@@ -124,6 +145,20 @@ export function Footer() {
               rel="noreferrer"
             >
               <FaYoutube size={iconSize} />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.tiktok.com/@lzxindustries"
+              rel="noreferrer"
+            >
+              <FaTiktok size={iconSize} />
+            </a>
+            <a
+              target="_blank"
+              href="https://x.com/lzxindustries"
+              rel="noreferrer"
+            >
+              <FaTwitter size={iconSize} />
             </a>
           </div>
         </div>

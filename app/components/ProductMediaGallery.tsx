@@ -66,7 +66,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
     return () => {
       isMounted = false;
     };
-  }, [currentSlide, media]);
+  }, [media]);
 
   return (
     <div className="w-full lg:w-1/2 card-image">
@@ -100,7 +100,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
               preCroppedImages[currentSlide] ? (
                 <img
                   className="w-full h-full object-contain"
-                  src={preCroppedImages[currentSlide]}
+                  src={preCroppedImages[currentSlide] ?? undefined}
                   alt={media[currentSlide].name}
                 />
               ) : null
@@ -151,7 +151,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
             <div className="inline-flex justify-center items-center bg-white rounded-full any-hover:hover:bg-gray-100 border border-gray-500 transition-colors duration-200 p-2 mx-auto">
               {media.map((_, index) => (
                 <button
-                  key={media.length > 1 ? media[index].name : ''}
+                  key={`slide-${index}`}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 mx-1 rounded-full any-hover:hover:bg-black ${
                     index === currentSlide ? 'bg-black' : 'bg-gray-300'

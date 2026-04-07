@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Videomancy Web Campaign — Segment Icon: Audio-Reactive
+  Template: Editable placeholder — replace paths with final design
+  Spec: 64×64, Moonwax #FCF3D0, abstract sine wave / audio-to-video motif
+  Copyright (C) 2026 LZX Industries LLC. All Rights Reserved.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="ar-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FCF3D0"/>
+      <stop offset="100%" stop-color="#FCF3D0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Audio-reactive: sine wave transforming into video signal -->
+  <g fill="none" stroke="url(#ar-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Smooth sine wave (audio input, left side) -->
+    <path d="M6 32 Q10 20 14 32 Q18 44 22 32 Q26 20 30 32"/>
+
+    <!-- Transition zone (audio → video) -->
+    <circle cx="32" cy="32" r="4" fill="#FCF3D0" opacity="0.3"/>
+
+    <!-- Stepped/quantized wave (video output, right side) -->
+    <path d="M34 32 L36 24 L38 24 L38 32 L40 32 L40 40 L42 40 L42 32 L44 32 L44 20 L46 20 L46 32 L48 32 L48 38 L50 38 L50 32 L52 32 L54 26 L56 26 L58 32"/>
+
+    <!-- VU meter bars (left bottom) -->
+    <line x1="10" y1="52" x2="10" y2="46"/>
+    <line x1="14" y1="52" x2="14" y2="44"/>
+    <line x1="18" y1="52" x2="18" y2="42"/>
+    <line x1="22" y1="52" x2="22" y2="46"/>
+
+    <!-- Video frame indicator (right bottom) -->
+    <rect x="42" y="44" width="14" height="10" rx="1"/>
+    <line x1="42" y1="48" x2="56" y2="48" opacity="0.5"/>
+  </g>
+</svg>

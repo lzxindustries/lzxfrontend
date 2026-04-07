@@ -23,13 +23,13 @@ export async function getAllPatches(context: AppLoadContext) {
     getDataCollection(context, 'PatchModule') as Promise<
       PatchModuleInterface[]
     >,
-    getDataCollection(context, 'PatchModule') as Promise<ModuleInterface[]>,
+    getDataCollection(context, 'Module') as Promise<ModuleInterface[]>,
     getDataCollection(context, 'Video') as Promise<VideoInterface[]>,
   ]);
 
   const patch_views: PatchView[] = [];
 
-  patch_datas.map((patch_data) => {
+  patch_datas.forEach((patch_data) => {
     const patch_view: PatchView = {
       name: patch_data.name,
       diagram: patch_data.diagram,
@@ -43,14 +43,14 @@ export async function getAllPatches(context: AppLoadContext) {
       modules: [],
     };
 
-    artist_datas.map((artist_data) => {
+    artist_datas.forEach((artist_data) => {
       if (patch_data.artist == artist_data._id)
         patch_view.artist.name = artist_data.name;
     });
 
     // videos
     patch_videos_data.forEach((patch_video) => {
-      if (patch_video.video == patch_data._id)
+      if (patch_video.patch == patch_data._id)
         videos_data.forEach((video) => {
           if (video._id == patch_video.video)
             patch_view.videos.push({
@@ -63,7 +63,7 @@ export async function getAllPatches(context: AppLoadContext) {
 
     // modules
     patch_modules_data.forEach((patch_module) => {
-      if (patch_module.module == patch_data._id)
+      if (patch_module.patch == patch_data._id)
         modules_data.forEach((module) => {
           if (module._id == patch_module.module)
             patch_view.modules.push({

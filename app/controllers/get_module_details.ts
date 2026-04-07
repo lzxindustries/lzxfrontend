@@ -89,10 +89,10 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
   };
 
   company_data.forEach((company) => {
-    if (module_data.company == company._id)
+    if (module_data.company == company._id) {
       module_view.company.name = company.name;
-    if (module_data.company == company._id)
       module_view.company.legalName = company.legalName;
+    }
   });
 
   // connectors
@@ -103,8 +103,10 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
     };
 
     parts_data.forEach((part) => {
-      if (connector.part == part._id) part_view.name = part.name;
-      if (connector.part == part._id) part_view.image = part.image;
+      if (connector.part == part._id) {
+        part_view.name = part.name;
+        part_view.image = part.image;
+      }
     });
 
     if (connector.module == module_data._id)
@@ -126,8 +128,10 @@ export async function getModuleDetails(context: AppLoadContext, id: string) {
     };
 
     parts_data.forEach((part) => {
-      if (control.part == part._id) part_view.name = part.name;
-      if (control.part == part._id) part_view.image = part.image;
+      if (control.part == part._id) {
+        part_view.name = part.name;
+        part_view.image = part.image;
+      }
     });
 
     if (control.module == module_data._id)

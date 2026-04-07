@@ -1,6 +1,6 @@
 import {useFetcher} from '@remix-run/react';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
-import {useEffect, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import {Button} from '~/components/Button';
 import {Grid} from '~/components/Grid';
 import {Link} from '~/components/Link';
@@ -63,10 +63,24 @@ export function ProductGrid({
     );
   }
 
+  const sortedProducts = useMemo(() => {
+    return [...products].sort((a, b) => {
+      // Pin Videomancer first
+      const aPin = (a as any).handle === 'videomancer' ? 1 : 0;
+      const bPin = (b as any).handle === 'videomancer' ? 1 : 0;
+      if (aPin !== bPin) return bPin - aPin;
+      const aQty = (a as any).variants?.nodes?.[0]?.quantityAvailable ?? 0;
+      const bQty = (b as any).variants?.nodes?.[0]?.quantityAvailable ?? 0;
+      const aInStock = aQty > 0 ? 1 : 0;
+      const bInStock = bQty > 0 ? 1 : 0;
+      return bInStock - aInStock;
+    });
+  }, [products]);
+
   return (
     <>
       <Grid layout="products" {...props}>
-        {products.map((product, i) => (
+        {sortedProducts.map((product, i) => (
           <ProductCard
             key={product.id}
             product={product}

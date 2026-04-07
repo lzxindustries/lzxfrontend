@@ -200,7 +200,7 @@ function AppliedFilters({filters = []}: {filters: AppliedFilter[]}) {
             <Link
               to={getAppliedFilterLink(filter, params, location)}
               className="flex px-2 border rounded-full gap"
-              key={`${filter.label}-${filter.urlParam}`}
+              key={`${filter.label}-${filter.urlParam.key}-${filter.urlParam.value}`}
             >
               <span className="flex-grow">{filter.label}</span>
               <span>

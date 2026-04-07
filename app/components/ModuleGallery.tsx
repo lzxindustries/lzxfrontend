@@ -22,6 +22,7 @@ export function ModuleGallery({
       {module.videos.map((video) => {
         return video.youtube ? (
           <iframe
+            key={video.youtube}
             className="w-full aspect-video"
             src={'https://www.youtube.com/embed/' + video.youtube}
             title={video.name}

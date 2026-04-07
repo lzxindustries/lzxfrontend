@@ -230,6 +230,7 @@ export function ProductForm() {
       ? true
       : false;
   const productQty = selectedVariant?.quantityAvailable;
+  const isVideomancer = product.handle === 'videomancer';
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -365,7 +366,11 @@ export function ProductForm() {
             ) : null}
 
             {!isOutOfStock && !isPreorder && !isBackorder ? (
-              <Text as="span">{productQty} in stock.</Text>
+              <Text as="span">
+                {isVideomancer
+                  ? 'Ships in 24 hours.'
+                  : 'Ships in 24 hours.'}
+              </Text>
             ) : null}
 
             {isOutOfStock ? (
@@ -384,7 +389,7 @@ export function ProductForm() {
             ) : null}
 
             {!isOutOfStock && isBackorder && !isPreorder ? (
-              <Text as="span">Backorder delays may be variable as we transition our supply chain in response to new tariffs.</Text>
+              <Text as="span">Ship in 4-6 weeks.</Text>
             ) : null}
 
             {/* {!isOutOfStock && (
@@ -665,7 +670,7 @@ const PRODUCT_QUERY = `#graphql
       selectedVariant: variantBySelectedOptions(selectedOptions: $selectedOptions) {
         ...ProductVariantFragment
       }
-      media(first: 7) {
+      media(first: 20) {
         nodes {
           ...Media
         }

@@ -1,132 +1,47 @@
 import {useLoaderData} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {
-  flattenConnection,
   AnalyticsPageType,
   getSeoMeta,
 } from '@shopify/hydrogen';
-import type {
-  Collection as CollectionType,
-  CollectionConnection,
-  Filter,
-} from '@shopify/hydrogen/storefront-api-types';
+import type {Collection as CollectionType} from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
+import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
-import {ProductGrid} from '~/components/ProductGrid';
-import {SortFilter} from '~/components/SortFilter';
-import type {AppliedFilter, SortParam} from '~/components/SortFilter';
-import {Section} from '~/components/Text';
+import {ProductCard} from '~/components/ProductCard';
+import {SocialProof} from '~/components/SocialProof';
+import {Section, PageHeader} from '~/components/Text';
+import {VideomancyLandingSections} from '~/components/VideomancyLandingSections';
 import {CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 
-const PAGINATION_SIZE = 48;
+export async function loader({context}: LoaderFunctionArgs) {
+  const seo = seoPayload.home();
 
-type VariantFilterParam = Record<string, string | boolean>;
-type PriceFiltersQueryParam = Record<'price', {max?: number; min?: number}>;
-type VariantOptionFiltersQueryParam = Record<
-  'variantOption',
-  {name: string; value: string}
->;
-type FiltersQueryParams = Array<
-  VariantFilterParam | PriceFiltersQueryParam | VariantOptionFiltersQueryParam
->;
-
-export async function loader({request, context}: LoaderFunctionArgs) {
-  const collectionHandle = 'active';
-
-  invariant(collectionHandle, 'Missing collectionHandle param');
-
-  const searchParams = new URL(request.url).searchParams;
-  const knownFilters = ['productVendor', 'productType'];
-  const available = 'available';
-  const variantOption = 'variantOption';
-  const {sortKey, reverse} = getSortValuesFromParam(
-    searchParams.get('sort') as SortParam,
-  );
-  const cursor = searchParams.get('cursor');
-  const filters: FiltersQueryParams = [];
-  const appliedFilters: AppliedFilter[] = [];
-
-  for (const [key, value] of searchParams.entries()) {
-    if (available === key) {
-      filters.push({available: value === 'true'});
-      appliedFilters.push({
-        label: value === 'true' ? 'In stock' : 'Out of stock',
-        urlParam: {
-          key: available,
-          value,
-        },
-      });
-    } else if (knownFilters.includes(key)) {
-      filters.push({[key]: value});
-      appliedFilters.push({label: value, urlParam: {key, value}});
-    } else if (key.includes(variantOption)) {
-      const [name, val] = value.split(':');
-      filters.push({variantOption: {name, value: val}});
-      appliedFilters.push({label: val, urlParam: {key, value}});
-    }
-  }
-
-  // Builds min and max price filter since we can't stack them separately into
-  // the filters array. See price filters limitations:
-  // https://shopify.dev/custom-storefronts/products-collections/filter-products#limitations
-  if (searchParams.has('minPrice') || searchParams.has('maxPrice')) {
-    const price: {min?: number; max?: number} = {};
-    if (searchParams.has('minPrice')) {
-      price.min = Number(searchParams.get('minPrice')) || 0;
-      appliedFilters.push({
-        label: `Min: $${price.min}`,
-        urlParam: {key: 'minPrice', value: searchParams.get('minPrice')!},
-      });
-    }
-    if (searchParams.has('maxPrice')) {
-      price.max = Number(searchParams.get('maxPrice')) || 0;
-      appliedFilters.push({
-        label: `Max: $${price.max}`,
-        urlParam: {key: 'maxPrice', value: searchParams.get('maxPrice')!},
-      });
-    }
-    filters.push({
-      price,
-    });
-  }
-
-  const {collection, collections} = await context.storefront.query<{
+  const {storefront} = context;
+  const data = await storefront.query<{
     collection: CollectionType;
-    collections: CollectionConnection;
-  }>(COLLECTION_QUERY, {
+  }>(ACTIVE_COLLECTION_QUERY, {
     variables: {
-      handle: collectionHandle,
-      pageBy: PAGINATION_SIZE,
-      cursor,
-      filters,
-      sortKey,
-      reverse,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
+      handle: 'active',
+      pageBy: 250,
+      country: storefront.i18n.country,
+      language: storefront.i18n.language,
     },
   });
 
-  if (!collection) {
-    throw new Response('home', {status: 404});
-  }
-
-  const collectionNodes = flattenConnection(collections);
-  const seo = seoPayload.home();
+  invariant(data?.collection, 'No data returned from Shopify API');
 
   return json(
     {
-      collection,
-      appliedFilters,
-      collections: collectionNodes,
       analytics: {
-        pageType: AnalyticsPageType.collection,
-        collectionHandle,
-        resourceId: collection.id,
+        pageType: AnalyticsPageType.home,
       },
+      products: data.collection.products,
       seo,
     },
     {
@@ -144,134 +59,57 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Home() {
-  const {collection, collections, appliedFilters} =
-    useLoaderData<typeof loader>();
+  const {products} = useLoaderData<typeof loader>();
+
+  const sortedNodes = [...products.nodes].sort((a, b) => {
+    // Pin Videomancer first
+    const aPin = a.handle === 'videomancer' ? 1 : 0;
+    const bPin = b.handle === 'videomancer' ? 1 : 0;
+    if (aPin !== bPin) return bPin - aPin;
+    const aQty = a.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+    const bQty = b.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+    const aInStock = aQty > 0 ? 1 : 0;
+    const bInStock = bQty > 0 ? 1 : 0;
+    return bInStock - aInStock;
+  });
 
   return (
     <>
-      {/* <img
-        src="/clips/home_banner_2024_Q1.gif"
-        className="w-full"
-        alt="Home Banner"
-      /> */}
       <Hero />
-      <Section padding="x">
-        <SortFilter
-          filters={collection.products.filters as Filter[]}
-          appliedFilters={appliedFilters}
-          collections={collections as CollectionType[]}
-        >
-          <ProductGrid
-            key={collection.id}
-            collection={collection as CollectionType}
-            url={`/collections/active`}
-            data-test="product-grid"
-          />
-        </SortFilter>
+      <VideomancyLandingSections />
+      <PageHeader heading="Explore Our Catalog" variant="allCollections" />
+      <Section>
+        <Grid layout="products" data-test="product-grid">
+          {sortedNodes.map((product, i) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              loading={getImageLoadingPriority(i)}
+            />
+          ))}
+        </Grid>
       </Section>
+      <SocialProof />
     </>
   );
 }
 
-const COLLECTION_QUERY = `#graphql
+const ACTIVE_COLLECTION_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
-  query CollectionDetails(
+  query ActiveCollectionHome(
     $handle: String!
     $country: CountryCode
     $language: LanguageCode
     $pageBy: Int!
-    $cursor: String
-    $filters: [ProductFilter!]
-    $sortKey: ProductCollectionSortKeys!
-    $reverse: Boolean
   ) @inContext(country: $country, language: $language) {
     collection(handle: $handle) {
       id
       handle
-      title
-      description
-      seo {
-        description
-        title
-      }
-      image {
-        id
-        url
-        width
-        height
-        altText
-      }
-      products(
-        first: $pageBy,
-        after: $cursor,
-        filters: $filters,
-        sortKey: $sortKey,
-        reverse: $reverse
-      ) {
-        filters {
-          id
-          label
-          type
-          values {
-            id
-            label
-            count
-            input
-          }
-        }
+      products(first: $pageBy, sortKey: BEST_SELLING) {
         nodes {
           ...ProductCard
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
-        }
-      }
-    }
-    collections(first: 100) {
-      edges {
-        node {
-          title
-          handle
         }
       }
     }
   }
 `;
-
-function getSortValuesFromParam(sortParam: SortParam | null) {
-  switch (sortParam) {
-    case 'price-high-low':
-      return {
-        sortKey: 'PRICE',
-        reverse: true,
-      };
-    case 'price-low-high':
-      return {
-        sortKey: 'PRICE',
-        reverse: false,
-      };
-    case 'newest':
-      return {
-        sortKey: 'CREATED',
-        reverse: true,
-      };
-    case 'eldest':
-      return {
-        sortKey: 'CREATED',
-        reverse: false,
-      };
-    case 'name':
-      return {
-        sortKey: 'TITLE',
-        reverse: false,
-      };
-    default:
-      return {
-        sortKey: 'MANUAL',
-        reverse: false,
-        // sortKey: 'RELEVANCE',
-        // reverse: false,
-      };
-  }
-}

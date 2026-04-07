@@ -20,6 +20,11 @@ export default {
         contrast: withOpacityValue('--color-contrast'),
         notice: withOpacityValue('--color-accent'),
         shopPay: 'var(--color-shop-pay)',
+        mystic: '#0072BC',
+        'mystic-light': '#1A8AD4',
+        moonwax: '#FCF3D0',
+        'lzx-card': '#404040',
+        'lzx-border': '#767676',
       },
       screens: {
         sm: '32em',
@@ -50,6 +55,8 @@ export default {
       fontFamily: {
         sans: ['Goldplay', 'sans-serif'],
         serif: ['GoldplayAlt', 'serif'],
+        display: ['KCStrikerSansInk', 'GoldplayAlt', 'sans-serif'],
+        hand: ['PostBoxRegular', 'GoldplayAlt', 'sans-serif'],
       },
       fontSize: {
         display: ['var(--font-size-display)', '1.1'],
