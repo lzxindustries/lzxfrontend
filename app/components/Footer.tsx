@@ -16,8 +16,9 @@ export function Footer() {
   return (
     <div>
       <footer className="footer p-10 bg-base-200 text-base-content">
-        <div>
+        <div className="max-w-full overflow-hidden">
           <span className="footer-title">Subscribe to our newsletter</span>
+          {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
           <MailchimpSubscribe url="https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0" />
           {/* <div className="form-control">
             <input type="text" placeholder="Your e-mail" className="input w-full max-w-xs" />
@@ -91,7 +92,7 @@ export function Footer() {
           </a>
         </div>
         <div>
-          <span className="footer-title w-64">Country</span>
+          <span className="footer-title">Country</span>
           <CountrySelector />
           <div className="h-8" />
           {/* <select className="select select-bordered w-full max-w-xs">
@@ -110,11 +111,12 @@ export function Footer() {
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
-          <div className="grid grid-flow-col gap-4">
+          <div className="grid grid-flow-col gap-4 flex-wrap">
             <a
               target="_blank"
               href="https://www.facebook.com/lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on Facebook"
             >
               <FaFacebook size={iconSize} />
             </a>
@@ -122,6 +124,7 @@ export function Footer() {
               target="_blank"
               href="https://www.instagram.com/lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on Instagram"
             >
               <FaInstagram size={iconSize} />
             </a>
@@ -129,6 +132,7 @@ export function Footer() {
               target="_blank"
               href="https://discord.gg/7xzD4XzhGn"
               rel="noreferrer"
+              aria-label="LZX on Discord"
             >
               <FaDiscord size={iconSize} />
             </a>
@@ -136,6 +140,7 @@ export function Footer() {
               target="_blank"
               href="https://www.twitch.tv/lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on Twitch"
             >
               <FaTwitch size={iconSize} />
             </a>
@@ -143,6 +148,7 @@ export function Footer() {
               target="_blank"
               href="https://www.youtube.com/lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on YouTube"
             >
               <FaYoutube size={iconSize} />
             </a>
@@ -150,6 +156,7 @@ export function Footer() {
               target="_blank"
               href="https://www.tiktok.com/@lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on TikTok"
             >
               <FaTiktok size={iconSize} />
             </a>
@@ -157,6 +164,7 @@ export function Footer() {
               target="_blank"
               href="https://x.com/lzxindustries"
               rel="noreferrer"
+              aria-label="LZX on X"
             >
               <FaTwitter size={iconSize} />
             </a>

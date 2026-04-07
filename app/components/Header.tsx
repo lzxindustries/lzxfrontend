@@ -3,6 +3,7 @@ import {
   FaShoppingCart,
   FaSearch,
   FaUser,
+  FaUserCheck,
   FaInstagram,
   FaDiscord,
   FaTwitch,
@@ -17,14 +18,17 @@ import Logo from './Logo';
 export function Header({
   cartCount = 13,
   url = '',
+  isLoggedIn = false,
+  onCartClick,
 }: {
   cartCount: number;
   url?: string;
+  isLoggedIn?: boolean;
+  onCartClick?: () => void;
 }) {
   const iconSize = 16;
   const logoSize = 24;
   const isHome = url === '/' || url === '';
-  const isModules = url.includes('/modules');
   const isVideomancer = url.includes('/products/videomancer');
   const isCatalog = url.includes('/catalog');
   const isCart = url.includes('/cart');
@@ -38,11 +42,11 @@ export function Header({
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <button tabIndex={-1} className="btn btn-ghost lg:hidden">
+          <button tabIndex={0} className="btn btn-ghost lg:hidden" aria-label="Open menu">
             <FaList size={iconSize} />
           </button>
           <ul
-            tabIndex={-1}
+            tabIndex={0}
             className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li key="home">
@@ -67,12 +71,6 @@ export function Header({
                 Shop
               </a>
             </li>
-            {/* <li tabIndex={0}>
-              <a className="justify-between">
-                Docs
-                <FaAngleRight size={iconSize} />
-              </a>
-              <ul className="p-2"> */}
             <li key="getting-started">
               <a
                 className={isGettingStarted ? 'active' : ''}
@@ -81,11 +79,6 @@ export function Header({
                 Docs
               </a>
             </li>
-            {/* <li key="modules">
-              <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
-                Module List
-              </a>
-            </li> */}
             <li key="dealers">
               <a className={isDealers ? 'active' : ''} href="/dealers">
                 Dealers
@@ -108,19 +101,9 @@ export function Header({
                 Community
               </a>
             </li>
-            {/* <li key="firmware">
-              <a
-                className={''}
-                href="https://github.com/lzxindustries/firmware"
-              >
-                Firmware
-              </a>
-            </li> */}
-            {/* </ul>
-            </li> */}
           </ul>
         </div>
-        <a className="px-2" href="/">
+        <a className="px-2" href="/" aria-label="LZX Industries home">
           <Logo size={logoSize} />
         </a>
       </div>
@@ -145,12 +128,6 @@ export function Header({
               Shop
             </a>
           </li>
-          {/* <li tabIndex={0}>
-            <a>
-              Docs
-              <FaAngleDown size={iconSize} />
-            </a>
-            <ul className="p-2"> */}
           <li>
             <a
               className={isGettingStarted ? 'active' : ''}
@@ -159,11 +136,6 @@ export function Header({
               Docs
             </a>
           </li>
-          {/* <li>
-            <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
-              Module List
-            </a>
-          </li> */}
           <li>
             <a className={isDealers ? 'active' : ''} href="/dealers">
               Dealers
@@ -177,19 +149,13 @@ export function Header({
               Blog
             </a>
           </li>
-          {/* <li>
-            <a className={''} href="https://github.com/lzxindustries/firmware">
-              Firmware
-            </a>
-          </li> */}
-          {/* </ul>
-          </li> */}
         </ul>
         <a
           className="px-2"
           target="_blank"
           href="https://community.lzxindustries.net"
           rel="noreferrer"
+          aria-label="LZX Community Forum"
         >
           <MdForum size={iconSize} />
         </a>
@@ -198,6 +164,7 @@ export function Header({
           target="_blank"
           href="https://www.facebook.com/lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on Facebook"
         >
           <FaFacebook size={iconSize} />
         </a>
@@ -206,6 +173,7 @@ export function Header({
           target="_blank"
           href="https://www.instagram.com/lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on Instagram"
         >
           <FaInstagram size={iconSize} />
         </a>
@@ -214,6 +182,7 @@ export function Header({
           target="_blank"
           href="https://discord.gg/7xzD4XzhGn"
           rel="noreferrer"
+          aria-label="LZX on Discord"
         >
           <FaDiscord size={iconSize} />
         </a>
@@ -222,6 +191,7 @@ export function Header({
           target="_blank"
           href="https://www.twitch.tv/lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on Twitch"
         >
           <FaTwitch size={iconSize} />
         </a>
@@ -230,6 +200,7 @@ export function Header({
           target="_blank"
           href="https://www.youtube.com/lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on YouTube"
         >
           <FaYoutube size={iconSize} />
         </a>
@@ -238,6 +209,7 @@ export function Header({
           target="_blank"
           href="https://www.tiktok.com/@lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on TikTok"
         >
           <FaTiktok size={iconSize} />
         </a>
@@ -246,80 +218,33 @@ export function Header({
           target="_blank"
           href="https://x.com/lzxindustries"
           rel="noreferrer"
+          aria-label="LZX on X"
         >
           <FaTwitter size={iconSize} />
         </a>
       </div>
-      <div className="navbar-end">
-        {/* <div className="form-control px-2">
-          <input type="text" placeholder="Search" className="input input-bordered px-6" />
-        </div> */}
-
-        <ul className="menu menu-horizontal px-2">
+      <div className="navbar-end">\n        <ul className="menu menu-horizontal px-2">
           <li>
-            <a className={isSearch ? 'active' : ''} href="/search">
+            <a className={isSearch ? 'active' : ''} href="/search" aria-label="Search">
               <FaSearch size={iconSize} />
             </a>
           </li>
           <li>
-            <a className={isAccount ? 'active' : ''} href="/account">
-              <FaUser size={iconSize} />
+            <a className={isAccount ? 'active' : ''} href="/account" aria-label={isLoggedIn ? 'My Account' : 'Sign in'}>
+              {isLoggedIn ? <FaUserCheck size={iconSize} /> : <FaUser size={iconSize} />}
             </a>
           </li>
           <li>
-            <a className={isCart ? ' active' : ''} href="/cart">
+            <button
+              className={isCart ? 'active' : ''}
+              onClick={onCartClick}
+              aria-label="Cart"
+            >
               <FaShoppingCart size={iconSize} />
-            </a>
-          </li>
-          {/* {cartCount !== 0 ? <span className="badge badge-sm indicator-item">{cartCount}</span> : ''} */}
-          <span className="badge badge-sm indicator-item">{cartCount}</span>
+            </button>
+          </li>\n          <span className="badge badge-sm indicator-item">{cartCount}</span>
         </ul>
       </div>
     </div>
   );
 }
-
-// function Header({ title, menu }: { title: string; menu?: EnhancedMenu }) {
-//   const isHome = useIsHomePath();
-
-//   const {
-//     isOpen: isCartOpen,
-//     openDrawer: openCart,
-//     closeDrawer: closeCart,
-//   } = useDrawer();
-
-//   const {
-//     isOpen: isMenuOpen,
-//     openDrawer: openMenu,
-//     closeDrawer: closeMenu,
-//   } = useDrawer();
-
-//   const addToCartFetchers = useCartFetchers('ADD_TO_CART');
-
-//   // toggle cart drawer when adding to cart
-//   useEffect(() => {
-//     if (isCartOpen || !addToCartFetchers.length) return;
-//     openCart();
-//   }, [addToCartFetchers, isCartOpen, openCart]);
-
-//   return (
-//     <>
-//       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
-//       {menu && (
-//         <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu} />
-//       )}
-//       <DesktopHeader
-//         isHome={isHome}
-//         title={title}
-//         menu={menu}
-//         openCart={openCart}
-//       />
-//       <MobileHeader
-//         isHome={isHome}
-//         title={title}
-//         openCart={openCart}
-//         openMenu={openMenu}
-//       />
-//     </>
-//   );
-// }

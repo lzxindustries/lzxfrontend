@@ -29,6 +29,8 @@ export type AppliedFilter = {
 export type SortParam =
   | 'price-low-high'
   | 'price-high-low'
+  | 'best-selling'
+  | 'featured'
   | 'name'
   | 'eldest'
   | 'newest';
@@ -125,21 +127,6 @@ export function FiltersDrawer({
         );
     }
   };
-
-  const collectionsMarkup = collections.map((collection) => {
-    return (
-      <li key={collection.handle} className="pb-4">
-        <Link
-          to={`/collections/${collection.handle}`}
-          className="focus:underline hover:underline"
-          key={collection.handle}
-          prefetch="intent"
-        >
-          {collection.title}
-        </Link>
-      </li>
-    );
-  });
 
   return (
     <>
@@ -330,7 +317,12 @@ function filterInputToParams(
   rawInput: string | Record<string, any>,
   params: URLSearchParams,
 ) {
-  const input = typeof rawInput === 'string' ? JSON.parse(rawInput) : rawInput;
+  let input: Record<string, any>;
+  try {
+    input = typeof rawInput === 'string' ? JSON.parse(rawInput) : rawInput;
+  } catch {
+    return params;
+  }
   switch (type) {
     case 'PRICE_RANGE':
       if (input.price.min) params.set('minPrice', input.price.min);

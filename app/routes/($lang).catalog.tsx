@@ -16,7 +16,7 @@ import invariant from 'tiny-invariant';
 import {ProductGrid} from '~/components/ProductGrid';
 import {SortFilter} from '~/components/SortFilter';
 import type {AppliedFilter, SortParam} from '~/components/SortFilter';
-import {PageHeader, Section} from '~/components/Text';
+import {Section} from '~/components/Text';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server';

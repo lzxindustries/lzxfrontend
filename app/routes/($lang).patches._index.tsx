@@ -1,11 +1,29 @@
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import ModalImage from 'react-modal-image';
 import {Grid} from '~/components/Grid';
 import {Section, Text} from '~/components/Text';
 import {getAllPatches} from '~/controllers/get_all_patches';
+import {routeHeaders} from '~/data/cache';
 
-export async function loader({params, request, context}: LoaderFunctionArgs) {
+export const headers = routeHeaders;
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <Section>
+      <h1 className="text-xl font-bold">Error loading patches</h1>
+      <p>{message}</p>
+    </Section>
+  );
+}
+
+export async function loader({context}: LoaderFunctionArgs) {
   const patchData = await getAllPatches(context);
   return patchData;
 }
@@ -39,6 +57,7 @@ export default function Patches() {
                 )}
 
                 {patch.gif && !patch.youtube ? (
+                  // @ts-expect-error react-modal-image types incompatible with React 18
                   <ModalImage
                     className="opacity-100 w-full align-middle"
                     smallSrcSet={'/clips/' + patch.gif}
@@ -60,46 +79,6 @@ export default function Patches() {
                 ) : (
                   ''
                 )}
-                {/* {
-                      patch.artists && (patch.artists.length > 1 && <p><Text color="primary">Artists </Text>
-                        <Text color="subtle">
-                          {patch.artists.map((artist, index) => {
-                            return (<>
-                              {(index != patch.artists.length - 1) ?
-                              artist.name + ', ' : artist.name}
-                            </>)
-                          })}
-                        </Text>
-                      </p>)
-                    }
-                    {
-                      patch.artists.length == 1 && <p><Text color="primary">Artist </Text>
-                        <Text color="subtle">
-                          {patch.artists[0].name}
-                        </Text>
-                      </p>
-                    } */}
-                {/* {
-                      patch.modules && (<p><Text color="primary">Modules </Text>
-                        <Text color="subtle">
-                          {patch.modules.map((module) => {
-                            return (<><Link to={'/products/' + module.title.toLowerCase()} >{module.title}</Link> </>)
-                          })}
-                        </Text>
-                      </p>)
-                    } */}
-                {/*
-                      patch.modules && (patch.modules.length > 0 && <p><Text color="primary">Modules </Text>
-                        <Text color="subtle">
-                          {patch.modules.map((module, index) => {
-                            return (<>
-                              <Link to={'/products/' + module.title.toLowerCase()} >
-                              </Link>
-                            </>)
-                          })}
-                        </Text>
-                      </p>)
-                     */}
                 {patch.diagram && (
                   <a
                     href={'/diagrams/' + patch.diagram}

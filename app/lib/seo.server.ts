@@ -27,12 +27,12 @@ function root({
 }: {
   shop: Shop;
   url: Request['url'];
-}): SeoConfig<Organization> {
+}): SeoConfig {
   return {
     title: shop?.name,
     titleTemplate: '%s | LZX Industries',
     description: truncate(shop?.description ?? ''),
-    handle: '@shopify',
+    handle: '@lzxindustries',
     url,
     robots: {
       noIndex: false,
@@ -61,7 +61,7 @@ function root({
   };
 }
 
-function home(): SeoConfig<WebPage> {
+function home(): SeoConfig {
   return {
     title: 'LZX Industries — Video Synthesis Instruments',
     titleTemplate: '%s',
@@ -78,7 +78,7 @@ function home(): SeoConfig<WebPage> {
     },
   };
 }
-function catalog(): SeoConfig<WebPage> {
+function catalog(): SeoConfig {
   return {
     title: 'Catalog',
     titleTemplate: '%s | LZX Industries',
@@ -103,7 +103,7 @@ function productJsonLd({
   product: Product;
   selectedVariant: ProductVariant;
   url: Request['url'];
-}): SeoConfig<SeoProduct | BreadcrumbList>['jsonLd'] {
+}): SeoConfig['jsonLd'] {
   const origin = new URL(url).origin;
   const variants = product.variants.nodes;
   const description = truncate(
@@ -170,7 +170,7 @@ function product({
   product: Product;
   selectedVariant: ProductVariant;
   url: Request['url'];
-}): SeoConfig<SeoProduct | BreadcrumbList> {
+}): SeoConfig {
   const description = truncate(
     product?.seo?.description ?? product?.description ?? '',
   );
@@ -188,7 +188,7 @@ function collectionJsonLd({
 }: {
   url: Request['url'];
   collection: Collection;
-}): SeoConfig<CollectionPage | BreadcrumbList>['jsonLd'] {
+}): SeoConfig['jsonLd'] {
   const siteUrl = new URL(url);
   const itemListElement: CollectionPage['mainEntity'] =
     collection.products.nodes.map((product, index) => {
@@ -240,7 +240,7 @@ function collection({
 }: {
   collection: Collection;
   url: Request['url'];
-}): SeoConfig<CollectionPage | BreadcrumbList> {
+}): SeoConfig {
   return {
     title: collection?.seo?.title,
     description: truncate(
@@ -264,7 +264,7 @@ function collectionsJsonLd({
 }: {
   url: Request['url'];
   collections: CollectionConnection;
-}): SeoConfig<CollectionPage>['jsonLd'] {
+}): SeoConfig['jsonLd'] {
   const itemListElement: CollectionPage['mainEntity'] = collections.nodes.map(
     (collection, index) => {
       return {
@@ -294,11 +294,11 @@ function listCollections({
 }: {
   collections: CollectionConnection;
   url: Request['url'];
-}): SeoConfig<CollectionPage> {
+}): SeoConfig {
   return {
     title: 'Collections',
     titleTemplate: '%s | Collections',
-    description: 'All hydrogen collections',
+    description: 'All LZX Industries collections',
     url,
     jsonLd: collectionsJsonLd({collections, url}),
   };
@@ -310,7 +310,7 @@ function article({
 }: {
   article: Article;
   url: Request['url'];
-}): SeoConfig<SeoArticle> {
+}): SeoConfig {
   return {
     title: article?.seo?.title ?? article?.title,
     description: truncate(article?.seo?.description ?? ''),
@@ -345,7 +345,7 @@ function blog({
 }: {
   blog: Blog;
   url: Request['url'];
-}): SeoConfig<SeoBlog> {
+}): SeoConfig {
   return {
     title: blog?.seo?.title,
     description: truncate(blog?.seo?.description || ''),
@@ -367,7 +367,7 @@ function page({
 }: {
   page: Page;
   url: Request['url'];
-}): SeoConfig<WebPage> {
+}): SeoConfig {
   return {
     description: truncate(page?.seo?.description || ''),
     title: page?.seo?.title,
@@ -387,7 +387,7 @@ function policy({
 }: {
   policy: ShopPolicy;
   url: Request['url'];
-}): SeoConfig<WebPage> {
+}): SeoConfig {
   return {
     description: truncate(policy?.body ?? ''),
     title: policy?.title,
@@ -402,7 +402,7 @@ function policies({
 }: {
   policies: ShopPolicy[];
   url: Request['url'];
-}): SeoConfig<WebPage | BreadcrumbList> {
+}): SeoConfig {
   const origin = new URL(url).origin;
   const itemListElement: BreadcrumbList['itemListElement'] = policies
     .filter(Boolean)
@@ -417,7 +417,7 @@ function policies({
   return {
     title: 'Policies',
     titleTemplate: '%s | Policies',
-    description: 'Hydroge store policies',
+    description: 'LZX Industries store policies',
     jsonLd: [
       {
         '@context': 'https://schema.org',
@@ -427,7 +427,7 @@ function policies({
       {
         '@context': 'https://schema.org',
         '@type': 'WebPage',
-        description: 'Hydrogen store policies',
+        description: 'LZX Industries store policies',
         name: 'Policies',
         url,
       },

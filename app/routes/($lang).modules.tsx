@@ -1,14 +1,27 @@
-import {useLoaderData, Link} from '@remix-run/react';
+import {useLoaderData, Link, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {BsCheckSquareFill} from 'react-icons/bs';
 import IconLink from '~/components/IconLink';
 import {Section} from '~/components/Text';
 import {getAllModules} from '~/controllers/get_all_modules';
-import {routeHeaders, CACHE_LONG} from '~/data/cache';
-import {ModuleView} from '~/views/module';
+import {routeHeaders} from '~/data/cache';
 export const headers = routeHeaders;
 
-export async function loader({params, request, context}: LoaderFunctionArgs) {
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <Section>
+      <h1 className="text-xl font-bold">Error loading modules</h1>
+      <p>{message}</p>
+    </Section>
+  );
+}
+
+export async function loader({context}: LoaderFunctionArgs) {
   const modules = await getAllModules(context);
   return {
     modules,
@@ -39,7 +52,7 @@ export default function Product() {
               {modules.map((module) => {
                 const showModule =
                   module.max_pos_12v_ma > 0 &&
-                  module.is_hidden == false &&
+                  module.is_hidden === false &&
                   module.hp > 0
                     ? true
                     : false;

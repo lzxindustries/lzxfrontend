@@ -96,7 +96,7 @@ function useDataFromMatches(dataKey: string): Record<string, unknown> {
   const data: Record<string, unknown> = {};
 
   matches.forEach((event) => {
-    const eventData = event?.data;
+    const eventData = event?.data as Record<string, any> | undefined;
     if (eventData && eventData[dataKey]) {
       Object.assign(data, eventData[dataKey]);
     }
@@ -179,8 +179,8 @@ function useDataFromFetchers({
   const data: Record<string, unknown> = {};
 
   for (const fetcher of fetchers) {
-    const formData = fetcher.submission?.formData;
-    const fetcherData = fetcher.data;
+    const formData = fetcher.formData;
+    const fetcherData = fetcher.data as Record<string, any> | undefined;
     if (
       formData &&
       formData.get(formDataKey) === formDataValue &&

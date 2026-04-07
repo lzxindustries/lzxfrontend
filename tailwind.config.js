@@ -40,18 +40,16 @@ export default {
         '2xl-only': {min: '96em'},
       },
       // spacing: {
-      //   nav: 'var(--height-nav)',
-      //   screen: 'var(--screen-height, 100vh)',
-      // },
-      // height: {
-      //   screen: 'var(--screen-height, 100vh)',
-      //   'screen-no-nav':
-      //     'calc(var(--screen-height, 100vh) - var(--height-nav))',
-      //   'screen-dynamic': 'var(--screen-height-dynamic, 100vh)',
-      // },
-      // width: {
-      //   mobileGallery: 'calc(100vw - 3rem)',
-      // },
+      spacing: {
+        nav: 'var(--height-nav)',
+        screen: 'var(--screen-height, 100vh)',
+      },
+      height: {
+        screen: 'var(--screen-height, 100vh)',
+        'screen-no-nav':
+          'calc(var(--screen-height, 100vh) - var(--height-nav))',
+        'screen-dynamic': 'var(--screen-height-dynamic, 100vh)',
+      },
       fontFamily: {
         sans: ['Goldplay', 'sans-serif'],
         serif: ['GoldplayAlt', 'serif'],

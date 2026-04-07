@@ -1,16 +1,19 @@
 import {Listbox} from '@headlessui/react';
 import {
+  Await,
   useLoaderData,
   useLocation,
   useNavigation,
   useSearchParams,
+  useRouteError,
+  isRouteErrorResponse,
 } from '@remix-run/react';
 import type {
   SeoConfig,
   ShopifyAnalyticsProduct,
   Storefront,
 } from '@shopify/hydrogen';
-import {AnalyticsPageType, getSeoMeta, Money} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton} from '@shopify/hydrogen';
 import type {
   ProductConnection,
   Product as ProductType,
@@ -21,18 +24,36 @@ import type {
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
-import {type ReactNode, useMemo, useRef} from 'react';
+import {type ReactNode, Suspense, useMemo, useRef, useState} from 'react';
+import {FaHeart, FaRegHeart} from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
 import {IconCaret, IconCheck} from '~/components/Icon';
 import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
+import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
-import {getModuleDetails} from '~/controllers/get_module_details';
+import {useWishlist} from '~/hooks/useWishlist';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {seoPayload} from '~/lib/seo.server.js';
-import type {ModuleView} from '~/views/module.js';
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? error.status === 404
+      ? 'Product not found'
+      : `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <div className="flex flex-col items-center justify-center p-12">
+      <h1 className="text-2xl font-bold mb-4">Error</h1>
+      <p>{message}</p>
+    </div>
+  );
+}
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
@@ -80,15 +101,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  const id = product.id;
-  // const moduleData: ModuleView = await getModuleDetails(context, id);
-
-  // if (!id || !moduleData) {
-  //   throw new Response('product', { status: 404 });
-  // }
-
   return defer({
-    // moduleData,
     product,
     shop,
     storeDomain: shop.primaryDomain.url,
@@ -108,79 +121,30 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Product() {
-  // const {moduleData, product, shop, recommended} =
-  const {product, shop, recommended} =
+  const {product, recommended} =
     useLoaderData<typeof loader>();
-  const {media, title, id, descriptionHtml, vendor} = product;
-  const {shippingPolicy, refundPolicy} = shop;
-  // const isModule = moduleData.hp > 0 ? true : false;
-  // moduleData.description = descriptionHtml;
 
   return (
-    // <ModuleDetails moduleData={moduleData} product={product}>
-    <ModuleDetails product={product}>
-      <ProductForm />
-    </ModuleDetails>
+    <>
+      <ModuleDetails product={product}>
+        <ProductForm />
+      </ModuleDetails>
+      <Suspense>
+        <Await resolve={recommended}>
+          {(products) =>
+            products && products.length > 0 ? (
+              <ProductSwimlane
+                title="You May Also Like"
+                products={products}
+              />
+            ) : null
+          }
+        </Await>
+      </Suspense>
+    </>
   );
 }
 
-// <Section className="px-0 md:px-8 lg:px-12">
-// <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
-// {isModule ? <ModuleGallery module={moduleData} /> : <ProductGallery media={media.nodes} className="w-full"/>
-// }
-//   <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
-//     {/* <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0"> */}
-
-//     <div className="inline-block w-1/2 align-top py-4">
-//       <div className="inline-block align-top w-full">
-//         {/* <Text size="lead">{isModule ? moduleData.brand : vendor}</Text> */}
-//         <h1>
-//           {isModule ? moduleData.name : title}
-//         </h1>
-//         <Text size="lead" color="subtle" className="uppercase">{isModule ? moduleData.subtitle : null}</Text>
-//       </div>
-//     </div>
-//     <div className="inline-block w-1/2 align-top py-4">
-//       <div className="inline-block align-top w-full h-full">
-//         <ProductForm />
-//       </div>
-//     </div>
-//     {isModule ? <ModuleDetails moduleData={moduleData} /> : <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />}
-//     {/* <div className="grid gap-4 py-4">
-//         {viewDescription && (
-//           <ProductDetail
-//             title="Description"
-//             content={viewDescription}
-//           />
-//         )}
-//         {shippingPolicy?.body && (
-//           <ProductDetail
-//             title="Shipping"
-//             content={getExcerpt(shippingPolicy.body)}
-//             learnMore={`/policies/${shippingPolicy.handle}`}
-//           />
-//         )}
-//         {refundPolicy?.body && (
-//           <ProductDetail
-//             title="Returns"
-//             content={getExcerpt(refundPolicy.body)}
-//             learnMore={`/policies/${refundPolicy.handle}`}
-//           />
-//         )}
-//       </div> */}
-//   </div>
-// </div>
-// </Section>
-// {/* <Suspense fallback={<Skeleton className="h-32" />}>
-// <Await
-//   errorElement="There was a problem loading related products"
-//   resolve={recommended}
-// >
-//   {(products) => (
-//     <ProductSwimlane title="Patching Partners" products={products} />
-//   )}
-// </Await>
-// </Suspense> */}
 export function ProductForm() {
   const {product, analytics, storeDomain} = useLoaderData<typeof loader>();
   const [currentSearchParams] = useSearchParams();
@@ -229,7 +193,6 @@ export function ProductForm() {
     (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder
       ? true
       : false;
-  const productQty = selectedVariant?.quantityAvailable;
   const isVideomancer = product.handle === 'videomancer';
   const isOnSale =
     selectedVariant?.price?.amount &&
@@ -241,6 +204,8 @@ export function ProductForm() {
     quantity: 1,
   };
 
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <div className="grid gap-2">
       <div className="grid gap-4">
@@ -248,6 +213,44 @@ export function ProductForm() {
           options={product.options}
           searchParamsWithDefaults={searchParamsWithDefaults}
         />
+        {selectedVariant && !isOutOfStock && (
+          <div className="flex items-center gap-3">
+            <label htmlFor="quantity" className="text-sm font-medium">Qty</label>
+            <div className="flex items-center border rounded">
+              <button
+                type="button"
+                className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
+                aria-label="Decrease quantity"
+              >
+                &#8722;
+              </button>
+              <input
+                id="quantity"
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                className="w-12 text-center bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                aria-label="Quantity"
+              />
+              <button
+                type="button"
+                className="w-10 h-10 transition text-primary/50 hover:text-primary"
+                onClick={() => setQuantity((q) => q + 1)}
+                aria-label="Increase quantity"
+              >
+                &#43;
+              </button>
+            </div>
+          </div>
+        )}
+        {selectedVariant && selectedVariant.quantityAvailable && selectedVariant.quantityAvailable > 0 && selectedVariant.quantityAvailable < 5 && !isPreorder && !isBackorder && (
+          <div className="p-3 bg-yellow-100/20 border border-yellow-600/30 rounded text-yellow-800 text-sm">
+            <Text className="font-medium">Only {selectedVariant.quantityAvailable} left in stock</Text>
+          </div>
+        )}
         {selectedVariant && (
           <div className="grid items-stretch gap-4">
             {isOutOfStock ? (
@@ -260,7 +263,7 @@ export function ProductForm() {
                 lines={[
                   {
                     merchandiseId: selectedVariant.id,
-                    quantity: 1,
+                    quantity,
                   },
                 ]}
                 variant="primary"
@@ -296,7 +299,7 @@ export function ProductForm() {
                 lines={[
                   {
                     merchandiseId: selectedVariant.id,
-                    quantity: 1,
+                    quantity,
                   },
                 ]}
                 variant="primary"
@@ -333,7 +336,7 @@ export function ProductForm() {
                 lines={[
                   {
                     merchandiseId: selectedVariant.id,
-                    quantity: 1,
+                    quantity,
                   },
                 ]}
                 variant="primary"
@@ -373,6 +376,16 @@ export function ProductForm() {
               </Text>
             ) : null}
 
+            {!isOutOfStock &&
+              !isBackorder &&
+              selectedVariant?.quantityAvailable != null &&
+              selectedVariant.quantityAvailable > 0 &&
+              selectedVariant.quantityAvailable <= 5 && (
+                <Text as="span" className="text-red-500 font-medium">
+                  Only {selectedVariant.quantityAvailable} left in stock
+                </Text>
+              )}
+
             {isOutOfStock ? (
               <Text as="span">
                 Out of stock. Please{' '}
@@ -392,17 +405,66 @@ export function ProductForm() {
               <Text as="span">Ship in 4-6 weeks.</Text>
             ) : null}
 
-            {/* {!isOutOfStock && (
+            {!isOutOfStock && (
               <ShopPayButton
                 width="100%"
                 variantIds={[selectedVariant?.id!]}
                 storeDomain={storeDomain}
               />
-            )} */}
+            )}
+            <WishlistButton
+              handle={product.handle}
+              title={product.title}
+              variantId={selectedVariant?.id ?? ''}
+              image={selectedVariant?.image?.url}
+              price={selectedVariant?.price?.amount}
+            />
           </div>
         )}
       </div>
     </div>
+  );
+}
+
+function WishlistButton({
+  handle,
+  title,
+  variantId,
+  image,
+  price,
+}: {
+  handle: string;
+  title: string;
+  variantId: string;
+  image?: string;
+  price?: string;
+}) {
+  const {isInWishlist, toggleItem} = useWishlist();
+  const saved = isInWishlist(handle);
+
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        toggleItem({
+          handle,
+          title,
+          variantId,
+          image,
+          price,
+          addedAt: new Date().toISOString(),
+        })
+      }
+      className={`flex items-center justify-center gap-2 w-full py-2 border rounded transition ${
+        saved
+          ? 'border-red-300 text-red-500 bg-red-50'
+          : 'border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40'
+      }`}
+      aria-label={saved ? 'Remove from wishlist' : 'Save to wishlist'}
+    >
+      {saved ? <FaHeart size={16} /> : <FaRegHeart size={16} />}
+      <span className="text-sm">{saved ? 'Saved' : 'Save for Later'}</span>
+    </button>
   );
 }
 

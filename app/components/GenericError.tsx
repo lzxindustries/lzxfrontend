@@ -10,7 +10,8 @@ export function GenericError({
   const heading = `Something’s wrong here.`;
   let description = `We found an error while loading this page.`;
 
-  // TODO hide error in prod?
+  const isDev = process.env.NODE_ENV === 'development';
+
   if (error) {
     description += `\n${error.message}`;
 
@@ -23,7 +24,7 @@ export function GenericError({
         <Text width="narrow" as="p">
           {description}
         </Text>
-        {error?.stack && (
+        {isDev && error?.stack && (
           <pre
             style={{
               padding: '2rem',

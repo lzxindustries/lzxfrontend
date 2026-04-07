@@ -59,7 +59,8 @@ export function CartDetails({
       {cartHasItems && (
         <CartSummary cost={cart.cost} layout={layout}>
           <CartDiscounts discountCodes={cart.discountCodes} />
-          <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+          <CartNotes note={cart.note} />
+          <CartCheckoutActions checkoutUrl={cart.checkoutUrl} cart={cart} />
         </CartSummary>
       )}
     </div>
@@ -111,8 +112,9 @@ function CartDiscounts({
             type="text"
             name="discountCode"
             placeholder="Discount code"
+            aria-label="Discount code"
           />
-          <button className="flex justify-end font-medium whitespace-nowrap">
+          <button className="flex justify-end font-medium whitespace-nowrap text-ellipsis overflow-hidden">
             Apply Discount
           </button>
         </div>
@@ -168,18 +170,50 @@ function CartLines({
   );
 }
 
-function CartCheckoutActions({checkoutUrl}: {checkoutUrl: string}) {
+function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: CartType}) {
   if (!checkoutUrl) return null;
 
   return (
-    <div className="flex flex-col mt-2">
+    <div className="flex flex-col mt-2 gap-2">
+      {/* Shop Pay button available via @shopify/hydrogen - uncomment when Shop Pay is configured */}
+      {/* {cart && <ShopPayButton cart={cart} />} */}
       <a href={checkoutUrl} target="_self">
         <Button as="span" width="full">
           Continue to Checkout
         </Button>
       </a>
-      {/* @todo: <CartShopPayButton cart={cart} /> */}
+      <Link to="/catalog" className="text-center text-sm text-primary/50 hover:text-primary transition">
+        Continue Shopping
+      </Link>
     </div>
+  );
+}
+
+function CartNotes({note}: {note?: string | null}) {
+  const fetcher = useFetcher();
+
+  return (
+    <fetcher.Form action="/cart" method="post">
+      <input type="hidden" name="cartAction" value={CartAction.UPDATE_NOTE} />
+      <div className="grid gap-2">
+        <label htmlFor="cart-note" className="text-sm font-medium">
+          Order notes
+        </label>
+        <textarea
+          id="cart-note"
+          name="note"
+          defaultValue={note ?? ''}
+          placeholder="Special instructions for your order"
+          className={`${getInputStyleClasses()} min-h-[60px] text-sm`}
+          rows={2}
+          onBlur={(e) => {
+            if (e.currentTarget.value !== (note ?? '')) {
+              e.currentTarget.form?.requestSubmit();
+            }
+          }}
+        />
+      </div>
+    </fetcher.Form>
   );
 }
 
@@ -280,6 +314,7 @@ function CartLineItem({line}: {line: CartLine}) {
 
 function ItemRemoveButton({lineIds}: {lineIds: CartLine['id'][]}) {
   const fetcher = useFetcher();
+  const isRemoving = fetcher.state !== 'idle';
 
   return (
     <fetcher.Form action="/cart" method="post">
@@ -290,8 +325,9 @@ function ItemRemoveButton({lineIds}: {lineIds: CartLine['id'][]}) {
       />
       <input type="hidden" name="linesIds" value={JSON.stringify(lineIds)} />
       <button
-        className="flex items-center justify-center w-10 h-10 border rounded"
+        className={`flex items-center justify-center w-10 h-10 border rounded ${isRemoving ? 'opacity-50' : ''}`}
         type="submit"
+        disabled={isRemoving}
       >
         <span className="sr-only">Remove</span>
         <IconRemove aria-hidden="true" />
@@ -356,7 +392,9 @@ function UpdateCartButton({
     <fetcher.Form action="/cart" method="post">
       <input type="hidden" name="cartAction" value={CartAction.UPDATE_CART} />
       <input type="hidden" name="lines" value={JSON.stringify(lines)} />
-      {children}
+      <div className={fetcher.state !== 'idle' ? 'opacity-50 pointer-events-none' : ''}>
+        {children}
+      </div>
     </fetcher.Form>
   );
 }

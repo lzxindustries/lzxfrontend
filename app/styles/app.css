@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Override DaisyUI footer: keep stacked (row) layout below lg (64em / 1024px).
+ * DaisyUI switches to grid-auto-flow: column at 48rem which causes 5-column
+ * footers to overflow on tablets.
+ */
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  .footer {
+    grid-auto-flow: row;
+  }
+}
+
+/* Prevent any child element from causing horizontal page scroll */
+html,
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'KCStrikerSansInk';
   src: url('../assets/fonts/KCStrikerSansInk.woff2') format('woff2');
@@ -302,18 +319,10 @@
   --font-size-lead: 1.125rem;
   --font-size-heading: 2rem;
   --font-size-display: 3rem;
-  /* --height-nav: 3rem; */
+  --height-nav: 4rem;
   --screen-height: 100vh;
   --screen-height-dynamic: 100vh;
 
-  /* @media (min-width: 32em) {
-    --height-nav: 4rem;
-  } */
-  /* @media (min-width: 48em) {
-    --height-nav: 6rem;
-    --font-size-heading: 2.25rem;
-    --font-size-display: 3.75rem;
-  } */
   @supports (height: 100svh) {
     --screen-height: 100svh;
   }

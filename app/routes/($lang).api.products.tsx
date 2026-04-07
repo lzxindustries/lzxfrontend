@@ -34,13 +34,12 @@ export async function loader({
   }
 
   let count = 4;
-  try {
-    const _count = searchParams.get('count');
-    if (typeof _count === 'string') {
-      count = parseInt(_count);
+  const _count = searchParams.get('count');
+  if (_count) {
+    const parsed = parseInt(_count, 10);
+    if (!Number.isNaN(parsed)) {
+      count = Math.max(1, Math.min(100, parsed));
     }
-  } catch (_) {
-    // noop
   }
 
   const {products} = await storefront.query<{

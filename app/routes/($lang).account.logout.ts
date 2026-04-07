@@ -6,12 +6,12 @@ import {
   type LoaderFunctionArgs,
 } from '@shopify/remix-oxygen';
 
-export async function doLogout(context: AppLoadContext) {
+export async function doLogout(context: AppLoadContext, redirectPath?: string) {
   const {session} = context;
   session.unset('customerAccessToken');
+  session.flash('sessionExpired', true); // Flash message for expired session
 
-  // The only file where I have to explicitly type cast i18n to pass typecheck
-  return redirect(`${context.storefront.i18n.pathPrefix}/account/login`, {
+  return redirect(redirectPath || `${context.storefront.i18n.pathPrefix}/account/login`, {
     headers: {
       'Set-Cookie': await session.commit(),
     },

@@ -1,4 +1,4 @@
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {
   AnalyticsPageType,
@@ -17,6 +17,20 @@ import {CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <PageHeader heading="Error loading page">
+      <p>{message}</p>
+    </PageHeader>
+  );
+}
 
 export async function loader({context}: LoaderFunctionArgs) {
   const seo = seoPayload.home();

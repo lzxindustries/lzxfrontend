@@ -1,0 +1,75 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - run: yarn install --immutable
+      - run: yarn lint
+      - run: yarn typecheck
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - run: yarn install --immutable
+      - run: yarn test
+      - run: yarn test:coverage
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 14
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    needs: [lint-and-typecheck, unit-tests]
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+      - run: yarn install --immutable
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Run E2E + responsive + visual tests
+        run: npx playwright test --shard=${{ matrix.shard }}/2
+        env:
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+          PUBLIC_STOREFRONT_API_TOKEN: ${{ secrets.PUBLIC_STOREFRONT_API_TOKEN }}
+          PRIVATE_STOREFRONT_API_TOKEN: ${{ secrets.PRIVATE_STOREFRONT_API_TOKEN }}
+          PUBLIC_STORE_DOMAIN: ${{ secrets.PUBLIC_STORE_DOMAIN }}
+          PUBLIC_STOREFRONT_ID: ${{ secrets.PUBLIC_STOREFRONT_ID }}
+          CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
+          DATA_API_BASE_URL: ${{ secrets.DATA_API_BASE_URL }}
+          DATA_API_KEY: ${{ secrets.DATA_API_KEY }}
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      - name: Upload Playwright report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-${{ matrix.shard }}
+          path: playwright-report/
+          retention-days: 14

@@ -1,4 +1,4 @@
-import {useLocation, useMatches} from '@remix-run/react';
+import {useMatches} from '@remix-run/react';
 import type {
   MenuItem,
   Menu,
@@ -7,9 +7,9 @@ import type {
 
 // @ts-expect-error types not available
 import typographicBase from 'typographic-base';
+// @ts-expect-error types not available
 import {parse as parseCookie} from 'worktop/cookie';
 import type {I18nLocale} from './type';
-import {Locale} from './type';
 import {countries} from '~/data/countries';
 
 export interface EnhancedMenuItem extends MenuItem {
@@ -210,6 +210,24 @@ export const getInputStyleClasses = (isError?: string | null) => {
   }`;
 };
 
+export function financialStatusMessage(status: string) {
+  const translations: Record<string, string> = {
+    AUTHORIZED: 'Authorized',
+    EXPIRED: 'Expired',
+    PAID: 'Paid',
+    PARTIALLY_PAID: 'Partially Paid',
+    PARTIALLY_REFUNDED: 'Partially Refunded',
+    PENDING: 'Pending',
+    REFUNDED: 'Refunded',
+    VOIDED: 'Voided',
+  };
+  try {
+    return translations?.[status] ?? status;
+  } catch (error) {
+    return status;
+  }
+}
+
 export function statusMessage(status: string) {
   const translations: Record<string, string> = {
     ATTEMPTED_DELIVERY: 'Attempted delivery',
@@ -277,19 +295,11 @@ export function getLocaleFromRequest(request: Request): I18nLocale {
 
 export function usePrefixPathWithLocale(path: string) {
   const [root] = useMatches();
-  const selectedLocale = root.data?.selectedLocale ?? DEFAULT_LOCALE;
+  const selectedLocale = (root.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
 
   return `${selectedLocale.pathPrefix}${
     path.startsWith('/') ? path : '/' + path
   }`;
-}
-
-export function useIsHomePath() {
-  const {pathname} = useLocation();
-  const [root] = useMatches();
-  const selectedLocale = root.data?.selectedLocale ?? DEFAULT_LOCALE;
-  const strippedPathname = pathname.replace(selectedLocale.pathPrefix, '');
-  return strippedPathname === '/';
 }
 
 /**

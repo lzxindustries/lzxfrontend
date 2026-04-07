@@ -21,11 +21,11 @@ export function Modal({
         <div className="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
           <div
             className="relative flex-1 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform rounded shadow-xl bg-white sm:my-12 sm:flex-none sm:w-full sm:max-w-sm sm:p-6"
-            role="button"
+            role="dialog"
             onClick={(e) => {
               e.stopPropagation();
             }}
-            onKeyPress={(e) => {
+            onKeyDown={(e) => {
               e.stopPropagation();
             }}
             tabIndex={0}

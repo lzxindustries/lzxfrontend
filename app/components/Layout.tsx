@@ -1,7 +1,12 @@
 import {useMatches, useLocation, Await} from '@remix-run/react';
-import {Suspense} from 'react';
+import {Suspense, useEffect, useRef} from 'react';
+import type {Cart as CartType} from '@shopify/hydrogen/storefront-api-types';
 import {Footer} from './Footer';
 import {Header} from './Header';
+import {Drawer, useDrawer} from './Drawer';
+import {Cart} from './Cart';
+import {useCartFetchers} from '~/hooks/useCartFetchers';
+import {CartAction} from '~/lib/type';
 import type {LayoutData} from '~/root';
 
 export function Layout({
@@ -20,25 +25,58 @@ export function Layout({
     return <div>Error: Root route not found.</div>;
   }
 
-  const cart = rootMatch.data?.cart;
+  const cart = (rootMatch.data as Record<string, any>)?.cart;
+  const isLoggedIn = (rootMatch.data as Record<string, any>)?.isLoggedIn;
+
+  const {isOpen: isCartOpen, openDrawer: openCart, closeDrawer: closeCart} = useDrawer();
+
+  // Auto-open cart drawer when an add-to-cart action completes
+  const addToCartFetchers = useCartFetchers(CartAction.ADD_TO_CART);
+  const prevFetcherCount = useRef(addToCartFetchers.length);
+
+  useEffect(() => {
+    if (
+      addToCartFetchers.length === 0 &&
+      prevFetcherCount.current > 0
+    ) {
+      openCart();
+    }
+    prevFetcherCount.current = addToCartFetchers.length;
+  }, [addToCartFetchers.length, openCart]);
 
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <a href="#mainContent" className="sr-only">
+        <a href="#mainContent" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
           Skip to content
         </a>
-        <Suspense fallback={<div>Loading Header...</div>}>
+        <Suspense fallback={<div className="navbar bg-base-100 sticky top-0 z-50" />}>
           <Await resolve={cart}>
             {(cartData) => (
-              <Header
-                cartCount={cartData?.totalQuantity || 0}
-                url={`${location.pathname}${location.search}`}
-              />
+              <>
+                <Header
+                  cartCount={cartData?.totalQuantity || 0}
+                  url={`${location.pathname}${location.search}`}
+                  isLoggedIn={isLoggedIn}
+                  onCartClick={openCart}
+                />
+                <Drawer
+                  open={isCartOpen}
+                  onClose={closeCart}
+                  heading="Cart"
+                  openFrom="right"
+                >
+                  <Cart
+                    layout="drawer"
+                    onClose={closeCart}
+                    cart={cartData as CartType}
+                  />
+                </Drawer>
+              </>
             )}
           </Await>
         </Suspense>
-        <main role="main" id="mainContent" className="flex-grow">
+        <main id="mainContent" className="flex-grow">
           {children}
         </main>
       </div>

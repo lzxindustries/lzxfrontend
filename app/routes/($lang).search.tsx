@@ -1,4 +1,4 @@
-import {Await, Form, useLoaderData} from '@remix-run/react';
+import {Await, Form, useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
 import type {
@@ -10,8 +10,8 @@ import type {
 import {defer} from '@shopify/remix-oxygen';
 import type {
   MetaArgs,
-  type LoaderFunctionArgs,
-  type SerializeFrom,
+  LoaderFunctionArgs,
+  SerializeFrom,
 } from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import invariant from 'tiny-invariant';
@@ -23,6 +23,20 @@ import {Heading, Section, Text, PageHeader} from '~/components/Text';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <PageHeader heading="Search Error">
+      <p>{message}</p>
+    </PageHeader>
+  );
+}
 
 export async function loader({
   request,

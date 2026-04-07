@@ -4,7 +4,7 @@ import type {
   ExternalVideo,
   MediaImage,
 } from '@shopify/hydrogen/storefront-api-types';
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {cropImageByTransparency} from '~/lib/utils';
 
 export enum MediaGalleryItemType {

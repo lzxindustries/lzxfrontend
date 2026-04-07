@@ -9,20 +9,17 @@ import {
   useMatches,
   useRouteError,
 } from '@remix-run/react';
-import type {MetaFunction} from '@remix-run/react';
 import {
   ShopifySalesChannel,
-  Seo,
   getSeoMeta,
-  SeoConfig,
 } from '@shopify/hydrogen';
 import type {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
 import {defer} from '@shopify/remix-oxygen';
 import type {
   MetaArgs,
-  type LinksFunction,
-  type LoaderFunctionArgs,
-  type AppLoadContext,
+  LinksFunction,
+  LoaderFunctionArgs,
+  AppLoadContext,
 } from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {GenericError} from './components/GenericError';
@@ -110,7 +107,7 @@ export const meta = ({matches}: MetaArgs<typeof loader>) => {
 
 export function ErrorBoundary({error}: {error: Error}) {
   const [root] = useMatches();
-  const locale = root?.data?.selectedLocale ?? DEFAULT_LOCALE;
+  const locale = (root?.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
   const routeError = useRouteError();
   const isRouteError = isRouteErrorResponse(routeError);
 
@@ -133,7 +130,7 @@ export function ErrorBoundary({error}: {error: Error}) {
       </head>
       <body>
         <Layout
-          layout={root?.data?.layout}
+          layout={(root?.data as Record<string, any>)?.layout}
           key={`${locale.language}-${locale.country}`}
         >
           {isRouteError ? (

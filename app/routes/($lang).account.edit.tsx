@@ -11,6 +11,8 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import {json, redirect, type ActionFunction} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
+import {useState} from 'react';
+import {FaEye, FaEyeSlash, FaExclamationTriangle} from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 import {getCustomer} from './($lang).account';
 import {Button} from '~/components/Button';
@@ -110,7 +112,11 @@ export const action: ActionFunction = async ({request, context, params}) => {
 
     assertApiErrors(data.customerUpdate);
 
-    return redirect(params?.lang ? `${params.lang}/account` : '/account');
+    return redirect(
+      params?.lang
+        ? `${params.lang}/account?updated=true`
+        : '/account?updated=true',
+    );
   } catch (error: any) {
     return badRequest({formError: error.message});
   }
@@ -130,6 +136,9 @@ export default function AccountDetailsEdit() {
   const actionData = useActionData<ActionData>();
   const {customer} = useOutletContext<AccountOutletContext>();
   const {state} = useNavigation();
+  const [emailValue, setEmailValue] = useState(customer.email ?? '');
+  const emailChanged =
+    emailValue !== '' && emailValue !== (customer.email ?? '');
 
   return (
     <>
@@ -143,6 +152,9 @@ export default function AccountDetailsEdit() {
           </div>
         )}
         <div className="mt-3">
+          <label htmlFor="firstName" className="text-sm text-primary/50 mb-1 block">
+            First name
+          </label>
           <input
             className={getInputStyleClasses()}
             id="firstName"
@@ -155,6 +167,9 @@ export default function AccountDetailsEdit() {
           />
         </div>
         <div className="mt-3">
+          <label htmlFor="lastName" className="text-sm text-primary/50 mb-1 block">
+            Last name
+          </label>
           <input
             className={getInputStyleClasses()}
             id="lastName"
@@ -167,6 +182,9 @@ export default function AccountDetailsEdit() {
           />
         </div>
         <div className="mt-3">
+          <label htmlFor="phone" className="text-sm text-primary/50 mb-1 block">
+            Phone
+          </label>
           <input
             className={getInputStyleClasses()}
             id="phone"
@@ -179,6 +197,9 @@ export default function AccountDetailsEdit() {
           />
         </div>
         <div className="mt-3">
+          <label htmlFor="email" className="text-sm text-primary/50 mb-1 block">
+            Email address
+          </label>
           <input
             className={getInputStyleClasses(actionData?.fieldErrors?.email)}
             id="email"
@@ -189,10 +210,17 @@ export default function AccountDetailsEdit() {
             placeholder="Email address"
             aria-label="Email address"
             defaultValue={customer.email ?? ''}
+            onChange={(e) => setEmailValue(e.target.value)}
           />
+          {emailChanged && (
+            <div className="flex items-center gap-2 mt-2 p-2 bg-amber-50 border border-amber-200 rounded text-amber-800 text-xs">
+              <FaExclamationTriangle className="shrink-0" />
+              <span>Changing your email will update your login credentials.</span>
+            </div>
+          )}
           {actionData?.fieldErrors?.email && (
-            <p className="text-red-500 text-xs">
-              {actionData.fieldErrors.email} &nbsp;
+            <p className="text-red-500 text-xs mt-1">
+              {actionData.fieldErrors.email}
             </p>
           )}
         </div>
@@ -206,7 +234,7 @@ export default function AccountDetailsEdit() {
         />
         {actionData?.fieldErrors?.currentPassword && (
           <Text size="fine" className="mt-1 text-red-500">
-            {actionData.fieldErrors.currentPassword} &nbsp;
+            {actionData.fieldErrors.currentPassword}
           </Text>
         )}
         <Password
@@ -229,10 +257,9 @@ export default function AccountDetailsEdit() {
         >
           Passwords must be at least 8 characters.
         </Text>
-        {actionData?.fieldErrors?.newPassword2 ? <br /> : null}
         {actionData?.fieldErrors?.newPassword2 && (
           <Text size="fine" className="mt-1 text-red-500">
-            {actionData.fieldErrors.newPassword2} &nbsp;
+            {actionData.fieldErrors.newPassword2}
           </Text>
         )}
         <div className="mt-6">
@@ -243,7 +270,7 @@ export default function AccountDetailsEdit() {
             type="submit"
             disabled={state !== 'idle'}
           >
-            {state !== 'idle' ? 'Saving' : 'Save'}
+            {state !== 'idle' ? 'Saving...' : 'Save'}
           </Button>
         </div>
         <div className="mb-4">
@@ -265,20 +292,34 @@ function Password({
   passwordError?: string;
   label: string;
 }) {
+  const [show, setShow] = useState(false);
   return (
     <div className="mt-3">
-      <input
-        className={getInputStyleClasses(passwordError)}
-        id={name}
-        name={name}
-        type="password"
-        autoComplete={
-          name === 'currentPassword' ? 'current-password' : undefined
-        }
-        placeholder={label}
-        aria-label={label}
-        minLength={8}
-      />
+      <label htmlFor={name} className="text-sm text-primary/50 mb-1 block">
+        {label}
+      </label>
+      <div className="relative">
+        <input
+          className={getInputStyleClasses(passwordError)}
+          id={name}
+          name={name}
+          type={show ? 'text' : 'password'}
+          autoComplete={
+            name === 'currentPassword' ? 'current-password' : undefined
+          }
+          placeholder={label}
+          aria-label={label}
+          minLength={8}
+        />
+        <button
+          type="button"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary/70"
+          onClick={() => setShow(!show)}
+          aria-label={show ? 'Hide password' : 'Show password'}
+        >
+          {show ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+        </button>
+      </div>
     </div>
   );
 }

@@ -9,3 +9,7 @@ node_modules
 .hydrogen
 .yarn
 storefrontapi.generated.d.ts
+coverage/
+playwright-report/
+test-results/
+.playwright/

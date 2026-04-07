@@ -1,4 +1,4 @@
-import {useFetcher, useMatches, useNavigation} from '@remix-run/react';
+import {useFetcher, useMatches} from '@remix-run/react';
 import type {CartLineInput} from '@shopify/hydrogen/storefront-api-types';
 import {Button} from '~/components/Button';
 import {CartAction} from '~/lib/type';
@@ -23,7 +23,7 @@ export function AddToCartButton({
   [key: string]: any;
 }) {
   const [root] = useMatches();
-  const selectedLocale = root?.data?.selectedLocale;
+  const selectedLocale = (root?.data as Record<string, any>)?.selectedLocale;
   const fetcher = useFetcher();
   const fetcherIsNotIdle = fetcher.state !== 'idle';
 

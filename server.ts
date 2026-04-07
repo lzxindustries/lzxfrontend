@@ -77,6 +77,7 @@ export default {
 
       const urlPathname = new URL(request.url).pathname;
       if (
+        response.ok &&
         !urlPathname.endsWith('/cart') &&
         !urlPathname.endsWith('/account') &&
         !urlPathname.includes('/account/')

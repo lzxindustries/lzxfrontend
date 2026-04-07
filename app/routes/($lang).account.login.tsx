@@ -2,6 +2,7 @@ import {
   Form,
   useActionData,
   useLoaderData,
+  useSearchParams,
   type MetaFunction,
 } from '@remix-run/react';
 import type {CustomerAccessTokenCreatePayload} from '@shopify/hydrogen/storefront-api-types';
@@ -22,13 +23,14 @@ export const handle = {
 
 export async function loader({context, params}: LoaderFunctionArgs) {
   const customerAccessToken = await context.session.get('customerAccessToken');
+  const sessionExpired = await context.session.get('sessionExpired');
 
   if (customerAccessToken) {
     return redirect(params.lang ? `${params.lang}/account` : '/account');
   }
 
   // TODO: Query for this?
-  return json({shopName: 'LZX Industries'});
+  return json({shopName: 'LZX Industries', sessionExpired});
 }
 
 type ActionData = {
@@ -54,7 +56,7 @@ export const action: ActionFunction = async ({request, context, params}) => {
     });
   }
 
-  const {session, storefront} = context;
+  const {session} = context;
 
   try {
     const customerAccessToken = await doLogin(context, {email, password});
@@ -88,29 +90,42 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Login() {
-  const {shopName} = useLoaderData<typeof loader>();
+  const {shopName, sessionExpired} = useLoaderData<typeof loader>();
   const actionData = useActionData<ActionData>();
   const [nativeEmailError, setNativeEmailError] = useState<null | string>(null);
   const [nativePasswordError, setNativePasswordError] = useState<null | string>(
     null,
   );
+  const [showPassword, setShowPassword] = useState(false);
+  const [searchParams] = useSearchParams();
 
   return (
     <div className="flex justify-center my-24 px-4">
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Sign in.</h1>
-        {/* TODO: Add onSubmit to validate _before_ submission with native? */}
+        <p className="mt-2 text-sm text-primary/60">
+          Track orders, manage your addresses, and get access to exclusive content.
+        </p>
         <Form
           method="post"
           noValidate
           className="pt-6 pb-8 mt-4 mb-4 space-y-3"
         >
+          {sessionExpired && (
+            <div className="flex items-center justify-center mb-6 rounded bg-yellow-500/10 border border-yellow-500/20">
+              <p className="m-4 text-s text-yellow-400">Your session has expired. Please sign in again.</p>
+            </div>
+          )}
           {actionData?.formError && (
-            <div className="flex items-center justify-center mb-6 bg-zinc-500">
-              <p className="m-4 text-s text-contrast">{actionData.formError}</p>
+            <div className="flex flex-col items-center justify-center mb-6 rounded bg-red-500/10 border border-red-500/20">
+              <p className="m-4 mb-2 text-s text-red-400">{actionData.formError}</p>
+              <a href="/account/register" className="mb-3 text-sm underline text-primary/60 hover:text-primary">
+                Create a new account
+              </a>
             </div>
           )}
           <div>
+            <label htmlFor="email" className="sr-only">Email address</label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativeEmailError)}`}
               id="email"
@@ -137,33 +152,42 @@ export default function Login() {
           </div>
 
           <div>
-            <input
-              className={`mb-1 ${getInputStyleClasses(nativePasswordError)}`}
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              placeholder="Password"
-              aria-label="Password"
-              minLength={8}
-              required
-              // eslint-disable-next-line jsx-a11y/no-autofocus
-              autoFocus
-              onBlur={(event) => {
-                if (
-                  event.currentTarget.validity.valid ||
-                  !event.currentTarget.value.length
-                ) {
-                  setNativePasswordError(null);
-                } else {
-                  setNativePasswordError(
-                    event.currentTarget.validity.valueMissing
-                      ? 'Please enter a password'
-                      : 'Passwords must be at least 8 characters',
-                  );
-                }
-              }}
-            />
+            <label htmlFor="password" className="sr-only">Password</label>
+            <div className="relative">
+              <input
+                className={`mb-1 pr-12 ${getInputStyleClasses(nativePasswordError)}`}
+                id="password"
+                name="password"
+                type={showPassword ? 'text' : 'password'}
+                autoComplete="current-password"
+                placeholder="Password"
+                aria-label="Password"
+                minLength={8}
+                required
+                onBlur={(event) => {
+                  if (
+                    event.currentTarget.validity.valid ||
+                    !event.currentTarget.value.length
+                  ) {
+                    setNativePasswordError(null);
+                  } else {
+                    setNativePasswordError(
+                      event.currentTarget.validity.valueMissing
+                        ? 'Please enter a password'
+                        : 'Passwords must be at least 8 characters',
+                    );
+                  }
+                }}
+              />
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-primary/50 hover:text-primary"
+                onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
             {nativePasswordError && (
               <p className="text-red-500 text-xs">
                 {' '}

@@ -5,8 +5,6 @@ import {useCallback, useEffect, useRef} from 'react';
 import {useInView} from 'react-intersection-observer';
 import {Button} from '~/components/Button';
 import {IconCheck} from '~/components/Icon';
-import IconPolicy from '~/components/IconPolicy';
-import {Text} from '~/components/Text';
 import type {Localizations, Locale} from '~/lib/type';
 import {CartAction} from '~/lib/type';
 import {DEFAULT_LOCALE} from '~/lib/utils';
@@ -15,7 +13,7 @@ export function CountrySelector() {
   const [root] = useMatches();
   const fetcher = useFetcher();
   const closeRef = useRef<HTMLDetailsElement>(null);
-  const selectedLocale = root.data?.selectedLocale ?? DEFAULT_LOCALE;
+  const selectedLocale = (root.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
   const {pathname, search} = useLocation();
   const pathWithoutLocale = `${pathname.replace(
     selectedLocale.pathPrefix,

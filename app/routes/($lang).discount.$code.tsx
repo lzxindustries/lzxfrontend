@@ -17,13 +17,16 @@ import {getCartId} from '~/lib/utils';
 export async function loader({request, context, params}: LoaderFunctionArgs) {
   const {storefront} = context;
   // N.B. This route will probably be removed in the future.
-  const session = context.session as any;
   const {code} = params;
 
   const url = new URL(request.url);
   const searchParams = new URLSearchParams(url.search);
-  const redirectParam =
+  const rawRedirect =
     searchParams.get('redirect') || searchParams.get('return_to') || '/';
+
+  // Prevent open redirect: only allow relative paths
+  const redirectParam =
+    rawRedirect.startsWith('/') && !rawRedirect.startsWith('//') ? rawRedirect : '/';
 
   searchParams.delete('redirect');
   searchParams.delete('return_to');

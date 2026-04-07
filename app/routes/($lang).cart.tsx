@@ -1,4 +1,4 @@
-import {Await, useMatches} from '@remix-run/react';
+import {Await, useMatches, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {
   Cart as CartType,
   CartInput,
@@ -147,6 +147,20 @@ export async function action({request, context}: ActionFunctionArgs) {
       cartId = result.cart.id;
 
       break;
+    case CartAction.UPDATE_NOTE:
+      invariant(cartId, 'Missing cartId');
+
+      const note = String(formData.get('note') ?? '');
+
+      result = await cartNoteUpdate({
+        cartId,
+        note,
+        storefront,
+      });
+
+      cartId = result.cart.id;
+
+      break;
     default:
       invariant(false, `${cartAction} cart action is not defined`);
   }
@@ -181,7 +195,7 @@ export default function CartRoute() {
   return (
     <div className="grid w-full gap-8 p-6 py-8 md:p-8 lg:p-12 justify-items-start">
       <Suspense fallback={<CartLoading />}>
-        <Await resolve={root.data?.cart}>
+        <Await resolve={(root.data as Record<string, any>)?.cart}>
           {(cart) => <Cart layout="page" cart={cart} />}
         </Await>
       </Suspense>
@@ -519,4 +533,55 @@ export async function cartDiscountCodesUpdate({
   );
 
   return cartDiscountCodesUpdate;
+}
+
+const NOTE_UPDATE_MUTATION = `#graphql
+  mutation cartNoteUpdate($cartId: ID!, $note: String!, $country: CountryCode = ZZ)
+    @inContext(country: $country) {
+    cartNoteUpdate(cartId: $cartId, note: $note) {
+      cart {
+        id
+        note
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+export async function cartNoteUpdate({
+  cartId,
+  note,
+  storefront,
+}: {
+  cartId: string;
+  note: string;
+  storefront: AppLoadContext['storefront'];
+}) {
+  const {cartNoteUpdate} = await storefront.mutate<{
+    cartNoteUpdate: {cart: CartType; userErrors: UserError[]};
+  }>(NOTE_UPDATE_MUTATION, {
+    variables: {cartId, note},
+  });
+
+  invariant(cartNoteUpdate, 'No data returned from cartNoteUpdate mutation');
+
+  return {cart: cartNoteUpdate.cart, errors: cartNoteUpdate.userErrors};
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <div className="flex flex-col items-center justify-center p-12">
+      <h1 className="text-2xl font-bold mb-4">Cart Error</h1>
+      <p>{message}</p>
+    </div>
+  );
 }

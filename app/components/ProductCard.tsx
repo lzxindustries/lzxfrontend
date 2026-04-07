@@ -1,8 +1,6 @@
-import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
 import {flattenConnection, useMoney} from '@shopify/hydrogen';
 import type {MoneyV2, Product} from '@shopify/hydrogen/storefront-api-types';
 import clsx from 'clsx';
-import {useState} from 'react';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Link} from '~/components/Link';
 import {Text} from '~/components/Text';
@@ -38,15 +36,10 @@ export function ProductCard({
   onClick?: () => void;
   quickAdd?: boolean;
 }) {
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleOnClick = () => {
-    setIsLoading(true);
     if (onClick) {
       onClick();
     }
-    // Simulate loading completion (e.g., API call completion)
-    setTimeout(() => setIsLoading(false), 10000); // Replace with actual logic
   };
 
   let cardLabel;
@@ -76,23 +69,6 @@ export function ProductCard({
     cardLabel = 'New';
   }
 
-  const productAnalytics: ShopifyAnalyticsProduct = {
-    productGid: product.id,
-    variantGid: firstVariant.id,
-    name: product.title,
-    variantName: firstVariant.title,
-    brand: product.vendor,
-    price: firstVariant.price.amount,
-    quantity: 1,
-  };
-
-  const imageLocal = '';
-  // product.title == 'Angles' ? imageLocal = '/images/angles-front-panel.svg' : ''
-  // product.title == 'Chromagnon' ? imageLocal = '/images/chromagnon-front-panel.png' : ''
-
-  // var is2Cols = false
-  // product.title == 'Chromagnon' ? is2Cols = true : ''
-
   return (
     <div className="flex flex-col gap-2">
       <Link
@@ -103,11 +79,6 @@ export function ProductCard({
       >
         <div className={clsx('grid gap-4', className)}>
           <div className="card-image aspect-square bg-primary/5 relative">
-            {isLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-white/50 z-10">
-                <div className="loader border-8 border-primary border-t-transparent rounded-full w-14 h-14 animate-spin" />
-              </div>
-            )}
             {firstVariant?.quantityAvailable != null && firstVariant.quantityAvailable > 0 && (
               <div className="absolute top-2 right-2 z-10 bg-green-600 text-white text-xs font-normal px-2 py-1 rounded">
                 Ready to Ship

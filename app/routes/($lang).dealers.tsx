@@ -1,13 +1,32 @@
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {Section} from '~/components/Text';
 import {getAllDealers} from '~/controllers/get_all_dealers';
+import {routeHeaders} from '~/data/cache';
 
-export async function loader({params, request, context}: LoaderFunctionArgs) {
+export const headers = routeHeaders;
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  const message = isRouteErrorResponse(error)
+    ? `${error.status} ${error.data}`
+    : error instanceof Error
+      ? error.message
+      : 'Unknown error';
+  return (
+    <Section>
+      <h1 className="text-xl font-bold">Error loading dealers</h1>
+      <p>{message}</p>
+    </Section>
+  );
+}
+
+export async function loader({context}: LoaderFunctionArgs) {
   const dealerData = await getAllDealers(context);
   return dealerData;
 }
 
-export default function Patches() {
+export default function Dealers() {
   const dealerData = useLoaderData<typeof loader>();
 
   return (
