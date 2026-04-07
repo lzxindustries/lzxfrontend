@@ -65,7 +65,7 @@ test.describe('Responsive header', () => {
 /* ── Horizontal Overflow Check ───────────────────────────────── */
 
 test.describe('Horizontal overflow check', () => {
-  const pages = ['/', '/products', '/modules', '/patches', '/dealers', '/cart'];
+  const pages = ['/', '/products', '/cart'];
 
   for (const path of pages) {
     for (const [label, size] of Object.entries(VIEWPORTS)) {

@@ -220,7 +220,7 @@ function Account({
 
       {/* Quick Links */}
       <div className="grid w-full gap-4 p-4 md:p-8 lg:p-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <a
             href="/account/orders"
             className="flex items-center gap-3 p-4 border border-primary/10 rounded-lg hover:bg-primary/5 transition-colors"
@@ -229,16 +229,6 @@ function Account({
             <div>
               <Text className="font-bold">Order History</Text>
               <Text size="fine" color="subtle">View all orders</Text>
-            </div>
-          </a>
-          <a
-            href="/account/hardware"
-            className="flex items-center gap-3 p-4 border border-primary/10 rounded-lg hover:bg-primary/5 transition-colors"
-          >
-            <span className="text-2xl">🔧</span>
-            <div>
-              <Text className="font-bold">My Hardware</Text>
-              <Text size="fine" color="subtle">Registered serial numbers</Text>
             </div>
           </a>
         </div>

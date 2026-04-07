@@ -55,30 +55,6 @@ test.describe('Cart', () => {
   });
 });
 
-test.describe('Modules Catalog', () => {
-  test('modules page loads and shows module data', async ({page}) => {
-    await page.goto('/modules');
-    await page.waitForLoadState('networkidle');
-    await expect(page.locator('main')).toBeVisible();
-  });
-});
-
-test.describe('Patches', () => {
-  test('patches page loads', async ({page}) => {
-    await page.goto('/patches');
-    await page.waitForLoadState('networkidle');
-    await expect(page.locator('main')).toBeVisible();
-  });
-});
-
-test.describe('Dealers', () => {
-  test('dealers page loads', async ({page}) => {
-    await page.goto('/dealers');
-    await page.waitForLoadState('networkidle');
-    await expect(page.locator('main')).toBeVisible();
-  });
-});
-
 test.describe('Search', () => {
   test('search page loads', async ({page}) => {
     await page.goto('/search');

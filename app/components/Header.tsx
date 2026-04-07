@@ -35,7 +35,6 @@ export function Header({
   const isAccount = url.includes('/account');
   const isSearch = url.includes('/search');
   const isGettingStarted = url.includes('https://docs.lzxindustries.net');
-  const isDealers = url.includes('/dealers');
   const isBlog = url.includes('https://docs.lzxindustries.net/blog');
 
   return (
@@ -77,11 +76,6 @@ export function Header({
                 href="https://docs.lzxindustries.net"
               >
                 Docs
-              </a>
-            </li>
-            <li key="dealers">
-              <a className={isDealers ? 'active' : ''} href="/dealers">
-                Dealers
               </a>
             </li>
             <li key="blog">
@@ -134,11 +128,6 @@ export function Header({
               href="https://docs.lzxindustries.net"
             >
               Docs
-            </a>
-          </li>
-          <li>
-            <a className={isDealers ? 'active' : ''} href="/dealers">
-              Dealers
             </a>
           </li>
           <li>

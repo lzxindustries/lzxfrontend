@@ -16,11 +16,6 @@ Set required environment variables:
 - `PRIVATE_STOREFRONT_API_TOKEN`
 - `PUBLIC_STORE_DOMAIN`
 - `PUBLIC_STOREFRONT_ID`
-- `CLUSTER_NAME`
-- `DATA_API_BASE_URL`
-- `DATA_API_KEY`
-- `DATABASE_NAME`
-- `DATABASE_URL`
 
 Install dependencies:
 

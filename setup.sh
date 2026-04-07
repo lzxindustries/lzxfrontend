@@ -48,10 +48,6 @@ PRIVATE_STOREFRONT_API_TOKEN=
 PUBLIC_STORE_DOMAIN=
 PUBLIC_STOREFRONT_ID=
 PUBLIC_STOREFRONT_API_VERSION=2024-04
-CLUSTER_NAME=
-DATA_API_BASE_URL=
-DATA_API_KEY=
-DATABASE_NAME=
 EOF
   echo ".env file created. Please populate the remaining values before running the app."
   echo ""
@@ -60,10 +56,6 @@ EOF
   echo "  PRIVATE_STOREFRONT_API_TOKEN - Shopify Storefront API private token"
   echo "  PUBLIC_STORE_DOMAIN          - e.g. your-store.myshopify.com"
   echo "  PUBLIC_STOREFRONT_ID         - Shopify storefront ID"
-  echo "  CLUSTER_NAME                 - MongoDB Atlas cluster name"
-  echo "  DATA_API_BASE_URL            - MongoDB Data API base URL"
-  echo "  DATA_API_KEY                 - MongoDB Data API key"
-  echo "  DATABASE_NAME                - MongoDB database name"
 else
   echo ".env already exists — skipping creation."
 fi
