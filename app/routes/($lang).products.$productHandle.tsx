@@ -216,7 +216,7 @@ export function ProductForm() {
 
   return (
     <>
-      <div className="grid gap-6">
+      <div className="grid gap-3">
         {/* Variant Selector — pill buttons */}
         <VariantSelector
           handle={product.handle}
@@ -312,13 +312,13 @@ export function ProductForm() {
 
         {/* Low stock warning */}
         {showLowStock && (
-          <div className="p-3 bg-yellow-50 border border-yellow-300 rounded text-yellow-800 text-sm font-medium">
+          <div className="px-3 py-2 bg-yellow-50 border border-yellow-300 rounded text-yellow-800 text-sm font-medium">
             Only {selectedVariant!.quantityAvailable} left in stock
           </div>
         )}
 
         {/* Action buttons + status messages */}
-        <div ref={ctaRef} className="grid gap-3">
+        <div ref={ctaRef} className="grid gap-2">
           {selectedVariant && (
             <>
               {isOutOfStock ? (

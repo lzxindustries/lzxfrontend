@@ -186,14 +186,14 @@ export function ModuleDetails({
     >
       <ProductMediaGallery media={media}></ProductMediaGallery>
       <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
-        <div className="flex flex-col gap-6 px-8 pt-4 pb-8">
+        <div className="flex flex-col gap-3 px-6 pt-4 pb-4">
           <h1 className="font-sans font-bold text-3xl md:text-4xl uppercase">
             {product.title}
           </h1>
           <div>{children}</div>
         </div>
         {sections.length > 0 && (
-          <div className="border-t border-primary/10 px-8">
+          <div className="border-t border-primary/10 px-6">
             {sections.map((section) => (
               <Disclosure key={section.title} defaultOpen={section.defaultOpen}>
                 {({open}) => (
