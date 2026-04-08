@@ -94,7 +94,6 @@ export function Footer() {
         <div>
           <span className="footer-title">Country</span>
           <CountrySelector />
-          <div className="h-8" />
           {/* <select className="select select-bordered w-full max-w-xs">
             <option selected>United States</option>
             <option>Canada</option>

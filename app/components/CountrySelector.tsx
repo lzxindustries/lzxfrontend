@@ -49,44 +49,42 @@ export function CountrySelector() {
   return (
     <section
       ref={observerRef}
-      className="grid w-full gap-4"
+      className="w-full"
       onMouseLeave={closeDropdown}
     >
-      <div className="relative">
-        <details
-          className="absolute w-full border rounded border-contrast/30 open:round-b-none overflow-clip bg-base-200"
-          ref={closeRef}
-        >
-          <summary className="flex items-center justify-between w-full px-4 py-3 cursor-pointer">
-            {selectedLocale.label}
-          </summary>
-          <div className="w-full overflow-auto border-b border-contrast/30 dark:border-white bg-contrast/30 max-h-36">
-            {countries &&
-              Object.keys(countries).map((countryPath) => {
-                const countryLocale = countries[countryPath];
-                const isSelected =
-                  countryLocale.language === selectedLocale.language &&
-                  countryLocale.country === selectedLocale.country;
+      <details
+        className="w-full border rounded border-base-content/20 overflow-clip bg-base-200"
+        ref={closeRef}
+      >
+        <summary className="flex items-center justify-between w-full px-4 py-2 cursor-pointer text-sm">
+          {selectedLocale.label}
+        </summary>
+        <div className="w-full overflow-auto border-t border-base-content/20 bg-base-100 max-h-36">
+          {countries &&
+            Object.keys(countries).map((countryPath) => {
+              const countryLocale = countries[countryPath];
+              const isSelected =
+                countryLocale.language === selectedLocale.language &&
+                countryLocale.country === selectedLocale.country;
 
-                const countryUrlPath = getCountryUrlPath({
-                  countryLocale,
-                  defaultLocalePrefix,
-                  pathWithoutLocale,
-                });
+              const countryUrlPath = getCountryUrlPath({
+                countryLocale,
+                defaultLocalePrefix,
+                pathWithoutLocale,
+              });
 
-                return (
-                  <Country
-                    key={countryPath}
-                    closeDropdown={closeDropdown}
-                    countryUrlPath={countryUrlPath}
-                    isSelected={isSelected}
-                    countryLocale={countryLocale}
-                  />
-                );
-              })}
-          </div>
-        </details>
-      </div>
+              return (
+                <Country
+                  key={countryPath}
+                  closeDropdown={closeDropdown}
+                  countryUrlPath={countryUrlPath}
+                  isSelected={isSelected}
+                  countryLocale={countryLocale}
+                />
+              );
+            })}
+        </div>
+      </details>
     </section>
   );
 }
@@ -112,9 +110,10 @@ function Country({
     >
       <Button
         className={clsx([
-          'text-contrast dark:text-primary border-none',
-          'bg-primary dark:bg-contrast w-full rounded-none p-2 transition flex justify-start',
-          'items-center text-left cursor-pointer py-2 px-4 hover:bg-gray-300',
+          'w-full rounded-none border-none',
+          'bg-transparent hover:bg-base-300 text-base-content',
+          'flex justify-start items-center text-left',
+          'cursor-pointer py-2 px-4 text-sm font-normal',
         ])}
         type="submit"
         variant="primary"
