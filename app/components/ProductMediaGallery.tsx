@@ -2,9 +2,7 @@ import type {
   Product,
   Media,
   ExternalVideo,
-  MediaImage,
 } from '@shopify/hydrogen/storefront-api-types';
-import {Image} from '@shopify/hydrogen';
 import React, {useEffect, useRef, useState} from 'react';
 import {cropImageByTransparency} from '~/lib/utils';
 
@@ -120,11 +118,10 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
           </button>
           <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
             {media[currentSlide].type === MediaGalleryItemType.IMAGE ? (
-              <Image
+              <img
                 src={preCroppedImages[currentSlide] ?? media[currentSlide].src}
                 alt={media[currentSlide].name}
                 className="w-full h-full object-contain"
-                sizes="(min-width: 1024px) 50vw, 100vw"
               />
             ) : media[currentSlide].type === MediaGalleryItemType.VIDEO ? (
               <div className="w-full ">
