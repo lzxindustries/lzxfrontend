@@ -36,10 +36,6 @@ export function Hero() {
             Something remarkable is about to happen to your video signal
           </Heading>
 
-          <p className="vm-reveal vm-reveal-delay-2 font-hand mt-4 text-lg text-moonwax/75 md:text-xl lg:text-2xl">
-            Built for the stage. Built for the studio. Built for the dark room at midnight.
-          </p>
-
           <Text
             as="p"
             className="vm-reveal vm-reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
