@@ -13,7 +13,7 @@ import type {
   LoaderFunctionArgs,
   SerializeFrom,
 } from '@shopify/remix-oxygen';
-import {Suspense} from 'react';
+import {Suspense, useEffect} from 'react';
 import invariant from 'tiny-invariant';
 import {FeaturedCollections} from '~/components/FeaturedCollections';
 import {Input} from '~/components/Input';
@@ -23,6 +23,7 @@ import {Heading, Section, Text, PageHeader} from '~/components/Text';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
+import {trackMetaEvent} from '~/hooks/useMetaPixel';
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -100,6 +101,12 @@ export default function Search() {
   const {searchTerm, products, noResultRecommendations} =
     useLoaderData<typeof loader>();
   const noResults = products?.nodes?.length === 0;
+
+  useEffect(() => {
+    if (searchTerm) {
+      trackMetaEvent('Search', {search_string: searchTerm});
+    }
+  }, [searchTerm]);
 
   return (
     <>

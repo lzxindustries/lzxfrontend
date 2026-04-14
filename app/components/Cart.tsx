@@ -17,6 +17,7 @@ import {Heading, Text} from '~/components/Text';
 
 import {CartAction} from '~/lib/type';
 import {getInputStyleClasses} from '~/lib/utils';
+import {trackMetaEvent} from '~/hooks/useMetaPixel';
 
 type Layouts = 'page' | 'drawer';
 
@@ -177,7 +178,19 @@ function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: C
     <div className="flex flex-col mt-2 gap-2">
       {/* Shop Pay button available via @shopify/hydrogen - uncomment when Shop Pay is configured */}
       {/* {cart && <ShopPayButton cart={cart} />} */}
-      <a href={checkoutUrl} target="_self">
+      <a
+        href={checkoutUrl}
+        target="_self"
+        onClick={() => {
+          trackMetaEvent('InitiateCheckout', {
+            value: cart?.cost?.subtotalAmount?.amount
+              ? parseFloat(cart.cost.subtotalAmount.amount)
+              : undefined,
+            currency: cart?.cost?.subtotalAmount?.currencyCode,
+            num_items: cart?.totalQuantity,
+          });
+        }}
+      >
         <Button as="span" width="full">
           Continue to Checkout
         </Button>

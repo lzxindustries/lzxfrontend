@@ -25,6 +25,7 @@ import invariant from 'tiny-invariant';
 import {useCallback, useState} from 'react';
 import {CookieConsent} from './components/CookieConsent';
 import {GenericError} from './components/GenericError';
+import {MetaPixel} from './components/MetaPixel';
 import {NotFound} from './components/NotFound';
 import {useAnalytics} from './hooks/useAnalytics';
 import {
@@ -92,6 +93,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        <MetaPixel />
       </head>
       <body>
         <Layout

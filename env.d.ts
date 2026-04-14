@@ -23,6 +23,26 @@ declare global {
     PUBLIC_STORE_DOMAIN: string;
     PUBLIC_STOREFRONT_ID: string;
   }
+
+  interface FbqStandard {
+    (
+      method: 'track',
+      event:
+        | 'PageView'
+        | 'ViewContent'
+        | 'AddToCart'
+        | 'InitiateCheckout'
+        | 'Purchase'
+        | 'Search'
+        | 'AddPaymentInfo',
+      params?: Record<string, unknown>,
+    ): void;
+    (method: 'init', pixelId: string): void;
+  }
+
+  interface Window {
+    fbq?: FbqStandard;
+  }
 }
 
 /**

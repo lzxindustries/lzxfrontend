@@ -5,6 +5,7 @@ import type {
 } from '@shopify/hydrogen';
 import {
   AnalyticsEventName,
+  AnalyticsPageType,
   getClientBrowserParameters,
   sendShopifyAnalytics,
   useShopifyCookies,
@@ -12,6 +13,7 @@ import {
 import {useEffect} from 'react';
 import type {I18nLocale} from '../lib/type';
 import {CartAction} from '../lib/type';
+import {trackMetaEvent} from './useMetaPixel';
 
 export function useAnalytics(hasUserConsent: boolean, locale: I18nLocale) {
   useShopifyCookies({hasUserConsent});
@@ -40,6 +42,20 @@ export function useAnalytics(hasUserConsent: boolean, locale: I18nLocale) {
       eventName: AnalyticsEventName.PAGE_VIEW,
       payload,
     });
+
+    // Meta Pixel: ViewContent for product pages
+    if (pageAnalytics.pageType === AnalyticsPageType.product) {
+      const products = (pageAnalytics as any).products;
+      const product = products?.[0];
+      trackMetaEvent('ViewContent', {
+        content_name: product?.name,
+        content_ids: product ? [product.productGid] : [],
+        content_type: 'product',
+        value: pageAnalytics.totalValue,
+        currency: pageAnalytics.currency,
+      });
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
@@ -59,6 +75,17 @@ export function useAnalytics(hasUserConsent: boolean, locale: I18nLocale) {
     sendShopifyAnalytics({
       eventName: AnalyticsEventName.ADD_TO_CART,
       payload: addToCartPayload,
+    });
+
+    // Meta Pixel: AddToCart
+    const cartProducts = (cartData as any).products;
+    const cartProduct = cartProducts?.[0];
+    trackMetaEvent('AddToCart', {
+      content_name: cartProduct?.name,
+      content_ids: cartProduct ? [cartProduct.productGid] : [],
+      content_type: 'product',
+      value: (cartData as any).totalValue,
+      currency: pageAnalytics.currency,
     });
   }
 }
