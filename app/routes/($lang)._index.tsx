@@ -10,6 +10,7 @@ import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
+import {LiteYouTube} from '~/components/LiteYouTube';
 import {ProductCard} from '~/components/ProductCard';
 import {Section, PageHeader} from '~/components/Text';
 import {VideomancyLandingSections} from '~/components/VideomancyLandingSections';
@@ -89,6 +90,25 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <section className="bg-black px-6 py-20 md:px-10 lg:px-12">
+        <div className="mx-auto w-full max-w-4xl">
+          <div className="vm-reveal text-center">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-mystic-light">
+              Demo Reel
+            </p>
+            <h2 className="font-display text-xl font-black uppercase tracking-[0.1em] text-moonwax md:text-3xl">
+              See it in action
+            </h2>
+          </div>
+          <div className="vm-reveal vm-reveal-delay-1 mt-10">
+            <LiteYouTube
+              videoId="7cY8loTRU78"
+              title="Videomancer Demo Reel"
+              className="drop-shadow-[0_0_60px_rgba(80,76,159,0.25)]"
+            />
+          </div>
+        </div>
+      </section>
       <VideomancyLandingSections />
       <PageHeader heading="Explore Our Catalog" variant="allCollections" />
       <Section>
