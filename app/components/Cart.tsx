@@ -115,7 +115,7 @@ function CartDiscounts({
             placeholder="Discount code"
             aria-label="Discount code"
           />
-          <button className="flex justify-end font-medium whitespace-nowrap text-ellipsis overflow-hidden">
+          <button className="flex justify-end font-medium whitespace-nowrap shrink-0">
             Apply Discount
           </button>
         </div>
