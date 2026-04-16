@@ -1,4 +1,4 @@
-import {useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
+import {Link, useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {
   AnalyticsPageType,
@@ -122,6 +122,67 @@ export default function Home() {
           ))}
         </Grid>
       </Section>
+
+      <section className="bg-base-200 px-6 py-16 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-4xl space-y-10">
+          <div>
+            <h2 className="mb-4 text-2xl font-bold">About LZX Industries</h2>
+            <p className="leading-relaxed">
+              LZX Industries designs and manufactures analog and digital video
+              synthesis instruments in Portland, Oregon. Our Eurorack-format
+              modules give artists, musicians, and VJs real-time control over
+              color, pattern, and motion — bridging the worlds of modular
+              synthesis and visual art. Every product is engineered, assembled,
+              and tested in-house.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-4 text-2xl font-bold">
+              What Is Video Synthesis?
+            </h2>
+            <p className="leading-relaxed">
+              Video synthesis is the art of generating and manipulating video
+              signals with electronic circuits. Unlike conventional video
+              editing, a video synthesizer creates imagery from scratch —
+              oscillators produce patterns, ramps define gradients, and
+              voltage-controlled processors blend, key, and colorize signals
+              in real time. The result is a live, performable visual
+              instrument that responds to hands-on control and external audio.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="mb-4 text-2xl font-bold">Get Started</h2>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                <Link to="/getting-started" className="link link-primary">
+                  Getting Started Guide
+                </Link>{' '}
+                — learn how to build your first video synthesis system.
+              </li>
+              <li>
+                <Link to="/glossary" className="link link-primary">
+                  Glossary
+                </Link>{' '}
+                — key terms and concepts in video synthesis.
+              </li>
+              <li>
+                <Link to="/patches" className="link link-primary">
+                  Patch Ideas
+                </Link>{' '}
+                — example patches and recipes for LZX modules.
+              </li>
+              <li>
+                <Link to="/videos" className="link link-primary">
+                  Videos
+                </Link>{' '}
+                — tutorials, demos, and artist performances.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

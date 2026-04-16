@@ -11,7 +11,6 @@ import type {
   Shop,
 } from '@shopify/hydrogen-react/storefront-api-types';
 import type {
-  Article as SeoArticle,
   BreadcrumbList,
   Blog as SeoBlog,
   CollectionPage,
@@ -52,6 +51,19 @@ function root({
         'https://www.tiktok.com/@lzxindustries',
       ],
       url,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '3955 SE Ankeny St',
+        addressLocality: 'Portland',
+        addressRegion: 'OR',
+        postalCode: '97214',
+        addressCountry: 'US',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'support@lzxindustries.net',
+        contactType: 'customer service',
+      },
       potentialAction: {
         '@type': 'SearchAction',
         target: `${url}search?q={search_term}`,
@@ -151,10 +163,12 @@ function productJsonLd({
       brand: {
         '@type': 'Brand',
         name: product.vendor,
+        url: origin,
       },
       description,
       image: [selectedVariant?.image?.url ?? ''],
       name: product.title,
+      mpn: selectedVariant?.sku ?? '',
       offers,
       sku: selectedVariant?.sku ?? '',
       url,
@@ -189,13 +203,13 @@ function collectionJsonLd({
   url: Request['url'];
   collection: Collection;
 }): SeoConfig['jsonLd'] {
-  const siteUrl = new URL(url);
+  const origin = new URL(url).origin;
   const itemListElement: CollectionPage['mainEntity'] =
     collection.products.nodes.map((product, index) => {
       return {
         '@type': 'ListItem',
         position: index + 1,
-        url: `/products/${product.handle}`,
+        url: `${origin}/products/${product.handle}`,
       };
     });
 
@@ -208,7 +222,7 @@ function collectionJsonLd({
           '@type': 'ListItem',
           position: 1,
           name: 'Collections',
-          item: `${siteUrl.host}/collections`,
+          item: `${origin}/collections`,
         },
         {
           '@type': 'ListItem',
@@ -225,7 +239,7 @@ function collectionJsonLd({
         collection?.seo?.description ?? collection?.description ?? '',
       ),
       image: collection?.image?.url,
-      url: `/collections/${collection.handle}`,
+      url: `${origin}/collections/${collection.handle}`,
       mainEntity: {
         '@type': 'ItemList',
         itemListElement,
@@ -246,7 +260,8 @@ function collection({
     description: truncate(
       collection?.seo?.description ?? collection?.description ?? '',
     ),
-    titleTemplate: '%s | Collection',
+    titleTemplate: '%s | LZX Industries',
+    url: new URL(url).origin + new URL(url).pathname,
     media: {
       type: 'image',
       url: collection?.image?.url,
@@ -265,12 +280,13 @@ function collectionsJsonLd({
   url: Request['url'];
   collections: CollectionConnection;
 }): SeoConfig['jsonLd'] {
+  const origin = new URL(url).origin;
   const itemListElement: CollectionPage['mainEntity'] = collections.nodes.map(
     (collection, index) => {
       return {
         '@type': 'ListItem',
         position: index + 1,
-        url: `/collections/${collection.handle}`,
+        url: `${origin}/collections/${collection.handle}`,
       };
     },
   );
@@ -435,18 +451,92 @@ function policies({
   };
 }
 
+function glossary({url}: {url: string}): SeoConfig {
+  return {
+    title: 'Video Synthesis Glossary',
+    titleTemplate: '%s | LZX Industries',
+    description:
+      'Definitions of key terms and concepts in video synthesis, including keyers, oscillators, ramps, and more.',
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Video Synthesis Glossary',
+    },
+  };
+}
+
+function patches({url}: {url: string}): SeoConfig {
+  return {
+    title: 'Patch Ideas & Recipes',
+    titleTemplate: '%s | LZX Industries',
+    description:
+      'Example patches and recipes for LZX video synthesis modules. Explore patch diagrams, module lists, and video demos from the community.',
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Patch Ideas & Recipes',
+      url,
+    },
+  };
+}
+
+function patch({
+  title,
+  description,
+  url,
+}: {
+  title: string;
+  description: string;
+  url: string;
+}): SeoConfig {
+  return {
+    title,
+    titleTemplate: '%s | LZX Industries',
+    description: truncate(description),
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      url,
+    },
+  };
+}
+
+function videoGallery({url}: {url: string}): SeoConfig {
+  return {
+    title: 'Videos',
+    titleTemplate: '%s | LZX Industries',
+    description:
+      'Watch tutorials, demos, and artist performances featuring LZX video synthesis modules.',
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Videos',
+      url,
+    },
+  };
+}
+
 export const seoPayload = {
   article,
   blog,
   catalog,
   collection,
+  glossary,
   home,
   listCollections,
   page,
+  patch,
+  patches,
   policies,
   policy,
   product,
   root,
+  videoGallery,
 };
 
 /**

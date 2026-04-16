@@ -6,6 +6,7 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
+import {getPatches} from '~/data/lzxdb';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
 
@@ -114,7 +115,29 @@ function shopSitemap({
       };
     });
 
-  const urlsDatas = [...productsData, ...collectionsData, ...pagesData];
+  const staticRoutes = [
+    {url: baseUrl, changeFreq: 'daily'},
+    {url: `${baseUrl}/getting-started`, changeFreq: 'monthly'},
+    {url: `${baseUrl}/catalog`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/journal`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/glossary`, changeFreq: 'monthly'},
+    {url: `${baseUrl}/patches`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/videos`, changeFreq: 'weekly'},
+  ];
+
+  // Add individual patch pages
+  const patchRoutes = getPatches().map((patch) => ({
+    url: `${baseUrl}/patches/${patch.slug}`,
+    changeFreq: 'monthly',
+  }));
+
+  const urlsDatas = [
+    ...staticRoutes,
+    ...patchRoutes,
+    ...productsData,
+    ...collectionsData,
+    ...pagesData,
+  ];
 
   return `
     <urlset
@@ -143,7 +166,7 @@ function renderUrlTag({
   return `
     <url>
       <loc>${url}</loc>
-      <lastmod>${lastMod}</lastmod>
+      ${lastMod ? `<lastmod>${lastMod}</lastmod>` : ''}
       <changefreq>${changeFreq}</changefreq>
       ${
         image

@@ -1,16 +1,31 @@
-import {useLoaderData, useFetcher, type MetaFunction} from '@remix-run/react';
+import {
+  useLoaderData,
+  useFetcher,
+  type MetaFunction,
+} from '@remix-run/react';
 import {Image, Money, flattenConnection} from '@shopify/hydrogen';
 import type {
   DiscountApplicationConnection,
   Order,
   OrderLineItem,
 } from '@shopify/hydrogen/storefront-api-types';
-import {json, redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import {
+  json,
+  redirect,
+  type LoaderFunctionArgs,
+  type ActionFunctionArgs,
+} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
+import {useState} from 'react';
 import invariant from 'tiny-invariant';
 import {Link} from '~/components/Link';
 import {Heading, PageHeader, Text} from '~/components/Text';
-import {statusMessage, financialStatusMessage} from '~/lib/utils';
+import {
+  isOrderAddressEditable,
+  updateOrderShippingAddress,
+  type ShippingAddressInput,
+} from '~/lib/admin.server';
+import {statusMessage, financialStatusMessage, getInputStyleClasses} from '~/lib/utils';
 import {CartAction} from '~/lib/type';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
@@ -63,18 +78,85 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
     firstDiscount?.__typename === 'PricingPercentageValue' &&
     firstDiscount?.percentage;
 
+  // Check if the shipping address can be edited via Admin API
+  const adminOrderId = `gid://shopify/Order/${params.id}`;
+  const canEditAddress = await isOrderAddressEditable(adminOrderId, context.env);
+
   return json({
     order,
     lineItems,
     discountValue,
     discountPercentage,
+    canEditAddress,
   });
 }
 
+export async function action({request, context, params}: ActionFunctionArgs) {
+  const customerAccessToken = await context.session.get('customerAccessToken');
+  if (!customerAccessToken) {
+    return json({formError: 'You must be logged in.'}, {status: 401});
+  }
+
+  const formData = await request.formData();
+  const intent = formData.get('intent');
+
+  if (intent !== 'updateShippingAddress') {
+    return json({formError: 'Invalid action.'}, {status: 400});
+  }
+
+  const orderId = formData.get('orderId');
+  invariant(typeof orderId === 'string', 'Order ID is required');
+
+  // Re-verify editability server-side
+  const adminOrderId = `gid://shopify/Order/${orderId}`;
+  const canEdit = await isOrderAddressEditable(adminOrderId, context.env);
+  if (!canEdit) {
+    return json(
+      {formError: 'This order can no longer be edited. A shipping label may have already been purchased.'},
+      {status: 400},
+    );
+  }
+
+  const shippingAddress: ShippingAddressInput = {};
+  const keys: (keyof ShippingAddressInput)[] = [
+    'firstName',
+    'lastName',
+    'address1',
+    'address2',
+    'city',
+    'province',
+    'country',
+    'zip',
+    'phone',
+    'company',
+  ];
+
+  for (const key of keys) {
+    const value = formData.get(key);
+    if (typeof value === 'string') {
+      shippingAddress[key] = value;
+    }
+  }
+
+  const result = await updateOrderShippingAddress(
+    adminOrderId,
+    shippingAddress,
+    context.env,
+  );
+
+  if (!result.success) {
+    return json({formError: result.error}, {status: 400});
+  }
+
+  return json({success: true});
+}
+
 export default function OrderRoute() {
-  const {order, lineItems, discountValue, discountPercentage} =
+  const {order, lineItems, discountValue, discountPercentage, canEditAddress} =
     useLoaderData<typeof loader>();
   const fetcher = useFetcher();
+  const addressFetcher = useFetcher();
+  const [isEditingAddress, setIsEditingAddress] = useState(false);
 
   const reorderLines = lineItems
     .filter((item) => item.variant?.id)

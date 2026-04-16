@@ -18,6 +18,7 @@ import type {
   Shop,
 } from '@shopify/hydrogen/storefront-api-types';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
+import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
 import {Suspense, useEffect, useRef, useState} from 'react';
@@ -31,6 +32,8 @@ import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {getModuleByName, getPatchesForModule, getVideosForModule} from '~/data/lzxdb';
+import type {LzxPatch, LzxVideo} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server.js';
 
 export function ErrorBoundary() {
@@ -96,11 +99,22 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     url: request.url,
   });
 
+  // Look up related patches and videos from the local DB
+  const lzxModule = getModuleByName(product.title);
+  const relatedPatches = lzxModule
+    ? getPatchesForModule(lzxModule.id)
+    : [];
+  const relatedVideos = lzxModule
+    ? getVideosForModule(lzxModule.id)
+    : [];
+
   return defer({
     product,
     shop,
     storeDomain: shop.primaryDomain.url,
     recommended,
+    relatedPatches,
+    relatedVideos,
     analytics: {
       pageType: AnalyticsPageType.product,
       resourceId: product.id,
@@ -116,14 +130,68 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Product() {
-  const {product, recommended} =
+  const {product, recommended, relatedPatches, relatedVideos} =
     useLoaderData<typeof loader>();
 
   return (
     <div className="pb-16 md:pb-0">
+      <Breadcrumbs
+        items={[
+          {label: 'Home', to: '/'},
+          {label: 'Products', to: '/catalog'},
+          {label: product.title},
+        ]}
+      />
       <ModuleDetails product={product}>
         <ProductForm />
       </ModuleDetails>
+
+      {/* Related patches and videos from the LZX database */}
+      {(relatedPatches.length > 0 || relatedVideos.length > 0) && (
+        <div className="mx-auto max-w-7xl px-6 py-12 md:px-10">
+          {relatedPatches.length > 0 && (
+            <div className="mb-10">
+              <Heading as="h2" className="mb-4">
+                Patches Using {product.title}
+              </Heading>
+              <ul className="flex flex-wrap gap-3">
+                {(relatedPatches as LzxPatch[]).map((p) => (
+                  <li key={p.id}>
+                    <a
+                      href={`/patches/${p.slug}`}
+                      className="btn btn-outline btn-sm"
+                    >
+                      {p.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {relatedVideos.length > 0 && (
+            <div>
+              <Heading as="h2" className="mb-4">
+                Videos Featuring {product.title}
+              </Heading>
+              <ul className="flex flex-wrap gap-3">
+                {(relatedVideos as LzxVideo[]).map((v) => (
+                  <li key={v.id}>
+                    <a
+                      href={`https://www.youtube.com/watch?v=${v.youtube}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline btn-sm"
+                    >
+                      {v.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
       <Suspense>
         <Await resolve={recommended}>
           {(products) =>

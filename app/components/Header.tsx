@@ -98,6 +98,12 @@ export function Header({
                 Community
               </a>
             </li>
+            <li key="patches">
+              <a href="/patches">Patches</a>
+            </li>
+            <li key="videos">
+              <a href="/videos">Videos</a>
+            </li>
           </ul>
         </div>
         <a className="px-2" href="/" aria-label="LZX Industries home">
@@ -140,6 +146,12 @@ export function Header({
             >
               Blog
             </a>
+          </li>
+          <li>
+            <a href="/patches">Patches</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
           </li>
         </ul>
         <a

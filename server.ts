@@ -72,7 +72,15 @@ export default {
          * If the redirect doesn't exist, then `storefrontRedirect`
          * will pass through the 404 response.
          */
-        return storefrontRedirect({request, response, storefront});
+        const redirectResponse = await storefrontRedirect({
+          request,
+          response,
+          storefront,
+        });
+        if (redirectResponse.status === 404) {
+          redirectResponse.headers.set('X-Robots-Tag', 'noindex');
+        }
+        return redirectResponse;
       }
 
       const urlPathname = new URL(request.url).pathname;
