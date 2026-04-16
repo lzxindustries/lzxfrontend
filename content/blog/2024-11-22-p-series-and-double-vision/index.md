@@ -18,7 +18,7 @@ The first is a new module, PGO, a 4HP Programmable Gain & Offset processor, whic
 
 ![](./pgo-module-box.jpg)
 
-This module is the first in a new series of modules titled P Series, which will focus on core utility modules that are available in both assembled and DIY forms.  We have also used PGO to prototype a more complete approach to our product documentation, and you can see what that looks like here at https://docs.lzxindustries.net/docs/modules/pgo.  P Series can be considered the successor to Cadet series, as well as Expedition modules providing raw functions, such as Bridge and Arch. We have a few more planned, and we'll release them over the upcoming months. 
+This module is the first in a new series of modules titled P Series, which will focus on core utility modules that are available in both assembled and DIY forms.  We have also used PGO to prototype a more complete approach to our product documentation, and you can see what that looks like here at [our documentation for PGO](/docs/modules/pgo).  P Series can be considered the successor to Cadet series, as well as Expedition modules providing raw functions, such as Bridge and Arch. We have a few more planned, and we'll release them over the upcoming months. 
 
 PGO may not appeal to every video synthesist -- it is a raw function, and is the kind of module you can use as a building block in patching more complex custom functions. For myself, I'm very excitd to have 16 of them in their own rack, and using that rack for future development ideas.  For existing Gen3 owners, you could use it this way -- or in a few other contexts as well.  Check out the docs linked above for more on that topic.
 

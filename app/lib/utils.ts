@@ -152,29 +152,38 @@ function parseItem(customPrefixes = {}) {
     }
 
     // extract path from url because we don't need the origin on internal to attributes
-    const {pathname} = new URL(item.url);
+    const {hostname, pathname} = new URL(item.url);
 
     /*
       Currently the MenuAPI only returns online store urls e.g — xyz.myshopify.com/..
       Note: update logic when API is updated to include the active qualified domain
     */
-    const isInternalLink = /\.myshopify\.com/g.test(item.url);
+    const isMyShopifyLink = /\.myshopify\.com/g.test(item.url);
+    const isOwnDomain = /^(docs\.|www\.)?lzxindustries\.net$/.test(hostname);
 
-    const parsedItem = isInternalLink
-      ? // internal links
+    const parsedItem = isMyShopifyLink
+      ? // internal Shopify links — resolve via menu type
         {
           ...item,
           isExternal: false,
           target: '_self',
           to: resolveToFromType({type: item.type, customPrefixes, pathname}),
         }
-      : // external links
-        {
-          ...item,
-          isExternal: true,
-          target: '_blank',
-          to: item.url,
-        };
+      : isOwnDomain
+        ? // links to our own domains — use pathname directly
+          {
+            ...item,
+            isExternal: false,
+            target: '_self',
+            to: pathname,
+          }
+        : // external links
+          {
+            ...item,
+            isExternal: true,
+            target: '_blank',
+            to: item.url,
+          };
 
     return {
       ...parsedItem,

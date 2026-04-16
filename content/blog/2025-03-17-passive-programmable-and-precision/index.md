@@ -48,7 +48,7 @@ Other modules in development for 2025 include:
 - A sync distribution amplifier with front and rear connectors, for sync connections with external devices and expander cases.
 - An extended version of our first rotator module (Navigator) merged with features from our polar-to-cartesian module (Colorspace Mapper/Mapper).
 
-In parting, check out some new documentation work by our collaborators.  There are beautifully illustrated and animated docs now available for DSG3, Angles, Keychain and Proc.  There are also initial drafts up for the P Series modules. Check it out at https://docs.lzxindustries.net
+In parting, check out some new documentation work by our collaborators.  There are beautifully illustrated and animated docs now available for DSG3, Angles, Keychain and Proc.  There are also initial drafts up for the P Series modules. Check it out at [our documentation site](/docs)
 
 We'll continue regularly adding to the docs throughout 2025.  Please let us know what you think of them.
 

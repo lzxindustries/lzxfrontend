@@ -25,7 +25,7 @@ The board's BOM is so big it was causing issues with the vendor's system initial
 
 Despite being behind where I wanted to be at the end of October, this milestone is quite exciting.  With the off site assembly process flowing smoothly, we have the stage set for formal production when it is go time.   I look forward to writing another update about Chromagnon toward the end of the month.
 
-In other news, in the time in between Chromagnon tasks, I have been working on our new documentation website at https://docs.lzxindustries.net.  You may be there already, as it is the new location for this blog.  Most of the content is hidden from public view for now, but I'm quite happy with how the illustration and writing process is going so far.  We'll be migrating most content from our current website to this new static site soon -- including all module documentation, resources and articles. 
+In other news, in the time in between Chromagnon tasks, I have been working on our new documentation website at [docs.lzxindustries.net](/docs).  You may be there already, as it is the new location for this blog.  Most of the content is hidden from public view for now, but I'm quite happy with how the illustration and writing process is going so far.  We'll be migrating most content from our current website to this new static site soon -- including all module documentation, resources and articles. 
 
 Finally, here's a teaser of a new module we have been working on. It will be available as a DIY project as well as assembled.
 

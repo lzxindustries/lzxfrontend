@@ -45,7 +45,7 @@ Our DIY products — including PCB and frontpanel sets, kits, and related compon
 - **No build support.** We do not offer assembly instructions, build troubleshooting, or hands-on technical support for DIY products beyond what is published on the product page, our documentation site, and our community resources.
 - **Functional guarantee.** We guarantee that DIY products will function as intended when assembled correctly according to the parts lists in their posted Bill of Materials (BOM) and any published assembly guides.
 - **Component sourcing.** You are responsible for sourcing any components not included in the kit. Our BOMs provide reference part numbers, but component availability may vary.
-- **Community resources.** For build questions, we encourage you to join our community forum at [community.lzxindustries.net](https://community.lzxindustries.net) and consult our documentation at [docs.lzxindustries.net](https://docs.lzxindustries.net).
+- **Community resources.** For build questions, we encourage you to join our community forum at [community.lzxindustries.net](https://community.lzxindustries.net) and consult our documentation at [docs.lzxindustries.net](/docs).
 
 DIY products are offered as a service to the tradition of synth DIY and are intended for builders with experience in through-hole and surface mount soldering techniques and component sourcing.
 

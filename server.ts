@@ -21,6 +21,13 @@ export default {
     executionContext: ExecutionContext,
   ): Promise<Response> {
     try {
+      // Redirect legacy docs subdomain to main site
+      const requestUrl = new URL(request.url);
+      if (requestUrl.hostname === 'docs.lzxindustries.net') {
+        requestUrl.hostname = 'lzxindustries.net';
+        return Response.redirect(requestUrl.toString(), 301);
+      }
+
       /**
        * Open a cache instance in the worker and a custom session instance.
        */

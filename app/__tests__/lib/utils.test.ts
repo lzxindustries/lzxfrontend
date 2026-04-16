@@ -271,6 +271,61 @@ describe('parseMenu', () => {
     const parsed = parseMenu(menu as any);
     expect(parsed).toBe(menu);
   });
+
+  it('internalizes docs.lzxindustries.net links', () => {
+    const menu = {
+      id: 'menu-docs',
+      items: [
+        {
+          id: 'item-docs',
+          title: 'Documentation',
+          url: 'https://docs.lzxindustries.net/docs/modules/dsg3',
+          type: 'HTTP',
+          items: [],
+        },
+      ],
+    };
+    const parsed = parseMenu(menu as any);
+    expect(parsed.items[0].to).toBe('/docs/modules/dsg3');
+    expect(parsed.items[0].isExternal).toBe(false);
+    expect(parsed.items[0].target).toBe('_self');
+  });
+
+  it('internalizes lzxindustries.net links', () => {
+    const menu = {
+      id: 'menu-main',
+      items: [
+        {
+          id: 'item-main',
+          title: 'Blog',
+          url: 'https://lzxindustries.net/blog',
+          type: 'HTTP',
+          items: [],
+        },
+      ],
+    };
+    const parsed = parseMenu(menu as any);
+    expect(parsed.items[0].to).toBe('/blog');
+    expect(parsed.items[0].isExternal).toBe(false);
+  });
+
+  it('keeps community.lzxindustries.net as external', () => {
+    const menu = {
+      id: 'menu-community',
+      items: [
+        {
+          id: 'item-community',
+          title: 'Forum',
+          url: 'https://community.lzxindustries.net',
+          type: 'HTTP',
+          items: [],
+        },
+      ],
+    };
+    const parsed = parseMenu(menu as any);
+    expect(parsed.items[0].to).toBe('https://community.lzxindustries.net');
+    expect(parsed.items[0].isExternal).toBe(true);
+  });
 });
 
 describe('DEFAULT_LOCALE', () => {

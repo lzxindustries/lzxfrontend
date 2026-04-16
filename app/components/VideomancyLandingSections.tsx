@@ -278,7 +278,7 @@ export function VideomancyLandingSections() {
                 Buy Videomancer
               </Link>
               <Link
-                to="https://docs.lzxindustries.net/docs/instruments/videomancer"
+                to="/docs/instruments/videomancer"
                 className="rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/50 any-hover:hover:bg-white/10"
               >
                 Study the workflow
