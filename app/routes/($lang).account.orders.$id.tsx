@@ -384,30 +384,66 @@ export default function OrderRoute() {
               </tfoot>
             </table>
             <div className="sticky border-none top-nav md:my-8">
-              <Heading size="copy" className="font-semibold" as="h3">
-                Shipping Address
-              </Heading>
-              {order?.shippingAddress ? (
-                <ul className="mt-6">
-                  <li>
-                    <Text>
-                      {order.shippingAddress.firstName &&
-                        order.shippingAddress.firstName + ' '}
-                      {order.shippingAddress.lastName}
-                    </Text>
-                  </li>
-                  {order?.shippingAddress?.formatted ? (
-                    order.shippingAddress.formatted.map((line: string) => (
-                      <li key={line}>
-                        <Text>{line}</Text>
-                      </li>
-                    ))
-                  ) : (
-                    <></>
-                  )}
-                </ul>
+              <div className="flex items-center justify-between">
+                <Heading size="copy" className="font-semibold" as="h3">
+                  Shipping Address
+                </Heading>
+                {canEditAddress && !isEditingAddress && (
+                  <button
+                    type="button"
+                    className="text-sm underline text-primary/60 hover:text-primary"
+                    onClick={() => setIsEditingAddress(true)}
+                  >
+                    Edit
+                  </button>
+                )}
+              </div>
+              {isEditingAddress ? (
+                <EditShippingAddressForm
+                  orderId={order.orderNumber!.toString()}
+                  address={order.shippingAddress}
+                  fetcher={addressFetcher}
+                  onCancel={() => setIsEditingAddress(false)}
+                />
               ) : (
-                <p className="mt-3">No shipping address defined</p>
+                <>
+                  {order?.shippingAddress ? (
+                    <ul className="mt-6">
+                      <li>
+                        <Text>
+                          {order.shippingAddress.firstName &&
+                            order.shippingAddress.firstName + ' '}
+                          {order.shippingAddress.lastName}
+                        </Text>
+                      </li>
+                      {order?.shippingAddress?.formatted ? (
+                        order.shippingAddress.formatted.map((line: string) => (
+                          <li key={line}>
+                            <Text>{line}</Text>
+                          </li>
+                        ))
+                      ) : (
+                        <></>
+                      )}
+                    </ul>
+                  ) : (
+                    <p className="mt-3">No shipping address defined</p>
+                  )}
+                  {!canEditAddress &&
+                    order.fulfillmentStatus !== 'FULFILLED' && (
+                      <p className="mt-3 text-xs text-primary/40">
+                        Shipping address cannot be changed after a label has
+                        been printed. Contact{' '}
+                        <a
+                          href="mailto:support@lzxindustries.net"
+                          className="underline"
+                        >
+                          support@lzxindustries.net
+                        </a>{' '}
+                        for assistance.
+                      </p>
+                    )}
+                </>
               )}
               <Heading size="copy" className="mt-8 font-semibold" as="h3">
                 Status
@@ -464,6 +500,163 @@ export default function OrderRoute() {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function EditShippingAddressForm({
+  orderId,
+  address,
+  fetcher,
+  onCancel,
+}: {
+  orderId: string;
+  address: Order['shippingAddress'];
+  fetcher: ReturnType<typeof useFetcher>;
+  onCancel: () => void;
+}) {
+  const actionData = fetcher.data as {formError?: string; success?: boolean} | undefined;
+
+  // Close the form after a successful submission
+  if (actionData?.success) {
+    // Trigger a page reload to show updated address from Shopify
+    if (typeof window !== 'undefined') {
+      window.location.reload();
+    }
+  }
+
+  return (
+    <div className="mt-4">
+      {actionData?.formError && (
+        <div className="flex items-center justify-center mb-4 rounded bg-red-100">
+          <p className="m-3 text-sm text-red-900">{actionData.formError}</p>
+        </div>
+      )}
+      <fetcher.Form method="post">
+        <input type="hidden" name="intent" value="updateShippingAddress" />
+        <input type="hidden" name="orderId" value={orderId} />
+        <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              className={getInputStyleClasses()}
+              name="firstName"
+              type="text"
+              autoComplete="given-name"
+              placeholder="First name"
+              aria-label="First name"
+              required
+              defaultValue={address?.firstName ?? ''}
+            />
+            <input
+              className={getInputStyleClasses()}
+              name="lastName"
+              type="text"
+              autoComplete="family-name"
+              placeholder="Last name"
+              aria-label="Last name"
+              required
+              defaultValue={address?.lastName ?? ''}
+            />
+          </div>
+          <input
+            className={getInputStyleClasses()}
+            name="company"
+            type="text"
+            autoComplete="organization"
+            placeholder="Company (optional)"
+            aria-label="Company"
+            defaultValue={address?.company ?? ''}
+          />
+          <input
+            className={getInputStyleClasses()}
+            name="address1"
+            type="text"
+            autoComplete="address-line1"
+            placeholder="Address"
+            aria-label="Address line 1"
+            required
+            defaultValue={address?.address1 ?? ''}
+          />
+          <input
+            className={getInputStyleClasses()}
+            name="address2"
+            type="text"
+            autoComplete="address-line2"
+            placeholder="Apartment, suite, etc. (optional)"
+            aria-label="Address line 2"
+            defaultValue={address?.address2 ?? ''}
+          />
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              className={getInputStyleClasses()}
+              name="city"
+              type="text"
+              autoComplete="address-level2"
+              placeholder="City"
+              aria-label="City"
+              required
+              defaultValue={address?.city ?? ''}
+            />
+            <input
+              className={getInputStyleClasses()}
+              name="province"
+              type="text"
+              autoComplete="address-level1"
+              placeholder="State / Province"
+              aria-label="State / Province"
+              defaultValue={address?.province ?? ''}
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <input
+              className={getInputStyleClasses()}
+              name="zip"
+              type="text"
+              autoComplete="postal-code"
+              placeholder="ZIP / Postal code"
+              aria-label="ZIP / Postal code"
+              required
+              defaultValue={address?.zip ?? ''}
+            />
+            <input
+              className={getInputStyleClasses()}
+              name="country"
+              type="text"
+              autoComplete="country-name"
+              placeholder="Country"
+              aria-label="Country"
+              required
+              defaultValue={address?.country ?? ''}
+            />
+          </div>
+          <input
+            className={getInputStyleClasses()}
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="Phone (optional)"
+            aria-label="Phone"
+            defaultValue={address?.phone ?? ''}
+          />
+        </div>
+        <div className="mt-4 flex gap-3">
+          <button
+            type="submit"
+            className="btn btn-primary btn-sm"
+            disabled={fetcher.state !== 'idle'}
+          >
+            {fetcher.state !== 'idle' ? 'Saving...' : 'Save Address'}
+          </button>
+          <button
+            type="button"
+            className="btn btn-ghost btn-sm"
+            onClick={onCancel}
+            disabled={fetcher.state !== 'idle'}
+          >
+            Cancel
+          </button>
+        </div>
+      </fetcher.Form>
     </div>
   );
 }

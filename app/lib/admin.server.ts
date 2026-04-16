@@ -3,19 +3,59 @@ interface AdminApiResponse<T> {
   errors?: Array<{message: string; locations?: Array<{line: number; column: number}>}>;
 }
 
+let cachedToken: string | null = null;
+let tokenExpiresAt = 0;
+
+async function getAdminAccessToken(env: Env): Promise<string> {
+  // Return cached token if still valid (with 60s buffer)
+  if (cachedToken && Date.now() < tokenExpiresAt - 60_000) {
+    return cachedToken;
+  }
+
+  const response = await fetch(
+    `https://${env.PUBLIC_STORE_DOMAIN}/admin/oauth/access_token`,
+    {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        grant_type: 'client_credentials',
+        client_id: env.SHOPIFY_CLIENT_ID,
+        client_secret: env.SHOPIFY_CLIENT_SECRET,
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    throw new Error(
+      `Admin OAuth token request failed: ${response.status} ${response.statusText}`,
+    );
+  }
+
+  const json = (await response.json()) as {
+    access_token: string;
+    expires_in: number;
+  };
+
+  cachedToken = json.access_token;
+  tokenExpiresAt = Date.now() + json.expires_in * 1000;
+
+  return cachedToken;
+}
+
 export async function adminQuery<T>(
   query: string,
   variables: Record<string, unknown>,
   env: Env,
 ): Promise<T> {
   const apiVersion = env.PUBLIC_STOREFRONT_API_VERSION || '2024-04';
+  const accessToken = await getAdminAccessToken(env);
   const response = await fetch(
     `https://${env.PUBLIC_STORE_DOMAIN}/admin/api/${apiVersion}/graphql.json`,
     {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Shopify-Access-Token': env.SHOPIFY_ADMIN_API_TOKEN,
+        'X-Shopify-Access-Token': accessToken,
       },
       body: JSON.stringify({query, variables}),
     },
