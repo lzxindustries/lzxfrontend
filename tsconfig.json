@@ -1,5 +1,15 @@
 {
-  "include": ["./**/*.d.ts", "./**/*.ts", "./**/*.tsx"],
+  "include": [
+    "env.d.ts",
+    "server.ts",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "playwright.config.ts",
+    "app/**/*.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx"
+  ],
   "exclude": ["lfs/**", "dist/**", "build/**", "coverage/**", "playwright-report/**", "test-results/**"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],

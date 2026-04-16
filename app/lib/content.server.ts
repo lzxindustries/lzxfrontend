@@ -74,6 +74,11 @@ function extractSlugFromBlogPath(filepath: string): string {
   return match?.[1] ?? '';
 }
 
+function extractBlogFolderFromPath(filepath: string): string {
+  const match = filepath.match(/\/blog\/([^/]+)\/index\.md$/);
+  return match?.[1] ?? '';
+}
+
 function extractDocPathFromFilePath(filepath: string): string {
   // Path format: ../../content/docs/modules/dsg3.md → modules/dsg3
   const match = filepath.match(/\/content\/docs\/(.+)\.md$/);
@@ -160,6 +165,7 @@ export function listBlogPosts(tag?: string): BlogPost[] {
 export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
   for (const [filepath, raw] of Object.entries(blogFiles)) {
     const dirSlug = extractSlugFromBlogPath(filepath);
+    const folderSlug = extractBlogFolderFromPath(filepath);
 
     let fmSlug = '';
     try {
@@ -169,8 +175,9 @@ export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
       fmSlug = '';
     }
 
-    const effectiveSlug = fmSlug || dirSlug;
-    if (effectiveSlug !== slug) continue;
+  const effectiveSlug = fmSlug || dirSlug;
+  const aliases = new Set([effectiveSlug, dirSlug, folderSlug].filter(Boolean));
+  if (!aliases.has(slug)) continue;
 
     const imageBasePath = `/docs/blog/${dirSlug}`;
     const parsed = await renderMarkdown(raw, imageBasePath, `/blog/${effectiveSlug}`);

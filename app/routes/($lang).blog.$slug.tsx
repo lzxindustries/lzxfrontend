@@ -1,6 +1,6 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
-import {json} from '@shopify/remix-oxygen';
+import {json, redirect} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import {CACHE_LONG} from '~/data/cache';
@@ -15,6 +15,12 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   const post = await getBlogPost(slug);
   if (!post) {
     throw new Response('Not Found', {status: 404});
+  }
+
+  if (post.slug !== slug) {
+    const url = new URL(request.url);
+    url.pathname = url.pathname.replace(/\/blog\/[^/]+$/, `/blog/${post.slug}`);
+    return redirect(url.toString(), 301);
   }
 
   const heroImage = post.frontmatter.image

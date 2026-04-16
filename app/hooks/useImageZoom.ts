@@ -11,12 +11,13 @@ export function useImageZoom(containerRef: React.RefObject<HTMLElement | null>) 
     const container = containerRef.current;
     if (!container) return;
 
+    const images = container.querySelectorAll('img');
+    if (images.length === 0) return;
+
     let cancelled = false;
 
     import('medium-zoom').then(({default: mediumZoom}) => {
       if (cancelled) return;
-      const images = container.querySelectorAll('img');
-      if (images.length === 0) return;
 
       zoomRef.current = mediumZoom(Array.from(images), {
         margin: 24,
