@@ -48,6 +48,7 @@ We use the following third-party services that may receive or process your perso
 | **Shopify** | E-commerce platform, order management | Name, address, email, order details |
 | **Shopify Payments / payment processors** | Payment processing | Payment information |
 | **USPS** | Shipping and delivery | Name, shipping address |
+| **UPS** | Shipping and delivery | Name, shipping address, phone number |
 | **Mailchimp** | Email newsletter | Email address (with your consent) |
 | **Analytics providers** | Website analytics | IP address, browsing behavior (anonymized where possible) |
 

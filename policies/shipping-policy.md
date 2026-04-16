@@ -20,21 +20,45 @@ First paid, first shipped. Your place in our fulfillment queue is reserved at th
 
 All items in an order ship together by default. If your order includes a backorder or preorder item, in-stock items will be held until all items are ready to ship. If you need in-stock items shipped immediately, we recommend placing a separate order. If you would like to split an existing order, please contact us — additional shipping charges may apply.
 
-## Shipping Carrier & Delivery Estimates
+## Shipping Carriers & Services
 
-We ship via **USPS Priority Mail** for both domestic and international shipments.
+We ship via **USPS** and **UPS**. The available services and estimated delivery times are listed below. The carrier and service options available for your order are determined at checkout based on the weight and destination of your shipment.
 
-| Destination | Estimated Delivery (after processing) |
-|---|---|
-| United States (domestic) | 2–5 business days |
-| Canada | 6–10 business days |
-| International | 6–21 business days |
+### Domestic (United States)
 
-Delivery estimates are provided by USPS and are not guaranteed. Actual delivery times may vary based on carrier operations, customs processing, and other factors outside our control.
+| Carrier | Service | Estimated Delivery (after processing) |
+|---|---|---|
+| USPS | Priority Mail | 2–5 business days |
+| USPS | Ground Advantage | 2–5 business days |
+| UPS | Ground | 1–5 business days |
+| UPS | 3 Day Select | 3 business days |
+| UPS | 2nd Day Air | 2 business days |
+| UPS | Next Day Air Saver | 1 business day |
+| UPS | Next Day Air | 1 business day |
+
+### Canada
+
+| Carrier | Service | Estimated Delivery (after processing) |
+|---|---|---|
+| USPS | Priority Mail International | 6–10 business days |
+| UPS | Standard (Canada) | 5–8 business days |
+| UPS | Worldwide Expedited | 2–5 business days |
+| UPS | Worldwide Saver | 1–3 business days |
+
+### International
+
+| Carrier | Service | Estimated Delivery (after processing) |
+|---|---|---|
+| USPS | Priority Mail International | 6–21 business days |
+| UPS | Worldwide Expedited | 2–5 business days |
+| UPS | Worldwide Saver | 1–3 business days |
+| UPS | Worldwide Express | 1–3 business days |
+
+Delivery estimates are provided by the carrier and are not guaranteed. Actual delivery times may vary based on carrier operations, customs processing, and other factors outside our control.
 
 ## Shipping Rates
 
-We charge a weight-based shipping rate that reflects our actual shipping and handling costs. Rates are calculated at checkout based on the weight and destination of your order. If you have special shipping needs, please contact us before placing your order so we can determine if we can accommodate your request.
+Rates are calculated at checkout based on the weight, dimensions, and destination of your order. Different carrier and service options may be available at different price points. If you have special shipping needs, please contact us before placing your order so we can determine if we can accommodate your request.
 
 ## Package Insurance
 
@@ -54,7 +78,7 @@ Shipments are sent to the address provided at checkout. If you need to update yo
 
 **Customs and duties:** We declare the full value of all items on customs forms. We do not undervalue items on customs declarations. You are responsible for any import duties, taxes, or customs fees charged by your country upon delivery. These charges are not included in our shipping rates and are not refundable by LZX Industries.
 
-**Tracking:** International shipments include USPS tracking. Tracking visibility may be limited once the package leaves the United States and is transferred to your country's postal service.
+**Tracking:** All shipments include tracking. USPS international tracking visibility may be limited once the package leaves the United States and is transferred to your country's postal service. UPS provides full end-to-end tracking on all international shipments.
 
 **Delivery delays:** International shipments may experience delays due to customs processing. These delays are outside our control and do not qualify for refund or reshipment under our lost package policy until at least 30 business days have passed from the ship date.
 

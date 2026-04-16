@@ -18,7 +18,7 @@ LZX Industries LLC ("LZX," "we," "us," or "our") designs and manufactures creati
 
 ## In-Stock Items
 
-In-stock items are processed and shipped within 2–3 business days. See our Shipping Policy for carrier information and delivery estimates.
+In-stock items are processed and shipped within 2–3 business days. See our [Shipping Policy](/policies/shipping-policy) for carrier information and delivery estimates.
 
 ## Preorders & Backorders
 
@@ -45,17 +45,17 @@ Our DIY products — including PCB and frontpanel sets, kits, and related compon
 - **No build support.** We do not offer assembly instructions, build troubleshooting, or hands-on technical support for DIY products beyond what is published on the product page, our documentation site, and our community resources.
 - **Functional guarantee.** We guarantee that DIY products will function as intended when assembled correctly according to the parts lists in their posted Bill of Materials (BOM) and any published assembly guides.
 - **Component sourcing.** You are responsible for sourcing any components not included in the kit. Our BOMs provide reference part numbers, but component availability may vary.
-- **Community resources.** For build questions, we encourage you to join our community forum at community.lzxindustries.net and consult our documentation at docs.lzxindustries.net.
+- **Community resources.** For build questions, we encourage you to join our community forum at [community.lzxindustries.net](https://community.lzxindustries.net) and consult our documentation at [docs.lzxindustries.net](https://docs.lzxindustries.net).
 
 DIY products are offered as a service to the tradition of synth DIY and are intended for builders with experience in through-hole and surface mount soldering techniques and component sourcing.
 
 ## Shipping
 
-See our **Shipping Policy** for full details on processing times, carriers, delivery estimates, insurance, international shipments, and lost or damaged package procedures.
+See our **[Shipping Policy](/policies/shipping-policy)** for full details on processing times, carriers, delivery estimates, insurance, international shipments, and lost or damaged package procedures.
 
 ## Returns & Refunds
 
-See our **Refund Policy** for full details on return eligibility, return windows, and how refunds are processed.
+See our **[Refund Policy](/policies/refund-policy)** for full details on return eligibility, return windows, and how refunds are processed.
 
 ## Intellectual Property
 

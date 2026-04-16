@@ -36,8 +36,11 @@ For technical questions about LZX modules — patching, signal flow, compatibili
 
 ## Social Media
 
-- **Instagram:** [@laboratory](https://www.instagram.com/laboratory/)
-- **YouTube:** [LZX Industries](https://www.youtube.com/@lzxindustries)
+- **Instagram:** [@lzxindustries](https://www.instagram.com/lzxindustries)
+- **YouTube:** [LZX Industries](https://www.youtube.com/lzxindustries)
+- **Discord:** [LZX Community](https://discord.gg/7xzD4XzhGn)
+- **Facebook:** [LZX Industries](https://www.facebook.com/lzxindustries)
+- **TikTok:** [@lzxindustries](https://www.tiktok.com/@lzxindustries)
 
 ## Response Times
 
