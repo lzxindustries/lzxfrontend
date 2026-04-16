@@ -13,3 +13,14 @@ coverage/
 playwright-report/
 test-results/
 .playwright/
+
+# Local asset library and scrape mirrors
+lfs/
+
+# Non-runtime design/source assets copied alongside docs images
+public/docs/**/source_documents/
+public/docs/**/source-documents/
+public/docs/**/backup/
+public/docs/**/Adobe After Effects Auto-Save/
+public/docs/**/ae-links/
+public/docs/**/Overlord/
