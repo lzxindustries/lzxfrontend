@@ -18,6 +18,7 @@ test-results/
 lfs/
 
 # Non-runtime design/source assets copied alongside docs images
+public/docs/**/*.ai
 public/docs/**/source_documents/
 public/docs/**/source-documents/
 public/docs/**/backup/
