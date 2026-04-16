@@ -15,6 +15,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
@@ -252,6 +253,75 @@ function extractExcerpt(raw: string): string {
     .slice(0, 200);
 }
 
+// --- MDX-to-Markdown preprocessing ---
+// Docusaurus docs use MDX features (imports, JSX, admonitions, component
+// definitions). We convert these to plain Markdown / HTML before feeding
+// the content to the remark pipeline.
+
+function stripMdxSyntax(content: string): string {
+  // 1. Collect import variable→path map and remove import lines
+  const imports: Record<string, string> = {};
+  content = content.replace(
+    /^import\s+(\w+)\s+from\s+['"]([^'"]+)['"];?\s*$/gm,
+    (_match, name: string, path: string) => {
+      imports[name] = path;
+      return '';
+    },
+  );
+
+  // 2. Remove `export function ...` blocks (e.g. ResponsiveYouTube component
+  //    definitions). These span from `export function` to the closing `}` at
+  //    column 0.
+  content = content.replace(
+    /^export\s+function\s+[\s\S]*?\n}\s*$/gm,
+    '',
+  );
+
+  // 3. Replace <ResponsiveYouTube videoId="XYZ" /> with a plain iframe
+  content = content.replace(
+    /<ResponsiveYouTube\s+videoId=["']([^"']+)["']\s*\/>/g,
+    (_match, videoId: string) =>
+      `<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">\n` +
+      `<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" ` +
+      `src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>\n</div>`,
+  );
+
+  // 4. Replace <img src={variable} alt="..." /> with resolved path
+  content = content.replace(
+    /<img\s+src=\{(\w+)\}\s*(alt=["'][^"']*["'])?\s*\/?>/g,
+    (_match, name: string, altAttr?: string) => {
+      const path = imports[name] || name;
+      const alt = altAttr || '';
+      return `<img src="${path}" ${alt} />`;
+    },
+  );
+
+  // 5. Replace template-literal src: src={`...${var}...`}
+  content = content.replace(
+    /src=\{`([^`]*)\$\{(\w+)\}([^`]*)`\}/g,
+    (_match, before: string, name: string, after: string) => {
+      const val = imports[name] || name;
+      return `src="${before}${val}${after}"`;
+    },
+  );
+
+  // 6. Convert Docusaurus admonition blocks (:::note, :::warning, :::tip, etc.)
+  content = content.replace(
+    /^:::(note|tip|info|warning|caution|danger|important)\s*\n([\s\S]*?)^:::\s*$/gm,
+    (_match, type: string, body: string) => {
+      const label = type.charAt(0).toUpperCase() + type.slice(1);
+      return (
+        `<div class="admonition admonition-${type}">\n` +
+        `<p class="admonition-title">${label}</p>\n\n` +
+        body.trim() +
+        '\n</div>\n'
+      );
+    },
+  );
+
+  return content;
+}
+
 // --- Main render function ---
 
 export async function renderMarkdown(
@@ -259,7 +329,10 @@ export async function renderMarkdown(
   imageBasePath: string = '',
   currentPath: string = '',
 ): Promise<ParsedMarkdown> {
-  const {data: frontmatter, content} = matter(raw);
+  const {data: frontmatter, content: rawContent} = matter(raw);
+
+  // Preprocess MDX syntax before feeding to remark
+  const content = stripMdxSyntax(rawContent);
 
   const headings: TocHeading[] = [];
 
@@ -268,6 +341,7 @@ export async function renderMarkdown(
     .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype, {allowDangerousHtml: true})
+    .use(rehypeRaw)
     .use(rehypeKatex)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, {behavior: 'wrap'})

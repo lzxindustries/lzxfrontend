@@ -680,4 +680,29 @@ body {
   blockquote > p:first-child strong:first-child {
     @apply not-italic font-bold;
   }
+
+  /* Docusaurus-style admonition blocks */
+  .admonition {
+    @apply my-4 rounded-lg border-l-4 p-4;
+  }
+  .admonition-title {
+    @apply mb-2 font-bold;
+  }
+  .admonition-note {
+    @apply border-blue-500 bg-blue-50 text-blue-900;
+  }
+  .admonition-tip {
+    @apply border-green-500 bg-green-50 text-green-900;
+  }
+  .admonition-info {
+    @apply border-cyan-500 bg-cyan-50 text-cyan-900;
+  }
+  .admonition-warning,
+  .admonition-caution {
+    @apply border-yellow-500 bg-yellow-50 text-yellow-900;
+  }
+  .admonition-danger,
+  .admonition-important {
+    @apply border-red-500 bg-red-50 text-red-900;
+  }
 }

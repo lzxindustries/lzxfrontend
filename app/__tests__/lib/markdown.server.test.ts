@@ -50,3 +50,48 @@ describe('renderMarkdown internal link rewriting', () => {
     expect(result.html).toContain('href="https://lzxindustries.net"');
   });
 });
+
+describe('renderMarkdown MDX preprocessing', () => {
+  it('strips import lines and resolves JSX img src variables', async () => {
+    const raw = [
+      "import my_image from '/img/guides/photo.jpg';",
+      '',
+      '# Hello',
+      '<img src={my_image} alt="Photo" />',
+    ].join('\n');
+
+    const result = await renderMarkdown(raw, '/docs/img/guides', '/docs/guides/test');
+
+    expect(result.html).not.toContain('import');
+    expect(result.html).toContain('src="/docs/img/guides/photo.jpg"');
+    expect(result.html).toContain('alt="Photo"');
+  });
+
+  it('converts ResponsiveYouTube to iframe', async () => {
+    const raw = [
+      'export function ResponsiveYouTube({ videoId }) {',
+      '  return <div>embed</div>;',
+      '}',
+      '',
+      '<ResponsiveYouTube videoId="abc123" />',
+    ].join('\n');
+
+    const result = await renderMarkdown(raw);
+
+    expect(result.html).not.toContain('export function');
+    expect(result.html).toContain('youtube.com/embed/abc123');
+  });
+
+  it('converts admonition blocks to styled divs', async () => {
+    const raw = [
+      ':::note',
+      'Important info here.',
+      ':::',
+    ].join('\n');
+
+    const result = await renderMarkdown(raw);
+
+    expect(result.html).toContain('admonition-note');
+    expect(result.html).toContain('Important info here.');
+  });
+});
