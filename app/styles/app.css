@@ -582,3 +582,102 @@ body {
     @apply grid w-full snap-x snap-mandatory scroll-px-6 grid-flow-col justify-start gap-4 overflow-x-scroll px-6 pb-4;
   }
 }
+
+/* --- Documentation content styles --- */
+.docs-content {
+  @apply text-base leading-relaxed;
+
+  h1 {
+    @apply text-3xl font-bold mt-8 mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mt-8 mb-3 pb-2 border-b border-base-300;
+  }
+
+  h3 {
+    @apply text-xl font-semibold mt-6 mb-2;
+  }
+
+  h4 {
+    @apply text-lg font-medium mt-4 mb-2;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply text-primary underline hover:text-primary-focus;
+  }
+
+  ul {
+    @apply list-disc pl-6 mb-4 space-y-1;
+  }
+
+  ol {
+    @apply list-decimal pl-6 mb-4 space-y-1;
+  }
+
+  li > ul,
+  li > ol {
+    @apply mt-1 mb-0;
+  }
+
+  blockquote {
+    @apply border-l-4 border-primary/30 pl-4 italic my-4 text-base-content/80;
+  }
+
+  img {
+    @apply rounded-lg my-4 max-w-full h-auto;
+  }
+
+  table {
+    @apply w-full my-4 border-collapse;
+  }
+
+  th {
+    @apply bg-base-200 text-left px-4 py-2 border border-base-300 font-semibold text-sm uppercase;
+  }
+
+  td {
+    @apply px-4 py-2 border border-base-300;
+  }
+
+  pre {
+    @apply rounded-lg my-4 p-4 overflow-x-auto bg-base-200 text-sm;
+  }
+
+  code {
+    @apply bg-base-200 rounded px-1.5 py-0.5 text-sm font-mono;
+  }
+
+  pre code {
+    @apply bg-transparent p-0 rounded-none;
+  }
+
+  hr {
+    @apply my-8 border-base-300;
+  }
+
+  /* Heading anchor links */
+  .icon-link::before {
+    content: '#';
+    @apply text-base-content/30 mr-1;
+  }
+
+  h2:hover .icon-link::before,
+  h3:hover .icon-link::before {
+    @apply text-primary/60;
+  }
+
+  /* KaTeX overrides for light theme */
+  .katex-display {
+    @apply my-4 overflow-x-auto;
+  }
+
+  /* Admonition/alert styles for blockquotes with [!NOTE] etc */
+  blockquote > p:first-child strong:first-child {
+    @apply not-italic font-bold;
+  }
+}

@@ -17,6 +17,7 @@ import {MdForum} from 'react-icons/md';
 import {useState} from 'react';
 import Logo from './Logo';
 import {PredictiveSearch} from './PredictiveSearch';
+import {DocsSearch} from './DocsSearch';
 
 export function Header({
   cartCount = 13,
@@ -37,8 +38,8 @@ export function Header({
   const isCatalog = url.includes('/catalog');
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
-  const isGettingStarted = url.includes('https://docs.lzxindustries.net');
-  const isBlog = url.includes('https://docs.lzxindustries.net/blog');
+  const isDocs = url.startsWith('/docs');
+  const isBlog = url.startsWith('/blog');
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -73,10 +74,10 @@ export function Header({
                 Shop
               </a>
             </li>
-            <li key="getting-started">
+            <li key="docs">
               <a
-                className={isGettingStarted ? 'active' : ''}
-                href="https://docs.lzxindustries.net"
+                className={isDocs ? 'active' : ''}
+                href="/docs"
               >
                 Docs
               </a>
@@ -84,7 +85,7 @@ export function Header({
             <li key="blog">
               <a
                 className={isBlog ? 'active' : ''}
-                href="https://docs.lzxindustries.net/blog"
+                href="/blog"
               >
                 Blog
               </a>
@@ -133,8 +134,8 @@ export function Header({
           </li>
           <li>
             <a
-              className={isGettingStarted ? 'active' : ''}
-              href="https://docs.lzxindustries.net"
+              className={isDocs ? 'active' : ''}
+              href="/docs"
             >
               Docs
             </a>
@@ -142,7 +143,7 @@ export function Header({
           <li>
             <a
               className={isBlog ? 'active' : ''}
-              href="https://docs.lzxindustries.net/blog"
+              href="/blog"
             >
               Blog
             </a>
@@ -264,6 +265,12 @@ export function Header({
               </button>
             </div>
             <PredictiveSearch onClose={() => setSearchOpen(false)} />
+            <div className="mt-4 rounded-lg bg-base-100 p-4 shadow">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide opacity-60">
+                Search Docs And Blog
+              </p>
+              <DocsSearch />
+            </div>
           </div>
         </div>
       )}

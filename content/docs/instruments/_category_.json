@@ -1,0 +1,9 @@
+{
+  "label": "Instruments",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Documentation for standalone instruments.",
+    "image": "/img/instruments/videomancer/videomancer_frontpanel.png"
+  }
+}

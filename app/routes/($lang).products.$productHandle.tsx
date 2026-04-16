@@ -384,6 +384,7 @@ export function ProductForm() {
                     },
                   ]}
                   variant="primary"
+                  className="!rounded"
                   data-test="add-to-cart"
                   analytics={{
                     products: [productAnalytics],
@@ -464,6 +465,7 @@ export function ProductForm() {
             <AddToCartButton
               lines={[{merchandiseId: selectedVariant.id, quantity}]}
               variant="primary"
+              className="!rounded"
               width="auto"
               analytics={{
                 products: [productAnalytics],

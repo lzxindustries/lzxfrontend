@@ -35,12 +35,16 @@ import {
   type EnhancedMenu,
 } from './lib/utils';
 import styles from './styles/app.css?url';
+import katexStyles from 'katex/dist/katex.min.css?url';
+import hljsStyles from 'highlight.js/styles/github.css?url';
 import favicon from '~/assets/favicon.svg';
 import {Layout} from '~/components/Layout';
 import {seoPayload} from '~/lib/seo.server';
 export const links: LinksFunction = () => {
   return [
     {rel: 'stylesheet', href: styles},
+    {rel: 'stylesheet', href: katexStyles},
+    {rel: 'stylesheet', href: hljsStyles},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',

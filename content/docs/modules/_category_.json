@@ -1,0 +1,9 @@
+{
+  "label": "Modules",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Documentation for EuroRack video synthesizer modules.",
+    "image": "/img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png"
+  }
+}

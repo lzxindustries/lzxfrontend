@@ -97,6 +97,40 @@ GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, 
 - Use `executionContext.waitUntil()` for background tasks
 - Cache API via `caches.open('hydrogen')`
 
+## LFS Asset Library (`lfs/library/`)
+
+A symlink at repo root (`lfs → /mnt/e/lfs`) provides access to the binary asset library. This is **local-only** (gitignored, not deployed). Contents are organized as:
+
+| Directory | Contents |
+|-----------|----------|
+| `brand/logos/` | AI vector sources + 79 PNG exports. Regenerate: `python3 lfs/library/brand/logos/generate_brand_logos.py` |
+| `brand/color-swatches/` | 16 PNG brand palette swatches |
+| `brand/fonts/` | ~140 OTF/TTF font files (Goldplay, Lato, TeX Gyre, etc.) |
+| `brand/panel-components/` | AI files for knobs, jacks, LEDs, connectors |
+| `brand/panel-icons/` | SVG schematic icons |
+| `products/` | Per-product assets organized by category → series → product slug → asset type |
+| `products/product-catalog.json` | Machine-readable index of all 121 products (slug, name, sku, type, active/hidden flags, folder) |
+| `stock/` | Third-party stock assets: footage, photos, textures, test-images, test-patterns, music, sound-effects |
+| `scrape/` | Archived community/web content: wayback pages, YouTube subtitles, Reddit, Discord, ModWiggler, etc. |
+
+### Product asset structure
+```
+products/
+├── accessories/<slug>/website/      Website images
+├── eurorack-cases/<slug>/website/   Website images
+├── eurorack-modules/<series>/<slug>/  Panel art, logos, packaging, photos, downloads
+│   Series: cadet, castle, expedition, gen3, orion, visionary
+├── instruments/<slug>/              brand/, merchandise/, panel-art/, website/, downloads/
+│   Instruments: bitvision, chromagnon, videomancer, vidiot
+```
+
+### Generated files
+Key generated assets (see `lfs/library/GENERATED_FILES.md` for full list):
+- **Brand logos**: `brand/logos/generate_brand_logos.py`
+- **Video bumpers**: `video/bumpers/generate_video_bumpers.sh`
+- **Source clips**: `video/source-clips/generate_video_source_clips.py`
+- **Social templates**: `templates/social/generate_templates_social.py`
+
 ## Project-Specific Notes
 
 - **Legacy vs Active products**: `is_active_product` flag distinguishes current vs discontinued modules

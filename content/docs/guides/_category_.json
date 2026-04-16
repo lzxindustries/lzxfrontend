@@ -1,0 +1,9 @@
+{
+  "label": "Guides",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Guides for using analog video synthesizers.",
+    "image": "/img/guides/your_first_patch_kit.jpg"
+  }
+}

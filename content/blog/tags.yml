@@ -1,0 +1,54 @@
+chromagnon:
+  label: Chromagnon
+  permalink: /chromagnon
+  description: Posts about the Chromagnon video synthesizer
+
+community:
+  label: Community
+  permalink: /community
+  description: Artist features and community highlights
+
+software:
+  label: Software
+  permalink: /software
+  description: Software downloads and releases
+
+video:
+  label: Video
+  permalink: /video
+  description: Video demos and recordings
+
+videomancer:
+  label: Videomancer
+  permalink: /videomancer
+  description: Posts about the Videomancer video synthesizer
+
+artists:
+  label: Artists
+  permalink: /artists
+  description: Artist features and spotlights
+
+behind-the-scenes:
+  label: Behind the Scenes
+  permalink: /behind-the-scenes
+  description: Behind-the-scenes looks at LZX development
+
+business:
+  label: Business
+  permalink: /business
+  description: Business updates and decisions
+
+gen3:
+  label: Gen3
+  permalink: /gen3
+  description: Posts about Gen3 series modules
+
+manufacturing:
+  label: Manufacturing
+  permalink: /manufacturing
+  description: Manufacturing updates and processes
+
+team:
+  label: Team
+  permalink: /team
+  description: Team updates and introductions

@@ -521,11 +521,109 @@ function videoGallery({url}: {url: string}): SeoConfig {
   };
 }
 
+function doc({
+  title,
+  description,
+  url,
+}: {
+  title: string;
+  description: string;
+  url: string;
+}): SeoConfig {
+  return {
+    title,
+    titleTemplate: '%s | LZX Docs',
+    description: truncate(description),
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: title,
+      description: truncate(description),
+      url,
+    },
+  };
+}
+
+function blogPost({
+  title,
+  description,
+  image,
+  publishedAt,
+  author,
+  url,
+}: {
+  title: string;
+  description: string;
+  image?: string;
+  publishedAt: string;
+  author: string;
+  url: string;
+}): SeoConfig {
+  return {
+    title,
+    titleTemplate: '%s | LZX Blog',
+    description: truncate(description),
+    url,
+    media: image
+      ? {type: 'image', url: image, altText: title}
+      : undefined,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description: truncate(description),
+      image: image || undefined,
+      datePublished: publishedAt,
+      author: {
+        '@type': 'Person',
+        name: author,
+      },
+      url,
+    },
+  };
+}
+
+function blogIndex({url}: {url: string}): SeoConfig {
+  return {
+    title: 'Blog',
+    titleTemplate: '%s | LZX Industries',
+    description:
+      'News, updates, artist features, and behind-the-scenes stories from LZX Industries.',
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'LZX Industries Blog',
+      url,
+    },
+  };
+}
+
+function blogTag({tag, url}: {tag: string; url: string}): SeoConfig {
+  return {
+    title: `Posts tagged "${tag}"`,
+    titleTemplate: '%s | LZX Blog',
+    description: `Blog posts about ${tag} from LZX Industries.`,
+    url,
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `Blog — ${tag}`,
+      url,
+    },
+  };
+}
+
 export const seoPayload = {
   article,
   blog,
+  blogIndex,
+  blogPost,
+  blogTag,
   catalog,
   collection,
+  doc,
   glossary,
   home,
   listCollections,

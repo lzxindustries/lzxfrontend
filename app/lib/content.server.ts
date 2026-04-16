@@ -1,0 +1,405 @@
+import {renderMarkdown} from './markdown.server';
+import matter from 'gray-matter';
+import type {ContentFrontmatter, TocHeading} from './markdown.server';
+
+export type {TocHeading} from './markdown.server';
+
+// --- Types ---
+
+export interface BlogPost {
+  slug: string;
+  date: string;
+  frontmatter: ContentFrontmatter;
+  excerpt: string;
+  readingTime: number;
+  imageBasePath: string;
+}
+
+export interface BlogPostFull extends BlogPost {
+  html: string;
+  headings: TocHeading[];
+}
+
+export interface DocPage {
+  slug: string;
+  path: string;
+  frontmatter: ContentFrontmatter;
+}
+
+export interface DocPageFull extends DocPage {
+  html: string;
+  headings: TocHeading[];
+  readingTime: number;
+}
+
+export interface SidebarItem {
+  label: string;
+  slug: string;
+  path: string;
+  position: number;
+  children?: SidebarItem[];
+}
+
+export interface TagInfo {
+  tag: string;
+  count: number;
+}
+
+// --- Content loading via import.meta.glob ---
+// Vite bundles these at build time as raw strings
+
+const blogFiles = import.meta.glob<string>(
+  '../../content/blog/*/index.md',
+  {query: '?raw', import: 'default', eager: true},
+);
+
+const docFiles = import.meta.glob<string>(
+  '../../content/docs/**/*.md',
+  {query: '?raw', import: 'default', eager: true},
+);
+
+// --- Helpers ---
+
+function extractDateFromBlogPath(filepath: string): string {
+  // Path format: ../../content/blog/YYYY-MM-DD-slug/index.md
+  const match = filepath.match(
+    /\/blog\/(\d{4}-\d{2}-\d{2})-[^/]+\/index\.md$/,
+  );
+  return match?.[1] ?? '1970-01-01';
+}
+
+function extractSlugFromBlogPath(filepath: string): string {
+  // Path format: ../../content/blog/YYYY-MM-DD-slug/index.md
+  const match = filepath.match(/\/blog\/\d{4}-\d{2}-\d{2}-([^/]+)\/index\.md$/);
+  return match?.[1] ?? '';
+}
+
+function extractDocPathFromFilePath(filepath: string): string {
+  // Path format: ../../content/docs/modules/dsg3.md → modules/dsg3
+  const match = filepath.match(/\/content\/docs\/(.+)\.md$/);
+  if (!match) return '';
+  // Remove trailing /index for index files
+  const cleaned = match[1].replace(/\/index$/, '');
+  // Normalize top-level docs/index.md to docs root
+  return cleaned === 'index' ? '' : cleaned;
+}
+
+function slugFromDocPath(docPath: string): string {
+  // Last segment of the path
+  const parts = docPath.split('/');
+  return parts[parts.length - 1] ?? '';
+}
+
+function sectionFromDocPath(docPath: string): string {
+  // First segment: modules, guides, instruments, case-and-power
+  return docPath.split('/')[0] ?? '';
+}
+
+// --- Blog functions ---
+
+export function listBlogPosts(tag?: string): BlogPost[] {
+  const posts: BlogPost[] = [];
+  const isProduction = typeof process !== 'undefined' &&
+    process.env?.NODE_ENV === 'production';
+  const truncateMarker = /<!--\s*truncate\s*-->/i;
+
+  for (const [filepath, raw] of Object.entries(blogFiles)) {
+    let frontmatter: ContentFrontmatter = {title: extractSlugFromBlogPath(filepath)};
+    let contentAfterFm = raw;
+    try {
+      const parsed = matter(raw);
+      frontmatter = parsed.data as ContentFrontmatter;
+      contentAfterFm = parsed.content;
+    } catch {
+      continue;
+    }
+
+    // Skip drafts in production
+    if (isProduction && frontmatter.draft) continue;
+
+    // Filter by tag if specified
+    if (tag && (!frontmatter.tags || !frontmatter.tags.includes(tag))) continue;
+
+    const date = extractDateFromBlogPath(filepath);
+    const dirSlug = extractSlugFromBlogPath(filepath);
+    const slug = (frontmatter.slug as string) || dirSlug;
+
+    // Extract excerpt from raw content
+    const truncateIdx = contentAfterFm.search(truncateMarker);
+    const excerptRaw =
+      truncateIdx >= 0
+        ? contentAfterFm.slice(0, truncateIdx)
+        : contentAfterFm.slice(0, 300);
+    const excerpt = excerptRaw
+      .replace(/!\[.*?\]\(.*?\)/g, '')
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .replace(/#{1,6}\s+/g, '')
+      .replace(/[*_~`>]/g, '')
+      .replace(/\n+/g, ' ')
+      .trim()
+      .slice(0, 200);
+
+    const wordCount = contentAfterFm.trim().split(/\s+/).length;
+    const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+    posts.push({
+      slug,
+      date,
+      frontmatter,
+      excerpt,
+      readingTime,
+      imageBasePath: `/docs/blog/${dirSlug}`,
+    });
+  }
+
+  // Sort by date descending
+  posts.sort((a, b) => b.date.localeCompare(a.date));
+  return posts;
+}
+
+export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
+  for (const [filepath, raw] of Object.entries(blogFiles)) {
+    const dirSlug = extractSlugFromBlogPath(filepath);
+
+    let fmSlug = '';
+    try {
+      const parsed = matter(raw);
+      fmSlug = (parsed.data.slug as string) || '';
+    } catch {
+      fmSlug = '';
+    }
+
+    const effectiveSlug = fmSlug || dirSlug;
+    if (effectiveSlug !== slug) continue;
+
+    const imageBasePath = `/docs/blog/${dirSlug}`;
+    const parsed = await renderMarkdown(raw, imageBasePath, `/blog/${effectiveSlug}`);
+
+    return {
+      slug: effectiveSlug,
+      date: extractDateFromBlogPath(filepath),
+      frontmatter: parsed.frontmatter,
+      excerpt: parsed.excerpt,
+      readingTime: parsed.readingTime,
+      imageBasePath,
+      html: parsed.html,
+      headings: parsed.headings,
+    };
+  }
+  return null;
+}
+
+export function getAllTags(): TagInfo[] {
+  const tagCounts = new Map<string, number>();
+  const posts = listBlogPosts();
+
+  for (const post of posts) {
+    if (post.frontmatter.tags) {
+      for (const tag of post.frontmatter.tags) {
+        tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+      }
+    }
+  }
+
+  return Array.from(tagCounts.entries())
+    .map(([tag, count]) => ({tag, count}))
+    .sort((a, b) => b.count - a.count);
+}
+
+// --- Docs functions ---
+
+export function listDocsInSection(section: string): DocPage[] {
+  const docs: DocPage[] = [];
+
+  for (const [filepath, raw] of Object.entries(docFiles)) {
+    const docPath = extractDocPathFromFilePath(filepath);
+    if (!docPath.startsWith(section + '/') && docPath !== section) continue;
+
+    let frontmatter: ContentFrontmatter = {title: slugFromDocPath(docPath)};
+    try {
+      const parsed = matter(raw);
+      frontmatter = parsed.data as ContentFrontmatter;
+      if (!frontmatter.title) {
+        frontmatter.title = slugFromDocPath(docPath);
+      }
+    } catch {
+      // use default title
+    }
+
+    docs.push({
+      slug: slugFromDocPath(docPath),
+      path: docPath,
+      frontmatter,
+    });
+  }
+
+  // Sort by sidebar_position, then alphabetically
+  docs.sort((a, b) => {
+    const posA = a.frontmatter.sidebar_position ?? 999;
+    const posB = b.frontmatter.sidebar_position ?? 999;
+    if (posA !== posB) return posA - posB;
+    return (a.frontmatter.title ?? '').localeCompare(b.frontmatter.title ?? '');
+  });
+
+  return docs;
+}
+
+export async function getDocPage(
+  docPath: string,
+): Promise<DocPageFull | null> {
+  // Try exact path, then with /index suffix
+  const candidates = [
+    `../../content/docs/${docPath}.md`,
+    `../../content/docs/${docPath}/index.md`,
+  ];
+
+  for (const candidate of candidates) {
+    const raw = docFiles[candidate];
+    if (!raw) continue;
+
+    const section = sectionFromDocPath(docPath);
+    const imageBasePath = `/docs/img/${section}`;
+    const normalizedDocPath = docPath.replace(/\/index$/, '');
+    const currentPath = normalizedDocPath ? `/docs/${normalizedDocPath}` : '/docs';
+    const parsed = await renderMarkdown(raw, imageBasePath, currentPath);
+
+    return {
+      slug: slugFromDocPath(docPath),
+      path: docPath,
+      frontmatter: parsed.frontmatter,
+      html: parsed.html,
+      headings: parsed.headings,
+      readingTime: parsed.readingTime,
+    };
+  }
+
+  return null;
+}
+
+export function buildSidebar(section: string): SidebarItem[] {
+  const docs = listDocsInSection(section);
+  const tree: SidebarItem[] = [];
+  const folders = new Map<string, SidebarItem>();
+
+  for (const doc of docs) {
+    // Calculate relative path within section
+    const relativePath = doc.path.startsWith(section + '/')
+      ? doc.path.slice(section.length + 1)
+      : doc.path;
+
+    const parts = relativePath.split('/');
+    const docPosition = doc.frontmatter.sidebar_position ?? 999;
+
+    if (parts.length === 1) {
+      // Top-level doc in section
+      tree.push({
+        label: doc.frontmatter.title ?? doc.slug,
+        slug: doc.slug,
+        path: doc.path,
+        position: docPosition,
+      });
+    } else {
+      // Create or reuse folder nodes for all intermediate path segments
+      let parentChildren = tree;
+      let parentPath = section;
+
+      for (let i = 0; i < parts.length - 1; i++) {
+        const segment = parts[i] ?? '';
+        const folderPath = `${parentPath}/${segment}`;
+
+        let folder = folders.get(folderPath);
+        if (!folder) {
+          folder = {
+            label: formatLabel(segment),
+            slug: segment,
+            path: folderPath,
+            position: docPosition,
+            children: [],
+          };
+          folders.set(folderPath, folder);
+          parentChildren.push(folder);
+        } else {
+          folder.position = Math.min(folder.position, docPosition);
+        }
+
+        parentChildren = folder.children!;
+        parentPath = folderPath;
+      }
+
+      parentChildren.push({
+        label: doc.frontmatter.title ?? doc.slug,
+        slug: doc.slug,
+        path: doc.path,
+        position: docPosition,
+      });
+    }
+  }
+
+  sortSidebarItems(tree);
+
+  return tree;
+}
+
+function sortSidebarItems(items: SidebarItem[]) {
+  items.sort((a, b) => {
+    if (a.position !== b.position) return a.position - b.position;
+    return a.label.localeCompare(b.label);
+  });
+
+  for (const item of items) {
+    if (item.children?.length) {
+      sortSidebarItems(item.children);
+    }
+  }
+}
+
+export function getPrevNext(
+  section: string,
+  currentPath: string,
+): {prev: SidebarItem | null; next: SidebarItem | null} {
+  const sidebar = buildSidebar(section);
+  const flat = flattenSidebar(sidebar);
+  const idx = flat.findIndex((item) => item.path === currentPath);
+
+  return {
+    prev: idx > 0 ? flat[idx - 1] : null,
+    next: idx >= 0 && idx < flat.length - 1 ? flat[idx + 1] : null,
+  };
+}
+
+function flattenSidebar(items: SidebarItem[]): SidebarItem[] {
+  const result: SidebarItem[] = [];
+  for (const item of items) {
+    if (item.children?.length) {
+      result.push(...flattenSidebar(item.children));
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
+}
+
+// --- Utility for all content listing (sitemap, search index) ---
+
+export function getAllContentPaths(): string[] {
+  const paths: string[] = [];
+
+  // Blog posts
+  for (const post of listBlogPosts()) {
+    paths.push(`/blog/${post.slug}`);
+  }
+
+  // Docs
+  for (const [filepath] of Object.entries(docFiles)) {
+    const docPath = extractDocPathFromFilePath(filepath);
+    paths.push(docPath ? `/docs/${docPath}` : '/docs');
+  }
+
+  return paths;
+}
+
+function formatLabel(slug: string): string {
+  return slug
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}

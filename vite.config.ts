@@ -37,6 +37,8 @@ export default defineConfig({
        * @see https://vitejs.dev/config/dep-optimization-options
        */
       include: [
+        'debug',
+        'extend',
         '@remix-run/dev/server-build',
         'ts-easing',
         'fast-shallow-equal',
@@ -52,6 +54,10 @@ export default defineConfig({
         'prop-types',
         'typographic-base',
         'react-universal-interface',
+        'gray-matter',
+        'highlight.js',
+        'highlight.js/lib/core',
+        'lowlight',
       ],
     },
   },

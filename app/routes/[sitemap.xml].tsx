@@ -7,6 +7,7 @@ import type {
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {getPatches} from '~/data/lzxdb';
+import {getAllContentPaths} from '~/lib/content.server';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
 
@@ -131,9 +132,16 @@ function shopSitemap({
     changeFreq: 'monthly',
   }));
 
+  // Add docs and blog content pages
+  const contentRoutes = getAllContentPaths().map((path) => ({
+    url: `${baseUrl}${path}`,
+    changeFreq: path.startsWith('/blog') ? 'monthly' : 'weekly',
+  }));
+
   const urlsDatas = [
     ...staticRoutes,
     ...patchRoutes,
+    ...contentRoutes,
     ...productsData,
     ...collectionsData,
     ...pagesData,
