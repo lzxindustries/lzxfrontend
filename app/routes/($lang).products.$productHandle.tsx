@@ -21,7 +21,7 @@ import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {defer} from '@shopify/remix-oxygen';
 import clsx from 'clsx';
 import {Suspense, useEffect, useRef, useState} from 'react';
-import {FaHeart, FaRegHeart} from 'react-icons/fa';
+import {FaHeart, FaRegHeart, FaTruck, FaLock} from 'react-icons/fa';
 import invariant from 'tiny-invariant';
 import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
@@ -374,6 +374,29 @@ export function ProductForm() {
               />
             </>
           )}
+        </div>
+
+        {/* Trust signals */}
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-3 border-t border-primary/10 text-xs text-primary/60">
+          {!isOutOfStock && (
+            <Link
+              to="/policies/shipping-policy"
+              className="flex items-center gap-1.5 hover:text-primary transition"
+            >
+              <FaTruck className="text-sm" />
+              <span>
+                {isPreorder
+                  ? 'Ships when available'
+                  : isBackorder
+                    ? 'Ships in 4-6 weeks'
+                    : 'Ships in 24 hours'}
+              </span>
+            </Link>
+          )}
+          <span className="flex items-center gap-1.5">
+            <FaLock className="text-sm" />
+            <span>Secure Checkout</span>
+          </span>
         </div>
       </div>
 

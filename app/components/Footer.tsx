@@ -87,8 +87,17 @@ export function Footer() {
           <a className="link link-hover" href="/policies/terms-of-service">
             Terms of Service
           </a>
+          <a className="link link-hover" href="/policies/terms-of-service#warranty">
+            Warranty
+          </a>
           <a className="link link-hover" href="/policies/refund-policy">
             Refund Policy
+          </a>
+          <a className="link link-hover" href="/policies/shipping-policy">
+            Shipping Policy
+          </a>
+          <a className="link link-hover" href="/policies/privacy-policy">
+            Privacy Policy
           </a>
         </div>
         <div>
