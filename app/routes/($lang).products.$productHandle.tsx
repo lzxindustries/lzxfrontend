@@ -187,24 +187,6 @@ export function ProductForm() {
         ? 'Backorder Now'
         : 'Add to Cart';
 
-  // Determine shipping/status message
-  const statusMessage = isOutOfStock ? (
-    <Text as="span" className="text-sm">
-      Out of stock. Please{' '}
-      <Link to={'mailto:sales@lzxindustries.net'}>contact us</Link> to
-      let us know about your interest in this item!
-    </Text>
-  ) : isPreorder ? (
-    <Text as="span" className="text-sm">
-      This product is not shipping, but is available for preorder.
-      Please place your order only if you are prepared to wait.
-    </Text>
-  ) : isBackorder ? (
-    <Text as="span" className="text-sm text-primary/70">Ships in 4-6 weeks.</Text>
-  ) : (
-    <Text as="span" className="text-sm text-green-700">Ships in 24 hours.</Text>
-  );
-
   // Low stock warning (single source of truth)
   const showLowStock =
     !isOutOfStock &&
@@ -355,8 +337,6 @@ export function ProductForm() {
               )}
 
               {/* Status message */}
-              {statusMessage}
-
               {!isOutOfStock && (
                 <ShopPayButton
                   width="100%"
