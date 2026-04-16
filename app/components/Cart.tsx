@@ -1,5 +1,5 @@
-import {useFetcher} from '@remix-run/react';
-import {flattenConnection, Image, Money, OptimisticInput} from '@shopify/hydrogen';
+import {useFetcher, useMatches} from '@remix-run/react';
+import {flattenConnection, Image, Money, OptimisticInput, ShopPayButton} from '@shopify/hydrogen';
 import type {
   Cart as CartType,
   CartCost,
@@ -172,12 +172,18 @@ function CartLines({
 }
 
 function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: CartType}) {
+  const matches = useMatches();
+  const rootData = matches.find((match) => match.id === 'root')?.data as Record<string, any> | undefined;
+  const storeDomain = rootData?.layout?.shop?.primaryDomain?.url;
+
+  const variantIds = cart?.lines?.edges
+    ?.map((edge) => edge.node.merchandise?.id)
+    .filter(Boolean) as string[] | undefined;
+
   if (!checkoutUrl) return null;
 
   return (
     <div className="flex flex-col mt-2 gap-2">
-      {/* Shop Pay button available via @shopify/hydrogen - uncomment when Shop Pay is configured */}
-      {/* {cart && <ShopPayButton cart={cart} />} */}
       <a
         href={checkoutUrl}
         target="_self"
@@ -195,6 +201,22 @@ function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: C
           Continue to Checkout
         </Button>
       </a>
+      {storeDomain && variantIds && variantIds.length > 0 && (
+        <ShopPayButton
+          width="100%"
+          variantIds={variantIds}
+          storeDomain={storeDomain}
+        />
+      )}
+      <div className="flex items-center justify-center gap-3 text-xs text-primary/50 mt-1">
+        <Link to="/policies/refund-policy" className="underline hover:text-primary transition">
+          Return Policy
+        </Link>
+        <span>·</span>
+        <Link to="/policies/shipping-policy" className="underline hover:text-primary transition">
+          Shipping Policy
+        </Link>
+      </div>
       <Link to="/catalog" className="text-center text-sm text-primary/50 hover:text-primary transition">
         Continue Shopping
       </Link>
@@ -249,8 +271,8 @@ function CartSummary({
       <h2 id="summary-heading" className="sr-only">
         Order summary
       </h2>
-      <dl className="grid">
-        <div className="flex items-center justify-between font-medium">
+      <dl className="grid gap-1">
+        <div className="flex items-center justify-between">
           <Text as="dt">Subtotal</Text>
           <Text as="dd" data-test="subtotal">
             {cost?.subtotalAmount?.amount ? (
@@ -260,6 +282,27 @@ function CartSummary({
             )}
           </Text>
         </div>
+        {cost?.totalTaxAmount?.amount && parseFloat(cost.totalTaxAmount.amount) > 0 && (
+          <div className="flex items-center justify-between text-sm text-primary/60">
+            <Text as="dt">Tax</Text>
+            <Text as="dd">
+              <Money data={cost.totalTaxAmount} />
+            </Text>
+          </div>
+        )}
+        {cost?.totalAmount?.amount && (
+          <div className="flex items-center justify-between font-medium border-t pt-2 mt-1">
+            <Text as="dt">Estimated Total</Text>
+            <Text as="dd">
+              <Money data={cost.totalAmount} />
+            </Text>
+          </div>
+        )}
+        {(!cost?.totalTaxAmount?.amount || parseFloat(cost.totalTaxAmount.amount) === 0) && (
+          <p className="text-xs text-primary/50 mt-1">
+            Tax and shipping calculated at checkout
+          </p>
+        )}
       </dl>
       {children}
     </section>
