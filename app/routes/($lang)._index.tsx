@@ -173,12 +173,7 @@ export default function Home() {
                 </Link>{' '}
                 — example patches and recipes for LZX modules.
               </li>
-              <li>
-                <Link to="/videos" className="link link-primary">
-                  Videos
-                </Link>{' '}
-                — tutorials, demos, and artist performances.
-              </li>
+
             </ul>
           </div>
         </div>

@@ -80,9 +80,6 @@ export function Footer() {
           <a className="link link-hover" href="/patches">
             Patch Ideas
           </a>
-          <a className="link link-hover" href="/videos">
-            Videos
-          </a>
           <a className="link link-hover" href="/glossary">
             Glossary
           </a>

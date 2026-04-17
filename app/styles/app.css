@@ -587,20 +587,16 @@ body {
 .docs-content {
   @apply text-base leading-relaxed;
 
-  h1 {
-    @apply text-3xl font-bold mt-8 mb-4;
-  }
-
   h2 {
-    @apply text-2xl font-semibold mt-8 mb-3 pb-2 border-b border-base-300;
+    @apply text-lead font-bold mt-8 mb-3 pb-2 border-b border-base-300;
   }
 
   h3 {
-    @apply text-xl font-semibold mt-6 mb-2;
+    @apply text-copy font-bold mt-6 mb-2;
   }
 
   h4 {
-    @apply text-lg font-medium mt-4 mb-2;
+    @apply text-copy font-medium mt-4 mb-2;
   }
 
   p {

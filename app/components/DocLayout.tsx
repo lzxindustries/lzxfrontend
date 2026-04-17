@@ -244,7 +244,7 @@ export function DocLayout({
         <Sidebar items={sidebar} currentPath={currentPath} basePath="/docs" />
         <article className="flex-1 min-w-0 max-w-prose-wide">
           {frontmatter.title && (
-            <h1 className="text-3xl font-bold mb-6">{frontmatter.title}</h1>
+            <h1 className="text-heading font-bold mb-6">{frontmatter.title}</h1>
           )}
           <div
             ref={contentRef}

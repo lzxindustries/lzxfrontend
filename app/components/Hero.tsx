@@ -44,7 +44,7 @@ export function Hero() {
             format conversion, and audio-reactive workflows.
           </Text>
 
-          <div className="vm-reveal vm-reveal-delay-3 mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
+          <div className="vm-reveal vm-reveal-delay-3 mt-8 hidden flex-wrap items-center gap-3 sm:mt-10 lg:flex">
             <Link
               to="/products/videomancer"
               className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
@@ -59,7 +59,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <p className="vm-reveal vm-reveal-delay-3 mt-4 text-xs uppercase tracking-[0.18em] text-white/50">
+          <p className="vm-reveal vm-reveal-delay-3 mt-4 hidden text-xs uppercase tracking-[0.18em] text-white/50 lg:block">
             Ships in 24 hours
           </p>
         </div>
@@ -72,6 +72,27 @@ export function Hero() {
             className="vm-reveal vm-reveal-delay-4 w-full max-w-[280px] drop-shadow-[0_0_60px_rgba(80,76,159,0.4)] sm:max-w-[340px] lg:max-w-[480px]"
             loading="eager"
           />
+        </div>
+
+        {/* Buttons below product image on mobile */}
+        <div className="flex flex-col items-center lg:hidden">
+          <div className="vm-reveal vm-reveal-delay-3 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/products/videomancer"
+              className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
+            >
+              Shop now
+            </Link>
+            <Link
+              to="/docs/instruments/videomancer/user-manual"
+              className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
+            >
+              See docs
+            </Link>
+          </div>
+          <p className="vm-reveal vm-reveal-delay-3 mt-4 text-xs uppercase tracking-[0.18em] text-white/50">
+            Ships in 24 hours
+          </p>
         </div>
       </div>
 

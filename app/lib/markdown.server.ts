@@ -205,6 +205,18 @@ function visitElements(
   }
 }
 
+// --- Strip h1 headings (title rendered separately by layout) ---
+
+function stripH1Headings(): Plugin<[], Root> {
+  return () => {
+    return (tree: Root) => {
+      tree.children = tree.children.filter(
+        (node) => !(node.type === 'element' && node.tagName === 'h1'),
+      );
+    };
+  };
+}
+
 // --- Mermaid code block wrapping ---
 
 function wrapMermaidBlocks(): Plugin<[], Root> {
@@ -379,6 +391,7 @@ export async function renderMarkdown(
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, {behavior: 'wrap'})
     .use(rehypeHighlight as never, {ignoreMissing: true})
+    .use(stripH1Headings())
     .use(wrapMermaidBlocks())
     .use(rewriteInternalPaths(imageBasePath, currentPath))
     .use(extractHeadings(headings))

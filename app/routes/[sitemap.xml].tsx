@@ -123,7 +123,6 @@ function shopSitemap({
     {url: `${baseUrl}/journal`, changeFreq: 'weekly'},
     {url: `${baseUrl}/glossary`, changeFreq: 'monthly'},
     {url: `${baseUrl}/patches`, changeFreq: 'weekly'},
-    {url: `${baseUrl}/videos`, changeFreq: 'weekly'},
   ];
 
   // Add individual patch pages
