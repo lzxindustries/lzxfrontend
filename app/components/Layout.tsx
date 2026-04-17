@@ -1,5 +1,5 @@
 import {useMatches, useLocation, Await} from '@remix-run/react';
-import {Suspense, useEffect, useRef} from 'react';
+import {Suspense, useEffect, useRef, useState} from 'react';
 import type {Cart as CartType} from '@shopify/hydrogen/storefront-api-types';
 import {Footer} from './Footer';
 import {Header} from './Header';
@@ -8,6 +8,22 @@ import {Cart} from './Cart';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 import {CartAction} from '~/lib/type';
 import type {LayoutData} from '~/root';
+
+/**
+ * Sync cart count from the resolved cart promise back to parent state.
+ */
+function CartCountSync({
+  count,
+  onCount,
+}: {
+  count: number;
+  onCount: (n: number) => void;
+}) {
+  useEffect(() => {
+    onCount(count);
+  }, [count, onCount]);
+  return null;
+}
 
 export function Layout({
   children,
@@ -29,6 +45,7 @@ export function Layout({
   const isLoggedIn = (rootMatch.data as Record<string, any>)?.isLoggedIn;
 
   const {isOpen: isCartOpen, openDrawer: openCart, closeDrawer: closeCart} = useDrawer();
+  const [cartCount, setCartCount] = useState(0);
 
   // Auto-open cart drawer when an add-to-cart action completes
   const addToCartFetchers = useCartFetchers(CartAction.ADD_TO_CART);
@@ -50,15 +67,19 @@ export function Layout({
         <a href="#mainContent" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
           Skip to content
         </a>
-        <Suspense fallback={<div className="navbar bg-base-100 sticky top-0 z-50" />}>
+        <Header
+          cartCount={cartCount}
+          url={`${location.pathname}${location.search}`}
+          isLoggedIn={isLoggedIn}
+          onCartClick={openCart}
+        />
+        <Suspense fallback={null}>
           <Await resolve={cart}>
             {(cartData) => (
               <>
-                <Header
-                  cartCount={cartData?.totalQuantity || 0}
-                  url={`${location.pathname}${location.search}`}
-                  isLoggedIn={isLoggedIn}
-                  onCartClick={openCart}
+                <CartCountSync
+                  count={cartData?.totalQuantity || 0}
+                  onCount={setCartCount}
                 />
                 <Drawer
                   open={isCartOpen}
