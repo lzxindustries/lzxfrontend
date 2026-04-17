@@ -607,6 +607,12 @@ body {
     @apply text-primary underline hover:text-primary-focus;
   }
 
+  h2 > a,
+  h3 > a,
+  h4 > a {
+    @apply text-base-content no-underline;
+  }
+
   ul {
     @apply list-disc pl-6 mb-4 space-y-1;
   }
