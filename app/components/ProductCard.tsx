@@ -6,6 +6,7 @@ import {Link} from '~/components/Link';
 import {Text} from '~/components/Text';
 import {getProductPlaceholder} from '~/lib/placeholders';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
+import {resolveProductUrl} from '~/data/product-slugs';
 
 export function ProductCardBackgroundSVG() {
   return (
@@ -73,7 +74,7 @@ export function ProductCard({
     <div className="flex flex-col gap-2">
       <Link
         onClick={handleOnClick}
-        to={`/products/${product.handle}`}
+        to={resolveProductUrl(product.handle)}
         prefetch="intent"
         className="relative"
       >

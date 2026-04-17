@@ -8,6 +8,7 @@ import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {getPatches} from '~/data/lzxdb';
 import {getAllContentPaths} from '~/lib/content.server';
+import {getAllModuleSlugs, getAllInstrumentSlugs} from '~/data/product-slugs';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
 
@@ -123,12 +124,25 @@ function shopSitemap({
     {url: `${baseUrl}/journal`, changeFreq: 'weekly'},
     {url: `${baseUrl}/glossary`, changeFreq: 'monthly'},
     {url: `${baseUrl}/patches`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/modules`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/instruments`, changeFreq: 'weekly'},
   ];
 
   // Add individual patch pages
   const patchRoutes = getPatches().map((patch) => ({
     url: `${baseUrl}/patches/${patch.slug}`,
     changeFreq: 'monthly',
+  }));
+
+  // Add module and instrument hub pages
+  const moduleRoutes = getAllModuleSlugs().map((slug) => ({
+    url: `${baseUrl}/modules/${slug}`,
+    changeFreq: 'weekly',
+  }));
+
+  const instrumentRoutes = getAllInstrumentSlugs().map((slug) => ({
+    url: `${baseUrl}/instruments/${slug}`,
+    changeFreq: 'weekly',
   }));
 
   // Add docs and blog content pages
@@ -140,6 +154,8 @@ function shopSitemap({
   const urlsDatas = [
     ...staticRoutes,
     ...patchRoutes,
+    ...moduleRoutes,
+    ...instrumentRoutes,
     ...contentRoutes,
     ...productsData,
     ...collectionsData,

@@ -46,13 +46,13 @@ export function Hero() {
 
           <div className="vm-reveal vm-reveal-delay-3 mt-8 hidden flex-wrap items-center gap-3 sm:mt-10 lg:flex">
             <Link
-              to="/products/videomancer"
+              to="/instruments/videomancer"
               className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
             >
               Shop now
             </Link>
             <Link
-              to="/docs/instruments/videomancer/user-manual"
+              to="/instruments/videomancer/manual/user-manual"
               className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
             >
               See docs
@@ -78,13 +78,13 @@ export function Hero() {
         <div className="flex flex-col items-center lg:hidden">
           <div className="vm-reveal vm-reveal-delay-3 flex flex-wrap items-center justify-center gap-3">
             <Link
-              to="/products/videomancer"
+              to="/instruments/videomancer"
               className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
             >
               Shop now
             </Link>
             <Link
-              to="/docs/instruments/videomancer/user-manual"
+              to="/instruments/videomancer/manual/user-manual"
               className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
             >
               See docs

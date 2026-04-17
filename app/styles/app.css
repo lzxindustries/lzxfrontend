@@ -643,7 +643,15 @@ body {
   }
 
   td {
-    @apply px-4 py-2 border border-base-300;
+    @apply px-4 py-2 border border-base-300 align-top;
+  }
+
+  /* Nested tables inside cells (e.g. Full Specifications connector/control tables) */
+  td > table {
+    @apply mt-0;
+  }
+  td > table:last-child {
+    @apply mb-0;
   }
 
   pre {

@@ -13,6 +13,7 @@ import {Button} from '~/components/Button';
 import {FeaturedProducts} from '~/components/FeaturedProducts';
 import {IconRemove} from '~/components/Icon';
 import {Link} from '~/components/Link';
+import {resolveProductUrl} from '~/data/product-slugs';
 import {Heading, Text} from '~/components/Text';
 
 import {CartAction} from '~/lib/type';
@@ -334,7 +335,7 @@ function CartLineItem({line}: {line: CartLine}) {
         <div className="grid gap-2">
           <Heading as="h3" size="copy">
             {merchandise?.product?.handle ? (
-              <Link to={`/products/${merchandise.product.handle}`}>
+              <Link to={resolveProductUrl(merchandise.product.handle)}>
                 {merchandise?.product?.title || ''}
               </Link>
             ) : (

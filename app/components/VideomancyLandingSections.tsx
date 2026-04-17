@@ -156,7 +156,7 @@ export function VideomancyLandingSections() {
             {segments.map((segment, index) => (
               <Link
                 key={segment.id}
-                to={`/products/videomancer#${segment.id}`}
+                to={`/instruments/videomancer#${segment.id}`}
                 className="vm-reveal group rounded-2xl border border-lzx-border/40 bg-lzx-card/50 p-6 transition-all duration-300 any-hover:hover:scale-[1.03] any-hover:hover:border-mystic/60 any-hover:hover:bg-lzx-card/80"
                 style={{animationDelay: `${120 + index * 80}ms`}}
               >
@@ -272,13 +272,13 @@ export function VideomancyLandingSections() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                to="/products/videomancer"
+                to="/instruments/videomancer"
                 className="rounded-full bg-mystic px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/20 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/35"
               >
                 Buy Videomancer
               </Link>
               <Link
-                to="/docs/instruments/videomancer/user-manual"
+                to="/instruments/videomancer/manual/user-manual"
                 className="rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/50 any-hover:hover:bg-white/10"
               >
                 Study the workflow

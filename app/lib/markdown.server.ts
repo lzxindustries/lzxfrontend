@@ -188,6 +188,19 @@ function normalizeMarkdownPath(pathname: string): string {
   let normalized = pathname.replace(/\.md$/i, '').replace(/\/index$/i, '');
   if (normalized === '/docs/index') normalized = '/docs';
   if (!normalized) return '/';
+
+  // Rewrite /docs/modules/{slug} → /modules/{slug}/manual
+  const moduleMatch = normalized.match(/^\/docs\/modules\/([^/]+)$/);
+  if (moduleMatch) return `/modules/${moduleMatch[1]}/manual`;
+
+  // Rewrite /docs/instruments/{slug}/{subpath?} → /instruments/{slug}/manual/{subpath?}
+  const instrMatch = normalized.match(/^\/docs\/instruments\/([^/]+)(?:\/(.+))?$/);
+  if (instrMatch) {
+    const slug = instrMatch[1];
+    const subpath = instrMatch[2];
+    return `/instruments/${slug}/manual${subpath ? '/' + subpath : ''}`;
+  }
+
   return normalized;
 }
 

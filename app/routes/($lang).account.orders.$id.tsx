@@ -19,6 +19,7 @@ import clsx from 'clsx';
 import {useState} from 'react';
 import invariant from 'tiny-invariant';
 import {Link} from '~/components/Link';
+import {resolveProductUrl} from '~/data/product-slugs';
 import {Heading, PageHeader, Text} from '~/components/Text';
 import {
   isOrderAddressEditable,
@@ -242,7 +243,7 @@ export default function OrderRoute() {
                     <td className="w-full py-4 pl-0 pr-3 align-top sm:align-middle max-w-0 sm:w-auto sm:max-w-none">
                       <div className="flex gap-6">
                         <Link
-                          to={`/products/${lineItem.variant!.product!.handle}`}
+                          to={resolveProductUrl(lineItem.variant!.product!.handle)}
                         >
                           {lineItem?.variant?.image && (
                             <div className="w-24 card-image aspect-square">

@@ -7,6 +7,7 @@ import {PageHeader, Section} from '~/components/Text';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {LiteYouTube} from '~/components/LiteYouTube';
 import {getPatchBySlug} from '~/data/lzxdb';
+import {resolveProductUrl} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG} from '~/data/cache';
 
@@ -112,7 +113,7 @@ export default function PatchDetail() {
                 {patch.modules.map((module) => (
                   <li key={module.id}>
                     <Link
-                      to={`/products/${module.handle}`}
+                      to={resolveProductUrl(module.handle)}
                       className="link link-primary"
                       prefetch="intent"
                     >

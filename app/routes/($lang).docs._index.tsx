@@ -15,13 +15,13 @@ const SECTIONS = [
   {
     title: 'Modules',
     description: 'Documentation for all LZX EuroRack modules — specs, controls, and patching.',
-    to: '/docs/modules/module-list',
+    to: '/modules',
     icon: '🔧',
   },
   {
     title: 'Instruments',
     description: 'Videomancer user manual, program guides, and instrument documentation.',
-    to: '/docs/instruments/videomancer/user-manual',
+    to: '/instruments/videomancer',
     icon: '🎛️',
   },
   {

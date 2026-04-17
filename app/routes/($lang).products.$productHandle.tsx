@@ -35,6 +35,7 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getModuleByName, getPatchesForModule, getVideosForModule} from '~/data/lzxdb';
 import type {LzxPatch, LzxVideo} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server.js';
+import {isModuleSlug, isInstrumentSlug, getCanonicalSlug} from '~/data/product-slugs';
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -56,6 +57,27 @@ export function ErrorBoundary() {
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
+
+  // Redirect module/instrument products to their hub pages
+  const canonical = getCanonicalSlug(productHandle);
+  if (canonical && isModuleSlug(productHandle)) {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: `/modules/${canonical}`,
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+  if (canonical && isInstrumentSlug(productHandle)) {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: `/instruments/${canonical}`,
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
 
   const searchParams = new URL(request.url).searchParams;
 

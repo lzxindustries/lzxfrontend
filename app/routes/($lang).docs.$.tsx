@@ -18,6 +18,39 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     throw new Response('Not Found', {status: 404});
   }
 
+  // Redirect /docs/modules/* → /modules/*/manual
+  if (splat.startsWith('modules/')) {
+    const rest = splat.slice('modules/'.length);
+    if (rest === 'module-list' || rest === 'module-list/') {
+      throw new Response(null, {
+        status: 301,
+        headers: {Location: '/modules', 'Cache-Control': 'public, max-age=31536000'},
+      });
+    }
+    const slug = rest.split('/')[0];
+    if (slug) {
+      throw new Response(null, {
+        status: 301,
+        headers: {Location: `/modules/${slug}/manual`, 'Cache-Control': 'public, max-age=31536000'},
+      });
+    }
+  }
+
+  // Redirect /docs/instruments/* → /instruments/*/manual/*
+  if (splat.startsWith('instruments/')) {
+    const rest = splat.slice('instruments/'.length);
+    const parts = rest.split('/');
+    const slug = parts[0];
+    const subPath = parts.slice(1).join('/');
+    if (slug) {
+      const target = `/instruments/${slug}/manual${subPath ? '/' + subPath : ''}`;
+      throw new Response(null, {
+        status: 301,
+        headers: {Location: target, 'Cache-Control': 'public, max-age=31536000'},
+      });
+    }
+  }
+
   const doc = await getDocPage(splat);
   if (!doc) {
     throw new Response('Not Found', {status: 404});

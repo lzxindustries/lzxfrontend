@@ -71,6 +71,18 @@ function processFile(filePath, urlBase) {
     let docPath = relPath.replace(/\.md$/, '').replace(/\/index$/, '');
     if (docPath === 'index') docPath = '';
     url = docPath ? `/docs/${docPath}` : '/docs';
+
+    // Rewrite module and instrument docs to hub URLs
+    const moduleMatch = url.match(/^\/docs\/modules\/([^/]+)$/);
+    if (moduleMatch) {
+      url = `/modules/${moduleMatch[1]}/manual`;
+    }
+    const instrMatch = url.match(/^\/docs\/instruments\/([^/]+)(?:\/(.+))?$/);
+    if (instrMatch) {
+      const slug = instrMatch[1];
+      const subpath = instrMatch[2];
+      url = `/instruments/${slug}/manual${subpath ? '/' + subpath : ''}`;
+    }
   }
 
   const html = `<!DOCTYPE html>

@@ -2,6 +2,7 @@ import {useFetcher, useNavigate} from '@remix-run/react';
 import {Image, Money} from '@shopify/hydrogen';
 import type {CurrencyCode} from '@shopify/hydrogen/storefront-api-types';
 import {useEffect, useRef, useState} from 'react';
+import {resolveProductUrl} from '~/data/product-slugs';
 
 interface PredictiveProduct {
   id: string;
@@ -105,7 +106,7 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
                   <li key={product.id}>
                     <button
                       type="button"
-                      onClick={() => handleSelect(`/products/${product.handle}`)}
+                      onClick={() => handleSelect(resolveProductUrl(product.handle))}
                       className="flex items-center gap-3 w-full text-left p-2 rounded hover:bg-base-200 transition"
                     >
                       {product.featuredImage && (

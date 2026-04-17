@@ -27,11 +27,14 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Resources</span>
-          <a className="link link-hover" href="/products/videomancer">
+          <a className="link link-hover" href="/instruments/videomancer">
             Videomancer Product Page
           </a>
-          <a className="link link-hover" href="/docs/instruments/videomancer/user-manual">
+          <a className="link link-hover" href="/instruments/videomancer/manual/user-manual">
             Videomancer Docs
+          </a>
+          <a className="link link-hover" href="/modules">
+            All Modules
           </a>
           <a className="link link-hover" href="/blog">
             Blog

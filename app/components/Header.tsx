@@ -34,12 +34,13 @@ export function Header({
   const logoSize = 24;
   const [searchOpen, setSearchOpen] = useState(false);
   const isHome = url === '/' || url === '';
-  const isVideomancer = url.includes('/products/videomancer');
+  const isVideomancer = url.includes('/instruments/videomancer');
   const isCatalog = url.includes('/catalog');
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
   const isDocs = url.startsWith('/docs');
   const isBlog = url.startsWith('/blog');
+  const isModules = url.startsWith('/modules');
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -63,7 +64,7 @@ export function Header({
             <li key="videomancer">
               <a
                 className={isVideomancer ? 'active' : ''}
-                href="/products/videomancer"
+                href="/instruments/videomancer"
                 style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
               >
                 Videomancer
@@ -73,6 +74,9 @@ export function Header({
               <a className={isCatalog ? 'active' : ''} href="/catalog">
                 Shop
               </a>
+            </li>
+            <li key="modules">
+              <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
             </li>
             <li key="docs">
               <a
@@ -118,7 +122,7 @@ export function Header({
           <li>
             <a
               className={isVideomancer ? 'active' : ''}
-              href="/products/videomancer"
+              href="/instruments/videomancer"
               style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
             >
               Videomancer
@@ -128,6 +132,9 @@ export function Header({
             <a className={isCatalog ? 'active' : ''} href="/catalog">
               Shop
             </a>
+          </li>
+          <li>
+            <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
           </li>
           <li>
             <a

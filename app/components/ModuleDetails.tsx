@@ -47,9 +47,22 @@ const rewriteLegacyDocsLinks = (html: string): string => {
   // Product content in Shopify still contains legacy Docusaurus category URLs.
   rewritten = rewritten.replace(
     /https?:\/\/docs\.lzxindustries\.net\/docs\/category\/program-guides/gi,
-    '/docs/instruments/videomancer/programs',
+    '/instruments/videomancer/manual/programs',
   );
 
+  // Rewrite legacy docs.lzxindustries.net instrument links to new hub paths.
+  rewritten = rewritten.replace(
+    /https?:\/\/docs\.lzxindustries\.net\/docs\/instruments\/([^"'\s<]*)/gi,
+    '/instruments/$1/manual',
+  );
+
+  // Rewrite legacy docs.lzxindustries.net module links to new hub paths.
+  rewritten = rewritten.replace(
+    /https?:\/\/docs\.lzxindustries\.net\/docs\/modules\/([^"'\s<]*)/gi,
+    '/modules/$1/manual',
+  );
+
+  // Catch-all for any remaining legacy docs links.
   rewritten = rewritten.replace(
     /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
     '$1',

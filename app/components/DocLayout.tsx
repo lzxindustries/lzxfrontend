@@ -12,15 +12,17 @@ function Sidebar({
   items,
   currentPath,
   basePath,
+  linkBuilder,
 }: {
   items: SidebarItem[];
   currentPath: string;
   basePath: string;
+  linkBuilder: (item: SidebarItem) => string;
 }) {
   return (
     <nav className="w-64 shrink-0 hidden lg:block" aria-label="Documentation sidebar">
       <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4">
-        <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} />
+        <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} linkBuilder={linkBuilder} />
       </div>
     </nav>
   );
@@ -31,11 +33,13 @@ function SidebarList({
   currentPath,
   basePath,
   depth,
+  linkBuilder,
 }: {
   items: SidebarItem[];
   currentPath: string;
   basePath: string;
   depth: number;
+  linkBuilder: (item: SidebarItem) => string;
 }) {
   return (
     <ul className={clsx('space-y-1', depth > 0 && 'ml-3 mt-1')}>
@@ -46,6 +50,7 @@ function SidebarList({
           currentPath={currentPath}
           basePath={basePath}
           depth={depth}
+          linkBuilder={linkBuilder}
         />
       ))}
     </ul>
@@ -57,11 +62,13 @@ function SidebarEntry({
   currentPath,
   basePath,
   depth,
+  linkBuilder,
 }: {
   item: SidebarItem;
   currentPath: string;
   basePath: string;
   depth: number;
+  linkBuilder: (item: SidebarItem) => string;
 }) {
   const isActive = currentPath === item.path;
   const hasChildren = item.children && item.children.length > 0;
@@ -88,6 +95,7 @@ function SidebarEntry({
             currentPath={currentPath}
             basePath={basePath}
             depth={depth + 1}
+            linkBuilder={linkBuilder}
           />
         )}
       </li>
@@ -97,7 +105,7 @@ function SidebarEntry({
   return (
     <li>
       <Link
-        to={`/docs/${item.path}`}
+        to={linkBuilder(item)}
         className={clsx(
           'block text-sm py-1.5 px-2 rounded transition-colors',
           isActive
@@ -144,9 +152,11 @@ function TableOfContents({headings}: {headings: TocHeading[]}) {
 function PrevNextNav({
   prev,
   next,
+  linkBuilder,
 }: {
   prev: SidebarItem | null;
   next: SidebarItem | null;
+  linkBuilder: (item: SidebarItem) => string;
 }) {
   if (!prev && !next) return null;
 
@@ -154,7 +164,7 @@ function PrevNextNav({
     <nav className="flex justify-between items-center mt-12 pt-6 border-t border-base-200">
       {prev ? (
         <Link
-          to={`/docs/${prev.path}`}
+          to={linkBuilder(prev)}
           className="group flex flex-col items-start"
         >
           <span className="text-xs opacity-50 group-hover:opacity-70">← Previous</span>
@@ -165,7 +175,7 @@ function PrevNextNav({
       )}
       {next ? (
         <Link
-          to={`/docs/${next.path}`}
+          to={linkBuilder(next)}
           className="group flex flex-col items-end"
         >
           <span className="text-xs opacity-50 group-hover:opacity-70">Next →</span>
@@ -184,10 +194,12 @@ function MobileSidebar({
   items,
   currentPath,
   basePath,
+  linkBuilder,
 }: {
   items: SidebarItem[];
   currentPath: string;
   basePath: string;
+  linkBuilder: (item: SidebarItem) => string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -202,7 +214,7 @@ function MobileSidebar({
       </button>
       {open && (
         <div className="mt-2 p-4 bg-base-200 rounded-lg">
-          <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} />
+          <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} linkBuilder={linkBuilder} />
         </div>
       )}
     </div>
@@ -220,6 +232,8 @@ export interface DocLayoutProps {
   next: SidebarItem | null;
   frontmatter: {title?: string; description?: string};
   currentPath: string;
+  /** Custom function for building sidebar/nav links. Defaults to `/docs/${item.path}` */
+  linkBuilder?: (item: SidebarItem) => string;
 }
 
 export function DocLayout({
@@ -231,17 +245,20 @@ export function DocLayout({
   next,
   frontmatter,
   currentPath,
+  linkBuilder,
 }: DocLayoutProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   useImageZoom(contentRef);
   useMermaid(contentRef);
 
+  const buildLink = linkBuilder ?? ((item: SidebarItem) => `/docs/${item.path}`);
+
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
-      <MobileSidebar items={sidebar} currentPath={currentPath} basePath="/docs" />
+      <MobileSidebar items={sidebar} currentPath={currentPath} basePath="/docs" linkBuilder={buildLink} />
       <div className="flex gap-8 px-6 pb-16 md:px-10 lg:px-12 max-w-screen-2xl mx-auto">
-        <Sidebar items={sidebar} currentPath={currentPath} basePath="/docs" />
+        <Sidebar items={sidebar} currentPath={currentPath} basePath="/docs" linkBuilder={buildLink} />
         <article className="flex-1 min-w-0 max-w-prose-wide">
           {frontmatter.title && (
             <h1 className="text-heading font-bold mb-6">{frontmatter.title}</h1>
@@ -251,7 +268,7 @@ export function DocLayout({
             className="docs-content prose max-w-none"
             dangerouslySetInnerHTML={{__html: html}}
           />
-          <PrevNextNav prev={prev} next={next} />
+          <PrevNextNav prev={prev} next={next} linkBuilder={buildLink} />
         </article>
         <TableOfContents headings={headings} />
       </div>

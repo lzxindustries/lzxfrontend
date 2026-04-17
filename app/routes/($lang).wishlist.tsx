@@ -1,6 +1,7 @@
 import type {MetaFunction} from '@shopify/remix-oxygen';
 import {FaHeart, FaTrash} from 'react-icons/fa';
 import {Link} from '~/components/Link';
+import {resolveProductUrl} from '~/data/product-slugs';
 import {Button} from '~/components/Button';
 import {PageHeader, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
@@ -38,7 +39,7 @@ export default function Wishlist() {
                 className="flex gap-4 p-4 border border-primary/10 rounded-lg"
               >
                 {item.image && (
-                  <Link to={`/products/${item.handle}`} className="shrink-0">
+                  <Link to={resolveProductUrl(item.handle)} className="shrink-0">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -50,7 +51,7 @@ export default function Wishlist() {
                 )}
                 <div className="flex flex-col flex-1 min-w-0">
                   <Link
-                    to={`/products/${item.handle}`}
+                    to={resolveProductUrl(item.handle)}
                     className="font-medium truncate hover:underline"
                   >
                     {item.title}
@@ -62,7 +63,7 @@ export default function Wishlist() {
                   )}
                   <div className="mt-auto pt-2 flex gap-2">
                     <Link
-                      to={`/products/${item.handle}`}
+                      to={resolveProductUrl(item.handle)}
                       className="text-xs underline text-primary/60 hover:text-primary"
                     >
                       View Product
