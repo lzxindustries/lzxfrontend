@@ -31,6 +31,7 @@ yarn run typecheck
 ```
 
 Expected result:
+
 - Unit tests pass.
 - Typecheck exits with code 0.
 
@@ -39,6 +40,7 @@ Expected result:
 Set `KLAVIYO_PRIVATE_API_KEY` in your deployment environment.
 
 If using environment UI (recommended):
+
 1. Open your deployment provider dashboard.
 2. Add secret `KLAVIYO_PRIVATE_API_KEY`.
 3. Redeploy.
@@ -62,12 +64,14 @@ If using CLI-based secret management (only if your environment supports it), use
    - Submission appears in Klaviyo.
 
 Negative checks:
+
 1. Submit invalid email and confirm validation error response.
 2. Temporarily remove key in local env and confirm graceful fallback message.
 
 ## Step 5: Post-deploy monitoring (required user step)
 
 For the first 24-48 hours:
+
 1. Watch server logs for `/api/notify-me` failures.
 2. Track non-200 response counts.
 3. Confirm submissions are not silently failing in Klaviyo.

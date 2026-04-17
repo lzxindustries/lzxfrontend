@@ -1,9 +1,11 @@
-import {Link, useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
-import type {SeoConfig} from '@shopify/hydrogen';
 import {
-  AnalyticsPageType,
-  getSeoMeta,
-} from '@shopify/hydrogen';
+  Link,
+  useLoaderData,
+  useRouteError,
+  isRouteErrorResponse,
+} from '@remix-run/react';
+import type {SeoConfig} from '@shopify/hydrogen';
+import {AnalyticsPageType, getSeoMeta} from '@shopify/hydrogen';
 import type {Collection as CollectionType} from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
@@ -25,8 +27,8 @@ export function ErrorBoundary() {
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <PageHeader heading="Error loading page">
       <p>{message}</p>
@@ -135,10 +137,16 @@ export default function Home() {
                 to={`/blog/${post.slug}`}
                 className="rounded-lg border border-base-300 p-4 transition hover:bg-base-200"
               >
-                <p className="text-xs uppercase tracking-wide text-base-content/60">{post.date}</p>
-                <h3 className="mt-2 text-lg font-semibold leading-tight">{post.frontmatter.title}</h3>
+                <p className="text-xs uppercase tracking-wide text-base-content/60">
+                  {post.date}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight">
+                  {post.frontmatter.title}
+                </h3>
                 {post.excerpt ? (
-                  <p className="mt-2 text-sm text-base-content/70 line-clamp-3">{post.excerpt}</p>
+                  <p className="mt-2 text-sm text-base-content/70 line-clamp-3">
+                    {post.excerpt}
+                  </p>
                 ) : null}
               </Link>
             ))}
@@ -182,9 +190,9 @@ export default function Home() {
               signals with electronic circuits. Unlike conventional video
               editing, a video synthesizer creates imagery from scratch —
               oscillators produce patterns, ramps define gradients, and
-              voltage-controlled processors blend, key, and colorize signals
-              in real time. The result is a live, performable visual
-              instrument that responds to hands-on control and external audio.
+              voltage-controlled processors blend, key, and colorize signals in
+              real time. The result is a live, performable visual instrument
+              that responds to hands-on control and external audio.
             </p>
           </div>
 
@@ -209,7 +217,6 @@ export default function Home() {
                 </Link>{' '}
                 — example patches and recipes for LZX modules.
               </li>
-
             </ul>
           </div>
         </div>

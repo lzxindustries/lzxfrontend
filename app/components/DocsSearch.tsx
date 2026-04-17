@@ -55,9 +55,7 @@ export function DocsSearch() {
     try {
       // Pagefind generates its assets at /pagefind/pagefind.js
       const pagefindModulePath = '/pagefind/pagefind.js';
-      const module = await import(
-        /* @vite-ignore */ pagefindModulePath
-      );
+      const module = await import(/* @vite-ignore */ pagefindModulePath);
       const pf = ((module as {default?: Window['pagefind']}).default ??
         module) as unknown as Window['pagefind'];
       if (!pf) return;

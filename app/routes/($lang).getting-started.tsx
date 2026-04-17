@@ -7,8 +7,8 @@ export function ErrorBoundary() {
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <Section>
       <h1 className="text-xl font-bold">Error loading page</h1>

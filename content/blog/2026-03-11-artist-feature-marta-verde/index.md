@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-marta-verde
-title: "Artist Feature: Marta Verde"
+title: 'Artist Feature: Marta Verde'
 authors: [kat]
 tags: [community]
 image: ./marta_verde_01.png

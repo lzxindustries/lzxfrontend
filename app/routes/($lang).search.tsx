@@ -1,4 +1,10 @@
-import {Await, Form, useLoaderData, useRouteError, isRouteErrorResponse} from '@remix-run/react';
+import {
+  Await,
+  Form,
+  useLoaderData,
+  useRouteError,
+  isRouteErrorResponse,
+} from '@remix-run/react';
 import type {SeoConfig} from '@shopify/hydrogen';
 import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
 import type {
@@ -30,8 +36,8 @@ export function ErrorBoundary() {
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <PageHeader heading="Search Error">
       <p>{message}</p>

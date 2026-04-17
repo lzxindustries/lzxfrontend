@@ -2,29 +2,29 @@
 draft: false
 sidebar_position: 259
 slug: /instruments/videomancer/scramble
-title: "Scramble"
+title: 'Scramble'
 image: /img/instruments/videomancer/scramble/scramble_hero_s1.png
-description: "Analog pay-TV systems of the late 1980s and early 1990s scrambled their signals to prevent unauthorized viewing."
+description: 'Analog pay-TV systems of the late 1980s and early 1990s scrambled their signals to prevent unauthorized viewing.'
 ---
 
 ![Scramble hero image](/img/instruments/videomancer/scramble/scramble_hero_s1.png)
-*Scramble applying per-line cut-and-rotate shuffling with periodic video inversion and sync jitter to simulate a failing analog TV descrambler.*
+_Scramble applying per-line cut-and-rotate shuffling with periodic video inversion and sync jitter to simulate a failing analog TV descrambler._
 
 ---
 
 ## Overview
 
-**Scramble** recreates the look of an analog TV signal that has been scrambled for pay-per-view and then improperly decoded by a faulty or unauthorized descrambler box. Each scanline of the video is sliced at a different point and rotated, producing the instantly recognizable "shuffled blinds" effect of systems like ***VideoCrypt*** and ***Nagravision***. Additional artifacts: periodic video inversion, horizontal jitter, and drifting decode lock: complete the illusion of intercepted cable television.
+**Scramble** recreates the look of an analog TV signal that has been scrambled for pay-per-view and then improperly decoded by a faulty or unauthorized descrambler box. Each scanline of the video is sliced at a different point and rotated, producing the instantly recognizable "shuffled blinds" effect of systems like **_VideoCrypt_** and **_Nagravision_**. Additional artifacts: periodic video inversion, horizontal jitter, and drifting decode lock: complete the illusion of intercepted cable television.
 
 The magic is in the **Decode** control. As you turn it, the scrambled image drifts toward intelligibility, occasionally snapping into brief, tantalizing clarity before losing lock and collapsing back into chaos. This imperfect decoding is the signature aesthetic: the viewer knows something is there, almost visible, but just out of reach.
 
 :::tip
-***Scramble is an artifact simulator, not a signal degrader.*** It doesn't reduce resolution or destroy information: it *rearranges* it. Every pixel is still present; they've just been shuffled. That's why the Decode knob can bring the image back.
+**_Scramble is an artifact simulator, not a signal degrader._** It doesn't reduce resolution or destroy information: it _rearranges_ it. Every pixel is still present; they've just been shuffled. That's why the Decode knob can bring the image back.
 :::
 
 ### What's In a Name?
 
-The name ***Scramble*** is a direct reference to analog television ***scrambling***: the practice of deliberately disrupting a broadcast signal so that only paying subscribers with authorized descramblers could watch. The word captures both the technical process (scrambling pixel positions) and the frantic urgency of trying to decode a signal you're not supposed to see.
+The name **_Scramble_** is a direct reference to analog television **_scrambling_**: the practice of deliberately disrupting a broadcast signal so that only paying subscribers with authorized descramblers could watch. The word captures both the technical process (scrambling pixel positions) and the frantic urgency of trying to decode a signal you're not supposed to see.
 
 ---
 
@@ -40,14 +40,14 @@ The name ***Scramble*** is a direct reference to analog television ***scrambling
 ## Parameters
 
 ![Videomancer front panel with Scramble loaded](/img/instruments/videomancer/scramble/scramble_control_panel.png)
-*Videomancer's front panel with Scramble active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Scramble active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — Cut Depth
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Cut Depth** controls the maximum horizontal displacement applied to each scanline during the cut-and-rotate shuffle. At 0%, fully counterclockwise, no displacement occurs and the image passes through unscrambled. As the value increases, the cut points stretch further across the scanline, producing more dramatic horizontal offsets. At 100%, fully clockwise, each line can be rotated by up to the full width of the active picture. The resulting image looks like a stack of horizontal strips that have been slid sideways by varying amounts.
 
@@ -55,10 +55,10 @@ The name ***Scramble*** is a direct reference to analog television ***scrambling
 
 ### Knob 2 — Decode
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 0.0%          |
 
 **Decode** is the descrambler alignment offset. It subtracts from the per-line cut point, attempting to undo the scrambling and restore the original image. When Decode exactly cancels the LFSR-generated offset for a given line, that line snaps back into its correct position. At 0%, no correction is applied. As you increase the value, more lines realign. The sweet spot where the entire image becomes momentarily coherent depends on the **Seed** and **Cut Depth** settings.
 
@@ -70,36 +70,36 @@ Think of Decode as a pirate descrambler's tuning knob. Finding the right setting
 
 ### Knob 3 — Seed
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 25.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 25.0%         |
 
-**Seed** sets the initial value of the 16-bit ***linear feedback shift register*** (LFSR) that generates the per-line cut points. Different seeds produce different scrambling patterns. At the start of each frame, the LFSR is reloaded with the seed value (combined with the current drift offset), ensuring a repeatable pattern. Changing the seed rotates through entirely different arrangements of line offsets, each producing a distinct scrambled texture.
+**Seed** sets the initial value of the 16-bit **_linear feedback shift register_** (LFSR) that generates the per-line cut points. Different seeds produce different scrambling patterns. At the start of each frame, the LFSR is reloaded with the seed value (combined with the current drift offset), ensuring a repeatable pattern. Changing the seed rotates through entirely different arrangements of line offsets, each producing a distinct scrambled texture.
 
 ---
 
 ### Knob 4 — Invert Period
 
 | Property | Value |
-|----------|-------|
-| Range | 0 – 7 |
-| Default | 0 |
+| -------- | ----- |
+| Range    | 0 – 7 |
+| Default  | 0     |
 
 **Invert Period** selects which bit of the line counter controls periodic video inversion. The control is quantized to 8 steps (0 to 7). At step 0, inversion is disabled. Steps 1 through 7 select progressively higher bits of the vertical line counter, creating inversion zones that alternate every 2, 4, 8, 16, 32, 64, or 128 lines respectively. Higher steps produce wider bands of inverted video.
 
 :::note
-Inversion simulates the ***sync suppression*** technique used by analog scramblers, where alternating portions of the signal had their polarity reversed to confuse unauthorized decoders.
+Inversion simulates the **_sync suppression_** technique used by analog scramblers, where alternating portions of the signal had their polarity reversed to confuse unauthorized decoders.
 :::
 
 ---
 
 ### Knob 5 — Jitter
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 12.5% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 12.5%         |
 
 **Jitter** controls the amplitude of per-line horizontal displacement noise. A 10-bit LFSR generates a random offset each scanline, scaled by this control. At 0%, no jitter is applied. Increasing the value adds progressively wilder horizontal wobble to each line. At extreme settings, individual scanlines slide far enough sideways to wrap around the picture, creating a shimmering, tearing distortion reminiscent of a TV with damaged horizontal sync.
 
@@ -107,10 +107,10 @@ Inversion simulates the ***sync suppression*** technique used by analog scramble
 
 ### Knob 6 — Drift Rate
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 0.0%          |
 
 **Drift Rate** controls how quickly the internal decode alignment changes over time. When **Drift** (Switch 9) is enabled, an accumulator adds the drift rate value each frame, slowly rotating through different seed offsets. At 0%, the drift is frozen even when enabled. Higher values cause the descrambler lock to cycle faster, producing a rhythmic pattern of decoding and re-scrambling.
 
@@ -118,11 +118,11 @@ Inversion simulates the ***sync suppression*** technique used by analog scramble
 
 ### Switch 7 — Scramble Mode
 
-| Property | Value |
-|----------|-------|
-| Off | LFSR |
-| On | Sawtooth |
-| Default | LFSR |
+| Property | Value    |
+| -------- | -------- |
+| Off      | LFSR     |
+| On       | Sawtooth |
+| Default  | LFSR     |
 
 **Scramble Mode** selects the source of per-line cut-point offsets. In **LFSR** mode, a pseudo-random sequence produces the classic scrambled-channel look where each line is displaced by a seemingly random amount. In **Sawtooth** mode, the line counter itself is used as the offset source, creating a smooth diagonal shear across the image: as if the picture were printed on a cylinder and sliced on an angle.
 
@@ -130,11 +130,11 @@ Inversion simulates the ***sync suppression*** technique used by analog scramble
 
 ### Switch 8 — Invert Mode
 
-| Property | Value |
-|----------|-------|
-| Off | Luma |
-| On | Full YUV |
-| Default | Luma |
+| Property | Value    |
+| -------- | -------- |
+| Off      | Luma     |
+| On       | Full YUV |
+| Default  | Luma     |
 
 **Invert Mode** determines which channels are affected by periodic video inversion. In **Luma** mode, only the Y (brightness) channel is inverted, producing alternating bands of positive and negative luminance while colors remain stable. In **Full YUV** mode, both luminance and chrominance are inverted, creating complementary color banding: blues become oranges, greens become magentas: for a more aggressive, psychedelic distortion.
 
@@ -143,10 +143,10 @@ Inversion simulates the ***sync suppression*** technique used by analog scramble
 ### Switch 9 — Drift
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Drift** enables or disables the auto-drift accumulator. When **Off**, the scramble pattern is static from frame to frame (assuming constant Seed and Decode values). When **On**, the internal offset evolves each frame at the rate set by **Drift Rate** (Knob 6), causing the image to cycle between scrambled and momentarily decoded states: the lock-and-lose animation of a descrambler slowly falling out of sync.
 
@@ -155,10 +155,10 @@ Inversion simulates the ***sync suppression*** technique used by analog scramble
 ### Switch 10 — Luma Mod
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Luma Mod** enables luminance-reactive modulation of the cut point. When **Off**, cut displacement is determined solely by the LFSR (or sawtooth) and the Decode offset. When **On**, the brightness of each input pixel is added to the read address, causing brighter areas to displace further. The result is content-dependent scrambling where the shuffling pattern follows the tonal contours of the source image.
 
@@ -171,10 +171,10 @@ Luma Mod dramatically increases visual complexity. Combine it with high Cut Dept
 ### Switch 11 — Double
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Double** enables double-scramble mode. When **Off**, each scanline receives a single cut-and-rotate operation. When **On**, a second displacement is generated by XORing two halves of the LFSR register, and this additional offset is applied on top of the first. The result is a more aggressively disrupted image that is harder to decode, as if the signal passed through two separate scrambling stages.
 
@@ -182,10 +182,10 @@ Luma Mod dramatically increases visual complexity. Combine it with high Cut Dept
 
 ### Fader 12 — Mix
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Mix** crossfades between the original (dry) input and the processed (wet) scrambled output. At 0%, only the dry signal is heard: the image is untouched. At 100%, only the scrambled result is visible. Intermediate values blend the two, creating a ghostly overlay of the original image beneath the scrambled version.
 
@@ -195,20 +195,19 @@ Luma Mod dramatically increases visual complexity. Combine it with high Cut Dept
 
 ### Analog TV scrambling
 
-In the analog television era, premium channels protected their signals using ***line-shuffle scrambling*** systems like VideoCrypt (used by Sky Television in Europe) and Nagravision (used by Canal+ in France). These systems worked by cutting each scanline at a pseudo-random point and swapping the two halves. The cut point changed every line, determined by a sequence known only to authorized smart cards. Without the correct decryption key, the viewer saw a chaotic mosaic of horizontally displaced strips (recognizable as television but completely unwatchable.)
+In the analog television era, premium channels protected their signals using **_line-shuffle scrambling_** systems like VideoCrypt (used by Sky Television in Europe) and Nagravision (used by Canal+ in France). These systems worked by cutting each scanline at a pseudo-random point and swapping the two halves. The cut point changed every line, determined by a sequence known only to authorized smart cards. Without the correct decryption key, the viewer saw a chaotic mosaic of horizontally displaced strips (recognizable as television but completely unwatchable.)
 
 The infamous "descrambler box" was an unauthorized decoder that attempted to guess or crack the cut-point sequence. When it got close, the image would flash into partial clarity before dissolving again. Scramble recreates this entire experience in FPGA hardware.
 
 ### Line-buffer cut-and-rotate
 
-The core technique is deceptively simple. Each scanline is written pixel-by-pixel into a ***line buffer***: a block of RAM that holds one full row of video. On readback, the address is offset by the per-line cut point, effectively rotating the line contents. Because the read address wraps around the buffer, no pixels are lost; they simply appear at different horizontal positions. The result is a circular shift of each scanline by a different amount.
+The core technique is deceptively simple. Each scanline is written pixel-by-pixel into a **_line buffer_**: a block of RAM that holds one full row of video. On readback, the address is offset by the per-line cut point, effectively rotating the line contents. Because the read address wraps around the buffer, no pixels are lost; they simply appear at different horizontal positions. The result is a circular shift of each scanline by a different amount.
 
 The cut point comes from one of two sources: a 16-bit LFSR that produces pseudo-random values, or a sawtooth ramp derived from the line counter. The LFSR produces the classic scrambled look; the sawtooth creates a smooth diagonal displacement.
 
 ### Sync suppression and jitter
 
-Real analog scramblers didn't just shuffle pixels: they also attacked the synchronization signals that keep a television's scanning circuits locked. ***Sync suppression*** reduced or inverted the sync pulses, causing the TV's horizontal oscillator to drift. Scramble simulates this with two mechanisms: periodic video inversion (alternating groups of lines are negated) and horizontal jitter (each line is nudged sideways by a random amount). Together, these artifacts complete the illusion of a signal that refuses to be tamed.
-
+Real analog scramblers didn't just shuffle pixels: they also attacked the synchronization signals that keep a television's scanning circuits locked. **_Sync suppression_** reduced or inverted the sync pulses, causing the TV's horizontal oscillator to drift. Scramble simulates this with two mechanisms: periodic video inversion (alternating groups of lines are negated) and horizontal jitter (each line is nudged sideways by a random amount). Together, these artifacts complete the illusion of a signal that refuses to be tamed.
 
 ---
 
@@ -224,19 +223,20 @@ The processing pipeline is dominated by the line buffer and its address computat
 
 Out-of-range detection compares the computed read address against the actual line width. When displacement pushes the read beyond the written region, the output is forced to black (Y=0) with neutral chroma (U=512, V=512), preventing stale BRAM data from appearing as green artifacts.
 
-
 ---
 
 ## Exercises
 
 These exercises progress from basic scrambling to the full descrambler simulation. Each one introduces additional layers of the analog scrambling aesthetic.
+
 ### Exercise 1: Classic Scrambled Channel
 
 ![Classic Scrambled Channel result](/img/instruments/videomancer/scramble/scramble_ex1_s1.png)
-*Classic Scrambled Channel — simulated result across source images.*
+_Classic Scrambled Channel — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -262,30 +262,31 @@ A live camera feed or recorded footage with clear horizontal features (text, fac
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Cut Depth | ~70% |
-| Decode | 0% |
-| Seed | ~25% |
-| Invert Period | 0 |
-| Jitter | 0% |
-| Drift Rate | 0% |
-| Scramble Mode | LFSR |
-| Invert Mode | Luma |
-| Drift | Off |
-| Luma Mod | Off |
-| Double | Off |
-| Mix | 100% |
+| Control       | Value |
+| ------------- | ----- |
+| Cut Depth     | ~70%  |
+| Decode        | 0%    |
+| Seed          | ~25%  |
+| Invert Period | 0     |
+| Jitter        | 0%    |
+| Drift Rate    | 0%    |
+| Scramble Mode | LFSR  |
+| Invert Mode   | Luma  |
+| Drift         | Off   |
+| Luma Mod      | Off   |
+| Double        | Off   |
+| Mix           | 100%  |
 
 ---
 
 ### Exercise 2: Descrambler Lock and Drift
 
 ![Descrambler Lock and Drift result](/img/instruments/videomancer/scramble/scramble_ex2_s1.png)
-*Descrambler Lock and Drift — simulated result across source images.*
+_Descrambler Lock and Drift — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -311,30 +312,31 @@ Footage with strong contrast and recognizable subjects: the effect is most drama
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Cut Depth | 50% |
-| Decode | ~40% |
-| Seed | ~25% |
-| Invert Period | 3 |
-| Jitter | ~15% |
-| Drift Rate | ~20% |
-| Scramble Mode | LFSR |
-| Invert Mode | Luma |
-| Drift | On |
-| Luma Mod | Off |
-| Double | Off |
-| Mix | 100% |
+| Control       | Value |
+| ------------- | ----- |
+| Cut Depth     | 50%   |
+| Decode        | ~40%  |
+| Seed          | ~25%  |
+| Invert Period | 3     |
+| Jitter        | ~15%  |
+| Drift Rate    | ~20%  |
+| Scramble Mode | LFSR  |
+| Invert Mode   | Luma  |
+| Drift         | On    |
+| Luma Mod      | Off   |
+| Double        | Off   |
+| Mix           | 100%  |
 
 ---
 
 ### Exercise 3: Full Signal Chaos
 
 ![Full Signal Chaos result](/img/instruments/videomancer/scramble/scramble_ex3_s1.png)
-*Full Signal Chaos — simulated result across source images.*
+_Full Signal Chaos — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -362,22 +364,23 @@ High-contrast footage or graphic patterns: bold shapes survive the extreme proce
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Cut Depth | 80% |
-| Decode | 0% |
-| Seed | ~50% |
-| Invert Period | 2 |
-| Jitter | 50% |
-| Drift Rate | 40% |
-| Scramble Mode | LFSR |
-| Invert Mode | Full YUV |
-| Drift | On |
-| Luma Mod | On |
-| Double | On |
-| Mix | 100% |
+| Control       | Value    |
+| ------------- | -------- |
+| Cut Depth     | 80%      |
+| Decode        | 0%       |
+| Seed          | ~50%     |
+| Invert Period | 2        |
+| Jitter        | 50%      |
+| Drift Rate    | 40%      |
+| Scramble Mode | LFSR     |
+| Invert Mode   | Full YUV |
+| Drift         | On       |
+| Luma Mod      | On       |
+| Double        | On       |
+| Mix           | 100%     |
 
 ---
+
 ## Glossary
 
 - **Cut-and-Rotate**: A scrambling technique that slices a scanline at a pseudo-random point and swaps the two halves, circularly shifting the pixel data.

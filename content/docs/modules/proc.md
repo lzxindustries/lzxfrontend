@@ -1,44 +1,45 @@
 ---
 draft: false
-title: "PROC"
+title: 'PROC'
 image: /img/modules/proc/proc-diagrams/proc_frontpanel.png
-description: "Documentation for PROC, a triple voltage processor and summing amplifier with continuous control over attenuation, inversion, and bias."
+description: 'Documentation for PROC, a triple voltage processor and summing amplifier with continuous control over attenuation, inversion, and bias.'
 ---
 
 # PROC
+
 <span class="head2_nolink">Triple Voltage Processor</span>
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import proc_frontpanel from '/img/modules/proc/proc-diagrams/proc_frontpanel.png';
@@ -65,11 +66,11 @@ import proc_line_art_labeled from '/img/modules/proc/proc-diagrams/proc_line_art
 
 <!-- AFR note: HTML style comments in combination with Markdown/Docusaurus are causing some compilation errors. Not sure what the evil character combo is. I changed the commented out warning below to JS style comments. Otherwise the site wouldn't load. -->
 
-{/*
+{/_
 :::warning
 This page is under construction and in a draft state. Stay tuned to our newsletter for the official content release.
 :::
-*/}
+_/}
 
 <img src={proc_frontpanel} alt="Proc front panel" />
 
@@ -168,7 +169,7 @@ Each **Bias** potentiometer, labeled **C**, adds a static voltage to the output.
 
 Proc can handle input signals that add up to a value range from -2 to +2 volts without distortion. Note that the internally generated bias voltage C is also an input signal, even though there's no C input jack.
 
-Proc can also output signals in that same range, -2 to +2 volts. This allows for bidirectional conversion between unipolar signals that are only positive, and bipolar signals that can be positive or negative. 
+Proc can also output signals in that same range, -2 to +2 volts. This allows for bidirectional conversion between unipolar signals that are only positive, and bipolar signals that can be positive or negative.
 
 :::note
 As the animation above illustrates, negative voltages are outside the visible range of LZX video. Some modules can handle bipolar signals with negative voltages, but an encoder such as ESG3 can only accept values in the range from 0 to +1 volts. Any value below zero will simply be ignored by the encoder.
@@ -201,26 +202,30 @@ By sending the output of one channel to the input of another, we can create more
 ## Example Patches
 
 ### Buffered multiple
+
 <img src={proc_buffered_multiple} alt="Proc buffered multiple" />
 
 ---
 
 ### Static voltage
+
 <img src={proc_static_voltage_generator} alt="Proc static voltage generator" />
 
 ---
 
 ### RGB color picker
+
 <img src={proc_rgb_color_picker} alt="Proc RGB color picker" />
 
-{/*
+{/_
 RGB color picker
 <img src={proc_rgb_color_picker_static} alt="Proc RGB color picker" />
-*/}
+_/}
 
 ---
 
 ### Bias / brightness
+
 <img src={proc_brightness} alt="Proc bias" />
 
 ---
@@ -228,16 +233,19 @@ RGB color picker
 <!-- AFR note: the Add graphic looks like an OR operation because the two sources are binary. Recommend each source to be dimmed to 50% showing how they add up to 100% in the overlapping area -->
 
 ### Add
+
 <img src={proc_adder} alt="Proc addition" />
 
 ---
 
 ### Amplify / increase contrast
+
 <img src={proc_contrast} alt="Proc contrast" />
 
 ---
 
 ### Subtract
+
 <img src={proc_subtractor} alt="Proc subtraction" />
 
 ---
@@ -260,18 +268,20 @@ Ramp shift
 -->
 
 ### Invert
+
 <img src={proc_inverter} alt="Proc invert" />
 
 ---
 
 ### Mixer: three variations
+
 <img src={proc_modulation_mixer} alt="Proc modulation mixer" />
 
 ---
 
 ### Priority layering
-<img src={proc_dsg3_priority_layering} alt="Proc + DSG3 priority layering" />
 
+<img src={proc_dsg3_priority_layering} alt="Proc + DSG3 priority layering" />
 
 <!-- AFR note: advise adding example patch illustrations showing A) colorization of a monochrome signal and B) colorization of an RGB signal. They don't need to be animated, but this is a key feature we don't want to ignore. -->
 
@@ -283,22 +293,22 @@ Ramp shift
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -314,7 +324,7 @@ Ramp shift
 </td><td>
 
 | Jack | Function      |
-|------|---------------|
+| ---- | ------------- |
 | J1   | A1 in (thru)  |
 | J2   | B1 in         |
 | J3   | Channel 1 out |
@@ -328,7 +338,7 @@ Ramp shift
 </td><td>
 
 | Potentiometer | Function         |
-|---------------|------------------|
+| ------------- | ---------------- |
 | P1            | Channel 1 B gain |
 | P2            | Channel 1 C bias |
 | P3            | Channel 2 B gain |
@@ -360,7 +370,7 @@ Ramp shift
 | RoHS Compliance              | Manufactured with lead-free processes       |
 | Video Sync                   | None                                        |
 
---- 
+---
 
 <!--
 | Pronunciation                |                                             |

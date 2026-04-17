@@ -9,7 +9,13 @@ import type {
   ShopifyAnalyticsProduct,
   Storefront,
 } from '@shopify/hydrogen';
-import {AnalyticsPageType, getSeoMeta, Money, ShopPayButton, VariantSelector} from '@shopify/hydrogen';
+import {
+  AnalyticsPageType,
+  getSeoMeta,
+  Money,
+  ShopPayButton,
+  VariantSelector,
+} from '@shopify/hydrogen';
 import type {
   ProductConnection,
   Product as ProductType,
@@ -32,10 +38,18 @@ import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {getModuleByName, getPatchesForModule, getVideosForModule} from '~/data/lzxdb';
+import {
+  getModuleByName,
+  getPatchesForModule,
+  getVideosForModule,
+} from '~/data/lzxdb';
 import type {LzxPatch, LzxVideo} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server.js';
-import {isModuleSlug, isInstrumentSlug, getCanonicalSlug} from '~/data/product-slugs';
+import {
+  isModuleSlug,
+  isInstrumentSlug,
+  getCanonicalSlug,
+} from '~/data/product-slugs';
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -44,8 +58,8 @@ export function ErrorBoundary() {
       ? 'Product not found'
       : `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <div className="flex flex-col items-center justify-center p-12">
       <h1 className="text-2xl font-bold mb-4">Error</h1>
@@ -123,12 +137,8 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   // Look up related patches and videos from the local DB
   const lzxModule = getModuleByName(product.title);
-  const relatedPatches = lzxModule
-    ? getPatchesForModule(lzxModule.id)
-    : [];
-  const relatedVideos = lzxModule
-    ? getVideosForModule(lzxModule.id)
-    : [];
+  const relatedPatches = lzxModule ? getPatchesForModule(lzxModule.id) : [];
+  const relatedVideos = lzxModule ? getVideosForModule(lzxModule.id) : [];
 
   return defer({
     product,
@@ -218,10 +228,7 @@ export default function Product() {
         <Await resolve={recommended}>
           {(products) =>
             products && products.length > 0 ? (
-              <ProductSwimlane
-                title="You May Also Like"
-                products={products}
-              />
+              <ProductSwimlane title="You May Also Like" products={products} />
             ) : null
           }
         </Await>
@@ -272,10 +279,10 @@ export function ProductForm() {
   const buttonLabel = isOutOfStock
     ? 'Sold Out'
     : isPreorder
-      ? 'Preorder Now'
-      : isBackorder
-        ? 'Backorder Now'
-        : 'Add to Cart';
+    ? 'Preorder Now'
+    : isBackorder
+    ? 'Backorder Now'
+    : 'Add to Cart';
 
   // Low stock warning (single source of truth)
   const showLowStock =
@@ -296,10 +303,7 @@ export function ProductForm() {
           variants={product.variants}
         >
           {({option}) => (
-            <div
-              key={option.name}
-              className="flex flex-col gap-2"
-            >
+            <div key={option.name} className="flex flex-col gap-2">
               <Heading as="legend" size="lead" className="min-w-[4rem]">
                 {option.name}
               </Heading>
@@ -316,7 +320,8 @@ export function ProductForm() {
                       isActive
                         ? 'bg-black text-white border-black font-semibold'
                         : 'bg-white text-primary border-primary/30 hover:border-primary/60',
-                      !isAvailable && 'opacity-40 line-through pointer-events-none',
+                      !isAvailable &&
+                        'opacity-40 line-through pointer-events-none',
                     )}
                   >
                     {value}
@@ -350,7 +355,9 @@ export function ProductForm() {
         {/* Quantity selector */}
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
-            <label htmlFor="quantity" className="text-sm font-medium">Qty</label>
+            <label htmlFor="quantity" className="text-sm font-medium">
+              Qty
+            </label>
             <div className="flex items-center border rounded">
               <button
                 type="button"
@@ -366,7 +373,9 @@ export function ProductForm() {
                 type="number"
                 min="1"
                 value={quantity}
-                onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                onChange={(e) =>
+                  setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                }
                 className="w-12 text-center bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                 aria-label="Quantity"
               />
@@ -459,8 +468,8 @@ export function ProductForm() {
                 {isPreorder
                   ? 'Ships when available'
                   : isBackorder
-                    ? 'Ships in 4-6 weeks'
-                    : 'Ships in 24 hours'}
+                  ? 'Ships in 4-6 weeks'
+                  : 'Ships in 24 hours'}
               </span>
             </Link>
           )}
@@ -476,7 +485,9 @@ export function ProductForm() {
         <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] px-4 py-3 md:hidden">
           <div className="flex items-center gap-3 max-w-lg mx-auto">
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold truncate">{product.title}</div>
+              <div className="text-sm font-semibold truncate">
+                {product.title}
+              </div>
               <Money
                 withoutTrailingZeros
                 data={selectedVariant.price!}

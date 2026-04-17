@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "SUM/DIST"
+title: 'SUM/DIST'
 image: /img/modules/sum-dist/sum-dist-diagrams/sum-dist_frontpanel.png
-description: "Documentation for SUM/DIST, a function bank of summing and distribution amplifiers for adding and distributing video signals."
+description: 'Documentation for SUM/DIST, a function bank of summing and distribution amplifiers for adding and distributing video signals.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import sumdist_frontpanel from '/img/modules/sum-dist/sum-dist-diagrams/sum-dist_frontpanel.png';
@@ -43,6 +43,7 @@ import sumdist_frontpanel from '/img/modules/sum-dist/sum-dist-diagrams/sum-dist
 import sumdist_line_art_labeled from '/img/modules/sum-dist/sum-dist-diagrams/sum-dist_line_art_labeled_496x1024.png';
 
 # SUM/DIST
+
 <span class="head2_nolink">Summing & Distribution Amplifiers</span>
 
 <img src={sumdist_frontpanel} alt="Sum/Dist front panel" />
@@ -55,14 +56,13 @@ Sum/Dist is a function bank for adding and distributing signals. Each of its fou
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 12 HP                                                                           |
-| Power Consumption | 12V @ 200 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Included          | DC barrel power cable, EuroRack power cable                                     |
-| Video Sync        | None                                                                            |
-
+| Parameter         | Value                                       |
+| ----------------- | ------------------------------------------- |
+| Mounting Width    | 12 HP                                       |
+| Power Consumption | 12V @ 200 mA                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Included          | DC barrel power cable, EuroRack power cable |
+| Video Sync        | None                                        |
 
 ## System Integration Advice
 
@@ -102,6 +102,7 @@ Since the function blocks are buffered, Sum/Dist can also serve as a delay line,
 <br />presented by Johnny Woods
 
 ---
+
 <!--
 ## Example Patches
 TODO
@@ -113,22 +114,22 @@ TODO
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -143,69 +144,69 @@ TODO
 
 </td><td>
 
-| Jack | Function                                     |
-|------|----------------------------------------------|
-| J1   | Sum A1 in                                    |
-| J2   | Sum B1 in                                    |
-| J3   | Sum C1 in                                    |
-| J4   | Sum 1 out                                    |
-| J5   | Sum A2 in                                    |
-| J6   | Sum B2 in                                    |
-| J7   | Sum C2 in                                    |
-| J8   | Sum 2 out                                    |
-| J9   | Sum A3 in                                    |
-| J10  | Sum B3 in                                    |
-| J11  | Sum C3 in                                    |
-| J12  | Sum 3 out                                    |
-| J13  | Sum A4 in                                    |
-| J14  | Sum B4 in                                    |
-| J15  | Sum C4 in                                    |
-| J16  | Sum 4 out                                    |
+| Jack | Function  |
+| ---- | --------- |
+| J1   | Sum A1 in |
+| J2   | Sum B1 in |
+| J3   | Sum C1 in |
+| J4   | Sum 1 out |
+| J5   | Sum A2 in |
+| J6   | Sum B2 in |
+| J7   | Sum C2 in |
+| J8   | Sum 2 out |
+| J9   | Sum A3 in |
+| J10  | Sum B3 in |
+| J11  | Sum C3 in |
+| J12  | Sum 3 out |
+| J13  | Sum A4 in |
+| J14  | Sum B4 in |
+| J15  | Sum C4 in |
+| J16  | Sum 4 out |
 
 </td><td>
 
-| Jack | Function                                     |
-|------|----------------------------------------------|
-| J17  | Dist 1 in                                    |
-| J18  | Dist A1 out                                  |
-| J19  | Dist B1 out                                  |
-| J20  | Dist C1 out                                  |
-| J21  | Dist 2 in                                    |
-| J22  | Dist A2 out                                  |
-| J23  | Dist B2 out                                  |
-| J24  | Dist C2 out                                  |
-| J25  | Dist 3 in                                    |
-| J26  | Dist A3 out                                  |
-| J27  | Dist B3 out                                  |
-| J28  | Dist C3 out                                  |
-| J29  | Dist 4 in                                    |
-| J30  | Dist A4 out                                  |
-| J31  | Dist B4 out                                  |
-| J32  | Dist C4 out                                  |
+| Jack | Function    |
+| ---- | ----------- |
+| J17  | Dist 1 in   |
+| J18  | Dist A1 out |
+| J19  | Dist B1 out |
+| J20  | Dist C1 out |
+| J21  | Dist 2 in   |
+| J22  | Dist A2 out |
+| J23  | Dist B2 out |
+| J24  | Dist C2 out |
+| J25  | Dist 3 in   |
+| J26  | Dist A3 out |
+| J27  | Dist B3 out |
+| J28  | Dist C3 out |
+| J29  | Dist 4 in   |
+| J30  | Dist A4 out |
+| J31  | Dist B4 out |
+| J32  | Dist C4 out |
 
 </td></tr></table>
 
 ### Technical Data
 
-| Parameter                    | Value                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950053                                                                          |
-| Mounting Width               | 12 HP                                                                           |
-| Mounting Depth               | 32 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 200 ma                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable                                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes.                                          |
-| Video Sync                   | None                                                                            |
+| Parameter                    | Value                                       |
+| ---------------------------- | ------------------------------------------- |
+| Manufacturer Part Number     | 950053                                      |
+| Mounting Width               | 12 HP                                       |
+| Mounting Depth               | 32 mm                                       |
+| Mounting Hole Count          | 4                                           |
+| Power Consumption            | 12V @ 200 ma                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Input Impedance              | 1M ohms                                     |
+| Output Impedance             | 75 ohms                                     |
+| Input Protection Range       | +/-20V                                      |
+| Input Clipping Range         | +/-2.5V                                     |
+| Output Range                 | +/-2.5V                                     |
+| Included                     | DC barrel power cable, EuroRack power cable |
+| EuroRack Power Cable Type    | 16-pin                                      |
+| EuroRack Power Cable Length  | 25 cm                                       |
+| DC Barrel Power Cable Length | 25 cm                                       |
+| RoHS Compliance              | Manufactured with lead-free processes.      |
+| Video Sync                   | None                                        |
 
 ---
 

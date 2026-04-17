@@ -1,13 +1,13 @@
 ---
 slug: chromagnon-revision-update
-title: "Chromagnon: Hardware Revision Update"
+title: 'Chromagnon: Hardware Revision Update'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
 # image: ./chromagnon-revision.jpg
 ---
 
-<!-- 
+<!--
 CONTINGENCY POST: Use this if RevI hardware validation reveals issues requiring another revision cycle.
 This was identified as a medium risk in the March 2026 production plan post.
 
@@ -30,7 +30,7 @@ What we found, what it means, and the updated schedule.
 
 ## What Happened
 
-<!-- 
+<!--
 Be specific:
 - Which test(s) failed or revealed issues?
 - What is the nature of the problem? (Signal integrity, component footprint, routing error, etc.)
@@ -40,7 +40,7 @@ Be specific:
 
 ## What We're Doing About It
 
-<!-- 
+<!--
 - Describe the revision scope: is it a minor fix (value changes, trace cuts) or a significant rework?
 - How long will the revision take? (Design: X days/weeks, fabrication: X weeks, validation: X weeks)
 - Are we making ANY other changes while we're at it? (If yes, explain why bundling makes sense)
@@ -48,23 +48,23 @@ Be specific:
 
 ## Updated Schedule
 
-<!-- 
+<!--
 Update the full schedule table from the March post.
 Show original targets alongside new targets.
 Be conservative — add buffer this time.
 -->
 
-| Milestone | Original Target | Revised Target |
-|---|---|---|
-| Hardware validation | May 2026 | |
-| Production-ready milestone | June 2026 | |
-| Production order placed | June–July 2026 | |
-| First batch assembly & QC | August 2026 | |
-| Ship Unit #1 | August 2026 | |
+| Milestone                  | Original Target | Revised Target |
+| -------------------------- | --------------- | -------------- |
+| Hardware validation        | May 2026        |                |
+| Production-ready milestone | June 2026       |                |
+| Production order placed    | June–July 2026  |                |
+| First batch assembly & QC  | August 2026     |                |
+| Ship Unit #1               | August 2026     |                |
 
 ## What Has NOT Changed
 
-<!-- 
+<!--
 Reinforce:
 - Feature set unchanged
 - Pre-order prices honored

@@ -1,6 +1,6 @@
 ---
 slug: tbc2-firmware-1.0.7
-title: "TBC2 Firmware 1.0.7"
+title: 'TBC2 Firmware 1.0.7'
 authors: [lars]
 tags: [gen3, software]
 ---

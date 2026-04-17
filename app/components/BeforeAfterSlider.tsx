@@ -37,17 +37,14 @@ export function BeforeAfterSlider({
     return () => observer.disconnect();
   }, []);
 
-  const updatePosition = useCallback(
-    (clientX: number) => {
-      const container = containerRef.current;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
-      setPosition(pct);
-    },
-    [],
-  );
+  const updatePosition = useCallback((clientX: number) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setPosition(pct);
+  }, []);
 
   const handlePointerDown = useCallback(
     (e: React.PointerEvent) => {
@@ -135,7 +132,9 @@ export function BeforeAfterSlider({
           className="absolute top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-black/60 shadow-lg backdrop-blur-sm transition-transform duration-100"
           style={{
             left: `${position}%`,
-            transform: `translate(-50%, -50%)${isDragging ? ' scale(1.15)' : ''}`,
+            transform: `translate(-50%, -50%)${
+              isDragging ? ' scale(1.15)' : ''
+            }`,
           }}
         >
           <svg

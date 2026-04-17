@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "DWO3"
+title: 'DWO3'
 image: /img/modules/dwo3/dwo3-diagrams/dwo3_frontpanel.png
-description: "Documentation for DWO3, a dual wideband oscillator capable of generating high frequency waveforms for SD and HD video pattern generation."
+description: 'Documentation for DWO3, a dual wideband oscillator capable of generating high frequency waveforms for SD and HD video pattern generation.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import dwo3_frontpanel from '/img/modules/dwo3/dwo3-diagrams/dwo3_frontpanel.png';
@@ -43,6 +43,7 @@ import dwo3_frontpanel from '/img/modules/dwo3/dwo3-diagrams/dwo3_frontpanel.png
 import dwo3_line_art_labeled from '/img/modules/dwo3/dwo3-diagrams/dwo3_line_art_labeled_496x1024.png';
 
 # DWO3
+
 <span class="head2_nolink">Dual Wideband Oscillator</span>
 
 <img src={dwo3_frontpanel} alt="DWO3 front panel" />
@@ -68,13 +69,13 @@ Features:
 
 ## Key Specifications
 
-|                   |                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 12 HP                                                                           |
-| Power Consumption | 12V @ 230 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
-| Video Sync        | Rear RCA in & out                                                               |
+|                   |                                                             |
+| ----------------- | ----------------------------------------------------------- |
+| Mounting Width    | 12 HP                                                       |
+| Power Consumption | 12V @ 230 mA                                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable |
+| Video Sync        | Rear RCA in & out                                           |
 
 ---
 
@@ -174,8 +175,6 @@ TODO
 ---
 -->
 
-
-
 ## Installation
 
 <!--
@@ -184,23 +183,23 @@ TODO
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the sync cable to a sync source, such as a sync DA or the last module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the sync cable to a sync source, such as a sync DA or the last module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -216,7 +215,7 @@ TODO
 </td><td>
 
 | Jack | Function                               |
-|------|----------------------------------------|
+| ---- | -------------------------------------- |
 | J1   | Osc 1 Exponential Frequency CV in      |
 | J2   | Osc 2 Exponential Frequency CV in      |
 | J3   | Osc 1 Reset in                         |
@@ -234,41 +233,41 @@ TODO
 
 </td><td>
 
-| Switch | Function         |
-|--------|------------------|
-| S1     | Osc 1 Range      |
-| S2     | Osc 2 Range      |
+| Switch | Function    |
+| ------ | ----------- |
+| S1     | Osc 1 Range |
+| S2     | Osc 2 Range |
 
-| Pot    | Function                             |
-|--------|--------------------------------------|
-| P1     | Osc 1 Frequency                      |
-| P2     | Osc 2 Frequency                      |
-| P3     | Osc 1 Exponential Frequency CV Depth |
-| P4     | Osc 2 Exponential Frequency CV Depth |
+| Pot | Function                             |
+| --- | ------------------------------------ |
+| P1  | Osc 1 Frequency                      |
+| P2  | Osc 2 Frequency                      |
+| P3  | Osc 1 Exponential Frequency CV Depth |
+| P4  | Osc 2 Exponential Frequency CV Depth |
 
 </td></tr></table>
 
 ### Technical Data
 
-|                              |                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950040                                                                          |
-| Mounting Width               | 12 HP                                                                           |
-| Mounting Depth               | 42 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 230 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes.                                          |
-| Video Sync                   | Rear RCA in & out                                                               |
+|                              |                                                             |
+| ---------------------------- | ----------------------------------------------------------- |
+| Manufacturer Part Number     | 950040                                                      |
+| Mounting Width               | 12 HP                                                       |
+| Mounting Depth               | 42 mm                                                       |
+| Mounting Hole Count          | 4                                                           |
+| Power Consumption            | 12V @ 230 mA                                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Input Impedance              | 1M ohms                                                     |
+| Output Impedance             | 75 ohms                                                     |
+| Input Protection Range       | +/-20V                                                      |
+| Input Clipping Range         | +/-2.5V                                                     |
+| Output Range                 | +/-2.5V                                                     |
+| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable |
+| EuroRack Power Cable Type    | 16-pin                                                      |
+| EuroRack Power Cable Length  | 25 cm                                                       |
+| DC Barrel Power Cable Length | 25 cm                                                       |
+| RoHS Compliance              | Manufactured with lead-free processes.                      |
+| Video Sync                   | Rear RCA in & out                                           |
 
 <!--
 | Pronunciation                |                                                                                 |
@@ -321,18 +320,18 @@ Trim pots are labeled with a suffix **1** or **2** to indicate which oscillator 
 3. Set oscillator frequency knob to approximately ten o'clock.
 4. Set vertical range of oscilloscope to fully visualize a signal between zero and one volts.
 5. Set scanning activation threshold of oscilloscope ("trigger") to approximately 0.25 volts, or whatever value between zero and one volt that yields a stable display. It may be necessary to adjust the threshold throughout the calibration process.
-6. Set horizontal range of oscilloscope to view approximately three cycles. In Locked Horizontal mode, the oscillator output goes negative at the start of each line. Set the oscilloscope to view about three lines of video. You should see the oscillator output go below zero three times. Between each of those negative values, you should see approximately five sawtooth ramps ranging from approximately zero to one volt. 
-7.  If necessary for visualization of the sawtooth wave, use **Freq CV Depth** knob to fine-tune oscillator frequency.
-8.  Adjust **R35 Sawtooth Bias** and **R33 Sawtooth Amplitude** to achieve a symmetrical sawtooth wave ranging from zero to one volts. These adjustments affect one another, so you'll need to go back and forth between them several times to calibrate the Sawtooth wave.
-9.  To verify the shape of the waveform, check it in various oscillator frequency ranges and oscilloscope horizontal ranges.
+6. Set horizontal range of oscilloscope to view approximately three cycles. In Locked Horizontal mode, the oscillator output goes negative at the start of each line. Set the oscilloscope to view about three lines of video. You should see the oscillator output go below zero three times. Between each of those negative values, you should see approximately five sawtooth ramps ranging from approximately zero to one volt.
+7. If necessary for visualization of the sawtooth wave, use **Freq CV Depth** knob to fine-tune oscillator frequency.
+8. Adjust **R35 Sawtooth Bias** and **R33 Sawtooth Amplitude** to achieve a symmetrical sawtooth wave ranging from zero to one volts. These adjustments affect one another, so you'll need to go back and forth between them several times to calibrate the Sawtooth wave.
+9. To verify the shape of the waveform, check it in various oscillator frequency ranges and oscilloscope horizontal ranges.
 
 #### Sine calibration
 
 1. Connect **Sine** output to oscilloscope.
 2. Set oscillator frequency range to **Locked Horizontal** (highest rate).
-3.  If necessary for visualization of the sine wave, adjust **Freq CV Depth** knob to fine-tune oscillator frequency, and/or adjust oscilloscope activation threshold.
-4.  Adjust **R39 Sine Shaper Pre-bias**, **R37 Sine Shaper Pre-amplitude**, and **R50 Sine shaper Post-bias** to achieve a symmetrical sine wave ranging from zero to one volts. These adjustments affect one another, so you'll need to go back and forth between them several times to calibrate the Sine wave.
-5.  To verify the shape of the waveform, check it in various oscillator frequency ranges and oscilloscope horizontal ranges.
+3. If necessary for visualization of the sine wave, adjust **Freq CV Depth** knob to fine-tune oscillator frequency, and/or adjust oscilloscope activation threshold.
+4. Adjust **R39 Sine Shaper Pre-bias**, **R37 Sine Shaper Pre-amplitude**, and **R50 Sine shaper Post-bias** to achieve a symmetrical sine wave ranging from zero to one volts. These adjustments affect one another, so you'll need to go back and forth between them several times to calibrate the Sine wave.
+5. To verify the shape of the waveform, check it in various oscillator frequency ranges and oscilloscope horizontal ranges.
 
 ---
 

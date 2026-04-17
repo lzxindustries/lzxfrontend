@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-evan-henry
-title: "Artist Feature: Evan Henry"
+title: 'Artist Feature: Evan Henry'
 authors: [kat]
 tags: [community]
 image: ./evan_henry_01.jpg

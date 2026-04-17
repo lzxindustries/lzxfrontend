@@ -22,7 +22,9 @@ export async function loader({params}: LoaderFunctionArgs) {
 
   const description =
     patch.notes ||
-    `${patch.name} — a video synthesis patch${patch.artist ? ` by ${patch.artist.name}` : ''} using ${patch.modules.map((m) => m.name).join(', ') || 'LZX modules'}.`;
+    `${patch.name} — a video synthesis patch${
+      patch.artist ? ` by ${patch.artist.name}` : ''
+    } using ${patch.modules.map((m) => m.name).join(', ') || 'LZX modules'}.`;
 
   const seo = seoPayload.patch({
     title: patch.name,

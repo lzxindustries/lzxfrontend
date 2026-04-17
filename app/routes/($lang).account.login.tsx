@@ -104,7 +104,8 @@ export default function Login() {
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Sign in.</h1>
         <p className="mt-2 text-sm text-primary/60">
-          Track orders, manage your addresses, and get access to exclusive content.
+          Track orders, manage your addresses, and get access to exclusive
+          content.
         </p>
         <Form
           method="post"
@@ -113,19 +114,28 @@ export default function Login() {
         >
           {sessionExpired && (
             <div className="flex items-center justify-center mb-6 rounded bg-yellow-500/10 border border-yellow-500/20">
-              <p className="m-4 text-s text-yellow-400">Your session has expired. Please sign in again.</p>
+              <p className="m-4 text-s text-yellow-400">
+                Your session has expired. Please sign in again.
+              </p>
             </div>
           )}
           {actionData?.formError && (
             <div className="flex flex-col items-center justify-center mb-6 rounded bg-red-500/10 border border-red-500/20">
-              <p className="m-4 mb-2 text-s text-red-400">{actionData.formError}</p>
-              <a href="/account/register" className="mb-3 text-sm underline text-primary/60 hover:text-primary">
+              <p className="m-4 mb-2 text-s text-red-400">
+                {actionData.formError}
+              </p>
+              <a
+                href="/account/register"
+                className="mb-3 text-sm underline text-primary/60 hover:text-primary"
+              >
                 Create a new account
               </a>
             </div>
           )}
           <div>
-            <label htmlFor="email" className="sr-only">Email address</label>
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativeEmailError)}`}
               id="email"
@@ -152,10 +162,14 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="sr-only">Password</label>
+            <label htmlFor="password" className="sr-only">
+              Password
+            </label>
             <div className="relative">
               <input
-                className={`mb-1 pr-12 ${getInputStyleClasses(nativePasswordError)}`}
+                className={`mb-1 pr-12 ${getInputStyleClasses(
+                  nativePasswordError,
+                )}`}
                 id="password"
                 name="password"
                 type={showPassword ? 'text' : 'password'}

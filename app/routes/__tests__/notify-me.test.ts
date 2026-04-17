@@ -40,7 +40,11 @@ afterEach(() => {
 describe('notify-me action', () => {
   it('returns 400 for invalid email', async () => {
     const {response, payload} = await runAction({
-      form: {email: 'bad-email', handle: 'videomancer', variantId: 'gid://shopify/ProductVariant/1'},
+      form: {
+        email: 'bad-email',
+        handle: 'videomancer',
+        variantId: 'gid://shopify/ProductVariant/1',
+      },
     });
 
     expect(response.status).toBe(400);
@@ -50,7 +54,11 @@ describe('notify-me action', () => {
 
   it('returns fallback success when klaviyo key is missing', async () => {
     const {response, payload} = await runAction({
-      form: {email: 'user@example.com', handle: 'videomancer', variantId: 'gid://shopify/ProductVariant/1'},
+      form: {
+        email: 'user@example.com',
+        handle: 'videomancer',
+        variantId: 'gid://shopify/ProductVariant/1',
+      },
     });
 
     expect(response.status).toBe(200);
@@ -67,7 +75,11 @@ describe('notify-me action', () => {
     );
 
     const {response, payload} = await runAction({
-      form: {email: 'user@example.com', handle: 'videomancer', variantId: 'gid://shopify/ProductVariant/1'},
+      form: {
+        email: 'user@example.com',
+        handle: 'videomancer',
+        variantId: 'gid://shopify/ProductVariant/1',
+      },
       env: {KLAVIYO_PRIVATE_API_KEY: 'test-key'},
     });
 
@@ -85,7 +97,11 @@ describe('notify-me action', () => {
     );
 
     const {response, payload} = await runAction({
-      form: {email: 'user@example.com', handle: 'videomancer', variantId: 'gid://shopify/ProductVariant/1'},
+      form: {
+        email: 'user@example.com',
+        handle: 'videomancer',
+        variantId: 'gid://shopify/ProductVariant/1',
+      },
       env: {KLAVIYO_PRIVATE_API_KEY: 'test-key'},
     });
 
@@ -98,7 +114,11 @@ describe('notify-me action', () => {
     vi.spyOn(globalThis, 'fetch').mockRejectedValue(new Error('network down'));
 
     const {response, payload} = await runAction({
-      form: {email: 'user@example.com', handle: 'videomancer', variantId: 'gid://shopify/ProductVariant/1'},
+      form: {
+        email: 'user@example.com',
+        handle: 'videomancer',
+        variantId: 'gid://shopify/ProductVariant/1',
+      },
       env: {KLAVIYO_PRIVATE_API_KEY: 'test-key'},
     });
 

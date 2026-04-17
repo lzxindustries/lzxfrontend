@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "RIBBONS"
+title: 'RIBBONS'
 image: /img/modules/ribbons/ribbons-diagrams/ribbons_frontpanel.png
-description: "Documentation for RIBBONS, a three-bit digitizer and colorizer that slices video signals into eight quantized bands."
+description: 'Documentation for RIBBONS, a three-bit digitizer and colorizer that slices video signals into eight quantized bands.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import ribbons_frontpanel from '/img/modules/ribbons/ribbons-diagrams/ribbons_frontpanel.png';
@@ -43,13 +43,14 @@ import ribbons_frontpanel from '/img/modules/ribbons/ribbons-diagrams/ribbons_fr
 import ribbons_line_art_labeled from '/img/modules/ribbons/ribbons-diagrams/ribbons_line_art_labeled_336x1024.png';
 
 # RIBBONS
+
 <span class="head2_nolink">Three-Bit Digitizer and Colorizer</span>
 
 <img src={ribbons_frontpanel} alt="Ribbons front panel" />
 
 ## Overview
 
-Ribbons digitally samples any video source or other signal and slices it into eight quantized bands. It outputs these eight values as three signals representing the digits of a three-bit binary number. The three-bit encoding scheme invokes the look of primitive digital graphics and posterization effects from the 1970s and '80s. 
+Ribbons digitally samples any video source or other signal and slices it into eight quantized bands. It outputs these eight values as three signals representing the digits of a three-bit binary number. The three-bit encoding scheme invokes the look of primitive digital graphics and posterization effects from the 1970s and '80s.
 
 With nine high-speed analog comparators and CMOS logic, Ribbons digitizes SD or HD video without a pixel clock or quantized timebase. This reveals a surreal and silky image quality that is absent from today's conventional digital video.
 
@@ -57,31 +58,31 @@ In low frequency applications, Ribbons is a control voltage quantizer. Convert a
 
 ### Features
 
-* Three binary **Digital Outputs** that together define eight quantized values
-* Digital-to-analog **DAC** output of the combined, quantized signal.<br />Converts a video source to a grayscale posterization effect, or a low frequency control signal to quantized, stair-step values.
-* **Inverted DAC** output for more patching options
-* Upper and lower sampling boundaries set by **Center** and **Span** parameters
-* Video-rate voltage control of Center and Span
-* **Enable** and **Disable** inputs mask the outputs
-* **Window Key** output of the sampling range
+- Three binary **Digital Outputs** that together define eight quantized values
+- Digital-to-analog **DAC** output of the combined, quantized signal.<br />Converts a video source to a grayscale posterization effect, or a low frequency control signal to quantized, stair-step values.
+- **Inverted DAC** output for more patching options
+- Upper and lower sampling boundaries set by **Center** and **Span** parameters
+- Video-rate voltage control of Center and Span
+- **Enable** and **Disable** inputs mask the outputs
+- **Window Key** output of the sampling range
 
 ### Legacy
 
-* 2012: our first three-bit digitizer, **8-Stage Video Quantizer & Sequencer**, loosely inspired by the Sandin IP Amplitude Classifier
-* 2018: **Castle 000 ADC** and **Castle 001 DAC**, in the Castle DIY series
-* 2019: **Fortress**, the first LZX module to integrate ADC and DAC capabilities
+- 2012: our first three-bit digitizer, **8-Stage Video Quantizer & Sequencer**, loosely inspired by the Sandin IP Amplitude Classifier
+- 2018: **Castle 000 ADC** and **Castle 001 DAC**, in the Castle DIY series
+- 2019: **Fortress**, the first LZX module to integrate ADC and DAC capabilities
 
 The Expedition series module **Topogram** serves some of the same high-level artistic functions as Ribbons. Topogram differentiates a signal into up to six bands, but it's entirely analog, with a completely different design philosophy and patch paradigm. There are several "key" functional differences. Topogram's outputs are all binary, while Ribbons also provides combined grayscale outputs. Topogram's outputs are discrete from one another, but the digital outputs of Ribbons can overlap because each is a digit within a three-digit binary number.
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 8 HP                                                                            |
-| Power Consumption | 12V @ 125 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Video Sync        | None                                                                            |
-| Included          | DC barrel power cable, EuroRack power cable                                     |
+| Parameter         | Value                                       |
+| ----------------- | ------------------------------------------- |
+| Mounting Width    | 8 HP                                        |
+| Power Consumption | 12V @ 125 mA                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Video Sync        | None                                        |
+| Included          | DC barrel power cable, EuroRack power cable |
 
 ---
 
@@ -97,7 +98,7 @@ Ribbons works well with any modules that have binary functions. For example, Swi
 
 ## Controls & Connectors
 
-The primary **Input** to the digitizer is at the extreme lower left. Above that are **Enable** and **Disable** inputs. The Enable input is labeled $\mathrm{EN}$. The Disable input is labeled $\mathrm{\overline{EN}}$. The bar over the letters is called a *macron*, and in this context it indicates logical negation. The input label means "not enable", or disable.
+The primary **Input** to the digitizer is at the extreme lower left. Above that are **Enable** and **Disable** inputs. The Enable input is labeled $\mathrm{EN}$. The Disable input is labeled $\mathrm{\overline{EN}}$. The bar over the letters is called a _macron_, and in this context it indicates logical negation. The input label means "not enable", or disable.
 
 The Enable and Disable inputs are binary. They mask all of the Ribbons outputs. A voltage above 0.5 sent to the Enable input reveals the outputs, a voltage below 0.5 masks off the outputs. The Disable input inverts this behavior: a high signal masks off the outputs, a low signal reveals them. Enable and Disable inputs can be used simultaneously.
 
@@ -177,22 +178,22 @@ The simplest patch using this concept is a four-level posterizer. Just send the 
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -212,7 +213,7 @@ AFR note: this illustration, screen captured from the primary domain, has an err
 </td><td>
 
 | Jack | Function         |
-|------|------------------|
+| ---- | ---------------- |
 | J1   | Center CV in     |
 | J2   | Span CV in       |
 | J3   | Enable in        |
@@ -227,36 +228,36 @@ AFR note: this illustration, screen captured from the primary domain, has an err
 
 </td><td>
 
-| Potentiometer | Function               |
-|---------------|------------------------|
-| P1            | Center                 |
-| P2            | Span                   |
-| P3            | Center CV Depth        |
-| P4            | Span CV Depth          |
+| Potentiometer | Function        |
+| ------------- | --------------- |
+| P1            | Center          |
+| P2            | Span            |
+| P3            | Center CV Depth |
+| P4            | Span CV Depth   |
 
 </td></tr></table>
 
 ### Technical Data
 
-| Parameter                    | Value                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950049                                                                          |
-| Mounting Width               | 8 HP                                                                            |
-| Mounting Depth               | 32 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 125 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable                                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes                                           |
-| Video Sync                   | None                                                                            |
+| Parameter                    | Value                                       |
+| ---------------------------- | ------------------------------------------- |
+| Manufacturer Part Number     | 950049                                      |
+| Mounting Width               | 8 HP                                        |
+| Mounting Depth               | 32 mm                                       |
+| Mounting Hole Count          | 4                                           |
+| Power Consumption            | 12V @ 125 mA                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Input Impedance              | 1M ohms                                     |
+| Output Impedance             | 75 ohms                                     |
+| Input Protection Range       | +/-20V                                      |
+| Input Clipping Range         | +/-2.5V                                     |
+| Output Range                 | +/-2.5V                                     |
+| Included                     | DC barrel power cable, EuroRack power cable |
+| EuroRack Power Cable Type    | 16-pin                                      |
+| EuroRack Power Cable Length  | 25 cm                                       |
+| DC Barrel Power Cable Length | 25 cm                                       |
+| RoHS Compliance              | Manufactured with lead-free processes       |
+| Video Sync                   | None                                        |
 
 <!--
 | Pronunciation                |                                                                                 |

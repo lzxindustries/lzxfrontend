@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-building-it-right
-title: "Chromagnon: Building It Right"
+title: 'Chromagnon: Building It Right'
 authors: [lars]
 tags: [chromagnon, manufacturing, business]
 draft: false
@@ -11,7 +11,7 @@ Hello video friends. It's a Thursday here in Portland — spring is creeping in,
 
 <!--truncate-->
 
-In December, I said a potential timeline for Chromagnon production was toward the end of Q1 2026. While we may not be reaching the fulfillment milestone within this quarter, we are making progress.  I owe you a look into a comprehensive plan — one built on what we've recently accomplished, and what our next steps are.
+In December, I said a potential timeline for Chromagnon production was toward the end of Q1 2026. While we may not be reaching the fulfillment milestone within this quarter, we are making progress. I owe you a look into a comprehensive plan — one built on what we've recently accomplished, and what our next steps are.
 
 ## Where We Are Today
 
@@ -20,6 +20,7 @@ As of this week, my primary focus is a major Videomancer firmware update, launch
 The day after that launch, Chromagnon has my full attention. Here's where things stand:
 
 **What's ready:**
+
 - Front panel design, control layout, jack assignments — finalized
 - Sheet metal enclosure design — finalized, ready to order
 - Button caps, LED light grid, control knobs — finalized designs, ready to order
@@ -28,16 +29,18 @@ The day after that launch, Chromagnon has my full attention. Here's where things
 - Desktop configuration app — operational, pending release
 
 **In progress:**
+
 - Chromagnon application firmware (signal processing, UI, control mapping) — built on the shared Videomancer codebase, continuing development
 
 **What's left:**
+
 - RevI core board design revision — integrating the validated Videomancer platform into Chromagnon's hardware layout (2–3 weeks)
 - Prototype fabrication and delivery (~2 weeks after design submission)
 - Hardware validation — verifying all functions on the new board (2–4 weeks)
 - Production ordering and manufacturing lead time (4–6 weeks)
 
 ![Chromagnon core board](./chromagnon-revI-core-board.jpg)
-*Chromagnon core board — the foundation of the instrument. The RevI revision will integrate the validated Videomancer platform into this layout.*
+_Chromagnon core board — the foundation of the instrument. The RevI revision will integrate the validated Videomancer platform into this layout._
 
 ## What Changed
 
@@ -48,6 +51,7 @@ Some of you have followed every revision of this project. Others placed a pre-or
 In April 2025, tariffs on Chinese PCB assembly surged from baseline rates to 175% overnight. A $284 assembly order became a $782 assembly order. Our entire production plan — which relied on Chinese contract assembly for Chromagnon's massive, 1300+ component circuit board — became financially impossible.
 
 We had three options:
+
 1. **Push through and raise the price** to $3,200+ — breaking our commitment to pre-order customers
 2. **Cancel the project** — unthinkable
 3. **Redesign with an alternate approach** — the only real choice
@@ -71,13 +75,13 @@ The instrument you ordered is the instrument you're getting. Same 35 jacks — I
 And yes — every pre-order will be fulfilled at the price you paid.
 
 ![Chromagnon front panel](./chromagnon-front-panel.png)
-*Chromagnon's front panel — 35 jacks, 19 pots, 17 switches. Same layout, same controls, same instrument.*
+_Chromagnon's front panel — 35 jacks, 19 pots, 17 switches. Same layout, same controls, same instrument._
 
 ![Chromagnon sheet metal enclosure rendering](./chromagnon-sheet-metal-enclosure.png)
-*Rendering of Chromagnon's sheet metal enclosure — the "boat" design, manufactured domestically in Oregon.*
+_Rendering of Chromagnon's sheet metal enclosure — the "boat" design, manufactured domestically in Oregon._
 
 ![Sheet metal prototypes](./sheet-metal-prototypes.jpg)
-*Sheet metal parts for Chromagnon — prototype parts in hand.*
+_Sheet metal parts for Chromagnon — prototype parts in hand._
 
 ## Where Your Pre-Order Investment Stands
 
@@ -88,36 +92,36 @@ Your pre-order funds were invested directly into Chromagnon development and prod
 The money is in the project. It has been for a long time. Projects other than Chromagnon — our modular catalog, and now Videomancer — have been subsidizing Chromagnon's continued development for years. Videomancer development was funded separately through business loans, not from Chromagnon pre-orders. Chromagnon fulfillment has been and remains the company's #1 priority.
 
 ![Chromagnon on the workbench](./chromagnon-workbench.jpg)
-*Chromagnon RevH prototype on the workbench.*
+_Chromagnon RevH prototype on the workbench._
 
 ![Chromagnon subassembly boards](./chromagnon-subassemblies.jpg)
-*Validated subassembly boards from earlier in development — FQM, DEC, FWR, FQA, HGA.*
+_Validated subassembly boards from earlier in development — FQM, DEC, FWR, FQA, HGA._
 
 ## The Schedule
 
 Here is the milestone schedule for Chromagnon production. I'm erring on the cautious side — I'd rather update you that we're ahead of schedule than behind it.
 
-| Milestone | Target | Status |
-|---|---|---|
-| Videomancer major firmware update (17 new programs, bug fixes, feature refinements) | March 12, 2026 | Final testing |
-| Full transition to Chromagnon engineering | Mid-March 2026 | Ready |
-| RevI core board design revision complete | Early April 2026 | Not started |
-| Firmware integration begins (on existing dev hardware) | April 2026 | — |
-| RevI prototype boards fabricated & delivered | Late April–Early May 2026 | — |
-| Hardware validation & firmware integration on RevI | May–June 2026 | — |
-| **Production-ready milestone** | **June 2026** | — |
-| Production order placed & manufacturing | June–July 2026 | — |
-| First batch assembly & quality control | August 2026 | — |
-| **Ship Unit #1** | **August 2026** | — |
-| Pre-order fulfillment begins at scale | September 2026 | — |
-| Ongoing fulfillment (monthly batches) | Q3–Q4 2026 | — |
+| Milestone                                                                           | Target                    | Status        |
+| ----------------------------------------------------------------------------------- | ------------------------- | ------------- |
+| Videomancer major firmware update (17 new programs, bug fixes, feature refinements) | March 12, 2026            | Final testing |
+| Full transition to Chromagnon engineering                                           | Mid-March 2026            | Ready         |
+| RevI core board design revision complete                                            | Early April 2026          | Not started   |
+| Firmware integration begins (on existing dev hardware)                              | April 2026                | —             |
+| RevI prototype boards fabricated & delivered                                        | Late April–Early May 2026 | —             |
+| Hardware validation & firmware integration on RevI                                  | May–June 2026             | —             |
+| **Production-ready milestone**                                                      | **June 2026**             | —             |
+| Production order placed & manufacturing                                             | June–July 2026            | —             |
+| First batch assembly & quality control                                              | August 2026               | —             |
+| **Ship Unit #1**                                                                    | **August 2026**           | —             |
+| Pre-order fulfillment begins at scale                                               | September 2026            | —             |
+| Ongoing fulfillment (monthly batches)                                               | Q3–Q4 2026                | —             |
 
 **First batch size:** 50–100 units, scaling with revenue. Our production capability supports 150–200 units/month once we're in full operation, consistent with the batch sizes we've been running for Videomancer.
 
 **Fulfillment order:** Strictly by the sequence your pre-order was received. No exceptions for dealers vs. direct customers.
 
 ![Chromagnon production timeline](./chromagnon-timeline-graphic.png)
-*Visual overview of the production timeline — milestones from the Videomancer firmware update through fulfillment at scale.*
+_Visual overview of the production timeline — milestones from the Videomancer firmware update through fulfillment at scale._
 
 ### What Could Move These Dates
 
@@ -189,20 +193,20 @@ No. While they share the same underlying platform, the instruments are architect
 Download the [Chromagnon Simulator](/blog/chromagnon-simulator-downloads) for Windows or macOS. It's a desktop application built during development that previews the instrument's signal processing capabilities.
 
 ![Chromagnon Simulator](./chromagnon-simulator-screenshot.png)
-*The Chromagnon Simulator desktop app — download it [here](/blog/chromagnon-simulator-downloads) to preview the instrument's signal processing.*
+_The Chromagnon Simulator desktop app — download it [here](/blog/chromagnon-simulator-downloads) to preview the instrument's signal processing._
 
 ## Update Schedule
 
 Starting now, I'm committing to **monthly Chromagnon-focused updates** posted in the first week of each month. If a milestone hits between updates, I'll post that too. Here's what to expect:
 
-| Month | Expected Update |
-|---|---|
-| **April 2026** | RevI board design complete, board layout previews, firmware integration begins |
-| **May 2026** | Prototype in hand, hardware validation progress, first demo content |
-| **June 2026** | Assembly line progress, production-ready confirmation |
-| **July 2026** | First batch status, queue position system launch |
-| **August 2026** | Ship Unit #1 announcement, fulfillment begins |
-| **September onward** | Monthly batch shipping updates until all pre-orders fulfilled |
+| Month                | Expected Update                                                                |
+| -------------------- | ------------------------------------------------------------------------------ |
+| **April 2026**       | RevI board design complete, board layout previews, firmware integration begins |
+| **May 2026**         | Prototype in hand, hardware validation progress, first demo content            |
+| **June 2026**        | Assembly line progress, production-ready confirmation                          |
+| **July 2026**        | First batch status, queue position system launch                               |
+| **August 2026**      | Ship Unit #1 announcement, fulfillment begins                                  |
+| **September onward** | Monthly batch shipping updates until all pre-orders fulfilled                  |
 
 I know the updates slowed down last year. After the team downsized last summer, I picked up a lot of roles — technical support, sales emails, shipping, production coordination — on top of the engineering work. That's not an excuse, but it's the reason. You'll hear from me every month with specifics.
 
@@ -219,4 +223,4 @@ Lars
 
 ---
 
-*Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/lzx).*
+_Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/lzx)._

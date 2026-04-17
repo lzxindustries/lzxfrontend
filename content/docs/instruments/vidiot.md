@@ -1,8 +1,8 @@
 ---
 draft: true
 sidebar_position: 4
-title: "Vidiot"
-description: "Documentation for Vidiot, a compact all-in-one analog video synthesizer instrument by LZX Industries."
+title: 'Vidiot'
+description: 'Documentation for Vidiot, a compact all-in-one analog video synthesizer instrument by LZX Industries.'
 ---
 
 # Vidiot
@@ -16,7 +16,6 @@ A Complete Visual Instrument. Vidiot is a complete instrument for analog video s
 Past Tech Made New. We worked with video synthesis visionary Dan Bucciano to bring the design philosophy of the 1970’s into a totally new and groundbreaking device for video artists.
 Modular Synthesis Compatibility. Vidiot is fully compatible with all existing LZX EuroRack video synth modules. Like our modules, any audio or control voltage source can be patched to any of its 13 patch inputs.
 Included Items: Vidiot, 5VDC 1.2A Universal Input Voltage Power Adapter (includes plugs for US, UK, EU, Australia and China), Video RCA Cable (5 ft), 2x Patch Cables (6 inch lengths, 1 red, 1 blue), Official Vidiot Birthday Party Hat, Vinyl Sticker
-
 
 Dimensions
 Width, 36HP

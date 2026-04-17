@@ -2,10 +2,11 @@
 draft: false
 sidebar_position: 2
 slug: /instruments/videomancer/modulation-operators
-title: "Modulation Guide"
+title: 'Modulation Guide'
 image: /img/instruments/videomancer/videomancer_frontpanel.png
 description: "Complete reference guide for Videomancer's 39 modulation operator types across 12 channels, including oscillators, envelope followers, random generators, sequencers, spatial modulators, physics simulations, and USB HID input devices."
 ---
+
 # Modulation Guide
 
 ## Overview
@@ -62,11 +63,11 @@ The **velocity gate** is an optional final stage that applies MIDI note velocity
 
 Every operator receives three control values from dedicated knobs on the Videomancer front panel:
 
-| Parameter | Knob | Role |
-|-----------|------|------|
-| **Time** | M1 | Controls *rate* or *speed* — how fast the operator evolves. For oscillators, this is the period. For followers, it is the slew rate. For physics simulations, it controls a force constant. |
-| **Space** | M2 | Controls *amplitude* or *depth* — how much the operator's output affects the target parameter. Often labeled "Gain" or "Depth." |
-| **Slope** | M3 | Controls *character* or *shape* — which waveshape, which input channel, how much chaos, which rule. This is the qualitative parameter that changes *what kind* of signal the operator produces. |
+| Parameter | Knob | Role                                                                                                                                                                                            |
+| --------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time**  | M1   | Controls _rate_ or _speed_ — how fast the operator evolves. For oscillators, this is the period. For followers, it is the slew rate. For physics simulations, it controls a force constant.     |
+| **Space** | M2   | Controls _amplitude_ or _depth_ — how much the operator's output affects the target parameter. Often labeled "Gain" or "Depth."                                                                 |
+| **Slope** | M3   | Controls _character_ or _shape_ — which waveshape, which input channel, how much chaos, which rule. This is the qualitative parameter that changes _what kind_ of signal the operator produces. |
 
 The exact meaning of each parameter depends on the active operator. The display labels update automatically when you change operators, so you always see what Time, Space, and Slope do for the current selection.
 
@@ -85,47 +86,47 @@ Modulators operate in one of two output modes:
 
 The 39 operators are grouped by category below. Use this index to find an operator by its numeric ID. The **Display** column shows the single-character indicator that appears on the Motion screen next to each modulator channel.
 
-| ID | Operator | Display | Category | Per-line |
-|----|----------|---------|----------|----------|
-| 0 | Disabled | `·` | — | — |
-| 1 | Free LFO | `L` | Oscillators | No |
-| 2 | Sync LFO | `S` | Oscillators | No |
-| 3 | CV Input | `C` | External Input | Yes |
-| 4 | Audio Input | `A` | External Input | Yes |
-| 5 | Random | `R` | Random & Chaos | No |
-| 6 | Envelope | `E` | Envelopes & Followers | No |
-| 7 | Sample & Hold | `H` | Envelopes & Followers | No |
-| 8 | Trigger Env | `T` | Envelopes & Followers | No |
-| 9 | Step Seq | `Q` | Sequencing & Rhythm | No |
-| 10 | FFT Band | `F` | Envelopes & Followers | No |
-| 11 | H Displace | `D` | Spatial (disabled) | No |
-| 12 | Turing Machine | `U` | Random & Chaos | No |
-| 13 | Bouncing Ball | `B` | Physics | No |
-| 14 | Logistic Map | `X` | Random & Chaos | No |
-| 15 | Euclidean Rhythm | `Y` | Sequencing & Rhythm | No |
-| 16 | Motion LFO | `M` | Oscillators | No |
-| 17 | V Gradient | `G` | Spatial (disabled) | No |
-| 18 | Comparator | `K` | Envelopes & Followers | Yes |
-| 19 | Pendulum | `N` | Physics | No |
-| 20 | Drift | `W` | Random & Chaos | No |
-| 21 | Ring Mod | `*` | External Input | Yes |
-| 22 | Cellular | `#` | Random & Chaos | No |
-| 23 | Pulse Width | `P` | Oscillators | No |
-| 24 | Peak Hold | `J` | Envelopes & Followers | Yes |
-| 25 | Field Accum | `I` | Envelopes & Followers | No |
-| 26 | Slew Limiter | `/` | Envelopes & Followers | No |
-| 27 | Perlin Noise | `~` | Random & Chaos | No |
-| 28 | Wavefolder | `Z` | Oscillators | No |
-| 29 | Clock Div | `V` | Sequencing & Rhythm | No |
-| 30 | Prob Gate | `?` | Sequencing & Rhythm | No |
-| 31 | Quantizer | `O` | Envelopes & Followers | Yes |
-| 32 | Mouse | `m` | USB HID Input | No |
-| 33 | Keyboard | `k` | USB HID Input | No |
-| 34 | Gamepad | `g` | USB HID Input | No |
-| 35 | Tablet | `t` | USB HID Input | No |
-| 36 | Joystick | `?` | USB HID Input | No |
-| 37 | Sensor | `?` | USB HID Input | No |
-| 38 | MIDI Turing | `?` | Random & Chaos | No |
+| ID  | Operator         | Display | Category              | Per-line |
+| --- | ---------------- | ------- | --------------------- | -------- |
+| 0   | Disabled         | `·`     | —                     | —        |
+| 1   | Free LFO         | `L`     | Oscillators           | No       |
+| 2   | Sync LFO         | `S`     | Oscillators           | No       |
+| 3   | CV Input         | `C`     | External Input        | Yes      |
+| 4   | Audio Input      | `A`     | External Input        | Yes      |
+| 5   | Random           | `R`     | Random & Chaos        | No       |
+| 6   | Envelope         | `E`     | Envelopes & Followers | No       |
+| 7   | Sample & Hold    | `H`     | Envelopes & Followers | No       |
+| 8   | Trigger Env      | `T`     | Envelopes & Followers | No       |
+| 9   | Step Seq         | `Q`     | Sequencing & Rhythm   | No       |
+| 10  | FFT Band         | `F`     | Envelopes & Followers | No       |
+| 11  | H Displace       | `D`     | Spatial (disabled)    | No       |
+| 12  | Turing Machine   | `U`     | Random & Chaos        | No       |
+| 13  | Bouncing Ball    | `B`     | Physics               | No       |
+| 14  | Logistic Map     | `X`     | Random & Chaos        | No       |
+| 15  | Euclidean Rhythm | `Y`     | Sequencing & Rhythm   | No       |
+| 16  | Motion LFO       | `M`     | Oscillators           | No       |
+| 17  | V Gradient       | `G`     | Spatial (disabled)    | No       |
+| 18  | Comparator       | `K`     | Envelopes & Followers | Yes      |
+| 19  | Pendulum         | `N`     | Physics               | No       |
+| 20  | Drift            | `W`     | Random & Chaos        | No       |
+| 21  | Ring Mod         | `*`     | External Input        | Yes      |
+| 22  | Cellular         | `#`     | Random & Chaos        | No       |
+| 23  | Pulse Width      | `P`     | Oscillators           | No       |
+| 24  | Peak Hold        | `J`     | Envelopes & Followers | Yes      |
+| 25  | Field Accum      | `I`     | Envelopes & Followers | No       |
+| 26  | Slew Limiter     | `/`     | Envelopes & Followers | No       |
+| 27  | Perlin Noise     | `~`     | Random & Chaos        | No       |
+| 28  | Wavefolder       | `Z`     | Oscillators           | No       |
+| 29  | Clock Div        | `V`     | Sequencing & Rhythm   | No       |
+| 30  | Prob Gate        | `?`     | Sequencing & Rhythm   | No       |
+| 31  | Quantizer        | `O`     | Envelopes & Followers | Yes      |
+| 32  | Mouse            | `m`     | USB HID Input         | No       |
+| 33  | Keyboard         | `k`     | USB HID Input         | No       |
+| 34  | Gamepad          | `g`     | USB HID Input         | No       |
+| 35  | Tablet           | `t`     | USB HID Input         | No       |
+| 36  | Joystick         | `?`     | USB HID Input         | No       |
+| 37  | Sensor           | `?`     | USB HID Input         | No       |
+| 38  | MIDI Turing      | `?`     | Random & Chaos        | No       |
 
 ### Oscillators
 
@@ -135,11 +136,11 @@ These operators generate periodic waveforms. They are the workhorses of modulati
 
 #### 0 — Disabled
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Time | *(unused)* |
-| Space | Space | *(unused)* |
-| Slope | Slope | *(unused)* |
+| Parameter | Label | Function   |
+| --------- | ----- | ---------- |
+| Time      | Time  | _(unused)_ |
+| Space     | Space | _(unused)_ |
+| Slope     | Slope | _(unused)_ |
 
 **Per-line**: No
 
@@ -149,11 +150,11 @@ Passthrough. The modulator outputs the manual knob position plus any MIDI CC off
 
 #### 1 — Free LFO
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Oscillator period. Fully clockwise = 50 ms (fast). Fully counter-clockwise = 20 seconds (slow). The rate response is weighted so that most of the knob's travel covers the slow-to-moderate range, with fast rates concentrated near the top. |
-| Space | Depth | Output amplitude. At zero, the oscillator runs but produces no output. At maximum, the full modulation range is used. |
-| Slope | Wave | Waveshape select. Eight shapes are available, evenly spaced across the knob: ramp, sawtooth, triangle, square, sine, logarithmic, exponential, and parabola. |
+| Parameter | Label | Function                                                                                                                                                                                                                                      |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Oscillator period. Fully clockwise = 50 ms (fast). Fully counter-clockwise = 20 seconds (slow). The rate response is weighted so that most of the knob's travel covers the slow-to-moderate range, with fast rates concentrated near the top. |
+| Space     | Depth | Output amplitude. At zero, the oscillator runs but produces no output. At maximum, the full modulation range is used.                                                                                                                         |
+| Slope     | Wave  | Waveshape select. Eight shapes are available, evenly spaced across the knob: ramp, sawtooth, triangle, square, sine, logarithmic, exponential, and parabola.                                                                                  |
 
 **Per-line**: No
 
@@ -167,11 +168,11 @@ The eight waveshapes cover the fundamental periodic functions. Triangle and sine
 
 #### 2 — Sync LFO
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Division | Musical time division. Sixteen divisions from 32 bars (very slow) down to 1/16 note (fast): 32/1, 16/1, 8/1, 4/1, 3/1, 2/1, 3/2, 1/1, 3/4, 1/2, 3/8, 1/3, 1/4, 1/6, 1/8, 1/16. Dotted and triplet divisions are included. |
-| Space | Depth | Output amplitude. |
-| Slope | Wave | Waveshape select (same eight shapes as Free LFO). |
+| Parameter | Label    | Function                                                                                                                                                                                                                  |
+| --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Division | Musical time division. Sixteen divisions from 32 bars (very slow) down to 1/16 note (fast): 32/1, 16/1, 8/1, 4/1, 3/1, 2/1, 3/2, 1/1, 3/4, 1/2, 3/8, 1/3, 1/4, 1/6, 1/8, 1/16. Dotted and triplet divisions are included. |
+| Space     | Depth    | Output amplitude.                                                                                                                                                                                                         |
+| Slope     | Wave     | Waveshape select (same eight shapes as Free LFO).                                                                                                                                                                         |
 
 **Per-line**: No
 
@@ -185,15 +186,15 @@ The musical divisions are multiplicative: at 1/1 division, the oscillator comple
 
 #### 16 — Motion LFO
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Division | Musical time division (same sixteen divisions as Sync LFO). |
-| Space | Depth | Output amplitude. |
-| Slope | Wave | Waveshape select (eight shapes). |
+| Parameter | Label    | Function                                                    |
+| --------- | -------- | ----------------------------------------------------------- |
+| Time      | Division | Musical time division (same sixteen divisions as Sync LFO). |
+| Space     | Depth    | Output amplitude.                                           |
+| Slope     | Wave     | Waveshape select (eight shapes).                            |
 
 **Per-line**: No
 
-A transport-locked LFO that follows the transport position exactly rather than running its own internal clock. The distinction from Sync LFO matters: Sync LFO *runs at the same speed* as the transport but can drift slightly over time because it runs its own phase accumulator derived from BPM. Motion LFO is perfectly phase-locked to the transport — no drift, no jitter. If you stop and restart the transport, Motion LFO snaps to the exact same position in the waveform every time.
+A transport-locked LFO that follows the transport position exactly rather than running its own internal clock. The distinction from Sync LFO matters: Sync LFO _runs at the same speed_ as the transport but can drift slightly over time because it runs its own phase accumulator derived from BPM. Motion LFO is perfectly phase-locked to the transport — no drift, no jitter. If you stop and restart the transport, Motion LFO snaps to the exact same position in the waveform every time.
 
 Both Sync LFO and Motion LFO output zero when stopped and freeze when paused. The practical difference is accuracy: use Motion LFO when you need guaranteed phase lock to the transport. Use Sync LFO when BPM-relative speed is sufficient and exact phase alignment is not critical.
 
@@ -203,11 +204,11 @@ Both Sync LFO and Motion LFO output zero when stopped and freeze when paused. Th
 
 #### 23 — Pulse Width
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Oscillator period (same weighted rate curve as Free LFO, 50 ms–20 s). |
-| Space | Depth | Output amplitude, centered around the midpoint. |
-| Slope | Width | Duty cycle. Fully counter-clockwise = 0% (always low). Center = 50% (symmetric square wave). Fully clockwise = 100% (always high). |
+| Parameter | Label | Function                                                                                                                           |
+| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Oscillator period (same weighted rate curve as Free LFO, 50 ms–20 s).                                                              |
+| Space     | Depth | Output amplitude, centered around the midpoint.                                                                                    |
+| Slope     | Width | Duty cycle. Fully counter-clockwise = 0% (always low). Center = 50% (symmetric square wave). Fully clockwise = 100% (always high). |
 
 **Per-line**: No
 
@@ -221,11 +222,11 @@ Pulse Width is useful for rhythmic gating effects where you want control over ho
 
 #### 28 — Wavefolder
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Oscillator period (weighted rate curve, 50 ms–20 s). |
-| Space | Folds | Fold count. Fully counter-clockwise = no folding (clean sine wave). Fully clockwise = 8 folds. |
-| Slope | Symmetry | Fold center offset. Center = symmetric folding. Turning the knob in either direction shifts the fold center, producing asymmetric waveforms. |
+| Parameter | Label    | Function                                                                                                                                     |
+| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate     | Oscillator period (weighted rate curve, 50 ms–20 s).                                                                                         |
+| Space     | Folds    | Fold count. Fully counter-clockwise = no folding (clean sine wave). Fully clockwise = 8 folds.                                               |
+| Slope     | Symmetry | Fold center offset. Center = symmetric folding. Turning the knob in either direction shifts the fold center, producing asymmetric waveforms. |
 
 **Per-line**: No
 
@@ -247,11 +248,11 @@ These operators read external signals — CV (control voltage) or audio — from
 
 #### 3 — CV Input
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing rate. Fully counter-clockwise = instant response (no filtering). Fully clockwise = very slow response (heavy lowpass). |
-| Space | Gain | Output amplitude, 4× range. Unity gain at about 25% of travel. Maximum = 4× amplification. |
-| Slope | Channel | Input channel select. Six options across the knob range: channels 1–4 individually, or mixed pairs (ch1+2, ch3+4). |
+| Parameter | Label   | Function                                                                                                                         |
+| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Slew    | Smoothing rate. Fully counter-clockwise = instant response (no filtering). Fully clockwise = very slow response (heavy lowpass). |
+| Space     | Gain    | Output amplitude, 4× range. Unity gain at about 25% of travel. Maximum = 4× amplification.                                       |
+| Slope     | Channel | Input channel select. Six options across the knob range: channels 1–4 individually, or mixed pairs (ch1+2, ch3+4).               |
 
 **Per-line**: Yes
 
@@ -263,11 +264,11 @@ In per-line mode, each scanline reads its own input sample, so the modulation va
 
 #### 4 — Audio Input
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | *(Unused — this operator does not apply slew filtering. The knob has no effect.)* |
-| Space | Gain | Output amplitude, 4× range. |
-| Slope | Channel | Input channel select (same six options as CV Input). |
+| Parameter | Label   | Function                                                                          |
+| --------- | ------- | --------------------------------------------------------------------------------- |
+| Time      | Slew    | _(Unused — this operator does not apply slew filtering. The knob has no effect.)_ |
+| Space     | Gain    | Output amplitude, 4× range.                                                       |
+| Slope     | Channel | Input channel select (same six options as CV Input).                              |
 
 **Per-line**: Yes
 
@@ -279,11 +280,11 @@ Identical to CV Input but with no slew filtering — the raw input signal passes
 
 #### 21 — Ring Mod
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Output smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Channel | Channel pair. Lower half of the knob = ch1 × ch2. Upper half = ch3 × ch4. |
+| Parameter | Label   | Function                                                                                            |
+| --------- | ------- | --------------------------------------------------------------------------------------------------- |
+| Time      | Slew    | Output smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
+| Space     | Gain    | Output amplitude.                                                                                   |
+| Slope     | Channel | Channel pair. Lower half of the knob = ch1 × ch2. Upper half = ch3 × ch4.                           |
 
 **Per-line**: Yes
 
@@ -303,11 +304,11 @@ These operators track the amplitude or threshold crossings of external signals. 
 
 #### 6 — Envelope
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Attack | Attack rate. Fully counter-clockwise = instant (tracks peaks immediately). Fully clockwise = very slow (output rises gradually toward new peaks). |
-| Space | Release | Release rate. Fully counter-clockwise = instant (drops immediately when input falls). Fully clockwise = very slow (output holds peaks and decays gradually). |
-| Slope | Channel | Input channel select. |
+| Parameter | Label   | Function                                                                                                                                                     |
+| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Time      | Attack  | Attack rate. Fully counter-clockwise = instant (tracks peaks immediately). Fully clockwise = very slow (output rises gradually toward new peaks).            |
+| Space     | Release | Release rate. Fully counter-clockwise = instant (drops immediately when input falls). Fully clockwise = very slow (output holds peaks and decays gradually). |
+| Slope     | Channel | Input channel select.                                                                                                                                        |
 
 **Per-line**: No
 
@@ -321,11 +322,11 @@ Fast attack and slow release produce a classic "peak hold" envelope that capture
 
 #### 7 — Sample & Hold
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Clock period (50 ms–20 s). |
-| Space | Gain | Output amplitude. |
-| Slope | Channel | Input channel select. |
+| Parameter | Label   | Function                   |
+| --------- | ------- | -------------------------- |
+| Time      | Rate    | Clock period (50 ms–20 s). |
+| Space     | Gain    | Output amplitude.          |
+| Slope     | Channel | Input channel select.      |
 
 **Per-line**: No
 
@@ -339,11 +340,11 @@ Sample & Hold is one of the fundamental building blocks of analog synthesizer mo
 
 #### 8 — Trigger Env
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Attack | Attack rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
-| Space | Release | Release rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
-| Slope | Curve | Envelope shape. Three curves across the knob range: linear, exponential, and logarithmic. |
+| Parameter | Label   | Function                                                                                  |
+| --------- | ------- | ----------------------------------------------------------------------------------------- |
+| Time      | Attack  | Attack rate. Fully counter-clockwise = instant. Fully clockwise = very slow.              |
+| Space     | Release | Release rate. Fully counter-clockwise = instant. Fully clockwise = very slow.             |
+| Slope     | Curve   | Envelope shape. Three curves across the knob range: linear, exponential, and logarithmic. |
 
 **Per-line**: No
 
@@ -357,11 +358,11 @@ This is the operator to use when you want a parameter to respond to MIDI keyboar
 
 #### 10 — FFT Band
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Envelope smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Band | *(Display only — does not affect audio processing. The display shows a band label but the output always tracks broadband energy.)* |
+| Parameter | Label | Function                                                                                                                           |
+| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Envelope smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response.                              |
+| Space     | Gain  | Output amplitude.                                                                                                                  |
+| Slope     | Band  | _(Display only — does not affect audio processing. The display shows a band label but the output always tracks broadband energy.)_ |
 
 **Per-line**: No
 
@@ -375,11 +376,11 @@ Use FFT Band when you want a parameter to respond to the overall loudness of an 
 
 #### 18 — Comparator
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Thresh | Comparison threshold. Fully counter-clockwise = lowest threshold (almost everything passes). Fully clockwise = highest threshold (only the strongest signals pass). |
-| Space | Gain | Output amplitude. |
-| Slope | Channel | Input channel select. |
+| Parameter | Label   | Function                                                                                                                                                            |
+| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Thresh  | Comparison threshold. Fully counter-clockwise = lowest threshold (almost everything passes). Fully clockwise = highest threshold (only the strongest signals pass). |
+| Space     | Gain    | Output amplitude.                                                                                                                                                   |
+| Slope     | Channel | Input channel select.                                                                                                                                               |
 
 **Per-line**: Yes
 
@@ -393,11 +394,11 @@ In per-line mode, the comparison happens independently at each scanline, so the 
 
 #### 26 — Slew Limiter
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rise | Maximum rise rate. Fully counter-clockwise = nearly frozen (very slow rise). Fully clockwise = instant (follows input upward immediately). |
-| Space | Gain | Output amplitude. |
-| Slope | Fall | Maximum fall rate. Same scale as Rise but applied to downward movement. |
+| Parameter | Label | Function                                                                                                                                   |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Time      | Rise  | Maximum rise rate. Fully counter-clockwise = nearly frozen (very slow rise). Fully clockwise = instant (follows input upward immediately). |
+| Space     | Gain  | Output amplitude.                                                                                                                          |
+| Slope     | Fall  | Maximum fall rate. Same scale as Rise but applied to downward movement.                                                                    |
 
 **Per-line**: No
 
@@ -411,17 +412,17 @@ Asymmetric slew rates produce distinctive motion profiles. Fast rise and slow fa
 
 #### 24 — Peak Hold
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Decay | Decay rate. Fully counter-clockwise = instant decay (output tracks input directly). Fully clockwise = infinite hold (peaks are captured and never decay). |
-| Space | Gain | Output amplitude. |
-| Slope | Channel | Input channel select. |
+| Parameter | Label   | Function                                                                                                                                                  |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Decay   | Decay rate. Fully counter-clockwise = instant decay (output tracks input directly). Fully clockwise = infinite hold (peaks are captured and never decay). |
+| Space     | Gain    | Output amplitude.                                                                                                                                         |
+| Slope     | Channel | Input channel select.                                                                                                                                     |
 
 **Per-line**: Yes
 
 A peak detector with configurable hold time. New peaks in the input are captured instantly — the output jumps to match. Between peaks, the output decays toward zero at the rate set by Decay. With the knob fully counter-clockwise (fastest decay), the output simply follows the input. With the knob fully clockwise (no decay), peaks are held indefinitely, creating a ratchet effect where the output can only go up.
 
-The per-line variant outputs the *maximum* of the held peak and the current scanline's input value, so per-line variation from the input signal is preserved while the held peak provides a floor.
+The per-line variant outputs the _maximum_ of the held peak and the current scanline's input value, so per-line variation from the input signal is preserved while the held peak provides a floor.
 
 ![Peak Hold — Decay Rates](/img/instruments/videomancer/modulation/peak_hold.png)
 
@@ -429,11 +430,11 @@ The per-line variant outputs the *maximum* of the held peak and the current scan
 
 #### 25 — Field Accum
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Integration rate. Controls how much of the input signal is added per field (1/64 at minimum, 1/1 at maximum). |
-| Space | Gain | Output amplitude. |
-| Slope | Leak | Drain rate and input channel select. Fully counter-clockwise = no leak (pure integrator, value latches). Fully clockwise = fast drain (output returns to center quickly). |
+| Parameter | Label | Function                                                                                                                                                                  |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Integration rate. Controls how much of the input signal is added per field (1/64 at minimum, 1/1 at maximum).                                                             |
+| Space     | Gain  | Output amplitude.                                                                                                                                                         |
+| Slope     | Leak  | Drain rate and input channel select. Fully counter-clockwise = no leak (pure integrator, value latches). Fully clockwise = fast drain (output returns to center quickly). |
 
 **Per-line**: No
 
@@ -447,11 +448,11 @@ With no leak and a steady input, Field Accum ramps steadily in one direction unt
 
 #### 31 — Quantizer
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Levels | Number of quantization levels (2 at minimum, 32 at maximum). |
-| Space | Gain | Output amplitude. |
-| Slope | Channel | Input channel select. |
+| Parameter | Label   | Function                                                     |
+| --------- | ------- | ------------------------------------------------------------ |
+| Time      | Levels  | Number of quantization levels (2 at minimum, 32 at maximum). |
+| Space     | Gain    | Output amplitude.                                            |
+| Slope     | Channel | Input channel select.                                        |
 
 **Per-line**: Yes
 
@@ -473,11 +474,11 @@ These operators produce non-repeating or quasi-periodic patterns. They range fro
 
 #### 5 — Random
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rise | Rise slew rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
-| Space | Gain | Output amplitude. |
-| Slope | Fall | Fall slew rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
+| Parameter | Label | Function                                                                        |
+| --------- | ----- | ------------------------------------------------------------------------------- |
+| Time      | Rise  | Rise slew rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
+| Space     | Gain  | Output amplitude.                                                               |
+| Slope     | Fall  | Fall slew rate. Fully counter-clockwise = instant. Fully clockwise = very slow. |
 
 **Per-line**: No
 
@@ -491,11 +492,11 @@ With both slew rates at zero (instant), the output jumps to a new random value e
 
 #### 20 — Drift
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Step size / volatility. Fully counter-clockwise = static (no movement). Fully clockwise = large random steps. |
-| Space | Gain | Output amplitude. |
-| Slope | Range | Centering pull. Fully counter-clockwise = free walk (no centering). Fully clockwise = tight centering (output stays near middle). |
+| Parameter | Label | Function                                                                                                                          |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Step size / volatility. Fully counter-clockwise = static (no movement). Fully clockwise = large random steps.                     |
+| Space     | Gain  | Output amplitude.                                                                                                                 |
+| Slope     | Range | Centering pull. Fully counter-clockwise = free walk (no centering). Fully clockwise = tight centering (output stays near middle). |
 
 **Per-line**: No
 
@@ -509,11 +510,11 @@ Drift produces motion that feels organic and aimless — like a leaf blowing in 
 
 #### 27 — Perlin Noise
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Speed | Evolution rate. Fully counter-clockwise = slow, gradual drift. Fully clockwise = fast, rapidly changing texture. |
-| Space | Gain | Output amplitude. |
-| Slope | Detail | Octave count. Fully counter-clockwise = 1 octave (smooth, gentle undulation). Fully clockwise = 4 octaves (rough, detailed texture). |
+| Parameter | Label  | Function                                                                                                                             |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Time      | Speed  | Evolution rate. Fully counter-clockwise = slow, gradual drift. Fully clockwise = fast, rapidly changing texture.                     |
+| Space     | Gain   | Output amplitude.                                                                                                                    |
+| Slope     | Detail | Octave count. Fully counter-clockwise = 1 octave (smooth, gentle undulation). Fully clockwise = 4 octaves (rough, detailed texture). |
 
 **Per-line**: No
 
@@ -527,11 +528,11 @@ The Detail parameter adds octave layering — additional noise at higher frequen
 
 #### 12 — Turing Machine
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Clock period (50 ms–20 s). |
-| Space | Gain | Output amplitude. |
-| Slope | Mutate | Mutation probability. Fully counter-clockwise = locked (perfectly repeating cycle). Center = 50% (every other bit is mutated). Fully clockwise = fully random (no pattern memory). |
+| Parameter | Label  | Function                                                                                                                                                                           |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate   | Clock period (50 ms–20 s).                                                                                                                                                         |
+| Space     | Gain   | Output amplitude.                                                                                                                                                                  |
+| Slope     | Mutate | Mutation probability. Fully counter-clockwise = locked (perfectly repeating cycle). Center = 50% (every other bit is mutated). Fully clockwise = fully random (no pattern memory). |
 
 **Per-line**: No
 
@@ -545,11 +546,11 @@ At zero mutation, the sequence cycles through a fixed 255-step pattern that repe
 
 #### 38 — MIDI Turing
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Output smoothing. Fully counter-clockwise = instant jumps (new value appears immediately). Fully clockwise = slow glide (output slews toward the new value over many frames). |
-| Space | Gain | Output amplitude. |
-| Slope | Mutate | Mutation probability. Same behavior as Turing Machine: fully counter-clockwise = locked loop, fully clockwise = fully random, center = 50% mutation. |
+| Parameter | Label  | Function                                                                                                                                                                      |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Slew   | Output smoothing. Fully counter-clockwise = instant jumps (new value appears immediately). Fully clockwise = slow glide (output slews toward the new value over many frames). |
+| Space     | Gain   | Output amplitude.                                                                                                                                                             |
+| Slope     | Mutate | Mutation probability. Same behavior as Turing Machine: fully counter-clockwise = locked loop, fully clockwise = fully random, center = 50% mutation.                          |
 
 **Per-line**: No
 
@@ -563,11 +564,11 @@ The Slew parameter replaces Rate (since timing is now determined by MIDI input).
 
 #### 14 — Logistic Map
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Iteration clock (50 ms–20 s). |
-| Space | Gain | Output amplitude. |
-| Slope | Chaos | Controls the balance between order and randomness. Fully counter-clockwise = stable, repeating value. Center = oscillation between a few values. Fully clockwise = full chaos (output never repeats). |
+| Parameter | Label | Function                                                                                                                                                                                              |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Iteration clock (50 ms–20 s).                                                                                                                                                                         |
+| Space     | Gain  | Output amplitude.                                                                                                                                                                                     |
+| Slope     | Chaos | Controls the balance between order and randomness. Fully counter-clockwise = stable, repeating value. Center = oscillation between a few values. Fully clockwise = full chaos (output never repeats). |
 
 **Per-line**: No
 
@@ -581,11 +582,11 @@ Sweeping Chaos from low to high reveals a characteristic progression: at the low
 
 #### 22 — Cellular
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Generation clock (50 ms–20 s). |
-| Space | Gain | Output amplitude. |
-| Slope | Rule | Automaton rule select. Four elementary cellular automaton rules across the knob: Rule 30 (chaotic), Rule 90 (fractal/Sierpinski), Rule 110 (complex), Rule 150 (symmetric complex). |
+| Parameter | Label | Function                                                                                                                                                                            |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate  | Generation clock (50 ms–20 s).                                                                                                                                                      |
+| Space     | Gain  | Output amplitude.                                                                                                                                                                   |
+| Slope     | Rule  | Automaton rule select. Four elementary cellular automaton rules across the knob: Rule 30 (chaotic), Rule 90 (fractal/Sierpinski), Rule 110 (complex), Rule 150 (symmetric complex). |
 
 **Per-line**: No
 
@@ -607,11 +608,11 @@ These operators produce structured, repeating patterns — step sequences, rhyth
 
 #### 9 — Step Seq
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Clock period (50 ms–20 s). |
-| Space | Depth | Output amplitude. |
-| Slope | Pattern | Pattern select. Eight preset patterns across the knob: pulse, ramp up, ramp down, triangle, alternating, staircase, spike, and random-latch. |
+| Parameter | Label   | Function                                                                                                                                     |
+| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Rate    | Clock period (50 ms–20 s).                                                                                                                   |
+| Space     | Depth   | Output amplitude.                                                                                                                            |
+| Slope     | Pattern | Pattern select. Eight preset patterns across the knob: pulse, ramp up, ramp down, triangle, alternating, staircase, spike, and random-latch. |
 
 **Per-line**: No
 
@@ -625,11 +626,11 @@ The patterns cover common modulation shapes: Pulse alternates between high and l
 
 #### 15 — Euclidean Rhythm
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Clock period (50 ms–20 s). |
-| Space | Gain | Output amplitude. |
-| Slope | Density | Pulse count. Fully counter-clockwise = 0 pulses (silent). Fully clockwise = 16 pulses (all steps active). |
+| Parameter | Label   | Function                                                                                                  |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| Time      | Rate    | Clock period (50 ms–20 s).                                                                                |
+| Space     | Gain    | Output amplitude.                                                                                         |
+| Slope     | Density | Pulse count. Fully counter-clockwise = 0 pulses (silent). Fully clockwise = 16 pulses (all steps active). |
 
 **Per-line**: No
 
@@ -643,11 +644,11 @@ The output is binary per step (high or low), making this operator ideal for bool
 
 #### 29 — Clock Div
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Division | Division ratio. Fully counter-clockwise = ÷1 (follows transport directly). Fully clockwise = ÷16. |
-| Space | Gain | Output amplitude. |
-| Slope | Duty | Gate duty cycle. Fully counter-clockwise = shortest possible pulse. Center = 50% (symmetric square). Fully clockwise = nearly 100% (gate stays open almost the entire divided period). |
+| Parameter | Label    | Function                                                                                                                                                                               |
+| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Division | Division ratio. Fully counter-clockwise = ÷1 (follows transport directly). Fully clockwise = ÷16.                                                                                      |
+| Space     | Gain     | Output amplitude.                                                                                                                                                                      |
+| Slope     | Duty     | Gate duty cycle. Fully counter-clockwise = shortest possible pulse. Center = 50% (symmetric square). Fully clockwise = nearly 100% (gate stays open almost the entire divided period). |
 
 **Per-line**: No
 
@@ -661,11 +662,11 @@ Clock Div is the rhythmic complement to Motion LFO. Where Motion LFO produces co
 
 #### 30 — Prob Gate
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Rate | Gate period (50 ms–20 s). |
-| Space | Prob | Probability of the gate being "high" on any given period (0% = never, 50% = half the time, 100% = always). |
-| Slope | Length | Gate length within the period. Controls what fraction of the period the gate stays open when it fires. |
+| Parameter | Label  | Function                                                                                                   |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------- |
+| Time      | Rate   | Gate period (50 ms–20 s).                                                                                  |
+| Space     | Prob   | Probability of the gate being "high" on any given period (0% = never, 50% = half the time, 100% = always). |
+| Slope     | Length | Gate length within the period. Controls what fraction of the period the gate stays open when it fires.     |
 
 **Per-line**: No
 
@@ -685,11 +686,11 @@ These operators are designed to produce values that vary across the video frame 
 
 #### 11 — H Displace
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Freq | *(unused)* |
-| Space | Depth | *(unused)* |
-| Slope | Wave | *(unused)* |
+| Parameter | Label | Function   |
+| --------- | ----- | ---------- |
+| Time      | Freq  | _(unused)_ |
+| Space     | Depth | _(unused)_ |
+| Slope     | Wave  | _(unused)_ |
 
 **Per-line**: No
 
@@ -699,11 +700,11 @@ These operators are designed to produce values that vary across the video frame 
 
 #### 17 — V Gradient
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Freq | *(unused)* |
-| Space | Depth | *(unused)* |
-| Slope | Wave | *(unused)* |
+| Parameter | Label | Function   |
+| --------- | ----- | ---------- |
+| Time      | Freq  | _(unused)_ |
+| Space     | Depth | _(unused)_ |
+| Slope     | Wave  | _(unused)_ |
 
 **Per-line**: No
 
@@ -719,11 +720,11 @@ These operators simulate physical systems. They produce the kinds of motion that
 
 #### 13 — Bouncing Ball
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Gravity | Gravitational acceleration. Fully counter-clockwise = weak gravity (floaty, slow falls). Fully clockwise = strong gravity (fast, violent bounces). |
-| Space | Gain | Output amplitude. |
-| Slope | Bounce | Elasticity. Fully counter-clockwise = no bounce (ball sticks to floor). Fully clockwise = nearly perfect bounce (ball returns to almost its original height). |
+| Parameter | Label   | Function                                                                                                                                                      |
+| --------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Gravity | Gravitational acceleration. Fully counter-clockwise = weak gravity (floaty, slow falls). Fully clockwise = strong gravity (fast, violent bounces).            |
+| Space     | Gain    | Output amplitude.                                                                                                                                             |
+| Slope     | Bounce  | Elasticity. Fully counter-clockwise = no bounce (ball sticks to floor). Fully clockwise = nearly perfect bounce (ball returns to almost its original height). |
 
 **Per-line**: No
 
@@ -737,11 +738,11 @@ A MIDI note-on resets the ball to the ceiling when the ball has come to rest on 
 
 #### 19 — Pendulum
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Length | Pendulum period. Fully counter-clockwise = short pendulum (fast swings). Fully clockwise = long pendulum (slow swings). |
-| Space | Gain | Output amplitude. |
-| Slope | Damp | Damping coefficient. Fully counter-clockwise = undamped (oscillates forever). Fully clockwise = heavy damping (oscillation dies out quickly). |
+| Parameter | Label  | Function                                                                                                                                      |
+| --------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Time      | Length | Pendulum period. Fully counter-clockwise = short pendulum (fast swings). Fully clockwise = long pendulum (slow swings).                       |
+| Space     | Gain   | Output amplitude.                                                                                                                             |
+| Slope     | Damp   | Damping coefficient. Fully counter-clockwise = undamped (oscillates forever). Fully clockwise = heavy damping (oscillation dies out quickly). |
 
 **Per-line**: No
 
@@ -763,11 +764,11 @@ These operators use USB-connected human interface devices as modulation sources.
 
 #### 32 — Mouse
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow, gliding response. |
-| Space | Gain | Output amplitude. |
-| Slope | Axis | Selects which mouse axis to read: X position, Y position, Scroll Wheel, or Buttons. |
+| Parameter | Label | Function                                                                                              |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow, gliding response. |
+| Space     | Gain  | Output amplitude.                                                                                     |
+| Slope     | Axis  | Selects which mouse axis to read: X position, Y position, Scroll Wheel, or Buttons.                   |
 
 **Per-line**: No
 
@@ -783,11 +784,11 @@ Approximately two full mouse sweeps cover the entire modulation range. For finer
 
 #### 33 — Keyboard
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Attack | Ramp-up rate when a key is pressed. Fully counter-clockwise = instant. Fully clockwise = very slow. |
-| Space | Release | Ramp-down rate when all keys are released. Fully counter-clockwise = instant. Fully clockwise = very slow. |
-| Slope | Curve | Envelope shape: linear, exponential, or logarithmic. |
+| Parameter | Label   | Function                                                                                                   |
+| --------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| Time      | Attack  | Ramp-up rate when a key is pressed. Fully counter-clockwise = instant. Fully clockwise = very slow.        |
+| Space     | Release | Ramp-down rate when all keys are released. Fully counter-clockwise = instant. Fully clockwise = very slow. |
+| Slope     | Curve   | Envelope shape: linear, exponential, or logarithmic.                                                       |
 
 **Per-line**: No
 
@@ -803,11 +804,11 @@ Particularly useful in performance when a MIDI controller is not available — a
 
 #### 34 — Gamepad
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Axis | Selects which gamepad input to read: Left Stick X/Y, Right Stick X/Y, Left/Right Trigger, or Buttons. |
+| Parameter | Label | Function                                                                                              |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response.          |
+| Space     | Gain  | Output amplitude.                                                                                     |
+| Slope     | Axis  | Selects which gamepad input to read: Left Stick X/Y, Right Stick X/Y, Left/Right Trigger, or Buttons. |
 
 **Per-line**: No
 
@@ -821,11 +822,11 @@ See [Gamepad](#gamepad) in USB HID Devices for axis details, spring-return behav
 
 #### 35 — Tablet
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Axis | Selects which tablet input to read: X Position, Y Position, Pressure, or Buttons. |
+| Parameter | Label | Function                                                                                     |
+| --------- | ----- | -------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
+| Space     | Gain  | Output amplitude.                                                                            |
+| Slope     | Axis  | Selects which tablet input to read: X Position, Y Position, Pressure, or Buttons.            |
 
 **Per-line**: No
 
@@ -841,11 +842,11 @@ See [Drawing Tablet](#drawing-tablet) in USB HID Devices for device compatibilit
 
 #### 36 — Joystick
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Axis | Selects which joystick input to read: X, Y, Z, Rx, Ry, Rz, Hat, or Buttons. |
+| Parameter | Label | Function                                                                                     |
+| --------- | ----- | -------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
+| Space     | Gain  | Output amplitude.                                                                            |
+| Slope     | Axis  | Selects which joystick input to read: X, Y, Z, Rx, Ry, Rz, Hat, or Buttons.                  |
 
 **Per-line**: No
 
@@ -861,11 +862,11 @@ See [Joystick](#joystick) in USB HID Devices for axis mapping, compatibility not
 
 #### 37 — Sensor
 
-| Parameter | Label | Function |
-|-----------|-------|----------|
-| Time | Slew | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
-| Space | Gain | Output amplitude. |
-| Slope | Axis | Selects which sensor axis to read: Accel X/Y/Z, Gyro X/Y/Z, or Magnitude. |
+| Parameter | Label | Function                                                                                     |
+| --------- | ----- | -------------------------------------------------------------------------------------------- |
+| Time      | Slew  | Smoothing. Fully counter-clockwise = instant response. Fully clockwise = very slow response. |
+| Space     | Gain  | Output amplitude.                                                                            |
+| Slope     | Axis  | Selects which sensor axis to read: Accel X/Y/Z, Gyro X/Y/Z, or Magnitude.                    |
 
 **Per-line**: No
 
@@ -883,14 +884,14 @@ See [Sensor](#sensor) in USB HID Devices for axis orientation, rest positions, a
 
 Six of the 39 operators produce per-scanline varying output. This means the modulation value changes for every horizontal line of the video frame, not just once per field. Per-line rendering enables spatial modulation effects that would be impossible with field-rate updates alone.
 
-| Operator | Per-line function | What varies per line |
-|------|-------------------|---------------------|
-| **CV Input** | Reads input at each scanline | Input voltage at that moment in the scan |
-| **Audio Input** | Reads input at each scanline | Audio waveform mapped to vertical position |
-| **Comparator** | Compares input at each scanline | Binary threshold map across frame |
-| **Ring Mod** | Multiplies two input channels per line | Product of two input signals, spatially varying |
-| **Peak Hold** | Combines held peak with per-line input | Spatial floor at the held peak value |
-| **Quantizer** | Quantizes input at each scanline | Staircase-quantized spatial pattern |
+| Operator        | Per-line function                      | What varies per line                            |
+| --------------- | -------------------------------------- | ----------------------------------------------- |
+| **CV Input**    | Reads input at each scanline           | Input voltage at that moment in the scan        |
+| **Audio Input** | Reads input at each scanline           | Audio waveform mapped to vertical position      |
+| **Comparator**  | Compares input at each scanline        | Binary threshold map across frame               |
+| **Ring Mod**    | Multiplies two input channels per line | Product of two input signals, spatially varying |
+| **Peak Hold**   | Combines held peak with per-line input | Spatial floor at the held peak value            |
+| **Quantizer**   | Quantizes input at each scanline       | Staircase-quantized spatial pattern             |
 
 > **Note**: H Displace and V Gradient are listed in the operator reference as spatial per-line operators, but they are currently disabled in firmware and produce no per-line output. They are reserved for a future firmware update.
 
@@ -912,14 +913,14 @@ Each input is sampled once per video scanline, synchronized to the video timing.
 
 Eleven modulation operators read from the analog inputs — CV Input, Audio Input, FFT Band, Envelope, Sample & Hold, Comparator, Ring Mod, Peak Hold, Field Accum, Slew Limiter, and Quantizer. Most of these operators let you select which input channel to read via the **Slope** knob, with six options:
 
-| Slope Position | Channel | Description |
-|----------------|---------|-------------|
-| Far left | Ch 1 | Input jack 1 only |
-| Left of center | Ch 2 | Input jack 2 only |
-| Center-left | Ch 3 | Input jack 3 only |
-| Center-right | Ch 4 | Input jack 4 only |
-| Right of center | Ch 1+2 | Average of inputs 1 and 2 |
-| Far right | Ch 3+4 | Average of inputs 3 and 4 |
+| Slope Position  | Channel | Description               |
+| --------------- | ------- | ------------------------- |
+| Far left        | Ch 1    | Input jack 1 only         |
+| Left of center  | Ch 2    | Input jack 2 only         |
+| Center-left     | Ch 3    | Input jack 3 only         |
+| Center-right    | Ch 4    | Input jack 4 only         |
+| Right of center | Ch 1+2  | Average of inputs 1 and 2 |
+| Far right       | Ch 3+4  | Average of inputs 3 and 4 |
 
 The mixed-pair options (Ch 1+2 and Ch 3+4) are useful when you want a modulation source derived from two related signals — for example, left and right channels of a stereo audio signal.
 
@@ -1021,12 +1022,12 @@ The front-panel **USB Device** port (USB-C connector, also used for firmware upd
 
 All three MIDI ports support the same set of standard MIDI messages:
 
-| Category | Messages |
-|----------|----------|
-| **Channel Voice** | Note On, Note Off, Control Change, Program Change, Pitch Bend, Polyphonic Aftertouch, Channel Pressure |
-| **System Common** | MTC Quarter Frame, Song Position Pointer, Song Select, Tune Request |
-| **System Real-Time** | Clock, Start, Continue, Stop, Active Sensing, System Reset |
-| **System Exclusive** | SysEx (up to 64 bytes) |
+| Category             | Messages                                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Channel Voice**    | Note On, Note Off, Control Change, Program Change, Pitch Bend, Polyphonic Aftertouch, Channel Pressure |
+| **System Common**    | MTC Quarter Frame, Song Position Pointer, Song Select, Tune Request                                    |
+| **System Real-Time** | Clock, Start, Continue, Stop, Active Sensing, System Reset                                             |
+| **System Exclusive** | SysEx (up to 64 bytes)                                                                                 |
 
 All standard MIDI behaviors are supported, including interpreting **Note On with velocity 0** as Note Off.
 
@@ -1038,20 +1039,20 @@ MIDI Continuous Controller (CC) messages are the primary way to remotely control
 
 Out of the box, the CC assignments are:
 
-| Modulator | CC MSB | CC LSB | Control |
-|-----------|--------|--------|---------|
-| P1 (Knob 1) | CC 0 | CC 32 | Rotary knob 1 |
-| P2 (Knob 2) | CC 1 | CC 33 | Rotary knob 2 |
-| P3 (Knob 3) | CC 2 | CC 34 | Rotary knob 3 |
-| P4 (Knob 4) | CC 3 | CC 35 | Rotary knob 4 |
-| P5 (Knob 5) | CC 4 | CC 36 | Rotary knob 5 |
-| P6 (Knob 6) | CC 5 | CC 37 | Rotary knob 6 |
-| P7 (Toggle 7) | CC 6 | CC 38 | Toggle switch 7 |
-| P8 (Toggle 8) | CC 7 | CC 39 | Toggle switch 8 |
-| P9 (Toggle 9) | CC 8 | CC 40 | Toggle switch 9 |
-| P10 (Toggle 10) | CC 9 | CC 41 | Toggle switch 10 |
-| P11 (Toggle 11) | CC 10 | CC 42 | Toggle switch 11 |
-| P12 (Fader) | CC 11 | CC 43 | Linear fader 12 |
+| Modulator       | CC MSB | CC LSB | Control          |
+| --------------- | ------ | ------ | ---------------- |
+| P1 (Knob 1)     | CC 0   | CC 32  | Rotary knob 1    |
+| P2 (Knob 2)     | CC 1   | CC 33  | Rotary knob 2    |
+| P3 (Knob 3)     | CC 2   | CC 34  | Rotary knob 3    |
+| P4 (Knob 4)     | CC 3   | CC 35  | Rotary knob 4    |
+| P5 (Knob 5)     | CC 4   | CC 36  | Rotary knob 5    |
+| P6 (Knob 6)     | CC 5   | CC 37  | Rotary knob 6    |
+| P7 (Toggle 7)   | CC 6   | CC 38  | Toggle switch 7  |
+| P8 (Toggle 8)   | CC 7   | CC 39  | Toggle switch 8  |
+| P9 (Toggle 9)   | CC 8   | CC 40  | Toggle switch 9  |
+| P10 (Toggle 10) | CC 9   | CC 41  | Toggle switch 10 |
+| P11 (Toggle 11) | CC 10  | CC 42  | Toggle switch 11 |
+| P12 (Fader)     | CC 11  | CC 43  | Linear fader 12  |
 
 #### 14-Bit Resolution
 
@@ -1161,15 +1162,15 @@ A power cycle during assign mode is harmless — assign mode is a temporary UI s
 
 #### Summary of Assign Mode Interactions
 
-| User Action | System Response |
-|-------------|-----------------|
-| Short-press Px | Normal: cycles modulator parameter page |
-| Long-press Px (≥1.4 s), no existing CC | Enters assign mode (LCD + LED blink) |
-| Long-press Px (≥1.4 s), CC already assigned | Clears the assignment, shows "CC cleared!" |
-| Move MIDI knob during assign (any port) | Captures CC, shows "CC N assigned!", persists |
-| Rotate encoder during assign | Selects CC# manually (0–127, wrapping) |
-| Press encoder (CC# dialed in) | Confirms manual CC# selection, persists |
-| Press encoder (no CC# dialed in) | Cancels assign mode, no change |
+| User Action                                 | System Response                               |
+| ------------------------------------------- | --------------------------------------------- |
+| Short-press Px                              | Normal: cycles modulator parameter page       |
+| Long-press Px (≥1.4 s), no existing CC      | Enters assign mode (LCD + LED blink)          |
+| Long-press Px (≥1.4 s), CC already assigned | Clears the assignment, shows "CC cleared!"    |
+| Move MIDI knob during assign (any port)     | Captures CC, shows "CC N assigned!", persists |
+| Rotate encoder during assign                | Selects CC# manually (0–127, wrapping)        |
+| Press encoder (CC# dialed in)               | Confirms manual CC# selection, persists       |
+| Press encoder (no CC# dialed in)            | Cancels assign mode, no change                |
 
 ![MIDI Assign — State Flow](/img/instruments/videomancer/modulation/midi_learn_flow.png)
 
@@ -1180,19 +1181,19 @@ MIDI note messages provide trigger control for modulation operators that respond
 **Note-to-modulator mapping**: Note numbers 0 through 11 map directly to modulators P1 through P12. Note 0 triggers P1, note 1 triggers P2, and so on. Notes 12 and above are ignored.
 
 | Note Number | Modulator | Octave (Middle C = 60) |
-|-------------|-----------|------------------------|
-| 0 (C-2) | P1 | Lowest C |
-| 1 (C#-2) | P2 | |
-| 2 (D-2) | P3 | |
-| 3 (D#-2) | P4 | |
-| 4 (E-2) | P5 | |
-| 5 (F-2) | P6 | |
-| 6 (F#-2) | P7 | |
-| 7 (G-2) | P8 | |
-| 8 (G#-2) | P9 | |
-| 9 (A-2) | P10 | |
-| 10 (A#-2) | P11 | |
-| 11 (B-2) | P12 | |
+| ----------- | --------- | ---------------------- |
+| 0 (C-2)     | P1        | Lowest C               |
+| 1 (C#-2)    | P2        |                        |
+| 2 (D-2)     | P3        |                        |
+| 3 (D#-2)    | P4        |                        |
+| 4 (E-2)     | P5        |                        |
+| 5 (F-2)     | P6        |                        |
+| 6 (F#-2)    | P7        |                        |
+| 7 (G-2)     | P8        |                        |
+| 8 (G#-2)    | P9        |                        |
+| 9 (A-2)     | P10       |                        |
+| 10 (A#-2)   | P11       |                        |
+| 11 (B-2)    | P12       |                        |
 
 **Note On** activates the target modulator. Operators that respond to notes — like Trigger Env — begin their attack phase. Bouncing Ball resets to the top and starts a new drop. MIDI Turing advances one step in its shift register sequence.
 
@@ -1222,13 +1223,14 @@ The BPM is displayed on the LCD and used by all transport-locked operators. No m
 
 Three MIDI messages control the transport state:
 
-| Message | Action |
-|---------|--------|
-| **Start** | Begins playback from the start. The transport position resets to zero. |
-| **Continue** | Resumes playback from the current position. |
-| **Stop** | Stops playback. BPM continues to be tracked from incoming clock messages. |
+| Message      | Action                                                                    |
+| ------------ | ------------------------------------------------------------------------- |
+| **Start**    | Begins playback from the start. The transport position resets to zero.    |
+| **Continue** | Resumes playback from the current position.                               |
+| **Stop**     | Stops playback. BPM continues to be tracked from incoming clock messages. |
 
 Transport state affects different operators differently:
+
 - **Free LFO** and most operators produce no modulation output while the transport is stopped. Free LFO resets its phase to zero on stop.
 - **Sync LFO** advances only while playing. Its output drops to zero when stopped and freezes when paused.
 - **Motion LFO** reads the transport phase directly. It jumps to the correct position when playback starts.
@@ -1249,21 +1251,21 @@ When no MIDI clock is connected, the BPM can be set manually via tap tempo. Tapp
 
 The transport LEDs reflect the current state:
 
-| State | Stop LED | Play LED |
-|-------|----------|----------|
-| **Stopped** | Solid on | Off |
-| **Playing** | Off | Solid on |
-| **Paused** | Off | Blinking |
+| State       | Stop LED | Play LED |
+| ----------- | -------- | -------- |
+| **Stopped** | Solid on | Off      |
+| **Playing** | Off      | Solid on |
+| **Paused**  | Off      | Blinking |
 
 ### MIDI Channel Filtering
 
 All MIDI input can be filtered by channel:
 
-| Setting | Behavior |
-|---------|----------|
-| **Disabled** | No MIDI messages are processed |
-| **Omni** (default) | Messages on all 16 MIDI channels are accepted |
-| **Channel 1–16** | Only messages on the selected channel are accepted |
+| Setting            | Behavior                                           |
+| ------------------ | -------------------------------------------------- |
+| **Disabled**       | No MIDI messages are processed                     |
+| **Omni** (default) | Messages on all 16 MIDI channels are accepted      |
+| **Channel 1–16**   | Only messages on the selected channel are accepted |
 
 The channel filter applies to CC, note, program change, and aftertouch messages. System messages (clock, start, stop, continue, SysEx) are always accepted regardless of the channel filter setting, since they have no channel.
 
@@ -1277,14 +1279,14 @@ Videomancer's USB Host port accepts standard USB Human Interface Devices — mic
 
 ### Supported Device Types
 
-| Device Type | Input Style | Typical Use |
-|-------------|-------------|-------------|
-| **Mouse** | Accumulated relative position | Sweep parameters by dragging |
-| **Keyboard** | Gate (any key pressed) | Trigger envelopes and gates |
-| **Gamepad** | Analog sticks, triggers, buttons | Two-axis control, spring-return |
-| **Drawing Tablet** | Absolute position, pressure | Pressure-expressive gestural control |
-| **Joystick** | Up to 6 axes, hat switch, buttons | Multi-axis flight stick, HOTAS, throttle |
-| **Sensor** | Accelerometer, gyroscope | Motion-controlled tilt/shake modulation |
+| Device Type        | Input Style                       | Typical Use                              |
+| ------------------ | --------------------------------- | ---------------------------------------- |
+| **Mouse**          | Accumulated relative position     | Sweep parameters by dragging             |
+| **Keyboard**       | Gate (any key pressed)            | Trigger envelopes and gates              |
+| **Gamepad**        | Analog sticks, triggers, buttons  | Two-axis control, spring-return          |
+| **Drawing Tablet** | Absolute position, pressure       | Pressure-expressive gestural control     |
+| **Joystick**       | Up to 6 axes, hat switch, buttons | Multi-axis flight stick, HOTAS, throttle |
+| **Sensor**         | Accelerometer, gyroscope          | Motion-controlled tilt/shake modulation  |
 
 ### Connecting Devices
 
@@ -1298,12 +1300,12 @@ HID state is persistent — the accumulated mouse position, keyboard gate, gamep
 
 Any standard USB mouse works, including wireless mice with USB receivers. The mouse provides four modulation axes selectable via the Slope knob on the Mouse operator (operator 32):
 
-| Axis | Behavior |
-|------|----------|
-| **X position** | Accumulated horizontal movement (starts at center) |
-| **Y position** | Accumulated vertical movement (starts at center) |
-| **Scroll wheel** | Accumulated scroll movement (starts at center) |
-| **Buttons** | Gate: any button pressed |
+| Axis             | Behavior                                           |
+| ---------------- | -------------------------------------------------- |
+| **X position**   | Accumulated horizontal movement (starts at center) |
+| **Y position**   | Accumulated vertical movement (starts at center)   |
+| **Scroll wheel** | Accumulated scroll movement (starts at center)     |
+| **Buttons**      | Gate: any button pressed                           |
 
 Mouse movement is relative — the mouse reports how far it moved since the last report, and Videomancer accumulates those movements into a bounded position. Moving left decreases X; moving right increases it. The position starts at center and clamps at both extremes, so continuous movement in one direction eventually hits the limit.
 
@@ -1319,11 +1321,11 @@ The key count (how many keys are currently pressed) is tracked. This means holdi
 
 The three operator parameters control the envelope shape:
 
-| Parameter | Function |
-|-----------|----------|
-| **Time** (Attack) | How fast the output ramps up when a key is pressed. Fully counter-clockwise = instant snap to maximum. Fully clockwise = very slow swell. |
-| **Space** (Release) | How fast the output ramps down when all keys are released. Fully counter-clockwise = instant cut. Fully clockwise = long decay. |
-| **Slope** (Curve) | Envelope contour: linear (equal rate throughout), exponential (fast start, slow finish), or logarithmic (slow start, fast finish). |
+| Parameter           | Function                                                                                                                                  |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time** (Attack)   | How fast the output ramps up when a key is pressed. Fully counter-clockwise = instant snap to maximum. Fully clockwise = very slow swell. |
+| **Space** (Release) | How fast the output ramps down when all keys are released. Fully counter-clockwise = instant cut. Fully clockwise = long decay.           |
+| **Slope** (Curve)   | Envelope contour: linear (equal rate throughout), exponential (fast start, slow finish), or logarithmic (slow start, fast finish).        |
 
 Keyboard modulation is useful when a MIDI controller is not available. Any USB keyboard becomes a modulation trigger surface — press keys for percussive hits, hold keys for sustained effects, or tap rhythmically for gated patterns.
 
@@ -1333,15 +1335,15 @@ Keyboard modulation is useful when a MIDI controller is not available. Any USB k
 
 Standard USB gamepads (Xbox-compatible, PlayStation-compatible, and generic HID gamepads) are supported. The Gamepad operator (operator 34) provides seven selectable inputs:
 
-| Input | Behavior | Rest Position |
-|-------|----------|---------------|
-| **Left Stick X** | Horizontal axis, spring-centered | Center |
-| **Left Stick Y** | Vertical axis, spring-centered | Center |
-| **Right Stick X** | Horizontal axis, spring-centered | Center |
-| **Right Stick Y** | Vertical axis, spring-centered | Center |
-| **Left Trigger** | Linear pull, no spring return | Minimum (released) |
-| **Right Trigger** | Linear pull, no spring return | Minimum (released) |
-| **Buttons** | Gate: any button pressed | Off (released) |
+| Input             | Behavior                         | Rest Position      |
+| ----------------- | -------------------------------- | ------------------ |
+| **Left Stick X**  | Horizontal axis, spring-centered | Center             |
+| **Left Stick Y**  | Vertical axis, spring-centered   | Center             |
+| **Right Stick X** | Horizontal axis, spring-centered | Center             |
+| **Right Stick Y** | Vertical axis, spring-centered   | Center             |
+| **Left Trigger**  | Linear pull, no spring return    | Minimum (released) |
+| **Right Trigger** | Linear pull, no spring return    | Minimum (released) |
+| **Buttons**       | Gate: any button pressed         | Off (released)     |
 
 Analog sticks are **spring-centered** — they naturally return to the midpoint when released. This makes them ideal for temporary parameter offsets. Push the stick to modulate, release to snap back. Triggers are one-directional ramps suitable for intensity control.
 
@@ -1353,12 +1355,12 @@ The D-pad / hat switch is not directly exposed as a modulation axis. Buttons are
 
 USB drawing tablets and digitizers (Wacom, Huion, XP-Pen, and most USB digitizer devices) provide pressure-sensitive, absolute-position input. The Tablet operator (operator 35) exposes four axes:
 
-| Axis | Behavior |
-|------|----------|
+| Axis           | Behavior                                                                     |
+| -------------- | ---------------------------------------------------------------------------- |
 | **X position** | Absolute horizontal position on the tablet surface (left edge to right edge) |
-| **Y position** | Absolute vertical position on the tablet surface (top edge to bottom edge) |
-| **Pressure** | Pen or finger pressure (no contact to maximum) |
-| **Buttons** | Gate: tip switch, barrel button, or eraser |
+| **Y position** | Absolute vertical position on the tablet surface (top edge to bottom edge)   |
+| **Pressure**   | Pen or finger pressure (no contact to maximum)                               |
+| **Buttons**    | Gate: tip switch, barrel button, or eraser                                   |
 
 Unlike the Mouse, the Tablet uses **absolute positioning** — the pen's position on the tablet maps directly to a fixed modulation value. Moving to the left edge always produces the same value; the right edge always produces the opposite extreme. This provides repeatable, deterministic control — the same physical position always produces the same modulation value.
 
@@ -1374,16 +1376,16 @@ The Buttons axis provides a gate output. The tip switch (pen contact with the ta
 
 USB flight sticks, HOTAS throttles, and other multi-axis joystick controllers are supported. The Joystick operator (operator 36) is distinguished from the Gamepad operator by how the device identifies itself — devices that report as joysticks are routed here, while devices that report as gamepads use the Gamepad operator.
 
-| Axis | Behavior | Typical Physical Control |
-|------|----------|-------------------------|
-| **X** | Primary stick horizontal | Stick left/right |
-| **Y** | Primary stick vertical | Stick forward/back |
-| **Z** | Third axis | Throttle lever or stick twist |
-| **Rx** | Rotation X | Secondary axis or pedals |
-| **Ry** | Rotation Y | Secondary axis |
-| **Rz** | Rotation Z | Rudder pedals or stick twist |
-| **Hat** | 8-directional switch | POV hat on stick top |
-| **Buttons** | Gate: any button pressed | Stick buttons, hat press |
+| Axis        | Behavior                 | Typical Physical Control      |
+| ----------- | ------------------------ | ----------------------------- |
+| **X**       | Primary stick horizontal | Stick left/right              |
+| **Y**       | Primary stick vertical   | Stick forward/back            |
+| **Z**       | Third axis               | Throttle lever or stick twist |
+| **Rx**      | Rotation X               | Secondary axis or pedals      |
+| **Ry**      | Rotation Y               | Secondary axis                |
+| **Rz**      | Rotation Z               | Rudder pedals or stick twist  |
+| **Hat**     | 8-directional switch     | POV hat on stick top          |
+| **Buttons** | Gate: any button pressed | Stick buttons, hat press      |
 
 Joystick axes are typically **not spring-centered** — throttle levers and rudder pedals stay where you set them, providing absolute positioning similar to the Tablet operator but with more axes. The 8-position hat switch is mapped across the output range: each position corresponds to a different output value, and the center position (hat released) produces the midpoint.
 
@@ -1395,15 +1397,15 @@ The Joystick operator is ideal for live performance setups where a musician want
 
 USB sensor devices (motion sensor dongles and similar controllers) provide accelerometer and gyroscope data for motion-controlled modulation. The Sensor operator (operator 37) exposes six axes plus a combined magnitude:
 
-| Axis | Measures | Rest Position |
-|------|----------|---------------|
-| **Accel X** | Tilt left/right (gravity component) | Level |
-| **Accel Y** | Tilt forward/back (gravity component) | Level |
-| **Accel Z** | Vertical acceleration (gravity) | Offset by gravity |
-| **Gyro X** | Roll rotation rate | Stationary |
-| **Gyro Y** | Pitch rotation rate | Stationary |
-| **Gyro Z** | Yaw rotation rate | Stationary |
-| **Magnitude** | Combined acceleration magnitude | Varies with orientation |
+| Axis          | Measures                              | Rest Position           |
+| ------------- | ------------------------------------- | ----------------------- |
+| **Accel X**   | Tilt left/right (gravity component)   | Level                   |
+| **Accel Y**   | Tilt forward/back (gravity component) | Level                   |
+| **Accel Z**   | Vertical acceleration (gravity)       | Offset by gravity       |
+| **Gyro X**    | Roll rotation rate                    | Stationary              |
+| **Gyro Y**    | Pitch rotation rate                   | Stationary              |
+| **Gyro Z**    | Yaw rotation rate                     | Stationary              |
+| **Magnitude** | Combined acceleration magnitude       | Varies with orientation |
 
 Accelerometer axes respond to both **static tilt** (gravity) and **dynamic acceleration** (shaking, striking). Tilting the sensor slowly produces a smooth modulation sweep — ideal for gradual parameter changes controlled by physical orientation. Shaking the sensor produces rapid, noisy output — useful for percussive or chaotic effects.
 
@@ -1428,7 +1430,7 @@ These exercises progress from basic oscillator modulation through external input
 3. Watch the FPGA program's parameter sweep smoothly back and forth. The knob position sets the center of the sweep; depth controls how far it swings.
 4. Slowly decrease Depth. The sweep narrows. At zero, the modulation disappears.
 5. Change Wave from triangle to square. The parameter now snaps between two values instead of sweeping.
-6. Try each waveshape. Notice how each produces a different *feel* of motion from the same rate and depth settings.
+6. Try each waveshape. Notice how each produces a different _feel_ of motion from the same rate and depth settings.
 
 **Key concepts**: Rate controls speed, Depth controls swing range, Wave controls the shape of the motion.
 
@@ -1505,5 +1507,3 @@ These exercises progress from basic oscillator modulation through external input
 - **Program Change for live preset recall**. Map your MIDI foot controller's program change buttons to Videomancer presets for hands-free preset switching during performance.
 - **Joystick for multi-axis control**. Flight sticks and HOTAS setups provide up to six independent axes plus a hat switch — far more simultaneous control dimensions than a gamepad. Use the throttle axis (Z) for slow sweeps and the stick (X/Y) for quick gestural modulation.
 - **Sensor for motion-controlled effects**. Tilt a USB motion sensor to sweep parameters with physical orientation, or shake it for percussive bursts. Increase Slew for smooth tilt tracking; decrease it for responsive shake detection. The Magnitude axis captures overall motion intensity regardless of direction.
-
-

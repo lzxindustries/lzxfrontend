@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "ESG3"
+title: 'ESG3'
 image: /img/modules/esg3/esg3-diagrams/esg3_frontpanel.png
-description: "Documentation for ESG3, a combined encoder, sync generator, and processing amplifier for SD and HD modular video synthesis."
+description: 'Documentation for ESG3, a combined encoder, sync generator, and processing amplifier for SD and HD modular video synthesis.'
 ---
 
 import esg3_frontpanel from '/img/modules/esg3/esg3-diagrams/esg3_frontpanel.png';
@@ -10,6 +10,7 @@ import esg3_frontpanel from '/img/modules/esg3/esg3-diagrams/esg3_frontpanel.png
 import esg3_line_art_labeled from '/img/modules/esg3/esg3-diagrams/esg3_line_art_labeled_496x1024.png';
 
 # ESG3
+
 <span class="head2_nolink">Encoder & Sync Generator</span>
 
 <img src={esg3_frontpanel} alt="ESG3 front panel" />
@@ -42,7 +43,6 @@ ESG3 combines the functions of the Visionary encoder and sync generator modules.
 | Included          | DC barrel power cable, EuroRack power cable, RCA sync cable |
 | Video Sync        | Rear RCA in & out                                           |
 
-
 ---
 
 ## System Integration Advice
@@ -66,11 +66,13 @@ Correct installation of ESG3 and its rear sync connections is critical for a sta
 The rear sync output of ESG3 must be connected to some other module, or to a sync distribution amplifier such as **Bus 168**, except in the extremely unlikely situation that no module in the system requires sync. All sync within the modular system must come from ESG3. It can lock to external sync or not, but either way, ESG3 is the ultimate source of sync within the modular system. To prevent any issues with stability, any module capable of generating sync on its own (TBC2) must be locked to ESG3, not the other way around.
 
 For systems without a sync distribution amplifier, the optimal sync chain is:
+
 $$
 ESG3 \to TBC2 \to all \ other \ modules \ in \ series
 $$
 
 The sync routing for a system with a sync DA is:
+
 $$
 ESG3 \to Sync \ DA \to all \ other \ modules \ in \ parallel
 $$
@@ -93,26 +95,25 @@ In the table below, the numeral **0** represents the **OFF** state, with the swi
 
 The letter **X** indicates a position that's independent to the listed setting. For example, any HD timing may be output in RGB or YPbPr color space according to the position of the right-most DIP switch.
 
-
-| Format         | Setting  |
-|----------------|----------|
-| NTSC (486i59)  | 0000xxxx |
-| PAL (576i50)   | 1000xxxx |
-| 480p59         | 0100xxxx |
-| 576p50         | 1100xxxx |
-| 720p50         | 0101xxxx |
-| 720p59         | 0110xxxx |
-| 720p60         | 1110xxxx |
-| 1080i50        | 0001xxxx |
-| 1080i59        | 0010xxxx |
-| 1080i60        | 1010xxxx |
-| 1080p23        | 1001xxxx |
-| 1080p24        | 0011xxxx |
-| 1080p25        | 1011xxxx |
-| 1080p29        | 1101xxxx |
-| 1080p30        | 0111xxxx |
-| RGsB           | xxxxxxx1 |
-| YPbPr          | xxxxxxx0 |
+| Format        | Setting  |
+| ------------- | -------- |
+| NTSC (486i59) | 0000xxxx |
+| PAL (576i50)  | 1000xxxx |
+| 480p59        | 0100xxxx |
+| 576p50        | 1100xxxx |
+| 720p50        | 0101xxxx |
+| 720p59        | 0110xxxx |
+| 720p60        | 1110xxxx |
+| 1080i50       | 0001xxxx |
+| 1080i59       | 0010xxxx |
+| 1080i60       | 1010xxxx |
+| 1080p23       | 1001xxxx |
+| 1080p24       | 0011xxxx |
+| 1080p25       | 1011xxxx |
+| 1080p29       | 1101xxxx |
+| 1080p30       | 0111xxxx |
+| RGsB          | xxxxxxx1 |
+| YPbPr         | xxxxxxx0 |
 
 ### LEDs
 
@@ -181,24 +182,24 @@ A Brightness pot sets the bias or offset of its color component. The signal valu
 
 ### Installation requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Installation procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the ESG3 sync output to the first module in the sync chain, or to a sync distribution amplifier inside the enclosure, such as **Bus 168**. If the system includes TBC2, it should receive sync directly from ESG3.
-* Optionally connect the ESG3 sync input to an external jack on the front panel or enclosure, or to another sync generator module. Do not connect ESG3 directly to any external device, as that would incur risk of mechanical damage to the module. Do not connect ESG3 sync input to sync output of any module other than a dedicated sync generator, such as another ESG3. Do not connect ESG3 sync input to TBC2 sync output, as that could incur sync stability issues.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the ESG3 sync output to the first module in the sync chain, or to a sync distribution amplifier inside the enclosure, such as **Bus 168**. If the system includes TBC2, it should receive sync directly from ESG3.
+- Optionally connect the ESG3 sync input to an external jack on the front panel or enclosure, or to another sync generator module. Do not connect ESG3 directly to any external device, as that would incur risk of mechanical damage to the module. Do not connect ESG3 sync input to sync output of any module other than a dedicated sync generator, such as another ESG3. Do not connect ESG3 sync input to TBC2 sync output, as that could incur sync stability issues.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -213,66 +214,66 @@ A Brightness pot sets the bias or offset of its color component. The signal valu
 
 </td><td>
 
-| Jack | Function                               |
-|------|----------------------------------------|
-| J1   | Red in                                 |
-| J2   | RCA Composite video out                |
-| J3   | Green in                               |
-| J4   | Blue in                                |
-| J5   | RCA Y or Green+Sync video out          |
-| J6   | RCA Pb or Blue video out               |
-| J7   | RCA Pr or Red video out                |
+| Jack | Function                      |
+| ---- | ----------------------------- |
+| J1   | Red in                        |
+| J2   | RCA Composite video out       |
+| J3   | Green in                      |
+| J4   | Blue in                       |
+| J5   | RCA Y or Green+Sync video out |
+| J6   | RCA Pb or Blue video out      |
+| J7   | RCA Pr or Red video out       |
 
 </td><td>
 
-| Switch | Function                             |
-|--------|--------------------------------------|
-| S1     | All Outputs <br />Invert/Mute        |
-| S2     | Red <br />Invert/Mute                |
-| S3     | Green <br />Invert/Mute              |
-| S4     | Blue <br />Invert/Mute               |
-| S5     | Video Standard <br />DIP switches    |
+| Switch | Function                          |
+| ------ | --------------------------------- |
+| S1     | All Outputs <br />Invert/Mute     |
+| S2     | Red <br />Invert/Mute             |
+| S3     | Green <br />Invert/Mute           |
+| S4     | Blue <br />Invert/Mute            |
+| S5     | Video Standard <br />DIP switches |
 
-| Pot    | Function                             |
-|--------|--------------------------------------|
-| P1     | Red Contrast                         |
-| P2     | Green Contrast                       |
-| P3     | Blue Contrast                        |
-| P4     | Red Brightness                       |
-| P5     | Green Brightness                     |
-| P6     | Blue Brightness                      |
+| Pot | Function         |
+| --- | ---------------- |
+| P1  | Red Contrast     |
+| P2  | Green Contrast   |
+| P3  | Blue Contrast    |
+| P4  | Red Brightness   |
+| P5  | Green Brightness |
+| P6  | Blue Brightness  |
 
 </td></tr></table>
 
 ### Technical Data
 
-|                              |                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Mounting Width               | 12 HP                                                                           |
-| Mounting Depth               | 42 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 300 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 100K ohms                                                                       |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-15V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Module Width                 | 60.96 mm                                                                        |
-| Module Height                | 128.5 mm                                                                        |
-| Product Box Width            | 4 in / 101.6 mm                                                                 |
-| Product Box Height           | 2 in / 50.8 mm                                                                  |
-| Product Box Depth            | 6 in / 152.4 mm                                                                 |
-| Included                     | DC barrel power cable, EuroRack power cable                                     |
-| EuroRack Power Cable Type    | 16-pin to 16-pin                                                                |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes                                           |
-| Video Sync                   | Rear RCA in & out                                                               | 
+|                              |                                             |
+| ---------------------------- | ------------------------------------------- |
+| Mounting Width               | 12 HP                                       |
+| Mounting Depth               | 42 mm                                       |
+| Mounting Hole Count          | 4                                           |
+| Power Consumption            | 12V @ 300 mA                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Input Impedance              | 100K ohms                                   |
+| Output Impedance             | 75 ohms                                     |
+| Input Protection Range       | +/-15V                                      |
+| Input Clipping Range         | +/-2.5V                                     |
+| Output Range                 | +/-2.5V                                     |
+| Module Width                 | 60.96 mm                                    |
+| Module Height                | 128.5 mm                                    |
+| Product Box Width            | 4 in / 101.6 mm                             |
+| Product Box Height           | 2 in / 50.8 mm                              |
+| Product Box Depth            | 6 in / 152.4 mm                             |
+| Included                     | DC barrel power cable, EuroRack power cable |
+| EuroRack Power Cable Type    | 16-pin to 16-pin                            |
+| EuroRack Power Cable Length  | 25 cm                                       |
+| DC Barrel Power Cable Length | 25 cm                                       |
+| RoHS Compliance              | Manufactured with lead-free processes       |
+| Video Sync                   | Rear RCA in & out                           |
 
-<!-- 
+<!--
 | Manufacturer Part Number     |                                                                                 |
-| Pronunciation                |                                                                                 | 
+| Pronunciation                |                                                                                 |
 | Propagation Delay            | TODO                                                                            |
 | Bandwidth @ -3dB             | TODO                                                                            |
 | Module Depth                 | TODO mm                                                                         |
@@ -292,17 +293,16 @@ This is analog video synthesis, not broadcast video. The process below may not r
 - Electronic "tweaker" trim pot adjustment tool, or small "jeweler's" flat head screwdriver
 - Color-critical video monitor
 - Waveform monitor and vectorscope
-	- Either hardware test equipment or a video capture card with software are acceptable. 
-	- One free software option is **OBS Studio** with the **Color Monitor** plugin.
+  - Either hardware test equipment or a video capture card with software are acceptable.
+  - One free software option is **OBS Studio** with the **Color Monitor** plugin.
 - LZX-compatible video module capable of generating a horizontal ramp (e.g. TBC2, DSG3, Angles)
   - Note: individual modules may have up to 10% variation in output voltage. If possible, choose the module with output closest to the 0 to 1 voltage range.
 - Full-field 100% color bars, using one of the following options:
   - Decoder accepting color bars video signal
   - TBC2 Media Player displaying color bars image
   - Horizontal ramp → Ribbons input<br />
-	Ribbons D0 / D1 / D2 → ESG3 R / G / B respectively<br />
-	Adjust Ribbons controls until black bar is visible on left, and white bar is visible on right.
-
+    Ribbons D0 / D1 / D2 → ESG3 R / G / B respectively<br />
+    Adjust Ribbons controls until black bar is visible on left, and white bar is visible on right.
 
 ### Calibration procedure
 
@@ -343,7 +343,7 @@ Calibration is much easier with hardware test equipment that supports RGB compon
 8. Connect YPbPr outputs to test equipment and monitor.
 9. Mute the Green and Blue channels. Adjust Red Bias and Gain trim pots until the ramp precisely occupies the values from 0 to 100 IRE, with no clipping on left or right. This may be challenging on the waveform monitor because the Red channel only uses about 1/3 of the value range. It may be easier to gauge using the color-critical video monitor.
 10. Mute the Red and Green channels and unmute the Blue channel. Adjust Blue Bias and Gain trim pots until the ramp precisely occupies the values from 0 to 100 IRE, with no clipping on left or right. This is even more challenging on the waveform monitor because the Blue channel only uses about 1/10 of the value range. It may be easier to gauge using the color-critical video monitor.
-11. Unmute all channels. The result should be a nearly perfect grayscale ramp from 0 to 100 IRE. 
+11. Unmute all channels. The result should be a nearly perfect grayscale ramp from 0 to 100 IRE.
 12. Check the vectorscope. If needed, make very small adjustments to various trim pots to make the dot as small as possible, as close to center as possible.
 13. Check the results on the waveform monitor. If the ramp is no longer linear, adjust accordingly. The linearity of the ramp on the waveform monitor is the priority.
 14. Patch color bars into ESG3 RGB inputs. Check the vectorscope. If ESG3 is calibrated, there will a dot in the center, and a dot in each of the six boxes corresponding to the RGB primary and CMY secondary colors. If necessary, adjust trim pots accordingly.

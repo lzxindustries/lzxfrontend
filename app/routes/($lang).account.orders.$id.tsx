@@ -1,8 +1,4 @@
-import {
-  useLoaderData,
-  useFetcher,
-  type MetaFunction,
-} from '@remix-run/react';
+import {useLoaderData, useFetcher, type MetaFunction} from '@remix-run/react';
 import {Image, Money, flattenConnection} from '@shopify/hydrogen';
 import type {
   DiscountApplicationConnection,
@@ -26,7 +22,11 @@ import {
   updateOrderShippingAddress,
   type ShippingAddressInput,
 } from '~/lib/admin.server';
-import {statusMessage, financialStatusMessage, getInputStyleClasses} from '~/lib/utils';
+import {
+  statusMessage,
+  financialStatusMessage,
+  getInputStyleClasses,
+} from '~/lib/utils';
 import {CartAction} from '~/lib/type';
 
 export const meta: MetaFunction<typeof loader> = ({data}) => {
@@ -81,7 +81,10 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
 
   // Check if the shipping address can be edited via Admin API
   const adminOrderId = `gid://shopify/Order/${params.id}`;
-  const canEditAddress = await isOrderAddressEditable(adminOrderId, context.env);
+  const canEditAddress = await isOrderAddressEditable(
+    adminOrderId,
+    context.env,
+  );
 
   return json({
     order,
@@ -113,7 +116,10 @@ export async function action({request, context, params}: ActionFunctionArgs) {
   const canEdit = await isOrderAddressEditable(adminOrderId, context.env);
   if (!canEdit) {
     return json(
-      {formError: 'This order can no longer be edited. A shipping label may have already been purchased.'},
+      {
+        formError:
+          'This order can no longer be edited. A shipping label may have already been purchased.',
+      },
       {status: 400},
     );
   }
@@ -243,7 +249,9 @@ export default function OrderRoute() {
                     <td className="w-full py-4 pl-0 pr-3 align-top sm:align-middle max-w-0 sm:w-auto sm:max-w-none">
                       <div className="flex gap-6">
                         <Link
-                          to={resolveProductUrl(lineItem.variant!.product!.handle)}
+                          to={resolveProductUrl(
+                            lineItem.variant!.product!.handle,
+                          )}
                         >
                           {lineItem?.variant?.image && (
                             <div className="w-24 card-image aspect-square">
@@ -343,7 +351,9 @@ export default function OrderRoute() {
                     <Text>Subtotal</Text>
                   </th>
                   <td className="pt-6 pl-3 pr-4 text-right md:pr-3">
-                    {order.subtotalPrice && <Money data={order.subtotalPrice} />}
+                    {order.subtotalPrice && (
+                      <Money data={order.subtotalPrice} />
+                    )}
                   </td>
                 </tr>
                 <tr>
@@ -457,11 +467,7 @@ export default function OrderRoute() {
               {order.successfulFulfillments &&
                 order.successfulFulfillments.length > 0 && (
                   <>
-                    <Heading
-                      size="copy"
-                      className="mt-8 font-semibold"
-                      as="h3"
-                    >
+                    <Heading size="copy" className="mt-8 font-semibold" as="h3">
                       Tracking
                     </Heading>
                     <div className="mt-3 space-y-2">
@@ -516,7 +522,9 @@ function EditShippingAddressForm({
   fetcher: ReturnType<typeof useFetcher>;
   onCancel: () => void;
 }) {
-  const actionData = fetcher.data as {formError?: string; success?: boolean} | undefined;
+  const actionData = fetcher.data as
+    | {formError?: string; success?: boolean}
+    | undefined;
 
   // Close the form after a successful submission
   if (actionData?.success) {
@@ -694,9 +702,9 @@ function OrderTimeline({
         fulfillmentStatus === 'FULFILLED'
           ? 'Shipped'
           : fulfillmentStatus === 'IN_PROGRESS' ||
-              fulfillmentStatus === 'PARTIALLY_FULFILLED'
-            ? 'In Progress'
-            : 'Awaiting shipment',
+            fulfillmentStatus === 'PARTIALLY_FULFILLED'
+          ? 'In Progress'
+          : 'Awaiting shipment',
       done:
         fulfillmentStatus === 'FULFILLED' ||
         fulfillmentStatus === 'IN_PROGRESS' ||
@@ -735,7 +743,9 @@ function OrderTimeline({
                 {step.label}
               </span>
               {step.detail && (
-                <span className="text-[9px] text-primary/40">{step.detail}</span>
+                <span className="text-[9px] text-primary/40">
+                  {step.detail}
+                </span>
               )}
             </div>
             {i < steps.length - 1 && (

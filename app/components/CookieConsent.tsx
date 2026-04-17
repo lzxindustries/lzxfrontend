@@ -40,16 +40,10 @@ export function CookieConsent({
           accept or decline non-essential cookies.
         </p>
         <div className="flex gap-2 shrink-0">
-          <button
-            onClick={decline}
-            className="btn btn-sm btn-ghost"
-          >
+          <button onClick={decline} className="btn btn-sm btn-ghost">
             Decline
           </button>
-          <button
-            onClick={accept}
-            className="btn btn-sm btn-primary"
-          >
+          <button onClick={accept} className="btn btn-sm btn-primary">
             Accept
           </button>
         </div>

@@ -2,8 +2,8 @@
 draft: false
 sidebar_position: 1
 slug: /instruments/videomancer
-title: "Videomancer Documentation"
-description: "Start here for Videomancer setup, operation, modulation, and program guides."
+title: 'Videomancer Documentation'
+description: 'Start here for Videomancer setup, operation, modulation, and program guides.'
 ---
 
 # Videomancer Documentation

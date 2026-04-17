@@ -47,7 +47,10 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       title: 'Instruments',
       handle: 'instruments',
       description: 'LZX Industries standalone video instruments',
-      seo: {title: 'Instruments', description: 'LZX Industries standalone video instruments'},
+      seo: {
+        title: 'Instruments',
+        description: 'LZX Industries standalone video instruments',
+      },
       descriptionHtml: '',
       updatedAt: new Date().toISOString(),
       image: null,

@@ -31,9 +31,9 @@ for (const {name, path} of KEY_PAGES) {
       fullPage: true,
       // Mask dynamic content that changes between runs
       mask: [
-        page.locator('iframe'),          // YouTube embeds
-        page.locator('video'),           // Background videos
-        page.locator('time'),            // Timestamps
+        page.locator('iframe'), // YouTube embeds
+        page.locator('video'), // Background videos
+        page.locator('time'), // Timestamps
         page.locator('[data-testid="price"]'), // Prices that may change
       ],
     });

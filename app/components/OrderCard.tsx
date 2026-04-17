@@ -71,9 +71,10 @@ export function OrderCard({order}: {order: Order}) {
                   className={`px-3 py-1 text-xs font-medium rounded-full ${
                     order.financialStatus === 'PAID'
                       ? 'bg-green-100 text-green-800'
-                      : order.financialStatus === 'REFUNDED' || order.financialStatus === 'PARTIALLY_REFUNDED'
-                        ? 'bg-yellow-100 text-yellow-800'
-                        : 'bg-primary/5 text-primary/50'
+                      : order.financialStatus === 'REFUNDED' ||
+                        order.financialStatus === 'PARTIALLY_REFUNDED'
+                      ? 'bg-yellow-100 text-yellow-800'
+                      : 'bg-primary/5 text-primary/50'
                   }`}
                 >
                   <Text size="fine">

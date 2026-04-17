@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-derick-noetzel
-title: "Artist Feature: Derick Noetzel"
+title: 'Artist Feature: Derick Noetzel'
 authors: [kat]
 tags: [community]
 image: ./derick_noetzel_01.jpg

@@ -75,9 +75,15 @@ export function BlogIndex({
           <>
             {years.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="text-sm font-medium text-base-content/70 mr-1">Archive:</span>
+                <span className="text-sm font-medium text-base-content/70 mr-1">
+                  Archive:
+                </span>
                 {years.map((year) => (
-                  <a key={year} href={`#year-${year}`} className="badge badge-outline">
+                  <a
+                    key={year}
+                    href={`#year-${year}`}
+                    className="badge badge-outline"
+                  >
                     {year}
                   </a>
                 ))}
@@ -85,7 +91,9 @@ export function BlogIndex({
             )}
 
             {years.map((year, yearIndex) => {
-              const yearPosts = posts.filter((post) => post.date.startsWith(year));
+              const yearPosts = posts.filter((post) =>
+                post.date.startsWith(year),
+              );
 
               return (
                 <section key={year} id={`year-${year}`} className="mb-10">
@@ -105,7 +113,8 @@ export function BlogIndex({
                                 Newsletter
                               </p>
                               <p className="mt-1 mb-3 text-sm text-base-content/70">
-                                Get release updates, firmware notes, and workshop news.
+                                Get release updates, firmware notes, and
+                                workshop news.
                               </p>
                               {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
                               <MailchimpSubscribe url="https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0" />
@@ -125,10 +134,7 @@ export function BlogIndex({
         {totalPages > 1 && (
           <div className="flex justify-center gap-2 mt-10">
             {page > 1 && (
-              <Link
-                to={`?page=${page - 1}`}
-                className="btn btn-sm btn-outline"
-              >
+              <Link to={`?page=${page - 1}`} className="btn btn-sm btn-outline">
                 ← Previous
               </Link>
             )}
@@ -145,10 +151,7 @@ export function BlogIndex({
               </Link>
             ))}
             {page < totalPages && (
-              <Link
-                to={`?page=${page + 1}`}
-                className="btn btn-sm btn-outline"
-              >
+              <Link to={`?page=${page + 1}`} className="btn btn-sm btn-outline">
                 Next →
               </Link>
             )}
@@ -163,7 +166,10 @@ export function BlogIndex({
 
 function BlogCard({post}: {post: BlogPost}) {
   const imageUrl = post.frontmatter.image
-    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(/^\.\//, '')}`
+    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(
+        /^\.\//,
+        '',
+      )}`
     : null;
 
   return (
@@ -258,9 +264,7 @@ export function BlogPostView({
 
         <div className="flex flex-wrap items-center gap-3 text-sm opacity-60 mb-8">
           <time>{formatDate(date)}</time>
-          {authors.length > 0 && (
-            <span>by {authors.join(', ')}</span>
-          )}
+          {authors.length > 0 && <span>by {authors.join(', ')}</span>}
           <span>{readingTime} min read</span>
         </div>
 

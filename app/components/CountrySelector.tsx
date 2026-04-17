@@ -13,7 +13,8 @@ export function CountrySelector() {
   const [root] = useMatches();
   const fetcher = useFetcher();
   const closeRef = useRef<HTMLDetailsElement>(null);
-  const selectedLocale = (root.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
+  const selectedLocale =
+    (root.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
   const {pathname, search} = useLocation();
   const pathWithoutLocale = `${pathname.replace(
     selectedLocale.pathPrefix,
@@ -47,11 +48,7 @@ export function CountrySelector() {
   }, []);
 
   return (
-    <section
-      ref={observerRef}
-      className="w-full"
-      onMouseLeave={closeDropdown}
-    >
+    <section ref={observerRef} className="w-full" onMouseLeave={closeDropdown}>
       <details
         className="w-full border rounded border-base-content/20 overflow-clip bg-base-200"
         ref={closeRef}

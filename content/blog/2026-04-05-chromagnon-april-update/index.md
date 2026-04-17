@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-april-update
-title: "Chromagnon Update: April 2026"
+title: 'Chromagnon Update: April 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: false
@@ -34,13 +34,13 @@ All of it feeds into Chromagnon — the two codebases share most of their infras
 
 Here's where we stand against the [March plan](/blog/chromagnon-building-it-right):
 
-| Milestone | Target | Status |
-|---|---|---|
-| RevI core board design | Early April | ~90% complete, on track |
-| Firmware integration on dev hardware | April | In progress, ahead of plan |
+| Milestone                             | Target               | Status                            |
+| ------------------------------------- | -------------------- | --------------------------------- |
+| RevI core board design                | Early April          | ~90% complete, on track           |
+| Firmware integration on dev hardware  | April                | In progress, ahead of plan        |
 | RevI prototype fabricated & delivered | Late April–Early May | Hardware orders placing this week |
-| First demo content | May | On track |
-| Ship Unit #1 | August 2026 | On track |
+| First demo content                    | May                  | On track                          |
+| Ship Unit #1                          | August 2026          | On track                          |
 
 Still on schedule.
 
@@ -52,4 +52,4 @@ Lars
 
 ---
 
-*Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/lzx).*
+_Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/lzx)._

@@ -5,7 +5,8 @@ import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 
 export const meta = ({matches}: MetaArgs) => {
-  const parentData = matches.find((m) => m.id.includes('modules.$slug'))?.data as any;
+  const parentData = matches.find((m) => m.id.includes('modules.$slug'))
+    ?.data as any;
   const title = parentData?.product?.title ?? 'Module';
   return [{title: `${title} Downloads | LZX Industries`}];
 };
@@ -17,7 +18,9 @@ export default function ModuleDownloads() {
   if (assets.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
-        <p className="text-base-content/60">No downloads available for {product.title}.</p>
+        <p className="text-base-content/60">
+          No downloads available for {product.title}.
+        </p>
       </div>
     );
   }
@@ -45,10 +48,14 @@ export default function ModuleDownloads() {
           >
             <div className="min-w-0 flex-1">
               <div className="font-medium">{asset.name}</div>
-              <div className="text-sm text-base-content/60">{asset.fileName || 'File unavailable'}</div>
+              <div className="text-sm text-base-content/60">
+                {asset.fileName || 'File unavailable'}
+              </div>
             </div>
             <div className="flex items-center gap-3">
-              {asset.fileType ? <span className="badge badge-outline">{asset.fileType}</span> : null}
+              {asset.fileType ? (
+                <span className="badge badge-outline">{asset.fileType}</span>
+              ) : null}
               {asset.fileName ? (
                 <a
                   href={`/assets/${encodeURIComponent(asset.fileName)}`}
@@ -60,7 +67,9 @@ export default function ModuleDownloads() {
                   <span>Download</span>
                 </a>
               ) : (
-                <span className="text-sm text-base-content/60">Unavailable</span>
+                <span className="text-sm text-base-content/60">
+                  Unavailable
+                </span>
               )}
             </div>
           </div>

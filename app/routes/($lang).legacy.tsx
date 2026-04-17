@@ -87,8 +87,8 @@ export default function LegacyModulesPage() {
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h1 className="text-3xl font-bold mb-2">Legacy Modules</h1>
       <p className="text-base-content/70 mb-8">
-        These modules are no longer in active production, but documentation and downloads remain
-        available for existing owners and users.
+        These modules are no longer in active production, but documentation and
+        downloads remain available for existing owners and users.
       </p>
 
       {entries.length === 0 ? (
@@ -121,9 +121,13 @@ export default function LegacyModulesPage() {
                     {entry.name}
                   </div>
                   {entry.subtitle ? (
-                    <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">{entry.subtitle}</p>
+                    <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">
+                      {entry.subtitle}
+                    </p>
                   ) : null}
-                  <span className="badge badge-sm badge-ghost mt-1">Legacy</span>
+                  <span className="badge badge-sm badge-ghost mt-1">
+                    Legacy
+                  </span>
                 </div>
               </Link>
             );

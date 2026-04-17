@@ -63,9 +63,11 @@ export function ProductCard({
 
   const {image, price, compareAtPrice} = firstVariant;
   const subtitle =
-    (product as Product & {
-      subtitle?: {value?: string | null} | null;
-    }).subtitle?.value ?? '';
+    (
+      product as Product & {
+        subtitle?: {value?: string | null} | null;
+      }
+    ).subtitle?.value ?? '';
   const slugEntry = getSlugEntry(product.handle);
   const isLegacy = !!slugEntry?.isHidden;
   const lifecycleLabel = isLegacy ? 'Legacy' : slugEntry ? 'Active' : null;
@@ -73,8 +75,8 @@ export function ProductCard({
     slugEntry?.hubType === 'instrument'
       ? 'Instrument'
       : slugEntry?.hubType === 'module'
-        ? 'Module'
-        : null;
+      ? 'Module'
+      : null;
 
   if (label) {
     cardLabel = label;
@@ -94,11 +96,12 @@ export function ProductCard({
       >
         <div className={clsx('grid gap-4', className)}>
           <div className="card-image aspect-square bg-primary/5 relative">
-            {firstVariant?.quantityAvailable != null && firstVariant.quantityAvailable > 0 && (
-              <div className="absolute top-2 right-2 z-10 bg-green-600 text-white text-xs font-normal px-2 py-1 rounded">
-                Ready to Ship
-              </div>
-            )}
+            {firstVariant?.quantityAvailable != null &&
+              firstVariant.quantityAvailable > 0 && (
+                <div className="absolute top-2 right-2 z-10 bg-green-600 text-white text-xs font-normal px-2 py-1 rounded">
+                  Ready to Ship
+                </div>
+              )}
             {cardLabel ? (
               <div className="absolute top-2 left-2 z-10 bg-primary text-primary-content text-xs font-normal px-2 py-1 rounded">
                 {cardLabel}
@@ -133,11 +136,18 @@ export function ProductCard({
             {productTypeLabel ? (
               <div className="flex justify-center gap-1 mt-1 flex-wrap">
                 {lifecycleLabel ? (
-                  <span className={clsx('badge badge-xs', isLegacy ? 'badge-ghost' : 'badge-primary')}>
+                  <span
+                    className={clsx(
+                      'badge badge-xs',
+                      isLegacy ? 'badge-ghost' : 'badge-primary',
+                    )}
+                  >
                     {lifecycleLabel}
                   </span>
                 ) : null}
-                <span className="badge badge-outline badge-xs">{productTypeLabel}</span>
+                <span className="badge badge-outline badge-xs">
+                  {productTypeLabel}
+                </span>
               </div>
             ) : null}
             <Text

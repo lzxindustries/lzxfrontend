@@ -41,6 +41,7 @@ yarn run typecheck        # Type checking only
 ### Route Patterns
 
 File names like `($lang).products.$productHandle.tsx` create routes like `/en-us/products/some-product`
+
 - Loaders: `export async function loader({params, request, context}: LoaderFunctionArgs)`
 - Actions: `export async function action({request, context}: ActionFunctionArgs)`
 - Always destructure `context.storefront`, `context.session`, `context.env`
@@ -48,10 +49,11 @@ File names like `($lang).products.$productHandle.tsx` create routes like `/en-us
 ### Data Fetching Patterns
 
 **Shopify queries** (in route loaders):
+
 ```tsx
 const {product} = await context.storefront.query<{product: ProductType}>(
   PRODUCT_QUERY,
-  {variables: {handle, country: context.storefront.i18n.country}}
+  {variables: {handle, country: context.storefront.i18n.country}},
 );
 ```
 
@@ -63,7 +65,10 @@ GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, 
 - Custom cache headers in `server.ts` for non-cart/account pages:
   ```tsx
   response.headers.set('Cache-Control', CACHE_SHORT);
-  response.headers.set('Oxygen-Cache-Control', 'public, max-age=3600, stale-while-revalidate=259200');
+  response.headers.set(
+    'Oxygen-Cache-Control',
+    'public, max-age=3600, stale-while-revalidate=259200',
+  );
   ```
 - Use `routeHeaders` export in routes for consistent behavior
 
@@ -88,11 +93,13 @@ GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, 
 ## Critical Integration Points
 
 ### Hydrogen/Shopify API
+
 - Storefront API version: `2025-04` (configurable via env)
 - Use fragments from `app/data/fragments.ts` (MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT)
 - Cart managed via session storage (`getCartId()` in `app/lib/utils.ts`)
 
 ### Worker Environment
+
 - Cloudflare Workers runtime (not Node.js)
 - Use `executionContext.waitUntil()` for background tasks
 - Cache API via `caches.open('hydrogen')`
@@ -101,19 +108,20 @@ GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, 
 
 A symlink at repo root (`lfs → /mnt/e/lfs`) provides access to the binary asset library. This is **local-only** (gitignored, not deployed). Contents are organized as:
 
-| Directory | Contents |
-|-----------|----------|
-| `brand/logos/` | AI vector sources + 79 PNG exports. Regenerate: `python3 lfs/library/brand/logos/generate_brand_logos.py` |
-| `brand/color-swatches/` | 16 PNG brand palette swatches |
-| `brand/fonts/` | ~140 OTF/TTF font files (Goldplay, Lato, TeX Gyre, etc.) |
-| `brand/panel-components/` | AI files for knobs, jacks, LEDs, connectors |
-| `brand/panel-icons/` | SVG schematic icons |
-| `products/` | Per-product assets organized by category → series → product slug → asset type |
-| `products/product-catalog.json` | Machine-readable index of all 121 products (slug, name, sku, type, active/hidden flags, folder) |
-| `stock/` | Third-party stock assets: footage, photos, textures, test-images, test-patterns, music, sound-effects |
-| `scrape/` | Archived community/web content: wayback pages, YouTube subtitles, Reddit, Discord, ModWiggler, etc. |
+| Directory                       | Contents                                                                                                  |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `brand/logos/`                  | AI vector sources + 79 PNG exports. Regenerate: `python3 lfs/library/brand/logos/generate_brand_logos.py` |
+| `brand/color-swatches/`         | 16 PNG brand palette swatches                                                                             |
+| `brand/fonts/`                  | ~140 OTF/TTF font files (Goldplay, Lato, TeX Gyre, etc.)                                                  |
+| `brand/panel-components/`       | AI files for knobs, jacks, LEDs, connectors                                                               |
+| `brand/panel-icons/`            | SVG schematic icons                                                                                       |
+| `products/`                     | Per-product assets organized by category → series → product slug → asset type                             |
+| `products/product-catalog.json` | Machine-readable index of all 121 products (slug, name, sku, type, active/hidden flags, folder)           |
+| `stock/`                        | Third-party stock assets: footage, photos, textures, test-images, test-patterns, music, sound-effects     |
+| `scrape/`                       | Archived community/web content: wayback pages, YouTube subtitles, Reddit, Discord, ModWiggler, etc.       |
 
 ### Product asset structure
+
 ```
 products/
 ├── accessories/<slug>/website/      Website images
@@ -125,7 +133,9 @@ products/
 ```
 
 ### Generated files
+
 Key generated assets (see `lfs/library/GENERATED_FILES.md` for full list):
+
 - **Brand logos**: `brand/logos/generate_brand_logos.py`
 - **Video bumpers**: `video/bumpers/generate_video_bumpers.sh`
 - **Source clips**: `video/source-clips/generate_video_source_clips.py`

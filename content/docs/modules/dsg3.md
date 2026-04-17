@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "DSG3"
+title: 'DSG3'
 image: /img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png
-description: "Documentation for DSG3, a dual shape generator with waveshaping, blending, and logic functions for creating 2D shapes in video synthesis."
+description: 'Documentation for DSG3, a dual shape generator with waveshaping, blending, and logic functions for creating 2D shapes in video synthesis.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import dsg3_frontpanel from '/img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png';
@@ -56,6 +56,7 @@ import dsg3_signal_path from '/img/modules/dsg3/dsg3-diagrams/dsg3_signal-path.p
 import dsg3_line_art_labeled from '/img/modules/dsg3/dsg3-diagrams/dsg3_line_art_labeled_496x1024.png';
 
 # DSG3
+
 <span class="head2_nolink">Dual Shape Generator</span>
 
 <img src={dsg3_frontpanel} alt="DSG3 front panel" />
@@ -75,7 +76,7 @@ As a standalone pattern generator, DSG3 can output two independent quadrilateral
 - Double Fold
   - multiply frequency by four, solarize
 - Logarithmic curve
-  - brighten, reduce contrast, gamma 2.0 
+  - brighten, reduce contrast, gamma 2.0
 - Exponential curve
   - darken, increase contrast, gamma 0.5
 - Average
@@ -107,7 +108,7 @@ DSG3 remixes and augments past designs such as Arch. On deeper investigation, DS
 
 ## System Integration Advice
 
-DSG3 is a core module for almost any LZX-compatible system. For 2D pattern generation, DSG3 is essential for symmetry, curvature, and complexity. The inclusion of internal ramps makes DSG3 a full-featured pattern generator. It packs many layers of functionality into a 12HP module, which is particularly important for smaller modular systems. 
+DSG3 is a core module for almost any LZX-compatible system. For 2D pattern generation, DSG3 is essential for symmetry, curvature, and complexity. The inclusion of internal ramps makes DSG3 a full-featured pattern generator. It packs many layers of functionality into a 12HP module, which is particularly important for smaller modular systems.
 
 Likewise, DSG3 is a highly space-efficient general purpose video processor, ideally suited for a wide range of image manipulation and image blending operations.
 
@@ -259,7 +260,7 @@ Reverse the input values. An input range from 0 to 1 gives an output range from 
 
 Precision full-wave rectification. Convert ramps/sawtooths to triangle waves. Double or quadruple the frequency of oscillators. Apply solarization and color cycling effects to images.
 
-Fold 1 doubles the frequency of the signal, Fold 2 multiplies it by four.  
+Fold 1 doubles the frequency of the signal, Fold 2 multiplies it by four.
 
 <img src={dsg3_fold} alt="DSG3 Fold" />
 
@@ -324,6 +325,7 @@ $$
 <!-- AFR note: this section could use more example patches. If there's time, I will suggest some. In particular, the combination of low frequency signals for color cycling effects -->
 
 ### Self-patching Shapes in series
+
 <img src={dsg3_self_patching} alt="DSG3 patching submodules in series" />
 
 ---
@@ -340,23 +342,23 @@ $$
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the sync cable to a sync source or the last module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the sync cable to a sync source or the last module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -372,7 +374,7 @@ $$
 </td><td>
 
 | Jack | Function         |
-|------|------------------|
+| ---- | ---------------- |
 | J1   | Shape 1 H in     |
 | J2   | Shape 1 V in     |
 | J3   | Shape 2 H in     |
@@ -389,7 +391,7 @@ $$
 </td><td>
 
 | Switch | Function         |
-|--------|------------------|
+| ------ | ---------------- |
 | S1     | Shape 1 H Invert |
 | S2     | Shape 1 V Invert |
 | S3     | Shape 2 H Invert |
@@ -427,7 +429,7 @@ $$
 | RoHS Compliance              | Manufactured with lead-free processes.                      |
 | Video Sync                   | Rear RCA in & out                                           |
 
-<!-- 
+<!--
 | Pronunciation                |                                                             |
 | Propagation Delay            | TODO                                                        |
 | Bandwidth @ -3dB             | TODO                                                        |
@@ -440,7 +442,7 @@ $$
 | Product Weight               | TODO                                                        |
 -->
 
---- 
+---
 
 <!--
 ## Calibration

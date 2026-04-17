@@ -20,9 +20,18 @@ function Sidebar({
   linkBuilder: (item: SidebarItem) => string;
 }) {
   return (
-    <nav className="w-64 shrink-0 hidden lg:block" aria-label="Documentation sidebar">
+    <nav
+      className="w-64 shrink-0 hidden lg:block"
+      aria-label="Documentation sidebar"
+    >
       <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4">
-        <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} linkBuilder={linkBuilder} />
+        <SidebarList
+          items={items}
+          currentPath={currentPath}
+          basePath={basePath}
+          depth={0}
+          linkBuilder={linkBuilder}
+        />
       </div>
     </nav>
   );
@@ -86,7 +95,14 @@ function SidebarEntry({
             'hover:bg-base-200 transition-colors',
           )}
         >
-          <span className={clsx('transition-transform text-xs', expanded && 'rotate-90')}>▶</span>
+          <span
+            className={clsx(
+              'transition-transform text-xs',
+              expanded && 'rotate-90',
+            )}
+          >
+            ▶
+          </span>
           <span className="font-medium">{item.label}</span>
         </button>
         {expanded && (
@@ -125,7 +141,10 @@ function TableOfContents({headings}: {headings: TocHeading[]}) {
   if (headings.length === 0) return null;
 
   return (
-    <nav className="w-56 shrink-0 hidden xl:block" aria-label="Table of contents">
+    <nav
+      className="w-56 shrink-0 hidden xl:block"
+      aria-label="Table of contents"
+    >
       <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pl-4 border-l border-base-200">
         <p className="text-xs font-bold uppercase tracking-wider mb-3 opacity-60">
           On this page
@@ -167,18 +186,19 @@ function PrevNextNav({
           to={linkBuilder(prev)}
           className="group flex flex-col items-start"
         >
-          <span className="text-xs opacity-50 group-hover:opacity-70">← Previous</span>
+          <span className="text-xs opacity-50 group-hover:opacity-70">
+            ← Previous
+          </span>
           <span className="text-sm font-medium text-primary">{prev.label}</span>
         </Link>
       ) : (
         <div />
       )}
       {next ? (
-        <Link
-          to={linkBuilder(next)}
-          className="group flex flex-col items-end"
-        >
-          <span className="text-xs opacity-50 group-hover:opacity-70">Next →</span>
+        <Link to={linkBuilder(next)} className="group flex flex-col items-end">
+          <span className="text-xs opacity-50 group-hover:opacity-70">
+            Next →
+          </span>
           <span className="text-sm font-medium text-primary">{next.label}</span>
         </Link>
       ) : (
@@ -214,7 +234,13 @@ function MobileSidebar({
       </button>
       {open && (
         <div className="mt-2 p-4 bg-base-200 rounded-lg">
-          <SidebarList items={items} currentPath={currentPath} basePath={basePath} depth={0} linkBuilder={linkBuilder} />
+          <SidebarList
+            items={items}
+            currentPath={currentPath}
+            basePath={basePath}
+            depth={0}
+            linkBuilder={linkBuilder}
+          />
         </div>
       )}
     </div>
@@ -251,14 +277,25 @@ export function DocLayout({
   useImageZoom(contentRef);
   useMermaid(contentRef);
 
-  const buildLink = linkBuilder ?? ((item: SidebarItem) => `/docs/${item.path}`);
+  const buildLink =
+    linkBuilder ?? ((item: SidebarItem) => `/docs/${item.path}`);
 
   return (
     <>
       <Breadcrumbs items={breadcrumbs} />
-      <MobileSidebar items={sidebar} currentPath={currentPath} basePath="/docs" linkBuilder={buildLink} />
+      <MobileSidebar
+        items={sidebar}
+        currentPath={currentPath}
+        basePath="/docs"
+        linkBuilder={buildLink}
+      />
       <div className="flex gap-8 px-6 pb-16 md:px-10 lg:px-12 max-w-screen-2xl mx-auto">
-        <Sidebar items={sidebar} currentPath={currentPath} basePath="/docs" linkBuilder={buildLink} />
+        <Sidebar
+          items={sidebar}
+          currentPath={currentPath}
+          basePath="/docs"
+          linkBuilder={buildLink}
+        />
         <article className="flex-1 min-w-0 max-w-prose-wide">
           {frontmatter.title && (
             <h1 className="text-heading font-bold mb-6">{frontmatter.title}</h1>

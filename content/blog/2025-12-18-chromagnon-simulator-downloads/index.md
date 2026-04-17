@@ -19,11 +19,11 @@ Hi everyone! As promised, I've made my Chromagnon Simulator application availabl
 
 ## Windows Installation
 
-Simply download the appropriate zip file for your platform, extract it, and run the application. No installation required - these are portable versions that run directly from the extracted folder. 
+Simply download the appropriate zip file for your platform, extract it, and run the application. No installation required - these are portable versions that run directly from the extracted folder.
 
 ## MacOS Installation
 
-There are some issues with the MacOS build, but our user Adam was able to get it to work. 
+There are some issues with the MacOS build, but our user Adam was able to get it to work.
 
 - Download and extract “chromagnon-simulator-macos-portable.zip”
 - Open up the extracted “Chromagnon Simulator-0.1.0 Darwin” folder

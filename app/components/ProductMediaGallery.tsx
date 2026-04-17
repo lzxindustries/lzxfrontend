@@ -46,7 +46,9 @@ const getYoutubeIdFromEmbed = (embedUrl: string): string | null => {
 const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () =>
-    setCurrentSlide((prev) => (media.length > 0 ? (prev + 1) % media.length : 0));
+    setCurrentSlide((prev) =>
+      media.length > 0 ? (prev + 1) % media.length : 0,
+    );
   const prevSlide = () =>
     setCurrentSlide((prev) =>
       media.length > 0 ? (prev - 1 + media.length) % media.length : 0,
@@ -98,9 +100,15 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   useEffect(() => {
     const container = thumbnailContainerRef.current;
     if (!container) return;
-    const activeThumb = container.children[currentSlide] as HTMLElement | undefined;
+    const activeThumb = container.children[currentSlide] as
+      | HTMLElement
+      | undefined;
     if (activeThumb) {
-      activeThumb.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'});
+      activeThumb.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
     }
   }, [currentSlide]);
 

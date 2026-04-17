@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "PRM"
+title: 'PRM'
 image: /img/modules/prm/prm-diagrams/prm_front-panel.png
-description: "Documentation for PRM, a programmable rectifier and multiplier for modifying and combining analog video signals."
+description: 'Documentation for PRM, a programmable rectifier and multiplier for modifying and combining analog video signals.'
 ---
 
 import prm_front_panel from '/img/modules/prm/prm-diagrams/prm_front-panel.png';
@@ -27,6 +27,7 @@ import prm_analog_logic_xor from '/img/modules/prm/prm-diagrams/prm_analog-logic
 import prm_voltage_limiter from '/img/modules/prm/prm-diagrams/prm_voltage-limiter.png';
 
 # PRM
+
 <span class="head2_nolink">Programmable Rectifier & Multiplier</span>
 
 <img src={prm_front_panel} alt="prm_front_panel" />
@@ -89,7 +90,7 @@ PRM ships with a black front panel installed. Red, green and blue panels are als
 
 ## Connectors
 
-The PRM design was informed by years of studying interfaces common to the building blocks of analog computers and video processing equipment. 
+The PRM design was informed by years of studying interfaces common to the building blocks of analog computers and video processing equipment.
 
 <img src={prm_controls_connectors_indicators} alt="prm_controls_connectors_indicators" />
 
@@ -168,7 +169,6 @@ P-series modules are precision instruments. DIY PRM modules must be calibrated b
 <img src={prm_sine_shaper} alt="prm_sine_shaper" />
 
 ---
-
 
 ### Double Frequency / Parabolic
 
@@ -292,23 +292,23 @@ Rotate a figure that is defined by horizontal and vertical input signals. Typica
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
-* Eurorack power for PRM requires a 16-pin to 10-pin ribbon cable
-* Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
+- Eurorack power for PRM requires a 16-pin to 10-pin ribbon cable
+- Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -344,7 +344,7 @@ Rotate a figure that is defined by horizontal and vertical input signals. Typica
 | RoHS Compliance              | Manufactured with lead-free processes.                                          |
 | Video Sync                   | None                                                                            |
 
-<!-- 
+<!--
 | Mounting Depth               | TODO mm                                                                         |
 | Bandwidth @ -3dB             | TODO                                                                            |
 | Module Depth                 | TODO mm                                                                         |
@@ -385,7 +385,7 @@ If using a modular system to supply the test oscillators, follow these steps:
 6. Adjust SMX3 **A2** and **C2** knobs to tune the oscillator gain and bias to precisely +/- 1v.
 7. Set DWO3 Oscillator 2 **Frequency Range** to **Free Upper Vertical**.
 8. Set DWO3 Oscillator 2 **Frequency** knob to nine o'clock, and **Freq CV Depth** knob centered. This gives a frequency of approximately 10 kHz.
-9.  Patch DWO3 Oscillator 2 **Square** output to SMX3 input **A3**.
+9. Patch DWO3 Oscillator 2 **Square** output to SMX3 input **A3**.
 10. Patch SMX3 output **3** to oscilloscope.
 11. Adjust SMX3 **A3** and **C3** knobs to tune the oscillator gain and bias to precisely +/- 1v.
 
@@ -441,7 +441,7 @@ PRM-RevD Interactive Bill of Materials
 
 ---
 
-## DIY 
+## DIY
 
 PRM is available as an assembled module, a full DIY kit, or a partial DIY kit.
 
@@ -451,12 +451,12 @@ Downloads for the complete schematic and an interactive HTML Bill of Materials a
 
 The partial DIY kit from LZX includes the printed circuit board and front panel. The following components must be purchased separately from electronics parts vendors.
 
-| Manufacturer                        | Manufacturer Part Number | Description                              | Quantity | Reference Designators                        |
-| ----------------------------------- | ------------------------ | ---------------------------------------- | -------- | -------------------------------------------- |
-| Wenzhou QingPu Electronics Co., Ltd | WQP-WQP518MA             | 3.5mm Jack Mono Switched                 | 9        | J4, J5, J6, J7, J8, J9, J10, J11, J12        |
-|                                     |                          | Pin Header Pitch 0.1in 2X5 Male Shrouded | 1        | J2                                           |
-| Wurth Elektronik                    | 694106402002             | DC Jack Vertical 2.1mm Barrel            | 1        | J3                                           |
-| Recom Technologies                  | R-78K5.0-0.5             | DC/DC Converter Submodule 5.0V           | 1        | U5                                           | 
+| Manufacturer                        | Manufacturer Part Number | Description                              | Quantity | Reference Designators                 |
+| ----------------------------------- | ------------------------ | ---------------------------------------- | -------- | ------------------------------------- |
+| Wenzhou QingPu Electronics Co., Ltd | WQP-WQP518MA             | 3.5mm Jack Mono Switched                 | 9        | J4, J5, J6, J7, J8, J9, J10, J11, J12 |
+|                                     |                          | Pin Header Pitch 0.1in 2X5 Male Shrouded | 1        | J2                                    |
+| Wurth Elektronik                    | 694106402002             | DC Jack Vertical 2.1mm Barrel            | 1        | J3                                    |
+| Recom Technologies                  | R-78K5.0-0.5             | DC/DC Converter Submodule 5.0V           | 1        | U5                                    |
 
 ### Assembly Instructions
 
@@ -466,5 +466,3 @@ This assembly job is recommended for intermediate level DIYers who are comfortab
 2. Mount and solder front-facing jacks.
 3. Attach the front panel and secure it with mounting nuts for the jacks.
 4. Calibrate the module according to the [Calibration](/docs/modules/prm#calibration) procedure above.
-
-

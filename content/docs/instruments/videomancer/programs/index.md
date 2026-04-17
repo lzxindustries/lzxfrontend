@@ -2,8 +2,8 @@
 draft: false
 sidebar_position: 90
 slug: /instruments/videomancer/programs
-title: "Program Guides"
-description: "Index of embedded Videomancer program guides."
+title: 'Program Guides'
+description: 'Index of embedded Videomancer program guides.'
 ---
 
 # Program Guides

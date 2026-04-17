@@ -8,8 +8,15 @@ interface PredictiveProduct {
   id: string;
   title: string;
   handle: string;
-  featuredImage?: {url: string; altText?: string; width?: number; height?: number};
-  variants: {nodes: Array<{price: {amount: string; currencyCode: CurrencyCode}}>};
+  featuredImage?: {
+    url: string;
+    altText?: string;
+    width?: number;
+    height?: number;
+  };
+  variants: {
+    nodes: Array<{price: {amount: string; currencyCode: CurrencyCode}}>;
+  };
 }
 
 interface PredictiveCollection {
@@ -23,7 +30,12 @@ interface PredictiveResults {
   products: PredictiveProduct[];
   collections: PredictiveCollection[];
   pages: Array<{id: string; title: string; handle: string}>;
-  articles: Array<{id: string; title: string; handle: string; blog: {handle: string}}>;
+  articles: Array<{
+    id: string;
+    title: string;
+    handle: string;
+    blog: {handle: string};
+  }>;
 }
 
 export function PredictiveSearch({onClose}: {onClose?: () => void}) {
@@ -45,7 +57,10 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
         onClose?.();
       }
     }
@@ -106,7 +121,9 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
                   <li key={product.id}>
                     <button
                       type="button"
-                      onClick={() => handleSelect(resolveProductUrl(product.handle))}
+                      onClick={() =>
+                        handleSelect(resolveProductUrl(product.handle))
+                      }
                       className="flex items-center gap-3 w-full text-left p-2 rounded hover:bg-base-200 transition"
                     >
                       {product.featuredImage && (
@@ -176,11 +193,7 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
                   <li key={article.id}>
                     <button
                       type="button"
-                      onClick={() =>
-                        handleSelect(
-                          `/journal/${article.handle}`,
-                        )
-                      }
+                      onClick={() => handleSelect(`/journal/${article.handle}`)}
                       className="text-sm p-2 rounded hover:bg-base-200 transition w-full text-left truncate"
                     >
                       {article.title}
@@ -194,7 +207,9 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
           <div className="p-3 border-t border-base-300">
             <button
               type="button"
-              onClick={() => handleSubmit({preventDefault: () => {}} as React.FormEvent)}
+              onClick={() =>
+                handleSubmit({preventDefault: () => {}} as React.FormEvent)
+              }
               className="text-sm text-primary hover:underline w-full text-center"
             >
               View all results for &ldquo;{query}&rdquo;

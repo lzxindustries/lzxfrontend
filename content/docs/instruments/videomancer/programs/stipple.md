@@ -2,29 +2,29 @@
 draft: false
 sidebar_position: 287
 slug: /instruments/videomancer/stipple
-title: "Stipple"
+title: 'Stipple'
 image: /img/instruments/videomancer/stipple/stipple_hero_s1.png
-description: "Every classic computer had a fixed palette — a small set of colors chosen by the hardware designers, often constrained by cost, memory, and the television standards of the era."
+description: 'Every classic computer had a fixed palette — a small set of colors chosen by the hardware designers, often constrained by cost, memory, and the television standards of the era.'
 ---
 
 ![Stipple hero image](/img/instruments/videomancer/stipple/stipple_hero_s1.png)
-*Stipple mapping live video through the Game Boy's four-shade green palette with 4×4 Bayer dithering and scanline emulation.*
+_Stipple mapping live video through the Game Boy's four-shade green palette with 4×4 Bayer dithering and scanline emulation._
 
 ---
 
 ## Overview
 
-**Stipple** is a retro palette quantizer that maps incoming video to the exact color palettes of eight classic computing platforms. It reduces the full-color video stream to a handful of carefully chosen colors: four shades of green for the Game Boy, stark black and white for the original Macintosh, or the rich sixteen-color palettes of the NES, C64, and Amiga. The magic is in the ***dithering***: an ordered pattern of dots that tricks the eye into perceiving more colors than actually exist.
+**Stipple** is a retro palette quantizer that maps incoming video to the exact color palettes of eight classic computing platforms. It reduces the full-color video stream to a handful of carefully chosen colors: four shades of green for the Game Boy, stark black and white for the original Macintosh, or the rich sixteen-color palettes of the NES, C64, and Amiga. The magic is in the **_dithering_**: an ordered pattern of dots that tricks the eye into perceiving more colors than actually exist.
 
 Stipple chains brightness and contrast adjustment, Bayer or noise dithering, palette quantization, saturation control, pixel doubling, and scanline emulation into a single pipeline. At minimum settings, Stipple can apply a subtle palette restriction. At maximum, it transforms video into something that looks like it was rendered on vintage hardware: chunky pixels, limited colors, and the unmistakable stipple patterns of early computer graphics.
 
 :::tip
-***Dithering is the heart of Stipple.*** Without it, palette quantization produces harsh color banding. With it, the eye blends neighboring pixels into intermediate shades, conjuring colors the palette doesn't actually contain.
+**_Dithering is the heart of Stipple._** Without it, palette quantization produces harsh color banding. With it, the eye blends neighboring pixels into intermediate shades, conjuring colors the palette doesn't actually contain.
 :::
 
 ### What's In a Name?
 
-The name ***Stipple*** refers to the drawing technique of creating tonal gradations using patterns of small dots. In digital graphics, stippling is synonymous with ***ordered dithering***: the technique at the core of this program. Classic platforms like the Game Boy and Macintosh relied heavily on stipple patterns to simulate shading with their severely limited color palettes.
+The name **_Stipple_** refers to the drawing technique of creating tonal gradations using patterns of small dots. In digital graphics, stippling is synonymous with **_ordered dithering_**: the technique at the core of this program. Classic platforms like the Game Boy and Macintosh relied heavily on stipple patterns to simulate shading with their severely limited color palettes.
 
 ---
 
@@ -40,14 +40,14 @@ The name ***Stipple*** refers to the drawing technique of creating tonal gradati
 ## Parameters
 
 ![Videomancer front panel with Stipple loaded](/img/instruments/videomancer/stipple/stipple_control_panel.png)
-*Videomancer's front panel with Stipple active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Stipple active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — Palette
 
 | Property | Value |
-|----------|-------|
-| Range | 0 – 7 |
-| Default | 0 |
+| -------- | ----- |
+| Range    | 0 – 7 |
+| Default  | 0     |
 
 **Palette** selects one of eight classic computing platform color palettes. Each palette contains the exact RGB values of its historical source, pre-converted to YUV at synthesis time. The eight platforms, in order from 0 to 7: **Game Boy** (4 green shades), **CGA Mode 4** (black, magenta, cyan, white), **Macintosh** (black and white), **NES** (16 colors), **EGA** (16 colors), **C64** (16 colors), **Amiga OCS** (16 colors), and **Amstrad CPC** (16 colors).
 
@@ -62,9 +62,9 @@ Smaller palettes produce stronger quantization artifacts, which makes dithering 
 ### Knob 2 — Dither Size
 
 | Property | Value |
-|----------|-------|
-| Range | 0 – 3 |
-| Default | 1 |
+| -------- | ----- |
+| Range    | 0 – 3 |
+| Default  | 1     |
 
 **Dither Size** controls the spatial scale of the dither matrix. It selects between four matrix sizes: **None** (dithering disabled), **2×2**, **4×4**, and **8×8**. Larger matrices produce finer stipple patterns with more threshold levels, creating smoother apparent gradations. The 8×8 Bayer matrix provides 64 distinct threshold levels, while the 2×2 matrix provides only 4.
 
@@ -74,10 +74,10 @@ When set to None, the Bayer address is fixed at zero and dithering has no spatia
 
 ### Knob 3 — Dither Amt
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Dither Amt** controls the strength of the dithering offset applied before quantization. At 0%, no dither offset is added, and the quantizer produces hard color boundaries. As the amount increases, the dither pattern pushes pixel values further across quantization thresholds, producing more visible stipple texture. At 100%, the dither offset reaches its maximum range, creating bold dot patterns.
 
@@ -87,10 +87,10 @@ The offset is computed as a shift-and-add approximation that scales the centered
 
 ### Knob 4 — Brightness
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Brightness** applies a DC offset to the luminance channel after contrast scaling. At 50% (center position), there is no offset. Turning counterclockwise darkens the image; turning clockwise brightens it. Brightness adjustment occurs before dithering and quantization, so it shifts which palette colors the quantizer selects.
 
@@ -102,10 +102,10 @@ Use **Brightness** to bias the image toward the dark or light end of a palette. 
 
 ### Knob 5 — Contrast
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Contrast** scales the luminance channel before brightness offset. The scaling uses a shift-and-add approximation of the top three bits of the control value. At low contrast, the luminance range compresses toward mid-gray, reducing the number of palette colors that get used. At high contrast, the luminance range stretches, engaging the full palette and producing punchier color boundaries.
 
@@ -113,10 +113,10 @@ Use **Brightness** to bias the image toward the dark or light end of a palette. 
 
 ### Knob 6 — Saturation
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Saturation** scales the chrominance (U and V) channels of the palette output. The control quantizes to four levels: fully desaturated (gray-scale), half saturation, normal (100%), and oversaturated (150%). At minimum, all palette colors collapse to their luminance-equivalent grays. At maximum, palette colors become more vivid than their historical originals.
 
@@ -129,10 +129,10 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 ### Switch 7 — Pixel Dbl
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Pixel Dbl** enables horizontal pixel doubling by holding each palette output value for two consecutive pixels. The visible result is chunkier, wider pixels that resemble the low horizontal resolution of vintage displays. When off, each pixel is independently quantized. Pixel doubling is applied after palette lookup and saturation scaling, so it operates on final palette colors.
 
@@ -141,10 +141,10 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 ### Switch 8 — Scanlines
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Scanlines** darkens every other horizontal line to 50% brightness, simulating the visible raster lines of a CRT monitor. This effect is applied after pixel doubling, so both effects can combine for an authentic retro display look. When off, all lines are rendered at full brightness.
 
@@ -153,22 +153,22 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 ### Switch 9 — Dither Mode
 
 | Property | Value |
-|----------|-------|
-| Off | Bayer |
-| On | Noise |
-| Default | Bayer |
+| -------- | ----- |
+| Off      | Bayer |
+| On       | Noise |
+| Default  | Bayer |
 
-**Dither Mode** selects between two dithering algorithms. In the **Bayer** position, the dither pattern is a fixed 8×8 ordered matrix that produces a regular, repeating stipple grid. In the **Noise** position, a ***linear feedback shift register*** (LFSR) generates pseudo-random noise values instead, producing a texture resembling film grain. Bayer dithering creates structured, geometric patterns; noise dithering creates organic, random textures.
+**Dither Mode** selects between two dithering algorithms. In the **Bayer** position, the dither pattern is a fixed 8×8 ordered matrix that produces a regular, repeating stipple grid. In the **Noise** position, a **_linear feedback shift register_** (LFSR) generates pseudo-random noise values instead, producing a texture resembling film grain. Bayer dithering creates structured, geometric patterns; noise dithering creates organic, random textures.
 
 ---
 
 ### Switch 10 — Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Invert** applies a luminance inversion after brightness and contrast adjustment, before dithering. The entire tonal scale flips: blacks become white, whites become black, and all intermediate values reverse. Because inversion occurs upstream of the dither and quantize stages, it changes which palette colors the quantizer selects for each region of the image.
 
@@ -177,10 +177,10 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 ### Switch 11 — Dith Phase
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Dith Phase** shifts the Bayer dither matrix diagonally by XOR-ing the matrix address with a constant. This offsets the stipple pattern by several pixels in both axes, producing a different spatial arrangement of the same dither thresholds. The visual effect is subtle: the dot pattern shifts position without changing its overall character. When using Noise mode, this toggle has no effect because the LFSR output is not address-based.
 
@@ -188,10 +188,10 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 
 ### Fader 12 — Mix
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Mix** crossfades between the dry (unprocessed) input and the wet (palette-quantized) output using a four-clock interpolator. At 0%, the original video passes through unchanged. At 100%, the full Stipple effect is applied. Intermediate positions blend the two, which can soften the palette restriction into a subtle color cast rather than hard quantization.
 
@@ -201,20 +201,19 @@ On monochrome palettes like the Macintosh (black and white) and Game Boy (shades
 
 ### Palette quantization
 
-***Palette quantization*** is the process of mapping a full-range image to a fixed set of colors. Early computers had no choice: hardware constraints limited them to a tiny color palette. The Game Boy's screen could display exactly four shades of green. The Commodore 64 had sixteen fixed colors. Artists working within these limits developed visual languages built on careful color choice and clever dithering.
+**_Palette quantization_** is the process of mapping a full-range image to a fixed set of colors. Early computers had no choice: hardware constraints limited them to a tiny color palette. The Game Boy's screen could display exactly four shades of green. The Commodore 64 had sixteen fixed colors. Artists working within these limits developed visual languages built on careful color choice and clever dithering.
 
 Stipple stores all eight palettes as 128 constant RGB entries (8 platforms × 16 colors each), pre-converted to YUV at synthesis time using BT.601 coefficients. The input luminance, after contrast and brightness adjustment, is quantized to a 4-bit index (0–15) that addresses the selected palette's color table. The result is a direct color lookup: no interpolation, no blending, just a hard snap to the nearest palette entry.
 
 ### Ordered dithering
 
-- **Ordered dithering*** uses a repeating threshold matrix: typically a ***Bayer matrix**: to distribute quantization error spatially. Each pixel position in the matrix has a different threshold. When a pixel's value falls near a quantization boundary, the local threshold determines which side it lands on. The result is a structured stipple pattern where dots cluster into regular geometric arrangements.
+- **Ordered dithering\*** uses a repeating threshold matrix: typically a **\*Bayer matrix**: to distribute quantization error spatially. Each pixel position in the matrix has a different threshold. When a pixel's value falls near a quantization boundary, the local threshold determines which side it lands on. The result is a structured stipple pattern where dots cluster into regular geometric arrangements.
 
 The 8×8 Bayer matrix provides 64 distinct threshold levels: 64 different transition points between any two palette colors: yielding much smoother apparent gradients than the palette's actual color count would suggest. Smaller matrices (2×2 or 4×4) have fewer thresholds and produce coarser patterns.
 
 ### Retro display emulation
 
-Stipple's pixel doubling and scanline features reproduce the visual characteristics of vintage CRT displays. ***Pixel doubling*** halves the effective horizontal resolution by holding each palette output for two consecutive pixels, mimicking the chunky rectangular pixels of low-resolution display modes. ***Scanline emulation*** darkens every other line to 50% brightness, recreating the visible horizontal gaps between raster lines on a CRT. Together, these two features transform the clean, sharp digital output into something that evokes the warm, textured look of old televisions and monitors.
-
+Stipple's pixel doubling and scanline features reproduce the visual characteristics of vintage CRT displays. **_Pixel doubling_** halves the effective horizontal resolution by holding each palette output for two consecutive pixels, mimicking the chunky rectangular pixels of low-resolution display modes. **_Scanline emulation_** darkens every other line to 50% brightness, recreating the visible horizontal gaps between raster lines on a CRT. Together, these two features transform the clean, sharp digital output into something that evokes the warm, textured look of old televisions and monitors.
 
 ---
 
@@ -222,25 +221,26 @@ Stipple's pixel doubling and scanline features reproduce the visual characterist
 
 ### Signal Flow Notes
 
-The pipeline runs entirely on the luminance channel until palette lookup. Input Y is contrast-scaled and brightness-offset in two pipelined stages, then optionally inverted. The adjusted Y value enters the dither-and-quantize section, where a Bayer matrix value (or LFSR noise) is scaled by the dither amount and added as an offset before the value is divided into a 4-bit palette index. That index addresses one of the eight platform color tables, producing a full YUV triplet from the palette ROM. The U and V channels of the *input* video are never used (all output color comes from the palette.)
+The pipeline runs entirely on the luminance channel until palette lookup. Input Y is contrast-scaled and brightness-offset in two pipelined stages, then optionally inverted. The adjusted Y value enters the dither-and-quantize section, where a Bayer matrix value (or LFSR noise) is scaled by the dither amount and added as an offset before the value is divided into a 4-bit palette index. That index addresses one of the eight platform color tables, producing a full YUV triplet from the palette ROM. The U and V channels of the _input_ video are never used (all output color comes from the palette.)
 
 :::tip
 **All output color comes from the palette.** The input's chroma channels are ignored entirely. Only the input luminance determines which palette color is selected for each pixel.
 :::
-
 
 ---
 
 ## Exercises
 
 These exercises explore palette selection, dithering techniques, and display emulation. Each builds on the previous one, gradually engaging more of the processing chain.
+
 ### Exercise 1: Game Boy Photography
 
 ![Game Boy Photography result](/img/instruments/videomancer/stipple/stipple_ex1_s1.png)
-*Game Boy Photography — simulated result across source images.*
+_Game Boy Photography — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -266,30 +266,31 @@ A portrait or close-up with varied lighting (faces work especially well for the 
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Palette | 0 (Game Boy) |
-| Dither Size | 3 (8×8) |
-| Dither Amt | ~60% |
-| Brightness | ~55% |
-| Contrast | 50% |
-| Saturation | 50% |
-| Pixel Dbl | On |
-| Scanlines | On |
-| Dither Mode | Bayer |
-| Invert | Off |
-| Dith Phase | Off |
-| Mix | 100% |
+| Control     | Value        |
+| ----------- | ------------ |
+| Palette     | 0 (Game Boy) |
+| Dither Size | 3 (8×8)      |
+| Dither Amt  | ~60%         |
+| Brightness  | ~55%         |
+| Contrast    | 50%          |
+| Saturation  | 50%          |
+| Pixel Dbl   | On           |
+| Scanlines   | On           |
+| Dither Mode | Bayer        |
+| Invert      | Off          |
+| Dith Phase  | Off          |
+| Mix         | 100%         |
 
 ---
 
 ### Exercise 2: Macintosh Halftone
 
 ![Macintosh Halftone result](/img/instruments/videomancer/stipple/stipple_ex2_s1.png)
-*Macintosh Halftone — simulated result across source images.*
+_Macintosh Halftone — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -316,30 +317,31 @@ A grayscale image or footage of an evenly lit scene with smooth tonal gradations
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Palette | 2 (Macintosh) |
-| Dither Size | 3 (8×8) |
-| Dither Amt | 70% |
-| Brightness | 50% |
-| Contrast | 60% |
-| Saturation | 50% |
-| Pixel Dbl | Off |
-| Scanlines | Off |
-| Dither Mode | Bayer |
-| Invert | Off |
-| Dith Phase | Off |
-| Mix | 100% |
+| Control     | Value         |
+| ----------- | ------------- |
+| Palette     | 2 (Macintosh) |
+| Dither Size | 3 (8×8)       |
+| Dither Amt  | 70%           |
+| Brightness  | 50%           |
+| Contrast    | 60%           |
+| Saturation  | 50%           |
+| Pixel Dbl   | Off           |
+| Scanlines   | Off           |
+| Dither Mode | Bayer         |
+| Invert      | Off           |
+| Dith Phase  | Off           |
+| Mix         | 100%          |
 
 ---
 
 ### Exercise 3: CRT Television Emulation
 
 ![CRT Television Emulation result](/img/instruments/videomancer/stipple/stipple_ex3_s1.png)
-*CRT Television Emulation — simulated result across source images.*
+_CRT Television Emulation — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -367,22 +369,23 @@ Footage with bold colors and motion: cartoons, music performances, or colorful a
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Palette | 6 (Amiga OCS) |
-| Dither Size | 2 (4×4) |
-| Dither Amt | ~50% |
-| Brightness | 50% |
-| Contrast | ~65% |
-| Saturation | 100% |
-| Pixel Dbl | On |
-| Scanlines | On |
-| Dither Mode | Bayer |
-| Invert | Off |
-| Dith Phase | Off |
-| Mix | ~70% |
+| Control     | Value         |
+| ----------- | ------------- |
+| Palette     | 6 (Amiga OCS) |
+| Dither Size | 2 (4×4)       |
+| Dither Amt  | ~50%          |
+| Brightness  | 50%           |
+| Contrast    | ~65%          |
+| Saturation  | 100%          |
+| Pixel Dbl   | On            |
+| Scanlines   | On            |
+| Dither Mode | Bayer         |
+| Invert      | Off           |
+| Dith Phase  | Off           |
+| Mix         | ~70%          |
 
 ---
+
 ## Glossary
 
 - **Bayer Matrix**: A fixed threshold pattern used in ordered dithering to distribute quantization error spatially, producing a regular stipple grid.

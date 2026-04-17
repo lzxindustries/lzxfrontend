@@ -24,14 +24,20 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     if (rest === 'module-list' || rest === 'module-list/') {
       throw new Response(null, {
         status: 301,
-        headers: {Location: '/modules', 'Cache-Control': 'public, max-age=31536000'},
+        headers: {
+          Location: '/modules',
+          'Cache-Control': 'public, max-age=31536000',
+        },
       });
     }
     const slug = rest.split('/')[0];
     if (slug) {
       throw new Response(null, {
         status: 301,
-        headers: {Location: `/modules/${slug}/manual`, 'Cache-Control': 'public, max-age=31536000'},
+        headers: {
+          Location: `/modules/${slug}/manual`,
+          'Cache-Control': 'public, max-age=31536000',
+        },
       });
     }
   }
@@ -43,10 +49,15 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     const slug = parts[0];
     const subPath = parts.slice(1).join('/');
     if (slug) {
-      const target = `/instruments/${slug}/manual${subPath ? '/' + subPath : ''}`;
+      const target = `/instruments/${slug}/manual${
+        subPath ? '/' + subPath : ''
+      }`;
       throw new Response(null, {
         status: 301,
-        headers: {Location: target, 'Cache-Control': 'public, max-age=31536000'},
+        headers: {
+          Location: target,
+          'Cache-Control': 'public, max-age=31536000',
+        },
       });
     }
   }
@@ -75,7 +86,10 @@ export async function loader({params, request}: LoaderFunctionArgs) {
         to: hasPage ? `/docs/${partialPath}` : undefined,
       };
     }),
-    {label: doc.frontmatter.title ?? formatLabel(pathParts[pathParts.length - 1])},
+    {
+      label:
+        doc.frontmatter.title ?? formatLabel(pathParts[pathParts.length - 1]),
+    },
   ];
 
   const seo = seoPayload.doc({
@@ -125,7 +139,5 @@ export default function DocsPage() {
 }
 
 function formatLabel(slug: string): string {
-  return slug
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }

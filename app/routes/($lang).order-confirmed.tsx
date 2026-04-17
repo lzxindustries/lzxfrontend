@@ -37,7 +37,9 @@ export default function OrderConfirmed() {
               Order Confirmed
             </Text>
             <Text className="mt-2" color="subtle">
-              We&apos;ve received your order and are getting it ready. You&apos;ll receive a confirmation email shortly with your order details.
+              We&apos;ve received your order and are getting it ready.
+              You&apos;ll receive a confirmation email shortly with your order
+              details.
             </Text>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -46,7 +48,8 @@ export default function OrderConfirmed() {
                 What&apos;s Next?
               </Text>
               <Text size="fine" color="subtle">
-                We&apos;ll send you shipping updates via email as your order progresses.
+                We&apos;ll send you shipping updates via email as your order
+                progresses.
               </Text>
             </div>
             <div className="p-4 border border-primary/10 rounded-lg">
@@ -54,7 +57,8 @@ export default function OrderConfirmed() {
                 Track Your Order
               </Text>
               <Text size="fine" color="subtle">
-                Sign in to your account to view order status and tracking information.
+                Sign in to your account to view order status and tracking
+                information.
               </Text>
             </div>
             <div className="p-4 border border-primary/10 rounded-lg">
@@ -67,16 +71,10 @@ export default function OrderConfirmed() {
             </div>
           </div>
           <div className="flex gap-4 justify-center">
-            <Link
-              to="/account"
-              className="btn btn-primary"
-            >
+            <Link to="/account" className="btn btn-primary">
               View Your Account
             </Link>
-            <Link
-              to="/"
-              className="btn btn-secondary"
-            >
+            <Link to="/" className="btn btn-secondary">
               Continue Shopping
             </Link>
           </div>

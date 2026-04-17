@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-may-update
-title: "Chromagnon Update: May 2026"
+title: 'Chromagnon Update: May 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
@@ -11,7 +11,7 @@ Monthly Chromagnon update for May 2026.
 
 <!--truncate-->
 
-<!-- 
+<!--
 CONTEXT: By this date, RevI prototype boards should have been received (late April / early May).
 Hardware validation should be starting or underway (May–June target).
 Firmware integration has been ongoing since April on existing dev hardware.
@@ -32,7 +32,7 @@ EXPECTED CONTENT:
 
 ## Hardware Validation Results
 
-<!-- 
+<!--
 Report on:
 - RevI prototype board: received? assembled? powered on?
 - Validation checklist progress (reference the 42-step test plan from 2024, updated for RevI)
@@ -43,11 +43,11 @@ Report on:
 
 **Schedule check against March plan:**
 
-| Milestone | Original Target | Actual Status |
-|---|---|---|
-| RevI prototype fabricated & delivered | Late April–Early May 2026 | |
-| Hardware validation & firmware integration on RevI | May–June 2026 | |
-| Production-ready milestone | June 2026 | |
+| Milestone                                          | Original Target           | Actual Status |
+| -------------------------------------------------- | ------------------------- | ------------- |
+| RevI prototype fabricated & delivered              | Late April–Early May 2026 |               |
+| Hardware validation & firmware integration on RevI | May–June 2026             |               |
+| Production-ready milestone                         | June 2026                 |               |
 
 ## Demo Content
 

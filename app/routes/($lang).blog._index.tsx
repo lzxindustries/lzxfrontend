@@ -11,7 +11,10 @@ const POSTS_PER_PAGE = 10;
 
 export async function loader({request}: LoaderFunctionArgs) {
   const url = new URL(request.url);
-  const requestedPage = Math.max(1, parseInt(url.searchParams.get('page') ?? '1', 10));
+  const requestedPage = Math.max(
+    1,
+    parseInt(url.searchParams.get('page') ?? '1', 10),
+  );
 
   const allPosts = listBlogPosts();
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));

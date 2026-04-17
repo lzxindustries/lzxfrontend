@@ -102,7 +102,10 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       title: 'Modules',
       handle: 'modules',
       description: 'LZX Industries eurorack video synthesis modules',
-      seo: {title: 'Modules', description: 'LZX Industries eurorack video synthesis modules'},
+      seo: {
+        title: 'Modules',
+        description: 'LZX Industries eurorack video synthesis modules',
+      },
       descriptionHtml: '',
       updatedAt: new Date().toISOString(),
       image: null,
@@ -122,9 +125,7 @@ export default function ModuleListingPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
-      <h1 className="font-bold text-3xl md:text-4xl uppercase mb-8">
-        Modules
-      </h1>
+      <h1 className="font-bold text-3xl md:text-4xl uppercase mb-8">Modules</h1>
 
       {seriesGroups.map((group) => (
         <section key={group.key} className="mb-12">

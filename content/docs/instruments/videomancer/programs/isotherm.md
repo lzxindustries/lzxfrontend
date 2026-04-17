@@ -2,13 +2,13 @@
 draft: false
 sidebar_position: 149
 slug: /instruments/videomancer/isotherm
-title: "Isotherm"
+title: 'Isotherm'
 image: /img/instruments/videomancer/isotherm/isotherm_hero_s1.png
-description: "Every surface radiates energy."
+description: 'Every surface radiates energy.'
 ---
 
 ![Isotherm hero image](/img/instruments/videomancer/isotherm/isotherm_hero_s1.png)
-*Isotherm rendering a live camera feed through the Ironbow false-color palette with isotherm contour lines tracing luminance boundaries.*
+_Isotherm rendering a live camera feed through the Ironbow false-color palette with isotherm contour lines tracing luminance boundaries._
 
 ---
 
@@ -16,7 +16,7 @@ description: "Every surface radiates energy."
 
 **Isotherm** is a false-color thermal camera simulator. It treats the luminance of your input video as a temperature proxy and maps it through one of four color palettes: Ironbow, Rainbow, White-Hot, or Black-Hot: to produce imagery that looks like it came from a thermal imaging camera. Bright areas glow hot; dark areas read cold. The illusion is surprisingly convincing.
 
-Beyond simple palette mapping, Isotherm draws ***isotherm contour lines*** at configurable intervals, marking the boundaries between luminance zones the way a weather map traces temperature gradients. A military-style ***HUD overlay*** adds a center crosshair and corner bracket reticles for a surveillance-camera aesthetic. An ***auto-range*** system continuously tracks the brightest and darkest pixels in the frame and stretches the palette to fill the available range, maximizing contrast automatically.
+Beyond simple palette mapping, Isotherm draws **_isotherm contour lines_** at configurable intervals, marking the boundaries between luminance zones the way a weather map traces temperature gradients. A military-style **_HUD overlay_** adds a center crosshair and corner bracket reticles for a surveillance-camera aesthetic. An **_auto-range_** system continuously tracks the brightest and darkest pixels in the frame and stretches the palette to fill the available range, maximizing contrast automatically.
 
 :::tip
 Isotherm is in the **Analysis** category because it reveals hidden structure in your video. Luminance gradients that are invisible in a normal image become vivid, color-coded boundaries.
@@ -24,7 +24,7 @@ Isotherm is in the **Analysis** category because it reveals hidden structure in 
 
 ### What's In a Name?
 
-An ***isotherm*** is a line on a map connecting points of equal temperature. Meteorologists use isotherms on weather charts to visualize temperature distribution across a region. In this program, the "temperature" is luminance, and the isotherm contour lines trace boundaries between brightness zones (topographic lines for a landscape of light.)
+An **_isotherm_** is a line on a map connecting points of equal temperature. Meteorologists use isotherms on weather charts to visualize temperature distribution across a region. In this program, the "temperature" is luminance, and the isotherm contour lines trace boundaries between brightness zones (topographic lines for a landscape of light.)
 
 ---
 
@@ -40,19 +40,19 @@ An ***isotherm*** is a line on a map connecting points of equal temperature. Met
 ## Parameters
 
 ![Videomancer front panel with Isotherm loaded](/img/instruments/videomancer/isotherm/isotherm_control_panel.png)
-*Videomancer's front panel with Isotherm active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Isotherm active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — Posterize
 
 | Property | Value |
-|----------|-------|
-| Range | 0 – 7 |
-| Default | 0 |
+| -------- | ----- |
+| Range    | 0 – 7 |
+| Default  | 0     |
 
 **Posterize** controls the number of quantization bands applied to the luminance signal before palette mapping. At the minimum setting, posterization is disabled and the full 10-bit luminance range maps smoothly through the palette. As you increase the value, luminance is progressively truncated to fewer bits, producing flat thermal zones separated by hard color boundaries. At the maximum setting, only eight distinct luminance levels survive (eight bold color bands like a simplified weather map.)
 
 :::note
-Posterization happens *before* palette lookup. The banded luminance feeds into the palette interpolator, so each band maps to a single palette color rather than a gradient.
+Posterization happens _before_ palette lookup. The banded luminance feeds into the palette interpolator, so each band maps to a single palette color rather than a gradient.
 :::
 
 ---
@@ -60,9 +60,9 @@ Posterization happens *before* palette lookup. The banded luminance feeds into t
 ### Knob 2 — Contour Int
 
 | Property | Value |
-|----------|-------|
-| Range | 1 – 8 |
-| Default | 4 |
+| -------- | ----- |
+| Range    | 1 – 8 |
+| Default  | 4     |
 
 **Contour Int** sets the spacing between isotherm contour lines. This is a stepped control with eight intervals, from very dense (interval of 4 luminance steps) to very sparse (interval of 256 luminance steps). At the maximum setting, contour lines are disabled entirely. Denser intervals produce a web of fine contour lines revealing subtle luminance gradients. Wider intervals draw only the major boundaries.
 
@@ -70,10 +70,10 @@ Posterization happens *before* palette lookup. The banded luminance feeds into t
 
 ### Knob 3 — Smoothing
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 0.0%          |
 
 **Smoothing** applies horizontal IIR low-pass filtering to the input luminance before any palette processing. At the minimum setting, no smoothing is applied and pixel-level detail is preserved. Increasing the value progressively blurs the luminance channel horizontally, softening noise and high-frequency detail. At maximum smoothing, the IIR filter has a very long time constant, producing broad horizontal smears that emphasize slow luminance gradients.
 
@@ -85,21 +85,21 @@ Smoothing is especially useful with noisy or low-quality video sources. A small 
 
 ### Knob 4 — Contrast
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
-**Contrast** adjusts the gain applied to the luminance signal. In ***auto-range*** mode, this is a post-normalization contrast control centered at 50%: values below reduce contrast toward flat gray, values above increase contrast toward hard clipping. In ***manual*** mode (Auto Range off), Contrast acts as a raw gain multiplier on the input luminance. Either way, the center position (50%) passes the signal at unity gain.
+**Contrast** adjusts the gain applied to the luminance signal. In **_auto-range_** mode, this is a post-normalization contrast control centered at 50%: values below reduce contrast toward flat gray, values above increase contrast toward hard clipping. In **_manual_** mode (Auto Range off), Contrast acts as a raw gain multiplier on the input luminance. Either way, the center position (50%) passes the signal at unity gain.
 
 ---
 
 ### Knob 5 — Brightness
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Brightness** offsets the luminance signal up or down. In auto-range mode, it shifts the normalized result. In manual mode, it adds a DC offset to the gained signal. The center position (50%) adds no offset. Turning counterclockwise darkens the image; turning clockwise brightens it. Combined with **Contrast**, this gives full manual control over how the input luminance maps to palette colors.
 
@@ -107,10 +107,10 @@ Smoothing is especially useful with noisy or low-quality video sources. A small 
 
 ### Knob 6 — Contour Wid
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 25.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 25.0%         |
 
 **Contour Wid** controls the thickness of isotherm contour lines. At the minimum value, contour lines are drawn as hairlines: one or two pixels wide. As the value increases, the lines thicken, eventually becoming wide bands that visually merge with the palette colors at very high settings. The contour width interacts with **Contour Int**: wide contour lines at narrow intervals can fill most of the image with white.
 
@@ -123,10 +123,10 @@ Setting both **Contour Wid** high and **Contour Int** to a dense interval may pr
 ### Switch 7 — Palette A
 
 | Property | Value |
-|----------|-------|
-| Off | Lo |
-| On | Hi |
-| Default | Lo |
+| -------- | ----- |
+| Off      | Lo    |
+| On       | Hi    |
+| Default  | Lo    |
 
 **Palette A** is the high bit of the two-bit palette selector. Combined with **Palette B** (Switch 8), it selects one of four color palettes. Flipping this switch changes the upper bit of the palette index, jumping between palette pairs.
 
@@ -135,10 +135,10 @@ Setting both **Contour Wid** high and **Contour Int** to a dense interval may pr
 ### Switch 8 — Palette B
 
 | Property | Value |
-|----------|-------|
-| Off | Lo |
-| On | Hi |
-| Default | Lo |
+| -------- | ----- |
+| Off      | Lo    |
+| On       | Hi    |
+| Default  | Lo    |
 
 **Palette B** is the low bit of the two-bit palette selector. Combined with **Palette A** (Switch 7), it selects one of four color palettes. Flipping this switch changes the lower bit of the palette index, stepping between adjacent palettes.
 
@@ -147,10 +147,10 @@ Setting both **Contour Wid** high and **Contour Int** to a dense interval may pr
 ### Switch 9 — Auto Range
 
 | Property | Value |
-|----------|-------|
-| Off | On |
-| On | Off |
-| Default | On |
+| -------- | ----- |
+| Off      | On    |
+| On       | Off   |
+| Default  | On    |
 
 **Auto Range** enables or disables automatic luminance normalization. With auto-range **On** (the default), Isotherm continuously tracks the minimum and maximum luminance in the frame and stretches the palette to span that range. This maximizes contrast regardless of the input signal level. With auto-range **Off**, the palette maps the raw input luminance directly, and **Contrast** and **Brightness** serve as manual gain and offset controls.
 
@@ -163,10 +163,10 @@ Auto-range is ideal for live camera feeds where lighting conditions change. For 
 ### Switch 10 — HUD
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **HUD** enables a heads-up display overlay. When set to **On**, a white center crosshair and four corner bracket reticles are drawn on top of the thermal image. The HUD elements are resolution-adaptive and remain centered regardless of video format. The crosshair is 40 pixels across; corner brackets extend 40 pixels along each edge.
 
@@ -175,10 +175,10 @@ Auto-range is ideal for live camera feeds where lighting conditions change. For 
 ### Switch 11 — Invert Map
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Invert Map** reverses the direction of the palette mapping. When **Off**, low luminance maps to the cold end of the palette and high luminance maps to the hot end. When **On**, the mapping is inverted: bright areas read cold and dark areas read hot. This is equivalent to flipping the thermal polarity on a real thermal camera.
 
@@ -188,12 +188,12 @@ Auto-range is ideal for live camera feeds where lighting conditions change. For 
 
 **Palette A** (Switch 7) and **Palette B** (Switch 8) form a two-bit binary palette selector:
 
-| Palette A | Palette B | Palette |
-|-----------|-----------|---------|
-| Lo | Lo | **Ironbow** — black to deep blue to red to orange to yellow to white |
-| Hi | Lo | **White-Hot** — monochrome black-to-white ramp |
-| Lo | Hi | **Rainbow** — full spectral sweep: violet to blue to cyan to green to yellow to red to white |
-| Hi | Hi | **Black-Hot** — inverted monochrome: white-to-black ramp |
+| Palette A | Palette B | Palette                                                                                      |
+| --------- | --------- | -------------------------------------------------------------------------------------------- |
+| Lo        | Lo        | **Ironbow** — black to deep blue to red to orange to yellow to white                         |
+| Hi        | Lo        | **White-Hot** — monochrome black-to-white ramp                                               |
+| Lo        | Hi        | **Rainbow** — full spectral sweep: violet to blue to cyan to green to yellow to red to white |
+| Hi        | Hi        | **Black-Hot** — inverted monochrome: white-to-black ramp                                     |
 
 :::note
 The Ironbow palette mimics the classic look of uncooled thermal cameras. Rainbow is the most colorful, revealing fine luminance gradients as distinct hues. White-Hot and Black-Hot are monochrome variants useful for high-contrast analysis.
@@ -205,10 +205,10 @@ The Ironbow palette mimics the classic look of uncooled thermal cameras. Rainbow
 
 ### Fader 12 — Mix
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Mix** crossfades between the dry (unprocessed) input signal and the wet (false-color) output. At 0%, the output is the original input video with no thermal processing visible. At 100% (the default), the output is fully false-colored. Intermediate values blend the two, creating a translucent thermal overlay on top of the source image. This is useful for orientation: you can see the original scene underneath the thermal coloring.
 
@@ -218,18 +218,17 @@ The Ironbow palette mimics the classic look of uncooled thermal cameras. Rainbow
 
 ### False-Color Imaging
 
-***False-color*** imaging assigns arbitrary colors to measurable quantities. In scientific imaging, false color reveals information invisible to the naked eye: infrared cameras render heat as color, satellite imagery maps vegetation health, and medical scans highlight tissue density. The technique works because the human visual system is far more sensitive to color differences than to luminance differences. A smooth gray gradient might look uniform, but map it through a rainbow palette and subtle variations leap out in vivid hues.
+**_False-color_** imaging assigns arbitrary colors to measurable quantities. In scientific imaging, false color reveals information invisible to the naked eye: infrared cameras render heat as color, satellite imagery maps vegetation health, and medical scans highlight tissue density. The technique works because the human visual system is far more sensitive to color differences than to luminance differences. A smooth gray gradient might look uniform, but map it through a rainbow palette and subtle variations leap out in vivid hues.
 
 Isotherm applies this principle to video luminance. The input luma is treated as a scalar field: a "temperature" that varies across the frame: and the palette maps that scalar to a color. This transforms any video source into a thermal-style visualization.
 
 ### Piecewise-Linear Palettes
 
-Rather than storing a full 1024-entry lookup table for each palette, Isotherm defines 16 ***key-point*** colors per palette and interpolates linearly between them. The input luminance selects a segment between two adjacent key-points, and a fractional index drives piecewise-linear blending across all three color channels (Y, Cb, Cr) simultaneously. This approach requires only registers: no block RAM: while producing smooth color gradients.
+Rather than storing a full 1024-entry lookup table for each palette, Isotherm defines 16 **_key-point_** colors per palette and interpolates linearly between them. The input luminance selects a segment between two adjacent key-points, and a fractional index drives piecewise-linear blending across all three color channels (Y, Cb, Cr) simultaneously. This approach requires only registers: no block RAM: while producing smooth color gradients.
 
 ### Auto-Ranging
 
-Real thermal cameras use ***automatic gain control*** to stretch the sensor's output to fill the display range, ensuring maximum contrast regardless of the scene's absolute temperature. Isotherm implements a digital equivalent: an IIR envelope tracker follows the minimum and maximum luminance values across each frame, gradually decaying toward the extremes. The tracked range normalizes the input before palette mapping, so even low-contrast scenes produce vivid, full-range thermal imagery.
-
+Real thermal cameras use **_automatic gain control_** to stretch the sensor's output to fill the display range, ensuring maximum contrast regardless of the scene's absolute temperature. Isotherm implements a digital equivalent: an IIR envelope tracker follows the minimum and maximum luminance values across each frame, gradually decaying toward the extremes. The tracked range normalizes the input before palette mapping, so even low-contrast scenes produce vivid, full-range thermal imagery.
 
 ---
 
@@ -242,22 +241,23 @@ The key architectural decision is that **the entire palette mapping operates on 
 Auto-range and manual mode share the same pipeline stages but take different paths through them. In auto mode, stages 2 and 3 normalize the input to the tracked min/max envelope, then stage 3b applies contrast and brightness as post-normalization adjustments. In manual mode, stage 3 applies contrast as raw gain and brightness as a DC offset directly, bypassing the auto-range normalization.
 
 :::tip
-**Contour lines are generated from the post-posterize luminance.** This means posterization creates discrete zones, and contour lines appear at the boundaries *between* those zones. More posterization bands mean more contour lines at a given interval (and fewer bands mean fewer, bolder contours.)
+**Contour lines are generated from the post-posterize luminance.** This means posterization creates discrete zones, and contour lines appear at the boundaries _between_ those zones. More posterization bands mean more contour lines at a given interval (and fewer bands mean fewer, bolder contours.)
 :::
-
 
 ---
 
 ## Exercises
 
 These exercises progress from basic palette exploration to precision thermal analysis techniques. Each builds familiarity with a different subsystem of Isotherm's processing chain.
+
 ### Exercise 1: Thermal Palette Survey
 
 ![Thermal Palette Survey result](/img/instruments/videomancer/isotherm/isotherm_ex1_s1.png)
-*Thermal Palette Survey — simulated result across source images.*
+_Thermal Palette Survey — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -283,30 +283,31 @@ A live camera feed with a mix of bright and dark areas: a face lit from one side
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Posterize | 0 |
+| Control     | Value        |
+| ----------- | ------------ |
+| Posterize   | 0            |
 | Contour Int | 8 (disabled) |
-| Smoothing | 0% |
-| Contrast | 50% |
-| Brightness | 50% |
-| Contour Wid | 0% |
-| Palette A | Lo |
-| Palette B | Lo |
-| Auto Range | On |
-| HUD | Off |
-| Invert Map | Off |
-| Mix | 100% |
+| Smoothing   | 0%           |
+| Contrast    | 50%          |
+| Brightness  | 50%          |
+| Contour Wid | 0%           |
+| Palette A   | Lo           |
+| Palette B   | Lo           |
+| Auto Range  | On           |
+| HUD         | Off          |
+| Invert Map  | Off          |
+| Mix         | 100%         |
 
 ---
 
 ### Exercise 2: Contour Mapping
 
 ![Contour Mapping result](/img/instruments/videomancer/isotherm/isotherm_ex2_s1.png)
-*Contour Mapping — simulated result across source images.*
+_Contour Mapping — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -332,30 +333,31 @@ A slowly moving video source with smooth gradients (clouds, water, or gently lit
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Posterize | 4 |
-| Contour Int | 3 |
-| Smoothing | 0% |
-| Contrast | 50% |
-| Brightness | 50% |
-| Contour Wid | 25% |
-| Palette A | Lo |
-| Palette B | Lo |
-| Auto Range | On |
-| HUD | On |
-| Invert Map | Off |
-| Mix | 100% |
+| Control     | Value |
+| ----------- | ----- |
+| Posterize   | 4     |
+| Contour Int | 3     |
+| Smoothing   | 0%    |
+| Contrast    | 50%   |
+| Brightness  | 50%   |
+| Contour Wid | 25%   |
+| Palette A   | Lo    |
+| Palette B   | Lo    |
+| Auto Range  | On    |
+| HUD         | On    |
+| Invert Map  | Off   |
+| Mix         | 100%  |
 
 ---
 
 ### Exercise 3: Abstract Heat Landscapes
 
 ![Abstract Heat Landscapes result](/img/instruments/videomancer/isotherm/isotherm_ex3_s1.png)
-*Abstract Heat Landscapes — simulated result across source images.*
+_Abstract Heat Landscapes — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -383,22 +385,23 @@ Any visually complex footage: architectural scenes, nature footage, or abstract 
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Posterize | 3 |
+| Control     | Value        |
+| ----------- | ------------ |
+| Posterize   | 3            |
 | Contour Int | 8 (disabled) |
-| Smoothing | 50% |
-| Contrast | 60% |
-| Brightness | 40% |
-| Contour Wid | 0% |
-| Palette A | Lo |
-| Palette B | Hi |
-| Auto Range | Off |
-| HUD | Off |
-| Invert Map | On |
-| Mix | 50% |
+| Smoothing   | 50%          |
+| Contrast    | 60%          |
+| Brightness  | 40%          |
+| Contour Wid | 0%           |
+| Palette A   | Lo           |
+| Palette B   | Hi           |
+| Auto Range  | Off          |
+| HUD         | Off          |
+| Invert Map  | On           |
+| Mix         | 50%          |
 
 ---
+
 ## Glossary
 
 - **Auto-Range**: Automatic normalization of input luminance to fill the full palette range, implemented as an IIR envelope tracker following per-frame min/max values.

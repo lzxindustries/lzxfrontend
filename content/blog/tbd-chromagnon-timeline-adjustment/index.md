@@ -1,13 +1,13 @@
 ---
 slug: chromagnon-timeline-adjustment
-title: "Chromagnon: Schedule Update"
+title: 'Chromagnon: Schedule Update'
 authors: [lars]
 tags: [chromagnon, manufacturing, business]
 draft: true
 # image: ./chromagnon-timeline.jpg
 ---
 
-<!-- 
+<!--
 CONTINGENCY POST: Use this if the overall timeline needs to shift forward for reasons
 OTHER than a hardware revision — e.g., supply chain delays, revenue-pacing issues,
 production partner capacity, or personal/team disruptions.
@@ -33,7 +33,7 @@ An adjustment to the Chromagnon production schedule.
 
 ## The Update
 
-<!-- 
+<!--
 Lead with the new date. One sentence. No preamble.
 Example: "Ship Unit #1 is moving from August to [MONTH]."
 Then explain why in 2-3 paragraphs.
@@ -41,7 +41,7 @@ Then explain why in 2-3 paragraphs.
 
 ## What Caused the Shift
 
-<!-- 
+<!--
 Be specific. Which risk factor from the March post materialized?
 - Production lead times? (Medium risk — called out in March)
 - Revenue pacing? (Ongoing factor — called out in March)
@@ -54,7 +54,7 @@ and then move to the plan.
 
 ## What's Been Accomplished
 
-<!-- 
+<!--
 Show concrete progress since the last update:
 - Hardware milestones hit
 - Production orders placed
@@ -68,19 +68,19 @@ even if the timeline has moved.
 
 ## Revised Schedule
 
-| Milestone | Previous Target | New Target | Status |
-|---|---|---|---|
-| Production-ready | | | |
-| Production order placed | | | |
-| First batch assembly & QC | | | |
-| Ship Unit #1 | | | |
-| Fulfillment at scale | | | |
+| Milestone                 | Previous Target | New Target | Status |
+| ------------------------- | --------------- | ---------- | ------ |
+| Production-ready          |                 |            |        |
+| Production order placed   |                 |            |        |
+| First batch assembly & QC |                 |            |        |
+| Ship Unit #1              |                 |            |        |
+| Fulfillment at scale      |                 |            |        |
 
 ## What Has NOT Changed
 
-<!-- 
+<!--
 - Pre-order prices honored
-- Queue order unchanged  
+- Queue order unchanged
 - Feature set unchanged
 - Monthly update commitment unchanged
 -->

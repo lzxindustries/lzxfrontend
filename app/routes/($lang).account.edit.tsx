@@ -152,7 +152,10 @@ export default function AccountDetailsEdit() {
           </div>
         )}
         <div className="mt-3">
-          <label htmlFor="firstName" className="text-sm text-primary/50 mb-1 block">
+          <label
+            htmlFor="firstName"
+            className="text-sm text-primary/50 mb-1 block"
+          >
             First name
           </label>
           <input
@@ -167,7 +170,10 @@ export default function AccountDetailsEdit() {
           />
         </div>
         <div className="mt-3">
-          <label htmlFor="lastName" className="text-sm text-primary/50 mb-1 block">
+          <label
+            htmlFor="lastName"
+            className="text-sm text-primary/50 mb-1 block"
+          >
             Last name
           </label>
           <input
@@ -215,7 +221,9 @@ export default function AccountDetailsEdit() {
           {emailChanged && (
             <div className="flex items-center gap-2 mt-2 p-2 bg-amber-50 border border-amber-200 rounded text-amber-800 text-xs">
               <FaExclamationTriangle className="shrink-0" />
-              <span>Changing your email will update your login credentials.</span>
+              <span>
+                Changing your email will update your login credentials.
+              </span>
             </div>
           )}
           {actionData?.fieldErrors?.email && (

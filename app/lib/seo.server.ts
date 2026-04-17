@@ -20,13 +20,7 @@ import type {
   WebPage,
 } from 'schema-dts';
 
-function root({
-  shop,
-  url,
-}: {
-  shop: Shop;
-  url: Request['url'];
-}): SeoConfig {
+function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
   return {
     title: shop?.name,
     titleTemplate: '%s | LZX Industries',
@@ -355,13 +349,7 @@ function article({
   };
 }
 
-function blog({
-  blog,
-  url,
-}: {
-  blog: Blog;
-  url: Request['url'];
-}): SeoConfig {
+function blog({blog, url}: {blog: Blog; url: Request['url']}): SeoConfig {
   return {
     title: blog?.seo?.title,
     description: truncate(blog?.seo?.description || ''),
@@ -377,13 +365,7 @@ function blog({
   };
 }
 
-function page({
-  page,
-  url,
-}: {
-  page: Page;
-  url: Request['url'];
-}): SeoConfig {
+function page({page, url}: {page: Page; url: Request['url']}): SeoConfig {
   return {
     description: truncate(page?.seo?.description || ''),
     title: page?.seo?.title,
@@ -565,9 +547,7 @@ function blogPost({
     titleTemplate: '%s | LZX Blog',
     description: truncate(description),
     url,
-    media: image
-      ? {type: 'image', url: image, altText: title}
-      : undefined,
+    media: image ? {type: 'image', url: image, altText: title} : undefined,
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',

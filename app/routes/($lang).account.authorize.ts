@@ -6,5 +6,7 @@ import {redirect, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
  * email/password login, so authorise requests simply redirect to login.
  */
 export async function loader({params}: LoaderFunctionArgs) {
-  return redirect(params.lang ? `/${params.lang}/account/login` : '/account/login');
+  return redirect(
+    params.lang ? `/${params.lang}/account/login` : '/account/login',
+  );
 }

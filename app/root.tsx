@@ -9,10 +9,7 @@ import {
   useMatches,
   useRouteError,
 } from '@remix-run/react';
-import {
-  ShopifySalesChannel,
-  getSeoMeta,
-} from '@shopify/hydrogen';
+import {ShopifySalesChannel, getSeoMeta} from '@shopify/hydrogen';
 import type {Shop, Cart} from '@shopify/hydrogen/storefront-api-types';
 import {defer} from '@shopify/remix-oxygen';
 import type {
@@ -120,7 +117,8 @@ export const meta = ({matches}: MetaArgs<typeof loader>) => {
 
 export function ErrorBoundary({error}: {error: Error}) {
   const [root] = useMatches();
-  const locale = (root?.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
+  const locale =
+    (root?.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
   const routeError = useRouteError();
   const isRouteError = isRouteErrorResponse(routeError);
 

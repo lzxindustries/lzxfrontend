@@ -14,12 +14,12 @@ All content from `docs.lzxindustries.net` (Docusaurus) has been migrated to `lzx
 
 These are remapped in `server.ts` before the hostname redirect:
 
-| Old path | Redirects to |
-|----------|-------------|
-| `/blog/archive` | `/blog` |
-| `/blog/authors` | `/blog` |
-| `/docs/category/program-guides` | `/docs` |
-| `/docs/category/videomancer` | `/docs/instruments/videomancer/quick-start` |
+| Old path                        | Redirects to                                |
+| ------------------------------- | ------------------------------------------- |
+| `/blog/archive`                 | `/blog`                                     |
+| `/blog/authors`                 | `/blog`                                     |
+| `/docs/category/program-guides` | `/docs`                                     |
+| `/docs/category/videomancer`    | `/docs/instruments/videomancer/quick-start` |
 
 All other paths (docs, blog posts, blog tag pages) map 1:1.
 
@@ -128,6 +128,7 @@ Open `https://docs.lzxindustries.net` in a browser. Should land on `https://lzxi
 ### 4.2 Update external references
 
 Update links you control to point to `lzxindustries.net`:
+
 - GitHub READMEs (lzxindustries repos)
 - npm packages
 - Social media bios
@@ -184,8 +185,7 @@ if (requestUrl.hostname === 'docs.lzxindustries.net') {
     '/blog/archive': '/blog',
     '/blog/authors': '/blog',
     '/docs/category/program-guides': '/docs',
-    '/docs/category/videomancer':
-      '/docs/instruments/videomancer/quick-start',
+    '/docs/category/videomancer': '/docs/instruments/videomancer/quick-start',
   };
   const mapped = docusaurusRedirects[requestUrl.pathname];
   if (mapped) {

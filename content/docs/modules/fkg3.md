@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "FKG3"
+title: 'FKG3'
 image: /img/modules/fkg3/fkg3-diagrams/fkg3_frontpanel.png
-description: "Documentation for FKG3, a fader and key generating compositor for layering two RGB sources with internal or external keying."
+description: 'Documentation for FKG3, a fader and key generating compositor for layering two RGB sources with internal or external keying.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import fkg3_frontpanel from '/img/modules/fkg3/fkg3-diagrams/fkg3_frontpanel.png';
@@ -43,6 +43,7 @@ import fkg3_frontpanel from '/img/modules/fkg3/fkg3-diagrams/fkg3_frontpanel.png
 import fkg3_panel_labeled from '/img/modules/fkg3/fkg3-diagrams/fkg3_panel_labeled_496x1024.png';
 
 # FKG3
+
 <span class="head2_nolink">Fader & Key Generating Compositor</span>
 
 <img src={fkg3_frontpanel} alt="FKG3 front panel" />
@@ -51,7 +52,7 @@ import fkg3_panel_labeled from '/img/modules/fkg3/fkg3-diagrams/fkg3_panel_label
 
 FKG3 serves a wide range of creative image compositing functions. It's a key generator and RGB fader in one, allowing two RGB triplets to be layered with an internal or external key. Keys can be cut based upon luminance, or any one of the RGB color components. The edge of the key can range from hard to soft. The key softness can be increased so much that FKG3 becomes a crossfader with no key edge at all. Threshold and Softness can be voltage controlled with video rate signals. RGB and monochrome sources can be freely composited thanks to internally self-normalled input jacks.
 
-Keying is based on analog logic. This is what allows FKG3 to perform a variety of fades, hard keys, and soft keys. It's also the "key" to controlling how chroma keys are cut. The individual RGB inputs open up creative possibilites that aren't possible with the conventional key bus of an ordinary video mixer. 
+Keying is based on analog logic. This is what allows FKG3 to perform a variety of fades, hard keys, and soft keys. It's also the "key" to controlling how chroma keys are cut. The individual RGB inputs open up creative possibilites that aren't possible with the conventional key bus of an ordinary video mixer.
 
 The analog logic of FKG3 can be applied to any signal, not just a video image. Low frequency control voltages can also be processed.
 
@@ -67,13 +68,13 @@ FKG3 is more familiar from the perspective of traditional keying in a video mixe
 
 ## Key Specifications
 
-|                   |                                                                                 |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 12 HP                                                                           |
-| Power Consumption | 12V @ 200 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
-| Video Sync        | Rear RCA in & out                                                               |
+|                   |                                                             |
+| ----------------- | ----------------------------------------------------------- |
+| Mounting Width    | 12 HP                                                       |
+| Power Consumption | 12V @ 200 mA                                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable |
+| Video Sync        | Rear RCA in & out                                           |
 
 ---
 
@@ -83,15 +84,15 @@ FKG3 is a core module in almost any modular video synth. Compositing is a primar
 
 ### Terminology
 
-The terms *layering*, *blending* and *compositing* are often used interchangeably, but they are technically different. *Layering* refers to any combination of two or more images. *Blending* is a type of layering in which two images are combined using a math operation such as sum or difference. *Compositing* is a type of layering in which two or more images appear to be stacked over one another, or in front of one another. Compositing requires a mask or stencil, often called a *matte* in film compositing.
+The terms _layering_, _blending_ and _compositing_ are often used interchangeably, but they are technically different. _Layering_ refers to any combination of two or more images. _Blending_ is a type of layering in which two images are combined using a math operation such as sum or difference. _Compositing_ is a type of layering in which two or more images appear to be stacked over one another, or in front of one another. Compositing requires a mask or stencil, often called a _matte_ in film compositing.
 
-In video terms, the mask is known as a *key*. The key can come from one of the stacked images, or from some other source such as a gradient. In the case of a gradient as the key source, sweeping the key threshold across a value range creates the effect of a *wipe*.
+In video terms, the mask is known as a _key_. The key can come from one of the stacked images, or from some other source such as a gradient. In the case of a gradient as the key source, sweeping the key threshold across a value range creates the effect of a _wipe_.
 
 Keys can have hard or soft edges. They can be derived or "cut" from the brightness value of an image, or from a particular color.
 
 ### Module options
 
-Other analog logic based modules, such as DSG3, can blend two sources, but they can't perform compositing operations. Comparator modules such as Keychain, Stacker, or Ribbons can generate hard keys, but they can't actually combine two images. They're *keyers*, not compositors. Another module with multiple inputs, such as Switcher, would be required to do the actual compositing based on an external key provided by the keyer module.
+Other analog logic based modules, such as DSG3, can blend two sources, but they can't perform compositing operations. Comparator modules such as Keychain, Stacker, or Ribbons can generate hard keys, but they can't actually combine two images. They're _keyers_, not compositors. Another module with multiple inputs, such as Switcher, would be required to do the actual compositing based on an external key provided by the keyer module.
 
 FKG3 is the all-in-one solution for compositing two layers. It generates a key internally and applies it as a mask to cut out the opacity of one layer. This gives the effect of stacking the layers. FKG3 is also a requirement for a soft key, in which the stencil edge is not a sharp transition, but a gradient. And FKG3's **Edge** keying mode creates a visually interesting effect that would be complicated to patch using other modules.
 
@@ -173,7 +174,7 @@ $$
 Y = 0.299R + 0.587G + 0.114B
 $$
 
-Chroma keys are based on RGB exclusive analog logic. The transparency amount is determined by the purity of the selected color component. 
+Chroma keys are based on RGB exclusive analog logic. The transparency amount is determined by the purity of the selected color component.
 
 Chroma keys use the following logic. The key value is the transparency, so a high value for K results in that area being keyed out.
 
@@ -185,7 +186,7 @@ $$
 
 To cut a key based upon a color component, that component value must be high, and the other component values must be low. For example, to key out the red areas of an image, the red value must be high, and both green and blue values must be low. Only a red image area will cut the key. A white image area includes red at full intensity, but will not cut a key because green and blue are also at full intensity. The minimum of the three values would be zero, resulting in no transparency.
 
-If cutting an internal self-key in chroma key modes, where either the Foreground or Background inputs supply the key source, FKG3 operates the same as a traditional keyer on a video mixer. However, FKG3 does not have a hue control. Precisely dialing in a conventional chroma key such as a green screen may require color correcting  RGB components before sending them to the external Key input.
+If cutting an internal self-key in chroma key modes, where either the Foreground or Background inputs supply the key source, FKG3 operates the same as a traditional keyer on a video mixer. However, FKG3 does not have a hue control. Precisely dialing in a conventional chroma key such as a green screen may require color correcting RGB components before sending them to the external Key input.
 
 ### External keying
 
@@ -201,7 +202,7 @@ As always, we can break the internal normal with a dummy plug wired to connect t
 
 Since the RGB inputs are internally self-normalled, we can easily mix and match color and grayscale images. Simply patch a monochrome signal into a Red input, and it flows to the Green and Blue inputs below.
 
-That much is pretty standard procedure. Things get more interesting when we consider each row of Red, Green, and Blue jacks as a semi-independent signal chain. Each of the RGB components is composited separately, so we could patch arbitrary monochrome signals into all of the Foreground and Background inputs, and get three different monochrome composite outputs. 
+That much is pretty standard procedure. Things get more interesting when we consider each row of Red, Green, and Blue jacks as a semi-independent signal chain. Each of the RGB components is composited separately, so we could patch arbitrary monochrome signals into all of the Foreground and Background inputs, and get three different monochrome composite outputs.
 
 But remember that there's only one key to rule them all. No matter how we generate the key — internally, externally, luma or chroma — it's always a single monochrome stencil. All three of the independent channels are composited with the same key. Nevertheless, this is a useful technique for video and low frequency applications. For example, we can apply a VCA or crossfade effect to two sets of three different control signals such as LFOs or random value generators.
 
@@ -214,15 +215,13 @@ But remember that there's only one key to rule them all. No matter how we genera
 [3 Patches for FKG3](https://youtu.be/h32UDIphXuI)
 <br />presented by Johnny Woods
 
-<!--
----
+## <!--
 
 ## Example Patches
 
 TODO
 
--->
----
+## -->
 
 ## Installation
 
@@ -232,23 +231,23 @@ TODO
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the sync cable to a sync source or the last module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the sync cable to a sync source or the last module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -263,61 +262,61 @@ TODO
 
 </td><td>
 
-| Jack | Function                               |
-|------|----------------------------------------|
-| J1   | Threshold CV in                        |
-| J2   | Softness CV in                         |
-| J3   | Red Background in                      |
-| J4   | Red Foreground in                      |
-| J5   | Red Key in                             |
-| J6   | Red out                                |
-| J7   | Green Background in                    |
-| J8   | Green Foreground in                    |
-| J9   | Green Key in                           |
-| J10  | Green out                              |
-| J11  | Blue Background in                     |
-| J12  | Blue Foreground in                     |
-| J13  | Blue Key in                            |
-| J14  | Blue out                               |
+| Jack | Function            |
+| ---- | ------------------- |
+| J1   | Threshold CV in     |
+| J2   | Softness CV in      |
+| J3   | Red Background in   |
+| J4   | Red Foreground in   |
+| J5   | Red Key in          |
+| J6   | Red out             |
+| J7   | Green Background in |
+| J8   | Green Foreground in |
+| J9   | Green Key in        |
+| J10  | Green out           |
+| J11  | Blue Background in  |
+| J12  | Blue Foreground in  |
+| J13  | Blue Key in         |
+| J14  | Blue out            |
 
 </td><td>
 
-| Switch | Function                             |
-|--------|--------------------------------------|
-| S1     | Edge / Invert                        |
-| S2     | Key Source                           |
-| S3     | Key color mode                       |
+| Switch | Function       |
+| ------ | -------------- |
+| S1     | Edge / Invert  |
+| S2     | Key Source     |
+| S3     | Key color mode |
 
-| Pot    | Function                             |
-|--------|--------------------------------------|
-| P1     | Threshold                            |
-| P2     | Softness                             |
-| P3     | Threshold CV Depth                   |
-| P4     | Softness CV Depth                    |
+| Pot | Function           |
+| --- | ------------------ |
+| P1  | Threshold          |
+| P2  | Softness           |
+| P3  | Threshold CV Depth |
+| P4  | Softness CV Depth  |
 
 </td></tr></table>
 
 ### Technical Data
 
-|                              |                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950043                                                                          |
-| Mounting Width               | 12 HP                                                                           |
-| Mounting Depth               | 42 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 200 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes.                                          |
-| Video Sync                   | Rear RCA                                                                        |
+|                              |                                                             |
+| ---------------------------- | ----------------------------------------------------------- |
+| Manufacturer Part Number     | 950043                                                      |
+| Mounting Width               | 12 HP                                                       |
+| Mounting Depth               | 42 mm                                                       |
+| Mounting Hole Count          | 4                                                           |
+| Power Consumption            | 12V @ 200 mA                                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Input Impedance              | 1M ohms                                                     |
+| Output Impedance             | 75 ohms                                                     |
+| Input Protection Range       | +/-20V                                                      |
+| Input Clipping Range         | +/-2.5V                                                     |
+| Output Range                 | +/-2.5V                                                     |
+| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable |
+| EuroRack Power Cable Type    | 16-pin                                                      |
+| EuroRack Power Cable Length  | 25 cm                                                       |
+| DC Barrel Power Cable Length | 25 cm                                                       |
+| RoHS Compliance              | Manufactured with lead-free processes.                      |
+| Video Sync                   | Rear RCA                                                    |
 
 <!--
 | Pronunciation                |                                                                                 |

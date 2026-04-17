@@ -1,6 +1,6 @@
 ---
 slug: inside-the-workshop
-title: "Inside the Workshop: A Day in the Life at LZX HQ"
+title: 'Inside the Workshop: A Day in the Life at LZX HQ'
 authors: [lars]
 tags: [behind-the-scenes, manufacturing, team]
 draft: true
@@ -8,12 +8,13 @@ draft: true
 
 :::danger PLACEHOLDER CONTENT - DO NOT PUBLISH
 This is a detailed outline only. Requires:
+
 - Actual photography of workshop, team, equipment, processes
 - Team member interviews and quotes
 - Real examples of daily work
 - Action shots of assembly, testing, shipping
 - Complete rewrite with actual content and photos
-:::
+  :::
 
 **[Intro paragraph]**
 
@@ -36,6 +37,7 @@ The workshop is a [square footage] space in [neighborhood description]. It's not
 **Morning ritual:** Check email, review overnight orders, print packing slips. Every order gets reviewed personally. This isn't Amazon - we know many customers by name after years of correspondence.
 
 **Today's orders:**
+
 - 3x Vessel 84 cases (to Australia, Germany, Netherlands)
 - 2x SMX3 modules
 - 1x complete Gen3 starter system (6 modules + case)
@@ -63,6 +65,7 @@ The workshop is a [square footage] space in [neighborhood description]. It's not
 5. **Initial power-on test** - Does it boot? Any smoke? (Important!)
 
 **What's on the bench today:**
+
 - [Photo] Stack of DSG3 PCBs from recent run
 - [Photo] Front panels waiting for assembly
 - [Photo] The knob inventory (organized by color)
@@ -87,6 +90,7 @@ The workshop is a [square footage] space in [neighborhood description]. It's not
 Before tariffs, we sent PCBs to China for assembly. Now, everything happens here. That meant learning to operate professional SMT equipment, which was... a journey.
 
 **The SMT process:**
+
 1. Apply solder paste through stencil
 2. Hans places components (0402 resistors, ICs, etc.)
 3. Reflow oven melts solder
@@ -113,6 +117,7 @@ Before tariffs, we sent PCBs to China for assembly. Now, everything happens here
 [Photo of workspace with speakers or headphones]
 
 **Lars:** Currently rotating between:
+
 - William Basinski - "The Disintegration Loops"
 - Boards of Canada
 - Tangerine Dream - "Phaedra"
@@ -141,6 +146,7 @@ The shop soundtrack matters. Hours of repetitive assembly work demand the right 
 Every module gets tested before shipping. Not a quick power-on check - actual signal testing.
 
 **Standard test for DSG3:**
+
 1. Power consumption verification
 2. Sync input/output check
 3. Ramp generator linearity and frequency
@@ -155,6 +161,7 @@ Every module gets tested before shipping. Not a quick power-on check - actual si
 **Time per module:** 10-15 minutes for standard modules, 30-45 minutes for complex ones like TBC2
 
 **Today's testing queue:**
+
 - 8x newly assembled SMX3 modules
 - 2x TBC2 firmware update verification
 - 1x customer return (noise issue - turned out to be power supply)
@@ -181,6 +188,7 @@ Every module gets tested before shipping. Not a quick power-on check - actual si
 ### The Dev Tools
 
 [Photo spread of development equipment]
+
 - Oscilloscope (Keysight DSOX1204G)
 - Waveform generator
 - Logic analyzer
@@ -249,6 +257,7 @@ Sometimes we record these for Instagram or Discord. Sometimes we just sit and wa
 [Photo of whiteboard with task list]
 
 **Tomorrow's priorities:**
+
 - Complete SMX3 assembly batch (8 units)
 - Videomancer firmware update testing
 - RevI Chromagnon bringup
@@ -285,28 +294,36 @@ This isn't a glamorous business. It's repetitive assembly, tedious testing, frus
 **[Individual profiles with photos]**
 
 ### Lars Larsen - Product Designer & Owner
+
 [Photo]
+
 - Designs circuits, writes firmware, manages projects
 - Coffee intake: Excessive
 - Favorite module to assemble: ESG3 (most complex)
 - Spirit animal: Caffeine molecule
 
 ### Nick - Production & Assembly
+
 [Photo]
+
 - Master of the soldering iron
 - Runs the testing bench
 - Keeps inventory organized
 - Spirit animal: Hans the SMT machine
 
 ### Andrew - SMT Operations
+
 [Photo]
+
 - Hans whisperer
 - Microscope specialist
 - Rework wizard
 - Spirit animal: 0402 resistor (small but essential)
 
 ### Jonah - Fulfillment & QC
+
 [Photo]
+
 - Shipping coordinator
 - Final inspection
 - Customer communication
@@ -329,6 +346,7 @@ In 2023-2024, we had a larger team (up to 9 people). Supply chain challenges and
 Small-batch electronics manufacturing in the US is not a lucrative business. It would be easier and more profitable to design in the US, manufacture in China, and drop-ship from Alibaba. But that's not what this is about.
 
 LZX exists because:
+
 - Analog video synthesis is a unique art form worth preserving
 - The community deserves tools built by people who understand the craft
 - Some things are worth doing even when they're hard
@@ -349,6 +367,7 @@ Thank you for supporting small-batch manufacturing and analog video synthesis.
 We occasionally host workshop tours and open studio days. If you're in the Portland area and want to see the space in person, reach out via [contact method]. We love showing people the operation.
 
 **Upcoming events:**
+
 - [TBD: Workshop open house]
 - [TBD: LZX user meetup]
 

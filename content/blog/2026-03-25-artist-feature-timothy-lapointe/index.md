@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-timothy-lapointe
-title: "Artist Feature: Timothy Lapointe"
+title: 'Artist Feature: Timothy Lapointe'
 authors: [kat]
 tags: [community]
 image: ./timothy_lapointe_01.png

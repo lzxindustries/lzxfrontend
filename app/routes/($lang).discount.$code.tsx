@@ -26,7 +26,9 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
 
   // Prevent open redirect: only allow relative paths
   const redirectParam =
-    rawRedirect.startsWith('/') && !rawRedirect.startsWith('//') ? rawRedirect : '/';
+    rawRedirect.startsWith('/') && !rawRedirect.startsWith('//')
+      ? rawRedirect
+      : '/';
 
   searchParams.delete('redirect');
   searchParams.delete('return_to');

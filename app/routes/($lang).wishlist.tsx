@@ -39,7 +39,10 @@ export default function Wishlist() {
                 className="flex gap-4 p-4 border border-primary/10 rounded-lg"
               >
                 {item.image && (
-                  <Link to={resolveProductUrl(item.handle)} className="shrink-0">
+                  <Link
+                    to={resolveProductUrl(item.handle)}
+                    className="shrink-0"
+                  >
                     <img
                       src={item.image}
                       alt={item.title}

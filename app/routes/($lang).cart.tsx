@@ -1,4 +1,9 @@
-import {Await, useMatches, useRouteError, isRouteErrorResponse} from '@remix-run/react';
+import {
+  Await,
+  useMatches,
+  useRouteError,
+  isRouteErrorResponse,
+} from '@remix-run/react';
 import type {
   Cart as CartType,
   CartInput,
@@ -576,8 +581,8 @@ export function ErrorBoundary() {
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <div className="flex flex-col items-center justify-center p-12">
       <h1 className="text-2xl font-bold mb-4">Cart Error</h1>

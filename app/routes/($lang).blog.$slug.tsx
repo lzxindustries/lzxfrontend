@@ -24,7 +24,10 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   }
 
   const heroImage = post.frontmatter.image
-    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(/^\.\//, '')}`
+    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(
+        /^\.\//,
+        '',
+      )}`
     : undefined;
 
   const seo = seoPayload.blogPost({
@@ -36,10 +39,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     url: new URL(request.url).origin + `/blog/${slug}`,
   });
 
-  return json(
-    {post, heroImage, seo},
-    {headers: {'Cache-Control': CACHE_LONG}},
-  );
+  return json({post, heroImage, seo}, {headers: {'Cache-Control': CACHE_LONG}});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {

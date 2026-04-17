@@ -16,7 +16,10 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   const decodedTag = decodeURIComponent(tag);
   const url = new URL(request.url);
-  const requestedPage = Math.max(1, parseInt(url.searchParams.get('page') ?? '1', 10));
+  const requestedPage = Math.max(
+    1,
+    parseInt(url.searchParams.get('page') ?? '1', 10),
+  );
 
   const allPosts = listBlogPosts(decodedTag);
   if (allPosts.length === 0) {

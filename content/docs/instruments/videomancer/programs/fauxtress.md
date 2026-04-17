@@ -2,13 +2,13 @@
 draft: false
 sidebar_position: 108
 slug: /instruments/videomancer/fauxtress
-title: "Fauxtress"
+title: 'Fauxtress'
 image: /img/instruments/videomancer/fauxtress/fauxtress_hero_s1.png
-description: "Fauxtress is a faithful reimplementation of the LZX Industries Fortress EuroRack module as a Videomancer FPGA program."
+description: 'Fauxtress is a faithful reimplementation of the LZX Industries Fortress EuroRack module as a Videomancer FPGA program.'
 ---
 
 ![Fauxtress hero image](/img/instruments/videomancer/fauxtress/fauxtress_hero_s1.png)
-*Fauxtress applying phase-accumulator decimation, BRAM delay echo, and XOR phase wrapping to sculpt shifting digital interference textures from a video source.*
+_Fauxtress applying phase-accumulator decimation, BRAM delay echo, and XOR phase wrapping to sculpt shifting digital interference textures from a video source._
 
 ---
 
@@ -26,7 +26,7 @@ The feedback loop is what makes this program unique. Even small amounts of **Fee
 
 ### What's In a Name?
 
-The name ***Fauxtress*** is a portmanteau of ***faux*** (false, imitation) and ***Fortress***, the classic LZX Industries module. It's a "false Fortress": a program that borrows the Fortress phase accumulator architecture but repurposes it for video processing rather than standalone pattern synthesis. Where the original Fortress generated its own imagery from scratch, Fauxtress takes an existing video signal and reshapes it through the same accumulator-driven decimation engine.
+The name **_Fauxtress_** is a portmanteau of **_faux_** (false, imitation) and **_Fortress_**, the classic LZX Industries module. It's a "false Fortress": a program that borrows the Fortress phase accumulator architecture but repurposes it for video processing rather than standalone pattern synthesis. Where the original Fortress generated its own imagery from scratch, Fauxtress takes an existing video signal and reshapes it through the same accumulator-driven decimation engine.
 
 ---
 
@@ -42,14 +42,14 @@ The name ***Fauxtress*** is a portmanteau of ***faux*** (false, imitation) and *
 ## Parameters
 
 ![Videomancer front panel with Fauxtress loaded](/img/instruments/videomancer/fauxtress/fauxtress_control_panel.png)
-*Videomancer's front panel with Fauxtress active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Fauxtress active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — H Rate
 
-| Property | Value |
-|----------|-------|
-| Range | 0 – 1023 |
-| Default | 512 |
+| Property | Value    |
+| -------- | -------- |
+| Range    | 0 – 1023 |
+| Default  | 512      |
 
 **H Rate** sets the frequency of the horizontal phase accumulator, which drives the horizontal sample-and-hold decimation clock. At 0, the accumulator pulses at its lowest rate, producing wide horizontal bands of held color. As the value increases, the pulse rate rises and the bands become narrower and more numerous. At 1023, the pulse fires nearly every pixel and the input passes through with minimal horizontal decimation.
 
@@ -59,25 +59,25 @@ The accumulator is a 16-bit phase register that overflows periodically. This mea
 
 ### Knob 2 — V Rate
 
-| Property | Value |
-|----------|-------|
-| Range | 0 – 1023 |
-| Default | 512 |
+| Property | Value    |
+| -------- | -------- |
+| Range    | 0 – 1023 |
+| Default  | 512      |
 
 **V Rate** sets the frequency of the vertical phase accumulator, controlling vertical sample-and-hold decimation. At low values, many consecutive scanlines display the same held data, producing thick horizontal stripes. At high values, vertical detail is preserved and stripes become thinner. At 1023, nearly every scanline is captured, disabling vertical decimation.
 
-V Rate and **H Rate** together define the grid geometry of the decimation pattern. Nearly equal values create roughly square blocks; unequal values create elongated rectangles or thin slivers. Both accumulators alias independently, so sweeping one while the other is fixed produces mesmerizing ***moiré*** beating effects.
+V Rate and **H Rate** together define the grid geometry of the decimation pattern. Nearly equal values create roughly square blocks; unequal values create elongated rectangles or thin slivers. Both accumulators alias independently, so sweeping one while the other is fixed produces mesmerizing **_moiré_** beating effects.
 
 ---
 
 ### Knob 3 — Anim Rate
 
-| Property | Value |
-|----------|-------|
-| Range | 0 – 1023 |
-| Default | 0 |
+| Property | Value    |
+| -------- | -------- |
+| Range    | 0 – 1023 |
+| Default  | 0        |
 
-**Anim Rate** controls the speed of the animation phase accumulator: a free-running ***low-frequency oscillator*** (LFO) that increments once per frame. At 0, the animation phase is frozen and Phase Wrap has no visible effect. As the value increases, the animation phase drifts faster, causing the XOR interference to sweep across the image. At maximum, the phase cycles rapidly, creating flickering, stroboscopic patterns.
+**Anim Rate** controls the speed of the animation phase accumulator: a free-running **_low-frequency oscillator_** (LFO) that increments once per frame. At 0, the animation phase is frozen and Phase Wrap has no visible effect. As the value increases, the animation phase drifts faster, causing the XOR interference to sweep across the image. At maximum, the phase cycles rapidly, creating flickering, stroboscopic patterns.
 
 :::note
 Anim Rate has no visible effect unless **Phase Wrap** (Switch 10) is enabled. Without phase wrapping, the animation accumulator runs silently in the background.
@@ -87,10 +87,10 @@ Anim Rate has no visible effect unless **Phase Wrap** (Switch 10) is enabled. Wi
 
 ### Knob 4 — Delay
 
-| Property | Value |
-|----------|-------|
-| Range | 0 – 511 |
-| Default | 128 |
+| Property | Value   |
+| -------- | ------- |
+| Range    | 0 – 511 |
+| Default  | 128     |
 
 **Delay** sets the depth of the BRAM variable delay line, ranging from 0 to 511 pixels. At 0, the delay line returns the current pixel immediately. As the value increases, the output is an echo of pixels further in the past, creating spatial offset and smearing effects in the luminance channel. At 511, the echo is displaced by up to 511 pixels (roughly one-third of a standard-definition scanline.)
 
@@ -100,12 +100,12 @@ The delay line stores luminance only. Chroma passes through the processing chain
 
 ### Knob 5 — Feedback
 
-| Property | Value |
-|----------|-------|
-| Range | 0% – 100% |
-| Default | 0% |
+| Property | Value     |
+| -------- | --------- |
+| Range    | 0% – 100% |
+| Default  | 0%        |
 
-**Feedback** controls how much of the delayed luminance is mixed back into the input of the delay line. At 0%, no recirculation occurs: the delay line produces a single echo. At higher values, the echo feeds back into itself, creating iterative accumulation. The feedback mixer uses ***saturating addition***, meaning the combined signal clips at maximum brightness rather than wrapping around.
+**Feedback** controls how much of the delayed luminance is mixed back into the input of the delay line. At 0%, no recirculation occurs: the delay line produces a single echo. At higher values, the echo feeds back into itself, creating iterative accumulation. The feedback mixer uses **_saturating addition_**, meaning the combined signal clips at maximum brightness rather than wrapping around.
 
 The feedback path uses a coarse four-level blend: 0% (off), 25%, 50%, and 100%. Small amounts of feedback add subtle texture buildup. Full feedback drives the signal toward saturation, producing high-contrast self-reinforcing patterns that grow and crystallize over time.
 
@@ -117,10 +117,10 @@ High feedback values combined with long delay times can produce very bright, sat
 
 ### Knob 6 — Depth
 
-| Property | Value |
-|----------|-------|
-| Range | 0% – 100% |
-| Default | 50% |
+| Property | Value     |
+| -------- | --------- |
+| Range    | 0% – 100% |
+| Default  | 50%       |
 
 **Depth** blends between the raw input video and the horizontally decimated output. At 0, the decimation engine is fully bypassed and the raw input passes through. At maximum, the signal is fully decimated by the H Rate accumulator. The blend uses a coarse four-level crossfade: 0–255 (raw), 256–511 (25% decimated), 512–767 (75% decimated), and 768–1023 (fully decimated).
 
@@ -131,10 +131,10 @@ Think of Depth as a "how much Fauxtress" control. At low settings, only the dela
 ### Switch 7 — H Lock
 
 | Property | Value |
-|----------|-------|
-| Off | Free |
-| On | Lock |
-| Default | Lock |
+| -------- | ----- |
+| Off      | Free  |
+| On       | Lock  |
+| Default  | Lock  |
 
 **H Lock** controls whether the horizontal phase accumulator resets at the start of each scanline. With the switch set to **Lock**, the accumulator resets on every horizontal sync pulse, producing a pattern that is stable and aligned to the raster. Set to **Free**, the accumulator runs continuously across scanlines, and the decimation pattern drifts and wraps in unpredictable ways.
 
@@ -147,10 +147,10 @@ Locked accumulators produce tidy, repeatable grid patterns. Free-running accumul
 ### Switch 8 — V Lock
 
 | Property | Value |
-|----------|-------|
-| Off | Free |
-| On | Lock |
-| Default | Lock |
+| -------- | ----- |
+| Off      | Free  |
+| On       | Lock  |
+| Default  | Lock  |
 
 **V Lock** controls whether the vertical phase accumulator resets at the start of each frame. Set to **Lock**, the vertical decimation pattern is stable from frame to frame. Set to **Free**, the accumulator free-runs across frames, and the vertical band positions drift over time. Combined with H Lock in Free mode, both axes drift independently, producing a mesmerizing, slowly migrating grid.
 
@@ -159,26 +159,26 @@ Locked accumulators produce tidy, repeatable grid patterns. Free-running accumul
 ### Switch 9 — Luma Src
 
 | Property | Value |
-|----------|-------|
-| Off | Osc |
-| On | Video |
-| Default | Osc |
+| -------- | ----- |
+| Off      | Osc   |
+| On       | Video |
+| Default  | Osc   |
 
 **Luma Src** selects the clock source for horizontal decimation. With the switch set to **Osc**, the H Rate phase accumulator drives the sample-and-hold clock: the default oscillator-driven mode. Set to **Video**, the input video's luminance transitions drive the clock instead: every time the brightness crosses the midpoint threshold, a decimation pulse fires.
 
-In Video mode, the horizontal decimation becomes ***content-adaptive***. Busy, high-contrast areas generate frequent pulses and fine detail, while flat regions hold longer and produce wider bands. The image's brightness contours directly shape the decimation grid.
+In Video mode, the horizontal decimation becomes **_content-adaptive_**. Busy, high-contrast areas generate frequent pulses and fine detail, while flat regions hold longer and produce wider bands. The image's brightness contours directly shape the decimation grid.
 
 ---
 
 ### Switch 10 — Phase Wrap
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
-**Phase Wrap** enables the Fortress-style XOR coupling between the animation accumulator and the processed video data. When enabled, the upper bits of the animation phase accumulator are XORed with the depth-blended pixel values at the bit level. The animation phase shifts slowly (controlled by **Anim Rate**), flipping different bits each frame and producing evolving ***interference patterns***: diagonal fringes, strobing regions, and slowly mutating digital textures.
+**Phase Wrap** enables the Fortress-style XOR coupling between the animation accumulator and the processed video data. When enabled, the upper bits of the animation phase accumulator are XORed with the depth-blended pixel values at the bit level. The animation phase shifts slowly (controlled by **Anim Rate**), flipping different bits each frame and producing evolving **_interference patterns_**: diagonal fringes, strobing regions, and slowly mutating digital textures.
 
 This is the signature Fortress effect. The XOR operation scrambles pixel values in a structured, repeating way that creates complex visual interference from simple phase relationships.
 
@@ -187,10 +187,10 @@ This is the signature Fortress effect. The XOR operation scrambles pixel values 
 ### Switch 11 — Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Invert** reverses the luminance and chrominance of the processed output. All three channels (Y, U, V) are inverted by subtracting each value from 1023. This creates a photographic-negative effect applied after all other processing stages: including decimation, phase wrap, feedback, and vertical decimation: but before the dry/wet mix.
 
@@ -202,10 +202,10 @@ Invert affects all three channels simultaneously. Because U and V are also inver
 
 ### Fader 12 — Mix
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Mix** crossfades between the unprocessed input video and the fully processed output. At 0%, only the dry input signal is heard. At 100%, only the processed signal passes through. The crossfade uses an interpolator matched to the processing pipeline's latency, so there are no timing glitches when adjusting the fader.
 
@@ -217,13 +217,13 @@ Mix is your master intensity control. Use it to blend Fauxtress textures subtly 
 
 ### Phase Accumulators
 
-A ***phase accumulator*** is a counter that adds a fixed increment on every clock cycle and wraps around when it overflows. The overflow rate: the frequency at which the counter resets to zero: is proportional to the increment value. Larger increments produce faster overflow and higher frequencies. Phase accumulators are the core of ***numerically controlled oscillators*** (NCOs), used in everything from radio transmitters to music synthesizers.
+A **_phase accumulator_** is a counter that adds a fixed increment on every clock cycle and wraps around when it overflows. The overflow rate: the frequency at which the counter resets to zero: is proportional to the increment value. Larger increments produce faster overflow and higher frequencies. Phase accumulators are the core of **_numerically controlled oscillators_** (NCOs), used in everything from radio transmitters to music synthesizers.
 
 Fauxtress uses three independent phase accumulators. The horizontal and vertical accumulators drive sample-and-hold decimation: their overflow pulses determine when a new pixel or scanline is captured. The animation accumulator is a per-frame LFO whose phase is used for the XOR coupling effect. All three accumulators are 16-bit, and the parameter value (10-bit) occupies the top bits of the increment register.
 
 ### Delay Line Feedback
 
-The BRAM variable delay line at the heart of Fauxtress is a ***shift register***: a first-in, first-out buffer that outputs data written N clock cycles ago. By feeding the output back into the input through a mixer, the delay line becomes a ***recirculating buffer***. Each pass through the loop adds the current input to the echo of a previous state, building up layered textures over time.
+The BRAM variable delay line at the heart of Fauxtress is a **_shift register_**: a first-in, first-out buffer that outputs data written N clock cycles ago. By feeding the output back into the input through a mixer, the delay line becomes a **_recirculating buffer_**. Each pass through the loop adds the current input to the echo of a previous state, building up layered textures over time.
 
 This is the same principle behind audio delay and reverb effects, adapted to the pixel domain. The key difference is that the delay operates on luminance only and the feedback is additive with saturation, meaning the signal accumulates toward white rather than decaying. The result is a bright, crystalline buildup rather than a fading echo.
 
@@ -232,7 +232,6 @@ This is the same principle behind audio delay and reverb effects, adapted to the
 The original LZX Fortress was a hardware module built around phase accumulators driving a pattern generator. Its signature effect was the slowly drifting diagonal interference pattern produced by XORing an animation oscillator with the output. Fauxtress preserves this architecture but replaces the internal pattern generator with an external video input, turning a synthesis engine into a processing engine.
 
 The **Phase Wrap** toggle enables the same XOR coupling used in the original Fortress. The animation accumulator's output is XORed with the processed video data at the bit level. Because XOR flips specific bits based on the accumulator's phase, and the phase shifts slowly over time, the result is an evolving pattern of bit-level interference that sweeps across the image.
-
 
 ---
 
@@ -244,27 +243,28 @@ Three key architectural details shape the sound of Fauxtress:
 
 1. **Feedback loop topology**: The feedback path wraps around the delay line only: stages 6 through 8. The delay line stores luminance only; chroma bypasses the delay and feedback entirely. This means that feedback accumulation affects brightness patterns while color remains a single-pass transformation. The saturating addition in the feedback mixer clips at 1023, so the feedback loop drives toward white rather than wrapping.
 
-2. **Depth blend position**: The Depth crossfade sits *before* the phase wrap and feedback stages. This means that at low Depth values, the raw input feeds into the phase wrap and delay line. The feedback loop still operates even when decimation is minimal, so you can use the delay echo without the blocky accumulator patterns.
+2. **Depth blend position**: The Depth crossfade sits _before_ the phase wrap and feedback stages. This means that at low Depth values, the raw input feeds into the phase wrap and delay line. The feedback loop still operates even when decimation is minimal, so you can use the delay echo without the blocky accumulator patterns.
 
-3. **V Decimation placement**: Vertical decimation happens *after* the delay line, not before. This means the delay line processes every scanline at full vertical resolution, and V Rate only affects the final output. Changing V Rate doesn't alter the feedback loop's content (it just changes how the result is displayed.)
+3. **V Decimation placement**: Vertical decimation happens _after_ the delay line, not before. This means the delay line processes every scanline at full vertical resolution, and V Rate only affects the final output. Changing V Rate doesn't alter the feedback loop's content (it just changes how the result is displayed.)
 
 :::tip
 **The feedback loop is luminance-only.** Chroma follows a simpler path: H Decimation → Depth Blend → Phase Wrap → V Decimation → Invert → Mix. No delay, no feedback. This asymmetry is intentional: the luminance feedback creates complex evolving patterns while chroma stays responsive to the controls.
 :::
-
 
 ---
 
 ## Exercises
 
 These exercises progress from basic decimation to feedback-driven texture synthesis, gradually engaging more of the processing chain. Each builds on skills from the previous one.
+
 ### Exercise 1: Accumulator Grid
 
 ![Accumulator Grid result](/img/instruments/videomancer/fauxtress/fauxtress_ex1_s1.png)
-*Accumulator Grid — simulated result across source images.*
+_Accumulator Grid — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -290,30 +290,31 @@ A live camera feed or recorded footage with recognizable subjects and moderate c
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| H Rate | ~400 |
-| V Rate | ~400 |
-| Anim Rate | 0 |
-| Delay | 0 |
-| Feedback | 0% |
-| Depth | 1023 |
-| H Lock | Lock |
-| V Lock | Lock |
-| Luma Src | Osc |
-| Phase Wrap | Off |
-| Invert | Off |
-| Mix | 100% |
+| Control    | Value |
+| ---------- | ----- |
+| H Rate     | ~400  |
+| V Rate     | ~400  |
+| Anim Rate  | 0     |
+| Delay      | 0     |
+| Feedback   | 0%    |
+| Depth      | 1023  |
+| H Lock     | Lock  |
+| V Lock     | Lock  |
+| Luma Src   | Osc   |
+| Phase Wrap | Off   |
+| Invert     | Off   |
+| Mix        | 100%  |
 
 ---
 
 ### Exercise 2: Delay Echo and Feedback
 
 ![Delay Echo and Feedback result](/img/instruments/videomancer/fauxtress/fauxtress_ex2_s1.png)
-*Delay Echo and Feedback — simulated result across source images.*
+_Delay Echo and Feedback — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -339,30 +340,31 @@ High-contrast footage such as silhouettes, text, or graphic patterns.
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| H Rate | ~500 |
-| V Rate | ~500 |
-| Anim Rate | 0 |
-| Delay | ~256 |
-| Feedback | 50% |
-| Depth | 1023 |
-| H Lock | Lock |
-| V Lock | Lock |
-| Luma Src | Osc |
-| Phase Wrap | Off |
-| Invert | Off |
-| Mix | 100% |
+| Control    | Value |
+| ---------- | ----- |
+| H Rate     | ~500  |
+| V Rate     | ~500  |
+| Anim Rate  | 0     |
+| Delay      | ~256  |
+| Feedback   | 50%   |
+| Depth      | 1023  |
+| H Lock     | Lock  |
+| V Lock     | Lock  |
+| Luma Src   | Osc   |
+| Phase Wrap | Off   |
+| Invert     | Off   |
+| Mix        | 100%  |
 
 ---
 
 ### Exercise 3: Phase Wrap Interference
 
 ![Phase Wrap Interference result](/img/instruments/videomancer/fauxtress/fauxtress_ex3_s1.png)
-*Phase Wrap Interference — simulated result across source images.*
+_Phase Wrap Interference — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -389,22 +391,23 @@ Any footage: abstract or representational. High-contrast material produces the m
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| H Rate | ~500 |
-| V Rate | ~500 |
-| Anim Rate | ~300 |
-| Delay | ~256 |
-| Feedback | 50% |
-| Depth | 1023 |
-| H Lock | Free |
-| V Lock | Free |
-| Luma Src | Video |
-| Phase Wrap | On |
-| Invert | Off |
-| Mix | 100% |
+| Control    | Value |
+| ---------- | ----- |
+| H Rate     | ~500  |
+| V Rate     | ~500  |
+| Anim Rate  | ~300  |
+| Delay      | ~256  |
+| Feedback   | 50%   |
+| Depth      | 1023  |
+| H Lock     | Free  |
+| V Lock     | Free  |
+| Luma Src   | Video |
+| Phase Wrap | On    |
+| Invert     | Off   |
+| Mix        | 100%  |
 
 ---
+
 ## Glossary
 
 - **Accumulator**: A register that adds a fixed increment on each clock cycle and wraps on overflow; the basis of a numerically controlled oscillator.
@@ -428,6 +431,5 @@ Any footage: abstract or representational. High-contrast material produces the m
 - **Shift Register**: A sequential storage element where data enters at one end and exits at the other after a fixed number of clock cycles.
 
 - **XOR**: Exclusive-OR; a bitwise logic operation that flips bits where the two operands differ.
-
 
 ---

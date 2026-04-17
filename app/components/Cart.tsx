@@ -1,5 +1,11 @@
 import {useFetcher, useMatches} from '@remix-run/react';
-import {flattenConnection, Image, Money, OptimisticInput, ShopPayButton} from '@shopify/hydrogen';
+import {
+  flattenConnection,
+  Image,
+  Money,
+  OptimisticInput,
+  ShopPayButton,
+} from '@shopify/hydrogen';
 import type {
   Cart as CartType,
   CartCost,
@@ -172,9 +178,17 @@ function CartLines({
   );
 }
 
-function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: CartType}) {
+function CartCheckoutActions({
+  checkoutUrl,
+  cart,
+}: {
+  checkoutUrl: string;
+  cart?: CartType;
+}) {
   const matches = useMatches();
-  const rootData = matches.find((match) => match.id === 'root')?.data as Record<string, any> | undefined;
+  const rootData = matches.find((match) => match.id === 'root')?.data as
+    | Record<string, any>
+    | undefined;
   const storeDomain = rootData?.layout?.shop?.primaryDomain?.url;
 
   const variantIds = cart?.lines?.edges
@@ -210,15 +224,24 @@ function CartCheckoutActions({checkoutUrl, cart}: {checkoutUrl: string; cart?: C
         />
       )}
       <div className="flex items-center justify-center gap-3 text-xs text-primary/50 mt-1">
-        <Link to="/policies/refund-policy" className="underline hover:text-primary transition">
+        <Link
+          to="/policies/refund-policy"
+          className="underline hover:text-primary transition"
+        >
           Return Policy
         </Link>
         <span>·</span>
-        <Link to="/policies/shipping-policy" className="underline hover:text-primary transition">
+        <Link
+          to="/policies/shipping-policy"
+          className="underline hover:text-primary transition"
+        >
           Shipping Policy
         </Link>
       </div>
-      <Link to="/catalog" className="text-center text-sm text-primary/50 hover:text-primary transition">
+      <Link
+        to="/catalog"
+        className="text-center text-sm text-primary/50 hover:text-primary transition"
+      >
         Continue Shopping
       </Link>
     </div>
@@ -283,14 +306,15 @@ function CartSummary({
             )}
           </Text>
         </div>
-        {cost?.totalTaxAmount?.amount && parseFloat(cost.totalTaxAmount.amount) > 0 && (
-          <div className="flex items-center justify-between text-sm text-primary/60">
-            <Text as="dt">Tax</Text>
-            <Text as="dd">
-              <Money data={cost.totalTaxAmount} />
-            </Text>
-          </div>
-        )}
+        {cost?.totalTaxAmount?.amount &&
+          parseFloat(cost.totalTaxAmount.amount) > 0 && (
+            <div className="flex items-center justify-between text-sm text-primary/60">
+              <Text as="dt">Tax</Text>
+              <Text as="dd">
+                <Money data={cost.totalTaxAmount} />
+              </Text>
+            </div>
+          )}
         {cost?.totalAmount?.amount && (
           <div className="flex items-center justify-between font-medium border-t pt-2 mt-1">
             <Text as="dt">Estimated Total</Text>
@@ -299,7 +323,8 @@ function CartSummary({
             </Text>
           </div>
         )}
-        {(!cost?.totalTaxAmount?.amount || parseFloat(cost.totalTaxAmount.amount) === 0) && (
+        {(!cost?.totalTaxAmount?.amount ||
+          parseFloat(cost.totalTaxAmount.amount) === 0) && (
           <p className="text-xs text-primary/50 mt-1">
             Tax and shipping calculated at checkout
           </p>
@@ -382,7 +407,9 @@ function ItemRemoveButton({lineIds}: {lineIds: CartLine['id'][]}) {
       />
       <input type="hidden" name="linesIds" value={JSON.stringify(lineIds)} />
       <button
-        className={`flex items-center justify-center w-10 h-10 border rounded ${isRemoving ? 'opacity-50' : ''}`}
+        className={`flex items-center justify-center w-10 h-10 border rounded ${
+          isRemoving ? 'opacity-50' : ''
+        }`}
         type="submit"
         disabled={isRemoving}
       >
@@ -449,8 +476,15 @@ function UpdateCartButton({
     <fetcher.Form action="/cart" method="post">
       <input type="hidden" name="cartAction" value={CartAction.UPDATE_CART} />
       <input type="hidden" name="lines" value={JSON.stringify(lines)} />
-      <OptimisticInput id={lines[0]?.id} data={{quantity: lines[0]?.quantity}} />
-      <div className={fetcher.state !== 'idle' ? 'opacity-50 pointer-events-none' : ''}>
+      <OptimisticInput
+        id={lines[0]?.id}
+        data={{quantity: lines[0]?.quantity}}
+      />
+      <div
+        className={
+          fetcher.state !== 'idle' ? 'opacity-50 pointer-events-none' : ''
+        }
+      >
         {children}
       </div>
     </fetcher.Form>

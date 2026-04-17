@@ -2,7 +2,7 @@
 draft: false
 sidebar_position: 3
 slug: /instruments/videomancer/serial-command-guide
-title: "Serial Port Guide"
+title: 'Serial Port Guide'
 image: /img/instruments/videomancer/videomancer_frontpanel.png
 description: "Complete reference for Videomancer's text-based serial command interface over USB CDC, including program management, presets, settings, MIDI monitoring, and filesystem access."
 ---
@@ -42,28 +42,28 @@ Send a newline-terminated (`\n`) ASCII string:
 
 ### Receiving Responses
 
-| Prefix | Meaning | Format |
-|--------|---------|--------|
-| `@` | Success | `@<command>:<payload>\n` |
-| `!` | Error | `!<code>:<message>\n` |
-| *(none)* | Log output | Plain text line (when logging is active) |
+| Prefix   | Meaning    | Format                                   |
+| -------- | ---------- | ---------------------------------------- |
+| `@`      | Success    | `@<command>:<payload>\n`                 |
+| `!`      | Error      | `!<code>:<message>\n`                    |
+| _(none)_ | Log output | Plain text line (when logging is active) |
 
 The **payload** is either a simple string (e.g., `ok`) or a JSON object. All responses are newline-terminated.
 
 ### Error Codes
 
-| Code | Name | Description |
-|------|------|-------------|
-| 1 | `unknown_command` | Unrecognized command |
-| 2 | `parse_error` | Malformed arguments |
-| 3 | `service_unavailable` | Required service not ready |
-| 4 | `buffer_overflow` | Command exceeded 511-byte limit |
-| 5 | `not_connected` | CDC port not connected |
-| 6 | `file_not_found` | File or directory not found |
-| 7 | `io_error` | Filesystem I/O failure |
-| 8 | `sd_not_mounted` | SD card not mounted |
-| 9 | `path_too_long` | Path exceeds maximum length |
-| 10 | `invalid_path` | Path is malformed (e.g., contains `..`) |
+| Code | Name                  | Description                             |
+| ---- | --------------------- | --------------------------------------- |
+| 1    | `unknown_command`     | Unrecognized command                    |
+| 2    | `parse_error`         | Malformed arguments                     |
+| 3    | `service_unavailable` | Required service not ready              |
+| 4    | `buffer_overflow`     | Command exceeded 511-byte limit         |
+| 5    | `not_connected`       | CDC port not connected                  |
+| 6    | `file_not_found`      | File or directory not found             |
+| 7    | `io_error`            | Filesystem I/O failure                  |
+| 8    | `sd_not_mounted`      | SD card not mounted                     |
+| 9    | `path_too_long`       | Path exceeds maximum length             |
+| 10   | `invalid_path`        | Path is malformed (e.g., contains `..`) |
 
 ---
 
@@ -134,12 +134,12 @@ Lists installed FPGA programs with paginated JSON output. Programs are listed in
 @programs:{"count":343,"programs":["afterdark","afterimage","alcove",...],"more":true,"next":40}
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `count` | number | Total number of installed programs |
-| `programs` | array | Program names in this page |
-| `more` | boolean | `true` if more pages remain |
-| `next` | number | Offset for the next page (present only when `more` is `true`) |
+| Field      | Type    | Description                                                   |
+| ---------- | ------- | ------------------------------------------------------------- |
+| `count`    | number  | Total number of installed programs                            |
+| `programs` | array   | Program names in this page                                    |
+| `more`     | boolean | `true` if more pages remain                                   |
+| `next`     | number  | Offset for the next page (present only when `more` is `true`) |
 
 To retrieve all programs, page through until `more` is `false`:
 

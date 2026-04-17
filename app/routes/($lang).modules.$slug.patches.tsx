@@ -5,7 +5,8 @@ import type {ModuleHubData} from '~/data/hub-loaders';
 import type {LzxPatch} from '~/data/lzxdb';
 
 export const meta = ({matches}: MetaArgs) => {
-  const parentData = matches.find((m) => m.id.includes('modules.$slug'))?.data as any;
+  const parentData = matches.find((m) => m.id.includes('modules.$slug'))
+    ?.data as any;
   const title = parentData?.product?.title ?? 'Module';
   return [{title: `${title} Patches | LZX Industries`}];
 };
@@ -17,7 +18,9 @@ export default function ModulePatches() {
   if (patches.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
-        <p className="text-base-content/60">No patches available for {product.title}.</p>
+        <p className="text-base-content/60">
+          No patches available for {product.title}.
+        </p>
       </div>
     );
   }

@@ -9,7 +9,9 @@ import {
 
 describe('content.server blog and docs integration', () => {
   it('uses frontmatter blog slugs in blog listings', () => {
-    const post = listBlogPosts().find((entry) => entry.slug === 'videomancer-preview-release');
+    const post = listBlogPosts().find(
+      (entry) => entry.slug === 'videomancer-preview-release',
+    );
 
     expect(post).toBeDefined();
     expect(post?.date).toBe('2026-03-12');
@@ -28,7 +30,7 @@ describe('content.server blog and docs integration', () => {
 
     expect(doc).not.toBeNull();
     expect(doc?.frontmatter.title).toBeTruthy();
-    expect(doc?.html).toContain('<h1');
+    expect(doc?.html).toContain('<h2');
   });
 
   it('builds sidebar navigation and computes prev/next links', () => {

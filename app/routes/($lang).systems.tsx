@@ -63,7 +63,8 @@ export async function loader({request}: LoaderFunctionArgs) {
       title: 'Systems',
       seo: {
         title: 'Systems',
-        description: 'Curated LZX starter system configurations and workflow entry points.',
+        description:
+          'Curated LZX starter system configurations and workflow entry points.',
       },
     } as any,
     url: request.url,
@@ -85,14 +86,20 @@ export default function SystemsPage() {
       <div className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
         <h1 className="text-3xl font-bold mb-2">Systems</h1>
         <p className="text-base-content/70 mb-8">
-          Curated starter configurations to help you choose a direction and start patching faster.
+          Curated starter configurations to help you choose a direction and
+          start patching faster.
         </p>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {systems.map((system) => (
-            <article key={system.id} className="rounded-lg border border-base-300 p-5">
+            <article
+              key={system.id}
+              className="rounded-lg border border-base-300 p-5"
+            >
               <h2 className="text-xl font-semibold">{system.name}</h2>
-              <p className="mt-2 text-sm text-base-content/70">{system.summary}</p>
+              <p className="mt-2 text-sm text-base-content/70">
+                {system.summary}
+              </p>
 
               <div className="mt-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-base-content/60">
@@ -101,7 +108,10 @@ export default function SystemsPage() {
                 <ul className="mt-2 space-y-1">
                   {system.modules.map((module) => (
                     <li key={module.to}>
-                      <Link to={module.to} className="link link-primary text-sm">
+                      <Link
+                        to={module.to}
+                        className="link link-primary text-sm"
+                      >
                         {module.name}
                       </Link>
                     </li>

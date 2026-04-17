@@ -44,7 +44,11 @@ export function Layout({
   const cart = (rootMatch.data as Record<string, any>)?.cart;
   const isLoggedIn = (rootMatch.data as Record<string, any>)?.isLoggedIn;
 
-  const {isOpen: isCartOpen, openDrawer: openCart, closeDrawer: closeCart} = useDrawer();
+  const {
+    isOpen: isCartOpen,
+    openDrawer: openCart,
+    closeDrawer: closeCart,
+  } = useDrawer();
   const [cartCount, setCartCount] = useState(0);
 
   // Auto-open cart drawer when an add-to-cart action completes
@@ -52,10 +56,7 @@ export function Layout({
   const prevFetcherCount = useRef(addToCartFetchers.length);
 
   useEffect(() => {
-    if (
-      addToCartFetchers.length === 0 &&
-      prevFetcherCount.current > 0
-    ) {
+    if (addToCartFetchers.length === 0 && prevFetcherCount.current > 0) {
       openCart();
     }
     prevFetcherCount.current = addToCartFetchers.length;
@@ -64,7 +65,10 @@ export function Layout({
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <a href="#mainContent" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+        <a
+          href="#mainContent"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-black"
+        >
           Skip to content
         </a>
         <Header

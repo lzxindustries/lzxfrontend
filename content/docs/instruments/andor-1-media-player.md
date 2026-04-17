@@ -1,8 +1,8 @@
 ---
 draft: true
 sidebar_position: 5
-title: "Andor 1 Media Player"
-description: "Documentation for Andor 1, a media player designed for use with LZX modular video synthesizer systems."
+title: 'Andor 1 Media Player'
+description: 'Documentation for Andor 1, a media player designed for use with LZX modular video synthesizer systems.'
 ---
 
 # Andor 1 Media Player
@@ -14,10 +14,6 @@ The Andor 1 is incredibly simple to use, but packed with professional features l
 Andor 1 was developed by programmer, artist, and curator Paul Slocum and is based on more than a decade of exhibiting video and digital art at his own And/Or Gallery and at other museums and galleries internationally.
 
 User Manual (PDF)
-
-
-
-
 
 Effortless Looping and Synchronizing of Videos
 
@@ -47,19 +43,17 @@ An external USB keyboard will be required to adjust settings in the menu.
 
 LZX Industries Video Synthesis Compatibility Notes
 
-Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices.  It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection. 
+Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection.
 
 If you have any questions about interfacing before purchasing Andor 1, please contact us.
 
 Menu Screenshots
 
-		
-
- Downloads
+Downloads
 Andor 1 User Manual (PDF)
 
- Videos
+Videos
 
- System Building Tips
+System Building Tips
 Video Synth Compatibility
 Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection.

@@ -48,23 +48,23 @@ export interface TagInfo {
 // --- Content loading via import.meta.glob ---
 // Vite bundles these at build time as raw strings
 
-const blogFiles = import.meta.glob<string>(
-  '../../content/blog/*/index.md',
-  {query: '?raw', import: 'default', eager: true},
-);
+const blogFiles = import.meta.glob<string>('../../content/blog/*/index.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 
-const docFiles = import.meta.glob<string>(
-  '../../content/docs/**/*.md',
-  {query: '?raw', import: 'default', eager: true},
-);
+const docFiles = import.meta.glob<string>('../../content/docs/**/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 
 // --- Helpers ---
 
 function extractDateFromBlogPath(filepath: string): string {
   // Path format: ../../content/blog/YYYY-MM-DD-slug/index.md
-  const match = filepath.match(
-    /\/blog\/(\d{4}-\d{2}-\d{2})-[^/]+\/index\.md$/,
-  );
+  const match = filepath.match(/\/blog\/(\d{4}-\d{2}-\d{2})-[^/]+\/index\.md$/);
   return match?.[1] ?? '1970-01-01';
 }
 
@@ -103,7 +103,9 @@ function sectionFromDocPath(docPath: string): string {
 function isProductionRuntime(): boolean {
   return (
     (typeof import.meta !== 'undefined' &&
-      Boolean((import.meta as ImportMeta & {env?: {PROD?: boolean}}).env?.PROD)) ||
+      Boolean(
+        (import.meta as ImportMeta & {env?: {PROD?: boolean}}).env?.PROD,
+      )) ||
     (typeof process !== 'undefined' && process.env?.NODE_ENV === 'production')
   );
 }
@@ -116,7 +118,9 @@ export function listBlogPosts(tag?: string): BlogPost[] {
   const truncateMarker = /<!--\s*truncate\s*-->/i;
 
   for (const [filepath, raw] of Object.entries(blogFiles)) {
-    let frontmatter: ContentFrontmatter = {title: extractSlugFromBlogPath(filepath)};
+    let frontmatter: ContentFrontmatter = {
+      title: extractSlugFromBlogPath(filepath),
+    };
     let contentAfterFm = raw;
     try {
       const parsed = matter(raw);
@@ -182,12 +186,18 @@ export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
       fmSlug = '';
     }
 
-  const effectiveSlug = fmSlug || dirSlug;
-  const aliases = new Set([effectiveSlug, dirSlug, folderSlug].filter(Boolean));
-  if (!aliases.has(slug)) continue;
+    const effectiveSlug = fmSlug || dirSlug;
+    const aliases = new Set(
+      [effectiveSlug, dirSlug, folderSlug].filter(Boolean),
+    );
+    if (!aliases.has(slug)) continue;
 
     const imageBasePath = `/docs/blog/${dirSlug}`;
-    const parsed = await renderMarkdown(raw, imageBasePath, `/blog/${effectiveSlug}`);
+    const parsed = await renderMarkdown(
+      raw,
+      imageBasePath,
+      `/blog/${effectiveSlug}`,
+    );
 
     return {
       slug: effectiveSlug,
@@ -261,9 +271,7 @@ export function listDocsInSection(section: string): DocPage[] {
   return docs;
 }
 
-export async function getDocPage(
-  docPath: string,
-): Promise<DocPageFull | null> {
+export async function getDocPage(docPath: string): Promise<DocPageFull | null> {
   const isProduction = isProductionRuntime();
 
   // Try exact path, then with /index suffix
@@ -279,7 +287,9 @@ export async function getDocPage(
     const section = sectionFromDocPath(docPath);
     const imageBasePath = `/docs/img/${section}`;
     const normalizedDocPath = docPath.replace(/\/index$/, '');
-    const currentPath = normalizedDocPath ? `/docs/${normalizedDocPath}` : '/docs';
+    const currentPath = normalizedDocPath
+      ? `/docs/${normalizedDocPath}`
+      : '/docs';
     const parsed = await renderMarkdown(raw, imageBasePath, currentPath);
 
     if (isProduction && parsed.frontmatter.draft) {
@@ -443,7 +453,5 @@ export function getAllContentPaths(): string[] {
 }
 
 function formatLabel(slug: string): string {
-  return slug
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }

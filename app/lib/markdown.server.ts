@@ -62,8 +62,7 @@ function extractHeadings(headings: TocHeading[]): Plugin<[], Root> {
           (node.tagName === 'h2' || node.tagName === 'h3')
         ) {
           const depth = node.tagName === 'h2' ? 2 : 3;
-          const id =
-            (node.properties?.id as string) || '';
+          const id = (node.properties?.id as string) || '';
           const text = getTextContent(node);
           if (text) {
             headings.push({depth, id, text});
@@ -204,7 +203,9 @@ function normalizeMarkdownPath(pathname: string): string {
   if (moduleMatch) return `/modules/${moduleMatch[1]}/manual`;
 
   // Rewrite /docs/instruments/{slug}/{subpath?} → /instruments/{slug}/manual/{subpath?}
-  const instrMatch = normalized.match(/^\/docs\/instruments\/([^/]+)(?:\/(.+))?$/);
+  const instrMatch = normalized.match(
+    /^\/docs\/instruments\/([^/]+)(?:\/(.+))?$/,
+  );
   if (instrMatch) {
     const slug = instrMatch[1];
     const subpath = instrMatch[2];
@@ -214,10 +215,7 @@ function normalizeMarkdownPath(pathname: string): string {
   return normalized;
 }
 
-function visitElements(
-  node: Root | Element,
-  fn: (el: Element) => void,
-) {
+function visitElements(node: Root | Element, fn: (el: Element) => void) {
   if ('children' in node) {
     for (const child of node.children) {
       if (child.type === 'element') {
@@ -277,7 +275,9 @@ function wrapMermaidBlocks(): Plugin<[], Root> {
             child.type === 'element' &&
             child.tagName === 'code' &&
             Array.isArray(child.properties?.className) &&
-            (child.properties.className as string[]).includes('language-mermaid')
+            (child.properties.className as string[]).includes(
+              'language-mermaid',
+            )
           ) {
             const mermaidSource = getTextContent(child);
             // Replace <pre><code> with a <div class="mermaid"> for client-side rendering
@@ -341,10 +341,7 @@ function stripMdxSyntax(content: string): string {
   // 2. Remove `export function ...` blocks (e.g. ResponsiveYouTube component
   //    definitions). These span from `export function` to the closing `}` at
   //    column 0.
-  content = content.replace(
-    /^export\s+function\s+[\s\S]*?\n}\s*$/gm,
-    '',
-  );
+  content = content.replace(/^export\s+function\s+[\s\S]*?\n}\s*$/gm, '');
 
   // 3. Replace <ResponsiveYouTube videoId="XYZ" /> with a plain iframe
   content = content.replace(

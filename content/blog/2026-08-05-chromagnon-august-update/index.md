@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-august-update
-title: "Chromagnon Update: August 2026"
+title: 'Chromagnon Update: August 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
@@ -11,7 +11,7 @@ Monthly Chromagnon update for August 2026.
 
 <!--truncate-->
 
-<!-- 
+<!--
 CONTEXT: This is targeted as the Ship Unit #1 post.
 If the schedule has held, the first batch should be in assembly/QC or shipping.
 This is the post customers have been waiting YEARS for. Make it count.
@@ -21,7 +21,7 @@ IF UNIT #1 HAS SHIPPED:
 
 ## Ship Unit #1
 
-<!-- 
+<!--
 THE MILESTONE. Report:
 - Unit #1 has shipped. Date, destination (general — don't share customer details without permission).
 - Photo of the unit being packed / on the shipping bench
@@ -32,7 +32,7 @@ Reflect briefly on the journey — but keep it tight. This is a celebration, not
 Don't re-litigate the delays. Point forward.
 -->
 
-<!-- 
+<!--
 IF UNIT #1 HAS NOT SHIPPED:
 Be completely transparent about why. Update the timeline.
 Do not spin. Do not minimize. State facts, state the revised date, state what's blocking.
@@ -40,7 +40,7 @@ Do not spin. Do not minimize. State facts, state the revised date, state what's 
 
 ## Fulfillment Begins
 
-<!-- 
+<!--
 Concrete fulfillment logistics:
 - How many units in the first shipping batch?
 - How many shipped this month / shipping this week?
@@ -57,15 +57,15 @@ Include shipping stats:
 
 **Fulfillment tracker:**
 
-| Batch | Units | Status | Ship Date |
-|---|---|---|---|
-| Batch 1 | | | |
-| Batch 2 | | | |
-| Batch 3 | | | |
+| Batch   | Units | Status | Ship Date |
+| ------- | ----- | ------ | --------- |
+| Batch 1 |       |        |           |
+| Batch 2 |       |        |           |
+| Batch 3 |       |        |           |
 
 ## First Customer Reactions
 
-<!-- 
+<!--
 If any early recipients have shared reactions, photos, or videos — feature them here.
 This is powerful social proof that Chromagnon is REAL and SHIPPING.
 Reach out to the first few customers and ask if they'd be willing to share.
@@ -73,7 +73,7 @@ Reach out to the first few customers and ask if they'd be willing to share.
 
 ## Ongoing Updates
 
-<!-- 
+<!--
 Commit to the monthly cadence through fulfillment completion:
 - September onward: monthly batch shipping reports
 - Each update includes: units shipped, units remaining, next batch date

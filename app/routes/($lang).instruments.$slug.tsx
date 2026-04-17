@@ -6,7 +6,10 @@ import invariant from 'tiny-invariant';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {HubNavBar} from '~/components/HubNavBar';
 import type {HubTab} from '~/components/HubNavBar';
-import {loadInstrumentHubData, getRecommendedProducts} from '~/data/hub-loaders';
+import {
+  loadInstrumentHubData,
+  getRecommendedProducts,
+} from '~/data/hub-loaders';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 import {getCanonicalSlug} from '~/data/product-slugs';
 import {routeHeaders} from '~/data/cache';
@@ -66,7 +69,11 @@ export default function InstrumentLayout() {
     {label: 'Overview', to: basePath},
     {label: 'Manual', to: `${basePath}/manual`, hidden: !hasManual},
     {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},
-    {label: 'Downloads', to: `${basePath}/downloads`, hidden: assets.length === 0},
+    {
+      label: 'Downloads',
+      to: `${basePath}/downloads`,
+      hidden: assets.length === 0,
+    },
   ];
 
   return (

@@ -8,7 +8,11 @@ import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {getPatches} from '~/data/lzxdb';
 import {getAllContentPaths} from '~/lib/content.server';
-import {getAllModuleSlugs, getAllInstrumentSlugs, getDocPathForSlug} from '~/data/product-slugs';
+import {
+  getAllModuleSlugs,
+  getAllInstrumentSlugs,
+  getDocPathForSlug,
+} from '~/data/product-slugs';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
 
@@ -136,11 +140,12 @@ function shopSitemap({
 
   // Add module and instrument hub pages (including manual sub-pages)
   const moduleRoutes = getAllModuleSlugs().flatMap((slug) => {
-    const routes = [
-      {url: `${baseUrl}/modules/${slug}`, changeFreq: 'weekly'},
-    ];
+    const routes = [{url: `${baseUrl}/modules/${slug}`, changeFreq: 'weekly'}];
     if (getDocPathForSlug(slug)) {
-      routes.push({url: `${baseUrl}/modules/${slug}/manual`, changeFreq: 'weekly'});
+      routes.push({
+        url: `${baseUrl}/modules/${slug}/manual`,
+        changeFreq: 'weekly',
+      });
     }
     return routes;
   });
@@ -150,7 +155,10 @@ function shopSitemap({
       {url: `${baseUrl}/instruments/${slug}`, changeFreq: 'weekly'},
     ];
     if (getDocPathForSlug(slug)) {
-      routes.push({url: `${baseUrl}/instruments/${slug}/manual`, changeFreq: 'weekly'});
+      routes.push({
+        url: `${baseUrl}/instruments/${slug}/manual`,
+        changeFreq: 'weekly',
+      });
     }
     return routes;
   });
@@ -158,7 +166,8 @@ function shopSitemap({
   // Add docs and blog content pages (exclude module/instrument docs — now served via hub routes)
   const contentRoutes = getAllContentPaths()
     .filter(
-      (p) => !p.startsWith('/docs/modules/') && !p.startsWith('/docs/instruments/'),
+      (p) =>
+        !p.startsWith('/docs/modules/') && !p.startsWith('/docs/instruments/'),
     )
     .map((path) => ({
       url: `${baseUrl}${path}`,

@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "PGO"
+title: 'PGO'
 image: /img/modules/pgo/pgo-diagrams/pgo_front-panel.png
-description: "Documentation for PGO, a programmable gain and offset utility for adding and subtracting video signals in a compact 4HP module."
+description: 'Documentation for PGO, a programmable gain and offset utility for adding and subtracting video signals in a compact 4HP module.'
 ---
 
 import pgo_pcb_front from '/img/modules/pgo/pgo-diagrams/pgo-pcb-render-front-RevB.png';
@@ -36,9 +36,10 @@ import pgo_differential_to_single_ended from '/img/modules/pgo/pgo-diagrams/pgo_
 import pgo_single_ended_to_differential from '/img/modules/pgo/pgo-diagrams/pgo_single-ended-to-differential.png';
 
 # PGO
+
 <span class="head2_nolink">Programmable Gain & Offset</span>
 
-<img src={pgo_front_panel} alt="pgo_front_panel" /> 
+<img src={pgo_front_panel} alt="pgo_front_panel" />
 
 ## Overview
 
@@ -91,7 +92,7 @@ AFR note: recommend adding an illustration of the reverse sides of the four pane
 
 ## Connectors
 
-The PGO design was informed by years of studying interfaces common to the building blocks of analog computers and video processing equipment. 
+The PGO design was informed by years of studying interfaces common to the building blocks of analog computers and video processing equipment.
 
 <img src={pgo_controls_connectors_indicators} alt="Controls Connectors And Indicators" />
 
@@ -111,7 +112,7 @@ PGO uses switched, or normalled, connections between some of its input jacks. 
 
 ### Difference Amplifier
 
-A difference amplifier subtracts one voltage from another. It is similar to a differential amplifier, but is specifically optimized to subtract one voltage from another with accuracy.  PGO's amplifier is fully differential, meaning that it has both positive and negative outputs.  
+A difference amplifier subtracts one voltage from another. It is similar to a differential amplifier, but is specifically optimized to subtract one voltage from another with accuracy.  PGO's amplifier is fully differential, meaning that it has both positive and negative outputs.
 
 In PGO's implementation, the positive input and negative input of the difference amplifier are each preceded by a four-input summing amplifier stage. This configuration allows the user to simultaneously add and subtract multiple signals. Due to the cascading input switches, the gain of each side of the difference amplifier may be programmed by which jacks are patched and which jacks are left open.
 
@@ -193,7 +194,7 @@ Calculate the average of two input signals.
 
 ### Unipolar Modulation
 
-Subtract a modulator from a primary signal, where both are unipolar, from zero to +1V. The primary signal *source a* passes unmodified when the modulating signal *source b* is at its midpoint of 0.5V. As a ramp shifter, *source a* is the input ramp, and *source b* is the positioning control voltage. As a brightness processor, *source a* is a unipolar color channel such as luma, red, green, or blue, and *source b* is the brightness adjustment.
+Subtract a modulator from a primary signal, where both are unipolar, from zero to +1V. The primary signal _source a_ passes unmodified when the modulating signal _source b_ is at its midpoint of 0.5V. As a ramp shifter, _source a_ is the input ramp, and _source b_ is the positioning control voltage. As a brightness processor, _source a_ is a unipolar color channel such as luma, red, green, or blue, and _source b_ is the brightness adjustment.
 
 <img src={pgo_unipolar_modulator} alt="Unipolar Modulator"/>
 
@@ -201,7 +202,7 @@ Subtract a modulator from a primary signal, where both are unipolar, from zero t
 
 ### Weighted Mixer
 
-Calculate a 3:1 weighted sum of two inputs, with 3 parts of *source a* for every 1 part of *source b*.
+Calculate a 3:1 weighted sum of two inputs, with 3 parts of _source a_ for every 1 part of _source b_.
 
 <img src={pgo_weighted_mixer} alt="Weighted Mixer"/>
 
@@ -242,7 +243,7 @@ Likewise with Single-ended to differential, it should have two separate output f
 
 ### Differential to Single-ended
 
-Convert a differential input signal to a single-ended output signal. In a differential signal, information is encoded as the difference between a matched pair of separate signals. For example, balanced audio rejects noise on cable runs by sending both a positive and a phase-inverted negative signal on two conductors. Video chroma can be encoded as the difference between two color primaries, such as Pb and Pr, or I and Q. 
+Convert a differential input signal to a single-ended output signal. In a differential signal, information is encoded as the difference between a matched pair of separate signals. For example, balanced audio rejects noise on cable runs by sending both a positive and a phase-inverted negative signal on two conductors. Video chroma can be encoded as the difference between two color primaries, such as Pb and Pr, or I and Q.
 
 <img src={pgo_differential_to_single_ended} alt="Differential To Single Ended"/>
 
@@ -262,23 +263,23 @@ Convert a single-ended input signal to a differential output signal. One possibl
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
-* Eurorack power for PGO requires a 16-pin to 10-pin ribbon cable
-* Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
+- Eurorack power for PGO requires a 16-pin to 10-pin ribbon cable
+- Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -287,7 +288,7 @@ Convert a single-ended input signal to a differential output signal. One possibl
 | Parameter                    | Value                                                                           |
 | ---------------------------- | ------------------------------------------------------------------------------- |
 | Manufacturer Part Number     | 950065                                                                          |
-| Pronunciation                | piː ɡəʊ                                                                          |
+| Pronunciation                | piː ɡəʊ                                                                         |
 | Mounting Width               | 4 HP                                                                            |
 | Mounting Hole Count          | 2                                                                               |
 | Power Consumption            | 12V @ 50 mA                                                                     |
@@ -311,7 +312,7 @@ Convert a single-ended input signal to a differential output signal. One possibl
 
 ---
 
-<!-- 
+<!--
 | Mounting Depth               | TODO mm                                                                         |
 | Propagation Delay            | TODO                                                                            |
 | Bandwidth @ -3dB             | TODO                                                                            |
@@ -347,7 +348,7 @@ PGO-RevB Schematic Diagram
 
 PGO-RevB Interactive Bill of Materials
 &nbsp;<br />
-[Download  (ZIP)](/zip/modules/pgo/PGO-REVB_Interactive_Bill_of_Materials.zip)
+[Download (ZIP)](/zip/modules/pgo/PGO-REVB_Interactive_Bill_of_Materials.zip)
 
 <img src={pgo_pcb_front_smt_only} alt="PCB Front SMT Only" style={{height: 400}} />
 <img src={pgo_pcb_rear_smt_only} alt="PCB Rear SMT Only" style={{height: 400}} />
@@ -379,13 +380,13 @@ This assembly job is recommended for intermediate level DIYers who are comfortab
 
 1. Mount and solder rear-facing through hole parts first, in this order: pin header, DC/DC converter, DC barrel jack.
 1. Mount and solder front-facing jacks.
-2. Attach the front panel and secure it with mounting nuts for the jacks.
+1. Attach the front panel and secure it with mounting nuts for the jacks.
 
 ---
 
 ## Functional Testing
 
-The following tests are designed to verify the module is functioning as expected after assembly. If you are concerned your module is not operating properly, these tests may be used for self verification before a repair is initiated.  It is also best practice to perform a functional test when selling or purchasing a module on the secondhand market.
+The following tests are designed to verify the module is functioning as expected after assembly. If you are concerned your module is not operating properly, these tests may be used for self verification before a repair is initiated. It is also best practice to perform a functional test when selling or purchasing a module on the secondhand market.
 
 ### Requirements
 
@@ -416,9 +417,9 @@ The following tests are designed to verify the module is functioning as expected
 - Verify that Difference Amplifier Out+ is within +/-2% of -2V
 - Verify that Difference Amplifier Out- is within +/-2% of +2V
 
-This concludes functional testing. If all steps starting with *Verify...* passed their conditions, then PGO is operating within expected parameters.
+This concludes functional testing. If all steps starting with _Verify..._ passed their conditions, then PGO is operating within expected parameters.
 
-<!-- 
+<!--
 ## Performance Testing
 
 The following tests are designed for verification of hardware revisions and general troubleshooting of performance issues. While intended for use by the LZX Industries design team, we publish the tests here to satisfy the curiosities of advanced users and service technicians.
@@ -440,10 +441,10 @@ The following tests are designed for verification of hardware revisions and gene
 #### Test +3.3V rail accuracy
 
 - Use your multimeter to measure the voltage present at pin 3 of the U3 DC-DC converter module.
-- Verify that the measurement is within the range of 3.0V to 3.6V. 
+- Verify that the measurement is within the range of 3.0V to 3.6V.
 -->
 
-<!-- 
+<!--
 ## Theory Of Operation
 
 ### Block Diagram
@@ -452,5 +453,5 @@ The following tests are designed for verification of hardware revisions and gene
 
 ### Voltage Reference
 
-### Difference Amplifier 
+### Difference Amplifier
 -->

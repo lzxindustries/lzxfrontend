@@ -6,7 +6,12 @@ import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
 import {DocLayout} from '~/components/DocLayout';
-import {getDocPage, buildSidebar, getPrevNext, hasDocPagePath} from '~/lib/content.server';
+import {
+  getDocPage,
+  buildSidebar,
+  getPrevNext,
+  hasDocPagePath,
+} from '~/lib/content.server';
 import type {SidebarItem} from '~/lib/content.server';
 import {getDocPathForSlug, getCanonicalSlug} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
@@ -15,9 +20,7 @@ import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 
 function formatLabel(slug: string): string {
-  return slug
-    .replace(/-/g, ' ')
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export async function loader({params, request}: LoaderFunctionArgs) {
@@ -48,7 +51,10 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   const breadcrumbs = [
     {label: 'Home', to: '/'},
     {label: 'Instruments', to: '/instruments'},
-    {label: (doc.frontmatter as any)._productTitle ?? canonical, to: `/instruments/${canonical}`},
+    {
+      label: (doc.frontmatter as any)._productTitle ?? canonical,
+      to: `/instruments/${canonical}`,
+    },
     {label: 'Manual', to: `/instruments/${canonical}/manual`},
     ...splatParts.slice(0, -1).map((part, i) => {
       const partialSplat = splatParts.slice(0, i + 1).join('/');
@@ -56,16 +62,23 @@ export async function loader({params, request}: LoaderFunctionArgs) {
       const hasPage = hasDocPagePath(partialDocPath);
       return {
         label: formatLabel(part),
-        to: hasPage ? `/instruments/${canonical}/manual/${partialSplat}` : undefined,
+        to: hasPage
+          ? `/instruments/${canonical}/manual/${partialSplat}`
+          : undefined,
       };
     }),
-    {label: doc.frontmatter.title ?? formatLabel(splatParts[splatParts.length - 1] ?? '')},
+    {
+      label:
+        doc.frontmatter.title ??
+        formatLabel(splatParts[splatParts.length - 1] ?? ''),
+    },
   ];
 
   const seo = seoPayload.doc({
     title: doc.frontmatter.title ?? splat,
     description: doc.frontmatter.description ?? '',
-    url: new URL(request.url).origin + `/instruments/${canonical}/manual/${splat}`,
+    url:
+      new URL(request.url).origin + `/instruments/${canonical}/manual/${splat}`,
   });
 
   return json(

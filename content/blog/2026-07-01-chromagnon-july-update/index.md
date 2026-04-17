@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-july-update
-title: "Chromagnon Update: July 2026"
+title: 'Chromagnon Update: July 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
@@ -11,7 +11,7 @@ Monthly Chromagnon update for July 2026.
 
 <!--truncate-->
 
-<!-- 
+<!--
 CONTEXT: By this date, production orders should be in manufacturing (placed June-July).
 First batch assembly and QC targets August 2026.
 Customer portal / queue position system should be launching.
@@ -21,7 +21,7 @@ EXPECTED CONTENT:
 
 ## Production Status
 
-<!-- 
+<!--
 Report on:
 - Production order status: boards in fabrication? Components procured?
 - Assembly timeline: when does the contract assembler begin?
@@ -34,14 +34,14 @@ Include vendor timeline updates where possible.
 
 **Schedule check against March plan:**
 
-| Milestone | Original Target | Actual Status |
-|---|---|---|
-| First batch assembly & QC | August 2026 | |
-| Ship Unit #1 | August 2026 | |
+| Milestone                 | Original Target | Actual Status |
+| ------------------------- | --------------- | ------------- |
+| First batch assembly & QC | August 2026     |               |
+| Ship Unit #1              | August 2026     |               |
 
 ## Queue Position System Launch
 
-<!-- 
+<!--
 THIS IS A MAJOR CUSTOMER-FACING DELIVERABLE.
 Report on:
 - Customer portal launch — is it live?
@@ -56,7 +56,7 @@ Provide actionable info for customers — they've been waiting to know their pos
 
 ## Firmware Release Candidate
 
-<!-- 
+<!--
 Report on:
 - Firmware feature freeze — what's in v1.0?
 - Known limitations or features deferred to post-launch updates
@@ -66,7 +66,7 @@ Report on:
 
 ## Ship Unit #1 Countdown
 
-<!-- 
+<!--
 Build anticipation:
 - What's left between now and shipping the first unit?
 - Who is Unit #1 going to? (The first pre-order customer, by policy)

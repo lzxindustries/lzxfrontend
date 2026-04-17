@@ -4,8 +4,12 @@ import {useEffect, useRef} from 'react';
  * Attaches medium-zoom to all images within the given container ref.
  * Call this hook in any layout that renders markdown content.
  */
-export function useImageZoom(containerRef: React.RefObject<HTMLElement | null>) {
-  const zoomRef = useRef<ReturnType<typeof import('medium-zoom')['default']> | null>(null);
+export function useImageZoom(
+  containerRef: React.RefObject<HTMLElement | null>,
+) {
+  const zoomRef = useRef<ReturnType<
+    typeof import('medium-zoom')['default']
+  > | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;

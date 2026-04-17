@@ -11,11 +11,14 @@ export async function doLogout(context: AppLoadContext, redirectPath?: string) {
   session.unset('customerAccessToken');
   session.flash('sessionExpired', true); // Flash message for expired session
 
-  return redirect(redirectPath || `${context.storefront.i18n.pathPrefix}/account/login`, {
-    headers: {
-      'Set-Cookie': await session.commit(),
+  return redirect(
+    redirectPath || `${context.storefront.i18n.pathPrefix}/account/login`,
+    {
+      headers: {
+        'Set-Cookie': await session.commit(),
+      },
     },
-  });
+  );
 }
 
 export async function loader({context}: LoaderFunctionArgs) {

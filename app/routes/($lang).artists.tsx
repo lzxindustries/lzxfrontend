@@ -47,7 +47,8 @@ export async function loader({request}: LoaderFunctionArgs) {
       title: 'Artists',
       seo: {
         title: 'Artists',
-        description: 'Featured artists and creators using LZX video synthesis instruments and modules.',
+        description:
+          'Featured artists and creators using LZX video synthesis instruments and modules.',
       },
     } as any,
     url: request.url,
@@ -69,7 +70,8 @@ export default function ArtistsPage() {
       <div className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
         <h1 className="text-3xl font-bold mb-2">Artists</h1>
         <p className="text-base-content/70 mb-8">
-          A growing archive of artists and video creators using LZX tools in their work.
+          A growing archive of artists and video creators using LZX tools in
+          their work.
         </p>
 
         {artistPosts.length === 0 ? (
@@ -91,10 +93,16 @@ export default function ArtistsPage() {
                   />
                 ) : null}
                 <div className="p-4">
-                  <p className="text-xs uppercase tracking-wide text-base-content/60">{post.date}</p>
-                  <h2 className="mt-2 text-lg font-semibold leading-tight">{post.title}</h2>
+                  <p className="text-xs uppercase tracking-wide text-base-content/60">
+                    {post.date}
+                  </p>
+                  <h2 className="mt-2 text-lg font-semibold leading-tight">
+                    {post.title}
+                  </h2>
                   {post.excerpt ? (
-                    <p className="mt-2 text-sm text-base-content/70 line-clamp-3">{post.excerpt}</p>
+                    <p className="mt-2 text-sm text-base-content/70 line-clamp-3">
+                      {post.excerpt}
+                    </p>
                   ) : null}
                 </div>
               </Link>

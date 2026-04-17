@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-majxr-tom
-title: "Artist Feature: Majxr Tom"
+title: 'Artist Feature: Majxr Tom'
 authors: [kat]
 tags: [community]
 image: ./majxr_tom_01.jpg

@@ -68,9 +68,7 @@ export default function PatchesIndex() {
                 <div className="card-body p-4">
                   <h2 className="card-title text-base">{patch.name}</h2>
                   {patch.artist && (
-                    <p className="text-sm opacity-70">
-                      by {patch.artist.name}
-                    </p>
+                    <p className="text-sm opacity-70">by {patch.artist.name}</p>
                   )}
                   {patch.modules.length > 0 && (
                     <p className="text-xs opacity-50">

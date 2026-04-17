@@ -59,9 +59,7 @@ export const action: ActionFunction = async ({request, context, params}) => {
       const hasTaken = errors.some(
         (e: any) => e.code === 'TAKEN' || e.code === 'CUSTOMER_DISABLED',
       );
-      const hasTooShort = errors.some(
-        (e: any) => e.code === 'TOO_SHORT',
-      );
+      const hasTooShort = errors.some((e: any) => e.code === 'TOO_SHORT');
 
       if (hasTaken) {
         throw new Error(
@@ -69,7 +67,9 @@ export const action: ActionFunction = async ({request, context, params}) => {
         );
       }
       if (hasTooShort) {
-        throw new Error('Password is too short. Please use at least 5 characters.');
+        throw new Error(
+          'Password is too short. Please use at least 5 characters.',
+        );
       }
       throw new Error(
         errors.map((e: any) => e.message).join(', ') ||
@@ -93,7 +93,9 @@ export const action: ActionFunction = async ({request, context, params}) => {
     }
 
     return badRequest({
-      formError: error.message || 'Sorry, we could not create your account. Please try again.',
+      formError:
+        error.message ||
+        'Sorry, we could not create your account. Please try again.',
     });
   }
 };
@@ -115,21 +117,31 @@ export default function Register() {
     if (!password) return null;
     if (password.length < 8) return 'Too short';
     if (password.length < 12) return 'Fair';
-    if (/[A-Z]/.test(password) && /[0-9]/.test(password) && /[^A-Za-z0-9]/.test(password)) return 'Strong';
+    if (
+      /[A-Z]/.test(password) &&
+      /[0-9]/.test(password) &&
+      /[^A-Za-z0-9]/.test(password)
+    )
+      return 'Strong';
     return 'Good';
   }
 
-  const strengthColor = passwordStrength === 'Strong' ? 'text-green-500' :
-    passwordStrength === 'Good' ? 'text-yellow-500' :
-    passwordStrength === 'Fair' ? 'text-orange-500' :
-    'text-red-500';
+  const strengthColor =
+    passwordStrength === 'Strong'
+      ? 'text-green-500'
+      : passwordStrength === 'Good'
+      ? 'text-yellow-500'
+      : passwordStrength === 'Fair'
+      ? 'text-orange-500'
+      : 'text-red-500';
 
   return (
     <div className="flex justify-center my-24 px-4">
       <div className="max-w-md w-full">
         <h1 className="text-4xl">Create an Account.</h1>
         <p className="mt-2 text-sm text-primary/60">
-          Get order tracking, save your addresses, and access exclusive updates on new releases.
+          Get order tracking, save your addresses, and access exclusive updates
+          on new releases.
         </p>
         <Form
           method="post"
@@ -138,16 +150,23 @@ export default function Register() {
         >
           {actionData?.formError && (
             <div className="flex flex-col items-center justify-center mb-6 rounded bg-red-500/10 border border-red-500/20">
-              <p className="m-4 mb-2 text-s text-red-400">{actionData.formError}</p>
+              <p className="m-4 mb-2 text-s text-red-400">
+                {actionData.formError}
+              </p>
               {actionData.formError.includes('already exists') && (
-                <a href="/account/login" className="mb-3 text-sm underline text-primary/60 hover:text-primary">
+                <a
+                  href="/account/login"
+                  className="mb-3 text-sm underline text-primary/60 hover:text-primary"
+                >
                   Go to login
                 </a>
               )}
             </div>
           )}
           <div>
-            <label htmlFor="email" className="sr-only">Email address</label>
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
             <input
               className={`mb-1 ${getInputStyleClasses(nativeEmailError)}`}
               id="email"
@@ -173,10 +192,14 @@ export default function Register() {
             )}
           </div>
           <div>
-            <label htmlFor="password" className="sr-only">Password</label>
+            <label htmlFor="password" className="sr-only">
+              Password
+            </label>
             <div className="relative">
               <input
-                className={`mb-1 pr-12 ${getInputStyleClasses(nativePasswordError)}`}
+                className={`mb-1 pr-12 ${getInputStyleClasses(
+                  nativePasswordError,
+                )}`}
                 id="password"
                 name="password"
                 type={showPassword ? 'text' : 'password'}
@@ -186,7 +209,9 @@ export default function Register() {
                 minLength={8}
                 required
                 onChange={(event) => {
-                  setPasswordStrength(getPasswordStrength(event.currentTarget.value));
+                  setPasswordStrength(
+                    getPasswordStrength(event.currentTarget.value),
+                  );
                 }}
                 onBlur={(event) => {
                   if (

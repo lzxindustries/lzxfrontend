@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-lauren-klotzman
-title: "Artist Feature: Lauren Klotzman"
+title: 'Artist Feature: Lauren Klotzman'
 authors: [kat]
 tags: [community]
 image: ./klotzman_01.jpg

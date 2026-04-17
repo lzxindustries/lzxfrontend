@@ -2,19 +2,19 @@
 draft: false
 sidebar_position: 180
 slug: /instruments/videomancer/lumarian
-title: "Lumarian"
+title: 'Lumarian'
 image: /img/instruments/videomancer/lumarian/lumarian_hero_s1.png
-description: "Every video image is made of three things: how bright each pixel is (luminance), what color it is (chrominance), and where the edges between regions fall."
+description: 'Every video image is made of three things: how bright each pixel is (luminance), what color it is (chrominance), and where the edges between regions fall.'
 ---
 
 ![Lumarian hero image](/img/instruments/videomancer/lumarian/lumarian_hero_s1.png)
-*Lumarian applying gamma-curved contrast, edge enhancement, and chroma inversion to sculpt a luminance-driven color composition.*
+_Lumarian applying gamma-curved contrast, edge enhancement, and chroma inversion to sculpt a luminance-driven color composition._
 
 ---
 
 ## Overview
 
-**Lumarian** is a comprehensive color correction and edge enhancement program. It combines a traditional ***proc amp*** (contrast and brightness), adjustable ***gamma*** curve, variable-frequency ***edge enhancement***, saturation control, inversions, and luminance threshold keying into a single processing chain. Each stage feeds the next, so adjustments at one point in the chain ripple through all downstream stages.
+**Lumarian** is a comprehensive color correction and edge enhancement program. It combines a traditional **_proc amp_** (contrast and brightness), adjustable **_gamma_** curve, variable-frequency **_edge enhancement_**, saturation control, inversions, and luminance threshold keying into a single processing chain. Each stage feeds the next, so adjustments at one point in the chain ripple through all downstream stages.
 
 At subtle settings, Lumarian provides gentle color correction: a slight lift to contrast, a nudge to gamma, a touch of edge sharpening. At extreme settings, it becomes a dramatic image sculpting tool: crushed blacks, blazing highlights, razor-sharp edges folded into psychedelic shapes by the rectifier, and hard luminance keys that carve the image into bright islands floating in darkness.
 
@@ -24,7 +24,7 @@ Lumarian processes all three channels (Y, U, V) but its strongest personality li
 
 ### What's In a Name?
 
-The name ***Lumarian*** blends ***luma***: the brightness component of a video signal: with the suffix *-arian*, suggesting one who studies or practices an art. A lumarian is a practitioner of light. There's also a nod to ***luminary***, a source of light or inspiration, and a hint of the mythic: ancient civilizations that mastered the mysteries of illumination.
+The name **_Lumarian_** blends **_luma_**: the brightness component of a video signal: with the suffix _-arian_, suggesting one who studies or practices an art. A lumarian is a practitioner of light. There's also a nod to **_luminary_**, a source of light or inspiration, and a hint of the mythic: ancient civilizations that mastered the mysteries of illumination.
 
 ---
 
@@ -40,14 +40,14 @@ The name ***Lumarian*** blends ***luma***: the brightness component of a video s
 ## Parameters
 
 ![Videomancer front panel with Lumarian loaded](/img/instruments/videomancer/lumarian/lumarian_control_panel.png)
-*Videomancer's front panel with Lumarian active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Lumarian active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — Contrast
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 200.0% |
-| Default | 100.1% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 200.0% |
+| Default  | 100.1%        |
 
 **Contrast** adjusts the gain applied to the luminance channel. At the center position (100.0%), the input passes through at unity gain. Turning counterclockwise toward 0.0% fades luminance toward a flat mid-gray. Turning clockwise toward 200.0% stretches the tonal range, blowing out highlights and crushing shadows. Contrast is the first processing stage, so its effect cascades through gamma, edge enhancement, and threshold.
 
@@ -59,10 +59,10 @@ Contrast above 100% combined with a gentle **Gamma** adjustment is the fastest p
 
 ### Knob 2 — Brightness
 
-| Property | Value |
-|----------|-------|
-| Range | -1.000 – 1.000 |
-| Default | 0.001 |
+| Property | Value          |
+| -------- | -------------- |
+| Range    | -1.000 – 1.000 |
+| Default  | 0.001          |
 
 **Brightness** shifts the luminance channel up or down by adding a constant offset after the contrast gain stage. At the center position (0.000), no offset is applied. Turning counterclockwise toward −1.000 darkens the entire image uniformly. Turning clockwise toward 1.000 brightens it. Because brightness is applied after contrast, it shifts the entire tonal range without changing its spread.
 
@@ -70,10 +70,10 @@ Contrast above 100% combined with a gentle **Gamma** adjustment is the fastest p
 
 ### Knob 3 — Saturation
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 200.0% |
-| Default | 100.1% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 200.0% |
+| Default  | 100.1%        |
 
 **Saturation** controls the gain applied to both chrominance channels (U and V). At the center position (100.0%), color saturation is unchanged. Turning counterclockwise toward 0.0% fades color toward monochrome. Turning clockwise toward 200.0% intensifies colors, pushing them toward clipping.
 
@@ -85,12 +85,12 @@ The saturation proc amp uses a fixed brightness offset of 512 (mid-scale), which
 
 ### Knob 4 — Gamma
 
-| Property | Value |
-|----------|-------|
-| Range | -2.000 – 2.000 |
-| Default | 0.002 |
+| Property | Value          |
+| -------- | -------------- |
+| Range    | -2.000 – 2.000 |
+| Default  | 0.002          |
 
-**Gamma** reshapes the luminance transfer curve. The processing stage generates two curves from a shared squarer: an ***exponential curve*** (input squared) and a ***logarithmic curve*** (inverted squared complement): and crossfades between them. At the center position (0.000), the two curves blend into a roughly linear response. Turning counterclockwise toward −2.000 applies the exponential curve, compressing midtones toward black. Turning clockwise toward 2.000 applies the logarithmic curve, lifting midtones toward white.
+**Gamma** reshapes the luminance transfer curve. The processing stage generates two curves from a shared squarer: an **_exponential curve_** (input squared) and a **_logarithmic curve_** (inverted squared complement): and crossfades between them. At the center position (0.000), the two curves blend into a roughly linear response. Turning counterclockwise toward −2.000 applies the exponential curve, compressing midtones toward black. Turning clockwise toward 2.000 applies the logarithmic curve, lifting midtones toward white.
 
 :::tip
 Gamma is the most powerful tonal control. A small adjustment around center yields natural-looking correction. Extreme values create dramatic contrast curves that reveal hidden detail in shadows or highlights.
@@ -100,21 +100,21 @@ Gamma is the most powerful tonal control. A small adjustment around center yield
 
 ### Knob 5 — Edge Gain
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 200.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 200.0% |
+| Default  | 0.0%          |
 
-**Edge Gain** controls the amplitude of the edge enhancement signal. At 0.0%, no enhancement is applied and the signal passes through from the gamma stage unchanged. Increasing the value toward 200.0% progressively amplifies high-frequency detail extracted by the variable filter, adding bright halos along contours. The edge signal is scaled by a ***differential multiplier*** and blended back into the image.
+**Edge Gain** controls the amplitude of the edge enhancement signal. At 0.0%, no enhancement is applied and the signal passes through from the gamma stage unchanged. Increasing the value toward 200.0% progressively amplifies high-frequency detail extracted by the variable filter, adding bright halos along contours. The edge signal is scaled by a **_differential multiplier_** and blended back into the image.
 
 ---
 
 ### Knob 6 — Edge Cutoff
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 0.0%          |
 
 **Edge Cutoff** sets the frequency threshold for the variable high-pass filter inside the edge enhancement stage. At 0.0%, only the finest, highest-frequency edges are extracted. Increasing the value toward 100.0% lowers the cutoff, admitting progressively broader spatial frequencies. At high values, large-scale contrast transitions are treated as "edges," producing a more dramatic, poster-like enhancement.
 
@@ -127,22 +127,22 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 ### Switch 7 — Luma Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
-**Luma Invert** applies a bitwise complement to the luminance channel. When set to **On**, every pixel's brightness is flipped: bright becomes dark and dark becomes bright. This inversion occurs *after* the edge enhancement stage but *before* the threshold key, so it reverses the luminance values that the threshold compares against.
+**Luma Invert** applies a bitwise complement to the luminance channel. When set to **On**, every pixel's brightness is flipped: bright becomes dark and dark becomes bright. This inversion occurs _after_ the edge enhancement stage but _before_ the threshold key, so it reverses the luminance values that the threshold compares against.
 
 ---
 
 ### Switch 8 — Chroma Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Chroma Invert** applies a bitwise complement to both U and V chrominance channels simultaneously. When set to **On**, colors shift to their complementary hues: reds become cyan, blues become yellow, greens become magenta. Chroma inversion happens early in the pipeline, before the saturation proc amp, so the inverted colors are then scaled by the **Saturation** control.
 
@@ -151,10 +151,10 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 ### Switch 9 — Edge Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Edge Invert** flips the polarity of the edge enhancement signal within the rectifier stage. When set to **On**, bright edge halos become dark edge grooves, and vice versa. This toggle modifies bit 0 of the 3-bit rectifier mode, working in combination with **Edge Rectify** and **Edge Select** to produce eight distinct edge shaping behaviors.
 
@@ -163,10 +163,10 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 ### Switch 10 — Edge Rectify
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Edge Rectify** enables full-wave rectification of the edge signal. When set to **On**, the rectifier folds the negative portion of the high-pass filter's output up to become positive, doubling the visible edge frequency: a "both sides of the edge" effect where every contour shows as a bright line regardless of the direction of the luminance transition.
 
@@ -174,11 +174,11 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 
 ### Switch 11 — Edge Select
 
-| Property | Value |
-|----------|-------|
-| Off | Single |
-| On | Both |
-| Default | Single |
+| Property | Value  |
+| -------- | ------ |
+| Off      | Single |
+| On       | Both   |
+| Default  | Single |
 
 **Edge Select** chooses between single-edge and dual-edge modes. When set to **Single**, the edge enhancement responds to only one polarity of luminance transition: either light-to-dark or dark-to-light depending on the **Edge Invert** setting. When set to **Both**, both polarities produce visible edge lines. This toggle modifies bit 2 of the 3-bit rectifier mode, enabling half-wave rectification behavior.
 
@@ -186,10 +186,10 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 
 ### Fader 12 — Luma Blank
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 0.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 0.0%          |
 
 **Luma Blank** applies a luminance threshold key at the final stage of the processing chain. At 0.0%, all pixels pass through. As the value increases toward 100.0%, pixels whose luminance falls below the threshold are replaced with black (Y=0) and neutral color (U=V=512). At high values, only the brightest areas of the image survive.
 
@@ -203,18 +203,17 @@ High **Edge Gain** combined with low **Edge Cutoff** amplifies very fine detail 
 
 ### The proc amp
 
-A ***processing amplifier***, or proc amp, is the most fundamental building block in analog and digital video processing. It applies two operations to a signal: gain (contrast) and offset (brightness). The formula is `output = (input − midpoint) × contrast / midpoint + brightness`. Lumarian's luminance proc amp is the first stage in the processing chain, setting the tonal foundation for everything that follows. The saturation proc amp uses the same math on U and V, with a fixed brightness offset at mid-scale to preserve the chroma zero-point.
+A **_processing amplifier_**, or proc amp, is the most fundamental building block in analog and digital video processing. It applies two operations to a signal: gain (contrast) and offset (brightness). The formula is `output = (input − midpoint) × contrast / midpoint + brightness`. Lumarian's luminance proc amp is the first stage in the processing chain, setting the tonal foundation for everything that follows. The saturation proc amp uses the same math on U and V, with a fixed brightness offset at mid-scale to preserve the chroma zero-point.
 
 ### Gamma correction
 
-***Gamma*** describes the nonlinear relationship between signal value and perceived brightness. In the physical world, doubling the voltage in a CRT display more than doubles the brightness because the phosphor response follows a power law. Gamma correction compensates for this curve (or intentionally distorts it for creative effect.)
+**_Gamma_** describes the nonlinear relationship between signal value and perceived brightness. In the physical world, doubling the voltage in a CRT display more than doubles the brightness because the phosphor response follows a power law. Gamma correction compensates for this curve (or intentionally distorts it for creative effect.)
 
 Lumarian's gamma stage doesn't use a lookup table or a true power function. Instead, it approximates gamma curves algebraically by computing two shapes: an exponential curve (the input squared, which compresses midtones) and a logarithmic curve (the complement squared and subtracted from maximum, which expands midtones). A crossfade interpolator blends between these two curves based on the control value. The result is a smoothly adjustable transfer curve that reshapes the midtone distribution.
 
 ### Edge enhancement
 
-Edge enhancement, also called ***unsharp masking*** in photography, sharpens an image by emphasizing transitions between adjacent tonal regions. Lumarian extracts edges using a ***variable high-pass filter***: a filter whose cutoff frequency is adjustable via the **Edge Cutoff** control. The high-pass output contains only the rapid transitions in the image. This edge signal is then shaped by a ***complex rectifier*** that can invert, half-wave rectify, or full-wave rectify the signal in eight combinations, and finally scaled by a ***differential multiplier*** controlled by **Edge Gain** before being blended back into the image.
-
+Edge enhancement, also called **_unsharp masking_** in photography, sharpens an image by emphasizing transitions between adjacent tonal regions. Lumarian extracts edges using a **_variable high-pass filter_**: a filter whose cutoff frequency is adjustable via the **Edge Cutoff** control. The high-pass output contains only the rapid transitions in the image. This edge signal is then shaped by a **_complex rectifier_** that can invert, half-wave rectify, or full-wave rectify the signal in eight combinations, and finally scaled by a **_differential multiplier_** controlled by **Edge Gain** before being blended back into the image.
 
 ---
 
@@ -232,19 +231,20 @@ Two key structural details:
 **Order matters.** Contrast and brightness shape the raw signal, gamma reshapes the curve, edges are extracted from the gamma-corrected signal, inversion is applied last before threshold. Each stage transforms what the next stage sees.
 :::
 
-
 ---
 
 ## Exercises
 
 These exercises progress from basic color correction to creative edge sculpting. Each exercise builds on the previous one, engaging more of the processing chain.
+
 ### Exercise 1: Classical Color Correction
 
 ![Classical Color Correction result](/img/instruments/videomancer/lumarian/lumarian_ex1_s1.png)
-*Classical Color Correction — simulated result across source images.*
+_Classical Color Correction — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -270,30 +270,31 @@ A live camera feed or recorded footage with a mix of shadow, midtone, and highli
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Contrast | 130.0% |
-| Brightness | −0.100 |
-| Saturation | 80.0% |
-| Gamma | 0.400 |
-| Edge Gain | 0.0% |
-| Edge Cutoff | 0.0% |
-| Luma Invert | Off |
-| Chroma Invert | Off |
-| Edge Invert | Off |
-| Edge Rectify | Off |
-| Edge Select | Single |
-| Luma Blank | 0.0% |
+| Control       | Value  |
+| ------------- | ------ |
+| Contrast      | 130.0% |
+| Brightness    | −0.100 |
+| Saturation    | 80.0%  |
+| Gamma         | 0.400  |
+| Edge Gain     | 0.0%   |
+| Edge Cutoff   | 0.0%   |
+| Luma Invert   | Off    |
+| Chroma Invert | Off    |
+| Edge Invert   | Off    |
+| Edge Rectify  | Off    |
+| Edge Select   | Single |
+| Luma Blank    | 0.0%   |
 
 ---
 
 ### Exercise 2: Edge Sculpting
 
 ![Edge Sculpting result](/img/instruments/videomancer/lumarian/lumarian_ex2_s1.png)
-*Edge Sculpting — simulated result across source images.*
+_Edge Sculpting — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -320,30 +321,31 @@ Footage with strong contours: architectural shapes, faces, or high-contrast grap
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Contrast | 120.0% |
-| Brightness | 0.000 |
-| Saturation | 100.0% |
-| Gamma | 0.300 |
-| Edge Gain | 100.0% |
-| Edge Cutoff | 50.0% |
-| Luma Invert | Off |
-| Chroma Invert | Off |
-| Edge Invert | Off |
-| Edge Rectify | On |
-| Edge Select | Both |
-| Luma Blank | 40.0% |
+| Control       | Value  |
+| ------------- | ------ |
+| Contrast      | 120.0% |
+| Brightness    | 0.000  |
+| Saturation    | 100.0% |
+| Gamma         | 0.300  |
+| Edge Gain     | 100.0% |
+| Edge Cutoff   | 50.0%  |
+| Luma Invert   | Off    |
+| Chroma Invert | Off    |
+| Edge Invert   | Off    |
+| Edge Rectify  | On     |
+| Edge Select   | Both   |
+| Luma Blank    | 40.0%  |
 
 ---
 
 ### Exercise 3: Inverted Luminance Key
 
 ![Inverted Luminance Key result](/img/instruments/videomancer/lumarian/lumarian_ex3_s1.png)
-*Inverted Luminance Key — simulated result across source images.*
+_Inverted Luminance Key — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -371,22 +373,23 @@ High-contrast footage such as silhouettes, text on a background, or stage lighti
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Contrast | 160.0% |
-| Brightness | 0.000 |
-| Saturation | 100.0% |
-| Gamma | −2.000 |
-| Edge Gain | 60.0% |
-| Edge Cutoff | 30.0% |
-| Luma Invert | On |
-| Chroma Invert | On |
-| Edge Invert | Off |
-| Edge Rectify | Off |
-| Edge Select | Single |
-| Luma Blank | 50.0% |
+| Control       | Value  |
+| ------------- | ------ |
+| Contrast      | 160.0% |
+| Brightness    | 0.000  |
+| Saturation    | 100.0% |
+| Gamma         | −2.000 |
+| Edge Gain     | 60.0%  |
+| Edge Cutoff   | 30.0%  |
+| Luma Invert   | On     |
+| Chroma Invert | On     |
+| Edge Invert   | Off    |
+| Edge Rectify  | Off    |
+| Edge Select   | Single |
+| Luma Blank    | 50.0%  |
 
 ---
+
 ## Glossary
 
 - **Contrast**: The gain factor applied to a signal; higher contrast stretches the difference between dark and light values.

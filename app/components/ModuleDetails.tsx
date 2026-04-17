@@ -76,9 +76,7 @@ const rewriteLegacyDocsLinks = (html: string): string => {
   return rewritten;
 };
 
-const getGalleryMedia = (
-  product: Product,
-): MediaGalleryItem[] => {
+const getGalleryMedia = (product: Product): MediaGalleryItem[] => {
   const items: MediaGalleryItem[] = [];
   const seenYoutubeIds = new Set<string>();
 
@@ -87,9 +85,7 @@ const getGalleryMedia = (
       const shopifyImage = item as MediaImage;
       if (!shopifyImage.image) return;
       items.push({
-        name:
-          (item.alt ?? '').trim() ||
-          `Image ${index + 1}`,
+        name: (item.alt ?? '').trim() || `Image ${index + 1}`,
         src: shopifyImage.image.url,
         type: MediaGalleryItemType.IMAGE,
       } as MediaGalleryItem);
@@ -194,12 +190,21 @@ export function ModuleDetails({
     return getGalleryMedia(product);
   }, [product]);
 
-  const metafields = (product as any).metafields as (Metafield | null)[] | undefined;
-  const specs = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'specs')?.value;
-  const features = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'features')?.value;
-  const compatibility = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'compatibility')?.value;
+  const metafields = (product as any).metafields as
+    | (Metafield | null)[]
+    | undefined;
+  const specs = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'specs',
+  )?.value;
+  const features = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'features',
+  )?.value;
+  const compatibility = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'compatibility',
+  )?.value;
 
-  const sections: {title: string; content: string; defaultOpen?: boolean}[] = [];
+  const sections: {title: string; content: string; defaultOpen?: boolean}[] =
+    [];
 
   if (product.descriptionHtml) {
     sections.push({
@@ -212,10 +217,16 @@ export function ModuleDetails({
     sections.push({title: 'Specs', content: rewriteLegacyDocsLinks(specs)});
   }
   if (features) {
-    sections.push({title: 'Features', content: rewriteLegacyDocsLinks(features)});
+    sections.push({
+      title: 'Features',
+      content: rewriteLegacyDocsLinks(features),
+    });
   }
   if (compatibility) {
-    sections.push({title: 'Compatibility', content: rewriteLegacyDocsLinks(compatibility)});
+    sections.push({
+      title: 'Compatibility',
+      content: rewriteLegacyDocsLinks(compatibility),
+    });
   }
 
   return (
@@ -242,13 +253,19 @@ export function ModuleDetails({
                         {section.title}
                       </span>
                       <svg
-                        className={`h-5 w-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          open ? 'rotate-180' : ''
+                        }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         strokeWidth={2}
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
                       </svg>
                     </Disclosure.Button>
                     <Disclosure.Panel className="pb-4">

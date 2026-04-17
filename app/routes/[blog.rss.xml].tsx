@@ -13,8 +13,16 @@ export async function loader() {
       <guid isPermaLink="true">${origin}/blog/${post.slug}</guid>
       <description><![CDATA[${post.excerpt}]]></description>
       <pubDate>${new Date(post.date + 'T12:00:00Z').toUTCString()}</pubDate>
-      ${(post.frontmatter.authors as string[])?.map((a) => `<author>${a}</author>`).join('\n      ') ?? ''}
-      ${(post.frontmatter.tags as string[])?.map((t) => `<category>${t}</category>`).join('\n      ') ?? ''}
+      ${
+        (post.frontmatter.authors as string[])
+          ?.map((a) => `<author>${a}</author>`)
+          .join('\n      ') ?? ''
+      }
+      ${
+        (post.frontmatter.tags as string[])
+          ?.map((t) => `<category>${t}</category>`)
+          .join('\n      ') ?? ''
+      }
     </item>`,
   );
 

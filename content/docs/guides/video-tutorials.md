@@ -1,29 +1,32 @@
 ---
 draft: false
-title: "Video Tutorials"
+title: 'Video Tutorials'
 sidebar_position: 7
-description: "Curated collection of video tutorials and instructional content for LZX video synthesizer modules and techniques."
+description: 'Curated collection of video tutorials and instructional content for LZX video synthesizer modules and techniques.'
 ---
 
 # Video Tutorials
 
-Over the years, LZX product designers and artists have produced many tutorials and instructional videos, all available on YouTube. Most of these feature a specific module. Some tutorials cover the integration of multiple modules and entire modular systems. Others provide fundamental background instruction in the basics of analog video, the LZX modular standard, and post-production techniques. The following list also includes archives of informal live streams demonstrating practical techniques of patching  Gen3 systems.
+Over the years, LZX product designers and artists have produced many tutorials and instructional videos, all available on YouTube. Most of these feature a specific module. Some tutorials cover the integration of multiple modules and entire modular systems. Others provide fundamental background instruction in the basics of analog video, the LZX modular standard, and post-production techniques. The following list also includes archives of informal live streams demonstrating practical techniques of patching Gen3 systems.
 
 ---
 
 ## Fundamentals
 
 ### Analog Video Primer
+
 [LZX Industries Analogue Video Primer](https://youtu.be/kpeRcRG7xFs)
 <br />instruction on the fundamentals of analog video
 <br />presented by Lars Larsen
 
 ### Post-production
+
 [LZX Video Synth Techniques: Post Production Workflow](https://youtu.be/mVQETn5Mjp4)
 <br />instruction on capturing, editing, and post-processing analog video
 <br />presented by Johnny Woods
 
 ### Patchable video standard
+
 [LZX Industries Presents: The Patchable Video Standard - Section 1 (Intro)](https://youtu.be/eQ-XJPtSaG0)
 <br />[LZX Industries Presents: The Patchable Video Standard - Section 2 (Setup)](https://youtu.be/o-KB3qjCtKU)
 <br />[LZX Industries Presents: The Patchable Video Standard - Section 3 (Use)](https://youtu.be/YLl-xxtyMlQ)

@@ -16,9 +16,7 @@ fbq('track', 'PageView');
 export function MetaPixel() {
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{__html: metaPixelScript}}
-      />
+      <script dangerouslySetInnerHTML={{__html: metaPixelScript}} />
       <noscript>
         <img
           height="1"

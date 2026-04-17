@@ -3,7 +3,8 @@ import {renderMarkdown} from '~/lib/markdown.server';
 
 describe('renderMarkdown internal link rewriting', () => {
   it('rewrites relative .md docs links with anchors', async () => {
-    const raw = 'See [Common Glossary](../common_reference.md#common-glossary).';
+    const raw =
+      'See [Common Glossary](../common_reference.md#common-glossary).';
 
     const result = await renderMarkdown(
       raw,
@@ -12,7 +13,7 @@ describe('renderMarkdown internal link rewriting', () => {
     );
 
     expect(result.html).toContain(
-      'href="/docs/instruments/videomancer/common_reference#common-glossary"',
+      'href="/instruments/videomancer/manual/common_reference#common-glossary"',
     );
   });
 
@@ -20,9 +21,13 @@ describe('renderMarkdown internal link rewriting', () => {
     const raw =
       'See [DSG3](/docs/modules/dsg3.md) and [diagram](/img/instruments/videomancer/modulation/signal_path.png).';
 
-    const result = await renderMarkdown(raw, '/docs/img/modules', '/docs/modules/dsg3');
+    const result = await renderMarkdown(
+      raw,
+      '/docs/img/modules',
+      '/docs/modules/dsg3',
+    );
 
-    expect(result.html).toContain('href="/docs/modules/dsg3"');
+    expect(result.html).toContain('href="/modules/dsg3/manual"');
     expect(result.html).toContain(
       'href="/docs/img/instruments/videomancer/modulation/signal_path.png"',
     );
@@ -45,7 +50,11 @@ describe('renderMarkdown internal link rewriting', () => {
   it('keeps external links unchanged', async () => {
     const raw = 'Visit [LZX](https://lzxindustries.net).';
 
-    const result = await renderMarkdown(raw, '/docs/img/modules', '/docs/modules/dsg3');
+    const result = await renderMarkdown(
+      raw,
+      '/docs/img/modules',
+      '/docs/modules/dsg3',
+    );
 
     expect(result.html).toContain('href="https://lzxindustries.net"');
   });
@@ -60,7 +69,11 @@ describe('renderMarkdown MDX preprocessing', () => {
       '<img src={my_image} alt="Photo" />',
     ].join('\n');
 
-    const result = await renderMarkdown(raw, '/docs/img/guides', '/docs/guides/test');
+    const result = await renderMarkdown(
+      raw,
+      '/docs/img/guides',
+      '/docs/guides/test',
+    );
 
     expect(result.html).not.toContain('import');
     expect(result.html).toContain('src="/docs/img/guides/photo.jpg"');
@@ -83,11 +96,7 @@ describe('renderMarkdown MDX preprocessing', () => {
   });
 
   it('converts admonition blocks to styled divs', async () => {
-    const raw = [
-      ':::note',
-      'Important info here.',
-      ':::',
-    ].join('\n');
+    const raw = [':::note', 'Important info here.', ':::'].join('\n');
 
     const result = await renderMarkdown(raw);
 

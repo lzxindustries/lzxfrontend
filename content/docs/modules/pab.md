@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "PAB"
+title: 'PAB'
 image: /img/modules/pab/pab-diagrams/pab_front-panel.png
-description: "Documentation for PAB, a programmable active buffer for distributing and delaying signals in 16-nanosecond increments."
+description: 'Documentation for PAB, a programmable active buffer for distributing and delaying signals in 16-nanosecond increments.'
 ---
 
 import pab_front_panel from '/img/modules/pab/pab-diagrams/pab_front-panel.png';
@@ -12,6 +12,7 @@ import pab_controls_connectors_indicators from '/img/modules/pab/pab-diagrams/pa
 import pab_understanding_cascading_input_jacks from '/img/modules/pab/pab-diagrams/pab_understanding-cascading-input-jacks.png';
 
 # PAB
+
 <span class="head2_nolink">Programmable Active Buffers</span>
 
 <img src={pab_front_panel} alt="pab_front_panel" />
@@ -70,23 +71,23 @@ PAB uses switched, or normalled, connections between its input jacks. With no 
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
-* Eurorack power for PAB requires a 16-pin to 10-pin ribbon cable
-* Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1 mm DC barrel power cable **or** EuroRack power cable (both options included)
+- Eurorack power for PAB requires a 16-pin to 10-pin ribbon cable
+- Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ## Full Specifications
 
@@ -157,7 +158,7 @@ PAB-REVB Interactive Bill of Materials
 
 ---
 
-## DIY 
+## DIY
 
 PAB is available as an assembled module, a full DIY kit, or a partial DIY kit.
 
@@ -167,12 +168,12 @@ Downloads for the complete schematic and an interactive HTML Bill of Materials a
 
 The partial DIY kit from LZX includes the printed circuit board and front panel. The following components must be purchased separately from electronics parts vendors.
 
-| Manufacturer                        | Manufacturer Part Number | Description                              | Quantity | Reference Designators |
-| ----------------------------------- | ------------------------ | ---------------------------------------- | -------- | --------------------- |
+| Manufacturer                        | Manufacturer Part Number | Description                              | Quantity | Reference Designators                                   |
+| ----------------------------------- | ------------------------ | ---------------------------------------- | -------- | ------------------------------------------------------- |
 | Wenzhou QingPu Electronics Co., Ltd | WQP-WQP518MA             | 3.5mm Jack Mono Switched                 | 13       | J1, J2, J3, J4, J5, J6, J8, J9, J14, J15, J16, J17, J18 |
-|                                     |                          | Pin Header Pitch 0.1in 2X5 Male Shrouded | 1        | J12                   |
-| Wurth Elektronik                    | 694106402002             | DC Jack Vertical 2.1mm Barrel            | 1        | J13                   |
-| Recom Technologies                  | R-78K3.3-0.5             | DC/DC Converter Submodule 3.3V           | 1        | U6                    | 
+|                                     |                          | Pin Header Pitch 0.1in 2X5 Male Shrouded | 1        | J12                                                     |
+| Wurth Elektronik                    | 694106402002             | DC Jack Vertical 2.1mm Barrel            | 1        | J13                                                     |
+| Recom Technologies                  | R-78K3.3-0.5             | DC/DC Converter Submodule 3.3V           | 1        | U6                                                      |
 
 ### Assembly Instructions
 
@@ -180,7 +181,7 @@ This assembly job is recommended for intermediate level DIYers who are comfortab
 
 1. Mount and solder rear facing through hole parts first, in this order: pin header, DC/DC converter, DC barrel jack.
 1. Mount and solder front facing jacks next.
-2. Attach the front panel and secure it with mounting nuts for the jacks.
+1. Attach the front panel and secure it with mounting nuts for the jacks.
 
 <!-- ## Functional Testing
 

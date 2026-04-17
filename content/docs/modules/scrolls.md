@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "SCROLLS"
+title: 'SCROLLS'
 image: /img/modules/scrolls/scrolls-diagrams/scrolls_frontpanel.png
-description: "Documentation for SCROLLS, a dual motion controlled ramp generator for SD and HD modular video synthesis."
+description: 'Documentation for SCROLLS, a dual motion controlled ramp generator for SD and HD modular video synthesis.'
 ---
 
 import scrolls_frontpanel from '/img/modules/scrolls/scrolls-diagrams/scrolls_frontpanel.png';
@@ -27,6 +27,7 @@ import scrolls_synchronous_lfos from '/img/modules/scrolls/scrolls-diagrams/scro
 import scrolls_line_art_labeled from '/img/modules/scrolls/scrolls-diagrams/scrolls_line_art_labeled_496x1024.png';
 
 # SCROLLS
+
 <span class="head2_nolink">Dual Motion Controlled Ramp Generator</span>
 
 <img src={scrolls_frontpanel} alt="Scrolls front panel" />
@@ -35,7 +36,7 @@ import scrolls_line_art_labeled from '/img/modules/scrolls/scrolls-diagrams/scro
 
 Scrolls is a high precision motion controlled dual waveform generator for SD and HD modular video synthesis. It provides full control over two independent sets of video waveforms. Front panel switches provide access to 72 combinations of speed, waveform blanking and mirroring, and advanced motion paths ranging from elliptical orbit to random walk.
 
-Basic generative synthesis patches begin with horizontal and vertical ramps. These define 2D Cartesian coordinates in screen space. With *motion controlled* ramps, the coordinate system itself is shifted, repositioning or animating the entire resulting pattern.
+Basic generative synthesis patches begin with horizontal and vertical ramps. These define 2D Cartesian coordinates in screen space. With _motion controlled_ ramps, the coordinate system itself is shifted, repositioning or animating the entire resulting pattern.
 
 Scrolls also outputs four dedicated low frequency control voltages. These LFOs control the movement of the video waveforms. Use them to animate the patch in other ways, dancing in time with Scrolls.
 
@@ -47,13 +48,13 @@ Scrolls is the third iteration of precision motion control from LZX. The first h
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 12 HP                                                                           |
-| Power Consumption | 12V @ 150 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Video Sync        | Rear RCA                                                                        |
-| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
+| Parameter         | Value                                                       |
+| ----------------- | ----------------------------------------------------------- |
+| Mounting Width    | 12 HP                                                       |
+| Power Consumption | 12V @ 150 mA                                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Video Sync        | Rear RCA                                                    |
+| Included          | DC barrel power cable, EuroRack power cable, RCA sync cable |
 
 ---
 
@@ -77,7 +78,7 @@ Scrolls is a primary element of a generative video system. It provides the base 
 
 Scrolls is a rhythm source, almost like the visual version of a drum machine. It packs a great deal of functionality into a small package of 12 HP, with no menu diving.
 
-Two identical submodules, **Ramp 1** and **Ramp 2**, provide independent inputs and outputs. 
+Two identical submodules, **Ramp 1** and **Ramp 2**, provide independent inputs and outputs.
 
 The primary global **Mode** of Scrolls is chosen from the eight-position rotary switch in the center of the panel. This selects whether H or V signals are available from the video generator jacks, and how all motion is controlled.
 
@@ -135,7 +136,7 @@ For example, if you plug a video signal into a **Phase CV** input, you'll probab
 
 ## Waveform
 
-Choose from three waveform modes. The toggle switch selects one of three modes, from left to right: **Wrap**, **Blank**, and **Mirror**. 
+Choose from three waveform modes. The toggle switch selects one of three modes, from left to right: **Wrap**, **Blank**, and **Mirror**.
 
 ### Wrap
 
@@ -235,7 +236,6 @@ In journey mode, increasing the Phase may have the counterintuitive result of de
 
 **LFO A** and **LFO B** are &ldquo;s-curve&rdquo; slewed trapezoid waves. **LFO B** is 90 degrees out of phase relative to LFO A.
 
-
 <img src={scrolls_corner} alt="Scrolls: Corner mode" />
 
 ---
@@ -259,6 +259,7 @@ Two chaotic modes are available, determined by the position of the **Phase 2** k
 ## Example Patches
 
 ### Reset DWO3
+
 <img src={scrolls_dwo3_reset} alt="Scrolls patch: DWO3 reset" />
 
 ---
@@ -275,23 +276,23 @@ Two chaotic modes are available, determined by the position of the **Phase 2** k
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the sync cable to a sync source or the last module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the sync cable to a sync source or the last module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -306,27 +307,27 @@ Two chaotic modes are available, determined by the position of the **Phase 2** k
 
 </td><td>
 
-| Jack | Function         |
-|------|------------------|
-| J1   | Phase 1 CV in    |
-| J2   | Phase 2 CV in    |
-| J3   | LFO 1A out       |
-| J4   | LFO 1B out       |
-| J5   | LFO 2A out       |
-| J6   | LFO 2B out       |
-| J7   | Ramp 1 out       |
-| J8   | Pulse 1 out      |
-| J9   | Ramp 2 out       |
-| J10  | Pulse 2 out      |
-| J11  | Saw 1 out        |
-| J12  | Tri 1 out        |
-| J13  | Saw 2 out        |
-| J14  | Tri 2 out        |
+| Jack | Function      |
+| ---- | ------------- |
+| J1   | Phase 1 CV in |
+| J2   | Phase 2 CV in |
+| J3   | LFO 1A out    |
+| J4   | LFO 1B out    |
+| J5   | LFO 2A out    |
+| J6   | LFO 2B out    |
+| J7   | Ramp 1 out    |
+| J8   | Pulse 1 out   |
+| J9   | Ramp 2 out    |
+| J10  | Pulse 2 out   |
+| J11  | Saw 1 out     |
+| J12  | Tri 1 out     |
+| J13  | Saw 2 out     |
+| J14  | Tri 2 out     |
 
 </td><td>
 
 | Control | Function         |
-|---------|------------------|
+| ------- | ---------------- |
 | S1      | Speed            |
 | S2      | Waveform         |
 | S3      | Mode             |
@@ -339,25 +340,25 @@ Two chaotic modes are available, determined by the position of the **Phase 2** k
 
 ### Technical Data
 
-| Parameter                    | Value                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950001                                                                          |
-| Mounting Width               | 12 HP                                                                           |
-| Mounting Depth               | 42 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 150 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes.                                          |
-| Video Sync                   | Rear RCA in and out                                                             |
+| Parameter                    | Value                                                       |
+| ---------------------------- | ----------------------------------------------------------- |
+| Manufacturer Part Number     | 950001                                                      |
+| Mounting Width               | 12 HP                                                       |
+| Mounting Depth               | 42 mm                                                       |
+| Mounting Hole Count          | 4                                                           |
+| Power Consumption            | 12V @ 150 mA                                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                     |
+| Input Impedance              | 1M ohms                                                     |
+| Output Impedance             | 75 ohms                                                     |
+| Input Protection Range       | +/-20V                                                      |
+| Input Clipping Range         | +/-2.5V                                                     |
+| Output Range                 | +/-2.5V                                                     |
+| Included                     | DC barrel power cable, EuroRack power cable, RCA sync cable |
+| EuroRack Power Cable Type    | 16-pin                                                      |
+| EuroRack Power Cable Length  | 25 cm                                                       |
+| DC Barrel Power Cable Length | 25 cm                                                       |
+| RoHS Compliance              | Manufactured with lead-free processes.                      |
+| Video Sync                   | Rear RCA in and out                                         |
 
 ---
 
@@ -390,13 +391,11 @@ Keep the module free of dust and debris by performing periodic cleaning. Spots m
 
 The hardware revision code is printed on the circuit board visible from the rear of the module.
 
-
 <!--
 AFR note: I'm not seeing any Scrolls firmware ZIP in the repo
 -->
 
-<!--
----
+## <!--
 
 ## Firmware
 
@@ -412,41 +411,41 @@ If your serial number is below #50, you should update your firmware to the lates
 
 ### Requirements
 
-* Your module.
-* A PC running Windows, Mac or Linux.
-* A USB Mini-B cable.
+- Your module.
+- A PC running Windows, Mac or Linux.
+- A USB Mini-B cable.
 
 ### Connecting the Module
 
-* Remove the module from your rack and disconnect any EuroRack or DC power cables.
-* Connect the USB Mini-B cable to the USB connector on the rear of the module.
-* Connect the other end of the USB cable to a*powered* USB port on your PC.
+- Remove the module from your rack and disconnect any EuroRack or DC power cables.
+- Connect the USB Mini-B cable to the USB connector on the rear of the module.
+- Connect the other end of the USB cable to a*powered* USB port on your PC.
 
 ### Downloading the Firmware
 
-* Download the current firmware package: [Scrolls Firmware 1.0.3](/firmware/scrolls_1.0.3/scrolls-1.0.3.zip)
+- Download the current firmware package: [Scrolls Firmware 1.0.3](/firmware/scrolls_1.0.3/scrolls-1.0.3.zip)
 
-* Extract the downloaded archive and verify that you have a file with the .BIN file extension.
+- Extract the downloaded archive and verify that you have a file with the .BIN file extension.
 
 ### Updating the Firmware
 
 #### Installing LibUSB Drivers (Windows Only)
 
-For future updates, this step will be unnecessary when using the same PC. 
+For future updates, this step will be unnecessary when using the same PC.
 
-* Download a recent release of the Zadig application from https://zadig.akeo.ie and open the executable file.
-* Select Options > List All Devices.
-* Select STM32 BOOTLOADER from the dropdown device list.
-* Select WinUSB and then reinstall or replace the driver.
+- Download a recent release of the Zadig application from https://zadig.akeo.ie and open the executable file.
+- Select Options > List All Devices.
+- Select STM32 BOOTLOADER from the dropdown device list.
+- Select WinUSB and then reinstall or replace the driver.
 
 #### Installing the Firmware Binary
 
-* Visit the WebDFU tool at https://devanlai.github.io/webdfu/dfu-util.
-* Click the Connect button and select STM32 BOOTLOADER from the list.
-* Select the option for Internal Flash and click Select Interface.
-* Under Firmware Download, click Choose File and select the .BIN file downloaded during the previous step.
-* Click Download and wait for the process to complete.
-* Disconnect your module from the USB cable and reinstall it in your EuroRack system.
+- Visit the WebDFU tool at https://devanlai.github.io/webdfu/dfu-util.
+- Click the Connect button and select STM32 BOOTLOADER from the list.
+- Select the option for Internal Flash and click Select Interface.
+- Under Firmware Download, click Choose File and select the .BIN file downloaded during the previous step.
+- Click Download and wait for the process to complete.
+- Disconnect your module from the USB cable and reinstall it in your EuroRack system.
 
 ---
 

@@ -75,8 +75,7 @@ test.describe('Account', () => {
     await page.waitForLoadState('networkidle');
     // Should redirect to login or show login form
     await expect(
-      page.url().includes('/account/login') ||
-        page.locator('form').isVisible(),
+      page.url().includes('/account/login') || page.locator('form').isVisible(),
     ).toBeTruthy();
   });
 
@@ -135,9 +134,11 @@ test.describe('Responsive Navigation', () => {
     await page.setViewportSize({width: 375, height: 812});
     await page.goto('/');
     // Look for hamburger menu or mobile nav toggle
-    const menuButton = page.locator(
-      'button[aria-label*="menu" i], button[aria-label*="nav" i], header button',
-    ).first();
+    const menuButton = page
+      .locator(
+        'button[aria-label*="menu" i], button[aria-label*="nav" i], header button',
+      )
+      .first();
     if (await menuButton.isVisible()) {
       await menuButton.click();
       // Nav drawer should open

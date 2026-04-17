@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 draft: true
-title: "Introduction to Analog Graphics"
-description: "An introduction to analog graphics and the principles of creating visual patterns with analog video synthesizer circuits."
+title: 'Introduction to Analog Graphics'
+description: 'An introduction to analog graphics and the principles of creating visual patterns with analog video synthesizer circuits.'
 image: /img/modules/intro-to-analog-graphics/intro-to-analog-graphics-01.png
 ---
 
@@ -53,7 +53,6 @@ This page is under construction and in a draft state. Stay tuned to our newslett
 <img src={intro_to_analog_graphics_17} alt="Diagram" />
 <img src={intro_to_analog_graphics_18} alt="Diagram" />
 <img src={intro_to_analog_graphics_19} alt="Diagram" />
-
 
 ## Introduction
 

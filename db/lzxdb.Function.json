@@ -1,8 +1,10 @@
-[{
-  "_id": {
-    "$oid": "64e59b55cbf7d153788b5858"
-  },
-  "name": "Multiplier",
-  "description": "A multiplier generates the product of two input voltages.",
-  "__v": 0
-}]
+[
+  {
+    "_id": {
+      "$oid": "64e59b55cbf7d153788b5858"
+    },
+    "name": "Multiplier",
+    "description": "A multiplier generates the product of two input voltages.",
+    "__v": 0
+  }
+]

@@ -133,11 +133,12 @@ function buildPatch(raw: (typeof patchesData)[number]): LzxPatch {
     id: patchId,
     name: raw.name,
     slug: slugify(raw.name),
-    notes: (raw as Record<string, unknown>).notes as string ?? '',
-    diagram: (raw as Record<string, unknown>).diagram as string ?? '',
-    youtube: (raw as Record<string, unknown>).youtube as string | null ?? null,
+    notes: ((raw as Record<string, unknown>).notes as string) ?? '',
+    diagram: ((raw as Record<string, unknown>).diagram as string) ?? '',
+    youtube:
+      ((raw as Record<string, unknown>).youtube as string | null) ?? null,
     gif: (raw as Record<string, unknown>).gif as string | undefined,
-    artist: artistRef ? (artistMap.get(oid(artistRef)) ?? null) : null,
+    artist: artistRef ? artistMap.get(oid(artistRef)) ?? null : null,
     modules: [...moduleIds]
       .map((id) => moduleMap.get(id))
       .filter((m): m is LzxModule => m != null),

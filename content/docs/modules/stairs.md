@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "STAIRS"
+title: 'STAIRS'
 image: /img/modules/stairs/stairs-diagrams/stairs_frontpanel.png
-description: "Documentation for STAIRS, a six-stage video wavefolder and frequency multiplier for solarization and colorization effects."
+description: 'Documentation for STAIRS, a six-stage video wavefolder and frequency multiplier for solarization and colorization effects.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import stairs_frontpanel from '/img/modules/stairs/stairs-diagrams/stairs_frontpanel.png';
@@ -43,6 +43,7 @@ import stairs_frontpanel from '/img/modules/stairs/stairs-diagrams/stairs_frontp
 import stairs_line_art_labeled from '/img/modules/stairs/stairs-diagrams/stairs_line_art_labeled_336x1024.png';
 
 # STAIRS
+
 <span class="head2_nolink">Complex Wavefolder & Frequency Multiplier</span>
 
 <img src={stairs_frontpanel} alt="Stairs front panel" />
@@ -67,13 +68,13 @@ Stairs omits the internal modulation routing of the Staircase **Harmonics** swit
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 8 HP                                                                            |
-| Power Consumption | 12V @ 210 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Included          | DC barrel power cable, EuroRack power cable                                     |
-| Video Sync        | None                                                                            |
+| Parameter         | Value                                       |
+| ----------------- | ------------------------------------------- |
+| Mounting Width    | 8 HP                                        |
+| Power Consumption | 12V @ 210 mA                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Included          | DC barrel power cable, EuroRack power cable |
+| Video Sync        | None                                        |
 
 ---
 
@@ -81,12 +82,11 @@ Stairs omits the internal modulation routing of the Staircase **Harmonics** swit
 
 Stairs is the most advanced video wavefolder available. Its unique creative potential makes it a very popular module. No other commercial tool, analog or digital, can do what Stairs does.
 
-Simpler variations on the wavefolder circuit are available in  **PRM** and **DSG3**. Those are single- or double-stage folders without voltage control. PRM also features half-wave rectified outputs, isolating the high and low value ranges of the source signal to independent wavefolded outputs. Stairs achieves this effect via the Phase control, but only for a single value range at a time.
+Simpler variations on the wavefolder circuit are available in **PRM** and **DSG3**. Those are single- or double-stage folders without voltage control. PRM also features half-wave rectified outputs, isolating the high and low value ranges of the source signal to independent wavefolded outputs. Stairs achieves this effect via the Phase control, but only for a single value range at a time.
 
 Each implementation has its advantages. PRM is extremely precise, DSG3 is optimal for animated effects such as color cycling, and Stairs gives the greatest range of complexity.
 
 ---
-
 
 ## Controls & Connectors
 
@@ -135,7 +135,7 @@ Different signals can be patched into RGB inputs to achieve a variety of effects
 
 Steps and Phase parameters can be voltage controlled. This opens up many creative possibilities, some of which are unique to Stairs. A simple example: crop the highlights instead of the darker, lower values. Send a static voltage source, typically +1v, into the **Phase CV** input, and turn the **Phase CV Depth** knob counterclockwise, to the left. This biases the incoming signal down instead of up.
 
-Voltage control of Steps really shows off the unique capabilities of Stairs. Low frequency control signals such as sine or triangle waves make the frequency "breathe". It's an effect similar to frequency modulation of an oscillator -- except this applies to any video image, not just a simple waveform! 
+Voltage control of Steps really shows off the unique capabilities of Stairs. Low frequency control signals such as sine or triangle waves make the frequency "breathe". It's an effect similar to frequency modulation of an oscillator -- except this applies to any video image, not just a simple waveform!
 
 Sending a video signal into **Steps CV** takes us into very interesting territory: frequency modulating an image with another image! Multing the same image into both the RGB signal inputs and the Phase CV jack results in a nonlinear frequency response, where the brightness of the image determines the number of folds. The concentric bands are not uniform, but vary in width depending on brightness.
 
@@ -176,23 +176,23 @@ TODO
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* Connect the sync cable to a sync source or the last module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- Connect the sync cable to a sync source or the last module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -207,52 +207,52 @@ TODO
 
 </td><td>
 
-| Jack | Function      |
-|------|---------------|
-| J1   | Steps CV in   |
-| J2   | Phase CV in   |
-| J3   | R in          |
-| J4   | 2x out        |
-| J5   | 4x out        |
-| J6   | G in          |
-| J7   | 8x out        |
-| J8   | 16x out       |
-| J9   | B in          |
-| J10  | 32x out       |
-| J11  | 64x out       |
+| Jack | Function    |
+| ---- | ----------- |
+| J1   | Steps CV in |
+| J2   | Phase CV in |
+| J3   | R in        |
+| J4   | 2x out      |
+| J5   | 4x out      |
+| J6   | G in        |
+| J7   | 8x out      |
+| J8   | 16x out     |
+| J9   | B in        |
+| J10  | 32x out     |
+| J11  | 64x out     |
 
 </td><td>
 
-| Potentiometer | Function         |
-|---------------|------------------|
-| P1            | Steps            |
-| P2            | Phase            |
-| P3            | Steps CV Depth   |
-| P4            | Phase CV Depth   |
+| Potentiometer | Function       |
+| ------------- | -------------- |
+| P1            | Steps          |
+| P2            | Phase          |
+| P3            | Steps CV Depth |
+| P4            | Phase CV Depth |
 
 </td></tr></table>
 
 ### Technical Data
 
-| Parameter                    | Value                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number     | 950052                                                                          |
-| Mounting Width               | 8 HP                                                                            |
-| Mounting Depth               | 32 mm                                                                           |
-| Mounting Hole Count          | 4                                                                               |
-| Power Consumption            | 12V @ 210 mA                                                                    |
-| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance              | 1M ohms                                                                         |
-| Output Impedance             | 75 ohms                                                                         |
-| Input Protection Range       | +/-20V                                                                          |
-| Input Clipping Range         | +/-2.5V                                                                         |
-| Output Range                 | +/-2.5V                                                                         |
-| Included                     | DC barrel power cable, EuroRack power cable                                     |
-| EuroRack Power Cable Type    | 16-pin                                                                          |
-| EuroRack Power Cable Length  | 25 cm                                                                           |
-| DC Barrel Power Cable Length | 25 cm                                                                           |
-| RoHS Compliance              | Manufactured with lead-free processes                                           |
-| Video Sync                   | None                                                                            |
+| Parameter                    | Value                                       |
+| ---------------------------- | ------------------------------------------- |
+| Manufacturer Part Number     | 950052                                      |
+| Mounting Width               | 8 HP                                        |
+| Mounting Depth               | 32 mm                                       |
+| Mounting Hole Count          | 4                                           |
+| Power Consumption            | 12V @ 210 mA                                |
+| Power Connectors             | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Input Impedance              | 1M ohms                                     |
+| Output Impedance             | 75 ohms                                     |
+| Input Protection Range       | +/-20V                                      |
+| Input Clipping Range         | +/-2.5V                                     |
+| Output Range                 | +/-2.5V                                     |
+| Included                     | DC barrel power cable, EuroRack power cable |
+| EuroRack Power Cable Type    | 16-pin                                      |
+| EuroRack Power Cable Length  | 25 cm                                       |
+| DC Barrel Power Cable Length | 25 cm                                       |
+| RoHS Compliance              | Manufactured with lead-free processes       |
+| Video Sync                   | None                                        |
 
 ---
 

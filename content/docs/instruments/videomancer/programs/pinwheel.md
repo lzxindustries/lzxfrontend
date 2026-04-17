@@ -2,36 +2,36 @@
 draft: false
 sidebar_position: 229
 slug: /instruments/videomancer/pinwheel
-title: "Pinwheel"
+title: 'Pinwheel'
 image: /img/instruments/videomancer/pinwheel/pinwheel_hero_s1.png
-description: "Color in digital video is encoded as numbers."
+description: 'Color in digital video is encoded as numbers.'
 ---
 
 ![Pinwheel hero image](/img/instruments/videomancer/pinwheel/pinwheel_hero_s1.png)
-*Pinwheel remapping a portrait's color spectrum through luminance-driven hue rotation, spinning warm tones into cool and back again.*
+_Pinwheel remapping a portrait's color spectrum through luminance-driven hue rotation, spinning warm tones into cool and back again._
 
 ---
 
 ## Overview
 
-**Pinwheel** is a color transformation program that rotates the hue of each pixel based on its brightness. At its heart is a true ***vector rotation*** in the UV color plane, performed per pixel in real time using a hardware sine/cosine lookup table and a 2×2 matrix multiplier. The rotation angle is computed from a combination of a fixed hue offset and a luminance-dependent modulation term. The result is a "color pinwheel": brighter and darker parts of the image spin to different positions on the color wheel, creating vivid, content-adaptive color remapping.
+**Pinwheel** is a color transformation program that rotates the hue of each pixel based on its brightness. At its heart is a true **_vector rotation_** in the UV color plane, performed per pixel in real time using a hardware sine/cosine lookup table and a 2×2 matrix multiplier. The rotation angle is computed from a combination of a fixed hue offset and a luminance-dependent modulation term. The result is a "color pinwheel": brighter and darker parts of the image spin to different positions on the color wheel, creating vivid, content-adaptive color remapping.
 
 Beyond hue rotation, Pinwheel includes saturation and brightness controls, a colorize mode that replaces the input color with pure hue-shifted tone, and a bit-level crush stage that can posterize or glitch the output. These layers combine to produce effects ranging from subtle color grading to aggressive digital color destruction.
 
 :::tip
-The signature effect is ***luminance-driven hue rotation***. Turn up **Luma to Hue** (Knob 4): different brightness regions of the image shift to entirely different colors. This is what makes Pinwheel unique: it's not a uniform color shift, it's a content-adaptive one.
+The signature effect is **_luminance-driven hue rotation_**. Turn up **Luma to Hue** (Knob 4): different brightness regions of the image shift to entirely different colors. This is what makes Pinwheel unique: it's not a uniform color shift, it's a content-adaptive one.
 :::
 
 ### What's In a Name?
 
-A ***pinwheel*** is a toy that spins in the wind, its vanes cycling through colors as they rotate. The name captures Pinwheel's core behavior: the color wheel spins at different speeds for different brightness levels, so the image's tonal range fans out across the spectrum like the blades of a pinwheel.
+A **_pinwheel_** is a toy that spins in the wind, its vanes cycling through colors as they rotate. The name captures Pinwheel's core behavior: the color wheel spins at different speeds for different brightness levels, so the image's tonal range fans out across the spectrum like the blades of a pinwheel.
 
 ---
 
 ## Quick Start
 
 1. Turn **Hue** (Knob 1) slowly from left to right. The entire image shifts through the color spectrum: reds become greens, greens become blues, and so on. This is a uniform hue rotation.
-2. Now increase **Luma to Hue** (Knob 4) to about 75%. Bright and dark areas of the image now have *different* hues. The image's tonal range fans out across the color wheel.
+2. Now increase **Luma to Hue** (Knob 4) to about 75%. Bright and dark areas of the image now have _different_ hues. The image's tonal range fans out across the color wheel.
 3. Increase **Saturation** (Knob 2) past halfway. Colors become more vivid as the chroma scaling boosts the UV components after rotation.
 4. Toggle **Colorize** (Switch 7) to On. The input color is stripped away, and pure hue-rotated tone is applied. The image becomes a monochrome-to-color map, with brightness determining the hue.
 
@@ -40,14 +40,14 @@ A ***pinwheel*** is a toy that spins in the wind, its vanes cycling through colo
 ## Parameters
 
 ![Videomancer front panel with Pinwheel loaded](/img/instruments/videomancer/pinwheel/pinwheel_control_panel.png)
-*Videomancer's front panel with Pinwheel active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side).*
+_Videomancer's front panel with Pinwheel active. Knobs 1–6 (top two rows of left cluster), Toggle switches 7–11 (bottom row of left cluster), Fader 12 (right side)._
 
 ### Knob 1 — Hue
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 200.0% |
-| Default | 100.1% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 200.0% |
+| Default  | 100.1%        |
 
 **Hue** sets the base rotation angle applied to all pixels in the UV color plane. At 0%, the hue offset is minimal. At 100%, the angle sweeps through two full rotations of the color wheel (0 to 200%). The midpoint, 100%, corresponds to a full 360° rotation: meaning the colors return to their original positions. Values below 100% apply a partial rotation; values above 100% continue past a full revolution.
 
@@ -57,10 +57,10 @@ This parameter acts as the "starting position" of the pinwheel. **Luma to Hue** 
 
 ### Knob 2 — Saturation
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Saturation** scales the color intensity of the rotated UV signal. The proc amp stage applies a contrast adjustment centered at neutral gray (512). At 0%, chroma is fully attenuated: the rotated colors collapse to gray. At 50%, the original chroma amplitude is preserved. At 100%, the chroma is boosted to twice its original intensity, pushing colors toward full saturation.
 
@@ -72,23 +72,23 @@ Use Saturation in combination with **Colorize** (Switch 7) to control the intens
 
 ### Knob 3 — Brightness
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Brightness** shifts the luminance level of the output. The proc amp stage adds a fixed offset to the scaled luma value. At 0%, brightness is reduced to its minimum. At 50%, the original brightness level is preserved. At 100%, the image is pushed toward peak white.
 
-Brightness is applied *after* the luma gain stage, so it offsets the overall level of the contrast-adjusted result.
+Brightness is applied _after_ the luma gain stage, so it offsets the overall level of the contrast-adjusted result.
 
 ---
 
 ### Knob 4 — Luma to Hue
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Luma to Hue** controls how much the input brightness modulates the hue rotation angle. At 0%, all pixels receive the same hue rotation determined solely by the **Hue** knob. As this control increases, brighter pixels receive a larger angular offset, spreading the image's tonal range across the color wheel. At 100%, the full 10-bit range of the luminance signal contributes to the rotation angle.
 
@@ -102,25 +102,25 @@ The rotation angle is computed by a proc amp as: `angle = Y × luma_to_hue + hue
 
 ### Knob 5 — Posterize
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Posterize** applies a bit-level mask to the luminance channel at the output stage. The 10-bit mask value is bitwise-ANDed (in Clean mode) or XORed (in Glitch mode) with the processed Y value. At 100%, the mask is all ones (0x3FF), and luminance passes through unchanged. As the value decreases, more of the lower bits are zeroed or scrambled, reducing the number of distinct brightness levels. At 0%, nearly all bits are masked, reducing the image to stark tonal bands.
 
 :::warning
-Despite the name "Posterize," this control operates at the ***bit level***, not by quantization. The visual result is similar to traditional posterization at moderate settings, but extreme settings produce staircase-like artifacts specific to bitwise masking.
+Despite the name "Posterize," this control operates at the **_bit level_**, not by quantization. The visual result is similar to traditional posterization at moderate settings, but extreme settings produce staircase-like artifacts specific to bitwise masking.
 :::
 
 ---
 
 ### Knob 6 — Luma Gain
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 50.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 50.0%         |
 
 **Luma Gain** controls the contrast of the luminance channel. The proc amp stage multiplies the input Y value by a gain factor derived from this parameter. At 0%, the gain is zero: luminance collapses to the **Brightness** offset alone. At 50%, the original contrast is preserved. At 100%, double gain is applied, stretching the tonal range and clipping highlights and shadows.
 
@@ -129,10 +129,10 @@ Despite the name "Posterize," this control operates at the ***bit level***, not 
 ### Switch 7 — Colorize
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Colorize** replaces the input chroma (U and V) with neutral gray (512) before hue rotation. With Colorize off, the original color information passes through the rotation stage, resulting in a shifted version of the original palette. With Colorize on, chroma starts at zero, and the hue rotation applies pure calculated color based solely on the luminance-derived angle. The result is a false-color effect where brightness determines hue.
 
@@ -141,10 +141,10 @@ Despite the name "Posterize," this control operates at the ***bit level***, not 
 ### Switch 8 — Luma Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Luma Invert** applies a bitwise complement to the luminance channel before the bit-crush stage. When combined with the **Posterize** mask in Clean mode, inversion flips the tonal range of the crushed output. In Glitch mode, the interaction between inversion and XOR produces different scrambled patterns than either effect alone.
 
@@ -153,10 +153,10 @@ Despite the name "Posterize," this control operates at the ***bit level***, not 
 ### Switch 9 — Chroma Invert
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Chroma Invert** applies a bitwise complement to the U and V channels before the bit-crush stage. The effect is a reversal of the color spectrum in the crushed output. In Clean mode, inverted chroma is ANDed with the **Chroma Crush** mask; in Glitch mode, it is XORed.
 
@@ -164,11 +164,11 @@ Despite the name "Posterize," this control operates at the ***bit level***, not 
 
 ### Switch 10 — Crush Mode
 
-| Property | Value |
-|----------|-------|
-| Off | Clean |
-| On | Glitch |
-| Default | Clean |
+| Property | Value  |
+| -------- | ------ |
+| Off      | Clean  |
+| On       | Glitch |
+| Default  | Clean  |
 
 **Crush Mode** selects between two bitwise operations used for the crush stages. In **Clean** mode, the processed values are bitwise-ANDed with their respective crush masks (**Posterize** for Y, **Chroma Crush** for UV). AND masking zeros out bits, producing smooth posterization-like reduction. In **Glitch** mode, the operation switches to bitwise XOR, which scrambles values in unpredictable ways. XOR does not simply reduce information: it remaps values chaotically, creating digital artifacts and color inversions.
 
@@ -181,10 +181,10 @@ Toggle Crush Mode while slowly sweeping the **Posterize** or **Chroma Crush** co
 ### Switch 11 — Bypass
 
 | Property | Value |
-|----------|-------|
-| Off | Off |
-| On | On |
-| Default | Off |
+| -------- | ----- |
+| Off      | Off   |
+| On       | On    |
+| Default  | Off   |
 
 **Bypass** routes the unprocessed input signal directly to the output, bypassing all Pinwheel processing stages. A BRAM-based delay line stores the original pixels and replays them at the correct time, so there is no glitch when switching. Sync signals always pass through the main pipeline, ensuring stable timing. Use Bypass for instant A/B comparison.
 
@@ -192,10 +192,10 @@ Toggle Crush Mode while slowly sweeping the **Posterize** or **Chroma Crush** co
 
 ### Fader 12 — Chroma Crush
 
-| Property | Value |
-|----------|-------|
-| Range | 0.0% – 100.0% |
-| Default | 100.0% |
+| Property | Value         |
+| -------- | ------------- |
+| Range    | 0.0% – 100.0% |
+| Default  | 100.0%        |
 
 **Chroma Crush** applies a bit-level mask to both the U and V channels at the output stage, analogous to **Posterize** for the luminance channel. At 100%, the mask is all ones and color passes through intact. As the value decreases, color information is progressively destroyed. At 0%, chroma is reduced to near-neutral. In Clean mode, the mask operates via AND; in Glitch mode, via XOR.
 
@@ -205,9 +205,9 @@ Toggle Crush Mode while slowly sweeping the **Posterize** or **Chroma Crush** co
 
 ### Hue rotation as vector math
 
-Color in a YUV video signal is encoded as two components: ***U*** (blue-yellow axis) and ***V*** (red-cyan axis). Together these form a two-dimensional vector. The ***hue*** of a color is the angle of that vector, and the ***saturation*** is its length. Rotating the UV vector by some angle changes the hue while preserving the saturation (which is exactly what a 2×2 rotation matrix does.)
+Color in a YUV video signal is encoded as two components: **_U_** (blue-yellow axis) and **_V_** (red-cyan axis). Together these form a two-dimensional vector. The **_hue_** of a color is the angle of that vector, and the **_saturation_** is its length. Rotating the UV vector by some angle changes the hue while preserving the saturation (which is exactly what a 2×2 rotation matrix does.)
 
-Pinwheel implements this rotation in hardware using a BRAM-based sine/cosine lookup table with 1024 entries and 10-bit precision. The lookup table feeds a ***differential 2×2 matrix multiplier*** that applies the classic rotation formula:
+Pinwheel implements this rotation in hardware using a BRAM-based sine/cosine lookup table with 1024 entries and 10-bit precision. The lookup table feeds a **_differential 2×2 matrix multiplier_** that applies the classic rotation formula:
 
 $$U' = U \cdot \cos\theta - V \cdot \sin\theta$$
 $$V' = U \cdot \sin\theta + V \cdot \cos\theta$$
@@ -216,16 +216,15 @@ The entire rotation: lookup, multiply, and accumulate: completes in 14 clock cyc
 
 ### Luminance-driven modulation
 
-The rotation angle is not fixed. A ***proc amp*** stage computes the angle from the input luminance: `angle = Y × contrast + offset`, where the contrast is the **Luma to Hue** parameter and the offset is the **Hue** parameter. This means brighter pixels rotate further around the color wheel than darker ones. The effect is a rainbow-like color spread that follows the tonal contours of the source image.
+The rotation angle is not fixed. A **_proc amp_** stage computes the angle from the input luminance: `angle = Y × contrast + offset`, where the contrast is the **Luma to Hue** parameter and the offset is the **Hue** parameter. This means brighter pixels rotate further around the color wheel than darker ones. The effect is a rainbow-like color spread that follows the tonal contours of the source image.
 
 Because the angle computation uses a full 10-bit multiplier, the modulation is smooth and continuous: there are no quantization steps in the angular domain, even when the posterize controls reduce the output bit depth.
 
 ### Bit-level crushing
 
-The final output stage applies bitwise operations to the processed pixel data. In Clean mode, each channel's value is ANDed with a mask derived from the crush control, zeroing out lower-order bits and creating flat bands of uniform value: a digital equivalent of ***posterization***. In Glitch mode, the AND is replaced with XOR, which does not reduce the number of distinct values but rather scrambles them. XOR flips bits according to the mask pattern, creating unpredictable value mapping that depends on both the input data and the mask setting.
+The final output stage applies bitwise operations to the processed pixel data. In Clean mode, each channel's value is ANDed with a mask derived from the crush control, zeroing out lower-order bits and creating flat bands of uniform value: a digital equivalent of **_posterization_**. In Glitch mode, the AND is replaced with XOR, which does not reduce the number of distinct values but rather scrambles them. XOR flips bits according to the mask pattern, creating unpredictable value mapping that depends on both the input data and the mask setting.
 
 The luma and chroma crush controls are independent, so Y can be posterized cleanly while UV is glitched, or vice versa. The Luma Invert and Chroma Invert toggles apply a bitwise NOT before the crush stage, changing which bits are affected by the mask.
-
 
 ---
 
@@ -241,19 +240,20 @@ The chroma input is delayed by 10 clocks before entering the rotation stage, so 
 The bypass path uses a BRAM-based circular buffer rather than a shift register, storing the full 30-bit YUV pixel and reading it back after 36 clocks. This ensures glitch-free switching between processed and bypassed output.
 :::
 
-
 ---
 
 ## Exercises
 
 These exercises explore Pinwheel's color transformation capabilities, progressing from simple hue shifts to complex crushed color textures.
+
 ### Exercise 1: Color Wheel Sweep
 
 ![Color Wheel Sweep result](/img/instruments/videomancer/pinwheel/pinwheel_ex1_s1.png)
-*Color Wheel Sweep — simulated result across source images.*
+_Color Wheel Sweep — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -278,30 +278,31 @@ A color bar pattern or any footage with a range of distinct, saturated colors.
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Hue | Sweep 0 to 200% |
-| Saturation | 50% |
-| Brightness | 50% |
-| Luma to Hue | 0% |
-| Posterize | 100% |
-| Luma Gain | 50% |
-| Colorize | Off |
-| Luma Invert | Off |
-| Chroma Invert | Off |
-| Crush Mode | Clean |
-| Bypass | Off |
-| Chroma Crush | 100% |
+| Control       | Value           |
+| ------------- | --------------- |
+| Hue           | Sweep 0 to 200% |
+| Saturation    | 50%             |
+| Brightness    | 50%             |
+| Luma to Hue   | 0%              |
+| Posterize     | 100%            |
+| Luma Gain     | 50%             |
+| Colorize      | Off             |
+| Luma Invert   | Off             |
+| Chroma Invert | Off             |
+| Crush Mode    | Clean           |
+| Bypass        | Off             |
+| Chroma Crush  | 100%            |
 
 ---
 
 ### Exercise 2: Luminance Rainbow
 
 ![Luminance Rainbow result](/img/instruments/videomancer/pinwheel/pinwheel_ex2_s1.png)
-*Luminance Rainbow — simulated result across source images.*
+_Luminance Rainbow — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -327,30 +328,31 @@ A high-contrast image with a smooth range of brightness values: a face lit from 
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Hue | 100% |
-| Saturation | 60% |
-| Brightness | 50% |
-| Luma to Hue | 100% |
-| Posterize | 100% |
-| Luma Gain | 50% |
-| Colorize | On |
-| Luma Invert | Off |
-| Chroma Invert | Off |
-| Crush Mode | Clean |
-| Bypass | Off |
-| Chroma Crush | 100% |
+| Control       | Value |
+| ------------- | ----- |
+| Hue           | 100%  |
+| Saturation    | 60%   |
+| Brightness    | 50%   |
+| Luma to Hue   | 100%  |
+| Posterize     | 100%  |
+| Luma Gain     | 50%   |
+| Colorize      | On    |
+| Luma Invert   | Off   |
+| Chroma Invert | Off   |
+| Crush Mode    | Clean |
+| Bypass        | Off   |
+| Chroma Crush  | 100%  |
 
 ---
 
 ### Exercise 3: Crushed Color Glitch
 
 ![Crushed Color Glitch result](/img/instruments/videomancer/pinwheel/pinwheel_ex3_s1.png)
-*Crushed Color Glitch — simulated result across source images.*
+_Crushed Color Glitch — simulated result across source images._
+
 #### Exercise Illustration
 
-***A description of the exercise illustration.***
+**_A description of the exercise illustration._**
 
 #### Learning Outcomes
 
@@ -377,22 +379,23 @@ Any footage, especially material with a mix of bright and dark regions.
 
 #### Settings
 
-| Control | Value |
-|---------|-------|
-| Hue | 100% |
-| Saturation | 60% |
-| Brightness | 50% |
-| Luma to Hue | 80% |
-| Posterize | 40% |
-| Luma Gain | 50% |
-| Colorize | On |
-| Luma Invert | Off |
-| Chroma Invert | Off |
-| Crush Mode | Glitch |
-| Bypass | Off |
-| Chroma Crush | 50% |
+| Control       | Value  |
+| ------------- | ------ |
+| Hue           | 100%   |
+| Saturation    | 60%    |
+| Brightness    | 50%    |
+| Luma to Hue   | 80%    |
+| Posterize     | 40%    |
+| Luma Gain     | 50%    |
+| Colorize      | On     |
+| Luma Invert   | Off    |
+| Chroma Invert | Off    |
+| Crush Mode    | Glitch |
+| Bypass        | Off    |
+| Chroma Crush  | 50%    |
 
 ---
+
 ## Glossary
 
 - **Bit Crushing**: Reducing the effective bit depth of a signal by masking or scrambling individual bits, producing banding or glitch artifacts.

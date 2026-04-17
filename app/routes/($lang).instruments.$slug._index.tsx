@@ -1,9 +1,5 @@
 import {Await, Link, useFetcher, useOutletContext} from '@remix-run/react';
-import {
-  Money,
-  ShopPayButton,
-  VariantSelector,
-} from '@shopify/hydrogen';
+import {Money, ShopPayButton, VariantSelector} from '@shopify/hydrogen';
 import type {
   ExternalVideo,
   MediaImage,
@@ -53,7 +49,10 @@ export const meta = ({matches}: MetaArgs) => {
 // --- Gallery helpers ---
 
 const normalizeForMatch = (value: string): string =>
-  value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
 
 const getKeywordRank = (value: string, keywords: string[]): number => {
   const normalized = normalizeForMatch(value);
@@ -91,8 +90,23 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
 
   // Videomancer-specific deterministic sort
   if (product.handle === 'videomancer' && items.length > 1) {
-    const imagePriority = ['hero', 'front panel', 'front', 'main', 'beauty', 'product', 'angle'];
-    const videoPriority = ['overview', 'intro', 'trailer', 'demo', 'walkthrough', 'performance'];
+    const imagePriority = [
+      'hero',
+      'front panel',
+      'front',
+      'main',
+      'beauty',
+      'product',
+      'angle',
+    ];
+    const videoPriority = [
+      'overview',
+      'intro',
+      'trailer',
+      'demo',
+      'walkthrough',
+      'performance',
+    ];
 
     const withMeta = items.map((item, i) => ({
       item,
@@ -103,14 +117,28 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
           : getKeywordRank(`${item.name} ${item.src}`, videoPriority),
     }));
 
-    const images = withMeta.filter((e) => e.item.type === MediaGalleryItemType.IMAGE);
-    const videos = withMeta.filter((e) => e.item.type === MediaGalleryItemType.VIDEO);
+    const images = withMeta.filter(
+      (e) => e.item.type === MediaGalleryItemType.IMAGE,
+    );
+    const videos = withMeta.filter(
+      (e) => e.item.type === MediaGalleryItemType.VIDEO,
+    );
 
-    const heroImage = [...images].sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex)[0];
-    const priorityVideo = [...videos].sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex)[0];
+    const heroImage = [...images].sort(
+      (a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex,
+    )[0];
+    const priorityVideo = [...videos].sort(
+      (a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex,
+    )[0];
 
-    const remainingVideos = videos.filter((e) => e !== priorityVideo).sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex).map((e) => e.item);
-    const remainingImages = images.filter((e) => e !== heroImage).sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex).map((e) => e.item);
+    const remainingVideos = videos
+      .filter((e) => e !== priorityVideo)
+      .sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex)
+      .map((e) => e.item);
+    const remainingImages = images
+      .filter((e) => e !== heroImage)
+      .sort((a, b) => b.rank - a.rank || a.originalIndex - b.originalIndex)
+      .map((e) => e.item);
 
     const ordered: MediaGalleryItem[] = [];
     if (heroImage) ordered.push(heroImage.item);
@@ -150,18 +178,40 @@ export default function InstrumentOverview() {
 
   const media = useMemo(() => getGalleryMedia(product as Product), [product]);
 
-  const metafields = (product as any).metafields as (Metafield | null)[] | undefined;
-  const specs = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'specs')?.value;
-  const features = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'features')?.value;
-  const compatibility = metafields?.find((m) => m?.namespace === 'custom' && m?.key === 'compatibility')?.value;
+  const metafields = (product as any).metafields as
+    | (Metafield | null)[]
+    | undefined;
+  const specs = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'specs',
+  )?.value;
+  const features = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'features',
+  )?.value;
+  const compatibility = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'compatibility',
+  )?.value;
 
-  const sections: {title: string; content: string; defaultOpen?: boolean}[] = [];
+  const sections: {title: string; content: string; defaultOpen?: boolean}[] =
+    [];
   if (product.descriptionHtml) {
-    sections.push({title: 'Description', content: rewriteLegacyDocsLinks(product.descriptionHtml), defaultOpen: true});
+    sections.push({
+      title: 'Description',
+      content: rewriteLegacyDocsLinks(product.descriptionHtml),
+      defaultOpen: true,
+    });
   }
-  if (specs) sections.push({title: 'Specs', content: rewriteLegacyDocsLinks(specs)});
-  if (features) sections.push({title: 'Features', content: rewriteLegacyDocsLinks(features)});
-  if (compatibility) sections.push({title: 'Compatibility', content: rewriteLegacyDocsLinks(compatibility)});
+  if (specs)
+    sections.push({title: 'Specs', content: rewriteLegacyDocsLinks(specs)});
+  if (features)
+    sections.push({
+      title: 'Features',
+      content: rewriteLegacyDocsLinks(features),
+    });
+  if (compatibility)
+    sections.push({
+      title: 'Compatibility',
+      content: rewriteLegacyDocsLinks(compatibility),
+    });
 
   return (
     <div className="pb-16 md:pb-0">
@@ -176,7 +226,9 @@ export default function InstrumentOverview() {
               <div className="badge badge-warning badge-lg">Discontinued</div>
             ) : (
               <ProductForm
-                product={product as Product & {selectedVariant?: ProductVariant}}
+                product={
+                  product as Product & {selectedVariant?: ProductVariant}
+                }
                 storeDomain={storeDomain}
               />
             )}
@@ -193,17 +245,37 @@ export default function InstrumentOverview() {
           {sections.length > 0 && (
             <div className="border-t border-primary/10 px-6">
               {sections.map((section) => (
-                <Disclosure key={section.title} defaultOpen={section.defaultOpen}>
+                <Disclosure
+                  key={section.title}
+                  defaultOpen={section.defaultOpen}
+                >
                   {({open}) => (
                     <div className="border-b border-primary/10">
                       <Disclosure.Button className="flex w-full items-center justify-between py-4 text-left">
-                        <span className="text-base font-semibold uppercase tracking-wide">{section.title}</span>
-                        <svg className={`h-5 w-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        <span className="text-base font-semibold uppercase tracking-wide">
+                          {section.title}
+                        </span>
+                        <svg
+                          className={`h-5 w-5 transition-transform duration-200 ${
+                            open ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </Disclosure.Button>
                       <Disclosure.Panel className="pb-4">
-                        <div className="prose prose-sm max-w-none" dangerouslySetInnerHTML={{__html: section.content}} />
+                        <div
+                          className="prose prose-sm max-w-none"
+                          dangerouslySetInnerHTML={{__html: section.content}}
+                        />
                       </Disclosure.Panel>
                     </div>
                   )}
@@ -241,7 +313,8 @@ function ProductForm({
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
   const isPreorder = product.id === 'gid://shopify/Product/4319674761239';
-  const isBackorder = (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder;
+  const isBackorder =
+    (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -264,12 +337,16 @@ function ProductForm({
 
   const buttonLabel = isOutOfStock
     ? 'Sold Out'
-    : isPreorder ? 'Preorder Now'
-    : isBackorder ? 'Backorder Now'
+    : isPreorder
+    ? 'Preorder Now'
+    : isBackorder
+    ? 'Backorder Now'
     : 'Add to Cart';
 
   const showLowStock =
-    !isOutOfStock && !isPreorder && !isBackorder &&
+    !isOutOfStock &&
+    !isPreorder &&
+    !isBackorder &&
     selectedVariant?.quantityAvailable != null &&
     selectedVariant.quantityAvailable > 0 &&
     selectedVariant.quantityAvailable < 5;
@@ -277,18 +354,33 @@ function ProductForm({
   return (
     <>
       <div className="grid gap-3">
-        <VariantSelector handle={product.handle} options={product.options} variants={product.variants}>
+        <VariantSelector
+          handle={product.handle}
+          options={product.options}
+          variants={product.variants}
+        >
           {({option}) => (
             <div key={option.name} className="flex flex-col gap-2">
-              <Heading as="legend" size="lead" className="min-w-[4rem]">{option.name}</Heading>
+              <Heading as="legend" size="lead" className="min-w-[4rem]">
+                {option.name}
+              </Heading>
               <div className="flex flex-wrap gap-2">
                 {option.values.map(({value, isAvailable, isActive, to}) => (
-                  <Link key={option.name + value} to={to} preventScrollReset prefetch="intent" replace
+                  <Link
+                    key={option.name + value}
+                    to={to}
+                    preventScrollReset
+                    prefetch="intent"
+                    replace
                     className={clsx(
                       'px-4 py-2 text-sm rounded-full border transition-all duration-200 cursor-pointer min-h-[40px] flex items-center',
-                      isActive ? 'bg-black text-white border-black font-semibold' : 'bg-white text-primary border-primary/30 hover:border-primary/60',
-                      !isAvailable && 'opacity-40 line-through pointer-events-none',
-                    )}>
+                      isActive
+                        ? 'bg-black text-white border-black font-semibold'
+                        : 'bg-white text-primary border-primary/30 hover:border-primary/60',
+                      !isAvailable &&
+                        'opacity-40 line-through pointer-events-none',
+                    )}
+                  >
                     {value}
                   </Link>
                 ))}
@@ -299,18 +391,57 @@ function ProductForm({
 
         {selectedVariant && (
           <div className="flex items-baseline gap-3">
-            <Money withoutTrailingZeros data={selectedVariant.price!} as="span" className="text-2xl font-bold" />
-            {isOnSale && <Money withoutTrailingZeros data={selectedVariant.compareAtPrice!} as="span" className="text-lg text-primary/40 line-through" />}
+            <Money
+              withoutTrailingZeros
+              data={selectedVariant.price!}
+              as="span"
+              className="text-2xl font-bold"
+            />
+            {isOnSale && (
+              <Money
+                withoutTrailingZeros
+                data={selectedVariant.compareAtPrice!}
+                as="span"
+                className="text-lg text-primary/40 line-through"
+              />
+            )}
           </div>
         )}
 
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
-            <label htmlFor="quantity" className="text-sm font-medium">Qty</label>
+            <label htmlFor="quantity" className="text-sm font-medium">
+              Qty
+            </label>
             <div className="flex items-center border rounded">
-              <button type="button" className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10" onClick={() => setQuantity((q) => Math.max(1, q - 1))} disabled={quantity <= 1} aria-label="Decrease quantity">&#8722;</button>
-              <input id="quantity" type="number" min="1" value={quantity} onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))} className="w-12 text-center bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" aria-label="Quantity" />
-              <button type="button" className="w-10 h-10 transition text-primary/50 hover:text-primary" onClick={() => setQuantity((q) => q + 1)} aria-label="Increase quantity">&#43;</button>
+              <button
+                type="button"
+                className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
+                aria-label="Decrease quantity"
+              >
+                &#8722;
+              </button>
+              <input
+                id="quantity"
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) =>
+                  setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                }
+                className="w-12 text-center bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                aria-label="Quantity"
+              />
+              <button
+                type="button"
+                className="w-10 h-10 transition text-primary/50 hover:text-primary"
+                onClick={() => setQuantity((q) => q + 1)}
+                aria-label="Increase quantity"
+              >
+                &#43;
+              </button>
             </div>
           </div>
         )}
@@ -329,10 +460,21 @@ function ProductForm({
                   <Button variant="secondary" disabled>
                     <Text>Sold Out</Text>
                   </Button>
-                  <notifyFetcher.Form method="post" action="/api/notify-me" className="grid gap-2">
+                  <notifyFetcher.Form
+                    method="post"
+                    action="/api/notify-me"
+                    className="grid gap-2"
+                  >
                     <input type="hidden" name="handle" value={product.handle} />
-                    <input type="hidden" name="variantId" value={selectedVariant.id ?? ''} />
-                    <label htmlFor="notify-email-instrument" className="text-xs font-medium text-base-content/70">
+                    <input
+                      type="hidden"
+                      name="variantId"
+                      value={selectedVariant.id ?? ''}
+                    />
+                    <label
+                      htmlFor="notify-email-instrument"
+                      className="text-xs font-medium text-base-content/70"
+                    >
                       Get notified when back in stock
                     </label>
                     <div className="flex gap-2">
@@ -344,12 +486,21 @@ function ProductForm({
                         placeholder="you@example.com"
                         className="input input-bordered input-sm flex-1"
                       />
-                      <button type="submit" className="btn btn-sm btn-primary" disabled={notifyFetcher.state !== 'idle'}>
+                      <button
+                        type="submit"
+                        className="btn btn-sm btn-primary"
+                        disabled={notifyFetcher.state !== 'idle'}
+                      >
                         Notify Me
                       </button>
                     </div>
                     {notifyFetcher.data?.message ? (
-                      <p className={clsx('text-xs', notifyFetcher.data.ok ? 'text-success' : 'text-error')}>
+                      <p
+                        className={clsx(
+                          'text-xs',
+                          notifyFetcher.data.ok ? 'text-success' : 'text-error',
+                        )}
+                      >
                         {notifyFetcher.data.message}
                       </p>
                     ) : null}
@@ -361,27 +512,74 @@ function ProductForm({
                   variant="primary"
                   className="!rounded"
                   data-test="add-to-cart"
-                  analytics={{products: [{productGid: product.id, variantGid: selectedVariant.id ?? '', name: product.title, variantName: selectedVariant.title ?? 'Default', brand: product.vendor, price: selectedVariant.price?.amount ?? '0', quantity: 1}], totalValue: parseFloat(selectedVariant.price?.amount ?? '0')}}
+                  analytics={{
+                    products: [
+                      {
+                        productGid: product.id,
+                        variantGid: selectedVariant.id ?? '',
+                        name: product.title,
+                        variantName: selectedVariant.title ?? 'Default',
+                        brand: product.vendor,
+                        price: selectedVariant.price?.amount ?? '0',
+                        quantity: 1,
+                      },
+                    ],
+                    totalValue: parseFloat(
+                      selectedVariant.price?.amount ?? '0',
+                    ),
+                  }}
                 >
-                  <Text as="span" className="flex items-center justify-center gap-2">
-                    <span>{buttonLabel}</span> <span>&middot;</span> <Money withoutTrailingZeros data={selectedVariant.price!} as="span" />
+                  <Text
+                    as="span"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <span>{buttonLabel}</span> <span>&middot;</span>{' '}
+                    <Money
+                      withoutTrailingZeros
+                      data={selectedVariant.price!}
+                      as="span"
+                    />
                   </Text>
                 </AddToCartButton>
               )}
-              {!isOutOfStock && <ShopPayButton width="100%" variantIds={[selectedVariant.id!]} storeDomain={storeDomain} />}
-              <WishlistButton handle={product.handle} title={product.title} variantId={selectedVariant.id ?? ''} image={selectedVariant.image?.url} price={selectedVariant.price?.amount} />
+              {!isOutOfStock && (
+                <ShopPayButton
+                  width="100%"
+                  variantIds={[selectedVariant.id!]}
+                  storeDomain={storeDomain}
+                />
+              )}
+              <WishlistButton
+                handle={product.handle}
+                title={product.title}
+                variantId={selectedVariant.id ?? ''}
+                image={selectedVariant.image?.url}
+                price={selectedVariant.price?.amount}
+              />
             </>
           )}
         </div>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-3 border-t border-primary/10 text-xs text-primary/60">
           {!isOutOfStock && (
-            <Link to="/policies/shipping-policy" className="flex items-center gap-1.5 hover:text-primary transition">
+            <Link
+              to="/policies/shipping-policy"
+              className="flex items-center gap-1.5 hover:text-primary transition"
+            >
               <FaTruck className="text-sm" />
-              <span>{isPreorder ? 'Ships when available' : isBackorder ? 'Ships in 4-6 weeks' : 'Ships in 24 hours'}</span>
+              <span>
+                {isPreorder
+                  ? 'Ships when available'
+                  : isBackorder
+                  ? 'Ships in 4-6 weeks'
+                  : 'Ships in 24 hours'}
+              </span>
             </Link>
           )}
-          <span className="flex items-center gap-1.5"><FaLock className="text-sm" /><span>Secure Checkout</span></span>
+          <span className="flex items-center gap-1.5">
+            <FaLock className="text-sm" />
+            <span>Secure Checkout</span>
+          </span>
         </div>
       </div>
 
@@ -389,15 +587,39 @@ function ProductForm({
         <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] px-4 py-3 md:hidden">
           <div className="flex items-center gap-3 max-w-lg mx-auto">
             <div className="flex-1 min-w-0">
-              <div className="text-sm font-semibold truncate">{product.title}</div>
-              <Money withoutTrailingZeros data={selectedVariant.price!} as="div" className="text-sm font-bold" />
+              <div className="text-sm font-semibold truncate">
+                {product.title}
+              </div>
+              <Money
+                withoutTrailingZeros
+                data={selectedVariant.price!}
+                as="div"
+                className="text-sm font-bold"
+              />
             </div>
             <AddToCartButton
               lines={[{merchandiseId: selectedVariant.id, quantity}]}
-              variant="primary" className="!rounded" width="auto"
-              analytics={{products: [{productGid: product.id, variantGid: selectedVariant.id ?? '', name: product.title, variantName: selectedVariant.title ?? 'Default', brand: product.vendor, price: selectedVariant.price?.amount ?? '0', quantity: 1}], totalValue: parseFloat(selectedVariant.price?.amount ?? '0')}}
+              variant="primary"
+              className="!rounded"
+              width="auto"
+              analytics={{
+                products: [
+                  {
+                    productGid: product.id,
+                    variantGid: selectedVariant.id ?? '',
+                    name: product.title,
+                    variantName: selectedVariant.title ?? 'Default',
+                    brand: product.vendor,
+                    price: selectedVariant.price?.amount ?? '0',
+                    quantity: 1,
+                  },
+                ],
+                totalValue: parseFloat(selectedVariant.price?.amount ?? '0'),
+              }}
             >
-              <Text as="span" className="text-sm whitespace-nowrap">{buttonLabel}</Text>
+              <Text as="span" className="text-sm whitespace-nowrap">
+                {buttonLabel}
+              </Text>
             </AddToCartButton>
           </div>
         </div>
@@ -406,13 +628,41 @@ function ProductForm({
   );
 }
 
-function WishlistButton({handle, title, variantId, image, price}: {handle: string; title: string; variantId: string; image?: string; price?: string}) {
+function WishlistButton({
+  handle,
+  title,
+  variantId,
+  image,
+  price,
+}: {
+  handle: string;
+  title: string;
+  variantId: string;
+  image?: string;
+  price?: string;
+}) {
   const {isInWishlist, toggleItem} = useWishlist();
   const saved = isInWishlist(handle);
   return (
-    <button type="button" onClick={() => toggleItem({handle, title, variantId, image, price, addedAt: new Date().toISOString()})}
-      className={`flex items-center justify-center gap-2 w-full py-2 border rounded transition ${saved ? 'border-red-300 text-red-500 bg-red-50' : 'border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40'}`}
-      aria-label={saved ? 'Remove from wishlist' : 'Save to wishlist'}>
+    <button
+      type="button"
+      onClick={() =>
+        toggleItem({
+          handle,
+          title,
+          variantId,
+          image,
+          price,
+          addedAt: new Date().toISOString(),
+        })
+      }
+      className={`flex items-center justify-center gap-2 w-full py-2 border rounded transition ${
+        saved
+          ? 'border-red-300 text-red-500 bg-red-50'
+          : 'border-primary/20 text-primary/60 hover:text-primary hover:border-primary/40'
+      }`}
+      aria-label={saved ? 'Remove from wishlist' : 'Save to wishlist'}
+    >
       {saved ? <FaHeart size={16} /> : <FaRegHeart size={16} />}
       <span className="text-sm">{saved ? 'Saved' : 'Save for Later'}</span>
     </button>

@@ -40,8 +40,9 @@ export function Hero() {
             as="p"
             className="vm-reveal vm-reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
           >
-            Videomancer is a hardware video effects console for live performance, glitch art,
-            format conversion, and audio-reactive workflows.
+            Videomancer is a hardware video effects console for live
+            performance, glitch art, format conversion, and audio-reactive
+            workflows.
           </Text>
 
           <div className="vm-reveal vm-reveal-delay-3 mt-8 hidden flex-wrap items-center gap-3 sm:mt-10 lg:flex">
@@ -105,7 +106,12 @@ export function Hero() {
           stroke="currentColor"
           aria-hidden="true"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7"
+          />
         </svg>
       </div>
     </section>

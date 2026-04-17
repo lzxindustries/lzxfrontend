@@ -1,7 +1,7 @@
 ---
 draft: true
-title: "DC Distro"
-description: "Documentation for DC Distro, a DC power distribution module for LZX modular video systems."
+title: 'DC Distro'
+description: 'Documentation for DC Distro, a DC power distribution module for LZX modular video systems.'
 ---
 
 # DC Distro
@@ -10,11 +10,9 @@ The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series m
 
 Additional DC jumper cables are available separately, in three lengths.
 
-
 Depth requirement: 2.5 inches
-Number of output connectors: 9 
-Included power supply rated for 100-240V input range. 
-
+Number of output connectors: 9
+Included power supply rated for 100-240V input range.
 
 Dimensions
 Width, 4HP

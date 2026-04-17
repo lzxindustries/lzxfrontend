@@ -58,7 +58,8 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
 
   for (const [index, item] of product.media.nodes.entries()) {
     if (item.mediaContentType === 'IMAGE') {
-      const img = item as import('@shopify/hydrogen/storefront-api-types').MediaImage;
+      const img =
+        item as import('@shopify/hydrogen/storefront-api-types').MediaImage;
       if (!img.image) continue;
       items.push({
         name: (item.alt ?? '').trim() || `Image ${index + 1}`,
@@ -66,7 +67,8 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
         type: MediaGalleryItemType.IMAGE,
       });
     } else if (item.mediaContentType === 'EXTERNAL_VIDEO') {
-      const vid = item as import('@shopify/hydrogen/storefront-api-types').ExternalVideo;
+      const vid =
+        item as import('@shopify/hydrogen/storefront-api-types').ExternalVideo;
       const ytId = vid.embedUrl?.split('/').filter(Boolean).pop();
       if (!ytId || seenYoutubeIds.has(ytId)) continue;
       seenYoutubeIds.add(ytId);
@@ -161,7 +163,9 @@ export default function ModuleOverview() {
               <div className="badge badge-warning badge-lg">Discontinued</div>
             ) : (
               <ProductForm
-                product={product as Product & {selectedVariant?: ProductVariant}}
+                product={
+                  product as Product & {selectedVariant?: ProductVariant}
+                }
                 storeDomain={storeDomain}
               />
             )}
@@ -200,7 +204,9 @@ export default function ModuleOverview() {
                           {section.title}
                         </span>
                         <svg
-                          className={`h-5 w-5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+                          className={`h-5 w-5 transition-transform duration-200 ${
+                            open ? 'rotate-180' : ''
+                          }`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -290,10 +296,10 @@ function ProductForm({
   const buttonLabel = isOutOfStock
     ? 'Sold Out'
     : isPreorder
-      ? 'Preorder Now'
-      : isBackorder
-        ? 'Backorder Now'
-        : 'Add to Cart';
+    ? 'Preorder Now'
+    : isBackorder
+    ? 'Backorder Now'
+    : 'Add to Cart';
 
   const showLowStock =
     !isOutOfStock &&
@@ -513,8 +519,8 @@ function ProductForm({
                 {isPreorder
                   ? 'Ships when available'
                   : isBackorder
-                    ? 'Ships in 4-6 weeks'
-                    : 'Ships in 24 hours'}
+                  ? 'Ships in 4-6 weeks'
+                  : 'Ships in 24 hours'}
               </span>
             </Link>
           )}

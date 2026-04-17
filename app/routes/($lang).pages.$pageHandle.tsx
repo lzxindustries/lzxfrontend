@@ -13,14 +13,8 @@ export const headers = routeHeaders;
 
 function normalizePageBody(html: string): string {
   return html
-    .replace(
-      /href=["']\/pages\/([^"'\s]+@[^"'\s]+)["']/gi,
-      'href="mailto:$1"',
-    )
-    .replace(
-      /href=["']([^"':\s]+@[^"':\s]+)["']/gi,
-      'href="mailto:$1"',
-    );
+    .replace(/href=["']\/pages\/([^"'\s]+@[^"'\s]+)["']/gi, 'href="mailto:$1"')
+    .replace(/href=["']([^"':\s]+@[^"':\s]+)["']/gi, 'href="mailto:$1"');
 }
 
 export async function loader({request, params, context}: LoaderFunctionArgs) {

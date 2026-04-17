@@ -2,8 +2,8 @@
 draft: false
 sidebar_position: 0
 slug: /instruments/videomancer/quick-start
-title: "Quick Start Guide"
-description: "Get up and running with Videomancer in minutes. Connect HDMI, load a program, and start exploring video synthesis."
+title: 'Quick Start Guide'
+description: 'Get up and running with Videomancer in minutes. Connect HDMI, load a program, and start exploring video synthesis.'
 image: /img/instruments/videomancer/videomancer_frontpanel.png
 ---
 
@@ -116,11 +116,11 @@ Some Programs default to a black output. If your display is black after loading 
 
 Videomancer has twelve **Parameters** that control the behavior of the loaded Program. Each Program assigns different functions to these controls:
 
-| Control | Parameters | Type |
-|:--------|:-----------|:-----|
-| **Knobs 1–6** | Parameters 1–6 | Continuous (turn to adjust) |
-| **Switches 7–11** | Parameters 7–11 | Binary (toggle on/off) |
-| **Slider ★** | Parameter 12 | Continuous (slide to adjust) |
+| Control           | Parameters      | Type                         |
+| :---------------- | :-------------- | :--------------------------- |
+| **Knobs 1–6**     | Parameters 1–6  | Continuous (turn to adjust)  |
+| **Switches 7–11** | Parameters 7–11 | Binary (toggle on/off)       |
+| **Slider ★**      | Parameter 12    | Continuous (slide to adjust) |
 
 Press any **Parameter button** (labeled **1** through **★**) to see that Parameter's name and current value on the LCD display.
 

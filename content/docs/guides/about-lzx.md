@@ -1,9 +1,9 @@
 ---
 draft: false
-title: "About LZX"
+title: 'About LZX'
 sidebar_position: 1
 image: /img/guides/about_lxz_workshop.jpg
-description: "Learn about LZX Industries, creators of modular video synthesizer instruments and tools for real-time visual art."
+description: 'Learn about LZX Industries, creators of modular video synthesizer instruments and tools for real-time visual art.'
 ---
 
 import about_lxz_workshop from '/img/guides/about_lxz_workshop.jpg';
@@ -21,7 +21,7 @@ LZX takes creative, experimental video tools to their next levels. We explore an
 LZX started as a DIY project in 2008. Over the years, we've developed several generations of modular instrument designs. These series are branded as:
 
 - Visionary (2011-2015)
-- Expedition (2015-2018) 
+- Expedition (2015-2018)
 - Orion (2018-2022)
 - Gen3 (2022-present)
 - P-Series (2024-present)

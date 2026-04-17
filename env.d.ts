@@ -2,9 +2,9 @@
 /// <reference types="@shopify/remix-oxygen" />
 /// <reference types="@shopify/oxygen-workers-types" />
 
-import type { WithCache } from '@shopify/hydrogen';
-import type { Storefront } from '~/lib/type';
-import type { AppSession } from '~/lib/session.server';
+import type {WithCache} from '@shopify/hydrogen';
+import type {Storefront} from '~/lib/type';
+import type {AppSession} from '~/lib/session.server';
 
 declare global {
   /**
@@ -66,4 +66,4 @@ declare module '@shopify/remix-oxygen' {
 }
 
 // Needed to make this file a module.
-export { };
+export {};

@@ -1,6 +1,9 @@
 interface AdminApiResponse<T> {
   data: T;
-  errors?: Array<{message: string; locations?: Array<{line: number; column: number}>}>;
+  errors?: Array<{
+    message: string;
+    locations?: Array<{line: number; column: number}>;
+  }>;
 }
 
 let cachedToken: string | null = null;
@@ -183,9 +186,7 @@ export async function updateOrderShippingAddress(
   if (data.orderUpdate.userErrors.length > 0) {
     return {
       success: false,
-      error: data.orderUpdate.userErrors
-        .map((e) => e.message)
-        .join(', '),
+      error: data.orderUpdate.userErrors.map((e) => e.message).join(', '),
     };
   }
 

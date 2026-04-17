@@ -5,7 +5,8 @@ import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 
 export const meta = ({matches}: MetaArgs) => {
-  const parentData = matches.find((m) => m.id.includes('instruments.$slug'))?.data as any;
+  const parentData = matches.find((m) => m.id.includes('instruments.$slug'))
+    ?.data as any;
   const title = parentData?.product?.title ?? 'Instrument';
   return [{title: `${title} Downloads | LZX Industries`}];
 };
@@ -17,7 +18,9 @@ export default function InstrumentDownloads() {
   if (assets.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
-        <p className="text-base-content/60">No downloads available for {product.title}.</p>
+        <p className="text-base-content/60">
+          No downloads available for {product.title}.
+        </p>
       </div>
     );
   }
@@ -28,7 +31,8 @@ export default function InstrumentDownloads() {
       <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
         <p className="font-semibold">Prefer guided updates?</p>
         <p className="mt-1 text-sm text-base-content/70">
-          Use LZX Connect for simplified firmware updates on supported instruments.
+          Use LZX Connect for simplified firmware updates on supported
+          instruments.
         </p>
         <a href="/connect" className="btn btn-sm btn-primary mt-3">
           Open LZX Connect
@@ -45,10 +49,14 @@ export default function InstrumentDownloads() {
           >
             <div className="min-w-0 flex-1">
               <div className="font-medium">{asset.name}</div>
-              <div className="text-sm text-base-content/60">{asset.fileName || 'File unavailable'}</div>
+              <div className="text-sm text-base-content/60">
+                {asset.fileName || 'File unavailable'}
+              </div>
             </div>
             <div className="flex items-center gap-3">
-              {asset.fileType ? <span className="badge badge-outline">{asset.fileType}</span> : null}
+              {asset.fileType ? (
+                <span className="badge badge-outline">{asset.fileType}</span>
+              ) : null}
               {asset.fileName ? (
                 <a
                   href={`/assets/${encodeURIComponent(asset.fileName)}`}
@@ -60,7 +68,9 @@ export default function InstrumentDownloads() {
                   <span>Download</span>
                 </a>
               ) : (
-                <span className="text-sm text-base-content/60">Unavailable</span>
+                <span className="text-sm text-base-content/60">
+                  Unavailable
+                </span>
               )}
             </div>
           </div>

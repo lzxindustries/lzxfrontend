@@ -35,10 +35,13 @@ export default function AboutPage() {
           <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-primary">
             LZX Industries
           </p>
-          <h1 className="text-4xl font-black tracking-tight md:text-5xl">Creative instruments for video synthesis</h1>
+          <h1 className="text-4xl font-black tracking-tight md:text-5xl">
+            Creative instruments for video synthesis
+          </h1>
           <p className="mt-4 max-w-3xl text-base-content/75 md:text-lg">
-            LZX Industries builds analog and digital instruments for real-time image processing,
-            modular video synthesis, and performance-driven visual experimentation.
+            LZX Industries builds analog and digital instruments for real-time
+            image processing, modular video synthesis, and performance-driven
+            visual experimentation.
           </p>
         </header>
 
@@ -46,35 +49,38 @@ export default function AboutPage() {
           <section className="rounded-xl border border-base-300 p-6 md:p-8">
             <h2 className="text-2xl font-bold">What We Make</h2>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              Our tools bridge the worlds of modular synthesis, live visuals, and video signal
-              processing. We design systems that let artists shape color, sync, keying, modulation,
-              and motion as a playable medium rather than a post-production workflow.
+              Our tools bridge the worlds of modular synthesis, live visuals,
+              and video signal processing. We design systems that let artists
+              shape color, sync, keying, modulation, and motion as a playable
+              medium rather than a post-production workflow.
             </p>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              The result is an ecosystem of Eurorack modules, standalone instruments, patches,
-              guides, and documentation built around performable image generation.
+              The result is an ecosystem of Eurorack modules, standalone
+              instruments, patches, guides, and documentation built around
+              performable image generation.
             </p>
           </section>
 
           <section className="rounded-xl border border-base-300 p-6 md:p-8">
             <h2 className="text-2xl font-bold">Built in Portland</h2>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              LZX Industries designs and manufactures instruments in Portland, Oregon. The goal is
-              straightforward: make serious tools for video artists while keeping the documentation,
-              support resources, and technical depth strong enough for long-term use.
+              LZX Industries designs and manufactures instruments in Portland,
+              Oregon. The goal is straightforward: make serious tools for video
+              artists while keeping the documentation, support resources, and
+              technical depth strong enough for long-term use.
             </p>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              We care about stable signal paths, deep experimentation, and systems that reward users
-              who want to keep learning.
+              We care about stable signal paths, deep experimentation, and
+              systems that reward users who want to keep learning.
             </p>
           </section>
 
           <section className="rounded-xl border border-base-300 p-6 md:p-8">
             <h2 className="text-2xl font-bold">How the Site Fits In</h2>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              The storefront is not just a catalog. It is also the support layer for the products:
-              manuals, downloads, patches, glossary terms, blog updates, and now LZX Connect for a
-              unified firmware workflow.
+              The storefront is not just a catalog. It is also the support layer
+              for the products: manuals, downloads, patches, glossary terms,
+              blog updates, and now LZX Connect for a unified firmware workflow.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link to="/downloads" className="btn btn-outline btn-sm">
@@ -95,8 +101,9 @@ export default function AboutPage() {
           <section className="rounded-xl border border-base-300 p-6 md:p-8">
             <h2 className="text-2xl font-bold">Start Here</h2>
             <p className="mt-3 leading-relaxed text-base-content/80">
-              If you are new to the ecosystem, the fastest path is to explore the getting-started
-              guide, browse starter systems, and then move into patches and product manuals.
+              If you are new to the ecosystem, the fastest path is to explore
+              the getting-started guide, browse starter systems, and then move
+              into patches and product manuals.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link to="/getting-started" className="btn btn-primary btn-sm">

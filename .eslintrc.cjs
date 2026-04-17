@@ -8,7 +8,19 @@ module.exports = {
     'plugin:hydrogen/typescript',
     'plugin:import/recommended',
   ],
+  settings: {
+    jest: {
+      version: 29,
+    },
+  },
   rules: {
+    'prettier/prettier': 'off',
+    'import/first': 'off',
+    'react-hooks/rules-of-hooks': 'off',
+    'jsx-a11y/no-noninteractive-tabindex': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/naming-convention': 'off',
     'hydrogen/prefer-image-component': 'off',

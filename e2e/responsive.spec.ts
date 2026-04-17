@@ -172,9 +172,7 @@ test.describe('Typography scales properly', () => {
 
     const fontSize = await page.evaluate(() => {
       const body = document.querySelector('body');
-      return body
-        ? parseFloat(window.getComputedStyle(body).fontSize)
-        : 0;
+      return body ? parseFloat(window.getComputedStyle(body).fontSize) : 0;
     });
     expect(fontSize).toBeGreaterThanOrEqual(14);
   });

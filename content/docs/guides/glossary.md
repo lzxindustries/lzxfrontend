@@ -1,11 +1,12 @@
 ---
 draft: false
-title: "Glossary"
+title: 'Glossary'
 sidebar_position: 8
-description: "Glossary of key terms used in video synthesis, video art, and modular video synthesizer systems."
+description: 'Glossary of key terms used in video synthesis, video art, and modular video synthesizer systems.'
 ---
 
 # Glossary
+
 &nbsp;
 
 The following terms are commonly used in the contexts of video, video art, and video synthesizers. Knowing the meaning of these terms is essential to getting the most out of your video synth.
@@ -22,17 +23,17 @@ A category of circuits that perform logical operations on continuous analog sign
 
 ### Bipolar
 
-A signal that may include both positive and negative voltages. Compare to [unipolar](/docs/guides/glossary#unipolar), which only includes positive voltages. In LZX systems, the final video output to the encoder is unipolar only. 
+A signal that may include both positive and negative voltages. Compare to [unipolar](/docs/guides/glossary#unipolar), which only includes positive voltages. In LZX systems, the final video output to the encoder is unipolar only.
 
 Many modules can only handle unipolar signals. However, some modules such as [Swatch](/docs/modules/swatch) require bipolar signals. Others, such as [DSG3](/docs/modules/dsg3) and [Contour](/docs/modules/contour), can optionally accept bipolar signals, but can only output unipolar signals. Utility modules such as [Proc](/docs/modules/proc) and [PGO](/docs/modules/pgo) can convert between unipolar and bipolar signals.
 
 ### Blending
 
-A type of [layering](/docs/guides/glossary#layering) in which exactly two images are combined using a math operation such as sum or difference. Blending operations can be simple or complex. Image editing applications feature complex blend modes such as *screen* or *overlay*. LZX modules such as DSG3 and Arch use [analog logic](/docs/guides/glossary#analog-logic) to blend two signals in interesting ways. See [compositing](/docs/guides/glossary#compositing).
+A type of [layering](/docs/guides/glossary#layering) in which exactly two images are combined using a math operation such as sum or difference. Blending operations can be simple or complex. Image editing applications feature complex blend modes such as _screen_ or _overlay_. LZX modules such as DSG3 and Arch use [analog logic](/docs/guides/glossary#analog-logic) to blend two signals in interesting ways. See [compositing](/docs/guides/glossary#compositing).
 
 ### Chroma
 
-Abbreviation of *chrominance*, the color of a video signal. In composite and S-video formats, all color information is combined into a single signal component that carries the hue and saturation of the picture. In chrominance-based component video formats, color is encoded in color difference channels. In the native RGB space of video, chroma is inherent in the red, green, and blue primary color channels. See [luma](/docs/guides/glossary#luma).
+Abbreviation of _chrominance_, the color of a video signal. In composite and S-video formats, all color information is combined into a single signal component that carries the hue and saturation of the picture. In chrominance-based component video formats, color is encoded in color difference channels. In the native RGB space of video, chroma is inherent in the red, green, and blue primary color channels. See [luma](/docs/guides/glossary#luma).
 
 ### Chroma key
 
@@ -52,12 +53,13 @@ A type of [chroma key](/docs/guides/glossary#chroma-key) generator that acts on 
 
 ### Compositing
 
-A type of [layering](/docs/guides/glossary#layering) in which two or more images appear to be stacked over one another, or in front of one another. Compositing requires a mask or stencil, often called a *matte* in film compositing, and *alpha channel* in computer graphics, or a [key](/docs/guides/glossary#key) in video terms. The various layers of a composite image may have different levels of transparency, allowing some layers to [blend](/docs/guides/glossary#blending) with others.
+A type of [layering](/docs/guides/glossary#layering) in which two or more images appear to be stacked over one another, or in front of one another. Compositing requires a mask or stencil, often called a _matte_ in film compositing, and _alpha channel_ in computer graphics, or a [key](/docs/guides/glossary#key) in video terms. The various layers of a composite image may have different levels of transparency, allowing some layers to [blend](/docs/guides/glossary#blending) with others.
+
 ### Encoder
 
-An *encoder module* accepts arbitrary signals in the zero to one volt range and outputs conventional, standard video. An encoder is required to convert modular signals to legal video that can be displayed or recorded.
+An _encoder module_ accepts arbitrary signals in the zero to one volt range and outputs conventional, standard video. An encoder is required to convert modular signals to legal video that can be displayed or recorded.
 
-In the context of the LZX [TBC2](/docs/modules/tbc2) module, *encoder* has a different meaning. The Encoder submodule of TBC2 accepts digital video from one of various sources, converts it to analog, and outputs LZX 1 volt patchable signals.
+In the context of the LZX [TBC2](/docs/modules/tbc2) module, _encoder_ has a different meaning. The Encoder submodule of TBC2 accepts digital video from one of various sources, converts it to analog, and outputs LZX 1 volt patchable signals.
 
 ### Exponential amplifier
 
@@ -77,7 +79,7 @@ A circuit that doubles the frequency of a signal. Also known as a rectifier or s
 
 ### Genlock
 
-A process, state, or connection in which a video device is externally synchronized to some other device. The term *genlock* is commonly used as a verb or an adjective. In a historical video studio, all devices have *genlock inputs* and are *genlocked* to *house sync*. All devices are synchronized to a single reference, so that their signals can be combined seamlessly and free of glitches. 
+A process, state, or connection in which a video device is externally synchronized to some other device. The term _genlock_ is commonly used as a verb or an adjective. In a historical video studio, all devices have _genlock inputs_ and are _genlocked_ to _house sync_. All devices are synchronized to a single reference, so that their signals can be combined seamlessly and free of glitches.
 
 The same situation applies to the internal workings of a modular video synthesizer. All modules that require sync must be genlocked to the same reference timing, provided by the sync generator module such as [ESG3](/docs/modules/esg3). To send a video signal into the synthesizer, either the external device must be genlocked to the sync generator, or the sync generator must be genlocked to the external device. For multiple video sources, everything must be genlocked to a single reference. But today, only the most advanced professional video equipment has genlock capability. Ordinary consumer cameras, VCRs, etc. can't be genlocked. The [TBC2](/docs/modules/tbc2) module solves this problem by sampling two incoming video streams with [frame synchronizers](/docs/guides/glossary#frame-synchronizer).
 
@@ -91,11 +93,11 @@ A circuit that performs a binary Boolean logic operation to switch between two s
 
 ### Key
 
-The term *key* is used in multiple ways in video. The strictest definition is a video signal that controls a transition between two or more other video signals. Conventionally, a key is a video image that acts as a mask to composite two other images. It's also commonly known as an *alpha channel* or *matte*. A key is created by a [key generator](/docs/guides/glossary#key-generator). The key generator output is applied as the key source to a [keyer](/docs/guides/glossary#keyer), which uses the key to mask and composite two images.
+The term _key_ is used in multiple ways in video. The strictest definition is a video signal that controls a transition between two or more other video signals. Conventionally, a key is a video image that acts as a mask to composite two other images. It's also commonly known as an _alpha channel_ or _matte_. A key is created by a [key generator](/docs/guides/glossary#key-generator). The key generator output is applied as the key source to a [keyer](/docs/guides/glossary#keyer), which uses the key to mask and composite two images.
 
-In common usage, the term *key* can refer to the mask, or to the final composited output of the keyer.
+In common usage, the term _key_ can refer to the mask, or to the final composited output of the keyer.
 
-*Key* is also a verb, referring to the act of generating or "cutting" a key mask, or to the global process of key compositing.
+_Key_ is also a verb, referring to the act of generating or "cutting" a key mask, or to the global process of key compositing.
 
 ### Key generator
 
@@ -103,7 +105,7 @@ A circuit or module that converts an incoming signal to a [key](/docs/guides/glo
 
 ### Keyer
 
-A device that performs a [key](/docs/guides/glossary#key) compositing operation. Also known as a *keying compositor*. A keyer usually includes an integrated [key generator](/docs/guides/glossary#key-generator). However, many video synth modules can act as keyers if a key mask is provided by an external key generator.
+A device that performs a [key](/docs/guides/glossary#key) compositing operation. Also known as a _keying compositor_. A keyer usually includes an integrated [key generator](/docs/guides/glossary#key-generator). However, many video synth modules can act as keyers if a key mask is provided by an external key generator.
 
 ### Layering
 
@@ -115,7 +117,7 @@ A circuit that performs a logarithmic function. Scales a linear input to a logar
 
 ### Luma
 
-Abbreviation of *luminance*, the brightness of a video image. Often represented by the letter *Y*. If all color saturation is removed from a video image, luma is what remains. Composite, S-video, and YPbPr component video formats carry luminance separately from color in various ways. In the native RGB space of video, luminance is inherent in the red, green, and blue primary color components.
+Abbreviation of _luminance_, the brightness of a video image. Often represented by the letter _Y_. If all color saturation is removed from a video image, luma is what remains. Composite, S-video, and YPbPr component video formats carry luminance separately from color in various ways. In the native RGB space of video, luminance is inherent in the red, green, and blue primary color components.
 
 ### Luma key generator
 
@@ -151,13 +153,13 @@ A type of [keyer](/docs/guides/glossary#keyer) capable of compositing images wit
 
 ### Summing amplifier
 
-A circuit or module that adds two or more voltages. Also known as a *mixer*. The voltages may be unipolar (positive values only) or bipolar (positive and negative values).
+A circuit or module that adds two or more voltages. Also known as a _mixer_. The voltages may be unipolar (positive values only) or bipolar (positive and negative values).
 
 ### Sync
 
-*Sync* refers to the timing signals of video. These precisely determine when a video frame starts and ends, and when a single line of video starts and ends. Sync is an absolute hard requirement for all analog video. Without it, video can't exist. 
+_Sync_ refers to the timing signals of video. These precisely determine when a video frame starts and ends, and when a single line of video starts and ends. Sync is an absolute hard requirement for all analog video. Without it, video can't exist.
 
-LZX and most other video equipment uses *composite sync*. This is a type of sync that can stand alone or be embedded within an analog video stream. Composite sync combines the vertical sync pulses controlling frame rate and the horizontal sync pulses controlling individual scanlines. 
+LZX and most other video equipment uses _composite sync_. This is a type of sync that can stand alone or be embedded within an analog video stream. Composite sync combines the vertical sync pulses controlling frame rate and the horizontal sync pulses controlling individual scanlines.
 
 If sync is altered or missing, the result is corrupted video. This is why some glitch devices produce video that cannot be recorded, and needs to be rephotographed from a very forgiving monitor such as a cathode ray tube (CRT).
 

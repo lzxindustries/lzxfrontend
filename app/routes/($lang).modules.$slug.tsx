@@ -57,8 +57,17 @@ export type ModuleLayoutLoaderData = ModuleHubData & {
 
 export default function ModuleLayout() {
   const data = useLoaderData<typeof loader>();
-  const {product, hasManual, patches, videos, assets, connectors, controls, features, slugEntry} =
-    data as unknown as ModuleHubData;
+  const {
+    product,
+    hasManual,
+    patches,
+    videos,
+    assets,
+    connectors,
+    controls,
+    features,
+    slugEntry,
+  } = data as unknown as ModuleHubData;
   const slug = (data as unknown as ModuleHubData).slug;
 
   const basePath = `/modules/${slug}`;
@@ -68,10 +77,18 @@ export default function ModuleLayout() {
 
   const tabs: HubTab[] = [
     {label: 'Overview', to: basePath},
-    {label: 'Manual', to: `${basePath}/manual`, hidden: !hasManual && !slugEntry.externalUrl},
+    {
+      label: 'Manual',
+      to: `${basePath}/manual`,
+      hidden: !hasManual && !slugEntry.externalUrl,
+    },
     {label: 'Patches', to: `${basePath}/patches`, hidden: patches.length === 0},
     {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},
-    {label: 'Downloads', to: `${basePath}/downloads`, hidden: assets.length === 0},
+    {
+      label: 'Downloads',
+      to: `${basePath}/downloads`,
+      hidden: assets.length === 0,
+    },
     {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
   ];
 

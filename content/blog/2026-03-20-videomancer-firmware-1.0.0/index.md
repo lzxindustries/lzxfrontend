@@ -1,6 +1,6 @@
 ---
 slug: videomancer-firmware-1.0.0-rc.4
-title: "Videomancer Firmware 1.0.0-rc.4"
+title: 'Videomancer Firmware 1.0.0-rc.4'
 authors: [lars]
 tags: [videomancer, software]
 draft: false

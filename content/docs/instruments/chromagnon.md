@@ -1,8 +1,8 @@
 ---
 draft: true
 sidebar_position: 2
-title: "Chromagnon"
-description: "Documentation for Chromagnon, a fully analog video synthesizer and processor instrument by LZX Industries."
+title: 'Chromagnon'
+description: 'Documentation for Chromagnon, a fully analog video synthesizer and processor instrument by LZX Industries.'
 ---
 
 # Chromagnon
@@ -23,7 +23,6 @@ Included Items: 52HP EuroRack module with standalone enclosure and 12V DC wall w
 Frontpanel artwork and enclosure renders are a work in progress and may change. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces.
 
 Promotional painting of "Chromagnonfolk with Gary" by Jason Wayne Barnett.
-
 
 Dimensions
 Width, 52HP

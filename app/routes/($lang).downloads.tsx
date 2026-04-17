@@ -3,7 +3,11 @@ import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {Link, useLoaderData} from '@remix-run/react';
 import {FaDownload} from 'react-icons/fa';
-import {getAllInstrumentEntries, getAllModuleSlugs, getSlugEntry} from '~/data/product-slugs';
+import {
+  getAllInstrumentEntries,
+  getAllModuleSlugs,
+  getSlugEntry,
+} from '~/data/product-slugs';
 import {getModuleAssets, getModuleById} from '~/data/lzxdb';
 import {SUPPORT_MANIFEST, type ManualVersion} from '~/data/support-manifest';
 import {seoPayload} from '~/lib/seo.server';
@@ -97,7 +101,9 @@ export async function loader({request}: LoaderFunctionArgs) {
       productUrl: `/instruments/${entry.canonical}`,
       assets,
       manuals: SUPPORT_MANIFEST[entry.canonical]?.manuals ?? [],
-      relatedProducts: (SUPPORT_MANIFEST[entry.canonical]?.relatedProductSlugs ?? [])
+      relatedProducts: (
+        SUPPORT_MANIFEST[entry.canonical]?.relatedProductSlugs ?? []
+      )
         .map((relatedSlug) => {
           const related = getSlugEntry(relatedSlug);
           if (!related) return null;
@@ -154,12 +160,17 @@ export default function DownloadsPage() {
 
       <div className="space-y-5">
         {entries.map((entry) => (
-          <section key={`${entry.hubType}-${entry.slug}`} className="rounded-lg border border-base-300 p-4">
+          <section
+            key={`${entry.hubType}-${entry.slug}`}
+            className="rounded-lg border border-base-300 p-4"
+          >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <h2 className="text-xl font-semibold">{entry.name}</h2>
                 {entry.subtitle ? (
-                  <p className="text-sm text-base-content/70">{entry.subtitle}</p>
+                  <p className="text-sm text-base-content/70">
+                    {entry.subtitle}
+                  </p>
                 ) : null}
                 <p className="text-xs uppercase tracking-wide text-base-content/60 mt-1">
                   {entry.hubType}
@@ -185,11 +196,15 @@ export default function DownloadsPage() {
                 >
                   <div className="min-w-0">
                     <div className="font-medium truncate">{asset.name}</div>
-                    <div className="text-xs text-base-content/60 truncate">{asset.fileName}</div>
+                    <div className="text-xs text-base-content/60 truncate">
+                      {asset.fileName}
+                    </div>
                   </div>
                   <div className="flex items-center gap-2">
                     {asset.fileType ? (
-                      <span className="badge badge-outline">{asset.fileType}</span>
+                      <span className="badge badge-outline">
+                        {asset.fileType}
+                      </span>
                     ) : null}
                     <span className="btn btn-xs btn-ghost gap-1">
                       <FaDownload aria-hidden="true" />
@@ -226,7 +241,11 @@ export default function DownloadsPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {entry.relatedProducts.map((related) => (
-                    <Link key={`${entry.slug}-${related.to}`} to={related.to} className="badge badge-ghost">
+                    <Link
+                      key={`${entry.slug}-${related.to}`}
+                      to={related.to}
+                      className="badge badge-ghost"
+                    >
                       {related.name}
                     </Link>
                   ))}

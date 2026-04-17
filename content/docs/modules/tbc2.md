@@ -1,41 +1,41 @@
 ---
 draft: false
-title: "TBC2"
+title: 'TBC2'
 image: /img/modules/tbc2/tbc2-diagrams/tbc2_frontpanel.png
-description: "Documentation for TBC2, a dual video input module for bringing multiple video sources into a modular video synthesizer."
+description: 'Documentation for TBC2, a dual video input module for bringing multiple video sources into a modular video synthesizer.'
 ---
 
 import { useEffect, useRef, useState } from 'react';
 
 export function ResponsiveYouTube({ videoId }) {
-  const iframeRef = useRef(null);
-  const [height, setHeight] = useState(0);
+const iframeRef = useRef(null);
+const [height, setHeight] = useState(0);
 
-  useEffect(() => {
-    if (iframeRef.current) {
-      const updateHeight = () => {
-        const width = iframeRef.current.offsetWidth;
-        setHeight(width * 9 / 16); // fallback aspect ratio
-      };
-      updateHeight();
-      window.addEventListener('resize', updateHeight);
-      return () => window.removeEventListener('resize', updateHeight);
-    }
-  }, []);
+useEffect(() => {
+if (iframeRef.current) {
+const updateHeight = () => {
+const width = iframeRef.current.offsetWidth;
+setHeight(width \* 9 / 16); // fallback aspect ratio
+};
+updateHeight();
+window.addEventListener('resize', updateHeight);
+return () => window.removeEventListener('resize', updateHeight);
+}
+}, []);
 
-  return (
-    <iframe
-      ref={iframeRef}
-      width="100%"
-      height={height}
-      src={`https://www.youtube.com/embed/${videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video"
-      style={{ display: 'block' }}
-    />
-  );
+return (
+<iframe
+ref={iframeRef}
+width="100%"
+height={height}
+src={`https://www.youtube.com/embed/${videoId}`}
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowFullScreen
+title="YouTube video"
+style={{ display: 'block' }}
+/>
+);
 }
 
 import tbc2_frontpanel from '/img/modules/tbc2/tbc2-diagrams/tbc2_frontpanel.png';
@@ -43,6 +43,7 @@ import tbc2_frontpanel from '/img/modules/tbc2/tbc2-diagrams/tbc2_frontpanel.png
 import tbc2_line_art_labeled from '/img/modules/tbc2/tbc2-diagrams/tbc2_line_art_labeled_654x1024.png';
 
 # TBC2
+
 <span class="head2_nolink">Dual Video Input</span>
 
 <img src={tbc2_frontpanel} alt="TBC2 front panel" />
@@ -51,15 +52,15 @@ import tbc2_line_art_labeled from '/img/modules/tbc2/tbc2-diagrams/tbc2_line_art
 
 TBC2 is the most flexible, cost-effective, and space-efficient tool for bringing multiple video sources into a modular synth.
 
-It's not an exaggeration to say that TBC2 compresses a sizable rack of conventional video equipment into a tiny space of only 16 HP. To achieve the capabilities of TBC2, a rig or studio setup would need the following: 
+It's not an exaggeration to say that TBC2 compresses a sizable rack of conventional video equipment into a tiny space of only 16 HP. To achieve the capabilities of TBC2, a rig or studio setup would need the following:
 
-* Sync generator
-* Two full-frame time base correctors
-* Two processing amplifiers
-* Pattern generator
-* Matrix router
-* Crossfading mixer with two output busses
-* Random access media player
+- Sync generator
+- Two full-frame time base correctors
+- Two processing amplifiers
+- Pattern generator
+- Matrix router
+- Crossfading mixer with two output busses
+- Random access media player
 
 Most of that gear would require genlock inputs for synchronizing to external clock reference. And such a system would still require two Eurorack decoders to convert conventional video to the LZX 1 volt patchable standard. All told, TBC2 replaces thousands of dollars of equipment that would be bulky, heavy, and power-hungry. TBC2 elegantly solves all of those problems, bringing half a studio of video gear directly into the modular synth.
 
@@ -73,18 +74,18 @@ Bonus features of TBC2 include still image and looping image sequence playback, 
 
 Features:
 
-* Decode and synchronize two SD or HD video input sources
-* Component, Composite, and S-Video inputs
-* Encode RGB and luminance to LZX 1v patchable outputs
-* Support any conventional resolution and frame rate, up to 1080p30
-* Optionally support VGA / VESA / SCART with 10HP expander, up to 1024x768p60
-* Genlock and generate SD / HD sync via front and rear RCA jacks
-* Display images and play looping sequences from MicroSD card
-* Generate horizontal and vertical ramps
-* Color correct each SD input: Hue, Saturation, Contrast, Brightness
-* Automatically scale incoming video to fit the current format
-* Crossfade between Decoder inputs, ramps, or Media Player
-* Remotely control parameters via MIDI
+- Decode and synchronize two SD or HD video input sources
+- Component, Composite, and S-Video inputs
+- Encode RGB and luminance to LZX 1v patchable outputs
+- Support any conventional resolution and frame rate, up to 1080p30
+- Optionally support VGA / VESA / SCART with 10HP expander, up to 1024x768p60
+- Genlock and generate SD / HD sync via front and rear RCA jacks
+- Display images and play looping sequences from MicroSD card
+- Generate horizontal and vertical ramps
+- Color correct each SD input: Hue, Saturation, Contrast, Brightness
+- Automatically scale incoming video to fit the current format
+- Crossfade between Decoder inputs, ramps, or Media Player
+- Remotely control parameters via MIDI
 
 ### Legacy
 
@@ -94,13 +95,13 @@ TBC2 is the second generation time base corrector from LZX. It's far more advanc
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 16 HP                                                                           |
-| Power Consumption | 12V @ 600 mA                                                                    |
-| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Included          | DC barrel power cable, EuroRack power cable                                     |
-| Video Sync        | Front and rear RCA in and out                                                   |
+| Parameter         | Value                                       |
+| ----------------- | ------------------------------------------- |
+| Mounting Width    | 16 HP                                       |
+| Power Consumption | 12V @ 600 mA                                |
+| Power Connectors  | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Included          | DC barrel power cable, EuroRack power cable |
+| Video Sync        | Front and rear RCA in and out               |
 
 ---
 
@@ -131,7 +132,6 @@ At the top left are RCA jacks for video **Sync Input** and **Sync Output**. As e
 ### MIDI In and Out
 
 In the center of the front panel are two mini jacks for **MIDI In** and **MIDI Out**. TBC2 is not capable of generating MIDI on its own, so the MIDI Out jack is actually a MIDI Through that buffers and echoes any MIDI messages received by the MIDI In jack.
-
 
 The TBC2 MIDI jacks use the **Type B** TRS standard: a three-conductor tip-ring-sleeve (stereo) mini jack. The tip is the "source" conductor (+5v static), the ring is the "sink" or signal conductor, and the sleeve is the shield or ground.
 
@@ -208,19 +208,19 @@ TBC2 firmware consists of several functional processing blocks that the artist c
 
 TBC2 has two input **Decoder** submodules. Each supports the following standards for color, resolution, and frame rate:
 
-| Supported input color formats |
-|-------------------------------|
-| YPbBr component               |
-| RGsB component (sync on green)|
-| Composite (CVBS)              |
-| S-Video (Y/C)                 |
+| Supported input color formats  |
+| ------------------------------ |
+| YPbBr component                |
+| RGsB component (sync on green) |
+| Composite (CVBS)               |
+| S-Video (Y/C)                  |
 
 <!--
 AFR note: for simplicity, I used the format abbreviation convention of whole frame/field numbers.
 -->
 
 | Supported input standards |
-|---------------------------|
+| ------------------------- |
 | NTSC 486i59               |
 | PAL 576i50                |
 | 480p                      |
@@ -255,9 +255,11 @@ TBC2 has one **Genlock** submodule. This module controls the timing of the outpu
 
 :::warning
 Although it is possible to use TBC2 as the source of all sync inside the modular system, that is not its intended use. Configuring a system with TBC2 as the global clock is not recommended due to potential stability issues. The source of all sync in the system should be a module designed for that purpose, such as ESG3. For systems without a sync distribution amplifier, the optimal sync chain is:
+
 $$
 Sync \ generator \to TBC2 \to all \ other \ modules \ in \ series
 $$
+
 :::
 
 :::tip
@@ -266,9 +268,11 @@ When sync is looped through modules in series, the best practice is to route syn
 
 :::note
 Sync issues such as propagation delay are eliminated by a sync distribution amplifier. **Bus 168** is a purpose-designed sync and power distribution bus. It's included with **Vessel 168**, and available as a DIY kit. The sync routing for a system with a sync DA is:
+
 $$
 Sync \ generator \to Sync \ DA \to all \ other \ modules \ in \ parallel
 $$
+
 :::
 
 <!--
@@ -276,7 +280,7 @@ AFR note: for simplicity, I used the format abbreviation convention of whole fra
 -->
 
 | Supported output standards |
-|----------------------------|
+| -------------------------- |
 | NTSC 486i59                |
 | PAL 576i50                 |
 | 480p29                     |
@@ -300,6 +304,7 @@ AFR note: for simplicity, I used the format abbreviation convention of whole fra
 TBC2 has two output **Encoder** submodules. Each drives a set of four LZX modular video outputs, simultaneously providing Red, Green, Blue components and a grayscale Luminance signal. The Encoder video standard follows the setting of the Genlock submodule.
 
 The source of each encoder is a crossfader. Each of the A or B inputs to a particular crossfader can be chosen from the following sources:
+
 - Decoder A
 - Decoder B
 - Ramp Generator
@@ -341,10 +346,10 @@ Media Player output video standard follows the Genlock Module.
 
 TBC2 is compatible with some, but not all, microSD cards. We have tested the following specific brands and models, and verified them to be hassle-free.
 
-| Brand/Series     | Size           | SKU            |
-|------------------|----------------|----------------|
-| SanDisk          | 8 GB           | SDSDQAB-008G   |
-| SanDisk	       | 16 GB          | SDSDQAB-016G   |
+| Brand/Series | Size  | SKU          |
+| ------------ | ----- | ------------ |
+| SanDisk      | 8 GB  | SDSDQAB-008G |
+| SanDisk      | 16 GB | SDSDQAB-016G |
 
 To avoid counterfeit MicroSD cards, always purchase from a trusted vendor. We recommend [Mouser](https://www.mouser.com) and [DigiKey](https://www.digikey.com).
 
@@ -354,11 +359,11 @@ To avoid counterfeit MicroSD cards, always purchase from a trusted vendor. We re
 
 TBC2 requires the MicroSD to be formatted using the **FAT32** file system with default sector size.
 
-The Media submodule requires a very specific directory structure. 
+The Media submodule requires a very specific directory structure.
 
-* The MicroSD card must have a top level folder named `media`.
-* The `media` folder must contain subfolders that can be named whatever is desired.
-* Still image files must be placed within a subfolder of `media`.
+- The MicroSD card must have a top level folder named `media`.
+- The `media` folder must contain subfolders that can be named whatever is desired.
+- Still image files must be placed within a subfolder of `media`.
 
 For example:
 
@@ -373,9 +378,10 @@ The Media submodule provides no method for navigating a directory tree, or hiera
 ### File Preparation
 
 The Media submodule supports the following image file formats:
-* .PNG - lossless compressed
-* .BMP - uncompressed
-* .JPG - lossy compressed - may exhibit image artifacts
+
+- .PNG - lossless compressed
+- .BMP - uncompressed
+- .JPG - lossy compressed - may exhibit image artifacts
 
 :::tip
 The Media submodule can read files with long filenames, but the firmware has no way to display them. To make it possible to read the entire filename on the display, stick to the antique DOS filename requirement of "eight dot three". The filename can be up to eight characters long, followed by a dot, then a filename extension of three characters.
@@ -383,12 +389,12 @@ The Media submodule can read files with long filenames, but the firmware has no 
 
 For best image quality, image files should match the current video standard of the Genlock submodule. If not, the image will be scaled to fit the pixel height determined by the Genlock submodule.
 
-| Video format                          | Pixel resolution (width x height)       |
-|---------------------------------------|-----------------------------------------|
-| Standard Definition (SD) NTSC         | 720 x 486                               |
-| Standard Definition (SD) PAL          | 720 x 576                               |
-| Extended Definition (ED)              | 1280 x 720                              |
-| Full High Definition (FHD)            | 1920 x 1080                             |
+| Video format                  | Pixel resolution (width x height) |
+| ----------------------------- | --------------------------------- |
+| Standard Definition (SD) NTSC | 720 x 486                         |
+| Standard Definition (SD) PAL  | 720 x 576                         |
+| Extended Definition (ED)      | 1280 x 720                        |
+| Full High Definition (FHD)    | 1920 x 1080                       |
 
 TBC2 supports broadcast NTSC and PAL digital video formats. These formats are slightly anamorphic, making use of non-square pixels. For example, a file prepared for NTSC has a resolution of 720x486, according to the CCIR-601 standard from 1982. If we divide 720 by 486, the result is a ratio of 1:48:1, but the picture aspect ratio of NTSC is actually 1.33:1. This is happening because more pixels are sampled in the horizontal dimension than in the vertical dimension (scanlines). The pixels themselves are rectangular, slightly narrower than their height, with a pixel aspect ratio of 0.9.
 
@@ -414,12 +420,12 @@ $$
 
 Maximum file counts per standard video resolution are listed in the table below.
 
-| Pixel resolution                      | Maximum number of images per folder     |
-|---------------------------------------|-----------------------------------------|
-| 720 x 486 (NTSC)                      | 143                                     |
-| 720 x 576 (PAL)                       | 120                                     |
-| 1280 x 720 (Extended Definition)      | 54                                      |
-| 1920 x 1080 (Full High Definition)    | 24                                      |
+| Pixel resolution                   | Maximum number of images per folder |
+| ---------------------------------- | ----------------------------------- |
+| 720 x 486 (NTSC)                   | 143                                 |
+| 720 x 576 (PAL)                    | 120                                 |
+| 1280 x 720 (Extended Definition)   | 54                                  |
+| 1920 x 1080 (Full High Definition) | 24                                  |
 
 ---
 
@@ -429,23 +435,24 @@ A media folder can be played back as a motion picture at the current frame rate 
 
 #### Sequential Filenames
 
-With current TBC2 firmware, it's not a technical requirement to name files in an alphanumeric sequence. But it's standard practice in video and animation production, and it will save your sanity. 
+With current TBC2 firmware, it's not a technical requirement to name files in an alphanumeric sequence. But it's standard practice in video and animation production, and it will save your sanity.
 
 The best way to do this is with trailing numerals in the filename. For maximum compatibility with various systems, the file numbers should be padded with leading digits. For example:
+
 - seqa_001.png
 - seqa_002.png
 - seqa_003.png
-&nbsp;<br />
-etc.
+  &nbsp;<br />
+  etc.
 
 #### File Playback Order
 
-The Media submodule plays back files ***in the order that they were saved on the MicroSD card***. Not the alphanumeric order of filenames. Not the order in which they were originally created.
+The Media submodule plays back files **_in the order that they were saved on the MicroSD card_**. Not the alphanumeric order of filenames. Not the order in which they were originally created.
 
-Currently, the most reliable method of ensuring correct sequential playback is to copy the files to the MicroSD card ***one at a time, in the desired playback order*** . This is very tedious, and ideally we could just copy the entire folder. But unfortunately, the host operating system may not copy the files in alphanumeric order.
+Currently, the most reliable method of ensuring correct sequential playback is to copy the files to the MicroSD card **_one at a time, in the desired playback order_** . This is very tedious, and ideally we could just copy the entire folder. But unfortunately, the host operating system may not copy the files in alphanumeric order.
 
 :::tip
-Depending on the operating system, you may be able to trick the file browser into copying files in the needed order. On Windows, try this. Manually create an empty folder on the MicroSD card. Select the files you wish to copy in ***REVERSE*** order. Click the last file, hold **SHIFT**, then click the first file. Copy the selected files to the MicroSD card folder.
+Depending on the operating system, you may be able to trick the file browser into copying files in the needed order. On Windows, try this. Manually create an empty folder on the MicroSD card. Select the files you wish to copy in **_REVERSE_** order. Click the last file, hold **SHIFT**, then click the first file. Copy the selected files to the MicroSD card folder.
 :::
 
 ---
@@ -456,18 +463,18 @@ MIDI receive channel is configurable through the menus.
 
 Continuous Controller numbers are fixed to the following mapping:
 
-| CC   | Module	            | Parameter                   |
-|------|--------------------|-----------------------------|
-| 0	   | Encoder A          | Crossfade                   |
-| 1    | Decoder A          | SD Processor Hue            |
-| 2    | Decoder A          | SD Processor Saturation     |
-| 3    | Decoder A          | SD Processor Brightness     |
-| 4    | Decoder A          | SD Processor Contrast       |
-| 16   | Encoder B          | Crossfade                   |
-| 17   | Decoder B          | SD Processor Hue            |
-| 18   | Decoder B          | SD Processor Saturation     |
-| 19   | Decoder B          | SD Processor Brightness     |
-| 20   | Decoder B          | SD Processor Contrast       |
+| CC  | Module    | Parameter               |
+| --- | --------- | ----------------------- |
+| 0   | Encoder A | Crossfade               |
+| 1   | Decoder A | SD Processor Hue        |
+| 2   | Decoder A | SD Processor Saturation |
+| 3   | Decoder A | SD Processor Brightness |
+| 4   | Decoder A | SD Processor Contrast   |
+| 16  | Encoder B | Crossfade               |
+| 17  | Decoder B | SD Processor Hue        |
+| 18  | Decoder B | SD Processor Saturation |
+| 19  | Decoder B | SD Processor Brightness |
+| 20  | Decoder B | SD Processor Contrast   |
 
 ---
 
@@ -497,24 +504,24 @@ Continuous Controller numbers are fixed to the following mapping:
 
 ### Requirements
 
-* EuroRack enclosure
-* 12V DC or EuroRack power supply
-* 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
-* Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
+- EuroRack enclosure
+- 12V DC or EuroRack power supply
+- 2.1mm DC barrel power cable **or** a EuroRack power cable (both options included)
+- Four M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Connect the disconnected end of the power cable to the power supply.
-* If a sync generator such as ESG3 is present in the same enclosure, connect the TBC2 rear sync input to the sync generator rear sync output. If the enclosure includes a sync distribution amplifier, connect the TBC2 rear sync input to one of the sync DA outputs.
-* In the absence of a sync distribution amplifier within the enclosure, connect the TBC2 rear sync output to the rear sync input of the next module in the sync chain.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Store the unused cable along with the product box in a safe location. 
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Connect either the EuroRack Power Cable **or** the DC Barrel Power Cable to the module. Do not connect both Eurorack and DC Barrel power.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module with its attached power cable in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Connect the disconnected end of the power cable to the power supply.
+- If a sync generator such as ESG3 is present in the same enclosure, connect the TBC2 rear sync input to the sync generator rear sync output. If the enclosure includes a sync distribution amplifier, connect the TBC2 rear sync input to one of the sync DA outputs.
+- In the absence of a sync distribution amplifier within the enclosure, connect the TBC2 rear sync output to the rear sync input of the next module in the sync chain.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Store the unused cable along with the product box in a safe location.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
@@ -529,71 +536,70 @@ Continuous Controller numbers are fixed to the following mapping:
 
 </td><td>
 
-| Jack | Function                                     |
-|------|----------------------------------------------|
-| J1   | RCA sync in                                  |
-| J2   | RCA sync out                                 |
-| J3   | Decoder A: <br />Y or <br />Green+sync in    |
-| J4   | Decoder B: <br />Y or <br />Green+sync in    |
-| J5   | Decoder A: <br />Pb or Blue in               |
-| J6   | Decoder B: <br />Pb or Blue in               |
-| J7   | Decoder A: <br />Pr or Red in                |
-| J8   | Decoder B: <br />Pr or Red in                |
-| J9   | MIDI in                                      |
-| J10  | Encoder A:<br /> Y out                       |
-| J11  | Encoder B:<br /> Y out                       |
-| J12  | MIDI out                                     |
-
+| Jack | Function                                  |
+| ---- | ----------------------------------------- |
+| J1   | RCA sync in                               |
+| J2   | RCA sync out                              |
+| J3   | Decoder A: <br />Y or <br />Green+sync in |
+| J4   | Decoder B: <br />Y or <br />Green+sync in |
+| J5   | Decoder A: <br />Pb or Blue in            |
+| J6   | Decoder B: <br />Pb or Blue in            |
+| J7   | Decoder A: <br />Pr or Red in             |
+| J8   | Decoder B: <br />Pr or Red in             |
+| J9   | MIDI in                                   |
+| J10  | Encoder A:<br /> Y out                    |
+| J11  | Encoder B:<br /> Y out                    |
+| J12  | MIDI out                                  |
 
 </td><td>
 
-| Jack | Function                                     |
-|------|----------------------------------------------|
-| J13  | Encoder A: <br />Red out                     |
-| J14  | Encoder B: <br />Red out                     |
-| J15  | Decoder A: <br />CVBS in                     |
-| J16  | Decoder B: <br />CVBS in                     |
-| J17  | Micro-USB                                    |
-| J18  | Encoder A: <br />Green out                   |
-| J19  | Encoder B: <br />Green out                   |
-| J20  | Decoder A: <br />S-Video in                  |
-| J21  | Decoder A: <br />S-Video in                  |
-| J22  | Trigger in                                   |
-| J23  | Encoder A: <br />Blue out                    |
-| J24  | Encoder B: <br />Blue out                    |
-| J25  | MicroSD card slot                            |
+| Jack | Function                    |
+| ---- | --------------------------- |
+| J13  | Encoder A: <br />Red out    |
+| J14  | Encoder B: <br />Red out    |
+| J15  | Decoder A: <br />CVBS in    |
+| J16  | Decoder B: <br />CVBS in    |
+| J17  | Micro-USB                   |
+| J18  | Encoder A: <br />Green out  |
+| J19  | Encoder B: <br />Green out  |
+| J20  | Decoder A: <br />S-Video in |
+| J21  | Decoder A: <br />S-Video in |
+| J22  | Trigger in                  |
+| J23  | Encoder A: <br />Blue out   |
+| J24  | Encoder B: <br />Blue out   |
+| J25  | MicroSD card slot           |
 
-| Switch | Function         |
-|--------|------------------|
-| S1     | Cancel           |
-| S2     | Up               |
-| S3     | Down             |
-| S4     | Confirm          |
+| Switch | Function |
+| ------ | -------- |
+| S1     | Cancel   |
+| S2     | Up       |
+| S3     | Down     |
+| S4     | Confirm  |
 
 </td></tr></table>
 
 ### Technical Data
 
-| Parameter                                  | Value                                                                           |
-| ------------------------------------------ | ------------------------------------------------------------------------------- |
-| Manufacturer Part Number: Mk 1 (Orion)     | 950046                                                                          |
-| Manufacturer Part Number: Mk 2 (Gen 3)     | 950058                                                                          |
-| Mounting Width                             | 16 HP                                                                           |
-| Mounting Depth                             | 55 mm                                                                           |
-| Mounting Hole Count                        | 4                                                                               |
-| Power Consumption                          | 12V @ 600 mA                                                                    |
-| Power Connectors                           | 16 pin EuroRack ribbon, 2.1mm DC barrel                                         |
-| Input Impedance                            | 1M ohms                                                                         |
-| Output Impedance                           | 75 ohms                                                                         |
-| Input Protection Range                     | +/-20V                                                                          |
-| Input Clipping Range                       | +/-2.5V                                                                         |
-| Output Range                               | +/-2.5V                                                                         |
-| Included                                   | DC barrel power cable, EuroRack power cable                                     |
-| EuroRack Power Cable Type                  | 16-pin                                                                          |
-| EuroRack Power Cable Length                | 25 cm                                                                           |
-| DC Barrel Power Cable Length               | 25 cm                                                                           |
-| RoHS Compliance                            | Manufactured with lead-free processes                                           |
-| Video Sync                                 | Front & rear RCA in & out                                                       |
+| Parameter                              | Value                                       |
+| -------------------------------------- | ------------------------------------------- |
+| Manufacturer Part Number: Mk 1 (Orion) | 950046                                      |
+| Manufacturer Part Number: Mk 2 (Gen 3) | 950058                                      |
+| Mounting Width                         | 16 HP                                       |
+| Mounting Depth                         | 55 mm                                       |
+| Mounting Hole Count                    | 4                                           |
+| Power Consumption                      | 12V @ 600 mA                                |
+| Power Connectors                       | 16 pin EuroRack ribbon, 2.1mm DC barrel     |
+| Input Impedance                        | 1M ohms                                     |
+| Output Impedance                       | 75 ohms                                     |
+| Input Protection Range                 | +/-20V                                      |
+| Input Clipping Range                   | +/-2.5V                                     |
+| Output Range                           | +/-2.5V                                     |
+| Included                               | DC barrel power cable, EuroRack power cable |
+| EuroRack Power Cable Type              | 16-pin                                      |
+| EuroRack Power Cable Length            | 25 cm                                       |
+| DC Barrel Power Cable Length           | 25 cm                                       |
+| RoHS Compliance                        | Manufactured with lead-free processes       |
+| Video Sync                             | Front & rear RCA in & out                   |
 
 <!--
 | Pronunciation                              | TODO                                                                            |
@@ -649,6 +655,7 @@ To reset TBC2 firmware to the version shipped from the factory:
 2. Wait for firmware reset to complete, until the **System Restart** prompt appears.
 3. Press the **Confirm** button to reboot the module.
 4. Confirm that TBC2 boots to the factory installed version by checking the version number on the **System** page. If the wrong version is displayed, power cycle the module.
+
 ---
 
 ## Firmware Update
@@ -704,12 +711,14 @@ TBC2 Firmware 1.0.7
 ### 1.0.7
 
 **Bug Fixes**
+
 - Fixed GUI slider behavior for Mk1 compatibility
 - Fixed GUI labeling error in ramp generator
 
 ### 1.0.6
 
 **Bug Fixes**
+
 - Fixed decoder getting stuck in a scanning loop on certain inputs
 - Fixed OLED preview scrolling during PAL-to-NTSC conversion
 - Fixed HD component input sync glitch causing picture displacement
@@ -718,12 +727,14 @@ TBC2 Firmware 1.0.7
 - Fixed various crashes and stability issues
 
 **New Features**
+
 - Added letterbox scaling for cross-format conversions
 - Added confirmation prompts before firmware update/reset
 - Added invert and triangle controls to ramp generator
 - Shows error when SD card or BOOT.bin is missing during firmware update
 
 **Improvements**
+
 - Ramp phase control now goes from 0–360 degrees
 - Renamed shutdown button to "Save & Restart"
 - Decoder GUI adapts layout to input/output resolution

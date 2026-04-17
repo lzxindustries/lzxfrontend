@@ -1,8 +1,8 @@
 ---
 draft: false
-title: "LNK"
+title: 'LNK'
 image: /img/modules/lnk/lnk-diagrams/lnk_front-panel.png
-description: "Documentation for LNK, a passive linking utility module for connecting and distributing signals in a modular video system."
+description: 'Documentation for LNK, a passive linking utility module for connecting and distributing signals in a modular video system.'
 ---
 
 import lnk_front_panel from '/img/modules/lnk/lnk-diagrams/lnk_front-panel.png';
@@ -12,6 +12,7 @@ import lnk_mults from '/img/modules/lnk/lnk-diagrams/lnk_mults.png';
 import lnk_understanding_cascading_input_jacks from '/img/modules/lnk/lnk-diagrams/lnk_understanding-cascading-input-jacks.png';
 
 # LNK
+
 <span class="head2_nolink">Passive Links</span>
 
 <img src={lnk_front_panel} alt="lnk_front_panel" />
@@ -20,16 +21,16 @@ import lnk_understanding_cascading_input_jacks from '/img/modules/lnk/lnk-diagra
 
 ## Key Specifications
 
-| Parameter         | Value                                                                           |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Mounting Width    | 4 HP                                                                            |
-| Power Consumption | None                                                                            |
-| Power Connectors  | None                                                                            |
-| Video Sync        | None                                                                            |
+| Parameter         | Value |
+| ----------------- | ----- |
+| Mounting Width    | 4 HP  |
+| Power Consumption | None  |
+| Power Connectors  | None  |
+| Video Sync        | None  |
 
 ---
 
-<!-- 
+<!--
 ## System Integration Advice
 
 ---
@@ -37,7 +38,7 @@ import lnk_understanding_cascading_input_jacks from '/img/modules/lnk/lnk-diagra
 
 ## Connectors
 
-<img src={lnk_controls_connectors_indicators} alt="lnk_controls_connectors_indicators" /> 
+<img src={lnk_controls_connectors_indicators} alt="lnk_controls_connectors_indicators" />
 
 ---
 
@@ -47,52 +48,53 @@ import lnk_understanding_cascading_input_jacks from '/img/modules/lnk/lnk-diagra
 
 LNK uses switched, or normalled, connections between its input jacks. With no cable inserted, a signal flows down from one input jack to another. This connection is overridden when a cable is inserted. Normalled inputs are indicated on the front panel with arrows.
 
-<img src={lnk_understanding_cascading_input_jacks} alt="lnk_understanding_cascading_input_jacks" /> 
+<img src={lnk_understanding_cascading_input_jacks} alt="lnk_understanding_cascading_input_jacks" />
 
 ---
 
 ## Example Patches
 
-<img src={lnk_mults} alt="lnk_mults" /> 
+<img src={lnk_mults} alt="lnk_mults" />
 
 ---
 
 ## Installation
 
-<img src={lnk_mounting_power_sync} alt="lnk_mounting_power_sync" /> 
+<img src={lnk_mounting_power_sync} alt="lnk_mounting_power_sync" />
 
 ### Requirements
 
-* EuroRack enclosure.
-* Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer.
-* #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer.
+- EuroRack enclosure.
+- Two M2.5 x 6mm mounting screws, or screws provided or specified by the enclosure manufacturer.
+- #1 Phillips head screwdriver, or hand tool provided or specified by the enclosure manufacturer.
 
 ### Procedure
 
-* Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
-* Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
-* Carefully test fit the module in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
-* Mount the module to the EuroRack rails using all mounting holes.
-* Power on the EuroRack enclosure and start patching.
+- Power off and disconnect the EuroRack enclosure's power supply and any attached DC adapters.
+- Ensure that no mounting screws are in any holes in the area where you wish to mount the module.
+- Carefully test fit the module in the open space in the EuroRack enclosure. If it is obstructed by the enclosure or any internal assemblies, abort this procedure.
+- Mount the module to the EuroRack rails using all mounting holes.
+- Power on the EuroRack enclosure and start patching.
 
 ---
 
 ## Full Specifications
 
 ### Technical Data
-|                              |                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| Mounting Width               | 4 HP                                                                            |
-| Mounting Hole Count          | 2                                                                               |
-| Module Width                 | 20.32 mm                                                                        |
-| Module Height                | 128.5 mm                                                                        |
-| Product Box Width            | 4 in / 101.6 mm                                                                 |
-| Product Box Height           | 2 in / 50.8 mm                                                                  |
-| Product Box Depth            | 6 in / 152.4 mm                                                                 |
-| RoHS Compliance              | Manufactured with lead-free processes                                           |
-| Video Sync                   | None                                                                            | 
 
-<!-- 
+|                     |                                       |
+| ------------------- | ------------------------------------- |
+| Mounting Width      | 4 HP                                  |
+| Mounting Hole Count | 2                                     |
+| Module Width        | 20.32 mm                              |
+| Module Height       | 128.5 mm                              |
+| Product Box Width   | 4 in / 101.6 mm                       |
+| Product Box Height  | 2 in / 50.8 mm                        |
+| Product Box Depth   | 6 in / 152.4 mm                       |
+| RoHS Compliance     | Manufactured with lead-free processes |
+| Video Sync          | None                                  |
+
+<!--
 | Manufacturer Part Number     |                                                                                 |
 | Pronunciation                |                                                                                 |
 | Module Depth                 | TODO                                                                            |
@@ -102,7 +104,6 @@ LNK uses switched, or normalled, connections between its input jacks. With no 
 -->
 
 ---
-
 
 ## Maintenance
 
@@ -130,7 +131,7 @@ LNK-RevA Interactive Bill of Materials
 
 ---
 
-## DIY 
+## DIY
 
 LNK is available as an assembled module, a full DIY kit, or a partial DIY kit.
 
@@ -140,8 +141,8 @@ Downloads for the complete schematic and an interactive HTML Bill of Materials a
 
 The partial DIY kit from LZX includes the printed circuit board and front panel. The following components must be purchased separately from electronics parts vendors.
 
-| Manufacturer                        | Manufacturer Part Number | Description              | Quantity | Reference Designators                             |
-| ----------------------------------- | ------------------------ | ------------------------ | -------- | ------------------------------------------------- |
+| Manufacturer                        | Manufacturer Part Number | Description              | Quantity | Reference Designators                                                 |
+| ----------------------------------- | ------------------------ | ------------------------ | -------- | --------------------------------------------------------------------- |
 | Wenzhou QingPu Electronics Co., Ltd | WQP-WQP518MA             | 3.5mm Jack Mono Switched | 16       | J1, J2, J3, J4, J5, J6, J7, J8, J9, J10, J11, J12, J13, J14, J15, J16 |
 
 ### Assembly Instructions

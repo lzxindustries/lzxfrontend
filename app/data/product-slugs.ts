@@ -97,7 +97,10 @@ function detectSeries(m: Record<string, unknown>): string | null {
 
   // Expedition series modules (have external_url to community forum, eurorack, not hidden)
   const extUrl = (m.external_url as string) ?? '';
-  if (extUrl.includes('community.lzxindustries.net') && m.has_eurorack_power_entry)
+  if (
+    extUrl.includes('community.lzxindustries.net') &&
+    m.has_eurorack_power_entry
+  )
     return 'expedition';
 
   // VideoHeadroom third-party
@@ -223,7 +226,7 @@ for (const m of modulesData) {
     docPath = moduleDocPaths.get(canonical) ?? null;
   }
 
-  const oid = ((raw._id as Record<string, string>)?.$oid) ?? null;
+  const oid = (raw._id as Record<string, string>)?.$oid ?? null;
   const shopifyGid = (raw.id as string) ?? null;
   const externalUrl = (raw.external_url as string) ?? null;
   const isHidden = (raw.is_hidden as boolean) ?? false;

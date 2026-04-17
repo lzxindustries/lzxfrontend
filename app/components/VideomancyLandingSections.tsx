@@ -87,14 +87,29 @@ const sourcePairs = [
 ];
 
 const hardwareImages = [
-  {src: '/images/videomancer/hardware/photo-rear.png', alt: 'Videomancer rear panel'},
-  {src: '/images/videomancer/hardware/photo-angle-front.png', alt: 'Videomancer front angle'},
-  {src: '/images/videomancer/hardware/photo-side.png', alt: 'Videomancer side view'},
+  {
+    src: '/images/videomancer/hardware/photo-rear.png',
+    alt: 'Videomancer rear panel',
+  },
+  {
+    src: '/images/videomancer/hardware/photo-angle-front.png',
+    alt: 'Videomancer front angle',
+  },
+  {
+    src: '/images/videomancer/hardware/photo-side.png',
+    alt: 'Videomancer side view',
+  },
 ];
 
 const btsImages = [
-  {src: '/images/videomancer/bts/box-stack.png', alt: 'Videomancer boxes stacked in the workshop'},
-  {src: '/images/videomancer/bts/assembly-case.png', alt: 'Videomancer case assembly'},
+  {
+    src: '/images/videomancer/bts/box-stack.png',
+    alt: 'Videomancer boxes stacked in the workshop',
+  },
+  {
+    src: '/images/videomancer/bts/assembly-case.png',
+    alt: 'Videomancer case assembly',
+  },
   {src: '/images/videomancer/bts/pouch-dice.png', alt: 'Videomancer packaging'},
 ];
 
@@ -111,7 +126,10 @@ export function VideomancyLandingSections() {
             >
               Watch closely
             </Heading>
-            <Text as="p" className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-white/60 md:text-lg">
+            <Text
+              as="p"
+              className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-white/60 md:text-lg"
+            >
               One instrument. One program between ordinary and extraordinary.
             </Text>
           </div>
@@ -145,7 +163,10 @@ export function VideomancyLandingSections() {
             >
               Pick a path, any path
             </Heading>
-            <Text as="p" className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-2xl text-white/60 md:text-lg">
+            <Text
+              as="p"
+              className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-2xl text-white/60 md:text-lg"
+            >
               Every creator arrives with a different source and a different
               intention. The instrument does not care. It is ready for all of
               them.
@@ -161,7 +182,13 @@ export function VideomancyLandingSections() {
                 style={{animationDelay: `${120 + index * 80}ms`}}
               >
                 <div className="mb-4" aria-hidden="true">
-                  <img src={segment.icon} alt="" width={56} height={56} className="h-14 w-14" />
+                  <img
+                    src={segment.icon}
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="h-14 w-14"
+                  />
                 </div>
                 <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-moonwax">
                   {segment.title}
@@ -184,8 +211,12 @@ export function VideomancyLandingSections() {
           >
             Real hardware
           </Heading>
-          <Text as="p" className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-center text-white/60 md:text-lg">
-            Old school, industrial build quality. Just like broadcast video electronics from the 70s and 80s.
+          <Text
+            as="p"
+            className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-center text-white/60 md:text-lg"
+          >
+            Old school, industrial build quality. Just like broadcast video
+            electronics from the 70s and 80s.
           </Text>
         </div>
         <div className="hiddenScroll mt-8 flex gap-3 overflow-x-auto px-6 pb-4 md:px-10 lg:justify-center lg:px-12">
@@ -213,7 +244,10 @@ export function VideomancyLandingSections() {
           >
             Built by video freaks
           </Heading>
-          <Text as="p" className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-center text-white/60 md:text-lg">
+          <Text
+            as="p"
+            className="vm-reveal vm-reveal-delay-1 mx-auto mt-3 max-w-xl text-center text-white/60 md:text-lg"
+          >
             Assembled by hand in a basement workshop in Portland, Oregon.
           </Text>
         </div>
@@ -250,7 +284,13 @@ export function VideomancyLandingSections() {
                   className="vm-reveal rounded-2xl border border-white/10 bg-[#111] p-5"
                   style={{animationDelay: `${120 + index * 90}ms`}}
                 >
-                  <img src={card.icon} alt="" width={56} height={56} className="mb-3 h-14 w-14" />
+                  <img
+                    src={card.icon}
+                    alt=""
+                    width={56}
+                    height={56}
+                    className="mb-3 h-14 w-14"
+                  />
                   <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-moonwax">
                     {card.title}
                   </h3>

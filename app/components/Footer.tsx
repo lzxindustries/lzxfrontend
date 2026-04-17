@@ -30,7 +30,10 @@ export function Footer() {
           <a className="link link-hover" href="/instruments/videomancer">
             Videomancer Product Page
           </a>
-          <a className="link link-hover" href="/instruments/videomancer/manual/user-manual">
+          <a
+            className="link link-hover"
+            href="/instruments/videomancer/manual/user-manual"
+          >
             Videomancer Docs
           </a>
           <a className="link link-hover" href="/modules">
@@ -119,7 +122,10 @@ export function Footer() {
           <a className="link link-hover" href="/policies/terms-of-service">
             Terms of Service
           </a>
-          <a className="link link-hover" href="/policies/terms-of-service#warranty">
+          <a
+            className="link link-hover"
+            href="/policies/terms-of-service#warranty"
+          >
             Warranty
           </a>
           <a className="link link-hover" href="/policies/refund-policy">

@@ -52,7 +52,11 @@ export function Header({
     <div className="navbar bg-base-100 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <button tabIndex={0} className="btn btn-ghost lg:hidden" aria-label="Open menu">
+          <button
+            tabIndex={0}
+            className="btn btn-ghost lg:hidden"
+            aria-label="Open menu"
+          >
             <FaList size={iconSize} />
           </button>
           <ul
@@ -60,10 +64,7 @@ export function Header({
             className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li key="home">
-              <a
-                className={isHome ? 'active' : ''}
-                href="/"
-              >
+              <a className={isHome ? 'active' : ''} href="/">
                 Home
               </a>
             </li>
@@ -71,7 +72,10 @@ export function Header({
               <a
                 className={isVideomancer ? 'active' : ''}
                 href="/instruments/videomancer"
-                style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
+                style={{
+                  color: isVideomancer ? undefined : '#0072BC',
+                  fontWeight: 600,
+                }}
               >
                 Videomancer
               </a>
@@ -82,7 +86,9 @@ export function Header({
               </a>
             </li>
             <li key="modules">
-              <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
+              <a className={isModules ? 'active' : ''} href="/modules">
+                Modules
+              </a>
             </li>
             <li key="systems">
               <a className={isSystems ? 'active' : ''} href="/systems">
@@ -95,10 +101,7 @@ export function Header({
               </a>
             </li>
             <li key="docs">
-              <a
-                className={isDocs ? 'active' : ''}
-                href="/docs"
-              >
+              <a className={isDocs ? 'active' : ''} href="/docs">
                 Docs
               </a>
             </li>
@@ -113,10 +116,7 @@ export function Header({
               </a>
             </li>
             <li key="blog">
-              <a
-                className={isBlog ? 'active' : ''}
-                href="/blog"
-              >
+              <a className={isBlog ? 'active' : ''} href="/blog">
                 Blog
               </a>
             </li>
@@ -159,7 +159,10 @@ export function Header({
             <a
               className={isVideomancer ? 'active' : ''}
               href="/instruments/videomancer"
-              style={{color: isVideomancer ? undefined : '#0072BC', fontWeight: 600}}
+              style={{
+                color: isVideomancer ? undefined : '#0072BC',
+                fontWeight: 600,
+              }}
             >
               Videomancer
             </a>
@@ -170,7 +173,9 @@ export function Header({
             </a>
           </li>
           <li>
-            <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
+            <a className={isModules ? 'active' : ''} href="/modules">
+              Modules
+            </a>
           </li>
           <li>
             <a className={isSystems ? 'active' : ''} href="/systems">
@@ -183,10 +188,7 @@ export function Header({
             </a>
           </li>
           <li>
-            <a
-              className={isDocs ? 'active' : ''}
-              href="/docs"
-            >
+            <a className={isDocs ? 'active' : ''} href="/docs">
               Docs
             </a>
           </li>
@@ -201,10 +203,7 @@ export function Header({
             </a>
           </li>
           <li>
-            <a
-              className={isBlog ? 'active' : ''}
-              href="/blog"
-            >
+            <a className={isBlog ? 'active' : ''} href="/blog">
               Blog
             </a>
           </li>
@@ -303,8 +302,16 @@ export function Header({
             </button>
           </li>
           <li>
-            <a className={isAccount ? 'active' : ''} href="/account" aria-label={isLoggedIn ? 'My Account' : 'Sign in'}>
-              {isLoggedIn ? <FaUserCheck size={iconSize} /> : <FaUser size={iconSize} />}
+            <a
+              className={isAccount ? 'active' : ''}
+              href="/account"
+              aria-label={isLoggedIn ? 'My Account' : 'Sign in'}
+            >
+              {isLoggedIn ? (
+                <FaUserCheck size={iconSize} />
+              ) : (
+                <FaUser size={iconSize} />
+              )}
             </a>
           </li>
           <li>

@@ -1,15 +1,15 @@
 ---
 draft: false
-title: "Troubleshooting"
+title: 'Troubleshooting'
 sidebar_position: 6
-description: "Troubleshooting guide for diagnosing and resolving common issues with LZX modular video synthesizer systems."
+description: 'Troubleshooting guide for diagnosing and resolving common issues with LZX modular video synthesizer systems.'
 ---
 
-#  Troubleshooting
+# Troubleshooting
 
 ## Halp!
 
-***I suspect something isn't working. How should I troubleshoot the system?***
+**_I suspect something isn't working. How should I troubleshoot the system?_**
 
 ---
 
@@ -29,7 +29,7 @@ Underpowering the system can result in a variety of glitchy behavior &mdash; not
 
 ## Testing methodology
 
-**Test modules in isolation.** 
+**Test modules in isolation.**
 
 Disconnect all modules from the system, and connect only the output encoder, such as ESG3, to the power supply. After verifying it works correctly, power up the next module. Keep going until the issue recurs. If the issue reappears near the current limits of the power supply, upgrade the power supply. If the issue seems to be connected to a specific module, focus on troubleshooting that module.
 
@@ -53,7 +53,7 @@ Because video is a much higher frequency than audio, the length of video cables 
 
 ### Adapters and splitters
 
-Connection adapters such as RCA to BNC may introduce problems such as signal dropouts and visual artifacts. Eliminate or reduce the number of adapters to test if they may be contributing to picture dropout. Splitters such as "T" adapters or passive (unpowered) video distribution boxes can also cause issues. 
+Connection adapters such as RCA to BNC may introduce problems such as signal dropouts and visual artifacts. Eliminate or reduce the number of adapters to test if they may be contributing to picture dropout. Splitters such as "T" adapters or passive (unpowered) video distribution boxes can also cause issues.
 
 :::note
 Signal current is divided by the number of destinations. If a signal is split three ways, the current to each input is only 1/3 of normal. For configurations requiring the same video signal to be sent to multiple destinations, a video distribution amplifier will prevent any drop in current level, helping avoid signal degradation and dropouts.

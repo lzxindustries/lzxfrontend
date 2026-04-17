@@ -20,10 +20,7 @@ export async function loader() {
     },
   };
 
-  return json(
-    {allTags, seo},
-    {headers: {'Cache-Control': CACHE_LONG}},
-  );
+  return json({allTags, seo}, {headers: {'Cache-Control': CACHE_LONG}});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -36,7 +33,11 @@ export default function BlogTagsIndex() {
   return (
     <>
       <Breadcrumbs
-        items={[{label: 'Home', to: '/'}, {label: 'Blog', to: '/blog'}, {label: 'Tags'}]}
+        items={[
+          {label: 'Home', to: '/'},
+          {label: 'Blog', to: '/blog'},
+          {label: 'Tags'},
+        ]}
       />
       <div className="px-6 pb-16 md:px-10 lg:px-12 max-w-screen-lg mx-auto">
         <h1 className="text-3xl font-bold mb-8">Tags</h1>

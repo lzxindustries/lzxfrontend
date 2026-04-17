@@ -8,7 +8,11 @@ import invariant from 'tiny-invariant';
 import {DocLayout} from '~/components/DocLayout';
 import {getDocPage, buildSidebar, getPrevNext} from '~/lib/content.server';
 import type {SidebarItem} from '~/lib/content.server';
-import {getDocPathForSlug, getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
+import {
+  getDocPathForSlug,
+  getCanonicalSlug,
+  getSlugEntry,
+} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG} from '~/data/cache';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';

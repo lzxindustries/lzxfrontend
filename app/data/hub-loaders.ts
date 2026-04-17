@@ -210,9 +210,7 @@ const instrumentDocFiles = import.meta.glob<string>(
   {query: '?raw', import: 'default', eager: true},
 );
 
-function getDocFrontmatter(
-  docPath: string,
-): ContentFrontmatter | null {
+function getDocFrontmatter(docPath: string): ContentFrontmatter | null {
   // Try direct file, then index
   const candidates = [
     `../../content/docs/${docPath}.md`,

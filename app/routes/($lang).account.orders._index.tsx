@@ -27,18 +27,15 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
   const url = new URL(request.url);
   const cursor = url.searchParams.get('cursor') ?? undefined;
 
-  const data = await context.storefront.query<{customer: any}>(
-    ORDERS_QUERY,
-    {
-      variables: {
-        customerAccessToken,
-        first: PAGE_SIZE,
-        after: cursor,
-        country: context.storefront.i18n.country,
-        language: context.storefront.i18n.language,
-      },
+  const data = await context.storefront.query<{customer: any}>(ORDERS_QUERY, {
+    variables: {
+      customerAccessToken,
+      first: PAGE_SIZE,
+      after: cursor,
+      country: context.storefront.i18n.country,
+      language: context.storefront.i18n.language,
     },
-  );
+  });
 
   if (!data?.customer) {
     const {session} = context;
@@ -54,10 +51,7 @@ export async function loader({request, context, params}: LoaderFunctionArgs) {
   const orders = flattenConnection(data.customer.orders) as Order[];
   const pageInfo = data.customer.orders.pageInfo;
 
-  return json(
-    {orders, pageInfo},
-    {headers: {'Cache-Control': CACHE_NONE}},
-  );
+  return json({orders, pageInfo}, {headers: {'Cache-Control': CACHE_NONE}});
 }
 
 export default function OrdersIndex() {
@@ -140,7 +134,8 @@ export default function OrdersIndex() {
               </select>
             </div>
             <Text className="mb-4" size="fine" color="subtle">
-              {filteredOrders.length} order{filteredOrders.length !== 1 ? 's' : ''}
+              {filteredOrders.length} order
+              {filteredOrders.length !== 1 ? 's' : ''}
               {filteredOrders.length !== allOrders.length &&
                 ` (of ${allOrders.length} total)`}
             </Text>

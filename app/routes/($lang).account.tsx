@@ -143,10 +143,13 @@ function Account({
   useEffect(() => {
     if (showUpdated) {
       // Remove query param from URL without navigation
-      setSearchParams((prev) => {
-        prev.delete('updated');
-        return prev;
-      }, {replace: true});
+      setSearchParams(
+        (prev) => {
+          prev.delete('updated');
+          return prev;
+        },
+        {replace: true},
+      );
       const timer = setTimeout(() => setShowUpdated(false), 4000);
       return () => clearTimeout(timer);
     }
@@ -156,7 +159,9 @@ function Account({
     <>
       {showUpdated && (
         <div className="fixed top-4 right-4 z-50 bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in">
-          <span className="text-sm font-medium">Profile updated successfully.</span>
+          <span className="text-sm font-medium">
+            Profile updated successfully.
+          </span>
           <button
             type="button"
             onClick={() => setShowUpdated(false)}
@@ -179,24 +184,36 @@ function Account({
       <div className="grid w-full gap-4 p-4 md:p-8 lg:p-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-primary/5 rounded-lg p-4 text-center">
-            <Text size="lead" className="font-bold">{orders.length}</Text>
-            <Text size="fine" color="subtle">Total Orders</Text>
+            <Text size="lead" className="font-bold">
+              {orders.length}
+            </Text>
+            <Text size="fine" color="subtle">
+              Total Orders
+            </Text>
           </div>
           <div className="bg-primary/5 rounded-lg p-4 text-center">
-            <Text size="lead" className="font-bold">{addresses.length}</Text>
-            <Text size="fine" color="subtle">Saved Addresses</Text>
+            <Text size="lead" className="font-bold">
+              {addresses.length}
+            </Text>
+            <Text size="fine" color="subtle">
+              Saved Addresses
+            </Text>
           </div>
           <div className="bg-primary/5 rounded-lg p-4 text-center">
             <Text size="lead" className="font-bold">
               {orders.filter((o) => o.fulfillmentStatus === 'FULFILLED').length}
             </Text>
-            <Text size="fine" color="subtle">Fulfilled</Text>
+            <Text size="fine" color="subtle">
+              Fulfilled
+            </Text>
           </div>
           <div className="bg-primary/5 rounded-lg p-4 text-center">
             <Text size="lead" className="font-bold">
               {orders.filter((o) => o.fulfillmentStatus !== 'FULFILLED').length}
             </Text>
-            <Text size="fine" color="subtle">In Progress</Text>
+            <Text size="fine" color="subtle">
+              In Progress
+            </Text>
           </div>
         </div>
       </div>
@@ -207,7 +224,10 @@ function Account({
           <div className="grid w-full gap-4 p-4 py-6 md:gap-8 md:p-8 lg:p-12">
             <div className="flex items-center justify-between">
               <h2 className="font-bold text-lead">Recent Orders</h2>
-              <a href="/account/orders" className="text-sm underline text-primary/60 hover:text-primary">
+              <a
+                href="/account/orders"
+                className="text-sm underline text-primary/60 hover:text-primary"
+              >
                 View All Orders
               </a>
             </div>
@@ -228,7 +248,9 @@ function Account({
             <span className="text-2xl">📦</span>
             <div>
               <Text className="font-bold">Order History</Text>
-              <Text size="fine" color="subtle">View all orders</Text>
+              <Text size="fine" color="subtle">
+                View all orders
+              </Text>
             </div>
           </a>
         </div>

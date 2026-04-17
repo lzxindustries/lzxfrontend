@@ -1,6 +1,6 @@
 ---
 slug: chromagnon-september-update
-title: "Chromagnon Fulfillment: September 2026"
+title: 'Chromagnon Fulfillment: September 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
@@ -11,7 +11,7 @@ Monthly Chromagnon fulfillment update for September 2026.
 
 <!--truncate-->
 
-<!-- 
+<!--
 CONTEXT: By this date, fulfillment should be in full swing.
 This post establishes the template for all subsequent monthly fulfillment updates.
 Keep it short, data-driven, and consistent. Customers want numbers, not narrative.
@@ -24,23 +24,23 @@ Copy this structure for each subsequent month until all pre-orders are fulfilled
 
 **As of [DATE]:**
 
-| Metric | Count |
-|---|---|
-| Total pre-orders | ~700 |
-| Units shipped to date | |
-| Units shipped this month | |
-| Units in QC / ready to ship | |
-| Remaining to fulfill | |
-| Current batch | Batch __ |
+| Metric                      | Count      |
+| --------------------------- | ---------- |
+| Total pre-orders            | ~700       |
+| Units shipped to date       |            |
+| Units shipped this month    |            |
+| Units in QC / ready to ship |            |
+| Remaining to fulfill        |            |
+| Current batch               | Batch \_\_ |
 
 ## Shipping Batches
 
-| Batch | Units | Status | Ship Window |
-|---|---|---|---|
-| Batch 1 | | Shipped | |
-| Batch 2 | | Shipped / In Progress | |
-| Batch 3 | | In Production / Upcoming | |
-| Batch 4 | | Scheduled | |
+| Batch   | Units | Status                   | Ship Window |
+| ------- | ----- | ------------------------ | ----------- |
+| Batch 1 |       | Shipped                  |             |
+| Batch 2 |       | Shipped / In Progress    |             |
+| Batch 3 |       | In Production / Upcoming |             |
+| Batch 4 |       | Scheduled                |             |
 
 ## Customer Portal Reminder
 

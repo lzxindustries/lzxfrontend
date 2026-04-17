@@ -1,6 +1,6 @@
 ---
 slug: artist-feature-devin-greenwood
-title: "Artist Feature: Devin Greenwood"
+title: 'Artist Feature: Devin Greenwood'
 authors: [kat]
 tags: [community]
 image: ./devin_greenwood_01.png
@@ -30,7 +30,7 @@ Devin views his process as very intentional layers that cascade upon each other 
 
 ## Current Work
 
-Devin is currently working on musical productions with accompanying films, such as his work composing *Polycule: For Six Singers* via a video score of color as the backdrop for their performance. He is also working on a piece inspired by his father, who passed away in 2023, set to old Super 8 footage his father had shot of him as a baby.
+Devin is currently working on musical productions with accompanying films, such as his work composing _Polycule: For Six Singers_ via a video score of color as the backdrop for their performance. He is also working on a piece inspired by his father, who passed away in 2023, set to old Super 8 footage his father had shot of him as a baby.
 
 Devin is looking forward to further exploring the world of scanline manipulation, a world with a lot of unexplored territory for him.
 
