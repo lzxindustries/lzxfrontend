@@ -82,10 +82,8 @@ test.describe('Account', () => {
   test('unauthenticated user is redirected to login', async ({page}) => {
     await page.goto('/account');
     await page.waitForLoadState('networkidle');
-    // Should redirect to login or show login form
-    await expect(
-      page.url().includes('/account/login') || page.locator('form').isVisible(),
-    ).toBeTruthy();
+    // Should redirect to login
+    expect(page.url()).toContain('/account/login');
   });
 
   test('login page renders', async ({page}) => {
@@ -163,10 +161,7 @@ test.describe('Responsive Navigation', () => {
 test.describe('404 Handling', () => {
   test('nonexistent page shows error content', async ({page}) => {
     const response = await page.goto('/this-page-does-not-exist-xyz');
-    // Remix catch-all throws 404 but error boundary may render with 200
-    // or the original 404 status — accept either
-    const status = response?.status() ?? 200;
-    expect([200, 404]).toContain(status);
+    expect(response?.status()).toBe(404);
     await expect(page.locator('body')).toBeVisible();
   });
 });

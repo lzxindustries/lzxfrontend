@@ -2,7 +2,7 @@ import {defineConfig, devices} from '@playwright/test';
 
 const env = process.env as Record<string, string | undefined>;
 const ci = !!env.CI;
-const webServerCommand = ci ? 'yarn run preview' : 'yarn run dev';
+const webServerCommand = 'yarn run preview';
 
 export default defineConfig({
   testDir: './e2e',
