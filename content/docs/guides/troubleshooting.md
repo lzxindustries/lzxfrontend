@@ -63,12 +63,4 @@ Signal current is divided by the number of destinations. If a signal is split th
 
 ## Manufacturer Warranty
 
-LZX Industries, LLC (&ldquo;LZX&rdquo;) warrants to the original purchaser that this product will be free from defects in material and workmanship for one (1) year from the date of purchase.
-
-If a defect occurs during this period, LZX will, at its option, repair, replace, or refund the product.
-
-This warranty does not cover damage from misuse, accident, modification, improper installation, or normal wear. Proof of purchase may be required.
-
-To request service, contact support@lzxindustries.net
-
-This warranty is limited to the remedies above. LZX is not responsible for incidental or consequential damages. Rights may vary by state or country.
+For warranty coverage details, see our [Warranty Policy](/policies/terms-of-service#warranty). To request service, contact support@lzxindustries.net

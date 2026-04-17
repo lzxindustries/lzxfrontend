@@ -217,6 +217,30 @@ function stripH1Headings(): Plugin<[], Root> {
   };
 }
 
+// --- Strip legacy subtitle spans (head2_nolink) ---
+
+function stripLegacySubtitles(): Plugin<[], Root> {
+  return () => {
+    return (tree: Root) => {
+      tree.children = tree.children.filter((node) => {
+        if (node.type !== 'element') return true;
+        return !hasClass(node, 'head2_nolink');
+      });
+    };
+  };
+}
+
+function hasClass(node: Element, className: string): boolean {
+  const classes = node.properties?.className;
+  if (Array.isArray(classes)) return classes.includes(className);
+  if (typeof classes === 'string') return classes === className;
+  // Check children recursively (span may be wrapped in <p>)
+  for (const child of node.children) {
+    if (child.type === 'element' && hasClass(child, className)) return true;
+  }
+  return false;
+}
+
 // --- Mermaid code block wrapping ---
 
 function wrapMermaidBlocks(): Plugin<[], Root> {
@@ -392,6 +416,7 @@ export async function renderMarkdown(
     .use(rehypeAutolinkHeadings, {behavior: 'wrap'})
     .use(rehypeHighlight as never, {ignoreMissing: true})
     .use(stripH1Headings())
+    .use(stripLegacySubtitles())
     .use(wrapMermaidBlocks())
     .use(rewriteInternalPaths(imageBasePath, currentPath))
     .use(extractHeadings(headings))
