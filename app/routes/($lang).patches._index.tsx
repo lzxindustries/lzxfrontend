@@ -46,20 +46,20 @@ export default function PatchesIndex() {
                 className="card bg-base-200 shadow-md transition-shadow hover:shadow-lg"
                 prefetch="intent"
               >
-                {patch.diagram ? (
-                  <figure>
-                    <img
-                      src={`/diagrams/${patch.diagram}`}
-                      alt={`${patch.name} patch diagram`}
-                      className="aspect-video w-full object-cover"
-                      loading="lazy"
-                    />
-                  </figure>
-                ) : patch.youtube ? (
+                {patch.youtube ? (
                   <figure>
                     <img
                       src={`https://i.ytimg.com/vi/${patch.youtube}/hqdefault.jpg`}
                       alt={`${patch.name} video thumbnail`}
+                      className="aspect-video w-full object-cover"
+                      loading="lazy"
+                    />
+                  </figure>
+                ) : patch.diagram ? (
+                  <figure>
+                    <img
+                      src={`/diagrams/${patch.diagram}`}
+                      alt={`${patch.name} patch diagram`}
                       className="aspect-video w-full object-cover"
                       loading="lazy"
                     />

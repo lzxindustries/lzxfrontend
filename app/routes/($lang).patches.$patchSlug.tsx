@@ -62,6 +62,17 @@ export default function PatchDetail() {
       </PageHeader>
       <Section padding="x">
         <div className="mx-auto max-w-4xl space-y-10 pb-16">
+          {/* Video */}
+          {patch.youtube && (
+            <div>
+              <h2 className="mb-4 text-xl font-bold">Video Demo</h2>
+              <LiteYouTube
+                videoId={patch.youtube}
+                title={`${patch.name} demo`}
+              />
+            </div>
+          )}
+
           {/* Diagram */}
           {patch.diagram && (
             <div>
@@ -78,20 +89,9 @@ export default function PatchDetail() {
           {patch.gif && (
             <div>
               <img
-                src={`/patches/${patch.gif}`}
+                src={`/clips/${patch.gif}`}
                 alt={`${patch.name} animated preview`}
                 className="w-full rounded-lg"
-              />
-            </div>
-          )}
-
-          {/* Video */}
-          {patch.youtube && (
-            <div>
-              <h2 className="mb-4 text-xl font-bold">Video Demo</h2>
-              <LiteYouTube
-                videoId={patch.youtube}
-                title={`${patch.name} demo`}
               />
             </div>
           )}

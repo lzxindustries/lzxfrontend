@@ -24,6 +24,18 @@ export default {
       // Redirect legacy docs subdomain to main site
       const requestUrl = new URL(request.url);
       if (requestUrl.hostname === 'docs.lzxindustries.net') {
+        // Rewrite Docusaurus-specific paths that don't exist on new site
+        const docusaurusRedirects: Record<string, string> = {
+          '/blog/archive': '/blog',
+          '/blog/authors': '/blog',
+          '/docs/category/program-guides': '/docs',
+          '/docs/category/videomancer':
+            '/docs/instruments/videomancer/quick-start',
+        };
+        const mapped = docusaurusRedirects[requestUrl.pathname];
+        if (mapped) {
+          requestUrl.pathname = mapped;
+        }
         requestUrl.hostname = 'lzxindustries.net';
         return Response.redirect(requestUrl.toString(), 301);
       }

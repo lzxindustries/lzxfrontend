@@ -45,9 +45,12 @@ const getYoutubeIdFromEmbed = (embedUrl: string): string | null => {
 
 const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % media.length);
+  const nextSlide = () =>
+    setCurrentSlide((prev) => (media.length > 0 ? (prev + 1) % media.length : 0));
   const prevSlide = () =>
-    setCurrentSlide((prev) => (prev - 1 + media.length) % media.length);
+    setCurrentSlide((prev) =>
+      media.length > 0 ? (prev - 1 + media.length) % media.length : 0,
+    );
 
   const [preCroppedImages, setPreCroppedImages] = useState<(string | null)[]>(
     [],
@@ -56,6 +59,8 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
   const thumbnailContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setCurrentSlide(0);
+
     let isMounted = true;
     setPreCroppedImages(Array(media.length).fill(null));
 
@@ -78,6 +83,16 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
       isMounted = false;
     };
   }, [media]);
+
+  if (media.length === 0) {
+    return (
+      <div className="w-full lg:w-1/2 card-image">
+        <div className="flex items-center justify-center aspect-square p-6 text-sm opacity-60">
+          Media unavailable for this product.
+        </div>
+      </div>
+    );
+  }
 
   // Scroll active thumbnail into view
   useEffect(() => {

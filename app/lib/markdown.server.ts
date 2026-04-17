@@ -101,8 +101,8 @@ function rewriteInternalPaths(
             // Co-located image: rewrite relative to basePath
             const filename = src.split('/').pop() || src;
             node.properties.src = `${imageBasePath}/${filename}`;
-          } else if (src.startsWith('/img/')) {
-            // Docusaurus static image: prefix with /docs
+          } else if (isDocsStaticAssetPath(src)) {
+            // Docusaurus static assets are served from /public/docs/*
             node.properties.src = `/docs${src}`;
           }
         }
@@ -116,7 +116,7 @@ function rewriteInternalPaths(
 
           let rewrittenPath = pathname;
 
-          if (pathname.startsWith('/img/')) {
+          if (isDocsStaticAssetPath(pathname)) {
             rewrittenPath = `/docs${pathname}`;
           } else if (isMarkdownPath(pathname)) {
             if (pathname.startsWith('/')) {
@@ -171,6 +171,10 @@ function isMarkdownPath(pathname: string): boolean {
 
 function isAssetPath(pathname: string): boolean {
   return /\.(png|jpe?g|gif|webp|svg|avif|mp4|mov|webm|pdf)$/i.test(pathname);
+}
+
+function isDocsStaticAssetPath(pathname: string): boolean {
+  return /^\/(img|pdf|zip|firmware|mp3)\//i.test(pathname);
 }
 
 function resolveRelativePath(pathname: string, currentPath: string): string {
@@ -286,13 +290,12 @@ function stripMdxSyntax(content: string): string {
       `src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>\n</div>`,
   );
 
-  // 4. Replace <img src={variable} alt="..." /> with resolved path
+  // 4. Replace JSX image source bindings inside <img> tags.
   content = content.replace(
-    /<img\s+src=\{(\w+)\}\s*(alt=["'][^"']*["'])?\s*\/?>/g,
-    (_match, name: string, altAttr?: string) => {
+    /(<img[^>]*\ssrc=)\{(\w+)\}/g,
+    (_match, before: string, name: string) => {
       const path = imports[name] || name;
-      const alt = altAttr || '';
-      return `<img src="${path}" ${alt} />`;
+      return `${before}"${path}"`;
     },
   );
 
@@ -305,19 +308,49 @@ function stripMdxSyntax(content: string): string {
     },
   );
 
-  // 6. Convert Docusaurus admonition blocks (:::note, :::warning, :::tip, etc.)
-  content = content.replace(
-    /^:::(note|tip|info|warning|caution|danger|important)\s*\n([\s\S]*?)^:::\s*$/gm,
-    (_match, type: string, body: string) => {
-      const label = type.charAt(0).toUpperCase() + type.slice(1);
-      return (
-        `<div class="admonition admonition-${type}">\n` +
-        `<p class="admonition-title">${label}</p>\n\n` +
-        body.trim() +
-        '\n</div>\n'
-      );
-    },
-  );
+  // 6. Convert Docusaurus admonition blocks (supports titles and nesting).
+  const lines = content.split('\n');
+  const admonitionStack: string[] = [];
+  const convertedLines: string[] = [];
+
+  for (const line of lines) {
+    const normalizedLine = line.replace(/\r$/, '');
+
+    const openMatch = normalizedLine.match(
+      /^:::(note|tip|info|warning|caution|danger|important)\b\s*(.*)$/i,
+    );
+    if (openMatch) {
+      const type = openMatch[1].toLowerCase();
+      const explicitTitle = openMatch[2]?.trim();
+      const defaultLabel = type.charAt(0).toUpperCase() + type.slice(1);
+      const title = explicitTitle || defaultLabel;
+
+      admonitionStack.push(type);
+      convertedLines.push(`<div class="admonition admonition-${type}">`);
+      convertedLines.push(`<p class="admonition-title">${title}</p>`);
+      continue;
+    }
+
+    if (/^:::\s*$/.test(normalizedLine)) {
+      if (admonitionStack.length > 0) {
+        admonitionStack.pop();
+        convertedLines.push('</div>');
+      } else {
+        convertedLines.push(normalizedLine);
+      }
+      continue;
+    }
+
+    convertedLines.push(normalizedLine);
+  }
+
+  // Close any unbalanced admonitions to avoid malformed HTML output.
+  while (admonitionStack.length > 0) {
+    admonitionStack.pop();
+    convertedLines.push('</div>');
+  }
+
+  content = convertedLines.join('\n');
 
   return content;
 }

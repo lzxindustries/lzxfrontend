@@ -41,6 +41,28 @@ const getKeywordRank = (value: string, keywords: string[]): number => {
   return 0;
 };
 
+const rewriteLegacyDocsLinks = (html: string): string => {
+  let rewritten = html;
+
+  // Product content in Shopify still contains legacy Docusaurus category URLs.
+  rewritten = rewritten.replace(
+    /https?:\/\/docs\.lzxindustries\.net\/docs\/category\/program-guides/gi,
+    '/docs/instruments/videomancer/programs',
+  );
+
+  rewritten = rewritten.replace(
+    /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
+    '$1',
+  );
+
+  rewritten = rewritten.replace(
+    /(href=["'])\/docs\/category\/[^"']+(["'])/gi,
+    '$1/docs$2',
+  );
+
+  return rewritten;
+};
+
 const getGalleryMedia = (
   product: Product,
 ): MediaGalleryItem[] => {
@@ -167,16 +189,20 @@ export function ModuleDetails({
   const sections: {title: string; content: string; defaultOpen?: boolean}[] = [];
 
   if (product.descriptionHtml) {
-    sections.push({title: 'Description', content: product.descriptionHtml, defaultOpen: true});
+    sections.push({
+      title: 'Description',
+      content: rewriteLegacyDocsLinks(product.descriptionHtml),
+      defaultOpen: true,
+    });
   }
   if (specs) {
-    sections.push({title: 'Specs', content: specs});
+    sections.push({title: 'Specs', content: rewriteLegacyDocsLinks(specs)});
   }
   if (features) {
-    sections.push({title: 'Features', content: features});
+    sections.push({title: 'Features', content: rewriteLegacyDocsLinks(features)});
   }
   if (compatibility) {
-    sections.push({title: 'Compatibility', content: compatibility});
+    sections.push({title: 'Compatibility', content: rewriteLegacyDocsLinks(compatibility)});
   }
 
   return (

@@ -52,7 +52,7 @@ export function Hero() {
               Shop now
             </Link>
             <Link
-              to="/docs/instruments/videomancer"
+              to="/docs/instruments/videomancer/user-manual"
               className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
             >
               See docs

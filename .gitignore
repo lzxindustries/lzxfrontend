@@ -13,6 +13,7 @@ coverage/
 playwright-report/
 test-results/
 .playwright/
+audit-results/
 
 # Local asset library and scrape mirrors
 lfs/

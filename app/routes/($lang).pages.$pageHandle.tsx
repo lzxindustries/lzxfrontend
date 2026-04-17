@@ -11,6 +11,18 @@ import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 
+function normalizePageBody(html: string): string {
+  return html
+    .replace(
+      /href=["']\/pages\/([^"'\s]+@[^"'\s]+)["']/gi,
+      'href="mailto:$1"',
+    )
+    .replace(
+      /href=["']([^"':\s]+@[^"':\s]+)["']/gi,
+      'href="mailto:$1"',
+    );
+}
+
 export async function loader({request, params, context}: LoaderFunctionArgs) {
   invariant(params.pageHandle, 'Missing page handle');
 
@@ -25,10 +37,15 @@ export async function loader({request, params, context}: LoaderFunctionArgs) {
     throw new Response(null, {status: 404});
   }
 
-  const seo = seoPayload.page({page, url: request.url});
+  const normalizedPage = {
+    ...page,
+    body: normalizePageBody(page.body || ''),
+  };
+
+  const seo = seoPayload.page({page: normalizedPage, url: request.url});
 
   return json(
-    {page, seo},
+    {page: normalizedPage, seo},
     {
       headers: {
         'Cache-Control': CACHE_LONG,

@@ -86,11 +86,11 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   const productAnalytics: ShopifyAnalyticsProduct = {
     productGid: product.id,
-    variantGid: selectedVariant.id,
+    variantGid: selectedVariant?.id ?? '',
     name: product.title,
-    variantName: selectedVariant.title,
+    variantName: selectedVariant?.title ?? 'Default',
     brand: product.vendor,
-    price: selectedVariant.price.amount,
+    price: selectedVariant?.price?.amount ?? '0',
   };
 
   const seo = seoPayload.product({
@@ -119,7 +119,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
       pageType: AnalyticsPageType.product,
       resourceId: product.id,
       products: [productAnalytics],
-      totalValue: parseFloat(selectedVariant.price.amount),
+      totalValue: parseFloat(selectedVariant?.price?.amount ?? '0'),
     },
     seo,
   });

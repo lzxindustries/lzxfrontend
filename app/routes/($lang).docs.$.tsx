@@ -4,7 +4,12 @@ import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
-import {getDocPage, buildSidebar, getPrevNext} from '~/lib/content.server';
+import {
+  getDocPage,
+  buildSidebar,
+  getPrevNext,
+  hasDocPagePath,
+} from '~/lib/content.server';
 import {DocLayout} from '~/components/DocLayout';
 
 export async function loader({params, request}: LoaderFunctionArgs) {
@@ -29,10 +34,14 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   const breadcrumbs = [
     {label: 'Home', to: '/'},
     {label: 'Docs', to: '/docs'},
-    ...pathParts.slice(0, -1).map((part, i) => ({
-      label: formatLabel(part),
-      to: `/docs/${pathParts.slice(0, i + 1).join('/')}`,
-    })),
+    ...pathParts.slice(0, -1).map((part, i) => {
+      const partialPath = pathParts.slice(0, i + 1).join('/');
+      const hasPage = hasDocPagePath(partialPath);
+      return {
+        label: formatLabel(part),
+        to: hasPage ? `/docs/${partialPath}` : undefined,
+      };
+    }),
     {label: doc.frontmatter.title ?? formatLabel(pathParts[pathParts.length - 1])},
   ];
 

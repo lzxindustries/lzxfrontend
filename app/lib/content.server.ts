@@ -100,12 +100,19 @@ function sectionFromDocPath(docPath: string): string {
   return docPath.split('/')[0] ?? '';
 }
 
+function isProductionRuntime(): boolean {
+  return (
+    (typeof import.meta !== 'undefined' &&
+      Boolean((import.meta as ImportMeta & {env?: {PROD?: boolean}}).env?.PROD)) ||
+    (typeof process !== 'undefined' && process.env?.NODE_ENV === 'production')
+  );
+}
+
 // --- Blog functions ---
 
 export function listBlogPosts(tag?: string): BlogPost[] {
   const posts: BlogPost[] = [];
-  const isProduction = typeof process !== 'undefined' &&
-    process.env?.NODE_ENV === 'production';
+  const isProduction = isProductionRuntime();
   const truncateMarker = /<!--\s*truncate\s*-->/i;
 
   for (const [filepath, raw] of Object.entries(blogFiles)) {
@@ -217,6 +224,7 @@ export function getAllTags(): TagInfo[] {
 
 export function listDocsInSection(section: string): DocPage[] {
   const docs: DocPage[] = [];
+  const isProduction = isProductionRuntime();
 
   for (const [filepath, raw] of Object.entries(docFiles)) {
     const docPath = extractDocPathFromFilePath(filepath);
@@ -232,6 +240,8 @@ export function listDocsInSection(section: string): DocPage[] {
     } catch {
       // use default title
     }
+
+    if (isProduction && frontmatter.draft) continue;
 
     docs.push({
       slug: slugFromDocPath(docPath),
@@ -254,6 +264,8 @@ export function listDocsInSection(section: string): DocPage[] {
 export async function getDocPage(
   docPath: string,
 ): Promise<DocPageFull | null> {
+  const isProduction = isProductionRuntime();
+
   // Try exact path, then with /index suffix
   const candidates = [
     `../../content/docs/${docPath}.md`,
@@ -270,6 +282,10 @@ export async function getDocPage(
     const currentPath = normalizedDocPath ? `/docs/${normalizedDocPath}` : '/docs';
     const parsed = await renderMarkdown(raw, imageBasePath, currentPath);
 
+    if (isProduction && parsed.frontmatter.draft) {
+      return null;
+    }
+
     return {
       slug: slugFromDocPath(docPath),
       path: docPath,
@@ -281,6 +297,15 @@ export async function getDocPage(
   }
 
   return null;
+}
+
+export function hasDocPagePath(docPath: string): boolean {
+  const candidates = [
+    `../../content/docs/${docPath}.md`,
+    `../../content/docs/${docPath}/index.md`,
+  ];
+
+  return candidates.some((candidate) => Boolean(docFiles[candidate]));
 }
 
 export function buildSidebar(section: string): SidebarItem[] {
@@ -390,6 +415,7 @@ function flattenSidebar(items: SidebarItem[]): SidebarItem[] {
 
 export function getAllContentPaths(): string[] {
   const paths: string[] = [];
+  const isProduction = isProductionRuntime();
 
   // Blog posts
   for (const post of listBlogPosts()) {
@@ -397,7 +423,18 @@ export function getAllContentPaths(): string[] {
   }
 
   // Docs
-  for (const [filepath] of Object.entries(docFiles)) {
+  for (const [filepath, raw] of Object.entries(docFiles)) {
+    if (isProduction) {
+      try {
+        const parsed = matter(raw);
+        if ((parsed.data as ContentFrontmatter).draft) {
+          continue;
+        }
+      } catch {
+        // keep path if frontmatter cannot be parsed
+      }
+    }
+
     const docPath = extractDocPathFromFilePath(filepath);
     paths.push(docPath ? `/docs/${docPath}` : '/docs');
   }

@@ -287,7 +287,7 @@ Convert a single-ended input signal to a differential output signal. One possibl
 | Parameter                    | Value                                                                           |
 | ---------------------------- | ------------------------------------------------------------------------------- |
 | Manufacturer Part Number     | 950065                                                                          |
-| Pronunciation                | [piː ɡəʊ](/mp3/modules/pgo/pgo-pronunciation.mp3)                               |
+| Pronunciation                | piː ɡəʊ                                                                          |
 | Mounting Width               | 4 HP                                                                            |
 | Mounting Hole Count          | 2                                                                               |
 | Power Consumption            | 12V @ 50 mA                                                                     |

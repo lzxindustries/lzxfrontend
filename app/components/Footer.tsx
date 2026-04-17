@@ -30,7 +30,7 @@ export function Footer() {
           <a className="link link-hover" href="/products/videomancer">
             Videomancer Product Page
           </a>
-          <a className="link link-hover" href="/docs/instruments/videomancer">
+          <a className="link link-hover" href="/docs/instruments/videomancer/user-manual">
             Videomancer Docs
           </a>
           <a className="link link-hover" href="/blog">
