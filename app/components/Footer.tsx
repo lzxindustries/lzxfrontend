@@ -39,6 +39,18 @@ export function Footer() {
           <a className="link link-hover" href="/blog">
             Blog
           </a>
+          <a className="link link-hover" href="/artists">
+            Artists
+          </a>
+          <a className="link link-hover" href="/about">
+            About
+          </a>
+          <a className="link link-hover" href="/downloads">
+            Downloads
+          </a>
+          <a className="link link-hover" href="/connect">
+            LZX Connect
+          </a>
           <a
             className="link link-hover"
             target="_blank"
@@ -88,6 +100,18 @@ export function Footer() {
           </a>
           <a className="link link-hover" href="/catalog">
             Full Catalog
+          </a>
+          <a className="link link-hover" href="/systems">
+            Starter Systems
+          </a>
+          <a className="link link-hover" href="/b-stock">
+            B-Stock
+          </a>
+          <a className="link link-hover" href="/accessories">
+            Accessories
+          </a>
+          <a className="link link-hover" href="/legacy">
+            Legacy Modules
           </a>
         </div>
         <div>

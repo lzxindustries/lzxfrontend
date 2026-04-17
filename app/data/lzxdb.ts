@@ -10,6 +10,7 @@ import connectorsData from '../../db/lzxdb.ModuleConnector.json';
 import controlsData from '../../db/lzxdb.ModuleControl.json';
 import featuresData from '../../db/lzxdb.ModuleFeature.json';
 import assetsData from '../../db/lzxdb.ModuleAsset.json';
+import assetRecordsData from '../../db/lzxdb.Asset.json';
 
 // --- Helpers ---
 
@@ -244,10 +245,20 @@ export interface LzxModuleFeature {
   description: string;
 }
 
+export interface LzxAsset {
+  id: string;
+  name: string;
+  fileName: string;
+  fileType: string;
+}
+
 export interface LzxModuleAsset {
   id: string;
   moduleId: string;
   assetId: string;
+  name: string;
+  fileName: string;
+  fileType: string;
 }
 
 // --- Module detail lookup maps ---
@@ -304,13 +315,29 @@ for (const f of featuresData) {
   else featuresByModule.set(moduleId, [entry]);
 }
 
+const assetMap = new Map<string, LzxAsset>();
+for (const a of assetRecordsData) {
+  const id = oid(a._id);
+  assetMap.set(id, {
+    id,
+    name: a.name,
+    fileName: a.file_name,
+    fileType: a.file_type,
+  });
+}
+
 const assetsByModule = new Map<string, LzxModuleAsset[]>();
 for (const a of assetsData) {
   const moduleId = oid(a.module);
+  const assetId = oid(a.asset);
+  const resolved = assetMap.get(assetId);
   const entry: LzxModuleAsset = {
     id: oid(a._id),
     moduleId,
-    assetId: oid(a.asset),
+    assetId,
+    name: resolved?.name ?? assetId,
+    fileName: resolved?.fileName ?? '',
+    fileType: resolved?.fileType ?? '',
   };
   const existing = assetsByModule.get(moduleId);
   if (existing) existing.push(entry);

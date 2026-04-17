@@ -7,6 +7,7 @@ import {Text} from '~/components/Text';
 import {getProductPlaceholder} from '~/lib/placeholders';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
 import {resolveProductUrl} from '~/data/product-slugs';
+import {getSlugEntry} from '~/data/product-slugs';
 
 export function ProductCardBackgroundSVG() {
   return (
@@ -61,6 +62,19 @@ export function ProductCard({
   if (!firstVariant) return null;
 
   const {image, price, compareAtPrice} = firstVariant;
+  const subtitle =
+    (product as Product & {
+      subtitle?: {value?: string | null} | null;
+    }).subtitle?.value ?? '';
+  const slugEntry = getSlugEntry(product.handle);
+  const isLegacy = !!slugEntry?.isHidden;
+  const lifecycleLabel = isLegacy ? 'Legacy' : slugEntry ? 'Active' : null;
+  const productTypeLabel =
+    slugEntry?.hubType === 'instrument'
+      ? 'Instrument'
+      : slugEntry?.hubType === 'module'
+        ? 'Module'
+        : null;
 
   if (label) {
     cardLabel = label;
@@ -85,6 +99,11 @@ export function ProductCard({
                 Ready to Ship
               </div>
             )}
+            {cardLabel ? (
+              <div className="absolute top-2 left-2 z-10 bg-primary text-primary-content text-xs font-normal px-2 py-1 rounded">
+                {cardLabel}
+              </div>
+            ) : null}
             {image && (
               <Image
                 data={image}
@@ -102,6 +121,25 @@ export function ProductCard({
             >
               {product.title}
             </Text>
+            {subtitle ? (
+              <Text
+                className="w-full text-center overflow-hidden whitespace-nowrap text-ellipsis text-xs opacity-70"
+                as="p"
+                size="copy"
+              >
+                {subtitle}
+              </Text>
+            ) : null}
+            {productTypeLabel ? (
+              <div className="flex justify-center gap-1 mt-1 flex-wrap">
+                {lifecycleLabel ? (
+                  <span className={clsx('badge badge-xs', isLegacy ? 'badge-ghost' : 'badge-primary')}>
+                    {lifecycleLabel}
+                  </span>
+                ) : null}
+                <span className="badge badge-outline badge-xs">{productTypeLabel}</span>
+              </div>
+            ) : null}
             <Text
               className="w-full font-medium text-center overflow-hidden whitespace-nowrap text-ellipsis top-0 mt-0 pt-0"
               as="p"

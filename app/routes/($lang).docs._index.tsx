@@ -4,6 +4,7 @@ import {json} from '@shopify/remix-oxygen';
 import {useLoaderData, Link} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
+import {DocsSearch} from '~/components/DocsSearch';
 
 const SECTIONS = [
   {
@@ -63,6 +64,13 @@ export default function DocsIndex() {
         <p className="text-lg opacity-70 mb-8">
           Technical documentation for LZX video synthesis instruments and modules.
         </p>
+
+        <div className="mb-8 rounded-lg border border-base-300 bg-base-200 p-4">
+          <p className="text-xs font-semibold uppercase tracking-wide opacity-60 mb-2">
+            Search Documentation
+          </p>
+          <DocsSearch />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {SECTIONS.map((section) => (

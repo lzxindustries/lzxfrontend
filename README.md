@@ -17,6 +17,10 @@ Set required environment variables:
 - `PUBLIC_STORE_DOMAIN`
 - `PUBLIC_STOREFRONT_ID`
 
+Optional environment variables:
+
+- `KLAVIYO_PRIVATE_API_KEY` (enables back-in-stock Notify Me submissions)
+
 Install dependencies:
 
 ```

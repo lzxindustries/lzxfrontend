@@ -88,7 +88,7 @@ GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, 
 ## Critical Integration Points
 
 ### Hydrogen/Shopify API
-- Storefront API version: `2024-04` (configurable via env)
+- Storefront API version: `2025-04` (configurable via env)
 - Use fragments from `app/data/fragments.ts` (MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT)
 - Cart managed via session storage (`getCartId()` in `app/lib/utils.ts`)
 

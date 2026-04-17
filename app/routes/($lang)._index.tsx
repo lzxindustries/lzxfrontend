@@ -17,6 +17,7 @@ import {VideomancyLandingSections} from '~/components/VideomancyLandingSections'
 import {CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
+import {listBlogPosts} from '~/lib/content.server';
 import {seoPayload} from '~/lib/seo.server';
 
 export function ErrorBoundary() {
@@ -35,6 +36,7 @@ export function ErrorBoundary() {
 
 export async function loader({context}: LoaderFunctionArgs) {
   const seo = seoPayload.home();
+  const recentPosts = listBlogPosts().slice(0, 3);
 
   const {storefront} = context;
   const data = await storefront.query<{
@@ -56,6 +58,7 @@ export async function loader({context}: LoaderFunctionArgs) {
         pageType: AnalyticsPageType.home,
       },
       products: data.collection.products,
+      recentPosts,
       seo,
     },
     {
@@ -73,7 +76,7 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Home() {
-  const {products} = useLoaderData<typeof loader>();
+  const {products, recentPosts} = useLoaderData<typeof loader>();
 
   const sortedNodes = [...products.nodes].sort((a, b) => {
     // Pin Videomancer first
@@ -110,6 +113,39 @@ export default function Home() {
         </div>
       </section>
       <VideomancyLandingSections />
+
+      <section className="px-6 py-14 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-6 flex items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                Updates
+              </p>
+              <h2 className="text-3xl font-bold">What's New</h2>
+            </div>
+            <Link to="/blog" className="btn btn-sm btn-outline">
+              View All Posts
+            </Link>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {recentPosts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="rounded-lg border border-base-300 p-4 transition hover:bg-base-200"
+              >
+                <p className="text-xs uppercase tracking-wide text-base-content/60">{post.date}</p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight">{post.frontmatter.title}</h3>
+                {post.excerpt ? (
+                  <p className="mt-2 text-sm text-base-content/70 line-clamp-3">{post.excerpt}</p>
+                ) : null}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <PageHeader heading="Explore Our Catalog" variant="allCollections" />
       <Section>
         <Grid layout="products" data-test="product-grid">

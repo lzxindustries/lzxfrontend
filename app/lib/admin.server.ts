@@ -47,7 +47,7 @@ export async function adminQuery<T>(
   variables: Record<string, unknown>,
   env: Env,
 ): Promise<T> {
-  const apiVersion = env.PUBLIC_STOREFRONT_API_VERSION || '2024-04';
+  const apiVersion = env.PUBLIC_STOREFRONT_API_VERSION || '2025-04';
   const accessToken = await getAdminAccessToken(env);
   const response = await fetch(
     `https://${env.PUBLIC_STORE_DOMAIN}/admin/api/${apiVersion}/graphql.json`,

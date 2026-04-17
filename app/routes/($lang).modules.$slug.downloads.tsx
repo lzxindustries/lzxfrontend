@@ -1,5 +1,6 @@
 import {useOutletContext} from '@remix-run/react';
 import type {MetaArgs} from '@shopify/remix-oxygen';
+import {FaDownload} from 'react-icons/fa';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 
@@ -24,14 +25,43 @@ export default function ModuleDownloads() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h2 className="text-2xl font-bold mb-6">Downloads</h2>
+      <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
+        <p className="font-semibold">Need a guided updater?</p>
+        <p className="mt-1 text-sm text-base-content/70">
+          LZX Connect provides a unified update flow for supported LZX devices.
+        </p>
+        <a href="/connect" className="btn btn-sm btn-primary mt-3">
+          Open LZX Connect
+        </a>
+        <a href="/downloads" className="btn btn-sm btn-outline mt-3 ml-2">
+          Browse All Downloads
+        </a>
+      </div>
       <div className="grid gap-4">
         {assets.map((asset) => (
           <div
             key={asset.id}
-            className="flex items-center gap-4 p-4 rounded-lg border border-base-300"
+            className="flex flex-col gap-3 rounded-lg border border-base-300 p-4 sm:flex-row sm:items-center sm:justify-between"
           >
-            <div className="flex-1">
-              <div className="font-medium">Asset {asset.assetId}</div>
+            <div className="min-w-0 flex-1">
+              <div className="font-medium">{asset.name}</div>
+              <div className="text-sm text-base-content/60">{asset.fileName || 'File unavailable'}</div>
+            </div>
+            <div className="flex items-center gap-3">
+              {asset.fileType ? <span className="badge badge-outline">{asset.fileType}</span> : null}
+              {asset.fileName ? (
+                <a
+                  href={`/assets/${encodeURIComponent(asset.fileName)}`}
+                  download
+                  className="btn btn-sm btn-outline gap-2"
+                  aria-label={`Download ${asset.name}`}
+                >
+                  <FaDownload aria-hidden="true" />
+                  <span>Download</span>
+                </a>
+              ) : (
+                <span className="text-sm text-base-content/60">Unavailable</span>
+              )}
             </div>
           </div>
         ))}

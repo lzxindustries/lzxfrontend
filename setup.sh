@@ -47,7 +47,8 @@ PUBLIC_STOREFRONT_API_TOKEN=
 PRIVATE_STOREFRONT_API_TOKEN=
 PUBLIC_STORE_DOMAIN=
 PUBLIC_STOREFRONT_ID=
-PUBLIC_STOREFRONT_API_VERSION=2024-04
+PUBLIC_STOREFRONT_API_VERSION=2025-04
+KLAVIYO_PRIVATE_API_KEY=
 EOF
   echo ".env file created. Please populate the remaining values before running the app."
   echo ""
@@ -56,6 +57,9 @@ EOF
   echo "  PRIVATE_STOREFRONT_API_TOKEN - Shopify Storefront API private token"
   echo "  PUBLIC_STORE_DOMAIN          - e.g. your-store.myshopify.com"
   echo "  PUBLIC_STOREFRONT_ID         - Shopify storefront ID"
+  echo ""
+  echo "Optional variable:"
+  echo "  KLAVIYO_PRIVATE_API_KEY      - Enables Notify Me back-in-stock signup delivery"
 else
   echo ".env already exists — skipping creation."
 fi

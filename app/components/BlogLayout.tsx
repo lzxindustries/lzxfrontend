@@ -1,6 +1,7 @@
 import {useRef} from 'react';
 import {Link} from '@remix-run/react';
 import clsx from 'clsx';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {useImageZoom} from '~/hooks/useImageZoom';
 import {useMermaid} from '~/hooks/useMermaid';
 import {Breadcrumbs} from './Breadcrumbs';
@@ -24,6 +25,8 @@ export function BlogIndex({
   activeTag,
   allTags,
 }: BlogIndexProps) {
+  const years = Array.from(new Set(posts.map((post) => post.date.slice(0, 4))));
+
   return (
     <>
       <Breadcrumbs
@@ -69,11 +72,53 @@ export function BlogIndex({
         {posts.length === 0 ? (
           <p className="text-lg opacity-60">No posts found.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.map((post) => (
-              <BlogCard key={post.slug} post={post} />
-            ))}
-          </div>
+          <>
+            {years.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="text-sm font-medium text-base-content/70 mr-1">Archive:</span>
+                {years.map((year) => (
+                  <a key={year} href={`#year-${year}`} className="badge badge-outline">
+                    {year}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {years.map((year, yearIndex) => {
+              const yearPosts = posts.filter((post) => post.date.startsWith(year));
+
+              return (
+                <section key={year} id={`year-${year}`} className="mb-10">
+                  <h2 className="text-2xl font-semibold mb-4">{year}</h2>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {yearPosts.map((post, index) => {
+                      const showNewsletter =
+                        yearIndex === 0 && index === 1 && posts.length > 2;
+
+                      return (
+                        <div key={post.slug}>
+                          <BlogCard post={post} />
+                          {showNewsletter ? (
+                            <div className="mt-4 rounded-lg border border-base-300 bg-base-200 p-4">
+                              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                                Newsletter
+                              </p>
+                              <p className="mt-1 mb-3 text-sm text-base-content/70">
+                                Get release updates, firmware notes, and workshop news.
+                              </p>
+                              {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
+                              <MailchimpSubscribe url="https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0" />
+                            </div>
+                          ) : null}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              );
+            })}
+          </>
         )}
 
         {/* Pagination */}

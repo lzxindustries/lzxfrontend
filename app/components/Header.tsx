@@ -41,6 +41,12 @@ export function Header({
   const isDocs = url.startsWith('/docs');
   const isBlog = url.startsWith('/blog');
   const isModules = url.startsWith('/modules');
+  const isConnect = url.startsWith('/connect');
+  const isDownloads = url.startsWith('/downloads');
+  const isLegacy = url.startsWith('/legacy');
+  const isArtists = url.startsWith('/artists');
+  const isSystems = url.startsWith('/systems');
+  const isAbout = url.startsWith('/about');
 
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50">
@@ -78,6 +84,16 @@ export function Header({
             <li key="modules">
               <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
             </li>
+            <li key="systems">
+              <a className={isSystems ? 'active' : ''} href="/systems">
+                Systems
+              </a>
+            </li>
+            <li key="legacy">
+              <a className={isLegacy ? 'active' : ''} href="/legacy">
+                Legacy
+              </a>
+            </li>
             <li key="docs">
               <a
                 className={isDocs ? 'active' : ''}
@@ -86,12 +102,32 @@ export function Header({
                 Docs
               </a>
             </li>
+            <li key="downloads">
+              <a className={isDownloads ? 'active' : ''} href="/downloads">
+                Downloads
+              </a>
+            </li>
+            <li key="connect">
+              <a className={isConnect ? 'active' : ''} href="/connect">
+                LZX Connect
+              </a>
+            </li>
             <li key="blog">
               <a
                 className={isBlog ? 'active' : ''}
                 href="/blog"
               >
                 Blog
+              </a>
+            </li>
+            <li key="artists">
+              <a className={isArtists ? 'active' : ''} href="/artists">
+                Artists
+              </a>
+            </li>
+            <li key="about">
+              <a className={isAbout ? 'active' : ''} href="/about">
+                About
               </a>
             </li>
             <li key="community">
@@ -137,6 +173,16 @@ export function Header({
             <a className={isModules ? 'active' : ''} href="/modules">Modules</a>
           </li>
           <li>
+            <a className={isSystems ? 'active' : ''} href="/systems">
+              Systems
+            </a>
+          </li>
+          <li>
+            <a className={isLegacy ? 'active' : ''} href="/legacy">
+              Legacy
+            </a>
+          </li>
+          <li>
             <a
               className={isDocs ? 'active' : ''}
               href="/docs"
@@ -145,11 +191,31 @@ export function Header({
             </a>
           </li>
           <li>
+            <a className={isDownloads ? 'active' : ''} href="/downloads">
+              Downloads
+            </a>
+          </li>
+          <li>
+            <a className={isConnect ? 'active' : ''} href="/connect">
+              LZX Connect
+            </a>
+          </li>
+          <li>
             <a
               className={isBlog ? 'active' : ''}
               href="/blog"
             >
               Blog
+            </a>
+          </li>
+          <li>
+            <a className={isArtists ? 'active' : ''} href="/artists">
+              Artists
+            </a>
+          </li>
+          <li>
+            <a className={isAbout ? 'active' : ''} href="/about">
+              About
             </a>
           </li>
           <li>

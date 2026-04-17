@@ -24,6 +24,7 @@ declare global {
     PUBLIC_STOREFRONT_ID: string;
     SHOPIFY_CLIENT_ID: string;
     SHOPIFY_CLIENT_SECRET: string;
+    KLAVIYO_PRIVATE_API_KEY?: string;
   }
 
   interface FbqStandard {

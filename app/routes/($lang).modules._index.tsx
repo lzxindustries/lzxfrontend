@@ -5,9 +5,9 @@ import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 import {Image} from '@shopify/hydrogen';
 
-import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getModulesBySeries} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
+import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
 
@@ -37,6 +37,12 @@ const SERIES_LABELS: Record<string, string> = {
   other: 'Other',
 };
 
+const MAX_PRODUCTS_PER_QUERY = 250;
+
+function buildHandleFilterQuery(handles: string[]): string {
+  return handles.map((handle) => `handle:${handle}`).join(' OR ');
+}
+
 export async function loader({context, request}: LoaderFunctionArgs) {
   const bySeriesMap = getModulesBySeries();
   const allHandles = [...bySeriesMap.values()]
@@ -44,27 +50,36 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     .filter((e) => !e.isHidden)
     .map((e) => e.canonical);
 
-  // Batch-fetch Shopify products for images/prices
-  const {products} = await context.storefront.query<{
-    products: {nodes: Product[]};
-  }>(MODULE_LISTING_QUERY, {
-    variables: {
-      first: allHandles.length + 10,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
-  });
-
   const productMap = new Map<string, Product>();
-  for (const p of products.nodes) {
-    productMap.set(p.handle, p);
+
+  // Fetch only known module handles and gracefully degrade if Shopify query fails.
+  if (allHandles.length > 0) {
+    try {
+      const handleFilterQuery = buildHandleFilterQuery(allHandles);
+      const {products} = await context.storefront.query<{
+        products: {nodes: Product[]};
+      }>(MODULE_LISTING_QUERY, {
+        variables: {
+          first: Math.min(allHandles.length, MAX_PRODUCTS_PER_QUERY),
+          query: handleFilterQuery,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const p of products.nodes) {
+        productMap.set(p.handle, p);
+      }
+    } catch (error) {
+      console.error('Failed to load module listing product data', error);
+    }
   }
 
   // Build serializable series groups
   const seriesGroups: {
     key: string;
     label: string;
-    entries: (SlugEntry & {shopifyProduct?: Product})[];
+    entries: (SlugEntry & {shopifyProduct?: Product; subtitle?: string})[];
   }[] = [];
 
   for (const key of SERIES_ORDER) {
@@ -76,6 +91,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       entries: entries.map((e) => ({
         ...e,
         shopifyProduct: productMap.get(e.canonical) ?? undefined,
+        subtitle: e.moduleId ? getModuleById(e.moduleId)?.subtitle : undefined,
       })),
     });
   }
@@ -145,6 +161,11 @@ export default function ModuleListingPage() {
                     <div className="font-semibold text-sm group-hover:text-primary transition">
                       {entry.name}
                     </div>
+                    {entry.subtitle ? (
+                      <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">
+                        {entry.subtitle}
+                      </p>
+                    ) : null}
                     {entry.isHidden && (
                       <span className="badge badge-sm badge-ghost mt-1">
                         Legacy
@@ -164,10 +185,11 @@ export default function ModuleListingPage() {
 const MODULE_LISTING_QUERY = `#graphql
   query ModuleListing(
     $first: Int!
+    $query: String
     $country: CountryCode
     $language: LanguageCode
   ) @inContext(country: $country, language: $language) {
-    products(first: $first, sortKey: TITLE) {
+    products(first: $first, query: $query, sortKey: TITLE) {
       nodes {
         id
         title

@@ -6,13 +6,14 @@ import {hydrateRoot} from 'react-dom/client';
  * Fix initial pathname to match browser if we're dealing with trailing slashes.
  * GitHub Issue: https://github.com/remix-run/remix/issues/7529
  */
-const initialPathname = window.__remixContext.url;
+const remixContext = window.__remixContext as {url?: string};
+const initialPathname = remixContext.url ?? window.location.pathname;
 const hydratedPathname = window.location.pathname;
 if (
   initialPathname !== hydratedPathname &&
   initialPathname.replace(/\/+$/, '') === hydratedPathname.replace(/\/+$/, '')
 ) {
-  window.__remixContext.url = hydratedPathname;
+  remixContext.url = hydratedPathname;
 }
 
 startTransition(() => {

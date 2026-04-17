@@ -1,4 +1,4 @@
-import {Await, Link, useOutletContext} from '@remix-run/react';
+import {Await, Link, useFetcher, useOutletContext} from '@remix-run/react';
 import {
   Money,
   ShopPayButton,
@@ -236,6 +236,7 @@ function ProductForm({
   product: Product & {selectedVariant?: ProductVariant};
   storeDomain: string;
 }) {
+  const notifyFetcher = useFetcher<{ok: boolean; message: string}>();
   const firstVariant = product.variants.nodes[0];
   const selectedVariant = product.selectedVariant ?? firstVariant;
   const isOutOfStock = !selectedVariant?.availableForSale;
@@ -324,7 +325,36 @@ function ProductForm({
           {selectedVariant && (
             <>
               {isOutOfStock ? (
-                <Button variant="secondary" disabled><Text>Sold Out</Text></Button>
+                <div className="grid gap-3 rounded-lg border border-base-300 p-3">
+                  <Button variant="secondary" disabled>
+                    <Text>Sold Out</Text>
+                  </Button>
+                  <notifyFetcher.Form method="post" action="/api/notify-me" className="grid gap-2">
+                    <input type="hidden" name="handle" value={product.handle} />
+                    <input type="hidden" name="variantId" value={selectedVariant.id ?? ''} />
+                    <label htmlFor="notify-email-instrument" className="text-xs font-medium text-base-content/70">
+                      Get notified when back in stock
+                    </label>
+                    <div className="flex gap-2">
+                      <input
+                        id="notify-email-instrument"
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="you@example.com"
+                        className="input input-bordered input-sm flex-1"
+                      />
+                      <button type="submit" className="btn btn-sm btn-primary" disabled={notifyFetcher.state !== 'idle'}>
+                        Notify Me
+                      </button>
+                    </div>
+                    {notifyFetcher.data?.message ? (
+                      <p className={clsx('text-xs', notifyFetcher.data.ok ? 'text-success' : 'text-error')}>
+                        {notifyFetcher.data.message}
+                      </p>
+                    ) : null}
+                  </notifyFetcher.Form>
+                </div>
               ) : (
                 <AddToCartButton
                   lines={[{merchandiseId: selectedVariant.id, quantity}]}
