@@ -2,6 +2,7 @@ import {defineConfig, devices} from '@playwright/test';
 
 const env = process.env as Record<string, string | undefined>;
 const ci = !!env.CI;
+const webServerCommand = ci ? 'yarn run preview' : 'yarn run dev';
 
 export default defineConfig({
   testDir: './e2e',
@@ -92,7 +93,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn run dev',
+    command: webServerCommand,
     url: 'http://localhost:3000',
     reuseExistingServer: !ci,
     timeout: 120000,
