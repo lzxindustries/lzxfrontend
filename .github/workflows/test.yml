@@ -54,14 +54,25 @@ jobs:
       - run: yarn install --immutable
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium firefox webkit
-      - name: Run E2E + responsive + visual tests
-        run: SESSION_SECRET="${SESSION_SECRET:-ci-session-secret}" npx playwright test --shard=${{ matrix.shard }}/2
+      - name: Create CI env file for web server
+        run: |
+          SESSION_SECRET_VALUE="${SESSION_SECRET:-ci-session-secret}"
+          cat > .env <<EOF
+          SESSION_SECRET=${SESSION_SECRET_VALUE}
+          PUBLIC_STOREFRONT_API_TOKEN=${PUBLIC_STOREFRONT_API_TOKEN}
+          PRIVATE_STOREFRONT_API_TOKEN=${PRIVATE_STOREFRONT_API_TOKEN}
+          PUBLIC_STORE_DOMAIN=${PUBLIC_STORE_DOMAIN}
+          PUBLIC_STOREFRONT_ID=${PUBLIC_STOREFRONT_ID}
+          PUBLIC_STOREFRONT_API_VERSION=2025-04
+          EOF
         env:
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
           PUBLIC_STOREFRONT_API_TOKEN: ${{ secrets.PUBLIC_STOREFRONT_API_TOKEN }}
           PRIVATE_STOREFRONT_API_TOKEN: ${{ secrets.PRIVATE_STOREFRONT_API_TOKEN }}
           PUBLIC_STORE_DOMAIN: ${{ secrets.PUBLIC_STORE_DOMAIN }}
           PUBLIC_STOREFRONT_ID: ${{ secrets.PUBLIC_STOREFRONT_ID }}
+      - name: Run E2E + responsive + visual tests
+        run: npx playwright test --shard=${{ matrix.shard }}/2
       - name: Upload Playwright report
         uses: actions/upload-artifact@v4
         if: always()
