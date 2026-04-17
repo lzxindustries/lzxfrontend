@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "ANGLES: Fixed Ratio Mixer & Dual Ramp Generator"
+title: "ANGLES"
 image: /img/modules/angles/angles-diagrams/angles_frontpanel.png
 description: "Documentation for ANGLES, a dual horizontal/vertical ramp generator and 24-output fixed ratio mixer for dynamic video compositions."
 ---

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "SCROLLS: Dual Motion Controlled Ramp Generator"
+title: "SCROLLS"
 image: /img/modules/scrolls/scrolls-diagrams/scrolls_frontpanel.png
 description: "Documentation for SCROLLS, a dual motion controlled ramp generator for SD and HD modular video synthesis."
 ---

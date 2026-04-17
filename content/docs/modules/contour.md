@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "CONTOUR: Triple Detail Extractor"
+title: "CONTOUR"
 image: /img/modules/contour/contour-diagrams/contour_frontpanel.png
 description: "Documentation for CONTOUR, a triple voltage-controlled high-pass filter for extracting edge transitions from video images and patterns."
 ---

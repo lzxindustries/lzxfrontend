@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "FACTORS: Triple Four-Quadrant Multiplier"
+title: "FACTORS"
 image: /img/modules/factors/factors-diagrams/factors_front_panel.png
 description: "Documentation for FACTORS, a triple four-quadrant multiplier and modulator for amplitude modulation and contrast control."
 ---

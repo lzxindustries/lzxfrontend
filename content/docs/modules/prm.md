@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "PRM: Programmable Rectifier & Multiplier"
+title: "PRM"
 image: /img/modules/prm/prm-diagrams/prm_front-panel.png
 description: "Documentation for PRM, a programmable rectifier and multiplier for modifying and combining analog video signals."
 ---

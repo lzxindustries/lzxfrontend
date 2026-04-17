@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "SUM/DIST: Summing & Distribution Amplifiers"
+title: "SUM/DIST"
 image: /img/modules/sum-dist/sum-dist-diagrams/sum-dist_frontpanel.png
 description: "Documentation for SUM/DIST, a function bank of summing and distribution amplifiers for adding and distributing video signals."
 ---

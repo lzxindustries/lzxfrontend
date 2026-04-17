@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "DSG3: Dual Shape Generator"
+title: "DSG3"
 image: /img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png
 description: "Documentation for DSG3, a dual shape generator with waveshaping, blending, and logic functions for creating 2D shapes in video synthesis."
 ---

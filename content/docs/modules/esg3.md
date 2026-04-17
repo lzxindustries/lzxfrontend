@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "ESG3: Encoder & Sync Generator"
+title: "ESG3"
 image: /img/modules/esg3/esg3-diagrams/esg3_frontpanel.png
 description: "Documentation for ESG3, a combined encoder, sync generator, and processing amplifier for SD and HD modular video synthesis."
 ---

@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "STAIRS: Complex Wavefolder & Frequency Multiplier"
+title: "STAIRS"
 image: /img/modules/stairs/stairs-diagrams/stairs_frontpanel.png
 description: "Documentation for STAIRS, a six-stage video wavefolder and frequency multiplier for solarization and colorization effects."
 ---

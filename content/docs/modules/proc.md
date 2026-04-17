@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "PROC: Triple Voltage Processor"
+title: "PROC"
 image: /img/modules/proc/proc-diagrams/proc_frontpanel.png
 description: "Documentation for PROC, a triple voltage processor and summing amplifier with continuous control over attenuation, inversion, and bias."
 ---

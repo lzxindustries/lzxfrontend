@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "KEYCHAIN: Triple Hard Key Generator"
+title: "KEYCHAIN"
 image: /img/modules/keychain/keychain-diagrams/keychain_frontpanel.png
 description: "Documentation for KEYCHAIN, a triple hard key generator using ultra-fast voltage comparators for SD and HD video synthesis."
 ---

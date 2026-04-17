@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "LNK: Passive Links"
+title: "LNK"
 image: /img/modules/lnk/lnk-diagrams/lnk_front-panel.png
 description: "Documentation for LNK, a passive linking utility module for connecting and distributing signals in a modular video system."
 ---

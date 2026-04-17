@@ -1,6 +1,6 @@
 ---
 draft: false
-title: "SWITCHER: Dual 4x3 Multiplexer"
+title: "SWITCHER"
 image: /img/modules/switcher/switcher-diagrams/switcher_frontpanel.png
 description: "Documentation for SWITCHER, a dual 4x3 multiplexer router with illuminated buttons for RGB source selection."
 ---
