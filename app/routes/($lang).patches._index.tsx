@@ -55,11 +55,11 @@ export default function PatchesIndex() {
                       loading="lazy"
                     />
                   </figure>
-                ) : patch.diagram ? (
+                ) : patch.gif ? (
                   <figure>
                     <img
-                      src={`/diagrams/${patch.diagram}`}
-                      alt={`${patch.name} patch diagram`}
+                      src={`/clips/${patch.gif}`}
+                      alt={`${patch.name} animated preview`}
                       className="aspect-video w-full object-cover"
                       loading="lazy"
                     />

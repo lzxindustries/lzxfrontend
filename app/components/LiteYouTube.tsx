@@ -36,9 +36,9 @@ export function LiteYouTube({
           onClick={handleClick}
           aria-label={`Play ${title}`}
         >
-          {/* YouTube high-res thumbnail */}
+          {/* hqdefault is consistently available across uploads, unlike maxresdefault. */}
           <img
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+            src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
             alt=""
             className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-80"
             loading="eager"
