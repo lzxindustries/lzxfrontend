@@ -1,8 +1,7 @@
 import {Await, Link, useOutletContext} from '@remix-run/react';
-import type {SeoConfig, ShopifyAnalyticsProduct} from '@shopify/hydrogen';
+import type {ShopifyAnalyticsProduct} from '@shopify/hydrogen';
 import {
   AnalyticsPageType,
-  getSeoMeta,
   Money,
   ShopPayButton,
   VariantSelector,
@@ -23,7 +22,6 @@ import {Button} from '~/components/Button';
 import {Heading, Text} from '~/components/Text';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {useWishlist} from '~/hooks/useWishlist';
-import {seoPayload} from '~/lib/seo.server';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import ProductMediaGallery, {
@@ -36,15 +34,20 @@ export const meta = ({matches}: MetaArgs) => {
     ?.data as ModuleLayoutLoaderData | undefined;
   if (!parentData) return [];
   const product = parentData.product as unknown as Product;
-  return getSeoMeta(
-    seoPayload.product({
-      product,
-      selectedVariant:
-        (product as Product & {selectedVariant?: ProductVariant})
-          .selectedVariant ?? product.variants?.nodes?.[0],
-      url: '',
-    }) as SeoConfig,
-  );
+  const title = product?.seo?.title ?? product?.title ?? '';
+  const description = product?.seo?.description ?? product?.description ?? '';
+  const image =
+    (product as any)?.selectedVariant?.image?.url ??
+    product?.variants?.nodes?.[0]?.image?.url;
+  return [
+    {title: `${title} | LZX Industries`},
+    ...(description ? [{name: 'description', content: description}] : []),
+    ...(title ? [{property: 'og:title', content: title}] : []),
+    ...(description
+      ? [{property: 'og:description', content: description}]
+      : []),
+    ...(image ? [{property: 'og:image', content: image}] : []),
+  ];
 };
 
 // --- Media gallery (reused from ModuleDetails) ---
