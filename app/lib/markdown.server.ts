@@ -299,7 +299,7 @@ function extractExcerpt(raw: string): string {
 // the content to the remark pipeline.
 
 function stripMdxSyntax(content: string): string {
-  // 1. Collect import variable→path map and remove import lines
+  // 1. Collect default import variable→path map and remove import lines
   const imports: Record<string, string> = {};
   content = content.replace(
     /^import\s+(\w+)\s+from\s+['"]([^'"]+)['"];?\s*$/gm,
@@ -307,6 +307,12 @@ function stripMdxSyntax(content: string): string {
       imports[name] = path;
       return '';
     },
+  );
+
+  // 1b. Remove destructured/named imports (e.g. import { x, y } from 'react')
+  content = content.replace(
+    /^import\s+\{[^}]*\}\s+from\s+['"][^'"]+['"];?\s*$/gm,
+    '',
   );
 
   // 2. Remove `export function ...` blocks (e.g. ResponsiveYouTube component
