@@ -125,6 +125,9 @@ function rewriteInternalPaths(
               const resolved = resolveRelativePath(pathname, currentPath);
               rewrittenPath = normalizeMarkdownPath(resolved);
             }
+          } else if (isAbsoluteDocsPath(pathname)) {
+            // Absolute /docs/modules/ and /docs/instruments/ links (without .md)
+            rewrittenPath = normalizeMarkdownPath(pathname);
           } else if (isRelativeHref(pathname) && imageBasePath) {
             // Allow explicit links to co-located assets in blog/docs markdown.
             if (isAssetPath(pathname)) {
@@ -175,6 +178,13 @@ function isAssetPath(pathname: string): boolean {
 
 function isDocsStaticAssetPath(pathname: string): boolean {
   return /^\/(img|pdf|zip|firmware|mp3)\//i.test(pathname);
+}
+
+function isAbsoluteDocsPath(pathname: string): boolean {
+  return (
+    pathname.startsWith('/docs/modules/') ||
+    pathname.startsWith('/docs/instruments/')
+  );
 }
 
 function resolveRelativePath(pathname: string, currentPath: string): string {

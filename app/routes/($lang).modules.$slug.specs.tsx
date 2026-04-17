@@ -1,8 +1,15 @@
 import {useOutletContext} from '@remix-run/react';
+import type {MetaArgs} from '@shopify/remix-oxygen';
 import type {Metafield} from '@shopify/hydrogen/storefront-api-types';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import type {LzxModuleConnector, LzxModuleControl, LzxModuleFeature} from '~/data/lzxdb';
+
+export const meta = ({matches}: MetaArgs) => {
+  const parentData = matches.find((m) => m.id.includes('modules.$slug'))?.data as any;
+  const title = parentData?.product?.title ?? 'Module';
+  return [{title: `${title} Specifications | LZX Industries`}];
+};
 
 export default function ModuleSpecs() {
   const data = useOutletContext<ModuleLayoutLoaderData>();

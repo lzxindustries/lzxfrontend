@@ -8,7 +8,7 @@ import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {getPatches} from '~/data/lzxdb';
 import {getAllContentPaths} from '~/lib/content.server';
-import {getAllModuleSlugs, getAllInstrumentSlugs} from '~/data/product-slugs';
+import {getAllModuleSlugs, getAllInstrumentSlugs, getDocPathForSlug} from '~/data/product-slugs';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
 
@@ -134,22 +134,36 @@ function shopSitemap({
     changeFreq: 'monthly',
   }));
 
-  // Add module and instrument hub pages
-  const moduleRoutes = getAllModuleSlugs().map((slug) => ({
-    url: `${baseUrl}/modules/${slug}`,
-    changeFreq: 'weekly',
-  }));
+  // Add module and instrument hub pages (including manual sub-pages)
+  const moduleRoutes = getAllModuleSlugs().flatMap((slug) => {
+    const routes = [
+      {url: `${baseUrl}/modules/${slug}`, changeFreq: 'weekly'},
+    ];
+    if (getDocPathForSlug(slug)) {
+      routes.push({url: `${baseUrl}/modules/${slug}/manual`, changeFreq: 'weekly'});
+    }
+    return routes;
+  });
 
-  const instrumentRoutes = getAllInstrumentSlugs().map((slug) => ({
-    url: `${baseUrl}/instruments/${slug}`,
-    changeFreq: 'weekly',
-  }));
+  const instrumentRoutes = getAllInstrumentSlugs().flatMap((slug) => {
+    const routes = [
+      {url: `${baseUrl}/instruments/${slug}`, changeFreq: 'weekly'},
+    ];
+    if (getDocPathForSlug(slug)) {
+      routes.push({url: `${baseUrl}/instruments/${slug}/manual`, changeFreq: 'weekly'});
+    }
+    return routes;
+  });
 
-  // Add docs and blog content pages
-  const contentRoutes = getAllContentPaths().map((path) => ({
-    url: `${baseUrl}${path}`,
-    changeFreq: path.startsWith('/blog') ? 'monthly' : 'weekly',
-  }));
+  // Add docs and blog content pages (exclude module/instrument docs — now served via hub routes)
+  const contentRoutes = getAllContentPaths()
+    .filter(
+      (p) => !p.startsWith('/docs/modules/') && !p.startsWith('/docs/instruments/'),
+    )
+    .map((path) => ({
+      url: `${baseUrl}${path}`,
+      changeFreq: path.startsWith('/blog') ? 'monthly' : 'weekly',
+    }));
 
   const urlsDatas = [
     ...staticRoutes,

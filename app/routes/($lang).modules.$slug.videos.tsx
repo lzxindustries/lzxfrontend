@@ -1,7 +1,14 @@
 import {useOutletContext} from '@remix-run/react';
+import type {MetaArgs} from '@shopify/remix-oxygen';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import type {LzxVideo} from '~/data/lzxdb';
+
+export const meta = ({matches}: MetaArgs) => {
+  const parentData = matches.find((m) => m.id.includes('modules.$slug'))?.data as any;
+  const title = parentData?.product?.title ?? 'Module';
+  return [{title: `${title} Videos | LZX Industries`}];
+};
 
 export default function ModuleVideos() {
   const data = useOutletContext<ModuleLayoutLoaderData>();

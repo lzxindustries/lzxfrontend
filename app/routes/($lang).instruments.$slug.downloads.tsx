@@ -1,6 +1,13 @@
 import {useOutletContext} from '@remix-run/react';
+import type {MetaArgs} from '@shopify/remix-oxygen';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
+
+export const meta = ({matches}: MetaArgs) => {
+  const parentData = matches.find((m) => m.id.includes('instruments.$slug'))?.data as any;
+  const title = parentData?.product?.title ?? 'Instrument';
+  return [{title: `${title} Downloads | LZX Industries`}];
+};
 
 export default function InstrumentDownloads() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
