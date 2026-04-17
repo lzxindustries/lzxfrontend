@@ -610,7 +610,7 @@ body {
   h2 > a,
   h3 > a,
   h4 > a {
-    @apply text-base-content no-underline;
+    @apply text-base-content no-underline font-bold;
   }
 
   ul {
