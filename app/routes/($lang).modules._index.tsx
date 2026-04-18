@@ -7,6 +7,7 @@ import {Image} from '@shopify/hydrogen';
 
 import {getModulesBySeries} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
+import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
@@ -39,26 +40,77 @@ const SERIES_LABELS: Record<string, string> = {
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
+type ModuleListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
+  availableForSale?: boolean;
+  featuredImage?: {
+    url: string;
+    altText?: string | null;
+    width?: number | null;
+    height?: number | null;
+  } | null;
+  variants?: {
+    nodes?: Array<{
+      id: string;
+      image?: {
+        url: string;
+        altText?: string | null;
+        width?: number | null;
+        height?: number | null;
+      } | null;
+      price?: {amount: string; currencyCode: string};
+    }>;
+  };
+};
+
 function buildHandleFilterQuery(handles: string[]): string {
   return handles.map((handle) => `handle:${handle}`).join(' OR ');
 }
 
 export async function loader({context, request}: LoaderFunctionArgs) {
   const bySeriesMap = getModulesBySeries();
-  const allHandles = [...bySeriesMap.values()]
+  const allEntries = [...bySeriesMap.values()]
     .flat()
-    .filter((e) => !e.isHidden)
-    .map((e) => e.canonical);
+    .filter((e) => !e.isHidden);
 
-  const productMap = new Map<string, Product>();
+  const allHandles = allEntries.map((e) => e.canonical);
+  const allShopifyIds = allEntries
+    .map((e) => e.shopifyGid)
+    .filter((id): id is string => Boolean(id));
 
-  // Fetch only known module handles and gracefully degrade if Shopify query fails.
+  const productByHandle = new Map<string, ModuleListingProduct>();
+  const productById = new Map<string, ModuleListingProduct>();
+
+  // Primary fetch path: look up products by explicit Shopify GID to avoid
+  // canonical-slug/handle mismatches.
+  if (allShopifyIds.length > 0) {
+    try {
+      const {nodes} = await context.storefront.query<{
+        nodes: (ModuleListingProduct | null)[];
+      }>(MODULE_LISTING_BY_IDS_QUERY, {
+        variables: {
+          ids: allShopifyIds,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const node of nodes) {
+        if (!node) continue;
+        productById.set(node.id, node);
+        productByHandle.set(node.handle, node);
+      }
+    } catch (error) {
+      console.error('Failed to load module listing product data by IDs', error);
+    }
+  }
+
+  // Secondary fetch path: handle-based lookup for products without a stored GID.
   if (allHandles.length > 0) {
     try {
       const handleFilterQuery = buildHandleFilterQuery(allHandles);
       const {products} = await context.storefront.query<{
-        products: {nodes: Product[]};
-      }>(MODULE_LISTING_QUERY, {
+        products: {nodes: ModuleListingProduct[]};
+      }>(MODULE_LISTING_BY_HANDLES_QUERY, {
         variables: {
           first: Math.min(allHandles.length, MAX_PRODUCTS_PER_QUERY),
           query: handleFilterQuery,
@@ -68,10 +120,14 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       });
 
       for (const p of products.nodes) {
-        productMap.set(p.handle, p);
+        productByHandle.set(p.handle, p);
+        productById.set(p.id, p);
       }
     } catch (error) {
-      console.error('Failed to load module listing product data', error);
+      console.error(
+        'Failed to load module listing product data by handles',
+        error,
+      );
     }
   }
 
@@ -90,7 +146,10 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       label: SERIES_LABELS[key] ?? key,
       entries: entries.map((e) => ({
         ...e,
-        shopifyProduct: productMap.get(e.canonical) ?? undefined,
+        shopifyProduct:
+          (e.shopifyGid ? productById.get(e.shopifyGid) : undefined) ??
+          productByHandle.get(e.canonical) ??
+          undefined,
         subtitle: e.moduleId ? getModuleById(e.moduleId)?.subtitle : undefined,
       })),
     });
@@ -135,11 +194,12 @@ export default function ModuleListingPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {group.entries.map((entry) => {
               const product = (entry as any).shopifyProduct as
-                | Product
+                | ModuleListingProduct
                 | undefined;
               const firstImage =
                 (product as any)?.featuredImage ??
                 product?.variants?.nodes?.[0]?.image;
+              const localArtworkPath = getModuleArtworkPath(entry.canonical);
 
               return (
                 <Link
@@ -154,6 +214,13 @@ export default function ModuleListingPage() {
                       aspectRatio="1/1"
                       sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
                       className="rounded bg-base-200 object-cover"
+                    />
+                  ) : localArtworkPath ? (
+                    <img
+                      src={localArtworkPath}
+                      alt={`${entry.name} front panel`}
+                      loading="lazy"
+                      className="aspect-square w-full rounded bg-base-200 object-cover"
                     />
                   ) : (
                     <div className="aspect-square rounded bg-base-200 flex items-center justify-center text-base-content/30">
@@ -185,7 +252,53 @@ export default function ModuleListingPage() {
   );
 }
 
-const MODULE_LISTING_QUERY = `#graphql
+const MODULE_LISTING_FRAGMENT = `#graphql
+  fragment ModuleListingProductFields on Product {
+    id
+    title
+    handle
+    availableForSale
+    featuredImage {
+      url
+      altText
+      width
+      height
+    }
+    variants(first: 1) {
+      nodes {
+        id
+        image {
+          url
+          altText
+          width
+          height
+        }
+        price {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+`;
+
+const MODULE_LISTING_BY_IDS_QUERY = `#graphql
+  ${MODULE_LISTING_FRAGMENT}
+  query ModuleListingByIds(
+    $ids: [ID!]!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    nodes(ids: $ids) {
+      ... on Product {
+        ...ModuleListingProductFields
+      }
+    }
+  }
+`;
+
+const MODULE_LISTING_BY_HANDLES_QUERY = `#graphql
+  ${MODULE_LISTING_FRAGMENT}
   query ModuleListing(
     $first: Int!
     $query: String
@@ -194,31 +307,7 @@ const MODULE_LISTING_QUERY = `#graphql
   ) @inContext(country: $country, language: $language) {
     products(first: $first, query: $query, sortKey: TITLE) {
       nodes {
-        id
-        title
-        handle
-        availableForSale
-        featuredImage {
-          url
-          altText
-          width
-          height
-        }
-        variants(first: 1) {
-          nodes {
-            id
-            image {
-              url
-              altText
-              width
-              height
-            }
-            price {
-              amount
-              currencyCode
-            }
-          }
-        }
+        ...ModuleListingProductFields
       }
     }
   }
