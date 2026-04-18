@@ -15,6 +15,19 @@ export default function ModulePatches() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
   const {patches, product} = data as unknown as ModuleHubData;
 
+  const getPatchThumbnail = (patch: LzxPatch): string | null => {
+    if (patch.youtube) {
+      return `https://i.ytimg.com/vi/${patch.youtube}/hqdefault.jpg`;
+    }
+    if (patch.gif) {
+      return `/clips/${patch.gif}`;
+    }
+    if (patch.diagram) {
+      return `/diagrams/${patch.diagram}`;
+    }
+    return null;
+  };
+
   if (patches.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
@@ -29,31 +42,35 @@ export default function ModulePatches() {
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h2 className="text-2xl font-bold mb-6">Patches</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {(patches as LzxPatch[]).map((patch) => (
-          <Link
-            key={patch.id}
-            to={`/patches/${patch.slug}`}
-            prefetch="intent"
-            className="group flex flex-col gap-2 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
-          >
-            {patch.diagram && (
-              <img
-                src={patch.diagram}
-                alt={patch.name}
-                className="rounded bg-base-200 object-contain aspect-video"
-                loading="lazy"
-              />
-            )}
-            <div className="font-semibold text-sm group-hover:text-primary transition">
-              {patch.name}
-            </div>
-            {patch.artist && (
-              <div className="text-xs text-base-content/60">
-                by {patch.artist.name}
+        {(patches as LzxPatch[]).map((patch) => {
+          const thumbnail = getPatchThumbnail(patch);
+
+          return (
+            <Link
+              key={patch.id}
+              to={`/patches/${patch.slug}`}
+              prefetch="intent"
+              className="group flex flex-col gap-2 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
+            >
+              {thumbnail && (
+                <img
+                  src={thumbnail}
+                  alt={patch.name}
+                  className="rounded bg-base-200 object-contain aspect-video"
+                  loading="lazy"
+                />
+              )}
+              <div className="font-semibold text-sm group-hover:text-primary transition">
+                {patch.name}
               </div>
-            )}
-          </Link>
-        ))}
+              {patch.artist && (
+                <div className="text-xs text-base-content/60">
+                  by {patch.artist.name}
+                </div>
+              )}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
