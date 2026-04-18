@@ -387,7 +387,7 @@ function ProductForm({
           variants={product.variants}
         >
           {({option}) =>
-            option.name === 'Title' && option.values.length === 1 && option.values[0]!.value === 'Default Title' ? null : (
+            option.name === 'Title' ? null : (
             <div key={option.name} className="flex flex-col gap-2">
               <Heading as="legend" size="lead" className="min-w-[4rem]">
                 {option.name}
@@ -416,26 +416,6 @@ function ProductForm({
             </div>
           )}
         </VariantSelector>
-
-
-        {selectedVariant && (
-          <div className="flex items-baseline gap-3">
-            <Money
-              withoutTrailingZeros
-              data={selectedVariant.price!}
-              as="span"
-              className="text-2xl font-bold"
-            />
-            {isOnSale && (
-              <Money
-                withoutTrailingZeros
-                data={selectedVariant.compareAtPrice!}
-                as="span"
-                className="text-lg text-primary/40 line-through"
-              />
-            )}
-          </div>
-        )}
 
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
