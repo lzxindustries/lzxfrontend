@@ -59,8 +59,22 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 export default function DocsIndex() {
   return (
     <>
-      <Breadcrumbs items={[{label: 'Home', to: '/'}, {label: 'Docs'}]} />
+      <Breadcrumbs
+        items={[
+          {label: 'Home', to: '/'},
+          {label: 'Support', to: '/support'},
+          {label: 'Docs'},
+        ]}
+      />
       <div className="px-6 pb-16 md:px-10 lg:px-12 max-w-screen-lg mx-auto">
+        <div className="mb-6 flex items-center gap-3">
+          <Link
+            to="/support"
+            className="text-sm link link-primary opacity-70 hover:opacity-100"
+          >
+            &larr; All Support Resources
+          </Link>
+        </div>
         <h1 className="text-3xl font-bold mb-2">Documentation</h1>
         <p className="text-lg opacity-70 mb-8">
           Technical documentation for LZX video synthesis instruments and

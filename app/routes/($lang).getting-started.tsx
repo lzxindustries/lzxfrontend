@@ -23,7 +23,7 @@ export const content = `
 ## What Is A Video Synthesizer?
 
 A video synthesizer is an electronic instrument which creates or processes video images in real time. A modular video synthesizer is comprised of one or more electronic modules. Each module performs a specific function, such as shape generation or color mixing. Modules are connected to each other with patch cables in an open ended manner which encourages experimentation and offers a wholly immersive creative experience. A large system of modules may be purchased at once, or it may be built up over time, according to an artist’s specific creative goals.
-
+> **Ready to explore?** Browse all [LZX Instruments](/instruments) and [Eurorack Modules](/modules), or check out our [Starter Systems](/systems) for curated configurations.
 ## Quick Facts About LZX
 
 *   The LZX mission is to preserve and expand upon tools available to the video art movement from the 1960s thru the 1980s. LZX exists as a counterpoint to the worlds of mainstream broadcast equipment and GPU based video processing software.
@@ -47,7 +47,7 @@ Your power supply must be connected to either the 12V DC input jack or the EuroR
 
 ### Connecting Video Sync
 
-For each module with a Video Sync In on the rear, it must be connected to your ESG3 Encoder & Sync Generator module using an RCA cable. This connection may be made directly, or through a chain of other modules. ESG3 Encoder & Sync Generator may be connected to other ESG3 Encoder & Sync Generator modules in this manner, or its video sync input may be left disconnected.
+For each module with a Video Sync In on the rear, it must be connected to your [ESG3 Encoder & Sync Generator](/modules/esg3) module using an RCA cable. This connection may be made directly, or through a chain of other modules. [ESG3](/modules/esg3) may be connected to other ESG3 modules in this manner, or its video sync input may be left disconnected.
 
 ![/media/GettingStartedSyncCable.jpg](/media/GettingStartedSyncCable.jpg)
 
@@ -63,8 +63,8 @@ This patch assumes you have followed the module installation instructions above,
 
 Here's what you will need:
 
-*   ESG3 Encoder & Sync Generator module
-*   DSG3 Dual Shape Generator module
+*   [ESG3 Encoder & Sync Generator](/modules/esg3) module
+*   [DSG3 Dual Shape Generator](/modules/dsg3) module
 *   An RCA-to-RCA cable for composite video output
 *   A video display with composite video input
 *   Three 3.5mm patch cables
@@ -266,6 +266,12 @@ Many users like to perform regular service and checkups on their analog hardware
 *   Lattice HW-USBN-2B Programming Cable
 *   TagConnect TC-LATTICE-10 Programming Cable Adapter
 *   TagConnect TC2050-IDC-NL 10-Pin No-Legs Cable with Ribbon Connector
+
+# Recommended Starter Systems
+
+Not sure where to begin? Our [Starter Systems](/systems) page offers curated module configurations for different creative goals — from a minimal two-module setup to a full studio rack. Each system includes links to documentation and suggested patches.
+
+[View Starter Systems →](/systems)
 
 # Compatibility
 

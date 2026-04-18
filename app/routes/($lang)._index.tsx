@@ -10,12 +10,19 @@ import type {Collection as CollectionType} from '@shopify/hydrogen/storefront-ap
 import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
+import {
+  FaBook,
+  FaMusic,
+  FaCubes,
+  FaSuitcase,
+  FaUsers,
+  FaPuzzlePiece,
+  FaComments,
+} from 'react-icons/fa';
 import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
-import {LiteYouTube} from '~/components/LiteYouTube';
 import {ProductCard} from '~/components/ProductCard';
 import {Section, PageHeader} from '~/components/Text';
-import {VideomancyLandingSections} from '~/components/VideomancyLandingSections';
 import {CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
@@ -95,28 +102,53 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <section className="bg-black px-6 py-20 md:px-10 lg:px-12">
-        <div className="mx-auto w-full max-w-4xl">
-          <div className="vm-reveal text-center">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-mystic-light">
-              Demo Reel
-            </p>
-            <h2 className="font-display text-xl font-black uppercase tracking-[0.1em] text-moonwax md:text-3xl">
-              See it in action
-            </h2>
-          </div>
-          <div className="vm-reveal vm-reveal-delay-1 mt-10">
-            <LiteYouTube
-              videoId="7cY8loTRU78"
-              title="Videomancer Demo Reel"
-              className="drop-shadow-[0_0_60px_rgba(80,76,159,0.25)]"
-            />
+
+      {/* Product Categories */}
+      <section className="px-6 py-14 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">
+            Explore Our Products
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link
+              to="/instruments"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaMusic className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Instruments</h3>
+              <p className="text-sm opacity-70">
+                Standalone video synthesis consoles — plug in, perform, and
+                create.
+              </p>
+            </Link>
+            <Link
+              to="/modules"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaCubes className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Modules</h3>
+              <p className="text-sm opacity-70">
+                Eurorack-format video synthesis modules — build your system one
+                module at a time.
+              </p>
+            </Link>
+            <Link
+              to="/catalog"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaSuitcase className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Cases & Accessories</h3>
+              <p className="text-sm opacity-70">
+                Enclosures, power supplies, and everything you need to get
+                started.
+              </p>
+            </Link>
           </div>
         </div>
       </section>
-      <VideomancyLandingSections />
 
-      <section className="px-6 py-14 md:px-10 lg:px-12">
+      {/* What's New */}
+      <section className="bg-base-200 px-6 py-14 md:px-10 lg:px-12">
         <div className="mx-auto max-w-6xl">
           <div className="mb-6 flex items-end justify-between gap-3">
             <div>
@@ -135,7 +167,7 @@ export default function Home() {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className="rounded-lg border border-base-300 p-4 transition hover:bg-base-200"
+                className="rounded-lg border border-base-300 bg-base-100 p-4 transition hover:bg-base-300"
               >
                 <p className="text-xs uppercase tracking-wide text-base-content/60">
                   {post.date}
@@ -154,6 +186,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Product Catalog */}
       <PageHeader heading="Explore Our Catalog" variant="allCollections" />
       <Section>
         <Grid layout="products" data-test="product-grid">
@@ -165,8 +198,91 @@ export default function Home() {
             />
           ))}
         </Grid>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm">
+          <span className="opacity-60">Looking for deals?</span>
+          <Link to="/b-stock" className="link link-primary font-semibold">
+            B-Stock
+          </Link>
+          <span className="opacity-40">|</span>
+          <Link to="/legacy" className="link link-primary font-semibold">
+            Legacy Modules
+          </Link>
+        </div>
       </Section>
 
+      {/* Getting Started CTA */}
+      <section className="bg-primary px-6 py-16 md:px-10 lg:px-12 text-primary-content">
+        <div className="mx-auto max-w-3xl text-center">
+          <FaBook className="mx-auto mb-4 text-4xl" />
+          <h2 className="text-3xl font-bold mb-4">
+            New to Video Synthesis?
+          </h2>
+          <p className="mb-6 text-lg opacity-90">
+            Learn how to build your first video synthesis system, understand
+            the fundamentals, and start creating with our step-by-step guide.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              to="/getting-started"
+              className="btn btn-lg bg-primary-content text-primary hover:bg-primary-content/90"
+            >
+              Getting Started Guide
+            </Link>
+            <Link
+              to="/systems"
+              className="btn btn-lg btn-outline border-primary-content text-primary-content hover:bg-primary-content/10"
+            >
+              Starter Systems
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Community */}
+      <section className="px-6 py-14 md:px-10 lg:px-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center text-3xl font-bold">
+            Join the Community
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link
+              to="/artists"
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"
+            >
+              <FaUsers className="mx-auto mb-3 text-3xl text-primary" />
+              <h3 className="text-lg font-bold mb-1">Artists</h3>
+              <p className="text-sm opacity-70">
+                Discover artists creating with LZX instruments.
+              </p>
+            </Link>
+            <Link
+              to="/patches"
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"
+            >
+              <FaPuzzlePiece className="mx-auto mb-3 text-3xl text-primary" />
+              <h3 className="text-lg font-bold mb-1">Patch Ideas</h3>
+              <p className="text-sm opacity-70">
+                Example patches and recipes for LZX modules.
+              </p>
+            </Link>
+            <a
+              href="https://community.lzxindustries.net"
+              target="_blank"
+              rel="noreferrer"
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"
+            >
+              <FaComments className="mx-auto mb-3 text-3xl text-primary" />
+              <h3 className="text-lg font-bold mb-1">Forum</h3>
+              <p className="text-sm opacity-70">
+                Ask questions, share patches, and connect with other video
+                synthesists.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
       <section className="bg-base-200 px-6 py-16 md:px-10 lg:px-12">
         <div className="mx-auto max-w-4xl space-y-10">
           <div>
@@ -194,30 +310,6 @@ export default function Home() {
               real time. The result is a live, performable visual instrument
               that responds to hands-on control and external audio.
             </p>
-          </div>
-
-          <div>
-            <h2 className="mb-4 text-2xl font-bold">Get Started</h2>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                <Link to="/getting-started" className="link link-primary">
-                  Getting Started Guide
-                </Link>{' '}
-                — learn how to build your first video synthesis system.
-              </li>
-              <li>
-                <Link to="/glossary" className="link link-primary">
-                  Glossary
-                </Link>{' '}
-                — key terms and concepts in video synthesis.
-              </li>
-              <li>
-                <Link to="/patches" className="link link-primary">
-                  Patch Ideas
-                </Link>{' '}
-                — example patches and recipes for LZX modules.
-              </li>
-            </ul>
           </div>
         </div>
       </section>
