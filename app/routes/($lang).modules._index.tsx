@@ -16,14 +16,7 @@ export const headers = routeHeaders;
 
 const SERIES_ORDER = [
   'gen3',
-  'orion',
-  'visionary',
   'castle',
-  'cadet',
-  'expedition',
-  'vhs',
-  'legacy',
-  'other',
 ];
 
 const SERIES_LABELS: Record<string, string> = {
