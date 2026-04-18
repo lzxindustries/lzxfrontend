@@ -26,11 +26,8 @@ const MENU_GROUPS: MegaMenuGroup[] = [
         highlight: true,
         description: 'Video effects console',
       },
-      {label: 'All Instruments', to: '/instruments'},
       {label: 'Modules', to: '/modules'},
-      {label: 'Starter Systems', to: '/systems'},
       {label: 'Shop All', to: '/catalog'},
-      {label: 'B-Stock', to: '/b-stock'},
     ],
   },
   {
@@ -40,7 +37,6 @@ const MENU_GROUPS: MegaMenuGroup[] = [
       {label: 'Documentation', to: '/docs'},
       {label: 'Downloads', to: '/downloads'},
       {label: 'Getting Started', to: '/getting-started'},
-      {label: 'Glossary', to: '/glossary'},
       {label: 'LZX Connect', to: '/connect'},
     ],
   },
@@ -48,7 +44,6 @@ const MENU_GROUPS: MegaMenuGroup[] = [
     label: 'Community',
     items: [
       {label: 'Blog', to: '/blog'},
-      {label: 'Artists', to: '/artists'},
       {label: 'Patches', to: '/patches'},
       {
         label: 'Forum',
@@ -59,10 +54,7 @@ const MENU_GROUPS: MegaMenuGroup[] = [
   },
   {
     label: 'About',
-    items: [
-      {label: 'About LZX', to: '/about'},
-      {label: 'Legacy Modules', to: '/legacy'},
-    ],
+    items: [{label: 'About LZX', to: '/about'}],
   },
 ];
 

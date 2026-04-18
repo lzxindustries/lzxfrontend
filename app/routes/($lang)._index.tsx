@@ -12,10 +12,8 @@ import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {
   FaBook,
-  FaMusic,
   FaCubes,
   FaSuitcase,
-  FaUsers,
   FaPuzzlePiece,
   FaComments,
 } from 'react-icons/fa';
@@ -109,18 +107,7 @@ export default function Home() {
           <h2 className="mb-8 text-center text-3xl font-bold">
             Explore Our Products
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Link
-              to="/instruments"
-              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
-            >
-              <FaMusic className="mx-auto mb-4 text-4xl text-primary" />
-              <h3 className="text-xl font-bold mb-2">Instruments</h3>
-              <p className="text-sm opacity-70">
-                Standalone video synthesis consoles — plug in, perform, and
-                create.
-              </p>
-            </Link>
+          <div className="grid gap-6 md:grid-cols-2">
             <Link
               to="/modules"
               className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
@@ -137,10 +124,10 @@ export default function Home() {
               className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
             >
               <FaSuitcase className="mx-auto mb-4 text-4xl text-primary" />
-              <h3 className="text-xl font-bold mb-2">Cases & Accessories</h3>
+              <h3 className="text-xl font-bold mb-2">Shop All</h3>
               <p className="text-sm opacity-70">
-                Enclosures, power supplies, and everything you need to get
-                started.
+                Browse our full catalog of instruments, modules, cases, and
+                accessories.
               </p>
             </Link>
           </div>
@@ -198,16 +185,7 @@ export default function Home() {
             />
           ))}
         </Grid>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm">
-          <span className="opacity-60">Looking for deals?</span>
-          <Link to="/b-stock" className="link link-primary font-semibold">
-            B-Stock
-          </Link>
-          <span className="opacity-40">|</span>
-          <Link to="/legacy" className="link link-primary font-semibold">
-            Legacy Modules
-          </Link>
-        </div>
+
       </Section>
 
       {/* Getting Started CTA */}
@@ -228,12 +206,6 @@ export default function Home() {
             >
               Getting Started Guide
             </Link>
-            <Link
-              to="/systems"
-              className="btn btn-lg btn-outline border-primary-content text-primary-content hover:bg-primary-content/10"
-            >
-              Starter Systems
-            </Link>
           </div>
         </div>
       </section>
@@ -244,17 +216,7 @@ export default function Home() {
           <h2 className="mb-8 text-center text-3xl font-bold">
             Join the Community
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Link
-              to="/artists"
-              className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"
-            >
-              <FaUsers className="mx-auto mb-3 text-3xl text-primary" />
-              <h3 className="text-lg font-bold mb-1">Artists</h3>
-              <p className="text-sm opacity-70">
-                Discover artists creating with LZX instruments.
-              </p>
-            </Link>
+          <div className="grid gap-6 md:grid-cols-2">
             <Link
               to="/patches"
               className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"

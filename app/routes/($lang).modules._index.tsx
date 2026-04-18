@@ -137,7 +137,9 @@ export default function ModuleListingPage() {
               const product = (entry as any).shopifyProduct as
                 | Product
                 | undefined;
-              const firstImage = product?.variants?.nodes?.[0]?.image;
+              const firstImage =
+                (product as any)?.featuredImage ??
+                product?.variants?.nodes?.[0]?.image;
 
               return (
                 <Link
@@ -196,6 +198,12 @@ const MODULE_LISTING_QUERY = `#graphql
         title
         handle
         availableForSale
+        featuredImage {
+          url
+          altText
+          width
+          height
+        }
         variants(first: 1) {
           nodes {
             id
