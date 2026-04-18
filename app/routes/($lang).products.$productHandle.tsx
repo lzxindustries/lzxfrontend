@@ -332,26 +332,6 @@ export function ProductForm() {
           )}
         </VariantSelector>
 
-        {/* Price display */}
-        {selectedVariant && (
-          <div className="flex items-baseline gap-3">
-            <Money
-              withoutTrailingZeros
-              data={selectedVariant.price!}
-              as="span"
-              className="text-2xl font-bold"
-            />
-            {isOnSale && (
-              <Money
-                withoutTrailingZeros
-                data={selectedVariant.compareAtPrice!}
-                as="span"
-                className="text-lg text-primary/40 line-through"
-              />
-            )}
-          </div>
-        )}
-
         {/* Quantity selector */}
         {selectedVariant && !isOutOfStock && (
           <div className="flex items-center gap-3">
