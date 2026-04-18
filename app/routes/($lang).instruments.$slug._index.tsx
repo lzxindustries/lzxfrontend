@@ -386,7 +386,8 @@ function ProductForm({
           options={product.options}
           variants={product.variants}
         >
-          {({option}) => (
+          {({option}) =>
+            option.name === 'Title' && option.values.length === 1 && option.values[0]!.value === 'Default Title' ? null : (
             <div key={option.name} className="flex flex-col gap-2">
               <Heading as="legend" size="lead" className="min-w-[4rem]">
                 {option.name}
@@ -415,6 +416,7 @@ function ProductForm({
             </div>
           )}
         </VariantSelector>
+
 
         {selectedVariant && (
           <div className="flex items-baseline gap-3">
