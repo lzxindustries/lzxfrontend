@@ -199,7 +199,7 @@ function collectionJsonLd({
 }): SeoConfig['jsonLd'] {
   const origin = new URL(url).origin;
   const itemListElement: CollectionPage['mainEntity'] =
-    collection.products.nodes.map((product, index) => {
+    (collection.products?.nodes ?? []).map((product, index) => {
       return {
         '@type': 'ListItem',
         position: index + 1,

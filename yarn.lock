@@ -4096,7 +4096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/cache@npm:^2.14.4":
+"@miniflare/cache@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/cache@npm:2.14.4"
   dependencies:
@@ -4108,7 +4108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/core@npm:2.14.4, @miniflare/core@npm:^2.14.4":
+"@miniflare/core@npm:2.14.4, @miniflare/core@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/core@npm:2.14.4"
   dependencies:
@@ -4126,7 +4126,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/queues@npm:2.14.4, @miniflare/queues@npm:^2.14.4":
+"@miniflare/queues@npm:2.14.4, @miniflare/queues@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/queues@npm:2.14.4"
   dependencies:
@@ -4135,7 +4135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/runner-vm@npm:^2.14.4":
+"@miniflare/runner-vm@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/runner-vm@npm:2.14.4"
   dependencies:
@@ -4144,7 +4144,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/shared@npm:2.14.4, @miniflare/shared@npm:^2.14.4":
+"@miniflare/shared@npm:2.14.4, @miniflare/shared@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/shared@npm:2.14.4"
   dependencies:
@@ -4156,7 +4156,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/storage-memory@npm:^2.14.4":
+"@miniflare/storage-memory@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/storage-memory@npm:2.14.4"
   dependencies:
@@ -4174,7 +4174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@miniflare/web-sockets@npm:^2.14.4":
+"@miniflare/web-sockets@npm:^2.14.2":
   version: 2.14.4
   resolution: "@miniflare/web-sockets@npm:2.14.4"
   dependencies:
@@ -5724,33 +5724,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shopify/mini-oxygen@npm:3.1.2":
-  version: 3.1.2
-  resolution: "@shopify/mini-oxygen@npm:3.1.2"
+"@shopify/mini-oxygen@npm:3.1.1":
+  version: 3.1.1
+  resolution: "@shopify/mini-oxygen@npm:3.1.1"
   dependencies:
-    "@miniflare/cache": "npm:^2.14.4"
-    "@miniflare/core": "npm:^2.14.4"
-    "@miniflare/queues": "npm:^2.14.4"
-    "@miniflare/runner-vm": "npm:^2.14.4"
-    "@miniflare/shared": "npm:^2.14.4"
-    "@miniflare/storage-memory": "npm:^2.14.4"
-    "@miniflare/web-sockets": "npm:^2.14.4"
-    body-parser: "npm:1.20.3"
+    "@miniflare/cache": "npm:^2.14.2"
+    "@miniflare/core": "npm:^2.14.2"
+    "@miniflare/queues": "npm:^2.14.2"
+    "@miniflare/runner-vm": "npm:^2.14.2"
+    "@miniflare/shared": "npm:^2.14.2"
+    "@miniflare/storage-memory": "npm:^2.14.2"
+    "@miniflare/web-sockets": "npm:^2.14.2"
+    body-parser: "npm:1.20.2"
     connect: "npm:^3.7.0"
-    get-port: "npm:^7.1.0"
-    miniflare: "npm:^3.20250124.0"
-    mrmime: "npm:2.0.0"
+    get-port: "npm:^7.0.0"
+    miniflare: "npm:^3.20240925.0"
+    mrmime: "npm:1.0.1"
     source-map: "npm:^0.7.4"
     source-map-support: "npm:^0.5.21"
     stack-trace: "npm:^1.0.0-pre2"
-    undici: "npm:^7.3.0"
-    ws: "npm:^8.18.0"
+    undici: "npm:^6.21.1"
+    ws: "npm:^8.17.1"
   peerDependencies:
-    vite: ^6.2.1
+    vite: ^5.1.0
   peerDependenciesMeta:
     vite:
       optional: true
-  checksum: 10c0/954b48620b1bdb482e8dc24998dd80d9a3ee7f089b4847d073bf18e4243805afd4edc0226d780a9728b01a9ea639e44338e99bebe889bbb2ef117d0a814701fc
+  checksum: 10c0/372a7b7c5a34ae9e34972918b38dd1fb06c662bcfec695b08a2b9c395fbc38138de93046533632027f9297436666503a6b5e63408b32341144280f007511170c
   languageName: node
   linkType: hard
 
@@ -7674,9 +7674,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:1.20.3":
-  version: 1.20.3
-  resolution: "body-parser@npm:1.20.3"
+"body-parser@npm:1.20.2":
+  version: 1.20.2
+  resolution: "body-parser@npm:1.20.2"
   dependencies:
     bytes: "npm:3.1.2"
     content-type: "npm:~1.0.5"
@@ -7686,11 +7686,11 @@ __metadata:
     http-errors: "npm:2.0.0"
     iconv-lite: "npm:0.4.24"
     on-finished: "npm:2.4.1"
-    qs: "npm:6.13.0"
+    qs: "npm:6.11.0"
     raw-body: "npm:2.5.2"
     type-is: "npm:~1.6.18"
     unpipe: "npm:1.0.0"
-  checksum: 10c0/0a9a93b7518f222885498dcecaad528cf010dd109b071bf471c93def4bfe30958b83e03496eb9c1ad4896db543d999bb62be1a3087294162a88cfa1b42c16310
+  checksum: 10c0/06f1438fff388a2e2354c96aa3ea8147b79bfcb1262dfcc2aae68ec13723d01d5781680657b74e9f83c808266d5baf52804032fbde2b7382b89bd8cdb273ace9
   languageName: node
   linkType: hard
 
@@ -11924,13 +11924,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-port@npm:^7.1.0":
-  version: 7.2.0
-  resolution: "get-port@npm:7.2.0"
-  checksum: 10c0/4ed741d9008ad15a24e2098c8971918025cc8241624245e704ecc62bb65160db5c79de5d7112acdaabccbe0714cd0704008c74d43a1f7a24a5875e58b84621be
-  languageName: node
-  linkType: hard
-
 "get-source@npm:^2.0.12":
   version: 2.0.12
   resolution: "get-source@npm:2.0.12"
@@ -14428,7 +14421,7 @@ __metadata:
     "@shopify/cli-hydrogen": "npm:8.1.1"
     "@shopify/hydrogen": "npm:2025.4.2"
     "@shopify/hydrogen-codegen": "npm:^0.3.3"
-    "@shopify/mini-oxygen": "npm:3.1.2"
+    "@shopify/mini-oxygen": "npm:3.1.1"
     "@shopify/oxygen-workers-types": "npm:4.1.2"
     "@shopify/prettier-config": "npm:^1.1.2"
     "@shopify/remix-oxygen": "npm:2.1.0"
@@ -15812,7 +15805,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"miniflare@npm:^3.20250124.0":
+"miniflare@npm:^3.20240925.0":
   version: 3.20250718.3
   resolution: "miniflare@npm:3.20250718.3"
   dependencies:
@@ -16064,13 +16057,6 @@ __metadata:
   version: 1.0.1
   resolution: "mrmime@npm:1.0.1"
   checksum: 10c0/ab071441da76fd23b3b0d1823d77aacf8679d379a4a94cacd83e487d3d906763b277f3203a594c613602e31ab5209c26a8119b0477c4541ef8555b293a9db6d3
-  languageName: node
-  linkType: hard
-
-"mrmime@npm:2.0.0":
-  version: 2.0.0
-  resolution: "mrmime@npm:2.0.0"
-  checksum: 10c0/312b35ed288986aec90955410b21ed7427fd1e4ee318cb5fc18765c8d029eeded9444faa46589e5b1ed6b35fb2054a802ac8dcb917ddf6b3e189cb3bf11a965c
   languageName: node
   linkType: hard
 
@@ -18061,12 +18047,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.13.0":
-  version: 6.13.0
-  resolution: "qs@npm:6.13.0"
+"qs@npm:6.11.0":
+  version: 6.11.0
+  resolution: "qs@npm:6.11.0"
   dependencies:
-    side-channel: "npm:^1.0.6"
-  checksum: 10c0/62372cdeec24dc83a9fb240b7533c0fdcf0c5f7e0b83343edd7310f0ab4c8205a5e7c56406531f2e47e1b4878a3821d652be4192c841de5b032ca83619d8f860
+    side-channel: "npm:^1.0.4"
+  checksum: 10c0/4e4875e4d7c7c31c233d07a448e7e4650f456178b9dd3766b7cfa13158fdb24ecb8c4f059fa91e820dc6ab9f2d243721d071c9c0378892dcdad86e9e9a27c68f
   languageName: node
   linkType: hard
 
@@ -19502,7 +19488,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"side-channel@npm:^1.0.4, side-channel@npm:^1.0.6, side-channel@npm:^1.1.0":
+"side-channel@npm:^1.0.4, side-channel@npm:^1.1.0":
   version: 1.1.0
   resolution: "side-channel@npm:1.1.0"
   dependencies:
@@ -21129,17 +21115,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici@npm:^6.21.1":
+  version: 6.25.0
+  resolution: "undici@npm:6.25.0"
+  checksum: 10c0/2597cc6689bdb02c210c557b1f85febbfda65becae6e6fc1061508e2f33734d25207f81cd8af56ada9956329eb3a7bd7431e87dcfeceba20ee87059b57dcf985
+  languageName: node
+  linkType: hard
+
 "undici@npm:^7.24.5":
   version: 7.24.7
   resolution: "undici@npm:7.24.7"
   checksum: 10c0/779c67e81677324763ea00ea547ba74757472ebe2625d046d592434ee19d9d148fe0eaef7006c0185096614249ac0f179e7f559b202b518af8d587e9548559b6
-  languageName: node
-  linkType: hard
-
-"undici@npm:^7.3.0":
-  version: 7.25.0
-  resolution: "undici@npm:7.25.0"
-  checksum: 10c0/02a0b45dc14eb91bc488948750232450fe52f27a6b08086d6ac6736bb47908d600fe3a96d346f12eab24729c782e5c2f693bc8e8eca6696d4e4c09b1ed4cb4ec
   languageName: node
   linkType: hard
 
@@ -22308,7 +22294,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.18.0, ws@npm:^8.17.1, ws@npm:^8.18.0, ws@npm:^8.2.2":
+"ws@npm:8.18.0, ws@npm:^8.17.1, ws@npm:^8.2.2":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:
