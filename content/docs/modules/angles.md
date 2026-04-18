@@ -59,14 +59,6 @@ import angles_line_art_labeled from '/img/modules/angles/angles-diagrams/angles_
 
 <!-- AFR note: these two diagrams freak me out because they show connecting multiple outputs to a single input. I thought that dirty mixing was bad practice. I'm commenting the diagrams out for now. -->
 
-{/_
-<img src={angles_quadrilateral} alt="Diagram" />
-_/}
-
-{/_
-<img src={angles_triangle} alt="Diagram" />
-_/}
-
 <img src={angles_frontpanel} alt="ANGLES front panel" />
 
 ## Overview

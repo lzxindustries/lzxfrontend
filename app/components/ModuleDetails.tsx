@@ -50,6 +50,27 @@ const rewriteLegacyDocsLinks = (html: string): string => {
     '/instruments/videomancer/manual/programs',
   );
 
+  // Some migrated content contains duplicated /docs/docs paths on the main domain.
+  rewritten = rewritten.replace(
+    /https?:\/\/lzxindustries\.net\/docs\/docs\/category\/program-guides/gi,
+    '/instruments/videomancer/manual/programs',
+  );
+
+  rewritten = rewritten.replace(
+    /https?:\/\/lzxindustries\.net\/docs\/docs\/instruments\/([^"'\s<]*)/gi,
+    '/instruments/$1/manual',
+  );
+
+  rewritten = rewritten.replace(
+    /https?:\/\/lzxindustries\.net\/docs\/docs\/modules\/([^"'\s<]*)/gi,
+    '/modules/$1/manual',
+  );
+
+  rewritten = rewritten.replace(
+    /https?:\/\/lzxindustries\.net\/docs\/docs\/(?!instruments\/|modules\/)([^"'\s<]*)/gi,
+    '/docs/$1',
+  );
+
   // Rewrite legacy docs.lzxindustries.net instrument links to new hub paths.
   rewritten = rewritten.replace(
     /https?:\/\/docs\.lzxindustries\.net\/docs\/instruments\/([^"'\s<]*)/gi,
@@ -71,6 +92,21 @@ const rewriteLegacyDocsLinks = (html: string): string => {
   rewritten = rewritten.replace(
     /(href=["'])\/docs\/category\/[^"']+(["'])/gi,
     '$1/docs$2',
+  );
+
+  rewritten = rewritten.replace(
+    /(href=["'])\/docs\/docs\/instruments\/([^"']+)(["'])/gi,
+    '$1/instruments/$2/manual$3',
+  );
+
+  rewritten = rewritten.replace(
+    /(href=["'])\/docs\/docs\/modules\/([^"']+)(["'])/gi,
+    '$1/modules/$2/manual$3',
+  );
+
+  rewritten = rewritten.replace(
+    /(href=["'])\/docs\/docs\/([^"']+)(["'])/gi,
+    '$1/docs/$2$3',
   );
 
   return rewritten;

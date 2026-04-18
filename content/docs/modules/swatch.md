@@ -59,19 +59,9 @@ AFR note: I hope to add some more example Swatch patches from my 6th-level Illus
 
 <!--
 AFR note: the Over vs. Clamp diagram looks incorrect. Need to verify. Aren't RGB Over outputs unipolar, not bipolar? And for clarity, source should be a ramp rather than two cycles of a triangle wave.
--->
-
-{/_
-import swatch_over_vs_clamp from '/img/modules/swatch/swatch-diagrams/swatch_over-vs-clamp.png';
-_/}
 
 <!--
 AFR note: Is the Tint patch diagram correct? Shouldn't this just be 2x static voltages coming out of Proc, directly into Swatch I+ and Q+, and nothing else?
--->
-
-{/_
-import swatch_tint from '/img/modules/swatch/swatch-diagrams/swatch_tint.png';
-_/}
 
 <!--
 AFR note: the Desaturate diagram is not useful. The result it shows is just the luminance. That can be achieved much more simply by just patching Swatch Y out to the encoder top Red input. The diagram does illustrate the module's high precision of phase alignment, but I think that would be lost on most users. The focus here is not on highlighting the technical excellence of the hardware, but rather its practical creative functions.

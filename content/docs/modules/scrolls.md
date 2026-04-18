@@ -395,8 +395,7 @@ The hardware revision code is printed on the circuit board visible from the rear
 AFR note: I'm not seeing any Scrolls firmware ZIP in the repo
 -->
 
-## <!--
-
+<!--
 ## Firmware
 
 Scrolls Firmware 1.0.1 (ZIP)

@@ -215,13 +215,11 @@ But remember that there's only one key to rule them all. No matter how we genera
 [3 Patches for FKG3](https://youtu.be/h32UDIphXuI)
 <br />presented by Johnny Woods
 
-## <!--
-
+<!--
 ## Example Patches
 
 TODO
-
-## -->
+-->
 
 ## Installation
 

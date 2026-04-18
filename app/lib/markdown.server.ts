@@ -316,6 +316,38 @@ function extractExcerpt(raw: string): string {
     .slice(0, 200);
 }
 
+// Remove `export function` blocks using brace counting so nested `}` don't
+// prematurely end the match.
+function stripExportFunctionBlocks(content: string): string {
+  const lines = content.split('\n');
+  const result: string[] = [];
+  let inExportFn = false;
+  let depth = 0;
+
+  for (const line of lines) {
+    if (!inExportFn) {
+      if (/^export\s+function\s/.test(line)) {
+        inExportFn = true;
+        depth =
+          (line.match(/\{/g) ?? []).length - (line.match(/\}/g) ?? []).length;
+        // depth may be 0 if opening brace is on a later line — that's fine,
+        // we still skip this line.
+        continue;
+      }
+      result.push(line);
+    } else {
+      depth +=
+        (line.match(/\{/g) ?? []).length - (line.match(/\}/g) ?? []).length;
+      if (depth <= 0) {
+        inExportFn = false;
+      }
+      // Skip all lines inside the export function block.
+    }
+  }
+
+  return result.join('\n');
+}
+
 // --- MDX-to-Markdown preprocessing ---
 // Docusaurus docs use MDX features (imports, JSX, admonitions, component
 // definitions). We convert these to plain Markdown / HTML before feeding
@@ -341,7 +373,7 @@ function stripMdxSyntax(content: string): string {
   // 2. Remove `export function ...` blocks (e.g. ResponsiveYouTube component
   //    definitions). These span from `export function` to the closing `}` at
   //    column 0.
-  content = content.replace(/^export\s+function\s+[\s\S]*?\n}\s*$/gm, '');
+  content = stripExportFunctionBlocks(content);
 
   // 3. Replace <ResponsiveYouTube videoId="XYZ" /> with a plain iframe
   content = content.replace(

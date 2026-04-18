@@ -66,12 +66,6 @@ import proc_line_art_labeled from '/img/modules/proc/proc-diagrams/proc_line_art
 
 <!-- AFR note: HTML style comments in combination with Markdown/Docusaurus are causing some compilation errors. Not sure what the evil character combo is. I changed the commented out warning below to JS style comments. Otherwise the site wouldn't load. -->
 
-{/_
-:::warning
-This page is under construction and in a draft state. Stay tuned to our newsletter for the official content release.
-:::
-_/}
-
 <img src={proc_frontpanel} alt="Proc front panel" />
 
 ## Overview
@@ -216,11 +210,6 @@ By sending the output of one channel to the input of another, we can create more
 ### RGB color picker
 
 <img src={proc_rgb_color_picker} alt="Proc RGB color picker" />
-
-{/_
-RGB color picker
-<img src={proc_rgb_color_picker_static} alt="Proc RGB color picker" />
-_/}
 
 ---
 

@@ -167,10 +167,6 @@ If you're not able to isolate the value range you want, then bias the signal up 
 
 <!-- AFR note: commented out the illustration below to eliminate redundancy -->
 
-{/_
-<img src={stacker_priority_layering} alt="Stacker patch: priority layering" />
-_/}
-
 <img src={stacker_priority_layering_combo} alt="Stacker patch: priority layering" />
 
 ---
