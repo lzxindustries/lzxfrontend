@@ -18,6 +18,12 @@ describe('LFS product metadata helpers', () => {
     expect(getLfsProductSubtitle('Color Chords')).toBe(
       'Four Channel Summing Matrix',
     );
+    expect(getLfsProductSubtitle('Cyclops')).toBe(
+      'EuroRack-to-ILDA Laser Display Interface',
+    );
+    expect(getLfsProductSubtitle('Pendulum')).toBe(
+      'Dual Animator with Crossfader and Router',
+    );
   });
 
   it('exposes external module listing entries for VH.S products', () => {
