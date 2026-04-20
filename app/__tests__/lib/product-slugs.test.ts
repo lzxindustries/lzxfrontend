@@ -76,6 +76,16 @@ describe('getAllModuleSlugs', () => {
   it('includes the TBC2 expander', () => {
     expect(getAllModuleSlugs()).toContain('tbc2-expander');
   });
+
+  it('includes restored first-party legacy and utility modules', () => {
+    const slugs = getAllModuleSlugs();
+
+    expect(slugs).toContain('dc-distro-3a');
+    expect(slugs).toContain('dc-distro-5a');
+    expect(slugs).toContain('triple-video-fader-key-generator');
+    expect(slugs).toContain('video-blending-matrix');
+    expect(slugs).toContain('video-logic');
+  });
 });
 
 describe('getModulesBySeries', () => {
@@ -83,6 +93,25 @@ describe('getModulesBySeries', () => {
     const gen3Modules = getModulesBySeries().get('gen3') ?? [];
     expect(gen3Modules.map((entry) => entry.canonical)).toContain(
       'tbc2-expander',
+    );
+  });
+
+  it('groups restored utility and legacy modules into the correct series', () => {
+    const bySeries = getModulesBySeries();
+
+    expect(
+      (bySeries.get('gen3') ?? []).map((entry) => entry.canonical),
+    ).toEqual(
+      expect.arrayContaining(['dc-distro-3a', 'dc-distro-5a']),
+    );
+    expect(
+      (bySeries.get('visionary') ?? []).map((entry) => entry.canonical),
+    ).toEqual(
+      expect.arrayContaining([
+        'triple-video-fader-key-generator',
+        'video-blending-matrix',
+        'video-logic',
+      ]),
     );
   });
 });

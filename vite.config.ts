@@ -13,7 +13,9 @@ export default defineConfig({
       ignoredRouteFiles: ['**/.*'],
       future: {
         v3_fetcherPersist: false,
+        v3_lazyRouteDiscovery: false,
         v3_relativeSplatPath: false,
+        v3_singleFetch: false,
         v3_throwAbortReason: false,
       },
     }),
@@ -23,6 +25,21 @@ export default defineConfig({
     // Allow a strict Content-Security-Policy
     // withtout inlining assets as base64:
     assetsInlineLimit: 0,
+    // Mermaid is already lazy-loaded into its own chunk; use a threshold that
+    // reflects that intentionally large vendor bundle.
+    chunkSizeWarningLimit: 650,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (
+          warning.code === 'EVAL' &&
+          warning.id?.includes('/node_modules/gray-matter/lib/engines.js')
+        ) {
+          return;
+        }
+
+        warn(warning);
+      },
+    },
   },
   ssr: {
     optimizeDeps: {

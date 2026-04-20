@@ -117,7 +117,12 @@ const EXPEDITION_SERIES_NAMES = new Set([
 ]);
 
 const MODULE_SERIES_OVERRIDES: Record<string, string> = {
+  'DC Distro 3A': 'gen3',
+  'DC Distro 5A': 'gen3',
   'TBC2 Expander': 'gen3',
+  'Triple Video Fader & Key Generator': 'visionary',
+  'Video Blending Matrix': 'visionary',
+  'Video Logic': 'visionary',
 };
 
 function detectSeries(m: Record<string, unknown>): string | null {
@@ -212,13 +217,8 @@ const ACCESSORY_NAMES = new Set([
   'Chromagnon Patch',
   'Chromagnon Sticker',
   '8GB MicroSD Card',
-  'Triple Video Fader & Key Generator',
-  'Video Logic',
-  'Video Blending Matrix',
   'Rack 84HP',
   'Bus 168 DIY Kit',
-  'DC Distro 3A',
-  'DC Distro 5A',
   'Vessel 84',
   'Vessel 168',
   'Vessel 208',

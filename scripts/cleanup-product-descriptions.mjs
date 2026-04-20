@@ -6,12 +6,15 @@
  *  1. Remove orphaned PDF references (e.g. "Owner's Manual (PDF)")
  *  2. Remove stale availability notices ("SOLD OUT", "No longer available", "Limited stock", etc.)
  *  3. Remove raw spec lines (Width/Mounting Depth/Power) -- these live in metafields now
- *  4. Normalize legacy URLs (community.lzxindustries.net, docs.lzxindustries.net, github lzxdocs)
- *  5. Strip leading/trailing whitespace and collapse excessive blank lines
+ *  4. Remove redundant docs CTA links ("Learn more about ... on our documentation website!")
+ *  5. Normalize legacy URLs (community.lzxindustries.net, docs.lzxindustries.net, github lzxdocs)
+ *  6. Strip leading/trailing whitespace and collapse excessive blank lines
  *
  * Usage:
  *   node scripts/cleanup-product-descriptions.mjs --dry-run   # preview only (default)
  *   node scripts/cleanup-product-descriptions.mjs --apply      # actually update Shopify
+ *   node scripts/cleanup-product-descriptions.mjs --docs-cta-only --apply
+ *     # remove only redundant docs CTA links
  */
 
 import dotenv from 'dotenv';
@@ -35,6 +38,7 @@ if (!PUBLIC_STORE_DOMAIN || !SHOPIFY_CLIENT_ID || !SHOPIFY_CLIENT_SECRET) {
 }
 
 const APPLY = process.argv.includes('--apply');
+const DOCS_CTA_ONLY = process.argv.includes('--docs-cta-only');
 
 // ─── Auth ────────────────────────────────────────────────────────────────────
 
@@ -157,10 +161,30 @@ const URL_REWRITES = [
   ],
 ];
 
+const REDUNDANT_DOCS_CTA_ANCHOR_PATTERN =
+  /<a\b[^>]*href="https?:\/\/lzxindustries\.net\/docs\/docs\/[^\"]*"[^>]*>\s*(?:<span[^>]*>)?\s*Learn\s+more\s+about\s+[^<]+?\s+on\s+our\s+documentation\s+website!\s*(?:<\/span>)?\s*<\/a>/i;
+
+const STANDALONE_REDUNDANT_DOCS_CTA_PATTERN = new RegExp(
+  `<p\\b[^>]*>\\s*(?:<br\\s*\\/?\\s*>\\s*)*(?:${REDUNDANT_DOCS_CTA_ANCHOR_PATTERN.source})\\s*(?:<strong>\\s*<\\/strong>\\s*)*(?:<br\\s*\\/?\\s*>\\s*)*<\\/p>`,
+  'gi',
+);
+
+const INLINE_REDUNDANT_DOCS_CTA_PATTERN = new RegExp(
+  `(?:<br\\s*\\/?\\s*>\\s*)*(?:${REDUNDANT_DOCS_CTA_ANCHOR_PATTERN.source})\\s*(?:<br\\s*\\/?\\s*>\\s*)*`,
+  'gi',
+);
+
 function cleanDescription(html) {
   if (!html) return html;
 
   let cleaned = html;
+
+  if (DOCS_CTA_ONLY) {
+    cleaned = cleaned.replace(STANDALONE_REDUNDANT_DOCS_CTA_PATTERN, '');
+    cleaned = cleaned.replace(INLINE_REDUNDANT_DOCS_CTA_PATTERN, '');
+    cleaned = cleaned.replace(/(<p\b[^>]*>\s*)Or(\s+<a\b)/gi, '$1$2');
+    return cleaned;
+  }
 
   // Apply removal patterns
   for (const pattern of REMOVAL_PATTERNS) {
@@ -172,10 +196,17 @@ function cleanDescription(html) {
     cleaned = cleaned.replace(pattern, replacement);
   }
 
+  cleaned = cleaned.replace(STANDALONE_REDUNDANT_DOCS_CTA_PATTERN, '');
+  cleaned = cleaned.replace(INLINE_REDUNDANT_DOCS_CTA_PATTERN, '');
+  cleaned = cleaned.replace(/(<p\b[^>]*>\s*)Or(\s+<a\b)/gi, '$1$2');
+
   // Collapse runs of <br> / whitespace
   cleaned = cleaned.replace(/(<br\s*\/?\s*>\s*){3,}/gi, '<br><br>');
   // Remove empty paragraphs
-  cleaned = cleaned.replace(/<p>\s*<\/p>/gi, '');
+  cleaned = cleaned.replace(
+    /<p\b[^>]*>\s*(?:&nbsp;|\u00a0)*\s*<\/p>/gi,
+    '',
+  );
   // Trim leading/trailing whitespace and <br>
   cleaned = cleaned.replace(/^(\s|<br\s*\/?\s*>)+/i, '');
   cleaned = cleaned.replace(/(\s|<br\s*\/?\s*>)+$/i, '');
@@ -211,7 +242,9 @@ async function updateProduct(token, id, descriptionHtml) {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log(`Mode: ${APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'}`);
+  console.log(
+    `Mode: ${APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'}${DOCS_CTA_ONLY ? ' [docs CTA only]' : ''}`,
+  );
   console.log('');
 
   console.log('Authenticating...');

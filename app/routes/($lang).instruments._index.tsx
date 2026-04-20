@@ -6,6 +6,7 @@ import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
 import {getAllInstrumentSlugs, getSlugEntry} from '~/data/product-slugs';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
+import {getLfsProductSubtitle} from '~/data/lfs-product-metadata';
 import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
@@ -33,6 +34,17 @@ const INSTRUMENT_LISTING_ARTWORK_OVERRIDES: Record<string, string> = {
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
+const BITVISION_LEGACY_ENTRY = {
+  canonical: 'bitvision',
+  name: 'BitVision',
+  subtitle: 'Compact Video Synthesizer for Audiovisualization',
+  externalUrl: 'https://community.lzxindustries.net/t/all-about-bitvision-legacy/1353',
+  hasInternalPage: false,
+  isHidden: true,
+  artworkPath: null,
+  shopifyProduct: null,
+};
+
 type InstrumentListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   availableForSale?: boolean;
   featuredImage?: {
@@ -53,6 +65,17 @@ type InstrumentListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
       price?: {amount: string; currencyCode: string};
     }>;
   };
+};
+
+type InstrumentListingEntry = {
+  canonical: string;
+  name: string;
+  subtitle?: string | null;
+  shopifyProduct?: InstrumentListingProduct | null;
+  externalUrl?: string | null;
+  hasInternalPage: boolean;
+  isHidden: boolean;
+  artworkPath?: string | null;
 };
 
 function buildHandleFilterQuery(handles: string[]): string {
@@ -142,16 +165,20 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const listingEntries = entries
     .map((entry) => {
       const subtitle = entry.moduleId
-        ? getModuleById(entry.moduleId)?.subtitle
-        : undefined;
+        ? getModuleById(entry.moduleId)?.subtitle ?? getLfsProductSubtitle(entry.name)
+        : getLfsProductSubtitle(entry.name);
 
       return {
-        ...entry,
+        canonical: entry.canonical,
+        name: entry.name,
+        isHidden: entry.isHidden,
         subtitle,
         shopifyProduct:
           (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
           productByHandle.get(entry.canonical) ??
           null,
+        hasInternalPage: true,
+        externalUrl: entry.externalUrl ?? null,
       };
     });
 
@@ -159,7 +186,10 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     listingEntries.filter((entry) => ACTIVE_INSTRUMENT_SLUGS.has(entry.canonical)),
   );
   const legacyEntries = sortInstrumentEntries(
-    listingEntries.filter((entry) => LEGACY_INSTRUMENT_SLUGS.has(entry.canonical)),
+    [
+      ...listingEntries.filter((entry) => LEGACY_INSTRUMENT_SLUGS.has(entry.canonical)),
+      BITVISION_LEGACY_ENTRY,
+    ],
   );
 
   const seo = seoPayload.collection({
@@ -189,27 +219,23 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 export default function InstrumentListingPage() {
   const {activeEntries, legacyEntries} = useLoaderData<typeof loader>();
 
-  const renderEntries = (entries: typeof activeEntries, legacy = false) => (
+  const renderEntries = (entries: InstrumentListingEntry[], legacy = false) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {entries.map((entry: any) => {
-        const product = entry.shopifyProduct as InstrumentListingProduct | null;
+      {entries.map((entry) => {
+        const product = entry.shopifyProduct ?? null;
         const firstImage =
           product?.featuredImage ??
           product?.variants?.nodes?.[0]?.image;
-        const localArtworkPath = getInstrumentListingArtworkPath(
-          entry.canonical,
-        );
+        const localArtworkPath =
+          entry.artworkPath ?? getInstrumentListingArtworkPath(entry.canonical);
         const shouldUseLocalSquareArtwork =
           Boolean(localArtworkPath) &&
           FORCE_LOCAL_SQUARE_ARTWORK_SLUGS.has(entry.canonical);
+        const cardClasses =
+          'group flex flex-col gap-3 rounded-lg border border-base-300 p-4 hover:shadow-md transition';
 
-        return (
-          <Link
-            key={entry.canonical}
-            to={`/instruments/${entry.canonical}`}
-            prefetch="intent"
-            className="group flex flex-col gap-3 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
-          >
+        const cardContent = (
+          <>
             {shouldUseLocalSquareArtwork ? (
               <img
                 src={localArtworkPath!}
@@ -249,7 +275,32 @@ export default function InstrumentListingPage() {
                 <span className="badge badge-sm badge-ghost mt-1">Legacy</span>
               ) : null}
             </div>
-          </Link>
+          </>
+        );
+
+        if (entry.hasInternalPage) {
+          return (
+            <Link
+              key={entry.canonical}
+              to={`/instruments/${entry.canonical}`}
+              prefetch="intent"
+              className={cardClasses}
+            >
+              {cardContent}
+            </Link>
+          );
+        }
+
+        return (
+          <a
+            key={entry.canonical}
+            href={entry.externalUrl ?? '#'}
+            target="_blank"
+            rel="noreferrer"
+            className={cardClasses}
+          >
+            {cardContent}
+          </a>
         );
       })}
     </div>

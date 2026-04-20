@@ -7,6 +7,10 @@ import {Image} from '@shopify/hydrogen';
 
 import {getModulesBySeries} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
+import {
+  getExternalModuleListingEntries,
+  getLfsProductSubtitle,
+} from '~/data/lfs-product-metadata';
 import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
@@ -14,7 +18,7 @@ import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
 
-const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'castle'];
+const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'vhs', 'castle'];
 const LEGACY_SERIES_ORDER = [
   'orion',
   'expedition',
@@ -27,6 +31,7 @@ const LEGACY_SERIES_ORDER = [
 const SERIES_LABELS: Record<string, string> = {
   pseries: 'P',
   gen3: 'Gen3',
+  vhs: 'VH.S',
   orion: 'Orion',
   visionary: 'Visionary',
   castle: 'Castle',
@@ -41,6 +46,8 @@ const SERIES_SUBTITLES: Record<string, string> = {
     'Compact utility modules designed to solve everyday patching needs with minimal space and maximum flexibility. These are foundational building blocks for routing, buffering, and distribution.',
   gen3:
     'Gen3 defines the modern LZX core: high-precision color, keying, and signal processing modules built for contemporary video synthesis systems. This series is optimized for deep integration and performance.',
+  vhs:
+    'Third-party modules from Video Headroom Systems built for the LZX Gen3 signal standard. These expand the ecosystem without requiring internal storefront product pages.',
   castle:
     'Castle is a digital logic playground for video-rate pulse structures, counters, gates, and timing experiments. It brings modular logic synthesis into the visual domain with a playful, patch-programmable approach.',
   orion:
@@ -81,6 +88,20 @@ type ModuleListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   };
 };
 
+type ModuleListingEntry = Pick<SlugEntry, 'canonical' | 'name' | 'isHidden'> & {
+  subtitle?: string | null;
+  shopifyProduct?: ModuleListingProduct;
+  externalUrl?: string | null;
+  hasInternalPage: boolean;
+  badgeLabel?: string | null;
+};
+
+type ModuleSeriesGroup = {
+  key: string;
+  label: string;
+  entries: ModuleListingEntry[];
+};
+
 function buildHandleFilterQuery(handles: string[]): string {
   return handles.map((handle) => `handle:${handle}`).join(' OR ');
 }
@@ -88,6 +109,15 @@ function buildHandleFilterQuery(handles: string[]): string {
 export async function loader({context, request}: LoaderFunctionArgs) {
   const bySeriesMap = getModulesBySeries();
   const allEntries = [...bySeriesMap.values()].flat();
+  const externalModuleEntries = getExternalModuleListingEntries().map((entry) => ({
+    canonical: entry.slug,
+    name: entry.name,
+    isHidden: entry.isHidden,
+    subtitle: entry.subtitle,
+    externalUrl: entry.externalUrl,
+    hasInternalPage: false,
+    badgeLabel: 'External',
+  })) satisfies ModuleListingEntry[];
 
   const allHandles = allEntries.map((e) => e.canonical);
   const allShopifyIds = allEntries
@@ -149,28 +179,32 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   }
 
   // Build serializable series groups
-  const rawSeriesGroups: {
-    key: string;
-    label: string;
-    entries: (SlugEntry & {shopifyProduct?: ModuleListingProduct; subtitle?: string})[];
-  }[] = [];
+  const rawSeriesGroups: ModuleSeriesGroup[] = [];
 
   for (const key of [...ACTIVE_SERIES_ORDER, ...LEGACY_SERIES_ORDER]) {
-    const entries = bySeriesMap.get(key);
-    if (!entries || entries.length === 0) continue;
+    const entries = key === 'vhs' ? undefined : bySeriesMap.get(key);
+    const groupEntries =
+      key === 'vhs'
+        ? externalModuleEntries
+        : entries?.map((entry) => ({
+            canonical: entry.canonical,
+            name: entry.name,
+            isHidden: entry.isHidden,
+            shopifyProduct:
+              (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
+              productByHandle.get(entry.canonical) ??
+              undefined,
+            subtitle:
+              (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
+              getLfsProductSubtitle(entry.name),
+            externalUrl: entry.externalUrl ?? null,
+            hasInternalPage: true,
+          }));
+    if (!groupEntries || groupEntries.length === 0) continue;
     rawSeriesGroups.push({
       key,
       label: SERIES_LABELS[key] ?? key,
-      entries: [...entries]
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((e) => ({
-        ...e,
-        shopifyProduct:
-          (e.shopifyGid ? productById.get(e.shopifyGid) : undefined) ??
-          productByHandle.get(e.canonical) ??
-          undefined,
-        subtitle: e.moduleId ? getModuleById(e.moduleId)?.subtitle : undefined,
-      })),
+      entries: [...groupEntries].sort((a, b) => a.name.localeCompare(b.name)),
     });
   }
 
@@ -208,11 +242,7 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 export default function ModuleListingPage() {
   const {activeSeriesGroups, legacySeriesGroups} = useLoaderData<typeof loader>();
 
-  const renderSeriesGroup = (group: {
-    key: string;
-    label: string;
-    entries: (SlugEntry & {shopifyProduct?: ModuleListingProduct; subtitle?: string})[];
-  }) => (
+  const renderSeriesGroup = (group: ModuleSeriesGroup) => (
     <section key={group.key} className="mb-12">
       <h2 className="text-xl font-semibold mb-1 border-b border-base-300 pb-2">
         {group.label} Series
@@ -222,20 +252,18 @@ export default function ModuleListingPage() {
       ) : null}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {group.entries.map((entry) => {
-          const product = (entry as any).shopifyProduct as
-            | ModuleListingProduct
-            | undefined;
+          const product = entry.shopifyProduct;
           const firstImage =
-            (product as any)?.featuredImage ?? product?.variants?.nodes?.[0]?.image;
+            product?.featuredImage ?? product?.variants?.nodes?.[0]?.image;
           const localArtworkPath = getModuleArtworkPath(entry.canonical);
+          const cardClasses =
+            'group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition';
+          const badgeLabel =
+            entry.badgeLabel ??
+            (!ACTIVE_SERIES_ORDER.includes(group.key) ? 'Legacy' : null);
 
-          return (
-            <Link
-              key={entry.canonical}
-              to={`/modules/${entry.canonical}`}
-              prefetch="intent"
-              className="group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition"
-            >
+          const cardContent = (
+            <>
               {localArtworkPath ? (
                 <img
                   src={localArtworkPath}
@@ -264,11 +292,36 @@ export default function ModuleListingPage() {
                     {entry.subtitle}
                   </p>
                 ) : null}
-                {!ACTIVE_SERIES_ORDER.includes(group.key) && (
-                  <span className="badge badge-sm badge-ghost mt-1">Legacy</span>
-                )}
+                {badgeLabel ? (
+                  <span className="badge badge-sm badge-ghost mt-1">{badgeLabel}</span>
+                ) : null}
               </div>
-            </Link>
+            </>
+          );
+
+          if (entry.hasInternalPage) {
+            return (
+              <Link
+                key={entry.canonical}
+                to={`/modules/${entry.canonical}`}
+                prefetch="intent"
+                className={cardClasses}
+              >
+                {cardContent}
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              key={entry.canonical}
+              href={entry.externalUrl ?? '#'}
+              target="_blank"
+              rel="noreferrer"
+              className={cardClasses}
+            >
+              {cardContent}
+            </a>
           );
         })}
       </div>
