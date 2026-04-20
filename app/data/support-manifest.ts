@@ -1,3 +1,5 @@
+import {getSlugEntry} from '~/data/product-slugs';
+
 // 3) Manual-version and related-product data format decision.
 
 export interface ManualVersion {
@@ -17,6 +19,7 @@ export interface ProductSupportRecord {
   relatedProductSlugs: string[];
   setupPrerequisites?: string[];
   connectSupported?: boolean;
+  showGuidedUpdaterOnDownloads?: boolean;
   faqItems?: FaqItem[];
 }
 
@@ -285,3 +288,15 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     relatedProductSlugs: ['castle-011-shift-register', 'castle-110-counter'],
   },
 };
+
+export function shouldShowGuidedUpdaterOnDownloads(
+  slug: string,
+  supportManifest: Record<string, ProductSupportRecord> = SUPPORT_MANIFEST,
+) {
+  const entry = getSlugEntry(slug);
+  if (entry?.hubType !== 'module') {
+    return false;
+  }
+
+  return supportManifest[slug]?.showGuidedUpdaterOnDownloads === true;
+}

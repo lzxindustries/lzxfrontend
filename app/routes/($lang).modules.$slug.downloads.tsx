@@ -3,6 +3,7 @@ import type {MetaArgs} from '@shopify/remix-oxygen';
 import {FaDownload} from 'react-icons/fa';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
+import {shouldShowGuidedUpdaterOnDownloads} from '~/data/support-manifest';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
@@ -14,6 +15,7 @@ export const meta = ({matches}: MetaArgs) => {
 export default function ModuleDownloads() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
   const {assets, product, slug} = data as unknown as ModuleHubData;
+  const showGuidedUpdater = shouldShowGuidedUpdaterOnDownloads(slug);
 
   if (assets.length === 0) {
     return (
@@ -36,19 +38,20 @@ export default function ModuleDownloads() {
           &larr; Back to {product.title} overview
         </Link>
       </div>
-      <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
-        <p className="font-semibold">Need a guided updater?</p>
-        <p className="mt-1 text-sm text-base-content/70">
-          LZX Connect provides guided firmware updates for Videomancer (with
-          Chromagnon support coming soon).
-        </p>
-        <a href="/connect" className="btn btn-sm btn-primary mt-3">
-          Open LZX Connect
-        </a>
-        <a href="/downloads" className="btn btn-sm btn-outline mt-3 ml-2">
-          Browse All Downloads
-        </a>
-      </div>
+      {showGuidedUpdater ? (
+        <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
+          <p className="font-semibold">Need a guided updater?</p>
+          <p className="mt-1 text-sm text-base-content/70">
+            LZX Connect provides guided firmware updates for supported modules.
+          </p>
+          <a href="/connect" className="btn btn-sm btn-primary mt-3">
+            Open LZX Connect
+          </a>
+          <a href="/downloads" className="btn btn-sm btn-outline mt-3 ml-2">
+            Browse All Downloads
+          </a>
+        </div>
+      ) : null}
       <div className="grid gap-4">
         {assets.map((asset) => (
           <div

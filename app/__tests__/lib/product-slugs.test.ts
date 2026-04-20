@@ -4,7 +4,9 @@ import {
   getCanonicalSlug,
   getAllModuleSlugs,
   getAllInstrumentEntries,
+  getModulesBySeries,
 } from '~/data/product-slugs';
+import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 
 describe('getSlugEntry', () => {
@@ -17,6 +19,14 @@ describe('getSlugEntry', () => {
     expect(entry).not.toBeNull();
     expect(entry!.canonical).toBe('esg3');
     expect(entry!.hubType).toBe('module');
+  });
+
+  it('returns a SlugEntry for TBC2 Expander as a module', () => {
+    const entry = getSlugEntry('tbc2-expander');
+    expect(entry).not.toBeNull();
+    expect(entry!.canonical).toBe('tbc2-expander');
+    expect(entry!.hubType).toBe('module');
+    expect(entry!.series).toBe('gen3');
   });
 
   it('returns a SlugEntry for a known instrument slug', () => {
@@ -61,6 +71,30 @@ describe('getAllModuleSlugs', () => {
       expect(entry).not.toBeNull();
       expect(entry!.hubType).toBe('module');
     }
+  });
+
+  it('includes the TBC2 expander', () => {
+    expect(getAllModuleSlugs()).toContain('tbc2-expander');
+  });
+});
+
+describe('getModulesBySeries', () => {
+  it('groups TBC2 Expander with the Gen3 modules', () => {
+    const gen3Modules = getModulesBySeries().get('gen3') ?? [];
+    expect(gen3Modules.map((entry) => entry.canonical)).toContain(
+      'tbc2-expander',
+    );
+  });
+});
+
+describe('getModuleArtworkPath', () => {
+  it('uses the correct TBC2 artwork overrides', () => {
+    expect(getModuleArtworkPath('tbc2')).toBe(
+      '/images/tbc2-mk2-front-panel-square.png',
+    );
+    expect(getModuleArtworkPath('tbc2-expander')).toBe(
+      '/images/tbc2-expander-front-panel-square.png',
+    );
   });
 });
 

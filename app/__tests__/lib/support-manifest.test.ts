@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest';
 import {
   SUPPORT_MANIFEST,
   type ProductSupportRecord,
+  shouldShowGuidedUpdaterOnDownloads,
 } from '~/data/support-manifest';
 import {
   getSlugEntry,
@@ -75,6 +76,14 @@ describe('SUPPORT_MANIFEST structure', () => {
       }
     }
   });
+
+  it('showGuidedUpdaterOnDownloads is a boolean when present', () => {
+    for (const entry of Object.values(SUPPORT_MANIFEST)) {
+      if (entry.showGuidedUpdaterOnDownloads !== undefined) {
+        expect(typeof entry.showGuidedUpdaterOnDownloads).toBe('boolean');
+      }
+    }
+  });
 });
 
 describe('SUPPORT_MANIFEST slug consistency', () => {
@@ -143,5 +152,29 @@ describe('SUPPORT_MANIFEST key products', () => {
 
   it('videomancer has manual entries', () => {
     expect(SUPPORT_MANIFEST['videomancer'].manuals.length).toBeGreaterThan(0);
+  });
+
+  it('does not show guided updater on product downloads for connect-supported instruments', () => {
+    expect(shouldShowGuidedUpdaterOnDownloads('videomancer')).toBe(false);
+    expect(shouldShowGuidedUpdaterOnDownloads('chromagnon')).toBe(false);
+  });
+
+  it('shows guided updater on product downloads only when a module opts in', () => {
+    const manifest: Record<string, ProductSupportRecord> = {
+      ...SUPPORT_MANIFEST,
+      esg3: {
+        ...SUPPORT_MANIFEST['esg3'],
+        showGuidedUpdaterOnDownloads: true,
+      },
+      videomancer: {
+        ...SUPPORT_MANIFEST['videomancer'],
+        showGuidedUpdaterOnDownloads: true,
+      },
+    };
+
+    expect(shouldShowGuidedUpdaterOnDownloads('esg3', manifest)).toBe(true);
+    expect(shouldShowGuidedUpdaterOnDownloads('videomancer', manifest)).toBe(
+      false,
+    );
   });
 });

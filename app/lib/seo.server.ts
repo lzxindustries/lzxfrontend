@@ -20,6 +20,14 @@ import type {
   WebPage,
 } from 'schema-dts';
 
+type SeoPageLike = {
+  title: string;
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+  } | null;
+};
+
 function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
   return {
     title: shop?.name,
@@ -365,7 +373,7 @@ function blog({blog, url}: {blog: Blog; url: Request['url']}): SeoConfig {
   };
 }
 
-function page({page, url}: {page: Page; url: Request['url']}): SeoConfig {
+function page({page, url}: {page: SeoPageLike; url: Request['url']}): SeoConfig {
   return {
     description: truncate(page?.seo?.description || ''),
     title: page?.seo?.title,

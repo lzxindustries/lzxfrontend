@@ -116,9 +116,17 @@ const EXPEDITION_SERIES_NAMES = new Set([
   'Pendulum',
 ]);
 
+const MODULE_SERIES_OVERRIDES: Record<string, string> = {
+  'TBC2 Expander': 'gen3',
+};
+
 function detectSeries(m: Record<string, unknown>): string | null {
   const sku = (m.sku as string) ?? '';
   const name = m.name as string;
+
+  if (MODULE_SERIES_OVERRIDES[name]) {
+    return MODULE_SERIES_OVERRIDES[name];
+  }
 
   if (sku.startsWith('LZXCSTL')) return 'castle';
   if (sku.startsWith('LZXCADT')) return 'cadet';
@@ -184,7 +192,6 @@ const MODULE_SLUG_OVERRIDES: Record<string, string> = {
 // --- Products that should NOT get hub pages ---
 
 const ACCESSORY_NAMES = new Set([
-  'TBC2 Expander',
   'Video Knob Pin',
   'Andor 1 Media Player Deluxe Accessories Pack',
   'DC Power Cable',
