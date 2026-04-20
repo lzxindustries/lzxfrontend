@@ -26,7 +26,10 @@ const MENU_GROUPS: MegaMenuGroup[] = [
         highlight: true,
         description: 'Video effects console',
       },
+      {label: 'All Instruments', to: '/instruments'},
       {label: 'Modules', to: '/modules'},
+      {label: 'Systems', to: '/systems'},
+      {label: 'B-Stock', to: '/b-stock'},
       {label: 'Shop All', to: '/catalog'},
     ],
   },
@@ -38,6 +41,7 @@ const MENU_GROUPS: MegaMenuGroup[] = [
       {label: 'Downloads', to: '/downloads'},
       {label: 'Getting Started', to: '/getting-started'},
       {label: 'LZX Connect', to: '/connect'},
+      {label: 'Glossary', to: '/glossary'},
     ],
   },
   {

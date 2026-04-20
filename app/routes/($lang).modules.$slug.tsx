@@ -78,7 +78,7 @@ export default function ModuleLayout() {
   const tabs: HubTab[] = [
     {label: 'Overview', to: basePath},
     {
-      label: 'Manual',
+      label: 'Docs',
       to: `${basePath}/manual`,
       hidden: !hasManual && !slugEntry.externalUrl,
     },
@@ -90,6 +90,7 @@ export default function ModuleLayout() {
       hidden: assets.length === 0,
     },
     {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
+    {label: 'Support', to: `${basePath}/support`},
   ];
 
   return (

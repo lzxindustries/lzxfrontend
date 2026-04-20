@@ -5,48 +5,48 @@ import {Link} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 
-const SECTIONS = [
+export const SECTIONS = [
   {
-    title: 'Documentation',
+    title: 'I need to set up a new product',
     description:
-      'Technical documentation for LZX modules and instruments — specs, controls, patching guides.',
-    to: '/docs',
-    icon: '📖',
-  },
-  {
-    title: 'Downloads',
-    description:
-      'Firmware, manuals, schematics, and other downloadable files for all products.',
-    to: '/downloads',
-    icon: '⬇️',
-  },
-  {
-    title: 'Getting Started',
-    description:
-      'New to video synthesis? Learn how to set up your first system and create your first patch.',
+      'Installation guides, first-patch tutorials, and unboxing instructions for instruments and modules.',
     to: '/getting-started',
     icon: '🚀',
   },
   {
-    title: 'Glossary',
+    title: 'I need to find documentation',
     description:
-      'Key terms and concepts in video synthesis — from keyers to oscillators.',
-    to: '/glossary',
-    icon: '📝',
+      'Technical manuals, specs, controls reference, and patching guides for all LZX products.',
+    to: '/docs',
+    icon: '📖',
   },
   {
-    title: 'Troubleshooting',
+    title: 'I need firmware or downloads',
     description:
-      'Common issues and solutions for LZX modules and instruments.',
+      'Firmware files, schematics, manuals, and other downloadable resources.',
+    to: '/downloads',
+    icon: '⬇️',
+  },
+  {
+    title: 'I need to update firmware',
+    description:
+      'Use LZX Connect to update Videomancer and other supported instruments.',
+    to: '/connect',
+    icon: '🔗',
+  },
+  {
+    title: 'I need to troubleshoot an issue',
+    description:
+      'Common problems, diagnostic steps, and known solutions for LZX hardware.',
     to: '/docs/guides/troubleshooting',
     icon: '🔧',
   },
   {
-    title: 'LZX Connect',
+    title: 'I need to look up a term',
     description:
-      'Browser-based firmware update tool for compatible LZX instruments.',
-    to: '/connect',
-    icon: '🔗',
+      'Glossary of video synthesis terminology — keyers, oscillators, encoders, and more.',
+    to: '/glossary',
+    icon: '📝',
   },
 ];
 

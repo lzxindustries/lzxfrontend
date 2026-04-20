@@ -67,7 +67,11 @@ export interface InstrumentHubData {
   lzxModule: LzxModule | null;
   docFrontmatter: ContentFrontmatter | null;
   hasManual: boolean;
+  patches: LzxPatch[];
   videos: LzxVideo[];
+  connectors: LzxModuleConnector[];
+  controls: LzxModuleControl[];
+  features: LzxModuleFeature[];
   assets: LzxModuleAsset[];
   sidebar: SidebarItem[];
   /** Doc pages within the instrument folder, for determining available sub-sections */
@@ -378,7 +382,11 @@ export async function loadInstrumentHubData(
   const moduleId = getModuleIdForSlug(slug);
   const lzxModule = moduleId ? getModuleById(moduleId) ?? null : null;
 
+  const patches = moduleId ? getPatchesForModule(moduleId) : [];
   const videos = moduleId ? getVideosForModule(moduleId) : [];
+  const connectors = moduleId ? getModuleConnectors(moduleId) : [];
+  const controls = moduleId ? getModuleControls(moduleId) : [];
+  const features = moduleId ? getModuleFeatures(moduleId) : [];
   const assets = moduleId ? getModuleAssets(moduleId) : [];
 
   // Doc metadata
@@ -401,7 +409,11 @@ export async function loadInstrumentHubData(
     lzxModule,
     docFrontmatter,
     hasManual,
+    patches,
     videos,
+    connectors,
+    controls,
+    features,
     assets,
     sidebar,
     docPages,

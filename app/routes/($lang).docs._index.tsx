@@ -6,33 +6,48 @@ import {CACHE_LONG} from '~/data/cache';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {DocsSearch} from '~/components/DocsSearch';
 
-const SECTIONS = [
+export const SECTIONS = [
   {
-    title: 'Guides',
+    title: 'Set Up Videomancer',
     description:
-      'Getting started with video synthesis, your first patch, and troubleshooting.',
-    to: '/docs/guides/your-first-patch',
-    icon: '📖',
+      'User manual, quick-start guide, firmware updates, and setup instructions for Videomancer.',
+    to: '/instruments/videomancer/manual',
+    icon: '🎛️',
   },
   {
-    title: 'Modules',
+    title: 'Learn a Module',
     description:
-      'Documentation for all LZX EuroRack modules — specs, controls, and patching.',
+      'Find documentation for any LZX eurorack module — specs, controls, and patching tips.',
     to: '/modules',
     icon: '🔧',
   },
   {
-    title: 'Instruments',
+    title: 'Get Started with Video Synthesis',
     description:
-      'Videomancer user manual, program guides, and instrument documentation.',
-    to: '/instruments/videomancer',
-    icon: '🎛️',
+      'New to video synthesis? Start here for beginner guides, your first patch, and key concepts.',
+    to: '/getting-started',
+    icon: '📖',
   },
   {
-    title: 'Case & Power',
-    description: 'Power supply specifications and enclosure documentation.',
+    title: 'Power and House Your System',
+    description:
+      'Power supply specifications, case options, and enclosure documentation.',
     to: '/docs/case-and-power',
     icon: '⚡',
+  },
+  {
+    title: 'Set Up Chromagnon',
+    description:
+      'Documentation and setup guides for the Chromagnon instrument.',
+    to: '/instruments/chromagnon',
+    icon: '🎬',
+  },
+  {
+    title: 'Find Legacy Documentation',
+    description:
+      'Documentation for discontinued modules and earlier product generations.',
+    to: '/legacy',
+    icon: '📁',
   },
 ];
 
@@ -88,7 +103,7 @@ export default function DocsIndex() {
           <DocsSearch />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SECTIONS.map((section) => (
             <Link
               key={section.title}

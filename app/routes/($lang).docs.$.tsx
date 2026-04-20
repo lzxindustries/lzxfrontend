@@ -1,7 +1,7 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, Link} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
 import {
@@ -92,6 +92,22 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     },
   ];
 
+  // Determine product hub back-link if this doc belongs to a product
+  let productHubLink: {label: string; to: string} | null = null;
+  if (section === 'instruments') {
+    const instrumentSlug = pathParts[1];
+    if (instrumentSlug) {
+      productHubLink = {
+        label: formatLabel(instrumentSlug),
+        to: `/instruments/${instrumentSlug}`,
+      };
+    }
+  } else if (section === 'guides') {
+    // Guides are standalone — no product back-link
+  } else if (section === 'case-and-power') {
+    // Case/power docs are standalone
+  }
+
   const seo = seoPayload.doc({
     title: doc.frontmatter.title ?? splat,
     description: doc.frontmatter.description ?? '',
@@ -106,6 +122,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
       next,
       breadcrumbs,
       currentPath: splat,
+      productHubLink,
       seo,
     },
     {
@@ -121,20 +138,32 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function DocsPage() {
-  const {doc, sidebar, prev, next, breadcrumbs, currentPath} =
+  const {doc, sidebar, prev, next, breadcrumbs, currentPath, productHubLink} =
     useLoaderData<typeof loader>();
 
   return (
-    <DocLayout
-      html={doc.html}
-      sidebar={sidebar}
-      headings={doc.headings}
-      breadcrumbs={breadcrumbs}
-      prev={prev}
-      next={next}
-      frontmatter={doc.frontmatter}
-      currentPath={currentPath}
-    />
+    <>
+      {productHubLink && (
+        <div className="mx-auto max-w-7xl px-6 pt-4 md:px-10">
+          <Link
+            to={productHubLink.to}
+            className="text-sm text-primary hover:underline"
+          >
+            &larr; Back to {productHubLink.label} product page
+          </Link>
+        </div>
+      )}
+      <DocLayout
+        html={doc.html}
+        sidebar={sidebar}
+        headings={doc.headings}
+        breadcrumbs={breadcrumbs}
+        prev={prev}
+        next={next}
+        frontmatter={doc.frontmatter}
+        currentPath={currentPath}
+      />
+    </>
   );
 }
 

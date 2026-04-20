@@ -1,8 +1,19 @@
-import type {MetaFunction} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaFunction} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
 import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
+import {getLatestRelease} from '~/data/github-releases';
+import type {ResolvedRelease} from '~/data/github-releases';
+import {CACHE_SHORT} from '~/data/cache';
+import {ReleaseNotes} from '~/components/ReleaseNotes';
 
-const CONNECT_RELEASES_URL =
-  'https://github.com/lzxindustries/videomancer-firmware/releases';
+export async function loader({}: LoaderFunctionArgs) {
+  const release = await getLatestRelease();
+  return json(
+    {release},
+    {headers: {'Cache-Control': CACHE_SHORT}},
+  );
+}
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,6 +27,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function ConnectPage() {
+  const {release} = useLoaderData<typeof loader>();
+  const rel = release as unknown as ResolvedRelease;
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-12 md:px-10 lg:py-16">
       <header className="mb-10">
@@ -36,11 +50,30 @@ export default function ConnectPage() {
         <h2 className="text-2xl font-bold">Download</h2>
         <p className="mt-2 text-base-content/70">
           Download the latest release package for your operating system.
+          {rel.tagName && (
+            <span className="ml-2 badge badge-sm badge-outline">
+              {rel.tagName}
+            </span>
+          )}
+          {rel.prerelease && (
+            <span className="ml-2 badge badge-sm badge-warning">
+              Pre-release
+            </span>
+          )}
+          {rel.publishedAt && (
+            <span className="ml-2 text-sm text-base-content/50">
+              {new Date(rel.publishedAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </span>
+          )}
         </p>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <a
-            href={CONNECT_RELEASES_URL}
+            href={rel.windows?.url ?? rel.allReleasesUrl}
             target="_blank"
             rel="noreferrer"
             className="btn btn-outline justify-start gap-2"
@@ -49,7 +82,7 @@ export default function ConnectPage() {
             <span>Windows</span>
           </a>
           <a
-            href={CONNECT_RELEASES_URL}
+            href={rel.macos?.url ?? rel.allReleasesUrl}
             target="_blank"
             rel="noreferrer"
             className="btn btn-outline justify-start gap-2"
@@ -58,7 +91,7 @@ export default function ConnectPage() {
             <span>macOS</span>
           </a>
           <a
-            href={CONNECT_RELEASES_URL}
+            href={rel.linux?.url ?? rel.allReleasesUrl}
             target="_blank"
             rel="noreferrer"
             className="btn btn-outline justify-start gap-2"
@@ -69,7 +102,7 @@ export default function ConnectPage() {
         </div>
 
         <a
-          href={CONNECT_RELEASES_URL}
+          href={rel.allReleasesUrl}
           target="_blank"
           rel="noreferrer"
           className="btn btn-primary mt-5 gap-2"
@@ -78,6 +111,21 @@ export default function ConnectPage() {
           <span>View All Releases</span>
         </a>
       </section>
+
+      {rel.body && (
+        <div className="mb-8">
+          <ReleaseNotes
+            releases={[
+              {
+                version: rel.tagName || 'Latest',
+                date: rel.publishedAt || new Date().toISOString(),
+                prerelease: rel.prerelease,
+                notes: rel.body,
+              },
+            ]}
+          />
+        </div>
+      )}
 
       <section className="grid gap-6 md:grid-cols-2">
         <article className="rounded-xl border border-base-300 p-6">

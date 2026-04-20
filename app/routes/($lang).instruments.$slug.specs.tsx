@@ -1,8 +1,8 @@
 import {useOutletContext} from '@remix-run/react';
 import type {MetaArgs} from '@shopify/remix-oxygen';
 import type {Metafield} from '@shopify/hydrogen/storefront-api-types';
-import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
-import type {ModuleHubData} from '~/data/hub-loaders';
+import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
+import type {InstrumentHubData} from '~/data/hub-loaders';
 import type {
   LzxModuleConnector,
   LzxModuleControl,
@@ -10,16 +10,25 @@ import type {
 } from '~/data/lzxdb';
 
 export const meta = ({matches}: MetaArgs) => {
-  const parentData = matches.find((m) => m.id.includes('modules.$slug'))
+  const parentData = matches.find((m) => m.id.includes('instruments.$slug'))
     ?.data as any;
-  const title = parentData?.product?.title ?? 'Module';
+  const title = parentData?.product?.title ?? 'Instrument';
   return [{title: `${title} Specifications | LZX Industries`}];
 };
 
-export default function ModuleSpecs() {
-  const data = useOutletContext<ModuleLayoutLoaderData>();
+export function rewriteLegacyDocsLinks(html: string): string {
+  let rewritten = html;
+  rewritten = rewritten.replace(
+    /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
+    '$1',
+  );
+  return rewritten;
+}
+
+export default function InstrumentSpecs() {
+  const data = useOutletContext<InstrumentLayoutLoaderData>();
   const {product, connectors, controls, features} =
-    data as unknown as ModuleHubData;
+    data as unknown as InstrumentHubData;
 
   const metafields = (product as any).metafields as
     | (Metafield | null)[]
@@ -27,14 +36,18 @@ export default function ModuleSpecs() {
   const specsHtml = metafields?.find(
     (m) => m?.namespace === 'custom' && m?.key === 'specs',
   )?.value;
+  const featuresHtml = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'features',
+  )?.value;
+  const compatibilityHtml = metafields?.find(
+    (m) => m?.namespace === 'custom' && m?.key === 'compatibility',
+  )?.value;
 
-  const hasContent =
-    connectors.length > 0 ||
-    controls.length > 0 ||
-    features.length > 0 ||
-    specsHtml;
+  const hasLzxDbContent =
+    connectors.length > 0 || controls.length > 0 || features.length > 0;
+  const hasMetafields = specsHtml || featuresHtml || compatibilityHtml;
 
-  if (!hasContent) {
+  if (!hasLzxDbContent && !hasMetafields) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
         <p className="text-base-content/60">
@@ -51,43 +64,56 @@ export default function ModuleSpecs() {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10 space-y-10">
-      <div className="max-w-3xl">
-        <h2 className="text-2xl font-bold mb-2">Specifications</h2>
-        <p className="text-base-content/70">
-          Technical specifications for the {product.title}
-          {(connectors as LzxModuleConnector[]).length > 0 &&
-            `, including ${inputs.length} input${inputs.length !== 1 ? 's' : ''} and ${outputs.length} output${outputs.length !== 1 ? 's' : ''}`}
-          {(controls as LzxModuleControl[]).length > 0 &&
-            ` and ${(controls as LzxModuleControl[]).length} front-panel control${(controls as LzxModuleControl[]).length !== 1 ? 's' : ''}`}
-          .
-          {' '}Use these specs to understand how {product.title} fits into your
-          signal chain and which modules pair well with it.
-        </p>
-        {(features as LzxModuleFeature[]).length > 0 && (
-          <p className="text-base-content/60 text-sm mt-2">
-            {product.title} provides{' '}
-            {(features as LzxModuleFeature[]).length} documented feature
-            {(features as LzxModuleFeature[]).length !== 1 ? 's' : ''}.
-            {inputs.length > 0 &&
-              outputs.length > 0 &&
-              ` Patch from its ${inputs.length} input${inputs.length !== 1 ? 's' : ''} to process signals, or tap its ${outputs.length} output${outputs.length !== 1 ? 's' : ''} to feed other modules in your system.`}
-          </p>
-        )}
-      </div>
-
       {/* Shopify specs metafield */}
       {specsHtml && (
-        <div
-          className="prose prose-sm max-w-none"
-          dangerouslySetInnerHTML={{__html: specsHtml}}
-        />
+        <section>
+          <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
+            Specs
+          </h3>
+          <div
+            className="prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: rewriteLegacyDocsLinks(specsHtml),
+            }}
+          />
+        </section>
       )}
 
-      {/* Features */}
-      {(features as LzxModuleFeature[]).length > 0 && (
+      {/* Shopify features metafield */}
+      {featuresHtml && (
         <section>
           <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
             Features
+          </h3>
+          <div
+            className="prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: rewriteLegacyDocsLinks(featuresHtml),
+            }}
+          />
+        </section>
+      )}
+
+      {/* Shopify compatibility metafield */}
+      {compatibilityHtml && (
+        <section>
+          <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
+            Compatibility
+          </h3>
+          <div
+            className="prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{
+              __html: rewriteLegacyDocsLinks(compatibilityHtml),
+            }}
+          />
+        </section>
+      )}
+
+      {/* lzxdb Features */}
+      {(features as LzxModuleFeature[]).length > 0 && (
+        <section>
+          <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
+            Feature Details
           </h3>
           <ul className="list-disc pl-5 space-y-1 text-sm">
             {(features as LzxModuleFeature[]).map((f) => (

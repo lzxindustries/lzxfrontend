@@ -260,6 +260,10 @@ export interface LzxModuleAsset {
   name: string;
   fileName: string;
   fileType: string;
+  description: string;
+  version: string | null;
+  platform: string | null;
+  releaseDate: string | null;
 }
 
 // --- Module detail lookup maps ---
@@ -327,18 +331,59 @@ for (const a of assetRecordsData) {
   });
 }
 
+export function inferAssetVersion(name: string, fileName: string): string | null {
+  // Match patterns like "RevE", "Rev3", "v1.0.6", "1.0.0", "Rev.E"
+  const combined = `${name} ${fileName}`;
+  const revMatch = combined.match(/\b(Rev\.?\s?[A-Z0-9]+)/i);
+  if (revMatch) return revMatch[1];
+  const vMatch = combined.match(/\bv?(\d+\.\d+(?:\.\d+)?)\b/);
+  if (vMatch) return `v${vMatch[1]}`;
+  return null;
+}
+
+export function inferAssetPlatform(name: string, fileName: string): string | null {
+  const combined = `${name} ${fileName}`.toLowerCase();
+  if (combined.includes('mac') || combined.includes('darwin') || combined.includes('.dmg'))
+    return 'macOS';
+  if (combined.includes('win') || combined.includes('.exe') || combined.includes('.msi'))
+    return 'Windows';
+  if (combined.includes('linux') || combined.includes('.appimage') || combined.includes('.deb'))
+    return 'Linux';
+  return null;
+}
+
+export function generateAssetDescription(name: string, fileType: string): string {
+  const type = fileType.toUpperCase();
+  const lowerName = name.toLowerCase();
+  if (lowerName.includes('firmware')) return `Firmware update (${type})`;
+  if (lowerName.includes('schematic')) return `Hardware schematic (${type})`;
+  if (lowerName.includes('bom') || lowerName.includes('bill of materials'))
+    return `Bill of materials (${type})`;
+  if (lowerName.includes('manual') || lowerName.includes('user guide'))
+    return `User manual (${type})`;
+  if (lowerName.includes('quickstart') || lowerName.includes('quick start'))
+    return `Quick start guide (${type})`;
+  return `${type} download`;
+}
+
 const assetsByModule = new Map<string, LzxModuleAsset[]>();
 for (const a of assetsData) {
   const moduleId = oid(a.module);
   const assetId = oid(a.asset);
   const resolved = assetMap.get(assetId);
+  const assetName = resolved?.name ?? assetId;
+  const assetFileType = resolved?.fileType ?? '';
   const entry: LzxModuleAsset = {
     id: oid(a._id),
     moduleId,
     assetId,
-    name: resolved?.name ?? assetId,
+    name: assetName,
     fileName: resolved?.fileName ?? '',
-    fileType: resolved?.fileType ?? '',
+    fileType: assetFileType,
+    description: generateAssetDescription(assetName, assetFileType),
+    version: inferAssetVersion(assetName, resolved?.fileName ?? ''),
+    platform: inferAssetPlatform(assetName, resolved?.fileName ?? ''),
+    releaseDate: null,
   };
   const existing = assetsByModule.get(moduleId);
   if (existing) existing.push(entry);

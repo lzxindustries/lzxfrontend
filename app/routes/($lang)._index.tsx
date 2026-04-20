@@ -220,7 +220,7 @@ export default function Home() {
           </h2>
           <p className="mb-6 text-lg opacity-90">
             Learn how to build your first video synthesis system, understand
-            the fundamentals, and start creating with our step-by-step guide.
+            the fundamentals, and start creating with our step-by-step guides.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
@@ -228,6 +228,12 @@ export default function Home() {
               className="btn btn-lg bg-primary-content text-primary hover:bg-primary-content/90"
             >
               Getting Started Guide
+            </Link>
+            <Link
+              to="/instruments/videomancer/setup"
+              className="btn btn-lg btn-outline border-primary-content text-primary-content hover:bg-primary-content/10"
+            >
+              Set Up Videomancer
             </Link>
           </div>
         </div>

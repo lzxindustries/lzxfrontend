@@ -59,21 +59,33 @@ export type InstrumentLayoutLoaderData = InstrumentHubData & {
 
 export default function InstrumentLayout() {
   const data = useLoaderData<typeof loader>();
-  const {product, hasManual, videos, assets, slugEntry} =
+  const {product, hasManual, videos, assets, slugEntry, connectors, controls, features, patches} =
     data as unknown as InstrumentHubData;
   const slug = (data as unknown as InstrumentHubData).slug;
 
   const basePath = `/instruments/${slug}`;
 
+  const hasSpecs =
+    connectors.length > 0 || controls.length > 0 || features.length > 0 ||
+    (product as any).metafields?.some(
+      (m: any) =>
+        m?.namespace === 'custom' &&
+        ['specs', 'features', 'compatibility'].includes(m?.key),
+    );
+
   const tabs: HubTab[] = [
     {label: 'Overview', to: basePath},
-    {label: 'Manual', to: `${basePath}/manual`, hidden: !hasManual},
+    {label: 'Docs', to: `${basePath}/manual`, hidden: !hasManual},
+    {label: 'Learn', to: `${basePath}/learn`},
+    {label: 'Setup', to: `${basePath}/setup`},
     {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},
     {
-      label: 'Downloads',
+      label: 'Software & Downloads',
       to: `${basePath}/downloads`,
       hidden: assets.length === 0,
     },
+    {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
+    {label: 'Support', to: `${basePath}/support`},
   ];
 
   return (

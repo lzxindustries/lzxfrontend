@@ -24,6 +24,10 @@ import ProductMediaGallery, {
   type MediaGalleryItem,
   MediaGalleryItemType,
 } from '~/components/ProductMediaGallery';
+import {
+  QuickStartPreview,
+  QUICK_START_STEPS,
+} from '~/components/QuickStartPreview';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('instruments.$slug'))
@@ -209,15 +213,6 @@ export default function InstrumentOverview() {
   const metafields = (product as any).metafields as
     | (Metafield | null)[]
     | undefined;
-  const specs = metafields?.find(
-    (m) => m?.namespace === 'custom' && m?.key === 'specs',
-  )?.value;
-  const features = metafields?.find(
-    (m) => m?.namespace === 'custom' && m?.key === 'features',
-  )?.value;
-  const compatibility = metafields?.find(
-    (m) => m?.namespace === 'custom' && m?.key === 'compatibility',
-  )?.value;
 
   const sections: {title: string; content: string; defaultOpen?: boolean}[] =
     [];
@@ -228,18 +223,6 @@ export default function InstrumentOverview() {
       defaultOpen: true,
     });
   }
-  if (specs)
-    sections.push({title: 'Specs', content: rewriteLegacyDocsLinks(specs)});
-  if (features)
-    sections.push({
-      title: 'Features',
-      content: rewriteLegacyDocsLinks(features),
-    });
-  if (compatibility)
-    sections.push({
-      title: 'Compatibility',
-      content: rewriteLegacyDocsLinks(compatibility),
-    });
 
   return (
     <div className="pb-16 md:pb-0">
@@ -265,10 +248,21 @@ export default function InstrumentOverview() {
                 to={`/instruments/${slugEntry.canonical}/manual`}
                 className="btn btn-outline btn-sm mt-2"
               >
-                Read Full Manual &rarr;
+                Read Full Docs &rarr;
               </Link>
             )}
           </div>
+
+          {/* Quick Start Preview */}
+          {QUICK_START_STEPS[slugEntry.canonical] && hasManual && (
+            <div className="px-6 pt-4">
+              <QuickStartPreview
+                steps={QUICK_START_STEPS[slugEntry.canonical]!}
+                manualUrl={`/instruments/${slugEntry.canonical}/manual/quick-start`}
+                productTitle={product.title}
+              />
+            </div>
+          )}
 
           {sections.length > 0 && (
             <div className="border-t border-primary/10 px-6">

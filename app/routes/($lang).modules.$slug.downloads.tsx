@@ -1,4 +1,4 @@
-import {useOutletContext} from '@remix-run/react';
+import {Link, useOutletContext} from '@remix-run/react';
 import type {MetaArgs} from '@shopify/remix-oxygen';
 import {FaDownload} from 'react-icons/fa';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
@@ -13,7 +13,7 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function ModuleDownloads() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {assets, product} = data as unknown as ModuleHubData;
+  const {assets, product, slug} = data as unknown as ModuleHubData;
 
   if (assets.length === 0) {
     return (
@@ -28,10 +28,19 @@ export default function ModuleDownloads() {
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h2 className="text-2xl font-bold mb-6">Downloads</h2>
+      <div className="mb-4">
+        <Link
+          to={`/modules/${slug}`}
+          className="text-sm text-primary hover:underline"
+        >
+          &larr; Back to {product.title} overview
+        </Link>
+      </div>
       <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
         <p className="font-semibold">Need a guided updater?</p>
         <p className="mt-1 text-sm text-base-content/70">
-          LZX Connect provides a unified update flow for supported LZX devices.
+          LZX Connect provides guided firmware updates for Videomancer (with
+          Chromagnon support coming soon).
         </p>
         <a href="/connect" className="btn btn-sm btn-primary mt-3">
           Open LZX Connect
@@ -47,9 +56,24 @@ export default function ModuleDownloads() {
             className="flex flex-col gap-3 rounded-lg border border-base-300 p-4 sm:flex-row sm:items-center sm:justify-between"
           >
             <div className="min-w-0 flex-1">
-              <div className="font-medium">{asset.name}</div>
-              <div className="text-sm text-base-content/60">
+              <div className="font-medium">
+                {asset.name}
+                {asset.version && (
+                  <span className="ml-2 badge badge-sm badge-outline">
+                    {asset.version}
+                  </span>
+                )}
+              </div>
+              {asset.description && (
+                <div className="text-sm text-base-content/70">
+                  {asset.description}
+                </div>
+              )}
+              <div className="text-xs text-base-content/50">
                 {asset.fileName || 'File unavailable'}
+                {asset.platform && (
+                  <span className="ml-2">&middot; {asset.platform}</span>
+                )}
               </div>
             </div>
             <div className="flex items-center gap-3">

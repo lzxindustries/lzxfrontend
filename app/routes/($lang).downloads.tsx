@@ -22,9 +22,12 @@ type DownloadEntry = {
   assets: Array<{
     id: string;
     name: string;
+    description: string;
     fileName: string;
     fileType: string;
     href: string;
+    version: string | null;
+    platform: string | null;
   }>;
   manuals: ManualVersion[];
   relatedProducts: Array<{name: string; to: string}>;
@@ -46,9 +49,12 @@ export async function loader({request}: LoaderFunctionArgs) {
       .map((a) => ({
         id: a.id,
         name: a.name || a.fileName,
+        description: a.description,
         fileName: a.fileName,
         fileType: a.fileType,
         href: `/assets/${encodeURIComponent(a.fileName)}`,
+        version: a.version,
+        platform: a.platform,
       }));
 
     if (assets.length === 0) continue;
@@ -85,9 +91,12 @@ export async function loader({request}: LoaderFunctionArgs) {
       .map((a) => ({
         id: a.id,
         name: a.name || a.fileName,
+        description: a.description,
         fileName: a.fileName,
         fileType: a.fileType,
         href: `/assets/${encodeURIComponent(a.fileName)}`,
+        version: a.version,
+        platform: a.platform,
       }));
 
     if (assets.length === 0) continue;
@@ -151,7 +160,8 @@ export default function DownloadsPage() {
       <div className="mb-8 rounded-lg border border-base-300 bg-base-200 p-4 md:p-5">
         <p className="font-semibold">Prefer guided firmware updates?</p>
         <p className="mt-1 text-sm text-base-content/70">
-          Use LZX Connect for a unified desktop updater workflow.
+          LZX Connect provides a unified desktop updater for Videomancer (with
+          Chromagnon support coming soon).
         </p>
         <Link to="/connect" className="btn btn-sm btn-primary mt-3">
           Open LZX Connect
@@ -195,9 +205,24 @@ export default function DownloadsPage() {
                   className="flex flex-col gap-2 rounded border border-base-300 p-3 transition hover:bg-base-200 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div className="min-w-0">
-                    <div className="font-medium truncate">{asset.name}</div>
-                    <div className="text-xs text-base-content/60 truncate">
+                    <div className="font-medium truncate">
+                      {asset.name}
+                      {asset.version && (
+                        <span className="ml-2 badge badge-sm badge-outline">
+                          {asset.version}
+                        </span>
+                      )}
+                    </div>
+                    {asset.description && (
+                      <div className="text-xs text-base-content/70 truncate">
+                        {asset.description}
+                      </div>
+                    )}
+                    <div className="text-xs text-base-content/50 truncate">
                       {asset.fileName}
+                      {asset.platform && (
+                        <span className="ml-2">&middot; {asset.platform}</span>
+                      )}
                     </div>
                   </div>
                   <div className="flex items-center gap-2">

@@ -16,7 +16,14 @@ export const headers = routeHeaders;
 
 const SERIES_ORDER = [
   'gen3',
+  'orion',
+  'visionary',
   'castle',
+  'cadet',
+  'expedition',
+  'vhs',
+  'legacy',
+  'other',
 ];
 
 const SERIES_LABELS: Record<string, string> = {
@@ -128,7 +135,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const seriesGroups: {
     key: string;
     label: string;
-    entries: (SlugEntry & {shopifyProduct?: Product; subtitle?: string})[];
+    entries: (SlugEntry & {shopifyProduct?: ModuleListingProduct; subtitle?: string})[];
   }[] = [];
 
   for (const key of SERIES_ORDER) {
