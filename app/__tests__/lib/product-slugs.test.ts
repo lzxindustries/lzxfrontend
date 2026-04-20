@@ -119,34 +119,34 @@ describe('getModulesBySeries', () => {
 describe('getModuleArtworkPath', () => {
   it('uses the correct TBC2 artwork overrides', () => {
     expect(getModuleArtworkPath('tbc2')).toBe(
-      '/images/tbc2-mk2-front-panel-square.png?v=20260420-modules-refresh',
+      '/images/tbc2-mk2-front-panel-square.png?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('tbc2-expander')).toBe(
-      '/images/tbc2-expander-front-panel-square.png?v=20260420-modules-refresh',
+      '/images/tbc2-expander-front-panel-square.png?v=20260420-modules-transparent-bg',
     );
   });
 
   it('adds cache-busting versions for corrected gray Expedition thumbnails', () => {
     expect(getModuleArtworkPath('sensory-translator')).toBe(
-      '/images/modules/sensory-translator.png?v=20260420-modules-refresh',
+      '/images/modules/sensory-translator.png?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('marble-index')).toBe(
-      '/images/modules/marble-index.png?v=20260420-modules-refresh',
+      '/images/modules/marble-index.png?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('pendulum')).toBe(
-      '/images/modules/pendulum.png?v=20260420-modules-refresh',
+      '/images/modules/pendulum.png?v=20260420-modules-transparent-bg',
     );
   });
 
   it('provides local artwork for the Visionary module cards', () => {
     expect(getModuleArtworkPath('triple-video-fader-key-generator')).toBe(
-      '/images/modules/triple-video-fader-key-generator.jpg?v=20260420-modules-refresh',
+      '/images/modules/triple-video-fader-key-generator.jpg?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('video-logic')).toBe(
-      '/images/modules/video-logic.jpg?v=20260420-modules-refresh',
+      '/images/modules/video-logic.jpg?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('color-video-encoder')).toBe(
-      '/images/modules/color-video-encoder.jpg?v=20260420-modules-refresh',
+      '/images/modules/color-video-encoder.jpg?v=20260420-modules-transparent-bg',
     );
   });
 });

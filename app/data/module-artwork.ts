@@ -84,7 +84,7 @@ const MODULE_ARTWORK: Record<string, string> = {
   'war-of-the-ants': '/images/modules/war-of-the-ants.png',
 };
 
-const MODULE_ARTWORK_VERSION = '20260420-modules-refresh';
+const MODULE_ARTWORK_VERSION = '20260420-modules-transparent-bg';
 
 export function getModuleArtworkPath(slug: string): string | null {
   const path = MODULE_ARTWORK[slug];
