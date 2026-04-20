@@ -4,13 +4,19 @@ import {json} from '@shopify/remix-oxygen';
 import {type SeoConfig, getSeoMeta, Image} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
-import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getAllInstrumentSlugs, getSlugEntry} from '~/data/product-slugs';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
+import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
+
+const EXCLUDED_INSTRUMENT_SLUGS = new Set([
+  'double-vision',
+  'double-vision-168',
+  'double-vision-expander',
+]);
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
@@ -40,11 +46,16 @@ function buildHandleFilterQuery(handles: string[]): string {
   return handles.map((handle) => `handle:${handle}`).join(' OR ');
 }
 
+export function isListedInstrumentSlug(slug: string): boolean {
+  return !EXCLUDED_INSTRUMENT_SLUGS.has(slug);
+}
+
 export async function loader({context, request}: LoaderFunctionArgs) {
   const slugs = getAllInstrumentSlugs();
   const entries = slugs
     .map((slug) => getSlugEntry(slug))
-    .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+    .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
+    .filter((entry) => isListedInstrumentSlug(entry.canonical));
 
   const allHandles = entries.map((entry) => entry.canonical);
   const allShopifyIds = entries
@@ -107,8 +118,13 @@ export async function loader({context, request}: LoaderFunctionArgs) {
 
   const listingEntries = entries
     .map((entry) => {
+      const subtitle = entry.moduleId
+        ? getModuleById(entry.moduleId)?.subtitle
+        : undefined;
+
       return {
         ...entry,
+        subtitle,
         shopifyProduct:
           (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
           productByHandle.get(entry.canonical) ??
@@ -187,6 +203,11 @@ export default function InstrumentListingPage() {
                 <div className="font-semibold text-lg group-hover:text-primary transition">
                   {entry.name}
                 </div>
+                {entry.subtitle ? (
+                  <p className="mt-1 text-sm text-base-content/70 line-clamp-2">
+                    {entry.subtitle}
+                  </p>
+                ) : null}
                 {entry.isHidden && (
                   <span className="badge badge-sm badge-ghost mt-1">
                     Discontinued
