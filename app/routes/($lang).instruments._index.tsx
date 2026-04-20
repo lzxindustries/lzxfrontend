@@ -19,7 +19,17 @@ const EXCLUDED_INSTRUMENT_SLUGS = new Set([
   'double-vision-expander',
 ]);
 
-const FORCE_LOCAL_SQUARE_ARTWORK_SLUGS = new Set(['videomancer', 'vidiot']);
+const FORCE_LOCAL_SQUARE_ARTWORK_SLUGS = new Set([
+  'chromagnon',
+  'videomancer',
+  'vidiot',
+]);
+const ACTIVE_INSTRUMENT_SLUGS = new Set(['videomancer', 'chromagnon']);
+const LEGACY_INSTRUMENT_SLUGS = new Set(['vidiot']);
+
+const INSTRUMENT_LISTING_ARTWORK_OVERRIDES: Record<string, string> = {
+  videomancer: '/images/videomancer/hardware/photo-angle-front.png',
+};
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
@@ -51,6 +61,16 @@ function buildHandleFilterQuery(handles: string[]): string {
 
 export function isListedInstrumentSlug(slug: string): boolean {
   return !EXCLUDED_INSTRUMENT_SLUGS.has(slug);
+}
+
+function sortInstrumentEntries<T extends {canonical: string; name: string}>(
+  entries: T[],
+) {
+  return [...entries].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function getInstrumentListingArtworkPath(slug: string): string | null {
+  return INSTRUMENT_LISTING_ARTWORK_OVERRIDES[slug] ?? getInstrumentArtworkPath(slug);
 }
 
 export async function loader({context, request}: LoaderFunctionArgs) {
@@ -135,6 +155,13 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       };
     });
 
+  const activeEntries = sortInstrumentEntries(
+    listingEntries.filter((entry) => ACTIVE_INSTRUMENT_SLUGS.has(entry.canonical)),
+  );
+  const legacyEntries = sortInstrumentEntries(
+    listingEntries.filter((entry) => LEGACY_INSTRUMENT_SLUGS.has(entry.canonical)),
+  );
+
   const seo = seoPayload.collection({
     collection: {
       id: 'instruments',
@@ -152,7 +179,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  return json({entries: listingEntries, seo});
+  return json({activeEntries, legacyEntries, seo});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -160,7 +187,73 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function InstrumentListingPage() {
-  const {entries} = useLoaderData<typeof loader>();
+  const {activeEntries, legacyEntries} = useLoaderData<typeof loader>();
+
+  const renderEntries = (entries: typeof activeEntries, legacy = false) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {entries.map((entry: any) => {
+        const product = entry.shopifyProduct as InstrumentListingProduct | null;
+        const firstImage =
+          product?.featuredImage ??
+          product?.variants?.nodes?.[0]?.image;
+        const localArtworkPath = getInstrumentListingArtworkPath(
+          entry.canonical,
+        );
+        const shouldUseLocalSquareArtwork =
+          Boolean(localArtworkPath) &&
+          FORCE_LOCAL_SQUARE_ARTWORK_SLUGS.has(entry.canonical);
+
+        return (
+          <Link
+            key={entry.canonical}
+            to={`/instruments/${entry.canonical}`}
+            prefetch="intent"
+            className="group flex flex-col gap-3 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
+          >
+            {shouldUseLocalSquareArtwork ? (
+              <img
+                src={localArtworkPath!}
+                alt={`${entry.name} product image`}
+                loading="lazy"
+                className="aspect-square w-full rounded bg-base-200 object-contain p-2"
+              />
+            ) : firstImage ? (
+              <Image
+                data={firstImage}
+                aspectRatio="16/9"
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="rounded bg-base-200 object-cover"
+              />
+            ) : localArtworkPath ? (
+              <img
+                src={localArtworkPath}
+                alt={`${entry.name} product image`}
+                loading="lazy"
+                className="aspect-video w-full rounded bg-base-200 object-cover"
+              />
+            ) : (
+              <div className="aspect-video rounded bg-base-200 flex items-center justify-center text-base-content/30">
+                No image
+              </div>
+            )}
+            <div>
+              <div className="font-semibold text-lg group-hover:text-primary transition">
+                {entry.name}
+              </div>
+              {entry.subtitle ? (
+                <p className="mt-1 text-sm text-base-content/70 line-clamp-2">
+                  {entry.subtitle}
+                </p>
+              ) : null}
+              {legacy ? (
+                <span className="badge badge-sm badge-ghost mt-1">Legacy</span>
+              ) : null}
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
@@ -168,69 +261,19 @@ export default function InstrumentListingPage() {
         Instruments
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {entries.map((entry: any) => {
-          const product = entry.shopifyProduct as InstrumentListingProduct | null;
-          const firstImage =
-            product?.featuredImage ??
-            product?.variants?.nodes?.[0]?.image;
-          const localArtworkPath = getInstrumentArtworkPath(entry.canonical);
-          const shouldUseLocalSquareArtwork =
-            Boolean(localArtworkPath) &&
-            FORCE_LOCAL_SQUARE_ARTWORK_SLUGS.has(entry.canonical);
+      {activeEntries.length > 0 ? (
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold uppercase mb-6">Active</h2>
+          {renderEntries(activeEntries)}
+        </section>
+      ) : null}
 
-          return (
-            <Link
-              key={entry.canonical}
-              to={`/instruments/${entry.canonical}`}
-              prefetch="intent"
-              className="group flex flex-col gap-3 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
-            >
-              {shouldUseLocalSquareArtwork ? (
-                <img
-                  src={localArtworkPath!}
-                  alt={`${entry.name} product image`}
-                  loading="lazy"
-                  className="aspect-square w-full rounded bg-base-200 object-contain p-2"
-                />
-              ) : firstImage ? (
-                <Image
-                  data={firstImage}
-                  aspectRatio="16/9"
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="rounded bg-base-200 object-cover"
-                />
-              ) : localArtworkPath ? (
-                <img
-                  src={localArtworkPath}
-                  alt={`${entry.name} product image`}
-                  loading="lazy"
-                  className="aspect-video w-full rounded bg-base-200 object-cover"
-                />
-              ) : (
-                <div className="aspect-video rounded bg-base-200 flex items-center justify-center text-base-content/30">
-                  No image
-                </div>
-              )}
-              <div>
-                <div className="font-semibold text-lg group-hover:text-primary transition">
-                  {entry.name}
-                </div>
-                {entry.subtitle ? (
-                  <p className="mt-1 text-sm text-base-content/70 line-clamp-2">
-                    {entry.subtitle}
-                  </p>
-                ) : null}
-                {entry.isHidden && (
-                  <span className="badge badge-sm badge-ghost mt-1">
-                    Discontinued
-                  </span>
-                )}
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      {legacyEntries.length > 0 ? (
+        <section>
+          <h2 className="text-2xl font-bold uppercase mb-6">Legacy</h2>
+          {renderEntries(legacyEntries, true)}
+        </section>
+      ) : null}
     </div>
   );
 }

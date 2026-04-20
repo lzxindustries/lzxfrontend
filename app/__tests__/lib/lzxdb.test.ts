@@ -245,6 +245,19 @@ describe('getModuleAssets', () => {
       }
     }
   });
+
+  it('includes the newer TBC2 firmware downloads', () => {
+    const module = getModuleByName('TBC2');
+    expect(module).toBeDefined();
+
+    const assets = getModuleAssets(module!.id);
+    expect(assets.some((asset) => asset.name === 'TBC2 Firmware 1.0.6')).toBe(
+      true,
+    );
+    expect(assets.some((asset) => asset.name === 'TBC2 Firmware 1.0.7')).toBe(
+      true,
+    );
+  });
 });
 
 describe('getPatchesForModule', () => {

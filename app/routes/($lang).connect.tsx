@@ -2,13 +2,13 @@ import type {LoaderFunctionArgs, MetaFunction} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
-import {getLatestRelease} from '~/data/github-releases';
+import {getLatestConnectRelease} from '~/data/github-releases';
 import type {ResolvedRelease} from '~/data/github-releases';
 import {CACHE_SHORT} from '~/data/cache';
 import {ReleaseNotes} from '~/components/ReleaseNotes';
 
 export async function loader({}: LoaderFunctionArgs) {
-  const release = await getLatestRelease();
+  const release = await getLatestConnectRelease();
   return json(
     {release},
     {headers: {'Cache-Control': CACHE_SHORT}},

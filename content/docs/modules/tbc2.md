@@ -637,7 +637,7 @@ AFR note: please check the accuracy of the Troubleshooting, Firmware Update, and
 If the module powers up but the screen is blank, follow this procedure:
 
 1. Format a Micro SD card, sized 16 GB or smaller.
-2. Download the latest firmware package from the links in the [Downloads](/docs/modules/tbc2#downloads) section below and unzip the files.
+2. Download the latest firmware package from the [TBC2 downloads page](/modules/tbc2/downloads) and unzip the files.
 3. Find `BOOT.bin` and copy it to the MicroSD card.
 4. Ensure that you have physical access to the back of the module. If necessary, power down TBC2 and remove it from the enclosure, keeping the module power cord connected.
 5. Power down TBC2 and insert the MicroSD card.
@@ -663,7 +663,7 @@ To reset TBC2 firmware to the version shipped from the factory:
 To install a different version of the TBC2 firmware:
 
 1. Format a Micro SD card, sized 16 GB or smaller.
-2. Download the latest firmware package from the links in the [Downloads](/docs/modules/tbc2#downloads) section below and unzip the files.
+2. Download the desired firmware package from the [TBC2 downloads page](/modules/tbc2/downloads) and unzip the files.
 3. Find `BOOT.BIN` and copy it to the MicroSD card.
 4. Power down TBC2 and insert the MicroSD card.
 5. Power up TBC2 and wait for it to finish booting.
@@ -676,33 +676,7 @@ To install a different version of the TBC2 firmware:
 
 ## Downloads
 
-TBC2 Firmware 1.0
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.0/tbc2_1.0.0.zip)
-
-TBC2 Firmware 1.0.1
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.1/tbc2_1.0.1.zip)
-
-TBC2-mk1 (Orion series) Firmware 1.0.2
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.2/tbc2_1.0.2_mk1.zip)
-
-TBC2-mk2 (Gen3 series) Firmware 1.0.2
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.2/tbc2_1.0.2_mk2.zip)
-
-TBC2 Firmware 1.0.3
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.3/tbc2_1.0.3.zip)
-
-TBC2 Firmware 1.0.6
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.6/tbc2_1.0.6.zip)
-
-TBC2 Firmware 1.0.7
-&nbsp;<br />
-[Download ZIP](/firmware/tbc2_1.0.7/tbc2_1.0.7.zip)
+Firmware packages and other downloadable files are available on the [TBC2 downloads page](/modules/tbc2/downloads).
 
 ---
 

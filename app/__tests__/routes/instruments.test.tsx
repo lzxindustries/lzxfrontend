@@ -13,7 +13,7 @@ vi.mock('@remix-run/react', async () => {
   return {
     ...actual,
     useLoaderData: () => ({
-      entries: [
+      activeEntries: [
         {
           canonical: 'videomancer',
           name: 'Videomancer',
@@ -22,6 +22,7 @@ vi.mock('@remix-run/react', async () => {
           shopifyProduct: null,
         },
       ],
+      legacyEntries: [],
     }),
   };
 });

@@ -2,6 +2,7 @@ import {describe, expect, it, vi, beforeEach, afterEach} from 'vitest';
 import {
   classifyAsset,
   toDownload,
+  getLatestConnectRelease,
   getLatestRelease,
   type GitHubAsset,
 } from '~/data/github-releases';
@@ -204,5 +205,92 @@ describe('getLatestRelease', () => {
 
     expect(release).toBeDefined();
     expect(release.tagName).toBe('');
+  });
+
+  it('returns the latest matching tagged release for LZX Connect', async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => [
+        {
+          tag_name: 'videomancer/1.0.0-rc.15',
+          published_at: '2026-04-18T05:21:20Z',
+          prerelease: true,
+          body: 'Firmware release',
+          assets: [
+            {
+              name: 'videomancer-1.0.0-rc.15.uf2',
+              browser_download_url: 'https://example.com/firmware.uf2',
+              size: 10000,
+            },
+          ],
+        },
+        {
+          tag_name: 'connect/1.0.1-rc.14',
+          published_at: '2026-04-18T04:13:56Z',
+          prerelease: true,
+          body: 'Latest app release',
+          assets: [
+            {
+              name: 'LZX.Connect_1.0.1-14_x64-setup.exe',
+              browser_download_url: 'https://example.com/connect.exe',
+              size: 20000,
+            },
+            {
+              name: 'LZX.Connect_1.0.1-14_aarch64.dmg',
+              browser_download_url: 'https://example.com/connect.dmg',
+              size: 30000,
+            },
+            {
+              name: 'LZX.Connect_1.0.1-14_amd64.AppImage',
+              browser_download_url: 'https://example.com/connect.AppImage',
+              size: 40000,
+            },
+          ],
+        },
+        {
+          tag_name: 'connect/1.0.1-rc.13',
+          published_at: '2026-04-18T02:13:44Z',
+          prerelease: true,
+          body: 'Older app release',
+          assets: [],
+        },
+      ],
+    };
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    const {getLatestConnectRelease: freshGetLatestConnectRelease} = await import(
+      '~/data/github-releases'
+    );
+    const release = await freshGetLatestConnectRelease();
+
+    expect(release.tagName).toBe('connect/1.0.1-rc.14');
+    expect(release.body).toBe('Latest app release');
+    expect(release.windows?.name).toBe('LZX.Connect_1.0.1-14_x64-setup.exe');
+    expect(release.macos?.name).toBe('LZX.Connect_1.0.1-14_aarch64.dmg');
+    expect(release.linux?.name).toBe('LZX.Connect_1.0.1-14_amd64.AppImage');
+  });
+
+  it('returns fallback when no release matches the requested tag prefix', async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => [
+        {
+          tag_name: 'videomancer/1.0.0-rc.15',
+          published_at: '2026-04-18T05:21:20Z',
+          prerelease: true,
+          body: 'Firmware release',
+          assets: [],
+        },
+      ],
+    };
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    const {getLatestConnectRelease: freshGetLatestConnectRelease} = await import(
+      '~/data/github-releases'
+    );
+    const release = await freshGetLatestConnectRelease();
+
+    expect(release.tagName).toBe('');
+    expect(release.windows).toBeNull();
   });
 });

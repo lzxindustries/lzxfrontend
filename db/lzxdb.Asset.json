@@ -241,5 +241,23 @@
     "file_name": "BUS168-SHIELD-REVB.pdf",
     "file_type": "PDF",
     "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68051c2aa5b87a3b4c6d7e81"
+    },
+    "name": "TBC2 Firmware 1.0.6",
+    "file_name": "tbc2_1.0.6.zip",
+    "file_type": "ZIP",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "68051c35a5b87a3b4c6d7e82"
+    },
+    "name": "TBC2 Firmware 1.0.7",
+    "file_name": "tbc2_1.0.7.zip",
+    "file_type": "ZIP",
+    "__v": 0
   }
 ]

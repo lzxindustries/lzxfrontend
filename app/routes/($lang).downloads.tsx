@@ -2,7 +2,9 @@ import {json} from '@shopify/remix-oxygen';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {Link, useLoaderData} from '@remix-run/react';
-import {FaDownload} from 'react-icons/fa';
+import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
+import {CACHE_SHORT} from '~/data/cache';
+import {getLatestRelease} from '~/data/github-releases';
 import {
   getAllInstrumentEntries,
   getAllModuleSlugs,
@@ -33,7 +35,18 @@ type DownloadEntry = {
   relatedProducts: Array<{name: string; to: string}>;
 };
 
+function formatFileSize(size: number) {
+  if (!size) return null;
+
+  if (size < 1024 * 1024) {
+    return `${(size / 1024).toFixed(0)} KB`;
+  }
+
+  return `${(size / (1024 * 1024)).toFixed(1)} MB`;
+}
+
 export async function loader({request}: LoaderFunctionArgs) {
+  const release = await getLatestRelease();
   const moduleSlugs = getAllModuleSlugs();
   const instrumentEntries = getAllInstrumentEntries();
 
@@ -140,7 +153,10 @@ export async function loader({request}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  return json({entries: allEntries, seo});
+  return json(
+    {entries: allEntries, release, seo},
+    {headers: {'Cache-Control': CACHE_SHORT}},
+  );
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -148,7 +164,32 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function DownloadsPage() {
-  const {entries} = useLoaderData<typeof loader>();
+  const {entries, release} = useLoaderData<typeof loader>();
+  const connectDownloads = [
+    {
+      label: 'Windows',
+      icon: FaWindows,
+      asset: release.windows,
+    },
+    {
+      label: 'macOS',
+      icon: FaApple,
+      asset: release.macos,
+    },
+    {
+      label: 'Linux',
+      icon: FaLinux,
+      asset: release.linux,
+    },
+  ].filter(
+    (
+      item,
+    ): item is {
+      label: string;
+      icon: typeof FaWindows;
+      asset: NonNullable<typeof release.windows>;
+    } => item.asset != null,
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
@@ -167,6 +208,85 @@ export default function DownloadsPage() {
           Open LZX Connect
         </Link>
       </div>
+
+      <section className="mb-8 rounded-lg border border-base-300 p-4 md:p-5">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <h2 className="text-xl font-semibold">LZX Connect App</h2>
+            <p className="mt-1 text-sm text-base-content/70">
+              Latest desktop release packages for guided firmware updates.
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-base-content/60">
+              {release.tagName ? (
+                <span className="badge badge-outline">{release.tagName}</span>
+              ) : null}
+              {release.prerelease ? (
+                <span className="badge badge-warning">Pre-release</span>
+              ) : null}
+              {release.publishedAt ? (
+                <span>
+                  {new Date(release.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </span>
+              ) : null}
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <Link to="/connect" className="btn btn-sm btn-outline">
+              Details
+            </Link>
+            <a
+              href={release.allReleasesUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-sm btn-primary"
+            >
+              All Releases
+            </a>
+          </div>
+        </div>
+
+        {connectDownloads.length > 0 ? (
+          <div className="mt-4 grid gap-3 lg:grid-cols-3">
+            {connectDownloads.map(({label, icon: Icon, asset}) => (
+              <a
+                key={label}
+                href={asset.url}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-start justify-between gap-3 rounded border border-base-300 p-3 transition hover:bg-base-200"
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 font-medium">
+                    <Icon aria-hidden="true" />
+                    <span>{label}</span>
+                  </div>
+                  <div className="mt-1 truncate text-sm text-base-content/70">
+                    {asset.name}
+                  </div>
+                  {asset.size ? (
+                    <div className="mt-1 text-xs text-base-content/50">
+                      {formatFileSize(asset.size)}
+                    </div>
+                  ) : null}
+                </div>
+                <span className="btn btn-xs btn-ghost gap-1">
+                  <FaDownload aria-hidden="true" />
+                  Download
+                </span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p className="mt-4 text-sm text-base-content/70">
+            Platform packages are temporarily unavailable here. Use the full
+            releases page for the latest downloads.
+          </p>
+        )}
+      </section>
 
       <div className="space-y-5">
         {entries.map((entry) => (
