@@ -4,6 +4,7 @@ import {getSeoMeta, Image, type SeoConfig} from '@shopify/hydrogen';
 import {Link, useLoaderData} from '@remix-run/react';
 import type {Product} from '@shopify/hydrogen/storefront-api-types';
 import {getModulesBySeries} from '~/data/product-slugs';
+import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 
@@ -12,7 +13,27 @@ type LegacyEntry = {
   name: string;
   subtitle?: string;
   moduleId: string | null;
-  shopifyProduct?: Product;
+  shopifyGid: string | null;
+  shopifyProduct?: LegacyListingProduct;
+};
+
+type LegacyListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
+  featuredImage?: {
+    url: string;
+    altText?: string | null;
+    width?: number | null;
+    height?: number | null;
+  } | null;
+  variants?: {
+    nodes?: Array<{
+      image?: {
+        url: string;
+        altText?: string | null;
+        width?: number | null;
+        height?: number | null;
+      } | null;
+    }>;
+  };
 };
 
 const MAX_PRODUCTS_PER_QUERY = 250;
@@ -26,15 +47,41 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const allEntries = [...bySeriesMap.values()].flat();
   const legacyEntries = allEntries.filter((e) => e.isHidden);
   const allHandles = legacyEntries.map((e) => e.canonical);
+  const allShopifyIds = legacyEntries
+    .map((e) => e.shopifyGid)
+    .filter((id): id is string => Boolean(id));
 
-  const productMap = new Map<string, Product>();
+  const productByHandle = new Map<string, LegacyListingProduct>();
+  const productById = new Map<string, LegacyListingProduct>();
+
+  if (allShopifyIds.length > 0) {
+    try {
+      const {nodes} = await context.storefront.query<{
+        nodes: (LegacyListingProduct | null)[];
+      }>(LEGACY_LISTING_BY_IDS_QUERY, {
+        variables: {
+          ids: allShopifyIds,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const node of nodes) {
+        if (!node) continue;
+        productById.set(node.id, node);
+        productByHandle.set(node.handle, node);
+      }
+    } catch (error) {
+      console.error('Failed to load legacy module listing product data by IDs', error);
+    }
+  }
 
   if (allHandles.length > 0) {
     try {
       const handleFilterQuery = buildHandleFilterQuery(allHandles);
       const {products} = await context.storefront.query<{
-        products: {nodes: Product[]};
-      }>(LEGACY_LISTING_QUERY, {
+        products: {nodes: LegacyListingProduct[]};
+      }>(LEGACY_LISTING_BY_HANDLES_QUERY, {
         variables: {
           first: Math.min(allHandles.length, MAX_PRODUCTS_PER_QUERY),
           query: handleFilterQuery,
@@ -44,10 +91,14 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       });
 
       for (const p of products.nodes) {
-        productMap.set(p.handle, p);
+        productByHandle.set(p.handle, p);
+        productById.set(p.id, p);
       }
     } catch (error) {
-      console.error('Failed to load legacy module listing product data', error);
+      console.error(
+        'Failed to load legacy module listing product data by handles',
+        error,
+      );
     }
   }
 
@@ -57,7 +108,10 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       name: e.name,
       subtitle: e.moduleId ? getModuleById(e.moduleId)?.subtitle : undefined,
       moduleId: e.moduleId,
-      shopifyProduct: productMap.get(e.canonical),
+      shopifyGid: e.shopifyGid,
+      shopifyProduct:
+        (e.shopifyGid ? productById.get(e.shopifyGid) : undefined) ??
+        productByHandle.get(e.canonical),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -99,6 +153,7 @@ export default function LegacyModulesPage() {
             const image =
               entry.shopifyProduct?.featuredImage ??
               entry.shopifyProduct?.variants?.nodes?.[0]?.image;
+            const localArtworkPath = getModuleArtworkPath(entry.canonical);
             return (
               <Link
                 key={entry.canonical}
@@ -111,6 +166,13 @@ export default function LegacyModulesPage() {
                     aspectRatio="1/1"
                     className="rounded bg-base-200 object-cover"
                     sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+                  />
+                ) : localArtworkPath ? (
+                  <img
+                    src={localArtworkPath}
+                    alt={`${entry.name} front panel`}
+                    loading="lazy"
+                    className="aspect-square w-full rounded bg-base-200 object-cover"
                   />
                 ) : (
                   <div className="aspect-square rounded bg-base-200 flex items-center justify-center text-base-content/30">
@@ -140,7 +202,47 @@ export default function LegacyModulesPage() {
   );
 }
 
-const LEGACY_LISTING_QUERY = `#graphql
+const LEGACY_LISTING_FRAGMENT = `#graphql
+  fragment LegacyListingProductFields on Product {
+    id
+    title
+    handle
+    featuredImage {
+      url
+      altText
+      width
+      height
+    }
+    variants(first: 1) {
+      nodes {
+        image {
+          url
+          altText
+          width
+          height
+        }
+      }
+    }
+  }
+`;
+
+const LEGACY_LISTING_BY_IDS_QUERY = `#graphql
+  ${LEGACY_LISTING_FRAGMENT}
+  query LegacyListingByIds(
+    $ids: [ID!]!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    nodes(ids: $ids) {
+      ... on Product {
+        ...LegacyListingProductFields
+      }
+    }
+  }
+`;
+
+const LEGACY_LISTING_BY_HANDLES_QUERY = `#graphql
+  ${LEGACY_LISTING_FRAGMENT}
   query LegacyListing(
     $first: Int!
     $query: String
@@ -149,25 +251,7 @@ const LEGACY_LISTING_QUERY = `#graphql
   ) @inContext(country: $country, language: $language) {
     products(first: $first, query: $query, sortKey: TITLE) {
       nodes {
-        id
-        title
-        handle
-        featuredImage {
-          url
-          altText
-          width
-          height
-        }
-        variants(first: 1) {
-          nodes {
-            image {
-              url
-              altText
-              width
-              height
-            }
-          }
-        }
+        ...LegacyListingProductFields
       }
     }
   }

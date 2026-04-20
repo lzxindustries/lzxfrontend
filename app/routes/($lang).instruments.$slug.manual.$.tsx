@@ -103,7 +103,8 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 export default function InstrumentManualPage() {
   const {doc, sidebar, prev, next, currentPath, slug, breadcrumbs} =
     useLoaderData<typeof loader>();
-  useOutletContext<InstrumentLayoutLoaderData>();
+  const parentData = useOutletContext<InstrumentLayoutLoaderData>();
+  const product = (parentData as unknown as InstrumentHubData).product;
 
   const linkBuilder = (item: SidebarItem) => {
     const prefix = `instruments/${slug}`;
@@ -118,6 +119,15 @@ export default function InstrumentManualPage() {
       html={doc.html}
       sidebar={sidebar}
       headings={doc.headings}
+      sectionHeader={{
+        badge: 'Manual',
+        contextLabel: product.title,
+        backLink: {
+          label: `${product.title} overview`,
+          to: `/instruments/${slug}`,
+        },
+      }}
+      showBreadcrumbs={false}
       breadcrumbs={breadcrumbs as {label: string; to?: string}[]}
       prev={prev}
       next={next}

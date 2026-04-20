@@ -14,14 +14,14 @@ import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
 
-const SERIES_ORDER = [
-  'pseries',
-  'gen3',
+const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'castle'];
+const LEGACY_SERIES_ORDER = [
   'orion',
   'visionary',
-  'castle',
   'cadet',
   'expedition',
+  'vhs',
+  'legacy',
   'other',
 ];
 
@@ -33,7 +33,32 @@ const SERIES_LABELS: Record<string, string> = {
   castle: 'Castle',
   cadet: 'Cadet',
   expedition: 'Expedition',
+  vhs: 'Third Party',
+  legacy: 'Legacy',
   other: 'Other',
+};
+
+const SERIES_SUBTITLES: Record<string, string> = {
+  pseries:
+    'Compact utility modules designed to solve everyday patching needs with minimal space and maximum flexibility. These are foundational building blocks for routing, buffering, and distribution.',
+  gen3:
+    'Gen3 defines the modern LZX core: high-precision color, keying, and signal processing modules built for contemporary video synthesis systems. This series is optimized for deep integration and performance.',
+  castle:
+    'Castle is a digital logic playground for video-rate pulse structures, counters, gates, and timing experiments. It brings modular logic synthesis into the visual domain with a playful, patch-programmable approach.',
+  orion:
+    'Orion explored expanded control and memory concepts for expressive visual composition. These modules bridge rhythmic structure, sequencing ideas, and performable modulation workflows.',
+  visionary:
+    'Visionary captures foundational LZX concepts that shaped early analog video patching techniques. The series remains a key reference point for historical workflows and classic signal behavior.',
+  cadet:
+    'Cadet offered a modular way to assemble a complete video synthesis voice from focused, single-purpose units. It emphasized accessibility, scalability, and educational clarity.',
+  expedition:
+    'Expedition documented a broad ecosystem of legacy modules from earlier eras of the platform. Together they represent a diverse toolkit of sync, processing, and image-generation techniques.',
+  vhs:
+    'Third-party companion modules developed for compatibility with the LZX ecosystem. This category is maintained as a historical reference for cross-platform patching workflows.',
+  legacy:
+    'Archival modules preserved for historical continuity and documentation access. These products are no longer active but remain important to legacy system owners.',
+  other:
+    'Special-case and archival modules that do not map cleanly to a single historical family. This section preserves discoverability for less common products.',
 };
 
 const MAX_PRODUCTS_PER_QUERY = 250;
@@ -66,9 +91,7 @@ function buildHandleFilterQuery(handles: string[]): string {
 
 export async function loader({context, request}: LoaderFunctionArgs) {
   const bySeriesMap = getModulesBySeries();
-  const allEntries = [...bySeriesMap.values()]
-    .flat()
-    .filter((e) => !e.isHidden);
+  const allEntries = [...bySeriesMap.values()].flat();
 
   const allHandles = allEntries.map((e) => e.canonical);
   const allShopifyIds = allEntries
@@ -130,19 +153,21 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   }
 
   // Build serializable series groups
-  const seriesGroups: {
+  const rawSeriesGroups: {
     key: string;
     label: string;
     entries: (SlugEntry & {shopifyProduct?: ModuleListingProduct; subtitle?: string})[];
   }[] = [];
 
-  for (const key of SERIES_ORDER) {
+  for (const key of [...ACTIVE_SERIES_ORDER, ...LEGACY_SERIES_ORDER]) {
     const entries = bySeriesMap.get(key);
     if (!entries || entries.length === 0) continue;
-    seriesGroups.push({
+    rawSeriesGroups.push({
       key,
       label: SERIES_LABELS[key] ?? key,
-      entries: entries.map((e) => ({
+      entries: [...entries]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((e) => ({
         ...e,
         shopifyProduct:
           (e.shopifyGid ? productById.get(e.shopifyGid) : undefined) ??
@@ -152,6 +177,13 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       })),
     });
   }
+
+  const activeSeriesGroups = rawSeriesGroups.filter((group) =>
+    ACTIVE_SERIES_ORDER.includes(group.key),
+  );
+  const legacySeriesGroups = rawSeriesGroups.filter((group) =>
+    LEGACY_SERIES_ORDER.includes(group.key),
+  );
 
   const seo = seoPayload.collection({
     collection: {
@@ -170,7 +202,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  return json({seriesGroups, seo});
+  return json({activeSeriesGroups, legacySeriesGroups, seo});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -178,82 +210,92 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function ModuleListingPage() {
-  const {seriesGroups} = useLoaderData<typeof loader>();
+  const {activeSeriesGroups, legacySeriesGroups} = useLoaderData<typeof loader>();
+
+  const renderSeriesGroup = (group: {
+    key: string;
+    label: string;
+    entries: (SlugEntry & {shopifyProduct?: ModuleListingProduct; subtitle?: string})[];
+  }) => (
+    <section key={group.key} className="mb-12">
+      <h2 className="text-xl font-semibold mb-1 border-b border-base-300 pb-2">
+        {group.label} Series
+      </h2>
+      {SERIES_SUBTITLES[group.key] ? (
+        <p className="text-sm text-base-content/70 mb-4">{SERIES_SUBTITLES[group.key]}</p>
+      ) : null}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {group.entries.map((entry) => {
+          const product = (entry as any).shopifyProduct as
+            | ModuleListingProduct
+            | undefined;
+          const firstImage =
+            (product as any)?.featuredImage ?? product?.variants?.nodes?.[0]?.image;
+          const localArtworkPath = getModuleArtworkPath(entry.canonical);
+
+          return (
+            <Link
+              key={entry.canonical}
+              to={`/modules/${entry.canonical}`}
+              prefetch="intent"
+              className="group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition"
+            >
+              {localArtworkPath ? (
+                <img
+                  src={localArtworkPath}
+                  alt={`${entry.name} front panel`}
+                  loading="lazy"
+                  className="aspect-square w-full rounded bg-base-200 object-contain p-2"
+                />
+              ) : firstImage ? (
+                <Image
+                  data={firstImage}
+                  aspectRatio="1/1"
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+                  className="rounded bg-base-200 object-contain p-2"
+                />
+              ) : (
+                <div className="aspect-square rounded bg-base-200 flex items-center justify-center text-base-content/30">
+                  No image
+                </div>
+              )}
+              <div>
+                <div className="font-semibold text-sm group-hover:text-primary transition">
+                  {entry.name}
+                </div>
+                {entry.subtitle ? (
+                  <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">
+                    {entry.subtitle}
+                  </p>
+                ) : null}
+                {!ACTIVE_SERIES_ORDER.includes(group.key) && (
+                  <span className="badge badge-sm badge-ghost mt-1">Legacy</span>
+                )}
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h1 className="font-bold text-3xl md:text-4xl uppercase mb-8">Modules</h1>
 
-      {seriesGroups.map((group) => (
-        <section key={group.key} className="mb-12">
-          <h2 className="text-xl font-semibold mb-4 border-b border-base-300 pb-2">
-            {group.label} Series
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {group.entries.map((entry) => {
-              const product = (entry as any).shopifyProduct as
-                | ModuleListingProduct
-                | undefined;
-              const firstImage =
-                (product as any)?.featuredImage ??
-                product?.variants?.nodes?.[0]?.image;
-              const localArtworkPath = getModuleArtworkPath(entry.canonical);
-              const LEGACY_SERIES = new Set([
-                'expedition',
-                'orion',
-                'cadet',
-                'visionary',
-              ]);
-              const isLegacy =
-                entry.isHidden || LEGACY_SERIES.has(entry.series ?? '');
-
-              return (
-                <Link
-                  key={entry.canonical}
-                  to={`/modules/${entry.canonical}`}
-                  prefetch="intent"
-                  className="group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition"
-                >
-                  {firstImage ? (
-                    <Image
-                      data={firstImage}
-                      aspectRatio="1/1"
-                      sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
-                      className="rounded bg-base-200 object-cover"
-                    />
-                  ) : localArtworkPath ? (
-                    <img
-                      src={localArtworkPath}
-                      alt={`${entry.name} front panel`}
-                      loading="lazy"
-                      className="aspect-square w-full rounded bg-base-200 object-cover"
-                    />
-                  ) : (
-                    <div className="aspect-square rounded bg-base-200 flex items-center justify-center text-base-content/30">
-                      No image
-                    </div>
-                  )}
-                  <div>
-                    <div className="font-semibold text-sm group-hover:text-primary transition">
-                      {entry.name}
-                    </div>
-                    {entry.subtitle ? (
-                      <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">
-                        {entry.subtitle}
-                      </p>
-                    ) : null}
-                    {isLegacy && (
-                      <span className="badge badge-sm badge-ghost mt-1">
-                        Legacy
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+      {activeSeriesGroups.length > 0 ? (
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold uppercase mb-6">Active</h2>
+          {activeSeriesGroups.map((group) => renderSeriesGroup(group))}
         </section>
-      ))}
+      ) : null}
+
+      {legacySeriesGroups.length > 0 ? (
+        <section>
+          <h2 className="text-2xl font-bold uppercase mb-6">Legacy</h2>
+          {legacySeriesGroups.map((group) => renderSeriesGroup(group))}
+        </section>
+      ) : null}
     </div>
   );
 }

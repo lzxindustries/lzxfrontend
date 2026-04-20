@@ -99,6 +99,15 @@ export default function InstrumentManualIndex() {
       html={doc.html}
       sidebar={sidebar}
       headings={doc.headings}
+      sectionHeader={{
+        badge: 'Manual',
+        contextLabel: product.title,
+        backLink: {
+          label: `${product.title} overview`,
+          to: `/instruments/${slug}`,
+        },
+      }}
+      showBreadcrumbs={false}
       breadcrumbs={[
         {label: 'Home', to: '/'},
         {label: 'Instruments', to: '/instruments'},

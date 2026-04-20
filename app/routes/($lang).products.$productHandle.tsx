@@ -75,19 +75,21 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   // Redirect module/instrument products to their hub pages
   const canonical = getCanonicalSlug(productHandle);
   if (canonical && isModuleSlug(productHandle)) {
+    const url = new URL(request.url);
     throw new Response(null, {
       status: 301,
       headers: {
-        Location: `/modules/${canonical}`,
+        Location: `/modules/${canonical}${url.search}`,
         'Cache-Control': 'public, max-age=31536000',
       },
     });
   }
   if (canonical && isInstrumentSlug(productHandle)) {
+    const url = new URL(request.url);
     throw new Response(null, {
       status: 301,
       headers: {
-        Location: `/instruments/${canonical}`,
+        Location: `/instruments/${canonical}${url.search}`,
         'Cache-Control': 'public, max-age=31536000',
       },
     });
@@ -301,36 +303,72 @@ export function ProductForm() {
           handle={product.handle}
           options={product.options}
           variants={product.variants}
+          selectedVariant={selectedVariant}
         >
           {({option}) =>
             option.name === 'Title' ? null : (
-            <div key={option.name} className="flex flex-col gap-2">
-              <Heading as="legend" size="lead" className="min-w-[4rem]">
-                {option.name}
-              </Heading>
-              <div className="flex flex-wrap gap-2">
-                {option.values.map(({value, isAvailable, isActive, to}) => (
-                  <Link
-                    key={option.name + value}
-                    to={to}
-                    preventScrollReset
-                    prefetch="intent"
-                    replace
-                    className={clsx(
-                      'px-4 py-2 text-sm rounded-full border transition-all duration-200 cursor-pointer min-h-[40px] flex items-center',
-                      isActive
-                        ? 'bg-black text-white border-black font-semibold'
-                        : 'bg-white text-primary border-primary/30 hover:border-primary/60',
-                      !isAvailable &&
-                        'opacity-40 line-through pointer-events-none',
-                    )}
-                  >
-                    {value}
-                  </Link>
-                ))}
+              <div key={option.name} className="flex flex-col gap-2">
+                <Heading as="legend" size="lead" className="min-w-[4rem]">
+                  {option.name}
+                </Heading>
+                <div className="flex flex-wrap gap-2">
+                  {option.values.map(
+                    ({value, isAvailable, isActive, to, variant}) => {
+                      const isSoldOut =
+                        variant?.availableForSale === false || !isAvailable;
+                      const quantityAvailable = variant?.quantityAvailable;
+                      const availabilityLabel = isSoldOut
+                        ? 'Sold out'
+                        : quantityAvailable != null &&
+                          quantityAvailable > 0 &&
+                          quantityAvailable < 5
+                        ? `${quantityAvailable} left`
+                        : 'In stock';
+
+                      return (
+                        <Link
+                          key={option.name + value}
+                          to={to}
+                          preventScrollReset
+                          prefetch="intent"
+                          replace
+                          className={clsx(
+                            'flex min-h-[56px] min-w-[8rem] flex-col justify-center rounded-2xl border px-4 py-2 text-left transition-all duration-200',
+                            isActive && !isSoldOut &&
+                              'border-black bg-black text-white shadow-sm ring-2 ring-black ring-offset-2',
+                            isActive &&
+                              isSoldOut &&
+                              'border-black bg-white text-primary shadow-sm ring-2 ring-black ring-offset-2',
+                            !isActive &&
+                              !isSoldOut &&
+                              'border-primary/20 bg-white text-primary hover:border-primary/60 hover:bg-primary/[0.03]',
+                            !isActive &&
+                              isSoldOut &&
+                              'border-primary/15 bg-primary/[0.03] text-primary/55 hover:border-primary/30',
+                          )}
+                        >
+                          <span className="text-sm font-semibold leading-tight">
+                            {value}
+                          </span>
+                          <span
+                            className={clsx(
+                              'mt-1 text-[11px] uppercase tracking-[0.14em]',
+                              isActive && !isSoldOut
+                                ? 'text-white/70'
+                                : isSoldOut
+                                ? 'text-primary/45'
+                                : 'text-primary/55',
+                            )}
+                          >
+                            {availabilityLabel}
+                          </span>
+                        </Link>
+                      );
+                    },
+                  )}
+                </div>
               </div>
-            </div>
-          )}
+            )}
         </VariantSelector>
 
         {/* Quantity selector */}

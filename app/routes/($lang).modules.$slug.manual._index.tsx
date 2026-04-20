@@ -108,6 +108,12 @@ export default function ModuleManualPage() {
       html={doc.html}
       sidebar={sidebar}
       headings={doc.headings}
+      sectionHeader={{
+        badge: 'Manual',
+        contextLabel: product.title,
+        backLink: {label: `${product.title} overview`, to: `/modules/${slug}`},
+      }}
+      showBreadcrumbs={false}
       breadcrumbs={[
         {label: 'Home', to: '/'},
         {label: 'Modules', to: '/modules'},

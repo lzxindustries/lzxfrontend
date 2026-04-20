@@ -254,6 +254,12 @@ export interface DocLayoutProps {
   sidebar: SidebarItem[];
   headings: TocHeading[];
   breadcrumbs: {label: string; to?: string}[];
+  sectionHeader?: {
+    badge: string;
+    contextLabel: string;
+    backLink?: {label: string; to: string};
+  };
+  showBreadcrumbs?: boolean;
   prev: SidebarItem | null;
   next: SidebarItem | null;
   frontmatter: {title?: string; description?: string};
@@ -267,6 +273,8 @@ export function DocLayout({
   sidebar,
   headings,
   breadcrumbs,
+  sectionHeader,
+  showBreadcrumbs = true,
   prev,
   next,
   frontmatter,
@@ -282,7 +290,7 @@ export function DocLayout({
 
   return (
     <>
-      <Breadcrumbs items={breadcrumbs} />
+      {showBreadcrumbs && <Breadcrumbs items={breadcrumbs} />}
       <MobileSidebar
         items={sidebar}
         currentPath={currentPath}
@@ -297,6 +305,24 @@ export function DocLayout({
           linkBuilder={buildLink}
         />
         <article className="flex-1 min-w-0 max-w-prose-wide">
+          {sectionHeader && (
+            <div className="mb-6 border-b border-base-200 pb-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-base-content/60">
+                {sectionHeader.badge}
+              </p>
+              <p className="mt-1 text-sm text-base-content/70">
+                {sectionHeader.contextLabel}
+              </p>
+              {sectionHeader.backLink && (
+                <Link
+                  to={sectionHeader.backLink.to}
+                  className="mt-2 inline-block text-sm text-primary hover:underline"
+                >
+                  &larr; Back to {sectionHeader.backLink.label}
+                </Link>
+              )}
+            </div>
+          )}
           {frontmatter.title && (
             <h1 className="text-heading font-bold mb-6">{frontmatter.title}</h1>
           )}
