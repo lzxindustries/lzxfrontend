@@ -4,6 +4,7 @@ title: 'Videomancer Firmware 1.0.0-rc.4'
 authors: [lars]
 tags: [videomancer, software]
 draft: false
+image: /docs/img/social-card.jpg
 ---
 
 It's been a busy couple of weeks — two TBC2 firmware updates, a Devin Greenwood artist feature, and a preview release that gave the adventurous among you a taste of what was cooking. As promised, here's the March 20th Videomancer update. Version 1.0.0-rc.4 is a pre-release build of the Videomancer firmware.

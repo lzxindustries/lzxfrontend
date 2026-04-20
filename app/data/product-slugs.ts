@@ -88,6 +88,34 @@ for (const key of Object.keys(instrumentDocGlob)) {
 
 // --- Series detection from SKU patterns ---
 
+// Modules explicitly assigned to the P Series
+const P_SERIES_NAMES = new Set(['LNK', 'MLT', 'P', 'PGO', 'PRM', 'PAB']);
+
+// Modules explicitly assigned to the Orion Series
+const ORION_SERIES_NAMES = new Set([
+  'Escher Sketch',
+  'Diver',
+  'Fortress',
+  'Memory Palace',
+]);
+
+// Modules explicitly assigned to the Expedition Series
+const EXPEDITION_SERIES_NAMES = new Set([
+  'Navigator',
+  'Prismatic Ray',
+  'Sensory Translator',
+  'Shapechanger',
+  'Passage',
+  'Polar Fringe',
+  'Staircase',
+  'Liquid TV',
+  'Marble Index',
+  'Mapper',
+  'Cyclops',
+  'Topogram',
+  'Pendulum',
+]);
+
 function detectSeries(m: Record<string, unknown>): string | null {
   const sku = (m.sku as string) ?? '';
   const name = m.name as string;
@@ -95,8 +123,21 @@ function detectSeries(m: Record<string, unknown>): string | null {
   if (sku.startsWith('LZXCSTL')) return 'castle';
   if (sku.startsWith('LZXCADT')) return 'cadet';
 
-  // Expedition series modules (have external_url to community forum, eurorack, not hidden)
+  // P series (passive/programmable utilities)
+  if (P_SERIES_NAMES.has(name)) return 'pseries';
+
+  // Explicit Orion series overrides
+  if (ORION_SERIES_NAMES.has(name)) return 'orion';
+
+  // Explicit Expedition series overrides (includes hidden legacy modules)
+  if (EXPEDITION_SERIES_NAMES.has(name)) return 'expedition';
+
+  // Visionary series (check before community URL check)
+  if (name === 'Video Waveform Generator') return 'visionary';
+
   const extUrl = (m.external_url as string) ?? '';
+
+  // Remaining community.lzxindustries.net modules → Expedition
   if (
     extUrl.includes('community.lzxindustries.net') &&
     m.has_eurorack_power_entry
@@ -106,14 +147,11 @@ function detectSeries(m: Record<string, unknown>): string | null {
   // VideoHeadroom third-party
   if (extUrl.includes('videoheadroom.systems')) return 'vhs';
 
-  // Visionary series
-  if (name === 'Video Waveform Generator') return 'visionary';
-
-  // Gen3 / P-series: active modules with is_active_product
+  // Gen3: active modules with eurorack power
   if (m.is_active_product && m.has_eurorack_power_entry) return 'gen3';
 
-  // Hidden legacy modules without series
-  if (m.is_hidden) return 'legacy';
+  // Hidden legacy modules without specific series → Visionary
+  if (m.is_hidden) return 'visionary';
 
   return null;
 }

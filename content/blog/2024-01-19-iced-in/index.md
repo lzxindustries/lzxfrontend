@@ -3,6 +3,7 @@ slug: iced-in
 title: Iced In
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Hello visual artists and Chromagnonites -- this week has been a bit crazy. Here in Portland we have all been iced into our homes since the holiday on Monday, so the typical workshop crew is working abroad. We've focused that on getting ahead on content creation for new videos and social media posts -- a project that is going well and should buy us some free days in February. I'm thankful everyone in the shop also has systems at home, or else this would not have been possible.

@@ -3,6 +3,7 @@ slug: chromagnon-testing-w2
 title: Chromagnon Testing W2
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Hello friends,

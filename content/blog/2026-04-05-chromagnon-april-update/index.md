@@ -4,6 +4,7 @@ title: 'Chromagnon Update: April 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: false
+image: /img/instruments/videomancer/videomancer_routing_diagram_dual_in.png
 ---
 
 Hello video friends. Here's the first monthly Chromagnon update, as promised in the [March production plan](/blog/chromagnon-building-it-right).

@@ -3,6 +3,7 @@ slug: we-answer-your-questions
 title: We Answer Your Questions
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Greetings Chromagnonites.

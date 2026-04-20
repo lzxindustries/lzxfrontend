@@ -3,6 +3,7 @@ slug: spring-cleaning
 title: Spring Cleaning
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Hello, Chromagnonites and other video freaks.

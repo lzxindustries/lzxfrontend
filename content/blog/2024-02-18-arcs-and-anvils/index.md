@@ -3,6 +3,7 @@ slug: arcs-and-anvils
 title: Arcs & Anvils
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Good afternoon, video folk.

@@ -110,6 +110,34 @@ function isProductionRuntime(): boolean {
   );
 }
 
+const BLOG_PREVIEW_FALLBACK_IMAGE = '/docs/img/social-card.jpg';
+
+function inferFirstInlineImage(content: string): string | undefined {
+  const markdownImageMatch = content.match(
+    /!\[[^\]]*\]\((?:<)?([^)>\s]+)(?:>)?(?:\s+["'][^"']*["'])?\)/,
+  );
+  if (markdownImageMatch?.[1]) return markdownImageMatch[1];
+
+  const htmlImageMatch = content.match(/<img[^>]*\ssrc=["']([^"']+)["'][^>]*>/i);
+  if (htmlImageMatch?.[1]) return htmlImageMatch[1];
+
+  return undefined;
+}
+
+function resolveBlogPreviewImage(
+  frontmatter: ContentFrontmatter,
+  contentAfterFrontmatter: string,
+): string {
+  const frontmatterImage =
+    typeof frontmatter.image === 'string' ? frontmatter.image.trim() : '';
+  if (frontmatterImage) return frontmatterImage;
+
+  const inferredImage = inferFirstInlineImage(contentAfterFrontmatter)?.trim();
+  if (inferredImage) return inferredImage;
+
+  return BLOG_PREVIEW_FALLBACK_IMAGE;
+}
+
 // --- Blog functions ---
 
 export function listBlogPosts(tag?: string): BlogPost[] {
@@ -126,6 +154,7 @@ export function listBlogPosts(tag?: string): BlogPost[] {
       const parsed = matter(raw);
       frontmatter = parsed.data as ContentFrontmatter;
       contentAfterFm = parsed.content;
+      frontmatter.image = resolveBlogPreviewImage(frontmatter, contentAfterFm);
     } catch {
       continue;
     }
@@ -178,10 +207,11 @@ export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
     const dirSlug = extractSlugFromBlogPath(filepath);
     const folderSlug = extractBlogFolderFromPath(filepath);
 
+    let parsedMatter: ReturnType<typeof matter> | null = null;
     let fmSlug = '';
     try {
-      const parsed = matter(raw);
-      fmSlug = (parsed.data.slug as string) || '';
+      parsedMatter = matter(raw);
+      fmSlug = (parsedMatter.data.slug as string) || '';
     } catch {
       fmSlug = '';
     }
@@ -197,6 +227,11 @@ export async function getBlogPost(slug: string): Promise<BlogPostFull | null> {
       raw,
       imageBasePath,
       `/blog/${effectiveSlug}`,
+    );
+
+    parsed.frontmatter.image = resolveBlogPreviewImage(
+      parsed.frontmatter,
+      parsedMatter?.content ?? '',
     );
 
     return {

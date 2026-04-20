@@ -4,6 +4,7 @@ title: 'Videomancer 0.2.0-rc.1 Preview'
 authors: [lars]
 tags: [videomancer, software]
 draft: false
+image: /docs/img/social-card.jpg
 ---
 
 As promised, here's the March 12th Videomancer update. This is a **preview release** — version 0.2.0-rc.1 of the Videomancer firmware, app, and programs. This is a work in progress, and there is a long list of functionality still being reviewed, and polishing to do. The official release has been postponed one week to **March 19th**. If you don't like playing with potentially buggy or frustrating software, wait until then. If you are fiending for a taste of the new programs -- check it out!

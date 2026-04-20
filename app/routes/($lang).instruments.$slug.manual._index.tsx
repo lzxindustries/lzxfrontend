@@ -21,12 +21,18 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   const canonical = getCanonicalSlug(slug) ?? slug;
   const docPath = getDocPathForSlug(canonical);
   if (!docPath) {
-    throw new Response('Manual not found', {status: 404});
+    return json(
+      {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
+      {headers: {'Cache-Control': CACHE_LONG}},
+    );
   }
 
   const doc = await getDocPage(docPath);
   if (!doc) {
-    throw new Response('Manual not found', {status: 404});
+    return json(
+      {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
+      {headers: {'Cache-Control': CACHE_LONG}},
+    );
   }
 
   // Build sidebar for the instrument's section
@@ -43,6 +49,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   return json(
     {
+      noManual: false as const,
       doc,
       sidebar,
       prev,
@@ -60,10 +67,22 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function InstrumentManualIndex() {
-  const {doc, sidebar, prev, next, currentPath, slug} =
-    useLoaderData<typeof loader>();
+  const loaderData = useLoaderData<typeof loader>();
   const parentData = useOutletContext<InstrumentLayoutLoaderData>();
   const product = (parentData as unknown as InstrumentHubData).product;
+
+  if (loaderData.noManual) {
+    return (
+      <div className="max-w-2xl mx-auto px-6 py-16 text-center">
+        <h1 className="text-2xl font-bold mb-4">No Manual Available</h1>
+        <p className="text-base-content/70">
+          A manual for <strong>{product.title}</strong> is not available yet.
+        </p>
+      </div>
+    );
+  }
+
+  const {doc, sidebar, prev, next, currentPath, slug} = loaderData;
 
   const linkBuilder = (item: SidebarItem) => {
     // item.path is like "instruments/videomancer/quick-start"

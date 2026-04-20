@@ -4,6 +4,7 @@ title: 'Chromagnon: FPGA Deeper Dive'
 authors: [lars]
 tags: [chromagnon, behind-the-scenes]
 draft: false
+image: /docs/img/social-card.jpg
 ---
 
 Yesterday's [Chromagnon update](/blog/chromagnon-building-it-right) generated a lot of great discussion on [Discord](https://discord.gg/lzx) about the move to FPGA-based signal processing. I ended up writing quite a bit in the thread answering questions, and wanted to collect those thoughts here for everyone who wasn't following along.

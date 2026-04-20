@@ -165,11 +165,13 @@ export function BlogIndex({
 // --- Blog Card ---
 
 function BlogCard({post}: {post: BlogPost}) {
-  const imageUrl = post.frontmatter.image
-    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(
-        /^\.\//,
-        '',
-      )}`
+  const image = post.frontmatter.image
+    ? String(post.frontmatter.image).trim()
+    : '';
+  const imageUrl = image
+    ? image.startsWith('/') || /^([a-z][a-z0-9+.-]*:|\/\/)/i.test(image)
+      ? image
+      : `${post.imageBasePath}/${image.replace(/^\.\//, '')}`
     : null;
 
   return (

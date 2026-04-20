@@ -15,26 +15,24 @@ import {routeHeaders} from '~/data/cache';
 export const headers = routeHeaders;
 
 const SERIES_ORDER = [
+  'pseries',
   'gen3',
   'orion',
   'visionary',
   'castle',
   'cadet',
   'expedition',
-  'vhs',
-  'legacy',
   'other',
 ];
 
 const SERIES_LABELS: Record<string, string> = {
+  pseries: 'P',
   gen3: 'Gen3',
   orion: 'Orion',
   visionary: 'Visionary',
   castle: 'Castle',
   cadet: 'Cadet',
   expedition: 'Expedition',
-  vhs: 'Third Party',
-  legacy: 'Legacy',
   other: 'Other',
 };
 
@@ -200,6 +198,14 @@ export default function ModuleListingPage() {
                 (product as any)?.featuredImage ??
                 product?.variants?.nodes?.[0]?.image;
               const localArtworkPath = getModuleArtworkPath(entry.canonical);
+              const LEGACY_SERIES = new Set([
+                'expedition',
+                'orion',
+                'cadet',
+                'visionary',
+              ]);
+              const isLegacy =
+                entry.isHidden || LEGACY_SERIES.has(entry.series ?? '');
 
               return (
                 <Link
@@ -236,7 +242,7 @@ export default function ModuleListingPage() {
                         {entry.subtitle}
                       </p>
                     ) : null}
-                    {entry.isHidden && (
+                    {isLegacy && (
                       <span className="badge badge-sm badge-ghost mt-1">
                         Legacy
                       </span>

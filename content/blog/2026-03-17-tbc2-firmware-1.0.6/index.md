@@ -3,6 +3,7 @@ slug: tbc2-firmware-1.0.6
 title: 'TBC2 Firmware 1.0.6'
 authors: [lars]
 tags: [gen3, software]
+image: /docs/img/social-card.jpg
 ---
 
 TBC2 firmware version 1.0.6 is now available for download.

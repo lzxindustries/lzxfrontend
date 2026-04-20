@@ -3,6 +3,7 @@ slug: double-visions
 title: Double Visions
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 A quick update for last week.

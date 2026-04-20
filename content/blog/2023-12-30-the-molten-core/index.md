@@ -3,6 +3,7 @@ slug: the-year-in-review
 title: The Year In Review
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 It's Friday... howdy! As promised in the last post, here is a list of notable milestones we reached at LZX in 2023.

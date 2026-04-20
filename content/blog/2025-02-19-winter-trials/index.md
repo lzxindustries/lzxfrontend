@@ -3,6 +3,7 @@ slug: winter-trials
 title: Winter Trials
 authors: [lars]
 tags: [chromagnon]
+image: /docs/img/social-card.jpg
 ---
 
 Greetings from Portland, video friends. January (and now most of February) have delivered some frustrating setbacks for both work and personal life. We had our furnace in the home/workshop go out for 10 days in January, followed by me getting sick for a couple of weeks. This kept me off the Chromagnon workbench, but I used the time to make more progress with the firmware.

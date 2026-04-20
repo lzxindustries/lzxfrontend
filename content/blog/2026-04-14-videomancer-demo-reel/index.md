@@ -4,6 +4,7 @@ title: 'Videomancer Demo Reel — April 2026'
 authors: [lars]
 tags: [videomancer, video]
 draft: false
+image: ./davinci_resolve_edit.png
 ---
 
 We put together a new demo reel showcasing raw output from the 24 programs available in the current release candidate firmware, [Videomancer 1.0.0-rc.13](https://github.com/lzxindustries/videomancer-firmware/releases/tag/videomancer%2F1.0.0-rc.13). Each clip is a direct capture from Videomancer with no external processing — what you see is what the instrument produces.

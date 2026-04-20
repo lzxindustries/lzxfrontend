@@ -23,11 +23,14 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     return redirect(url.toString(), 301);
   }
 
-  const heroImage = post.frontmatter.image
-    ? `${post.imageBasePath}/${String(post.frontmatter.image).replace(
-        /^\.\//,
-        '',
-      )}`
+  const heroImageValue = post.frontmatter.image
+    ? String(post.frontmatter.image).trim()
+    : '';
+  const heroImage = heroImageValue
+    ? heroImageValue.startsWith('/') ||
+      /^([a-z][a-z0-9+.-]*:|\/\/)/i.test(heroImageValue)
+      ? heroImageValue
+      : `${post.imageBasePath}/${heroImageValue.replace(/^\.\//, '')}`
     : undefined;
 
   const seo = seoPayload.blogPost({
