@@ -6,40 +6,115 @@ import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getAllInstrumentSlugs, getSlugEntry} from '~/data/product-slugs';
+import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
 
+const MAX_PRODUCTS_PER_QUERY = 250;
+
+type InstrumentListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
+  availableForSale?: boolean;
+  featuredImage?: {
+    url: string;
+    altText?: string | null;
+    width?: number | null;
+    height?: number | null;
+  } | null;
+  variants?: {
+    nodes?: Array<{
+      id: string;
+      image?: {
+        url: string;
+        altText?: string | null;
+        width?: number | null;
+        height?: number | null;
+      } | null;
+      price?: {amount: string; currencyCode: string};
+    }>;
+  };
+};
+
+function buildHandleFilterQuery(handles: string[]): string {
+  return handles.map((handle) => `handle:${handle}`).join(' OR ');
+}
+
 export async function loader({context, request}: LoaderFunctionArgs) {
   const slugs = getAllInstrumentSlugs();
+  const entries = slugs
+    .map((slug) => getSlugEntry(slug))
+    .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 
-  // Fetch Shopify product data for images/prices
-  const {products} = await context.storefront.query<{
-    products: {nodes: Product[]};
-  }>(INSTRUMENT_LISTING_QUERY, {
-    variables: {
-      first: slugs.length + 10,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
-  });
+  const allHandles = entries.map((entry) => entry.canonical);
+  const allShopifyIds = entries
+    .map((entry) => entry.shopifyGid)
+    .filter((id): id is string => Boolean(id));
 
-  const productMap = new Map<string, Product>();
-  for (const p of products.nodes) {
-    productMap.set(p.handle, p);
+  const productByHandle = new Map<string, InstrumentListingProduct>();
+  const productById = new Map<string, InstrumentListingProduct>();
+
+  if (allShopifyIds.length > 0) {
+    try {
+      const {nodes} = await context.storefront.query<{
+        nodes: (InstrumentListingProduct | null)[];
+      }>(INSTRUMENT_LISTING_BY_IDS_QUERY, {
+        variables: {
+          ids: allShopifyIds,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const node of nodes) {
+        if (!node) continue;
+        productById.set(node.id, node);
+        productByHandle.set(node.handle, node);
+      }
+    } catch (error) {
+      console.error(
+        'Failed to load instrument listing product data by IDs',
+        error,
+      );
+    }
   }
 
-  const entries = slugs
-    .map((s) => {
-      const entry = getSlugEntry(s);
-      if (!entry) return null;
+  if (allHandles.length > 0) {
+    try {
+      const handleFilterQuery = buildHandleFilterQuery(allHandles);
+      const {products} = await context.storefront.query<{
+        products: {nodes: InstrumentListingProduct[]};
+      }>(INSTRUMENT_LISTING_BY_HANDLES_QUERY, {
+        variables: {
+          first: Math.min(allHandles.length, MAX_PRODUCTS_PER_QUERY),
+          query: handleFilterQuery,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const product of products.nodes) {
+        productByHandle.set(product.handle, product);
+        productById.set(product.id, product);
+      }
+    } catch (error) {
+      console.error(
+        'Failed to load instrument listing product data by handles',
+        error,
+      );
+    }
+  }
+
+  const listingEntries = entries
+    .map((entry) => {
       return {
         ...entry,
-        shopifyProduct: productMap.get(entry.canonical) ?? null,
+        shopifyProduct:
+          (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
+          productByHandle.get(entry.canonical) ??
+          null,
       };
-    })
-    .filter(Boolean);
+    });
 
   const seo = seoPayload.collection({
     collection: {
@@ -58,7 +133,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  return json({entries, seo});
+  return json({entries: listingEntries, seo});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -76,10 +151,11 @@ export default function InstrumentListingPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {entries.map((entry: any) => {
-          const product = entry.shopifyProduct as Product | null;
+          const product = entry.shopifyProduct as InstrumentListingProduct | null;
           const firstImage =
             product?.featuredImage ??
             product?.variants?.nodes?.[0]?.image;
+          const localArtworkPath = getInstrumentArtworkPath(entry.canonical);
 
           return (
             <Link
@@ -94,6 +170,13 @@ export default function InstrumentListingPage() {
                   aspectRatio="16/9"
                   sizes="(min-width: 768px) 33vw, 100vw"
                   className="rounded bg-base-200 object-cover"
+                />
+              ) : localArtworkPath ? (
+                <img
+                  src={localArtworkPath}
+                  alt={`${entry.name} product image`}
+                  loading="lazy"
+                  className="aspect-video w-full rounded bg-base-200 object-cover"
                 />
               ) : (
                 <div className="aspect-video rounded bg-base-200 flex items-center justify-center text-base-content/30">
@@ -118,39 +201,62 @@ export default function InstrumentListingPage() {
   );
 }
 
-const INSTRUMENT_LISTING_QUERY = `#graphql
-  query InstrumentListing(
-    $first: Int!
-    $country: CountryCode
-    $language: LanguageCode
-  ) @inContext(country: $country, language: $language) {
-    products(first: $first, sortKey: TITLE) {
+const INSTRUMENT_LISTING_FRAGMENT = `#graphql
+  fragment InstrumentListingProductFields on Product {
+    id
+    title
+    handle
+    availableForSale
+    featuredImage {
+      url
+      altText
+      width
+      height
+    }
+    variants(first: 1) {
       nodes {
         id
-        title
-        handle
-        availableForSale
-        featuredImage {
+        image {
           url
           altText
           width
           height
         }
-        variants(first: 1) {
-          nodes {
-            id
-            image {
-              url
-              altText
-              width
-              height
-            }
-            price {
-              amount
-              currencyCode
-            }
-          }
+        price {
+          amount
+          currencyCode
         }
+      }
+    }
+  }
+`;
+
+const INSTRUMENT_LISTING_BY_IDS_QUERY = `#graphql
+  ${INSTRUMENT_LISTING_FRAGMENT}
+  query InstrumentListingByIds(
+    $ids: [ID!]!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    nodes(ids: $ids) {
+      ... on Product {
+        ...InstrumentListingProductFields
+      }
+    }
+  }
+`;
+
+const INSTRUMENT_LISTING_BY_HANDLES_QUERY = `#graphql
+  ${INSTRUMENT_LISTING_FRAGMENT}
+  query InstrumentListingByHandles(
+    $first: Int!
+    $query: String
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    products(first: $first, query: $query, sortKey: TITLE) {
+      nodes {
+        ...InstrumentListingProductFields
       }
     }
   }

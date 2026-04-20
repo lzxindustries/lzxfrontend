@@ -5,6 +5,7 @@ import {
   getAllModuleSlugs,
   getAllInstrumentEntries,
 } from '~/data/product-slugs';
+import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 
 describe('getSlugEntry', () => {
   it('returns null for non-existent slug', () => {
@@ -78,5 +79,12 @@ describe('getAllInstrumentEntries', () => {
     const entries = getAllInstrumentEntries();
     const vm = entries.find((e) => e.canonical === 'videomancer');
     expect(vm).toBeDefined();
+  });
+
+  it('has local artwork fallbacks for all instrument listing slugs', () => {
+    const entries = getAllInstrumentEntries();
+    for (const entry of entries) {
+      expect(getInstrumentArtworkPath(entry.canonical)).toBeTruthy();
+    }
   });
 });
