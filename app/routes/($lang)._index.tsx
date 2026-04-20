@@ -212,7 +212,7 @@ export default function Home() {
       </Section>
 
       {/* Getting Started CTA */}
-      <section className="bg-primary px-6 py-16 md:px-10 lg:px-12 text-primary-content">
+      <section className="bg-contrast px-6 py-16 text-primary md:px-10 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
           <FaBook className="mx-auto mb-4 text-4xl" />
           <h2 className="text-3xl font-bold mb-4">
@@ -225,13 +225,13 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/getting-started"
-              className="btn btn-lg bg-primary-content text-primary hover:bg-primary-content/90"
+              className="btn btn-lg border-0 bg-primary text-contrast hover:bg-primary/90"
             >
               Getting Started Guide
             </Link>
             <Link
               to="/instruments/videomancer/setup"
-              className="btn btn-lg btn-outline border-primary-content text-primary-content hover:bg-primary-content/10"
+              className="btn btn-lg btn-outline border-primary text-primary hover:bg-primary/10"
             >
               Set Up Videomancer
             </Link>
