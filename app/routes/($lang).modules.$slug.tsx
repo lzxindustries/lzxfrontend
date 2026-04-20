@@ -43,7 +43,9 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     throw new Response('Module not found', {status: 404});
   }
 
-  const recommended = getRecommendedProducts(context, data.product.id);
+  const recommended = data.hasShopifyProduct
+    ? getRecommendedProducts(context, data.product.id)
+    : Promise.resolve([]);
 
   return defer({
     ...data,

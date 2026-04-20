@@ -1,5 +1,6 @@
 import modulesData from '../../db/lzxdb.Module.json';
 import {slugify} from './lzxdb';
+import {getLegacyVisionaryModuleListingEntries} from './lfs-product-metadata';
 
 /**
  * Canonical slug mapping for modules and instruments.
@@ -306,6 +307,23 @@ for (const m of modulesData) {
   if (overrideSlug && defaultSlug !== overrideSlug) {
     registerAlias(defaultSlug, canonical);
   }
+}
+
+for (const entry of getLegacyVisionaryModuleListingEntries()) {
+  if (slugRegistry.has(entry.slug)) continue;
+
+  registerEntry({
+    canonical: entry.slug,
+    hubType: 'module',
+    docPath: null,
+    shopifyGid: null,
+    moduleId: null,
+    name: entry.name,
+    isHidden: entry.isHidden,
+    externalUrl: entry.externalUrl,
+    hasEurorackPower: null,
+    series: 'visionary',
+  });
 }
 
 // --- Public API ---

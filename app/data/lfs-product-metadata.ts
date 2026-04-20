@@ -1,3 +1,5 @@
+import {getMarkdownToHTML} from '~/lib/markdown';
+
 type RawLfsProduct = {
   slug?: string;
   name?: string;
@@ -38,6 +40,13 @@ export interface LegacyModuleListingEntry {
   externalUrl: string | null;
   isHidden: boolean;
   sourcePath: string;
+}
+
+export interface LegacyVisionaryModuleMetadata
+  extends LegacyModuleListingEntry {
+  descriptionHtml: string | null;
+  descriptionText: string | null;
+  specsHtml: string | null;
 }
 
 const lfsProductFiles = import.meta.glob<RawLfsProduct>(
@@ -183,6 +192,41 @@ function parseLegacyVisionarySubtitle(raw: string): string | null {
   return stringValue(match?.[1] ?? null);
 }
 
+function extractMarkdownSection(raw: string, sectionHeading: string): string | null {
+  const match = raw.match(
+    new RegExp(
+      `##\\s+${escapeRegExp(sectionHeading)}\\s*\\n\\s*([\\s\\S]*?)(?=\\n##\\s+|\\n---\\s*\\n|$)`,
+      'i',
+    ),
+  );
+
+  return stringValue(match?.[1] ?? null);
+}
+
+function stripLeadingBoldSummary(markdown: string | null): string | null {
+  if (!markdown) return null;
+
+  const stripped = markdown
+    .replace(/^\*\*.+?\*\*\s*\n\s*/s, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+
+  return stripped || null;
+}
+
+function stripMarkdownFormatting(markdown: string | null): string | null {
+  if (!markdown) return null;
+
+  const stripped = markdown
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[>*_`#-]/g, ' ')
+    .replace(/\|/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return stripped || null;
+}
+
 const lfsProducts: LfsProductMetadata[] = Object.entries(lfsProductFiles)
   .filter(([sourcePath]) => !sourcePath.endsWith('/product-catalog.json'))
   .flatMap(([sourcePath, raw]) => {
@@ -219,7 +263,7 @@ const lfsProducts: LfsProductMetadata[] = Object.entries(lfsProductFiles)
     ];
   });
 
-const legacyVisionaryModuleListings: LegacyModuleListingEntry[] = Object.entries(
+const legacyVisionaryModuleListings: LegacyVisionaryModuleMetadata[] = Object.entries(
   legacyVisionaryMetadataFiles,
 )
   .flatMap(([sourcePath, raw]) => {
@@ -230,6 +274,11 @@ const legacyVisionaryModuleListings: LegacyModuleListingEntry[] = Object.entries
     const name = parseLegacyVisionaryName(raw);
     if (!name) return [];
 
+    const descriptionMarkdown = stripLeadingBoldSummary(
+      extractMarkdownSection(raw, 'Description'),
+    );
+    const specsMarkdown = extractMarkdownSection(raw, 'Specifications');
+
     return [
       {
         slug,
@@ -237,14 +286,22 @@ const legacyVisionaryModuleListings: LegacyModuleListingEntry[] = Object.entries
         subtitle: parseLegacyVisionarySubtitle(raw),
         externalUrl: parseLegacyVisionaryExternalUrl(raw),
         isHidden: true,
+        descriptionHtml: descriptionMarkdown
+          ? getMarkdownToHTML(descriptionMarkdown)
+          : null,
+        descriptionText: stripMarkdownFormatting(descriptionMarkdown),
+        specsHtml: specsMarkdown ? getMarkdownToHTML(specsMarkdown) : null,
         sourcePath,
-      } satisfies LegacyModuleListingEntry,
+      } satisfies LegacyVisionaryModuleMetadata,
     ];
   })
   .sort((a, b) => a.name.localeCompare(b.name));
 
 const lfsProductsByName = new Map(lfsProducts.map((entry) => [entry.name, entry]));
 const lfsProductsBySlug = new Map(lfsProducts.map((entry) => [entry.slug, entry]));
+const legacyVisionaryMetadataBySlug = new Map(
+  legacyVisionaryModuleListings.map((entry) => [entry.slug, entry]),
+);
 
 export function getLfsProductMetadataByName(name: string): LfsProductMetadata | null {
   return lfsProductsByName.get(name) ?? null;
@@ -272,4 +329,10 @@ export function getExternalModuleListingEntries(): LfsProductMetadata[] {
 
 export function getLegacyVisionaryModuleListingEntries(): LegacyModuleListingEntry[] {
   return legacyVisionaryModuleListings;
+}
+
+export function getLegacyVisionaryModuleMetadataBySlug(
+  slug: string,
+): LegacyVisionaryModuleMetadata | null {
+  return legacyVisionaryMetadataBySlug.get(slug) ?? null;
 }

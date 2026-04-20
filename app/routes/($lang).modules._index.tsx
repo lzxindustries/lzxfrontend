@@ -9,7 +9,7 @@ import {getModulesBySeries} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
 import {
   getExternalModuleListingEntries,
-  getLegacyVisionaryModuleListingEntries,
+  getLegacyVisionaryModuleMetadataBySlug,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
 import {getModuleArtworkPath} from '~/data/module-artwork';
@@ -114,7 +114,6 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const allEntries = [...bySeriesMap.values()]
     .flat()
     .filter((entry) => !MODULE_LISTING_EXCLUSIONS.has(entry.canonical));
-  const existingCanonicals = new Set(allEntries.map((entry) => entry.canonical));
   const externalModuleEntries = getExternalModuleListingEntries().map((entry) => ({
     canonical: entry.slug,
     name: entry.name,
@@ -124,20 +123,6 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     hasInternalPage: false,
     badgeLabel: 'External',
   })) satisfies ModuleListingEntry[];
-  const legacyVisionaryEntries = getLegacyVisionaryModuleListingEntries()
-    .filter(
-      (entry) =>
-        !existingCanonicals.has(entry.slug) && Boolean(entry.externalUrl),
-    )
-    .map((entry) => ({
-      canonical: entry.slug,
-      name: entry.name,
-      isHidden: entry.isHidden,
-      subtitle: entry.subtitle,
-      externalUrl: entry.externalUrl,
-      hasInternalPage: false,
-      badgeLabel: 'External',
-    })) satisfies ModuleListingEntry[];
 
   const allHandles = allEntries.map((e) => e.canonical);
   const allShopifyIds = allEntries
@@ -218,16 +203,15 @@ export async function loader({context, request}: LoaderFunctionArgs) {
         undefined,
       subtitle:
         (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
-        getLfsProductSubtitle(entry.name),
+        getLfsProductSubtitle(entry.name) ??
+        getLegacyVisionaryModuleMetadataBySlug(entry.canonical)?.subtitle,
       externalUrl: entry.externalUrl ?? null,
       hasInternalPage: true,
     }));
     const groupEntries =
       key === 'vhs'
         ? externalModuleEntries
-        : key === 'visionary'
-          ? [...(mappedEntries ?? []), ...legacyVisionaryEntries]
-          : mappedEntries;
+        : mappedEntries;
     if (!groupEntries || groupEntries.length === 0) continue;
     rawSeriesGroups.push({
       key,

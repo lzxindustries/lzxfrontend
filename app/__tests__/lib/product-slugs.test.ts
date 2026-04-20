@@ -82,6 +82,12 @@ describe('getAllModuleSlugs', () => {
 
     expect(slugs).toContain('dc-distro-3a');
     expect(slugs).toContain('dc-distro-5a');
+    expect(slugs).toContain('color-video-encoder');
+    expect(slugs).toContain('octal-video-quantizer-sequencer');
+    expect(slugs).toContain('triple-video-multimode-filter');
+    expect(slugs).toContain('video-flip-flops');
+    expect(slugs).toContain('video-ramps');
+    expect(slugs).toContain('video-sync-generator');
     expect(slugs).toContain('triple-video-fader-key-generator');
     expect(slugs).toContain('video-blending-matrix');
     expect(slugs).toContain('video-logic');
@@ -108,6 +114,12 @@ describe('getModulesBySeries', () => {
       (bySeries.get('visionary') ?? []).map((entry) => entry.canonical),
     ).toEqual(
       expect.arrayContaining([
+        'color-video-encoder',
+        'octal-video-quantizer-sequencer',
+        'triple-video-multimode-filter',
+        'video-flip-flops',
+        'video-ramps',
+        'video-sync-generator',
         'triple-video-fader-key-generator',
         'video-blending-matrix',
         'video-logic',

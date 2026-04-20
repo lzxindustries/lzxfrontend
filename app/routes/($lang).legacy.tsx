@@ -5,6 +5,10 @@ import {Link, useLoaderData} from '@remix-run/react';
 import type {Product} from '@shopify/hydrogen/storefront-api-types';
 import {getModulesBySeries} from '~/data/product-slugs';
 import {getModuleArtworkPath} from '~/data/module-artwork';
+import {
+  getLegacyVisionaryModuleMetadataBySlug,
+  getLfsProductSubtitle,
+} from '~/data/lfs-product-metadata';
 import {getModuleById} from '~/data/lzxdb';
 import {seoPayload} from '~/lib/seo.server';
 
@@ -106,7 +110,11 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     .map((e) => ({
       canonical: e.canonical,
       name: e.name,
-      subtitle: e.moduleId ? getModuleById(e.moduleId)?.subtitle : undefined,
+      subtitle:
+        (e.moduleId ? getModuleById(e.moduleId)?.subtitle : null) ??
+        getLfsProductSubtitle(e.name) ??
+        getLegacyVisionaryModuleMetadataBySlug(e.canonical)?.subtitle ??
+        undefined,
       moduleId: e.moduleId,
       shopifyGid: e.shopifyGid,
       shopifyProduct:

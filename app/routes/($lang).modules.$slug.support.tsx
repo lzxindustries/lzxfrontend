@@ -18,7 +18,7 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function ModuleSupport() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {product, slug, hasManual} =
+  const {product, slug, hasManual, slugEntry} =
     data as unknown as ModuleHubData;
 
   const supportRecord = SUPPORT_MANIFEST[slug];
@@ -34,7 +34,7 @@ export default function ModuleSupport() {
       <section className="mb-8">
         <h3 className="text-lg font-bold mb-3">Resources</h3>
         <div className="grid gap-3 sm:grid-cols-2">
-          {hasManual && (
+          {hasManual ? (
             <Link
               to={`/modules/${slug}/manual`}
               className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
@@ -44,7 +44,19 @@ export default function ModuleSupport() {
                 Full manual and reference
               </span>
             </Link>
-          )}
+          ) : slugEntry.externalUrl ? (
+            <a
+              href={slugEntry.externalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
+            >
+              <span className="font-semibold">📖 Documentation</span>
+              <span className="text-sm opacity-70">
+                External manual and reference
+              </span>
+            </a>
+          ) : null}
           <Link
             to="/docs/guides/troubleshooting"
             className="card bg-base-200 hover:bg-base-300 transition-colors p-4"

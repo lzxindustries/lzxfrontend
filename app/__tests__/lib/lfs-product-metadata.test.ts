@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest';
 
 import {
   getExternalModuleListingEntries,
+  getLegacyVisionaryModuleMetadataBySlug,
   getLegacyVisionaryModuleListingEntries,
   getLfsProductMetadataByName,
   getLfsProductSubtitle,
@@ -63,5 +64,17 @@ describe('LFS product metadata helpers', () => {
       entries.find((entry) => entry.slug === 'color-video-encoder')
         ?.externalUrl,
     ).toBe('https://www.modulargrid.net/e/lzx-industries-color-video-encoder');
+  });
+
+  it('parses rich fallback content for legacy Visionary module hubs', () => {
+    const entry = getLegacyVisionaryModuleMetadataBySlug('color-video-encoder');
+
+    expect(entry?.subtitle).toBe(
+      'RGB to NTSC/PAL video encoder, clipping and blanking of input signals, RGB contrast, brightness and inversion processing',
+    );
+    expect(entry?.descriptionHtml).toContain(
+      'Color Video Encoder is one of two required modules',
+    );
+    expect(entry?.specsHtml).toContain('<table>');
   });
 });

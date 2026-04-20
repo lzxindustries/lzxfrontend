@@ -29,17 +29,20 @@ import ProductMediaGallery, {
   type MediaGalleryItem,
   MediaGalleryItemType,
 } from '~/components/ProductMediaGallery';
+import {getModuleArtworkPath} from '~/data/module-artwork';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
     ?.data as ModuleLayoutLoaderData | undefined;
   if (!parentData) return [];
   const product = parentData.product as unknown as Product;
+  const slug = parentData.slug;
   const title = product?.seo?.title ?? product?.title ?? '';
   const description = product?.seo?.description ?? product?.description ?? '';
   const image =
     (product as any)?.selectedVariant?.image?.url ??
-    product?.variants?.nodes?.[0]?.image?.url;
+    product?.variants?.nodes?.[0]?.image?.url ??
+    (slug ? getModuleArtworkPath(slug) : null);
   return [
     {title: `${title} | LZX Industries`},
     ...(description ? [{name: 'description', content: description}] : []),
@@ -53,11 +56,14 @@ export const meta = ({matches}: MetaArgs) => {
 
 // --- Media gallery (reused from ModuleDetails) ---
 
-function getGalleryMedia(product: Product): MediaGalleryItem[] {
+function getGalleryMedia(
+  product: Product,
+  fallbackArtworkPath?: string | null,
+): MediaGalleryItem[] {
   const items: MediaGalleryItem[] = [];
   const seenYoutubeIds = new Set<string>();
 
-  for (const [index, item] of product.media.nodes.entries()) {
+  for (const [index, item] of (product.media?.nodes ?? []).entries()) {
     if (item.mediaContentType === 'IMAGE') {
       const img =
         item as import('@shopify/hydrogen/storefront-api-types').MediaImage;
@@ -79,6 +85,14 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
         type: MediaGalleryItemType.VIDEO,
       });
     }
+  }
+
+  if (items.length === 0 && fallbackArtworkPath) {
+    items.push({
+      name: product.title,
+      src: fallbackArtworkPath,
+      type: MediaGalleryItemType.IMAGE,
+    });
   }
 
   return items;
@@ -133,12 +147,17 @@ function rewriteLegacyDocsLinks(html: string): string {
 
 export default function ModuleOverview() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {product, shop, slugEntry, hasManual} =
+  const {product, shop, slugEntry, hasManual, hasShopifyProduct} =
     data as unknown as ModuleHubData;
   const recommended = (data as any).recommended;
   const storeDomain = shop.primaryDomain.url;
+  const fallbackArtworkPath = getModuleArtworkPath(slugEntry.canonical);
+  const shouldShowCommerce = hasShopifyProduct && !slugEntry.isHidden;
 
-  const media = useMemo(() => getGalleryMedia(product as Product), [product]);
+  const media = useMemo(
+    () => getGalleryMedia(product as Product, fallbackArtworkPath),
+    [fallbackArtworkPath, product],
+  );
 
   const metafields = (product as any).metafields as
     | (Metafield | null)[]
@@ -188,7 +207,7 @@ export default function ModuleOverview() {
             <h1 className="font-sans font-bold text-3xl md:text-4xl uppercase">
               {product.title}
             </h1>
-            {slugEntry.isHidden ? (
+            {!shouldShowCommerce ? (
               <div className="badge badge-warning badge-lg">Discontinued</div>
             ) : (
               <ProductForm

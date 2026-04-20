@@ -26,11 +26,16 @@ import type {
   LzxVideo,
 } from '~/data/lzxdb';
 import {
+  getLfsProductMetadataBySlug,
+  getLegacyVisionaryModuleMetadataBySlug,
+} from '~/data/lfs-product-metadata';
+import {
   getSlugEntry,
   getModuleIdForSlug,
   getDocPathForSlug,
 } from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
+import {getMarkdownToHTML} from '~/lib/markdown';
 import {
   hasDocPagePath,
   buildSidebar,
@@ -46,6 +51,7 @@ export interface ModuleHubData {
   slug: string;
   slugEntry: SlugEntry;
   product: ProductType & {selectedVariant?: ProductVariant};
+  hasShopifyProduct: boolean;
   shop: Shop;
   lzxModule: LzxModule | null;
   docFrontmatter: ContentFrontmatter | null;
@@ -258,6 +264,85 @@ async function fetchShopifyProduct(
   return {product, shop};
 }
 
+function buildFallbackShop(request: Request): Shop {
+  const url = new URL(request.url);
+
+  return {
+    name: 'LZX Industries',
+    primaryDomain: {url: url.origin},
+    shippingPolicy: null,
+    refundPolicy: null,
+  } as Shop;
+}
+
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function buildFallbackModuleProduct(
+  slugEntry: SlugEntry,
+  lzxModule: LzxModule | null,
+): ProductType & {selectedVariant?: ProductVariant} {
+  const lfsProduct = getLfsProductMetadataBySlug(slugEntry.canonical);
+  const legacyVisionaryMetadata = getLegacyVisionaryModuleMetadataBySlug(
+    slugEntry.canonical,
+  );
+
+  const subtitle =
+    legacyVisionaryMetadata?.subtitle ??
+    lzxModule?.subtitle ??
+    lfsProduct?.subtitle ??
+    null;
+
+  const descriptionHtml =
+    legacyVisionaryMetadata?.descriptionHtml ??
+    (lfsProduct?.description ? getMarkdownToHTML(lfsProduct.description) : '');
+  const description =
+    legacyVisionaryMetadata?.descriptionText ??
+    lfsProduct?.description ??
+    subtitle ??
+    '';
+  const specsHtml = legacyVisionaryMetadata?.specsHtml ?? null;
+  const seoDescription =
+    stripHtml(descriptionHtml || '') || description || subtitle || '';
+
+  const metafields = [
+    subtitle
+      ? {
+          key: 'subtitle',
+          namespace: 'descriptors',
+          value: subtitle,
+          type: 'single_line_text_field',
+        }
+      : null,
+    specsHtml
+      ? {
+          key: 'specs',
+          namespace: 'custom',
+          value: specsHtml,
+          type: 'multi_line_text_field',
+        }
+      : null,
+  ].filter(Boolean);
+
+  return {
+    id: `legacy-module:${slugEntry.canonical}`,
+    title: slugEntry.name,
+    vendor: 'LZX Industries',
+    handle: slugEntry.canonical,
+    description,
+    descriptionHtml,
+    options: [],
+    media: {nodes: []},
+    variants: {nodes: []},
+    seo: {
+      title: slugEntry.name,
+      description: seoDescription,
+    },
+    metafields,
+  } as unknown as ProductType & {selectedVariant?: ProductVariant};
+}
+
 export async function getRecommendedProducts(
   context: AppLoadContext,
   productId: string,
@@ -304,15 +389,6 @@ export async function loadModuleHubData(
     selectedOptions.push({name, value});
   });
 
-  // Fetch Shopify product
-  const {product, shop} = await fetchShopifyProduct(
-    context,
-    handle,
-    selectedOptions,
-  );
-
-  if (!product?.id) return null;
-
   // Local DB lookups
   const moduleId = getModuleIdForSlug(slug);
   const lzxModule = moduleId ? getModuleById(moduleId) ?? null : null;
@@ -332,11 +408,27 @@ export async function loadModuleHubData(
   // Build sidebar for cross-module navigation
   const sidebar = buildSidebar('modules');
 
+  // Fetch Shopify product
+  const {product, shop} = await fetchShopifyProduct(
+    context,
+    handle,
+    selectedOptions,
+  );
+
+  const hasShopifyProduct = Boolean(product?.id);
+  if (!hasShopifyProduct && !slugEntry.isHidden) return null;
+
+  const resolvedProduct = hasShopifyProduct
+    ? product
+    : buildFallbackModuleProduct(slugEntry, lzxModule);
+  const resolvedShop = hasShopifyProduct ? shop : buildFallbackShop(request);
+
   return {
     slug: slugEntry.canonical,
     slugEntry,
-    product,
-    shop,
+    product: resolvedProduct,
+    hasShopifyProduct,
+    shop: resolvedShop,
     lzxModule,
     docFrontmatter,
     hasManual,
