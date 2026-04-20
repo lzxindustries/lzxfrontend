@@ -111,7 +111,7 @@ export default function ModuleManualPage() {
       sectionHeader={{
         badge: 'Reference Manual',
         contextLabel: product.title,
-        description: 'Technical documentation and patching reference.',
+        description: 'Technical documentation, setup guidance, and patching workflows.',
         backLink: {label: `${product.title} overview`, to: `/modules/${slug}`},
       }}
       showBreadcrumbs={false}

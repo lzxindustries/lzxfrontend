@@ -151,7 +151,7 @@ export default function DocsPage() {
           ? {
               badge: 'Reference Manual',
               contextLabel: productHubLink.label,
-              description: 'Technical documentation and reference pages.',
+              description: 'Technical documentation, setup guidance, and patching workflows.',
               backLink: {
                 label: `${productHubLink.label} product page`,
                 to: productHubLink.to,

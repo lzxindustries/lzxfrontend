@@ -144,9 +144,6 @@ function detectSeries(m: Record<string, unknown>): string | null {
   )
     return 'expedition';
 
-  // VideoHeadroom third-party
-  if (extUrl.includes('videoheadroom.systems')) return 'vhs';
-
   // Gen3: active modules with eurorack power
   if (m.is_active_product && m.has_eurorack_power_entry) return 'gen3';
 
@@ -221,6 +218,15 @@ const ACCESSORY_NAMES = new Set([
   'Vessel EuroRack PSU Expander',
 ]);
 
+const EXCLUDED_EXTERNAL_URL_PATTERNS = ['videoheadroom.systems'];
+
+function isExcludedFromSiteData(raw: Record<string, unknown>): boolean {
+  const externalUrl = ((raw.external_url as string) ?? '').toLowerCase();
+  return EXCLUDED_EXTERNAL_URL_PATTERNS.some((pattern) =>
+    externalUrl.includes(pattern),
+  );
+}
+
 // --- Build the master registry ---
 
 const slugRegistry = new Map<string, SlugEntry>();
@@ -240,6 +246,9 @@ function registerAlias(alias: string, canonical: string) {
 for (const m of modulesData) {
   const raw = m as Record<string, unknown>;
   const name = raw.name as string;
+
+  // Exclude unsupported third-party products from all site data/meta registries.
+  if (isExcludedFromSiteData(raw)) continue;
 
   // Skip accessories
   if (ACCESSORY_NAMES.has(name)) continue;

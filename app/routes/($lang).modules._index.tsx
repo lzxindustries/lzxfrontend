@@ -20,7 +20,6 @@ const LEGACY_SERIES_ORDER = [
   'visionary',
   'cadet',
   'expedition',
-  'vhs',
   'legacy',
   'other',
 ];
@@ -33,7 +32,6 @@ const SERIES_LABELS: Record<string, string> = {
   castle: 'Castle',
   cadet: 'Cadet',
   expedition: 'Expedition',
-  vhs: 'Third Party',
   legacy: 'Legacy',
   other: 'Other',
 };
@@ -53,8 +51,6 @@ const SERIES_SUBTITLES: Record<string, string> = {
     'Cadet offered a modular way to assemble a complete video synthesis voice from focused, single-purpose units. It emphasized accessibility, scalability, and educational clarity.',
   expedition:
     'Expedition documented a broad ecosystem of legacy modules from earlier eras of the platform. Together they represent a diverse toolkit of sync, processing, and image-generation techniques.',
-  vhs:
-    'Third-party companion modules developed for compatibility with the LZX ecosystem. This category is maintained as a historical reference for cross-platform patching workflows.',
   legacy:
     'Archival modules preserved for historical continuity and documentation access. These products are no longer active but remain important to legacy system owners.',
   other:
