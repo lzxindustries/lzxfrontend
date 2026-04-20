@@ -68,6 +68,10 @@ const LEGACY_VISIONARY_LISTING_SLUGS = new Set([
   'video-sync-generator',
 ]);
 
+const LEGACY_VISIONARY_EXCLUDED_SLUGS = new Set([
+  'scroll-position-controller',
+]);
+
 const SUBTITLE_OVERRIDES: Record<string, string> = {
   BAJA: '6 and 3 Phase Unipolar Analog Sine Wave Oscillator',
   CHANNEL: 'Signal Router, Fader, 1:3 Panner, Mixer, Soft Keyer',
@@ -174,7 +178,11 @@ function deriveSubtitle(name: string, description: string | null): string | null
 
 function legacyVisionarySlugFromSourcePath(sourcePath: string): string | null {
   const match = sourcePath.match(/\/visionary\/([^/]+)\/modulargrid\/metadata\.md$/);
-  return match?.[1] ?? null;
+  const slug = match?.[1] ?? null;
+
+  if (!slug || LEGACY_VISIONARY_EXCLUDED_SLUGS.has(slug)) return null;
+
+  return slug;
 }
 
 function parseLegacyVisionaryName(raw: string): string | null {

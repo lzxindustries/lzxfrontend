@@ -158,7 +158,7 @@ describe('getModuleArtworkPath', () => {
       '/images/modules/video-logic.jpg?v=20260420-modules-transparent-bg',
     );
     expect(getModuleArtworkPath('color-video-encoder')).toBe(
-      '/images/modules/color-video-encoder.jpg?v=20260420-modules-transparent-bg',
+      '/images/modules/color-video-encoder.png?v=20260420-modules-transparent-bg',
     );
   });
 });

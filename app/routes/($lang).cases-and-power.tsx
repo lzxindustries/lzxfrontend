@@ -19,7 +19,13 @@ const ACTIVE_SECTION_SUBTITLE =
 const LEGACY_SECTION_SUBTITLE =
   'Earlier rack, distro, and OEM power parts preserved for compatibility with older systems and support workflows.';
 
-const CURATED_CASES_AND_POWER_ENTRIES = [
+type CuratedCasesAndPowerEntry = {
+  slug: string;
+  imagePath?: string;
+  subtitle?: string;
+};
+
+const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedCasesAndPowerEntry[] = [
   {
     slug: 'vessel-84',
     imagePath: '/images/base-system-84-square.png',
@@ -54,7 +60,7 @@ const CURATED_CASES_AND_POWER_ENTRIES = [
     slug: 'vessel-eurorack-psu-expander',
     subtitle: 'Legacy +/-12V power expander for Vessel cases',
   },
-] as const;
+];
 
 type CasesAndPowerProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   featuredImage?: {

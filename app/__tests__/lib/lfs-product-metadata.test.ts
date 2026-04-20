@@ -64,6 +64,7 @@ describe('LFS product metadata helpers', () => {
       entries.find((entry) => entry.slug === 'color-video-encoder')
         ?.externalUrl,
     ).toBe('https://www.modulargrid.net/e/lzx-industries-color-video-encoder');
+    expect(slugs).not.toContain('scroll-position-controller');
   });
 
   it('parses rich fallback content for legacy Visionary module hubs', () => {
