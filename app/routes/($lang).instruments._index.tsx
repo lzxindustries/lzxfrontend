@@ -13,10 +13,13 @@ import {routeHeaders} from '~/data/cache';
 export const headers = routeHeaders;
 
 const EXCLUDED_INSTRUMENT_SLUGS = new Set([
+  'andor-1-media-player',
   'double-vision',
   'double-vision-168',
   'double-vision-expander',
 ]);
+
+const FORCE_LOCAL_SQUARE_ARTWORK_SLUGS = new Set(['videomancer', 'vidiot']);
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
@@ -172,6 +175,9 @@ export default function InstrumentListingPage() {
             product?.featuredImage ??
             product?.variants?.nodes?.[0]?.image;
           const localArtworkPath = getInstrumentArtworkPath(entry.canonical);
+          const shouldUseLocalSquareArtwork =
+            Boolean(localArtworkPath) &&
+            FORCE_LOCAL_SQUARE_ARTWORK_SLUGS.has(entry.canonical);
 
           return (
             <Link
@@ -180,7 +186,14 @@ export default function InstrumentListingPage() {
               prefetch="intent"
               className="group flex flex-col gap-3 rounded-lg border border-base-300 p-4 hover:shadow-md transition"
             >
-              {firstImage ? (
+              {shouldUseLocalSquareArtwork ? (
+                <img
+                  src={localArtworkPath!}
+                  alt={`${entry.name} product image`}
+                  loading="lazy"
+                  className="aspect-square w-full rounded bg-base-200 object-contain p-2"
+                />
+              ) : firstImage ? (
                 <Image
                   data={firstImage}
                   aspectRatio="16/9"

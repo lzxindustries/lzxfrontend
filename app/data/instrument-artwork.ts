@@ -1,5 +1,5 @@
 const INSTRUMENT_ARTWORK: Record<string, string> = {
-  videomancer: '/images/videomancer/hero-product.png',
+  videomancer: '/images/videomancer/hero-product-square.png',
   chromagnon: '/images/chromagnon-front-panel-square.png',
   vidiot: '/images/vidiot.PNG',
   'double-vision': '/images/double-vision-system-square.png',

@@ -1,62 +1,128 @@
+import {Link, useLoaderData} from '@remix-run/react';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
-import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
-import {Link, useLoaderData} from '@remix-run/react';
-import {Breadcrumbs} from '~/components/Breadcrumbs';
-import {CACHE_LONG} from '~/data/cache';
+import {getSeoMeta, Image, type SeoConfig} from '@shopify/hydrogen';
+import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
+
+import {routeHeaders} from '~/data/cache';
+import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
+import {getModuleById} from '~/data/lzxdb';
+import {getSlugEntry, type SlugEntry} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 
-type StarterSystem = {
-  id: string;
-  name: string;
-  summary: string;
-  modules: Array<{name: string; to: string}>;
-  docsTo: string;
-  patchesTo: string;
+export const headers = routeHeaders;
+
+const SYSTEM_SLUGS = [
+  'double-vision',
+  'double-vision-168',
+  'double-vision-expander',
+] as const;
+
+const SYSTEMS_SUBTITLE =
+  'Double Vision brings the modern Gen3 video synthesis platform into complete instruments and expandable system formats, from the base desktop configuration to larger racks and companion expansion.';
+
+const MAX_PRODUCTS_PER_QUERY = 250;
+
+type SystemsListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
+  availableForSale?: boolean;
+  featuredImage?: {
+    url: string;
+    altText?: string | null;
+    width?: number | null;
+    height?: number | null;
+  } | null;
+  variants?: {
+    nodes?: Array<{
+      id: string;
+      image?: {
+        url: string;
+        altText?: string | null;
+        width?: number | null;
+        height?: number | null;
+      } | null;
+      price?: {amount: string; currencyCode: string};
+    }>;
+  };
 };
 
-export async function loader({request}: LoaderFunctionArgs) {
-  const systems: StarterSystem[] = [
-    {
-      id: 'double-vision-starter',
-      name: 'Double Vision Starter System',
-      summary:
-        'A practical starter built around Double Vision for immediate hands-on image synthesis and modulation.',
-      modules: [
-        {name: 'Double Vision System', to: '/instruments/double-vision'},
-        {name: 'TBC2', to: '/modules/tbc2'},
-        {name: 'DSG3', to: '/modules/dsg3'},
-      ],
-      docsTo: '/getting-started',
-      patchesTo: '/patches',
-    },
-    {
-      id: 'colorizer',
-      name: 'Colorizer Performance Setup',
-      summary:
-        'Focused on live color processing and expressive modulation for performance workflows.',
-      modules: [
-        {name: 'Videomancer', to: '/instruments/videomancer'},
-        {name: 'Proc', to: '/modules/proc'},
-        {name: 'DSG3', to: '/modules/dsg3'},
-      ],
-      docsTo: '/docs/guides/your-first-patch',
-      patchesTo: '/patches',
-    },
-    {
-      id: 'studio-rack',
-      name: 'Studio Rack Builder',
-      summary:
-        'A flexible configuration for artists building a full rack around docs-driven experimentation.',
-      modules: [
-        {name: 'Videomancer', to: '/instruments/videomancer'},
-        {name: 'Modules Catalog', to: '/modules'},
-        {name: 'Legacy Library', to: '/legacy'},
-      ],
-      docsTo: '/docs',
-      patchesTo: '/patches',
-    },
-  ];
+type SystemsListingEntry = SlugEntry & {
+  shopifyProduct?: SystemsListingProduct | null;
+  subtitle?: string;
+};
+
+function buildHandleFilterQuery(handles: string[]): string {
+  return handles.map((handle) => `handle:${handle}`).join(' OR ');
+}
+
+export async function loader({context, request}: LoaderFunctionArgs) {
+  const entries = SYSTEM_SLUGS.map((slug) => getSlugEntry(slug)).filter(
+    (entry): entry is SlugEntry => Boolean(entry),
+  );
+
+  const allHandles = entries.map((entry) => entry.canonical);
+  const allShopifyIds = entries
+    .map((entry) => entry.shopifyGid)
+    .filter((id): id is string => Boolean(id));
+
+  const productByHandle = new Map<string, SystemsListingProduct>();
+  const productById = new Map<string, SystemsListingProduct>();
+
+  if (allShopifyIds.length > 0) {
+    try {
+      const {nodes} = await context.storefront.query<{
+        nodes: (SystemsListingProduct | null)[];
+      }>(SYSTEMS_LISTING_BY_IDS_QUERY, {
+        variables: {
+          ids: allShopifyIds,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const node of nodes) {
+        if (!node) continue;
+        productById.set(node.id, node);
+        productByHandle.set(node.handle, node);
+      }
+    } catch (error) {
+      console.error('Failed to load systems listing product data by IDs', error);
+    }
+  }
+
+  if (allHandles.length > 0) {
+    try {
+      const handleFilterQuery = buildHandleFilterQuery(allHandles);
+      const {products} = await context.storefront.query<{
+        products: {nodes: SystemsListingProduct[]};
+      }>(SYSTEMS_LISTING_BY_HANDLES_QUERY, {
+        variables: {
+          first: Math.min(allHandles.length, MAX_PRODUCTS_PER_QUERY),
+          query: handleFilterQuery,
+          country: context.storefront.i18n.country,
+          language: context.storefront.i18n.language,
+        },
+      });
+
+      for (const product of products.nodes) {
+        productByHandle.set(product.handle, product);
+        productById.set(product.id, product);
+      }
+    } catch (error) {
+      console.error(
+        'Failed to load systems listing product data by handles',
+        error,
+      );
+    }
+  }
+
+  const entriesWithProductData: SystemsListingEntry[] = entries.map((entry) => ({
+    ...entry,
+    subtitle: entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : undefined,
+    shopifyProduct:
+      (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
+      productByHandle.get(entry.canonical) ??
+      null,
+  }));
 
   const seo = seoPayload.page({
     page: {
@@ -64,13 +130,13 @@ export async function loader({request}: LoaderFunctionArgs) {
       seo: {
         title: 'Systems',
         description:
-          'Curated LZX starter system configurations and workflow entry points.',
+          'Double Vision Gen3 systems and expansion configurations.',
       },
-    } as any,
+    } as Collection,
     url: request.url,
   });
 
-  return json({systems, seo}, {headers: {'Cache-Control': CACHE_LONG}});
+  return json({entries: entriesWithProductData, seo});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -78,62 +144,126 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function SystemsPage() {
-  const {systems} = useLoaderData<typeof loader>();
+  const {entries} = useLoaderData<typeof loader>();
 
   return (
-    <>
-      <Breadcrumbs items={[{label: 'Home', to: '/'}, {label: 'Systems'}]} />
-      <div className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
-        <h1 className="text-3xl font-bold mb-2">Systems</h1>
-        <p className="text-base-content/70 mb-8">
-          Curated starter configurations to help you choose a direction and
-          start patching faster.
-        </p>
+    <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
+      <h1 className="font-bold text-3xl md:text-4xl uppercase mb-8">Systems</h1>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {systems.map((system) => (
-            <article
-              key={system.id}
-              className="rounded-lg border border-base-300 p-5"
-            >
-              <h2 className="text-xl font-semibold">{system.name}</h2>
-              <p className="mt-2 text-sm text-base-content/70">
-                {system.summary}
-              </p>
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold mb-1 border-b border-base-300 pb-2">
+          Gen3 Series
+        </h2>
+        <p className="text-sm text-base-content/70 mb-4">{SYSTEMS_SUBTITLE}</p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {entries.map((entry) => {
+            const product = entry.shopifyProduct ?? undefined;
+            const firstImage =
+              product?.featuredImage ?? product?.variants?.nodes?.[0]?.image;
+            const localArtworkPath = getInstrumentArtworkPath(entry.canonical);
 
-              <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-base-content/60">
-                  Suggested Modules
-                </p>
-                <ul className="mt-2 space-y-1">
-                  {system.modules.map((module) => (
-                    <li key={module.to}>
-                      <Link
-                        to={module.to}
-                        className="link link-primary text-sm"
-                      >
-                        {module.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                <Link to={system.docsTo} className="btn btn-sm btn-outline">
-                  Docs
-                </Link>
-                <Link to={system.patchesTo} className="btn btn-sm btn-outline">
-                  Patches
-                </Link>
-                <Link to="/catalog" className="btn btn-sm btn-primary">
-                  Shop
-                </Link>
-              </div>
-            </article>
-          ))}
+            return (
+              <Link
+                key={entry.canonical}
+                to={`/instruments/${entry.canonical}`}
+                prefetch="intent"
+                className="group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition"
+              >
+                {localArtworkPath ? (
+                  <img
+                    src={localArtworkPath}
+                    alt={`${entry.name} product image`}
+                    loading="lazy"
+                    className="aspect-square w-full rounded bg-base-200 object-contain p-2"
+                  />
+                ) : firstImage ? (
+                  <Image
+                    data={firstImage}
+                    aspectRatio="1/1"
+                    sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw"
+                    className="rounded bg-base-200 object-contain p-2"
+                  />
+                ) : (
+                  <div className="aspect-square rounded bg-base-200 flex items-center justify-center text-base-content/30">
+                    No image
+                  </div>
+                )}
+                <div>
+                  <div className="font-semibold text-sm group-hover:text-primary transition">
+                    {entry.name}
+                  </div>
+                  {entry.subtitle ? (
+                    <p className="text-xs text-base-content/70 line-clamp-2 mt-0.5">
+                      {entry.subtitle}
+                    </p>
+                  ) : null}
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }
+
+const SYSTEMS_LISTING_FRAGMENT = `#graphql
+  fragment SystemsListingProductFields on Product {
+    id
+    title
+    handle
+    availableForSale
+    featuredImage {
+      url
+      altText
+      width
+      height
+    }
+    variants(first: 1) {
+      nodes {
+        id
+        image {
+          url
+          altText
+          width
+          height
+        }
+        price {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+`;
+
+const SYSTEMS_LISTING_BY_IDS_QUERY = `#graphql
+  ${SYSTEMS_LISTING_FRAGMENT}
+  query SystemsListingByIds(
+    $ids: [ID!]!
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    nodes(ids: $ids) {
+      ... on Product {
+        ...SystemsListingProductFields
+      }
+    }
+  }
+`;
+
+const SYSTEMS_LISTING_BY_HANDLES_QUERY = `#graphql
+  ${SYSTEMS_LISTING_FRAGMENT}
+  query SystemsListingByHandles(
+    $first: Int!
+    $query: String
+    $country: CountryCode
+    $language: LanguageCode
+  ) @inContext(country: $country, language: $language) {
+    products(first: $first, query: $query, sortKey: TITLE) {
+      nodes {
+        ...SystemsListingProductFields
+      }
+    }
+  }
+`;

@@ -17,9 +17,9 @@ export const headers = routeHeaders;
 const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'castle'];
 const LEGACY_SERIES_ORDER = [
   'orion',
-  'visionary',
-  'cadet',
   'expedition',
+  'cadet',
+  'visionary',
   'legacy',
   'other',
 ];
