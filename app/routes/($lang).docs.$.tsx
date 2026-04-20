@@ -1,7 +1,7 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
-import {useLoaderData, Link} from '@remix-run/react';
+import {useLoaderData} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
 import {
@@ -142,28 +142,30 @@ export default function DocsPage() {
     useLoaderData<typeof loader>();
 
   return (
-    <>
-      {productHubLink && (
-        <div className="mx-auto max-w-7xl px-6 pt-4 md:px-10">
-          <Link
-            to={productHubLink.to}
-            className="text-sm text-primary hover:underline"
-          >
-            &larr; Back to {productHubLink.label} product page
-          </Link>
-        </div>
-      )}
-      <DocLayout
-        html={doc.html}
-        sidebar={sidebar}
-        headings={doc.headings}
-        breadcrumbs={breadcrumbs}
-        prev={prev}
-        next={next}
-        frontmatter={doc.frontmatter}
-        currentPath={currentPath}
-      />
-    </>
+    <DocLayout
+      html={doc.html}
+      sidebar={sidebar}
+      headings={doc.headings}
+      sectionHeader={
+        productHubLink
+          ? {
+              badge: 'Reference Manual',
+              contextLabel: productHubLink.label,
+              description: 'Technical documentation and reference pages.',
+              backLink: {
+                label: `${productHubLink.label} product page`,
+                to: productHubLink.to,
+              },
+            }
+          : undefined
+      }
+      showBreadcrumbs={!productHubLink}
+      breadcrumbs={breadcrumbs}
+      prev={prev}
+      next={next}
+      frontmatter={doc.frontmatter}
+      currentPath={currentPath}
+    />
   );
 }
 

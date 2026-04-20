@@ -120,8 +120,9 @@ export default function InstrumentManualPage() {
       sidebar={sidebar}
       headings={doc.headings}
       sectionHeader={{
-        badge: 'Manual',
+        badge: 'Reference Manual',
         contextLabel: product.title,
+        description: 'Technical documentation, setup notes, and workflows.',
         backLink: {
           label: `${product.title} overview`,
           to: `/instruments/${slug}`,

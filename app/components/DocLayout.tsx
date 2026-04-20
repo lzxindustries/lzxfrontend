@@ -257,6 +257,7 @@ export interface DocLayoutProps {
   sectionHeader?: {
     badge: string;
     contextLabel: string;
+    description?: string;
     backLink?: {label: string; to: string};
   };
   showBreadcrumbs?: boolean;
@@ -306,17 +307,22 @@ export function DocLayout({
         />
         <article className="flex-1 min-w-0 max-w-prose-wide">
           {sectionHeader && (
-            <div className="mb-6 border-b border-base-200 pb-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-base-content/60">
+            <div className="mb-4 border-b border-base-200 pb-3 md:mb-7 md:pb-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/55 md:text-xs">
                 {sectionHeader.badge}
               </p>
-              <p className="mt-1 text-sm text-base-content/70">
+              <p className="mt-1 text-sm font-medium text-base-content/80 md:text-base">
                 {sectionHeader.contextLabel}
               </p>
+              {sectionHeader.description && (
+                <p className="mt-1 text-sm text-base-content/65">
+                  {sectionHeader.description}
+                </p>
+              )}
               {sectionHeader.backLink && (
                 <Link
                   to={sectionHeader.backLink.to}
-                  className="mt-2 inline-block text-sm text-primary hover:underline"
+                  className="mt-1.5 inline-block text-sm text-primary hover:underline md:mt-2"
                 >
                   &larr; Back to {sectionHeader.backLink.label}
                 </Link>

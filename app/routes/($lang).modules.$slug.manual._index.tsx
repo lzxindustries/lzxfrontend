@@ -109,8 +109,9 @@ export default function ModuleManualPage() {
       sidebar={sidebar}
       headings={doc.headings}
       sectionHeader={{
-        badge: 'Manual',
+        badge: 'Reference Manual',
         contextLabel: product.title,
+        description: 'Technical documentation and patching reference.',
         backLink: {label: `${product.title} overview`, to: `/modules/${slug}`},
       }}
       showBreadcrumbs={false}
