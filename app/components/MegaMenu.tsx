@@ -54,7 +54,11 @@ const MENU_GROUPS: MegaMenuGroup[] = [
   },
   {
     label: 'About',
-    items: [{label: 'About LZX', to: '/about'}],
+    items: [
+      {label: 'About LZX', to: '/about'},
+      {label: 'Artists', to: '/artists'},
+      {label: 'Legacy Modules', to: '/legacy'},
+    ],
   },
 ];
 
@@ -153,7 +157,7 @@ function DesktopDropdown({
 
 export function DesktopMegaMenu({url}: {url: string}) {
   return (
-    <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+    <nav className="hidden lg:flex items-center gap-1" aria-label="Main" data-testid="mega-menu">
       <a
         href="/"
         className={clsx(

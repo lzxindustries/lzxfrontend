@@ -96,7 +96,9 @@ export default function LegacyModulesPage() {
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {entries.map((entry) => {
-            const image = entry.shopifyProduct?.variants?.nodes?.[0]?.image;
+            const image =
+              entry.shopifyProduct?.featuredImage ??
+              entry.shopifyProduct?.variants?.nodes?.[0]?.image;
             return (
               <Link
                 key={entry.canonical}
@@ -150,6 +152,12 @@ const LEGACY_LISTING_QUERY = `#graphql
         id
         title
         handle
+        featuredImage {
+          url
+          altText
+          width
+          height
+        }
         variants(first: 1) {
           nodes {
             image {

@@ -19,6 +19,7 @@ export function HubNavBar({tabs}: HubNavBarProps) {
     <nav
       aria-label="Product sections"
       className="border-b border-base-300 bg-base-100 sticky top-0 z-30"
+      data-testid="hub-nav"
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <ul className="flex gap-0 overflow-x-auto scrollbar-none -mb-px">

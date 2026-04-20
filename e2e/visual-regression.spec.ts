@@ -18,6 +18,19 @@ const KEY_PAGES = [
   {name: 'cart', path: '/cart'},
   {name: 'login', path: '/account/login'},
   {name: 'policies', path: '/policies'},
+  {name: 'modules', path: '/modules'},
+  {name: 'module-detail', path: '/modules/esg3'},
+  {name: 'instruments', path: '/instruments'},
+  {name: 'instrument-detail', path: '/instruments/videomancer'},
+  {name: 'blog', path: '/blog'},
+  {name: 'patches', path: '/patches'},
+  {name: 'glossary', path: '/glossary'},
+  {name: 'docs', path: '/docs'},
+  {name: 'getting-started', path: '/getting-started'},
+  {name: 'support', path: '/support'},
+  {name: 'systems', path: '/systems'},
+  {name: 'catalog', path: '/catalog'},
+  {name: 'downloads', path: '/downloads'},
 ];
 
 for (const {name, path} of KEY_PAGES) {
@@ -35,6 +48,7 @@ for (const {name, path} of KEY_PAGES) {
         page.locator('video'), // Background videos
         page.locator('time'), // Timestamps
         page.locator('[data-testid="price"]'), // Prices that may change
+        page.locator('.badge'), // Stock/status badges
       ],
     });
   });

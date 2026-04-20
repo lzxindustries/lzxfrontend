@@ -77,7 +77,9 @@ export default function InstrumentListingPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {entries.map((entry: any) => {
           const product = entry.shopifyProduct as Product | null;
-          const firstImage = product?.variants?.nodes?.[0]?.image;
+          const firstImage =
+            product?.featuredImage ??
+            product?.variants?.nodes?.[0]?.image;
 
           return (
             <Link
@@ -128,6 +130,12 @@ const INSTRUMENT_LISTING_QUERY = `#graphql
         title
         handle
         availableForSale
+        featuredImage {
+          url
+          altText
+          width
+          height
+        }
         variants(first: 1) {
           nodes {
             id

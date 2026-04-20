@@ -31,11 +31,12 @@ export function Header({
   const isAccount = url.includes('/account');
 
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50">
+    <div className="navbar bg-base-100 sticky top-0 z-50" data-testid="header">
       <div className="navbar-start">
         <button
           className="btn btn-ghost lg:hidden"
           aria-label="Open menu"
+          data-testid="mobile-menu-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -54,7 +55,7 @@ export function Header({
       <div className="navbar-end">
         <ul className="menu menu-horizontal px-2">
           <li>
-            <button onClick={() => setSearchOpen(true)} aria-label="Search">
+            <button onClick={() => setSearchOpen(true)} aria-label="Search" data-testid="search-toggle">
               <FaSearch size={iconSize} />
             </button>
           </li>

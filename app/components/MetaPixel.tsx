@@ -1,3 +1,5 @@
+import {useEffect, useState} from 'react';
+
 const META_PIXEL_ID = '349512098820812';
 
 const metaPixelScript = `
@@ -13,7 +15,22 @@ fbq('init', '${META_PIXEL_ID}');
 fbq('track', 'PageView');
 `;
 
+/**
+ * Renders the Meta (Facebook) Pixel tracking snippet.
+ *
+ * Deferred to the client via useEffect to avoid SSR/CSR hydration mismatch —
+ * the server does not render the script tag, and the client injects it after
+ * hydration completes.
+ */
 export function MetaPixel() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <script dangerouslySetInnerHTML={{__html: metaPixelScript}} />

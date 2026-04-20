@@ -343,7 +343,7 @@ function CartLineItem({line}: {line: CartLine}) {
   if (typeof quantity === 'undefined' || !merchandise?.product) return null;
 
   return (
-    <li key={id} className="flex gap-4">
+    <li key={id} className="flex gap-4" data-testid="cart-item">
       <div className="flex-shrink">
         {merchandise.image && (
           <Image
@@ -538,7 +538,7 @@ export function CartEmpty({
   };
 
   return (
-    <div ref={scrollRef} className={container[layout]} hidden={hidden}>
+    <div ref={scrollRef} className={container[layout]} hidden={hidden} data-testid="cart-empty">
       <section className="grid gap-6">
         <Text format>
           Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you

@@ -16,15 +16,13 @@ export function FeaturedCollections({
   const haveCollections = collections && collections.length > 0;
   if (!haveCollections) return null;
 
-  const items = collections.filter((item) => item.image).length;
+  const collectionsWithImages = collections.filter((item) => item.image);
+  if (collectionsWithImages.length === 0) return null;
 
   return (
     <Section {...props} heading={title}>
-      <Grid items={items}>
-        {collections.map((collection) => {
-          if (!collection?.image) {
-            return null;
-          }
+      <Grid items={collectionsWithImages.length}>
+        {collectionsWithImages.map((collection) => {
           return (
             <Link key={collection.id} to={`/collections/${collection.handle}`}>
               <div className="grid gap-4">

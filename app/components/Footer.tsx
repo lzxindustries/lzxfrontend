@@ -15,7 +15,7 @@ export function Footer() {
   const iconSize = 24;
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content">
+      <footer className="footer p-10 bg-base-200 text-base-content" data-testid="footer">
         <div className="max-w-full overflow-hidden">
           <span className="footer-title">Subscribe to our newsletter</span>
           {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
@@ -92,17 +92,8 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Explore</span>
-          <a className="link link-hover" href="/getting-started">
-            Getting Started
-          </a>
-          <a className="link link-hover" href="/patches">
-            Patch Ideas
-          </a>
           <a className="link link-hover" href="/glossary">
             Glossary
-          </a>
-          <a className="link link-hover" href="/catalog">
-            Full Catalog
           </a>
           <a className="link link-hover" href="/systems">
             Starter Systems
