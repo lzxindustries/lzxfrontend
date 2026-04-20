@@ -75,6 +75,12 @@ const MODULE_ARTWORK: Record<string, string> = {
   'war-of-the-ants': '/images/modules/war-of-the-ants.png',
 };
 
+const MODULE_ARTWORK_VERSION = '20260420-module-artwork';
+
 export function getModuleArtworkPath(slug: string): string | null {
-  return MODULE_ARTWORK[slug] ?? null;
+  const path = MODULE_ARTWORK[slug];
+
+  if (!path) return null;
+
+  return `${path}?v=${MODULE_ARTWORK_VERSION}`;
 }

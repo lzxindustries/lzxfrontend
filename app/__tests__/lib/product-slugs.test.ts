@@ -119,10 +119,22 @@ describe('getModulesBySeries', () => {
 describe('getModuleArtworkPath', () => {
   it('uses the correct TBC2 artwork overrides', () => {
     expect(getModuleArtworkPath('tbc2')).toBe(
-      '/images/tbc2-mk2-front-panel-square.png',
+      '/images/tbc2-mk2-front-panel-square.png?v=20260420-module-artwork',
     );
     expect(getModuleArtworkPath('tbc2-expander')).toBe(
-      '/images/tbc2-expander-front-panel-square.png',
+      '/images/tbc2-expander-front-panel-square.png?v=20260420-module-artwork',
+    );
+  });
+
+  it('adds cache-busting versions for corrected gray Expedition thumbnails', () => {
+    expect(getModuleArtworkPath('sensory-translator')).toBe(
+      '/images/modules/sensory-translator.png?v=20260420-module-artwork',
+    );
+    expect(getModuleArtworkPath('marble-index')).toBe(
+      '/images/modules/marble-index.png?v=20260420-module-artwork',
+    );
+    expect(getModuleArtworkPath('pendulum')).toBe(
+      '/images/modules/pendulum.png?v=20260420-module-artwork',
     );
   });
 });
