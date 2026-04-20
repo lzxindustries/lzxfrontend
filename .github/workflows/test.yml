@@ -41,7 +41,6 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest
     needs: [lint-and-typecheck, unit-tests]
-    if: ${{ secrets.PUBLIC_STOREFRONT_API_TOKEN != '' }}
     strategy:
       fail-fast: false
       matrix:
@@ -53,9 +52,27 @@ jobs:
           node-version: '20'
       - run: corepack enable
       - run: yarn install --immutable
+      - name: Check E2E secrets
+        id: check-secrets
+        run: |
+          if [[ -n "$PUBLIC_STOREFRONT_API_TOKEN" && -n "$PRIVATE_STOREFRONT_API_TOKEN" && -n "$PUBLIC_STORE_DOMAIN" && -n "$PUBLIC_STOREFRONT_ID" ]]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          PUBLIC_STOREFRONT_API_TOKEN: ${{ secrets.PUBLIC_STOREFRONT_API_TOKEN }}
+          PRIVATE_STOREFRONT_API_TOKEN: ${{ secrets.PRIVATE_STOREFRONT_API_TOKEN }}
+          PUBLIC_STORE_DOMAIN: ${{ secrets.PUBLIC_STORE_DOMAIN }}
+          PUBLIC_STOREFRONT_ID: ${{ secrets.PUBLIC_STOREFRONT_ID }}
+      - name: Skip E2E when secrets are unavailable
+        if: steps.check-secrets.outputs.should_run != 'true'
+        run: echo "Skipping E2E tests: required storefront secrets are not configured."
       - name: Install Playwright browsers
+        if: steps.check-secrets.outputs.should_run == 'true'
         run: npx playwright install --with-deps chromium firefox webkit
       - name: Create CI env file for web server
+        if: steps.check-secrets.outputs.should_run == 'true'
         run: |
           SESSION_SECRET_VALUE="${SESSION_SECRET:-ci-session-secret}"
           cat > .env <<EOF
@@ -73,10 +90,11 @@ jobs:
           PUBLIC_STORE_DOMAIN: ${{ secrets.PUBLIC_STORE_DOMAIN }}
           PUBLIC_STOREFRONT_ID: ${{ secrets.PUBLIC_STOREFRONT_ID }}
       - name: Run E2E + responsive + visual tests
+        if: steps.check-secrets.outputs.should_run == 'true'
         run: npx playwright test --shard=${{ matrix.shard }}/2
       - name: Upload Playwright report
+        if: steps.check-secrets.outputs.should_run == 'true' && always()
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: playwright-report-${{ matrix.shard }}
           path: playwright-report/
