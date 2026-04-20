@@ -67,7 +67,8 @@ jobs:
           PUBLIC_STOREFRONT_ID: ${{ secrets.PUBLIC_STOREFRONT_ID }}
       - name: Skip E2E when secrets are unavailable
         if: steps.check-secrets.outputs.should_run != 'true'
-        run: echo "Skipping E2E tests: required storefront secrets are not configured."
+        run: |
+          echo "Skipping E2E tests: required storefront secrets are not configured."
       - name: Install Playwright browsers
         if: steps.check-secrets.outputs.should_run == 'true'
         run: npx playwright install --with-deps chromium firefox webkit
