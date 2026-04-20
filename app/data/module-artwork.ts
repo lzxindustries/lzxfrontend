@@ -3,6 +3,7 @@ const MODULE_ARTWORK: Record<string, string> = {
   'arch': '/images/modules/arch.png',
   'baja': '/images/modules/baja.webp',
   'bridge': '/images/modules/bridge.png',
+  'color-video-encoder': '/images/modules/color-video-encoder.jpg',
   'cadet-i-sync-generator': '/images/modules/cadet-i-sync-generator.png',
   'cadet-ii-rgb-encoder': '/images/modules/cadet-ii-rgb-encoder.png',
   'cadet-iii-video-input': '/images/modules/cadet-iii-video-input.png',
@@ -45,6 +46,7 @@ const MODULE_ARTWORK: Record<string, string> = {
   'memory-palace': '/images/modules/memory-palace.png',
   'mlt': '/images/modules/mlt.png',
   'navigator': '/images/modules/navigator.png',
+  'octal-video-quantizer-sequencer': '/images/modules/octal-video-quantizer-sequencer.jpg',
   'pab': '/images/modules/pab.png',
   'passage': '/images/modules/passage.png',
   'pendulum': '/images/modules/pendulum.png',
@@ -70,12 +72,19 @@ const MODULE_ARTWORK: Record<string, string> = {
   'tbc2': '/images/tbc2-mk2-front-panel-square.png',
   'tbc2-expander': '/images/tbc2-expander-front-panel-square.png',
   'topogram': '/images/modules/topogram.png',
+  'triple-video-fader-key-generator': '/images/modules/triple-video-fader-key-generator.jpg',
+  'triple-video-multimode-filter': '/images/modules/triple-video-multimode-filter.jpg',
+  'video-blending-matrix': '/images/modules/video-blending-matrix.jpg',
+  'video-flip-flops': '/images/modules/video-flip-flops.jpg',
+  'video-logic': '/images/modules/video-logic.jpg',
+  'video-ramps': '/images/modules/video-ramps.jpg',
+  'video-sync-generator': '/images/modules/video-sync-generator.jpg',
   'video-waveform-generator': '/images/modules/video-waveform-generator.png',
   'visual-cortex': '/images/modules/visual-cortex.jpg',
   'war-of-the-ants': '/images/modules/war-of-the-ants.png',
 };
 
-const MODULE_ARTWORK_VERSION = '20260420-module-artwork';
+const MODULE_ARTWORK_VERSION = '20260420-modules-refresh';
 
 export function getModuleArtworkPath(slug: string): string | null {
   const path = MODULE_ARTWORK[slug];

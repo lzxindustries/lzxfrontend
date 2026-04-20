@@ -31,10 +31,33 @@ export interface LfsProductMetadata {
   sourcePath: string;
 }
 
+export interface LegacyModuleListingEntry {
+  slug: string;
+  name: string;
+  subtitle: string | null;
+  externalUrl: string | null;
+  isHidden: boolean;
+  sourcePath: string;
+}
+
 const lfsProductFiles = import.meta.glob<RawLfsProduct>(
   '../../lfs/library/products/**/*.json',
   {eager: true, import: 'default'},
 );
+
+const legacyVisionaryMetadataFiles = import.meta.glob<string>(
+  '../../lfs/library/products/eurorack-modules/visionary/**/modulargrid/metadata.md',
+  {eager: true, import: 'default', query: '?raw'},
+);
+
+const LEGACY_VISIONARY_LISTING_SLUGS = new Set([
+  'color-video-encoder',
+  'octal-video-quantizer-sequencer',
+  'triple-video-multimode-filter',
+  'video-flip-flops',
+  'video-ramps',
+  'video-sync-generator',
+]);
 
 const SUBTITLE_OVERRIDES: Record<string, string> = {
   BAJA: '6 and 3 Phase Unipolar Analog Sine Wave Oscillator',
@@ -138,6 +161,26 @@ function deriveSubtitle(name: string, description: string | null): string | null
   return concise.length > 96 ? capitalize(concise.slice(0, 93).trimEnd()) + '...' : capitalize(concise.trim());
 }
 
+function legacyVisionarySlugFromSourcePath(sourcePath: string): string | null {
+  const match = sourcePath.match(/\/visionary\/([^/]+)\/modulargrid\/metadata\.md$/);
+  return match?.[1] ?? null;
+}
+
+function parseLegacyVisionaryName(raw: string): string | null {
+  const match = raw.match(/^#\s+(.+)$/m);
+  return stringValue(match?.[1] ?? null);
+}
+
+function parseLegacyVisionaryExternalUrl(raw: string): string | null {
+  const match = raw.match(/\*\*ModularGrid:\*\*\s+\[[^\]]+\]\((https?:\/\/[^)]+)\)/);
+  return stringValue(match?.[1] ?? null);
+}
+
+function parseLegacyVisionarySubtitle(raw: string): string | null {
+  const match = raw.match(/## Description\s*\n\s*\n\*\*(.+?)\*\*/s);
+  return stringValue(match?.[1] ?? null);
+}
+
 const lfsProducts: LfsProductMetadata[] = Object.entries(lfsProductFiles)
   .filter(([sourcePath]) => !sourcePath.endsWith('/product-catalog.json'))
   .flatMap(([sourcePath, raw]) => {
@@ -174,6 +217,30 @@ const lfsProducts: LfsProductMetadata[] = Object.entries(lfsProductFiles)
     ];
   });
 
+const legacyVisionaryModuleListings: LegacyModuleListingEntry[] = Object.entries(
+  legacyVisionaryMetadataFiles,
+)
+  .flatMap(([sourcePath, raw]) => {
+    const slug = legacyVisionarySlugFromSourcePath(sourcePath);
+
+    if (!slug || !LEGACY_VISIONARY_LISTING_SLUGS.has(slug)) return [];
+
+    const name = parseLegacyVisionaryName(raw);
+    if (!name) return [];
+
+    return [
+      {
+        slug,
+        name,
+        subtitle: parseLegacyVisionarySubtitle(raw),
+        externalUrl: parseLegacyVisionaryExternalUrl(raw),
+        isHidden: true,
+        sourcePath,
+      } satisfies LegacyModuleListingEntry,
+    ];
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
 const lfsProductsByName = new Map(lfsProducts.map((entry) => [entry.name, entry]));
 const lfsProductsBySlug = new Map(lfsProducts.map((entry) => [entry.slug, entry]));
 
@@ -199,4 +266,8 @@ export function getExternalModuleListingEntries(): LfsProductMetadata[] {
         entry.externalUrl,
     )
     .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getLegacyVisionaryModuleListingEntries(): LegacyModuleListingEntry[] {
+  return legacyVisionaryModuleListings;
 }

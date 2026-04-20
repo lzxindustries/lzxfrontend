@@ -9,6 +9,7 @@ import {getModulesBySeries} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
 import {
   getExternalModuleListingEntries,
+  getLegacyVisionaryModuleListingEntries,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
 import {getModuleArtworkPath} from '~/data/module-artwork';
@@ -66,6 +67,8 @@ const SERIES_SUBTITLES: Record<string, string> = {
 
 const MAX_PRODUCTS_PER_QUERY = 250;
 
+const MODULE_LISTING_EXCLUSIONS = new Set(['dc-distro-5a']);
+
 type ModuleListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   availableForSale?: boolean;
   featuredImage?: {
@@ -108,7 +111,10 @@ function buildHandleFilterQuery(handles: string[]): string {
 
 export async function loader({context, request}: LoaderFunctionArgs) {
   const bySeriesMap = getModulesBySeries();
-  const allEntries = [...bySeriesMap.values()].flat();
+  const allEntries = [...bySeriesMap.values()]
+    .flat()
+    .filter((entry) => !MODULE_LISTING_EXCLUSIONS.has(entry.canonical));
+  const existingCanonicals = new Set(allEntries.map((entry) => entry.canonical));
   const externalModuleEntries = getExternalModuleListingEntries().map((entry) => ({
     canonical: entry.slug,
     name: entry.name,
@@ -118,6 +124,20 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     hasInternalPage: false,
     badgeLabel: 'External',
   })) satisfies ModuleListingEntry[];
+  const legacyVisionaryEntries = getLegacyVisionaryModuleListingEntries()
+    .filter(
+      (entry) =>
+        !existingCanonicals.has(entry.slug) && Boolean(entry.externalUrl),
+    )
+    .map((entry) => ({
+      canonical: entry.slug,
+      name: entry.name,
+      isHidden: entry.isHidden,
+      subtitle: entry.subtitle,
+      externalUrl: entry.externalUrl,
+      hasInternalPage: false,
+      badgeLabel: 'External',
+    })) satisfies ModuleListingEntry[];
 
   const allHandles = allEntries.map((e) => e.canonical);
   const allShopifyIds = allEntries
@@ -182,24 +202,32 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const rawSeriesGroups: ModuleSeriesGroup[] = [];
 
   for (const key of [...ACTIVE_SERIES_ORDER, ...LEGACY_SERIES_ORDER]) {
-    const entries = key === 'vhs' ? undefined : bySeriesMap.get(key);
+    const entries =
+      key === 'vhs'
+        ? undefined
+        : bySeriesMap
+            .get(key)
+            ?.filter((entry) => !MODULE_LISTING_EXCLUSIONS.has(entry.canonical));
+    const mappedEntries = entries?.map((entry) => ({
+      canonical: entry.canonical,
+      name: entry.name,
+      isHidden: entry.isHidden,
+      shopifyProduct:
+        (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
+        productByHandle.get(entry.canonical) ??
+        undefined,
+      subtitle:
+        (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
+        getLfsProductSubtitle(entry.name),
+      externalUrl: entry.externalUrl ?? null,
+      hasInternalPage: true,
+    }));
     const groupEntries =
       key === 'vhs'
         ? externalModuleEntries
-        : entries?.map((entry) => ({
-            canonical: entry.canonical,
-            name: entry.name,
-            isHidden: entry.isHidden,
-            shopifyProduct:
-              (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
-              productByHandle.get(entry.canonical) ??
-              undefined,
-            subtitle:
-              (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
-              getLfsProductSubtitle(entry.name),
-            externalUrl: entry.externalUrl ?? null,
-            hasInternalPage: true,
-          }));
+        : key === 'visionary'
+          ? [...(mappedEntries ?? []), ...legacyVisionaryEntries]
+          : mappedEntries;
     if (!groupEntries || groupEntries.length === 0) continue;
     rawSeriesGroups.push({
       key,

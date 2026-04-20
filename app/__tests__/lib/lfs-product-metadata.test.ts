@@ -2,6 +2,7 @@ import {describe, expect, it} from 'vitest';
 
 import {
   getExternalModuleListingEntries,
+  getLegacyVisionaryModuleListingEntries,
   getLfsProductMetadataByName,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
@@ -35,5 +36,26 @@ describe('LFS product metadata helpers', () => {
     expect(baja?.externalUrl).toBe(
       'https://www.videoheadroom.systems/video-synthesizers/p/baja',
     );
+  });
+
+  it('exposes the requested legacy Visionary modules from ModularGrid metadata', () => {
+    const entries = getLegacyVisionaryModuleListingEntries();
+    const slugs = entries.map((entry) => entry.slug);
+
+    expect(slugs).toEqual(
+      expect.arrayContaining([
+        'color-video-encoder',
+        'octal-video-quantizer-sequencer',
+        'triple-video-multimode-filter',
+        'video-flip-flops',
+        'video-ramps',
+        'video-sync-generator',
+      ]),
+    );
+
+    expect(
+      entries.find((entry) => entry.slug === 'color-video-encoder')
+        ?.externalUrl,
+    ).toBe('https://www.modulargrid.net/e/lzx-industries-color-video-encoder');
   });
 });
