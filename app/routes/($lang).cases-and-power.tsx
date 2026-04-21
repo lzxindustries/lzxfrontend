@@ -5,7 +5,10 @@ import {Image, getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
 import {routeHeaders} from '~/data/cache';
-import {getLfsProductMetadataBySlug} from '~/data/lfs-product-metadata';
+import {
+  getAllLfsProductMetadata,
+  type LfsProductMetadata,
+} from '~/data/lfs-product-metadata';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
@@ -19,48 +22,52 @@ const ACTIVE_SECTION_SUBTITLE =
 const LEGACY_SECTION_SUBTITLE =
   'Earlier rack, distro, and OEM power parts preserved for compatibility with older systems and support workflows.';
 
-type CuratedCasesAndPowerEntry = {
-  slug: string;
-  imagePath?: string;
-  subtitle?: string;
+const EXCLUDED_CASES_AND_POWER_SLUGS = new Set([
+  'double-vision-system',
+  'double-vision-168',
+  'double-vision-expander',
+]);
+
+const CASES_AND_POWER_DISPLAY_ORDER = new Map(
+  [
+    'vessel-84',
+    'vessel-168',
+    'vessel-208',
+    'bus-168-diy-kit',
+    'rack-84hp',
+    'dc-distro-3a',
+    'dc-distro-5a',
+    '12v-dc-adapter-3a',
+    'dc-power-cable',
+    'power-entry-8hp',
+    'power-sync-entry-12hp',
+    'vessel-eurorack-psu-expander',
+  ].map((slug, index) => [slug, index] as const),
+);
+
+const CASES_AND_POWER_IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
+  'vessel-84': '/images/base-system-84-square.png',
+  'vessel-168': '/images/vessel168_photo_top_square2.png',
+  'bus-168-diy-kit': '/images/bus208_photo_top.png',
+  'dc-distro-3a': '/images/dc-distro-3a-front-panel-square.png',
+  'dc-distro-5a': '/images/dc-distro-3a-front-panel-square.png',
+  'rack-84hp': '/images/rack-84.png',
+  '12v-dc-adapter-3a': '/images/12v-dc-wall-wart-adapter-set.png',
+  'dc-power-cable': '/images/dc-power-cable-square.png',
+  'power-entry-8hp': '/images/psu8-and-rear-panel.png',
+  'power-sync-entry-12hp': '/images/fpga12-and-rear-panel.png',
 };
 
-const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedCasesAndPowerEntry[] = [
-  {
-    slug: 'vessel-84',
-    imagePath: '/images/base-system-84-square.png',
-  },
-  {
-    slug: 'vessel-168',
-    imagePath: '/images/vessel168_photo_top_square2.png',
-  },
-  {
-    slug: 'vessel-208',
-  },
-  {
-    slug: 'bus-168-diy-kit',
-    imagePath: '/images/bus208_photo_top.png',
-    subtitle: 'DIY power and sync busboard for Vessel systems',
-  },
-  {
-    slug: 'dc-distro-3a',
-    imagePath: '/images/dc-distro-3a-front-panel-square.png',
-  },
-  {
-    slug: 'rack-84hp',
-    imagePath: '/images/rack-84.png',
-    subtitle: '84HP rack enclosure for desktop or 19" rack mounting',
-  },
-  {
-    slug: '12v-dc-adapter-3a',
-    imagePath: '/images/12v-dc-wall-wart-adapter-set.png',
-    subtitle: '3A wall wart power supply with international plug kit',
-  },
-  {
-    slug: 'vessel-eurorack-psu-expander',
-    subtitle: 'Legacy +/-12V power expander for Vessel cases',
-  },
-];
+const CASES_AND_POWER_SUBTITLE_OVERRIDES: Readonly<Record<string, string>> = {
+  'bus-168-diy-kit': 'DIY power and sync busboard for Vessel systems',
+  'rack-84hp': '84HP rack enclosure for desktop or 19" rack mounting',
+  '12v-dc-adapter-3a': '3A wall wart power supply with international plug kit',
+  'dc-power-cable': '2.1mm DC jumper cables for module power distribution',
+  'power-entry-8hp': 'OEM power entry assembly for 8HP and larger builds',
+  'power-sync-entry-12hp':
+    'OEM power and sync entry assembly for 12HP and larger builds',
+  'vessel-eurorack-psu-expander': 'Legacy +/-12V power expander for Vessel cases',
+};
 
 type CasesAndPowerProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   featuredImage?: {
@@ -92,27 +99,68 @@ type CasesAndPowerEntry = {
   shopifyProduct: CasesAndPowerProduct | null;
 };
 
-function getCuratedEntries(): Omit<CasesAndPowerEntry, 'shopifyProduct'>[] {
-  return CURATED_CASES_AND_POWER_ENTRIES.flatMap((entry) => {
-    const metadata = getLfsProductMetadataBySlug(entry.slug);
+function isCasesAndPowerEntry(metadata: LfsProductMetadata): boolean {
+  if (EXCLUDED_CASES_AND_POWER_SLUGS.has(metadata.slug)) return false;
 
-    if (!metadata) return [];
+  if (metadata.productType === 'eurorack_case') {
+    return true;
+  }
 
-    return [
-      {
-        slug: metadata.slug,
-        name: metadata.name,
-        subtitle: entry.subtitle ?? metadata.subtitle ?? null,
-        imagePath: entry.imagePath ?? null,
-        isActive: metadata.isActive,
-        shopifyId: metadata.shopifyId,
-      },
-    ];
-  });
+  if (metadata.slug === 'rack-84hp') {
+    return true;
+  }
+
+  if (metadata.slug === 'dc-distro-3a' || metadata.slug === 'dc-distro-5a') {
+    return true;
+  }
+
+  if (metadata.productType !== 'accessory') {
+    return false;
+  }
+
+  return (
+    metadata.slug === '12v-dc-adapter-3a' ||
+    metadata.slug === 'dc-power-cable' ||
+    metadata.slug === 'power-entry-8hp' ||
+    metadata.slug === 'power-sync-entry-12hp'
+  );
+}
+
+function compareCasesAndPowerEntries(
+  left: Omit<CasesAndPowerEntry, 'shopifyProduct'>,
+  right: Omit<CasesAndPowerEntry, 'shopifyProduct'>,
+): number {
+  const leftOrder = CASES_AND_POWER_DISPLAY_ORDER.get(left.slug) ?? Number.MAX_SAFE_INTEGER;
+  const rightOrder =
+    CASES_AND_POWER_DISPLAY_ORDER.get(right.slug) ?? Number.MAX_SAFE_INTEGER;
+
+  if (leftOrder !== rightOrder) return leftOrder - rightOrder;
+
+  return left.name.localeCompare(right.name);
+}
+
+export function getCasesAndPowerEntries(): Omit<
+  CasesAndPowerEntry,
+  'shopifyProduct'
+>[] {
+  return getAllLfsProductMetadata()
+    .filter(isCasesAndPowerEntry)
+    .map((metadata) => ({
+      slug: metadata.slug,
+      name: metadata.name,
+      subtitle:
+        CASES_AND_POWER_SUBTITLE_OVERRIDES[metadata.slug] ??
+        metadata.subtitle ??
+        null,
+      imagePath: CASES_AND_POWER_IMAGE_OVERRIDES[metadata.slug] ?? null,
+      isActive: metadata.isActive,
+      shopifyId: metadata.shopifyId,
+    }))
+    .sort(compareCasesAndPowerEntries);
 }
 
 export async function loader({context, request}: LoaderFunctionArgs) {
-  const curatedEntries = getCuratedEntries();
+  const curatedEntries = getCasesAndPowerEntries();
   const shopifyIds = curatedEntries
     .map((entry) => entry.shopifyId)
     .filter((id): id is string => Boolean(id));

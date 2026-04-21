@@ -2,7 +2,9 @@ import {describe, expect, it, vi} from 'vitest';
 import {render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 
-import CasesAndPowerPage from '~/routes/($lang).cases-and-power';
+import CasesAndPowerPage, {
+  getCasesAndPowerEntries,
+} from '~/routes/($lang).cases-and-power';
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>(
@@ -77,6 +79,21 @@ function renderWithRouter(ui: React.ReactElement) {
 }
 
 describe('Cases and power page', () => {
+  it('includes active cases, legacy racks, distro modules, and power accessories', () => {
+    const entries = getCasesAndPowerEntries();
+    const slugs = new Set(entries.map((entry) => entry.slug));
+
+    expect(slugs.has('vessel-168')).toBe(true);
+    expect(slugs.has('rack-84hp')).toBe(true);
+    expect(slugs.has('dc-distro-3a')).toBe(true);
+    expect(slugs.has('dc-distro-5a')).toBe(true);
+    expect(slugs.has('12v-dc-adapter-3a')).toBe(true);
+    expect(slugs.has('dc-power-cable')).toBe(true);
+    expect(slugs.has('power-entry-8hp')).toBe(true);
+    expect(slugs.has('power-sync-entry-12hp')).toBe(true);
+    expect(slugs.has('double-vision-system')).toBe(false);
+  });
+
   it('renders active and legacy sections with curated products', () => {
     renderWithRouter(<CasesAndPowerPage />);
 

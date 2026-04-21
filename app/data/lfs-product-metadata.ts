@@ -319,6 +319,10 @@ export function getLfsProductMetadataBySlug(slug: string): LfsProductMetadata | 
   return lfsProductsBySlug.get(slug) ?? null;
 }
 
+export function getAllLfsProductMetadata(): LfsProductMetadata[] {
+  return lfsProducts;
+}
+
 export function getLfsProductSubtitle(name: string): string | null {
   return getLfsProductMetadataByName(name)?.subtitle ?? null;
 }
