@@ -4,10 +4,15 @@ import {json} from '@shopify/remix-oxygen';
 import {type SeoConfig, getSeoMeta, Image} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
-import {getAllInstrumentSlugs, getSlugEntry} from '~/data/product-slugs';
+import {
+  getAllInstrumentSlugs,
+  getSlugEntry,
+  getDocPathForSlug,
+} from '~/data/product-slugs';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 import {getLfsProductSubtitle} from '~/data/lfs-product-metadata';
 import {getModuleById} from '~/data/lzxdb';
+import {hasDocPagePath} from '~/lib/content.server';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
 
@@ -167,6 +172,8 @@ export async function loader({context, request}: LoaderFunctionArgs) {
       const subtitle = entry.moduleId
         ? getModuleById(entry.moduleId)?.subtitle ?? getLfsProductSubtitle(entry.name)
         : getLfsProductSubtitle(entry.name);
+      const docPath = getDocPathForSlug(entry.canonical);
+      const hasManual = docPath ? hasDocPagePath(docPath) : false;
 
       return {
         canonical: entry.canonical,
@@ -179,8 +186,12 @@ export async function loader({context, request}: LoaderFunctionArgs) {
           null,
         hasInternalPage: true,
         externalUrl: entry.externalUrl ?? null,
+        hasManual,
       };
-    });
+    })
+    // Hide instruments without an MDX manual or external docs URL — the
+    // listing now serves as a docs index.
+    .filter((entry) => entry.hasManual || Boolean(entry.externalUrl));
 
   const activeEntries = sortInstrumentEntries(
     listingEntries.filter((entry) => ACTIVE_INSTRUMENT_SLUGS.has(entry.canonical)),
@@ -282,7 +293,7 @@ export default function InstrumentListingPage() {
           return (
             <Link
               key={entry.canonical}
-              to={`/instruments/${entry.canonical}`}
+              to={`/instruments/${entry.canonical}/manual`}
               prefetch="intent"
               className={cardClasses}
             >

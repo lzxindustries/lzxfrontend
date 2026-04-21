@@ -6,6 +6,7 @@ import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
 import {DocLayout} from '~/components/DocLayout';
+import {getForumArchiveDocForProduct} from '~/data/forum-archive.server';
 import {getDocPage, buildSidebar, getPrevNext} from '~/lib/content.server';
 import type {SidebarItem} from '~/lib/content.server';
 import {
@@ -24,8 +25,35 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   const canonical = getCanonicalSlug(slug) ?? slug;
   const slugEntry = getSlugEntry(canonical);
+  const archiveDoc = await getForumArchiveDocForProduct(
+    canonical,
+    slugEntry?.name ?? canonical,
+    slugEntry?.externalUrl,
+  );
 
-  // If module has an external URL, redirect there
+  // If module has an external URL but we have a local archive, render that.
+  if (archiveDoc) {
+    const seo = seoPayload.doc({
+      title: archiveDoc.frontmatter.title ?? `${canonical} Manual`,
+      description: archiveDoc.frontmatter.description ?? '',
+      url: new URL(request.url).origin + `/modules/${canonical}/manual`,
+    });
+
+    return json(
+      {
+        noManual: false as const,
+        doc: archiveDoc,
+        sidebar: [] as SidebarItem[],
+        prev: null,
+        next: null,
+        currentPath: archiveDoc.path,
+        slug: canonical,
+        seo,
+      },
+      {headers: {'Cache-Control': CACHE_LONG}},
+    );
+  }
+
   if (slugEntry?.externalUrl) {
     throw new Response(null, {
       status: 302,

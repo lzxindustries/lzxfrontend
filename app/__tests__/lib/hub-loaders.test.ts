@@ -46,6 +46,25 @@ describe('loadModuleHubData', () => {
     );
   });
 
+  it('hydrates fallback legacy media from the LFS product library', async () => {
+    const context = createContext();
+
+    const data = await loadModuleHubData(
+      'liquid-tv',
+      context,
+      new Request('https://www.lzxindustries.net/modules/liquid-tv'),
+    );
+
+    expect(data).not.toBeNull();
+    expect(data?.hasShopifyProduct).toBe(false);
+    expect((data?.product as any).media.nodes).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({mediaContentType: 'IMAGE'}),
+      ]),
+    );
+    expect(data?.archiveAssets.length).toBeGreaterThan(0);
+  });
+
   it('keeps active modules Shopify-dependent', async () => {
     const context = createContext();
 

@@ -34,10 +34,13 @@ import {AddToCartButton} from '~/components/AddToCartButton';
 import {Button} from '~/components/Button';
 import {Link} from '~/components/Link';
 import {ModuleDetails} from '~/components/ModuleDetails';
+import {DownloadAssetList} from '~/components/DownloadAssetList';
+import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {getLfsProductContentBySlug} from '~/data/lfs-product-metadata';
 import {
   getModuleByName,
   getPatchesForModule,
@@ -67,6 +70,112 @@ export function ErrorBoundary() {
       <p>{message}</p>
     </div>
   );
+}
+
+function hasContent(value: string | null | undefined): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function buildLegacyMediaNodes(slug: string) {
+  const legacyContent = getLfsProductContentBySlug(slug);
+  if (!legacyContent) return [];
+
+  return legacyContent.galleryImages.map((image, index) => ({
+    id: `lfs-product-media:${slug}:${index}`,
+    alt: image.alt,
+    mediaContentType: 'IMAGE',
+    image: {
+      url: image.src,
+      altText: image.alt,
+      width: null,
+      height: null,
+    },
+    previewImage: {
+      url: image.src,
+      altText: image.alt,
+      width: null,
+      height: null,
+    },
+  }));
+}
+
+function mergeLegacyProductData(
+  product: ProductType & {selectedVariant?: ProductVariant},
+  slug: string,
+) {
+  const legacyContent = getLfsProductContentBySlug(slug);
+  if (!legacyContent) return product;
+
+  const existingMediaNodes = product.media?.nodes ?? [];
+  const existingImageUrls = new Set(
+    existingMediaNodes
+      .map((item: any) => item?.image?.url)
+      .filter((url: unknown): url is string => typeof url === 'string'),
+  );
+
+  const legacyMediaNodes = buildLegacyMediaNodes(slug).filter(
+    (item: any) => !existingImageUrls.has(item.image.url),
+  );
+
+  const metafields = [
+    ...((((product as any).metafields as Array<Record<string, unknown> | null>) ??
+      []).filter(Boolean) as Array<Record<string, unknown>>),
+  ];
+
+  if (
+    legacyContent.subtitle &&
+    !metafields.some(
+      (field) =>
+        field.namespace === 'descriptors' && field.key === 'subtitle',
+    )
+  ) {
+    metafields.push({
+      key: 'subtitle',
+      namespace: 'descriptors',
+      value: legacyContent.subtitle,
+      type: 'single_line_text_field',
+    });
+  }
+
+  if (
+    legacyContent.specsHtml &&
+    !metafields.some(
+      (field) => field.namespace === 'custom' && field.key === 'specs',
+    )
+  ) {
+    metafields.push({
+      key: 'specs',
+      namespace: 'custom',
+      value: legacyContent.specsHtml,
+      type: 'multi_line_text_field',
+    });
+  }
+
+  return {
+    ...product,
+    descriptionHtml:
+      hasContent(product.descriptionHtml) || !legacyContent.descriptionHtml
+        ? product.descriptionHtml
+        : legacyContent.descriptionHtml,
+    description:
+      hasContent(product.description) || !legacyContent.descriptionText
+        ? product.description
+        : legacyContent.descriptionText,
+    media: {
+      ...(product.media ?? {nodes: []}),
+      nodes: [...existingMediaNodes, ...legacyMediaNodes],
+    },
+    seo: {
+      ...product.seo,
+      description:
+        hasContent(product.seo?.description)
+          ? product.seo?.description
+          : legacyContent.descriptionText ??
+            legacyContent.subtitle ??
+            product.seo?.description,
+    },
+    metafields,
+  } as ProductType & {selectedVariant?: ProductVariant};
 }
 
 export async function loader({params, request, context}: LoaderFunctionArgs) {
@@ -129,40 +238,47 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     throw new Response('product', {status: 404});
   }
 
-  const recommended = getRecommendedProducts(context.storefront, product.id);
-  const firstVariant = product.variants.nodes[0];
-  const selectedVariant = product.selectedVariant ?? firstVariant;
+  const legacyContent = getLfsProductContentBySlug(productHandle);
+  const resolvedProduct = mergeLegacyProductData(product, productHandle);
+
+  const recommended = getRecommendedProducts(context.storefront, resolvedProduct.id);
+  const firstVariant = resolvedProduct.variants.nodes[0];
+  const selectedVariant = resolvedProduct.selectedVariant ?? firstVariant;
 
   const productAnalytics: ShopifyAnalyticsProduct = {
-    productGid: product.id,
+    productGid: resolvedProduct.id,
     variantGid: selectedVariant?.id ?? '',
-    name: product.title,
+    name: resolvedProduct.title,
     variantName: selectedVariant?.title ?? 'Default',
-    brand: product.vendor,
+    brand: resolvedProduct.vendor,
     price: selectedVariant?.price?.amount ?? '0',
   };
 
   const seo = seoPayload.product({
-    product, // Note: there is a field in this value for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there.
+    product: resolvedProduct, // Note: there is a field in this value for seo title and description that is getting pulled from Shopify. Any SEO updates need to be made there.
     selectedVariant,
     url: request.url,
   });
 
   // Look up related patches and videos from the local DB
-  const lzxModule = getModuleByName(product.title);
+  const lzxModule = getModuleByName(resolvedProduct.title);
   const relatedPatches = lzxModule ? getPatchesForModule(lzxModule.id) : [];
   const relatedVideos = lzxModule ? getVideosForModule(lzxModule.id) : [];
 
   return defer({
-    product,
+    product: resolvedProduct,
     shop,
     storeDomain: shop.primaryDomain.url,
     recommended,
     relatedPatches,
     relatedVideos,
+    legacyDownloads: legacyContent?.downloads ?? [],
+    archiveAssets:
+      legacyContent?.archiveAssets.filter((asset) => !asset.isDownload) ?? [],
+    legacyExternalUrl: legacyContent?.externalUrl ?? null,
     analytics: {
       pageType: AnalyticsPageType.product,
-      resourceId: product.id,
+      resourceId: resolvedProduct.id,
       products: [productAnalytics],
       totalValue: parseFloat(selectedVariant?.price?.amount ?? '0'),
     },
@@ -175,7 +291,15 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function Product() {
-  const {product, recommended, relatedPatches, relatedVideos} =
+  const {
+    product,
+    recommended,
+    relatedPatches,
+    relatedVideos,
+    legacyDownloads,
+    archiveAssets,
+    legacyExternalUrl,
+  } =
     useLoaderData<typeof loader>();
 
   return (
@@ -188,8 +312,35 @@ export default function Product() {
         ]}
       />
       <ModuleDetails product={product}>
-        <ProductForm />
+        <>
+          <ProductForm />
+          {legacyExternalUrl ? (
+            <a
+              href={legacyExternalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline btn-sm mt-2"
+            >
+              Documentation &rarr;
+            </a>
+          ) : null}
+        </>
       </ModuleDetails>
+
+      {legacyDownloads.length > 0 ? (
+        <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
+          <Heading as="h2" className="mb-4">
+            Downloads
+          </Heading>
+          <DownloadAssetList assets={legacyDownloads} />
+        </div>
+      ) : null}
+
+      {archiveAssets.length > 0 ? (
+        <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
+          <ProductAssetArchive assets={archiveAssets} />
+        </div>
+      ) : null}
 
       {/* Related patches and videos from the LZX database */}
       {(relatedPatches.length > 0 || relatedVideos.length > 0) && (

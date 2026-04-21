@@ -22,6 +22,13 @@ export const SECTIONS = [
     icon: '🔧',
   },
   {
+    title: 'Compare Module Specs',
+    description:
+      'Master comparison table of every LZX module — width, depth, power draw, and sync I/O.',
+    to: '/modules/specs',
+    icon: '📊',
+  },
+  {
     title: 'Get Started with Video Synthesis',
     description:
       'New to video synthesis? Start here for beginner guides, your first patch, and key concepts.',

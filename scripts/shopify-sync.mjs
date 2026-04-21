@@ -2,7 +2,7 @@
 
 import {mkdir, readFile, unlink, writeFile} from 'node:fs/promises';
 import {copyFile, readdir} from 'node:fs/promises';
-import {existsSync, readFileSync} from 'node:fs';
+import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import {Readable} from 'node:stream';
@@ -16,6 +16,15 @@ const REQUIRED_ENV_VARS = [
   'SHOPIFY_CLIENT_ID',
   'SHOPIFY_CLIENT_SECRET',
 ];
+const SUPPORTED_SEED_PRODUCT_TYPES = new Set([
+  'eurorack_module',
+  'instrument',
+  'accessory',
+  'eurorack_case',
+]);
+const SUPPLEMENTAL_SEED_MEDIA_ROOTS = {
+  'alternate-frontpanel': ['accessories/alternate-frontpanels'],
+};
 const HELP_TEXT = `Shopify catalog sync CLI
 
 Usage:
@@ -377,7 +386,7 @@ async function runSeed(config, cli) {
 
   console.log(`Seed source root: ${config.sourceDir}`);
   console.log(`Catalog root: ${config.outputDir}`);
-  console.log(`Handles requested: ${requestedHandles.length || 'all missing modules'}`);
+  console.log(`Handles requested: ${requestedHandles.length || 'all missing products'}`);
   console.log('');
   console.log(`Products seeded: ${summary.seededCount}`);
   console.log(`Existing products skipped: ${summary.skippedExistingCount}`);
@@ -436,24 +445,23 @@ async function seedCatalogFromLfs(config, requestedHandles) {
 }
 
 async function loadLfsSeedCandidates(sourceDir) {
-  const modulesRoot = path.join(sourceDir, 'eurorack-modules');
-  if (!existsSync(modulesRoot)) {
-    throw new Error(`LFS source directory not found: ${modulesRoot}`);
+  if (!existsSync(sourceDir)) {
+    throw new Error(`LFS source directory not found: ${sourceDir}`);
   }
 
-  const files = await collectFilesRecursive(modulesRoot, '.json');
-  const allowedHandles = loadAllowedModuleSeedHandles(process.cwd());
+  const files = await collectFilesRecursive(sourceDir, '.json');
   const candidates = [];
   const seenHandles = new Set();
 
   for (const filePath of files.sort()) {
+    if (filePath.endsWith(`${path.sep}product-catalog.json`)) continue;
+
     const raw = JSON.parse(readFileSync(filePath, 'utf8'));
-    if (raw?.product_type !== 'eurorack_module') continue;
+    if (!SUPPORTED_SEED_PRODUCT_TYPES.has(raw?.product_type)) continue;
     if ((raw.company ?? 'lzx') !== 'lzx') continue;
 
     const handle = canonicalizeSeedHandle(raw);
     if (!handle || seenHandles.has(handle)) continue;
-  if (!allowedHandles.has(handle)) continue;
 
     const candidate = buildSeedCandidate(filePath, raw, handle);
     if (!candidate) continue;
@@ -467,7 +475,8 @@ async function loadLfsSeedCandidates(sourceDir) {
 
 function buildSeedCandidate(sourcePath, raw, handle) {
   const title = stringValue(raw.name) ?? startCase(handle);
-  const description = stringValue(raw.description) ?? '';
+  const legacyContent = buildSeedLegacyContent(sourcePath, raw, handle, title);
+  const description = legacyContent.description;
   const subtitle = stringValue(raw.subtitle);
   const isActive = raw.status?.is_active === true;
   const price = stringValue(raw.price);
@@ -499,7 +508,11 @@ function buildSeedCandidate(sourcePath, raw, handle) {
         },
       ]
     : [];
-  const specsHtml = buildSpecsHtml(raw.specs);
+  const specsHtml = buildSpecsHtml(raw.specs) ?? legacyContent.specsHtml;
+  const legacyContentJson =
+    legacyContent.metafieldValue != null
+      ? JSON.stringify(legacyContent.metafieldValue)
+      : null;
   const metafields = [
     subtitle
       ? {
@@ -525,12 +538,24 @@ function buildSeedCandidate(sourcePath, raw, handle) {
           compareDigest: null,
         }
       : null,
+    legacyContentJson
+      ? {
+          id: null,
+          namespace: 'custom',
+          key: 'legacy_content',
+          type: 'json',
+          value: legacyContentJson,
+          description: null,
+          updatedAt: null,
+          compareDigest: null,
+        }
+      : null,
   ].filter(Boolean);
 
   return {
     handle,
     title,
-    descriptionHtml: buildDescriptionHtml(description),
+    descriptionHtml: buildDescriptionHtml(description, legacyContent.descriptionSections),
     seo: {
       title: null,
       description: truncateText(description, 320),
@@ -556,7 +581,13 @@ function buildSeedCandidate(sourcePath, raw, handle) {
     },
     variants,
     metafields,
-    mediaSources: collectSeedMediaSources(sourcePath, raw),
+    mediaEntries: buildSeedMediaEntries(
+      sourcePath,
+      raw,
+      title,
+      legacyContent,
+      handle,
+    ),
     sourcePath,
     previousShopifyProductId: stringValue(raw.shopify_id),
   };
@@ -576,24 +607,40 @@ async function writeSeedCatalogEntry(outputDir, candidate) {
   const mediaManifest = [];
   let copiedImages = 0;
 
-  for (const [index, sourcePath] of candidate.mediaSources.entries()) {
-    const extension = path.extname(sourcePath).toLowerCase();
-    const stem = `${String(index + 1).padStart(2, '0')}-${slugify(path.basename(sourcePath, extension))}`;
-    const outputPath = path.join(mediaDir, `${stem}${extension}`);
-    await copyFile(sourcePath, outputPath);
-    copiedImages++;
+  for (const [index, entry] of candidate.mediaEntries.entries()) {
+    if (entry.kind === 'local-image') {
+      const extension = path.extname(entry.sourcePath).toLowerCase();
+      const stem = `${String(index + 1).padStart(2, '0')}-${slugify(path.basename(entry.sourcePath, extension))}`;
+      const outputPath = path.join(mediaDir, `${stem}${extension}`);
+      await copyFile(entry.sourcePath, outputPath);
+      copiedImages++;
+      mediaManifest.push({
+        id: null,
+        type: 'MediaImage',
+        mediaContentType: 'IMAGE',
+        status: null,
+        alt: entry.alt,
+        embeddedUrl: null,
+        host: null,
+        originUrl: null,
+        image: null,
+        sources: [],
+        localPath: path.relative(process.cwd(), outputPath),
+      });
+      continue;
+    }
+
     mediaManifest.push({
       id: null,
-      type: 'MediaImage',
-      mediaContentType: 'IMAGE',
+      type: entry.type,
+      mediaContentType: entry.mediaContentType,
       status: null,
-      alt: index === 0 ? candidate.title : `${candidate.title} image ${index + 1}`,
-      embeddedUrl: null,
+      alt: entry.alt,
+      embeddedUrl: entry.embeddedUrl ?? null,
       host: null,
-      originUrl: null,
-      image: null,
-      sources: [],
-      localPath: path.relative(process.cwd(), outputPath),
+      originUrl: entry.originUrl ?? null,
+      image: entry.image ?? null,
+      sources: entry.sources ?? [],
     });
   }
 
@@ -2367,6 +2414,25 @@ async function collectFilesRecursive(directoryPath, extension) {
   return files;
 }
 
+function collectAllFilesRecursiveSync(directoryPath) {
+  const entries = readdirSync(directoryPath, {withFileTypes: true});
+  const files = [];
+
+  for (const entry of entries) {
+    const childPath = path.join(directoryPath, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectAllFilesRecursiveSync(childPath));
+      continue;
+    }
+
+    if (entry.isFile()) {
+      files.push(childPath);
+    }
+  }
+
+  return files;
+}
+
 async function listSubdirectoryNames(directoryPath) {
   if (!existsSync(directoryPath)) {
     return [];
@@ -2488,68 +2554,6 @@ function canonicalizeSeedHandle(raw) {
   return slug;
 }
 
-function loadAllowedModuleSeedHandles(repoRoot) {
-  const rawModules = JSON.parse(
-    readFileSync(path.join(repoRoot, 'db', 'lzxdb.Module.json'), 'utf8'),
-  );
-  const instrumentNames = new Set([
-    'Videomancer',
-    'Chromagnon',
-    'Vidiot',
-    'Double Vision System',
-    'Double Vision 168',
-    'Double Vision Expander',
-    'Andor 1',
-  ]);
-  const accessoryNames = new Set([
-    'Video Knob Pin',
-    'Andor 1 Media Player Deluxe Accessories Pack',
-    'DC Power Cable',
-    'Gift Card',
-    'RGB Patch Cable',
-    'RCA Sync Cable',
-    'Blank Panel',
-    'Patch Cable',
-    'RCA Video Cable',
-    'Video Knob',
-    'Power Entry 8HP',
-    '14 Pin Sync Cable',
-    '12V DC Adapter 3A',
-    'Power & Sync Entry 12HP',
-    'Alternate Frontpanel',
-    'TBC2 Mk2 Fan Upgrade Kit',
-    'TBC2 Mk1 Fan Upgrade Kit',
-    'Chromagnon Patch',
-    'Chromagnon Sticker',
-    '8GB MicroSD Card',
-    'Rack 84HP',
-    'Bus 168 DIY Kit',
-    'Vessel 84',
-    'Vessel 168',
-    'Vessel 208',
-    'Vessel EuroRack PSU Expander',
-  ]);
-  const excludedPatterns = ['videoheadroom.systems'];
-  const allowedHandles = new Set();
-
-  for (const entry of rawModules) {
-    const name = entry.name;
-    const externalUrl = String(entry.external_url ?? '').toLowerCase();
-
-    if (excludedPatterns.some((pattern) => externalUrl.includes(pattern))) continue;
-    if (accessoryNames.has(name)) continue;
-    if (name === 'Vidiot' && entry.is_hidden) continue;
-    if (instrumentNames.has(name)) continue;
-
-    const handle = canonicalizeSeedHandle({name, slug: slugify(name)});
-    if (handle) {
-      allowedHandles.add(handle);
-    }
-  }
-
-  return allowedHandles;
-}
-
 function normalizeVendor(company) {
   return company === 'lzx' ? 'LZX Industries' : startCase(company ?? '');
 }
@@ -2575,15 +2579,17 @@ function buildSeedTags(raw) {
   return tags;
 }
 
-function buildDescriptionHtml(description) {
-  if (!description) return '';
+function buildDescriptionHtml(description, sections = []) {
+  const paragraphs = description
+    ? description
+        .split(/\n{2,}/)
+        .map((paragraph) => paragraph.trim())
+        .filter(Boolean)
+        .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    : [];
+  const htmlSections = sections.filter(Boolean);
 
-  return description
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean)
-    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
-    .join('\n');
+  return [...paragraphs, ...htmlSections].join('\n');
 }
 
 function buildSpecsHtml(specs) {
@@ -2599,33 +2605,320 @@ function buildSpecsHtml(specs) {
   return entries.length > 0 ? `<ul>${entries.join('')}</ul>` : null;
 }
 
-function collectSeedMediaSources(sourcePath, raw) {
+function flattenSeedManifestEntries(value, category = 'other') {
+  if (!value) return [];
+
+  if (Array.isArray(value)) {
+    return value.map((entry) => ({...entry, category}));
+  }
+
+  return Object.entries(value).flatMap(([key, child]) =>
+    flattenSeedManifestEntries(child, `${category}.${key}`),
+  );
+}
+
+function isSeedGalleryImageRelativePath(relativePath) {
+  const normalized = String(relativePath).replace(/\\/g, '/').toLowerCase();
+  const extension = path.extname(normalized);
+  if (!['.png', '.jpg', '.jpeg', '.webp'].includes(extension)) {
+    return false;
+  }
+
+  const segments = normalized.split('/');
+  return segments.includes('website') || segments.includes('photos');
+}
+
+function buildSeedLegacyContent(sourcePath, raw, handle, title) {
+  const modulargridDescription = readSeedModulargridDescription(sourcePath, raw);
+  const forumTopic = readSeedForumTopic(sourcePath, raw, handle);
+  const description =
+    stringValue(raw.description) ??
+    modulargridDescription ??
+    forumTopic?.excerpt ??
+    '';
+  const downloads = collectSeedDownloadAssets(sourcePath, raw);
+  const descriptionSections = buildSeedDescriptionSections(downloads, forumTopic);
+
+  return {
+    description,
+    specsHtml: forumTopic?.specsHtml ?? null,
+    descriptionSections,
+    forumTopic,
+    downloads,
+    metafieldValue:
+      downloads.length > 0 || forumTopic
+        ? {
+            downloads: downloads.map((download) => ({
+              title: download.title,
+              note: download.note,
+              extension: download.extension,
+              localPath: download.localPath,
+            })),
+            forumThreadUrl: forumTopic?.url ?? null,
+            forumVideoUrls: forumTopic?.videoUrls ?? [],
+            forumImageUrls: forumTopic?.imageUrls ?? [],
+          }
+        : null,
+  };
+}
+
+function buildSeedDescriptionSections(downloads, forumTopic) {
+  const sections = [];
+
+  if (downloads.length > 0) {
+    sections.push(
+      [
+        '<h2>Legacy Downloads</h2>',
+        '<ul>',
+        ...downloads.map(
+          (download) =>
+            `<li>${escapeHtml(download.title)}${download.note ? ` - ${escapeHtml(download.note)}` : ''}</li>`,
+        ),
+        '</ul>',
+      ].join(''),
+    );
+  }
+
+  if (forumTopic) {
+    const links = [
+      `<li><a href="${escapeHtmlAttribute(forumTopic.url)}">Original community thread</a></li>`,
+      ...forumTopic.videoUrls.map(
+        (url, index) =>
+          `<li><a href="${escapeHtmlAttribute(url)}">Community video ${index + 1}</a></li>`,
+      ),
+    ];
+
+    sections.push(
+      [
+        '<h2>Community Archive</h2>',
+        forumTopic.excerpt ? `<p>${escapeHtml(forumTopic.excerpt)}</p>` : '',
+        links.length > 0 ? `<ul>${links.join('')}</ul>` : '',
+      ].join(''),
+    );
+  }
+
+  return sections;
+}
+
+function getSupplementalSeedMediaRoots(sourcePath, handle) {
+  const productRoot = path.join(resolveLfsLibraryRoot(sourcePath), 'products');
+  return (SUPPLEMENTAL_SEED_MEDIA_ROOTS[handle] ?? []).map((relativePath) =>
+    path.resolve(productRoot, relativePath),
+  );
+}
+
+function buildSeedMediaEntries(sourcePath, raw, title, legacyContent, handle) {
   const productRoot = path.dirname(sourcePath);
-  const candidates = [];
-  const seenPaths = new Set();
-  const imageExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp']);
+  const seenLocalPaths = new Set();
+  const seenRemoteUrls = new Set();
+  const entries = [];
+  const localCandidates = new Set();
 
   const preferredFrontpanel = stringValue(raw.images?.frontpanel);
   if (preferredFrontpanel) {
-    candidates.push(preferredFrontpanel);
+    const absolutePath = path.resolve(productRoot, preferredFrontpanel);
+    if (isSeedGalleryImageRelativePath(preferredFrontpanel) || existsSync(absolutePath)) {
+      localCandidates.add(absolutePath);
+    }
   }
 
-  const websiteFiles = Array.isArray(raw.file_manifest?.website)
-    ? raw.file_manifest.website.map((entry) => entry?.path).filter(Boolean)
-    : [];
-  candidates.push(...websiteFiles);
+  for (const entry of flattenSeedManifestEntries(raw.file_manifest, 'other')) {
+    if (!entry?.path || !isSeedGalleryImageRelativePath(entry.path)) continue;
+    localCandidates.add(path.resolve(productRoot, entry.path));
+  }
 
-  return candidates
-    .map((relativePath) => path.resolve(productRoot, relativePath))
+  for (const absolutePath of collectAllFilesRecursiveSync(productRoot)) {
+    const relativePath = path.relative(productRoot, absolutePath).split(path.sep).join('/');
+    if (!isSeedGalleryImageRelativePath(relativePath)) continue;
+    localCandidates.add(absolutePath);
+  }
+
+  for (const supplementalRoot of getSupplementalSeedMediaRoots(sourcePath, handle)) {
+    if (!existsSync(supplementalRoot)) continue;
+
+    for (const absolutePath of collectAllFilesRecursiveSync(supplementalRoot)) {
+      const relativePath = path.relative(supplementalRoot, absolutePath).split(path.sep).join('/');
+      if (!isSeedGalleryImageRelativePath(relativePath)) continue;
+      localCandidates.add(absolutePath);
+    }
+  }
+
+  const localEntries = [...localCandidates]
     .filter((absolutePath) => {
-      const extension = path.extname(absolutePath).toLowerCase();
-      if (!imageExtensions.has(extension)) return false;
       if (!existsSync(absolutePath)) return false;
-      if (seenPaths.has(absolutePath)) return false;
-      seenPaths.add(absolutePath);
+      if (seenLocalPaths.has(absolutePath)) return false;
+      seenLocalPaths.add(absolutePath);
       return true;
     })
-    .sort(compareSeedMediaPaths);
+    .sort(compareSeedMediaPaths)
+    .map((absolutePath, index) => ({
+      kind: 'local-image',
+      sourcePath: absolutePath,
+      alt: index === 0 ? title : `${title} image ${index + 1}`,
+    }));
+
+  entries.push(...localEntries);
+
+  if (legacyContent.forumTopic) {
+    for (const url of legacyContent.forumTopic.imageUrls) {
+      if (seenRemoteUrls.has(url)) continue;
+      seenRemoteUrls.add(url);
+      entries.push({
+        kind: 'remote',
+        type: 'MediaImage',
+        mediaContentType: 'IMAGE',
+        alt: `${title} archive image`,
+        embeddedUrl: null,
+        originUrl: url,
+        image: {
+          url,
+          altText: `${title} archive image`,
+        },
+        sources: [],
+      });
+    }
+
+    for (const url of legacyContent.forumTopic.videoUrls) {
+      if (seenRemoteUrls.has(url)) continue;
+      seenRemoteUrls.add(url);
+      entries.push({
+        kind: 'remote',
+        type: 'ExternalVideo',
+        mediaContentType: 'EXTERNAL_VIDEO',
+        alt: `${title} community video`,
+        embeddedUrl: url,
+        originUrl: url,
+        image: null,
+        sources: [],
+      });
+    }
+  }
+
+  return entries;
+}
+
+function collectSeedDownloadAssets(sourcePath, raw) {
+  const productRoot = path.dirname(sourcePath);
+  const downloadEntries = Array.isArray(raw.file_manifest?.downloads)
+    ? raw.file_manifest.downloads
+    : [];
+
+  return downloadEntries
+    .map((entry) => {
+      if (!entry?.path) return null;
+      const absolutePath = path.resolve(productRoot, entry.path);
+      if (!existsSync(absolutePath)) return null;
+      const extension = path.extname(absolutePath).replace(/^\./, '').toLowerCase() || null;
+      return {
+        title: startCase(path.basename(absolutePath, path.extname(absolutePath))),
+        note: stringValue(entry.note),
+        extension,
+        localPath: path.relative(process.cwd(), absolutePath),
+      };
+    })
+    .filter(Boolean);
+}
+
+function readSeedModulargridDescription(sourcePath, raw) {
+  const metadataPath = Array.isArray(raw.file_manifest?.modulargrid)
+    ? raw.file_manifest.modulargrid
+        .map((entry) => entry?.path)
+        .find((candidate) => typeof candidate === 'string' && candidate.endsWith('metadata.md'))
+    : null;
+
+  if (!metadataPath) return null;
+
+  const absolutePath = path.resolve(path.dirname(sourcePath), metadataPath);
+  if (!existsSync(absolutePath)) return null;
+
+  const markdown = readFileSync(absolutePath, 'utf8');
+  const match = markdown.match(/## Description\s+([\s\S]*?)(?:\n---|$)/);
+  if (!match) return null;
+
+  return stripMarkdown(match[1]);
+}
+
+function readSeedForumTopic(sourcePath, raw, handle) {
+  const threadUrl = stringValue(raw.images?.external_url);
+  const slug = threadUrl ? extractTopicSlugFromUrl(threadUrl) : `all-about-${handle}`;
+  if (!slug) return null;
+
+  const topicPath = path.join(resolveLfsLibraryRoot(sourcePath), 'scrape', 'community', 'topics', `${slug}.json`);
+  if (!existsSync(topicPath)) return null;
+
+  const topic = JSON.parse(readFileSync(topicPath, 'utf8'));
+  const cooked = topic?.posts?.[0]?.cooked;
+  if (typeof cooked !== 'string' || !cooked) return null;
+
+  return {
+    url: threadUrl ?? `https://community.lzxindustries.net/t/${slug}/${topic.id}`,
+    excerpt: extractFirstParagraphText(cooked),
+    imageUrls: extractAttributeValues(cooked, 'img', 'src').slice(0, 8),
+    videoUrls: extractAttributeValues(cooked, 'iframe', 'src').slice(0, 4),
+    specsHtml: extractForumSectionHtml(cooked, 'Specifications'),
+  };
+}
+
+function resolveLfsLibraryRoot(sourcePath) {
+  let current = path.dirname(sourcePath);
+
+  while (current !== path.dirname(current)) {
+    if (path.basename(current) === 'products' && path.basename(path.dirname(current)) === 'library') {
+      return path.dirname(current);
+    }
+    current = path.dirname(current);
+  }
+
+  return path.resolve(process.cwd(), 'lfs', 'library');
+}
+
+function extractTopicSlugFromUrl(value) {
+  try {
+    const url = new URL(value);
+    const segments = url.pathname.split('/').filter(Boolean);
+    const topicIndex = segments.findIndex((segment) => segment === 't');
+    return topicIndex >= 0 ? segments[topicIndex + 1] ?? null : null;
+  } catch {
+    return null;
+  }
+}
+
+function extractFirstParagraphText(html) {
+  const normalized = html
+    .replace(/<div class="lightbox-wrapper">[\s\S]*?<\/div>/gi, ' ')
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, ' ')
+    .replace(/<br\s*\/?>/gi, ' ');
+  const paragraphs = [...normalized.matchAll(/<p>([\s\S]*?)<\/p>/gi)];
+
+  for (const paragraph of paragraphs) {
+    const text = collapseWhitespace(decodeHtmlEntities(stripHtml(paragraph[1])));
+    if (text) {
+      return text;
+    }
+  }
+
+  return '';
+}
+
+function extractForumSectionHtml(html, title) {
+  const escapedTitle = escapeRegExp(title);
+  const match = html.match(
+    new RegExp(`<h1[^>]*>${'[\\s\\S]*?'}${escapedTitle}<\\/h1>([\\s\\S]*?)(?=<h1|$)`, 'i'),
+  );
+  return match ? match[1].trim() : null;
+}
+
+function extractAttributeValues(html, tagName, attributeName) {
+  const pattern = new RegExp(`<${tagName}[^>]*\\s${attributeName}="([^"]+)"`, 'gi');
+  const matches = [];
+  let match = pattern.exec(html);
+
+  while (match) {
+    matches.push(decodeHtmlEntities(match[1]));
+    match = pattern.exec(html);
+  }
+
+  return [...new Set(matches)];
 }
 
 function compareSeedMediaPaths(left, right) {
@@ -2650,6 +2943,40 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function escapeHtmlAttribute(value) {
+  return escapeHtml(value);
+}
+
+function stripMarkdown(value) {
+  return collapseWhitespace(
+    String(value)
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\[(.*?)\]\((.*?)\)/g, '$1')
+      .replace(/[_*`>#-]/g, ' '),
+  );
+}
+
+function stripHtml(value) {
+  return String(value).replace(/<[^>]+>/g, ' ');
+}
+
+function collapseWhitespace(value) {
+  return String(value).replace(/\s+/g, ' ').trim();
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function decodeHtmlEntities(value) {
+  return String(value)
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
 }
 
 function truncateText(value, maxLength) {

@@ -65,6 +65,7 @@ export default function ModuleLayout() {
     patches,
     videos,
     assets,
+    archiveAssets,
     connectors,
     controls,
     features,
@@ -89,7 +90,7 @@ export default function ModuleLayout() {
     {
       label: 'Downloads',
       to: `${basePath}/downloads`,
-      hidden: assets.length === 0,
+      hidden: assets.length === 0 && archiveAssets.length === 0,
     },
     {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
     {label: 'Support', to: `${basePath}/support`},

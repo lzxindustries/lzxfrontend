@@ -1,13 +1,27 @@
-import {Link, useOutletContext} from '@remix-run/react';
+import {Link, useLoaderData, useOutletContext} from '@remix-run/react';
 import {Disclosure} from '@headlessui/react';
-import type {MetaArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
+import {getProductForumArchive} from '~/data/forum-archive.server';
+import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
+import {ForumArchiveSupportSection} from '~/components/ForumArchiveSupportSection';
 import {
   TroubleshootingFlow,
   GENERIC_MODULE_TROUBLESHOOTING,
 } from '~/components/TroubleshootingFlow';
+
+export async function loader({params}: LoaderFunctionArgs) {
+  const canonical = getCanonicalSlug(params.slug ?? '') ?? params.slug ?? '';
+  const slugEntry = getSlugEntry(canonical);
+  const forumArchive = canonical
+    ? await getProductForumArchive(canonical, slugEntry?.externalUrl)
+    : {officialTopic: null, relatedTopics: []};
+
+  return json({forumArchive});
+}
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
@@ -18,10 +32,13 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function ModuleSupport() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
+  const {forumArchive} = useLoaderData<typeof loader>();
   const {product, slug, hasManual, slugEntry} =
     data as unknown as ModuleHubData;
 
   const supportRecord = SUPPORT_MANIFEST[slug];
+  const hasArchivedGuide =
+    forumArchive.officialTopic != null || forumArchive.relatedTopics.length > 0;
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-8 md:px-10">
@@ -34,14 +51,16 @@ export default function ModuleSupport() {
       <section className="mb-8">
         <h3 className="text-lg font-bold mb-3">Resources</h3>
         <div className="grid gap-3 sm:grid-cols-2">
-          {hasManual ? (
+          {hasManual || hasArchivedGuide ? (
             <Link
               to={`/modules/${slug}/manual`}
               className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
             >
               <span className="font-semibold">📖 Documentation</span>
               <span className="text-sm opacity-70">
-                Full manual and reference
+                {hasManual
+                  ? 'Full manual and reference'
+                  : 'Archived community guide and reference'}
               </span>
             </Link>
           ) : slugEntry.externalUrl ? (
@@ -74,7 +93,7 @@ export default function ModuleSupport() {
             </span>
           </Link>
           <a
-            href="https://community.lzxindustries.net"
+            href={slugEntry.externalUrl ?? 'https://community.lzxindustries.net'}
             target="_blank"
             rel="noreferrer"
             className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
@@ -86,6 +105,11 @@ export default function ModuleSupport() {
           </a>
         </div>
       </section>
+
+      <ForumArchiveSupportSection
+        archive={forumArchive}
+        manualPath={`/modules/${slug}/manual`}
+      />
 
       {/* Guided Troubleshooting */}
       <section className="mb-8">

@@ -5,15 +5,18 @@ import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 import {Image} from '@shopify/hydrogen';
 
-import {getModulesBySeries} from '~/data/product-slugs';
+import {getModulesBySeries, getDocPathForSlug} from '~/data/product-slugs';
 import type {SlugEntry} from '~/data/product-slugs';
+import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import {
   getExternalModuleListingEntries,
   getLegacyVisionaryModuleMetadataBySlug,
+  getLfsModuleSeriesArchiveAssets,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
 import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getModuleById} from '~/data/lzxdb';
+import {hasDocPagePath} from '~/lib/content.server';
 import {seoPayload} from '~/lib/seo.server';
 import {routeHeaders} from '~/data/cache';
 
@@ -193,21 +196,30 @@ export async function loader({context, request}: LoaderFunctionArgs) {
         : bySeriesMap
             .get(key)
             ?.filter((entry) => !MODULE_LISTING_EXCLUSIONS.has(entry.canonical));
-    const mappedEntries = entries?.map((entry) => ({
-      canonical: entry.canonical,
-      name: entry.name,
-      isHidden: entry.isHidden,
-      shopifyProduct:
-        (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
-        productByHandle.get(entry.canonical) ??
-        undefined,
-      subtitle:
-        (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
-        getLfsProductSubtitle(entry.name) ??
-        getLegacyVisionaryModuleMetadataBySlug(entry.canonical)?.subtitle,
-      externalUrl: entry.externalUrl ?? null,
-      hasInternalPage: true,
-    }));
+    const mappedEntries = entries
+      ?.map((entry) => {
+        const docPath = getDocPathForSlug(entry.canonical);
+        const hasManual = docPath ? hasDocPagePath(docPath) : false;
+        return {
+          canonical: entry.canonical,
+          name: entry.name,
+          isHidden: entry.isHidden,
+          shopifyProduct:
+            (entry.shopifyGid ? productById.get(entry.shopifyGid) : undefined) ??
+            productByHandle.get(entry.canonical) ??
+            undefined,
+          subtitle:
+            (entry.moduleId ? getModuleById(entry.moduleId)?.subtitle : null) ??
+            getLfsProductSubtitle(entry.name) ??
+            getLegacyVisionaryModuleMetadataBySlug(entry.canonical)?.subtitle,
+          externalUrl: entry.externalUrl ?? null,
+          hasInternalPage: true,
+          hasManual,
+        };
+      })
+      // Hide modules that have neither an MDX manual nor an external
+      // documentation URL — listing now serves as a docs index.
+      .filter((entry) => entry.hasManual || Boolean(entry.externalUrl));
     const groupEntries =
       key === 'vhs'
         ? externalModuleEntries
@@ -226,6 +238,15 @@ export async function loader({context, request}: LoaderFunctionArgs) {
   const legacySeriesGroups = rawSeriesGroups.filter((group) =>
     LEGACY_SERIES_ORDER.includes(group.key),
   );
+  const seriesSharedArchives = rawSeriesGroups
+    .map((group) => ({
+      key: group.key,
+      label: group.label,
+      assets: getLfsModuleSeriesArchiveAssets(group.key).filter(
+        (asset) => !asset.isDownload,
+      ),
+    }))
+    .filter((group) => group.assets.length > 0);
 
   const seo = seoPayload.collection({
     collection: {
@@ -244,7 +265,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
     url: request.url,
   });
 
-  return json({activeSeriesGroups, legacySeriesGroups, seo});
+  return json({activeSeriesGroups, legacySeriesGroups, seriesSharedArchives, seo});
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -252,7 +273,14 @@ export const meta = ({data}: MetaArgs<typeof loader>) => {
 };
 
 export default function ModuleListingPage() {
-  const {activeSeriesGroups, legacySeriesGroups} = useLoaderData<typeof loader>();
+  const {
+    activeSeriesGroups,
+    legacySeriesGroups,
+    seriesSharedArchives = [],
+  } = useLoaderData<typeof loader>();
+  const sharedArchivesByKey = new Map(
+    seriesSharedArchives.map((group) => [group.key, group.assets]),
+  );
 
   const renderSeriesGroup = (group: ModuleSeriesGroup) => (
     <section key={group.key} className="mb-12">
@@ -315,7 +343,7 @@ export default function ModuleListingPage() {
             return (
               <Link
                 key={entry.canonical}
-                to={`/modules/${entry.canonical}`}
+                to={`/modules/${entry.canonical}/manual`}
                 prefetch="intent"
                 className={cardClasses}
               >
@@ -337,12 +365,28 @@ export default function ModuleListingPage() {
           );
         })}
       </div>
+      {sharedArchivesByKey.get(group.key)?.length ? (
+        <div className="mt-8">
+          <ProductAssetArchive
+            assets={sharedArchivesByKey.get(group.key) ?? []}
+            title={`${group.label} Series Archive`}
+          />
+        </div>
+      ) : null}
     </section>
   );
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
-      <h1 className="font-bold text-3xl md:text-4xl uppercase mb-8">Modules</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+        <h1 className="font-bold text-3xl md:text-4xl uppercase">Modules</h1>
+        <Link
+          to="/modules/specs"
+          className="link link-primary text-sm font-semibold"
+        >
+          View all module specs &rarr;
+        </Link>
+      </div>
 
       {activeSeriesGroups.length > 0 ? (
         <section className="mb-12">

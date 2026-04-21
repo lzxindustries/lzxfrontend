@@ -25,7 +25,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
       throw new Response(null, {
         status: 301,
         headers: {
-          Location: '/modules',
+          Location: '/modules/specs',
           'Cache-Control': 'public, max-age=31536000',
         },
       });

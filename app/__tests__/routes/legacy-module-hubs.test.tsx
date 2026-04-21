@@ -6,7 +6,7 @@ import ModuleListingPage from '~/routes/($lang).modules._index';
 import ModuleSupport from '~/routes/($lang).modules.$slug.support';
 
 const remixState = {
-  loaderData: {
+  listingLoaderData: {
     activeSeriesGroups: [],
     legacySeriesGroups: [
       {
@@ -26,6 +26,30 @@ const remixState = {
         ],
       },
     ],
+  },
+  supportLoaderData: {
+    forumArchive: {
+      officialTopic: {
+        title: 'All About Color Video Encoder',
+        url: 'https://community.lzxindustries.net/t/all-about-color-video-encoder/1234',
+        excerpt: 'Archived setup and usage notes for Color Video Encoder.',
+        sections: [{title: 'Specifications'}],
+        imageUrls: ['https://example.com/color-video-encoder.png'],
+        views: 123,
+        postsCount: 1,
+      },
+      relatedTopics: [
+        {
+          title: 'Encoding questions',
+          url: 'https://community.lzxindustries.net/t/encoding-questions/55',
+          excerpt: 'Troubleshooting thread.',
+          sections: [],
+          imageUrls: [],
+          views: 42,
+          postsCount: 4,
+        },
+      ],
+    },
   },
   outletContext: {
     product: {
@@ -48,9 +72,13 @@ vi.mock('@remix-run/react', async () => {
 
   return {
     ...actual,
-    useLoaderData: () => remixState.loaderData,
+    useLoaderData: () => remixState.currentLoaderData,
     useOutletContext: () => remixState.outletContext,
   };
+});
+
+beforeEach(() => {
+  remixState.currentLoaderData = remixState.listingLoaderData;
 });
 
 vi.mock('~/components/TroubleshootingFlow', () => ({
@@ -63,25 +91,31 @@ function renderWithRouter(ui: React.ReactElement) {
 }
 
 describe('Legacy module hubs', () => {
-  it('links first-party legacy modules to internal hub pages from the modules listing', () => {
+  it('links first-party legacy modules directly to their docs from the modules listing', () => {
+    remixState.currentLoaderData = remixState.listingLoaderData;
+
     renderWithRouter(<ModuleListingPage />);
 
     expect(screen.getByText('Color Video Encoder')).toBeTruthy();
     expect(
       screen.getByText('Color Video Encoder').closest('a')?.getAttribute('href'),
-    ).toBe('/modules/color-video-encoder');
+    ).toBe('/modules/color-video-encoder/manual');
   });
 
   it('shows the external documentation resource on support pages for legacy hubs without manuals', () => {
+    remixState.currentLoaderData = remixState.supportLoaderData;
+
     renderWithRouter(<ModuleSupport />);
 
     expect(screen.getByRole('heading', {name: 'Color Video Encoder Support'})).toBeTruthy();
     expect(screen.getByText('Troubleshooting flow')).toBeTruthy();
     expect(
-      screen.getByText('External manual and reference'),
+      screen.getByText('Archived community guide and reference'),
     ).toBeTruthy();
     expect(
       screen.getByText(/Documentation/).closest('a')?.getAttribute('href'),
-    ).toBe('https://www.modulargrid.net/e/lzx-industries-color-video-encoder');
+    ).toBe('/modules/color-video-encoder/manual');
+    expect(screen.getByText('Archived Community Guide')).toBeTruthy();
+    expect(screen.getByText('Encoding questions')).toBeTruthy();
   });
 });

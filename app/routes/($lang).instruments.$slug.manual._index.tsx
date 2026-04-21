@@ -6,9 +6,14 @@ import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
 import {DocLayout} from '~/components/DocLayout';
+import {getForumArchiveDocForProduct} from '~/data/forum-archive.server';
 import {getDocPage, buildSidebar, getPrevNext} from '~/lib/content.server';
 import type {SidebarItem} from '~/lib/content.server';
-import {getDocPathForSlug, getCanonicalSlug} from '~/data/product-slugs';
+import {
+  getDocPathForSlug,
+  getCanonicalSlug,
+  getSlugEntry,
+} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG} from '~/data/cache';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
@@ -19,8 +24,36 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   invariant(slug, 'Missing slug param');
 
   const canonical = getCanonicalSlug(slug) ?? slug;
+  const slugEntry = getSlugEntry(canonical);
+  const archiveDoc = await getForumArchiveDocForProduct(
+    canonical,
+    slugEntry?.name ?? canonical,
+    slugEntry?.externalUrl,
+  );
   const docPath = getDocPathForSlug(canonical);
   if (!docPath) {
+    if (archiveDoc) {
+      const seo = seoPayload.doc({
+        title: archiveDoc.frontmatter.title ?? `${canonical} Manual`,
+        description: archiveDoc.frontmatter.description ?? '',
+        url: new URL(request.url).origin + `/instruments/${canonical}/manual`,
+      });
+
+      return json(
+        {
+          noManual: false as const,
+          doc: archiveDoc,
+          sidebar: [] as SidebarItem[],
+          prev: null,
+          next: null,
+          currentPath: archiveDoc.path,
+          slug: canonical,
+          seo,
+        },
+        {headers: {'Cache-Control': CACHE_LONG}},
+      );
+    }
+
     return json(
       {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
       {headers: {'Cache-Control': CACHE_LONG}},
@@ -29,6 +62,28 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   const doc = await getDocPage(docPath);
   if (!doc) {
+    if (archiveDoc) {
+      const seo = seoPayload.doc({
+        title: archiveDoc.frontmatter.title ?? `${canonical} Manual`,
+        description: archiveDoc.frontmatter.description ?? '',
+        url: new URL(request.url).origin + `/instruments/${canonical}/manual`,
+      });
+
+      return json(
+        {
+          noManual: false as const,
+          doc: archiveDoc,
+          sidebar: [] as SidebarItem[],
+          prev: null,
+          next: null,
+          currentPath: archiveDoc.path,
+          slug: canonical,
+          seo,
+        },
+        {headers: {'Cache-Control': CACHE_LONG}},
+      );
+    }
+
     return json(
       {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
       {headers: {'Cache-Control': CACHE_LONG}},

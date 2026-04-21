@@ -6,6 +6,7 @@ import type {InstrumentHubData} from '~/data/hub-loaders';
 import {getLatestRelease} from '~/data/github-releases';
 import type {ResolvedRelease} from '~/data/github-releases';
 import {DownloadAssetList} from '~/components/DownloadAssetList';
+import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import {ReleaseNotes} from '~/components/ReleaseNotes';
 import {CACHE_SHORT} from '~/data/cache';
 import {shouldShowGuidedUpdaterOnDownloads} from '~/data/support-manifest';
@@ -24,12 +25,12 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function InstrumentDownloads() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
-  const {assets, product, slug} = data as unknown as InstrumentHubData;
+  const {assets, archiveAssets, product, slug} = data as unknown as InstrumentHubData;
   const {release} = useLoaderData<typeof loader>();
   const rel = release as unknown as ResolvedRelease;
   const showGuidedUpdater = shouldShowGuidedUpdaterOnDownloads(slug);
 
-  if (assets.length === 0) {
+  if (assets.length === 0 && archiveAssets.length === 0) {
     return (
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 text-center">
         <p className="text-base-content/60">
@@ -64,7 +65,12 @@ export default function InstrumentDownloads() {
           </a>
         </div>
       ) : null}
-      <DownloadAssetList assets={assets} />
+      {assets.length > 0 ? <DownloadAssetList assets={assets} /> : null}
+      {archiveAssets.length > 0 ? (
+        <div className="mt-8">
+          <ProductAssetArchive assets={archiveAssets} />
+        </div>
+      ) : null}
 
       {/* Release Notes */}
       {rel.body && (

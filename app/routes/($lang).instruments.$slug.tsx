@@ -59,7 +59,7 @@ export type InstrumentLayoutLoaderData = InstrumentHubData & {
 
 export default function InstrumentLayout() {
   const data = useLoaderData<typeof loader>();
-  const {product, hasManual, videos, assets, slugEntry, connectors, controls, features, patches} =
+  const {product, hasManual, videos, assets, archiveAssets, slugEntry, connectors, controls, features, patches} =
     data as unknown as InstrumentHubData;
   const slug = (data as unknown as InstrumentHubData).slug;
 
@@ -82,7 +82,7 @@ export default function InstrumentLayout() {
     {
       label: 'Software & Downloads',
       to: `${basePath}/downloads`,
-      hidden: assets.length === 0,
+      hidden: assets.length === 0 && archiveAssets.length === 0,
     },
     {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
     {label: 'Support', to: `${basePath}/support`},

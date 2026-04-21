@@ -27,8 +27,11 @@ import type {
 } from '~/data/lzxdb';
 import {
   getLfsProductMetadataBySlug,
+  getLfsProductContentBySlug,
+  getLegacyProductContentBySlug,
   getLegacyVisionaryModuleMetadataBySlug,
 } from '~/data/lfs-product-metadata';
+import type {LfsProductAsset} from '~/data/lfs-product-metadata';
 import {
   getSlugEntry,
   getModuleIdForSlug,
@@ -63,6 +66,7 @@ export interface ModuleHubData {
   controls: LzxModuleControl[];
   features: LzxModuleFeature[];
   assets: LzxModuleAsset[];
+  archiveAssets: LfsProductAsset[];
   sidebar: SidebarItem[];
 }
 
@@ -80,6 +84,7 @@ export interface InstrumentHubData {
   controls: LzxModuleControl[];
   features: LzxModuleFeature[];
   assets: LzxModuleAsset[];
+  archiveAssets: LfsProductAsset[];
   sidebar: SidebarItem[];
   /** Doc pages within the instrument folder, for determining available sub-sections */
   docPages: DocPage[];
@@ -365,30 +370,170 @@ function stripHtml(value: string): string {
   return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
+function hasContent(value: string | null | undefined): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function buildLegacyMediaNodes(slug: string) {
+  const legacyContent = getLfsProductContentBySlug(slug);
+  if (!legacyContent) return [];
+
+  return legacyContent.galleryImages.map((image, index) => ({
+    id: `lfs-media:${slug}:${index}`,
+    alt: image.alt,
+    mediaContentType: 'IMAGE',
+    image: {
+      url: image.src,
+      altText: image.alt,
+      width: null,
+      height: null,
+    },
+    previewImage: {
+      url: image.src,
+      altText: image.alt,
+      width: null,
+      height: null,
+    },
+  }));
+}
+
+function mergeLegacyAssets(
+  assets: LzxModuleAsset[],
+  slug: string,
+): LzxModuleAsset[] {
+  const legacyContent = getLfsProductContentBySlug(slug);
+  if (!legacyContent || legacyContent.downloads.length === 0) {
+    return assets;
+  }
+
+  const existingFileNames = new Set(
+    assets
+      .map((asset) => asset.fileName?.toLowerCase())
+      .filter((fileName): fileName is string => Boolean(fileName)),
+  );
+
+  const appended = legacyContent.downloads
+    .filter((download) => !existingFileNames.has(download.fileName.toLowerCase()))
+    .map(
+      (download) =>
+        ({
+          id: download.id,
+          moduleId: slug,
+          assetId: download.id,
+          name: download.name,
+          fileName: download.fileName,
+          fileType: download.fileType,
+          description: download.description,
+          version: download.version,
+          platform: download.platform,
+          releaseDate: download.releaseDate,
+          href: download.href,
+        }) as LzxModuleAsset,
+    );
+
+  return [...assets, ...appended];
+}
+
+function mergeLegacyProductData(
+  product: ProductType & {selectedVariant?: ProductVariant},
+  slug: string,
+): ProductType & {selectedVariant?: ProductVariant} {
+  const legacyContent = getLfsProductContentBySlug(slug);
+  if (!legacyContent) return product;
+
+  const existingMediaNodes = product.media?.nodes ?? [];
+  const existingImageUrls = new Set(
+    existingMediaNodes
+      .map((item: any) => item?.image?.url)
+      .filter((url: unknown): url is string => typeof url === 'string'),
+  );
+  const legacyMediaNodes = buildLegacyMediaNodes(slug).filter(
+    (item: any) => !existingImageUrls.has(item.image.url),
+  );
+
+  const metafields = [
+    ...((((product as any).metafields as Array<Record<string, unknown> | null>) ??
+      []).filter(Boolean) as Array<Record<string, unknown>>),
+  ];
+
+  if (
+    legacyContent.subtitle &&
+    !metafields.some(
+      (field) =>
+        field.namespace === 'descriptors' && field.key === 'subtitle',
+    )
+  ) {
+    metafields.push({
+      key: 'subtitle',
+      namespace: 'descriptors',
+      value: legacyContent.subtitle,
+      type: 'single_line_text_field',
+    });
+  }
+
+  if (
+    legacyContent.specsHtml &&
+    !metafields.some(
+      (field) => field.namespace === 'custom' && field.key === 'specs',
+    )
+  ) {
+    metafields.push({
+      key: 'specs',
+      namespace: 'custom',
+      value: legacyContent.specsHtml,
+      type: 'multi_line_text_field',
+    });
+  }
+
+  return {
+    ...product,
+    descriptionHtml:
+      hasContent(product.descriptionHtml) || !legacyContent.descriptionHtml
+        ? product.descriptionHtml
+        : legacyContent.descriptionHtml,
+    description:
+      hasContent(product.description) || !legacyContent.descriptionText
+        ? product.description
+        : legacyContent.descriptionText,
+    media: {
+      ...(product.media ?? {nodes: []}),
+      nodes: [...existingMediaNodes, ...legacyMediaNodes],
+    },
+    seo: {
+      ...product.seo,
+      description:
+        hasContent(product.seo?.description)
+          ? product.seo?.description
+          : legacyContent.descriptionText ??
+            legacyContent.subtitle ??
+            product.seo?.description,
+    },
+    metafields,
+  } as ProductType & {selectedVariant?: ProductVariant};
+}
+
 function buildFallbackModuleProduct(
   slugEntry: SlugEntry,
   lzxModule: LzxModule | null,
 ): ProductType & {selectedVariant?: ProductVariant} {
   const lfsProduct = getLfsProductMetadataBySlug(slugEntry.canonical);
-  const legacyVisionaryMetadata = getLegacyVisionaryModuleMetadataBySlug(
-    slugEntry.canonical,
-  );
+  const legacyProductContent = getLegacyProductContentBySlug(slugEntry.canonical);
 
   const subtitle =
-    legacyVisionaryMetadata?.subtitle ??
+    legacyProductContent?.subtitle ??
     lzxModule?.subtitle ??
     lfsProduct?.subtitle ??
     null;
 
   const descriptionHtml =
-    legacyVisionaryMetadata?.descriptionHtml ??
+    legacyProductContent?.descriptionHtml ??
     (lfsProduct?.description ? getMarkdownToHTML(lfsProduct.description) : '');
   const description =
-    legacyVisionaryMetadata?.descriptionText ??
+    legacyProductContent?.descriptionText ??
     lfsProduct?.description ??
     subtitle ??
     '';
-  const specsHtml = legacyVisionaryMetadata?.specsHtml ?? null;
+  const specsHtml = legacyProductContent?.specsHtml ?? null;
   const seoDescription =
     stripHtml(descriptionHtml || '') || description || subtitle || '';
 
@@ -419,7 +564,7 @@ function buildFallbackModuleProduct(
     description,
     descriptionHtml,
     options: [],
-    media: {nodes: []},
+    media: {nodes: buildLegacyMediaNodes(slugEntry.canonical)},
     variants: {nodes: []},
     seo: {
       title: slugEntry.name,
@@ -509,7 +654,14 @@ export async function loadModuleHubData(
   const connectors = moduleId ? getModuleConnectors(moduleId) : [];
   const controls = moduleId ? getModuleControls(moduleId) : [];
   const features = moduleId ? getModuleFeatures(moduleId) : [];
-  const assets = moduleId ? getModuleAssets(moduleId) : [];
+  const assets = mergeLegacyAssets(
+    moduleId ? getModuleAssets(moduleId) : [],
+    slugEntry.canonical,
+  );
+  const archiveAssets =
+    getLfsProductContentBySlug(slugEntry.canonical)?.archiveAssets.filter(
+      (asset) => !asset.isDownload,
+    ) ?? [];
 
   // Doc metadata
   const docPath = getDocPathForSlug(slug);
@@ -528,9 +680,14 @@ export async function loadModuleHubData(
   );
 
   const hasShopifyProduct = Boolean(product?.id);
-  const resolvedProduct = hasShopifyProduct
-    ? product
-    : buildFallbackModuleProduct(slugEntry, lzxModule);
+  if (!hasShopifyProduct && !isLegacy) {
+    return null;
+  }
+
+  const resolvedProduct = mergeLegacyProductData(
+    hasShopifyProduct ? product : buildFallbackModuleProduct(slugEntry, lzxModule),
+    slugEntry.canonical,
+  );
   const resolvedShop = hasShopifyProduct ? shop : buildFallbackShop(request);
 
   return {
@@ -549,6 +706,7 @@ export async function loadModuleHubData(
     controls,
     features,
     assets,
+    archiveAssets,
     sidebar,
   };
 }
@@ -591,7 +749,14 @@ export async function loadInstrumentHubData(
   const connectors = moduleId ? getModuleConnectors(moduleId) : [];
   const controls = moduleId ? getModuleControls(moduleId) : [];
   const features = moduleId ? getModuleFeatures(moduleId) : [];
-  const assets = moduleId ? getModuleAssets(moduleId) : [];
+  const assets = mergeLegacyAssets(
+    moduleId ? getModuleAssets(moduleId) : [],
+    slugEntry.canonical,
+  );
+  const archiveAssets =
+    getLfsProductContentBySlug(slugEntry.canonical)?.archiveAssets.filter(
+      (asset) => !asset.isDownload,
+    ) ?? [];
 
   // Doc metadata
   const docPath = getDocPathForSlug(slug);
@@ -608,7 +773,7 @@ export async function loadInstrumentHubData(
   return {
     slug: slugEntry.canonical,
     slugEntry,
-    product,
+    product: mergeLegacyProductData(product, slugEntry.canonical),
     shop,
     lzxModule,
     docFrontmatter,
@@ -619,6 +784,7 @@ export async function loadInstrumentHubData(
     controls,
     features,
     assets,
+    archiveAssets,
     sidebar,
     docPages,
   };

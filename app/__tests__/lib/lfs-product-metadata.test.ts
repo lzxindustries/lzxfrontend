@@ -2,6 +2,9 @@ import {describe, expect, it} from 'vitest';
 
 import {
   getExternalModuleListingEntries,
+  getLfsModuleSeriesArchiveAssets,
+  getLfsProductContentBySlug,
+  getLegacyProductContentBySlug,
   getLegacyVisionaryModuleMetadataBySlug,
   getLegacyVisionaryModuleListingEntries,
   getLfsProductMetadataByName,
@@ -77,5 +80,160 @@ describe('LFS product metadata helpers', () => {
       'Color Video Encoder is one of two required modules',
     );
     expect(entry?.specsHtml).toContain('<table>');
+  });
+
+  it('normalizes generalized legacy content for hidden products', () => {
+    const liquidTv = getLegacyProductContentBySlug('liquid-tv');
+    const andorAccessories = getLegacyProductContentBySlug(
+      'andor-1-media-player-deluxe-accessories-pack',
+    );
+
+    expect(liquidTv?.descriptionHtml).toContain('Liquid TV is a compact color video monitor');
+    expect(liquidTv?.specsHtml).toContain('16 HP');
+    expect(liquidTv?.galleryImages.length).toBeGreaterThan(0);
+
+    expect(andorAccessories?.downloads).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({fileName: 'andor-1-user-manual.pdf'}),
+      ]),
+    );
+  });
+
+  it('publishes web-safe download hrefs and retains archive-only source files', () => {
+    const videomancer = getLfsProductContentBySlug('videomancer');
+    const cadetPatch = getLfsProductContentBySlug(
+      'cadet-series-embroidered-patch',
+    );
+
+    expect(videomancer?.downloads).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          fileName: 'videomancer-1.0.0-rc.12.uf2',
+          href: expect.stringContaining('videomancer-1.0.0-rc.12.uf2'),
+        }),
+      ]),
+    );
+
+    expect(cadetPatch?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'lzx_video_cadet_patch_9color_3_x3.ai',
+          href: null,
+        }),
+      ]),
+    );
+  });
+
+  it('includes orphaned website images in the product archive inventory', () => {
+    const andorAccessories = getLfsProductContentBySlug(
+      'andor-1-media-player-deluxe-accessories-pack',
+    );
+
+    expect(andorAccessories?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'website/andor1_screenshot1.jpg',
+          href: expect.stringContaining('andor1_screenshot1.jpg'),
+        }),
+      ]),
+    );
+  });
+
+  it('indexes previously orphaned non-image product files in the archive inventory', () => {
+    const doubleVision = getLfsProductContentBySlug('double-vision-168');
+
+    expect(doubleVision?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'website/double-vision-expander-168.ai',
+          href: null,
+        }),
+      ]),
+    );
+  });
+
+  it('merges supplemental product roots into archive and gallery content', () => {
+    const alternateFrontpanel = getLfsProductContentBySlug('alternate-frontpanel');
+    const tbc2 = getLfsProductContentBySlug('tbc2');
+
+    expect(alternateFrontpanel?.galleryImages).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          path: expect.stringContaining('expedition-black-panels-group.png'),
+        }),
+      ]),
+    );
+    expect(alternateFrontpanel?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'website/expedition-black-panels-group.png',
+          href: expect.stringContaining('expedition-black-panels-group.png'),
+        }),
+      ]),
+    );
+
+    expect(tbc2?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'panel-art/tbc2_fpn_revb.ai',
+          href: null,
+        }),
+      ]),
+    );
+  });
+
+  it('builds synthetic legacy content from metadata-only and root-only folders', () => {
+    const audioFrequencyDecoder = getLegacyProductContentBySlug(
+      'audio-frequency-decoder',
+    );
+    const bitvision = getLfsProductContentBySlug('bitvision');
+
+    expect(audioFrequencyDecoder?.descriptionHtml).toContain(
+      'audio frequency decoder is an eight channel audio envelope extraction tool',
+    );
+    expect(audioFrequencyDecoder?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'panel-art/lzx_afd_frontpanel_1.0.ai',
+          href: null,
+        }),
+      ]),
+    );
+
+    expect(bitvision?.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'panel-art/bitvision_doc_user_manual.ai',
+          href: null,
+        }),
+      ]),
+    );
+  });
+
+  it('indexes shared series-level module archive roots', () => {
+    const visionaryShared = getLfsModuleSeriesArchiveAssets('visionary');
+    const orionShared = getLfsModuleSeriesArchiveAssets('orion');
+
+    expect(visionaryShared).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'brand/logos/visionary_logo_white_1024.png',
+          href: expect.stringContaining('visionary_logo_white_1024.png'),
+        }),
+      ]),
+    );
+
+    expect(orionShared).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'packaging/orion_16hp_product_box_fantastapack.pdf',
+          href: expect.stringContaining('orion_16hp_product_box_fantastapack.pdf'),
+        }),
+        expect.objectContaining({
+          relativePath: '_ingest/panel-art/lzx_arc_fpn_v1.2.ai',
+          href: null,
+        }),
+      ]),
+    );
   });
 });

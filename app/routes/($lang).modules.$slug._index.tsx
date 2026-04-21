@@ -163,6 +163,9 @@ export default function ModuleOverview() {
   const metafields = (product as any).metafields as
     | (Metafield | null)[]
     | undefined;
+  const subtitle = metafields?.find(
+    (m) => m?.namespace === 'descriptors' && m?.key === 'subtitle',
+  )?.value;
   const specs = metafields?.find(
     (m) => m?.namespace === 'custom' && m?.key === 'specs',
   )?.value;
@@ -208,6 +211,11 @@ export default function ModuleOverview() {
             <h1 className="font-sans font-bold text-3xl md:text-4xl uppercase">
               {product.title}
             </h1>
+            {subtitle ? (
+              <p className="text-base md:text-lg text-primary/70 -mt-1">
+                {subtitle}
+              </p>
+            ) : null}
             {!shouldShowCommerce ? (
               <div className="badge badge-warning badge-lg">{statusLabel}</div>
             ) : (

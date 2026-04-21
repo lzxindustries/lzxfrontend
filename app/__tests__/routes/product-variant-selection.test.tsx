@@ -312,4 +312,70 @@ describe('Variant selection regression coverage', () => {
       );
     }
   });
+
+  it('hydrates generic legacy product pages with LFS media and downloads', async () => {
+    const storefrontQuery = vi
+      .fn()
+      .mockResolvedValueOnce({
+        product: {
+          id: 'gid://shopify/Product/99',
+          title: 'Andor 1 Media Player Deluxe Accessories Pack',
+          vendor: 'LZX Industries',
+          handle: 'andor-1-media-player-deluxe-accessories-pack',
+          descriptionHtml: '',
+          description: '',
+          options: [],
+          selectedVariant: null,
+          media: {nodes: []},
+          variants: {nodes: []},
+          seo: {title: 'Andor 1', description: ''},
+          metafields: [],
+        },
+        shop: {
+          name: 'LZX Industries',
+          primaryDomain: {url: 'https://lzxindustries.net'},
+          shippingPolicy: null,
+          refundPolicy: null,
+        },
+      })
+      .mockResolvedValueOnce({
+        recommended: [],
+        additional: {nodes: []},
+      });
+
+    const result = await productLoader({
+      params: {productHandle: 'andor-1-media-player-deluxe-accessories-pack'},
+      request: new Request(
+        'https://lzxindustries.net/products/andor-1-media-player-deluxe-accessories-pack',
+      ),
+      context: {
+        storefront: {
+          i18n: {country: 'US', language: 'EN'},
+          query: storefrontQuery,
+        },
+      } as never,
+    } as never);
+
+    expect((result as any).data.product.media.nodes).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({mediaContentType: 'IMAGE'}),
+      ]),
+    );
+    expect((result as any).data.legacyDownloads).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          fileName: 'andor-1-user-manual.pdf',
+          href: expect.stringContaining('andor-1-user-manual.pdf'),
+        }),
+      ]),
+    );
+    expect((result as any).data.archiveAssets).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          relativePath: 'website/andor1_screenshot1.jpg',
+          href: expect.stringContaining('andor1_screenshot1.jpg'),
+        }),
+      ]),
+    );
+  });
 });
