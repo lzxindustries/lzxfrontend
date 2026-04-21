@@ -479,8 +479,14 @@ export function ProductForm() {
                       const isSoldOut =
                         variant?.availableForSale === false || !isAvailable;
                       const quantityAvailable = variant?.quantityAvailable;
+                      const isVariantBackorder =
+                        !isSoldOut &&
+                        !isPreorder &&
+                        (quantityAvailable ?? 0) <= 0;
                       const availabilityLabel = isSoldOut
                         ? 'Sold out'
+                        : isVariantBackorder
+                        ? 'Ships in 4-6 weeks'
                         : quantityAvailable != null &&
                           quantityAvailable > 0 &&
                           quantityAvailable < 5
