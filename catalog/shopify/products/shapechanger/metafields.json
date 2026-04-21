@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675503144983",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:42Z",
+    "compareDigest": "7b0c571ce06c5146df92b5f27fe494c1af144f0ac8b8fa1786b95c9a6ca2278d"
+  }
+]

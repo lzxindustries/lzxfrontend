@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795662359",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Navigator",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-navigator-front-panel.jpg?v=1776802836",
+      "altText": "Navigator",
+      "width": 385,
+      "height": 611
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/navigator/media/01-navigator.jpg"
+  }
+]

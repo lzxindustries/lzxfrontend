@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803159965719",
+  "handle": "cadet-ii-rgb-encoder",
+  "title": "Cadet II RGB Encoder",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
+  "createdAt": "2026-04-21T20:20:09Z",
+  "updatedAt": "2026-04-21T20:22:11Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423098903",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system."
+  }
+}

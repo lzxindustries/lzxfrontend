@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740794384407",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Cadet V Scaler",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-cadet-5-front-panel-square.jpg?v=1776802818",
+      "altText": "Cadet V Scaler",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/cadet-v-scaler/media/01-cadet-v-scaler.jpg"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675504914455",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits w...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:54Z",
+    "compareDigest": "b2ca483bf05a95158537d422bc63741bc52233f6cb37ca144c51e081cfa7caca"
+  }
+]

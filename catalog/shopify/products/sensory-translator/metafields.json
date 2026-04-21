@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675502882839",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five cha...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:41Z",
+    "compareDigest": "a1065cc569ad03ceaa459452240cf38a77c08ab2646994db928b63ea2f33db0a"
+  }
+]

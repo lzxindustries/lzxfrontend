@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675499081751",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:05Z",
+    "compareDigest": "16a10a752c056313933041d73cc7a8e79eac1579cf0bf9f8014d408d8c17c8d6"
+  }
+]

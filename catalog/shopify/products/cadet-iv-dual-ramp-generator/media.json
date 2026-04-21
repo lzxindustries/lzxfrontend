@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740794318871",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Cadet IV Dual Ramp Generator",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-cadet-4-front-panel-square.jpg?v=1776802815",
+      "altText": "Cadet IV Dual Ramp Generator",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/cadet-iv-dual-ramp-generator/media/01-cadet-iv-dual-ramp-generator.jpg"
+  }
+]

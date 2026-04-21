@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675499212823",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer sys...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:08Z",
+    "compareDigest": "59adffa2009065ffdb8b23df03ad8cf79025109ce690ee56bb91b1f407300814"
+  }
+]

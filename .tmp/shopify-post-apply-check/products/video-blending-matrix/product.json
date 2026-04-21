@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803161112599",
+  "handle": "video-blending-matrix",
+  "title": "Video Blending Matrix",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Legacy",
+    "Visible",
+    "Visionary"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:each mixer has five dc-coupled signal inputs which can be used for any type of signal, from low frequency modulation to full bandwidth video. four have associated level/inversion controls and inversion mode switches, the remaining one is a direct summing input for chained operation between multiple vbm modules. with the combination of the level/inversion control and inversion mode switches, three different variable input functions are possible: addition, subtraction, and inverted addition. with no signal input, each control can function as a variable 1v bias control. mix outputs:two separate mix output functions are available for each mixer: sum and absolute. the sum output is the sum of all input signals. the absolute output is the absolute value of the sum (negative signals are inverted and become positive.) the absolute outputs enable techniques such as frequency multiplication and the creation of solarization and color difference effects. matrix operation:matrix configuration is achieved through the normalization of input columns between the three independent signal mixers. with a single signal patched into the topmost input of mixer 1, this signal is applied to the corresponding input on mixers 2 & 3. within a patch utilizing triple colorspace (such as red, green, and blue channels), this feature allows a single signal to be mixed in varying amounts to each channel.",
+  "createdAt": "2026-04-21T20:20:53Z",
+  "updatedAt": "2026-04-21T20:21:08Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424475159",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:ea..."
+  }
+}

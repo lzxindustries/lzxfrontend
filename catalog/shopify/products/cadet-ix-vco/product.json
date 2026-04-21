@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160096791",
+  "handle": "cadet-ix-vco",
+  "title": "Cadet IX VCO",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.",
+  "createdAt": "2026-04-21T20:20:14Z",
+  "updatedAt": "2026-04-21T20:22:24Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423262743",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis."
+  }
+}

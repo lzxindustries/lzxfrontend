@@ -1,0 +1,74 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740794023959",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Bridge",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-bridge-front-panel.jpg?v=1776802809",
+      "altText": "Bridge",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bridge/media/01-bridge.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740794056727",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Bridge image 2",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-bridge-front-photo.png?v=1776802809",
+      "altText": "Bridge image 2",
+      "width": 172,
+      "height": 550
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bridge/media/02-bridge-image-2.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740794089495",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Bridge image 3",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/03-bridge-angle-photo.png?v=1776802809",
+      "altText": "Bridge image 3",
+      "width": 198,
+      "height": 550
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bridge/media/03-bridge-image-3.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740794122263",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Bridge image 4",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/04-bridge-front-legend.png?v=1776802809",
+      "altText": "Bridge image 4",
+      "width": 184,
+      "height": 564
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bridge/media/04-bridge-image-4.png"
+  }
+]

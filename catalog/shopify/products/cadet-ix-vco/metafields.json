@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675500064791",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:14Z",
+    "compareDigest": "8af3831b098d3ec0a2a51dd4de85b26f46fc9a33874742f43f89da1ed090f98c"
+  }
+]

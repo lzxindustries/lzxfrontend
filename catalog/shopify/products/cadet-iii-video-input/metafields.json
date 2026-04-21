@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675499540503",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:11Z",
+    "compareDigest": "dcec1453abae4d83528352b26629db105627409861c9a269a7e35eb6f40cf8c4"
+  }
+]

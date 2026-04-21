@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740794155031",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Cadet I Sync Generator",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-cadet-1-front-panel-square.jpg?v=1776802811",
+      "altText": "Cadet I Sync Generator",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/cadet-i-sync-generator/media/01-cadet-i-sync-generator.jpg"
+  }
+]

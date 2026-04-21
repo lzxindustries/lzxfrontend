@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803161210903",
+  "handle": "video-waveform-generator",
+  "title": "Video Waveform Generator",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Legacy",
+    "Visible",
+    "Visionary"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range vco with 6 selectable frequency ranges from 30 seconds to 2mhz, coarse and fine tuning controls. expanded hard sync circuit designed for accurate synchronization to video sync signals. selection switch allows normalization to sync bus signals distributed through the power header from the lzx visionary video sync generator module. precision video op-amps used in all circuitry for accurate high speed frequency and waveshape modulation. five simultaneous waveform outputs: triangle, sawtooth, square, pulse (rectangle) & shaped sine. two independent waveshapers with cv inputs, cv attenuverters and bias controls: pulsewidth modulator & sine shaper. control pulsewidth and sine shape from 0% to 100%. two frequency cv inputs with cv attenuverters. jumper-configurable options for input scaling (visionary or 1v/oct standard) and linear or exponential input. attenuversion controls on all signal inputs allow attenuation and inversion of any input signal. frequency notification led. no external +5v power rail necessary, user configurable jumper allows selection between onboard +5v regulator or +5v rail on standard power header. Specifications: width: 16hp maximum current draw: 140ma",
+  "createdAt": "2026-04-21T20:20:56Z",
+  "updatedAt": "2026-04-21T20:21:08Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424606231",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range v..."
+  }
+}

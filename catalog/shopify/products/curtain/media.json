@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740794941463",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Curtain",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-curtain-front-panel.jpg?v=1776802825",
+      "altText": "Curtain",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/curtain/media/01-curtain.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740794974231",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Curtain image 2",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-curtain-front-legend.jpg?v=1776802825",
+      "altText": "Curtain image 2",
+      "width": 307,
+      "height": 557
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/curtain/media/02-curtain-image-2.jpg"
+  }
+]

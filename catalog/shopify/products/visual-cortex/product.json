@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803161243671",
+  "handle": "visual-cortex",
+  "title": "Visual Cortex",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.",
+  "createdAt": "2026-04-21T20:20:58Z",
+  "updatedAt": "2026-04-21T20:23:13Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424638999",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositi..."
+  }
+}

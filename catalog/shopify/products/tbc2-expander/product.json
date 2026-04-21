@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160948759",
+  "handle": "tbc2-expander",
+  "title": "TBC2 Expander",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2-expander",
+  "description": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
+  "createdAt": "2026-04-21T20:20:45Z",
+  "updatedAt": "2026-04-21T20:59:13Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424213015",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included."
+  }
+}

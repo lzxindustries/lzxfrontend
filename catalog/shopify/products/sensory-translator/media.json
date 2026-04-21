@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795957271",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Sensory Translator",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-sensory-translator-front-panel-black.png?v=1776802844",
+      "altText": "Sensory Translator",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/sensory-translator/media/01-sensory-translator.png"
+  }
+]

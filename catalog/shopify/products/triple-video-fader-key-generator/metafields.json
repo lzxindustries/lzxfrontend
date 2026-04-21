@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675504488471",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "The Triple Video Fader & Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of p...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:51Z",
+    "compareDigest": "436f6045909b0228ce9f1dcb72a9d93bad02daa7f3b76925b54170c8b8f3fc8a"
+  }
+]

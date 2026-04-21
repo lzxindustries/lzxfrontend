@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795236375",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Doorway",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-doorway-front-panel.jpg?v=1776802830",
+      "altText": "Doorway",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/doorway/media/01-doorway.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740795269143",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Doorway image 2",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-doorway-front-legend.jpg?v=1776802830",
+      "altText": "Doorway image 2",
+      "width": 303,
+      "height": 552
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/doorway/media/02-doorway-image-2.jpg"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160621079",
+  "handle": "marble-index",
+  "title": "Marble Index",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Hidden",
+    "Legacy"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)",
+  "createdAt": "2026-04-21T20:20:33Z",
+  "updatedAt": "2026-04-21T20:22:49Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423885335",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most a..."
+  }
+}

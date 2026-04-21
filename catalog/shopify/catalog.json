@@ -1,8 +1,8 @@
 {
-  "pulledAt": "2026-04-21T19:56:21.330Z",
+  "pulledAt": "2026-04-21T21:01:51.894Z",
   "apiVersion": "2025-04",
   "query": null,
-  "productCount": 97,
+  "productCount": 133,
   "products": [
     {
       "id": "gid://shopify/Product/6890556129303",
@@ -41,10 +41,22 @@
       "updatedAt": "2026-04-21T09:02:40Z"
     },
     {
+      "id": "gid://shopify/Product/8803159834647",
+      "handle": "arch",
+      "title": "Arch",
+      "updatedAt": "2026-04-21T20:22:11Z"
+    },
+    {
       "id": "gid://shopify/Product/6890094067735",
       "handle": "blank-panel",
       "title": "Blank Panel",
       "updatedAt": "2026-04-17T00:53:55Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803159900183",
+      "handle": "bridge",
+      "title": "Bridge",
+      "updatedAt": "2026-04-21T20:22:15Z"
     },
     {
       "id": "gid://shopify/Product/7214169489431",
@@ -77,6 +89,36 @@
       "updatedAt": "2026-04-17T00:54:03Z"
     },
     {
+      "id": "gid://shopify/Product/8803159932951",
+      "handle": "cadet-i-sync-generator",
+      "title": "Cadet I Sync Generator",
+      "updatedAt": "2026-04-21T20:22:17Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803159965719",
+      "handle": "cadet-ii-rgb-encoder",
+      "title": "Cadet II RGB Encoder",
+      "updatedAt": "2026-04-21T20:22:11Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160031255",
+      "handle": "cadet-iii-video-input",
+      "title": "Cadet III Video Input",
+      "updatedAt": "2026-04-21T20:22:11Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160064023",
+      "handle": "cadet-iv-dual-ramp-generator",
+      "title": "Cadet IV Dual Ramp Generator",
+      "updatedAt": "2026-04-21T20:20:20Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160096791",
+      "handle": "cadet-ix-vco",
+      "title": "Cadet IX VCO",
+      "updatedAt": "2026-04-21T20:22:24Z"
+    },
+    {
       "id": "gid://shopify/Product/1692913041472",
       "handle": "cadet-series-embroidered-patch",
       "title": "Cadet Series Embroidered Patch",
@@ -87,6 +129,36 @@
       "handle": "cadet-series-vinyl-sticker",
       "title": "Cadet Series Vinyl Sticker",
       "updatedAt": "2026-04-17T00:53:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160129559",
+      "handle": "cadet-v-scaler",
+      "title": "Cadet V Scaler",
+      "updatedAt": "2026-04-21T20:22:26Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160162327",
+      "handle": "cadet-vi-fader",
+      "title": "Cadet VI Fader",
+      "updatedAt": "2026-04-21T20:22:26Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160195095",
+      "handle": "cadet-vii-processor",
+      "title": "Cadet VII Processor",
+      "updatedAt": "2026-04-21T20:22:19Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160227863",
+      "handle": "cadet-viii-hard-key-generator",
+      "title": "Cadet VIII Hard Key Generator",
+      "updatedAt": "2026-04-21T20:22:30Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160293399",
+      "handle": "cadet-x-multiplier",
+      "title": "Cadet X Multiplier",
+      "updatedAt": "2026-04-21T20:22:22Z"
     },
     {
       "id": "gid://shopify/Product/6561694679063",
@@ -185,6 +257,12 @@
       "updatedAt": "2026-04-21T09:02:39Z"
     },
     {
+      "id": "gid://shopify/Product/8803160326167",
+      "handle": "curtain",
+      "title": "Curtain",
+      "updatedAt": "2026-04-21T20:22:27Z"
+    },
+    {
       "id": "gid://shopify/Product/1822438031424",
       "handle": "cyclops",
       "title": "Cyclops",
@@ -203,10 +281,28 @@
       "updatedAt": "2026-04-17T00:53:53Z"
     },
     {
+      "id": "gid://shopify/Product/8803160391703",
+      "handle": "dc-distro-5a",
+      "title": "DC Distro 5A",
+      "updatedAt": "2026-04-21T20:22:28Z"
+    },
+    {
       "id": "gid://shopify/Product/6552581832727",
       "handle": "dc-power-cable",
       "title": "DC Power Cable",
       "updatedAt": "2026-04-17T00:53:51Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160424471",
+      "handle": "diver",
+      "title": "Diver",
+      "updatedAt": "2026-04-21T20:22:39Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160457239",
+      "handle": "doorway",
+      "title": "Doorway",
+      "updatedAt": "2026-04-21T20:22:30Z"
     },
     {
       "id": "gid://shopify/Product/7415503781911",
@@ -239,6 +335,12 @@
       "updatedAt": "2026-04-21T09:02:28Z"
     },
     {
+      "id": "gid://shopify/Product/8803160522775",
+      "handle": "escher-sketch",
+      "title": "Escher Sketch",
+      "updatedAt": "2026-04-21T20:22:38Z"
+    },
+    {
       "id": "gid://shopify/Product/6576385884183",
       "handle": "esg3",
       "title": "ESG3",
@@ -261,6 +363,12 @@
       "handle": "fkg3",
       "title": "FKG3",
       "updatedAt": "2026-04-21T09:02:24Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160555543",
+      "handle": "fortress",
+      "title": "Fortress",
+      "updatedAt": "2026-04-21T20:23:03Z"
     },
     {
       "id": "gid://shopify/Product/1725059989568",
@@ -311,6 +419,18 @@
       "updatedAt": "2026-04-17T00:53:47Z"
     },
     {
+      "id": "gid://shopify/Product/8803160588311",
+      "handle": "mapper",
+      "title": "Mapper",
+      "updatedAt": "2026-04-21T20:22:36Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160621079",
+      "handle": "marble-index",
+      "title": "Marble Index",
+      "updatedAt": "2026-04-21T20:22:49Z"
+    },
+    {
       "id": "gid://shopify/Product/6766673952791",
       "handle": "matte",
       "title": "Matte",
@@ -327,6 +447,12 @@
       "handle": "mlt",
       "title": "MLT",
       "updatedAt": "2026-04-21T09:02:43Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160653847",
+      "handle": "navigator",
+      "title": "Navigator",
+      "updatedAt": "2026-04-21T20:22:46Z"
     },
     {
       "id": "gid://shopify/Product/7477333917719",
@@ -365,10 +491,22 @@
       "updatedAt": "2026-04-21T09:02:47Z"
     },
     {
+      "id": "gid://shopify/Product/8803160686615",
+      "handle": "passage",
+      "title": "Passage",
+      "updatedAt": "2026-04-21T20:23:05Z"
+    },
+    {
       "id": "gid://shopify/Product/6890363125783",
       "handle": "patch-cable",
       "title": "Patch Cable",
       "updatedAt": "2026-04-17T00:53:56Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160719383",
+      "handle": "pendulum",
+      "title": "Pendulum",
+      "updatedAt": "2026-04-21T20:22:52Z"
     },
     {
       "id": "gid://shopify/Product/7414310109207",
@@ -381,6 +519,18 @@
       "handle": "pin-header-pitch-0-1in-2x8-male-shrouded",
       "title": "Pin Header Pitch 0.1in 2X8 Male Shrouded",
       "updatedAt": "2026-04-17T00:54:02Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160784919",
+      "handle": "polar-fringe",
+      "title": "Polar Fringe",
+      "updatedAt": "2026-04-21T20:22:44Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160817687",
+      "handle": "pot",
+      "title": "P",
+      "updatedAt": "2026-04-21T21:00:26Z"
     },
     {
       "id": "gid://shopify/Product/6890363879447",
@@ -449,6 +599,18 @@
       "updatedAt": "2026-04-21T09:02:41Z"
     },
     {
+      "id": "gid://shopify/Product/8803160850455",
+      "handle": "sensory-translator",
+      "title": "Sensory Translator",
+      "updatedAt": "2026-04-21T20:23:12Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160883223",
+      "handle": "shapechanger",
+      "title": "Shapechanger",
+      "updatedAt": "2026-04-21T20:22:48Z"
+    },
+    {
       "id": "gid://shopify/Product/6575222685719",
       "handle": "smx3",
       "title": "SMX3",
@@ -459,6 +621,12 @@
       "handle": "stacker",
       "title": "Stacker",
       "updatedAt": "2026-04-21T09:02:40Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803160915991",
+      "handle": "staircase",
+      "title": "Staircase",
+      "updatedAt": "2026-04-21T20:23:04Z"
     },
     {
       "id": "gid://shopify/Product/6766671396887",
@@ -491,6 +659,12 @@
       "updatedAt": "2026-04-21T09:02:25Z"
     },
     {
+      "id": "gid://shopify/Product/8803160948759",
+      "handle": "tbc2-expander",
+      "title": "TBC2 Expander",
+      "updatedAt": "2026-04-21T20:59:13Z"
+    },
+    {
       "id": "gid://shopify/Product/7214160281623",
       "handle": "tbc2-mk1-fan-upgrade-kit",
       "title": "TBC2 Mk1 Fan Upgrade Kit",
@@ -501,6 +675,18 @@
       "handle": "tbc2-mk2-fan-upgrade-kit",
       "title": "TBC2 Mk2 Fan Upgrade Kit",
       "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803161047063",
+      "handle": "topogram",
+      "title": "Topogram",
+      "updatedAt": "2026-04-21T20:23:04Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803161079831",
+      "handle": "triple-video-fader-key-generator",
+      "title": "Triple Video Fader & Key Generator",
+      "updatedAt": "2026-04-21T20:23:03Z"
     },
     {
       "id": "gid://shopify/Product/7171710189591",
@@ -533,6 +719,12 @@
       "updatedAt": "2026-04-17T00:53:50Z"
     },
     {
+      "id": "gid://shopify/Product/8803161112599",
+      "handle": "video-blending-matrix",
+      "title": "Video Blending Matrix",
+      "updatedAt": "2026-04-21T20:23:05Z"
+    },
+    {
       "id": "gid://shopify/Product/6890363158551",
       "handle": "video-cable",
       "title": "RCA Video Cable",
@@ -551,10 +743,22 @@
       "updatedAt": "2026-04-17T00:53:54Z"
     },
     {
+      "id": "gid://shopify/Product/8803161145367",
+      "handle": "video-logic",
+      "title": "Video Logic",
+      "updatedAt": "2026-04-21T20:23:12Z"
+    },
+    {
       "id": "gid://shopify/Product/1974680092736",
       "handle": "video-sync-distribution-cable",
       "title": "14 Pin Sync Cable",
       "updatedAt": "2026-04-17T00:53:50Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803161210903",
+      "handle": "video-waveform-generator",
+      "title": "Video Waveform Generator",
+      "updatedAt": "2026-04-21T20:23:09Z"
     },
     {
       "id": "gid://shopify/Product/8186914373655",
@@ -579,6 +783,18 @@
       "handle": "vidiot",
       "title": "Vidiot",
       "updatedAt": "2026-04-18T08:01:44Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803161243671",
+      "handle": "visual-cortex",
+      "title": "Visual Cortex",
+      "updatedAt": "2026-04-21T20:23:13Z"
+    },
+    {
+      "id": "gid://shopify/Product/8803161276439",
+      "handle": "war-of-the-ants",
+      "title": "War Of The Ants",
+      "updatedAt": "2026-04-21T20:23:02Z"
     },
     {
       "id": "gid://shopify/Product/7477334474775",

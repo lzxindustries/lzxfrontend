@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795170839",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Diver",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-diver-front-panel.jpg?v=1776802828",
+      "altText": "Diver",
+      "width": 732,
+      "height": 732
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/diver/media/01-diver.jpg"
+  }
+]

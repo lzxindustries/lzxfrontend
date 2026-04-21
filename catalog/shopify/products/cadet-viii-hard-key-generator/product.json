@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160227863",
+  "handle": "cadet-viii-hard-key-generator",
+  "title": "Cadet VIII Hard Key Generator",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.",
+  "createdAt": "2026-04-21T20:20:19Z",
+  "updatedAt": "2026-04-21T20:22:30Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423393815",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level."
+  }
+}

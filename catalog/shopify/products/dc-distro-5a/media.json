@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795072535",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "DC Distro 5A",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-dc-distro-3a-front-panel-square.png?v=1776802827",
+      "altText": "DC Distro 5A",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-distro-5a/media/01-dc-distro-5a.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740795105303",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "DC Distro 5A image 2",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-dc-distro-3a-front-panel.png?v=1776802827",
+      "altText": "DC Distro 5A image 2",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-distro-5a/media/02-dc-distro-5a-image-2.png"
+  }
+]

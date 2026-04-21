@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675504717847",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:ea...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:53Z",
+    "compareDigest": "eeefa391b241b90db9d0bb5cdde2ecc1c1f88a0950149b71d26dfebada3014b1"
+  }
+]

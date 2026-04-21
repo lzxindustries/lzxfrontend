@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803161276439",
+  "handle": "war-of-the-ants",
+  "title": "War Of The Ants",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Hidden",
+    "Legacy"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)",
+  "createdAt": "2026-04-21T20:20:58Z",
+  "updatedAt": "2026-04-21T20:23:02Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424671767",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based o..."
+  }
+}

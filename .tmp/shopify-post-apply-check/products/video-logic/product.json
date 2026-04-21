@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803161145367",
+  "handle": "video-logic",
+  "title": "Video Logic",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Legacy",
+    "Visible",
+    "Visionary"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.",
+  "createdAt": "2026-04-21T20:20:54Z",
+  "updatedAt": "2026-04-21T20:21:07Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424507927",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits w..."
+  }
+}

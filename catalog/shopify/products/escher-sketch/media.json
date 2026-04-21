@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795367447",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Escher Sketch",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-escher-sketch-front-panel.jpg?v=1776802832",
+      "altText": "Escher Sketch",
+      "width": 1024,
+      "height": 754
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/escher-sketch/media/01-escher-sketch.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740795400215",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Escher Sketch image 2",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-escher-sketch-front-legend-jpg.jpg?v=1776802832",
+      "altText": "Escher Sketch image 2",
+      "width": 776,
+      "height": 589
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/escher-sketch/media/02-escher-sketch-image-2.jpg"
+  }
+]

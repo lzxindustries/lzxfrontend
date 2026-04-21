@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675499671575",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:12Z",
+    "compareDigest": "a77593fd0a14c011f91fde920a3514f528988101fec418ecd94e517f4410bae9"
+  }
+]

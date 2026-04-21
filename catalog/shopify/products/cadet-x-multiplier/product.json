@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160293399",
+  "handle": "cadet-x-multiplier",
+  "title": "Cadet X Multiplier",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
+  "createdAt": "2026-04-21T20:20:20Z",
+  "updatedAt": "2026-04-21T20:22:22Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423492119",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier."
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740795760663",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Pendulum",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-pendulum-front-panel-black.png?v=1776802839",
+      "altText": "Pendulum",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/pendulum/media/01-pendulum.png"
+  }
+]

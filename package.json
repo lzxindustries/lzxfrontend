@@ -30,6 +30,7 @@
     "search:index": "node scripts/build-search-index.mjs",
     "shopify:sync": "node scripts/shopify-sync.mjs",
     "shopify:sync:doctor": "node scripts/shopify-sync.mjs doctor",
+    "shopify:sync:seed": "node scripts/shopify-sync.mjs seed",
     "shopify:sync:pull": "node scripts/shopify-sync.mjs pull",
     "shopify:sync:diff": "node scripts/shopify-sync.mjs diff",
     "shopify:sync:push": "node scripts/shopify-sync.mjs push",

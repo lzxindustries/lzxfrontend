@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160883223",
+  "handle": "shapechanger",
+  "title": "Shapechanger",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Hidden",
+    "Legacy"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)",
+  "createdAt": "2026-04-21T20:20:42Z",
+  "updatedAt": "2026-04-21T20:22:48Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079424147479",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting..."
+  }
+}

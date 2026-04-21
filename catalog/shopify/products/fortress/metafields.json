@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675501735959",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:31Z",
+    "compareDigest": "e53557d6da48fbbcb986c4d3791ab49eacff95015deb6e60bd4fe7c5e460f454"
+  }
+]

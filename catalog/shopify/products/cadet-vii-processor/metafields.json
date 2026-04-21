@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675500359703",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:17Z",
+    "compareDigest": "cf6f2b41e65c227ef09278e11511c94e3e78c4d36277481172cfdb5923ef0da3"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675502096407",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:35Z",
+    "compareDigest": "056564bbe6d4987b4ea13acde1c5bdb32fda58ae955d734afcca688a92a2fdac"
+  }
+]

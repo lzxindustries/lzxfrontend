@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740796710935",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Triple Video Fader & Key Generator",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-tvfkg-front-panel.jpg?v=1776802854",
+      "altText": "Triple Video Fader & Key Generator",
+      "width": 429,
+      "height": 601
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/triple-video-fader-key-generator/media/01-triple-video-fader-key-generator.jpg"
+  }
+]

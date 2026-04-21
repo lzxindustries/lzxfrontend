@@ -52,6 +52,7 @@ export interface ModuleHubData {
   slugEntry: SlugEntry;
   product: ProductType & {selectedVariant?: ProductVariant};
   hasShopifyProduct: boolean;
+  isLegacy: boolean;
   shop: Shop;
   lzxModule: LzxModule | null;
   docFrontmatter: ContentFrontmatter | null;
@@ -428,6 +429,30 @@ function buildFallbackModuleProduct(
   } as unknown as ProductType & {selectedVariant?: ProductVariant};
 }
 
+function isLegacyModuleState(
+  slugEntry: SlugEntry,
+  lzxModule: LzxModule | null,
+): boolean {
+  const lfsProduct = getLfsProductMetadataBySlug(slugEntry.canonical);
+  if (lfsProduct) {
+    return !lfsProduct.isActive;
+  }
+
+  if (getLegacyVisionaryModuleMetadataBySlug(slugEntry.canonical)) {
+    return true;
+  }
+
+  if (typeof lzxModule?.isActiveProduct === 'boolean') {
+    return !lzxModule.isActiveProduct;
+  }
+
+  if (typeof lzxModule?.isHidden === 'boolean') {
+    return lzxModule.isHidden;
+  }
+
+  return slugEntry.isHidden;
+}
+
 export async function getRecommendedProducts(
   context: AppLoadContext,
   productId: string,
@@ -477,6 +502,7 @@ export async function loadModuleHubData(
   // Local DB lookups
   const moduleId = getModuleIdForSlug(slug);
   const lzxModule = moduleId ? getModuleById(moduleId) ?? null : null;
+  const isLegacy = isLegacyModuleState(slugEntry, lzxModule);
 
   const patches = moduleId ? getPatchesForModule(moduleId) : [];
   const videos = moduleId ? getVideosForModule(moduleId) : [];
@@ -502,8 +528,6 @@ export async function loadModuleHubData(
   );
 
   const hasShopifyProduct = Boolean(product?.id);
-  if (!hasShopifyProduct && !slugEntry.isHidden) return null;
-
   const resolvedProduct = hasShopifyProduct
     ? product
     : buildFallbackModuleProduct(slugEntry, lzxModule);
@@ -514,6 +538,7 @@ export async function loadModuleHubData(
     slugEntry,
     product: resolvedProduct,
     hasShopifyProduct,
+    isLegacy,
     shop: resolvedShop,
     lzxModule,
     docFrontmatter,

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/28740797071383",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "War Of The Ants",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-war-of-the-ants-front-panel-black.png?v=1776802861",
+      "altText": "War Of The Ants",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": []
+  }
+]

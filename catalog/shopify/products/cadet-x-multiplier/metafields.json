@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675500720151",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:20Z",
+    "compareDigest": "e24049cd1d6b02d4268c2a0c93d6b7c0fad381aecbfb5d4e634eeacf1760304d"
+  }
+]

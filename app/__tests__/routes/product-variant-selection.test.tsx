@@ -1,5 +1,5 @@
 import {beforeEach, describe, expect, it, vi} from 'vitest';
-import {render} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import type {ComponentPropsWithoutRef, ElementType, ReactNode} from 'react';
 
@@ -146,9 +146,13 @@ function createSelectedVariant(id: string, value: string) {
 function createOutletContext({
   handle,
   canonical,
+  hasShopifyProduct = true,
+  isLegacy = false,
 }: {
   handle: string;
   canonical: string;
+  hasShopifyProduct?: boolean;
+  isLegacy?: boolean;
 }) {
   const selectedVariant = createSelectedVariant(
     'gid://shopify/ProductVariant/2',
@@ -176,7 +180,8 @@ function createOutletContext({
       canonical,
       isHidden: false,
     },
-    hasShopifyProduct: true,
+    hasShopifyProduct,
+    isLegacy,
     hasManual: false,
     recommended: null,
     connectors: [],
@@ -222,6 +227,23 @@ describe('Variant selection regression coverage', () => {
     expect(props.handle).toBe('prm');
     expect(props.productPath).toBe('modules');
     expect(props.selectedVariant?.id).toBe('gid://shopify/ProductVariant/2');
+  });
+
+  it('hides price and add-to-cart for legacy modules even when Shopify data exists', () => {
+    mockedUseOutletContext.mockReturnValue(
+      createOutletContext({
+        handle: 'fortress',
+        canonical: 'fortress',
+        hasShopifyProduct: true,
+        isLegacy: true,
+      }),
+    );
+
+    renderWithRouter(<ModuleOverview />);
+
+    expect(screen.getByText('Discontinued')).toBeTruthy();
+    expect(screen.queryByText('199.00')).toBeNull();
+    expect(document.querySelector('[data-test="add-to-cart"]')).toBeNull();
   });
 
   it('passes the instrument hub path and selected variant into VariantSelector', () => {

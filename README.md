@@ -46,6 +46,7 @@ Bootstrap a local Shopify product mirror into JSON, HTML, and media files:
 
 ```
 yarn shopify:sync:doctor
+yarn shopify:sync:seed
 yarn shopify:sync:pull
 yarn shopify:sync:diff
 yarn shopify:sync:push
@@ -59,6 +60,7 @@ The sync CLI writes to `catalog/shopify` by default and creates one folder per p
 Current implementation:
 
 - `doctor` validates Node version, output directory access, and required Shopify Admin env vars.
+- `seed` builds missing local product entries from `lfs/library/products`, including website images and basic lifecycle-aware defaults for legacy versus active modules.
 - `pull` exports product core fields, description HTML, SEO, variants, metafields, and media manifests.
 - `diff` compares local catalog files against the latest Shopify export and exits nonzero when drift is detected.
 - `push` plans Shopify mutations from local files and only writes when `--apply` is provided.
@@ -69,6 +71,7 @@ Examples:
 
 ```
 yarn shopify:sync:doctor --offline
+yarn shopify:sync:seed --handle arch
 yarn shopify:sync:pull --handle chromagnon
 yarn shopify:sync:diff --handle chromagnon
 yarn shopify:sync:push --handle chromagnon
@@ -79,8 +82,14 @@ yarn shopify:sync:pull --query "status:active"
 Current push scope:
 
 - Product core fields, description HTML, SEO, options, variants, pricing, and product metafields.
+- Online Store publication sync for `ACTIVE` products. The CLI publishes active products and unpublishes non-active products when the app has Shopify `read_publications` and `write_publications` scopes.
 - Additive media sync for images, external videos, videos, and 3D models when a source URL or `localPath` is available.
 - Media deletions and remote alt-text edits are reported as warnings in v1 and are not applied automatically.
+
+Publication sync note:
+
+- The current app must be re-authorized with Shopify `read_publications` and `write_publications` scopes before `--apply` can manage Online Store visibility.
+- If the publication id is already known, set `SHOPIFY_ONLINE_STORE_PUBLICATION_ID` to bypass automatic publication lookup.
 
 ### Shopify Store Sync
 

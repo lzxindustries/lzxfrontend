@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160653847",
+  "handle": "navigator",
+  "title": "Navigator",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Hidden",
+    "Legacy"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner's Manual (PDF)User Reference Card (PDF)",
+  "createdAt": "2026-04-21T20:20:34Z",
+  "updatedAt": "2026-04-21T20:22:46Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423918103",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for exp..."
+  }
+}

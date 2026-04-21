@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160555543",
+  "handle": "fortress",
+  "title": "Fortress",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Legacy",
+    "Orion",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory. The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics. Features Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns. Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators. An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation. 4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR., 16 Stage Shift Register Delay Line with 8 selectable output taps. 32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets. 48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps. 9-bit RGB DACs with palette memory and 8 selectable color palettes.",
+  "createdAt": "2026-04-21T20:20:31Z",
+  "updatedAt": "2026-04-21T20:23:03Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423819799",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory..."
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675505274903",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositi...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:58Z",
+    "compareDigest": "6c8a1ee101d523efc25999aacd304fbd2ed0ed793182703010fae8ddd95c7a4a"
+  }
+]

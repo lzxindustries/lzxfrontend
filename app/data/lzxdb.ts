@@ -45,6 +45,8 @@ export interface LzxModule {
   subtitle?: string;
   shopifyId?: string;
   handle: string;
+  isActiveProduct?: boolean;
+  isHidden?: boolean;
 }
 
 export interface LzxArtist {
@@ -79,6 +81,10 @@ for (const m of modulesData) {
     subtitle: (m as Record<string, unknown>).subtitle as string | undefined,
     shopifyId: (m as Record<string, unknown>).id as string | undefined,
     handle: slugify(m.name),
+    isActiveProduct: (m as Record<string, unknown>).is_active_product as
+      | boolean
+      | undefined,
+    isHidden: (m as Record<string, unknown>).is_hidden as boolean | undefined,
   });
 }
 

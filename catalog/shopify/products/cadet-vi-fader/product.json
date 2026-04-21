@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160162327",
+  "handle": "cadet-vi-fader",
+  "title": "Cadet VI Fader",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.",
+  "createdAt": "2026-04-21T20:20:16Z",
+  "updatedAt": "2026-04-21T20:22:26Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423328279",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module."
+  }
+}

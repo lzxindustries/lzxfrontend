@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675502718999",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (a...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:39Z",
+    "compareDigest": "8862e8a805faaf32bd138f24f1a0434c154009051f8f737712bf49e1af1b6cba"
+  }
+]

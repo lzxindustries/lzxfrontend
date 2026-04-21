@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675500458007",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:19Z",
+    "compareDigest": "64d01a5e499dc13e1337f30f3613b17f534df3c42862d4f8113680bf0875a27b"
+  }
+]

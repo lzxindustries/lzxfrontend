@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675499376663",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:09Z",
+    "compareDigest": "6044e284fd3555a3e8858ed7209a476f03195d0a312bafbf65b3bc71c00abe40"
+  }
+]

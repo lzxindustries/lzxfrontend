@@ -147,12 +147,13 @@ function rewriteLegacyDocsLinks(html: string): string {
 
 export default function ModuleOverview() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {product, shop, slugEntry, hasManual, hasShopifyProduct} =
+  const {product, shop, slugEntry, hasManual, hasShopifyProduct, isLegacy} =
     data as unknown as ModuleHubData;
   const recommended = (data as any).recommended;
   const storeDomain = shop.primaryDomain.url;
   const fallbackArtworkPath = getModuleArtworkPath(slugEntry.canonical);
-  const shouldShowCommerce = hasShopifyProduct && !slugEntry.isHidden;
+  const shouldShowCommerce = hasShopifyProduct && !isLegacy;
+  const statusLabel = isLegacy ? 'Discontinued' : 'Unavailable';
 
   const media = useMemo(
     () => getGalleryMedia(product as Product, fallbackArtworkPath),
@@ -208,7 +209,7 @@ export default function ModuleOverview() {
               {product.title}
             </h1>
             {!shouldShowCommerce ? (
-              <div className="badge badge-warning badge-lg">Discontinued</div>
+              <div className="badge badge-warning badge-lg">{statusLabel}</div>
             ) : (
               <ProductForm
                 product={

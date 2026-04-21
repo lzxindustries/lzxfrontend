@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/45071202222103",
+    "displayName": "Cadet V Scaler - Default Title",
+    "title": "Default Title",
+    "sku": null,
+    "barcode": null,
+    "position": 1,
+    "price": "0.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-04-21T20:20:15Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

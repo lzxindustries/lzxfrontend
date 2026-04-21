@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160424471",
+  "handle": "diver",
+  "title": "Diver",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Legacy",
+    "Orion",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.",
+  "createdAt": "2026-04-21T20:20:26Z",
+  "updatedAt": "2026-04-21T20:22:39Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423655959",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator."
+  }
+}

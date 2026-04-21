@@ -10,6 +10,15 @@ vi.mock('@remix-run/react', async () => {
 
   return {
     ...actual,
+    useMatches: () => [
+      {
+        data: {
+          selectedLocale: {
+            pathPrefix: '/en-gb',
+          },
+        },
+      },
+    ],
     useLoaderData: () => ({
       entries: [
         {
@@ -55,13 +64,13 @@ describe('Systems page', () => {
 
     expect(
       screen.getByText('Double Vision System').closest('a')?.getAttribute('href'),
-    ).toBe('/systems/double-vision');
+    ).toBe('/en-gb/systems/double-vision');
     expect(
       screen.getByText('Double Vision 168').closest('a')?.getAttribute('href'),
-    ).toBe('/systems/double-vision-168');
+    ).toBe('/en-gb/systems/double-vision-168');
     expect(
       screen.getByText('Double Vision Expander').closest('a')?.getAttribute('href'),
-    ).toBe('/systems/double-vision-expander');
+    ).toBe('/en-gb/systems/double-vision-expander');
   });
 
   it('replaces the old starter-system card content', () => {

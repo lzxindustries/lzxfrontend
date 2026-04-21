@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import {mkdir, readFile, unlink, writeFile} from 'node:fs/promises';
+import {copyFile, readdir} from 'node:fs/promises';
 import {existsSync, readFileSync} from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -9,6 +10,7 @@ import readline from 'node:readline';
 
 const DEFAULT_API_VERSION = '2025-04';
 const DEFAULT_OUTPUT_DIR = 'catalog/shopify';
+const DEFAULT_SOURCE_DIR = 'lfs/library/products';
 const REQUIRED_ENV_VARS = [
   'PUBLIC_STORE_DOMAIN',
   'SHOPIFY_CLIENT_ID',
@@ -18,6 +20,7 @@ const HELP_TEXT = `Shopify catalog sync CLI
 
 Usage:
   node scripts/shopify-sync.mjs doctor [--offline] [--output-dir <dir>]
+  node scripts/shopify-sync.mjs seed [--output-dir <dir>] [--source-dir <dir>] [--handle <handle>]
   node scripts/shopify-sync.mjs pull [--output-dir <dir>] [--handle <handle>] [--query <search>] [--no-media-download]
   node scripts/shopify-sync.mjs diff [--output-dir <dir>] [--handle <handle>] [--query <search>]
   node scripts/shopify-sync.mjs push [--output-dir <dir>] [--handle <handle>] [--query <search>] [--apply]
@@ -25,6 +28,7 @@ Usage:
 
 Commands:
   doctor    Validate local sync prerequisites and environment configuration.
+  seed      Build missing local catalog entries from LFS product metadata and images.
   pull      Export Shopify product data into local JSON, HTML, and media files.
   diff      Compare local catalog files against the latest Shopify product data.
   push      Plan or apply local catalog changes back to Shopify.
@@ -32,6 +36,7 @@ Commands:
 
 Options:
   --output-dir <dir>      Output root. Defaults to catalog/shopify.
+  --source-dir <dir>      Local LFS product source root. Defaults to lfs/library/products.
   --handle <handle>       Restrict export to one product handle. Repeatable.
   --query <search>        Additional Shopify product search filter.
   --apply                 Persist mutations instead of running in dry-run mode.
@@ -122,6 +127,77 @@ const STAGED_UPLOADS_CREATE_MUTATION = `
   }
 `;
 
+const PUBLICATIONS_QUERY = `
+  query Publications($after: String) {
+    publications(first: 50, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          id
+          name
+          autoPublish
+          supportsFuturePublishing
+        }
+      }
+    }
+  }
+`;
+
+const PUBLISHABLE_PUBLISH_MUTATION = `
+  mutation PublishablePublish($id: ID!, $publicationId: ID!) {
+    publishablePublish(id: $id, input: [{publicationId: $publicationId}]) {
+      publishable {
+        publishedOnPublication(publicationId: $publicationId)
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PUBLISHABLE_UNPUBLISH_MUTATION = `
+  mutation PublishableUnpublish($id: ID!, $publicationId: ID!) {
+    publishableUnpublish(id: $id, input: [{publicationId: $publicationId}]) {
+      publishable {
+        publishedOnPublication(publicationId: $publicationId)
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_MEDIA_STATUS_QUERY = `
+  query ProductMediaStatuses($query: String!, $after: String) {
+    products(first: 25, query: $query, after: $after) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      edges {
+        node {
+          handle
+          updatedAt
+          media(first: 100) {
+            edges {
+              node {
+                status
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
 main().catch((error) => {
   console.error(error instanceof Error ? error.message : String(error));
   process.exit(1);
@@ -141,6 +217,11 @@ async function main() {
   if (cli.command === 'doctor') {
     const ok = await runDoctor(config, cli.flags.offline === true);
     process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'seed') {
+    await runSeed(config, cli);
     return;
   }
 
@@ -220,14 +301,20 @@ function buildConfig(cli) {
     process.cwd(),
     cli.values['output-dir'] ?? DEFAULT_OUTPUT_DIR,
   );
+  const sourceDir = path.resolve(
+    process.cwd(),
+    cli.values['source-dir'] ?? DEFAULT_SOURCE_DIR,
+  );
 
   return {
     apiVersion: process.env.PUBLIC_STOREFRONT_API_VERSION || DEFAULT_API_VERSION,
     outputDir,
+    sourceDir,
     downloadMedia: cli.flags['no-media-download'] !== true,
     storeDomain: process.env.PUBLIC_STORE_DOMAIN || '',
     clientId: process.env.SHOPIFY_CLIENT_ID || '',
     clientSecret: process.env.SHOPIFY_CLIENT_SECRET || '',
+    onlineStorePublicationId: process.env.SHOPIFY_ONLINE_STORE_PUBLICATION_ID || '',
   };
 }
 
@@ -282,6 +369,269 @@ async function runPull(config, cli) {
   console.log(`Products exported: ${summary.productCount}`);
   console.log(`Image assets downloaded: ${summary.downloadedImages}`);
   console.log(`Catalog root: ${config.outputDir}`);
+}
+
+async function runSeed(config, cli) {
+  const requestedHandles = cli.values.handle ?? [];
+  const summary = await seedCatalogFromLfs(config, requestedHandles);
+
+  console.log(`Seed source root: ${config.sourceDir}`);
+  console.log(`Catalog root: ${config.outputDir}`);
+  console.log(`Handles requested: ${requestedHandles.length || 'all missing modules'}`);
+  console.log('');
+  console.log(`Products seeded: ${summary.seededCount}`);
+  console.log(`Existing products skipped: ${summary.skippedExistingCount}`);
+  console.log(`Images copied: ${summary.copiedImages}`);
+
+  if (summary.missingRequestedHandles.length > 0) {
+    console.log(
+      `Requested handles without a matching LFS source: ${summary.missingRequestedHandles.join(', ')}`,
+    );
+  }
+}
+
+async function seedCatalogFromLfs(config, requestedHandles) {
+  const candidates = await loadLfsSeedCandidates(config.sourceDir);
+  const requestedSet = new Set(requestedHandles);
+  const productsRoot = path.join(config.outputDir, 'products');
+  await mkdir(productsRoot, {recursive: true});
+
+  const existingHandles = new Set(await listSubdirectoryNames(productsRoot));
+  const matchedRequestedHandles = new Set();
+  const missingRequestedHandles = [];
+  let seededCount = 0;
+  let skippedExistingCount = 0;
+  let copiedImages = 0;
+
+  for (const candidate of candidates) {
+    if (requestedSet.size > 0 && !requestedSet.has(candidate.handle)) {
+      continue;
+    }
+
+    matchedRequestedHandles.add(candidate.handle);
+
+    if (existingHandles.has(candidate.handle)) {
+      skippedExistingCount++;
+      continue;
+    }
+
+    copiedImages += await writeSeedCatalogEntry(config.outputDir, candidate);
+    seededCount++;
+  }
+
+  for (const handle of requestedSet) {
+    if (!matchedRequestedHandles.has(handle)) {
+      missingRequestedHandles.push(handle);
+    }
+  }
+
+  await rebuildCatalogSummary(config.outputDir, config.apiVersion);
+
+  return {
+    seededCount,
+    skippedExistingCount,
+    copiedImages,
+    missingRequestedHandles: missingRequestedHandles.sort(),
+  };
+}
+
+async function loadLfsSeedCandidates(sourceDir) {
+  const modulesRoot = path.join(sourceDir, 'eurorack-modules');
+  if (!existsSync(modulesRoot)) {
+    throw new Error(`LFS source directory not found: ${modulesRoot}`);
+  }
+
+  const files = await collectFilesRecursive(modulesRoot, '.json');
+  const allowedHandles = loadAllowedModuleSeedHandles(process.cwd());
+  const candidates = [];
+  const seenHandles = new Set();
+
+  for (const filePath of files.sort()) {
+    const raw = JSON.parse(readFileSync(filePath, 'utf8'));
+    if (raw?.product_type !== 'eurorack_module') continue;
+    if ((raw.company ?? 'lzx') !== 'lzx') continue;
+
+    const handle = canonicalizeSeedHandle(raw);
+    if (!handle || seenHandles.has(handle)) continue;
+  if (!allowedHandles.has(handle)) continue;
+
+    const candidate = buildSeedCandidate(filePath, raw, handle);
+    if (!candidate) continue;
+
+    candidates.push(candidate);
+    seenHandles.add(handle);
+  }
+
+  return candidates.sort((left, right) => left.handle.localeCompare(right.handle));
+}
+
+function buildSeedCandidate(sourcePath, raw, handle) {
+  const title = stringValue(raw.name) ?? startCase(handle);
+  const description = stringValue(raw.description) ?? '';
+  const subtitle = stringValue(raw.subtitle);
+  const isActive = raw.status?.is_active === true;
+  const price = stringValue(raw.price);
+  const options = isActive && price
+    ? [
+        {
+          id: null,
+          name: 'Title',
+          position: 1,
+          values: ['Default Title'],
+        },
+      ]
+    : [];
+  const variants = isActive && price
+    ? [
+        {
+          id: null,
+          displayName: `${title} - Default Title`,
+          title: 'Default Title',
+          sku: stringValue(raw.sku),
+          barcode: null,
+          position: 1,
+          price,
+          compareAtPrice: null,
+          taxable: false,
+          inventoryPolicy: 'CONTINUE',
+          updatedAt: null,
+          selectedOptions: [{name: 'Title', value: 'Default Title'}],
+        },
+      ]
+    : [];
+  const specsHtml = buildSpecsHtml(raw.specs);
+  const metafields = [
+    subtitle
+      ? {
+          id: null,
+          namespace: 'descriptors',
+          key: 'subtitle',
+          type: 'single_line_text_field',
+          value: subtitle,
+          description: null,
+          updatedAt: null,
+          compareDigest: null,
+        }
+      : null,
+    specsHtml
+      ? {
+          id: null,
+          namespace: 'custom',
+          key: 'specs',
+          type: 'multi_line_text_field',
+          value: specsHtml,
+          description: null,
+          updatedAt: null,
+          compareDigest: null,
+        }
+      : null,
+  ].filter(Boolean);
+
+  return {
+    handle,
+    title,
+    descriptionHtml: buildDescriptionHtml(description),
+    seo: {
+      title: null,
+      description: truncateText(description, 320),
+    },
+    product: {
+      id: null,
+      handle,
+      title,
+      vendor: normalizeVendor(raw.company),
+      status: isActive ? 'ACTIVE' : 'DRAFT',
+      productType: normalizeSeedProductType(raw.product_type),
+      tags: buildSeedTags(raw),
+      templateSuffix: '',
+      onlineStoreUrl: null,
+      description,
+      createdAt: null,
+      updatedAt: null,
+      options,
+      seo: {
+        title: null,
+        description: truncateText(description, 320),
+      },
+    },
+    variants,
+    metafields,
+    mediaSources: collectSeedMediaSources(sourcePath, raw),
+    sourcePath,
+    previousShopifyProductId: stringValue(raw.shopify_id),
+  };
+}
+
+async function writeSeedCatalogEntry(outputDir, candidate) {
+  const productDir = path.join(outputDir, 'products', candidate.handle);
+  const mediaDir = path.join(productDir, 'media');
+  await mkdir(mediaDir, {recursive: true});
+
+  await writeJson(path.join(productDir, 'product.json'), candidate.product);
+  await writeFile(path.join(productDir, 'description.html'), candidate.descriptionHtml, 'utf8');
+  await writeJson(path.join(productDir, 'seo.json'), candidate.seo);
+  await writeJson(path.join(productDir, 'variants.json'), candidate.variants);
+  await writeJson(path.join(productDir, 'metafields.json'), candidate.metafields);
+
+  const mediaManifest = [];
+  let copiedImages = 0;
+
+  for (const [index, sourcePath] of candidate.mediaSources.entries()) {
+    const extension = path.extname(sourcePath).toLowerCase();
+    const stem = `${String(index + 1).padStart(2, '0')}-${slugify(path.basename(sourcePath, extension))}`;
+    const outputPath = path.join(mediaDir, `${stem}${extension}`);
+    await copyFile(sourcePath, outputPath);
+    copiedImages++;
+    mediaManifest.push({
+      id: null,
+      type: 'MediaImage',
+      mediaContentType: 'IMAGE',
+      status: null,
+      alt: index === 0 ? candidate.title : `${candidate.title} image ${index + 1}`,
+      embeddedUrl: null,
+      host: null,
+      originUrl: null,
+      image: null,
+      sources: [],
+      localPath: path.relative(process.cwd(), outputPath),
+    });
+  }
+
+  await writeJson(path.join(productDir, 'media.json'), mediaManifest);
+  await writeJson(path.join(productDir, 'sync-state.json'), {
+    handle: candidate.handle,
+    productId: null,
+    previousShopifyProductId: candidate.previousShopifyProductId,
+    source: 'lfs-seed',
+    sourcePath: candidate.sourcePath,
+    seededAt: new Date().toISOString(),
+  });
+
+  return copiedImages;
+}
+
+async function rebuildCatalogSummary(outputDir, apiVersion) {
+  const productsRoot = path.join(outputDir, 'products');
+  const handles = await listSubdirectoryNames(productsRoot);
+  const products = [];
+
+  for (const handle of handles.sort()) {
+    const product = await readJson(path.join(productsRoot, handle, 'product.json'));
+    products.push({
+      id: product.id ?? null,
+      handle: product.handle,
+      title: product.title,
+      updatedAt: product.updatedAt ?? null,
+    });
+  }
+
+  await writeJson(path.join(outputDir, 'catalog.json'), {
+    pulledAt: new Date().toISOString(),
+    apiVersion,
+    query: null,
+    productCount: products.length,
+    products,
+  });
 }
 
 async function runDiff(config, cli) {
@@ -967,6 +1317,10 @@ async function loadLocalCatalog(outputDir, requestedHandles) {
   const catalogPath = path.join(outputDir, 'catalog.json');
   let handles = [...requestedHandles];
 
+  if (handles.length === 0) {
+    handles = await listSubdirectoryNames(path.join(outputDir, 'products'));
+  }
+
   if (handles.length === 0 && existsSync(catalogPath)) {
     const summary = await readJson(catalogPath);
     handles = Array.isArray(summary.products)
@@ -975,6 +1329,8 @@ async function loadLocalCatalog(outputDir, requestedHandles) {
           .filter((handle) => typeof handle === 'string')
       : [];
   }
+
+  handles = [...new Set(handles)].sort();
 
   const entries = new Map();
   for (const handle of handles) {
@@ -1101,6 +1457,7 @@ function buildPushPlan(localCatalog, remoteCatalog) {
     const metafieldsChanged =
       stableStringify(buildPushComparableMetafieldsFromLocal(localEntry)) !==
       stableStringify(buildPushComparableMetafieldsFromRemote(remoteEntry));
+    const publicationPlan = buildPublicationPlan(localEntry, remoteEntry);
     const mediaPlan = buildMediaPushPlan(localEntry, remoteEntry);
     const identifier = buildProductIdentifier(localEntry, remoteEntry);
     const productId =
@@ -1117,6 +1474,10 @@ function buildPushPlan(localCatalog, remoteCatalog) {
       errors.push(`Cannot add media for ${handle} without a Shopify product id.`);
     }
 
+    if (publicationPlan.action && !productId && !productSliceChanged) {
+      errors.push(`Cannot ${publicationPlan.action} ${handle} without a Shopify product id.`);
+    }
+
     items.push({
       handle,
       identifier,
@@ -1125,6 +1486,7 @@ function buildPushPlan(localCatalog, remoteCatalog) {
       remoteEntry,
       productSliceChanged,
       metafieldsChanged,
+      publicationPlan,
       productInput: buildProductSetInput(localEntry),
       metafields: buildMetafieldsSetInputs(localEntry, productId),
       mediaPlan,
@@ -1135,6 +1497,7 @@ function buildPushPlan(localCatalog, remoteCatalog) {
     (item) =>
       item.productSliceChanged ||
       item.metafieldsChanged ||
+      item.publicationPlan.action ||
       item.mediaPlan.additions.length > 0,
   );
 
@@ -1143,6 +1506,7 @@ function buildPushPlan(localCatalog, remoteCatalog) {
       count +
       Number(item.productSliceChanged) +
       Number(item.metafieldsChanged) +
+      Number(Boolean(item.publicationPlan.action)) +
       item.mediaPlan.additions.length
     );
   }, 0);
@@ -1180,6 +1544,9 @@ function printPushPlan(plan, apply) {
     const actions = [];
     if (item.productSliceChanged) actions.push('product+variants');
     if (item.metafieldsChanged) actions.push(`metafields:${item.metafields.length}`);
+    if (item.publicationPlan.action) {
+      actions.push(`publication:${item.publicationPlan.action}`);
+    }
     if (item.mediaPlan.additions.length > 0) {
       actions.push(`media-add:${item.mediaPlan.additions.length}`);
     }
@@ -1201,11 +1568,19 @@ async function applyPushPlan(config, plan) {
   await client.getAccessToken();
 
   const changedHandles = [];
+  const mediaChangedHandles = [];
+  const needsPublicationSync = plan.items.some(
+    (item) => item.publicationPlan.action,
+  );
+  const onlineStorePublicationId = needsPublicationSync
+    ? await resolveOnlineStorePublicationId(client, config)
+    : null;
 
   for (const item of plan.items) {
     if (
       !item.productSliceChanged &&
       !item.metafieldsChanged &&
+      !item.publicationPlan.action &&
       item.mediaPlan.additions.length === 0
     ) {
       continue;
@@ -1226,9 +1601,26 @@ async function applyPushPlan(config, plan) {
     if (item.mediaPlan.additions.length > 0) {
       console.log(`Applying media updates for ${item.handle}...`);
       await applyProductMedia(client, productId, item.mediaPlan.additions);
+      mediaChangedHandles.push(item.handle);
+    }
+
+    if (item.publicationPlan.action) {
+      console.log(
+        `Applying publication ${item.publicationPlan.action} for ${item.handle}...`,
+      );
+      await applyProductPublication(
+        client,
+        productId,
+        onlineStorePublicationId,
+        item.publicationPlan.action,
+      );
     }
 
     changedHandles.push(item.handle);
+  }
+
+  if (mediaChangedHandles.length > 0) {
+    await waitForProductMediaSettled(client, mediaChangedHandles);
   }
 
   return changedHandles;
@@ -1291,6 +1683,39 @@ async function applyProductMedia(client, productId, additions) {
   const payload = data.productUpdate;
   if (payload.userErrors?.length > 0) {
     throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+  }
+}
+
+async function applyProductPublication(
+  client,
+  productId,
+  publicationId,
+  action,
+) {
+  if (!productId || !publicationId || !action) return;
+
+  const mutation =
+    action === 'publish'
+      ? PUBLISHABLE_PUBLISH_MUTATION
+      : PUBLISHABLE_UNPUBLISH_MUTATION;
+  const fieldName =
+    action === 'publish' ? 'publishablePublish' : 'publishableUnpublish';
+
+  try {
+    const data = await client.graphql(mutation, {id: productId, publicationId});
+    const payload = data[fieldName];
+
+    if (payload.userErrors?.length > 0) {
+      throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+    }
+  } catch (error) {
+    if (isMissingPublicationScopeError(error)) {
+      throw new Error(
+        'Publication sync requires Shopify `write_publications` access. Update the app scopes and re-authorize the app before rerunning --apply.',
+      );
+    }
+
+    throw error;
   }
 }
 
@@ -1366,6 +1791,150 @@ async function refreshLocalCatalog(config, handles) {
   await writeCatalog(refreshConfig, catalog, searchQuery);
 }
 
+async function waitForProductMediaSettled(client, handles) {
+  const uniqueHandles = [...new Set(handles)];
+  const maxAttempts = 10;
+  const pollIntervalMs = 3_000;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const states = await fetchProductMediaStates(client, uniqueHandles);
+    const pendingHandles = uniqueHandles.filter((handle) => {
+      const state = states.get(handle);
+      if (!state) return true;
+
+      return state.mediaStatuses.some(
+        (status) => status && status !== 'READY',
+      );
+    });
+
+    if (pendingHandles.length === 0) {
+      return;
+    }
+
+    if (attempt === maxAttempts) {
+      console.warn(
+        `Media still processing after ${maxAttempts} checks: ${pendingHandles.join(', ')}. Continuing with refresh.`,
+      );
+      return;
+    }
+
+    console.log(
+      `Waiting for Shopify media processing (${pendingHandles.length} handle(s) pending, check ${attempt}/${maxAttempts})...`,
+    );
+    await delay(pollIntervalMs);
+  }
+}
+
+async function fetchProductMediaStates(client, handles) {
+  const states = new Map();
+
+  for (const handleChunk of chunkArray(handles, 25)) {
+    const searchQuery = buildSearchQuery(handleChunk, null);
+    let cursor = null;
+    let hasNextPage = true;
+
+    while (hasNextPage) {
+      const data = await client.graphql(PRODUCT_MEDIA_STATUS_QUERY, {
+        query: searchQuery,
+        after: cursor,
+      });
+      const connection = data.products;
+
+      for (const edge of connection.edges ?? []) {
+        const product = edge.node;
+        states.set(product.handle, {
+          updatedAt: product.updatedAt ?? null,
+          mediaStatuses: (product.media?.edges ?? []).map(
+            (mediaEdge) => mediaEdge.node?.status ?? null,
+          ),
+        });
+      }
+
+      hasNextPage = connection.pageInfo?.hasNextPage === true;
+      cursor = connection.pageInfo?.endCursor ?? null;
+    }
+  }
+
+  return states;
+}
+
+async function resolveOnlineStorePublicationId(client, config) {
+  if (isShopifyGid(config.onlineStorePublicationId, 'Publication')) {
+    return config.onlineStorePublicationId;
+  }
+
+  try {
+    const publications = await fetchPublications(client);
+    const namedMatch = publications.find((publication) =>
+      /online store/i.test(publication.name ?? ''),
+    );
+
+    if (namedMatch) {
+      return namedMatch.id;
+    }
+
+    const futurePublishingMatches = publications.filter(
+      (publication) => publication.supportsFuturePublishing === true,
+    );
+    if (futurePublishingMatches.length === 1) {
+      return futurePublishingMatches[0].id;
+    }
+  } catch (error) {
+    if (isMissingPublicationScopeError(error)) {
+      throw new Error(
+        'Publication sync requires Shopify `read_publications` and `write_publications` access. Update the app scopes and re-authorize the app, or set SHOPIFY_ONLINE_STORE_PUBLICATION_ID explicitly.',
+      );
+    }
+
+    throw error;
+  }
+
+  throw new Error(
+    'Unable to determine the Online Store publication. Set SHOPIFY_ONLINE_STORE_PUBLICATION_ID and rerun the sync.',
+  );
+}
+
+async function fetchPublications(client) {
+  const publications = [];
+  let cursor = null;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const data = await client.graphql(PUBLICATIONS_QUERY, {after: cursor});
+    const connection = data.publications;
+
+    for (const edge of connection.edges ?? []) {
+      publications.push(edge.node);
+    }
+
+    hasNextPage = connection.pageInfo?.hasNextPage === true;
+    cursor = connection.pageInfo?.endCursor ?? null;
+  }
+
+  return publications;
+}
+
+function isMissingPublicationScopeError(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  return /read_publications|write_publications/.test(message);
+}
+
+function buildPublicationPlan(localEntry, remoteEntry) {
+  const desiredStatus = localEntry.raw.product?.status ?? null;
+  const isActive = desiredStatus === 'ACTIVE';
+  const isPublishedOnline = Boolean(remoteEntry?.product.onlineStoreUrl);
+
+  if (isActive && !isPublishedOnline) {
+    return {action: 'publish'};
+  }
+
+  if (!isActive && isPublishedOnline) {
+    return {action: 'unpublish'};
+  }
+
+  return {action: null};
+}
+
 function buildPushComparableProductSliceFromLocal(localEntry) {
   return {
     product: normalizePushOwnedProduct(localEntry.raw.product),
@@ -1413,6 +1982,7 @@ function buildProductSetInput(localEntry) {
   return {
     handle: product.handle,
     title: product.title,
+    status: product.status ?? null,
     descriptionHtml: localEntry.raw.descriptionHtml ?? '',
     vendor: product.vendor ?? null,
     productType: product.productType ?? null,
@@ -1557,6 +2127,7 @@ function normalizePushOwnedProduct(product) {
   return {
     handle: product.handle,
     title: product.title,
+    status: product.status ?? null,
     vendor: product.vendor ?? null,
     productType: product.productType ?? null,
     tags: Array.isArray(product.tags) ? [...product.tags].sort() : [],
@@ -1777,6 +2348,34 @@ async function readText(filePath) {
   return readFile(filePath, 'utf8');
 }
 
+async function collectFilesRecursive(directoryPath, extension) {
+  const entries = await readdir(directoryPath, {withFileTypes: true});
+  const files = [];
+
+  for (const entry of entries) {
+    const childPath = path.join(directoryPath, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await collectFilesRecursive(childPath, extension)));
+      continue;
+    }
+
+    if (entry.isFile() && childPath.endsWith(extension)) {
+      files.push(childPath);
+    }
+  }
+
+  return files;
+}
+
+async function listSubdirectoryNames(directoryPath) {
+  if (!existsSync(directoryPath)) {
+    return [];
+  }
+
+  const entries = await readdir(directoryPath, {withFileTypes: true});
+  return entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name);
+}
+
 function stableStringify(value) {
   return JSON.stringify(value);
 }
@@ -1875,6 +2474,197 @@ function slugify(value) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '') || 'asset';
+}
+
+function stringValue(value) {
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : null;
+}
+
+function canonicalizeSeedHandle(raw) {
+  const name = stringValue(raw.name);
+  const slug = stringValue(raw.slug);
+  if (name === 'P' || slug === 'p') return 'pot';
+  if (name === 'Sum/Dist' || slug === 'sum-dist') return 'sumdist';
+  return slug;
+}
+
+function loadAllowedModuleSeedHandles(repoRoot) {
+  const rawModules = JSON.parse(
+    readFileSync(path.join(repoRoot, 'db', 'lzxdb.Module.json'), 'utf8'),
+  );
+  const instrumentNames = new Set([
+    'Videomancer',
+    'Chromagnon',
+    'Vidiot',
+    'Double Vision System',
+    'Double Vision 168',
+    'Double Vision Expander',
+    'Andor 1',
+  ]);
+  const accessoryNames = new Set([
+    'Video Knob Pin',
+    'Andor 1 Media Player Deluxe Accessories Pack',
+    'DC Power Cable',
+    'Gift Card',
+    'RGB Patch Cable',
+    'RCA Sync Cable',
+    'Blank Panel',
+    'Patch Cable',
+    'RCA Video Cable',
+    'Video Knob',
+    'Power Entry 8HP',
+    '14 Pin Sync Cable',
+    '12V DC Adapter 3A',
+    'Power & Sync Entry 12HP',
+    'Alternate Frontpanel',
+    'TBC2 Mk2 Fan Upgrade Kit',
+    'TBC2 Mk1 Fan Upgrade Kit',
+    'Chromagnon Patch',
+    'Chromagnon Sticker',
+    '8GB MicroSD Card',
+    'Rack 84HP',
+    'Bus 168 DIY Kit',
+    'Vessel 84',
+    'Vessel 168',
+    'Vessel 208',
+    'Vessel EuroRack PSU Expander',
+  ]);
+  const excludedPatterns = ['videoheadroom.systems'];
+  const allowedHandles = new Set();
+
+  for (const entry of rawModules) {
+    const name = entry.name;
+    const externalUrl = String(entry.external_url ?? '').toLowerCase();
+
+    if (excludedPatterns.some((pattern) => externalUrl.includes(pattern))) continue;
+    if (accessoryNames.has(name)) continue;
+    if (name === 'Vidiot' && entry.is_hidden) continue;
+    if (instrumentNames.has(name)) continue;
+
+    const handle = canonicalizeSeedHandle({name, slug: slugify(name)});
+    if (handle) {
+      allowedHandles.add(handle);
+    }
+  }
+
+  return allowedHandles;
+}
+
+function normalizeVendor(company) {
+  return company === 'lzx' ? 'LZX Industries' : startCase(company ?? '');
+}
+
+function normalizeSeedProductType(productType) {
+  if (!productType) return null;
+  if (productType === 'eurorack_module') return 'EuroRack Module';
+  if (productType === 'instrument') return 'Instrument';
+  if (productType === 'accessory') return 'Accessory';
+  return startCase(productType.replace(/_/g, ' '));
+}
+
+function buildSeedTags(raw) {
+  const tags = [];
+  tags.push(raw.status?.is_active === true ? 'Active' : 'Legacy');
+
+  const category = stringValue(raw.category);
+  if (category) {
+    tags.push(startCase(category));
+  }
+
+  tags.push(raw.status?.is_hidden === true ? 'Hidden' : 'Visible');
+  return tags;
+}
+
+function buildDescriptionHtml(description) {
+  if (!description) return '';
+
+  return description
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join('\n');
+}
+
+function buildSpecsHtml(specs) {
+  if (!specs || typeof specs !== 'object') return null;
+
+  const entries = Object.entries(specs)
+    .filter(([, value]) => value != null && value !== '')
+    .map(
+      ([key, value]) =>
+        `<li><strong>${escapeHtml(startCase(key.replace(/_/g, ' ')))}:</strong> ${escapeHtml(String(value))}</li>`,
+    );
+
+  return entries.length > 0 ? `<ul>${entries.join('')}</ul>` : null;
+}
+
+function collectSeedMediaSources(sourcePath, raw) {
+  const productRoot = path.dirname(sourcePath);
+  const candidates = [];
+  const seenPaths = new Set();
+  const imageExtensions = new Set(['.png', '.jpg', '.jpeg', '.webp']);
+
+  const preferredFrontpanel = stringValue(raw.images?.frontpanel);
+  if (preferredFrontpanel) {
+    candidates.push(preferredFrontpanel);
+  }
+
+  const websiteFiles = Array.isArray(raw.file_manifest?.website)
+    ? raw.file_manifest.website.map((entry) => entry?.path).filter(Boolean)
+    : [];
+  candidates.push(...websiteFiles);
+
+  return candidates
+    .map((relativePath) => path.resolve(productRoot, relativePath))
+    .filter((absolutePath) => {
+      const extension = path.extname(absolutePath).toLowerCase();
+      if (!imageExtensions.has(extension)) return false;
+      if (!existsSync(absolutePath)) return false;
+      if (seenPaths.has(absolutePath)) return false;
+      seenPaths.add(absolutePath);
+      return true;
+    })
+    .sort(compareSeedMediaPaths);
+}
+
+function compareSeedMediaPaths(left, right) {
+  return scoreSeedMediaPath(left) - scoreSeedMediaPath(right) || left.localeCompare(right);
+}
+
+function scoreSeedMediaPath(filePath) {
+  const normalized = filePath.toLowerCase();
+  if (normalized.includes('front-panel-square')) return 0;
+  if (normalized.includes('frontpanel-square')) return 1;
+  if (normalized.includes('front-panel')) return 2;
+  if (normalized.includes('frontpanel')) return 3;
+  if (normalized.includes('front-photo')) return 4;
+  if (normalized.includes('angle-photo')) return 5;
+  return 10;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function truncateText(value, maxLength) {
+  const normalized = stringValue(value)?.replace(/\s+/g, ' ') ?? null;
+  if (!normalized) return null;
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 3).trimEnd()}...`;
+}
+
+function startCase(value) {
+  return String(value)
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\b\w/g, (match) => match.toUpperCase());
 }
 
 function delay(durationMs) {

@@ -1,9 +1,10 @@
-import {Link, useLoaderData} from '@remix-run/react';
+import {useLoaderData} from '@remix-run/react';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
 import {getSeoMeta, Image, type SeoConfig} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
+import {Link} from '~/components/Link';
 import {routeHeaders} from '~/data/cache';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 import {getModuleById} from '~/data/lzxdb';

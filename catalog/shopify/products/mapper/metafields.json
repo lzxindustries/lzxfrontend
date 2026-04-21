@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675501834263",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:32Z",
+    "compareDigest": "db426bc095812d6698cf98fbb5506aae1a075c0dc454dac46a01fbf2a3ecb2ff"
+  }
+]

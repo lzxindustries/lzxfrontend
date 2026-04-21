@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803159900183",
+  "handle": "bridge",
+  "title": "Bridge",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Expedition",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
+  "createdAt": "2026-04-21T20:20:05Z",
+  "updatedAt": "2026-04-21T20:22:15Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423033367",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing."
+  }
+}

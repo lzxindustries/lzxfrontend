@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160129559",
+  "handle": "cadet-v-scaler",
+  "title": "Cadet V Scaler",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.",
+  "createdAt": "2026-04-21T20:20:15Z",
+  "updatedAt": "2026-04-21T20:22:26Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423295511",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions."
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675503505431",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:45Z",
+    "compareDigest": "fe230117d77607828c50197251dd16b2400d0e6059bafc3e428fb079c17e1670"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675501113367",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and...",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:24Z",
+    "compareDigest": "6dd7c065330f813fc6245542ee8963474c62b4ff9d6329a7bbf771b1ccb51b68"
+  }
+]

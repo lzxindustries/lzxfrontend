@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/8803160031255",
+  "handle": "cadet-iii-video-input",
+  "title": "Cadet III Video Input",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Cadet",
+    "Legacy",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.",
+  "createdAt": "2026-04-21T20:20:11Z",
+  "updatedAt": "2026-04-21T20:22:11Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/11079423197207",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment."
+  }
+}

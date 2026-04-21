@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/48675500326935",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.",
+    "description": null,
+    "updatedAt": "2026-04-21T20:20:17Z",
+    "compareDigest": "067686ab9bd2bdc3e0fd99684f04e28aeb89ad61197f9d19c4bf942afe42d576"
+  }
+]
