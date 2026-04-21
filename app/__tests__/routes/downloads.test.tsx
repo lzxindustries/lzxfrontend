@@ -1,7 +1,36 @@
 import {describe, expect, it, vi} from 'vitest';
-import {render, screen} from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 import DownloadsPage from '~/routes/($lang).downloads';
+
+vi.mock('~/data/cache', () => ({
+  CACHE_SHORT: 'public, max-age=60',
+}));
+
+vi.mock('~/data/github-releases', () => ({
+  getLatestRelease: vi.fn(),
+}));
+
+vi.mock('~/data/product-slugs', () => ({
+  getAllInstrumentEntries: vi.fn(() => []),
+  getAllModuleSlugs: vi.fn(() => []),
+  getSlugEntry: vi.fn(() => null),
+}));
+
+vi.mock('~/data/lzxdb', () => ({
+  getModuleAssets: vi.fn(() => []),
+  getModuleById: vi.fn(() => null),
+}));
+
+vi.mock('~/data/support-manifest', () => ({
+  SUPPORT_MANIFEST: {},
+}));
+
+vi.mock('~/lib/seo.server', () => ({
+  seoPayload: {
+    page: vi.fn(() => ({})),
+  },
+}));
 
 const remixState = {
   loaderData: {
@@ -16,12 +45,32 @@ const remixState = {
         assets: [
           {
             id: 'asset-1',
-            name: 'Firmware',
-            description: 'Latest firmware image',
-            fileName: 'firmware.bin',
+            name: 'Firmware 1.0.6',
+            description: 'Firmware update (BIN)',
+            fileName: 'firmware-1.0.6.bin',
             fileType: 'BIN',
-            href: '/assets/firmware.bin',
-            version: '1.0.0',
+            href: '/assets/firmware-1.0.6.bin',
+            version: 'v1.0.6',
+            platform: null,
+          },
+          {
+            id: 'asset-2',
+            name: 'Firmware 1.0.7',
+            description: 'Firmware update (BIN)',
+            fileName: 'firmware-1.0.7.bin',
+            fileType: 'BIN',
+            href: '/assets/firmware-1.0.7.bin',
+            version: 'v1.0.7',
+            platform: null,
+          },
+          {
+            id: 'asset-3',
+            name: 'Manual',
+            description: 'User manual (PDF)',
+            fileName: 'manual.pdf',
+            fileType: 'PDF',
+            href: '/assets/manual.pdf',
+            version: null,
             platform: null,
           },
         ],
@@ -83,5 +132,17 @@ describe('Downloads route', () => {
       'href',
       'https://github.com/lzxindustries/videomancer-firmware/releases',
     );
+  });
+
+  it('collapses older firmware entries behind a toggle', () => {
+    renderWithRouter(<DownloadsPage />);
+
+    expect(screen.getByText('Firmware 1.0.7')).toBeTruthy();
+    expect(screen.queryByText('Firmware 1.0.6')).not.toBeInTheDocument();
+    expect(screen.getByText('Manual')).toBeTruthy();
+
+    fireEvent.click(screen.getByRole('button', {name: /show older firmware versions/i}));
+
+    expect(screen.getByText('Firmware 1.0.6')).toBeTruthy();
   });
 });

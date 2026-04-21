@@ -3,6 +3,7 @@ import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {Link, useLoaderData} from '@remix-run/react';
 import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
+import {DownloadAssetList} from '~/components/DownloadAssetList';
 import {CACHE_SHORT} from '~/data/cache';
 import {getLatestRelease} from '~/data/github-releases';
 import {
@@ -316,48 +317,8 @@ export default function DownloadsPage() {
               </div>
             </div>
 
-            <div className="mt-4 grid gap-2">
-              {entry.assets.map((asset) => (
-                <a
-                  key={asset.id}
-                  href={asset.href}
-                  download
-                  className="flex flex-col gap-2 rounded border border-base-300 p-3 transition hover:bg-base-200 sm:flex-row sm:items-center sm:justify-between"
-                >
-                  <div className="min-w-0">
-                    <div className="font-medium truncate">
-                      {asset.name}
-                      {asset.version && (
-                        <span className="ml-2 badge badge-sm badge-outline">
-                          {asset.version}
-                        </span>
-                      )}
-                    </div>
-                    {asset.description && (
-                      <div className="text-xs text-base-content/70 truncate">
-                        {asset.description}
-                      </div>
-                    )}
-                    <div className="text-xs text-base-content/50 truncate">
-                      {asset.fileName}
-                      {asset.platform && (
-                        <span className="ml-2">&middot; {asset.platform}</span>
-                      )}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {asset.fileType ? (
-                      <span className="badge badge-outline">
-                        {asset.fileType}
-                      </span>
-                    ) : null}
-                    <span className="btn btn-xs btn-ghost gap-1">
-                      <FaDownload aria-hidden="true" />
-                      Download
-                    </span>
-                  </div>
-                </a>
-              ))}
+            <div className="mt-4">
+              <DownloadAssetList assets={entry.assets} variant="directory" />
             </div>
 
             {entry.manuals.length > 0 ? (

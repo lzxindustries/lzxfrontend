@@ -281,6 +281,12 @@ describe('inferAssetVersion', () => {
     expect(inferAssetVersion('Firmware Update', 'firmware-1.0.6.bin')).toBe('v1.0.6');
   });
 
+  it('preserves firmware suffixes from filenames', () => {
+    expect(inferAssetVersion('Firmware Update', 'firmware-1.0.2-mk1.bin')).toBe(
+      'v1.0.2-mk1',
+    );
+  });
+
   it('extracts Rev3 from name', () => {
     expect(inferAssetVersion('Schematic Rev3', 'schematic-rev3.pdf')).toBe('Rev3');
   });
@@ -291,6 +297,12 @@ describe('inferAssetVersion', () => {
 
   it('extracts version with dot notation', () => {
     expect(inferAssetVersion('Firmware v2.1', 'firmware.bin')).toBe('v2.1');
+  });
+
+  it('preserves release candidate suffixes from names', () => {
+    expect(inferAssetVersion('Videomancer Firmware 1.0.0-rc.4', 'firmware.uf2')).toBe(
+      'v1.0.0-rc.4',
+    );
   });
 });
 

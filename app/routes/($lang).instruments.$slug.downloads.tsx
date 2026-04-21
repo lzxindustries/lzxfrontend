@@ -1,11 +1,11 @@
 import {Link, useLoaderData, useOutletContext} from '@remix-run/react';
 import type {MetaArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
-import {FaDownload} from 'react-icons/fa';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 import {getLatestRelease} from '~/data/github-releases';
 import type {ResolvedRelease} from '~/data/github-releases';
+import {DownloadAssetList} from '~/components/DownloadAssetList';
 import {ReleaseNotes} from '~/components/ReleaseNotes';
 import {CACHE_SHORT} from '~/data/cache';
 import {shouldShowGuidedUpdaterOnDownloads} from '~/data/support-manifest';
@@ -64,56 +64,7 @@ export default function InstrumentDownloads() {
           </a>
         </div>
       ) : null}
-      <div className="grid gap-4">
-        {assets.map((asset) => (
-          <div
-            key={asset.id}
-            className="flex flex-col gap-3 rounded-lg border border-base-300 p-4 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div className="min-w-0 flex-1">
-              <div className="font-medium">
-                {asset.name}
-                {asset.version && (
-                  <span className="ml-2 badge badge-sm badge-outline">
-                    {asset.version}
-                  </span>
-                )}
-              </div>
-              {asset.description && (
-                <div className="text-sm text-base-content/70">
-                  {asset.description}
-                </div>
-              )}
-              <div className="text-xs text-base-content/50">
-                {asset.fileName || 'File unavailable'}
-                {asset.platform && (
-                  <span className="ml-2">&middot; {asset.platform}</span>
-                )}
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              {asset.fileType ? (
-                <span className="badge badge-outline">{asset.fileType}</span>
-              ) : null}
-              {asset.fileName ? (
-                <a
-                  href={`/assets/${encodeURIComponent(asset.fileName)}`}
-                  download
-                  className="btn btn-sm btn-outline gap-2"
-                  aria-label={`Download ${asset.name}`}
-                >
-                  <FaDownload aria-hidden="true" />
-                  <span>Download</span>
-                </a>
-              ) : (
-                <span className="text-sm text-base-content/60">
-                  Unavailable
-                </span>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
+      <DownloadAssetList assets={assets} />
 
       {/* Release Notes */}
       {rel.body && (

@@ -332,12 +332,18 @@ for (const a of assetRecordsData) {
 }
 
 export function inferAssetVersion(name: string, fileName: string): string | null {
-  // Match patterns like "RevE", "Rev3", "v1.0.6", "1.0.0", "Rev.E"
-  const combined = `${name} ${fileName}`;
+  // Match patterns like "RevE", "Rev3", "v1.0.6", "1.0.2-mk1", "1.0.0-rc.4", "Rev.E"
+  const normalizedFileName = fileName.replace(/\.[^.]+$/, '');
+  const combined = `${name} ${normalizedFileName}`;
   const revMatch = combined.match(/\b(Rev\.?\s?[A-Z0-9]+)/i);
   if (revMatch) return revMatch[1];
-  const vMatch = combined.match(/\bv?(\d+\.\d+(?:\.\d+)?)\b/);
-  if (vMatch) return `v${vMatch[1]}`;
+  const vMatch = combined.match(
+    /\bv?(\d+\.\d+(?:\.\d+)?)(?:[-._]?([a-z]+(?:[-._]?\w+)*))?\b/i,
+  );
+  if (vMatch) {
+    const suffix = vMatch[2] ? `-${vMatch[2]}` : '';
+    return `v${vMatch[1]}${suffix}`;
+  }
   return null;
 }
 
