@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7171731587095",
+  "handle": "chromagnon-patch",
+  "title": "Chromagnon Patch",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "",
+  "createdAt": "2024-05-15T16:10:46Z",
+  "updatedAt": "2026-04-17T00:53:58Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9201990991895",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

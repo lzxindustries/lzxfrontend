@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/43474696011799",
+    "displayName": "Videomancer - Default Title",
+    "title": "Default Title",
+    "sku": "930003",
+    "barcode": "615678042087",
+    "position": 1,
+    "price": "999.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-04-21T16:18:00Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

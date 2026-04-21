@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/7171710189591",
+  "handle": "vessel-168",
+  "title": "Vessel 168",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Modular Case",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/vessel-168",
+  "description": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories",
+  "createdAt": "2024-05-15T15:54:52Z",
+  "updatedAt": "2026-04-18T08:01:48Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9201964548119",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

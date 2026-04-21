@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41429863628823",
+    "displayName": "Bus 168 DIY Kit - Default Title",
+    "title": "Default Title",
+    "sku": "940141",
+    "barcode": "",
+    "position": 2,
+    "price": "399.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-04-04T21:35:00Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

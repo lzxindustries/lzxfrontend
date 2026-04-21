@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6876230025239",
+  "handle": "angles",
+  "title": "Angles",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/angles",
+  "description": "Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo.",
+  "createdAt": "2023-03-03T22:12:01Z",
+  "updatedAt": "2026-04-21T09:02:40Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8841420800023",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

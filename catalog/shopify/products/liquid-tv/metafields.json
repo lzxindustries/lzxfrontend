@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/36725513519127",
+    "namespace": "shopify",
+    "key": "color-pattern",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/95417171991\"]",
+    "description": null,
+    "updatedAt": "2024-09-09T21:53:03Z",
+    "compareDigest": "ee74d90c1c76caef53a333de774effc0ed4599757e24753ae2fb8c8452d7478a"
+  }
+]

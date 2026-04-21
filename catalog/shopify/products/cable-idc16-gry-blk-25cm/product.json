@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7477334835223",
+  "handle": "cable-idc16-gry-blk-25cm",
+  "title": "CABLE-IDC16-GRY-BLK-25CM",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/cable-idc16-gry-blk-25cm",
+  "description": "",
+  "createdAt": "2025-02-05T20:00:43Z",
+  "updatedAt": "2026-04-17T00:54:01Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9565007544343",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

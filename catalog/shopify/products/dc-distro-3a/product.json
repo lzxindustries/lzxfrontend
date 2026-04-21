@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6778221133847",
+  "handle": "dc-distro-3a",
+  "title": "DC Distro 3A",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Accessories",
+    "Active",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/dc-distro-3a",
+  "description": "The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series modules without having to use a EuroRack power supply. This module distributes power from an included 12V power adapter to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, and Chromagnon. DC Distro supplies up to 3A @ 12V. Three 2.1mm barrel distribution cables are included (one of each length we carry). Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesNumber of output connectors: 9 Included power supply rated for 100-240V input range.",
+  "createdAt": "2022-07-15T16:06:36Z",
+  "updatedAt": "2026-04-17T00:53:53Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8715522441239",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

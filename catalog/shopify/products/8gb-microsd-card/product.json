@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7214199439383",
+  "handle": "8gb-microsd-card",
+  "title": "8GB MicroSD Card",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/8gb-microsd-card",
+  "description": "",
+  "createdAt": "2024-06-03T22:02:13Z",
+  "updatedAt": "2026-04-17T00:53:59Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9251891806231",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

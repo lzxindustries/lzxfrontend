@@ -1,0 +1,34 @@
+{
+  "id": "gid://shopify/Product/7540996833303",
+  "handle": "mlt",
+  "title": "MLT",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/mlt",
+  "description": "MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs.MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
+  "createdAt": "2025-03-13T19:37:44Z",
+  "updatedAt": "2026-04-21T09:02:43Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9660055388183",
+      "name": "Assembly",
+      "position": 1,
+      "values": [
+        "Fully Assembled",
+        "Full DIY Kit",
+        "Partial DIY Kit"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

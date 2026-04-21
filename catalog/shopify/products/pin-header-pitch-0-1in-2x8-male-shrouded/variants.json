@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41969980473367",
+    "displayName": "Pin Header Pitch 0.1in 2X8 Male Shrouded - Default Title",
+    "title": "Default Title",
+    "sku": "240001",
+    "barcode": "",
+    "position": 1,
+    "price": "0.50",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-11T17:47:37Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

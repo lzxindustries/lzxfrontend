@@ -1,0 +1,236 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/20275341197335",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/mempal2.png?v=1656949262",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/01-memory-palace.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21490542772247",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/MEMORYPALACEfront1200.jpg?v=1656949262",
+      "altText": "",
+      "width": 1200,
+      "height": 1046
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/02-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731273239",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0000.mov.00_14_59_09.Still001.jpg?v=1656949262",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/03-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731306007",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0000_1.mov.00_16_35_09.Still002.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/04-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731338775",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZXD0036_MP_FW19_IGTVs.00_09_34_16.Still009.jpg?v=1656949262",
+      "altText": "",
+      "width": 1080,
+      "height": 1920
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/05-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731371543",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZXD0038_MP_V19.00_08_27_05.Still003.jpg?v=1656949262",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/06-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731404311",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/IMBP__ProjectName_YT.00_03_49_15.Still003.jpg?v=1656949262",
+      "altText": "",
+      "width": 1080,
+      "height": 1920
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/07-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731437079",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0001_1.mov.00_01_40_10.Still001.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/08-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731469847",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_01_12_21.Still001.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/09-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731502615",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_13_03_02.Still003.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/10-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731535383",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_14_07_19.Still004.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/11-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731568151",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0004_1.mov.00_14_14_05.Still001.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/12-memory-palace.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/5828731600919",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0005_1.mov.00_04_23_00.Still001.jpg?v=1656949262",
+      "altText": "",
+      "width": 1440,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/memory-palace/media/13-memory-palace.jpg"
+  }
+]

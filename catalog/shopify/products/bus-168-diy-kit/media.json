@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/24374819553303",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/bus208_photo_top.png?v=1721933826",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bus-168-diy-kit/media/01-bus-168-diy-kit.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/24374820077591",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/bus208_photo_detail.png?v=1721933841",
+      "altText": "",
+      "width": 1024,
+      "height": 1025
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bus-168-diy-kit/media/02-bus-168-diy-kit.png"
+  }
+]

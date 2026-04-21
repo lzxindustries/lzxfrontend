@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1571349659671",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/5891.png?v=1544214813",
+      "altText": "",
+      "width": 334,
+      "height": 322
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/orion-series-vinyl-sticker/media/01-orion-series-vinyl-sticker.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/1571350085655",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_43.png?v=1544214813",
+      "altText": "",
+      "width": 1000,
+      "height": 1000
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/orion-series-vinyl-sticker/media/02-orion-series-vinyl-sticker.png"
+  }
+]

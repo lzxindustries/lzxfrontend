@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/27124040368151",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/VIDEOMANCER-STICKER-REVA.png?v=1760388515",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/videomancer-vinyl-sticker/media/01-videomancer-vinyl-sticker.png"
+  }
+]

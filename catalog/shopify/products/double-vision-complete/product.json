@@ -1,0 +1,31 @@
+{
+  "id": "gid://shopify/Product/7415503781911",
+  "handle": "double-vision-complete",
+  "title": "Double Vision 168",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/double-vision-complete",
+  "description": "Are you a complete maniac who is desperate for THE MOST visual stimulation?! Double Vision 168 is a 17-module, complete video synthesis bundle built from Double Vision 84 and its Expander. This 6U modular system is capable of analog SD/HD video generation and effects, with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Process video using the finest analog tools. Mounting rack, power supply, and all cables are included, so you can begin synthesizing a new reality immediately. 17 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (6) RGB Patch Cable(5) RCA Sync Cable(16) DC Power Cable(20) Patch Cable(3) RCA Video Cable(1) Video Knob Pin",
+  "createdAt": "2024-11-20T20:01:48Z",
+  "updatedAt": "2026-04-17T00:54:00Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9493507899415",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

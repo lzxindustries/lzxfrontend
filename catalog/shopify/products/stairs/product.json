@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6766671396887",
+  "handle": "stairs",
+  "title": "Stairs",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/stairs",
+  "description": "Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal.",
+  "createdAt": "2022-06-22T16:48:06Z",
+  "updatedAt": "2026-04-21T09:02:31Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8700836708375",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

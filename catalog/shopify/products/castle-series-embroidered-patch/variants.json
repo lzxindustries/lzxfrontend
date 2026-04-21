@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16578157576256",
+    "displayName": "Castle Series Embroidered Patch - Default",
+    "title": "Default",
+    "sku": "970004",
+    "barcode": "57576256",
+    "position": 1,
+    "price": "5.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-11-16T08:56:28Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default"
+      }
+    ]
+  }
+]

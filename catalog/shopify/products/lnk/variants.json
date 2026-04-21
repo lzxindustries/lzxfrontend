@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/42110742462487",
+    "displayName": "LNK - Fully Assembled",
+    "title": "Fully Assembled",
+    "sku": "950072",
+    "barcode": "659859479378",
+    "position": 1,
+    "price": "69.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-25T18:53:14Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Fully Assembled"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42110742495255",
+    "displayName": "LNK - Full DIY Kit",
+    "title": "Full DIY Kit",
+    "sku": "940905",
+    "barcode": "",
+    "position": 2,
+    "price": "35.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-07T04:51:26Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Full DIY Kit"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42110742528023",
+    "displayName": "LNK - Partial DIY Kit",
+    "title": "Partial DIY Kit",
+    "sku": "940404",
+    "barcode": "",
+    "position": 3,
+    "price": "23.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-11-05T05:43:51Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Partial DIY Kit"
+      }
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "id": "gid://shopify/Product/8220892233751",
+  "handle": "videomancer-tee",
+  "title": "Videomancer Tee",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Shirt",
+  "tags": [
+    "Active",
+    "Merch",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/videomancer-tee",
+  "description": "Your fellow video freaks will love seeing you in this mystical Videomancer design. Two color print on Hanes Beefy Tee in Black or Purple. All shirts will ship in mid-November 2025.",
+  "createdAt": "2025-10-26T23:49:24Z",
+  "updatedAt": "2026-04-17T17:10:07Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/10423067705367",
+      "name": "Color",
+      "position": 1,
+      "values": [
+        "Black",
+        "Purple"
+      ]
+    },
+    {
+      "id": "gid://shopify/ProductOption/10423067738135",
+      "name": "Size",
+      "position": 2,
+      "values": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

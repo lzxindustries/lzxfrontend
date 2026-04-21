@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1571360735255",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_47_f8c44e31-03d9-4e38-9c5a-014405bbee0d.png?v=1544214819",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/castle-series-embroidered-patch/media/01-castle-series-embroidered-patch.png"
+  }
+]

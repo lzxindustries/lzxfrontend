@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6782469046295",
+  "handle": "contour",
+  "title": "Contour",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/contour",
+  "description": "Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module's filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches.",
+  "createdAt": "2022-07-25T21:31:56Z",
+  "updatedAt": "2026-04-21T09:02:39Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8721058430999",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

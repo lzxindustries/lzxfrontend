@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41161405431831",
+    "displayName": "TBC2 Expander - Mk2 (Gen3 4HP)",
+    "title": "Mk2 (Gen3 4HP)",
+    "sku": "950047",
+    "barcode": "659359489440",
+    "position": 1,
+    "price": "79.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-09-23T13:37:53Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Mk2 (Gen3 4HP)"
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/23795639812119",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/TBC2EX-FPN-REVB_square.png?v=1713370612",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/vga-expander/media/01-vga-expander.png"
+  }
+]

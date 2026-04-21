@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/1702758350912",
+  "handle": "expedition-series-embroidered-patch",
+  "title": "Expedition Series Embroidered Patch",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "Patch",
+  "tags": [
+    "Merch"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.",
+  "createdAt": "2018-12-06T19:29:21Z",
+  "updatedAt": "2026-04-17T00:53:48Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2334832132160",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22913902346263",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/12v-dc-wall-wart-adapter-set.png?v=1684465474",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/12v-dc-adapter-3a/media/01-12v-dc-adapter-3a.png"
+  }
+]

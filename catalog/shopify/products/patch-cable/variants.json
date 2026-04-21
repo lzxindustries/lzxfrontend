@@ -1,0 +1,40 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40570738868247",
+    "displayName": "Patch Cable - Red 15cm",
+    "title": "Red 15cm",
+    "sku": "960011",
+    "barcode": "659859407630",
+    "position": 1,
+    "price": "3.00",
+    "compareAtPrice": "3.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-01T00:57:07Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Red 15cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40571328331799",
+    "displayName": "Patch Cable - Orange 30cm",
+    "title": "Orange 30cm",
+    "sku": "960012",
+    "barcode": "659859344980",
+    "position": 2,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-06-01T02:28:42Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Orange 30cm"
+      }
+    ]
+  }
+]

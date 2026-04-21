@@ -1,0 +1,268 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40569908428823",
+    "displayName": "Blank Panel - 2HP",
+    "title": "2HP",
+    "sku": "900004",
+    "barcode": "659859419688",
+    "position": 1,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-02-25T00:33:51Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "2HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908461591",
+    "displayName": "Blank Panel - 3HP",
+    "title": "3HP",
+    "sku": "900005",
+    "barcode": "659859329635",
+    "position": 2,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2024-04-17T21:23:01Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "3HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908494359",
+    "displayName": "Blank Panel - 4HP",
+    "title": "4HP",
+    "sku": "900006",
+    "barcode": "659859036342",
+    "position": 3,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-15T23:52:51Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "4HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908527127",
+    "displayName": "Blank Panel - 6HP",
+    "title": "6HP",
+    "sku": "900007",
+    "barcode": "659859301358",
+    "position": 4,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-11T16:22:28Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "6HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908559895",
+    "displayName": "Blank Panel - 8HP",
+    "title": "8HP",
+    "sku": "900008",
+    "barcode": "659859260631",
+    "position": 5,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-11T16:22:29Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "8HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908592663",
+    "displayName": "Blank Panel - 10HP",
+    "title": "10HP",
+    "sku": "900009",
+    "barcode": "659859347332",
+    "position": 6,
+    "price": "5.00",
+    "compareAtPrice": "5.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-06-28T19:02:30Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "10HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908625431",
+    "displayName": "Blank Panel - 12HP",
+    "title": "12HP",
+    "sku": "900010",
+    "barcode": "659859223827",
+    "position": 7,
+    "price": "6.00",
+    "compareAtPrice": "6.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-10-02T23:02:20Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "12HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908658199",
+    "displayName": "Blank Panel - 14HP",
+    "title": "14HP",
+    "sku": "900011",
+    "barcode": "659859142067",
+    "position": 8,
+    "price": "7.00",
+    "compareAtPrice": "7.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:24:58Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "14HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908690967",
+    "displayName": "Blank Panel - 16HP",
+    "title": "16HP",
+    "sku": "900012",
+    "barcode": "659859437828",
+    "position": 9,
+    "price": "8.00",
+    "compareAtPrice": "8.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:25:16Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "16HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908723735",
+    "displayName": "Blank Panel - 18HP",
+    "title": "18HP",
+    "sku": "900013",
+    "barcode": "659859068190",
+    "position": 10,
+    "price": "9.00",
+    "compareAtPrice": "9.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:25:46Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "18HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908756503",
+    "displayName": "Blank Panel - 20HP",
+    "title": "20HP",
+    "sku": "900014",
+    "barcode": "659859474915",
+    "position": 11,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:26:01Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "20HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908789271",
+    "displayName": "Blank Panel - 22HP",
+    "title": "22HP",
+    "sku": "900015",
+    "barcode": "659859011912",
+    "position": 12,
+    "price": "11.00",
+    "compareAtPrice": "11.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:26:28Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "22HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908822039",
+    "displayName": "Blank Panel - 24HP",
+    "title": "24HP",
+    "sku": "900016",
+    "barcode": "659859107127",
+    "position": 13,
+    "price": "12.00",
+    "compareAtPrice": "12.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:26:50Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "24HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40569908854807",
+    "displayName": "Blank Panel - 26HP",
+    "title": "26HP",
+    "sku": "900017",
+    "barcode": "659859445632",
+    "position": 14,
+    "price": "13.00",
+    "compareAtPrice": "13.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T21:27:11Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "26HP"
+      }
+    ]
+  }
+]

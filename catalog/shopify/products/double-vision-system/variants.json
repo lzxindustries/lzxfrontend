@@ -1,0 +1,40 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41811573047319",
+    "displayName": "Double Vision - 3U 84HP",
+    "title": "3U 84HP",
+    "sku": "950059",
+    "barcode": "659859304700",
+    "position": 2,
+    "price": "3999.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-07T21:22:38Z",
+    "selectedOptions": [
+      {
+        "name": "Case Size",
+        "value": "3U 84HP"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41811573080087",
+    "displayName": "Double Vision - 6U 168HP",
+    "title": "6U 168HP",
+    "sku": "950069",
+    "barcode": "",
+    "position": 3,
+    "price": "4399.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-06-06T18:42:13Z",
+    "selectedOptions": [
+      {
+        "name": "Case Size",
+        "value": "6U 168HP"
+      }
+    ]
+  }
+]

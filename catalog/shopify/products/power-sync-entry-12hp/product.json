@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/6890556915735",
+  "handle": "power-sync-entry-12hp",
+  "title": "Power & Sync Entry 12HP",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "OEM Component",
+  "tags": [
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/power-sync-entry-12hp",
+  "description": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 12HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
+  "createdAt": "2023-05-19T03:17:30Z",
+  "updatedAt": "2026-04-17T00:53:57Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8859388608535",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

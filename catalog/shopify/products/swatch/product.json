@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6856020394007",
+  "handle": "swatch",
+  "title": "Swatch",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/swatch",
+  "description": "Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis.",
+  "createdAt": "2022-12-19T23:13:02Z",
+  "updatedAt": "2026-04-21T09:02:34Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8815969566743",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

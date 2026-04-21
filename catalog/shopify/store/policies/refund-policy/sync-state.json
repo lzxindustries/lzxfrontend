@@ -1,0 +1,8 @@
+{
+  "resourceType": "policy",
+  "policyType": "REFUND_POLICY",
+  "policyId": "gid://shopify/ShopPolicy/3571548224",
+  "shopifyUpdatedAt": "2026-04-16T11:05:51-07:00",
+  "pulledAt": "2026-04-21T19:56:27.798Z",
+  "apiVersion": "2025-04"
+}

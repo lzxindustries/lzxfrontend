@@ -1,0 +1,97 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/39305574645783",
+    "displayName": "DC Power Cable - Straight 25cm",
+    "title": "Straight 25cm",
+    "sku": "960013",
+    "barcode": "672975060947",
+    "position": 1,
+    "price": "3.00",
+    "compareAtPrice": "3.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-26T17:48:27Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Straight 25cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40571242643479",
+    "displayName": "DC Power Cable - Right Angle 30cm",
+    "title": "Right Angle 30cm",
+    "sku": "960016",
+    "barcode": "659859129334",
+    "position": 2,
+    "price": "3.00",
+    "compareAtPrice": "3.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-21T18:51:38Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Right Angle 30cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/39305574678551",
+    "displayName": "DC Power Cable - Straight 50cm",
+    "title": "Straight 50cm",
+    "sku": "960014",
+    "barcode": "672975060954",
+    "position": 3,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-26T17:48:28Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Straight 50cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40571242676247",
+    "displayName": "DC Power Cable - Right Angle 90cm",
+    "title": "Right Angle 90cm",
+    "sku": "960017",
+    "barcode": "659859253091",
+    "position": 4,
+    "price": "4.00",
+    "compareAtPrice": "4.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-26T17:48:28Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Right Angle 90cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/39305574711319",
+    "displayName": "DC Power Cable - Straight 100cm",
+    "title": "Straight 100cm",
+    "sku": "960015",
+    "barcode": "672975060961",
+    "position": 5,
+    "price": "5.00",
+    "compareAtPrice": "5.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-17T18:00:37Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Straight 100cm"
+      }
+    ]
+  }
+]

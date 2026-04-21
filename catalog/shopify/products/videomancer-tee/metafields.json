@@ -1,0 +1,22 @@
+[
+  {
+    "id": "gid://shopify/Metafield/44184381620247",
+    "namespace": "shopify",
+    "key": "color-pattern",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/95417171991\",\"gid://shopify/Metaobject/175224160279\"]",
+    "description": null,
+    "updatedAt": "2025-10-26T23:49:24Z",
+    "compareDigest": "2aa3116a5714b179cd1e36c14a631fab79e5c4928e44eb899317035e7b18a3fa"
+  },
+  {
+    "id": "gid://shopify/Metafield/44184381653015",
+    "namespace": "shopify",
+    "key": "size",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/175224586263\",\"gid://shopify/Metaobject/175224619031\",\"gid://shopify/Metaobject/175224651799\",\"gid://shopify/Metaobject/175224684567\",\"gid://shopify/Metaobject/175224717335\"]",
+    "description": null,
+    "updatedAt": "2025-10-26T23:49:24Z",
+    "compareDigest": "f1bc25af16755a9954448eec64126947a9edb6b5db9aac6a4dd4e02375b36370"
+  }
+]

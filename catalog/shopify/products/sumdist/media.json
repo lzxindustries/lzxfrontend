@@ -1,0 +1,32 @@
+[
+  {
+    "id": "gid://shopify/ExternalVideo/25071637135383",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/S744YMZBouI",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/S744YMZBouI",
+    "image": null,
+    "sources": []
+  },
+  {
+    "id": "gid://shopify/MediaImage/21421763788823",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX12HPSumDistFrontpanelColorGraphicDarkSquare.png?v=1655916224",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/sumdist/media/02-sumdist.png"
+  }
+]

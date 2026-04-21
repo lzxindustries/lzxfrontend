@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7477334999063",
+  "handle": "pin-header-pitch-0-1in-2x8-male-shrouded",
+  "title": "Pin Header Pitch 0.1in 2X8 Male Shrouded",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/pin-header-pitch-0-1in-2x8-male-shrouded",
+  "description": "",
+  "createdAt": "2025-02-05T20:01:28Z",
+  "updatedAt": "2026-04-17T00:54:02Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9565007708183",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

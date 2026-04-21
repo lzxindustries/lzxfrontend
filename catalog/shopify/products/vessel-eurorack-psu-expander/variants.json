@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41429952954391",
+    "displayName": "Vessel EuroRack PSU Expander - Default Title",
+    "title": "Default Title",
+    "sku": "910149",
+    "barcode": "",
+    "position": 2,
+    "price": "399.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2024-06-03T21:36:36Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16571343863872",
+    "displayName": "RGB Patch Cable - 60cm",
+    "title": "60cm",
+    "sku": "960007",
+    "barcode": "672975060855",
+    "position": 1,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-21T02:06:39Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "60cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16571343929408",
+    "displayName": "RGB Patch Cable - 30cm",
+    "title": "30cm",
+    "sku": "960006",
+    "barcode": "672975060909",
+    "position": 2,
+    "price": "9.00",
+    "compareAtPrice": "9.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-27T23:52:36Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "30cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40560343416855",
+    "displayName": "RGB Patch Cable - 15cm",
+    "title": "15cm",
+    "sku": "960008",
+    "barcode": "659359265983",
+    "position": 3,
+    "price": "8.00",
+    "compareAtPrice": "8.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-27T23:52:36Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "15cm"
+      }
+    ]
+  }
+]

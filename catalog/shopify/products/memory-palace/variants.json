@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16492161499200",
+    "displayName": "Memory Palace - Default Title",
+    "title": "Default Title",
+    "sku": "950018",
+    "barcode": "672975060503",
+    "position": 1,
+    "price": "1199.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T19:16:02Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

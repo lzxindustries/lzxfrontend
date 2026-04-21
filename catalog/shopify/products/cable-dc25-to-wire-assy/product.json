@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/8203467751447",
+  "handle": "cable-dc25-to-wire-assy",
+  "title": "CABLE-DC25-TO-WIRE-ASSY",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/cable-dc25-to-wire-assy",
+  "description": "",
+  "createdAt": "2025-10-15T16:19:44Z",
+  "updatedAt": "2026-04-17T00:54:04Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/10403740778519",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

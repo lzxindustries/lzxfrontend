@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1571360276503",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/5892.png?v=1605280615",
+      "altText": "",
+      "width": 334,
+      "height": 322
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/castle-series-vinyl-sticker/media/01-castle-series-vinyl-sticker.png"
+  }
+]

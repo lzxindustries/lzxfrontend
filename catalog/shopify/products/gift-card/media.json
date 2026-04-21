@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/5845730787351",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/giftcertnew.png?v=1586281144",
+      "altText": "",
+      "width": 949,
+      "height": 566
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/gift-card/media/01-gift-card.png"
+  }
+]

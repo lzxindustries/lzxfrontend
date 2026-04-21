@@ -1,0 +1,22 @@
+[
+  {
+    "id": "gid://shopify/Metafield/21435150565399",
+    "namespace": "mc-facebook",
+    "key": "condition",
+    "type": "string",
+    "value": "new",
+    "description": null,
+    "updatedAt": "2023-06-22T19:09:11Z",
+    "compareDigest": "b20ab0a020a48d349e0c64d109c441f87c9bc43d49fc701c4a5f6f1b16aa4e32"
+  },
+  {
+    "id": "gid://shopify/Metafield/21435150532631",
+    "namespace": "mc-facebook",
+    "key": "google_product_category",
+    "type": "string",
+    "value": "386",
+    "description": null,
+    "updatedAt": "2023-06-22T19:09:11Z",
+    "compareDigest": "cce74094442f5de46c1fe57b93841bc6677c7a84cd3aa87374c4b2c2e6f47c7a"
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "id": "gid://shopify/Product/7541032321047",
+  "handle": "pab",
+  "title": "PAB",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/pab",
+  "description": "PAB (Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
+  "createdAt": "2025-03-13T19:55:56Z",
+  "updatedAt": "2026-04-21T09:02:47Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9660091564055",
+      "name": "Assembly",
+      "position": 1,
+      "values": [
+        "Fully Assembled",
+        "Full DIY Kit",
+        "Partial DIY Kit"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

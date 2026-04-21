@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41806643462167",
+    "displayName": "PGO - Fully Assembled",
+    "title": "Fully Assembled",
+    "sku": "950065",
+    "barcode": "659859339443",
+    "position": 1,
+    "price": "179.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-11T17:47:39Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Fully Assembled"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42110738137111",
+    "displayName": "PGO - Full DIY Kit",
+    "title": "Full DIY Kit",
+    "sku": "940407",
+    "barcode": "",
+    "position": 2,
+    "price": "95.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-08T19:07:15Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Full DIY Kit"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41806643494935",
+    "displayName": "PGO - Partial DIY Kit",
+    "title": "Partial DIY Kit",
+    "sku": "940400",
+    "barcode": "",
+    "position": 3,
+    "price": "71.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-04-16T19:33:57Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Partial DIY Kit"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/27197796319255",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Black.png?v=1761523656",
+      "altText": "",
+      "width": 1338,
+      "height": 1338
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/videomancer-tee/media/01-videomancer-tee.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/27197796352023",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Purple.png?v=1761523656",
+      "altText": "",
+      "width": 1338,
+      "height": 1338
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/videomancer-tee/media/02-videomancer-tee.png"
+  }
+]

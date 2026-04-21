@@ -1,0 +1,34 @@
+{
+  "id": "gid://shopify/Product/6921420800023",
+  "handle": "factors",
+  "title": "Factors",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "ADC",
+    "Active",
+    "DAC",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/factors",
+  "description": "Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a \"fade to gray\". The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities.",
+  "createdAt": "2023-08-07T22:50:41Z",
+  "updatedAt": "2026-04-21T09:02:40Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8893632675863",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

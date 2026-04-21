@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41969980145687",
+    "displayName": "CABLE-IDC16-GRY-BLK-25CM - Default Title",
+    "title": "Default Title",
+    "sku": "420001",
+    "barcode": "",
+    "position": 1,
+    "price": "1.25",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-11T17:47:38Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

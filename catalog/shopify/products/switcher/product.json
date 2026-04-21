@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6886906396695",
+  "handle": "switcher",
+  "title": "Switcher",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/switcher",
+  "description": "Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher's illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities.",
+  "createdAt": "2023-04-26T23:09:43Z",
+  "updatedAt": "2026-04-21T09:02:38Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8855074504727",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

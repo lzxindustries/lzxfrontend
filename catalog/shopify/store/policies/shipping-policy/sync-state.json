@@ -1,0 +1,8 @@
+{
+  "resourceType": "policy",
+  "policyType": "SHIPPING_POLICY",
+  "policyId": "gid://shopify/ShopPolicy/35821781015",
+  "shopifyUpdatedAt": "2026-04-16T11:25:04-07:00",
+  "pulledAt": "2026-04-21T19:56:27.800Z",
+  "apiVersion": "2025-04"
+}

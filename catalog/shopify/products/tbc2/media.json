@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22911911231511",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/tbc2-mk2-front-panel-square.png?v=1684296204",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/tbc2/media/01-tbc2.png"
+  }
+]

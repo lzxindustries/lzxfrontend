@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7644126117911",
+  "handle": "cable-trrs-av-blk-200cm",
+  "title": "CABLE-TRRS-AV-BLK-200CM",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/cable-trrs-av-blk-200cm",
+  "description": "",
+  "createdAt": "2025-05-15T16:03:35Z",
+  "updatedAt": "2026-04-17T00:54:03Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9794966224919",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

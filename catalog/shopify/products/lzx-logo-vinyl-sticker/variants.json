@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16570714882112",
+    "displayName": "LZX Logo Vinyl Sticker - Default Title",
+    "title": "Default Title",
+    "sku": "970006",
+    "barcode": "14882112",
+    "position": 1,
+    "price": "3.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-10-30T01:19:26Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

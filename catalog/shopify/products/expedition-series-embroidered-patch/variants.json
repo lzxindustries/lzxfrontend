@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16577777795136",
+    "displayName": "Expedition Series Embroidered Patch - Default",
+    "title": "Default",
+    "sku": "970014",
+    "barcode": "77795136",
+    "position": 1,
+    "price": "5.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T19:13:47Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default"
+      }
+    ]
+  }
+]

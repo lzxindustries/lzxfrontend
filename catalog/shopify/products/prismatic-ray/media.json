@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1572213096471",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/og398T7iSUOFosRlx8gF_image2.png?v=1569522546",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/prismatic-ray/media/01-prismatic-ray.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/1572217815063",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/YDzHY5LcSSKpkqywwHmX_image.jpg?v=1569522546",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/prismatic-ray/media/02-prismatic-ray.jpg"
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40558568275991",
+    "displayName": "Switcher - Default Title",
+    "title": "Default Title",
+    "sku": "950057",
+    "barcode": "659359216688",
+    "position": 1,
+    "price": "479.00",
+    "compareAtPrice": "0.00",
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-11T17:47:38Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

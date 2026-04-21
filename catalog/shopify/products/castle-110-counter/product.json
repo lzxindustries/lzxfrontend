@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1692914286656",
+  "handle": "castle-110-counter",
+  "title": "Castle 110 Counter",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-110-counter",
+  "description": "DIY PCB & Frontpanel Set The Counter is a 4-Bit clock counter/divider.",
+  "createdAt": "2018-12-06T05:54:59Z",
+  "updatedAt": "2026-04-17T00:53:46Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320733700160",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

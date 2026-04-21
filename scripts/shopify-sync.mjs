@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {mkdir, unlink, writeFile} from 'node:fs/promises';
+import {mkdir, readFile, unlink, writeFile} from 'node:fs/promises';
 import {existsSync, readFileSync} from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
@@ -19,18 +19,107 @@ const HELP_TEXT = `Shopify catalog sync CLI
 Usage:
   node scripts/shopify-sync.mjs doctor [--offline] [--output-dir <dir>]
   node scripts/shopify-sync.mjs pull [--output-dir <dir>] [--handle <handle>] [--query <search>] [--no-media-download]
+  node scripts/shopify-sync.mjs diff [--output-dir <dir>] [--handle <handle>] [--query <search>]
+  node scripts/shopify-sync.mjs push [--output-dir <dir>] [--handle <handle>] [--query <search>] [--apply]
+  node scripts/shopify-sync.mjs sync [--output-dir <dir>] [--handle <handle>] [--query <search>] [--apply]
 
 Commands:
   doctor    Validate local sync prerequisites and environment configuration.
   pull      Export Shopify product data into local JSON, HTML, and media files.
+  diff      Compare local catalog files against the latest Shopify product data.
+  push      Plan or apply local catalog changes back to Shopify.
+  sync      Run doctor and then push using the local catalog as the source of truth.
 
 Options:
   --output-dir <dir>      Output root. Defaults to catalog/shopify.
   --handle <handle>       Restrict export to one product handle. Repeatable.
   --query <search>        Additional Shopify product search filter.
+  --apply                 Persist mutations instead of running in dry-run mode.
   --no-media-download     Skip downloading image assets.
   --offline               Skip Shopify credential checks for doctor.
   --help                  Show this help text.
+`;
+
+const PRODUCT_SET_MUTATION = `
+  mutation UpsertProduct(
+    $identifier: ProductSetIdentifiers
+    $input: ProductSetInput!
+    $synchronous: Boolean!
+  ) {
+    productSet(identifier: $identifier, input: $input, synchronous: $synchronous) {
+      product {
+        id
+        handle
+        updatedAt
+      }
+      productSetOperation {
+        id
+        status
+        userErrors {
+          field
+          message
+        }
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const METAFIELDS_SET_MUTATION = `
+  mutation SetProductMetafields($metafields: [MetafieldsSetInput!]!) {
+    metafieldsSet(metafields: $metafields) {
+      metafields {
+        id
+        namespace
+        key
+        compareDigest
+        updatedAt
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_UPDATE_MEDIA_MUTATION = `
+  mutation UpdateProductMedia(
+    $product: ProductUpdateInput!
+    $media: [CreateMediaInput!]
+  ) {
+    productUpdate(product: $product, media: $media) {
+      product {
+        id
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const STAGED_UPLOADS_CREATE_MUTATION = `
+  mutation CreateStagedUploads($input: [StagedUploadInput!]!) {
+    stagedUploadsCreate(input: $input) {
+      stagedTargets {
+        url
+        resourceUrl
+        parameters {
+          name
+          value
+        }
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
 `;
 
 main().catch((error) => {
@@ -60,6 +149,24 @@ async function main() {
     return;
   }
 
+  if (cli.command === 'diff') {
+    const ok = await runDiff(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'push') {
+    const ok = await runPush(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'sync') {
+    const ok = await runSync(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
   throw new Error(`Unknown command: ${cli.command}`);
 }
 
@@ -76,7 +183,12 @@ function parseArgs(args) {
     }
 
     const key = current.slice(2);
-    if (key === 'help' || key === 'offline' || key === 'no-media-download') {
+    if (
+      key === 'help' ||
+      key === 'offline' ||
+      key === 'no-media-download' ||
+      key === 'apply'
+    ) {
       flags[key] = true;
       continue;
     }
@@ -155,14 +267,114 @@ async function runDoctor(config, offline) {
 }
 
 async function runPull(config, cli) {
-  const missing = REQUIRED_ENV_VARS.filter((envVar) => !process.env[envVar]);
-  if (missing.length > 0) {
-    throw new Error(`Missing required env vars: ${missing.join(', ')}`);
-  }
+  assertAdminEnv();
 
   await mkdir(config.outputDir, {recursive: true});
 
   const searchQuery = buildSearchQuery(cli.values.handle ?? [], cli.values.query);
+  const catalog = await fetchRemoteCatalog(config, searchQuery);
+  console.log(`Parsed ${catalog.products.length} product records.`);
+
+  console.log('Writing local catalog files...');
+  const summary = await writeCatalog(config, catalog, searchQuery);
+
+  console.log('');
+  console.log(`Products exported: ${summary.productCount}`);
+  console.log(`Image assets downloaded: ${summary.downloadedImages}`);
+  console.log(`Catalog root: ${config.outputDir}`);
+}
+
+async function runDiff(config, cli) {
+  assertAdminEnv();
+
+  const requestedHandles = cli.values.handle ?? [];
+  const localCatalog = await loadLocalCatalog(config.outputDir, requestedHandles);
+  if (localCatalog.handles.length === 0) {
+    throw new Error(
+      'No local catalog entries found. Run pull first or provide one or more --handle values.',
+    );
+  }
+
+  const searchQuery = buildSearchQuery(localCatalog.handles, cli.values.query);
+  const remoteCatalog = await fetchRemoteCatalog(config, searchQuery);
+  const diff = compareCatalogs(localCatalog, remoteCatalog);
+
+  console.log(`Compared ${diff.handleCount} product handle(s).`);
+
+  if (diff.entries.length === 0) {
+    console.log('Local catalog matches Shopify for the compared fields.');
+    return true;
+  }
+
+  console.log(`Found ${diff.entries.length} difference(s):`);
+  for (const entry of diff.entries) {
+    console.log(`- ${entry.handle}: ${entry.field} (${entry.reason})`);
+  }
+
+  return false;
+}
+
+async function runPush(config, cli) {
+  assertAdminEnv();
+
+  const requestedHandles = cli.values.handle ?? [];
+  const localCatalog = await loadLocalCatalog(config.outputDir, requestedHandles);
+  if (localCatalog.handles.length === 0) {
+    throw new Error(
+      'No local catalog entries found. Run pull first or provide one or more --handle values.',
+    );
+  }
+
+  const searchQuery = buildSearchQuery(localCatalog.handles, cli.values.query);
+  const remoteCatalog = await fetchRemoteCatalog(config, searchQuery);
+  const plan = buildPushPlan(localCatalog, remoteCatalog);
+  const apply = cli.flags.apply === true;
+
+  printPushPlan(plan, apply);
+
+  if (plan.errors.length > 0) {
+    return false;
+  }
+
+  if (plan.summary.actionCount === 0) {
+    console.log(apply ? 'Nothing to apply.' : 'Dry run complete. No changes pending.');
+    return true;
+  }
+
+  if (!apply) {
+    console.log('Dry run only. Re-run with --apply to persist changes.');
+    return true;
+  }
+
+  const changedHandles = await applyPushPlan(config, plan);
+  if (changedHandles.length > 0) {
+    console.log('Refreshing local catalog metadata from Shopify...');
+    await refreshLocalCatalog(config, changedHandles);
+  }
+
+  console.log('Push completed.');
+  return true;
+}
+
+async function runSync(config, cli) {
+  console.log('Running sync doctor...');
+  const doctorOk = await runDoctor(config, false);
+  if (!doctorOk) {
+    return false;
+  }
+
+  console.log('Running Shopify push...');
+  return runPush(config, cli);
+}
+
+function assertAdminEnv() {
+  const missing = REQUIRED_ENV_VARS.filter((envVar) => !process.env[envVar]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required env vars: ${missing.join(', ')}`);
+  }
+}
+
+async function fetchRemoteCatalog(config, searchQuery) {
   const client = createAdminClient(config);
 
   console.log('Authenticating with Shopify Admin API...');
@@ -179,16 +391,7 @@ async function runPull(config, cli) {
   }
 
   console.log('Downloading product catalog...');
-  const catalog = await downloadCatalog(bulkOperation.url);
-  console.log(`Parsed ${catalog.products.length} product records.`);
-
-  console.log('Writing local catalog files...');
-  const summary = await writeCatalog(config, catalog, searchQuery);
-
-  console.log('');
-  console.log(`Products exported: ${summary.productCount}`);
-  console.log(`Image assets downloaded: ${summary.downloadedImages}`);
-  console.log(`Catalog root: ${config.outputDir}`);
+  return downloadCatalog(bulkOperation.url);
 }
 
 function checkNodeVersion() {
@@ -706,11 +909,17 @@ async function writeCatalog(config, catalog, searchQuery) {
 
     const mediaDir = path.join(productDir, 'media');
     await mkdir(mediaDir, {recursive: true});
+    const existingMediaLocalPaths = await loadExistingMediaLocalPaths(productDir);
     const mediaManifest = [];
 
     for (let index = 0; index < entry.media.length; index++) {
       const media = entry.media[index];
       const manifestEntry = {...media};
+      const signature = buildMediaSignature(media);
+
+      if (signature && existingMediaLocalPaths.has(signature)) {
+        manifestEntry.localPath = existingMediaLocalPaths.get(signature);
+      }
 
       if (config.downloadMedia && media.image?.url) {
         const localRelativePath = await downloadImageAsset(
@@ -754,6 +963,824 @@ async function writeCatalog(config, catalog, searchQuery) {
   };
 }
 
+async function loadLocalCatalog(outputDir, requestedHandles) {
+  const catalogPath = path.join(outputDir, 'catalog.json');
+  let handles = [...requestedHandles];
+
+  if (handles.length === 0 && existsSync(catalogPath)) {
+    const summary = await readJson(catalogPath);
+    handles = Array.isArray(summary.products)
+      ? summary.products
+          .map((product) => product?.handle)
+          .filter((handle) => typeof handle === 'string')
+      : [];
+  }
+
+  const entries = new Map();
+  for (const handle of handles) {
+    const entry = await readLocalCatalogEntry(outputDir, handle);
+    if (entry) {
+      entries.set(handle, entry);
+    }
+  }
+
+  return {
+    handles,
+    entries,
+  };
+}
+
+async function readLocalCatalogEntry(outputDir, handle) {
+  const productDir = path.join(outputDir, 'products', handle);
+  if (!existsSync(productDir)) {
+    return null;
+  }
+
+  const [product, descriptionHtml, seo, variants, metafields, media, syncState] = await Promise.all([
+    readJson(path.join(productDir, 'product.json')),
+    readText(path.join(productDir, 'description.html')),
+    readJson(path.join(productDir, 'seo.json')),
+    readJson(path.join(productDir, 'variants.json')),
+    readJson(path.join(productDir, 'metafields.json')),
+    readJson(path.join(productDir, 'media.json')),
+    readOptionalJson(path.join(productDir, 'sync-state.json')),
+  ]);
+
+  return {
+    product: normalizeComparableLocalProduct(product),
+    descriptionHtml,
+    seo: normalizeComparableSeo(seo),
+    variants: normalizeComparableVariants(variants),
+    metafields: normalizeComparableMetafields(metafields),
+    media: normalizeComparableMedia(media),
+    raw: {
+      product,
+      descriptionHtml,
+      seo,
+      variants,
+      metafields,
+      media,
+      syncState,
+    },
+  };
+}
+
+function compareCatalogs(localCatalog, remoteCatalog) {
+  const remoteEntries = new Map(
+    remoteCatalog.products.map((entry) => [entry.product.handle, normalizeRemoteCatalogEntry(entry)]),
+  );
+  const handles = new Set([...localCatalog.handles, ...remoteEntries.keys()]);
+  const entries = [];
+
+  for (const handle of [...handles].sort()) {
+    const localEntry = localCatalog.entries.get(handle);
+    const remoteEntry = remoteEntries.get(handle);
+
+    if (!localEntry) {
+      entries.push({handle, field: 'catalog', reason: 'missing local catalog files'});
+      continue;
+    }
+
+    if (!remoteEntry) {
+      entries.push({handle, field: 'catalog', reason: 'missing in Shopify export'});
+      continue;
+    }
+
+    compareField(entries, handle, 'product.json', localEntry.product, remoteEntry.product);
+    compareField(
+      entries,
+      handle,
+      'description.html',
+      localEntry.descriptionHtml,
+      remoteEntry.descriptionHtml,
+    );
+    compareField(entries, handle, 'seo.json', localEntry.seo, remoteEntry.seo);
+    compareField(entries, handle, 'variants.json', localEntry.variants, remoteEntry.variants);
+    compareField(
+      entries,
+      handle,
+      'metafields.json',
+      localEntry.metafields,
+      remoteEntry.metafields,
+    );
+    compareField(entries, handle, 'media.json', localEntry.media, remoteEntry.media);
+  }
+
+  return {
+    handleCount: handles.size,
+    entries,
+  };
+}
+
+function compareField(differences, handle, field, localValue, remoteValue) {
+  if (stableStringify(localValue) === stableStringify(remoteValue)) {
+    return;
+  }
+
+  differences.push({handle, field, reason: 'content differs'});
+}
+
+function buildPushPlan(localCatalog, remoteCatalog) {
+  const remoteEntries = new Map(
+    remoteCatalog.products.map((entry) => [entry.product.handle, entry]),
+  );
+  const items = [];
+  const errors = [];
+
+  for (const handle of localCatalog.handles) {
+    const localEntry = localCatalog.entries.get(handle);
+    if (!localEntry) {
+      errors.push(`Missing local catalog files for ${handle}.`);
+      continue;
+    }
+
+    const remoteEntry = remoteEntries.get(handle) ?? null;
+    const productSliceChanged =
+      stableStringify(buildPushComparableProductSliceFromLocal(localEntry)) !==
+      stableStringify(buildPushComparableProductSliceFromRemote(remoteEntry));
+    const metafieldsChanged =
+      stableStringify(buildPushComparableMetafieldsFromLocal(localEntry)) !==
+      stableStringify(buildPushComparableMetafieldsFromRemote(remoteEntry));
+    const mediaPlan = buildMediaPushPlan(localEntry, remoteEntry);
+    const identifier = buildProductIdentifier(localEntry, remoteEntry);
+    const productId =
+      remoteEntry?.product.id ??
+      localEntry.raw.syncState?.productId ??
+      localEntry.raw.product.id ??
+      null;
+
+    if (metafieldsChanged && !productId && !productSliceChanged) {
+      errors.push(`Cannot set metafields for ${handle} without a Shopify product id.`);
+    }
+
+    if (mediaPlan.additions.length > 0 && !productId && !productSliceChanged) {
+      errors.push(`Cannot add media for ${handle} without a Shopify product id.`);
+    }
+
+    items.push({
+      handle,
+      identifier,
+      productId,
+      localEntry,
+      remoteEntry,
+      productSliceChanged,
+      metafieldsChanged,
+      productInput: buildProductSetInput(localEntry),
+      metafields: buildMetafieldsSetInputs(localEntry, productId),
+      mediaPlan,
+    });
+  }
+
+  const actionableItems = items.filter(
+    (item) =>
+      item.productSliceChanged ||
+      item.metafieldsChanged ||
+      item.mediaPlan.additions.length > 0,
+  );
+
+  const actionCount = actionableItems.reduce((count, item) => {
+    return (
+      count +
+      Number(item.productSliceChanged) +
+      Number(item.metafieldsChanged) +
+      item.mediaPlan.additions.length
+    );
+  }, 0);
+
+  const warningCount = items.reduce(
+    (count, item) => count + item.mediaPlan.warnings.length,
+    0,
+  );
+
+  return {
+    items,
+    errors,
+    summary: {
+      handleCount: items.length,
+      actionCount,
+      warningCount,
+    },
+  };
+}
+
+function printPushPlan(plan, apply) {
+  console.log(apply ? 'Push apply plan:' : 'Push dry-run plan:');
+  console.log(`Handles scanned: ${plan.summary.handleCount}`);
+  console.log(`Actions planned: ${plan.summary.actionCount}`);
+  console.log(`Warnings: ${plan.summary.warningCount}`);
+
+  if (plan.errors.length > 0) {
+    console.log('Errors:');
+    for (const error of plan.errors) {
+      console.log(`- ${error}`);
+    }
+  }
+
+  for (const item of plan.items) {
+    const actions = [];
+    if (item.productSliceChanged) actions.push('product+variants');
+    if (item.metafieldsChanged) actions.push(`metafields:${item.metafields.length}`);
+    if (item.mediaPlan.additions.length > 0) {
+      actions.push(`media-add:${item.mediaPlan.additions.length}`);
+    }
+
+    if (actions.length === 0 && item.mediaPlan.warnings.length === 0) {
+      console.log(`- ${item.handle}: no changes`);
+      continue;
+    }
+
+    console.log(`- ${item.handle}: ${actions.join(', ') || 'warnings only'}`);
+    for (const warning of item.mediaPlan.warnings) {
+      console.log(`  warning: ${warning}`);
+    }
+  }
+}
+
+async function applyPushPlan(config, plan) {
+  const client = createAdminClient(config);
+  await client.getAccessToken();
+
+  const changedHandles = [];
+
+  for (const item of plan.items) {
+    if (
+      !item.productSliceChanged &&
+      !item.metafieldsChanged &&
+      item.mediaPlan.additions.length === 0
+    ) {
+      continue;
+    }
+
+    let productId = item.productId;
+
+    if (item.productSliceChanged) {
+      console.log(`Applying product update for ${item.handle}...`);
+      productId = await applyProductSet(client, item.identifier, item.productInput);
+    }
+
+    if (item.metafieldsChanged) {
+      console.log(`Applying metafields for ${item.handle}...`);
+      await applyMetafieldsSet(client, productId, item.metafields);
+    }
+
+    if (item.mediaPlan.additions.length > 0) {
+      console.log(`Applying media updates for ${item.handle}...`);
+      await applyProductMedia(client, productId, item.mediaPlan.additions);
+    }
+
+    changedHandles.push(item.handle);
+  }
+
+  return changedHandles;
+}
+
+async function applyProductSet(client, identifier, input) {
+  const data = await client.graphql(PRODUCT_SET_MUTATION, {
+    identifier,
+    input,
+    synchronous: true,
+  });
+  const payload = data.productSet;
+
+  if (payload.userErrors?.length > 0) {
+    throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+  }
+
+  if (payload.productSetOperation?.userErrors?.length > 0) {
+    throw new Error(
+      payload.productSetOperation.userErrors
+        .map((error) => error.message)
+        .join(', '),
+    );
+  }
+
+  return payload.product?.id ?? identifier?.id ?? null;
+}
+
+async function applyMetafieldsSet(client, productId, metafields) {
+  if (!productId || metafields.length === 0) return;
+
+  for (const chunk of chunkArray(metafields, 25)) {
+    const data = await client.graphql(METAFIELDS_SET_MUTATION, {metafields: chunk});
+    const payload = data.metafieldsSet;
+    if (payload.userErrors?.length > 0) {
+      throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+    }
+  }
+}
+
+async function applyProductMedia(client, productId, additions) {
+  if (!productId || additions.length === 0) return;
+
+  const media = [];
+
+  for (const addition of additions) {
+    const originalSource = await resolveMediaOriginalSource(client, addition);
+    media.push({
+      alt: addition.alt,
+      mediaContentType: addition.mediaContentType,
+      originalSource,
+    });
+  }
+
+  const data = await client.graphql(PRODUCT_UPDATE_MEDIA_MUTATION, {
+    product: {id: productId},
+    media,
+  });
+
+  const payload = data.productUpdate;
+  if (payload.userErrors?.length > 0) {
+    throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+  }
+}
+
+async function resolveMediaOriginalSource(client, addition) {
+  if (addition.localPath) {
+    return stageLocalMediaFile(client, addition.localPath, addition.mediaContentType);
+  }
+
+  if (addition.originalSource) {
+    return addition.originalSource;
+  }
+
+  throw new Error(`No supported media source found for ${addition.handle}.`);
+}
+
+async function stageLocalMediaFile(client, localPath, mediaContentType) {
+  const resolvedPath = path.resolve(process.cwd(), localPath);
+  const fileBytes = await readFile(resolvedPath);
+  const fileName = path.basename(resolvedPath);
+  const mimeType = guessMimeType(fileName, mediaContentType);
+  const input = {
+    filename: fileName,
+    mimeType,
+    httpMethod: 'POST',
+    resource: getStagedUploadResource(mediaContentType),
+  };
+
+  if (mediaContentType === 'VIDEO' || mediaContentType === 'MODEL_3D') {
+    input.fileSize = String(fileBytes.byteLength);
+  }
+
+  const data = await client.graphql(STAGED_UPLOADS_CREATE_MUTATION, {
+    input: [input],
+  });
+
+  const payload = data.stagedUploadsCreate;
+  if (payload.userErrors?.length > 0) {
+    throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+  }
+
+  const target = payload.stagedTargets?.[0];
+  if (!target) {
+    throw new Error(`No staged upload target returned for ${fileName}.`);
+  }
+
+  await uploadToStagedTarget(target, fileName, mimeType, fileBytes);
+  return target.resourceUrl;
+}
+
+async function uploadToStagedTarget(target, fileName, mimeType, fileBytes) {
+  const form = new FormData();
+  for (const parameter of target.parameters ?? []) {
+    form.append(parameter.name, parameter.value);
+  }
+  form.append('file', new Blob([fileBytes], {type: mimeType}), fileName);
+
+  const response = await fetch(target.url, {
+    method: 'POST',
+    body: form,
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `Staged upload failed: ${response.status} ${response.statusText}`,
+    );
+  }
+}
+
+async function refreshLocalCatalog(config, handles) {
+  const refreshConfig = {...config, downloadMedia: false};
+  const searchQuery = buildSearchQuery(handles, null);
+  const catalog = await fetchRemoteCatalog(refreshConfig, searchQuery);
+  await writeCatalog(refreshConfig, catalog, searchQuery);
+}
+
+function buildPushComparableProductSliceFromLocal(localEntry) {
+  return {
+    product: normalizePushOwnedProduct(localEntry.raw.product),
+    descriptionHtml: localEntry.raw.descriptionHtml ?? '',
+    seo: normalizeComparableSeo(localEntry.raw.seo),
+    variants: normalizePushComparableVariants(localEntry.raw.variants),
+  };
+}
+
+function buildPushComparableProductSliceFromRemote(remoteEntry) {
+  if (!remoteEntry) return null;
+
+  return {
+    product: normalizePushOwnedProduct(remoteEntry.product),
+    descriptionHtml: remoteEntry.product.descriptionHtml ?? '',
+    seo: normalizeComparableSeo(remoteEntry.product.seo),
+    variants: normalizePushComparableVariants(remoteEntry.variants),
+  };
+}
+
+function buildPushComparableMetafieldsFromLocal(localEntry) {
+  return normalizePushComparableMetafields(localEntry.raw.metafields);
+}
+
+function buildPushComparableMetafieldsFromRemote(remoteEntry) {
+  if (!remoteEntry) return [];
+  return normalizePushComparableMetafields(remoteEntry.metafields);
+}
+
+function buildProductIdentifier(localEntry, remoteEntry) {
+  const remoteProductId = remoteEntry?.product.id ?? null;
+  const syncProductId = localEntry.raw.syncState?.productId ?? null;
+  const localProductId = localEntry.raw.product?.id ?? null;
+  const productId = remoteProductId ?? syncProductId ?? localProductId;
+
+  if (isShopifyGid(productId, 'Product')) {
+    return {id: productId};
+  }
+
+  return {handle: localEntry.raw.product.handle};
+}
+
+function buildProductSetInput(localEntry) {
+  const product = localEntry.raw.product;
+  return {
+    handle: product.handle,
+    title: product.title,
+    descriptionHtml: localEntry.raw.descriptionHtml ?? '',
+    vendor: product.vendor ?? null,
+    productType: product.productType ?? null,
+    tags: Array.isArray(product.tags) ? [...product.tags] : [],
+    templateSuffix: product.templateSuffix ?? null,
+    redirectNewHandle: true,
+    seo: normalizeComparableSeo(localEntry.raw.seo),
+    productOptions: buildProductOptionInputs(product.options),
+    variants: buildProductVariantSetInputs(localEntry.raw.variants),
+  };
+}
+
+function buildProductOptionInputs(options) {
+  return Array.isArray(options)
+    ? [...options].sort(compareByPositionThenId).map((option) => ({
+        id: option.id ?? undefined,
+        name: option.name,
+        position: option.position ?? undefined,
+        values: Array.isArray(option.values)
+          ? option.values.map((value) => ({name: value}))
+          : [],
+      }))
+    : [];
+}
+
+function buildProductVariantSetInputs(variants) {
+  return Array.isArray(variants)
+    ? [...variants].sort(compareByPositionThenId).map((variant) => ({
+        id: isShopifyGid(variant.id, 'ProductVariant') ? variant.id : undefined,
+        optionValues: Array.isArray(variant.selectedOptions)
+          ? variant.selectedOptions.map((option) => ({
+              optionName: option.name,
+              name: option.value,
+            }))
+          : [],
+        position: variant.position ?? undefined,
+        price: variant.price ?? null,
+        compareAtPrice: variant.compareAtPrice ?? null,
+        taxable: typeof variant.taxable === 'boolean' ? variant.taxable : undefined,
+        inventoryPolicy: variant.inventoryPolicy ?? undefined,
+        sku: variant.sku ?? null,
+        barcode: variant.barcode ?? null,
+      }))
+    : [];
+}
+
+function buildMetafieldsSetInputs(localEntry, productId) {
+  if (!productId) return [];
+
+  return Array.isArray(localEntry.raw.metafields)
+    ? localEntry.raw.metafields.map((metafield) => ({
+        ownerId: productId,
+        namespace: metafield.namespace,
+        key: metafield.key,
+        type: metafield.type,
+        value: metafield.value,
+        compareDigest: metafield.compareDigest ?? null,
+      }))
+    : [];
+}
+
+function buildMediaPushPlan(localEntry, remoteEntry) {
+  const localMedia = Array.isArray(localEntry.raw.media) ? localEntry.raw.media : [];
+  const remoteMedia = Array.isArray(remoteEntry?.media) ? remoteEntry.media : [];
+  const remoteBySignature = new Map();
+  const localSignatures = new Set();
+  const additions = [];
+  const warnings = [];
+
+  for (const media of remoteMedia) {
+    const signature = buildMediaSignature(media);
+    if (signature) {
+      remoteBySignature.set(signature, media);
+    }
+  }
+
+  for (const media of localMedia) {
+    const normalized = normalizePushComparableMediaEntry(media);
+    const signature = buildMediaSignature(normalized);
+    if (signature) {
+      localSignatures.add(signature);
+    }
+
+    const remoteMatch = signature ? remoteBySignature.get(signature) : null;
+    if (remoteMatch) {
+      const localAlt = normalized.alt ?? '';
+      const remoteAlt = normalizePushComparableMediaEntry(remoteMatch).alt ?? '';
+      if (localAlt !== remoteAlt) {
+        warnings.push(`media alt differs for ${signature}; alt updates are not applied in v1`);
+      }
+      continue;
+    }
+
+    const addition = buildMediaAddition(localEntry.raw.product.handle, media);
+    if (addition) {
+      additions.push(addition);
+    } else {
+      warnings.push('unsupported media entry skipped');
+    }
+  }
+
+  for (const media of remoteMedia) {
+    const signature = buildMediaSignature(media);
+    if (signature && !localSignatures.has(signature)) {
+      warnings.push(`remote media not present locally: ${signature}`);
+    }
+  }
+
+  return {additions, warnings};
+}
+
+function buildMediaAddition(handle, media) {
+  const normalized = normalizePushComparableMediaEntry(media);
+  const mediaContentType = normalized.mediaContentType;
+  const localPath = media.localPath ?? null;
+  let originalSource = null;
+
+  if (mediaContentType === 'EXTERNAL_VIDEO') {
+    originalSource = normalized.embeddedUrl ?? normalized.originUrl ?? null;
+  } else if (localPath) {
+    originalSource = null;
+  } else if (mediaContentType === 'IMAGE') {
+    originalSource = normalized.image?.url ?? null;
+  } else if (mediaContentType === 'VIDEO' || mediaContentType === 'MODEL_3D') {
+    originalSource = normalized.sources?.[0]?.url ?? null;
+  }
+
+  if (!localPath && !originalSource) {
+    return null;
+  }
+
+  return {
+    handle,
+    alt: normalized.alt,
+    mediaContentType,
+    localPath,
+    originalSource,
+  };
+}
+
+function normalizePushOwnedProduct(product) {
+  return {
+    handle: product.handle,
+    title: product.title,
+    vendor: product.vendor ?? null,
+    productType: product.productType ?? null,
+    tags: Array.isArray(product.tags) ? [...product.tags].sort() : [],
+    templateSuffix: product.templateSuffix ?? null,
+    options: Array.isArray(product.options)
+      ? [...product.options].sort(compareByPositionThenId).map((option) => ({
+          name: option.name,
+          position: option.position ?? null,
+          values: Array.isArray(option.values) ? [...option.values] : [],
+        }))
+      : [],
+  };
+}
+
+function normalizePushComparableVariants(variants) {
+  return Array.isArray(variants)
+    ? [...variants]
+        .map((variant) => ({
+          id: variant.id ?? null,
+          title: variant.title ?? null,
+          sku: variant.sku ?? null,
+          barcode: variant.barcode ?? null,
+          position: variant.position ?? null,
+          price: variant.price ?? null,
+          compareAtPrice: variant.compareAtPrice ?? null,
+          taxable: variant.taxable ?? null,
+          inventoryPolicy: variant.inventoryPolicy ?? null,
+          selectedOptions: Array.isArray(variant.selectedOptions)
+            ? variant.selectedOptions.map((option) => ({
+                name: option.name,
+                value: option.value,
+              }))
+            : [],
+        }))
+        .sort(compareByPositionThenId)
+    : [];
+}
+
+function normalizePushComparableMetafields(metafields) {
+  return Array.isArray(metafields)
+    ? [...metafields]
+        .map((metafield) => ({
+          namespace: metafield.namespace,
+          key: metafield.key,
+          type: metafield.type,
+          value: metafield.value,
+        }))
+        .sort(compareMetafields)
+    : [];
+}
+
+function normalizePushComparableMediaEntry(entry) {
+  const mediaContentType =
+    entry.mediaContentType ??
+    mapMediaTypeFromTypename(entry.type) ??
+    null;
+
+  return {
+    type: entry.type ?? null,
+    mediaContentType,
+    alt: entry.alt ?? entry.image?.altText ?? null,
+    embeddedUrl: entry.embeddedUrl ?? null,
+    originUrl: entry.originUrl ?? null,
+    image: entry.image
+      ? {
+          url: entry.image.url,
+          altText: entry.image.altText ?? null,
+        }
+      : null,
+    sources: Array.isArray(entry.sources)
+      ? entry.sources.map((source) => ({
+          url: source.url,
+          format: source.format ?? null,
+          mimeType: source.mimeType ?? null,
+        }))
+      : [],
+  };
+}
+
+function normalizeRemoteCatalogEntry(entry) {
+  return {
+    product: normalizeComparableRemoteProduct(entry.product),
+    descriptionHtml: entry.product.descriptionHtml ?? '',
+    seo: normalizeComparableSeo(entry.product.seo),
+    variants: normalizeComparableVariants(entry.variants),
+    metafields: normalizeComparableMetafields(entry.metafields),
+    media: normalizeComparableMedia(entry.media),
+  };
+}
+
+function normalizeComparableLocalProduct(product) {
+  return normalizeComparableRemoteProduct(product);
+}
+
+function normalizeComparableRemoteProduct(product) {
+  return {
+    id: product.id,
+    handle: product.handle,
+    title: product.title,
+    vendor: product.vendor,
+    status: product.status,
+    productType: product.productType,
+    tags: Array.isArray(product.tags) ? [...product.tags].sort() : [],
+    templateSuffix: product.templateSuffix ?? null,
+    onlineStoreUrl: product.onlineStoreUrl ?? null,
+    description: product.description ?? '',
+    createdAt: product.createdAt ?? null,
+    updatedAt: product.updatedAt ?? null,
+    options: Array.isArray(product.options)
+      ? [...product.options].sort(compareByPositionThenId).map((option) => ({
+          id: option.id,
+          name: option.name,
+          position: option.position,
+          values: Array.isArray(option.values) ? [...option.values] : [],
+        }))
+      : [],
+  };
+}
+
+function normalizeComparableSeo(seo) {
+  return {
+    title: seo?.title ?? null,
+    description: seo?.description ?? null,
+  };
+}
+
+function normalizeComparableVariants(variants) {
+  return Array.isArray(variants)
+    ? [...variants]
+        .map((variant) => ({
+          id: variant.id,
+          displayName: variant.displayName ?? null,
+          title: variant.title ?? null,
+          sku: variant.sku ?? null,
+          barcode: variant.barcode ?? null,
+          position: variant.position ?? null,
+          price: variant.price ?? null,
+          compareAtPrice: variant.compareAtPrice ?? null,
+          taxable: variant.taxable ?? null,
+          inventoryPolicy: variant.inventoryPolicy ?? null,
+          updatedAt: variant.updatedAt ?? null,
+          selectedOptions: Array.isArray(variant.selectedOptions)
+            ? variant.selectedOptions.map((option) => ({
+                name: option.name,
+                value: option.value,
+              }))
+            : [],
+        }))
+        .sort(compareByPositionThenId)
+    : [];
+}
+
+function normalizeComparableMetafields(metafields) {
+  return Array.isArray(metafields)
+    ? [...metafields]
+        .map((metafield) => ({
+          id: metafield.id,
+          namespace: metafield.namespace,
+          key: metafield.key,
+          type: metafield.type,
+          value: metafield.value,
+          description: metafield.description ?? null,
+          updatedAt: metafield.updatedAt ?? null,
+          compareDigest: metafield.compareDigest ?? null,
+        }))
+        .sort(compareMetafields)
+    : [];
+}
+
+function normalizeComparableMedia(media) {
+  return Array.isArray(media)
+    ? [...media]
+        .map((entry) => ({
+          id: entry.id,
+          type: entry.type ?? null,
+          mediaContentType: entry.mediaContentType ?? null,
+          status: entry.status ?? null,
+          alt: entry.alt ?? null,
+          embeddedUrl: entry.embeddedUrl ?? null,
+          host: entry.host ?? null,
+          originUrl: entry.originUrl ?? null,
+          image: entry.image
+            ? {
+                url: entry.image.url,
+                altText: entry.image.altText ?? null,
+                width: entry.image.width ?? null,
+                height: entry.image.height ?? null,
+              }
+            : null,
+          sources: Array.isArray(entry.sources)
+            ? entry.sources.map((source) => ({
+                url: source.url,
+                format: source.format ?? null,
+                mimeType: source.mimeType ?? null,
+                width: source.width ?? null,
+                height: source.height ?? null,
+                filesize: source.filesize ?? null,
+              }))
+            : [],
+        }))
+        .sort(compareMedia)
+    : [];
+}
+
+async function readJson(filePath) {
+  return JSON.parse(await readText(filePath));
+}
+
+async function readOptionalJson(filePath) {
+  if (!existsSync(filePath)) {
+    return null;
+  }
+
+  return readJson(filePath);
+}
+
+async function readText(filePath) {
+  return readFile(filePath, 'utf8');
+}
+
+function stableStringify(value) {
+  return JSON.stringify(value);
+}
+
 async function downloadImageAsset(sourceUrl, mediaDir, fileStem) {
   const url = new URL(sourceUrl);
   const extension = path.extname(url.pathname) || '.bin';
@@ -793,6 +1820,56 @@ function compareMedia(left, right) {
   return String(left.id ?? '').localeCompare(String(right.id ?? ''));
 }
 
+async function loadExistingMediaLocalPaths(productDir) {
+  const mediaPath = path.join(productDir, 'media.json');
+  if (!existsSync(mediaPath)) {
+    return new Map();
+  }
+
+  const existingMedia = await readJson(mediaPath);
+  const mediaLocalPaths = new Map();
+
+  for (const entry of Array.isArray(existingMedia) ? existingMedia : []) {
+    const signature = buildMediaSignature(entry);
+    if (signature && entry.localPath) {
+      mediaLocalPaths.set(signature, entry.localPath);
+    }
+  }
+
+  return mediaLocalPaths;
+}
+
+function buildMediaSignature(entry) {
+  const normalized = normalizePushComparableMediaEntry(entry);
+
+  switch (normalized.mediaContentType) {
+    case 'IMAGE':
+      return normalized.image?.url
+        ? `IMAGE:${normalized.image.url}`
+        : entry.localPath
+          ? `IMAGE_LOCAL:${entry.localPath}`
+          : null;
+    case 'EXTERNAL_VIDEO':
+      return normalized.embeddedUrl || normalized.originUrl
+        ? `EXTERNAL_VIDEO:${normalized.embeddedUrl ?? normalized.originUrl}`
+        : null;
+    case 'VIDEO':
+      return normalized.sources?.[0]?.url
+        ? `VIDEO:${normalized.sources[0].url}`
+        : entry.localPath
+          ? `VIDEO_LOCAL:${entry.localPath}`
+          : null;
+    case 'MODEL_3D':
+      return normalized.sources?.[0]?.url
+        ? `MODEL_3D:${normalized.sources[0].url}`
+        : entry.localPath
+          ? `MODEL_3D_LOCAL:${entry.localPath}`
+          : null;
+    default:
+      return null;
+  }
+}
+
 function slugify(value) {
   return String(value)
     .toLowerCase()
@@ -802,6 +1879,81 @@ function slugify(value) {
 
 function delay(durationMs) {
   return new Promise((resolve) => setTimeout(resolve, durationMs));
+}
+
+function chunkArray(values, size) {
+  const chunks = [];
+  for (let index = 0; index < values.length; index += size) {
+    chunks.push(values.slice(index, index + size));
+  }
+  return chunks;
+}
+
+function isShopifyGid(value, resource) {
+  return (
+    typeof value === 'string' &&
+    value.startsWith(`gid://shopify/${resource}/`)
+  );
+}
+
+function mapMediaTypeFromTypename(typeName) {
+  switch (typeName) {
+    case 'MediaImage':
+      return 'IMAGE';
+    case 'ExternalVideo':
+      return 'EXTERNAL_VIDEO';
+    case 'Video':
+      return 'VIDEO';
+    case 'Model3d':
+      return 'MODEL_3D';
+    default:
+      return null;
+  }
+}
+
+function getStagedUploadResource(mediaContentType) {
+  switch (mediaContentType) {
+    case 'IMAGE':
+      return 'PRODUCT_IMAGE';
+    case 'VIDEO':
+      return 'VIDEO';
+    case 'MODEL_3D':
+      return 'MODEL_3D';
+    default:
+      throw new Error(`Unsupported staged upload media type: ${mediaContentType}`);
+  }
+}
+
+function guessMimeType(fileName, mediaContentType) {
+  const extension = path.extname(fileName).toLowerCase();
+
+  switch (extension) {
+    case '.jpg':
+    case '.jpeg':
+      return 'image/jpeg';
+    case '.png':
+      return 'image/png';
+    case '.gif':
+      return 'image/gif';
+    case '.webp':
+      return 'image/webp';
+    case '.svg':
+      return 'image/svg+xml';
+    case '.mp4':
+      return 'video/mp4';
+    case '.mov':
+      return 'video/quicktime';
+    case '.webm':
+      return 'video/webm';
+    case '.glb':
+      return 'model/gltf-binary';
+    case '.gltf':
+      return 'model/gltf+json';
+    default:
+      if (mediaContentType === 'VIDEO') return 'video/mp4';
+      if (mediaContentType === 'MODEL_3D') return 'model/gltf-binary';
+      return 'application/octet-stream';
+  }
 }
 
 function loadEnvFiles(cwd) {

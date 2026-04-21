@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40570739982359",
+    "displayName": "Power Entry 8HP - Default Title",
+    "title": "Default Title",
+    "sku": "900002",
+    "barcode": "659859467757",
+    "position": 1,
+    "price": "39.00",
+    "compareAtPrice": "39.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-12-17T02:37:27Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

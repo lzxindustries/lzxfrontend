@@ -47,6 +47,11 @@ Bootstrap a local Shopify product mirror into JSON, HTML, and media files:
 ```
 yarn shopify:sync:doctor
 yarn shopify:sync:pull
+yarn shopify:sync:diff
+yarn shopify:sync:push
+yarn shopify:store-sync:doctor
+yarn shopify:store-sync:seed
+yarn shopify:store-sync:pull
 ```
 
 The sync CLI writes to `catalog/shopify` by default and creates one folder per product handle under `catalog/shopify/products/<handle>/`.
@@ -55,6 +60,9 @@ Current implementation:
 
 - `doctor` validates Node version, output directory access, and required Shopify Admin env vars.
 - `pull` exports product core fields, description HTML, SEO, variants, metafields, and media manifests.
+- `diff` compares local catalog files against the latest Shopify export and exits nonzero when drift is detected.
+- `push` plans Shopify mutations from local files and only writes when `--apply` is provided.
+- `sync` runs `doctor` and then `push`, so there is a single operator-facing entry point for dry runs or apply mode.
 - Product images are downloaded locally by default. Use `--no-media-download` to skip binary downloads.
 
 Examples:
@@ -62,7 +70,55 @@ Examples:
 ```
 yarn shopify:sync:doctor --offline
 yarn shopify:sync:pull --handle chromagnon
+yarn shopify:sync:diff --handle chromagnon
+yarn shopify:sync:push --handle chromagnon
+yarn shopify:sync:apply --handle chromagnon
 yarn shopify:sync:pull --query "status:active"
+```
+
+Current push scope:
+
+- Product core fields, description HTML, SEO, options, variants, pricing, and product metafields.
+- Additive media sync for images, external videos, videos, and 3D models when a source URL or `localPath` is available.
+- Media deletions and remote alt-text edits are reported as warnings in v1 and are not applied automatically.
+
+### Shopify Store Sync
+
+Mirror store-owned Shopify resources such as shop policies and non-product pages into local files:
+
+```
+yarn shopify:store-sync:doctor
+yarn shopify:store-sync:seed
+yarn shopify:store-sync:pull
+yarn shopify:store-sync:diff
+yarn shopify:store-sync:push
+```
+
+The store sync CLI writes to `catalog/shopify/store` by default and currently manages Shopify policy slots plus the existing `contact-information` and `legal-notice` pages.
+
+Current Admin access note:
+
+- Policy sync is active with the current app credentials.
+- Page sync requires Shopify Admin page scopes (`read_content` or `read_online_store_pages`, plus matching write scope for push). When those scopes are unavailable, the CLI warns and skips page pull, diff, and push instead of failing the entire run.
+
+Current implementation:
+
+- `doctor` validates Node version, output directory access, the seed source directory, and required Shopify Admin env vars.
+- `seed` imports the existing `policies/*.html` and `policies/*.md` files into the canonical local store mirror.
+- `pull` exports Shopify store policies and the configured store pages into local JSON and HTML files.
+- `diff` compares local store files against the latest Shopify store data and exits nonzero when drift is detected.
+- `push` plans Shopify policy/page mutations from local files and only writes when `--apply` is provided.
+- `sync` runs `doctor` and then `push`, so there is a single operator-facing entry point for dry runs or apply mode.
+
+Examples:
+
+```
+yarn shopify:store-sync:doctor --offline
+yarn shopify:store-sync:seed
+yarn shopify:store-sync:pull
+yarn shopify:store-sync:diff
+yarn shopify:store-sync:push
+yarn shopify:store-sync:apply --handle privacy-policy
 ```
 
 Build and run preview server:

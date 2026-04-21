@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/1692914843712",
+  "handle": "color-chords",
+  "title": "Color Chords",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "Vintage EuroRack Module",
+  "tags": [
+    "Expedition"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Out of production. Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other. Width, 16HP Mounting Depth, 32mm Power +12V @ 60mA Power -12V @ 60mA",
+  "createdAt": "2018-12-06T05:55:00Z",
+  "updatedAt": "2026-04-18T08:01:17Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320734388288",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

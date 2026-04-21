@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/43516067446807",
+    "displayName": "Videomancer Vinyl Sticker - Default Title",
+    "title": "Default Title",
+    "sku": "960042",
+    "barcode": "",
+    "position": 1,
+    "price": "5.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-04-17T17:10:24Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

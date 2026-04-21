@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41299105841175",
+    "displayName": "Chromagnon Patch - Default Title",
+    "title": "Default Title",
+    "sku": "970101",
+    "barcode": "",
+    "position": 2,
+    "price": "0.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-05-15T16:32:53Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

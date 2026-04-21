@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40616690286615",
+    "displayName": "Factors - Default Title",
+    "title": "Default Title",
+    "sku": "950042",
+    "barcode": "659359305856",
+    "position": 1,
+    "price": "339.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-18T08:22:18Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

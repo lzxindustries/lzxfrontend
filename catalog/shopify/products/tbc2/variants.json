@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40784595779607",
+    "displayName": "TBC2 - Default Title",
+    "title": "Default Title",
+    "sku": "950058",
+    "barcode": "672975060527",
+    "position": 1,
+    "price": "1199.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-17T20:17:38Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

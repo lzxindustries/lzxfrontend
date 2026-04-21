@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/40049326063639",
+    "namespace": "mc-facebook",
+    "key": "google_product_category",
+    "type": "string",
+    "value": "1867",
+    "description": null,
+    "updatedAt": "2025-05-15T16:03:35Z",
+    "compareDigest": "658b4f4347af71a6c32b20bd611536f0fcf82e6c758d99a0f0e8390bfd43d9e5"
+  }
+]

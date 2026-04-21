@@ -1,0 +1,34 @@
+{
+  "id": "gid://shopify/Product/7541009842199",
+  "handle": "p",
+  "title": "P",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/p",
+  "description": "P (Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot.P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
+  "createdAt": "2025-03-13T19:44:19Z",
+  "updatedAt": "2026-04-21T09:02:45Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9660068462615",
+      "name": "Assembly",
+      "position": 1,
+      "values": [
+        "Fully Assembled",
+        "Full DIY Kit",
+        "Partial DIY Kit"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

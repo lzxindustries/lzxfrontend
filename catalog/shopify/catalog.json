@@ -1,0 +1,590 @@
+{
+  "pulledAt": "2026-04-21T19:56:21.330Z",
+  "apiVersion": "2025-04",
+  "query": null,
+  "productCount": 97,
+  "products": [
+    {
+      "id": "gid://shopify/Product/6890556129303",
+      "handle": "12v-dc-adapter-3a",
+      "title": "12V DC Adapter 3A",
+      "updatedAt": "2026-04-17T00:53:57Z"
+    },
+    {
+      "id": "gid://shopify/Product/7475783172119",
+      "handle": "3-5mm-jack",
+      "title": "3.5mm Jack",
+      "updatedAt": "2026-04-17T00:54:01Z"
+    },
+    {
+      "id": "gid://shopify/Product/7475783041047",
+      "handle": "3-5mm-jack-knurled-nut",
+      "title": "3.5mm Jack Knurled Nut",
+      "updatedAt": "2026-04-17T00:54:00Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214199439383",
+      "handle": "8gb-microsd-card",
+      "title": "8GB MicroSD Card",
+      "updatedAt": "2026-04-17T00:53:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/1701957402688",
+      "handle": "andor-1-media-player",
+      "title": "Andor 1 Media Player",
+      "updatedAt": "2026-04-18T08:01:27Z"
+    },
+    {
+      "id": "gid://shopify/Product/6876230025239",
+      "handle": "angles",
+      "title": "Angles",
+      "updatedAt": "2026-04-21T09:02:40Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890094067735",
+      "handle": "blank-panel",
+      "title": "Blank Panel",
+      "updatedAt": "2026-04-17T00:53:55Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214169489431",
+      "handle": "bus-168-diy-kit",
+      "title": "Bus 168 DIY Kit",
+      "updatedAt": "2026-04-17T00:53:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/8203461459991",
+      "handle": "cable-dc21-splitter-8-blk",
+      "title": "CABLE-DC21-SPLITTER-8-BLK",
+      "updatedAt": "2026-04-17T00:54:04Z"
+    },
+    {
+      "id": "gid://shopify/Product/8203467751447",
+      "handle": "cable-dc25-to-wire-assy",
+      "title": "CABLE-DC25-TO-WIRE-ASSY",
+      "updatedAt": "2026-04-17T00:54:04Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477334835223",
+      "handle": "cable-idc16-gry-blk-25cm",
+      "title": "CABLE-IDC16-GRY-BLK-25CM",
+      "updatedAt": "2026-04-17T00:54:01Z"
+    },
+    {
+      "id": "gid://shopify/Product/7644126117911",
+      "handle": "cable-trrs-av-blk-200cm",
+      "title": "CABLE-TRRS-AV-BLK-200CM",
+      "updatedAt": "2026-04-17T00:54:03Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692913041472",
+      "handle": "cadet-series-embroidered-patch",
+      "title": "Cadet Series Embroidered Patch",
+      "updatedAt": "2026-04-17T00:53:45Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702700220480",
+      "handle": "cadet-series-vinyl-sticker",
+      "title": "Cadet Series Vinyl Sticker",
+      "updatedAt": "2026-04-17T00:53:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/6561694679063",
+      "handle": "capsule-power-kit",
+      "title": "Capsule Power Kit",
+      "updatedAt": "2026-04-17T00:53:51Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692913729600",
+      "handle": "castle-000-adc",
+      "title": "Castle 000 ADC",
+      "updatedAt": "2026-04-17T00:53:45Z"
+    },
+    {
+      "id": "gid://shopify/Product/1701868666944",
+      "handle": "castle-001-dac",
+      "title": "Castle 001 DAC",
+      "updatedAt": "2026-04-17T00:53:47Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692913860672",
+      "handle": "castle-010-clock-vco",
+      "title": "Castle 010 Clock VCO",
+      "updatedAt": "2026-04-17T00:53:45Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914024512",
+      "handle": "castle-011-shift-register",
+      "title": "Castle 011 Shift Register",
+      "updatedAt": "2026-04-17T00:53:46Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914090048",
+      "handle": "castle-100-multi-gate",
+      "title": "Castle 100 Multi Gate",
+      "updatedAt": "2026-04-17T00:53:46Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914221120",
+      "handle": "castle-101-quad-gate",
+      "title": "Castle 101 Quad Gate",
+      "updatedAt": "2026-04-17T00:53:46Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914286656",
+      "handle": "castle-110-counter",
+      "title": "Castle 110 Counter",
+      "updatedAt": "2026-04-17T00:53:46Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914483264",
+      "handle": "castle-111-d-flip-flops",
+      "title": "Castle 111 D Flip Flops",
+      "updatedAt": "2026-04-17T00:53:46Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702828408896",
+      "handle": "castle-series-embroidered-patch",
+      "title": "Castle Series Embroidered Patch",
+      "updatedAt": "2026-04-17T00:53:49Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702816219200",
+      "handle": "castle-series-vinyl-sticker",
+      "title": "Castle Series Vinyl Sticker",
+      "updatedAt": "2026-04-17T00:53:49Z"
+    },
+    {
+      "id": "gid://shopify/Product/4319674761239",
+      "handle": "chromagnon",
+      "title": "Chromagnon",
+      "updatedAt": "2026-04-20T14:32:45Z"
+    },
+    {
+      "id": "gid://shopify/Product/7171731587095",
+      "handle": "chromagnon-patch",
+      "title": "Chromagnon Patch",
+      "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/7171732733975",
+      "handle": "chromagnon-sticker",
+      "title": "Chromagnon Sticker",
+      "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692914843712",
+      "handle": "color-chords",
+      "title": "Color Chords",
+      "updatedAt": "2026-04-18T08:01:17Z"
+    },
+    {
+      "id": "gid://shopify/Product/6782469046295",
+      "handle": "contour",
+      "title": "Contour",
+      "updatedAt": "2026-04-21T09:02:39Z"
+    },
+    {
+      "id": "gid://shopify/Product/1822438031424",
+      "handle": "cyclops",
+      "title": "Cyclops",
+      "updatedAt": "2026-04-18T08:01:22Z"
+    },
+    {
+      "id": "gid://shopify/Product/6552562794519",
+      "handle": "dc-distro",
+      "title": "DC Distro 5A",
+      "updatedAt": "2026-04-17T00:53:51Z"
+    },
+    {
+      "id": "gid://shopify/Product/6778221133847",
+      "handle": "dc-distro-3a",
+      "title": "DC Distro 3A",
+      "updatedAt": "2026-04-17T00:53:53Z"
+    },
+    {
+      "id": "gid://shopify/Product/6552581832727",
+      "handle": "dc-power-cable",
+      "title": "DC Power Cable",
+      "updatedAt": "2026-04-17T00:53:51Z"
+    },
+    {
+      "id": "gid://shopify/Product/7415503781911",
+      "handle": "double-vision-complete",
+      "title": "Double Vision 168",
+      "updatedAt": "2026-04-17T00:54:00Z"
+    },
+    {
+      "id": "gid://shopify/Product/7415503716375",
+      "handle": "double-vision-expander",
+      "title": "Double Vision Expander",
+      "updatedAt": "2026-04-17T00:54:00Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890355163159",
+      "handle": "double-vision-system",
+      "title": "Double Vision",
+      "updatedAt": "2026-04-17T00:53:55Z"
+    },
+    {
+      "id": "gid://shopify/Product/6576427204631",
+      "handle": "dsg3",
+      "title": "DSG3",
+      "updatedAt": "2026-04-21T09:02:27Z"
+    },
+    {
+      "id": "gid://shopify/Product/6576427565079",
+      "handle": "dwo3",
+      "title": "DWO3",
+      "updatedAt": "2026-04-21T09:02:28Z"
+    },
+    {
+      "id": "gid://shopify/Product/6576385884183",
+      "handle": "esg3",
+      "title": "ESG3",
+      "updatedAt": "2026-04-21T09:02:32Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702758350912",
+      "handle": "expedition-series-embroidered-patch",
+      "title": "Expedition Series Embroidered Patch",
+      "updatedAt": "2026-04-17T00:53:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/6921420800023",
+      "handle": "factors",
+      "title": "Factors",
+      "updatedAt": "2026-04-21T09:02:40Z"
+    },
+    {
+      "id": "gid://shopify/Product/6573392003095",
+      "handle": "fkg3",
+      "title": "FKG3",
+      "updatedAt": "2026-04-21T09:02:24Z"
+    },
+    {
+      "id": "gid://shopify/Product/1725059989568",
+      "handle": "gift-card",
+      "title": "Gift Card",
+      "updatedAt": "2026-04-17T00:53:49Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477335195671",
+      "handle": "hws15766-pin-header-pitch-0-1in-2x5-male-shrouded",
+      "title": "HWS15766 Pin Header Pitch 0.1in 2X5 Male Shrouded",
+      "updatedAt": "2026-04-17T00:54:02Z"
+    },
+    {
+      "id": "gid://shopify/Product/7156509769751",
+      "handle": "jxmox-usb-c-to-micro-usb-adapter",
+      "title": "JXMOX USB C to Micro USB Adapter",
+      "updatedAt": "2026-04-17T00:53:57Z"
+    },
+    {
+      "id": "gid://shopify/Product/6766670315543",
+      "handle": "keychain",
+      "title": "Keychain",
+      "updatedAt": "2026-04-21T09:02:29Z"
+    },
+    {
+      "id": "gid://shopify/Product/7331966222359",
+      "handle": "liquid-tv",
+      "title": "Liquid TV",
+      "updatedAt": "2026-04-17T00:53:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/7540894138391",
+      "handle": "lnk",
+      "title": "LNK",
+      "updatedAt": "2026-04-21T09:02:43Z"
+    },
+    {
+      "id": "gid://shopify/Product/6690204811287",
+      "handle": "lzx-black-expedition-replacement-panel",
+      "title": "Alternate Frontpanel",
+      "updatedAt": "2026-04-17T00:53:52Z"
+    },
+    {
+      "id": "gid://shopify/Product/1701843599424",
+      "handle": "lzx-logo-vinyl-sticker",
+      "title": "LZX Logo Vinyl Sticker",
+      "updatedAt": "2026-04-17T00:53:47Z"
+    },
+    {
+      "id": "gid://shopify/Product/6766673952791",
+      "handle": "matte",
+      "title": "Matte",
+      "updatedAt": "2026-04-21T09:02:32Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692916154432",
+      "handle": "memory-palace",
+      "title": "Memory Palace",
+      "updatedAt": "2026-04-18T08:01:19Z"
+    },
+    {
+      "id": "gid://shopify/Product/7540996833303",
+      "handle": "mlt",
+      "title": "MLT",
+      "updatedAt": "2026-04-21T09:02:43Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477333917719",
+      "handle": "nut-m7-pot",
+      "title": "NUT-M7-POT",
+      "updatedAt": "2026-04-17T00:54:01Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702792855616",
+      "handle": "orion-series-embroidered-patch",
+      "title": "Orion Series Embroidered Patch",
+      "updatedAt": "2026-04-17T00:53:49Z"
+    },
+    {
+      "id": "gid://shopify/Product/1702781059136",
+      "handle": "orion-series-vinyl-sticker",
+      "title": "Orion Series Vinyl Sticker",
+      "updatedAt": "2026-04-17T00:53:49Z"
+    },
+    {
+      "id": "gid://shopify/Product/4295175766039",
+      "handle": "orion-tee-shirt",
+      "title": "Orion Tee Shirt",
+      "updatedAt": "2026-04-17T00:53:50Z"
+    },
+    {
+      "id": "gid://shopify/Product/7541009842199",
+      "handle": "p",
+      "title": "P",
+      "updatedAt": "2026-04-21T09:02:45Z"
+    },
+    {
+      "id": "gid://shopify/Product/7541032321047",
+      "handle": "pab",
+      "title": "PAB",
+      "updatedAt": "2026-04-21T09:02:47Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890363125783",
+      "handle": "patch-cable",
+      "title": "Patch Cable",
+      "updatedAt": "2026-04-17T00:53:56Z"
+    },
+    {
+      "id": "gid://shopify/Product/7414310109207",
+      "handle": "pgo",
+      "title": "PGO",
+      "updatedAt": "2026-04-21T09:02:43Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477334999063",
+      "handle": "pin-header-pitch-0-1in-2x8-male-shrouded",
+      "title": "Pin Header Pitch 0.1in 2X8 Male Shrouded",
+      "updatedAt": "2026-04-17T00:54:02Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890363879447",
+      "handle": "power-entry-module-8hp",
+      "title": "Power Entry 8HP",
+      "updatedAt": "2026-04-17T00:53:56Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890556915735",
+      "handle": "power-sync-entry-12hp",
+      "title": "Power & Sync Entry 12HP",
+      "updatedAt": "2026-04-17T00:53:57Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692917071936",
+      "handle": "prismatic-ray",
+      "title": "Prismatic Ray",
+      "updatedAt": "2026-04-18T08:01:20Z"
+    },
+    {
+      "id": "gid://shopify/Product/7541021147159",
+      "handle": "prm",
+      "title": "PRM",
+      "updatedAt": "2026-04-21T09:02:44Z"
+    },
+    {
+      "id": "gid://shopify/Product/6766673068055",
+      "handle": "proc",
+      "title": "Proc",
+      "updatedAt": "2026-04-21T09:02:35Z"
+    },
+    {
+      "id": "gid://shopify/Product/6782464294935",
+      "handle": "rack-84hp",
+      "title": "Rack 84HP",
+      "updatedAt": "2026-04-17T00:53:54Z"
+    },
+    {
+      "id": "gid://shopify/Product/1701898846272",
+      "handle": "rca-sync-cable",
+      "title": "RCA Sync Cable",
+      "updatedAt": "2026-04-17T00:53:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477333622807",
+      "handle": "rd901f-40-15f-b10k-00d-alpha-b10k-potentiometer",
+      "title": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer",
+      "updatedAt": "2026-04-17T00:54:01Z"
+    },
+    {
+      "id": "gid://shopify/Product/1701923323968",
+      "handle": "rgb-patch-cable",
+      "title": "RGB Patch Cable",
+      "updatedAt": "2026-04-17T00:53:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/6886906134551",
+      "handle": "ribbons",
+      "title": "Ribbons",
+      "updatedAt": "2026-04-21T09:02:39Z"
+    },
+    {
+      "id": "gid://shopify/Product/6925034356759",
+      "handle": "scrolls",
+      "title": "Scrolls",
+      "updatedAt": "2026-04-21T09:02:41Z"
+    },
+    {
+      "id": "gid://shopify/Product/6575222685719",
+      "handle": "smx3",
+      "title": "SMX3",
+      "updatedAt": "2026-04-21T09:02:24Z"
+    },
+    {
+      "id": "gid://shopify/Product/6886906560535",
+      "handle": "stacker",
+      "title": "Stacker",
+      "updatedAt": "2026-04-21T09:02:40Z"
+    },
+    {
+      "id": "gid://shopify/Product/6766671396887",
+      "handle": "stairs",
+      "title": "Stairs",
+      "updatedAt": "2026-04-21T09:02:31Z"
+    },
+    {
+      "id": "gid://shopify/Product/6766668120087",
+      "handle": "sumdist",
+      "title": "SumDist",
+      "updatedAt": "2026-04-21T09:02:31Z"
+    },
+    {
+      "id": "gid://shopify/Product/6856020394007",
+      "handle": "swatch",
+      "title": "Swatch",
+      "updatedAt": "2026-04-21T09:02:34Z"
+    },
+    {
+      "id": "gid://shopify/Product/6886906396695",
+      "handle": "switcher",
+      "title": "Switcher",
+      "updatedAt": "2026-04-21T09:02:38Z"
+    },
+    {
+      "id": "gid://shopify/Product/1692918218816",
+      "handle": "tbc2",
+      "title": "TBC2",
+      "updatedAt": "2026-04-21T09:02:25Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214160281623",
+      "handle": "tbc2-mk1-fan-upgrade-kit",
+      "title": "TBC2 Mk1 Fan Upgrade Kit",
+      "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/7171722870807",
+      "handle": "tbc2-mk2-fan-upgrade-kit",
+      "title": "TBC2 Mk2 Fan Upgrade Kit",
+      "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/7171710189591",
+      "handle": "vessel-168",
+      "title": "Vessel 168",
+      "updatedAt": "2026-04-18T08:01:48Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214185316375",
+      "handle": "vessel-208",
+      "title": "Vessel 208",
+      "updatedAt": "2026-04-17T00:53:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214168244247",
+      "handle": "vessel-84",
+      "title": "Vessel 84",
+      "updatedAt": "2026-04-17T00:53:58Z"
+    },
+    {
+      "id": "gid://shopify/Product/7214197440535",
+      "handle": "vessel-eurorack-psu-expander",
+      "title": "Vessel EuroRack PSU Expander",
+      "updatedAt": "2026-04-17T00:53:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/4256056410135",
+      "handle": "vga-expander",
+      "title": "TBC2 Expander",
+      "updatedAt": "2026-04-17T00:53:50Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890363158551",
+      "handle": "video-cable",
+      "title": "RCA Video Cable",
+      "updatedAt": "2026-04-17T00:53:56Z"
+    },
+    {
+      "id": "gid://shopify/Product/6890363289623",
+      "handle": "video-knob",
+      "title": "Video Knob",
+      "updatedAt": "2026-04-18T08:01:43Z"
+    },
+    {
+      "id": "gid://shopify/Product/6884822614039",
+      "handle": "video-knob-enamel-pin",
+      "title": "Video Knob Pin",
+      "updatedAt": "2026-04-17T00:53:54Z"
+    },
+    {
+      "id": "gid://shopify/Product/1974680092736",
+      "handle": "video-sync-distribution-cable",
+      "title": "14 Pin Sync Cable",
+      "updatedAt": "2026-04-17T00:53:50Z"
+    },
+    {
+      "id": "gid://shopify/Product/8186914373655",
+      "handle": "videomancer",
+      "title": "Videomancer",
+      "updatedAt": "2026-04-21T16:17:59Z"
+    },
+    {
+      "id": "gid://shopify/Product/8220892233751",
+      "handle": "videomancer-tee",
+      "title": "Videomancer Tee",
+      "updatedAt": "2026-04-17T17:10:07Z"
+    },
+    {
+      "id": "gid://shopify/Product/8199823786007",
+      "handle": "videomancer-vinyl-sticker",
+      "title": "Videomancer Vinyl Sticker",
+      "updatedAt": "2026-04-17T17:10:23Z"
+    },
+    {
+      "id": "gid://shopify/Product/7352095211543",
+      "handle": "vidiot",
+      "title": "Vidiot",
+      "updatedAt": "2026-04-18T08:01:44Z"
+    },
+    {
+      "id": "gid://shopify/Product/7477334474775",
+      "handle": "washer-m7-pot",
+      "title": "WASHER-M7-POT",
+      "updatedAt": "2026-04-17T00:54:01Z"
+    }
+  ]
+}

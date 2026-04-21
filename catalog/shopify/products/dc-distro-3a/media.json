@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/21566270177303",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX4HPDCDistro3AFront.png?v=1657901197",
+      "altText": "",
+      "width": 1200,
+      "height": 1200
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-distro-3a/media/01-dc-distro-3a.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21566270210071",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX4HPDCDistro3Arear.png?v=1657901197",
+      "altText": "",
+      "width": 1200,
+      "height": 1200
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-distro-3a/media/02-dc-distro-3a.png"
+  }
+]

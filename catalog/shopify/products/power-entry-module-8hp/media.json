@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22913915322391",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/psu8-and-rear-panel.png?v=1684466154",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/power-entry-module-8hp/media/01-power-entry-module-8hp.png"
+  }
+]

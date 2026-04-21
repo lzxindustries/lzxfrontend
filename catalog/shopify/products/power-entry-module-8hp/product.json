@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/6890363879447",
+  "handle": "power-entry-module-8hp",
+  "title": "Power Entry 8HP",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "OEM Component",
+  "tags": [
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/power-entry-module-8hp",
+  "description": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 8HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
+  "createdAt": "2023-05-18T03:00:33Z",
+  "updatedAt": "2026-04-17T00:53:56Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8859166998551",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

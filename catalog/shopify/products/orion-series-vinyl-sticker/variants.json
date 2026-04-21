@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16577893302336",
+    "displayName": "Orion Series Vinyl Sticker - Default",
+    "title": "Default",
+    "sku": "970008",
+    "barcode": "93302336",
+    "position": 1,
+    "price": "3.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-05-12T21:23:40Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default"
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "gid://shopify/ExternalVideo/25062807568407",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/WBdyM4eI3JQ",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/WBdyM4eI3JQ",
+    "image": null,
+    "sources": []
+  },
+  {
+    "id": "gid://shopify/ExternalVideo/25062810451991",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/c17o0oAmknY",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/c17o0oAmknY",
+    "image": null,
+    "sources": []
+  },
+  {
+    "id": "gid://shopify/ExternalVideo/25062820085783",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/bB_V8DBnVEw",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/bB_V8DBnVEw",
+    "image": null,
+    "sources": []
+  },
+  {
+    "id": "gid://shopify/MediaImage/22893817298967",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/StackerSquare.png?v=1682550867",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/stacker/media/04-stacker.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22906777108503",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "How do you stack up?",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/PXL_20230509_233228860.jpg?v=1683677738",
+      "altText": "How do you stack up?",
+      "width": 4032,
+      "height": 3024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/stacker/media/05-how-do-you-stack-up.jpg"
+  }
+]

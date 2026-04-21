@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16492166742080",
+    "displayName": "Prismatic Ray - Default Title",
+    "title": "Default Title",
+    "sku": "950021",
+    "barcode": "602573207994",
+    "position": 1,
+    "price": "399.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T19:22:25Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

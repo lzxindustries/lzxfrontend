@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gid://shopify/Metafield/43964427206679",
+    "namespace": "shopify",
+    "key": "adhesive-type",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/171777097751\"]",
+    "description": null,
+    "updatedAt": "2025-10-13T20:49:38Z",
+    "compareDigest": "aa7131e461f63d6c9a616ae2066bda9a635a48c75285bc6d60eaf00b7fdfee08"
+  },
+  {
+    "id": "gid://shopify/Metafield/43964427141143",
+    "namespace": "shopify",
+    "key": "color-pattern",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/171776999447\"]",
+    "description": null,
+    "updatedAt": "2025-10-13T20:49:38Z",
+    "compareDigest": "fb65573cdb6c844a314c19113c41abc5f2cc2aa43c4bc24045f77adcafaefb72"
+  },
+  {
+    "id": "gid://shopify/Metafield/43964427239447",
+    "namespace": "shopify",
+    "key": "embellishment-trim-material",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/171777032215\"]",
+    "description": null,
+    "updatedAt": "2025-10-13T20:49:38Z",
+    "compareDigest": "8505fa2ac9a6b4d769ae94f2b96d48cd2fde944909af351de9eff6e9a9dec20e"
+  },
+  {
+    "id": "gid://shopify/Metafield/43964427173911",
+    "namespace": "shopify",
+    "key": "theme",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/171777064983\",\"gid://shopify/Metaobject/171777130519\"]",
+    "description": null,
+    "updatedAt": "2025-10-13T20:49:38Z",
+    "compareDigest": "5c2f4b1e1145574eccc17b966e636c9af753635f539ccfc2f67597264d013af7"
+  }
+]

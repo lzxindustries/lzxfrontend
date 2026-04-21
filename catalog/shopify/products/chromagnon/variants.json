@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/31046223233047",
+    "displayName": "Chromagnon - Default Title",
+    "title": "Default Title",
+    "sku": "930002",
+    "barcode": "672975060916",
+    "position": 1,
+    "price": "1599.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-04-16T22:52:53Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

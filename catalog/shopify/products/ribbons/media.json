@@ -1,0 +1,164 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22893814644759",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/RibbonsSquare.png?v=1682550554",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/01-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895433842711",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons-square.jpg?v=1682640266",
+      "altText": "",
+      "width": 2826,
+      "height": 2826
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/02-ribbons.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437152279",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons06.png?v=1682640263",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/03-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437185047",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons03.png?v=1682640266",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/04-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437217815",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons05.png?v=1682640263",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/05-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437250583",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons02.png?v=1682640266",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/06-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437283351",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons04.png?v=1682640266",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/07-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437316119",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons07.png?v=1682640266",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/08-ribbons.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22895437348887",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons10.png?v=1682640266",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/ribbons/media/09-ribbons.png"
+  }
+]

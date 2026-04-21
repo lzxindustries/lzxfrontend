@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22893815169047",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/SwitcherSquare.png?v=1682550708",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/switcher/media/01-switcher.png"
+  }
+]

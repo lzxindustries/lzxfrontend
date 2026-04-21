@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gid://shopify/Metafield/39078300385303",
+    "namespace": "mc-facebook",
+    "key": "google_product_category",
+    "type": "string",
+    "value": "246",
+    "description": null,
+    "updatedAt": "2025-03-13T18:54:25Z",
+    "compareDigest": "ba0d464289ea300ad085c3e6473cfa2364a7f17a06d0483656cfe95d4473b038"
+  },
+  {
+    "id": "gid://shopify/Metafield/39078300418071",
+    "namespace": "shopify",
+    "key": "color-pattern",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/95417171991\"]",
+    "description": null,
+    "updatedAt": "2025-03-13T18:54:25Z",
+    "compareDigest": "ee74d90c1c76caef53a333de774effc0ed4599757e24753ae2fb8c8452d7478a"
+  },
+  {
+    "id": "gid://shopify/Metafield/39078300450839",
+    "namespace": "shopify",
+    "key": "device-interface",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/104002224151\"]",
+    "description": null,
+    "updatedAt": "2025-03-13T18:54:25Z",
+    "compareDigest": "bc6e4e5dd8a02bdba7231d37c0903e1d0c2348d70442d5cccc0c81fd75332f80"
+  },
+  {
+    "id": "gid://shopify/Metafield/39078300483607",
+    "namespace": "shopify",
+    "key": "processor-technology",
+    "type": "list.metaobject_reference",
+    "value": "[\"gid://shopify/Metaobject/104002191383\"]",
+    "description": null,
+    "updatedAt": "2025-03-13T18:54:25Z",
+    "compareDigest": "8a57d8a5829894d9604650fe453e203254e050085267f365af47adafedb0fd5b"
+  }
+]

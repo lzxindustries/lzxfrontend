@@ -1,0 +1,200 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/21771146887191",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/BeltBuckle.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/01-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771146919959",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/CameraFeedback1.jpg?v=1683302006",
+      "altText": "",
+      "width": 1531,
+      "height": 862
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/02-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771146952727",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/CameraFeedback2.jpg?v=1683302006",
+      "altText": "",
+      "width": 1884,
+      "height": 1059
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/03-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147018263",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ConduitPulse.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/04-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147051031",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/DawnSeed.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/05-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147149335",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/face_fx2.png?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/06-dsg3.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147214871",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/IsometricChecker.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/07-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147247639",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ReflectedAuras.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/08-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147313175",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Sarcophagi.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/09-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21771147378711",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/TubeSigils.jpg?v=1683302006",
+      "altText": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/10-dsg3.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22903417077783",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dsg3-front-panel-square.png?v=1683302006",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/11-dsg3.png"
+  }
+]

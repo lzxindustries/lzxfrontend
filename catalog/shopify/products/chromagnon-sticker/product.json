@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7171732733975",
+  "handle": "chromagnon-sticker",
+  "title": "Chromagnon Sticker",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "",
+  "createdAt": "2024-05-15T16:11:45Z",
+  "updatedAt": "2026-04-17T00:53:58Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9201992400919",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

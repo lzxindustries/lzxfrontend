@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/21421778862103",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX8HPKeychainFrontpanelColorGraphicDarkSquare.png?v=1655916467",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/keychain/media/01-keychain.png"
+  }
+]

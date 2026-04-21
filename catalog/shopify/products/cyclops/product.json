@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/1822438031424",
+  "handle": "cyclops",
+  "title": "Cyclops",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "Vintage EuroRack Module",
+  "tags": [
+    "Expedition"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "﻿ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V",
+  "createdAt": "2018-12-13T22:58:40Z",
+  "updatedAt": "2026-04-18T08:01:22Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2513057808448",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

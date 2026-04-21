@@ -1,0 +1,135 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16801576124480",
+    "displayName": "Gift Card - $10.00 USD",
+    "title": "$10.00 USD",
+    "sku": "998001",
+    "barcode": "76124480",
+    "position": 1,
+    "price": "10.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-07-07T21:02:27Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$10.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16801576190016",
+    "displayName": "Gift Card - $25.00 USD",
+    "title": "$25.00 USD",
+    "sku": "998002",
+    "barcode": "76190016",
+    "position": 2,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-15T15:52:20Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$25.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16801576222784",
+    "displayName": "Gift Card - $50.00 USD",
+    "title": "$50.00 USD",
+    "sku": "998003",
+    "barcode": "76222784",
+    "position": 3,
+    "price": "50.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-15T15:52:20Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$50.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16801576288320",
+    "displayName": "Gift Card - $100.00 USD",
+    "title": "$100.00 USD",
+    "sku": "998004",
+    "barcode": "76288320",
+    "position": 4,
+    "price": "100.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-27T19:42:56Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$100.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/31319491969047",
+    "displayName": "Gift Card - $250.00 USD",
+    "title": "$250.00 USD",
+    "sku": "998005",
+    "barcode": "",
+    "position": 5,
+    "price": "250.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-01T19:52:34Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$250.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/31319493935127",
+    "displayName": "Gift Card - $500.00 USD",
+    "title": "$500.00 USD",
+    "sku": "998006",
+    "barcode": "",
+    "position": 6,
+    "price": "500.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-15T15:52:21Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$500.00 USD"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/31319496130583",
+    "displayName": "Gift Card - $1,000.00 USD",
+    "title": "$1,000.00 USD",
+    "sku": "998007",
+    "barcode": "",
+    "position": 7,
+    "price": "1000.00",
+    "compareAtPrice": null,
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-10T23:32:43Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "$1,000.00 USD"
+      }
+    ]
+  }
+]

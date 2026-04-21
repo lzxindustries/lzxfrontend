@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/22911623266327",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/image_57_1.png?v=1684259190",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/castle-000-adc/media/01-castle-000-adc.png"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6576427204631",
+  "handle": "dsg3",
+  "title": "DSG3",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/dsg3",
+  "description": "DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways.",
+  "createdAt": "2021-08-27T02:51:28Z",
+  "updatedAt": "2026-04-21T09:02:27Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8460629606423",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

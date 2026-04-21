@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16571142963264",
+    "displayName": "RCA Sync Cable - 60cm",
+    "title": "60cm",
+    "sku": "960002",
+    "barcode": "42963264",
+    "position": 1,
+    "price": "9.00",
+    "compareAtPrice": "9.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-01-21T02:06:38Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "60cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16571142996032",
+    "displayName": "RCA Sync Cable - 30cm",
+    "title": "30cm",
+    "sku": "960001",
+    "barcode": "42996032",
+    "position": 2,
+    "price": "8.00",
+    "compareAtPrice": "8.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-21T02:06:39Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "30cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/16571143028800",
+    "displayName": "RCA Sync Cable - 15cm",
+    "title": "15cm",
+    "sku": "960003",
+    "barcode": "43028800",
+    "position": 3,
+    "price": "7.00",
+    "compareAtPrice": "7.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-03-26T17:48:11Z",
+    "selectedOptions": [
+      {
+        "name": "Length",
+        "value": "15cm"
+      }
+    ]
+  }
+]

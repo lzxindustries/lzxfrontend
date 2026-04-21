@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/7214197440535",
+  "handle": "vessel-eurorack-psu-expander",
+  "title": "Vessel EuroRack PSU Expander",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "Modular Case",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "",
+  "createdAt": "2024-06-03T21:36:10Z",
+  "updatedAt": "2026-04-17T00:53:59Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9251889414167",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

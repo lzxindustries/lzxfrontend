@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40169568567319",
+    "displayName": "Matte - Default Title",
+    "title": "Default Title",
+    "sku": "950044",
+    "barcode": "735263925752",
+    "position": 1,
+    "price": "219.00",
+    "compareAtPrice": "239.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-17T18:00:41Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

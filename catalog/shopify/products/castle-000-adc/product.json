@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1692913729600",
+  "handle": "castle-000-adc",
+  "title": "Castle 000 ADC",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-000-adc",
+  "description": "DIY PCB & Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream.",
+  "createdAt": "2018-12-06T05:54:57Z",
+  "updatedAt": "2026-04-17T00:53:45Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320733077568",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

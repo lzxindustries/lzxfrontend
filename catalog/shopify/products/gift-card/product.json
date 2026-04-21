@@ -1,0 +1,38 @@
+{
+  "id": "gid://shopify/Product/1725059989568",
+  "handle": "gift-card",
+  "title": "Gift Card",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Gift Card",
+  "tags": [
+    "Active",
+    "Merch",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/gift-card",
+  "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.",
+  "createdAt": "2018-12-08T00:07:39Z",
+  "updatedAt": "2026-04-17T00:53:49Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2366498439232",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "$10.00 USD",
+        "$25.00 USD",
+        "$50.00 USD",
+        "$100.00 USD",
+        "$250.00 USD",
+        "$500.00 USD",
+        "$1,000.00 USD"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! "
+  }
+}

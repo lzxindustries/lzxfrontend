@@ -1,0 +1,33 @@
+{
+  "pulledAt": "2026-04-21T19:56:27.801Z",
+  "apiVersion": "2025-04",
+  "policyCount": 4,
+  "pageCount": 0,
+  "policies": [
+    {
+      "handle": "privacy-policy",
+      "title": "Privacy policy",
+      "type": "PRIVACY_POLICY",
+      "updatedAt": "2026-04-16T11:24:42-07:00"
+    },
+    {
+      "handle": "refund-policy",
+      "title": "Refund policy",
+      "type": "REFUND_POLICY",
+      "updatedAt": "2026-04-16T11:05:51-07:00"
+    },
+    {
+      "handle": "shipping-policy",
+      "title": "Shipping",
+      "type": "SHIPPING_POLICY",
+      "updatedAt": "2026-04-16T11:25:04-07:00"
+    },
+    {
+      "handle": "terms-of-service",
+      "title": "Terms of service",
+      "type": "TERMS_OF_SERVICE",
+      "updatedAt": "2026-04-16T11:25:37-07:00"
+    }
+  ],
+  "pages": []
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41969976737815",
+    "displayName": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer - Default Title",
+    "title": "Default Title",
+    "sku": "200001",
+    "barcode": "",
+    "position": 1,
+    "price": "0.75",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-04-09T17:17:22Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/7214168244247",
+  "handle": "vessel-84",
+  "title": "Vessel 84",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Modular Case",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/vessel-84",
+  "description": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 84HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 5 Amps of current with side facing power switch 14 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 7 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 84HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws 12V 5A power supply w/EMI filtering IEC power cable",
+  "createdAt": "2024-06-03T19:25:09Z",
+  "updatedAt": "2026-04-17T00:53:58Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9251852419095",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

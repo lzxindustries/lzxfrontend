@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1571121496087",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_53.png?v=1544137381",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/castle-011-shift-register/media/01-castle-011-shift-register.png"
+  }
+]

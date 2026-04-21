@@ -1,0 +1,33 @@
+{
+  "id": "gid://shopify/Product/6884822614039",
+  "handle": "video-knob-enamel-pin",
+  "title": "Video Knob Pin",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Pin",
+  "tags": [
+    "Accessories",
+    "Active",
+    "Merch",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/video-knob-enamel-pin",
+  "description": "Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.",
+  "createdAt": "2023-04-13T16:15:33Z",
+  "updatedAt": "2026-04-17T00:53:54Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8852365901847",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

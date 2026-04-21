@@ -1,0 +1,232 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/43554742829079",
+    "displayName": "Videomancer Tee - Black / S",
+    "title": "Black / S",
+    "sku": "975001",
+    "barcode": "",
+    "position": 1,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-18T04:28:00Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Black"
+      },
+      {
+        "name": "Size",
+        "value": "S"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554742861847",
+    "displayName": "Videomancer Tee - Black / M",
+    "title": "Black / M",
+    "sku": "975002",
+    "barcode": "",
+    "position": 2,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-18T04:28:00Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Black"
+      },
+      {
+        "name": "Size",
+        "value": "M"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554742894615",
+    "displayName": "Videomancer Tee - Black / L",
+    "title": "Black / L",
+    "sku": "975003",
+    "barcode": "",
+    "position": 3,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-18T04:28:01Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Black"
+      },
+      {
+        "name": "Size",
+        "value": "L"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554742927383",
+    "displayName": "Videomancer Tee - Black / XL",
+    "title": "Black / XL",
+    "sku": "975004",
+    "barcode": "",
+    "position": 4,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-04-17T17:10:08Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Black"
+      },
+      {
+        "name": "Size",
+        "value": "XL"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554742960151",
+    "displayName": "Videomancer Tee - Black / 2XL",
+    "title": "Black / 2XL",
+    "sku": "975005",
+    "barcode": "",
+    "position": 5,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-31T22:32:25Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Black"
+      },
+      {
+        "name": "Size",
+        "value": "2XL"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554742992919",
+    "displayName": "Videomancer Tee - Purple / S",
+    "title": "Purple / S",
+    "sku": "975006",
+    "barcode": "",
+    "position": 6,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-01-02T21:30:38Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Purple"
+      },
+      {
+        "name": "Size",
+        "value": "S"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554743025687",
+    "displayName": "Videomancer Tee - Purple / M",
+    "title": "Purple / M",
+    "sku": "975007",
+    "barcode": "",
+    "position": 7,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-17T17:31:26Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Purple"
+      },
+      {
+        "name": "Size",
+        "value": "M"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554743058455",
+    "displayName": "Videomancer Tee - Purple / L",
+    "title": "Purple / L",
+    "sku": "975008",
+    "barcode": "",
+    "position": 8,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-17T17:31:17Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Purple"
+      },
+      {
+        "name": "Size",
+        "value": "L"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554743091223",
+    "displayName": "Videomancer Tee - Purple / XL",
+    "title": "Purple / XL",
+    "sku": "975009",
+    "barcode": "",
+    "position": 9,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-17T17:31:06Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Purple"
+      },
+      {
+        "name": "Size",
+        "value": "XL"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/43554743123991",
+    "displayName": "Videomancer Tee - Purple / 2XL",
+    "title": "Purple / 2XL",
+    "sku": "975010",
+    "barcode": "",
+    "position": 10,
+    "price": "30.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-17T17:30:55Z",
+    "selectedOptions": [
+      {
+        "name": "Color",
+        "value": "Purple"
+      },
+      {
+        "name": "Size",
+        "value": "2XL"
+      }
+    ]
+  }
+]

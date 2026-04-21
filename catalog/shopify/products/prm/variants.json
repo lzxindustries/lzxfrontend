@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/42111130271767",
+    "displayName": "PRM - Fully Assembled",
+    "title": "Fully Assembled",
+    "sku": "950066",
+    "barcode": "659859408347",
+    "position": 1,
+    "price": "219.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-17T20:17:39Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Fully Assembled"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111130304535",
+    "displayName": "PRM - Full DIY Kit",
+    "title": "Full DIY Kit",
+    "sku": "940409",
+    "barcode": "",
+    "position": 2,
+    "price": "119.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-08-12T22:17:27Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Full DIY Kit"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111130337303",
+    "displayName": "PRM - Partial DIY Kit",
+    "title": "Partial DIY Kit",
+    "sku": "940401",
+    "barcode": "",
+    "position": 3,
+    "price": "99.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-12-01T19:22:42Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Partial DIY Kit"
+      }
+    ]
+  }
+]

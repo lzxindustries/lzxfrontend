@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7475783172119",
+  "handle": "3-5mm-jack",
+  "title": "3.5mm Jack",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/3-5mm-jack",
+  "description": "",
+  "createdAt": "2025-02-03T23:44:37Z",
+  "updatedAt": "2026-04-17T00:54:01Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9563199635479",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

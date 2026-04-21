@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41298748145687",
+    "displayName": "Vessel 168 - Default Title",
+    "title": "Default Title",
+    "sku": "910010",
+    "barcode": "659859158358",
+    "position": 2,
+    "price": "1199.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-04-11T15:49:11Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

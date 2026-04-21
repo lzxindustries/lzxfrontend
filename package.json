@@ -30,7 +30,20 @@
     "search:index": "node scripts/build-search-index.mjs",
     "shopify:sync": "node scripts/shopify-sync.mjs",
     "shopify:sync:doctor": "node scripts/shopify-sync.mjs doctor",
-    "shopify:sync:pull": "node scripts/shopify-sync.mjs pull"
+    "shopify:sync:pull": "node scripts/shopify-sync.mjs pull",
+    "shopify:sync:diff": "node scripts/shopify-sync.mjs diff",
+    "shopify:sync:push": "node scripts/shopify-sync.mjs push",
+    "shopify:sync:apply": "node scripts/shopify-sync.mjs push --apply",
+    "shopify:sync:run": "node scripts/shopify-sync.mjs sync",
+    "shopify:sync:sync": "node scripts/shopify-sync.mjs sync",
+    "shopify:store-sync": "node scripts/shopify-store-sync.mjs",
+    "shopify:store-sync:doctor": "node scripts/shopify-store-sync.mjs doctor",
+    "shopify:store-sync:seed": "node scripts/shopify-store-sync.mjs seed",
+    "shopify:store-sync:pull": "node scripts/shopify-store-sync.mjs pull",
+    "shopify:store-sync:diff": "node scripts/shopify-store-sync.mjs diff",
+    "shopify:store-sync:push": "node scripts/shopify-store-sync.mjs push",
+    "shopify:store-sync:apply": "node scripts/shopify-store-sync.mjs push --apply",
+    "shopify:store-sync:run": "node scripts/shopify-store-sync.mjs sync"
   },
   "browserslist": [
     "defaults"

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40558567948311",
+    "displayName": "Ribbons - Default Title",
+    "title": "Default Title",
+    "sku": "950049",
+    "barcode": "659359184246",
+    "position": 1,
+    "price": "359.00",
+    "compareAtPrice": "0.00",
+    "taxable": false,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-18T08:22:23Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

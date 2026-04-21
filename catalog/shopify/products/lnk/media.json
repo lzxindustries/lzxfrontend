@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/25468992913431",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/LNK-FPN-REVA_8fe8316e-a6af-4c5d-9d85-bc9a59535ed1.png?v=1741893440",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/lnk/media/01-lnk.png"
+  }
+]

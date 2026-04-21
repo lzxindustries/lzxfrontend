@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6573392003095",
+  "handle": "fkg3",
+  "title": "FKG3",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/fkg3",
+  "description": "FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks.",
+  "createdAt": "2021-08-13T22:26:29Z",
+  "updatedAt": "2026-04-21T09:02:24Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8456528527383",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

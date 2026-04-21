@@ -1,0 +1,97 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/30935680811031",
+    "displayName": "Orion Tee Shirt - Small",
+    "title": "Small",
+    "sku": "970011",
+    "barcode": "659859000688",
+    "position": 1,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T20:46:16Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Small"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/30935680843799",
+    "displayName": "Orion Tee Shirt - Medium",
+    "title": "Medium",
+    "sku": "970010",
+    "barcode": "659859104966",
+    "position": 2,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T20:47:01Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Medium"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/30935680876567",
+    "displayName": "Orion Tee Shirt - Large",
+    "title": "Large",
+    "sku": "970009",
+    "barcode": "659859094052",
+    "position": 3,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T20:47:15Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "Large"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/30935680909335",
+    "displayName": "Orion Tee Shirt - X Large",
+    "title": "X Large",
+    "sku": "970012",
+    "barcode": "659859464961",
+    "position": 4,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T20:47:29Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "X Large"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/30935680942103",
+    "displayName": "Orion Tee Shirt - XX Large",
+    "title": "XX Large",
+    "sku": "970013",
+    "barcode": "659859479378",
+    "position": 5,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T20:47:52Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "XX Large"
+      }
+    ]
+  }
+]

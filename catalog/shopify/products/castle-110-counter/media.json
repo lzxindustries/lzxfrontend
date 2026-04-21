@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/1571124871191",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_50.png?v=1544137388",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/castle-110-counter/media/01-castle-110-counter.png"
+  }
+]

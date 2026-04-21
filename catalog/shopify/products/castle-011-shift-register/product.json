@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1692914024512",
+  "handle": "castle-011-shift-register",
+  "title": "Castle 011 Shift Register",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-011-shift-register",
+  "description": "DIY PCB & Frontpanel Set The Shift Register is a 4 position memory of sorts.",
+  "createdAt": "2018-12-06T05:54:58Z",
+  "updatedAt": "2026-04-17T00:53:46Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320733405248",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

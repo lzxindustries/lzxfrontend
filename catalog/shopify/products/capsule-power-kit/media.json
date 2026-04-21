@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/20400585375767",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/capsule1200.png?v=1624553354",
+      "altText": "",
+      "width": 1200,
+      "height": 1200
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/capsule-power-kit/media/01-capsule-power-kit.png"
+  }
+]

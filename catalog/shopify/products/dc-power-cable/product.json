@@ -1,0 +1,36 @@
+{
+  "id": "gid://shopify/Product/6552581832727",
+  "handle": "dc-power-cable",
+  "title": "DC Power Cable",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Cable",
+  "tags": [
+    "Accessories",
+    "Active",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/dc-power-cable",
+  "description": "2.1mm DC jumper cables for module-to-power-distribution connections. Right-angled cables recommended for Orion TBC2 and Memory Palace.",
+  "createdAt": "2021-05-11T17:05:35Z",
+  "updatedAt": "2026-04-17T00:53:51Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8428403982359",
+      "name": "Size",
+      "position": 1,
+      "values": [
+        "Straight 25cm",
+        "Right Angle 30cm",
+        "Straight 50cm",
+        "Right Angle 90cm",
+        "Straight 100cm"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/42111084658711",
+    "displayName": "P - Fully Assembled",
+    "title": "Fully Assembled",
+    "sku": "950074",
+    "barcode": "659859380988",
+    "position": 1,
+    "price": "49.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-25T19:57:30Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Fully Assembled"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111084691479",
+    "displayName": "P - Full DIY Kit",
+    "title": "Full DIY Kit",
+    "sku": "940406",
+    "barcode": "",
+    "position": 2,
+    "price": "23.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-20T15:22:07Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Full DIY Kit"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111084724247",
+    "displayName": "P - Partial DIY Kit",
+    "title": "Partial DIY Kit",
+    "sku": "940403",
+    "barcode": "",
+    "position": 3,
+    "price": "11.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-04-16T19:33:57Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Partial DIY Kit"
+      }
+    ]
+  }
+]

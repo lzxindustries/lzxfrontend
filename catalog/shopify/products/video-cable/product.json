@@ -1,0 +1,31 @@
+{
+  "id": "gid://shopify/Product/6890363158551",
+  "handle": "video-cable",
+  "title": "RCA Video Cable",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Cable",
+  "tags": [
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/video-cable",
+  "description": "Standard RCA video cable.",
+  "createdAt": "2023-05-18T02:50:47Z",
+  "updatedAt": "2026-04-17T00:53:56Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8859165884439",
+      "name": "Size",
+      "position": 1,
+      "values": [
+        "150cm",
+        "300cm"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

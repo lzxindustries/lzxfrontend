@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40571328430103",
+    "displayName": "12V DC Adapter 3A - Default Title",
+    "title": "Default Title",
+    "sku": "900022",
+    "barcode": "659859377674",
+    "position": 1,
+    "price": "29.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-11-01T17:02:06Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

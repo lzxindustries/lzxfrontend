@@ -1,0 +1,34 @@
+{
+  "id": "gid://shopify/Product/7414310109207",
+  "handle": "pgo",
+  "title": "PGO",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/pgo",
+  "description": "PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting.PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
+  "createdAt": "2024-11-19T18:08:59Z",
+  "updatedAt": "2026-04-21T09:02:43Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9492066598935",
+      "name": "Assembly",
+      "position": 1,
+      "values": [
+        "Fully Assembled",
+        "Full DIY Kit",
+        "Partial DIY Kit"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

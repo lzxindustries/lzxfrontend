@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/1702828408896",
+  "handle": "castle-series-embroidered-patch",
+  "title": "Castle Series Embroidered Patch",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Patch",
+  "tags": [
+    "Merch"
+  ],
+  "templateSuffix": null,
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-series-embroidered-patch",
+  "description": "",
+  "createdAt": "2018-12-06T19:36:08Z",
+  "updatedAt": "2026-04-17T00:53:49Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2334918869056",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

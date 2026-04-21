@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6575222685719",
+  "handle": "smx3",
+  "title": "SMX3",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/smx3",
+  "description": "SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources.",
+  "createdAt": "2021-08-21T01:20:57Z",
+  "updatedAt": "2026-04-21T09:02:24Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8458920001559",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

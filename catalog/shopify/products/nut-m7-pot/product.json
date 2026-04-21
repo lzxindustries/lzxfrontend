@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7477333917719",
+  "handle": "nut-m7-pot",
+  "title": "NUT-M7-POT",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/nut-m7-pot",
+  "description": "",
+  "createdAt": "2025-02-05T19:58:24Z",
+  "updatedAt": "2026-04-17T00:54:01Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9565006626839",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

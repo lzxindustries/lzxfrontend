@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16492149637184",
+    "displayName": "Cadet Series Embroidered Patch - Default Title",
+    "title": "Default Title",
+    "sku": "970002",
+    "barcode": "49637184",
+    "position": 1,
+    "price": "4.50",
+    "compareAtPrice": "5.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-02T01:27:15Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

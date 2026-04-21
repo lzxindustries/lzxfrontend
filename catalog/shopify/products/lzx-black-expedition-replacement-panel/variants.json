@@ -1,0 +1,268 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/39890449924119",
+    "displayName": "Alternate Frontpanel - Staircase",
+    "title": "Staircase",
+    "sku": "900018",
+    "barcode": "659859201948",
+    "position": 1,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-11T21:53:55Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Staircase"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40026512752663",
+    "displayName": "Alternate Frontpanel - Prismatic Ray",
+    "title": "Prismatic Ray",
+    "sku": "900019",
+    "barcode": "659859228143",
+    "position": 2,
+    "price": "16.00",
+    "compareAtPrice": "16.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-11T21:53:56Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Prismatic Ray"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40579064168471",
+    "displayName": "Alternate Frontpanel - Doorway",
+    "title": "Doorway",
+    "sku": "900020",
+    "barcode": "659859024523",
+    "position": 3,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-19T18:42:19Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Doorway"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40651426562071",
+    "displayName": "Alternate Frontpanel - TBC2 Gen3 w/Mounting Hardware",
+    "title": "TBC2 Gen3 w/Mounting Hardware",
+    "sku": "900021",
+    "barcode": "659859019994",
+    "position": 4,
+    "price": "22.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-14T10:43:37Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "TBC2 Gen3 w/Mounting Hardware"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096599994391",
+    "displayName": "Alternate Frontpanel - Navigator",
+    "title": "Navigator",
+    "sku": "900024",
+    "barcode": "659859015088",
+    "position": 5,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-08-21T14:41:59Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Navigator"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600027159",
+    "displayName": "Alternate Frontpanel - Pendulum",
+    "title": "Pendulum",
+    "sku": "900025",
+    "barcode": "659859490274",
+    "position": 6,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-10T19:06:58Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Pendulum"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600059927",
+    "displayName": "Alternate Frontpanel - Sensory Translator",
+    "title": "Sensory Translator",
+    "sku": "900026",
+    "barcode": "659859157368",
+    "position": 7,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-05-29T14:13:36Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Sensory Translator"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600092695",
+    "displayName": "Alternate Frontpanel - Passage",
+    "title": "Passage",
+    "sku": "900027",
+    "barcode": "659859353456",
+    "position": 8,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-05-29T14:13:38Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Passage"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600125463",
+    "displayName": "Alternate Frontpanel - Bridge",
+    "title": "Bridge",
+    "sku": "900028",
+    "barcode": "659859170527",
+    "position": 9,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-03-10T19:06:58Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Bridge"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600158231",
+    "displayName": "Alternate Frontpanel - Arch",
+    "title": "Arch",
+    "sku": "900029",
+    "barcode": "659859339344",
+    "position": 10,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-19T18:42:18Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Arch"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096600190999",
+    "displayName": "Alternate Frontpanel - War Of The Ants",
+    "title": "War Of The Ants",
+    "sku": "900030",
+    "barcode": "659859144955",
+    "position": 11,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-04-12T22:58:14Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "War Of The Ants"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41096605171735",
+    "displayName": "Alternate Frontpanel - Visual Cortex",
+    "title": "Visual Cortex",
+    "sku": "900031",
+    "barcode": "659859427553",
+    "position": 12,
+    "price": "25.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-12-19T18:42:17Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "Visual Cortex"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41475152117783",
+    "displayName": "Alternate Frontpanel - TBC2 Mk2",
+    "title": "TBC2 Mk2",
+    "sku": "900100",
+    "barcode": "",
+    "position": 13,
+    "price": "18.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-11-11T21:53:55Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "TBC2 Mk2"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/41475152150551",
+    "displayName": "Alternate Frontpanel - DWO3",
+    "title": "DWO3",
+    "sku": "900101",
+    "barcode": "",
+    "position": 14,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-12-14T10:43:36Z",
+    "selectedOptions": [
+      {
+        "name": "Style",
+        "value": "DWO3"
+      }
+    ]
+  }
+]

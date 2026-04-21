@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6766670315543",
+  "handle": "keychain",
+  "title": "Keychain",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/keychain",
+  "description": "Keychain is a triple hard key generator. Using voltage comparators with a 7ns response time, this module can generate sharp edged stencil shapes from any video or pattern generator source.",
+  "createdAt": "2022-06-22T16:45:55Z",
+  "updatedAt": "2026-04-21T09:02:29Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8700834742295",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

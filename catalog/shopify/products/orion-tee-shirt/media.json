@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/5445874450455",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/orion_tee.png?v=1571855893",
+      "altText": "",
+      "width": 853,
+      "height": 721
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/orion-tee-shirt/media/01-orion-tee-shirt.png"
+  }
+]

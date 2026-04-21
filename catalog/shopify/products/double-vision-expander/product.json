@@ -1,0 +1,31 @@
+{
+  "id": "gid://shopify/Product/7415503716375",
+  "handle": "double-vision-expander",
+  "title": "Double Vision Expander",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/double-vision-expander",
+  "description": "Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable(2) RCA Sync Cable(9) DC Power Cable(10) Patch Cable(1) Video Knob Pin",
+  "createdAt": "2024-11-20T20:01:08Z",
+  "updatedAt": "2026-04-17T00:54:00Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9493507833879",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

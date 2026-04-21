@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/1702792855616",
+  "handle": "orion-series-embroidered-patch",
+  "title": "Orion Series Embroidered Patch",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Patch",
+  "tags": [
+    "Merch"
+  ],
+  "templateSuffix": null,
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/orion-series-embroidered-patch",
+  "description": "",
+  "createdAt": "2018-12-06T19:32:34Z",
+  "updatedAt": "2026-04-17T00:53:49Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2334873944128",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

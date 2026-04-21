@@ -1,0 +1,40 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40570738901015",
+    "displayName": "RCA Video Cable - 150cm",
+    "title": "150cm",
+    "sku": "960009",
+    "barcode": "659859346694",
+    "position": 1,
+    "price": "9.00",
+    "compareAtPrice": "9.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-01-20T17:26:49Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "150cm"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40571266793495",
+    "displayName": "RCA Video Cable - 300cm",
+    "title": "300cm",
+    "sku": "960010",
+    "barcode": "659859155333",
+    "position": 2,
+    "price": "10.00",
+    "compareAtPrice": "10.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-10-31T15:25:46Z",
+    "selectedOptions": [
+      {
+        "name": "Size",
+        "value": "300cm"
+      }
+    ]
+  }
+]

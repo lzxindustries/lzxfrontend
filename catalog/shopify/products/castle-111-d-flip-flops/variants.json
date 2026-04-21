@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16492154486848",
+    "displayName": "Castle 111 D Flip Flops - Default Title",
+    "title": "Default Title",
+    "sku": "940009",
+    "barcode": "672975060794",
+    "position": 1,
+    "price": "20.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-07T02:11:07Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

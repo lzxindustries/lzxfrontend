@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6890363289623",
+  "handle": "video-knob",
+  "title": "Video Knob",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "OEM Component",
+  "tags": [
+    "Active",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/video-knob",
+  "description": "Injected molded control knobs for D-Shaft potentiometers. One piece. Pad printed.Note: These knobs will not fit on the detented potentiometers used in some Gen3 modules.",
+  "createdAt": "2023-05-18T02:55:31Z",
+  "updatedAt": "2026-04-18T08:01:43Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8859166048279",
+      "name": "Indicator",
+      "position": 1,
+      "values": [
+        "Arrow Fill",
+        "Arrow Outline"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/21970409160727",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX8HPContourFrontpanelColorGraphicDark.png?v=1663368735",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/contour/media/01-contour.png"
+  }
+]

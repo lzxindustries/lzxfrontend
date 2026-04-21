@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1692914483264",
+  "handle": "castle-111-d-flip-flops",
+  "title": "Castle 111 D Flip Flops",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-111-d-flip-flops",
+  "description": "DIY PCB & Frontpanel Set The D Flip Flops are three D type Flip Flops that share a common Clock and Reset.",
+  "createdAt": "2018-12-06T05:54:59Z",
+  "updatedAt": "2026-04-17T00:53:46Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320733995072",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

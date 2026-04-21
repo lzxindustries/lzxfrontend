@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/23972808654871",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/tbc2_mk2_fan_kit.png?v=1715794413",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/tbc2-mk2-fan-upgrade-kit/media/01-tbc2-mk2-fan-upgrade-kit.png"
+  }
+]

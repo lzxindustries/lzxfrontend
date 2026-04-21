@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41966223425559",
+    "displayName": "3.5mm Jack - Default Title",
+    "title": "Default Title",
+    "sku": "230001",
+    "barcode": "",
+    "position": 1,
+    "price": "0.20",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-04-09T17:17:27Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

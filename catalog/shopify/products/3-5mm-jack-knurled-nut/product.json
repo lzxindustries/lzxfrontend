@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7475783041047",
+  "handle": "3-5mm-jack-knurled-nut",
+  "title": "3.5mm Jack Knurled Nut",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/3-5mm-jack-knurled-nut",
+  "description": "",
+  "createdAt": "2025-02-03T23:43:25Z",
+  "updatedAt": "2026-04-17T00:54:00Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9563199438871",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

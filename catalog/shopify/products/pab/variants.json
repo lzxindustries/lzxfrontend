@@ -1,0 +1,59 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/42111161565207",
+    "displayName": "PAB - Fully Assembled",
+    "title": "Fully Assembled",
+    "sku": "950071",
+    "barcode": "659859090665",
+    "position": 1,
+    "price": "169.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-25T23:07:16Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Fully Assembled"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111161597975",
+    "displayName": "PAB - Full DIY Kit",
+    "title": "Full DIY Kit",
+    "sku": "940408",
+    "barcode": "",
+    "position": 2,
+    "price": "89.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-10-31T23:38:26Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Full DIY Kit"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/42111161630743",
+    "displayName": "PAB - Partial DIY Kit",
+    "title": "Partial DIY Kit",
+    "sku": "940402",
+    "barcode": "",
+    "position": 3,
+    "price": "59.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-08-25T22:02:06Z",
+    "selectedOptions": [
+      {
+        "name": "Assembly",
+        "value": "Partial DIY Kit"
+      }
+    ]
+  }
+]

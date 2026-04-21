@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1701868666944",
+  "handle": "castle-001-dac",
+  "title": "Castle 001 DAC",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-001-dac",
+  "description": "DIY PCB & Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations.",
+  "createdAt": "2018-12-06T18:04:04Z",
+  "updatedAt": "2026-04-17T00:53:47Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2333647306816",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7156509769751",
+  "handle": "jxmox-usb-c-to-micro-usb-adapter",
+  "title": "JXMOX USB C to Micro USB Adapter",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/jxmox-usb-c-to-micro-usb-adapter",
+  "description": "",
+  "createdAt": "2024-05-01T21:05:00Z",
+  "updatedAt": "2026-04-17T00:53:57Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9183695962135",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

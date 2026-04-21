@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41299121340439",
+    "displayName": "Chromagnon Sticker - Default Title",
+    "title": "Default Title",
+    "sku": "970100",
+    "barcode": "",
+    "position": 2,
+    "price": "0.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-05-15T16:28:45Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

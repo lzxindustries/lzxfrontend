@@ -1,0 +1,31 @@
+{
+  "id": "gid://shopify/Product/6890363125783",
+  "handle": "patch-cable",
+  "title": "Patch Cable",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Cable",
+  "tags": [
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/patch-cable",
+  "description": "Standard EuroRack patch cable.",
+  "createdAt": "2023-05-18T02:50:28Z",
+  "updatedAt": "2026-04-17T00:53:56Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8859165818903",
+      "name": "Size",
+      "position": 1,
+      "values": [
+        "Red 15cm",
+        "Orange 30cm"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

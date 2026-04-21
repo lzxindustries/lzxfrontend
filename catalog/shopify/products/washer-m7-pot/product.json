@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7477334474775",
+  "handle": "washer-m7-pot",
+  "title": "WASHER-M7-POT",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/washer-m7-pot",
+  "description": "",
+  "createdAt": "2025-02-05T19:58:59Z",
+  "updatedAt": "2026-04-17T00:54:01Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9565007183895",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/24855807131671",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/double-vision-system-168-square.png?v=1732141737",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/double-vision-complete/media/01-double-vision-complete.png"
+  }
+]

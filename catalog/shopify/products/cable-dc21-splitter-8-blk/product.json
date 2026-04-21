@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/8203461459991",
+  "handle": "cable-dc21-splitter-8-blk",
+  "title": "CABLE-DC21-SPLITTER-8-BLK",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/cable-dc21-splitter-8-blk",
+  "description": "",
+  "createdAt": "2025-10-15T16:16:51Z",
+  "updatedAt": "2026-04-17T00:54:04Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/10403734159383",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

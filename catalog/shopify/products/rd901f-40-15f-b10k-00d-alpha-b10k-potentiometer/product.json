@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7477333622807",
+  "handle": "rd901f-40-15f-b10k-00d-alpha-b10k-potentiometer",
+  "title": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/rd901f-40-15f-b10k-00d-alpha-b10k-potentiometer",
+  "description": "",
+  "createdAt": "2025-02-05T19:57:23Z",
+  "updatedAt": "2026-04-17T00:54:01Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9565006299159",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

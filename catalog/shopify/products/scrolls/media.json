@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/23209354395671",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/scrolls-frontpanel-square.png?v=1698703279",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/scrolls/media/01-scrolls.png"
+  }
+]

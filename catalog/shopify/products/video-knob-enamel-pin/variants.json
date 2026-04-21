@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40548593401879",
+    "displayName": "Video Knob Pin - Default Title",
+    "title": "Default Title",
+    "sku": "970001",
+    "barcode": "659859483870",
+    "position": 1,
+    "price": "8.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2025-06-03T13:25:01Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

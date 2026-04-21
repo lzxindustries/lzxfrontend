@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/7214160281623",
+  "handle": "tbc2-mk1-fan-upgrade-kit",
+  "title": "TBC2 Mk1 Fan Upgrade Kit",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "OEM Component",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2-mk1-fan-upgrade-kit",
+  "description": "This DIY kit is for TBC2 Mk1 (Orion) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.",
+  "createdAt": "2024-06-03T19:03:12Z",
+  "updatedAt": "2026-04-17T00:53:58Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9251841310743",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16492153798720",
+    "displayName": "Castle 110 Counter - Default Title",
+    "title": "Default Title",
+    "sku": "940008",
+    "barcode": "672975060732",
+    "position": 1,
+    "price": "20.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-01-07T02:11:06Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

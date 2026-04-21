@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/41298940887063",
+    "displayName": "TBC2 Mk2 Fan Upgrade Kit - Default Title",
+    "title": "Default Title",
+    "sku": "940010",
+    "barcode": "",
+    "position": 2,
+    "price": "19.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2025-11-04T02:17:30Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

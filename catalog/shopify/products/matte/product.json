@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/6766673952791",
+  "handle": "matte",
+  "title": "Matte",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "EuroRack Module",
+  "tags": [
+    "Active",
+    "Gen3",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/matte",
+  "description": "Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually.",
+  "createdAt": "2022-06-22T16:55:12Z",
+  "updatedAt": "2026-04-21T09:02:32Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8700841263127",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

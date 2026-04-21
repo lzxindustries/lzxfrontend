@@ -1,0 +1,40 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40570739490839",
+    "displayName": "Video Knob - Arrow Fill",
+    "title": "Arrow Fill",
+    "sku": "900001",
+    "barcode": "659859020037",
+    "position": 1,
+    "price": "1.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-13T21:02:46Z",
+    "selectedOptions": [
+      {
+        "name": "Indicator",
+        "value": "Arrow Fill"
+      }
+    ]
+  },
+  {
+    "id": "gid://shopify/ProductVariant/40570739523607",
+    "displayName": "Video Knob - Arrow Outline",
+    "title": "Arrow Outline",
+    "sku": "900023",
+    "barcode": "659859387581",
+    "position": 2,
+    "price": "1.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-13T21:02:47Z",
+    "selectedOptions": [
+      {
+        "name": "Indicator",
+        "value": "Arrow Outline"
+      }
+    ]
+  }
+]

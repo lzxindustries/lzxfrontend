@@ -1,0 +1,38 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/24627351191575",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/double-vision-system-square_8b246eb5-f3b1-4aa9-a617-446ca6f002f3.png?v=1727473122",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/double-vision-system/media/01-double-vision-system.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/24859753021463",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/double-vision-system-6u-square.png?v=1732224191",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/double-vision-system/media/02-double-vision-system.png"
+  }
+]

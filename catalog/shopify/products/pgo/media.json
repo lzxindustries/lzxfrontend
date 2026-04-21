@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/24848785899543",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/pgo-front-panel-square.png?v=1732039464",
+      "altText": "",
+      "width": 1200,
+      "height": 1200
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/pgo/media/01-pgo.png"
+  }
+]

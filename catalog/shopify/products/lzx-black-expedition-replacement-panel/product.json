@@ -1,0 +1,45 @@
+{
+  "id": "gid://shopify/Product/6690204811287",
+  "handle": "lzx-black-expedition-replacement-panel",
+  "title": "Alternate Frontpanel",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Accessories",
+  "tags": [
+    "Accessories",
+    "Expedition",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/lzx-black-expedition-replacement-panel",
+  "description": "Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly.",
+  "createdAt": "2022-02-22T20:31:03Z",
+  "updatedAt": "2026-04-17T00:53:52Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8600828968983",
+      "name": "Style",
+      "position": 1,
+      "values": [
+        "Staircase",
+        "Prismatic Ray",
+        "Doorway",
+        "TBC2 Gen3 w/Mounting Hardware",
+        "Navigator",
+        "Pendulum",
+        "Sensory Translator",
+        "Passage",
+        "Bridge",
+        "Arch",
+        "War Of The Ants",
+        "Visual Cortex",
+        "TBC2 Mk2",
+        "DWO3"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

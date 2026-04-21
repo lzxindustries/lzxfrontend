@@ -1,0 +1,32 @@
+{
+  "id": "gid://shopify/Product/1692914090048",
+  "handle": "castle-100-multi-gate",
+  "title": "Castle 100 Multi Gate",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "DIY PCB & Frontpanel Kit",
+  "tags": [
+    "Active",
+    "Castle",
+    "Visible"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-100-multi-gate",
+  "description": "DIY PCB & Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs.",
+  "createdAt": "2018-12-06T05:54:58Z",
+  "updatedAt": "2026-04-17T00:53:46Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2320733470784",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

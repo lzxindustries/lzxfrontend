@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/16578087583808",
+    "displayName": "Castle Series Vinyl Sticker - Default Title",
+    "title": "Default Title",
+    "sku": "960018",
+    "barcode": "87583808",
+    "position": 1,
+    "price": "3.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2024-04-17T18:58:21Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

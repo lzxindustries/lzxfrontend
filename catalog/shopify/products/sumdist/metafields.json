@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gid://shopify/Metafield/21021105881111",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. ",
+    "description": null,
+    "updatedAt": "2023-05-08T21:27:48Z",
+    "compareDigest": "e25048ce512954651365145a01638aa0acf8a6b437ed03becdbc0a004edaa0bf"
+  }
+]

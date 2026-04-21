@@ -1,0 +1,30 @@
+{
+  "id": "gid://shopify/Product/6561694679063",
+  "handle": "capsule-power-kit",
+  "title": "Capsule Power Kit",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "Accessories",
+  "tags": [
+    "Accessories"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions",
+  "createdAt": "2021-06-24T16:31:07Z",
+  "updatedAt": "2026-04-17T00:53:51Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/8441321226263",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

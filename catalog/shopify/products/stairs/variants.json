@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/40169563258903",
+    "displayName": "Stairs - Default Title",
+    "title": "Default Title",
+    "sku": "950052",
+    "barcode": "735263550237",
+    "position": 1,
+    "price": "339.00",
+    "compareAtPrice": "0.00",
+    "taxable": true,
+    "inventoryPolicy": "CONTINUE",
+    "updatedAt": "2026-02-17T20:17:39Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

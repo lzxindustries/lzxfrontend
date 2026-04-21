@@ -1,0 +1,28 @@
+{
+  "id": "gid://shopify/Product/7331966222359",
+  "handle": "liquid-tv",
+  "title": "Liquid TV",
+  "vendor": "LZX Industries",
+  "status": "DRAFT",
+  "productType": "",
+  "tags": [],
+  "templateSuffix": "",
+  "onlineStoreUrl": null,
+  "description": "The LZX Liquid TV is a full color video monitor with a 3.5” LCD video display. The module’s input jack takes any NTSC/PAL video source signal and displays it on the screen, offering easy previewing before the signal is patched elsewhere. This allows for the easy checking and composing of video sequences in real time. Additionally, three switchable preview inputs convert any voltage signal into a video signal that is subsequently displayed on the screen. Features Full color, 3.5 inch LCD video display. Displays any NTSC/PAL video signals or the output of the internal preview driver. Internal preview driver turns any voltage in your modular synth into a valid video signal for display or output, even without any other video synthesizer modules. Three separate preview channel inputs with pass through jacks. The LCD display may be powered from an external 12V source to ease the drain on your EuroRack power supply.",
+  "createdAt": "2024-09-09T21:53:03Z",
+  "updatedAt": "2026-04-17T00:53:59Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/9390163591191",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

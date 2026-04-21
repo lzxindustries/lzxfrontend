@@ -1,0 +1,31 @@
+{
+  "id": "gid://shopify/Product/1702816219200",
+  "handle": "castle-series-vinyl-sticker",
+  "title": "Castle Series Vinyl Sticker",
+  "vendor": "LZX Industries",
+  "status": "ACTIVE",
+  "productType": "Sticker",
+  "tags": [
+    "Castle",
+    "Merch"
+  ],
+  "templateSuffix": "",
+  "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-series-vinyl-sticker",
+  "description": "Out of stock.",
+  "createdAt": "2018-12-06T19:34:56Z",
+  "updatedAt": "2026-04-17T00:53:49Z",
+  "options": [
+    {
+      "id": "gid://shopify/ProductOption/2334903140416",
+      "name": "Title",
+      "position": 1,
+      "values": [
+        "Default Title"
+      ]
+    }
+  ],
+  "seo": {
+    "title": null,
+    "description": null
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "gid://shopify/MediaImage/24545756086295",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/lzx_liquidtv_01.jpg?v=1725918484",
+      "altText": "",
+      "width": 679,
+      "height": 505
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/liquid-tv/media/01-liquid-tv.jpg"
+  }
+]
