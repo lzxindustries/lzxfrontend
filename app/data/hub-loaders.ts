@@ -189,6 +189,74 @@ const HUB_PRODUCT_QUERY = `#graphql
   }
 `;
 
+const HUB_PRODUCT_BY_ID_QUERY = `#graphql
+  ${MEDIA_FRAGMENT}
+  ${PRODUCT_VARIANT_FRAGMENT}
+  query HubProductById(
+    $country: CountryCode
+    $language: LanguageCode
+    $id: ID!
+    $selectedOptions: [SelectedOptionInput!]!
+  ) @inContext(country: $country, language: $language) {
+    node(id: $id) {
+      ... on Product {
+        id
+        title
+        vendor
+        handle
+        descriptionHtml
+        description
+        options {
+          name
+          values
+        }
+        selectedVariant: variantBySelectedOptions(selectedOptions: $selectedOptions) {
+          ...HubProductVariantFragment
+        }
+        media(first: 20) {
+          nodes {
+            ...Media
+          }
+        }
+        variants(first: 250) {
+          nodes {
+            ...HubProductVariantFragment
+          }
+        }
+        seo {
+          description
+          title
+        }
+        metafields(identifiers: [
+          {namespace: "custom", key: "specs"},
+          {namespace: "custom", key: "features"},
+          {namespace: "custom", key: "compatibility"},
+          {namespace: "descriptors", key: "subtitle"},
+        ]) {
+          key
+          namespace
+          value
+          type
+        }
+      }
+    }
+    shop {
+      name
+      primaryDomain {
+        url
+      }
+      shippingPolicy {
+        body
+        handle
+      }
+      refundPolicy {
+        body
+        handle
+      }
+    }
+  }
+`;
+
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
   query hubProductRecommendations(
@@ -248,6 +316,7 @@ async function fetchShopifyProduct(
   context: AppLoadContext,
   handle: string,
   selectedOptions: {name: string; value: string}[],
+  shopifyGid?: string | null,
 ) {
   const {product, shop} = await context.storefront.query<{
     product: ProductType & {selectedVariant?: ProductVariant};
@@ -261,7 +330,23 @@ async function fetchShopifyProduct(
     },
   });
 
-  return {product, shop};
+  if (product?.id || !shopifyGid) {
+    return {product, shop};
+  }
+
+  const fallback = await context.storefront.query<{
+    node: (ProductType & {selectedVariant?: ProductVariant}) | null;
+    shop: Shop;
+  }>(HUB_PRODUCT_BY_ID_QUERY, {
+    variables: {
+      id: shopifyGid,
+      selectedOptions,
+      country: context.storefront.i18n.country,
+      language: context.storefront.i18n.language,
+    },
+  });
+
+  return {product: fallback.node ?? product, shop: fallback.shop};
 }
 
 function buildFallbackShop(request: Request): Shop {
@@ -413,6 +498,7 @@ export async function loadModuleHubData(
     context,
     handle,
     selectedOptions,
+    slugEntry.shopifyGid,
   );
 
   const hasShopifyProduct = Boolean(product?.id);
@@ -466,6 +552,7 @@ export async function loadInstrumentHubData(
     context,
     handle,
     selectedOptions,
+    slugEntry.shopifyGid,
   );
 
   if (!product?.id) return null;

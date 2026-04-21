@@ -48,6 +48,7 @@ import {seoPayload} from '~/lib/seo.server.js';
 import {
   isModuleSlug,
   isInstrumentSlug,
+  isSystemSlug,
   getCanonicalSlug,
 } from '~/data/product-slugs';
 
@@ -80,6 +81,16 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
       status: 301,
       headers: {
         Location: `/modules/${canonical}${url.search}`,
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+  if (canonical && isSystemSlug(productHandle)) {
+    const url = new URL(request.url);
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: `/systems/${canonical}${url.search}`,
         'Cache-Control': 'public, max-age=31536000',
       },
     });

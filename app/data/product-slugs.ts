@@ -36,6 +36,12 @@ export interface SlugEntry {
   series: string | null;
 }
 
+const SYSTEM_SLUGS = new Set([
+  'double-vision',
+  'double-vision-168',
+  'double-vision-expander',
+]);
+
 // --- Doc slug extraction via import.meta.glob ---
 
 const moduleDocGlob = import.meta.glob<string>(
@@ -353,6 +359,11 @@ export function isInstrumentSlug(slug: string): boolean {
   return entry?.hubType === 'instrument';
 }
 
+export function isSystemSlug(slug: string): boolean {
+  const entry = getSlugEntry(slug);
+  return entry ? SYSTEM_SLUGS.has(entry.canonical) : false;
+}
+
 /** Get the hub type for a slug, or null if not a hub product. */
 export function getProductHubType(slug: string): ProductHubType | null {
   return getSlugEntry(slug)?.hubType ?? null;
@@ -405,14 +416,22 @@ export function getAllInstrumentEntries(): SlugEntry[] {
   return [...slugRegistry.values()].filter((e) => e.hubType === 'instrument');
 }
 
+export function getAllSystemSlugs(): string[] {
+  return [...SYSTEM_SLUGS].filter((slug) => slugRegistry.has(slug));
+}
+
+export function resolveHubUrlForSlug(slug: string): string {
+  const entry = getSlugEntry(slug);
+  if (!entry) return `/products/${slug}`;
+  if (isSystemSlug(entry.canonical)) return `/systems/${entry.canonical}`;
+  if (entry.hubType === 'module') return `/modules/${entry.canonical}`;
+  return `/instruments/${entry.canonical}`;
+}
+
 /**
  * Resolve a product handle (from Shopify/ProductCard) to the correct
  * hub URL path, or null if it should stay at /products/.
  */
 export function resolveProductUrl(handle: string): string {
-  const entry = getSlugEntry(handle);
-  if (!entry) return `/products/${handle}`;
-  if (entry.hubType === 'module') return `/modules/${entry.canonical}`;
-  if (entry.hubType === 'instrument') return `/instruments/${entry.canonical}`;
-  return `/products/${handle}`;
+  return resolveHubUrlForSlug(handle);
 }

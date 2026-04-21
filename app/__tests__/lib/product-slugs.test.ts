@@ -5,6 +5,8 @@ import {
   getAllModuleSlugs,
   getAllInstrumentEntries,
   getModulesBySeries,
+  isSystemSlug,
+  resolveProductUrl,
 } from '~/data/product-slugs';
 import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
@@ -131,34 +133,34 @@ describe('getModulesBySeries', () => {
 describe('getModuleArtworkPath', () => {
   it('uses the correct TBC2 artwork overrides', () => {
     expect(getModuleArtworkPath('tbc2')).toBe(
-      '/images/tbc2-mk2-front-panel-square.png?v=20260420-modules-transparent-bg',
+      '/images/tbc2-mk2-front-panel-square.png?v=20260421-color-chords-transparent-bg',
     );
     expect(getModuleArtworkPath('tbc2-expander')).toBe(
-      '/images/tbc2-expander-front-panel-square.png?v=20260420-modules-transparent-bg',
+      '/images/tbc2-expander-front-panel-square.png?v=20260421-color-chords-transparent-bg',
     );
   });
 
   it('adds cache-busting versions for corrected gray Expedition thumbnails', () => {
     expect(getModuleArtworkPath('sensory-translator')).toBe(
-      '/images/modules/sensory-translator.png?v=20260420-modules-transparent-bg',
+      '/images/modules/sensory-translator.png?v=20260421-color-chords-transparent-bg',
     );
     expect(getModuleArtworkPath('marble-index')).toBe(
-      '/images/modules/marble-index.png?v=20260420-modules-transparent-bg',
+      '/images/modules/marble-index.png?v=20260421-color-chords-transparent-bg',
     );
     expect(getModuleArtworkPath('pendulum')).toBe(
-      '/images/modules/pendulum.png?v=20260420-modules-transparent-bg',
+      '/images/modules/pendulum.png?v=20260421-color-chords-transparent-bg',
     );
   });
 
   it('provides local artwork for the Visionary module cards', () => {
     expect(getModuleArtworkPath('triple-video-fader-key-generator')).toBe(
-      '/images/modules/triple-video-fader-key-generator.jpg?v=20260420-modules-transparent-bg',
+      '/images/modules/triple-video-fader-key-generator.jpg?v=20260421-color-chords-transparent-bg',
     );
     expect(getModuleArtworkPath('video-logic')).toBe(
-      '/images/modules/video-logic.jpg?v=20260420-modules-transparent-bg',
+      '/images/modules/video-logic.jpg?v=20260421-color-chords-transparent-bg',
     );
     expect(getModuleArtworkPath('color-video-encoder')).toBe(
-      '/images/modules/color-video-encoder.png?v=20260420-modules-transparent-bg',
+      '/images/modules/color-video-encoder.png?v=20260421-color-chords-transparent-bg',
     );
   });
 });
@@ -185,5 +187,16 @@ describe('getAllInstrumentEntries', () => {
     for (const entry of entries) {
       expect(getInstrumentArtworkPath(entry.canonical)).toBeTruthy();
     }
+  });
+});
+
+describe('system URL resolution', () => {
+  it('routes Double Vision products to the systems hub', () => {
+    expect(isSystemSlug('double-vision')).toBe(true);
+    expect(resolveProductUrl('double-vision')).toBe('/systems/double-vision');
+    expect(resolveProductUrl('double-vision-168')).toBe('/systems/double-vision-168');
+    expect(resolveProductUrl('double-vision-expander')).toBe(
+      '/systems/double-vision-expander',
+    );
   });
 });

@@ -10,6 +10,7 @@ import {
   getAllInstrumentEntries,
   getAllModuleSlugs,
   getSlugEntry,
+  resolveHubUrlForSlug,
 } from '~/data/product-slugs';
 import {getModuleAssets, getModuleById} from '~/data/lzxdb';
 import {SUPPORT_MANIFEST, type ManualVersion} from '~/data/support-manifest';
@@ -86,10 +87,7 @@ export async function loader({request}: LoaderFunctionArgs) {
         .map((relatedSlug) => {
           const related = getSlugEntry(relatedSlug);
           if (!related) return null;
-          const to =
-            related.hubType === 'instrument'
-              ? `/instruments/${related.canonical}`
-              : `/modules/${related.canonical}`;
+          const to = resolveHubUrlForSlug(related.canonical);
           return {name: related.name, to};
         })
         .filter((r): r is {name: string; to: string} => r != null),
@@ -121,7 +119,7 @@ export async function loader({request}: LoaderFunctionArgs) {
       subtitle: module?.subtitle,
       hubType: 'instrument',
       docsUrl: `/instruments/${entry.canonical}/manual`,
-      productUrl: `/instruments/${entry.canonical}`,
+      productUrl: resolveHubUrlForSlug(entry.canonical),
       assets,
       manuals: SUPPORT_MANIFEST[entry.canonical]?.manuals ?? [],
       relatedProducts: (
@@ -130,10 +128,7 @@ export async function loader({request}: LoaderFunctionArgs) {
         .map((relatedSlug) => {
           const related = getSlugEntry(relatedSlug);
           if (!related) return null;
-          const to =
-            related.hubType === 'instrument'
-              ? `/instruments/${related.canonical}`
-              : `/modules/${related.canonical}`;
+          const to = resolveHubUrlForSlug(related.canonical);
           return {name: related.name, to};
         })
         .filter((r): r is {name: string; to: string} => r != null),

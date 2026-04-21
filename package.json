@@ -27,7 +27,10 @@
     "test:e2e:visual": "playwright test visual-regression.spec.ts",
     "test:e2e:visual:update": "playwright test visual-regression.spec.ts --update-snapshots",
     "test:e2e:all": "playwright test",
-    "search:index": "node scripts/build-search-index.mjs"
+    "search:index": "node scripts/build-search-index.mjs",
+    "shopify:sync": "node scripts/shopify-sync.mjs",
+    "shopify:sync:doctor": "node scripts/shopify-sync.mjs doctor",
+    "shopify:sync:pull": "node scripts/shopify-sync.mjs pull"
   },
   "browserslist": [
     "defaults"

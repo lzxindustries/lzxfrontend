@@ -30,6 +30,7 @@ export interface SignalFlowConfig {
 const NODE_W = 140;
 const NODE_H = 50;
 const NODE_RX = 8;
+const NODE_FILL = '#f8fafc';
 
 const typeColors: Record<ConnectionNode['type'], string> = {
   source: '#3b82f6',
@@ -140,7 +141,7 @@ export function SignalFlowDiagram({config}: {config: SignalFlowConfig}) {
                 width={NODE_W}
                 height={NODE_H}
                 rx={NODE_RX}
-                fill={isHovered ? color : 'var(--fallback-b1,oklch(var(--b1)))'}
+                fill={isHovered ? color : NODE_FILL}
                 stroke={color}
                 strokeWidth={isHovered ? 2.5 : 1.5}
                 className="transition-all duration-200"

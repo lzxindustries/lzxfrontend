@@ -50,18 +50,18 @@ describe('Systems page', () => {
     expect(screen.getByText('Double Vision Expander')).toBeTruthy();
   });
 
-  it('links each card to the correct instrument route', () => {
+  it('links each card to the correct system route', () => {
     renderWithRouter(<SystemsPage />);
 
     expect(
       screen.getByText('Double Vision System').closest('a')?.getAttribute('href'),
-    ).toBe('/instruments/double-vision');
+    ).toBe('/systems/double-vision');
     expect(
       screen.getByText('Double Vision 168').closest('a')?.getAttribute('href'),
-    ).toBe('/instruments/double-vision-168');
+    ).toBe('/systems/double-vision-168');
     expect(
       screen.getByText('Double Vision Expander').closest('a')?.getAttribute('href'),
-    ).toBe('/instruments/double-vision-expander');
+    ).toBe('/systems/double-vision-expander');
   });
 
   it('replaces the old starter-system card content', () => {

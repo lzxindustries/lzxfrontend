@@ -5,10 +5,6 @@ import {Image, getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 
 import {routeHeaders} from '~/data/cache';
-import {
-  getAllLfsProductMetadata,
-  type LfsProductMetadata,
-} from '~/data/lfs-product-metadata';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
@@ -22,52 +18,94 @@ const ACTIVE_SECTION_SUBTITLE =
 const LEGACY_SECTION_SUBTITLE =
   'Earlier rack, distro, and OEM power parts preserved for compatibility with older systems and support workflows.';
 
-const EXCLUDED_CASES_AND_POWER_SLUGS = new Set([
-  'double-vision-system',
-  'double-vision-168',
-  'double-vision-expander',
-]);
+const MAX_PRODUCTS_PER_QUERY = 250;
 
-const CASES_AND_POWER_DISPLAY_ORDER = new Map(
-  [
-    'vessel-84',
-    'vessel-168',
-    'vessel-208',
-    'bus-168-diy-kit',
-    'rack-84hp',
-    'dc-distro-3a',
-    'dc-distro-5a',
-    '12v-dc-adapter-3a',
-    'dc-power-cable',
-    'power-entry-8hp',
-    'power-sync-entry-12hp',
-    'vessel-eurorack-psu-expander',
-  ].map((slug, index) => [slug, index] as const),
-);
-
-const CASES_AND_POWER_IMAGE_OVERRIDES: Readonly<Record<string, string>> = {
-  'vessel-84': '/images/base-system-84-square.png',
-  'vessel-168': '/images/vessel168_photo_top_square2.png',
-  'bus-168-diy-kit': '/images/bus208_photo_top.png',
-  'dc-distro-3a': '/images/dc-distro-3a-front-panel-square.png',
-  'dc-distro-5a': '/images/dc-distro-3a-front-panel-square.png',
-  'rack-84hp': '/images/rack-84.png',
-  '12v-dc-adapter-3a': '/images/12v-dc-wall-wart-adapter-set.png',
-  'dc-power-cable': '/images/dc-power-cable-square.png',
-  'power-entry-8hp': '/images/psu8-and-rear-panel.png',
-  'power-sync-entry-12hp': '/images/fpga12-and-rear-panel.png',
-};
-
-const CASES_AND_POWER_SUBTITLE_OVERRIDES: Readonly<Record<string, string>> = {
-  'bus-168-diy-kit': 'DIY power and sync busboard for Vessel systems',
-  'rack-84hp': '84HP rack enclosure for desktop or 19" rack mounting',
-  '12v-dc-adapter-3a': '3A wall wart power supply with international plug kit',
-  'dc-power-cable': '2.1mm DC jumper cables for module power distribution',
-  'power-entry-8hp': 'OEM power entry assembly for 8HP and larger builds',
-  'power-sync-entry-12hp':
-    'OEM power and sync entry assembly for 12HP and larger builds',
-  'vessel-eurorack-psu-expander': 'Legacy +/-12V power expander for Vessel cases',
-};
+const CURATED_CASES_AND_POWER_ENTRIES = [
+  {
+    slug: 'vessel-84',
+    name: 'Vessel 84',
+    subtitle: '84HP EuroRack enclosure with 12V DC power and video sync distribution',
+    imagePath: '/images/base-system-84-square.png',
+    isActive: true,
+  },
+  {
+    slug: 'vessel-168',
+    name: 'Vessel 168',
+    subtitle: '168HP EuroRack enclosure with 12V DC power and video sync distribution',
+    imagePath: '/images/vessel168_photo_top_square2.png',
+    isActive: true,
+  },
+  {
+    slug: 'vessel-208',
+    name: 'Vessel 208',
+    subtitle: '208HP EuroRack enclosure with 12V DC power and video sync distribution',
+    imagePath: null,
+    isActive: true,
+  },
+  {
+    slug: 'bus-168-diy-kit',
+    name: 'Bus 168 DIY Kit',
+    subtitle: 'DIY power and sync busboard for Vessel systems',
+    imagePath: '/images/bus208_photo_top.png',
+    isActive: true,
+  },
+  {
+    slug: 'rack-84hp',
+    name: 'Rack 84HP',
+    subtitle: '84HP rack enclosure for desktop or 19" rack mounting',
+    imagePath: '/images/rack-84.png',
+    isActive: false,
+  },
+  {
+    slug: 'dc-distro-3a',
+    name: 'DC Distro 3A',
+    subtitle: 'DC power distributor',
+    imagePath: '/images/dc-distro-3a-front-panel-square.png',
+    isActive: false,
+  },
+  {
+    slug: 'dc-distro-5a',
+    name: 'DC Distro 5A',
+    subtitle: 'DC power distributor',
+    imagePath: '/images/dc-distro-3a-front-panel-square.png',
+    isActive: false,
+  },
+  {
+    slug: '12v-dc-adapter-3a',
+    name: '12V DC Adapter 3A',
+    subtitle: '3A wall wart power supply with international plug kit',
+    imagePath: '/images/12v-dc-wall-wart-adapter-set.png',
+    isActive: false,
+  },
+  {
+    slug: 'dc-power-cable',
+    name: 'DC Power Cable',
+    subtitle: '2.1mm DC jumper cables for module power distribution',
+    imagePath: '/images/dc-power-cable-square.png',
+    isActive: false,
+  },
+  {
+    slug: 'power-entry-8hp',
+    name: 'Power Entry 8HP',
+    subtitle: 'OEM power entry assembly for 8HP and larger builds',
+    imagePath: '/images/psu8-and-rear-panel.png',
+    isActive: false,
+  },
+  {
+    slug: 'power-sync-entry-12hp',
+    name: 'Power & Sync Entry 12HP',
+    subtitle: 'OEM power and sync entry assembly for 12HP and larger builds',
+    imagePath: '/images/fpga12-and-rear-panel.png',
+    isActive: false,
+  },
+  {
+    slug: 'vessel-eurorack-psu-expander',
+    name: 'Vessel EuroRack PSU Expander',
+    subtitle: 'Legacy +/-12V power expander for Vessel cases',
+    imagePath: null,
+    isActive: false,
+  },
+] as const;
 
 type CasesAndPowerProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
   featuredImage?: {
@@ -95,93 +133,41 @@ type CasesAndPowerEntry = {
   subtitle: string | null;
   imagePath: string | null;
   isActive: boolean;
-  shopifyId: string | null;
   shopifyProduct: CasesAndPowerProduct | null;
 };
 
-function isCasesAndPowerEntry(metadata: LfsProductMetadata): boolean {
-  if (EXCLUDED_CASES_AND_POWER_SLUGS.has(metadata.slug)) return false;
-
-  if (metadata.productType === 'eurorack_case') {
-    return true;
-  }
-
-  if (metadata.slug === 'rack-84hp') {
-    return true;
-  }
-
-  if (metadata.slug === 'dc-distro-3a' || metadata.slug === 'dc-distro-5a') {
-    return true;
-  }
-
-  if (metadata.productType !== 'accessory') {
-    return false;
-  }
-
-  return (
-    metadata.slug === '12v-dc-adapter-3a' ||
-    metadata.slug === 'dc-power-cable' ||
-    metadata.slug === 'power-entry-8hp' ||
-    metadata.slug === 'power-sync-entry-12hp'
-  );
-}
-
-function compareCasesAndPowerEntries(
-  left: Omit<CasesAndPowerEntry, 'shopifyProduct'>,
-  right: Omit<CasesAndPowerEntry, 'shopifyProduct'>,
-): number {
-  const leftOrder = CASES_AND_POWER_DISPLAY_ORDER.get(left.slug) ?? Number.MAX_SAFE_INTEGER;
-  const rightOrder =
-    CASES_AND_POWER_DISPLAY_ORDER.get(right.slug) ?? Number.MAX_SAFE_INTEGER;
-
-  if (leftOrder !== rightOrder) return leftOrder - rightOrder;
-
-  return left.name.localeCompare(right.name);
+function buildHandleFilterQuery(handles: string[]): string {
+  return handles.map((handle) => `handle:${handle}`).join(' OR ');
 }
 
 export function getCasesAndPowerEntries(): Omit<
   CasesAndPowerEntry,
   'shopifyProduct'
 >[] {
-  return getAllLfsProductMetadata()
-    .filter(isCasesAndPowerEntry)
-    .map((metadata) => ({
-      slug: metadata.slug,
-      name: metadata.name,
-      subtitle:
-        CASES_AND_POWER_SUBTITLE_OVERRIDES[metadata.slug] ??
-        metadata.subtitle ??
-        null,
-      imagePath: CASES_AND_POWER_IMAGE_OVERRIDES[metadata.slug] ?? null,
-      isActive: metadata.isActive,
-      shopifyId: metadata.shopifyId,
-    }))
-    .sort(compareCasesAndPowerEntries);
+  return CURATED_CASES_AND_POWER_ENTRIES.map((entry) => ({...entry}));
 }
 
 export async function loader({context, request}: LoaderFunctionArgs) {
   const curatedEntries = getCasesAndPowerEntries();
-  const shopifyIds = curatedEntries
-    .map((entry) => entry.shopifyId)
-    .filter((id): id is string => Boolean(id));
+  const handles = curatedEntries.map((entry) => entry.slug);
+  const productByHandle = new Map<string, CasesAndPowerProduct>();
 
-  const productById = new Map<string, CasesAndPowerProduct>();
-
-  if (shopifyIds.length > 0) {
+  if (handles.length > 0) {
     try {
-      const {nodes} = await context.storefront.query<{
-        nodes: (CasesAndPowerProduct | null)[];
+      const handleFilterQuery = buildHandleFilterQuery(handles);
+      const {products} = await context.storefront.query<{
+        products: {nodes: CasesAndPowerProduct[]};
       }>(CASES_AND_POWER_QUERY, {
         variables: {
-          ids: shopifyIds,
+          first: Math.min(handles.length, MAX_PRODUCTS_PER_QUERY),
+          query: handleFilterQuery,
           country: context.storefront.i18n.country,
           language: context.storefront.i18n.language,
         },
       });
 
-      for (const node of nodes) {
-        if (!node) continue;
-        productById.set(node.id, node);
+      for (const product of products.nodes) {
+        productByHandle.set(product.handle, product);
       }
     } catch (error) {
       console.error('Failed to load cases and power product data', error);
@@ -190,7 +176,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
 
   const entries = curatedEntries.map((entry) => ({
     ...entry,
-    shopifyProduct: entry.shopifyId ? productById.get(entry.shopifyId) ?? null : null,
+    shopifyProduct: productByHandle.get(entry.slug) ?? null,
   }));
 
   const activeEntries = entries.filter((entry) => entry.isActive);
@@ -366,12 +352,13 @@ const CASES_AND_POWER_FRAGMENT = `#graphql
 const CASES_AND_POWER_QUERY = `#graphql
   ${CASES_AND_POWER_FRAGMENT}
   query CasesAndPowerProducts(
-    $ids: [ID!]!
+    $first: Int!
+    $query: String!
     $country: CountryCode
     $language: LanguageCode
   ) @inContext(country: $country, language: $language) {
-    nodes(ids: $ids) {
-      ... on Product {
+    products(first: $first, query: $query, sortKey: TITLE) {
+      nodes {
         ...CasesAndPowerProductFields
       }
     }

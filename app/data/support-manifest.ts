@@ -143,6 +143,16 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
       },
     ],
   },
+  'tbc2-expander': {
+    slug: 'tbc2-expander',
+    manuals: [],
+    relatedProductSlugs: ['tbc2', 'esg3', 'videomancer'],
+  },
+  'dc-distro-3a': {
+    slug: 'dc-distro-3a',
+    manuals: [],
+    relatedProductSlugs: ['tbc2', 'tbc2-expander', 'esg3'],
+  },
   fkg3: {
     slug: 'fkg3',
     manuals: [],
@@ -244,6 +254,23 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     slug: 'pot',
     manuals: [],
     relatedProductSlugs: ['esg3', 'proc'],
+  },
+
+  // ── Visionary Series ───────────────────────────────────────────────
+  'triple-video-fader-key-generator': {
+    slug: 'triple-video-fader-key-generator',
+    manuals: [],
+    relatedProductSlugs: ['video-blending-matrix', 'video-logic', 'esg3'],
+  },
+  'video-blending-matrix': {
+    slug: 'video-blending-matrix',
+    manuals: [],
+    relatedProductSlugs: ['triple-video-fader-key-generator', 'video-logic', 'smx3'],
+  },
+  'video-logic': {
+    slug: 'video-logic',
+    manuals: [],
+    relatedProductSlugs: ['triple-video-fader-key-generator', 'video-blending-matrix', 'keychain'],
   },
 
   // ── Castle Series ───────────────────────────────────────────────────

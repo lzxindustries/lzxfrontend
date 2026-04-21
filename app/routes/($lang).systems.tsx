@@ -7,7 +7,11 @@ import type {Collection, Product} from '@shopify/hydrogen/storefront-api-types';
 import {routeHeaders} from '~/data/cache';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 import {getModuleById} from '~/data/lzxdb';
-import {getSlugEntry, type SlugEntry} from '~/data/product-slugs';
+import {
+  getSlugEntry,
+  resolveHubUrlForSlug,
+  type SlugEntry,
+} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
@@ -165,7 +169,7 @@ export default function SystemsPage() {
             return (
               <Link
                 key={entry.canonical}
-                to={`/instruments/${entry.canonical}`}
+                to={resolveHubUrlForSlug(entry.canonical)}
                 prefetch="intent"
                 className="group flex flex-col gap-2 rounded-lg border border-base-300 p-3 hover:shadow-md transition"
               >

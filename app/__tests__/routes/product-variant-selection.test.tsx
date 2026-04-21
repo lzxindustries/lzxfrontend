@@ -176,6 +176,7 @@ function createOutletContext({
       canonical,
       isHidden: false,
     },
+    hasShopifyProduct: true,
     hasManual: false,
     recommended: null,
     connectors: [],

@@ -20,6 +20,7 @@ Set required environment variables:
 Optional environment variables:
 
 - `KLAVIYO_PRIVATE_API_KEY` (enables back-in-stock Notify Me submissions)
+- `SHOPIFY_CLIENT_ID` and `SHOPIFY_CLIENT_SECRET` (required for Shopify Admin sync scripts)
 
 Install dependencies:
 
@@ -37,6 +38,31 @@ Run development server on local network:
 
 ```
 yarn run dev --host
+```
+
+### Shopify Catalog Sync
+
+Bootstrap a local Shopify product mirror into JSON, HTML, and media files:
+
+```
+yarn shopify:sync:doctor
+yarn shopify:sync:pull
+```
+
+The sync CLI writes to `catalog/shopify` by default and creates one folder per product handle under `catalog/shopify/products/<handle>/`.
+
+Current implementation:
+
+- `doctor` validates Node version, output directory access, and required Shopify Admin env vars.
+- `pull` exports product core fields, description HTML, SEO, variants, metafields, and media manifests.
+- Product images are downloaded locally by default. Use `--no-media-download` to skip binary downloads.
+
+Examples:
+
+```
+yarn shopify:sync:doctor --offline
+yarn shopify:sync:pull --handle chromagnon
+yarn shopify:sync:pull --query "status:active"
 ```
 
 Build and run preview server:

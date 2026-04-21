@@ -4,6 +4,7 @@ import {MemoryRouter} from 'react-router-dom';
 
 import CasesAndPowerPage, {
   getCasesAndPowerEntries,
+  loader as casesAndPowerLoader,
 } from '~/routes/($lang).cases-and-power';
 
 vi.mock('@remix-run/react', async () => {
@@ -21,7 +22,6 @@ vi.mock('@remix-run/react', async () => {
           subtitle: '168HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution',
           imagePath: '/images/vessel168_photo_top_square2.png',
           isActive: true,
-          shopifyId: 'gid://shopify/Product/7171710189591',
           shopifyProduct: {
             id: 'gid://shopify/Product/7171710189591',
             title: 'Vessel 168',
@@ -34,7 +34,6 @@ vi.mock('@remix-run/react', async () => {
           subtitle: 'DIY power and sync busboard for Vessel systems',
           imagePath: '/images/bus208_photo_top.png',
           isActive: true,
-          shopifyId: 'gid://shopify/Product/7214169489431',
           shopifyProduct: {
             id: 'gid://shopify/Product/7214169489431',
             title: 'Bus 168 DIY Kit',
@@ -49,7 +48,6 @@ vi.mock('@remix-run/react', async () => {
           subtitle: 'DC Power Distributor',
           imagePath: '/images/dc-distro-3a-front-panel-square.png',
           isActive: false,
-          shopifyId: 'gid://shopify/Product/6778221133847',
           shopifyProduct: {
             id: 'gid://shopify/Product/6778221133847',
             title: 'DC Distro 3A',
@@ -62,7 +60,6 @@ vi.mock('@remix-run/react', async () => {
           subtitle: '84HP rack enclosure for desktop or 19" rack mounting',
           imagePath: '/images/rack-84.png',
           isActive: false,
-          shopifyId: 'gid://shopify/Product/6782464294935',
           shopifyProduct: {
             id: 'gid://shopify/Product/6782464294935',
             title: 'Rack 84HP',
@@ -79,6 +76,74 @@ function renderWithRouter(ui: React.ReactElement) {
 }
 
 describe('Cases and power page', () => {
+  it('loads curated products from Shopify by handle and merges the results', async () => {
+    const storefrontQuery = vi.fn().mockResolvedValue({
+      products: {
+        nodes: [
+          {
+            id: 'gid://shopify/Product/7171710189591',
+            title: 'Vessel 168',
+            handle: 'vessel-168',
+          },
+          {
+            id: 'gid://shopify/Product/6778221133847',
+            title: 'DC Distro 3A',
+            handle: 'dc-distro-3a',
+          },
+        ],
+      },
+    });
+
+    const response = await casesAndPowerLoader({
+      context: {
+        storefront: {
+          i18n: {country: 'US', language: 'EN'},
+          query: storefrontQuery,
+        },
+      },
+      request: new Request('https://example.com/cases-and-power'),
+      params: {},
+    } as unknown as Parameters<typeof casesAndPowerLoader>[0]);
+
+    const payload = await (response as Response).json();
+    const {activeEntries, legacyEntries} = payload as {
+      activeEntries: Array<{
+        slug: string;
+        shopifyProduct: {handle: string} | null;
+      }>;
+      legacyEntries: Array<{
+        slug: string;
+        shopifyProduct: {handle: string} | null;
+      }>;
+    };
+
+    expect(storefrontQuery).toHaveBeenCalledTimes(1);
+    expect(storefrontQuery).toHaveBeenCalledWith(
+      expect.stringContaining('query CasesAndPowerProducts'),
+      expect.objectContaining({
+        variables: expect.objectContaining({
+          first: getCasesAndPowerEntries().length,
+          country: 'US',
+          language: 'EN',
+          query: expect.stringContaining('handle:vessel-168'),
+        }),
+      }),
+    );
+    expect(storefrontQuery.mock.calls[0]?.[1]?.variables?.query).toContain(
+      'handle:dc-distro-3a',
+    );
+
+    expect(
+      activeEntries.find((entry) => entry.slug === 'vessel-168')?.shopifyProduct,
+    ).toEqual(expect.objectContaining({handle: 'vessel-168'}));
+    expect(
+      legacyEntries.find((entry) => entry.slug === 'dc-distro-3a')?.shopifyProduct,
+    ).toEqual(expect.objectContaining({handle: 'dc-distro-3a'}));
+    expect(
+      activeEntries.find((entry) => entry.slug === 'vessel-208')?.shopifyProduct,
+    ).toBeNull();
+  });
+
   it('includes active cases, legacy racks, distro modules, and power accessories', () => {
     const entries = getCasesAndPowerEntries();
     const slugs = new Set(entries.map((entry) => entry.slug));

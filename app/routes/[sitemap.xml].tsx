@@ -11,7 +11,9 @@ import {getAllContentPaths} from '~/lib/content.server';
 import {
   getAllModuleSlugs,
   getAllInstrumentSlugs,
+  getAllSystemSlugs,
   getDocPathForSlug,
+  isSystemSlug,
 } from '~/data/product-slugs';
 
 const MAX_URLS = 250; // the google limit is 50K, however, SF API only allow querying for 250 resources each time
@@ -130,6 +132,7 @@ function shopSitemap({
     {url: `${baseUrl}/patches`, changeFreq: 'weekly'},
     {url: `${baseUrl}/modules`, changeFreq: 'weekly'},
     {url: `${baseUrl}/instruments`, changeFreq: 'weekly'},
+    {url: `${baseUrl}/systems`, changeFreq: 'weekly'},
   ];
 
   // Add individual patch pages
@@ -150,18 +153,25 @@ function shopSitemap({
     return routes;
   });
 
-  const instrumentRoutes = getAllInstrumentSlugs().flatMap((slug) => {
-    const routes = [
-      {url: `${baseUrl}/instruments/${slug}`, changeFreq: 'weekly'},
-    ];
-    if (getDocPathForSlug(slug)) {
-      routes.push({
-        url: `${baseUrl}/instruments/${slug}/manual`,
-        changeFreq: 'weekly',
-      });
-    }
-    return routes;
-  });
+  const systemRoutes = getAllSystemSlugs().map((slug) => ({
+    url: `${baseUrl}/systems/${slug}`,
+    changeFreq: 'weekly',
+  }));
+
+  const instrumentRoutes = getAllInstrumentSlugs()
+    .filter((slug) => !isSystemSlug(slug))
+    .flatMap((slug) => {
+      const routes = [
+        {url: `${baseUrl}/instruments/${slug}`, changeFreq: 'weekly'},
+      ];
+      if (getDocPathForSlug(slug)) {
+        routes.push({
+          url: `${baseUrl}/instruments/${slug}/manual`,
+          changeFreq: 'weekly',
+        });
+      }
+      return routes;
+    });
 
   // Add docs and blog content pages (exclude module/instrument docs — now served via hub routes)
   const contentRoutes = getAllContentPaths()
@@ -178,6 +188,7 @@ function shopSitemap({
     ...staticRoutes,
     ...patchRoutes,
     ...moduleRoutes,
+    ...systemRoutes,
     ...instrumentRoutes,
     ...contentRoutes,
     ...productsData,

@@ -31,8 +31,10 @@ import {
 } from '~/components/QuickStartPreview';
 
 export const meta = ({matches}: MetaArgs) => {
-  const parentData = matches.find((m) => m.id.includes('instruments.$slug'))
-    ?.data as InstrumentLayoutLoaderData | undefined;
+  const parentData = matches.find(
+    (m) =>
+      m.id.includes('instruments.$slug') || m.id.includes('systems.$slug'),
+  )?.data as InstrumentLayoutLoaderData | undefined;
   if (!parentData) return [];
   const product = parentData.product as unknown as Product;
   const title = product?.seo?.title ?? product?.title ?? '';
