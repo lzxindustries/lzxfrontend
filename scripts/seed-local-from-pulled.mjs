@@ -90,6 +90,30 @@ function stripHtml(html) {
     .trim();
 }
 
+function hasContent(value) {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function buildFallbackDescriptionHtml(description) {
+  if (!hasContent(description)) return '';
+
+  return description
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+    .join('\n');
+}
+
 /** Is this product "active" (non-discontinued, non-test)? */
 function isActiveProduct(product) {
   if (!product) return false;
@@ -116,6 +140,10 @@ async function buildProductRecord(handle) {
     ]);
 
   if (!product) return null;
+
+  const resolvedDescriptionHtml = hasContent(descriptionHtml)
+    ? descriptionHtml
+    : buildFallbackDescriptionHtml(product.description);
 
   // Index metafields as `${namespace}:${key}`
   const mfMap = {};
@@ -171,8 +199,8 @@ async function buildProductRecord(handle) {
     isVisible: tagsLower.includes('visible'),
     isBStock: tagsLower.includes('b-stock'),
     subtitle,
-    descriptionHtml: descriptionHtml ?? '',
-    descriptionPlain: stripHtml(descriptionHtml),
+    descriptionHtml: resolvedDescriptionHtml,
+    descriptionPlain: stripHtml(resolvedDescriptionHtml || product.description),
     seo: seo ?? product.seo ?? null,
     options: product.options ?? [],
     gallery,

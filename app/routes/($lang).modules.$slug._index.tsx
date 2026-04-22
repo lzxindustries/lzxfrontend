@@ -30,6 +30,7 @@ import ProductMediaGallery, {
   MediaGalleryItemType,
 } from '~/components/ProductMediaGallery';
 import {getModuleArtworkPath} from '~/data/module-artwork';
+import {getProductPurchaseStatus} from '~/lib/product-badges';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
@@ -366,10 +367,12 @@ function ProductForm({
   const notifyFetcher = useFetcher<{ok: boolean; message: string}>();
   const firstVariant = product.variants.nodes[0];
   const selectedVariant = product.selectedVariant ?? firstVariant;
-  const isOutOfStock = !selectedVariant?.availableForSale;
-  const isPreorder = product.id === 'gid://shopify/Product/4319674761239';
-  const isBackorder =
-    (selectedVariant?.quantityAvailable ?? 0) <= 0 && !isPreorder;
+  const purchaseStatus = getProductPurchaseStatus({
+    productId: product.id,
+    variant: selectedVariant,
+  });
+  const {isOutOfStock, isPreorder, isBackorder, buttonLabel, shippingLabel} =
+    purchaseStatus;
   const isOnSale =
     selectedVariant?.price?.amount &&
     selectedVariant?.compareAtPrice?.amount &&
@@ -399,21 +402,7 @@ function ProductForm({
     return () => observer.disconnect();
   }, []);
 
-  const buttonLabel = isOutOfStock
-    ? 'Sold Out'
-    : isPreorder
-    ? 'Preorder Now'
-    : isBackorder
-    ? 'Backorder Now'
-    : 'Add to Cart';
-
-  const showLowStock =
-    !isOutOfStock &&
-    !isPreorder &&
-    !isBackorder &&
-    selectedVariant?.quantityAvailable != null &&
-    selectedVariant.quantityAvailable > 0 &&
-    selectedVariant.quantityAvailable < 5;
+  const showLowStock = purchaseStatus.isLowStock;
 
   return (
     <>
@@ -434,22 +423,13 @@ function ProductForm({
                 <div className="flex flex-wrap gap-2">
                   {option.values.map(
                     ({value, isAvailable, isActive, to, variant}) => {
-                      const isSoldOut =
-                        variant?.availableForSale === false || !isAvailable;
-                      const quantityAvailable = variant?.quantityAvailable;
-                      const isVariantBackorder =
-                        !isSoldOut &&
-                        !isPreorder &&
-                        (quantityAvailable ?? 0) <= 0;
-                      const availabilityLabel = isSoldOut
-                        ? 'Sold out'
-                        : isVariantBackorder
-                        ? 'Ships in 4-6 weeks'
-                        : quantityAvailable != null &&
-                          quantityAvailable > 0 &&
-                          quantityAvailable < 5
-                        ? `${quantityAvailable} left`
-                        : 'In stock';
+                      const variantStatus = getProductPurchaseStatus({
+                        productId: product.id,
+                        variant,
+                        isAvailable,
+                      });
+                      const isSoldOut = variantStatus.isOutOfStock;
+                      const availabilityLabel = variantStatus.availabilityLabel;
 
                       return (
                         <Link
@@ -647,11 +627,7 @@ function ProductForm({
             >
               <FaTruck className="text-sm" />
               <span>
-                {isPreorder
-                  ? 'Ships when available'
-                  : isBackorder
-                  ? 'Ships in 4-6 weeks'
-                  : 'Ships in 24 hours'}
+                {shippingLabel}
               </span>
             </Link>
           )}

@@ -7,7 +7,7 @@ import type {AppLoadContext} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {getProductRecord} from '~/data/product-catalog';
+import {getProductRecord, getProductRecordByGid} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
 import {
   buildHubProductFromLocal,
@@ -173,22 +173,22 @@ async function fetchShopifyProduct(
   request: Request,
   handle: string,
   selectedOptions: {name: string; value: string}[],
-  // Kept in the signature so call sites continue to compile; unused now
-  // that the local catalog is keyed by canonical slug.
-  _shopifyGid?: string | null,
+  shopifyGid?: string | null,
 ): Promise<{
   product: (ProductType & {selectedVariant?: ProductVariant}) | null;
   shop: Shop;
 }> {
   const shop = buildHubShop(request);
 
-  const record = getProductRecord(handle);
+  const record = getProductRecord(handle) ??
+    (shopifyGid ? getProductRecordByGid(shopifyGid) : null);
   if (!record) {
     return {product: null, shop};
   }
 
-  const lfs = getLfsAssetEntry(handle);
-  const commerce = await getCommerceByHandle(context.storefront, handle);
+  const resolvedHandle = record.handle;
+  const lfs = getLfsAssetEntry(resolvedHandle);
+  const commerce = await getCommerceByHandle(context.storefront, resolvedHandle);
 
   const product = buildHubProductFromLocal({
     record,

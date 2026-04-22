@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-22T16:29:11.083Z",
+  "generatedAt": "2026-04-22T21:48:48.347Z",
   "source": "catalog/shopify/products",
   "productCount": 133,
   "products": {
@@ -18,8 +18,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DC wall wart power supply with international plug kit. Output voltage: 12V. Max output current: 3A.</p>",
+      "descriptionPlain": "DC wall wart power supply with international plug kit. Output voltage: 12V. Max output current: 3A.",
       "seo": {
         "title": null,
         "description": null
@@ -245,8 +245,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>A versatile standalone media player for video art, stage production, video walls, signage, NFT display, and other applications. Plays seamless video loops or shows still images. Media can be easily switched with a single key press on a USB keyboard/remote or MIDI keyboard, or the optional remote control. Multiple units used together can wirelessly synchronize the playback of video files across multiple screens. The Andor 1 is incredibly simple to use, but packed with professional features like an integrated playlist editor that supports interactive playlists, video wall modes with bezel compensation, MIDI control, video rotation options, and built-in video color test patterns. It&#39;s small enough to easily fit behind most TVs and monitors, and in some cases it can be powered from a TV&#39;s USB port. Andor 1 was developed by programmer, artist, and curator Paul Slocum and is based on more than a decade of exhibiting video and digital art at his own And/Or Gallery and at other museums and galleries internationally. User Manual (PDF) Effortless Looping and Synchronizing of Videos Just plug in a USB drive containing your video. The only configuration required is to ensure players are on the same sync channel (which they are by default), and sync still works even if your videos are slightly different lengths. Supports dozens of sync channels to avoid interference when multiple synchronized installations are operating in the same area. Built For Art and Other Creative Displays Boots and plays media in seconds with no text or logos. Truly seamless video looping. Native support for a variety of computer and TV monitor resolutions and aspect ratios. It does what artists always wish media players did. Powerful Playlist System The simple integrated playlist editor allows you to string together sequences of multiple videos or images. It even includes the ability to link playlist items to MIDI notes or keys on the remote control, allowing synchronized video loops to be triggered across multiple screens from a single remote or MIDI device. Dimensions: 3.75 x 2.5 x 1 inchesVideo Specification: up to 1080p @ 60fps, up to 40MbpsVideo Codecs: H264, MPEG4, MJPEG, VP6, VP8Video Containers: AVI, MOV, MP4, FLV, MKVAudio Formats: MP3, WAV, AIFF, FLACStill Image Formats: JPEG, PNG, TIFF, PSDA/V Outputs: HDMI, composite video, analog audioOther Ports: USB x 4, micro USB power inputSupported File Systems: FAT, NTFS, HFS+, EXTSupported Audio: AC3, DTS, 5.1Subtitle Support: SRT files An external USB keyboard will be required to adjust settings in the menu. LZX Industries Video Synthesis Compatibility Notes Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection. If you have any questions about interfacing before purchasing Andor 1, please contact us. Menu Screenshots</p>",
+      "descriptionPlain": "A versatile standalone media player for video art, stage production, video walls, signage, NFT display, and other applications. Plays seamless video loops or shows still images. Media can be easily switched with a single key press on a USB keyboard/remote or MIDI keyboard, or the optional remote control. Multiple units used together can wirelessly synchronize the playback of video files across multiple screens. The Andor 1 is incredibly simple to use, but packed with professional features like an integrated playlist editor that supports interactive playlists, video wall modes with bezel compensation, MIDI control, video rotation options, and built-in video color test patterns. It's small enough to easily fit behind most TVs and monitors, and in some cases it can be powered from a TV's USB port. Andor 1 was developed by programmer, artist, and curator Paul Slocum and is based on more than a decade of exhibiting video and digital art at his own And/Or Gallery and at other museums and galleries internationally. User Manual (PDF) Effortless Looping and Synchronizing of Videos Just plug in a USB drive containing your video. The only configuration required is to ensure players are on the same sync channel (which they are by default), and sync still works even if your videos are slightly different lengths. Supports dozens of sync channels to avoid interference when multiple synchronized installations are operating in the same area. Built For Art and Other Creative Displays Boots and plays media in seconds with no text or logos. Truly seamless video looping. Native support for a variety of computer and TV monitor resolutions and aspect ratios. It does what artists always wish media players did. Powerful Playlist System The simple integrated playlist editor allows you to string together sequences of multiple videos or images. It even includes the ability to link playlist items to MIDI notes or keys on the remote control, allowing synchronized video loops to be triggered across multiple screens from a single remote or MIDI device. Dimensions: 3.75 x 2.5 x 1 inchesVideo Specification: up to 1080p @ 60fps, up to 40MbpsVideo Codecs: H264, MPEG4, MJPEG, VP6, VP8Video Containers: AVI, MOV, MP4, FLV, MKVAudio Formats: MP3, WAV, AIFF, FLACStill Image Formats: JPEG, PNG, TIFF, PSDA/V Outputs: HDMI, composite video, analog audioOther Ports: USB x 4, micro USB power inputSupported File Systems: FAT, NTFS, HFS+, EXTSupported Audio: AC3, DTS, 5.1Subtitle Support: SRT files An external USB keyboard will be required to adjust settings in the menu. LZX Industries Video Synthesis Compatibility Notes Andor 1 outputs HDMI and NTSC/PAL Composite Video signals which follow broadcast specifications and may be used with LZX Industries products in the same manner as other external video devices. It makes a compact, accessible solution for video clip playback, especially with the wireless remote for playlist selection. If you have any questions about interfacing before purchasing Andor 1, please contact us. Menu Screenshots",
       "seo": {
         "title": null,
         "description": null
@@ -351,8 +351,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo.</p>",
+      "descriptionPlain": "Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo.",
       "seo": {
         "title": null,
         "description": null
@@ -441,8 +441,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements. 1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output. 1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them.</p>",
+      "descriptionPlain": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements. 1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output. 1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them.",
       "seo": {
         "title": null,
         "description": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Bi..."
@@ -529,8 +529,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Fill gaps in your EuroRack case with these reversible blank panels. Sizes 4HP and larger include the LZX logo printed on one side.</p>",
+      "descriptionPlain": "Fill gaps in your EuroRack case with these reversible blank panels. Sizes 4HP and larger include the LZX logo printed on one side.",
       "seo": {
         "title": null,
         "description": null
@@ -802,8 +802,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Multi-function utility module including voltage level translation, voltage controlled fader and mixing.</p>",
+      "descriptionPlain": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
       "seo": {
         "title": null,
         "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing."
@@ -898,8 +898,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>A DIY installed version of the power and sync bus board used in our Vessel 168 EuroRack case. Screw terminal power entry supporting up to 10 Amps of current 28 individually filtered 12V power output connectors 14 individually buffered sync distribution outputs Included in the box: Assembled 168HP bus board with screw terminal connections for power input and power switch (optional). Chassis mount 2.5mm DC barrel connector with pigtail leads. 4x M3 8mm mounting screws. Not included: TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering and 2.5mm DC barrel connector Notes: As supplied, all you need to do is connect a 12V power supply and ground to the screw terminal marked for power input. The mounting standoffs can be used with any M3 screws if the supplied screws are too short. The four mounting locations are positioned 4.8 inches (24HP) apart. Optionally, you may remove the jumper link installed in the screw terminal marked for power switch. An external shorting switch may be used -- this connection is a remote control, so a high current switch or wiring is not necessary. You should use a 2.5mm DC connector like the one supplied, if you&#39;re expecting to draw more than 3 amps through the bus board.</p>",
+      "descriptionPlain": "A DIY installed version of the power and sync bus board used in our Vessel 168 EuroRack case. Screw terminal power entry supporting up to 10 Amps of current 28 individually filtered 12V power output connectors 14 individually buffered sync distribution outputs Included in the box: Assembled 168HP bus board with screw terminal connections for power input and power switch (optional). Chassis mount 2.5mm DC barrel connector with pigtail leads. 4x M3 8mm mounting screws. Not included: TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering and 2.5mm DC barrel connector Notes: As supplied, all you need to do is connect a 12V power supply and ground to the screw terminal marked for power input. The mounting standoffs can be used with any M3 screws if the supplied screws are too short. The four mounting locations are positioned 4.8 inches (24HP) apart. Optionally, you may remove the jumper link installed in the screw terminal marked for power switch. An external shorting switch may be used -- this connection is a remote control, so a high current switch or wiring is not necessary. You should use a 2.5mm DC connector like the one supplied, if you're expecting to draw more than 3 amps through the bus board.",
       "seo": {
         "title": null,
         "description": null
@@ -1181,8 +1181,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.",
       "seo": {
         "title": null,
         "description": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer sys..."
@@ -1251,8 +1251,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
       "seo": {
         "title": null,
         "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system."
@@ -1321,8 +1321,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.</p>",
+      "descriptionPlain": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.",
       "seo": {
         "title": null,
         "description": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment."
@@ -1391,8 +1391,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace.</p>",
+      "descriptionPlain": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace.",
       "seo": {
         "title": null,
         "description": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace."
@@ -1461,8 +1461,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.</p>",
+      "descriptionPlain": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.",
       "seo": {
         "title": null,
         "description": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis."
@@ -1530,8 +1530,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>In stock. 3 inch embroidered patch. Popular gift item for parents.</p>",
+      "descriptionPlain": "In stock. 3 inch embroidered patch. Popular gift item for parents.",
       "seo": {
         "title": null,
         "description": null
@@ -1608,8 +1608,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!</p>",
+      "descriptionPlain": "In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!",
       "seo": {
         "title": null,
         "description": null
@@ -1678,8 +1678,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.</p>",
+      "descriptionPlain": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.",
       "seo": {
         "title": null,
         "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions."
@@ -1748,8 +1748,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.</p>",
+      "descriptionPlain": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.",
       "seo": {
         "title": null,
         "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module."
@@ -1808,8 +1808,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.</p>",
+      "descriptionPlain": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.",
       "seo": {
         "title": null,
         "description": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications."
@@ -1878,8 +1878,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.",
       "seo": {
         "title": null,
         "description": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level."
@@ -1948,8 +1948,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.</p>",
+      "descriptionPlain": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
       "seo": {
         "title": null,
         "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier."
@@ -2016,8 +2016,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions</p>",
+      "descriptionPlain": "Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions",
       "seo": {
         "title": null,
         "description": null
@@ -2081,8 +2081,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream.",
       "seo": {
         "title": null,
         "description": null
@@ -2146,8 +2146,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations.",
       "seo": {
         "title": null,
         "description": null
@@ -2211,8 +2211,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Clock VCO is a square wave Voltage Controlled Oscillator with a linear response to CV.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Clock VCO is a square wave Voltage Controlled Oscillator with a linear response to CV.",
       "seo": {
         "title": null,
         "description": null
@@ -2285,8 +2285,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Shift Register is a 4 position memory of sorts.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Shift Register is a 4 position memory of sorts.",
       "seo": {
         "title": null,
         "description": null
@@ -2355,8 +2355,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs.",
       "seo": {
         "title": null,
         "description": null
@@ -2420,8 +2420,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Quad Gate uses a single quad logic chip and combines them in 4 different ways.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Quad Gate uses a single quad logic chip and combines them in 4 different ways.",
       "seo": {
         "title": null,
         "description": null
@@ -2485,8 +2485,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Counter is a 4-Bit clock counter/divider.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The Counter is a 4-Bit clock counter/divider.",
       "seo": {
         "title": null,
         "description": null
@@ -2550,8 +2550,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The D Flip Flops are three D type Flip Flops that share a common Clock and Reset.</p>",
+      "descriptionPlain": "DIY PCB & Frontpanel Set The D Flip Flops are three D type Flip Flops that share a common Clock and Reset.",
       "seo": {
         "title": null,
         "description": null
@@ -2677,8 +2677,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Out of stock.</p>",
+      "descriptionPlain": "Out of stock.",
       "seo": {
         "title": null,
         "description": null
@@ -2742,8 +2742,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Follow along with Chromagnon production progress on our blog. Chromagnon is a visual instrument designed for real-time image creation and transformation. It combines video sync generation, wideband analog IO, and FPGA-powered signal processing into a single playable device — equally at home as a standalone instrument or as the core of a EuroRack video synthesis system. Standalone and EuroRack out of the box. Includes a sheet metal enclosure for standalone use. Power from EuroRack power header or any 12V DC wall wart. A holistic visual instrument or core module for EuroRack video synthesis. Includes video sync generation, video input, video output, complex cartesian processor and quad waveform generators. Multi format visuals. Chromagnon supports several complete workflows within a simple interface: colorization, chroma keying, quadrilateral figure generation, and arbitrary raster generation for scan processing with ILDA lasers and XY displays. FPGA-powered processing with analog I/O. High-speed signal processing runs on a dedicated FPGA core for true per-pixel bandwidth in HD formats, while analog I/O buffers and CV input circuits maintain high-quality analog signal integrity. Firmware-updatable for future processing modes and features. Analog HD Video Interfaces. Video and sync generation up to 1080i60. Bring your existing LZX video synthesis system into a high resolution era. Included Items: 52HP EuroRack module with standalone sheet metal enclosure and 12V DC wall wart power adapter, lab exercise manual, 5ft composite video cable, 2x 3.5mm patch cables, 12V DC power jumper cable, EuroRack power cable, inflatable club. Front panel design, control layout, and enclosure design are finalized. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces. Promotional painting of &quot;Chromagnonfolk with Gary&quot; by Jason Wayne Barnett.</p>",
+      "descriptionPlain": "Follow along with Chromagnon production progress on our blog. Chromagnon is a visual instrument designed for real-time image creation and transformation. It combines video sync generation, wideband analog IO, and FPGA-powered signal processing into a single playable device — equally at home as a standalone instrument or as the core of a EuroRack video synthesis system. Standalone and EuroRack out of the box. Includes a sheet metal enclosure for standalone use. Power from EuroRack power header or any 12V DC wall wart. A holistic visual instrument or core module for EuroRack video synthesis. Includes video sync generation, video input, video output, complex cartesian processor and quad waveform generators. Multi format visuals. Chromagnon supports several complete workflows within a simple interface: colorization, chroma keying, quadrilateral figure generation, and arbitrary raster generation for scan processing with ILDA lasers and XY displays. FPGA-powered processing with analog I/O. High-speed signal processing runs on a dedicated FPGA core for true per-pixel bandwidth in HD formats, while analog I/O buffers and CV input circuits maintain high-quality analog signal integrity. Firmware-updatable for future processing modes and features. Analog HD Video Interfaces. Video and sync generation up to 1080i60. Bring your existing LZX video synthesis system into a high resolution era. Included Items: 52HP EuroRack module with standalone sheet metal enclosure and 12V DC wall wart power adapter, lab exercise manual, 5ft composite video cable, 2x 3.5mm patch cables, 12V DC power jumper cable, EuroRack power cable, inflatable club. Front panel design, control layout, and enclosure design are finalized. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces. Promotional painting of \"Chromagnonfolk with Gary\" by Jason Wayne Barnett.",
       "seo": {
         "title": null,
         "description": null
@@ -2921,8 +2921,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Out of production. Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other. Width, 16HP Mounting Depth, 32mm Power +12V @ 60mA Power -12V @ 60mA</p>",
+      "descriptionPlain": "Out of production. Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other. Width, 16HP Mounting Depth, 32mm Power +12V @ 60mA Power -12V @ 60mA",
       "seo": {
         "title": null,
         "description": null
@@ -3004,8 +3004,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module&#39;s filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches.</p>",
+      "descriptionPlain": "Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module's filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches.",
       "seo": {
         "title": null,
         "description": null
@@ -3069,8 +3069,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.</p>",
+      "descriptionPlain": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.",
       "seo": {
         "title": null,
         "description": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics."
@@ -3146,8 +3146,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V</p>",
+      "descriptionPlain": "ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V",
       "seo": {
         "title": null,
         "description": null
@@ -3227,8 +3227,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.</p>",
+      "descriptionPlain": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
       "seo": {
         "title": null,
         "description": null
@@ -3319,8 +3319,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series modules without having to use a EuroRack power supply. This module distributes power from an included 12V power adapter to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, and Chromagnon. DC Distro supplies up to 3A @ 12V. Three 2.1mm barrel distribution cables are included (one of each length we carry). Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesNumber of output connectors: 9 Included power supply rated for 100-240V input range.</p>",
+      "descriptionPlain": "The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series modules without having to use a EuroRack power supply. This module distributes power from an included 12V power adapter to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, and Chromagnon. DC Distro supplies up to 3A @ 12V. Three 2.1mm barrel distribution cables are included (one of each length we carry). Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesNumber of output connectors: 9 Included power supply rated for 100-240V input range.",
       "seo": {
         "title": null,
         "description": null
@@ -3402,8 +3402,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.</p>",
+      "descriptionPlain": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
       "seo": {
         "title": null,
         "description": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and..."
@@ -3481,8 +3481,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>2.1mm DC jumper cables for module-to-power-distribution connections. Right-angled cables recommended for Orion TBC2 and Memory Palace.</p>",
+      "descriptionPlain": "2.1mm DC jumper cables for module-to-power-distribution connections. Right-angled cables recommended for Orion TBC2 and Memory Palace.",
       "seo": {
         "title": null,
         "description": null
@@ -3655,8 +3655,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.</p>",
+      "descriptionPlain": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.",
       "seo": {
         "title": null,
         "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator."
@@ -3725,8 +3725,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner&#39;s Manual (PDF)</p>",
+      "descriptionPlain": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)",
       "seo": {
         "title": null,
         "description": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)"
@@ -3803,8 +3803,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Are you a complete maniac who is desperate for THE MOST visual stimulation?! Double Vision 168 is a 17-module, complete video synthesis bundle built from Double Vision 84 and its Expander. This 6U modular system is capable of analog SD/HD video generation and effects, with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Process video using the finest analog tools. Mounting rack, power supply, and all cables are included, so you can begin synthesizing a new reality immediately. 17 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack &amp; Power Vessel 168 EuroRack Case w/DC &amp; Sync Distribution Bus Accessories (6) RGB Patch Cable(5) RCA Sync Cable(16) DC Power Cable(20) Patch Cable(3) RCA Video Cable(1) Video Knob Pin</p>",
+      "descriptionPlain": "Are you a complete maniac who is desperate for THE MOST visual stimulation?! Double Vision 168 is a 17-module, complete video synthesis bundle built from Double Vision 84 and its Expander. This 6U modular system is capable of analog SD/HD video generation and effects, with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Process video using the finest analog tools. Mounting rack, power supply, and all cables are included, so you can begin synthesizing a new reality immediately. 17 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (6) RGB Patch Cable(5) RCA Sync Cable(16) DC Power Cable(20) Patch Cable(3) RCA Video Cable(1) Video Knob Pin",
       "seo": {
         "title": null,
         "description": null
@@ -3876,8 +3876,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack &amp; Power Vessel 168 EuroRack Case w/DC &amp; Sync Distribution Bus Accessories (3) RGB Patch Cable(2) RCA Sync Cable(9) DC Power Cable(10) Patch Cable(1) Video Knob Pin</p>",
+      "descriptionPlain": "Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable(2) RCA Sync Cable(9) DC Power Cable(10) Patch Cable(1) Video Knob Pin",
       "seo": {
         "title": null,
         "description": null
@@ -3946,8 +3946,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Now available in either the original 3U case, or an optional 6U case with room to grow!Are you a human from Planet Earth who is desperate for even MORE visual stimulation?! Double Vision System is an 8-module video synthesis bundle capable of analog SD/HD video generation and effects with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Mounting rack, power supply, and all cables are included, so you may start freaking out immediately. 8 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 Rack &amp; Power Vessel 84 EuroRack Case w/DC &amp; Sync Distribution Busor Vessel 168 EuroRack Case w/DC &amp; Sync Distribution Bus Accessories (3) RGB Patch Cable(4) RCA Sync Cable(7) DC Power Cable(6) Patch Cable(3) RCA Video Cable(1) Video Knob Pin</p>",
+      "descriptionPlain": "Now available in either the original 3U case, or an optional 6U case with room to grow!Are you a human from Planet Earth who is desperate for even MORE visual stimulation?! Double Vision System is an 8-module video synthesis bundle capable of analog SD/HD video generation and effects with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Mounting rack, power supply, and all cables are included, so you may start freaking out immediately. 8 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 Rack & Power Vessel 84 EuroRack Case w/DC & Sync Distribution Busor Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable(4) RCA Sync Cable(7) DC Power Cable(6) Patch Cable(3) RCA Video Cable(1) Video Knob Pin",
       "seo": {
         "title": null,
         "description": null
@@ -4045,8 +4045,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways.</p>",
+      "descriptionPlain": "DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways.",
       "seo": {
         "title": null,
         "description": null
@@ -4209,8 +4209,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges.</p>",
+      "descriptionPlain": "DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges.",
       "seo": {
         "title": null,
         "description": null
@@ -4274,8 +4274,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.</p>",
+      "descriptionPlain": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.",
       "seo": {
         "title": null,
         "description": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand..."
@@ -4353,8 +4353,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>ESG3 Encoder is our third generation of video synthesis core modules, offering everything you need to convert voltages from your EuroRack synthesizer into HD/SD Component and SD Composite video signals. Programmable output and sync reference format: NTSC, PAL, 486p5994, 576p50, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30. HD/SD component and composite video encoding with a fully analogue signal path. RGB proc amp with brightness, contrast, inversion and mute per channel. Video Format Switch ESG3&#39;s format selection switch determines the module&#39;s video output format and video sync standard. Additionally, the user may select between YPbPr and RGB colorspace modes for the Component output encoder. In most cases, the user should select the YPbPr component output mode. Optionally, RGB component output mode may be used with some displays and capture devices if supported. 0 represents the switch&#39;s OFF state. 1 represents the switch&#39;s ON state. x indicates a position irrelevant to the listed setting. Format Setting NTSC 0000xxxx PAL 1000xxxx 480p5994 0100xxxx 576p50 1100xxxx 1080i5994 0010xxxx 1080i60 1010xxxx 720p5994 0110xxxx 720p60 1110xxxx 1080i50 0001xxxx 1080p2398 1001xxxx 720p50 0101xxxx 1080p2997 1101xxxx 1080p24 0011xxxx 1080p25 1011xxxx 1080p30 0111xxxx RGB Out xxxxxxx1 YPbPr Out xxxxxxx0</p>",
+      "descriptionPlain": "ESG3 Encoder is our third generation of video synthesis core modules, offering everything you need to convert voltages from your EuroRack synthesizer into HD/SD Component and SD Composite video signals. Programmable output and sync reference format: NTSC, PAL, 486p5994, 576p50, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30. HD/SD component and composite video encoding with a fully analogue signal path. RGB proc amp with brightness, contrast, inversion and mute per channel. Video Format Switch ESG3's format selection switch determines the module's video output format and video sync standard. Additionally, the user may select between YPbPr and RGB colorspace modes for the Component output encoder. In most cases, the user should select the YPbPr component output mode. Optionally, RGB component output mode may be used with some displays and capture devices if supported. 0 represents the switch's OFF state. 1 represents the switch's ON state. x indicates a position irrelevant to the listed setting. Format Setting NTSC 0000xxxx PAL 1000xxxx 480p5994 0100xxxx 576p50 1100xxxx 1080i5994 0010xxxx 1080i60 1010xxxx 720p5994 0110xxxx 720p60 1110xxxx 1080i50 0001xxxx 1080p2398 1001xxxx 720p50 0101xxxx 1080p2997 1101xxxx 1080p24 0011xxxx 1080p25 1011xxxx 1080p30 0111xxxx RGB Out xxxxxxx1 YPbPr Out xxxxxxx0",
       "seo": {
         "title": null,
         "description": null
@@ -4425,8 +4425,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.</p>",
+      "descriptionPlain": "A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.",
       "seo": {
         "title": null,
         "description": null
@@ -4492,8 +4492,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a &quot;fade to gray&quot;. The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities.</p>",
+      "descriptionPlain": "Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a \"fade to gray\". The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities.",
       "seo": {
         "title": null,
         "description": null
@@ -4566,8 +4566,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks.</p>",
+      "descriptionPlain": "FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks.",
       "seo": {
         "title": null,
         "description": null
@@ -4640,8 +4640,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory. The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics. Features Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns. Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators. An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation. 4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR., 16 Stage Shift Register Delay Line with 8 selectable output taps. 32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets. 48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps. 9-bit RGB DACs with palette memory and 8 selectable color palettes.</p>",
+      "descriptionPlain": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory. The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics. Features Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns. Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators. An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation. 4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR., 16 Stage Shift Register Delay Line with 8 selectable output taps. 32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets. 48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps. 9-bit RGB DACs with palette memory and 8 selectable color palettes.",
       "seo": {
         "title": null,
         "description": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory..."
@@ -4710,8 +4710,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.</p>",
+      "descriptionPlain": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.",
       "seo": {
         "title": null,
         "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! "
@@ -4978,8 +4978,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Keychain is a triple hard key generator. Using voltage comparators with a 7ns response time, this module can generate sharp edged stencil shapes from any video or pattern generator source.</p>",
+      "descriptionPlain": "Keychain is a triple hard key generator. Using voltage comparators with a 7ns response time, this module can generate sharp edged stencil shapes from any video or pattern generator source.",
       "seo": {
         "title": null,
         "description": null
@@ -5039,8 +5039,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The LZX Liquid TV is a full color video monitor with a 3.5” LCD video display. The module’s input jack takes any NTSC/PAL video source signal and displays it on the screen, offering easy previewing before the signal is patched elsewhere. This allows for the easy checking and composing of video sequences in real time. Additionally, three switchable preview inputs convert any voltage signal into a video signal that is subsequently displayed on the screen. Features Full color, 3.5 inch LCD video display. Displays any NTSC/PAL video signals or the output of the internal preview driver. Internal preview driver turns any voltage in your modular synth into a valid video signal for display or output, even without any other video synthesizer modules. Three separate preview channel inputs with pass through jacks. The LCD display may be powered from an external 12V source to ease the drain on your EuroRack power supply.</p>",
+      "descriptionPlain": "The LZX Liquid TV is a full color video monitor with a 3.5” LCD video display. The module’s input jack takes any NTSC/PAL video source signal and displays it on the screen, offering easy previewing before the signal is patched elsewhere. This allows for the easy checking and composing of video sequences in real time. Additionally, three switchable preview inputs convert any voltage signal into a video signal that is subsequently displayed on the screen. Features Full color, 3.5 inch LCD video display. Displays any NTSC/PAL video signals or the output of the internal preview driver. Internal preview driver turns any voltage in your modular synth into a valid video signal for display or output, even without any other video synthesizer modules. Three separate preview channel inputs with pass through jacks. The LCD display may be powered from an external 12V source to ease the drain on your EuroRack power supply.",
       "seo": {
         "title": null,
         "description": null
@@ -5109,8 +5109,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>LNK is a passive utility module for distributing signals within your patch. Cascaded inputs provide up to fifteen outputs from a single input.LNK is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
+      "descriptionPlain": "LNK is a passive utility module for distributing signals within your patch. Cascaded inputs provide up to fifteen outputs from a single input.LNK is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
         "title": null,
         "description": null
@@ -5223,8 +5223,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly.</p>",
+      "descriptionPlain": "Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly.",
       "seo": {
         "title": null,
         "description": null
@@ -5571,8 +5571,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Cover up holes in spacetime with this handy adhesive decal.</p>",
+      "descriptionPlain": "Cover up holes in spacetime with this handy adhesive decal.",
       "seo": {
         "title": null,
         "description": null
@@ -5636,8 +5636,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA</p>",
+      "descriptionPlain": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA",
       "seo": {
         "title": null,
         "description": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA"
@@ -5696,8 +5696,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)</p>",
+      "descriptionPlain": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most a..."
@@ -5756,8 +5756,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually.</p>",
+      "descriptionPlain": "Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually.",
       "seo": {
         "title": null,
         "description": null
@@ -5839,8 +5839,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Invoking the lineage of computer video instruments from the 1980s and 1990s, the Orion Series Memory Palace introduces digital video transformations and frame buffer memory to the LZX video synthesis landscape. Width, 52HP Mounting Depth, 50mm Power +12V @ 550mA Power -12V @ 50mA Video Feedback Cornucopia An HSV proc amp, multi-mode soft key generator, variable frame delay, 2D transformation engine and flexible compositing pathways provide a workflow designed for a wide range of video feedback techniques. The perfect post-processor for your analog textures. Dedicated Digital Hardware Not just just a computer hiding behind the control panel. Dedicated FPGA blocks provide hardware acceleration for powerful real time video processing. Flexible video outputs include 1V YRGB, Composite, S-Video, and DVI-D connections. Performance Focused Controls 13 voltage controlled parameters with CV input attenuators and high quality faders for accurate positioning and smooth transitions. 13 broadcast-style illuminated pushbutton controls for satisfying button mashing. In frame buffer feedback mode, spatial effects are placed in the feedback path between the keyer and frame buffer memory. The video feed is mapped and multiplied across space and time into endless universes of recursive transformation. Memory Palace&#39;s painting mode allows you to draw onto the digital memory canvas using external shapes, patterns or even video sources as your paintbrush. Designed for use with the LZX Escher Sketch stylus pad controller or any voltage control source that generates XY voltages. Spatial Processor Functions Memory Palace&#39;s spatial processor is modeled after classic broadcast Digital Video Effects (DVE) processors from the 1980&#39;s and 1990&#39;s. The spatial processor uses digital frame memory to reinterpret the input image, adjusting its positioning, size, aspect ratio, and rotation angle in a nonlinear fashion. Multiple selectable modes: Feedback mode places the spatial effects in the processing chain after the keyer. Painting mode places the spatial effects on the input before the keyer. X &amp; Y Position displace the input image horizontally and vertically. Zoom scales the size of the input image larger or smaller than its original size. Stretch adjusts the horizontal / vertical aspect ratio of the image. Rotation rotates the entire image 360 degrees clockwise or counter-clockwise. Tile mode repeats the buffer image multiple times depending on Zoom and Stretch settings. Kaleidoscopic effects are possible when combined with the rotation control. Mosaic mode allows extension of the effects beyond the borders of the input frame. Mirror X &amp; Mirror Y functions mirror the entire image across the horizontal and vertical axes. X &amp; Y Scroll functions enable continuous movement of the image in any direction, with sliders controlling movement speed. Spin function enables continuous clockwise or counter-clockwise rotation of the image with the slider controlling spinning speed. Soft Keyer Functions Memory Palace&#39;s soft keyer allows smooth linear transitions from the incoming video and the image stored in the internal video frame buffer. It may source its key mask from luma and chroma keying modes, or may also be used as an alpha channel processor for external ramp gradients and keys. Multiple selectable modes: Luma Key, Chroma Key, Alpha Processor, and Window Key. Threshold controls the cutoff of the internal key generator, with behavior determined by the selected keyer mode. Softness controls the softness of the key edge used when compositing the buffer with the incoming image. Color Processor Functions Memory Palace&#39;s color processor can function as a video proc-amp or psychedelic colorizer. When used in feedback mode, it serves as a way to modify each repeat of the buffer image incrementally, creating seamless gradients across time. Multiple selectable modes: Proc Amp, Colorize. Hue controls a shift in the angle of the image&#39;s hue, without effecting brightness or saturation. Cycle mode allows hue to shift continuously, with the Hue slider setting the speed of color rotation. Saturation controls an increment or decrement of the image&#39;s saturation level. In a feedback loop, it can gradually saturate or desaturate an image with each successive pass. Frame Buffer Memory Functions Memory Palace includes uncompressed video memory which stores a stack of the most recent frames it has processed. Delay selects the number of frames to delay the image within its feedback loop, allowing complex echoing. While the image is frozen, delay can be used to scan the output across frames in the recent past using the slider or external voltage control. [Designer Note: We have not yet determined the maximum length of frame delay, but it will likely be 2-3 seconds. Since the delay reiterates into the buffer, the actual visual effect of the delay is much longer across time.] Feedback controls the amplitude of the buffer memory as it is fed back into the background of the Soft Keyer. Above its center point, the image will blow out to white, and below its center point, the image will fade to black. Freeze button freezes the entire buffer, disabling any writing into it. The frozen image will be held at the output until the frame is unfrozen. Freeze frames can be strobed with the external trigger input. Clear button clears the image to black. Useful in painting mode when you want to erase the current drawing and start a new one. Front Interface DVI-D/HDMI video output supporting 480p/576p SD progressive output. DVI-D to HDMI connector adapter included. [Designer Note: We plan to enable other output video format options on the DVI-D connector.] USB input for firmware update and future expansion. Composite &amp; S-Video (Y/C) video output supporting 480i/576i SD modes. Five 1V DC patchable video inputs for Aux, Alpha, Red, Green &amp; Blue channels at 480i/576i SD resolutions. The alpha input is an external soft key input for external masks and shapes, and the aux channel may be used as a modulation source. Four 1V DC patchable video outputs for Luma, Red, Green &amp; Blue channels at 480i/576i SD resolutions. All video inputs and outputs can be used simultaneously. External trigger/gate input with assignable function via settings menu. Standard MIDI in and MIDI thru via 3.5mm TRS connectors. Switches on module rear support both Type A and Type B MIDI TRS connections. 1.5 inch RGB OLED display for settings menu, with four tact switches for settings adjustment and navigation. 13 external voltage control inputs with buffered attenuators for all primary parameters. Switchable from LZX 1V DC to EuroRack 5V DC voltage scales from the settings menu. 13 high quality ALPS slide potentiometers, dedicated for each main parameter primary control. Response curve and lag time user adjustable via settings menu. 13 high quality NKK illuminated pushbuttons to control performance modes and functions. Rear Interface Video Sync/Genlock input and loop thru on RCA connectors. Loop through/terminate switch located near these connectors. Video Sync/Genlock output for on RCA connector for use as system master video sync generator. Switches for MIDI in/thru pinout mode, for use with alternate pinout connectors. EuroRack power connector for standard +/-12V power supplies. 2.1mm barrel 12V DC auxiliary power connector optionally supplies power to Memory Palace’s onboard computer to reduce drain on your EuroRack power supply. This can be used with the LZX Vessel case, or with a 1A 12V DC wall-wart power adapter in cases which will not support Memory Palace’s power load.</p>",
+      "descriptionPlain": "Invoking the lineage of computer video instruments from the 1980s and 1990s, the Orion Series Memory Palace introduces digital video transformations and frame buffer memory to the LZX video synthesis landscape. Width, 52HP Mounting Depth, 50mm Power +12V @ 550mA Power -12V @ 50mA Video Feedback Cornucopia An HSV proc amp, multi-mode soft key generator, variable frame delay, 2D transformation engine and flexible compositing pathways provide a workflow designed for a wide range of video feedback techniques. The perfect post-processor for your analog textures. Dedicated Digital Hardware Not just just a computer hiding behind the control panel. Dedicated FPGA blocks provide hardware acceleration for powerful real time video processing. Flexible video outputs include 1V YRGB, Composite, S-Video, and DVI-D connections. Performance Focused Controls 13 voltage controlled parameters with CV input attenuators and high quality faders for accurate positioning and smooth transitions. 13 broadcast-style illuminated pushbutton controls for satisfying button mashing. In frame buffer feedback mode, spatial effects are placed in the feedback path between the keyer and frame buffer memory. The video feed is mapped and multiplied across space and time into endless universes of recursive transformation. Memory Palace's painting mode allows you to draw onto the digital memory canvas using external shapes, patterns or even video sources as your paintbrush. Designed for use with the LZX Escher Sketch stylus pad controller or any voltage control source that generates XY voltages. Spatial Processor Functions Memory Palace's spatial processor is modeled after classic broadcast Digital Video Effects (DVE) processors from the 1980's and 1990's. The spatial processor uses digital frame memory to reinterpret the input image, adjusting its positioning, size, aspect ratio, and rotation angle in a nonlinear fashion. Multiple selectable modes: Feedback mode places the spatial effects in the processing chain after the keyer. Painting mode places the spatial effects on the input before the keyer. X & Y Position displace the input image horizontally and vertically. Zoom scales the size of the input image larger or smaller than its original size. Stretch adjusts the horizontal / vertical aspect ratio of the image. Rotation rotates the entire image 360 degrees clockwise or counter-clockwise. Tile mode repeats the buffer image multiple times depending on Zoom and Stretch settings. Kaleidoscopic effects are possible when combined with the rotation control. Mosaic mode allows extension of the effects beyond the borders of the input frame. Mirror X & Mirror Y functions mirror the entire image across the horizontal and vertical axes. X & Y Scroll functions enable continuous movement of the image in any direction, with sliders controlling movement speed. Spin function enables continuous clockwise or counter-clockwise rotation of the image with the slider controlling spinning speed. Soft Keyer Functions Memory Palace's soft keyer allows smooth linear transitions from the incoming video and the image stored in the internal video frame buffer. It may source its key mask from luma and chroma keying modes, or may also be used as an alpha channel processor for external ramp gradients and keys. Multiple selectable modes: Luma Key, Chroma Key, Alpha Processor, and Window Key. Threshold controls the cutoff of the internal key generator, with behavior determined by the selected keyer mode. Softness controls the softness of the key edge used when compositing the buffer with the incoming image. Color Processor Functions Memory Palace's color processor can function as a video proc-amp or psychedelic colorizer. When used in feedback mode, it serves as a way to modify each repeat of the buffer image incrementally, creating seamless gradients across time. Multiple selectable modes: Proc Amp, Colorize. Hue controls a shift in the angle of the image's hue, without effecting brightness or saturation. Cycle mode allows hue to shift continuously, with the Hue slider setting the speed of color rotation. Saturation controls an increment or decrement of the image's saturation level. In a feedback loop, it can gradually saturate or desaturate an image with each successive pass. Frame Buffer Memory Functions Memory Palace includes uncompressed video memory which stores a stack of the most recent frames it has processed. Delay selects the number of frames to delay the image within its feedback loop, allowing complex echoing. While the image is frozen, delay can be used to scan the output across frames in the recent past using the slider or external voltage control. [Designer Note: We have not yet determined the maximum length of frame delay, but it will likely be 2-3 seconds. Since the delay reiterates into the buffer, the actual visual effect of the delay is much longer across time.] Feedback controls the amplitude of the buffer memory as it is fed back into the background of the Soft Keyer. Above its center point, the image will blow out to white, and below its center point, the image will fade to black. Freeze button freezes the entire buffer, disabling any writing into it. The frozen image will be held at the output until the frame is unfrozen. Freeze frames can be strobed with the external trigger input. Clear button clears the image to black. Useful in painting mode when you want to erase the current drawing and start a new one. Front Interface DVI-D/HDMI video output supporting 480p/576p SD progressive output. DVI-D to HDMI connector adapter included. [Designer Note: We plan to enable other output video format options on the DVI-D connector.] USB input for firmware update and future expansion. Composite & S-Video (Y/C) video output supporting 480i/576i SD modes. Five 1V DC patchable video inputs for Aux, Alpha, Red, Green & Blue channels at 480i/576i SD resolutions. The alpha input is an external soft key input for external masks and shapes, and the aux channel may be used as a modulation source. Four 1V DC patchable video outputs for Luma, Red, Green & Blue channels at 480i/576i SD resolutions. All video inputs and outputs can be used simultaneously. External trigger/gate input with assignable function via settings menu. Standard MIDI in and MIDI thru via 3.5mm TRS connectors. Switches on module rear support both Type A and Type B MIDI TRS connections. 1.5 inch RGB OLED display for settings menu, with four tact switches for settings adjustment and navigation. 13 external voltage control inputs with buffered attenuators for all primary parameters. Switchable from LZX 1V DC to EuroRack 5V DC voltage scales from the settings menu. 13 high quality ALPS slide potentiometers, dedicated for each main parameter primary control. Response curve and lag time user adjustable via settings menu. 13 high quality NKK illuminated pushbuttons to control performance modes and functions. Rear Interface Video Sync/Genlock input and loop thru on RCA connectors. Loop through/terminate switch located near these connectors. Video Sync/Genlock output for on RCA connector for use as system master video sync generator. Switches for MIDI in/thru pinout mode, for use with alternate pinout connectors. EuroRack power connector for standard +/-12V power supplies. 2.1mm barrel 12V DC auxiliary power connector optionally supplies power to Memory Palace’s onboard computer to reduce drain on your EuroRack power supply. This can be used with the LZX Vessel case, or with a 1A 12V DC wall-wart power adapter in cases which will not support Memory Palace’s power load.",
       "seo": {
         "title": null,
         "description": null
@@ -6017,8 +6017,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs.MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
+      "descriptionPlain": "MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs.MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
         "title": null,
         "description": null
@@ -6131,8 +6131,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner&#39;s Manual (PDF)User Reference Card (PDF)</p>",
+      "descriptionPlain": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner's Manual (PDF)User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for exp..."
@@ -6318,8 +6318,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Looks great on all models of safety helmet.</p>",
+      "descriptionPlain": "Looks great on all models of safety helmet.",
       "seo": {
         "title": null,
         "description": null
@@ -6391,8 +6391,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.</p>",
+      "descriptionPlain": "Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.",
       "seo": {
         "title": null,
         "description": null
@@ -6525,8 +6525,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>P (Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot.P is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
+      "descriptionPlain": "P (Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot.P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
         "title": null,
         "description": null
@@ -6639,8 +6639,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>PAB (Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
+      "descriptionPlain": "PAB (Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
         "title": null,
         "description": null
@@ -6753,8 +6753,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA</p>",
+      "descriptionPlain": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA",
       "seo": {
         "title": null,
         "description": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA"
@@ -6821,8 +6821,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Standard EuroRack patch cable.</p>",
+      "descriptionPlain": "Standard EuroRack patch cable.",
       "seo": {
         "title": null,
         "description": null
@@ -6920,8 +6920,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 65mA Info Sheet (PDF)User Reference Card (PDF)</p>",
+      "descriptionPlain": "Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 65mA Info Sheet (PDF)User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mount..."
@@ -6990,8 +6990,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting.PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
+      "descriptionPlain": "PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting.PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
         "title": null,
         "description": null
@@ -7155,8 +7155,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)</p>",
+      "descriptionPlain": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)",
       "seo": {
         "title": null,
         "description": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to..."
@@ -7215,8 +7215,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.) Learn more about P on our documentation website!</p>",
+      "descriptionPlain": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.) Learn more about P on our documentation website!",
       "seo": {
         "title": null,
         "description": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (a..."
@@ -7292,8 +7292,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 8HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA</p>",
+      "descriptionPlain": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 8HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
       "seo": {
         "title": null,
         "description": null
@@ -7355,8 +7355,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 12HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA</p>",
+      "descriptionPlain": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 12HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
       "seo": {
         "title": null,
         "description": null
@@ -7418,8 +7418,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Mounting Depth, 32mm</p>",
+      "descriptionPlain": "Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Mounting Depth, 32mm",
       "seo": {
         "title": null,
         "description": null
@@ -7492,8 +7492,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>PRM is a multi-purpose analog operator for rectifying and multiplying signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PRM is capable of many basic processing steps, such as half wave rectification, full wave rectification, four-quadrant multiplication, two-quadrant multiplication, and non-linear wave shaping.PRM is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
+      "descriptionPlain": "PRM is a multi-purpose analog operator for rectifying and multiplying signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PRM is capable of many basic processing steps, such as half wave rectification, full wave rectification, four-quadrant multiplication, two-quadrant multiplication, and non-linear wave shaping.PRM is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
         "title": null,
         "description": null
@@ -7606,8 +7606,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Proc is a triple voltage processor and summing amplifier module that provides continuous control over attenuation, inversion, and bias. It&#39;s a flexible tool in any modular video system that allows voltage control over signal mixing, conversion, and modulation. Proc offers essential functions for combining and transforming video signals and modulation sources.</p>",
+      "descriptionPlain": "Proc is a triple voltage processor and summing amplifier module that provides continuous control over attenuation, inversion, and bias. It's a flexible tool in any modular video system that allows voltage control over signal mixing, conversion, and modulation. Proc offers essential functions for combining and transforming video signals and modulation sources.",
       "seo": {
         "title": null,
         "description": null
@@ -7671,8 +7671,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19&quot; rack cases and enclosures. Combine it with DC Distro 3A and you&#39;re ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated* Vector rails with threaded M2.5 inserts* 100 M2.5 module mountings screws</p>",
+      "descriptionPlain": "LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19\" rack cases and enclosures. Combine it with DC Distro 3A and you're ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated* Vector rails with threaded M2.5 inserts* 100 M2.5 module mountings screws",
       "seo": {
         "title": null,
         "description": null
@@ -7745,8 +7745,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm.</p>",
+      "descriptionPlain": "Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm.",
       "seo": {
         "title": null,
         "description": null
@@ -7920,8 +7920,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Three standard EuroRack patch cables bonded together. Eases patching of RGB video signals. Available in three lengths: 15cm, 30cm and 60cm.</p>",
+      "descriptionPlain": "Three standard EuroRack patch cables bonded together. Eases patching of RGB video signals. Available in three lengths: 15cm, 30cm and 60cm.",
       "seo": {
         "title": null,
         "description": null
@@ -8051,8 +8051,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video.</p>",
+      "descriptionPlain": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video.",
       "seo": {
         "title": null,
         "description": null
@@ -8197,8 +8197,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis.</p>",
+      "descriptionPlain": "Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis.",
       "seo": {
         "title": null,
         "description": null
@@ -8271,8 +8271,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five channels of CV control over your patch. Listen to the room. The Sensory Translator comes equipped with an omnidirectional microphone that can hear more than you can! Specs and features: Omnidirectional electret microphone mounted on front panel Three preamp gain settings External audio input selectable between line and modular level voltages 2-input mixer including EQ with Bass and Treble levels Five 4-Pole precision bandpass filters Each bandpass filter has a 2-Octave bandwidth Five envelope followers with three decay speed settings Dedicated LED indicators for each channel Selectable Impulse mode for Beat-to-Trigger detection 16 HP Current draw 80mA +12V, 70mA -12V</p>",
+      "descriptionPlain": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five channels of CV control over your patch. Listen to the room. The Sensory Translator comes equipped with an omnidirectional microphone that can hear more than you can! Specs and features: Omnidirectional electret microphone mounted on front panel Three preamp gain settings External audio input selectable between line and modular level voltages 2-input mixer including EQ with Bass and Treble levels Five 4-Pole precision bandpass filters Each bandpass filter has a 2-Octave bandwidth Five envelope followers with three decay speed settings Dedicated LED indicators for each channel Selectable Impulse mode for Beat-to-Trigger detection 16 HP Current draw 80mA +12V, 70mA -12V",
       "seo": {
         "title": null,
         "description": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five cha..."
@@ -8341,8 +8341,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)</p>",
+      "descriptionPlain": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting..."
@@ -8401,8 +8401,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources.</p>",
+      "descriptionPlain": "SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources.",
       "seo": {
         "title": null,
         "description": null
@@ -8475,8 +8475,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Stacker is a triple quadrilateral key generator and layer-priority encoder for your modular video synthesizer. Feed Stacker horizontal and vertical waveforms from DWO3, DSG3, Scrolls, or Angles to produce three stacked quadrilateral shapes on the outputs.</p>",
+      "descriptionPlain": "Stacker is a triple quadrilateral key generator and layer-priority encoder for your modular video synthesizer. Feed Stacker horizontal and vertical waveforms from DWO3, DSG3, Scrolls, or Angles to produce three stacked quadrilateral shapes on the outputs.",
       "seo": {
         "title": null,
         "description": null
@@ -8591,8 +8591,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that grows with you as you build your video synthesis system. Width, 10HP Mounting Depth, 32mm Power +12V @ 70mA Power -12V @ 70mA Owner&#39;s Manual (PDF)User Reference Card (PDF)</p>",
+      "descriptionPlain": "Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that grows with you as you build your video synthesis system. Width, 10HP Mounting Depth, 32mm Power +12V @ 70mA Power -12V @ 70mA Owner's Manual (PDF)User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that gro..."
@@ -8661,8 +8661,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal.</p>",
+      "descriptionPlain": "Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal.",
       "seo": {
         "title": null,
         "description": null
@@ -8735,8 +8735,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. It allows you to passively combine signals to condense many sources, and send inputs to multiple outputs for broader distribution.</p>",
+      "descriptionPlain": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. It allows you to passively combine signals to condense many sources, and send inputs to multiple outputs for broader distribution.",
       "seo": {
         "title": null,
         "description": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. "
@@ -8816,8 +8816,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis.</p>",
+      "descriptionPlain": "Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis.",
       "seo": {
         "title": null,
         "description": null
@@ -8890,8 +8890,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher&#39;s illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities.</p>",
+      "descriptionPlain": "Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher's illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities.",
       "seo": {
         "title": null,
         "description": null
@@ -8964,8 +8964,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>TBC2 is a dual video input module for your LZX modular system. Supported are Composite, Component &amp; S-Video inputs capable of SD/HD video decoding and frame synchronization. SD/HD Video Sync Generator supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 sync formats Dual SD/HD Video Decoders supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 input sources VESA/VGA input up to 1024x768 with optional 10HP VGA+SCART expander. Playback of still images and looping sequences loaded from frontpanel MicroSD card slot SD color correction controls for each input: Hue, Saturation, Contrast &amp; Brightness Auto upscaling and downscaling modes for both inputs MIDI input for remote parameter control Submodules Decoder TBC2 has two input decoder submodules. Each supports Component (YPbPr/RGsB), Composite (CVBS) and S-Video (YC) inputs. With the addition of the VGA/SCART expander, it supports VGA (RGBHV) and SCART (CVBS/RGsB) inputs. Input Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 640x480p60 800x600p60 1024x768p60 Genlock TBC2 has one genlock submodule. This module controls the timing of the output encoders. It is a full featured Sync Generator with front and rear outputs for video sync. Output Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 Encoder TBC2 has two output encoder submodules. Each supports Patchable 1V (YRGB) outputs. The output video standard follows the setting of the Genlock Module. Media TBC2 has one media submodule. This module is capable of loading still images (JPG, PNG, BMP) from the front MicroSD card socket. The output video standard follows the setting of the Genlock Module. To use the media module, copy your images into a subfolder of a compatible MicroSD card. For example: /media/folder/frame1.JPG We recommend preparing media in a size matching your system&#39;s output video standard in JPG or PNG formats. For example, for NTSC video, prepare media at 720 (W) x 486 (H) dimensions. Always eject or insert your MicroSD card only when your system is powered off. Keep remote backups of any data on your MicroSD card. The maximum number of images per media folder is determined by the current output video standard, with a minimum of 24 frames in 1920 (W) x 1080 (H) media sizes. Ramp Generator TBC2 has one Ramp Generator submodule. The output video standard follows the setting of the Genlock Module. The Ramp Generator is a low speed software renderer designed to generate programmable gradients and other patterns. After any settings change, this module will render a new output frame. MicroSD Card Compatibility TBC2 is compatible with some, but not all MicroSD cards. When you acquire a MicroSD card to use with TBC2, we recommend selecting from the specific brands and models we have tested to be hassle free, listed below. Always purchase MicroSD cards from a trusted vendor with name brand packaging to protect yourself against counterfeits. To prepare your MicroSD card for use with TBC2, please format the card as FAT32 with default sector size. Brand / Series Size SanDisk 8GB, 16GB SanDisk EDGE 8GB MIDI Control Change Map CC Module Parameter 0 Encoder A Crossfade 1 Decoder A SD Processor Hue 2 Decoder A SD Processor Saturation 3 Decoder A SD Processor Brightness 4 Decoder A SD Processor Contrast 16 Encoder B Crossfade 17 Decoder B SD Processor Hue 18 Decoder B SD Processor Saturation 19 Decoder B SD Processor Brightness 20 Decoder B SD Processor Contrast Firmware Update Download the latest firmware package from the releases section, and unzip the files. Find BOOT.bin and copy it to your MicroSD card. Power down your TBC2 and insert the MicroSD card. Power on your system and wait for TBC2 to finish booting, then activate the Update Firmware button on the System page. Wait for firmware update to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the correct version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Factory Reset To reset your TBC2 firmware to the version shipped from the factory, activate the Reset Firmware button on the System page. Wait for firmware reset to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the factory installed version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Troubleshooting If the module is receiving power, but the screen is blank, complete the following procedure: Format a Micro SD card, sized 16gb or smaller. Copy the current TBC2 firmware (available below) onto the card. With the module powered off, install the card in the slot in the front of the module. There are two buttons on the back edge of the module&#39;s circuit board. Hold down the top one (labeled &quot;Boot from SD&quot; on early units) and power up the module. Once the module has powered on, select &quot;update firmware&quot; in the menu and let the module complete that process. Once complete, power cycle the module. If the issue persists, please make a service request at the bottom of this page.</p>",
+      "descriptionPlain": "TBC2 is a dual video input module for your LZX modular system. Supported are Composite, Component & S-Video inputs capable of SD/HD video decoding and frame synchronization. SD/HD Video Sync Generator supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 sync formats Dual SD/HD Video Decoders supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 input sources VESA/VGA input up to 1024x768 with optional 10HP VGA+SCART expander. Playback of still images and looping sequences loaded from frontpanel MicroSD card slot SD color correction controls for each input: Hue, Saturation, Contrast & Brightness Auto upscaling and downscaling modes for both inputs MIDI input for remote parameter control Submodules Decoder TBC2 has two input decoder submodules. Each supports Component (YPbPr/RGsB), Composite (CVBS) and S-Video (YC) inputs. With the addition of the VGA/SCART expander, it supports VGA (RGBHV) and SCART (CVBS/RGsB) inputs. Input Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 640x480p60 800x600p60 1024x768p60 Genlock TBC2 has one genlock submodule. This module controls the timing of the output encoders. It is a full featured Sync Generator with front and rear outputs for video sync. Output Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 Encoder TBC2 has two output encoder submodules. Each supports Patchable 1V (YRGB) outputs. The output video standard follows the setting of the Genlock Module. Media TBC2 has one media submodule. This module is capable of loading still images (JPG, PNG, BMP) from the front MicroSD card socket. The output video standard follows the setting of the Genlock Module. To use the media module, copy your images into a subfolder of a compatible MicroSD card. For example: /media/folder/frame1.JPG We recommend preparing media in a size matching your system's output video standard in JPG or PNG formats. For example, for NTSC video, prepare media at 720 (W) x 486 (H) dimensions. Always eject or insert your MicroSD card only when your system is powered off. Keep remote backups of any data on your MicroSD card. The maximum number of images per media folder is determined by the current output video standard, with a minimum of 24 frames in 1920 (W) x 1080 (H) media sizes. Ramp Generator TBC2 has one Ramp Generator submodule. The output video standard follows the setting of the Genlock Module. The Ramp Generator is a low speed software renderer designed to generate programmable gradients and other patterns. After any settings change, this module will render a new output frame. MicroSD Card Compatibility TBC2 is compatible with some, but not all MicroSD cards. When you acquire a MicroSD card to use with TBC2, we recommend selecting from the specific brands and models we have tested to be hassle free, listed below. Always purchase MicroSD cards from a trusted vendor with name brand packaging to protect yourself against counterfeits. To prepare your MicroSD card for use with TBC2, please format the card as FAT32 with default sector size. Brand / Series Size SanDisk 8GB, 16GB SanDisk EDGE 8GB MIDI Control Change Map CC Module Parameter 0 Encoder A Crossfade 1 Decoder A SD Processor Hue 2 Decoder A SD Processor Saturation 3 Decoder A SD Processor Brightness 4 Decoder A SD Processor Contrast 16 Encoder B Crossfade 17 Decoder B SD Processor Hue 18 Decoder B SD Processor Saturation 19 Decoder B SD Processor Brightness 20 Decoder B SD Processor Contrast Firmware Update Download the latest firmware package from the releases section, and unzip the files. Find BOOT.bin and copy it to your MicroSD card. Power down your TBC2 and insert the MicroSD card. Power on your system and wait for TBC2 to finish booting, then activate the Update Firmware button on the System page. Wait for firmware update to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the correct version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Factory Reset To reset your TBC2 firmware to the version shipped from the factory, activate the Reset Firmware button on the System page. Wait for firmware reset to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the factory installed version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Troubleshooting If the module is receiving power, but the screen is blank, complete the following procedure: Format a Micro SD card, sized 16gb or smaller. Copy the current TBC2 firmware (available below) onto the card. With the module powered off, install the card in the slot in the front of the module. There are two buttons on the back edge of the module's circuit board. Hold down the top one (labeled \"Boot from SD\" on early units) and power up the module. Once the module has powered on, select \"update firmware\" in the menu and let the module complete that process. Once complete, power cycle the module. If the issue persists, please make a service request at the bottom of this page.",
       "seo": {
         "title": null,
         "description": null
@@ -9034,8 +9034,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.</p>",
+      "descriptionPlain": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
       "seo": {
         "title": null,
         "description": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included."
@@ -9194,8 +9194,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>This DIY kit is for TBC2 Mk1 (Orion) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.</p>",
+      "descriptionPlain": "This DIY kit is for TBC2 Mk1 (Orion) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.",
       "seo": {
         "title": null,
         "description": null
@@ -9259,8 +9259,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>This DIY kit is for TBC2 Mk2 (Gen3) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.</p>",
+      "descriptionPlain": "This DIY kit is for TBC2 Mk2 (Gen3) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.",
       "seo": {
         "title": null,
         "description": null
@@ -9324,8 +9324,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying range may be voltage controlled separately. Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges. Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch. Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center. The circuit is entirely analogue. Specifications Width, 16HP Mounting Depth, 32mm Power +12V @ 200mA Power -12V @ 200mA</p>",
+      "descriptionPlain": "Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying range may be voltage controlled separately. Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges. Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch. Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center. The circuit is entirely analogue. Specifications Width, 16HP Mounting Depth, 32mm Power +12V @ 200mA Power -12V @ 200mA",
       "seo": {
         "title": null,
         "description": "Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying rang..."
@@ -9384,8 +9384,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The Triple Video Fader &amp; Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of purposes such as crossfading, multiplication, luma keying, chroma keying, window comparison, simple comparison and amplitude classification. control voltage inputs and bias controls: control voltage (cv) inputs have corresponding level/inversion controls, allowing both addition or subtraction of the input signal from the additional 1v bias controls. once the cv input and bias level are summed, they control the key generator’s comparator threshold. depending on the crossfader control source mode, they may also directly control the corresponding crossfader. faders: signal inputs to a and b channels of the voltage-controlled crossfaders are accessible via the frontpanel. mode switches allow selection of the control voltage source for the crossfaders. the fade mode enables the summed cv &amp; bias voltages to control the crossfader directly. the key mode enables the the corresponding key generator output to control the crossfader directly. the and mode enables a logical and generated from all three key generators to control the crossfader directly. in addition, crossfaders 2 &amp; 3 can select crossfader 1’s control source for use as a master control. crossfader outputs are accessible on the right side of the frontpanel. Voltage-controlled crossfader with two inputs and one output. When control source is at 0 Volt, channel A is completely on. When control source is at 1 Volt, channel B is completely on. Voltage levels between 0 Volt and 1 Volt represent a proportional mix of channels A &amp; B. With signal inserted to channel B only, the fader behaves as a traditional voltage-controlled amplifier. KEY GENERATOR High speed voltage comparator serving as a key generation source. When the key generator input is greater than the voltage represented by the sum of the CV input and bias controls, the key output is 1 Volt (on). Otherwise, the output is 0 Volt (off). Inversion switches select between non-inverted and inverted versions of this logic signal. CONTROL SOURCE Control voltage (CV) inputs are processed by level and inversion controls and then summed with a variable 0 to 1 Volt bias. This sum serves as the threshold level for the key Generator, and as the control source for the fader while in FADE mode.</p>",
+      "descriptionPlain": "The Triple Video Fader & Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of purposes such as crossfading, multiplication, luma keying, chroma keying, window comparison, simple comparison and amplitude classification. control voltage inputs and bias controls: control voltage (cv) inputs have corresponding level/inversion controls, allowing both addition or subtraction of the input signal from the additional 1v bias controls. once the cv input and bias level are summed, they control the key generator’s comparator threshold. depending on the crossfader control source mode, they may also directly control the corresponding crossfader. faders: signal inputs to a and b channels of the voltage-controlled crossfaders are accessible via the frontpanel. mode switches allow selection of the control voltage source for the crossfaders. the fade mode enables the summed cv & bias voltages to control the crossfader directly. the key mode enables the the corresponding key generator output to control the crossfader directly. the and mode enables a logical and generated from all three key generators to control the crossfader directly. in addition, crossfaders 2 & 3 can select crossfader 1’s control source for use as a master control. crossfader outputs are accessible on the right side of the frontpanel. Voltage-controlled crossfader with two inputs and one output. When control source is at 0 Volt, channel A is completely on. When control source is at 1 Volt, channel B is completely on. Voltage levels between 0 Volt and 1 Volt represent a proportional mix of channels A & B. With signal inserted to channel B only, the fader behaves as a traditional voltage-controlled amplifier. KEY GENERATOR High speed voltage comparator serving as a key generation source. When the key generator input is greater than the voltage represented by the sum of the CV input and bias controls, the key output is 1 Volt (on). Otherwise, the output is 0 Volt (off). Inversion switches select between non-inverted and inverted versions of this logic signal. CONTROL SOURCE Control voltage (CV) inputs are processed by level and inversion controls and then summed with a variable 0 to 1 Volt bias. This sum serves as the threshold level for the key Generator, and as the control source for the fader while in FADE mode.",
       "seo": {
         "title": null,
         "description": "The Triple Video Fader & Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of p..."
@@ -9454,8 +9454,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories</p>",
+      "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories",
       "seo": {
         "title": null,
         "description": null
@@ -9537,8 +9537,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 208HP of Vector module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 208HP EuroRack case with busboard and lid 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories</p>",
+      "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 208HP of Vector module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 208HP EuroRack case with busboard and lid 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories",
       "seo": {
         "title": null,
         "description": null
@@ -9592,8 +9592,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 84HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 5 Amps of current with side facing power switch 14 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 7 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 84HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws 12V 5A power supply w/EMI filtering IEC power cable</p>",
+      "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 84HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 5 Amps of current with side facing power switch 14 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 7 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 84HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws 12V 5A power supply w/EMI filtering IEC power cable",
       "seo": {
         "title": null,
         "description": null
@@ -9702,8 +9702,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.</p>",
+      "descriptionPlain": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
       "seo": {
         "title": null,
         "description": null
@@ -9776,8 +9776,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:each mixer has five dc-coupled signal inputs which can be used for any type of signal, from low frequency modulation to full bandwidth video. four have associated level/inversion controls and inversion mode switches, the remaining one is a direct summing input for chained operation between multiple vbm modules. with the combination of the level/inversion control and inversion mode switches, three different variable input functions are possible: addition, subtraction, and inverted addition. with no signal input, each control can function as a variable 1v bias control. mix outputs:two separate mix output functions are available for each mixer: sum and absolute. the sum output is the sum of all input signals. the absolute output is the absolute value of the sum (negative signals are inverted and become positive.) the absolute outputs enable techniques such as frequency multiplication and the creation of solarization and color difference effects. matrix operation:matrix configuration is achieved through the normalization of input columns between the three independent signal mixers. with a single signal patched into the topmost input of mixer 1, this signal is applied to the corresponding input on mixers 2 &amp; 3. within a patch utilizing triple colorspace (such as red, green, and blue channels), this feature allows a single signal to be mixed in varying amounts to each channel.</p>",
+      "descriptionPlain": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:each mixer has five dc-coupled signal inputs which can be used for any type of signal, from low frequency modulation to full bandwidth video. four have associated level/inversion controls and inversion mode switches, the remaining one is a direct summing input for chained operation between multiple vbm modules. with the combination of the level/inversion control and inversion mode switches, three different variable input functions are possible: addition, subtraction, and inverted addition. with no signal input, each control can function as a variable 1v bias control. mix outputs:two separate mix output functions are available for each mixer: sum and absolute. the sum output is the sum of all input signals. the absolute output is the absolute value of the sum (negative signals are inverted and become positive.) the absolute outputs enable techniques such as frequency multiplication and the creation of solarization and color difference effects. matrix operation:matrix configuration is achieved through the normalization of input columns between the three independent signal mixers. with a single signal patched into the topmost input of mixer 1, this signal is applied to the corresponding input on mixers 2 & 3. within a patch utilizing triple colorspace (such as red, green, and blue channels), this feature allows a single signal to be mixed in varying amounts to each channel.",
       "seo": {
         "title": null,
         "description": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:ea..."
@@ -9844,8 +9844,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Standard RCA video cable.</p>",
+      "descriptionPlain": "Standard RCA video cable.",
       "seo": {
         "title": null,
         "description": null
@@ -9942,8 +9942,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Injected molded control knobs for D-Shaft potentiometers. One piece. Pad printed.Note: These knobs will not fit on the detented potentiometers used in some Gen3 modules.</p>",
+      "descriptionPlain": "Injected molded control knobs for D-Shaft potentiometers. One piece. Pad printed.Note: These knobs will not fit on the detented potentiometers used in some Gen3 modules.",
       "seo": {
         "title": null,
         "description": null
@@ -10033,8 +10033,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.</p>",
+      "descriptionPlain": "Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.",
       "seo": {
         "title": null,
         "description": null
@@ -10103,8 +10103,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it&#39;s easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.</p>",
+      "descriptionPlain": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.",
       "seo": {
         "title": null,
         "description": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits w..."
@@ -10181,8 +10181,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules.</p>",
+      "descriptionPlain": "Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules.",
       "seo": {
         "title": null,
         "description": null
@@ -10251,8 +10251,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range vco with 6 selectable frequency ranges from 30 seconds to 2mhz, coarse and fine tuning controls. expanded hard sync circuit designed for accurate synchronization to video sync signals. selection switch allows normalization to sync bus signals distributed through the power header from the lzx visionary video sync generator module. precision video op-amps used in all circuitry for accurate high speed frequency and waveshape modulation. five simultaneous waveform outputs: triangle, sawtooth, square, pulse (rectangle) &amp; shaped sine. two independent waveshapers with cv inputs, cv attenuverters and bias controls: pulsewidth modulator &amp; sine shaper. control pulsewidth and sine shape from 0% to 100%. two frequency cv inputs with cv attenuverters. jumper-configurable options for input scaling (visionary or 1v/oct standard) and linear or exponential input. attenuversion controls on all signal inputs allow attenuation and inversion of any input signal. frequency notification led. no external +5v power rail necessary, user configurable jumper allows selection between onboard +5v regulator or +5v rail on standard power header. Specifications: width: 16hp maximum current draw: 140ma</p>",
+      "descriptionPlain": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range vco with 6 selectable frequency ranges from 30 seconds to 2mhz, coarse and fine tuning controls. expanded hard sync circuit designed for accurate synchronization to video sync signals. selection switch allows normalization to sync bus signals distributed through the power header from the lzx visionary video sync generator module. precision video op-amps used in all circuitry for accurate high speed frequency and waveshape modulation. five simultaneous waveform outputs: triangle, sawtooth, square, pulse (rectangle) & shaped sine. two independent waveshapers with cv inputs, cv attenuverters and bias controls: pulsewidth modulator & sine shaper. control pulsewidth and sine shape from 0% to 100%. two frequency cv inputs with cv attenuverters. jumper-configurable options for input scaling (visionary or 1v/oct standard) and linear or exponential input. attenuversion controls on all signal inputs allow attenuation and inversion of any input signal. frequency notification led. no external +5v power rail necessary, user configurable jumper allows selection between onboard +5v regulator or +5v rail on standard power header. Specifications: width: 16hp maximum current draw: 140ma",
       "seo": {
         "title": null,
         "description": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range v..."
@@ -10320,8 +10320,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Real-time FPGA video effects console. Videomancer is a standalone video instrument — fifteen years of LZX Industries video synthesis design in a single box. Plug in any video source and transform the signal live with dedicated hardware controls. Six rotary knobs, five toggle switches, and one linear fader. Every effect parameter maps directly to a physical control. Turn a knob, see the image change. An ever-expanding library of programs spans dozens of categories: color processing, glitch, pattern generation, keying, posterization, displacement, and feedback. Select a program, adjust the controls, and perform. Videomancer processes video through programmable FPGA logic — not a GPU, not software plugins. The result is ultra-low latency measured in microseconds, not frames. What you do with the controls is what you see on the screen, instantly. Plug In Anything — HDMI, Composite, Component YPbPr, Component RGB, and 1V DC-coupled RGB. S-Video via adapter. Connect cameras, game consoles, computers, media players, and modular video synthesizers. HDMI and Analog, Both Directions — Supports NTSC, PAL, 240p through 1080p, and 1080i. Converts between HDMI and analog in either direction. 10-Bit Color Depth — Full 10-bit processing across both analog and digital streams. Precise colorization, proc-amp adjustment, and gradient-preserving effects. Hands-On Control — Twelve dedicated hardware controls for every effect parameter — no software menus between you and the image. External Modulation — Four Audio/CV inputs accept line-level audio, LFO-rate control voltage, and audio-rate modular signals. Full MIDI CC control via TRS Type A jacks, USB MIDI Device, USB MIDI Host, and USB HID support for joysticks, gamepads, and more. Instant Recall — Save and recall complete system states. Automatic state retention on power-up — the instrument remembers where you left off. Firmware Updates via USB — Update through LZX Connect, our free desktop app. Manual drag-and-drop update also supported via BOOTSEL. Expandable via microSD — Load additional programs from the built-in microSD card slot. Built to Perform — Rugged powder-coated steel enclosure with industrial screen printing. Powered by standard 12V DC barrel supply. What will you create? Perform visuals the way you perform music — with your hands. Videomancer sits between your camera and your projector, processing live footage into real-time visual effects. Map MIDI CC messages from your existing controller to any parameter. The instrument responds as fast as you move. No laptop in the signal chain. No crashes mid-set. No latency you can see. Quick-start guide → Every program has analog character — not a filter preset. Feed any video source into Videomancer and process it through dedicated FPGA hardware. Analog inputs and outputs give the signal path real analog character: the warmth, the noise floor, the artifacts you only get from real circuitry. Programs span color destruction, bit reduction, displacement, feedback, and noise synthesis. Each program responds differently to different sources. The same knob turn on a camera feed and a synthetic pattern produces two completely different results. Explore program guides → One box. HDMI and analog. Both directions. Videomancer converts between HDMI and analog video formats in either direction: composite, component, and 1V DC-coupled RGB. Connect vintage equipment to modern monitors, or route modular synthesizer output to an HDMI capture card. Even with no effects applied, Videomancer is a broadcast-quality format converter with 10-bit color depth and proc-amp controls for brightness and contrast adjustment. Supported formats and connection guide → Your music controls the image. No code required. Plug a line-level audio signal or control voltage into any of the four modulation inputs. The built-in modulation engine routes incoming signals to any parameter on any program — audio amplitude drives color saturation, an LFO sweeps a displacement offset, a MIDI CC fader crossfades between two looks. Setup takes minutes: select a program, patch a cable, assign a modulation target. The instrument handles the rest. Modulation and MIDI setup guide → Frequently Asked Questions Do I need a computer to use Videomancer? No. Videomancer is a standalone instrument. Plug in a video source, connect a display, power it on, and perform. A computer is only needed for firmware updates. How do I get started? Connect a video source to any input. Connect a display to any output. Power on the instrument. Select a program from the menu. Turn the knobs. The quick-start guide walks you through the rest. What video sources work? Any device with HDMI, composite, or component video output — cameras, game consoles, media players, computers, and modular synthesizers all work. Can I use this for live performance? Yes. There is no perceptible delay between your input and the display. MIDI and audio/CV modulation inputs make it a responsive performance instrument. Will Videomancer get new programs and features? Videomancer is a complete, stable instrument today. New programs and features arrive through regular firmware updates — every update is free and backward-compatible. The open-source Videomancer SDK also allows community developers to create and share their own programs. How do I update the firmware? Connect a USB cable and open LZX Connect on any computer. Select the firmware file and click update. A manual drag-and-drop method is also available as a fallback. What comes in the box? Videomancer device, 12V DC wall adapter with international plugs kit, mystical velvet pouch, 12-sided oracular polyhedron, Videomancer vinyl sticker, star stickers, fortune telling fish, and connectors &amp; controls reference card. Full documentation. Every program includes a detailed guide with signal flow diagrams, parameter descriptions, and creative exercises. The quick-start walkthrough gets you from unboxing to your first patch in under ten minutes. Read the Quick-Start Guide · Browse Program Guides What&#39;s in the Box Videomancer device 12V DC wall adapter with international plugs kit (US, EU, UK, AU) Mystical velvet pouch 12-sided oracular polyhedron Videomancer vinyl sticker Star stickers Fortune telling fish Connectors &amp; controls reference card Device Specifications Dimensions 234 × 178 × 75 mm (9.2 × 7.0 × 3.0 in) Power 12V DC barrel, center-positive (included) Video Inputs 1× HDMI, 1× Composite, 1× Component YPbPr/RGB, 1× 1V DC RGB (S-Video via Pb/Pr with adapter) Video Outputs 1× HDMI, 1× Composite, 1× Component YPbPr/RGB, 1× 1V DC RGB (S-Video via Pb/Pr with adapter) Supported Formats NTSC, PAL, 240p, 288p, 480p, 576p, 720p, 1080i, 1080p Color Depth 10-bit MIDI TRS Type A input and output Modulation Inputs 4× 3.5 mm audio/CV (line-level or modular) USB USB-C (firmware update, future expansion) Expansion microSD card slot Enclosure Powder-coated steel with industrial screen printing download firmware binaries from our public repository.</p>",
+      "descriptionPlain": "Real-time FPGA video effects console. Videomancer is a standalone video instrument — fifteen years of LZX Industries video synthesis design in a single box. Plug in any video source and transform the signal live with dedicated hardware controls. Six rotary knobs, five toggle switches, and one linear fader. Every effect parameter maps directly to a physical control. Turn a knob, see the image change. An ever-expanding library of programs spans dozens of categories: color processing, glitch, pattern generation, keying, posterization, displacement, and feedback. Select a program, adjust the controls, and perform. Videomancer processes video through programmable FPGA logic — not a GPU, not software plugins. The result is ultra-low latency measured in microseconds, not frames. What you do with the controls is what you see on the screen, instantly. Plug In Anything — HDMI, Composite, Component YPbPr, Component RGB, and 1V DC-coupled RGB. S-Video via adapter. Connect cameras, game consoles, computers, media players, and modular video synthesizers. HDMI and Analog, Both Directions — Supports NTSC, PAL, 240p through 1080p, and 1080i. Converts between HDMI and analog in either direction. 10-Bit Color Depth — Full 10-bit processing across both analog and digital streams. Precise colorization, proc-amp adjustment, and gradient-preserving effects. Hands-On Control — Twelve dedicated hardware controls for every effect parameter — no software menus between you and the image. External Modulation — Four Audio/CV inputs accept line-level audio, LFO-rate control voltage, and audio-rate modular signals. Full MIDI CC control via TRS Type A jacks, USB MIDI Device, USB MIDI Host, and USB HID support for joysticks, gamepads, and more. Instant Recall — Save and recall complete system states. Automatic state retention on power-up — the instrument remembers where you left off. Firmware Updates via USB — Update through LZX Connect, our free desktop app. Manual drag-and-drop update also supported via BOOTSEL. Expandable via microSD — Load additional programs from the built-in microSD card slot. Built to Perform — Rugged powder-coated steel enclosure with industrial screen printing. Powered by standard 12V DC barrel supply. What will you create? Perform visuals the way you perform music — with your hands. Videomancer sits between your camera and your projector, processing live footage into real-time visual effects. Map MIDI CC messages from your existing controller to any parameter. The instrument responds as fast as you move. No laptop in the signal chain. No crashes mid-set. No latency you can see. Quick-start guide → Every program has analog character — not a filter preset. Feed any video source into Videomancer and process it through dedicated FPGA hardware. Analog inputs and outputs give the signal path real analog character: the warmth, the noise floor, the artifacts you only get from real circuitry. Programs span color destruction, bit reduction, displacement, feedback, and noise synthesis. Each program responds differently to different sources. The same knob turn on a camera feed and a synthetic pattern produces two completely different results. Explore program guides → One box. HDMI and analog. Both directions. Videomancer converts between HDMI and analog video formats in either direction: composite, component, and 1V DC-coupled RGB. Connect vintage equipment to modern monitors, or route modular synthesizer output to an HDMI capture card. Even with no effects applied, Videomancer is a broadcast-quality format converter with 10-bit color depth and proc-amp controls for brightness and contrast adjustment. Supported formats and connection guide → Your music controls the image. No code required. Plug a line-level audio signal or control voltage into any of the four modulation inputs. The built-in modulation engine routes incoming signals to any parameter on any program — audio amplitude drives color saturation, an LFO sweeps a displacement offset, a MIDI CC fader crossfades between two looks. Setup takes minutes: select a program, patch a cable, assign a modulation target. The instrument handles the rest. Modulation and MIDI setup guide → Frequently Asked Questions Do I need a computer to use Videomancer? No. Videomancer is a standalone instrument. Plug in a video source, connect a display, power it on, and perform. A computer is only needed for firmware updates. How do I get started? Connect a video source to any input. Connect a display to any output. Power on the instrument. Select a program from the menu. Turn the knobs. The quick-start guide walks you through the rest. What video sources work? Any device with HDMI, composite, or component video output — cameras, game consoles, media players, computers, and modular synthesizers all work. Can I use this for live performance? Yes. There is no perceptible delay between your input and the display. MIDI and audio/CV modulation inputs make it a responsive performance instrument. Will Videomancer get new programs and features? Videomancer is a complete, stable instrument today. New programs and features arrive through regular firmware updates — every update is free and backward-compatible. The open-source Videomancer SDK also allows community developers to create and share their own programs. How do I update the firmware? Connect a USB cable and open LZX Connect on any computer. Select the firmware file and click update. A manual drag-and-drop method is also available as a fallback. What comes in the box? Videomancer device, 12V DC wall adapter with international plugs kit, mystical velvet pouch, 12-sided oracular polyhedron, Videomancer vinyl sticker, star stickers, fortune telling fish, and connectors & controls reference card. Full documentation. Every program includes a detailed guide with signal flow diagrams, parameter descriptions, and creative exercises. The quick-start walkthrough gets you from unboxing to your first patch in under ten minutes. Read the Quick-Start Guide · Browse Program Guides What's in the Box Videomancer device 12V DC wall adapter with international plugs kit (US, EU, UK, AU) Mystical velvet pouch 12-sided oracular polyhedron Videomancer vinyl sticker Star stickers Fortune telling fish Connectors & controls reference card Device Specifications Dimensions 234 × 178 × 75 mm (9.2 × 7.0 × 3.0 in) Power 12V DC barrel, center-positive (included) Video Inputs 1× HDMI, 1× Composite, 1× Component YPbPr/RGB, 1× 1V DC RGB (S-Video via Pb/Pr with adapter) Video Outputs 1× HDMI, 1× Composite, 1× Component YPbPr/RGB, 1× 1V DC RGB (S-Video via Pb/Pr with adapter) Supported Formats NTSC, PAL, 240p, 288p, 480p, 576p, 720p, 1080i, 1080p Color Depth 10-bit MIDI TRS Type A input and output Modulation Inputs 4× 3.5 mm audio/CV (line-level or modular) USB USB-C (firmware update, future expansion) Expansion microSD card slot Enclosure Powder-coated steel with industrial screen printing download firmware binaries from our public repository.",
       "seo": {
         "title": null,
         "description": null
@@ -10434,8 +10434,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Your fellow video freaks will love seeing you in this mystical Videomancer design. Two color print on Hanes Beefy Tee in Black or Purple. All shirts will ship in mid-November 2025.</p>",
+      "descriptionPlain": "Your fellow video freaks will love seeing you in this mystical Videomancer design. Two color print on Hanes Beefy Tee in Black or Purple. All shirts will ship in mid-November 2025.",
       "seo": {
         "title": null,
         "description": null
@@ -10705,8 +10705,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>This product has not been released yet, and will be available soon. Decorate your binders and laptops with this 3 inch vinyl sticker featuring the mystical Videomancer.</p>",
+      "descriptionPlain": "This product has not been released yet, and will be available soon. Decorate your binders and laptops with this 3 inch vinyl sticker featuring the mystical Videomancer.",
       "seo": {
         "title": null,
         "description": null
@@ -10786,8 +10786,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>We are now officially of our limited production run of Vidiots in 2024. These units were built from the remaining stock of production components in storage, and are identical to Vidiots last built in 2019. These unique units are identifiable by serial number prefix 930001-2024. Vidiot is the first standalone video synthesis instrument from LZX Industries, designed in collaboration with video synthesis pioneer Dan Bucciano. Capable of analog shape and pattern generation, external video processing, colorization, audiovisualization, keying, and much more. A Complete Visual Instrument. Vidiot is a complete instrument for analog video synthesis and processing. Everything you need to connect to a display and create video art is in the box. Past Tech Made New. We worked with video synthesis visionary Dan Bucciano to bring the design philosophy of the 1970’s into a totally new and groundbreaking device for video artists. Modular Synthesis Compatibility. Vidiot is fully compatible with all existing LZX EuroRack video synth modules. Like our modules, any audio or control voltage source can be patched to any of its 13 patch inputs. Included Items: Vidiot, 5VDC 1.2A Universal Input Voltage Power Adapter (includes plugs for US, UK, EU, Australia and China), Video RCA Cable (5 ft), 2x Patch Cables (6 inch lengths, 1 red, 1 blue), Official Vidiot Birthday Party Hat, Vinyl Sticker</p>",
+      "descriptionPlain": "We are now officially of our limited production run of Vidiots in 2024. These units were built from the remaining stock of production components in storage, and are identical to Vidiots last built in 2019. These unique units are identifiable by serial number prefix 930001-2024. Vidiot is the first standalone video synthesis instrument from LZX Industries, designed in collaboration with video synthesis pioneer Dan Bucciano. Capable of analog shape and pattern generation, external video processing, colorization, audiovisualization, keying, and much more. A Complete Visual Instrument. Vidiot is a complete instrument for analog video synthesis and processing. Everything you need to connect to a display and create video art is in the box. Past Tech Made New. We worked with video synthesis visionary Dan Bucciano to bring the design philosophy of the 1970’s into a totally new and groundbreaking device for video artists. Modular Synthesis Compatibility. Vidiot is fully compatible with all existing LZX EuroRack video synth modules. Like our modules, any audio or control voltage source can be patched to any of its 13 patch inputs. Included Items: Vidiot, 5VDC 1.2A Universal Input Voltage Power Adapter (includes plugs for US, UK, EU, Australia and China), Video RCA Cable (5 ft), 2x Patch Cables (6 inch lengths, 1 red, 1 blue), Official Vidiot Birthday Party Hat, Vinyl Sticker",
       "seo": {
         "title": null,
         "description": null
@@ -10864,8 +10864,8 @@
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.</p>",
+      "descriptionPlain": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.",
       "seo": {
         "title": null,
         "description": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositi..."
@@ -10924,8 +10924,8 @@
       "isVisible": false,
       "isBStock": false,
       "subtitle": null,
-      "descriptionHtml": "",
-      "descriptionPlain": "",
+      "descriptionHtml": "<p>In many European countries television static noise, or &quot;snow&quot;, is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)</p>",
+      "descriptionPlain": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)",
       "seo": {
         "title": null,
         "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based o..."

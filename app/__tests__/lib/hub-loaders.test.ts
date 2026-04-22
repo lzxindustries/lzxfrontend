@@ -1,6 +1,6 @@
 import {describe, expect, it, vi} from 'vitest';
 
-import {loadModuleHubData} from '~/data/hub-loaders';
+import {loadInstrumentHubData, loadModuleHubData} from '~/data/hub-loaders';
 
 function createContext() {
   // The new hub loader sources content from the local catalog and only
@@ -78,5 +78,28 @@ describe('loadModuleHubData', () => {
     );
 
     expect(data).toBeNull();
+  });
+});
+
+describe('loadInstrumentHubData', () => {
+  it('loads system products when the canonical slug differs from the catalog handle', async () => {
+    const context = createContext();
+
+    for (const [slug, name, handle] of [
+      ['double-vision', 'Double Vision System', 'double-vision-system'],
+      ['double-vision-168', 'Double Vision 168', 'double-vision-complete'],
+    ] as const) {
+      const data = await loadInstrumentHubData(
+        slug,
+        context,
+        new Request(`https://www.lzxindustries.net/systems/${slug}`),
+      );
+
+      expect(data).not.toBeNull();
+      expect(data?.slug).toBe(slug);
+      expect(data?.slugEntry.name).toBe(name);
+      expect(data?.product.handle).toBe(handle);
+      expect(data?.product.id).toMatch(/^gid:\/\/shopify\/Product\//);
+    }
   });
 });

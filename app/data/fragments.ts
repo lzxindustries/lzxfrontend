@@ -8,9 +8,10 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
     publishedAt
     handle
     availableForSale
-    variants(first: 1) {
+    variants(first: 100) {
       nodes {
         id
+        availableForSale
         image {
           url
           altText

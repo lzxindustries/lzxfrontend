@@ -5,6 +5,7 @@ import {AddToCartButton} from '~/components/AddToCartButton';
 import {Link} from '~/components/Link';
 import {Text} from '~/components/Text';
 import {getProductPlaceholder} from '~/lib/placeholders';
+import {getProductGridBadges} from '~/lib/product-badges';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
 import {resolveProductUrl} from '~/data/product-slugs';
 import {getSlugEntry} from '~/data/product-slugs';
@@ -52,6 +53,10 @@ export function ProductCard({
 
   const variants = flattenConnection(cardProduct?.variants);
   const firstVariant = variants.length ? variants[0] : null;
+  const stockBadges = getProductGridBadges({
+    productId: cardProduct.id,
+    variants,
+  });
 
   const {currencyNarrowSymbol, withoutTrailingZerosAndCurrency} = useMoney(
     firstVariant?.price || {amount: '0', currencyCode: 'USD'},
@@ -96,12 +101,23 @@ export function ProductCard({
       >
         <div className={clsx('grid gap-4', className)}>
           <div className="card-image aspect-square bg-primary/5 relative">
-            {firstVariant?.quantityAvailable != null &&
-              firstVariant.quantityAvailable > 0 && (
-                <div className="absolute top-2 right-2 z-10 bg-green-600 text-white text-xs font-normal px-2 py-1 rounded">
-                  Ready to Ship
-                </div>
-              )}
+            {stockBadges.length ? (
+              <div className="absolute top-2 right-2 z-10 flex flex-col items-end gap-1">
+                {stockBadges.map((badge) => (
+                  <div
+                    key={badge}
+                    className={clsx(
+                      'rounded px-2 py-1 text-xs font-normal',
+                      badge === 'In Stock' && 'bg-green-600 text-white',
+                      badge === 'Preorder' && 'bg-amber-400 text-black',
+                      badge === 'Backorder' && 'bg-sky-700 text-white',
+                    )}
+                  >
+                    {badge}
+                  </div>
+                ))}
+              </div>
+            ) : null}
             {cardLabel ? (
               <div className="absolute top-2 left-2 z-10 bg-primary text-primary-content text-xs font-normal px-2 py-1 rounded">
                 {cardLabel}
