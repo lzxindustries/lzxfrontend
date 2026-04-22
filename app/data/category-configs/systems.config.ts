@@ -1,8 +1,4 @@
-import {
-  getSlugEntry,
-  resolveHubUrlForSlug,
-  type SlugEntry,
-} from '~/data/product-slugs';
+import {getSlugEntry, type SlugEntry} from '~/data/product-slugs';
 import {getInstrumentArtworkPath} from '~/data/instrument-artwork';
 import {getModuleById} from '~/data/lzxdb';
 import type {
@@ -54,7 +50,7 @@ export const systemsCategoryConfig: CategoryListingConfig = {
 
   getRawSections: buildRawSections,
 
-  detailHref: (entry) => resolveHubUrlForSlug(entry.canonical),
+  detailHref: (entry) => `/systems/${entry.canonical}`,
   resolveHasInternalPage: () => true,
 
   resolveSubtitle: (entry) =>
