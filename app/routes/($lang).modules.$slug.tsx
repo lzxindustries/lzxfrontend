@@ -61,7 +61,7 @@ export default function ModuleLayout() {
   const data = useLoaderData<typeof loader>();
   const {
     product,
-    hasManual,
+    hasLocalDocumentation,
     patches,
     videos,
     assets,
@@ -83,7 +83,7 @@ export default function ModuleLayout() {
     {
       label: 'Docs',
       to: `${basePath}/manual`,
-      hidden: !hasManual && !slugEntry.externalUrl,
+      hidden: !hasLocalDocumentation,
     },
     {label: 'Patches', to: `${basePath}/patches`, hidden: patches.length === 0},
     {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},

@@ -216,10 +216,7 @@ export async function loader({context, request}: LoaderFunctionArgs) {
           hasInternalPage: true,
           hasManual,
         };
-      })
-      // Hide modules that have neither an MDX manual nor an external
-      // documentation URL — listing now serves as a docs index.
-      .filter((entry) => entry.hasManual || Boolean(entry.externalUrl));
+      });
     const groupEntries =
       key === 'vhs'
         ? externalModuleEntries
@@ -343,7 +340,7 @@ export default function ModuleListingPage() {
             return (
               <Link
                 key={entry.canonical}
-                to={`/modules/${entry.canonical}/manual`}
+                to={`/modules/${entry.canonical}`}
                 prefetch="intent"
                 className={cardClasses}
               >

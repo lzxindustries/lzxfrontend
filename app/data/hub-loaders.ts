@@ -30,8 +30,11 @@ import {
   getLfsProductContentBySlug,
   getLegacyProductContentBySlug,
   getLegacyVisionaryModuleMetadataBySlug,
+  type LegacyProductContent,
 } from '~/data/lfs-product-metadata';
 import type {LfsProductAsset} from '~/data/lfs-product-metadata';
+import {getProductForumArchive} from '~/data/forum-archive.server';
+import {hasSyntheticLegacyModuleManualContent} from '~/data/legacy-module-docs';
 import {
   getSlugEntry,
   getModuleIdForSlug,
@@ -58,8 +61,10 @@ export interface ModuleHubData {
   isLegacy: boolean;
   shop: Shop;
   lzxModule: LzxModule | null;
+  legacyContent: LegacyProductContent | null;
   docFrontmatter: ContentFrontmatter | null;
   hasManual: boolean;
+  hasLocalDocumentation: boolean;
   patches: LzxPatch[];
   videos: LzxVideo[];
   connectors: LzxModuleConnector[];
@@ -648,6 +653,7 @@ export async function loadModuleHubData(
   const moduleId = getModuleIdForSlug(slug);
   const lzxModule = moduleId ? getModuleById(moduleId) ?? null : null;
   const isLegacy = isLegacyModuleState(slugEntry, lzxModule);
+  const legacyContent = getLegacyProductContentBySlug(slugEntry.canonical);
 
   const patches = moduleId ? getPatchesForModule(moduleId) : [];
   const videos = moduleId ? getVideosForModule(moduleId) : [];
@@ -667,6 +673,13 @@ export async function loadModuleHubData(
   const docPath = getDocPathForSlug(slug);
   const hasManual = docPath ? hasDocPagePath(docPath) : false;
   const docFrontmatter = docPath ? getDocFrontmatter(docPath) : null;
+  const forumArchive = await getProductForumArchive(
+    slugEntry.canonical,
+    slugEntry.externalUrl,
+  );
+  const hasArchivedGuide =
+    forumArchive.officialTopic != null || forumArchive.relatedTopics.length > 0;
+  const hasSyntheticManual = hasSyntheticLegacyModuleManualContent(legacyContent);
 
   // Build sidebar for cross-module navigation
   const sidebar = buildSidebar('modules');
@@ -698,8 +711,10 @@ export async function loadModuleHubData(
     isLegacy,
     shop: resolvedShop,
     lzxModule,
+    legacyContent,
     docFrontmatter,
     hasManual,
+    hasLocalDocumentation: hasManual || hasArchivedGuide || hasSyntheticManual,
     patches,
     videos,
     connectors,

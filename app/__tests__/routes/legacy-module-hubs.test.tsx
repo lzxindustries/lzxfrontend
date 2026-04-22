@@ -57,7 +57,10 @@ const remixState = {
     },
     slug: 'color-video-encoder',
     hasManual: false,
+    hasLocalDocumentation: true,
     hasShopifyProduct: false,
+    assets: [],
+    archiveAssets: [],
     slugEntry: {
       canonical: 'color-video-encoder',
       externalUrl: 'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
@@ -91,7 +94,7 @@ function renderWithRouter(ui: React.ReactElement) {
 }
 
 describe('Legacy module hubs', () => {
-  it('links first-party legacy modules directly to their docs from the modules listing', () => {
+  it('links first-party legacy modules to their hub overview from the modules listing', () => {
     remixState.currentLoaderData = remixState.listingLoaderData;
 
     renderWithRouter(<ModuleListingPage />);
@@ -99,10 +102,10 @@ describe('Legacy module hubs', () => {
     expect(screen.getByText('Color Video Encoder')).toBeTruthy();
     expect(
       screen.getByText('Color Video Encoder').closest('a')?.getAttribute('href'),
-    ).toBe('/modules/color-video-encoder/manual');
+    ).toBe('/modules/color-video-encoder');
   });
 
-  it('shows the external documentation resource on support pages for legacy hubs without manuals', () => {
+  it('keeps local documentation primary on support pages for legacy hubs', () => {
     remixState.currentLoaderData = remixState.supportLoaderData;
 
     renderWithRouter(<ModuleSupport />);
@@ -110,11 +113,12 @@ describe('Legacy module hubs', () => {
     expect(screen.getByRole('heading', {name: 'Color Video Encoder Support'})).toBeTruthy();
     expect(screen.getByText('Troubleshooting flow')).toBeTruthy();
     expect(
-      screen.getByText('Archived community guide and reference'),
+      screen.getByText('Local manual, archive guide, and reference'),
     ).toBeTruthy();
     expect(
       screen.getByText(/Documentation/).closest('a')?.getAttribute('href'),
     ).toBe('/modules/color-video-encoder/manual');
+    expect(screen.getByText(/External Reference/)).toBeTruthy();
     expect(screen.getByText('Archived Community Guide')).toBeTruthy();
     expect(screen.getByText('Encoding questions')).toBeTruthy();
   });

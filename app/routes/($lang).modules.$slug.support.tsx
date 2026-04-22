@@ -33,12 +33,21 @@ export const meta = ({matches}: MetaArgs) => {
 export default function ModuleSupport() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
   const {forumArchive} = useLoaderData<typeof loader>();
-  const {product, slug, hasManual, slugEntry} =
-    data as unknown as ModuleHubData;
+  const {
+    product,
+    slug,
+    hasLocalDocumentation = false,
+    slugEntry,
+    assets = [],
+    archiveAssets = [],
+  } = data as unknown as Partial<ModuleHubData> &
+    Pick<ModuleHubData, 'product' | 'slug' | 'slugEntry'>;
 
   const supportRecord = SUPPORT_MANIFEST[slug];
   const hasArchivedGuide =
     forumArchive.officialTopic != null || forumArchive.relatedTopics.length > 0;
+  const hasLocalGuide = hasLocalDocumentation || hasArchivedGuide;
+  const hasResourceLibrary = assets.length > 0 || archiveAssets.length > 0;
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-8 md:px-10">
@@ -51,16 +60,16 @@ export default function ModuleSupport() {
       <section className="mb-8">
         <h3 className="text-lg font-bold mb-3">Resources</h3>
         <div className="grid gap-3 sm:grid-cols-2">
-          {hasManual || hasArchivedGuide ? (
+          {hasLocalGuide ? (
             <Link
               to={`/modules/${slug}/manual`}
               className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
             >
               <span className="font-semibold">📖 Documentation</span>
               <span className="text-sm opacity-70">
-                {hasManual
-                  ? 'Full manual and reference'
-                  : 'Archived community guide and reference'}
+                {hasArchivedGuide
+                  ? 'Local manual, archive guide, and reference'
+                  : 'Local manual and reference'}
               </span>
             </Link>
           ) : slugEntry.externalUrl ? (
@@ -93,7 +102,7 @@ export default function ModuleSupport() {
             </span>
           </Link>
           <a
-            href={slugEntry.externalUrl ?? 'https://community.lzxindustries.net'}
+            href={forumArchive.officialTopic?.url ?? 'https://community.lzxindustries.net'}
             target="_blank"
             rel="noreferrer"
             className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
@@ -103,8 +112,60 @@ export default function ModuleSupport() {
               Ask questions, share tips
             </span>
           </a>
+          {slugEntry.externalUrl ? (
+            <a
+              href={slugEntry.externalUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
+            >
+              <span className="font-semibold">↗ External Reference</span>
+              <span className="text-sm opacity-70">
+                Original external catalog or documentation entry
+              </span>
+            </a>
+          ) : null}
         </div>
       </section>
+
+      {(hasLocalGuide || hasResourceLibrary) && (
+        <section className="mb-8">
+          <h3 className="text-lg font-bold mb-3">Product Library Resources</h3>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {hasLocalGuide ? (
+              <Link
+                to={`/modules/${slug}/manual`}
+                className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
+              >
+                <span className="font-semibold">Local Reference</span>
+                <span className="text-sm opacity-70">
+                  On-site manual and archived reference material.
+                </span>
+              </Link>
+            ) : null}
+            {hasResourceLibrary ? (
+              <Link
+                to={`/modules/${slug}/downloads`}
+                className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
+              >
+                <span className="font-semibold">Downloads & Archive</span>
+                <span className="text-sm opacity-70">
+                  {assets.length} download{assets.length === 1 ? '' : 's'} and {archiveAssets.length} archived file{archiveAssets.length === 1 ? '' : 's'} available on-site.
+                </span>
+              </Link>
+            ) : null}
+            <Link
+              to={`/modules/${slug}`}
+              className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
+            >
+              <span className="font-semibold">Overview</span>
+              <span className="text-sm opacity-70">
+                Return to the product hub overview and gallery.
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
 
       <ForumArchiveSupportSection
         archive={forumArchive}

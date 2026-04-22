@@ -7,6 +7,7 @@ import invariant from 'tiny-invariant';
 
 import {DocLayout} from '~/components/DocLayout';
 import {getForumArchiveDocForProduct} from '~/data/forum-archive.server';
+import {getSyntheticLegacyModuleManualDoc} from '~/data/legacy-module-docs';
 import {getDocPage, buildSidebar, getPrevNext} from '~/lib/content.server';
 import type {SidebarItem} from '~/lib/content.server';
 import {
@@ -30,8 +31,34 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     slugEntry?.name ?? canonical,
     slugEntry?.externalUrl,
   );
+  const docPath = getDocPathForSlug(canonical);
+  const doc = docPath ? await getDocPage(docPath) : null;
 
-  // If module has an external URL but we have a local archive, render that.
+  if (doc && docPath) {
+    const sidebar = buildSidebar('modules');
+    const {prev, next} = getPrevNext('modules', docPath);
+
+    const seo = seoPayload.doc({
+      title: doc.frontmatter.title ?? `${canonical} Manual`,
+      description: doc.frontmatter.description ?? '',
+      url: new URL(request.url).origin + `/modules/${canonical}/manual`,
+    });
+
+    return json(
+      {
+        noManual: false as const,
+        doc,
+        sidebar,
+        prev,
+        next,
+        currentPath: docPath,
+        slug: canonical,
+        seo,
+      },
+      {headers: {'Cache-Control': CACHE_LONG}},
+    );
+  }
+
   if (archiveDoc) {
     const seo = seoPayload.doc({
       title: archiveDoc.frontmatter.title ?? `${canonical} Manual`,
@@ -54,14 +81,34 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     );
   }
 
-  if (slugEntry?.externalUrl) {
-    throw new Response(null, {
-      status: 302,
-      headers: {Location: slugEntry.externalUrl},
+  const syntheticDoc = getSyntheticLegacyModuleManualDoc(
+    canonical,
+    slugEntry?.name ?? canonical,
+    slugEntry?.externalUrl,
+  );
+
+  if (syntheticDoc) {
+    const seo = seoPayload.doc({
+      title: syntheticDoc.frontmatter.title ?? `${canonical} Manual`,
+      description: syntheticDoc.frontmatter.description ?? '',
+      url: new URL(request.url).origin + `/modules/${canonical}/manual`,
     });
+
+    return json(
+      {
+        noManual: false as const,
+        doc: syntheticDoc,
+        sidebar: [] as SidebarItem[],
+        prev: null,
+        next: null,
+        currentPath: syntheticDoc.path,
+        slug: canonical,
+        seo,
+      },
+      {headers: {'Cache-Control': CACHE_LONG}},
+    );
   }
 
-  const docPath = getDocPathForSlug(canonical);
   if (!docPath) {
     return json(
       {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
@@ -69,37 +116,12 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     );
   }
 
-  const doc = await getDocPage(docPath);
   if (!doc) {
     return json(
       {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
       {headers: {'Cache-Control': CACHE_LONG}},
     );
   }
-
-  // Module docs are flat (single file per module) — sidebar shows all modules
-  const sidebar = buildSidebar('modules');
-  const {prev, next} = getPrevNext('modules', docPath);
-
-  const seo = seoPayload.doc({
-    title: doc.frontmatter.title ?? `${canonical} Manual`,
-    description: doc.frontmatter.description ?? '',
-    url: new URL(request.url).origin + `/modules/${canonical}/manual`,
-  });
-
-  return json(
-    {
-      noManual: false as const,
-      doc,
-      sidebar,
-      prev,
-      next,
-      currentPath: docPath,
-      slug: canonical,
-      seo,
-    },
-    {headers: {'Cache-Control': CACHE_LONG}},
-  );
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
@@ -118,6 +140,12 @@ export default function ModuleManualPage() {
         <p className="text-base-content/70">
           A manual for <strong>{product.title}</strong> is not available yet.
         </p>
+        <a
+          href={`/modules/${loaderData.slug}`}
+          className="btn btn-outline btn-sm mt-6"
+        >
+          Return to overview
+        </a>
       </div>
     );
   }

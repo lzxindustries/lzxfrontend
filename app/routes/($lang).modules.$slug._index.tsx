@@ -147,13 +147,22 @@ function rewriteLegacyDocsLinks(html: string): string {
 
 export default function ModuleOverview() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {product, shop, slugEntry, hasManual, hasShopifyProduct, isLegacy} =
-    data as unknown as ModuleHubData;
+  const {
+    product,
+    shop,
+    slugEntry,
+    hasLocalDocumentation,
+    hasShopifyProduct,
+    isLegacy,
+    assets,
+    archiveAssets,
+  } = data as unknown as ModuleHubData;
   const recommended = (data as any).recommended;
   const storeDomain = shop.primaryDomain.url;
   const fallbackArtworkPath = getModuleArtworkPath(slugEntry.canonical);
   const shouldShowCommerce = hasShopifyProduct && !isLegacy;
   const statusLabel = isLegacy ? 'Discontinued' : 'Unavailable';
+  const hasResourceLibrary = assets.length > 0 || archiveAssets.length > 0;
 
   const media = useMemo(
     () => getGalleryMedia(product as Product, fallbackArtworkPath),
@@ -226,7 +235,7 @@ export default function ModuleOverview() {
                 storeDomain={storeDomain}
               />
             )}
-            {hasManual && (
+            {hasLocalDocumentation && (
               <Link
                 to={`/modules/${slugEntry.canonical}/manual`}
                 className="btn btn-outline btn-sm mt-2"
@@ -234,16 +243,56 @@ export default function ModuleOverview() {
                 Read Full Manual &rarr;
               </Link>
             )}
+            {hasResourceLibrary && (
+              <Link
+                to={`/modules/${slugEntry.canonical}/downloads`}
+                className="btn btn-outline btn-sm mt-2"
+              >
+                Browse Downloads & Archive &rarr;
+              </Link>
+            )}
             {slugEntry.externalUrl && (
               <a
                 href={slugEntry.externalUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-outline btn-sm mt-2"
+                className="btn btn-ghost btn-sm mt-2"
               >
-                Documentation &rarr;
+                External Reference &rarr;
               </a>
             )}
+
+            {(hasLocalDocumentation || hasResourceLibrary) && isLegacy ? (
+              <div className="mt-4 rounded-xl border border-base-300 bg-base-200 p-4">
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-base-content/60">
+                  Legacy Resources
+                </h2>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {hasLocalDocumentation ? (
+                    <Link
+                      to={`/modules/${slugEntry.canonical}/manual`}
+                      className="rounded-lg border border-base-300 bg-base-100 p-3 text-sm hover:border-primary/40"
+                    >
+                      <div className="font-semibold">Local Reference</div>
+                      <div className="mt-1 text-base-content/70">
+                        Archived manual and first-party reference material.
+                      </div>
+                    </Link>
+                  ) : null}
+                  {hasResourceLibrary ? (
+                    <Link
+                      to={`/modules/${slugEntry.canonical}/downloads`}
+                      className="rounded-lg border border-base-300 bg-base-100 p-3 text-sm hover:border-primary/40"
+                    >
+                      <div className="font-semibold">Downloads & Archive</div>
+                      <div className="mt-1 text-base-content/70">
+                        {assets.length} download{assets.length === 1 ? '' : 's'} and {archiveAssets.length} archived file{archiveAssets.length === 1 ? '' : 's'} surfaced from the product library.
+                      </div>
+                    </Link>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
           </div>
 
           {/* Disclosure sections */}
