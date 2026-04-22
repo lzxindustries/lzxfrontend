@@ -75,7 +75,7 @@ export function ProductCard({
     ).subtitle?.value ?? '';
   const slugEntry = getSlugEntry(product.handle);
   const isLegacy = !!slugEntry?.isHidden;
-  const lifecycleLabel = isLegacy ? 'Legacy' : slugEntry ? 'Active' : null;
+  const lifecycleLabel = isLegacy ? 'Legacy' : null;
   const productTypeLabel =
     slugEntry?.hubType === 'instrument'
       ? 'Instrument'
@@ -101,23 +101,6 @@ export function ProductCard({
       >
         <div className={clsx('grid gap-4', className)}>
           <div className="card-image aspect-square bg-primary/5 relative">
-            {stockBadges.length ? (
-              <div className="absolute top-2 right-2 z-10 flex flex-col items-end gap-1">
-                {stockBadges.map((badge) => (
-                  <div
-                    key={badge}
-                    className={clsx(
-                      'rounded px-2 py-1 text-xs font-normal',
-                      badge === 'In Stock' && 'bg-green-600 text-white',
-                      badge === 'Preorder' && 'bg-amber-400 text-black',
-                      badge === 'Backorder' && 'bg-sky-700 text-white',
-                    )}
-                  >
-                    {badge}
-                  </div>
-                ))}
-              </div>
-            ) : null}
             {cardLabel ? (
               <div className="absolute top-2 left-2 z-10 bg-primary text-primary-content text-xs font-normal px-2 py-1 rounded">
                 {cardLabel}
@@ -149,7 +132,7 @@ export function ProductCard({
                 {subtitle}
               </Text>
             ) : null}
-            {productTypeLabel ? (
+            {lifecycleLabel || productTypeLabel || stockBadges.length ? (
               <div className="flex justify-center gap-1 mt-1 flex-wrap">
                 {lifecycleLabel ? (
                   <span
@@ -161,9 +144,24 @@ export function ProductCard({
                     {lifecycleLabel}
                   </span>
                 ) : null}
-                <span className="badge badge-outline badge-xs">
-                  {productTypeLabel}
-                </span>
+                {productTypeLabel ? (
+                  <span className="badge badge-outline badge-xs">
+                    {productTypeLabel}
+                  </span>
+                ) : null}
+                {stockBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className={clsx(
+                      'badge badge-xs border-transparent',
+                      badge === 'In Stock' && 'bg-green-600 text-white',
+                      badge === 'Preorder' && 'bg-amber-400 text-black',
+                      badge === 'Backorder' && 'bg-sky-700 text-white',
+                    )}
+                  >
+                    {badge}
+                  </span>
+                ))}
               </div>
             ) : null}
             <Text
