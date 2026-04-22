@@ -3,7 +3,7 @@ import {render, screen} from '@testing-library/react';
 
 import ModuleLayout from '~/routes/($lang).modules.$slug';
 
-const remixState = {
+const remixState: any = {
   loaderData: {
     slug: 'color-video-encoder',
     product: {title: 'Color Video Encoder'},

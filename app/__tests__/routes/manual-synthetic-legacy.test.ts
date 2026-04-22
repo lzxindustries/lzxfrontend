@@ -33,7 +33,7 @@ describe('synthetic legacy module manual fallback', () => {
       context: {} as never,
     } as never);
 
-    const payload = await (response as Response).json();
+    const payload = (await (response as Response).json()) as any;
 
     expect(payload.noManual).toBe(false);
     expect(payload.doc.frontmatter.title).toBe('Audio Frequency Decoder Reference');

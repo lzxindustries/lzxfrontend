@@ -1,11 +1,11 @@
-import {describe, expect, it, vi} from 'vitest';
+import {beforeEach, describe, expect, it, vi} from 'vitest';
 import {render, screen} from '@testing-library/react';
 import {MemoryRouter} from 'react-router-dom';
 
 import ModuleListingPage from '~/routes/($lang).modules._index';
 import ModuleSupport from '~/routes/($lang).modules.$slug.support';
 
-const remixState = {
+const remixState: any = {
   listingLoaderData: {
     activeSeriesGroups: [],
     legacySeriesGroups: [
@@ -68,6 +68,8 @@ const remixState = {
   },
 };
 
+remixState.currentLoaderData = remixState.listingLoaderData;
+
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>(
     '@remix-run/react',
@@ -107,6 +109,21 @@ describe('Legacy module hubs', () => {
 
   it('keeps local documentation primary on support pages for legacy hubs', () => {
     remixState.currentLoaderData = remixState.supportLoaderData;
+    remixState.outletContext = {
+      ...remixState.outletContext,
+      assets: [
+        {
+          id: 'manual-pdf',
+          name: 'User Manual',
+        },
+      ],
+      archiveAssets: [
+        {
+          id: 'panel-art',
+          name: 'Panel Artwork',
+        },
+      ],
+    };
 
     renderWithRouter(<ModuleSupport />);
 
@@ -119,6 +136,11 @@ describe('Legacy module hubs', () => {
       screen.getByText(/Documentation/).closest('a')?.getAttribute('href'),
     ).toBe('/modules/color-video-encoder/manual');
     expect(screen.getByText(/External Reference/)).toBeTruthy();
+    expect(screen.getByText('Product Library Resources')).toBeTruthy();
+    expect(screen.getByText('Downloads & Archive')).toBeTruthy();
+    expect(screen.getByText('Overview').closest('a')?.getAttribute('href')).toBe(
+      '/modules/color-video-encoder',
+    );
     expect(screen.getByText('Archived Community Guide')).toBeTruthy();
     expect(screen.getByText('Encoding questions')).toBeTruthy();
   });

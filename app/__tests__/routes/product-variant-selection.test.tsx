@@ -148,11 +148,17 @@ function createOutletContext({
   canonical,
   hasShopifyProduct = true,
   isLegacy = false,
+  hasLocalDocumentation = false,
+  assets = [],
+  archiveAssets = [],
 }: {
   handle: string;
   canonical: string;
   hasShopifyProduct?: boolean;
   isLegacy?: boolean;
+  hasLocalDocumentation?: boolean;
+  assets?: any[];
+  archiveAssets?: any[];
 }) {
   const selectedVariant = createSelectedVariant(
     'gid://shopify/ProductVariant/2',
@@ -183,11 +189,13 @@ function createOutletContext({
     hasShopifyProduct,
     isLegacy,
     hasManual: false,
+    hasLocalDocumentation,
     recommended: null,
     connectors: [],
     controls: [],
     features: [],
-    assets: [],
+    assets,
+    archiveAssets,
     videos: [],
     patches: [],
     docPages: [],
@@ -244,6 +252,27 @@ describe('Variant selection regression coverage', () => {
     expect(screen.getByText('Discontinued')).toBeTruthy();
     expect(screen.queryByText('199.00')).toBeNull();
     expect(document.querySelector('[data-test="add-to-cart"]')).toBeNull();
+  });
+
+  it('surfaces legacy resource cards on module overviews when local docs and archive assets exist', () => {
+    mockedUseOutletContext.mockReturnValue(
+      createOutletContext({
+        handle: 'color-video-encoder',
+        canonical: 'color-video-encoder',
+        hasShopifyProduct: false,
+        isLegacy: true,
+        hasLocalDocumentation: true,
+        assets: [{id: 'manual'}],
+        archiveAssets: [{id: 'panel-art'}],
+      }),
+    );
+
+    renderWithRouter(<ModuleOverview />);
+
+    expect(screen.getByText('Legacy Resources')).toBeTruthy();
+    expect(screen.getByText('Local Reference')).toBeTruthy();
+    expect(screen.getByText('Downloads & Archive')).toBeTruthy();
+    expect(screen.getByText(/1 download and 1 archived file/i)).toBeTruthy();
   });
 
   it('passes the instrument hub path and selected variant into VariantSelector', () => {

@@ -35,8 +35,10 @@ export function hasSyntheticLegacyModuleManualContent(
   if (!content) return false;
 
   return Boolean(
+    content.subtitle ||
     content.descriptionHtml ||
       content.specsHtml ||
+      content.galleryImages.length > 0 ||
       content.downloads.length > 0 ||
       content.archiveAssets.some((asset) => !asset.isDownload),
   );
@@ -56,12 +58,56 @@ export function buildSyntheticLegacyModuleManualDoc(
     '<p>Archived product-library reference assembled from LZX library content for this legacy module.</p>',
   ];
 
+  if (content) {
+    const atAGlanceItems = [
+      content.subtitle
+        ? `<li><strong>Module:</strong> ${escapeHtml(content.subtitle)}</li>`
+        : null,
+      content.galleryImages.length > 0
+        ? `<li><strong>Gallery images:</strong> ${content.galleryImages.length}</li>`
+        : null,
+      content.downloads.length > 0
+        ? `<li><strong>Published downloads:</strong> ${content.downloads.length}</li>`
+        : null,
+      content.archiveAssets.some((asset) => !asset.isDownload)
+        ? `<li><strong>Archive inventory:</strong> ${content.archiveAssets.filter((asset) => !asset.isDownload).length} files</li>`
+        : null,
+    ].filter(Boolean);
+
+    if (atAGlanceItems.length > 0) {
+      pushSection(
+        sections,
+        headings,
+        'At a Glance',
+        `<ul>${atAGlanceItems.join('')}</ul>`,
+      );
+    }
+  }
+
   if (content?.descriptionHtml) {
     pushSection(sections, headings, 'Overview', content.descriptionHtml);
   }
 
   if (content?.specsHtml) {
     pushSection(sections, headings, 'Specifications', content.specsHtml);
+  }
+
+  if (content && content.galleryImages.length > 0) {
+    const galleryMarkup = content.galleryImages
+      .slice(0, 6)
+      .map(
+        (image) =>
+          `<figure><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || safeTitle)}" /><figcaption>${escapeHtml(image.alt || image.path)}</figcaption></figure>`,
+      )
+      .join('');
+    const remainingCount = Math.max(content.galleryImages.length - 6, 0);
+
+    pushSection(
+      sections,
+      headings,
+      'Gallery',
+      `<p>Representative product-library imagery for ${escapeHtml(safeTitle)}.</p><div class="legacy-gallery-grid">${galleryMarkup}</div>${remainingCount > 0 ? `<p>${remainingCount} more image${remainingCount === 1 ? '' : 's'} remain in the product library archive.</p>` : ''}`,
+    );
   }
 
   if (content && content.downloads.length > 0) {
