@@ -20,6 +20,8 @@
 
 import type {Storefront} from '@shopify/hydrogen';
 
+import {getProductRecord} from './product-catalog';
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -113,16 +115,15 @@ const COMMERCE_FRAGMENT = `#graphql
   }
 `;
 
-const COMMERCE_BY_HANDLES_QUERY = `#graphql
+const COMMERCE_BY_IDS_QUERY = `#graphql
   ${COMMERCE_FRAGMENT}
-  query CommerceByHandles(
-    $first: Int!
-    $query: String
+  query CommerceByIds(
+    $ids: [ID!]!
     $country: CountryCode
     $language: LanguageCode
   ) @inContext(country: $country, language: $language) {
-    products(first: $first, query: $query) {
-      nodes {
+    nodes(ids: $ids) {
+      ... on Product {
         ...CommerceProductFields
       }
     }
@@ -155,10 +156,6 @@ interface RawProductNode {
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function buildHandleFilterQuery(handles: string[]): string {
-  return handles.map((h) => `handle:${h}`).join(' OR ');
-}
 
 function chunk<T>(arr: T[], size: number): T[][] {
   const out: T[][] = [];
@@ -260,35 +257,45 @@ export async function getCommerceByHandles(
   const dedup = Array.from(new Set(handles.filter(Boolean)));
   if (!dedup.length) return out;
 
+  const handleByProductId = new Map<string, string>();
+  const productIds: string[] = [];
+  for (const handle of dedup) {
+    const productId = getProductRecord(handle)?.shopifyProductId;
+    if (!productId || handleByProductId.has(productId)) continue;
+    handleByProductId.set(productId, handle);
+    productIds.push(productId);
+  }
+  if (!productIds.length) return out;
+
   const cache = storefront.CacheCustom({
     mode: 'public',
     maxAge: 60,
     staleWhileRevalidate: 300,
   });
 
-  const batches = chunk(dedup, MAX_HANDLES_PER_QUERY);
+  const batches = chunk(productIds, MAX_HANDLES_PER_QUERY);
 
   for (const batch of batches) {
     try {
-      const {products} = await storefront.query<{
-        products: {nodes: RawProductNode[]};
-      }>(COMMERCE_BY_HANDLES_QUERY, {
+      const {nodes} = await storefront.query<{
+        nodes: Array<RawProductNode | null>;
+      }>(COMMERCE_BY_IDS_QUERY, {
         variables: {
-          first: batch.length,
-          query: buildHandleFilterQuery(batch),
+          ids: batch,
           country: storefront.i18n.country,
           language: storefront.i18n.language,
         },
         cache,
       });
 
-      for (const node of products.nodes ?? []) {
+      for (const node of nodes ?? []) {
+        if (!node) continue;
         out.set(node.handle, toSnippet(node));
       }
     } catch (err) {
       const swallow = opts.swallowErrors ?? true;
       console.error(
-        `[shopify-live] getCommerceByHandles failed for ${batch.length} handles:`,
+        `[shopify-live] getCommerceByHandles failed for ${batch.length} product ids:`,
         err,
       );
       if (!swallow) throw err;
