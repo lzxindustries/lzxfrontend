@@ -1,31 +1,10 @@
-import type {Product} from '@shopify/hydrogen/storefront-api-types';
 import type {LfsProductAsset} from '~/data/lfs-product-metadata';
+import type {CommerceSnippet} from '~/data/shopify-live.server';
 
-/**
- * Minimal Shopify product shape returned by the shared category listing
- * GraphQL queries. Kept narrow to the fields actually rendered in the cards.
- */
-export type CategoryListingProduct = Pick<Product, 'id' | 'title' | 'handle'> & {
-  availableForSale?: boolean;
-  featuredImage?: {
-    url: string;
-    altText?: string | null;
-    width?: number | null;
-    height?: number | null;
-  } | null;
-  variants?: {
-    nodes?: Array<{
-      id: string;
-      image?: {
-        url: string;
-        altText?: string | null;
-        width?: number | null;
-        height?: number | null;
-      } | null;
-      price?: {amount: string; currencyCode: string};
-    }>;
-  };
-};
+// NOTE: The legacy `CategoryListingProduct` type and the
+// `CATEGORY_LISTING_*_QUERY` GraphQL queries were removed when category
+// listings switched to the local product catalog + on-demand
+// `getCommerceByHandles()` snippet. See `loader.ts`.
 
 export type CategoryAspectRatio = '1/1' | '16/9';
 export type CategoryImageFit = 'contain' | 'cover';
@@ -100,6 +79,14 @@ export type CategoryListingConfig = {
   defaultArtworkAspectRatio?: CategoryAspectRatio;
   defaultArtworkFit?: CategoryImageFit;
 
+  /**
+   * When true, the loader fetches a live `CommerceSnippet` (price + stock)
+   * for every entry via `getCommerceByHandles`. Cards that don't render
+   * money or stock indicators should leave this off to skip the
+   * Storefront-API round-trip entirely.
+   */
+  includeCommerce?: boolean;
+
   /** Source: returns sections of groups of raw entries. */
   getRawSections: () => CategoryRawSection[];
 
@@ -160,6 +147,11 @@ export type CategoryListingEntry = {
   isExternal: boolean;
   badge?: string | null;
   image: CategoryEntryImage;
+  /**
+   * Live commerce snippet (price + stock) when the config opted in via
+   * `includeCommerce`. Always `null` otherwise.
+   */
+  commerce?: CommerceSnippet | null;
 };
 
 export type CategoryListingGroup = {

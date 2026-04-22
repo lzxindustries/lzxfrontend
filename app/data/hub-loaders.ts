@@ -6,7 +6,14 @@ import type {
 import type {AppLoadContext} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {getProductRecord} from '~/data/product-catalog';
+import {getLfsAssetEntry} from '~/data/lfs-assets';
+import {
+  buildHubProductFromLocal,
+  buildHubShop,
+} from '~/data/hub-product.server';
+import {getCommerceByHandle} from '~/data/shopify-live.server';
 import {
   getModuleById,
   getModuleConnectors,
@@ -95,178 +102,7 @@ export interface InstrumentHubData {
   docPages: DocPage[];
 }
 
-// --- GraphQL ---
-
-const PRODUCT_VARIANT_FRAGMENT = `#graphql
-  fragment HubProductVariantFragment on ProductVariant {
-    id
-    availableForSale
-    quantityAvailable
-    selectedOptions {
-      name
-      value
-    }
-    image {
-      id
-      url
-      altText
-      width
-      height
-    }
-    price {
-      amount
-      currencyCode
-    }
-    compareAtPrice {
-      amount
-      currencyCode
-    }
-    sku
-    title
-    unitPrice {
-      amount
-      currencyCode
-    }
-    product {
-      title
-      handle
-    }
-  }
-`;
-
-const HUB_PRODUCT_QUERY = `#graphql
-  ${MEDIA_FRAGMENT}
-  ${PRODUCT_VARIANT_FRAGMENT}
-  query HubProduct(
-    $country: CountryCode
-    $language: LanguageCode
-    $handle: String!
-    $selectedOptions: [SelectedOptionInput!]!
-  ) @inContext(country: $country, language: $language) {
-    product(handle: $handle) {
-      id
-      title
-      vendor
-      handle
-      descriptionHtml
-      description
-      options {
-        name
-        values
-      }
-      selectedVariant: variantBySelectedOptions(selectedOptions: $selectedOptions) {
-        ...HubProductVariantFragment
-      }
-      media(first: 20) {
-        nodes {
-          ...Media
-        }
-      }
-      variants(first: 250) {
-        nodes {
-          ...HubProductVariantFragment
-        }
-      }
-      seo {
-        description
-        title
-      }
-      metafields(identifiers: [
-        {namespace: "custom", key: "specs"},
-        {namespace: "custom", key: "features"},
-        {namespace: "custom", key: "compatibility"},
-        {namespace: "descriptors", key: "subtitle"},
-      ]) {
-        key
-        namespace
-        value
-        type
-      }
-    }
-    shop {
-      name
-      primaryDomain {
-        url
-      }
-      shippingPolicy {
-        body
-        handle
-      }
-      refundPolicy {
-        body
-        handle
-      }
-    }
-  }
-`;
-
-const HUB_PRODUCT_BY_ID_QUERY = `#graphql
-  ${MEDIA_FRAGMENT}
-  ${PRODUCT_VARIANT_FRAGMENT}
-  query HubProductById(
-    $country: CountryCode
-    $language: LanguageCode
-    $id: ID!
-    $selectedOptions: [SelectedOptionInput!]!
-  ) @inContext(country: $country, language: $language) {
-    node(id: $id) {
-      ... on Product {
-        id
-        title
-        vendor
-        handle
-        descriptionHtml
-        description
-        options {
-          name
-          values
-        }
-        selectedVariant: variantBySelectedOptions(selectedOptions: $selectedOptions) {
-          ...HubProductVariantFragment
-        }
-        media(first: 20) {
-          nodes {
-            ...Media
-          }
-        }
-        variants(first: 250) {
-          nodes {
-            ...HubProductVariantFragment
-          }
-        }
-        seo {
-          description
-          title
-        }
-        metafields(identifiers: [
-          {namespace: "custom", key: "specs"},
-          {namespace: "custom", key: "features"},
-          {namespace: "custom", key: "compatibility"},
-          {namespace: "descriptors", key: "subtitle"},
-        ]) {
-          key
-          namespace
-          value
-          type
-        }
-      }
-    }
-    shop {
-      name
-      primaryDomain {
-        url
-      }
-      shippingPolicy {
-        body
-        handle
-      }
-      refundPolicy {
-        body
-        handle
-      }
-    }
-  }
-`;
+// --- Recommendations (still Shopify-driven) ---
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
@@ -321,54 +157,51 @@ function getDocFrontmatter(docPath: string): ContentFrontmatter | null {
   return null;
 }
 
-// --- Shopify query helper ---
+// --- Local content + live commerce composition ---
 
+/**
+ * Returns the synthetic Storefront-shaped product the rest of the hub
+ * loader expects. Content (title, description, gallery, options,
+ * variants, metafields) comes from `~/data/product-catalog`; price and
+ * stock come from a live `getCommerceByHandle` snippet. Returns
+ * `{product: null, shop}` when no local catalog entry exists for the
+ * handle so the legacy/fallback synthesis path further down can take
+ * over.
+ */
 async function fetchShopifyProduct(
   context: AppLoadContext,
+  request: Request,
   handle: string,
   selectedOptions: {name: string; value: string}[],
-  shopifyGid?: string | null,
-) {
-  const {product, shop} = await context.storefront.query<{
-    product: ProductType & {selectedVariant?: ProductVariant};
-    shop: Shop;
-  }>(HUB_PRODUCT_QUERY, {
-    variables: {
-      handle,
-      selectedOptions,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
-  });
+  // Kept in the signature so call sites continue to compile; unused now
+  // that the local catalog is keyed by canonical slug.
+  _shopifyGid?: string | null,
+): Promise<{
+  product: (ProductType & {selectedVariant?: ProductVariant}) | null;
+  shop: Shop;
+}> {
+  const shop = buildHubShop(request);
 
-  if (product?.id || !shopifyGid) {
-    return {product, shop};
+  const record = getProductRecord(handle);
+  if (!record) {
+    return {product: null, shop};
   }
 
-  const fallback = await context.storefront.query<{
-    node: (ProductType & {selectedVariant?: ProductVariant}) | null;
-    shop: Shop;
-  }>(HUB_PRODUCT_BY_ID_QUERY, {
-    variables: {
-      id: shopifyGid,
-      selectedOptions,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
+  const lfs = getLfsAssetEntry(handle);
+  const commerce = await getCommerceByHandle(context.storefront, handle);
+
+  const product = buildHubProductFromLocal({
+    record,
+    commerce,
+    lfs,
+    selectedOptions,
   });
 
-  return {product: fallback.node ?? product, shop: fallback.shop};
+  return {product, shop};
 }
 
 function buildFallbackShop(request: Request): Shop {
-  const url = new URL(request.url);
-
-  return {
-    name: 'LZX Industries',
-    primaryDomain: {url: url.origin},
-    shippingPolicy: null,
-    refundPolicy: null,
-  } as Shop;
+  return buildHubShop(request);
 }
 
 function stripHtml(value: string): string {
@@ -684,9 +517,11 @@ export async function loadModuleHubData(
   // Build sidebar for cross-module navigation
   const sidebar = buildSidebar('modules');
 
-  // Fetch Shopify product
+  // Compose synthetic Storefront-shaped product from local catalog +
+  // live commerce snippet.
   const {product, shop} = await fetchShopifyProduct(
     context,
+    request,
     handle,
     selectedOptions,
     slugEntry.shopifyGid,
@@ -698,7 +533,7 @@ export async function loadModuleHubData(
   }
 
   const resolvedProduct = mergeLegacyProductData(
-    hasShopifyProduct ? product : buildFallbackModuleProduct(slugEntry, lzxModule),
+    hasShopifyProduct ? product! : buildFallbackModuleProduct(slugEntry, lzxModule),
     slugEntry.canonical,
   );
   const resolvedShop = hasShopifyProduct ? shop : buildFallbackShop(request);
@@ -745,9 +580,11 @@ export async function loadInstrumentHubData(
     selectedOptions.push({name, value});
   });
 
-  // Fetch Shopify product
+  // Compose synthetic Storefront-shaped product from local catalog +
+  // live commerce snippet.
   const {product, shop} = await fetchShopifyProduct(
     context,
+    request,
     handle,
     selectedOptions,
     slugEntry.shopifyGid,

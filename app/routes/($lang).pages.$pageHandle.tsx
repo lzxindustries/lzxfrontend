@@ -7,6 +7,7 @@ import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {PageHeader} from '~/components/Text';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
+import {getLocalPageByHandle} from '~/data/policies.server';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
@@ -19,6 +20,30 @@ function normalizePageBody(html: string): string {
 
 export async function loader({request, params, context}: LoaderFunctionArgs) {
   invariant(params.pageHandle, 'Missing page handle');
+
+  // Prefer locally-authored content. Pages that live in
+  // `/policies/*.html` (e.g. contact-information, legal-notice)
+  // resolve here without a Storefront API call. Anything else falls
+  // through to Shopify so admin-managed pages keep working.
+  const localPage = getLocalPageByHandle(params.pageHandle);
+  if (localPage) {
+    const normalizedPage = {
+      ...localPage,
+      body: normalizePageBody(localPage.body),
+      seo: {title: localPage.title, description: ''},
+    } as unknown as PageType;
+    const seo = seoPayload.page({page: normalizedPage, url: request.url});
+    return json(
+      {page: normalizedPage, seo},
+      {
+        headers: {
+          'Cache-Control': CACHE_LONG,
+          'Oxygen-Cache-Control':
+            'public, max-age=3600, stale-while-revalidate=600',
+        },
+      },
+    );
+  }
 
   const {page} = await context.storefront.query<{page: PageType}>(PAGE_QUERY, {
     variables: {

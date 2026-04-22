@@ -1,0 +1,1544 @@
+{
+  "12v-dc-adapter-3a": {
+    "variants": {
+      "900022": {
+        "title": "Default Title",
+        "price": "29.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "3-5mm-jack": {
+    "variants": {
+      "230001": {
+        "title": "Default Title",
+        "price": "0.20",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "3-5mm-jack-knurled-nut": {
+    "variants": {
+      "820001": {
+        "title": "Default Title",
+        "price": "0.02",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "8gb-microsd-card": {
+    "variants": {
+      "960700": {
+        "title": "Default Title",
+        "price": "19.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "andor-1-media-player": {
+    "variants": {
+      "920002": {
+        "title": "Default Title",
+        "price": "259.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "angles": {
+    "variants": {
+      "950036": {
+        "title": "Default Title",
+        "price": "399.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "arch": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071201828887": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "blank-panel": {
+    "variants": {
+      "900004": {
+        "title": "2HP",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "900005": {
+        "title": "3HP",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "900006": {
+        "title": "4HP",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "900007": {
+        "title": "6HP",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "900008": {
+        "title": "8HP",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "900009": {
+        "title": "10HP",
+        "price": "5.00",
+        "compareAtPrice": "5.00"
+      },
+      "900010": {
+        "title": "12HP",
+        "price": "6.00",
+        "compareAtPrice": "6.00"
+      },
+      "900011": {
+        "title": "14HP",
+        "price": "7.00",
+        "compareAtPrice": "7.00"
+      },
+      "900012": {
+        "title": "16HP",
+        "price": "8.00",
+        "compareAtPrice": "8.00"
+      },
+      "900013": {
+        "title": "18HP",
+        "price": "9.00",
+        "compareAtPrice": "9.00"
+      },
+      "900014": {
+        "title": "20HP",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900015": {
+        "title": "22HP",
+        "price": "11.00",
+        "compareAtPrice": "11.00"
+      },
+      "900016": {
+        "title": "24HP",
+        "price": "12.00",
+        "compareAtPrice": "12.00"
+      },
+      "900017": {
+        "title": "26HP",
+        "price": "13.00",
+        "compareAtPrice": "13.00"
+      }
+    }
+  },
+  "bridge": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071201927191": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "bus-168-diy-kit": {
+    "variants": {
+      "940141": {
+        "title": "Default Title",
+        "price": "399.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cable-dc21-splitter-8-blk": {
+    "variants": {
+      "420401": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cable-dc25-to-wire-assy": {
+    "variants": {
+      "420100": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cable-idc16-gry-blk-25cm": {
+    "variants": {
+      "420001": {
+        "title": "Default Title",
+        "price": "1.25",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cable-trrs-av-blk-200cm": {
+    "variants": {
+      "420029": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-i-sync-generator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071201959959": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-ii-rgb-encoder": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071201992727": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-iii-video-input": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202058263": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-iv-dual-ramp-generator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202091031": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-ix-vco": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202156567": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-series-embroidered-patch": {
+    "variants": {
+      "970002": {
+        "title": "Default Title",
+        "price": "4.50",
+        "compareAtPrice": "5.00"
+      }
+    }
+  },
+  "cadet-series-vinyl-sticker": {
+    "variants": {
+      "970003": {
+        "title": "Default Title",
+        "price": "3.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-v-scaler": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202222103": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-vi-fader": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202254871": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-vii-processor": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202287639": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-viii-hard-key-generator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202320407": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cadet-x-multiplier": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202385943": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "capsule-power-kit": {
+    "variants": {
+      "940001": {
+        "title": "Default Title",
+        "price": "499.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "castle-000-adc": {
+    "variants": {
+      "940002": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-001-dac": {
+    "variants": {
+      "940003": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-010-clock-vco": {
+    "variants": {
+      "940004": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "castle-011-shift-register": {
+    "variants": {
+      "940005": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "castle-100-multi-gate": {
+    "variants": {
+      "940006": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-101-quad-gate": {
+    "variants": {
+      "940007": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-110-counter": {
+    "variants": {
+      "940008": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-111-d-flip-flops": {
+    "variants": {
+      "940009": {
+        "title": "Default Title",
+        "price": "20.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "castle-series-embroidered-patch": {
+    "variants": {
+      "970004": {
+        "title": "Default",
+        "price": "5.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "castle-series-vinyl-sticker": {
+    "variants": {
+      "960018": {
+        "title": "Default Title",
+        "price": "3.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "chromagnon": {
+    "variants": {
+      "930002": {
+        "title": "Default Title",
+        "price": "1599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "chromagnon-patch": {
+    "variants": {
+      "970101": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "chromagnon-sticker": {
+    "variants": {
+      "970100": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "color-chords": {
+    "variants": {
+      "950006": {
+        "title": "Default Title",
+        "price": "299.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "contour": {
+    "variants": {
+      "950037": {
+        "title": "Default Title",
+        "price": "409.00",
+        "compareAtPrice": "339.00"
+      }
+    }
+  },
+  "curtain": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202418711": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "cyclops": {
+    "variants": {
+      "950011": {
+        "title": "Default Title",
+        "price": "249.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "dc-distro": {
+    "variants": {
+      "950038": {
+        "title": "Default Title",
+        "price": "150.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "dc-distro-3a": {
+    "variants": {
+      "950039": {
+        "title": "Default Title",
+        "price": "149.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "dc-distro-5a": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202549783": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "dc-power-cable": {
+    "variants": {
+      "960013": {
+        "title": "Straight 25cm",
+        "price": "3.00",
+        "compareAtPrice": "3.00"
+      },
+      "960014": {
+        "title": "Straight 50cm",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      },
+      "960015": {
+        "title": "Straight 100cm",
+        "price": "5.00",
+        "compareAtPrice": "5.00"
+      },
+      "960016": {
+        "title": "Right Angle 30cm",
+        "price": "3.00",
+        "compareAtPrice": "3.00"
+      },
+      "960017": {
+        "title": "Right Angle 90cm",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      }
+    }
+  },
+  "diver": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202582551": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "doorway": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202615319": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "double-vision-complete": {
+    "variants": {
+      "950068": {
+        "title": "Default Title",
+        "price": "7199.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "double-vision-expander": {
+    "variants": {
+      "950067": {
+        "title": "Default Title",
+        "price": "3599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "double-vision-system": {
+    "variants": {
+      "950059": {
+        "title": "3U 84HP",
+        "price": "3999.00",
+        "compareAtPrice": "0.00"
+      },
+      "950069": {
+        "title": "6U 168HP",
+        "price": "4399.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "dsg3": {
+    "variants": {
+      "950055": {
+        "title": "Default Title",
+        "price": "599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "dwo3": {
+    "variants": {
+      "950040": {
+        "title": "Default Title",
+        "price": "599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "escher-sketch": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202648087": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "esg3": {
+    "variants": {
+      "950041": {
+        "title": "Default Title",
+        "price": "599.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "expedition-series-embroidered-patch": {
+    "variants": {
+      "970014": {
+        "title": "Default",
+        "price": "5.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "factors": {
+    "variants": {
+      "950042": {
+        "title": "Default Title",
+        "price": "339.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "fkg3": {
+    "variants": {
+      "950043": {
+        "title": "Default Title",
+        "price": "479.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "fortress": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202713623": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "gift-card": {
+    "variants": {
+      "998001": {
+        "title": "$10.00 USD",
+        "price": "10.00",
+        "compareAtPrice": null
+      },
+      "998002": {
+        "title": "$25.00 USD",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "998003": {
+        "title": "$50.00 USD",
+        "price": "50.00",
+        "compareAtPrice": null
+      },
+      "998004": {
+        "title": "$100.00 USD",
+        "price": "100.00",
+        "compareAtPrice": null
+      },
+      "998005": {
+        "title": "$250.00 USD",
+        "price": "250.00",
+        "compareAtPrice": null
+      },
+      "998006": {
+        "title": "$500.00 USD",
+        "price": "500.00",
+        "compareAtPrice": null
+      },
+      "998007": {
+        "title": "$1,000.00 USD",
+        "price": "1000.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "hws15766-pin-header-pitch-0-1in-2x5-male-shrouded": {
+    "variants": {
+      "240028": {
+        "title": "Default Title",
+        "price": "0.50",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "jxmox-usb-c-to-micro-usb-adapter": {
+    "variants": {
+      "490900": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "keychain": {
+    "variants": {
+      "950056": {
+        "title": "Default Title",
+        "price": "339.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "liquid-tv": {
+    "variants": {
+      "950027": {
+        "title": "Default Title",
+        "price": "299.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "lnk": {
+    "variants": {
+      "940404": {
+        "title": "Partial DIY Kit",
+        "price": "23.00",
+        "compareAtPrice": null
+      },
+      "940905": {
+        "title": "Full DIY Kit",
+        "price": "35.00",
+        "compareAtPrice": null
+      },
+      "950072": {
+        "title": "Fully Assembled",
+        "price": "69.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "lzx-black-expedition-replacement-panel": {
+    "variants": {
+      "900018": {
+        "title": "Staircase",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900019": {
+        "title": "Prismatic Ray",
+        "price": "16.00",
+        "compareAtPrice": "16.00"
+      },
+      "900020": {
+        "title": "Doorway",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900021": {
+        "title": "TBC2 Gen3 w/Mounting Hardware",
+        "price": "22.00",
+        "compareAtPrice": null
+      },
+      "900024": {
+        "title": "Navigator",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900025": {
+        "title": "Pendulum",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900026": {
+        "title": "Sensory Translator",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900027": {
+        "title": "Passage",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900028": {
+        "title": "Bridge",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900029": {
+        "title": "Arch",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900030": {
+        "title": "War Of The Ants",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "900031": {
+        "title": "Visual Cortex",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "900100": {
+        "title": "TBC2 Mk2",
+        "price": "18.00",
+        "compareAtPrice": "10.00"
+      },
+      "900101": {
+        "title": "DWO3",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      }
+    }
+  },
+  "lzx-logo-vinyl-sticker": {
+    "variants": {
+      "970006": {
+        "title": "Default Title",
+        "price": "3.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "mapper": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202746391": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "marble-index": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202779159": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "matte": {
+    "variants": {
+      "950044": {
+        "title": "Default Title",
+        "price": "219.00",
+        "compareAtPrice": "239.00"
+      }
+    }
+  },
+  "memory-palace": {
+    "variants": {
+      "950018": {
+        "title": "Default Title",
+        "price": "1199.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "mlt": {
+    "variants": {
+      "940405": {
+        "title": "Partial DIY Kit",
+        "price": "23.00",
+        "compareAtPrice": null
+      },
+      "940858": {
+        "title": "Full DIY Kit",
+        "price": "59.00",
+        "compareAtPrice": null
+      },
+      "950073": {
+        "title": "Fully Assembled",
+        "price": "99.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "navigator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202811927": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "nut-m7-pot": {
+    "variants": {
+      "820002": {
+        "title": "Default Title",
+        "price": "0.05",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "orion-series-embroidered-patch": {
+    "variants": {
+      "970007": {
+        "title": "Default Title",
+        "price": "5.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "orion-series-vinyl-sticker": {
+    "variants": {
+      "970008": {
+        "title": "Default",
+        "price": "3.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "orion-tee-shirt": {
+    "variants": {
+      "970009": {
+        "title": "Large",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "970010": {
+        "title": "Medium",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "970011": {
+        "title": "Small",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "970012": {
+        "title": "X Large",
+        "price": "25.00",
+        "compareAtPrice": null
+      },
+      "970013": {
+        "title": "XX Large",
+        "price": "25.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "p": {
+    "variants": {
+      "940403": {
+        "title": "Partial DIY Kit",
+        "price": "11.00",
+        "compareAtPrice": null
+      },
+      "940406": {
+        "title": "Full DIY Kit",
+        "price": "23.00",
+        "compareAtPrice": null
+      },
+      "950074": {
+        "title": "Fully Assembled",
+        "price": "49.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "pab": {
+    "variants": {
+      "940402": {
+        "title": "Partial DIY Kit",
+        "price": "59.00",
+        "compareAtPrice": null
+      },
+      "940408": {
+        "title": "Full DIY Kit",
+        "price": "89.00",
+        "compareAtPrice": null
+      },
+      "950071": {
+        "title": "Fully Assembled",
+        "price": "169.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "passage": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202844695": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "patch-cable": {
+    "variants": {
+      "960011": {
+        "title": "Red 15cm",
+        "price": "3.00",
+        "compareAtPrice": "3.00"
+      },
+      "960012": {
+        "title": "Orange 30cm",
+        "price": "4.00",
+        "compareAtPrice": "4.00"
+      }
+    }
+  },
+  "pendulum": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202877463": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "pgo": {
+    "variants": {
+      "940400": {
+        "title": "Partial DIY Kit",
+        "price": "71.00",
+        "compareAtPrice": null
+      },
+      "940407": {
+        "title": "Full DIY Kit",
+        "price": "95.00",
+        "compareAtPrice": null
+      },
+      "950065": {
+        "title": "Fully Assembled",
+        "price": "179.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "pin-header-pitch-0-1in-2x8-male-shrouded": {
+    "variants": {
+      "240001": {
+        "title": "Default Title",
+        "price": "0.50",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "polar-fringe": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202910231": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "pot": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071202975767": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "power-entry-module-8hp": {
+    "variants": {
+      "900002": {
+        "title": "Default Title",
+        "price": "39.00",
+        "compareAtPrice": "39.00"
+      }
+    }
+  },
+  "power-sync-entry-12hp": {
+    "variants": {
+      "900003": {
+        "title": "Default Title",
+        "price": "79.00",
+        "compareAtPrice": "79.00"
+      }
+    }
+  },
+  "prismatic-ray": {
+    "variants": {
+      "950021": {
+        "title": "Default Title",
+        "price": "399.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "prm": {
+    "variants": {
+      "940401": {
+        "title": "Partial DIY Kit",
+        "price": "99.00",
+        "compareAtPrice": null
+      },
+      "940409": {
+        "title": "Full DIY Kit",
+        "price": "119.00",
+        "compareAtPrice": null
+      },
+      "950066": {
+        "title": "Fully Assembled",
+        "price": "219.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "proc": {
+    "variants": {
+      "950048": {
+        "title": "Default Title",
+        "price": "319.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "rack-84hp": {
+    "variants": {
+      "910001": {
+        "title": "Default Title",
+        "price": "149.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "rca-sync-cable": {
+    "variants": {
+      "960001": {
+        "title": "30cm",
+        "price": "8.00",
+        "compareAtPrice": "8.00"
+      },
+      "960002": {
+        "title": "60cm",
+        "price": "9.00",
+        "compareAtPrice": "9.00"
+      },
+      "960003": {
+        "title": "15cm",
+        "price": "7.00",
+        "compareAtPrice": "7.00"
+      }
+    }
+  },
+  "rd901f-40-15f-b10k-00d-alpha-b10k-potentiometer": {
+    "variants": {
+      "200001": {
+        "title": "Default Title",
+        "price": "0.75",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "rgb-patch-cable": {
+    "variants": {
+      "960006": {
+        "title": "30cm",
+        "price": "9.00",
+        "compareAtPrice": "9.00"
+      },
+      "960007": {
+        "title": "60cm",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      },
+      "960008": {
+        "title": "15cm",
+        "price": "8.00",
+        "compareAtPrice": "8.00"
+      }
+    }
+  },
+  "ribbons": {
+    "variants": {
+      "950049": {
+        "title": "Default Title",
+        "price": "359.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "scrolls": {
+    "variants": {
+      "950001": {
+        "title": "Default Title",
+        "price": "599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "sensory-translator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203008535": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "shapechanger": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203041303": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "smx3": {
+    "variants": {
+      "950050": {
+        "title": "Default Title",
+        "price": "479.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "stacker": {
+    "variants": {
+      "950051": {
+        "title": "Default Title",
+        "price": "329.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "staircase": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203074071": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "stairs": {
+    "variants": {
+      "950052": {
+        "title": "Default Title",
+        "price": "339.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "sumdist": {
+    "variants": {
+      "950053": {
+        "title": "Default Title",
+        "price": "299.00",
+        "compareAtPrice": "249.00"
+      }
+    }
+  },
+  "swatch": {
+    "variants": {
+      "950054": {
+        "title": "Default Title",
+        "price": "299.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "switcher": {
+    "variants": {
+      "950057": {
+        "title": "Default Title",
+        "price": "479.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "tbc2": {
+    "variants": {
+      "950058": {
+        "title": "Default Title",
+        "price": "1199.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "tbc2-expander": {
+    "variants": {
+      "LZXOTBC2X": {
+        "title": "Default Title",
+        "price": "79.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "tbc2-mk1-fan-upgrade-kit": {
+    "variants": {
+      "940140": {
+        "title": "Default Title",
+        "price": "19.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "tbc2-mk2-fan-upgrade-kit": {
+    "variants": {
+      "940010": {
+        "title": "Default Title",
+        "price": "19.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "topogram": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203368983": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "triple-video-fader-key-generator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203401751": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vessel-168": {
+    "variants": {
+      "910010": {
+        "title": "Default Title",
+        "price": "1199.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vessel-208": {
+    "variants": {
+      "910142": {
+        "title": "Default Title",
+        "price": "1599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vessel-84": {
+    "variants": {
+      "910204": {
+        "title": "Default Title",
+        "price": "799.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vessel-eurorack-psu-expander": {
+    "variants": {
+      "910149": {
+        "title": "Default Title",
+        "price": "399.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vga-expander": {
+    "variants": {
+      "950047": {
+        "title": "Mk2 (Gen3 4HP)",
+        "price": "79.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "video-blending-matrix": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203467287": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "video-cable": {
+    "variants": {
+      "960009": {
+        "title": "150cm",
+        "price": "9.00",
+        "compareAtPrice": "9.00"
+      },
+      "960010": {
+        "title": "300cm",
+        "price": "10.00",
+        "compareAtPrice": "10.00"
+      }
+    }
+  },
+  "video-knob": {
+    "variants": {
+      "900001": {
+        "title": "Arrow Fill",
+        "price": "1.00",
+        "compareAtPrice": null
+      },
+      "900023": {
+        "title": "Arrow Outline",
+        "price": "1.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "video-knob-enamel-pin": {
+    "variants": {
+      "970001": {
+        "title": "Default Title",
+        "price": "8.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "video-logic": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203500055": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "video-sync-distribution-cable": {
+    "variants": {
+      "960005": {
+        "title": "Default Title",
+        "price": "19.00",
+        "compareAtPrice": "0.00"
+      }
+    }
+  },
+  "video-waveform-generator": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203565591": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "videomancer": {
+    "variants": {
+      "930003": {
+        "title": "Default Title",
+        "price": "999.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "videomancer-tee": {
+    "variants": {
+      "975001": {
+        "title": "Black / S",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975002": {
+        "title": "Black / M",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975003": {
+        "title": "Black / L",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975004": {
+        "title": "Black / XL",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975005": {
+        "title": "Black / 2XL",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975006": {
+        "title": "Purple / S",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975007": {
+        "title": "Purple / M",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975008": {
+        "title": "Purple / L",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975009": {
+        "title": "Purple / XL",
+        "price": "30.00",
+        "compareAtPrice": null
+      },
+      "975010": {
+        "title": "Purple / 2XL",
+        "price": "30.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "videomancer-vinyl-sticker": {
+    "variants": {
+      "960042": {
+        "title": "Default Title",
+        "price": "5.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "vidiot": {
+    "variants": {
+      "930001": {
+        "title": "Default Title",
+        "price": "1599.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "visual-cortex": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203598359": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "war-of-the-ants": {
+    "variants": {
+      "gid://shopify/ProductVariant/45071203631127": {
+        "title": "Default Title",
+        "price": "0.00",
+        "compareAtPrice": null
+      }
+    }
+  },
+  "washer-m7-pot": {
+    "variants": {
+      "830001": {
+        "title": "Default Title",
+        "price": "0.05",
+        "compareAtPrice": null
+      }
+    }
+  }
+}

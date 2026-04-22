@@ -21,7 +21,6 @@ import type {
   Product as ProductType,
   ProductVariant,
   SelectedOptionInput,
-  Shop,
 } from '@shopify/hydrogen/storefront-api-types';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
@@ -39,8 +38,15 @@ import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
-import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getLfsProductContentBySlug} from '~/data/lfs-product-metadata';
+import {getProductRecord} from '~/data/product-catalog';
+import {getLfsAssetEntry} from '~/data/lfs-assets';
+import {getCommerceByHandle} from '~/data/shopify-live.server';
+import {
+  buildHubProductFromLocal,
+  buildHubShop,
+} from '~/data/hub-product.server';
 import {
   getModuleByName,
   getPatchesForModule,
@@ -222,23 +228,45 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     selectedOptions.push({name, value});
   });
 
-  const {shop, product} = await context.storefront.query<{
-    product: ProductType & {selectedVariant?: ProductVariant};
-    shop: Shop;
-  }>(PRODUCT_QUERY, {
-    variables: {
-      handle: productHandle,
-      selectedOptions,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
-  });
+  const shop = buildHubShop(request);
+  const record = getProductRecord(productHandle);
+  const lfs = getLfsAssetEntry(productHandle);
+  const legacyContent = getLfsProductContentBySlug(productHandle);
 
-  if (!product?.id) {
+  let product: ProductType & {selectedVariant?: ProductVariant};
+  if (record) {
+    const commerce = await getCommerceByHandle(
+      context.storefront,
+      productHandle,
+    );
+    product = buildHubProductFromLocal({
+      record,
+      commerce,
+      lfs,
+      selectedOptions,
+    });
+  } else if (legacyContent) {
+    // No entry in the local catalog, but we still have legacy LFS
+    // content (typically discontinued accessories). Synthesize a
+    // minimal product so the rest of the page can render — the merge
+    // step below populates media/description/metafields from LFS.
+    product = {
+      id: `lfs-product:${productHandle}`,
+      title: legacyContent.name,
+      vendor: 'LZX Industries',
+      handle: productHandle,
+      descriptionHtml: '',
+      description: '',
+      options: [],
+      media: {nodes: []},
+      variants: {nodes: []},
+      seo: {title: legacyContent.name, description: ''},
+      metafields: [],
+    } as unknown as ProductType & {selectedVariant?: ProductVariant};
+  } else {
     throw new Response('product', {status: 404});
   }
 
-  const legacyContent = getLfsProductContentBySlug(productHandle);
   const resolvedProduct = mergeLegacyProductData(product, productHandle);
 
   const recommended = getRecommendedProducts(context.storefront, resolvedProduct.id);
@@ -793,109 +821,6 @@ function WishlistButton({
 //     </Disclosure>
 //   );
 // }
-
-const PRODUCT_VARIANT_FRAGMENT = `#graphql
-  fragment ProductVariantFragment on ProductVariant {
-    id
-    availableForSale
-    quantityAvailable
-    selectedOptions {
-      name
-      value
-    }
-    image {
-      id
-      url
-      altText
-      width
-      height
-    }
-    price {
-      amount
-      currencyCode
-    }
-    compareAtPrice {
-      amount
-      currencyCode
-    }
-    sku
-    title
-    unitPrice {
-      amount
-      currencyCode
-    }
-    product {
-      title
-      handle
-    }
-  }
-`;
-
-const PRODUCT_QUERY = `#graphql
-  ${MEDIA_FRAGMENT}
-  ${PRODUCT_VARIANT_FRAGMENT}
-  query Product(
-    $country: CountryCode
-    $language: LanguageCode
-    $handle: String!
-    $selectedOptions: [SelectedOptionInput!]!
-  ) @inContext(country: $country, language: $language) {
-    product(handle: $handle) {
-      id
-      title
-      vendor
-      handle
-      descriptionHtml
-      description
-      options {
-        name
-        values
-      }
-      selectedVariant: variantBySelectedOptions(selectedOptions: $selectedOptions) {
-        ...ProductVariantFragment
-      }
-      media(first: 20) {
-        nodes {
-          ...Media
-        }
-      }
-      variants(first: 250) {
-        nodes {
-          ...ProductVariantFragment
-        }
-      }
-      seo {
-        description
-        title
-      }
-      metafields(identifiers: [
-        {namespace: "custom", key: "specs"},
-        {namespace: "custom", key: "features"},
-        {namespace: "custom", key: "compatibility"},
-        {namespace: "descriptors", key: "subtitle"},
-      ]) {
-        key
-        namespace
-        value
-        type
-      }
-    }
-    shop {
-      name
-      primaryDomain {
-        url
-      }
-      shippingPolicy {
-        body
-        handle
-      }
-      refundPolicy {
-        body
-        handle
-      }
-    }
-  }
-`;
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}

@@ -80,28 +80,14 @@ function renderWithRouter(ui: React.ReactElement) {
 }
 
 describe('Cases and power page', () => {
-  it('loads curated products from Shopify by handle and merges the results', async () => {
-    const storefrontQuery = vi.fn().mockResolvedValue({
-      products: {
-        nodes: [
-          {
-            id: 'gid://shopify/Product/7171710189591',
-            title: 'Vessel 168',
-            handle: 'vessel-168',
-          },
-          {
-            id: 'gid://shopify/Product/6778221133847',
-            title: 'DC Distro 3A',
-            handle: 'dc-distro-3a',
-          },
-        ],
-      },
-    });
+  it('builds entries from the local catalog without calling Shopify for content', async () => {
+    const storefrontQuery = vi.fn();
 
     const response = await casesAndPowerLoader({
       context: {
         storefront: {
           i18n: {country: 'US', language: 'EN'},
+          CacheCustom: () => ({}),
           query: storefrontQuery,
         },
       },
@@ -111,37 +97,21 @@ describe('Cases and power page', () => {
 
     const payload = (await (response as Response).json()) as CategoryListingData;
 
-    // Shared category loader uses one consolidated handle-based query
-    // (no entries have stored Shopify GIDs in the cases & power config).
-    expect(storefrontQuery).toHaveBeenCalledTimes(1);
-    expect(storefrontQuery).toHaveBeenCalledWith(
-      expect.stringContaining('query CategoryListingByHandles'),
-      expect.objectContaining({
-        variables: expect.objectContaining({
-          first: getCasesAndPowerEntries().length,
-          country: 'US',
-          language: 'EN',
-          query: expect.stringContaining('handle:vessel-168'),
-        }),
-      }),
-    );
-    expect(storefrontQuery.mock.calls[0]?.[1]?.variables?.query).toContain(
-      'handle:dc-distro-3a',
-    );
+    // The shared category-listing loader no longer issues Storefront
+    // GraphQL queries for content. Categories that opt into the live
+    // commerce snippet may call `getCommerceByHandles`, but the
+    // cases-and-power config does not.
+    expect(storefrontQuery).not.toHaveBeenCalled();
 
     const allEntries = payload.sections.flatMap((s) =>
       s.groups.flatMap((g) => g.entries),
     );
-    // Vessel 168 and DC Distro 3A came back as products and are reflected as
-    // shopify image data attached via the loader pipeline; the entry key
-    // remains the slug regardless.
     expect(allEntries.find((e) => e.key === 'vessel-168')?.href).toBe(
       '/products/vessel-168',
     );
     expect(allEntries.find((e) => e.key === 'dc-distro-3a')?.href).toBe(
       '/products/dc-distro-3a',
     );
-    expect(allEntries.find((e) => e.key === 'vessel-208')?.image.shopify).toBeNull();
   });
 
   it('includes active cases, legacy racks, distro modules, and power accessories', () => {

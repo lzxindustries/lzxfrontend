@@ -15,8 +15,16 @@ test-results/
 .playwright/
 audit-results/
 
-# Local asset library and scrape mirrors
+# Local asset library and scrape mirrors (developer-only mount, never deployed)
 lfs/
+
+# Build artifacts produced from lfs/ at ingest time. These are NOT
+# committed by default — the production build re-runs `yarn catalog:ingest`
+# from the lfs mount in dev, and Cloudflare/Oxygen builds rely on whatever
+# was last committed (none, until a deliberate "publish assets" pass).
+# The manifest IS committed so routes can resolve paths even when the
+# heavy assets are absent.
+!app/data/generated/lfs-asset-manifest.json
 
 # Non-runtime design/source assets copied alongside docs images
 public/docs/**/*.ai

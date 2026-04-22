@@ -9,6 +9,14 @@ if [ ! -d node_modules ]; then
   bash "$(dirname "$0")/setup.sh"
 fi
 
+# ---- LFS asset ingest (gracefully no-ops when lfs/ isn't mounted) ----
+echo "Ingesting LFS product assets (if mounted)..."
+if ! yarn catalog:ingest; then
+  echo ""
+  echo "Warning: catalog:ingest failed. Continuing with build..."
+  echo ""
+fi
+
 # ---- Type checking (non-blocking) ----
 echo "Running type check..."
 if ! yarn typecheck; then

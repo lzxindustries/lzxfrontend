@@ -4,19 +4,18 @@ import type {Collection} from '@shopify/hydrogen/storefront-api-types';
 import {seoPayload} from '~/lib/seo.server';
 import {hasDocPagePath} from '~/lib/content.server';
 import {getDocPathForSlug} from '~/data/product-slugs';
-
+import {getProductRecord} from '~/data/product-catalog';
+import {getLfsGalleryFirstImage} from '~/data/lfs-assets';
 import {
-  CATEGORY_LISTING_BY_HANDLES_QUERY,
-  CATEGORY_LISTING_BY_IDS_QUERY,
-  MAX_PRODUCTS_PER_QUERY,
-  buildHandleFilterQuery,
-} from './queries';
+  getCommerceByHandles,
+  type CommerceSnippet,
+} from '~/data/shopify-live.server';
+
 import type {
   CategoryListingConfig,
   CategoryListingData,
   CategoryListingEntry,
   CategoryListingGroup,
-  CategoryListingProduct,
   CategoryListingSection,
   CategorySourceEntry,
 } from './types';
@@ -35,7 +34,7 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
   }: LoaderFunctionArgs) {
     const rawSections = config.getRawSections();
 
-    // Collect every entry so we can batch the Shopify lookups.
+    // Collect every entry so we can batch downstream lookups.
     const allEntries: CategorySourceEntry[] = [];
     for (const section of rawSections) {
       for (const group of section.groups) {
@@ -43,72 +42,19 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
       }
     }
 
-    const allShopifyIds = Array.from(
-      new Set(
-        allEntries
-          .map((e) => e.shopifyGid)
-          .filter((id): id is string => Boolean(id)),
-      ),
-    );
     const allHandles = Array.from(
       new Set(allEntries.map((e) => e.canonical).filter(Boolean)),
     );
 
-    const productById = new Map<string, CategoryListingProduct>();
-    const productByHandle = new Map<string, CategoryListingProduct>();
-
-    // Primary fetch: by GID.
-    if (allShopifyIds.length > 0) {
-      try {
-        const {nodes} = await context.storefront.query<{
-          nodes: (CategoryListingProduct | null)[];
-        }>(CATEGORY_LISTING_BY_IDS_QUERY, {
-          variables: {
-            ids: allShopifyIds,
-            country: context.storefront.i18n.country,
-            language: context.storefront.i18n.language,
-          },
-        });
-        for (const node of nodes) {
-          if (!node) continue;
-          productById.set(node.id, node);
-          productByHandle.set(node.handle, node);
-        }
-      } catch (error) {
-        console.error(
-          `[${config.key}] Failed to load category listing products by IDs`,
-          error,
-        );
-      }
-    }
-
-    // Secondary fetch: by handle for entries without a stored GID.
-    const handlesNeedingFetch = allHandles.filter(
-      (h) => !productByHandle.has(h),
-    );
-    if (handlesNeedingFetch.length > 0) {
-      try {
-        const handleFilterQuery = buildHandleFilterQuery(handlesNeedingFetch);
-        const {products} = await context.storefront.query<{
-          products: {nodes: CategoryListingProduct[]};
-        }>(CATEGORY_LISTING_BY_HANDLES_QUERY, {
-          variables: {
-            first: Math.min(handlesNeedingFetch.length, MAX_PRODUCTS_PER_QUERY),
-            query: handleFilterQuery,
-            country: context.storefront.i18n.country,
-            language: context.storefront.i18n.language,
-          },
-        });
-        for (const p of products.nodes) {
-          productByHandle.set(p.handle, p);
-          productById.set(p.id, p);
-        }
-      } catch (error) {
-        console.error(
-          `[${config.key}] Failed to load category listing products by handles`,
-          error,
-        );
-      }
+    // Live commerce snippet (price + stock) is fetched once for all entries
+    // when the config opts in. Categories that only show artwork+name skip
+    // this round-trip entirely.
+    let commerceByHandle: Map<string, CommerceSnippet> = new Map();
+    if (config.includeCommerce && allHandles.length > 0) {
+      commerceByHandle = await getCommerceByHandles(
+        context.storefront,
+        allHandles,
+      );
     }
 
     const defaultAspect = config.defaultArtworkAspectRatio ?? '1/1';
@@ -137,19 +83,26 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
             continue;
           }
 
-          const shopifyProduct =
-            (raw.shopifyGid ? productById.get(raw.shopifyGid) : undefined) ??
-            productByHandle.get(raw.canonical) ??
-            null;
+          const shopifyProduct = getProductRecord(raw.canonical);
+          const lfsImage = getLfsGalleryFirstImage(raw.canonical);
+          const commerce = commerceByHandle.get(raw.canonical) ?? null;
 
           const subtitle =
             (config.resolveSubtitle?.(raw) ?? null) || null;
 
           const artwork = config.resolveArtwork?.(raw, ctx) ?? null;
-          const shopifyImage =
-            shopifyProduct?.featuredImage ??
-            shopifyProduct?.variants?.nodes?.[0]?.image ??
-            null;
+          // Fallback artwork: lfs-managed gallery image (served from
+          // /assets/products/...). The catalog mirror image is intentionally
+          // NOT used at runtime — it lives in `catalog/shopify/` and is not
+          // exported to /public.
+          const fallbackImage = lfsImage
+            ? {
+                url: lfsImage.publicPath,
+                altText: shopifyProduct?.title ?? raw.name,
+                width: lfsImage.width,
+                height: lfsImage.height,
+              }
+            : null;
 
           const hasInternalPage = config.resolveHasInternalPage
             ? config.resolveHasInternalPage(raw)
@@ -170,11 +123,12 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
             isExternal,
             badge,
             image: {
-              localPath: artwork?.path ?? null,
-              shopify: shopifyImage,
+              localPath: artwork?.path ?? fallbackImage?.url ?? null,
+              shopify: null,
               aspectRatio: artwork?.aspectRatio ?? defaultAspect,
               fit: artwork?.fit ?? defaultFit,
             },
+            commerce,
           });
         }
 

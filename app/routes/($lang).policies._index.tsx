@@ -4,30 +4,25 @@ import {getSeoMeta} from '@shopify/hydrogen';
 import type {ShopPolicy} from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import invariant from 'tiny-invariant';
 import {Link} from '~/components/Link';
 import {Heading, Section, PageHeader} from '~/components/Text';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import {listLocalPolicies} from '~/data/policies.server';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 
-export async function loader({
-  request,
-  context: {storefront},
-}: LoaderFunctionArgs) {
-  const data = await storefront.query<{
-    shop: Record<string, ShopPolicy>;
-  }>(POLICIES_QUERY);
-
-  invariant(data, 'No data returned from Shopify API');
-  const policies = Object.values(data.shop || {});
+export async function loader({request}: LoaderFunctionArgs) {
+  const policies = listLocalPolicies();
 
   if (policies.length === 0) {
     throw new Response('Not found', {status: 404});
   }
 
-  const seo = seoPayload.policies({policies, url: request.url});
+  const seo = seoPayload.policies({
+    policies: policies as unknown as ShopPolicy[],
+    url: request.url,
+  });
 
   return json(
     {
@@ -69,32 +64,4 @@ export default function Policies() {
   );
 }
 
-const POLICIES_QUERY = `#graphql
-  fragment Policy on ShopPolicy {
-    id
-    title
-    handle
-  }
 
-  query PoliciesQuery {
-    shop {
-      privacyPolicy {
-        ...Policy
-      }
-      shippingPolicy {
-        ...Policy
-      }
-      termsOfService {
-        ...Policy
-      }
-      refundPolicy {
-        ...Policy
-      }
-      subscriptionPolicy {
-        id
-        title
-        handle
-      }
-    }
-  }
-`;

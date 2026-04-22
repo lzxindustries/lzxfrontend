@@ -8,39 +8,23 @@ import invariant from 'tiny-invariant';
 import {Button} from '~/components/Button';
 import {Section, PageHeader} from '~/components/Text';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
+import {getLocalPolicyByHandle} from '~/data/policies.server';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
 
-export async function loader({request, params, context}: LoaderFunctionArgs) {
+export async function loader({request, params}: LoaderFunctionArgs) {
   invariant(params.policyHandle, 'Missing policy handle');
-  const handle = params.policyHandle;
-
-  const policyName = handle.replace(/-([a-z])/g, (_: unknown, m1: string) =>
-    m1.toUpperCase(),
-  );
-
-  const data = await context.storefront.query<{
-    shop: Record<string, ShopPolicy>;
-  }>(POLICY_CONTENT_QUERY, {
-    variables: {
-      privacyPolicy: false,
-      shippingPolicy: false,
-      termsOfService: false,
-      refundPolicy: false,
-      [policyName]: true,
-      language: context.storefront.i18n.language,
-    },
-  });
-
-  invariant(data, 'No data returned from Shopify API');
-  const policy = data.shop?.[policyName];
+  const policy = getLocalPolicyByHandle(params.policyHandle);
 
   if (!policy) {
     throw new Response(null, {status: 404});
   }
 
-  const seo = seoPayload.policy({policy, url: request.url});
+  const seo = seoPayload.policy({
+    policy: policy as unknown as ShopPolicy,
+    url: request.url,
+  });
 
   return json(
     {policy, seo},
@@ -91,35 +75,4 @@ export default function Policies() {
   );
 }
 
-const POLICY_CONTENT_QUERY = `#graphql
-  fragment PolicyContent on ShopPolicy {
-    body
-    handle
-    id
-    title
-    url
-  }
 
-  query PolicyContentsQuery(
-    $language: LanguageCode
-    $privacyPolicy: Boolean!
-    $shippingPolicy: Boolean!
-    $termsOfService: Boolean!
-    $refundPolicy: Boolean!
-  ) @inContext(language: $language) {
-    shop {
-      privacyPolicy @include(if: $privacyPolicy) {
-        ...PolicyContent
-      }
-      shippingPolicy @include(if: $shippingPolicy) {
-        ...PolicyContent
-      }
-      termsOfService @include(if: $termsOfService) {
-        ...PolicyContent
-      }
-      refundPolicy @include(if: $refundPolicy) {
-        ...PolicyContent
-      }
-    }
-  }
-`;

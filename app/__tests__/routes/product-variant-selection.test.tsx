@@ -343,34 +343,15 @@ describe('Variant selection regression coverage', () => {
   });
 
   it('hydrates generic legacy product pages with LFS media and downloads', async () => {
-    const storefrontQuery = vi
-      .fn()
-      .mockResolvedValueOnce({
-        product: {
-          id: 'gid://shopify/Product/99',
-          title: 'Andor 1 Media Player Deluxe Accessories Pack',
-          vendor: 'LZX Industries',
-          handle: 'andor-1-media-player-deluxe-accessories-pack',
-          descriptionHtml: '',
-          description: '',
-          options: [],
-          selectedVariant: null,
-          media: {nodes: []},
-          variants: {nodes: []},
-          seo: {title: 'Andor 1', description: ''},
-          metafields: [],
-        },
-        shop: {
-          name: 'LZX Industries',
-          primaryDomain: {url: 'https://lzxindustries.net'},
-          shippingPolicy: null,
-          refundPolicy: null,
-        },
-      })
-      .mockResolvedValueOnce({
-        recommended: [],
-        additional: {nodes: []},
-      });
+    // Generic legacy products like accessory packs are not in the
+    // local product catalog. The route synthesizes a minimal product
+    // shell from `getLfsProductContentBySlug` and merges in media and
+    // downloads from LFS. The Storefront API is only called for
+    // recommended products.
+    const storefrontQuery = vi.fn().mockResolvedValue({
+      recommended: [],
+      additional: {nodes: []},
+    });
 
     const result = await productLoader({
       params: {productHandle: 'andor-1-media-player-deluxe-accessories-pack'},
@@ -380,6 +361,7 @@ describe('Variant selection regression coverage', () => {
       context: {
         storefront: {
           i18n: {country: 'US', language: 'EN'},
+          CacheCustom: () => ({}),
           query: storefrontQuery,
         },
       } as never,

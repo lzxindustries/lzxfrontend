@@ -3,24 +3,21 @@ import {describe, expect, it, vi} from 'vitest';
 import {loadModuleHubData} from '~/data/hub-loaders';
 
 function createContext() {
+  // The new hub loader sources content from the local catalog and only
+  // calls Shopify for the live commerce snippet (price/stock). The
+  // commerce query is fail-soft, so a stub that returns no product
+  // nodes is enough — the catalog entry still drives the page.
   return {
     storefront: {
       i18n: {country: 'US', language: 'EN'},
-      query: vi.fn().mockResolvedValue({
-        product: null,
-        shop: {
-          name: 'LZX Industries',
-          primaryDomain: {url: 'https://www.lzxindustries.net'},
-          shippingPolicy: null,
-          refundPolicy: null,
-        },
-      }),
+      CacheCustom: () => ({}),
+      query: vi.fn().mockResolvedValue({products: {nodes: []}}),
     },
   } as any;
 }
 
 describe('loadModuleHubData', () => {
-  it('builds fallback hub data for hidden modules with no Shopify product', async () => {
+  it('builds fallback hub data for legacy modules with no catalog entry', async () => {
     const context = createContext();
 
     const data = await loadModuleHubData(
@@ -30,6 +27,8 @@ describe('loadModuleHubData', () => {
     );
 
     expect(data).not.toBeNull();
+    // Not in the local Shopify-mirror catalog → falls back to the
+    // synthetic legacy product.
     expect(data?.hasShopifyProduct).toBe(false);
     expect(data?.product.id).toBe('legacy-module:color-video-encoder');
     expect(data?.product.title).toBe('Color Video Encoder');
@@ -46,7 +45,7 @@ describe('loadModuleHubData', () => {
     );
   });
 
-  it('hydrates fallback legacy media from the LFS product library', async () => {
+  it('hydrates legacy media from the LFS product library', async () => {
     const context = createContext();
 
     const data = await loadModuleHubData(
@@ -56,7 +55,9 @@ describe('loadModuleHubData', () => {
     );
 
     expect(data).not.toBeNull();
-    expect(data?.hasShopifyProduct).toBe(false);
+    // liquid-tv is an inactive (legacy) catalog entry — commerce is
+    // hidden but the local product record still drives the page.
+    expect(data?.isLegacy).toBe(true);
     expect((data?.product as any).media.nodes).toEqual(
       expect.arrayContaining([
         expect.objectContaining({mediaContentType: 'IMAGE'}),
@@ -65,13 +66,15 @@ describe('loadModuleHubData', () => {
     expect(data?.archiveAssets.length).toBeGreaterThan(0);
   });
 
-  it('keeps active modules Shopify-dependent', async () => {
+  it('returns null for a slug that exists nowhere', async () => {
     const context = createContext();
 
     const data = await loadModuleHubData(
-      'esg3',
+      'this-slug-does-not-exist-anywhere-9999',
       context,
-      new Request('https://www.lzxindustries.net/modules/esg3'),
+      new Request(
+        'https://www.lzxindustries.net/modules/this-slug-does-not-exist-anywhere-9999',
+      ),
     );
 
     expect(data).toBeNull();
