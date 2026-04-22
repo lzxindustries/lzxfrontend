@@ -19,6 +19,8 @@ import {Button} from '~/components/Button';
 import {FeaturedProducts} from '~/components/FeaturedProducts';
 import {IconRemove} from '~/components/Icon';
 import {Link} from '~/components/Link';
+import {getProductRecord} from '~/data/product-catalog';
+import {getLfsGalleryFirstImage} from '~/data/lfs-assets';
 import {resolveProductUrl} from '~/data/product-slugs';
 import {Heading, Text} from '~/components/Text';
 
@@ -342,29 +344,45 @@ function CartLineItem({line}: {line: CartLine}) {
 
   if (typeof quantity === 'undefined' || !merchandise?.product) return null;
 
+  const handle = merchandise.product.handle;
+  const localRecord = handle ? getProductRecord(handle) : null;
+  const localImage = handle ? getLfsGalleryFirstImage(handle) : null;
+  const displayTitle = localRecord?.title ?? merchandise.product.title ?? '';
+  const altText =
+    localRecord?.title ?? merchandise.title ?? merchandise.product.title ?? '';
+
   return (
     <li key={id} className="flex gap-4" data-testid="cart-item">
       <div className="flex-shrink">
-        {merchandise.image && (
-          <Image
+        {localImage ? (
+          <img
             width={110}
             height={110}
-            data={merchandise.image}
+            src={localImage.publicPath}
             className="object-cover object-center w-24 h-24 border rounded md:w-28 md:h-28"
-            alt={merchandise.title}
+            alt={altText}
+            loading="lazy"
           />
+        ) : (
+          merchandise.image && (
+            <Image
+              width={110}
+              height={110}
+              data={merchandise.image}
+              className="object-cover object-center w-24 h-24 border rounded md:w-28 md:h-28"
+              alt={altText}
+            />
+          )
         )}
       </div>
 
       <div className="flex justify-between flex-grow">
         <div className="grid gap-2">
           <Heading as="h3" size="copy">
-            {merchandise?.product?.handle ? (
-              <Link to={resolveProductUrl(merchandise.product.handle)}>
-                {merchandise?.product?.title || ''}
-              </Link>
+            {handle ? (
+              <Link to={resolveProductUrl(handle)}>{displayTitle}</Link>
             ) : (
-              <Text>{merchandise?.product?.title || ''}</Text>
+              <Text>{displayTitle}</Text>
             )}
           </Heading>
 

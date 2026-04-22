@@ -27,10 +27,15 @@ import {NotFound} from './components/NotFound';
 import {useAnalytics} from './hooks/useAnalytics';
 import {
   DEFAULT_LOCALE,
-  parseMenu,
   getCartId,
   type EnhancedMenu,
 } from './lib/utils';
+import {
+  SHOP_NAME,
+  SHOP_DESCRIPTION,
+  SHOP_BRAND_LOGO_URL,
+  SITE_ORIGIN,
+} from './config/shop';
 import styles from './styles/app.css?url';
 import katexStyles from 'katex/dist/katex.min.css?url';
 import hljsStyles from 'highlight.js/styles/github.css?url';
@@ -56,10 +61,8 @@ export const links: LinksFunction = () => {
 
 export async function loader({request, context}: LoaderFunctionArgs) {
   const cartId = getCartId(request);
-  const [customerAccessToken, layout] = await Promise.all([
-    context.session.get('customerAccessToken'),
-    getLayoutData(context),
-  ]);
+  const customerAccessToken = await context.session.get('customerAccessToken');
+  const layout = getLayoutData(request);
 
   const seo = seoPayload.root({shop: layout.shop, url: request.url});
 
@@ -164,56 +167,6 @@ export function ErrorBoundary({error}: {error: Error}) {
   );
 }
 
-const LAYOUT_QUERY = `#graphql
-  query layoutMenus(
-    $language: LanguageCode
-    $headerMenuHandle: String!
-    $footerMenuHandle: String!
-  ) @inContext(language: $language) {
-    shop {
-      id
-      name
-      description
-      primaryDomain {
-        url
-      }
-      brand {
-       logo {
-         image {
-          url
-         }
-       }
-     }
-    }
-    headerMenu: menu(handle: $headerMenuHandle) {
-      id
-      items {
-        ...MenuItem
-        items {
-          ...MenuItem
-        }
-      }
-    }
-    footerMenu: menu(handle: $footerMenuHandle) {
-      id
-      items {
-        ...MenuItem
-        items {
-          ...MenuItem
-        }
-      }
-    }
-  }
-  fragment MenuItem on MenuItem {
-    id
-    resourceId
-    tags
-    title
-    type
-    url
-  }
-`;
-
 export interface LayoutData {
   headerMenu: EnhancedMenu;
   footerMenu: EnhancedMenu;
@@ -221,39 +174,36 @@ export interface LayoutData {
   cart?: Promise<Cart>;
 }
 
-async function getLayoutData({storefront}: AppLoadContext) {
-  const HEADER_MENU_HANDLE = 'main-menu';
-  const FOOTER_MENU_HANDLE = 'footer';
+function emptyMenu(handle: string): EnhancedMenu {
+  return {id: `local-${handle}`, items: []} as unknown as EnhancedMenu;
+}
 
-  const data = await storefront.query<LayoutData>(LAYOUT_QUERY, {
-    variables: {
-      headerMenuHandle: HEADER_MENU_HANDLE,
-      footerMenuHandle: FOOTER_MENU_HANDLE,
-      language: storefront.i18n.language,
+function getLayoutData(request: Request): LayoutData {
+  const origin = (() => {
+    try {
+      return new URL(request.url).origin;
+    } catch {
+      return SITE_ORIGIN;
+    }
+  })();
+
+  const shop = {
+    id: 'local-shop',
+    name: SHOP_NAME,
+    description: SHOP_DESCRIPTION,
+    primaryDomain: {url: origin},
+    brand: {
+      logo: {
+        image: {url: `${origin}${SHOP_BRAND_LOGO_URL}`},
+      },
     },
-  });
+  } as unknown as Shop;
 
-  invariant(data, 'No data returned from Shopify API');
-
-  /*
-    Modify specific links/routes (optional)
-    @see: https://shopify.dev/api/storefront/unstable/enums/MenuItemType
-    e.g here we map:
-      - /blogs/news -> /news
-      - /blog/news/blog-post -> /news/blog-post
-      - /collections/all -> /products
-  */
-  const customPrefixes = {BLOG: '', CATALOG: 'products'};
-
-  const headerMenu = data?.headerMenu
-    ? parseMenu(data.headerMenu, customPrefixes)
-    : undefined;
-
-  const footerMenu = data?.footerMenu
-    ? parseMenu(data.footerMenu, customPrefixes)
-    : undefined;
-
-  return {shop: data.shop, headerMenu, footerMenu};
+  return {
+    shop,
+    headerMenu: emptyMenu('header'),
+    footerMenu: emptyMenu('footer'),
+  };
 }
 
 const CART_QUERY = `#graphql

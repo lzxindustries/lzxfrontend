@@ -7,25 +7,41 @@ import ModuleSupport from '~/routes/($lang).modules.$slug.support';
 
 const remixState: any = {
   listingLoaderData: {
-    activeSeriesGroups: [],
-    legacySeriesGroups: [
+    pageTitle: 'Modules',
+    cardSize: 'sm',
+    gridColsClassName: 'grid-cols-1',
+    sections: [
       {
-        key: 'visionary',
-        label: 'Visionary',
-        entries: [
+        key: 'legacy',
+        label: 'Legacy',
+        groups: [
           {
-            canonical: 'color-video-encoder',
-            name: 'Color Video Encoder',
-            isHidden: true,
-            subtitle:
-              'RGB to NTSC/PAL video encoder, clipping and blanking of input signals, RGB contrast, brightness and inversion processing',
-            shopifyProduct: null,
-            externalUrl: 'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
-            hasInternalPage: true,
+            key: 'visionary',
+            label: 'Visionary',
+            entries: [
+              {
+                key: 'color-video-encoder',
+                name: 'Color Video Encoder',
+                href: '/modules/color-video-encoder',
+                isExternal: false,
+                externalUrl:
+                  'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
+                subtitle:
+                  'RGB to NTSC/PAL video encoder, clipping and blanking of input signals, RGB contrast, brightness and inversion processing',
+                image: {
+                  aspectRatio: '1/1',
+                  fit: 'contain',
+                  localPath: null,
+                  shopify: null,
+                },
+                commerce: null,
+              },
+            ],
           },
         ],
       },
     ],
+    seo: {},
   },
   supportLoaderData: {
     forumArchive: {
@@ -50,6 +66,7 @@ const remixState: any = {
         },
       ],
     },
+    supportContent: {},
   },
   outletContext: {
     product: {
@@ -79,6 +96,7 @@ vi.mock('@remix-run/react', async () => {
     ...actual,
     useLoaderData: () => remixState.currentLoaderData,
     useOutletContext: () => remixState.outletContext,
+    useMatches: () => [{data: {selectedLocale: null}}],
   };
 });
 

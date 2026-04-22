@@ -29,8 +29,8 @@ describe('Support page SECTIONS', () => {
 });
 
 describe('Docs index SECTIONS', () => {
-  it('has 6 sections', () => {
-    expect(DOCS_SECTIONS).toHaveLength(6);
+  it('has 7 sections', () => {
+    expect(DOCS_SECTIONS).toHaveLength(7);
   });
 
   it('each section has title, description, to, and icon', () => {

@@ -21,6 +21,7 @@ const remixState = {
         platform: null,
       },
     ],
+    archiveAssets: [] as Array<Record<string, unknown>>,
     product: {title: 'Videomancer'},
     slug: 'videomancer',
   },

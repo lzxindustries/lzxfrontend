@@ -185,10 +185,14 @@ const allRows = buildRows();
 // modulargrid/metadata.md`. Parse those files and synthesise spec rows so the
 // master table covers the full historical catalog.
 
-const visionaryMetadataFiles = import.meta.glob<string>(
-  '../../lfs/library/products/eurorack-modules/visionary/*/modulargrid/metadata.md',
-  {eager: true, import: 'default', query: '?raw'},
-);
+import visionaryMetadataSnapshot from './generated/visionary-modulargrid-metadata.json';
+
+// Map of slug → raw markdown, snapshotted from
+// lfs/library/products/eurorack-modules/visionary/<slug>/modulargrid/metadata.md
+// at build time via `scripts/snapshot-visionary-metadata.mjs`.
+const visionaryMetadataFiles: Record<string, string> = (
+  visionaryMetadataSnapshot as {files: Record<string, string>}
+).files;
 
 // Folders inside .../visionary/ that are not actually modules.
 const VISIONARY_NON_MODULE_SLUGS = new Set([
@@ -228,10 +232,7 @@ function extractSpecsBlock(raw: string): string | null {
 
 const existingSlugs = new Set(allRows.map((r) => r.slug));
 
-for (const [sourcePath, raw] of Object.entries(visionaryMetadataFiles)) {
-  const slug =
-    sourcePath.match(/\/visionary\/([^/]+)\/modulargrid\/metadata\.md$/)?.[1] ??
-    null;
+for (const [slug, raw] of Object.entries(visionaryMetadataFiles)) {
   if (!slug || VISIONARY_NON_MODULE_SLUGS.has(slug)) continue;
   if (existingSlugs.has(slug)) continue;
 

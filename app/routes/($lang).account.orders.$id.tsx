@@ -15,6 +15,8 @@ import clsx from 'clsx';
 import {useState} from 'react';
 import invariant from 'tiny-invariant';
 import {Link} from '~/components/Link';
+import {getProductRecord} from '~/data/product-catalog';
+import {getLfsGalleryFirstImage} from '~/data/lfs-assets';
 import {resolveProductUrl} from '~/data/product-slugs';
 import {Heading, PageHeader, Text} from '~/components/Text';
 import {
@@ -244,7 +246,14 @@ export default function OrderRoute() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {/* @ts-ignore */}
-                {lineItems.map((lineItem: OrderLineItem) => (
+                {lineItems.map((lineItem: OrderLineItem) => {
+                  const handle = lineItem.variant!.product!.handle;
+                  const localRecord = handle ? getProductRecord(handle) : null;
+                  const localImage = handle
+                    ? getLfsGalleryFirstImage(handle)
+                    : null;
+                  const displayTitle = localRecord?.title ?? lineItem.title;
+                  return (
                   <tr key={lineItem.variant!.id}>
                     <td className="w-full py-4 pl-0 pr-3 align-top sm:align-middle max-w-0 sm:w-auto sm:max-w-none">
                       <div className="flex gap-6">
@@ -253,18 +262,30 @@ export default function OrderRoute() {
                             lineItem.variant!.product!.handle,
                           )}
                         >
-                          {lineItem?.variant?.image && (
+                          {localImage ? (
                             <div className="w-24 card-image aspect-square">
-                              <Image
-                                data={lineItem.variant.image}
+                              <img
+                                src={localImage.publicPath}
                                 width={96}
                                 height={96}
+                                alt={displayTitle}
+                                loading="lazy"
                               />
                             </div>
+                          ) : (
+                            lineItem?.variant?.image && (
+                              <div className="w-24 card-image aspect-square">
+                                <Image
+                                  data={lineItem.variant.image}
+                                  width={96}
+                                  height={96}
+                                />
+                              </div>
+                            )
                           )}
                         </Link>
                         <div className="flex-col justify-center hidden lg:flex">
-                          <Text as="p">{lineItem.title}</Text>
+                          <Text as="p">{displayTitle}</Text>
                           <Text size="fine" className="mt-1" as="p">
                             {lineItem.variant!.title}
                           </Text>
@@ -273,7 +294,7 @@ export default function OrderRoute() {
                           <dt className="sr-only">Product</dt>
                           <dd className="truncate lg:hidden">
                             <Heading size="copy" format as="h3">
-                              {lineItem.title}
+                              {displayTitle}
                             </Heading>
                             <Text size="fine" className="mt-1">
                               {lineItem.variant!.title}
@@ -306,7 +327,8 @@ export default function OrderRoute() {
                       </Text>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
               <tfoot>
                 {((discountValue && discountValue.amount) ||
