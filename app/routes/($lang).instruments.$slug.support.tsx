@@ -5,6 +5,7 @@ import {Disclosure} from '@headlessui/react';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
+import {loadSupportContent} from '~/data/support-content.server';
 import {getProductForumArchive} from '~/data/forum-archive.server';
 import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
 import {ForumArchiveSupportSection} from '~/components/ForumArchiveSupportSection';
@@ -19,8 +20,9 @@ export async function loader({params}: LoaderFunctionArgs) {
   const forumArchive = canonical
     ? await getProductForumArchive(canonical, slugEntry?.externalUrl)
     : {officialTopic: null, relatedTopics: []};
+  const supportContent = loadSupportContent(canonical);
 
-  return json({forumArchive});
+  return json({forumArchive, supportContent});
 }
 
 export const meta = ({matches}: MetaArgs) => {
@@ -32,12 +34,12 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function InstrumentSupport() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
-  const {forumArchive} = useLoaderData<typeof loader>();
+  const {forumArchive, supportContent} = useLoaderData<typeof loader>();
   const {product, slug, hasManual, slugEntry} =
     data as unknown as InstrumentHubData;
 
   const supportRecord = SUPPORT_MANIFEST[slug];
-  const faqItems = supportRecord?.faqItems ?? [];
+  const faqItems = supportContent.faqItems ?? [];
   const connectSupported = supportRecord?.connectSupported ?? false;
   const troubleshootingTree = getTroubleshootingTree(slug);
   const hasArchivedGuide =

@@ -1,0 +1,136 @@
+{
+  "sections": {
+    "beforeAfter": {
+      "heading": "Watch closely",
+      "subheading": "One instrument. One program between ordinary and extraordinary."
+    },
+    "identitySelector": {
+      "heading": "Pick a path, any path",
+      "subheading": "Every creator arrives with a different source and a different intention. The instrument does not care. It is ready for all of them."
+    },
+    "hardware": {
+      "heading": "Real hardware",
+      "subheading": "Old school, industrial build quality. Just like broadcast video electronics from the 70s and 80s."
+    },
+    "bts": {
+      "heading": "Built by video freaks",
+      "subheading": "Assembled by hand in a basement workshop in Portland, Oregon."
+    },
+    "proof": {
+      "heading": "Why Videomancer?",
+      "ctaHeading": "We've been expecting you",
+      "ctaBody": "Pick up the instrument. We built the docs, the programs, and the community so your first session delivers.",
+      "buyLabel": "Buy Videomancer",
+      "studyLabel": "Study the workflow"
+    }
+  },
+  "segments": [
+    {
+      "id": "live-performance",
+      "title": "Live Performance",
+      "icon": "/icons/videomancy/segment_live_performance.svg",
+      "body": "Turn camera footage into tactile broadcast-style motion graphics live."
+    },
+    {
+      "id": "glitch-texture",
+      "title": "Glitch & Texture",
+      "icon": "/icons/videomancy/segment_glitch_texture.svg",
+      "body": "Add hands-on glitch and color processing to HDMI sources with no laptop plugin chain."
+    },
+    {
+      "id": "format-bridge",
+      "title": "Format Converter",
+      "icon": "/icons/videomancy/segment_format_bridge.svg",
+      "body": "Bridge modular video, analog formats, and HDMI from one box."
+    },
+    {
+      "id": "audio-reactive",
+      "title": "Audio-Reactive",
+      "icon": "/icons/videomancy/segment_audio_reactive.svg",
+      "body": "Bring MIDI, CV, and audio reactivity to real video hardware in minutes."
+    }
+  ],
+  "proofCards": [
+    {
+      "title": "Plug in and perform",
+      "icon": "/icons/videomancy/proof_plug.svg",
+      "body": "Connect any HDMI, composite, or component video source. Load a program. Start creating. No software setup, no plugin chains, no laptop required."
+    },
+    {
+      "title": "An ever-expanding library of effects",
+      "icon": "/icons/videomancy/proof_library.svg",
+      "body": "From broadcast color correction to destructive glitch, every program is a new instrument. Regular firmware updates deliver fresh creative tools for free."
+    },
+    {
+      "title": "Open source SDK",
+      "icon": "/icons/videomancy/proof_shield.svg",
+      "body": "Build your own video effects with the open source Videomancer SDK. Share programs, get help, and collaborate with a welcoming community of artists and engineers on Discord and GitHub."
+    }
+  ],
+  "sourcePairs": [
+    {
+      "title": "Pop Art Posterize",
+      "program": "stipple",
+      "source": "/images/before-after/stipple_parrot_source.png",
+      "processed": "/images/before-after/stipple_parrot_processed.png"
+    },
+    {
+      "title": "Technicolor Film",
+      "program": "glorious",
+      "source": "/images/before-after/glorious_fruit_source.png",
+      "processed": "/images/before-after/glorious_fruit_processed.png"
+    },
+    {
+      "title": "Signal Scramble",
+      "program": "scramble",
+      "source": "/images/before-after/scramble_sunset_source.png",
+      "processed": "/images/before-after/scramble_sunset_processed.png"
+    },
+    {
+      "title": "Scanimate Warp",
+      "program": "elastica",
+      "source": "/images/before-after/elastica_woman_source.png",
+      "processed": "/images/before-after/elastica_woman_processed.png"
+    },
+    {
+      "title": "Thermal False Color",
+      "program": "isotherm",
+      "source": "/images/before-after/isotherm_runner_source.png",
+      "processed": "/images/before-after/isotherm_runner_processed.png"
+    },
+    {
+      "title": "Retro Color Quantize",
+      "program": "stic",
+      "source": "/images/before-after/stic_castle_source.png",
+      "processed": "/images/before-after/stic_castle_processed.png"
+    }
+  ],
+  "hardwareImages": [
+    {
+      "src": "/images/videomancer/hardware/photo-rear.png",
+      "alt": "Videomancer rear panel"
+    },
+    {
+      "src": "/images/videomancer/hardware/photo-angle-front.png",
+      "alt": "Videomancer front angle"
+    },
+    {
+      "src": "/images/videomancer/hardware/photo-side.png",
+      "alt": "Videomancer side view"
+    }
+  ],
+  "btsImages": [
+    {
+      "src": "/images/videomancer/bts/box-stack.png",
+      "alt": "Videomancer boxes stacked in the workshop"
+    },
+    {
+      "src": "/images/videomancer/bts/assembly-case.png",
+      "alt": "Videomancer case assembly"
+    },
+    {
+      "src": "/images/videomancer/bts/pouch-dice.png",
+      "alt": "Videomancer packaging"
+    }
+  ]
+}

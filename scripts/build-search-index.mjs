@@ -162,6 +162,28 @@ function parseSupportManifest() {
     }
   }
 
+  // Also harvest FAQs from content/support/<slug>.md frontmatter, which is
+  // the new home for per-product support content.
+  const supportDir = path.resolve('content/support');
+  if (fs.existsSync(supportDir)) {
+    for (const entry of fs.readdirSync(supportDir)) {
+      if (!entry.endsWith('.md')) continue;
+      const slug = entry.replace(/\.md$/, '');
+      if (!products[slug]) {
+        products[slug] = {slug, faqItems: []};
+      }
+      const raw = fs.readFileSync(path.join(supportDir, entry), 'utf-8');
+      const fmMatch = raw.match(/^---\n([\s\S]*?)\n---/);
+      if (!fmMatch) continue;
+      const frontmatter = fmMatch[1];
+      const questionRegex = /^\s*-\s*question:\s*['"]?(.+?)['"]?\s*$/gm;
+      let qMatch;
+      while ((qMatch = questionRegex.exec(frontmatter)) !== null) {
+        products[slug].faqItems.push(qMatch[1]);
+      }
+    }
+  }
+
   return products;
 }
 

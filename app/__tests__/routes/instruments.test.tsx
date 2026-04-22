@@ -4,6 +4,41 @@ import {MemoryRouter} from 'react-router-dom';
 import InstrumentListingPage, {
   isListedInstrumentSlug,
 } from '~/routes/($lang).instruments._index';
+import type {CategoryListingData} from '~/lib/category-listing/types';
+
+const mockData: CategoryListingData = {
+  pageTitle: 'Instruments',
+  cardSize: 'md',
+  gridColsClassName: 'grid',
+  sections: [
+    {
+      key: 'active',
+      label: 'Active',
+      groups: [
+        {
+          key: 'active',
+          entries: [
+            {
+              key: 'videomancer',
+              name: 'Videomancer',
+              subtitle: 'Performance video instrument',
+              href: '/instruments/videomancer/manual',
+              externalUrl: null,
+              isExternal: false,
+              badge: null,
+              image: {
+                localPath: null,
+                shopify: null,
+                aspectRatio: '16/9',
+                fit: 'cover',
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>(
@@ -12,18 +47,8 @@ vi.mock('@remix-run/react', async () => {
 
   return {
     ...actual,
-    useLoaderData: () => ({
-      activeEntries: [
-        {
-          canonical: 'videomancer',
-          name: 'Videomancer',
-          subtitle: 'Performance video instrument',
-          isHidden: false,
-          shopifyProduct: null,
-        },
-      ],
-      legacyEntries: [],
-    }),
+    useMatches: () => [{data: {selectedLocale: null}}],
+    useLoaderData: () => mockData,
   };
 });
 

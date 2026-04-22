@@ -17,10 +17,8 @@ export interface ProductSupportRecord {
   slug: string;
   manuals: ManualVersion[];
   relatedProductSlugs: string[];
-  setupPrerequisites?: string[];
   connectSupported?: boolean;
   showGuidedUpdaterOnDownloads?: boolean;
-  faqItems?: FaqItem[];
 }
 
 export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
@@ -35,29 +33,9 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
       },
     ],
     relatedProductSlugs: ['double-vision', 'tbc2', 'lnk'],
-    setupPrerequisites: [
-      'A display with composite or component video input',
-      'RCA cables for video connections',
-      'USB-C cable for firmware updates',
-    ],
     connectSupported: true,
-    faqItems: [
-      {
-        question: 'How do I update Videomancer firmware?',
-        answer:
-          'Use the LZX Connect desktop app to perform guided firmware updates. Download it from the <a href="/connect">LZX Connect</a> page.',
-      },
-      {
-        question: 'What video formats does Videomancer support?',
-        answer:
-          'Videomancer supports HDMI, Composite (CVBS), S-Video, Component (YPbPr & RGB SOG) and 1V RGB video input and output in NTSC and PAL formats.',
-      },
-      {
-        question: 'Can I use Videomancer with eurorack modules?',
-        answer:
-          'Yes. Videomancer works standalone or alongside LZX eurorack modules via its 1V RGB video I/O and Audio/CV modulation inputs.',
-      },
-    ],
+    // FAQ items and setup prerequisites are sourced from
+    // content/support/videomancer.md frontmatter via loadSupportContent().
   },
   chromagnon: {
     slug: 'chromagnon',
@@ -96,30 +74,14 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     slug: 'esg3',
     manuals: [],
     relatedProductSlugs: ['dsg3', 'tbc2', 'smx3'],
-    setupPrerequisites: [
-      'EuroRack case or 12V DC power supply',
-      'RCA cables for video sync chain and output',
-      'A display with composite or component video input',
-    ],
-    faqItems: [
-      {
-        question: 'Do I need ESG3 in every system?',
-        answer:
-          'Yes — ESG3 provides the master video sync and encoder for your system. Every LZX modular system needs at least one ESG3.',
-      },
-    ],
+    // FAQ items and setup prerequisites are sourced from
+    // content/support/esg3.md frontmatter via loadSupportContent().
   },
   dsg3: {
     slug: 'dsg3',
     manuals: [],
     relatedProductSlugs: ['esg3', 'dwo3', 'scrolls'],
-    faqItems: [
-      {
-        question: 'What is the difference between DSG3 and DWO3?',
-        answer:
-          'DSG3 produces geometric shapes synchronized to video timing (ramps, rectangles). DWO3 is a free-running or sync-able oscillator for animated patterns.',
-      },
-    ],
+    // FAQ items sourced from content/support/dsg3.md frontmatter.
   },
   dwo3: {
     slug: 'dwo3',
@@ -135,13 +97,7 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     slug: 'tbc2',
     manuals: [],
     relatedProductSlugs: ['esg3', 'videomancer', 'smx3'],
-    faqItems: [
-      {
-        question: 'What video sources can TBC2 accept?',
-        answer:
-          'TBC2 accepts composite (CVBS) and S-Video inputs. It frame-synchronizes external video to your LZX system timing.',
-      },
-    ],
+    // FAQ items sourced from content/support/tbc2.md frontmatter.
   },
   'tbc2-expander': {
     slug: 'tbc2-expander',

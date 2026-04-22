@@ -4,6 +4,7 @@ import {
   type ProductSupportRecord,
   shouldShowGuidedUpdaterOnDownloads,
 } from '~/data/support-manifest';
+import {loadSupportContent} from '~/data/support-content.server';
 import {
   getSlugEntry,
   getAllModuleSlugs,
@@ -45,10 +46,11 @@ describe('SUPPORT_MANIFEST structure', () => {
     }
   });
 
-  it('each faqItem has question and answer strings', () => {
-    for (const entry of Object.values(SUPPORT_MANIFEST)) {
-      if (entry.faqItems) {
-        for (const faq of entry.faqItems) {
+  it('each faqItem from loaded support content has question and answer strings', () => {
+    for (const slug of Object.keys(SUPPORT_MANIFEST)) {
+      const content = loadSupportContent(slug);
+      if (content.faqItems) {
+        for (const faq of content.faqItems) {
           expect(typeof faq.question).toBe('string');
           expect(typeof faq.answer).toBe('string');
           expect(faq.question.length).toBeGreaterThan(0);
@@ -58,11 +60,12 @@ describe('SUPPORT_MANIFEST structure', () => {
     }
   });
 
-  it('setupPrerequisites is an array of strings when present', () => {
-    for (const entry of Object.values(SUPPORT_MANIFEST)) {
-      if (entry.setupPrerequisites) {
-        expect(Array.isArray(entry.setupPrerequisites)).toBe(true);
-        for (const prereq of entry.setupPrerequisites) {
+  it('setupPrerequisites from loaded support content is an array of strings when present', () => {
+    for (const slug of Object.keys(SUPPORT_MANIFEST)) {
+      const content = loadSupportContent(slug);
+      if (content.setupPrerequisites) {
+        expect(Array.isArray(content.setupPrerequisites)).toBe(true);
+        for (const prereq of content.setupPrerequisites) {
           expect(typeof prereq).toBe('string');
         }
       }
@@ -133,17 +136,16 @@ describe('SUPPORT_MANIFEST coverage', () => {
 });
 
 describe('SUPPORT_MANIFEST key products', () => {
-  it('videomancer has FAQ items', () => {
-    const vm = SUPPORT_MANIFEST['videomancer'];
-    expect(vm).toBeDefined();
-    expect(vm.faqItems).toBeDefined();
-    expect(vm.faqItems!.length).toBeGreaterThan(0);
+  it('videomancer has FAQ items in support content', () => {
+    const content = loadSupportContent('videomancer');
+    expect(content.faqItems).toBeDefined();
+    expect(content.faqItems!.length).toBeGreaterThan(0);
   });
 
-  it('videomancer has setup prerequisites', () => {
-    const vm = SUPPORT_MANIFEST['videomancer'];
-    expect(vm.setupPrerequisites).toBeDefined();
-    expect(vm.setupPrerequisites!.length).toBeGreaterThan(0);
+  it('videomancer has setup prerequisites in support content', () => {
+    const content = loadSupportContent('videomancer');
+    expect(content.setupPrerequisites).toBeDefined();
+    expect(content.setupPrerequisites!.length).toBeGreaterThan(0);
   });
 
   it('videomancer has connectSupported = true', () => {

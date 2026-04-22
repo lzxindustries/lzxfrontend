@@ -5,6 +5,7 @@ import {json} from '@shopify/remix-oxygen';
 import type {ModuleLayoutLoaderData} from './($lang).modules.$slug';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
+import {loadSupportContent} from '~/data/support-content.server';
 import {getProductForumArchive} from '~/data/forum-archive.server';
 import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
 import {ForumArchiveSupportSection} from '~/components/ForumArchiveSupportSection';
@@ -19,8 +20,9 @@ export async function loader({params}: LoaderFunctionArgs) {
   const forumArchive = canonical
     ? await getProductForumArchive(canonical, slugEntry?.externalUrl)
     : {officialTopic: null, relatedTopics: []};
+  const supportContent = loadSupportContent(canonical);
 
-  return json({forumArchive});
+  return json({forumArchive, supportContent});
 }
 
 export const meta = ({matches}: MetaArgs) => {
@@ -32,7 +34,7 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function ModuleSupport() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {forumArchive} = useLoaderData<typeof loader>();
+  const {forumArchive, supportContent} = useLoaderData<typeof loader>();
   const {
     product,
     slug,
@@ -179,13 +181,13 @@ export default function ModuleSupport() {
       </section>
 
       {/* FAQ */}
-      {supportRecord?.faqItems && supportRecord.faqItems.length > 0 && (
+      {supportContent.faqItems && supportContent.faqItems.length > 0 && (
         <section className="mb-8">
           <h3 className="text-lg font-bold mb-3">
             Frequently Asked Questions
           </h3>
           <div className="space-y-2">
-            {supportRecord.faqItems.map((item) => (
+            {supportContent.faqItems.map((item) => (
               <Disclosure key={item.question}>
                 {({open}) => (
                   <div className="rounded-lg border border-base-300">

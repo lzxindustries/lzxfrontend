@@ -268,10 +268,10 @@ export function ModuleDetails({
   return (
     <div
       key="ModuleDetails"
-      className="flex flex-wrap flex-row justify-center p-0 m-0"
+      className="m-0 flex flex-row flex-wrap items-start justify-center p-0"
     >
       <ProductMediaGallery media={media}></ProductMediaGallery>
-      <div className="basis-[100%] md:basis-1/2 md:h-screen hiddenScroll md:overflow-y-scroll">
+      <div className="hiddenScroll basis-[100%] md:max-h-screen md:basis-1/2 md:overflow-y-auto">
         <div className="flex flex-col gap-3 px-6 pt-4 pb-4">
           <h1 className="font-sans font-bold text-3xl md:text-4xl uppercase">
             {product.title}

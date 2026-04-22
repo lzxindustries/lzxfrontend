@@ -1,12 +1,21 @@
-import {Link, useOutletContext} from '@remix-run/react';
-import type {MetaArgs} from '@shopify/remix-oxygen';
+import {Link, useLoaderData, useOutletContext} from '@remix-run/react';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
+import {json} from '@shopify/remix-oxygen';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
+import {loadSupportContent} from '~/data/support-content.server';
+import {getCanonicalSlug} from '~/data/product-slugs';
 import {
   SignalFlowDiagram,
   getSignalFlowForProduct,
 } from '~/components/SignalFlowDiagram';
+
+export async function loader({params}: LoaderFunctionArgs) {
+  const canonical = getCanonicalSlug(params.slug ?? '') ?? params.slug ?? '';
+  const supportContent = loadSupportContent(canonical);
+  return json({supportContent});
+}
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('instruments.$slug'))
@@ -17,10 +26,11 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function InstrumentSetup() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
+  const {supportContent} = useLoaderData<typeof loader>();
   const {product, slug, hasManual} = data as unknown as InstrumentHubData;
 
   const supportRecord = SUPPORT_MANIFEST[slug];
-  const prerequisites = supportRecord?.setupPrerequisites ?? [];
+  const prerequisites = supportContent.setupPrerequisites ?? [];
   const connectSupported = supportRecord?.connectSupported ?? false;
   const signalFlow = getSignalFlowForProduct(slug);
 

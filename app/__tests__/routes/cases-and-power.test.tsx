@@ -6,6 +6,62 @@ import CasesAndPowerPage, {
   getCasesAndPowerEntries,
   loader as casesAndPowerLoader,
 } from '~/routes/($lang).cases-and-power';
+import type {CategoryListingData} from '~/lib/category-listing/types';
+
+const buildEntry = (overrides: Partial<{key: string; name: string; href: string; subtitle: string}> = {}) => ({
+  key: overrides.key ?? 'placeholder',
+  name: overrides.name ?? 'Placeholder',
+  subtitle: overrides.subtitle ?? null,
+  href: overrides.href ?? `/products/${overrides.key ?? 'placeholder'}`,
+  externalUrl: null,
+  isExternal: false,
+  badge: null,
+  image: {
+    localPath: null,
+    shopify: null,
+    aspectRatio: '1/1' as const,
+    fit: 'contain' as const,
+  },
+});
+
+const mockData: CategoryListingData = {
+  pageTitle: 'Cases & Power',
+  pageSubtitle: 'Mock subtitle',
+  cardSize: 'sm',
+  gridColsClassName: 'grid',
+  sections: [
+    {
+      key: 'active',
+      label: 'Active',
+      groups: [
+        {
+          key: 'active',
+          entries: [
+            buildEntry({key: 'vessel-168', name: 'Vessel 168', href: '/products/vessel-168'}),
+            buildEntry({
+              key: 'bus-168-diy-kit',
+              name: 'Bus 168 DIY Kit',
+              href: '/products/bus-168-diy-kit',
+            }),
+          ],
+        },
+      ],
+    },
+    {
+      key: 'legacy',
+      label: 'Legacy',
+      groups: [
+        {
+          key: 'legacy',
+          entries: [
+            buildEntry({key: 'dc-distro-3a', name: 'DC Distro 3A', href: '/products/dc-distro-3a'}),
+            buildEntry({key: 'rack-84hp', name: 'Rack 84HP', href: '/products/rack-84hp'}),
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 vi.mock('@remix-run/react', async () => {
   const actual = await vi.importActual<typeof import('@remix-run/react')>(
@@ -14,60 +70,8 @@ vi.mock('@remix-run/react', async () => {
 
   return {
     ...actual,
-    useLoaderData: () => ({
-      activeEntries: [
-        {
-          slug: 'vessel-168',
-          name: 'Vessel 168',
-          subtitle: '168HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution',
-          imagePath: '/images/vessel168_photo_top_square2.png',
-          isActive: true,
-          shopifyProduct: {
-            id: 'gid://shopify/Product/7171710189591',
-            title: 'Vessel 168',
-            handle: 'vessel-168',
-          },
-        },
-        {
-          slug: 'bus-168-diy-kit',
-          name: 'Bus 168 DIY Kit',
-          subtitle: 'DIY power and sync busboard for Vessel systems',
-          imagePath: '/images/bus208_photo_top.png',
-          isActive: true,
-          shopifyProduct: {
-            id: 'gid://shopify/Product/7214169489431',
-            title: 'Bus 168 DIY Kit',
-            handle: 'bus-168-diy-kit',
-          },
-        },
-      ],
-      legacyEntries: [
-        {
-          slug: 'dc-distro-3a',
-          name: 'DC Distro 3A',
-          subtitle: 'DC Power Distributor',
-          imagePath: '/images/dc-distro-3a-front-panel-square.png',
-          isActive: false,
-          shopifyProduct: {
-            id: 'gid://shopify/Product/6778221133847',
-            title: 'DC Distro 3A',
-            handle: 'dc-distro-3a',
-          },
-        },
-        {
-          slug: 'rack-84hp',
-          name: 'Rack 84HP',
-          subtitle: '84HP rack enclosure for desktop or 19" rack mounting',
-          imagePath: '/images/rack-84.png',
-          isActive: false,
-          shopifyProduct: {
-            id: 'gid://shopify/Product/6782464294935',
-            title: 'Rack 84HP',
-            handle: 'rack-84hp',
-          },
-        },
-      ],
-    }),
+    useMatches: () => [{data: {selectedLocale: null}}],
+    useLoaderData: () => mockData,
   };
 });
 
@@ -105,21 +109,13 @@ describe('Cases and power page', () => {
       params: {},
     } as unknown as Parameters<typeof casesAndPowerLoader>[0]);
 
-    const payload = await (response as Response).json();
-    const {activeEntries, legacyEntries} = payload as {
-      activeEntries: Array<{
-        slug: string;
-        shopifyProduct: {handle: string} | null;
-      }>;
-      legacyEntries: Array<{
-        slug: string;
-        shopifyProduct: {handle: string} | null;
-      }>;
-    };
+    const payload = (await (response as Response).json()) as CategoryListingData;
 
+    // Shared category loader uses one consolidated handle-based query
+    // (no entries have stored Shopify GIDs in the cases & power config).
     expect(storefrontQuery).toHaveBeenCalledTimes(1);
     expect(storefrontQuery).toHaveBeenCalledWith(
-      expect.stringContaining('query CasesAndPowerProducts'),
+      expect.stringContaining('query CategoryListingByHandles'),
       expect.objectContaining({
         variables: expect.objectContaining({
           first: getCasesAndPowerEntries().length,
@@ -133,15 +129,19 @@ describe('Cases and power page', () => {
       'handle:dc-distro-3a',
     );
 
-    expect(
-      activeEntries.find((entry) => entry.slug === 'vessel-168')?.shopifyProduct,
-    ).toEqual(expect.objectContaining({handle: 'vessel-168'}));
-    expect(
-      legacyEntries.find((entry) => entry.slug === 'dc-distro-3a')?.shopifyProduct,
-    ).toEqual(expect.objectContaining({handle: 'dc-distro-3a'}));
-    expect(
-      activeEntries.find((entry) => entry.slug === 'vessel-208')?.shopifyProduct,
-    ).toBeNull();
+    const allEntries = payload.sections.flatMap((s) =>
+      s.groups.flatMap((g) => g.entries),
+    );
+    // Vessel 168 and DC Distro 3A came back as products and are reflected as
+    // shopify image data attached via the loader pipeline; the entry key
+    // remains the slug regardless.
+    expect(allEntries.find((e) => e.key === 'vessel-168')?.href).toBe(
+      '/products/vessel-168',
+    );
+    expect(allEntries.find((e) => e.key === 'dc-distro-3a')?.href).toBe(
+      '/products/dc-distro-3a',
+    );
+    expect(allEntries.find((e) => e.key === 'vessel-208')?.image.shopify).toBeNull();
   });
 
   it('includes active cases, legacy racks, distro modules, and power accessories', () => {

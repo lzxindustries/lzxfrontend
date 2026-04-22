@@ -1,0 +1,30 @@
+{
+  "videomancer": [
+    {
+      "title": "Connect Power",
+      "description": "Plug the included 12V DC power supply into the barrel jack on the rear panel."
+    },
+    {
+      "title": "Connect HDMI",
+      "description": "Connect your HDMI source to HDMI IN and HDMI OUT to your display."
+    },
+    {
+      "title": "Power On & Load a Program",
+      "description": "Switch power on, press SYSTEM, then use the Rotary Encoder to browse and load a program like Passthru or Prism."
+    }
+  ],
+  "chromagnon": [
+    {
+      "title": "Install in Eurorack Case",
+      "description": "Mount Chromagnon in your eurorack case and connect the power ribbon cable."
+    },
+    {
+      "title": "Connect Video I/O",
+      "description": "Connect a video source to the input jacks and your display to the output jacks."
+    },
+    {
+      "title": "Explore the Controls",
+      "description": "Use the front panel controls to process and transform your video signal."
+    }
+  ]
+}
