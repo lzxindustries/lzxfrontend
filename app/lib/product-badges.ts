@@ -104,8 +104,9 @@ export function getProductGridBadges({
   variants: Array<ProductInventoryVariant | null | undefined>;
 }): ProductGridBadge[] {
   const badges: ProductGridBadge[] = [];
+  const hasInStockVariant = variants.some((variant) => isInStockVariant(variant));
 
-  if (variants.some((variant) => isInStockVariant(variant))) {
+  if (hasInStockVariant) {
     badges.push('In Stock');
   }
 
@@ -114,7 +115,10 @@ export function getProductGridBadges({
     return badges;
   }
 
-  if (variants.some((variant) => isBackorderVariant(variant, productId))) {
+  if (
+    !hasInStockVariant &&
+    variants.some((variant) => isBackorderVariant(variant, productId))
+  ) {
     badges.push('Backorder');
   }
 

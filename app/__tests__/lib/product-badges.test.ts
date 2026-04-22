@@ -17,7 +17,7 @@ describe('product badge rules', () => {
           {availableForSale: true, quantityAvailable: 3},
         ],
       }),
-    ).toEqual(['In Stock', 'Backorder']);
+    ).toEqual(['In Stock']);
   });
 
   it('marks Chromagnon as preorder instead of backorder', () => {
