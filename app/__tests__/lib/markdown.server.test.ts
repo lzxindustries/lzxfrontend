@@ -103,4 +103,19 @@ describe('renderMarkdown MDX preprocessing', () => {
     expect(result.html).toContain('admonition-note');
     expect(result.html).toContain('Important info here.');
   });
+
+  it('parses inline markdown inside admonition blocks', async () => {
+    const raw = [
+      ':::tip',
+      "Press the **PLAY** button and don't **_have to_** wait.",
+      ':::',
+    ].join('\n');
+
+    const result = await renderMarkdown(raw);
+
+    expect(result.html).toContain('<strong>PLAY</strong>');
+    expect(result.html).toContain('<em>have to</em>');
+    expect(result.html).not.toContain('**PLAY**');
+    expect(result.html).not.toContain('**_have to_**');
+  });
 });

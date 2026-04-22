@@ -420,14 +420,19 @@ function stripMdxSyntax(content: string): string {
       const title = explicitTitle || defaultLabel;
 
       admonitionStack.push(type);
+      // Blank lines around the raw HTML are required so CommonMark resumes
+      // markdown parsing for the inner content (otherwise inline syntax such
+      // as **bold**, *italic*, and links inside admonitions render literally).
       convertedLines.push(`<div class="admonition admonition-${type}">`);
       convertedLines.push(`<p class="admonition-title">${title}</p>`);
+      convertedLines.push('');
       continue;
     }
 
     if (/^:::\s*$/.test(normalizedLine)) {
       if (admonitionStack.length > 0) {
         admonitionStack.pop();
+        convertedLines.push('');
         convertedLines.push('</div>');
       } else {
         convertedLines.push(normalizedLine);
@@ -441,6 +446,7 @@ function stripMdxSyntax(content: string): string {
   // Close any unbalanced admonitions to avoid malformed HTML output.
   while (admonitionStack.length > 0) {
     admonitionStack.pop();
+    convertedLines.push('');
     convertedLines.push('</div>');
   }
 
