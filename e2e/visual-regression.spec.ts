@@ -24,7 +24,7 @@ const KEY_PAGES = [
   {name: 'instrument-detail', path: '/instruments/videomancer'},
   {name: 'blog', path: '/blog'},
   {name: 'patches', path: '/patches'},
-  {name: 'glossary', path: '/glossary'},
+  {name: 'glossary', path: '/docs/guides/glossary'},
   {name: 'docs', path: '/docs'},
   {name: 'getting-started', path: '/getting-started'},
   {name: 'support', path: '/support'},

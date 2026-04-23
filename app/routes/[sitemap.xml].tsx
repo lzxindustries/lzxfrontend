@@ -82,7 +82,7 @@ function shopSitemap({baseUrl}: {baseUrl: string}) {
     {url: `${baseUrl}/getting-started`, changeFreq: 'monthly'},
     {url: `${baseUrl}/catalog`, changeFreq: 'weekly'},
     {url: `${baseUrl}/journal`, changeFreq: 'weekly'},
-    {url: `${baseUrl}/glossary`, changeFreq: 'monthly'},
+    {url: `${baseUrl}/docs/guides/glossary`, changeFreq: 'monthly'},
     {url: `${baseUrl}/patches`, changeFreq: 'weekly'},
     {url: `${baseUrl}/modules`, changeFreq: 'weekly'},
     {url: `${baseUrl}/instruments`, changeFreq: 'weekly'},

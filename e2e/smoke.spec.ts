@@ -174,6 +174,25 @@ test.describe('Redirect verification', () => {
     // Accessories always redirects
     expect(page.url()).toMatch(/\/collections\/|\accessories/);
   });
+
+  test('/glossary 301s to the canonical docs glossary', async ({page}) => {
+    const response = await page.goto('/glossary', {waitUntil: 'commit'});
+    // Remix may return 3xx; follow to final page
+    await page.waitForLoadState('networkidle');
+    expect(page.url()).toContain('/docs/guides/glossary');
+    expect(response?.status() ?? 0).toBeLessThan(400);
+  });
+
+  test('/docs/getting-started/learn 301s to /getting-started/learn', async ({
+    page,
+  }) => {
+    const response = await page.goto('/docs/getting-started/learn', {
+      waitUntil: 'commit',
+    });
+    await page.waitForLoadState('networkidle');
+    expect(page.url()).toMatch(/\/getting-started\/learn/);
+    expect(response?.status() ?? 0).toBeLessThan(400);
+  });
 });
 
 test.describe('Error handling', () => {

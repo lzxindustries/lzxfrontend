@@ -45,7 +45,7 @@ const MENU_GROUPS: MegaMenuGroup[] = [
       {label: 'Downloads', to: '/downloads'},
       {label: 'Getting Started', to: '/getting-started'},
       {label: 'LZX Connect', to: '/connect'},
-      {label: 'Glossary', to: '/glossary'},
+      {label: 'Glossary', to: '/docs/guides/glossary'},
     ],
   },
   {

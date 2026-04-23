@@ -41,7 +41,7 @@ const EXTRA_ROUTES = [
   '/account/register',
   '/policies',
   '/getting-started',
-  '/glossary',
+  '/docs/guides/glossary',
   '/patches',
   '/videos',
   '/catalog',

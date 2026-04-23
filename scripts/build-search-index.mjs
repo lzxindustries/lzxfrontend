@@ -350,12 +350,10 @@ function generateGlobalPages() {
     'Getting started with LZX. Choose your path: Learn video synthesis fundamentals, start building a modular system, or set up your Videomancer instrument.',
   );
 
-  writeSyntheticPage(
-    '/glossary',
-    'Glossary | LZX Industries',
-    'Video synthesis terminology and definitions.',
-    'LZX Glossary. Definitions for video synthesis terminology, signal types, and technical concepts used across LZX products and documentation.',
-  );
+  // `/glossary` is a legacy alias that 301 redirects to the canonical
+  // `/docs/guides/glossary` page (see ($lang).glossary._index.tsx).
+  // The markdown glossary itself is already indexed through the
+  // normal /docs walker — no synthetic page needed here.
 }
 
 // Main

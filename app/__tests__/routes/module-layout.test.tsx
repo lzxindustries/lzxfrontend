@@ -52,8 +52,8 @@ vi.mock('~/components/HubNavBar', () => ({
   ),
 }));
 
-describe('Module layout docs tab visibility', () => {
-  it('hides the Docs tab when a module only has an external reference', () => {
+describe('Module layout manual tab visibility', () => {
+  it('hides the Manual tab when a module has no local documentation', () => {
     remixState.loaderData = {
       ...remixState.loaderData,
       hasLocalDocumentation: false,
@@ -61,10 +61,13 @@ describe('Module layout docs tab visibility', () => {
 
     render(<ModuleLayout />);
 
+    expect(screen.queryByText('Manual')).toBeNull();
+    // Also assert the deprecated "Docs" label is not leaking back in
+    // via fallback logic.
     expect(screen.queryByText('Docs')).toBeNull();
   });
 
-  it('shows the Docs tab when a module has local documentation without relying on an external URL', () => {
+  it('shows the Manual tab when a module has local documentation', () => {
     remixState.loaderData = {
       ...remixState.loaderData,
       hasLocalDocumentation: true,
@@ -76,9 +79,9 @@ describe('Module layout docs tab visibility', () => {
 
     render(<ModuleLayout />);
 
-    const docsLink = screen.getByText('Docs').closest('a');
+    const manualLink = screen.getByText('Manual').closest('a');
 
-    expect(docsLink?.getAttribute('href')).toBe(
+    expect(manualLink?.getAttribute('href')).toBe(
       '/modules/color-video-encoder/manual',
     );
   });

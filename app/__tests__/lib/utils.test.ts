@@ -1,3 +1,10 @@
+/**
+ * @vitest-environment node
+ * Uses Node's native `Request` / `headers` (Cookie is readable on
+ * `Request` init). The happy-dom / browser `Request` used in the
+ * default Vitest environment blocks the `Cookie` header from
+ * non-document requests, so `getCartId` would always see `undefined`.
+ */
 import {describe, expect, it} from 'vitest';
 import {
   missingClass,

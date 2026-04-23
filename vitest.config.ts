@@ -6,7 +6,12 @@ export default defineConfig({
   plugins: [tsconfigPaths() as any],
   test: {
     globals: true,
-    environment: 'jsdom',
+    // `jsdom` 29+ pulls `html-encoding-sniffer` 6, which depends on
+    // pure-ESM `@exodus/bytes` while Vitest still loads the chain via
+    // CommonJS `require`, producing "require() of ES Module" failures.
+    // `happy-dom` is sufficient for @testing-library/react and avoids
+    // that entire dependency path.
+    environment: 'happy-dom',
     setupFiles: ['./vitest.setup.ts'],
     include: ['app/**/*.test.{ts,tsx}'],
     coverage: {

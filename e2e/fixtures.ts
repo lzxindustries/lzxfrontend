@@ -38,7 +38,7 @@ export const URLS = {
   // Community
   patchesIndex: '/patches',
   patchDetail: '/patches/feedback-cartoon',
-  glossary: '/glossary',
+  glossary: '/docs/guides/glossary',
   artists: '/artists',
 
   // Shopping

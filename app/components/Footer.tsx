@@ -92,7 +92,7 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Explore</span>
-          <a className="link link-hover" href="/glossary">
+          <a className="link link-hover" href="/docs/guides/glossary">
             Glossary
           </a>
           <a className="link link-hover" href="/systems">

@@ -156,6 +156,18 @@ describe('SUPPORT_MANIFEST key products', () => {
     expect(SUPPORT_MANIFEST['videomancer'].manuals.length).toBeGreaterThan(0);
   });
 
+  it('videomancer manual points at the product hub, not a legacy /docs path', () => {
+    const url = SUPPORT_MANIFEST['videomancer'].manuals[0]?.url;
+    expect(url).toMatch(/^\/instruments\/videomancer\/manual\//);
+  });
+
+  it('proc, fkg3, and smx3 have optional support markdown with FAQ', () => {
+    for (const slug of ['proc', 'fkg3', 'smx3'] as const) {
+      const content = loadSupportContent(slug);
+      expect(content.faqItems?.length).toBeGreaterThan(0);
+    }
+  });
+
   it('does not show guided updater on product downloads for connect-supported instruments', () => {
     expect(shouldShowGuidedUpdaterOnDownloads('videomancer')).toBe(false);
     expect(shouldShowGuidedUpdaterOnDownloads('chromagnon')).toBe(false);

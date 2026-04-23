@@ -5,14 +5,38 @@ import invariant from 'tiny-invariant';
 
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {HubNavBar} from '~/components/HubNavBar';
-import type {HubTab} from '~/components/HubNavBar';
 import {
   loadInstrumentHubData,
   getRecommendedProducts,
 } from '~/data/hub-loaders';
 import type {InstrumentHubData} from '~/data/hub-loaders';
 import {getCanonicalSlug} from '~/data/product-slugs';
+import {buildInstrumentTabs} from '~/data/hub-tabs';
+import {hasCuratedLearnContent} from '~/data/instrument-learn-cards';
+import {loadSupportContent} from '~/data/support-content.server';
+import {SUPPORT_MANIFEST} from '~/data/support-manifest';
+import {getSignalFlowForProduct} from '~/components/SignalFlowDiagram';
 import {routeHeaders} from '~/data/cache';
+
+/**
+ * True when the Setup tab would have meaningful first-run content for
+ * this instrument: authored prerequisites, a signal flow diagram, or
+ * a firmware updater entry point. Otherwise the tab would render only
+ * a generic template that duplicates material in the Manual.
+ *
+ * Computed in the loader (not the component) because
+ * `loadSupportContent` lives in a `.server.ts` module and cannot be
+ * pulled into the client bundle.
+ */
+function computeHasSetupContent(slug: string): boolean {
+  const supportContent = loadSupportContent(slug);
+  const supportRecord = SUPPORT_MANIFEST[slug];
+  return (
+    (supportContent.setupPrerequisites?.length ?? 0) > 0 ||
+    Boolean(getSignalFlowForProduct(slug)) ||
+    supportRecord?.connectSupported === true
+  );
+}
 
 export const headers = routeHeaders;
 
@@ -46,24 +70,27 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   }
 
   const recommended = getRecommendedProducts(context, data.product.id);
+  const hasSetupContent = computeHasSetupContent(slug);
 
   return defer({
     ...data,
     recommended,
+    hasSetupContent,
   });
 }
 
 export type InstrumentLayoutLoaderData = InstrumentHubData & {
   recommended: ReturnType<typeof getRecommendedProducts>;
+  hasSetupContent: boolean;
 };
 
 export default function InstrumentLayout() {
   const data = useLoaderData<typeof loader>();
-  const {product, hasManual, videos, assets, archiveAssets, slugEntry, connectors, controls, features, patches} =
+  const {product, hasManual, videos, assets, archiveAssets, connectors, controls, features} =
     data as unknown as InstrumentHubData;
   const slug = (data as unknown as InstrumentHubData).slug;
-
-  const basePath = `/instruments/${slug}`;
+  const hasSetupContent = (data as unknown as InstrumentLayoutLoaderData)
+    .hasSetupContent;
 
   const hasSpecs =
     connectors.length > 0 || controls.length > 0 || features.length > 0 ||
@@ -73,20 +100,15 @@ export default function InstrumentLayout() {
         ['specs', 'features', 'compatibility'].includes(m?.key),
     );
 
-  const tabs: HubTab[] = [
-    {label: 'Overview', to: basePath},
-    {label: 'Docs', to: `${basePath}/manual`, hidden: !hasManual},
-    {label: 'Learn', to: `${basePath}/learn`},
-    {label: 'Setup', to: `${basePath}/setup`},
-    {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},
-    {
-      label: 'Software & Downloads',
-      to: `${basePath}/downloads`,
-      hidden: assets.length === 0 && archiveAssets.length === 0,
-    },
-    {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
-    {label: 'Support', to: `${basePath}/support`},
-  ];
+  const tabs = buildInstrumentTabs({
+    slug,
+    hasManual,
+    hasCuratedLearn: hasCuratedLearnContent(slug),
+    hasSetupContent,
+    videoCount: videos.length,
+    downloadCount: assets.length + archiveAssets.length,
+    hasSpecs: Boolean(hasSpecs),
+  });
 
   return (
     <div>

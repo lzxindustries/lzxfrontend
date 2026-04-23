@@ -360,7 +360,29 @@ export function hasDocPagePath(docPath: string): boolean {
     `../../content/docs/${docPath}/index.md`,
   ];
 
-  return candidates.some((candidate) => Boolean(docFiles[candidate]));
+  const isProduction = isProductionRuntime();
+
+  for (const candidate of candidates) {
+    const raw = docFiles[candidate];
+    if (!raw) continue;
+
+    // Draft pages never render in production (see `getDocPage`). If
+    // we returned `true` here for a draft-only path, the hub tab
+    // contract would surface a Manual tab that resolves to a 404 /
+    // fallback page. Keep tab visibility aligned with renderability.
+    if (isProduction) {
+      try {
+        const parsed = matter(raw);
+        if ((parsed.data as ContentFrontmatter).draft) {
+          continue;
+        }
+      } catch {
+        // fall through: treat unreadable frontmatter as "exists"
+      }
+    }
+    return true;
+  }
+  return false;
 }
 
 export function buildSidebar(section: string): SidebarItem[] {

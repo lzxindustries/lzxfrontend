@@ -5,10 +5,10 @@ import invariant from 'tiny-invariant';
 
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {HubNavBar} from '~/components/HubNavBar';
-import type {HubTab} from '~/components/HubNavBar';
 import {loadModuleHubData, getRecommendedProducts} from '~/data/hub-loaders';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
+import {buildModuleTabs} from '~/data/hub-tabs';
 import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
@@ -101,32 +101,20 @@ export default function ModuleLayout() {
     connectors,
     controls,
     features,
-    slugEntry,
   } = data as unknown as ModuleHubData;
   const slug = (data as unknown as ModuleHubData).slug;
-
-  const basePath = `/modules/${slug}`;
 
   const hasSpecs =
     connectors.length > 0 || controls.length > 0 || features.length > 0;
 
-  const tabs: HubTab[] = [
-    {label: 'Overview', to: basePath},
-    {
-      label: 'Docs',
-      to: `${basePath}/manual`,
-      hidden: !hasLocalDocumentation,
-    },
-    {label: 'Patches', to: `${basePath}/patches`, hidden: patches.length === 0},
-    {label: 'Videos', to: `${basePath}/videos`, hidden: videos.length === 0},
-    {
-      label: 'Downloads',
-      to: `${basePath}/downloads`,
-      hidden: assets.length === 0 && archiveAssets.length === 0,
-    },
-    {label: 'Specs', to: `${basePath}/specs`, hidden: !hasSpecs},
-    {label: 'Support', to: `${basePath}/support`},
-  ];
+  const tabs = buildModuleTabs({
+    slug,
+    hasLocalDocumentation,
+    patchCount: patches.length,
+    videoCount: videos.length,
+    downloadCount: assets.length + archiveAssets.length,
+    hasSpecs,
+  });
 
   return (
     <div>

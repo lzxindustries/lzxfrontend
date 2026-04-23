@@ -29,7 +29,7 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
       {
         version: 'current',
         date: '2026-03-20',
-        url: '/docs/instruments/videomancer/user-manual',
+        url: '/instruments/videomancer/manual/user-manual',
       },
     ],
     relatedProductSlugs: ['double-vision', 'tbc2', 'lnk'],
@@ -210,6 +210,82 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     slug: 'pot',
     manuals: [],
     relatedProductSlugs: ['esg3', 'proc'],
+  },
+
+  // ── Cadet Series ───────────────────────────────────────────────────
+  'cadet-i-sync-generator': {
+    slug: 'cadet-i-sync-generator',
+    manuals: [],
+    relatedProductSlugs: ['cadet-ii-rgb-encoder', 'esg3', 'cadet-iv-dual-ramp-generator'],
+  },
+  'cadet-ii-rgb-encoder': {
+    slug: 'cadet-ii-rgb-encoder',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-i-sync-generator',
+      'cadet-iii-video-input',
+      'cadet-iv-dual-ramp-generator',
+    ],
+  },
+  'cadet-iii-video-input': {
+    slug: 'cadet-iii-video-input',
+    manuals: [],
+    relatedProductSlugs: ['cadet-ii-rgb-encoder', 'tbc2', 'cadet-v-scaler'],
+  },
+  'cadet-iv-dual-ramp-generator': {
+    slug: 'cadet-iv-dual-ramp-generator',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-ii-rgb-encoder',
+      'dsg3',
+      'cadet-ix-vco',
+    ],
+  },
+  'cadet-ix-vco': {
+    slug: 'cadet-ix-vco',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-iv-dual-ramp-generator',
+      'cadet-x-multiplier',
+      'dwo3',
+    ],
+  },
+  'cadet-v-scaler': {
+    slug: 'cadet-v-scaler',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-vi-fader',
+      'cadet-vii-processor',
+      'proc',
+    ],
+  },
+  'cadet-vi-fader': {
+    slug: 'cadet-vi-fader',
+    manuals: [],
+    relatedProductSlugs: ['cadet-v-scaler', 'cadet-vii-processor', 'proc'],
+  },
+  'cadet-vii-processor': {
+    slug: 'cadet-vii-processor',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-vi-fader',
+      'cadet-viii-hard-key-generator',
+      'matte',
+    ],
+  },
+  'cadet-viii-hard-key-generator': {
+    slug: 'cadet-viii-hard-key-generator',
+    manuals: [],
+    relatedProductSlugs: [
+      'cadet-vii-processor',
+      'cadet-x-multiplier',
+      'fkg3',
+    ],
+  },
+  'cadet-x-multiplier': {
+    slug: 'cadet-x-multiplier',
+    manuals: [],
+    relatedProductSlugs: ['cadet-ix-vco', 'cadet-viii-hard-key-generator', 'smx3'],
   },
 
   // ── Visionary Series ───────────────────────────────────────────────

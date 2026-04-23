@@ -60,6 +60,26 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     }
   }
 
+  // Redirect /docs/getting-started/* → /getting-started/*
+  // `/getting-started` is the canonical onboarding URL family: it has
+  // a curated index page with path-picker cards and dedicated route
+  // templates. Leaving `/docs/getting-started/*` live would duplicate
+  // every onboarding page under two distinct layouts (DocLayout vs
+  // MarkdownArticle) and split analytics and SEO.
+  if (splat.startsWith('getting-started/') || splat === 'getting-started') {
+    const rest = splat === 'getting-started'
+      ? ''
+      : splat.slice('getting-started/'.length);
+    const target = rest ? `/getting-started/${rest}` : '/getting-started';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: target,
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   // Redirect /docs/instruments/* → /instruments/*/manual/*
   if (splat.startsWith('instruments/')) {
     const rest = splat.slice('instruments/'.length);

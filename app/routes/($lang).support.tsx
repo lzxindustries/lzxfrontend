@@ -45,7 +45,7 @@ export const SECTIONS = [
     title: 'I need to look up a term',
     description:
       'Glossary of video synthesis terminology — keyers, oscillators, encoders, and more.',
-    to: '/glossary',
+    to: '/docs/guides/glossary',
     icon: '📝',
   },
 ];

@@ -6,6 +6,7 @@ import type {InstrumentHubData} from '~/data/hub-loaders';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
 import {loadSupportContent} from '~/data/support-content.server';
 import {getCanonicalSlug} from '~/data/product-slugs';
+import {hasCuratedLearnContent} from '~/data/instrument-learn-cards';
 import {
   SignalFlowDiagram,
   getSignalFlowForProduct,
@@ -125,12 +126,21 @@ export default function InstrumentSetup() {
               🔗 Update Firmware
             </Link>
           )}
-          <Link
-            to={`/instruments/${slug}/learn`}
-            className="btn btn-outline btn-sm justify-start"
-          >
-            🎓 Learning Resources
-          </Link>
+          {/*
+            Learn tab is only surfaced for instruments that have
+            curated launchpad cards (see
+            `~/data/instrument-learn-cards`). Linking to it when no
+            tab exists would 404 the primary nav, so we gate on the
+            same predicate used by the hub tab builder.
+          */}
+          {hasCuratedLearnContent(slug) && (
+            <Link
+              to={`/instruments/${slug}/learn`}
+              className="btn btn-outline btn-sm justify-start"
+            >
+              🎓 Learning Resources
+            </Link>
+          )}
           <Link
             to={`/instruments/${slug}/support`}
             className="btn btn-outline btn-sm justify-start"

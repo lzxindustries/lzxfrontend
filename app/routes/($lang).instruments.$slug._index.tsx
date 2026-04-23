@@ -226,7 +226,7 @@ export default function InstrumentOverview() {
                 to={`/instruments/${slugEntry.canonical}/manual`}
                 className="btn btn-outline btn-sm mt-2"
               >
-                Read Full Docs &rarr;
+                Read the Manual &rarr;
               </Link>
             )}
           </div>
