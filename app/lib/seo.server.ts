@@ -49,7 +49,7 @@ function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
         'https://www.instagram.com/lzxindustries',
         'https://www.youtube.com/lzxindustries',
         'https://community.lzxindustries.net',
-        'https://x.com/laboratlzx',
+        'https://x.com/lzxindustries',
         'https://www.tiktok.com/@lzxindustries',
       ],
       url,

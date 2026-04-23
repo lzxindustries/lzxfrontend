@@ -61,6 +61,30 @@ export default {
         return Response.redirect(requestUrl.toString(), 301);
       }
 
+      // Dead product handles that are still linked from live Shopify
+      // product descriptions (we can't edit those HTML snippets from the
+      // codebase, so handle them at the edge). Each redirect points at
+      // the nearest sensible replacement:
+      //   * `double-vision-84` was the discontinued 84HP starter pack
+      //     of the Double Vision system — `double-vision-complete` is
+      //     its 168HP descendant and the canonical purchasable product.
+      //   * `andor-1-media-player-deluxe-accessories-pack` was folded
+      //     into the main Andor 1 Media Player product; send to the
+      //     instrument hub where the current accessories live.
+      const deadProductRedirects: Record<string, string> = {
+        '/products/double-vision-84': '/products/double-vision-complete',
+        '/products/andor-1-media-player-deluxe-accessories-pack':
+          '/instruments/andor-1-media-player',
+      };
+      const deadProductTarget =
+        deadProductRedirects[requestUrl.pathname] ??
+        deadProductRedirects[requestUrl.pathname.replace(/\/$/, '')];
+      if (deadProductTarget) {
+        requestUrl.pathname = deadProductTarget;
+        requestUrl.search = '';
+        return Response.redirect(requestUrl.toString(), 301);
+      }
+
       // Rewrite legacy /firmware/<slug>/<file> paths to the current
       // /downloads/products/<product>/firmware/ layout. Blog posts
       // published before the download reorg still link to the old
