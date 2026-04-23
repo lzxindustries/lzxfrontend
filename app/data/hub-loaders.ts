@@ -438,6 +438,11 @@ export async function getRecommendedProducts(
   context: AppLoadContext,
   productId: string,
 ): Promise<ProductType[]> {
+  // Synthetic LFS product IDs (`lfs-product:<slug>`) are not valid
+  // Storefront IDs. Skip the call entirely so we don't spam the Shopify
+  // logs with `Variable $productId of type ID! was provided invalid value`.
+  if (!productId.startsWith('gid://shopify/')) return [];
+
   let products: {
     recommended: ProductType[] | null;
     additional: {nodes: ProductType[]} | null;

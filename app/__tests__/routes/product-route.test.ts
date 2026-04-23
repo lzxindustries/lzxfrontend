@@ -1,6 +1,9 @@
 import {describe, expect, it, vi} from 'vitest';
 
-import {getRecommendedProducts} from '~/routes/($lang).products.$productHandle';
+import {
+  getRecommendedProducts,
+  meta,
+} from '~/routes/($lang).products.$productHandle';
 
 // Regression test for the 500s on /products/2-1mm-dc-jumper-cable,
 // /products/andor-1-media-player-deluxe-accessories-pack, and
@@ -89,5 +92,36 @@ describe('products route getRecommendedProducts', () => {
       'gid://shopify/Product/1',
     );
     expect(result.map((p: any) => p.handle)).toEqual(['a', 'b']);
+  });
+
+  it('skips the Shopify query entirely for synthetic LFS product IDs', async () => {
+    // Legacy-only products (no Shopify record) carry an `lfs-product:<slug>`
+    // id. Passing that to productRecommendations makes Shopify reject it
+    // with "Variable $productId of type ID! was provided invalid value".
+    // We should short-circuit with [] instead.
+    const query = vi.fn();
+    const storefront = {query} as any;
+    const result = await getRecommendedProducts(
+      storefront,
+      'lfs-product:andor-1-media-player-deluxe-accessories-pack',
+    );
+    expect(result).toEqual([]);
+    expect(query).not.toHaveBeenCalled();
+  });
+});
+
+describe('products route meta', () => {
+  // When the loader throws (e.g. 404 for an unknown handle) Remix still
+  // invokes `meta` during error rendering, but with `data === undefined`.
+  // The old implementation dereferenced `data!.seo` and crashed the
+  // response into a 500. Guard against that.
+  it('returns an empty tag list when loader data is undefined', () => {
+    const tags = (meta as any)({data: undefined} as any);
+    expect(tags).toEqual([]);
+  });
+
+  it('returns an empty tag list when seo is missing from loader data', () => {
+    const tags = (meta as any)({data: {}} as any);
+    expect(tags).toEqual([]);
   });
 });

@@ -321,7 +321,13 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  // When the loader throws (e.g. 404 for an unknown product handle that
+  // neither the catalog nor the legacy LFS content recognises) Remix
+  // still renders the document with this meta. `data` is undefined in
+  // that case; skip the seo payload rather than crashing the render
+  // with `undefined.seo`, which previously surfaced as a 500.
+  if (!data?.seo) return [];
+  return getSeoMeta(data.seo as SeoConfig);
 };
 
 export default function Product() {
@@ -822,6 +828,13 @@ export async function getRecommendedProducts(
   storefront: Storefront,
   productId: string,
 ): Promise<ProductType[]> {
+  // Legacy-only products (no Shopify record, synthesised from local LFS
+  // content) carry an `lfs-product:<slug>` id. That isn't a valid
+  // Storefront `ID`, so don't even attempt the query — Shopify would
+  // reject it with "Variable $productId of type ID! was provided invalid
+  // value" and we'd drop the recommended swimlane anyway.
+  if (!productId.startsWith('gid://shopify/')) return [];
+
   let products: {
     recommended: ProductType[] | null;
     additional: ProductConnection | null;

@@ -67,20 +67,41 @@ test.describe('Link audit regressions', () => {
   // .cursor/plans/recrawl-fixes_0f8b5efc.plan.md.
   // -------------------------------------------------------------------------
 
-  test('previously-500 product pages now render without errors', async ({
-    page,
-  }) => {
-    const handles = [
-      '2-1mm-dc-jumper-cable',
-      'andor-1-media-player-deluxe-accessories-pack',
-      'double-vision-84',
+  test('previously-500 product pages no longer return 500', async ({page}) => {
+    // Expected final shape after the fix:
+    //   - `2-1mm-dc-jumper-cable` → 301 to `/products/dc-power-cable`
+    //     (Shopify's storefrontRedirect catches the legacy handle).
+    //   - `andor-1-media-player-deluxe-accessories-pack` → 200 (synthesised
+    //     from local LFS content with a synthetic `lfs-product:<slug>` id).
+    //   - `double-vision-84` → 404 (product genuinely doesn't exist, but it
+    //     should return a clean 404 instead of crashing the meta render).
+    const cases: Array<[string, number]> = [
+      ['2-1mm-dc-jumper-cable', 200], // follows the 301 to dc-power-cable
+      ['andor-1-media-player-deluxe-accessories-pack', 200],
+      ['double-vision-84', 404],
     ];
-    for (const handle of handles) {
+    for (const [handle, expected] of cases) {
       const response = await page.goto(`/products/${handle}`, {
         waitUntil: 'domcontentloaded',
       });
-      expect(response?.status(), `/products/${handle}`).toBeLessThan(500);
+      expect(response?.status(), `/products/${handle}`).toBe(expected);
     }
+  });
+
+  test('synthetic LFS product page renders without crashing on recommendations', async ({
+    page,
+  }) => {
+    // The andor accessories pack has no Shopify record and is synthesised
+    // from local LFS content, so its product id is `lfs-product:<slug>`.
+    // That must NOT be passed to `productRecommendations` — Shopify would
+    // reject it and the old code surfaced that rejection as a 500.
+    const response = await page.goto(
+      '/products/andor-1-media-player-deluxe-accessories-pack',
+      {waitUntil: 'domcontentloaded'},
+    );
+    expect(response?.status()).toBe(200);
+    // Title renders, confirming the legacy synthesis branch completed.
+    await expect(page.locator('h1, [data-testid="product-title"]').first()).toBeVisible();
   });
 
   test('/collections/legacy-modules redirects to /legacy', async ({page}) => {
