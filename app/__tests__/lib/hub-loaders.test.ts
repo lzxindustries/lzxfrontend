@@ -134,6 +134,11 @@ describe('loadInstrumentHubData', () => {
     for (const [slug, name, handle] of [
       ['double-vision', 'Double Vision System', 'double-vision-system'],
       ['double-vision-168', 'Double Vision 168', 'double-vision-complete'],
+      [
+        'double-vision-expander',
+        'Double Vision Expander',
+        'double-vision-expander',
+      ],
     ] as const) {
       const data = await loadInstrumentHubData(
         slug,

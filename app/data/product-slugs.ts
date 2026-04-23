@@ -42,6 +42,24 @@ const SYSTEM_SLUGS = new Set([
   'double-vision-expander',
 ]);
 
+/**
+ * Explicit canonical system slug → Shopify product handle mapping.
+ *
+ * Canonical slugs in `SYSTEM_SLUGS` are the URL-facing slugs used by
+ * `/systems/:slug`. For some systems, the underlying Shopify product
+ * handle differs from the canonical slug (e.g. the "Double Vision"
+ * system is sold as `double-vision-system` in Shopify). This map
+ * makes those overrides explicit so redirects don't depend on
+ * brittle GID lookups across stale catalog snapshots.
+ *
+ * Entries omitted from this map fall through to `canonical` (i.e.
+ * canonical slug equals the product handle).
+ */
+const SYSTEM_HANDLE_OVERRIDES: Record<string, string> = {
+  'double-vision': 'double-vision-system',
+  'double-vision-168': 'double-vision-complete',
+};
+
 // --- Doc slug extraction via import.meta.glob ---
 
 const moduleDocGlob = import.meta.glob<string>(
@@ -418,6 +436,24 @@ export function getAllInstrumentEntries(): SlugEntry[] {
 
 export function getAllSystemSlugs(): string[] {
   return [...SYSTEM_SLUGS].filter((slug) => slugRegistry.has(slug));
+}
+
+/**
+ * Resolve a canonical system slug to its Shopify product handle.
+ *
+ * Resolution order:
+ * 1. Explicit override from `SYSTEM_HANDLE_OVERRIDES` when the Shopify
+ *    handle differs from the canonical slug.
+ * 2. Canonical slug itself when it matches the product handle.
+ *
+ * Returns null when the slug is not a known system. Callers should
+ * still verify the handle resolves to a `ProductRecord` (the catalog
+ * may lag behind this mapping), and may fall back to a GID lookup
+ * as a last resort.
+ */
+export function getSystemProductHandle(canonical: string): string | null {
+  if (!SYSTEM_SLUGS.has(canonical)) return null;
+  return SYSTEM_HANDLE_OVERRIDES[canonical] ?? canonical;
 }
 
 export function resolveHubUrlForSlug(slug: string): string {

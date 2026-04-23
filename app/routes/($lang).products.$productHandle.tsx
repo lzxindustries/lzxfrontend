@@ -40,7 +40,7 @@ import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getLfsProductContentBySlug} from '~/data/lfs-product-metadata';
-import {getProductRecord} from '~/data/product-catalog';
+import {getProductRecord, hasProductRecord} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
 import {getCommerceByHandle} from '~/data/shopify-live.server';
 import {
@@ -201,7 +201,12 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
       },
     });
   }
-  if (canonical && isSystemSlug(productHandle)) {
+  if (canonical && isSystemSlug(productHandle) && !hasProductRecord(productHandle)) {
+    // Only bounce canonical system slugs that aren't themselves a
+    // Shopify product handle. System product handles (e.g.
+    // "double-vision-system") ARE the final destination for
+    // `/systems/:slug` redirects, so routing them back here would
+    // create an infinite /systems/ <-> /products/ redirect loop.
     const url = new URL(request.url);
     throw new Response(null, {
       status: 301,
