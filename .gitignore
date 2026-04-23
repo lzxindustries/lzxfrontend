@@ -18,6 +18,10 @@ audit-results/
 # Local asset library and scrape mirrors (developer-only mount, never deployed)
 lfs/
 
+# Raw source material staged for content ingestion (docx, original photos,
+# WSL Zone.Identifier sidecars, etc). Processed output lands under content/.
+ingest/
+
 # Build artifacts produced from lfs/ at ingest time. These are NOT
 # committed by default — the production build re-runs `yarn catalog:ingest`
 # from the lfs mount in dev, and Cloudflare/Oxygen builds rely on whatever
