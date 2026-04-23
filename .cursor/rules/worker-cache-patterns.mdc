@@ -1,0 +1,36 @@
+---
+description: Oxygen/Worker runtime and cache header patterns
+globs: "{server.ts,app/root.tsx,app/data/cache.ts,app/**/*.server.ts}"
+alwaysApply: false
+---
+
+# Worker And Cache Patterns
+
+## Runtime
+
+- Server code runs on Cloudflare Workers via Shopify Oxygen; assume Workers APIs, not Node APIs.
+- Use `executionContext.waitUntil()` (exposed as `context.waitUntil`) for background work.
+- The worker cache is opened once as `caches.open('hydrogen')` in `server.ts` and wired into the Storefront client.
+- The worker enforces `SESSION_SECRET` at startup and will throw if missing.
+
+## Caching Model
+
+- Cache primitives come from `app/data/cache.ts`:
+  - `CACHE_SHORT`, `CACHE_LONG`, `CACHE_NONE` are strings generated from `@shopify/hydrogen`'s `CacheShort`/`CacheLong`/`CacheNone`.
+  - `routeHeaders({loaderHeaders})` forwards `Cache-Control` from loaders to document responses.
+- `server.ts` applies default cache headers to public pages:
+  - Adds `Cache-Control: CACHE_SHORT`, `Oxygen-Cache-Control: public, max-age=3600, stale-while-revalidate=259200`, and `Vary: Accept-Encoding`.
+  - Skips cart and account routes; do not add conflicting caching for these paths.
+
+## Route-Level Caching
+
+- Export `headers = routeHeaders` in routes that should propagate loader cache policy to the document response.
+- Set `Cache-Control` inside loaders using the `CACHE_*` constants; do not hand-author header strings.
+- For rarely changing data, prefer `CACHE_LONG`; for user- or cart-specific data, use `CACHE_NONE`.
+
+## Avoid
+
+- Importing Node built-ins (`fs`, `path`, `crypto` Node form, etc.) in server code paths.
+- Adding ad hoc `Cache-Control` strings that bypass `CACHE_*` constants.
+- Caching cart, checkout, or authenticated account responses.
+- Opening additional named worker caches; reuse the existing `hydrogen` cache.

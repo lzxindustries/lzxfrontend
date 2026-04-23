@@ -1,0 +1,56 @@
+---
+description: LZX frontend core facts, toolchain, and workflow
+alwaysApply: true
+---
+
+# Core Workflow
+
+Authoritative source of repo-wide facts. Scoped rules may refine, never contradict.
+
+## Stack
+
+- Shopify Hydrogen storefront on Remix, deployed to Shopify Oxygen (Cloudflare Workers).
+- React 18 + TypeScript, Vite 5 build, Tailwind CSS + DaisyUI styling.
+- GraphQL via Shopify Storefront API with Hydrogen codegen.
+- Tests: Vitest (unit) + Playwright (E2E).
+
+## Toolchain
+
+- Node `>=18.19`, Yarn `4.5.3` (Corepack-managed).
+- TypeScript path alias: `~/*` maps to `app/*`.
+- ESLint + Prettier; do not fight formatter output.
+
+## Commands
+
+- `yarn dev` / `yarn preview` / `yarn build`
+- `yarn codegen` after any GraphQL change
+- `yarn typecheck` / `yarn lint` / `yarn format`
+- `yarn test` / `yarn test:e2e`
+- `yarn shopify:sync:*` / `yarn shopify:store-sync:*` for catalog and store mirroring
+
+## Environment
+
+Required at runtime:
+
+- `SESSION_SECRET`
+- `PUBLIC_STOREFRONT_API_TOKEN`
+- `PRIVATE_STOREFRONT_API_TOKEN`
+- `PUBLIC_STORE_DOMAIN`
+- `PUBLIC_STOREFRONT_ID`
+
+Optional: `PUBLIC_STOREFRONT_API_VERSION` (defaults to `2025-04`), `KLAVIYO_*`, `SHOPIFY_CLIENT_ID`/`SHOPIFY_CLIENT_SECRET` (admin sync scripts).
+
+When adding a new env var, update `.env.example`, `env.d.ts`, and `README.md` together.
+
+## Working Principles
+
+- Prefer existing patterns; do not introduce new architecture without cause.
+- Preserve Cloudflare Workers compatibility in all server code (no Node-only APIs).
+- Keep changes small, typed, and consistent with neighboring code.
+- Treat `lfs -> /mnt/e/lfs` as optional local asset storage; never rely on it for app runtime.
+
+## Avoid
+
+- Changing Node/Yarn/TS/Vite versions opportunistically.
+- Committing secrets or populated `.env` files.
+- Duplicating conventions across rule files; route and cache specifics live in their scoped rules.

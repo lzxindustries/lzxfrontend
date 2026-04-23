@@ -1,0 +1,51 @@
+---
+description: Remix route, loader, and Shopify Storefront data conventions
+globs: "{app/routes/**/*.{ts,tsx},app/data/**/*.{ts,tsx}}"
+alwaysApply: false
+---
+
+# Routes And Shopify Data
+
+## Routing
+
+- Remix file-based routing; locale-aware routes use the `($lang)` prefix (e.g. `($lang).products.$productHandle.tsx`).
+- Dynamic params use `$name` segments; optional segments use `($name)`.
+- Splat routes use `$.tsx` only where a catch-all is intentional.
+
+## Loaders And Actions
+
+- Type loader/action args explicitly:
+  - `export async function loader({params, request, context}: LoaderFunctionArgs)`
+  - `export async function action({request, context}: ActionFunctionArgs)`
+- Destructure only what is needed from `context`: `storefront`, `session`, `env`, `waitUntil`.
+- Validate required params early with `invariant()` from `tiny-invariant`.
+- Return typed loader data; do not leak raw GraphQL envelopes when a shaped object is clearer.
+
+## Shopify Queries
+
+- Query through `context.storefront.query()` with `#graphql`-tagged template literals.
+- Pass locale via `country: context.storefront.i18n.country` when variant/price data is involved.
+- Reuse fragments from `app/data/fragments.ts` (for example `MEDIA_FRAGMENT`, `PRODUCT_CARD_FRAGMENT`) before introducing new shapes.
+- After changing any query or fragment, run `yarn codegen` to refresh generated types.
+
+## Example
+
+```ts
+const {product} = await context.storefront.query<{product: ProductType}>(
+  PRODUCT_QUERY,
+  {
+    variables: {
+      handle,
+      country: context.storefront.i18n.country,
+    },
+  },
+);
+invariant(product, 'Product not found');
+```
+
+## Avoid
+
+- Importing Node-only modules in route code; this runs on Workers.
+- Inlining repeated GraphQL selections instead of reusing fragments.
+- Calling `context.storefront.query()` outside of loaders/actions/`.server` helpers.
+- Hard-coding locale data; always route it through `context.storefront.i18n`.

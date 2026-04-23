@@ -1,154 +1,117 @@
-# LZX Frontend - AI Coding Agent Instructions
+# LZX Frontend — AI Coding Agent Instructions
 
-## Architecture Overview
+This file is the canonical context document for GitHub Copilot. Cursor uses the rule files in `.cursor/rules/` with the same facts. Keep this file and the Cursor rules in sync when project conventions change.
 
-This is a **Shopify Hydrogen 2024.4.7** e-commerce storefront built on **Remix 2.9.2**, deployed to **Cloudflare Workers** (Oxygen).
+## Project
 
-### Data Architecture
+- Shopify Hydrogen storefront on Remix, deployed to Shopify Oxygen (Cloudflare Workers).
+- React 18 + TypeScript, Vite 5, Tailwind CSS + DaisyUI, GraphQL via Storefront API.
+- Tests: Vitest (unit) + Playwright (E2E).
 
-- **Shopify Storefront API**: Products, collections, cart, customer accounts via GraphQL (`context.storefront.query()`)
+## Toolchain
 
-### Key Components
+- Node `>=18.19`, Yarn `4.5.3` (Corepack-managed).
+- TypeScript path alias `~/*` maps to `app/*`.
+- ESLint + Prettier govern style; do not fight the formatter.
 
-- **`server.ts`**: Cloudflare Worker entry point, creates Storefront client, handles caching
-- **`app/root.tsx`**: Layout wrapper, loads cart + shop config, handles errors
-- **`app/routes/`**: File-based routing with `($lang)` prefix for i18n
+## Commands
 
-## Development Workflow
+- `yarn dev` / `yarn preview` / `yarn build`
+- `yarn codegen` after GraphQL changes
+- `yarn typecheck` / `yarn lint` / `yarn format`
+- `yarn test` / `yarn test:e2e`
+- `yarn shopify:sync:*` / `yarn shopify:store-sync:*` for catalog and store mirroring
 
-### Setup & Running
+## Environment
 
-```bash
-yarn install
-yarn run dev              # Dev server with codegen
-yarn run dev --host       # Expose on local network
-yarn run preview          # Production preview build
-yarn run codegen          # Regenerate GraphQL types
-yarn run typecheck        # Type checking only
-```
+Required at runtime:
 
-**Environment Variables Required**: `SESSION_SECRET`, `PUBLIC_STOREFRONT_API_TOKEN`, `PRIVATE_STOREFRONT_API_TOKEN`, `PUBLIC_STORE_DOMAIN`, `PUBLIC_STOREFRONT_ID`
+- `SESSION_SECRET`
+- `PUBLIC_STOREFRONT_API_TOKEN`
+- `PRIVATE_STOREFRONT_API_TOKEN`
+- `PUBLIC_STORE_DOMAIN`
+- `PUBLIC_STOREFRONT_ID`
 
-### Build System
+Optional:
 
-- Vite 5 with Hydrogen/Oxygen plugins
-- SSR optimizeDeps for CJS/ESM compatibility (see `vite.config.ts`)
-- GraphQL codegen via `@shopify/hydrogen-codegen`
-- No inline assets (`assetsInlineLimit: 0`) for strict CSP
+- `PUBLIC_STOREFRONT_API_VERSION` (defaults to `2025-04`)
+- `KLAVIYO_PUBLIC_API_KEY`, `KLAVIYO_PRIVATE_API_KEY`
+- `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET` (admin sync scripts)
 
-## Code Conventions
+When adding a new env var, update `.env.example`, `env.d.ts`, and `README.md` together.
 
-### Route Patterns
+## Architecture
 
-File names like `($lang).products.$productHandle.tsx` create routes like `/en-us/products/some-product`
+- `server.ts` — Cloudflare Worker entry point. Creates the Storefront client, opens the `hydrogen` worker cache, initializes sessions, and sets default cache headers on public responses.
+- `app/root.tsx` — Global layout, shop/cart bootstrapping, error handling.
+- `app/routes/` — Remix file-based routes; locale-aware routes use the `($lang)` prefix (e.g. `($lang).products.$productHandle.tsx`).
+- `app/data/` — Shared data helpers and GraphQL fragments (`fragments.ts`, `cache.ts`).
+- `app/lib/` — Request, session, and utility helpers (including `getCartId`, locale helpers).
+- `app/components/` — Shared UI components; domain components live alongside them.
 
-- Loaders: `export async function loader({params, request, context}: LoaderFunctionArgs)`
-- Actions: `export async function action({request, context}: ActionFunctionArgs)`
-- Always destructure `context.storefront`, `context.session`, `context.env`
+## Route Conventions
 
-### Data Fetching Patterns
+- Use typed loader/action args:
+  - `export async function loader({params, request, context}: LoaderFunctionArgs)`
+  - `export async function action({request, context}: ActionFunctionArgs)`
+- Destructure only what is needed from `context`: `storefront`, `session`, `env`, `waitUntil`.
+- Validate required params with `invariant()` from `tiny-invariant`.
+- Query Shopify through `context.storefront.query()` with `#graphql`-tagged template literals.
+- Pass locale via `country: context.storefront.i18n.country` where variant or pricing data is involved.
+- Reuse fragments from `app/data/fragments.ts` before introducing new shapes.
 
-**Shopify queries** (in route loaders):
+Example:
 
-```tsx
+```ts
 const {product} = await context.storefront.query<{product: ProductType}>(
   PRODUCT_QUERY,
-  {variables: {handle, country: context.storefront.i18n.country}},
+  {
+    variables: {
+      handle,
+      country: context.storefront.i18n.country,
+    },
+  },
 );
+invariant(product, 'Product not found');
 ```
 
-GraphQL queries use template literals with `#graphql` tag (see `PRODUCT_QUERY`, `ARTICLE_QUERY` in routes).
+## Caching
 
-### Caching Strategy
+- Cache primitives live in `app/data/cache.ts`: `CACHE_SHORT`, `CACHE_LONG`, `CACHE_NONE`, and `routeHeaders`.
+- `server.ts` applies default cache headers to public responses and skips cart/account routes.
+- Export `headers = routeHeaders` in routes that should propagate loader cache policy to the document response.
+- Use the `CACHE_*` constants; do not hand-author `Cache-Control` strings.
+- Never cache cart, checkout, or authenticated account responses.
 
-- `CACHE_SHORT`, `CACHE_LONG`, `CACHE_NONE` from `app/data/cache.ts`
-- Custom cache headers in `server.ts` for non-cart/account pages:
-  ```tsx
-  response.headers.set('Cache-Control', CACHE_SHORT);
-  response.headers.set(
-    'Oxygen-Cache-Control',
-    'public, max-age=3600, stale-while-revalidate=259200',
-  );
-  ```
-- Use `routeHeaders` export in routes for consistent behavior
+## Worker Runtime
 
-### Component Organization
+- Server code runs on Cloudflare Workers via Oxygen; assume Workers APIs, not Node APIs.
+- Use `context.waitUntil()` for background work.
+- Reuse the existing `caches.open('hydrogen')` cache; do not open additional named caches.
 
-- UI components: `app/components/` (Button, Grid, Text, Modal, etc.)
-- Domain components: `ModuleDetails.tsx`, `ProductCard.tsx`, `Cart.tsx`
-- Icons from `react-icons` + custom icon components
+## Styling
 
-### TypeScript Patterns
+- Tailwind CSS with DaisyUI; global styles in `app/styles/app.css`.
+- Follow existing component patterns before adding new abstractions.
 
-- Path alias: `~/*` maps to `app/*` (see `tsconfig.json`)
-- Always use `invariant()` from `tiny-invariant` for param validation in loaders
+## Testing
 
-### Styling
+- Unit tests colocate with source where practical and run via Vitest.
+- E2E specs live in `e2e/` and run via Playwright; visual regression uses snapshot-based checks.
 
-- **Tailwind CSS** + **DaisyUI** components
-- PostCSS with preset-env
-- Custom base styles in `app/styles/app.css`
-- Inline styles for dynamic SVG components (Frontpanel, Jack)
+## Documentation Voice
 
-## Critical Integration Points
+Docs under `content/docs/` follow `content/docs/WRITING_STYLE_GUIDE.md`. Practitioner-expert voice, no marketing language, no first-person singular, present tense and active voice.
 
-### Hydrogen/Shopify API
+## Repo-Local Assets
 
-- Storefront API version: `2025-04` (configurable via env)
-- Use fragments from `app/data/fragments.ts` (MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT)
-- Cart managed via session storage (`getCartId()` in `app/lib/utils.ts`)
+- A symlink `lfs -> /mnt/e/lfs` may provide large, local-only assets; it is gitignored and optional.
+- Shopify catalog/store mirrors live under `catalog/shopify/` and are managed by scripts in `scripts/`.
 
-### Worker Environment
+## Avoid
 
-- Cloudflare Workers runtime (not Node.js)
-- Use `executionContext.waitUntil()` for background tasks
-- Cache API via `caches.open('hydrogen')`
-
-## LFS Asset Library (`lfs/library/`)
-
-A symlink at repo root (`lfs → /mnt/e/lfs`) provides access to the binary asset library. This is **local-only** (gitignored, not deployed). Contents are organized as:
-
-| Directory                       | Contents                                                                                                  |
-| ------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `brand/logos/`                  | AI vector sources + 79 PNG exports. Regenerate: `python3 lfs/library/brand/logos/generate_brand_logos.py` |
-| `brand/color-swatches/`         | 16 PNG brand palette swatches                                                                             |
-| `brand/fonts/`                  | ~140 OTF/TTF font files (Goldplay, Lato, TeX Gyre, etc.)                                                  |
-| `brand/panel-components/`       | AI files for knobs, jacks, LEDs, connectors                                                               |
-| `brand/panel-icons/`            | SVG schematic icons                                                                                       |
-| `products/`                     | Per-product assets organized by category → series → product slug → asset type                             |
-| `products/product-catalog.json` | Machine-readable index of all 121 products (slug, name, sku, type, active/hidden flags, folder)           |
-| `stock/`                        | Third-party stock assets: footage, photos, textures, test-images, test-patterns, music, sound-effects     |
-| `scrape/`                       | Archived community/web content: wayback pages, YouTube subtitles, Reddit, Discord, ModWiggler, etc.       |
-
-### Product asset structure
-
-```
-products/
-├── accessories/<slug>/website/      Website images
-├── eurorack-cases/<slug>/website/   Website images
-├── eurorack-modules/<series>/<slug>/  Panel art, logos, packaging, photos, downloads
-│   Series: cadet, castle, expedition, gen3, orion, visionary
-├── instruments/<slug>/              brand/, merchandise/, panel-art/, website/, downloads/
-│   Instruments: bitvision, chromagnon, videomancer, vidiot
-```
-
-### Generated files
-
-Key generated assets (see `lfs/library/GENERATED_FILES.md` for full list):
-
-- **Brand logos**: `brand/logos/generate_brand_logos.py`
-- **Video bumpers**: `video/bumpers/generate_video_bumpers.sh`
-- **Source clips**: `video/source-clips/generate_video_source_clips.py`
-- **Social templates**: `templates/social/generate_templates_social.py`
-
-## Project-Specific Notes
-
-- **Legacy vs Active products**: `is_active_product` flag distinguishes current vs discontinued modules
-- **External URLs**: Some modules link to third-party sites (check `external_url` field)
-
-## Common Tasks
-
-**Add a new route**: Create file in `app/routes/` with `($lang).` prefix, export loader/component
-**Query Shopify**: Use `context.storefront.query()` with GraphQL string
-**Add environment variable**: Update `.env` + `env.d.ts` + `README.md`
-**Update GraphQL types**: Run `yarn run codegen` after schema changes
+- Node-only APIs in server paths.
+- New env vars without updating `.env.example`, `env.d.ts`, and `README.md`.
+- GraphQL changes without running `yarn codegen`.
+- Caching user-specific responses.
+- Introducing architecture patterns that diverge from existing routes, data helpers, and components.

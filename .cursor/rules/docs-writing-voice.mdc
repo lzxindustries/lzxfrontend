@@ -1,0 +1,44 @@
+---
+description: LZX technical documentation voice and style
+globs: content/docs/**/*.md
+alwaysApply: false
+---
+
+# LZX Documentation Voice
+
+Follow `content/docs/WRITING_STYLE_GUIDE.md` as the authoritative voice reference. The rules below are the operational summary.
+
+## Voice
+
+- Write as a practitioner-expert addressing fellow practitioners; authoritative but not corporate.
+- Use "we" and "you"; never use first-person singular ("I").
+- Speak with earned confidence: definitive statements, not hedges.
+- Acknowledge trade-offs and limits honestly when they matter.
+
+## Tone
+
+- Confident, enthusiastic, direct; grounded immediately with concrete technical explanation.
+- Dry wit is allowed sparingly; exclamation marks are rare.
+- No marketing language ("revolutionary", "game-changing", "best-in-class").
+- No filler ("it is worth noting", "it should be mentioned").
+
+## Diction
+
+- Prefer project vocabulary: `patch`, `signal`, `jack`, `knob`/`pot`, `module`, `values`.
+- Avoid: `connect`/`route`, `port`/`socket`, `dial`, `unit`/`device`, `levels`.
+- Bold key terms on first use; do not italicize for emphasis.
+- Define uncommon terms on first use; do not over-explain standard domain vocabulary.
+
+## Structure
+
+- Present tense, active voice.
+- Vary sentence length; use short declaratives for key claims.
+- Paragraph arc: key claim first, technical explanation second, creative or practical implication third.
+- Imperative mood for instructions and creative encouragement.
+
+## Avoid
+
+- Passive voice in explanations.
+- Apologizing for complexity.
+- Talking down to the reader.
+- Unnecessary hedging when stating technical facts.
