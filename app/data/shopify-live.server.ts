@@ -58,6 +58,8 @@ export interface CommerceVariantSnippet {
 export interface CommerceSnippet {
   handle: string;
   productId: string;
+  description: string;
+  descriptionHtml: string;
   /** First variant by `position` — the buy-box default. */
   defaultVariant: CommerceVariantSnippet | null;
   variants: CommerceVariantSnippet[];
@@ -89,6 +91,8 @@ const COMMERCE_FRAGMENT = `#graphql
   fragment CommerceProductFields on Product {
     id
     handle
+    description
+    descriptionHtml
     availableForSale
     variants(first: 100) {
       nodes {
@@ -149,6 +153,8 @@ interface RawVariantNode {
 interface RawProductNode {
   id: string;
   handle: string;
+  description: string;
+  descriptionHtml: string;
   availableForSale: boolean;
   variants: {nodes: RawVariantNode[]};
 }
@@ -220,6 +226,8 @@ function toSnippet(p: RawProductNode): CommerceSnippet {
   return {
     handle: p.handle,
     productId: p.id,
+    description: p.description ?? '',
+    descriptionHtml: p.descriptionHtml ?? '',
     defaultVariant,
     variants,
     availableForSale: p.availableForSale,

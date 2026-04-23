@@ -1,5 +1,6 @@
 import {describe, expect, it, vi} from 'vitest';
 
+import {buildHubProductFromLocal} from '~/data/hub-product.server';
 import {loadInstrumentHubData, loadModuleHubData} from '~/data/hub-loaders';
 
 function createContext() {
@@ -17,6 +18,51 @@ function createContext() {
 }
 
 describe('loadModuleHubData', () => {
+  it('prefers live Shopify description HTML over flattened catalog HTML', () => {
+    const product = buildHubProductFromLocal({
+      record: {
+        handle: 'demo-module',
+        shopifyProductId: 'gid://shopify/Product/1',
+        title: 'Demo Module',
+        vendor: 'LZX Industries',
+        productType: 'Module',
+        status: 'ACTIVE',
+        tags: ['Visible'],
+        isActive: true,
+        isVisible: true,
+        isBStock: false,
+        subtitle: null,
+        descriptionHtml: '<p>Flattened catalog copy.</p>',
+        descriptionPlain: 'Flattened catalog copy.',
+        seo: null,
+        options: [],
+        gallery: [],
+        variants: [],
+        metafields: {},
+        onlineStoreUrl: null,
+        createdAt: null,
+        updatedAt: null,
+      },
+      commerce: {
+        handle: 'demo-module',
+        productId: 'gid://shopify/Product/1',
+        description: 'Lead paragraph. Bullet one. Bullet two.',
+        descriptionHtml:
+          '<p>Lead paragraph.</p><ul><li>Bullet one</li><li>Bullet two</li></ul>',
+        defaultVariant: null,
+        variants: [],
+        availableForSale: true,
+        currencyCode: 'USD',
+      },
+      lfs: null,
+      selectedOptions: [],
+    });
+
+    expect(product.descriptionHtml).toContain('<ul>');
+    expect(product.descriptionHtml).toContain('<li>Bullet one</li>');
+    expect(product.description).toBe('Lead paragraph. Bullet one. Bullet two.');
+  });
+
   it('builds fallback hub data for legacy modules with no catalog entry', async () => {
     const context = createContext();
 

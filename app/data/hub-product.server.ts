@@ -28,6 +28,10 @@ import type {
 const FALLBACK_CURRENCY = 'USD';
 const ZERO_MONEY: MoneyAmount = {amount: '0.00', currencyCode: FALLBACK_CURRENCY};
 
+function hasContent(value: string | null | undefined): value is string {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
 function buildMediaNodes(record: ProductRecord, lfs: LfsAssetEntry | null) {
   // Prefer lfs gallery (served from /assets/products/...) and fall back
   // to whatever Shopify-mirror URLs the bootstrap captured.
@@ -158,6 +162,12 @@ export function buildHubProductFromLocal(
 ): ProductType & {selectedVariant?: ProductVariant} {
   const {record, commerce, lfs, selectedOptions} = input;
   const mediaNodes = buildMediaNodes(record, lfs);
+  const descriptionHtml = hasContent(commerce?.descriptionHtml)
+    ? commerce.descriptionHtml
+    : record.descriptionHtml;
+  const description = hasContent(commerce?.description)
+    ? commerce.description
+    : record.descriptionPlain;
   const fallbackImage =
     mediaNodes[0]?.image
       ? {
@@ -192,8 +202,8 @@ export function buildHubProductFromLocal(
     title: record.title,
     vendor: record.vendor,
     handle: record.handle,
-    description: record.descriptionPlain,
-    descriptionHtml: record.descriptionHtml,
+    description,
+    descriptionHtml,
     productType: record.productType,
     tags: record.tags,
     options: record.options.map((o) => ({
@@ -206,7 +216,7 @@ export function buildHubProductFromLocal(
     selectedVariant,
     seo: {
       title: record.seo?.title ?? record.title,
-      description: record.seo?.description ?? record.descriptionPlain,
+      description: record.seo?.description ?? description,
     },
     metafields: flattenMetafields(record),
   } as unknown as ProductType & {selectedVariant?: ProductVariant};
