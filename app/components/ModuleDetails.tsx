@@ -11,6 +11,7 @@ import ProductMediaGallery, {
   type MediaGalleryItem,
   MediaGalleryItemType,
 } from './ProductMediaGallery';
+import {rewriteLegacyDocsLinks} from '~/lib/legacy-docs-links';
 
 const getLastPathSegment = (url: string): string | null => {
   try {
@@ -39,77 +40,6 @@ const getKeywordRank = (value: string, keywords: string[]): number => {
     }
   }
   return 0;
-};
-
-const rewriteLegacyDocsLinks = (html: string): string => {
-  let rewritten = html;
-
-  // Product content in Shopify still contains legacy Docusaurus category URLs.
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-
-  // Some migrated content contains duplicated /docs/docs paths on the main domain.
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/instruments\/([^"'\s<]*)/gi,
-    '/instruments/$1/manual',
-  );
-
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/modules\/([^"'\s<]*)/gi,
-    '/modules/$1/manual',
-  );
-
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/(?!instruments\/|modules\/)([^"'\s<]*)/gi,
-    '/docs/$1',
-  );
-
-  // Rewrite legacy docs.lzxindustries.net instrument links to new hub paths.
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net\/docs\/instruments\/([^"'\s<]*)/gi,
-    '/instruments/$1/manual',
-  );
-
-  // Rewrite legacy docs.lzxindustries.net module links to new hub paths.
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net\/docs\/modules\/([^"'\s<]*)/gi,
-    '/modules/$1/manual',
-  );
-
-  // Catch-all for any remaining legacy docs links.
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
-    '$1',
-  );
-
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/category\/[^"']+(["'])/gi,
-    '$1/docs$2',
-  );
-
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/instruments\/([^"']+)(["'])/gi,
-    '$1/instruments/$2/manual$3',
-  );
-
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/modules\/([^"']+)(["'])/gi,
-    '$1/modules/$2/manual$3',
-  );
-
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/([^"']+)(["'])/gi,
-    '$1/docs/$2$3',
-  );
-
-  return rewritten;
 };
 
 const getGalleryMedia = (product: Product): MediaGalleryItem[] => {

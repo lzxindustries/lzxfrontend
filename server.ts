@@ -48,6 +48,19 @@ export default {
         return Response.redirect(requestUrl.toString(), 301);
       }
 
+      // Legacy Docusaurus slugs (e.g. /instruments/videomancer/user-manual)
+      // are still referenced by external backlinks. Canonical URLs now
+      // live under /instruments/<slug>/manual/<page>; redirect the
+      // flat form to the new structure so the link-juice follows.
+      const legacyDocsSlugMatch = requestUrl.pathname.match(
+        /^\/instruments\/([^/]+)\/(user-manual|quick-start|modulation-operators|historic-device-references|fault-codes-reference|serial-command-guide)\/?$/,
+      );
+      if (legacyDocsSlugMatch) {
+        const [, slug, page] = legacyDocsSlugMatch;
+        requestUrl.pathname = `/instruments/${slug}/manual/${page}`;
+        return Response.redirect(requestUrl.toString(), 301);
+      }
+
       // Rewrite legacy /firmware/<slug>/<file> paths to the current
       // /downloads/products/<product>/firmware/ layout. Blog posts
       // published before the download reorg still link to the old

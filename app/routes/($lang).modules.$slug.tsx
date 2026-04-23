@@ -8,7 +8,7 @@ import {HubNavBar} from '~/components/HubNavBar';
 import type {HubTab} from '~/components/HubNavBar';
 import {loadModuleHubData, getRecommendedProducts} from '~/data/hub-loaders';
 import type {ModuleHubData} from '~/data/hub-loaders';
-import {getCanonicalSlug} from '~/data/product-slugs';
+import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
 import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
@@ -33,6 +33,25 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   const canonical = getCanonicalSlug(slug);
   if (!canonical) {
     throw new Response('Module not found', {status: 404});
+  }
+
+  // Safety net for stale external links: if this slug has been reclassified
+  // as an instrument (e.g. videomancer), 301 to the instrument hub instead
+  // of 404ing. The module route never rendered these slugs since the split.
+  const entry = getSlugEntry(canonical);
+  if (entry?.hubType === 'instrument') {
+    const url = new URL(request.url);
+    url.pathname = url.pathname.replace(
+      `/modules/${slug}`,
+      `/instruments/${canonical}`,
+    );
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
   }
 
   // Redirect aliases to canonical URL

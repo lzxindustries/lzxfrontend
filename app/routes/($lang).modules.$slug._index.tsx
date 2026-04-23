@@ -31,6 +31,7 @@ import ProductMediaGallery, {
 } from '~/components/ProductMediaGallery';
 import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getProductPurchaseStatus} from '~/lib/product-badges';
+import {rewriteLegacyDocsLinks} from '~/lib/legacy-docs-links';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
@@ -99,50 +100,6 @@ function getGalleryMedia(
   return items;
 }
 
-function rewriteLegacyDocsLinks(html: string): string {
-  let rewritten = html;
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/instruments\/([^"'\s<]*)/gi,
-    '/instruments/$1/manual',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/modules\/([^"'\s<]*)/gi,
-    '/modules/$1/manual',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/(?!instruments\/|modules\/)([^"'\s<]*)/gi,
-    '/docs/$1',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
-    '$1',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/category\/[^"']+(["'])/gi,
-    '$1/docs$2',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/instruments\/([^"']+)(["'])/gi,
-    '$1/instruments/$2/manual$3',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/modules\/([^"']+)(["'])/gi,
-    '$1/modules/$2/manual$3',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/([^"']+)(["'])/gi,
-    '$1/docs/$2$3',
-  );
-  return rewritten;
-}
 
 // --- Component ---
 

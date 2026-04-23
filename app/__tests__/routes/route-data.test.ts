@@ -2,7 +2,12 @@ import {describe, expect, it} from 'vitest';
 import {SECTIONS as SUPPORT_SECTIONS} from '~/routes/($lang).support';
 import {SECTIONS as DOCS_SECTIONS} from '~/routes/($lang).docs._index';
 import {PATHS} from '~/routes/($lang).getting-started._index';
-import {getLearnCards, DEFAULT_LEARN_CARDS, INSTRUMENT_LEARN_CARDS} from '~/routes/($lang).instruments.$slug.learn';
+import {
+  getLearnCards,
+  getLearnCardHref,
+  DEFAULT_LEARN_CARDS,
+  INSTRUMENT_LEARN_CARDS,
+} from '~/routes/($lang).instruments.$slug.learn';
 import {rewriteLegacyDocsLinks} from '~/routes/($lang).instruments.$slug.specs';
 
 describe('Support page SECTIONS', () => {
@@ -158,6 +163,58 @@ describe('Instrument Learn Cards', () => {
   it('getLearnCards falls back to defaults for unknown instrument', () => {
     const cards = getLearnCards('some-unknown-instrument');
     expect(cards).toBe(DEFAULT_LEARN_CARDS);
+  });
+});
+
+describe('getLearnCardHref', () => {
+  const basePath = '/instruments/chromagnon';
+
+  it('returns the raw URL for external cards', () => {
+    const href = getLearnCardHref(
+      {
+        title: 'Community Forum',
+        description: 'x',
+        icon: 'forum',
+        to: 'https://community.lzxindustries.net',
+        external: true,
+      },
+      basePath,
+    );
+    expect(href).toBe('https://community.lzxindustries.net');
+  });
+
+  it('leaves absolute same-origin `to` paths alone', () => {
+    const href = getLearnCardHref(
+      {title: 't', description: 'd', icon: 'i', to: '/getting-started'},
+      basePath,
+    );
+    expect(href).toBe('/getting-started');
+  });
+
+  it('resolves relative `to` against basePath (regression: /learn/setup 404)', () => {
+    const href = getLearnCardHref(
+      {title: 't', description: 'd', icon: 'i', to: 'setup'},
+      basePath,
+    );
+    expect(href).toBe('/instruments/chromagnon/setup');
+    expect(href).not.toContain('/learn/');
+  });
+
+  it('uses toKey as a basePath-relative segment when no `to` is provided', () => {
+    const href = getLearnCardHref(
+      {title: 't', description: 'd', icon: 'i', toKey: 'manual'},
+      basePath,
+    );
+    expect(href).toBe('/instruments/chromagnon/manual');
+  });
+
+  it('every DEFAULT_LEARN_CARD resolves to an absolute URL or path', () => {
+    for (const card of DEFAULT_LEARN_CARDS) {
+      const href = getLearnCardHref(card, basePath);
+      expect(
+        href.startsWith('/') || /^https?:\/\//.test(href),
+      ).toBe(true);
+    }
   });
 });
 

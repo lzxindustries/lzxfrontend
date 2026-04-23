@@ -137,6 +137,20 @@ export function getLearnCards(slug: string): LearnCard[] {
   return INSTRUMENT_LEARN_CARDS[slug] ?? DEFAULT_LEARN_CARDS;
 }
 
+/**
+ * Exported for testing — resolves the destination href for a learn card
+ * given the instrument base path. Non-absolute `to` values are resolved
+ * against `basePath` to avoid Remix `<Link>` treating them as relative to
+ * the current `/learn` route (which would produce `/instruments/<slug>/learn/<to>`).
+ */
+export function getLearnCardHref(card: LearnCard, basePath: string): string {
+  if (card.external) return card.to!;
+  if (card.to) {
+    return card.to.startsWith('/') ? card.to : `${basePath}/${card.to}`;
+  }
+  return `${basePath}/${card.toKey}`;
+}
+
 export default function InstrumentLearn() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
   const {product, hasManual, videos, slug, docPages} =
@@ -170,11 +184,7 @@ export default function InstrumentLearn() {
           // Skip cards that require a specific doc page
           if (card.requiresDoc && !docSubPaths.has(card.requiresDoc)) return null;
 
-          const href = card.external
-            ? card.to!
-            : card.to
-              ? card.to
-              : `${basePath}/${card.toKey}`;
+          const href = getLearnCardHref(card, basePath);
 
           if (card.external) {
             return (

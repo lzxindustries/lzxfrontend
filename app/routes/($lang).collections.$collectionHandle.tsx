@@ -53,6 +53,20 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     });
   }
 
+  // Similarly, the Shopify navigation still points at
+  // /collections/legacy-modules but no such collection exists. The
+  // canonical landing page for legacy modules is the first-party
+  // /legacy route.
+  if (collectionHandle === 'legacy-modules') {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: '/legacy',
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   const searchParams = new URL(request.url).searchParams;
   const knownFilters = ['productVendor', 'productType'];
   const available = 'available';

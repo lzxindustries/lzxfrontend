@@ -61,4 +61,107 @@ test.describe('Link audit regressions', () => {
       expect(response?.status(), `/modules/${slug}`).toBeLessThan(500);
     }
   });
+
+  // -------------------------------------------------------------------------
+  // April 2026 re-crawl follow-up. Each of the below maps back to a fix in
+  // .cursor/plans/recrawl-fixes_0f8b5efc.plan.md.
+  // -------------------------------------------------------------------------
+
+  test('previously-500 product pages now render without errors', async ({
+    page,
+  }) => {
+    const handles = [
+      '2-1mm-dc-jumper-cable',
+      'andor-1-media-player-deluxe-accessories-pack',
+      'double-vision-84',
+    ];
+    for (const handle of handles) {
+      const response = await page.goto(`/products/${handle}`, {
+        waitUntil: 'domcontentloaded',
+      });
+      expect(response?.status(), `/products/${handle}`).toBeLessThan(500);
+    }
+  });
+
+  test('/collections/legacy-modules redirects to /legacy', async ({page}) => {
+    const response = await page.goto('/collections/legacy-modules', {
+      waitUntil: 'domcontentloaded',
+    });
+    expect(response?.status()).toBeLessThan(400);
+    expect(new URL(page.url()).pathname).toBe('/legacy');
+  });
+
+  test('/modules/videomancer redirects to /instruments/videomancer', async ({
+    page,
+  }) => {
+    const response = await page.goto('/modules/videomancer', {
+      waitUntil: 'domcontentloaded',
+    });
+    expect(response?.status()).toBeLessThan(400);
+    expect(new URL(page.url()).pathname).toBe('/instruments/videomancer');
+  });
+
+  test('legacy Docusaurus slugs redirect into /manual/<page>', async ({
+    page,
+  }) => {
+    const cases: Array<[string, string]> = [
+      [
+        '/instruments/videomancer/user-manual',
+        '/instruments/videomancer/manual/user-manual',
+      ],
+      [
+        '/instruments/videomancer/quick-start',
+        '/instruments/videomancer/manual/quick-start',
+      ],
+      [
+        '/instruments/videomancer/modulation-operators',
+        '/instruments/videomancer/manual/modulation-operators',
+      ],
+      [
+        '/instruments/videomancer/historic-device-references',
+        '/instruments/videomancer/manual/historic-device-references',
+      ],
+    ];
+
+    for (const [from, to] of cases) {
+      const response = await page.goto(from, {
+        waitUntil: 'domcontentloaded',
+      });
+      expect(response?.status(), from).toBeLessThan(400);
+      expect(new URL(page.url()).pathname, from).toBe(to);
+    }
+  });
+
+  test('historic device references page (no longer draft) returns 200', async ({
+    request,
+  }) => {
+    const response = await request.get(
+      '/instruments/videomancer/manual/historic-device-references',
+    );
+    expect(response.status()).toBe(200);
+  });
+
+  test('instrument Learn card for setup links to /instruments/<slug>/setup (not /learn/setup)', async ({
+    page,
+  }) => {
+    await page.goto('/instruments/chromagnon/learn', {
+      waitUntil: 'domcontentloaded',
+    });
+    const setupHref = await page
+      .locator('a', {hasText: /setup/i})
+      .first()
+      .getAttribute('href');
+    expect(setupHref).toBe('/instruments/chromagnon/setup');
+    expect(setupHref).not.toContain('/learn/setup');
+  });
+
+  test('chromagnon overview does not link to /manual/quick-start', async ({
+    page,
+  }) => {
+    await page.goto('/instruments/chromagnon', {waitUntil: 'domcontentloaded'});
+    const quickStartLinks = await page
+      .locator('a[href$="/manual/quick-start"]')
+      .count();
+    expect(quickStartLinks).toBe(0);
+  });
 });

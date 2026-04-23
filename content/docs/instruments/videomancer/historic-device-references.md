@@ -1,5 +1,4 @@
 ---
-draft: true
 sidebar_position: 5
 slug: /instruments/videomancer/historic-device-references
 title: 'Videomancer: Historic Device References'

@@ -30,6 +30,7 @@ import {
   QUICK_START_STEPS,
 } from '~/components/QuickStartPreview';
 import {getProductPurchaseStatus} from '~/lib/product-badges';
+import {rewriteLegacyDocsLinks} from '~/lib/legacy-docs-links';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find(
@@ -158,59 +159,24 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
   return items;
 }
 
-function rewriteLegacyDocsLinks(html: string): string {
-  let rewritten = html;
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/category\/program-guides/gi,
-    '/instruments/videomancer/manual/programs',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/instruments\/([^"'\s<]*)/gi,
-    '/instruments/$1/manual',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/modules\/([^"'\s<]*)/gi,
-    '/modules/$1/manual',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/lzxindustries\.net\/docs\/docs\/(?!instruments\/|modules\/)([^"'\s<]*)/gi,
-    '/docs/$1',
-  );
-  rewritten = rewritten.replace(
-    /https?:\/\/docs\.lzxindustries\.net(\/docs\/[^"'\s<]*)/gi,
-    '$1',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/category\/[^"']+(["'])/gi,
-    '$1/docs$2',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/instruments\/([^"']+)(["'])/gi,
-    '$1/instruments/$2/manual$3',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/modules\/([^"']+)(["'])/gi,
-    '$1/modules/$2/manual$3',
-  );
-  rewritten = rewritten.replace(
-    /(href=["'])\/docs\/docs\/([^"']+)(["'])/gi,
-    '$1/docs/$2$3',
-  );
-  return rewritten;
-}
 
 // --- Component ---
 
 export default function InstrumentOverview() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
-  const {product, shop, slugEntry, hasManual} =
+  const {product, shop, slugEntry, hasManual, docPages} =
     data as unknown as InstrumentHubData;
   const recommended = (data as any).recommended;
   const storeDomain = shop.primaryDomain.url;
+
+  // Only render the Quick Start preview when a matching manual/quick-start
+  // doc is actually published for this instrument. `hasManual` alone is true
+  // for one-file manuals (e.g. chromagnon.md) that don't have a
+  // `quick-start.md` sibling, so linking there 404s.
+  const hasQuickStartDoc =
+    docPages?.some((p) =>
+      p.path.endsWith(`/${slugEntry.canonical}/quick-start`),
+    ) ?? false;
 
   const media = useMemo(() => getGalleryMedia(product as Product), [product]);
 
@@ -266,7 +232,9 @@ export default function InstrumentOverview() {
           </div>
 
           {/* Quick Start Preview */}
-          {QUICK_START_STEPS[slugEntry.canonical] && hasManual && (
+          {QUICK_START_STEPS[slugEntry.canonical] &&
+            hasManual &&
+            hasQuickStartDoc && (
             <div className="px-6 pt-4">
               <QuickStartPreview
                 steps={QUICK_START_STEPS[slugEntry.canonical]!}

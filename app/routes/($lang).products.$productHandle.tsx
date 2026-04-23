@@ -818,21 +818,34 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
-async function getRecommendedProducts(
+export async function getRecommendedProducts(
   storefront: Storefront,
   productId: string,
-) {
-  const products = await storefront.query<{
-    recommended: ProductType[];
-    additional: ProductConnection;
-  }>(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: {productId, count: 12},
-  });
+): Promise<ProductType[]> {
+  let products: {
+    recommended: ProductType[] | null;
+    additional: ProductConnection | null;
+  } | null = null;
 
-  invariant(products, 'No data returned from Shopify API');
+  try {
+    products = await storefront.query<{
+      recommended: ProductType[] | null;
+      additional: ProductConnection | null;
+    }>(RECOMMENDED_PRODUCTS_QUERY, {
+      variables: {productId, count: 12},
+    });
+  } catch {
+    // Shopify Storefront queries can fail for obscure SKUs (e.g. hidden or
+    // deleted recommendations). Swallow the error so the product page still
+    // renders — the recommended swimlane simply shows nothing.
+    return [];
+  }
 
-  const mergedProducts: ProductType[] = products.recommended
-    .concat(products.additional.nodes)
+  const recommended = products?.recommended ?? [];
+  const additional = products?.additional?.nodes ?? [];
+
+  const mergedProducts: ProductType[] = recommended
+    .concat(additional)
     .filter(
       (value, index, array) =>
         array.findIndex((value2) => value2.id === value.id) === index,
@@ -842,7 +855,9 @@ async function getRecommendedProducts(
     .map((item: ProductType) => item.id)
     .indexOf(productId);
 
-  mergedProducts.splice(originalProduct, 1);
+  if (originalProduct !== -1) {
+    mergedProducts.splice(originalProduct, 1);
+  }
 
   return mergedProducts;
 }
