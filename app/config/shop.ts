@@ -13,6 +13,9 @@
 export const SHOP_NAME = 'LZX Industries';
 export const SHOP_DESCRIPTION =
   'LZX Industries designs and builds modular hardware for analog and hybrid video synthesis.';
-export const SHOP_BRAND_LOGO_URL =
-  '/assets/brand/logos/lzx-industries-logo.png';
+// Points at the in-repo SVG shipped under public/docs/img. The
+// previous /assets/brand/logos/lzx-industries-logo.png path was
+// referenced by JSON-LD / OG metadata but the PNG was never deployed,
+// producing 404s across every page.
+export const SHOP_BRAND_LOGO_URL = '/docs/img/logo.svg';
 export const SITE_ORIGIN = 'https://lzxindustries.net';

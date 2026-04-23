@@ -17,6 +17,19 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {slug} = params;
   invariant(slug, 'Missing slug param');
 
+  // "module-list" is the cross-module index, not a product. Redirect
+  // any lingering bookmarks or rewritten markdown links to the specs
+  // overview that fulfils the same role.
+  if (slug === 'module-list') {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: '/modules/specs',
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   const canonical = getCanonicalSlug(slug);
   if (!canonical) {
     throw new Response('Module not found', {status: 404});

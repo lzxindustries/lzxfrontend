@@ -1,7 +1,11 @@
 import {describe, expect, it, vi} from 'vitest';
 
 import {buildHubProductFromLocal} from '~/data/hub-product.server';
-import {loadInstrumentHubData, loadModuleHubData} from '~/data/hub-loaders';
+import {
+  getRecommendedProducts,
+  loadInstrumentHubData,
+  loadModuleHubData,
+} from '~/data/hub-loaders';
 
 function createContext() {
   // The new hub loader sources content from the local catalog and only
@@ -124,6 +128,40 @@ describe('loadModuleHubData', () => {
     );
 
     expect(data).toBeNull();
+  });
+});
+
+describe('getRecommendedProducts', () => {
+  // Regression test for the 500s on /modules/pot, /modules/cyclops,
+  // /modules/liquid-tv. Shopify returns `null` for either field when a
+  // product has no recommendations yet; we must resolve to [] instead
+  // of blowing up the deferred promise.
+  it('returns [] when Shopify returns null for recommended and additional', async () => {
+    const context = {
+      storefront: {
+        query: vi.fn().mockResolvedValue({recommended: null, additional: null}),
+      },
+    } as any;
+
+    const result = await getRecommendedProducts(
+      context,
+      'gid://shopify/Product/1',
+    );
+    expect(result).toEqual([]);
+  });
+
+  it('returns [] when the storefront query throws', async () => {
+    const context = {
+      storefront: {
+        query: vi.fn().mockRejectedValue(new Error('storefront down')),
+      },
+    } as any;
+
+    const result = await getRecommendedProducts(
+      context,
+      'gid://shopify/Product/1',
+    );
+    expect(result).toEqual([]);
   });
 });
 

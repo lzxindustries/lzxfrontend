@@ -112,6 +112,16 @@ function isProductionRuntime(): boolean {
 
 const BLOG_PREVIEW_FALLBACK_IMAGE = '/docs/img/social-card.jpg';
 
+// Docusaurus-style static asset prefixes — deployed under /docs/ on
+// this site. Mirrors the img/link rewrites in markdown.server.ts so
+// frontmatter image paths resolve to the same deployed files used by
+// inline <img> tags.
+const DOCS_STATIC_ASSET_PATTERN = /^\/(img|pdf|zip|firmware|mp3)\//i;
+
+function rewriteDocsStaticAssetPath(value: string): string {
+  return DOCS_STATIC_ASSET_PATTERN.test(value) ? `/docs${value}` : value;
+}
+
 function inferFirstInlineImage(content: string): string | undefined {
   const markdownImageMatch = content.match(
     /!\[[^\]]*\]\((?:<)?([^)>\s]+)(?:>)?(?:\s+["'][^"']*["'])?\)/,
@@ -130,10 +140,10 @@ function resolveBlogPreviewImage(
 ): string {
   const frontmatterImage =
     typeof frontmatter.image === 'string' ? frontmatter.image.trim() : '';
-  if (frontmatterImage) return frontmatterImage;
+  if (frontmatterImage) return rewriteDocsStaticAssetPath(frontmatterImage);
 
   const inferredImage = inferFirstInlineImage(contentAfterFrontmatter)?.trim();
-  if (inferredImage) return inferredImage;
+  if (inferredImage) return rewriteDocsStaticAssetPath(inferredImage);
 
   return BLOG_PREVIEW_FALLBACK_IMAGE;
 }

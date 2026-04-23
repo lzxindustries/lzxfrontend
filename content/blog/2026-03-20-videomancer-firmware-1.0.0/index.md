@@ -25,7 +25,7 @@ For the time being, we intend to continue releasing new Videomancer firmware ver
 
 ## Download
 
-- [videomancer_1.0.0-rc.4.uf2](/firmware/videomancer_1.0.0-rc.4/videomancer_1.0.0-rc.4.uf2)
+Grab the `videomancer_1.0.0-rc.4.uf2` build from the [Videomancer downloads page](/instruments/videomancer/downloads).
 
 ## Installation
 

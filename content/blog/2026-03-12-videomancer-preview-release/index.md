@@ -20,7 +20,7 @@ This release includes 17 new programs, an entire rewrite of the firmware engine 
 
 ## Download
 
-- [videomancer_0.2.0-rc.1.uf2](/firmware/videomancer_0.2.0-rc.1/videomancer_0.2.0-rc.1.uf2)
+Grab the `videomancer_0.2.0-rc.1.uf2` build from the [Videomancer downloads page](/instruments/videomancer/downloads).
 
 ## Before You Install
 

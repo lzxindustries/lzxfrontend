@@ -71,7 +71,7 @@
       "$date": "2015-01-01T08:00:00.000Z"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VI%20Fader",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_rear_14_pin_sync_input": false,
     "is_sync_generator": false
@@ -89,7 +89,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20II%20RGB%20Encoder",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -334,7 +334,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VIII%20Hard%20Key%20Generator",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -787,7 +787,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20I%20Sync%20Generator",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -818,7 +818,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VII%20Processor",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -970,7 +970,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20III%20Video%20Input",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -1046,7 +1046,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20IV%20Dual%20Ramp%20Generator",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -1077,7 +1077,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20V%20Scaler",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -1108,7 +1108,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20IX%20Voltage%20Controlled%20Oscillator",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,
@@ -1612,7 +1612,7 @@
       "$oid": "6455856734e3e71f1fe4920e"
     },
     "is_hidden": false,
-    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20X%20Multiplier",
+    "external_url": null,
     "has_dc_barrel_power_entry": false,
     "has_eurorack_power_entry": true,
     "has_eurorack_power_sync_input": false,

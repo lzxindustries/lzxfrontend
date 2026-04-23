@@ -307,6 +307,11 @@ for (const m of modulesData) {
 
   const oid = (raw._id as Record<string, string>)?.$oid ?? null;
   const shopifyGid = (raw.id as string) ?? null;
+  // db/lzxdb.Module.json is hand-edited. Only keep external_url when it
+  // still resolves: community.lzxindustries.net threads live on
+  // Discourse and stay stable, but the legacy
+  // github.com/lzxindustries/lzxdocs tree is gone, so those entries
+  // have been cleared. Validate any new value here before adding it.
   const externalUrl = (raw.external_url as string) ?? null;
   const isHidden = (raw.is_hidden as boolean) ?? false;
   const hasEurorackPower = (raw.has_eurorack_power_entry as boolean) ?? null;

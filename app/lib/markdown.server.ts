@@ -198,9 +198,14 @@ function normalizeMarkdownPath(pathname: string): string {
   if (normalized === '/docs/index') normalized = '/docs';
   if (!normalized) return '/';
 
-  // Rewrite /docs/modules/{slug} → /modules/{slug}/manual
+  // Rewrite /docs/modules/{slug} → /modules/{slug}/manual, except for
+  // the cross-module index page which lives at /modules/specs.
   const moduleMatch = normalized.match(/^\/docs\/modules\/([^/]+)$/);
-  if (moduleMatch) return `/modules/${moduleMatch[1]}/manual`;
+  if (moduleMatch) {
+    const slug = moduleMatch[1];
+    if (slug === 'module-list') return '/modules/specs';
+    return `/modules/${slug}/manual`;
+  }
 
   // Rewrite /docs/instruments/{slug}/{subpath?} → /instruments/{slug}/manual/{subpath?}
   const instrMatch = normalized.match(

@@ -25,9 +25,26 @@ function formatLabel(slug: string): string {
 
 export async function loader({params, request}: LoaderFunctionArgs) {
   const {slug} = params;
-  const splat = params['*'];
+  const rawSplat = params['*'];
   invariant(slug, 'Missing slug param');
-  invariant(splat, 'Missing splat param');
+  invariant(rawSplat, 'Missing splat param');
+
+  // Canonicalize trailing slashes: /instruments/foo/manual/bar/ →
+  // /instruments/foo/manual/bar (301). Content lookups join the
+  // splat to a file path, so trailing slashes would 404.
+  if (rawSplat.endsWith('/')) {
+    const url = new URL(request.url);
+    url.pathname = url.pathname.replace(/\/+$/, '');
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
+  const splat = rawSplat;
 
   const canonical = getCanonicalSlug(slug) ?? slug;
   const docPath = getDocPathForSlug(canonical);

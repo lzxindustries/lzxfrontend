@@ -4,8 +4,6 @@ import type {
   Shop,
 } from '@shopify/hydrogen/storefront-api-types';
 import type {AppLoadContext} from '@shopify/remix-oxygen';
-import invariant from 'tiny-invariant';
-
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getProductRecord, getProductRecordByGid} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
@@ -439,18 +437,33 @@ function isLegacyModuleState(
 export async function getRecommendedProducts(
   context: AppLoadContext,
   productId: string,
-) {
-  const products = await context.storefront.query<{
-    recommended: ProductType[];
-    additional: {nodes: ProductType[]};
-  }>(RECOMMENDED_PRODUCTS_QUERY, {
-    variables: {productId, count: 12},
-  });
+): Promise<ProductType[]> {
+  let products: {
+    recommended: ProductType[] | null;
+    additional: {nodes: ProductType[]} | null;
+  } | null = null;
+  try {
+    products = await context.storefront.query<{
+      recommended: ProductType[] | null;
+      additional: {nodes: ProductType[]} | null;
+    }>(RECOMMENDED_PRODUCTS_QUERY, {
+      variables: {productId, count: 12},
+    });
+  } catch (error) {
+    // Storefront API failures on this deferred query should not take
+    // the whole module page down with a 500 — we just render no
+    // recommendations.
+    console.warn('getRecommendedProducts query failed', {productId, error});
+    return [];
+  }
 
-  invariant(products, 'No data returned from Shopify API');
-
-  const mergedProducts: ProductType[] = products.recommended
-    .concat(products.additional.nodes)
+  // Shopify returns `null` for productRecommendations when the product
+  // is too new or has no recommendations yet. Guard every step so the
+  // deferred promise always resolves to an array.
+  const recommended: ProductType[] = products?.recommended ?? [];
+  const additional: ProductType[] = products?.additional?.nodes ?? [];
+  const mergedProducts = recommended
+    .concat(additional)
     .filter(
       (value, index, array) =>
         array.findIndex((v2) => v2.id === value.id) === index,

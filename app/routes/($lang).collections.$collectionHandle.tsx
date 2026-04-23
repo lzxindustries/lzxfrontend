@@ -40,6 +40,19 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   invariant(collectionHandle, 'Missing collectionHandle param');
 
+  // Legacy Shopify menu / bookmarks occasionally link to
+  // /collections/systems. There is no "systems" collection in Shopify
+  // — the real hub is the first-party /systems page.
+  if (collectionHandle === 'systems') {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: '/systems',
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   const searchParams = new URL(request.url).searchParams;
   const knownFilters = ['productVendor', 'productType'];
   const available = 'available';

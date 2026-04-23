@@ -19,6 +19,6 @@ TBC2 firmware version 1.0.7 is now available for download.
 
 ## Download
 
-- [TBC2 Firmware 1.0.7](/firmware/tbc2_1.0.7/tbc2_1.0.7.zip)
+Grab the **TBC2 Firmware 1.0.7** ZIP from the [TBC2 downloads page](/modules/tbc2/downloads).
 
 See the [TBC2 documentation](/docs/modules/tbc2) for firmware update instructions.

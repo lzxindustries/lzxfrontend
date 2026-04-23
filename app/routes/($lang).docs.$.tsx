@@ -13,10 +13,28 @@ import {
 import {DocLayout} from '~/components/DocLayout';
 
 export async function loader({params, request}: LoaderFunctionArgs) {
-  const splat = params['*'];
-  if (!splat) {
+  const rawSplat = params['*'];
+  if (!rawSplat) {
     throw new Response('Not Found', {status: 404});
   }
+
+  // Canonicalize trailing slashes: /docs/foo/ → /docs/foo (301).
+  // Content lookups use splat as a relative path, so trailing
+  // slashes would otherwise 404.
+  if (rawSplat.endsWith('/')) {
+    const url = new URL(request.url);
+    url.pathname = url.pathname.replace(/\/+$/, '');
+    if (!url.pathname) url.pathname = '/docs';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: url.toString(),
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
+  const splat = rawSplat;
 
   // Redirect /docs/modules/* → /modules/*/manual
   if (splat.startsWith('modules/')) {

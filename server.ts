@@ -21,8 +21,16 @@ export default {
     executionContext: ExecutionContext,
   ): Promise<Response> {
     try {
-      // Redirect legacy docs subdomain to main site
       const requestUrl = new URL(request.url);
+
+      // Canonicalize www → apex. Fixes duplicate content and lets us
+      // focus TLS/WAF hardening on a single hostname.
+      if (requestUrl.hostname === 'www.lzxindustries.net') {
+        requestUrl.hostname = 'lzxindustries.net';
+        return Response.redirect(requestUrl.toString(), 301);
+      }
+
+      // Redirect legacy docs subdomain to main site
       if (requestUrl.hostname === 'docs.lzxindustries.net') {
         // Rewrite Docusaurus-specific paths that don't exist on new site
         const docusaurusRedirects: Record<string, string> = {
@@ -38,6 +46,25 @@ export default {
         }
         requestUrl.hostname = 'lzxindustries.net';
         return Response.redirect(requestUrl.toString(), 301);
+      }
+
+      // Rewrite legacy /firmware/<slug>/<file> paths to the current
+      // /downloads/products/<product>/firmware/ layout. Blog posts
+      // published before the download reorg still link to the old
+      // paths, so we keep them alive via 301s.
+      const firmwareMatch = requestUrl.pathname.match(
+        /^\/firmware\/([^/]+)\/([^/]+)$/,
+      );
+      if (firmwareMatch) {
+        const [, folder, file] = firmwareMatch;
+        // Folder slug is always <product>_<version>; derive product
+        // from the leading segment so we route to the right product
+        // downloads directory.
+        const product = folder.split('_')[0];
+        if (product && file) {
+          requestUrl.pathname = `/downloads/products/${product}/firmware/${file}`;
+          return Response.redirect(requestUrl.toString(), 301);
+        }
       }
 
       /**
