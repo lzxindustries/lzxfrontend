@@ -20,14 +20,16 @@ export const EXCLUDED_INSTRUMENT_SLUGS = new Set([
 ]);
 
 const FORCE_LOCAL_SQUARE_ARTWORK_SLUGS = new Set([
+  'bitvision',
   'chromagnon',
   'videomancer',
   'vidiot',
 ]);
 const ACTIVE_INSTRUMENT_SLUGS = new Set(['videomancer', 'chromagnon']);
-const LEGACY_INSTRUMENT_SLUGS = new Set(['vidiot']);
+const LEGACY_INSTRUMENT_SLUGS = new Set(['bitvision', 'vidiot']);
 
 const INSTRUMENT_LISTING_ARTWORK_OVERRIDES: Record<string, string> = {
+  bitvision: '/images/bitvision-manual-cover-square.jpg',
   videomancer: '/images/videomancer/hardware/photo-angle-front.png',
 };
 
@@ -68,8 +70,10 @@ function buildRawSections(): CategoryRawSection[] {
   );
   const legacy = [
     ...slugEntries.filter((e) => LEGACY_INSTRUMENT_SLUGS.has(e.canonical)),
-    BITVISION_LEGACY_ENTRY,
   ];
+  if (!legacy.some((entry) => entry.canonical === 'bitvision')) {
+    legacy.push(BITVISION_LEGACY_ENTRY);
+  }
 
   return [
     {key: 'active', groups: [{key: 'active', entries: active}]},
@@ -89,11 +93,10 @@ export const instrumentsCategoryConfig: CategoryListingConfig = {
   pageTitle: 'Instruments',
   seoTitle: 'Instruments',
   seoDescription: 'LZX Industries standalone video instruments',
-  cardSize: 'md',
+  sectionLabels: {active: 'Active', legacy: 'Legacy'},
+  cardSize: 'sm',
   defaultArtworkAspectRatio: '16/9',
   defaultArtworkFit: 'cover',
-  gridColsClassName:
-    'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6',
 
   getRawSections: buildRawSections,
 

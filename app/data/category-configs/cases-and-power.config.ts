@@ -19,6 +19,7 @@ type CuratedEntry = {
   subtitle: string;
   imagePath: string | null;
   isActive: boolean;
+  isPreRelease?: boolean;
 };
 
 const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
@@ -29,6 +30,7 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
       '84HP EuroRack enclosure with 12V DC power and video sync distribution',
     imagePath: '/images/base-system-84-square.png',
     isActive: true,
+    isPreRelease: true,
   },
   {
     slug: 'vessel-168',
@@ -44,7 +46,7 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     subtitle:
       '208HP EuroRack enclosure with 12V DC power and video sync distribution',
     imagePath: null,
-    isActive: true,
+    isActive: false,
   },
   {
     slug: 'bus-168-diy-kit',
@@ -58,14 +60,14 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     name: 'Rack 84HP',
     subtitle: '84HP rack enclosure for desktop or 19" rack mounting',
     imagePath: '/images/rack-84.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'dc-distro-3a',
     name: 'DC Distro 3A',
     subtitle: 'DC power distributor',
     imagePath: '/images/dc-distro-3a-front-panel-square.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'dc-distro-5a',
@@ -79,21 +81,21 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     name: '12V DC Adapter 3A',
     subtitle: '3A wall wart power supply with international plug kit',
     imagePath: '/images/12v-dc-wall-wart-adapter-set.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'dc-power-cable',
     name: 'DC Power Cable',
     subtitle: '2.1mm DC jumper cables for module power distribution',
     imagePath: '/images/dc-power-cable-square.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'power-entry-8hp',
     name: 'Power Entry 8HP',
     subtitle: 'OEM power entry assembly for 8HP and larger builds',
     imagePath: '/images/psu8-and-rear-panel.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'power-sync-entry-12hp',
@@ -101,7 +103,7 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     subtitle:
       'OEM power and sync entry assembly for 12HP and larger builds',
     imagePath: '/images/fpga12-and-rear-panel.png',
-    isActive: false,
+    isActive: true,
   },
   {
     slug: 'vessel-eurorack-psu-expander',
@@ -109,6 +111,7 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     subtitle: 'Legacy +/-12V power expander for Vessel cases',
     imagePath: null,
     isActive: false,
+    isPreRelease: true,
   },
 ];
 
@@ -125,6 +128,7 @@ function curatedToSource(entry: CuratedEntry): CategorySourceEntry {
     externalUrl: null,
     __curatedSubtitle: entry.subtitle,
     __imagePath: entry.imagePath,
+    __isPreRelease: entry.isPreRelease,
   };
 }
 
@@ -170,6 +174,9 @@ export const casesAndPowerCategoryConfig: CategoryListingConfig = {
   sectionLabels: {active: 'Active', legacy: 'Legacy'},
 
   getRawSections: buildRawSections,
+
+  // Filter out pre-release products.
+  filterEntry: (entry) => !((entry as Record<string, unknown>).__isPreRelease as boolean | undefined),
 
   // Cases & power link to Shopify product pages directly (no internal hub).
   detailHref: (entry) => `/products/${entry.canonical}`,

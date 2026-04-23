@@ -1,4 +1,5 @@
 const INSTRUMENT_ARTWORK: Record<string, string> = {
+  bitvision: '/images/bitvision-manual-cover-square.jpg',
   videomancer: '/images/videomancer/hero-product-square.png',
   chromagnon: '/images/chromagnon-front-panel-square.png',
   vidiot: '/images/vidiot.PNG',
