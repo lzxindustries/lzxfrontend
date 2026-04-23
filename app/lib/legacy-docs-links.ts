@@ -83,5 +83,22 @@ export function rewriteLegacyDocsLinks(html: string): string {
     '$1/docs/$2$3',
   );
 
+  // --- Legacy GitHub `lzxindustries/documentation` schematic PDFs ---
+  // A handful of Shopify product descriptions (mostly the Castle series)
+  // still link to PDFs hosted in the old `lzxindustries/documentation`
+  // repo, which has since been renamed and restructured. We mirror
+  // those PDFs locally under `/docs/pdf/<slug>/<slug>-schematics.pdf`,
+  // so rewrite both forms to the local path so the crawler gets 200s
+  // and users don't bounce off a 404.
+  rewritten = rewritten.replace(
+    /https?:\/\/github\.com\/lzxindustries\/documentation\/raw\/[^\/"'<\s]+\/([^\/"'<\s]+)\/\1(?:%20|\+|\s)+Schematics\.pdf/gi,
+    (_match, folder: string) => {
+      const slug = decodeURIComponent(folder.replace(/\+/g, '%20'))
+        .toLowerCase()
+        .replace(/\s+/g, '-');
+      return `/docs/pdf/${slug}/${slug}-schematics.pdf`;
+    },
+  );
+
   return rewritten;
 }

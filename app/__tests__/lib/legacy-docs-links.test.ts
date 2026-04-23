@@ -87,6 +87,25 @@ describe('rewriteLegacyDocsLinks', () => {
     expect(out).toContain('href="/instruments/videomancer/manual"');
   });
 
+  it('rewrites legacy github documentation schematic PDFs to local /docs/pdf paths', () => {
+    const html =
+      '<a href="https://github.com/lzxindustries/documentation/raw/master/Castle%20111%20D%20Flip%20Flops/Castle%20111%20D%20Flip%20Flops%20Schematics.pdf">Schematics</a>';
+    const out = rewriteLegacyDocsLinks(html);
+    expect(out).toContain(
+      '/docs/pdf/castle-111-d-flip-flops/castle-111-d-flip-flops-schematics.pdf',
+    );
+    expect(out).not.toContain('github.com/lzxindustries/documentation');
+  });
+
+  it('rewrites legacy github schematic PDFs regardless of branch name', () => {
+    const html =
+      '<a href="http://github.com/lzxindustries/documentation/raw/main/Castle%20000%20ADC/Castle%20000%20ADC%20Schematics.pdf">Schematic</a>';
+    const out = rewriteLegacyDocsLinks(html);
+    expect(out).toContain(
+      '/docs/pdf/castle-000-adc/castle-000-adc-schematics.pdf',
+    );
+  });
+
   it('rewrites a mix of all supported forms in one HTML blob', () => {
     const html = [
       '<a href="https://docs.lzxindustries.net/docs/category/program-guides">Programs</a>',
