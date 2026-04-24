@@ -16,6 +16,7 @@ import {hasCuratedLearnContent} from '~/data/instrument-learn-cards';
 import {loadSupportContent} from '~/data/support-content.server';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
 import {getSignalFlowForProduct} from '~/components/SignalFlowDiagram';
+import {getTroubleshootingTree} from '~/components/TroubleshootingFlow';
 import {routeHeaders} from '~/data/cache';
 
 /**
@@ -36,6 +37,14 @@ function computeHasSetupContent(slug: string): boolean {
     Boolean(getSignalFlowForProduct(slug)) ||
     supportRecord?.connectSupported === true
   );
+}
+
+/** True when the Support tab should appear in the hub nav (manifest, FAQ, or guided troubleshooting). */
+function computeHasInstrumentSupportNav(slug: string): boolean {
+  if (SUPPORT_MANIFEST[slug]) return true;
+  const supportContent = loadSupportContent(slug);
+  if ((supportContent.faqItems?.length ?? 0) > 0) return true;
+  return getTroubleshootingTree(slug) != null;
 }
 
 export const headers = routeHeaders;
@@ -71,17 +80,20 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   const recommended = getRecommendedProducts(context, data.product.id);
   const hasSetupContent = computeHasSetupContent(slug);
+  const hasSupportNav = computeHasInstrumentSupportNav(slug);
 
   return defer({
     ...data,
     recommended,
     hasSetupContent,
+    hasSupportNav,
   });
 }
 
 export type InstrumentLayoutLoaderData = InstrumentHubData & {
   recommended: ReturnType<typeof getRecommendedProducts>;
   hasSetupContent: boolean;
+  hasSupportNav: boolean;
 };
 
 export default function InstrumentLayout() {
@@ -89,7 +101,6 @@ export default function InstrumentLayout() {
   const {
     product,
     hasManual,
-    videos,
     assets,
     archiveAssets,
     connectors,
@@ -99,6 +110,8 @@ export default function InstrumentLayout() {
   const slug = (data as unknown as InstrumentHubData).slug;
   const hasSetupContent = (data as unknown as InstrumentLayoutLoaderData)
     .hasSetupContent;
+  const hasSupportNav = (data as unknown as InstrumentLayoutLoaderData)
+    .hasSupportNav;
 
   const hasSpecs =
     connectors.length > 0 ||
@@ -115,9 +128,9 @@ export default function InstrumentLayout() {
     hasManual,
     hasCuratedLearn: hasCuratedLearnContent(slug),
     hasSetupContent,
-    videoCount: videos.length,
     downloadCount: assets.length + archiveAssets.length,
     hasSpecs: Boolean(hasSpecs),
+    hasSupport: hasSupportNav,
   });
 
   return (

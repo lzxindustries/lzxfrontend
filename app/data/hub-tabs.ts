@@ -14,11 +14,11 @@
  * | Tab        | User question                                    | Content shape                                              |
  * |------------|--------------------------------------------------|------------------------------------------------------------|
  * | Overview   | "What is this product and can I buy it?"         | Hero, gallery, subtitle, buy box, recommended products.    |
- * | Manual     | "How does this work in detail?"                  | Reference documentation rendered from `content/docs/...`.  |
  * | Learn      | "Where do I start with curated lessons?"         | Curated launchpad cards to key doc pages and tutorials.    |
  * | Setup      | "How do I get first signal from this product?"   | First-run prerequisites, signal flow, quick-start steps.   |
+ * | Manual     | "How does this work in detail?"                  | Reference documentation rendered from `content/docs/...`.  |
  * | Patches    | "What example patches exist for this module?"    | Signal routing recipes and example patches from lzxdb.     |
- * | Videos     | "What video tutorials or demos cover this?"      | Curated and community video embeds.                        |
+ * | Videos     | "What video tutorials or demos cover this?"      | Curated and community video embeds (module hubs; `/videos` routes remain for instruments). |
  * | Downloads  | "What files do I need: firmware, manuals, PDFs?" | Downloadable assets — firmware, PDFs, schematics, images.  |
  * | Specs      | "What are the electrical and mechanical specs?"  | Connectors, controls, features, metafield spec tables.     |
  * | Support    | "I have a problem — what should I do next?"      | FAQ, troubleshooting, forum archive, contact channels.     |
@@ -34,6 +34,10 @@
  * - The downloads tab is labelled **Downloads** everywhere. The
  *   legacy "Software & Downloads" variant collapsed into the same
  *   tab.
+ * - **Instrument** hubs order tabs: Overview → Learn → Setup → Manual →
+ *   Downloads → Specs → Support. Learn/Setup/Manual/Downloads/Specs/Support
+ *   are omitted from the nav when they would be empty; **Overview** is always
+ *   shown. Instrument `/videos` URLs stay available but are not a hub tab.
  * - **Learn** and **Setup** are reserved for product lines that have
  *   curated per-product content. The tab builder hides Learn when
  *   only the generic launchpad cards would render, because those
@@ -55,9 +59,9 @@ export interface InstrumentTabContext {
   hasManual: boolean;
   hasCuratedLearn: boolean;
   hasSetupContent: boolean;
-  videoCount: number;
   downloadCount: number;
   hasSpecs: boolean;
+  hasSupport: boolean;
 }
 
 export interface ModuleTabContext {
@@ -78,17 +82,16 @@ export function buildInstrumentTabs(ctx: InstrumentTabContext): HubTab[] {
 
   return [
     {label: 'Overview', to: base},
-    {label: MANUAL_LABEL, to: `${base}/manual`, hidden: !ctx.hasManual},
     {label: 'Learn', to: `${base}/learn`, hidden: !ctx.hasCuratedLearn},
     {label: 'Setup', to: `${base}/setup`, hidden: !ctx.hasSetupContent},
-    {label: 'Videos', to: `${base}/videos`, hidden: ctx.videoCount === 0},
+    {label: MANUAL_LABEL, to: `${base}/manual`, hidden: !ctx.hasManual},
     {
       label: DOWNLOADS_LABEL,
       to: `${base}/downloads`,
       hidden: ctx.downloadCount === 0,
     },
     {label: 'Specs', to: `${base}/specs`, hidden: !ctx.hasSpecs},
-    {label: 'Support', to: `${base}/support`},
+    {label: 'Support', to: `${base}/support`, hidden: !ctx.hasSupport},
   ];
 }
 

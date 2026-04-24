@@ -17,8 +17,9 @@ import {
  *   "Software & Downloads").
  * - Learn and Setup surface only when meaningful per-product content
  *   exists. Empty defaults must not promote a tab.
- * - Tab ordering is deterministic and shared between hub types up to
- *   the product-specific middle slot (Learn/Setup vs. Patches).
+ * - Instrument hubs omit Manual, Downloads, Specs, and Support from the
+ *   nav when empty; Overview is always shown. (No Videos tab — use `/videos` URL.)
+ * - Module tab ordering is deterministic with Patches in the educational slot.
  */
 
 describe('buildInstrumentTabs', () => {
@@ -27,9 +28,9 @@ describe('buildInstrumentTabs', () => {
     hasManual: true,
     hasCuratedLearn: true,
     hasSetupContent: true,
-    videoCount: 3,
     downloadCount: 2,
     hasSpecs: true,
+    hasSupport: true,
   };
 
   it('uses canonical labels', () => {
@@ -46,10 +47,9 @@ describe('buildInstrumentTabs', () => {
     const tabs = buildInstrumentTabs(base).filter((t) => !t.hidden);
     expect(tabs.map((t) => t.label)).toEqual([
       'Overview',
-      'Manual',
       'Learn',
       'Setup',
-      'Videos',
+      'Manual',
       'Downloads',
       'Specs',
       'Support',
@@ -77,29 +77,31 @@ describe('buildInstrumentTabs', () => {
   it('hides content tabs when their data is empty', () => {
     const tabs = buildInstrumentTabs({
       ...base,
-      videoCount: 0,
       downloadCount: 0,
       hasSpecs: false,
     });
     const hidden = new Set(tabs.filter((t) => t.hidden).map((t) => t.label));
-    expect(hidden.has('Videos')).toBe(true);
-    expect(hidden.has('Downloads')).toBe(true);
+    expect(hidden.has(DOWNLOADS_LABEL)).toBe(true);
     expect(hidden.has('Specs')).toBe(true);
   });
 
-  it('always surfaces Overview and Support', () => {
+  it('hides Support when hasSupport is false', () => {
+    const tabs = buildInstrumentTabs({...base, hasSupport: false});
+    expect(tabs.find((t) => t.label === 'Support')?.hidden).toBe(true);
+  });
+
+  it('always surfaces Overview', () => {
     const tabs = buildInstrumentTabs({
       slug: 'videomancer',
       hasManual: false,
       hasCuratedLearn: false,
       hasSetupContent: false,
-      videoCount: 0,
       downloadCount: 0,
       hasSpecs: false,
+      hasSupport: false,
     });
     const visible = tabs.filter((t) => !t.hidden).map((t) => t.label);
-    expect(visible).toContain('Overview');
-    expect(visible).toContain('Support');
+    expect(visible).toEqual(['Overview']);
   });
 
   it('uses /instruments/<slug> as the base path', () => {
