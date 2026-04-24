@@ -38,4 +38,24 @@ describe('getMarkdownToHTML', () => {
     const result = getMarkdownToHTML('');
     expect(result).toBe('');
   });
+
+  it('strips YAML frontmatter so keys are not rendered as a heading', () => {
+    const input = [
+      '---',
+      "title: 'Start with Modular'",
+      "description: 'Set up your first eurorack video synthesis system.'",
+      'sidebar_position: 3',
+      '---',
+      '',
+      '# Start with Modular',
+      '',
+      'Body copy.',
+    ].join('\n');
+    const result = getMarkdownToHTML(input);
+    expect(result).not.toContain('title:');
+    expect(result).not.toContain('sidebar_position');
+    expect(result).not.toMatch(/<h2>[^<]*title:/);
+    expect(result).toContain('<h1>');
+    expect(result).toContain('Start with Modular');
+  });
 });
