@@ -143,6 +143,228 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
       icon: '💬',
     },
   ],
+
+  /**
+   * Single-manual instruments: the Learn tab highlights setup, the reference
+   * manual, the Support hub, and community resources. (Patches stay on the
+   * instrument hub nav to avoid a sixth card that mostly duplicates it.)
+   */
+  chromagnon: [
+    {
+      title: 'Getting started',
+      description:
+        'Unbox Chromagnon, connect power and video I/O, and make your first patch.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        'Matrix architecture, I/O, calibration, and full control reference.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description:
+        'Troubleshooting, firmware, and direct links to common Chromagnon topics.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for Chromagnon.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
+
+  vidiot: [
+    {
+      title: 'Getting started',
+      description:
+        'Power, video format, and your first Vidiot patch from the front panel.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        'Layout, LFO shape generator, 2D keyer, and full control reference.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description: 'Troubleshooting, connectivity, and common Vidiot questions.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for Vidiot.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
+
+  'andor-1-media-player': [
+    {
+      title: 'Getting started',
+      description: 'Cabling, power, and playing your first clip or stream.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        'Interface, I/O, storage, and control reference for Andor 1.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description:
+        'Troubleshooting, media formats, and common Andor 1 media player topics.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for Andor 1.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
+
+  'double-vision': [
+    {
+      title: 'Getting started',
+      description:
+        'Rack, power, and the core Double Vision system signal path.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        'System overview, modules, and patching reference for Double Vision.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description: 'Troubleshooting, accessories, and common Double Vision topics.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for the Double Vision system.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
+
+  'double-vision-168': [
+    {
+      title: 'Getting started',
+      description:
+        'Rack, power, and the Double Vision 168 (6U) monitor workflow.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        '6U case layout, monitor I/O, and system reference for Double Vision 168.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description: 'Troubleshooting, compatibility, and Double Vision 168 topics.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for Double Vision 168.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
+
+  'double-vision-expander': [
+    {
+      title: 'Getting started',
+      description:
+        'Install the expander, power, and integrate it with your Double Vision rig.',
+      to: 'setup',
+      icon: '🚀',
+    },
+    {
+      title: 'User manual',
+      description:
+        'I/O, mounting, and reference for the Double Vision expander sidecar.',
+      toKey: 'manual',
+      icon: '📖',
+    },
+    {
+      title: 'Support & FAQ',
+      description: 'Troubleshooting, cabling, and common expander questions.',
+      to: 'support',
+      icon: '🛟',
+    },
+    {
+      title: 'Videos',
+      description: 'Tutorials, demos, and walkthroughs for the expander.',
+      toKey: 'videos',
+      icon: '🎬',
+    },
+    {
+      title: 'Community forum',
+      description: 'Project ideas, patch tips, and help from the LZX community.',
+      to: 'https://community.lzxindustries.net',
+      external: true,
+      icon: '💬',
+    },
+  ],
 };
 
 /** Resolves the card list for a given instrument. */

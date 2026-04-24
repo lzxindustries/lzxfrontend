@@ -164,6 +164,23 @@ describe('Instrument Learn Cards', () => {
     const cards = getLearnCards('some-unknown-instrument');
     expect(cards).toBe(DEFAULT_LEARN_CARDS);
   });
+
+  it('single-manual instruments have curated cards with Support & FAQ', () => {
+    for (const slug of [
+      'chromagnon',
+      'vidiot',
+      'andor-1-media-player',
+      'double-vision',
+      'double-vision-168',
+      'double-vision-expander',
+    ] as const) {
+      const cards = getLearnCards(slug);
+      expect(cards).toBe(INSTRUMENT_LEARN_CARDS[slug]);
+      expect(
+        cards.find((c) => c.title === 'Support & FAQ'),
+      ).toBeDefined();
+    }
+  });
 });
 
 describe('getLearnCardHref', () => {
