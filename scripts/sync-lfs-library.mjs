@@ -94,7 +94,9 @@ function copyProductTextMetadata(sourceLibrary) {
   }
 
   walk(srcProducts);
-  console.log('Copied product JSON + modulargrid/metadata.md → data/lfs-library/products');
+  console.log(
+    'Copied product JSON + modulargrid/metadata.md → data/lfs-library/products',
+  );
 }
 
 function expandTagCandidates(handles) {
@@ -108,18 +110,8 @@ function expandTagCandidates(handles) {
 }
 
 function copyForumTopics(sourceLibrary) {
-  const srcTopics = path.join(
-    sourceLibrary,
-    'scrape',
-    'community',
-    'topics',
-  );
-  const destTopics = path.join(
-    DEST_ROOT,
-    'scrape',
-    'community',
-    'topics',
-  );
+  const srcTopics = path.join(sourceLibrary, 'scrape', 'community', 'topics');
+  const destTopics = path.join(DEST_ROOT, 'scrape', 'community', 'topics');
 
   if (!fs.existsSync(srcTopics)) {
     console.warn(`skip forum topics (missing): ${srcTopics}`);
@@ -146,15 +138,11 @@ function copyForumTopics(sourceLibrary) {
     const full = path.join(srcTopics, name);
     const raw = JSON.parse(fs.readFileSync(full, 'utf8'));
     const slug = raw.slug ?? '';
-    const tags = new Set(
-      (raw.tags ?? []).map((t) => t.slug).filter(Boolean),
-    );
+    const tags = new Set((raw.tags ?? []).map((t) => t.slug).filter(Boolean));
 
     let include = slug.startsWith('all-about-');
     if (!include) {
-      include = [...tags].some(
-        (t) => tagCandidates.has(t) || handleSet.has(t),
-      );
+      include = [...tags].some((t) => tagCandidates.has(t) || handleSet.has(t));
     }
 
     if (include) {
@@ -162,7 +150,9 @@ function copyForumTopics(sourceLibrary) {
       kept++;
     }
   }
-  console.log(`Copied ${kept} forum topic JSON files → data/lfs-library/scrape/community/topics`);
+  console.log(
+    `Copied ${kept} forum topic JSON files → data/lfs-library/scrape/community/topics`,
+  );
 }
 
 function main() {

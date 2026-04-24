@@ -550,9 +550,7 @@ function mergeArchiveAssetsFromManifest(
   const entry = getLfsAssetEntry(product.slug);
   if (!entry) return assets;
 
-  const seen = new Set(
-    assets.map((a) => `${a.sourcePath}::${a.relativePath}`),
-  );
+  const seen = new Set(assets.map((a) => `${a.sourcePath}::${a.relativePath}`));
   let index = assets.length;
   const extra: LfsProductAsset[] = [];
   const folderPrefix = `lfs/library/products/${entry.sourceFolder}/`;
@@ -580,12 +578,7 @@ function mergeArchiveAssetsFromManifest(
       name: humanizeFileName(fileName),
       fileName,
       fileType,
-      description: buildAssetDescription(
-        fileName,
-        fileType,
-        category,
-        null,
-      ),
+      description: buildAssetDescription(fileName, fileType, category, null),
       href,
       sourcePath: sourcePathVite,
       relativePath,
