@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-24T00:49:04.162Z",
+  "generatedAt": "2026-04-24T00:51:16.255Z",
   "source": "catalog/shopify/products",
   "productCount": 133,
   "products": {
@@ -213,7 +213,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429962555415",
           "sku": "960700",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -951,7 +951,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429863628823",
           "sku": "940141",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -2859,7 +2859,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41299105841175",
           "sku": "970101",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -2910,7 +2910,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41299121340439",
           "sku": "970100",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -3936,7 +3936,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41810151899159",
           "sku": "950067",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -4985,7 +4985,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41244911632407",
           "sku": "490900",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9294,7 +9294,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429817262103",
           "sku": "940140",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9359,7 +9359,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41298940887063",
           "sku": "940010",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9580,7 +9580,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41298748145687",
           "sku": "910010",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9635,7 +9635,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429909471255",
           "sku": "910142",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9690,7 +9690,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429856616471",
           "sku": "910204",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9745,7 +9745,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429952954391",
           "sku": "910149",
           "title": "Default Title",
-          "position": 2,
+          "position": 1,
           "selectedOptions": [
             {
               "name": "Title",

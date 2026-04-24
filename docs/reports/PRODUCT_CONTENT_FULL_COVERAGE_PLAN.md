@@ -38,7 +38,7 @@ This document defines what “full coverage” means for the LZX product hub, ho
 4. **Diff** against live: `yarn shopify:sync:diff` (or restrict with `--handle <handle>` on `node scripts/shopify-sync.mjs`).  
 5. **Push** to Shopify: `yarn shopify:sync:push --apply` (same script; dry-run is default without `--apply`). Re-pull after a successful apply to confirm parity.
 
-**Shopify `productSet` caveat:** a product with a **single** variant must use `position: 1` in `variants.json`. A lone variant at `position: 2` (seen on some API exports) causes `productSet` to error (“Variant position must be between 1 and the number of variants”). If push fails, `grep '"position": 2' catalog/shopify/products/<handle>/variants.json` and correct to `1` before re-applying.
+**Shopify `productSet` caveat:** a product with a **single** variant must use `position: 1` in `variants.json`. A lone variant at `position: 2` (seen on some API exports) causes `productSet` to error (“Variant position must be between 1 and the number of variants”). After a pull, run `yarn catalog:normalize-variants` to fix the mirror, or `grep '"position": 2' catalog/shopify/products/<handle>/variants.json` and set `1` by hand before re-applying.
 
 ## Maintainer commands
 
