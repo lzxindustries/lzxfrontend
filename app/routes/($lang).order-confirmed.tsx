@@ -83,7 +83,7 @@ export default function OrderConfirmed() {
               View Your Account
             </Link>
             <Link to="/" className="btn btn-secondary">
-              Continue Shopping
+              Continue shopping
             </Link>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function OrderConfirmed() {
           {(data) => (
             <>
               <ProductSwimlane
-                title="You Might Also Like"
+                title="You May Also Like"
                 products={data.featuredProducts}
               />
               <FeaturedCollections

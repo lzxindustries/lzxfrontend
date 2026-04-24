@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
     {
       name: 'description',
       content:
-        'Set up your first eurorack video synthesis system — install modules, connect sync, and create your first patch.',
+        'Set up your first Eurorack video synthesis system — install modules, connect sync, and create your first patch.',
     },
   ];
 };

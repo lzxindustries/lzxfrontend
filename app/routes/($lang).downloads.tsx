@@ -304,7 +304,7 @@ export default function DownloadsPage() {
                   </p>
                 ) : null}
                 <p className="text-xs uppercase tracking-wide text-base-content/60 mt-1">
-                  {entry.hubType}
+                  {entry.hubType === 'instrument' ? 'Instrument' : 'Module'}
                 </p>
               </div>
               <div className="flex gap-2">

@@ -52,7 +52,7 @@ describe('notify-me action', () => {
     expect(payload.message).toContain('valid email');
   });
 
-  it('returns fallback success when klaviyo key is missing', async () => {
+  it('returns 503 with honest copy when klaviyo key is missing', async () => {
     const {response, payload} = await runAction({
       form: {
         email: 'user@example.com',
@@ -61,9 +61,9 @@ describe('notify-me action', () => {
       },
     });
 
-    expect(response.status).toBe(200);
-    expect(payload.ok).toBe(true);
-    expect(payload.message).toContain('request was received');
+    expect(response.status).toBe(503);
+    expect(payload.ok).toBe(false);
+    expect(payload.message).toContain('not available yet');
   });
 
   it('returns success when klaviyo accepts subscription', async () => {

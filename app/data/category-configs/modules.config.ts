@@ -92,7 +92,7 @@ export const modulesCategoryConfig: CategoryListingConfig = {
   key: 'modules',
   pageTitle: 'Modules',
   seoTitle: 'Modules',
-  seoDescription: 'LZX Industries eurorack video synthesis modules',
+  seoDescription: 'LZX Industries Eurorack video synthesis modules',
   rightSlot: {label: 'View all module specs →', to: '/modules/specs'},
   sectionLabels: {active: 'Active', legacy: 'Legacy'},
   cardSize: 'sm',

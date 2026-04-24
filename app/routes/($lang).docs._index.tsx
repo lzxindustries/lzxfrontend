@@ -17,7 +17,7 @@ export const SECTIONS = [
   {
     title: 'Learn a Module',
     description:
-      'Find documentation for any LZX eurorack module — specs, controls, and patching tips.',
+      'Find documentation for any LZX Eurorack module — specs, controls, and patching tips.',
     to: '/modules',
     icon: '🔧',
   },

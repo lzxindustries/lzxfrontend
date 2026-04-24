@@ -45,6 +45,12 @@ export const action: ActionFunction = async ({request, context, params}) => {
     });
   }
 
+  if (password.length < 8) {
+    return badRequest({
+      formError: 'Password is too short. Please use at least 8 characters.',
+    });
+  }
+
   try {
     const data = await storefront.mutate<{
       customerCreate: CustomerCreatePayload;
@@ -63,12 +69,12 @@ export const action: ActionFunction = async ({request, context, params}) => {
 
       if (hasTaken) {
         throw new Error(
-          'An account with this email already exists. Please log in instead.',
+          'An account with this email already exists. Please sign in instead.',
         );
       }
       if (hasTooShort) {
         throw new Error(
-          'Password is too short. Please use at least 5 characters.',
+          'Password is too short. Please use at least 8 characters.',
         );
       }
       throw new Error(
@@ -158,7 +164,7 @@ export default function Register() {
                   href="/account/login"
                   className="mb-3 text-sm underline text-primary/60 hover:text-primary"
                 >
-                  Go to login
+                  Go to sign in
                 </a>
               )}
             </div>

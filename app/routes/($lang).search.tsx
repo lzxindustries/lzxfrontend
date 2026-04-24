@@ -138,7 +138,7 @@ export default function Search() {
           {noResults && (
             <Section padding="x">
               <Text className="opacity-50">
-                No results, try something else.
+                No results for that search. Try different keywords or browse the catalog.
               </Text>
             </Section>
           )}

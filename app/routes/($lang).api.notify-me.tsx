@@ -21,12 +21,14 @@ export async function action({request, context}: ActionFunctionArgs) {
       | undefined;
 
     if (!apiKey) {
-      // No key configured in env yet; accept request so UI flow is testable.
-      return json({
-        ok: true,
-        message:
-          'Thanks. Your request was received. Back-in-stock notifications are being finalized.',
-      });
+      return json(
+        {
+          ok: false,
+          message:
+            'Back-in-stock notifications are not available yet. Please check back soon or contact support@lzxindustries.net.',
+        },
+        {status: 503},
+      );
     }
 
     try {

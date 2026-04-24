@@ -135,7 +135,7 @@ export function Header({
             <PredictiveSearch onClose={() => setSearchOpen(false)} />
             <div className="mt-4 rounded-lg bg-base-100 p-4 shadow">
               <p className="mb-2 text-xs font-semibold uppercase tracking-wide opacity-60">
-                Search Docs And Blog
+                Search docs and blog
               </p>
               <DocsSearch />
             </div>

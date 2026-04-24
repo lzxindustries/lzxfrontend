@@ -230,7 +230,7 @@ function CartCheckoutActions({
           to="/policies/refund-policy"
           className="underline hover:text-primary transition"
         >
-          Return Policy
+          Refund Policy
         </Link>
         <span>·</span>
         <Link
@@ -244,7 +244,7 @@ function CartCheckoutActions({
         to="/catalog"
         className="text-center text-sm text-primary/50 hover:text-primary transition"
       >
-        Continue Shopping
+        Continue shopping
       </Link>
     </div>
   );
@@ -564,8 +564,7 @@ export function CartEmpty({
     >
       <section className="grid gap-6">
         <Text format>
-          Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
-          started!
+          You haven&rsquo;t added anything yet. Browse the shop to get started.
         </Text>
         <div>
           <Button onClick={onClose}>Continue shopping</Button>

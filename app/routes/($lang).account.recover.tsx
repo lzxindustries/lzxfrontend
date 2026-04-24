@@ -132,7 +132,7 @@ export default function Recover() {
                 <p className="align-baseline text-sm mt-6">
                   Return to &nbsp;
                   <Link className="inline underline" to="/account/login">
-                    Login
+                    Sign in
                   </Link>
                 </p>
               </div>

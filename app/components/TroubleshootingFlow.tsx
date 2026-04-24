@@ -341,7 +341,7 @@ export const GENERIC_MODULE_TROUBLESHOOTING: TroubleshootingNode[] = [
         label: 'Immediately on power-up',
         nextId: null,
         resolution:
-          'This may indicate a power supply issue. Check that your eurorack power supply has sufficient capacity on all rails (+12V, -12V, +5V if needed). Try removing other modules to isolate the issue.',
+          'This may indicate a power supply issue. Check that your Eurorack power supply has sufficient capacity on all rails (+12V, -12V, +5V if needed). Try removing other modules to isolate the issue.',
       },
       {
         label: 'Only with certain input signals',
