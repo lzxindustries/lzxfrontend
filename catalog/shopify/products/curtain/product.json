@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.",
   "createdAt": "2026-04-21T20:20:22Z",
-  "updatedAt": "2026-04-21T20:22:27Z",
+  "updatedAt": "2026-04-22T08:20:31Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423524887",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Curtain | LZX Industries",
+    "title": null,
     "description": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics."
   }
 }

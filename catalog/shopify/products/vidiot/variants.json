@@ -5,12 +5,12 @@
     "title": "Default Title",
     "sku": "930001",
     "barcode": "",
-    "position": 2,
+    "position": 1,
     "price": "1599.00",
     "compareAtPrice": null,
     "taxable": true,
     "inventoryPolicy": "DENY",
-    "updatedAt": "2024-11-26T23:26:30Z",
+    "updatedAt": "2026-04-24T00:49:10Z",
     "selectedOptions": [
       {
         "name": "Title",

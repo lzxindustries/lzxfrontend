@@ -4,9 +4,19 @@
     "namespace": "global",
     "key": "description_tag",
     "type": "string",
-    "value": "Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying rang...",
+    "value": "Topogram: 2D shapes + 3D perspective (LZX Orion). See Manual and Specs.",
     "description": null,
-    "updatedAt": "2026-04-21T20:20:50Z",
-    "compareDigest": "e1b8a473f36daf0870ff50dc876598bd4363e17b0c92165b66b6f52591ede3d2"
+    "updatedAt": "2026-04-24T00:49:05Z",
+    "compareDigest": "88ebb4d4cae33da1b662d2bc6d94bddf4e87781e86d7382add89fc0952244d24"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697830047767",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Topogram | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:05Z",
+    "compareDigest": "e2cf0d14dba863d91c9dd37e72f451d918032fc0ee1a69960b8cfd574f00f2f2"
   }
 ]

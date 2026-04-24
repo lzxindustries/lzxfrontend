@@ -17,6 +17,14 @@ faqItems:
     answer: |
       Yes. Videomancer works standalone or alongside LZX eurorack modules via its
       1V RGB video I/O and Audio/CV modulation inputs.
+  - question: 'Is there perceptible delay between a knob turn and the output?'
+    answer: |
+      Internal processing is FPGA-based with latency on the order of
+      **microseconds** in typical paths, not “whole frames” like many GPU
+      plugins. The exact number depends on program and I/O; treat the
+      [Quick Start](/instruments/videomancer/manual/quick-start) and
+      [User Manual](/instruments/videomancer/manual) as authoritative when you
+      are wiring time-critical show cues.
 ---
 
 # Videomancer Support

@@ -39,3 +39,5 @@ public/docs/**/Adobe After Effects Auto-Save/
 public/docs/**/ae-links/
 public/docs/**/Overlord/
 .shopify
+# Local timestamped copies of catalog/shopify before risky edits (large)
+catalog/shopify.backup.*/

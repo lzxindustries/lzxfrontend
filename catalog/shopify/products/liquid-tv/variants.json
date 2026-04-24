@@ -5,12 +5,12 @@
     "title": "Default Title",
     "sku": "950027",
     "barcode": "602573249444",
-    "position": 2,
+    "position": 1,
     "price": "299.00",
     "compareAtPrice": null,
     "taxable": false,
     "inventoryPolicy": "DENY",
-    "updatedAt": "2024-09-09T23:02:20Z",
+    "updatedAt": "2026-04-24T00:49:02Z",
     "selectedOptions": [
       {
         "name": "Title",

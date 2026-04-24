@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.",
   "createdAt": "2026-04-21T20:20:15Z",
-  "updatedAt": "2026-04-21T20:22:26Z",
+  "updatedAt": "2026-04-22T08:20:25Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423295511",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Cadet V Scaler | LZX Industries",
+    "title": null,
     "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions."
   }
 }

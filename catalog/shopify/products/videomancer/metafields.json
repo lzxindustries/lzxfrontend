@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697830670359",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Videomancer: standalone FPGA video effects, analog + HDMI, hands-on control. Manual and Specs on lzxindustries.com for programs, I/O, and firmware.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:09Z",
+    "compareDigest": "ab76133dda210d5fe834e152cb74a7407b8ddf4184d95ea0d0d679e7377f019a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697830637591",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Videomancer | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:09Z",
+    "compareDigest": "c8bec364d94c1f15fe83b72f4c9d8a764dce10cf77a41dccf5b626403ae75d2a"
+  },
+  {
     "id": "gid://shopify/Metafield/43731781025815",
     "namespace": "shopify",
     "key": "color-pattern",

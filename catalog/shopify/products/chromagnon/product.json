@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/chromagnon",
-  "description": "Follow along with Chromagnon production progress on our blog. Chromagnon is a visual instrument designed for real-time image creation and transformation. It combines video sync generation, wideband analog IO, and FPGA-powered signal processing into a single playable device — equally at home as a standalone instrument or as the core of a EuroRack video synthesis system. Standalone and EuroRack out of the box. Includes a sheet metal enclosure for standalone use. Power from EuroRack power header or any 12V DC wall wart. A holistic visual instrument or core module for EuroRack video synthesis. Includes video sync generation, video input, video output, complex cartesian processor and quad waveform generators. Multi format visuals. Chromagnon supports several complete workflows within a simple interface: colorization, chroma keying, quadrilateral figure generation, and arbitrary raster generation for scan processing with ILDA lasers and XY displays. FPGA-powered processing with analog I/O. High-speed signal processing runs on a dedicated FPGA core for true per-pixel bandwidth in HD formats, while analog I/O buffers and CV input circuits maintain high-quality analog signal integrity. Firmware-updatable for future processing modes and features. Analog HD Video Interfaces. Video and sync generation up to 1080i60. Bring your existing LZX video synthesis system into a high resolution era. Included Items: 52HP EuroRack module with standalone sheet metal enclosure and 12V DC wall wart power adapter, lab exercise manual, 5ft composite video cable, 2x 3.5mm patch cables, 12V DC power jumper cable, EuroRack power cable, inflatable club. Front panel design, control layout, and enclosure design are finalized. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces. Promotional painting of \"Chromagnonfolk with Gary\" by Jason Wayne Barnett.",
+  "description": "Chromagnon is a signal-frontier matrix video instrument: a patchable 14×5 analog matrix, dedicated shape and colorization paths, and deep CV—built for generative and performance video without parking a DAW in the signal chain. Matrix patching, calibrations, and creative workflows live in the Manual. Commerce-facing highlights and the Specs tab keep long tables out of this Overview copy.",
   "createdAt": "2019-10-29T18:10:08Z",
-  "updatedAt": "2026-04-20T14:32:45Z",
+  "updatedAt": "2026-04-24T00:48:59Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/5614998224919",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": null,
-    "description": null
+    "title": "Chromagnon | LZX Industries",
+    "description": "Chromagnon: patchable matrix video instrument. Manual, Specs, and hub on lzxindustries.com."
   }
 }

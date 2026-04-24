@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": null,
-  "description": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five channels of CV control over your patch. Listen to the room. The Sensory Translator comes equipped with an omnidirectional microphone that can hear more than you can! Specs and features: Omnidirectional electret microphone mounted on front panel Three preamp gain settings External audio input selectable between line and modular level voltages 2-input mixer including EQ with Bass and Treble levels Five 4-Pole precision bandpass filters Each bandpass filter has a 2-Octave bandwidth Five envelope followers with three decay speed settings Dedicated LED indicators for each channel Selectable Impulse mode for Beat-to-Trigger detection 16 HP Current draw 80mA +12V, 70mA -12V",
+  "description": "Sensory Translator is a 5-channel CV and video-rate signal acquisition stage: a bridge between the outside world and your 1V patch, built for control voltages, audio, and light-to-voltage work without treating the module as a generic “interface” box. Input ranges, scaling, and patch ethics: Manual. Specs for hardware.",
   "createdAt": "2026-04-21T20:20:40Z",
-  "updatedAt": "2026-04-21T20:23:12Z",
+  "updatedAt": "2026-04-24T00:49:03Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424114711",
@@ -27,6 +27,6 @@
   ],
   "seo": {
     "title": "Sensory Translator | LZX Industries",
-    "description": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five cha..."
+    "description": "Sensory Translator: 5-channel input acquisition for LZX. Manual and Specs on lzxindustries.com."
   }
 }

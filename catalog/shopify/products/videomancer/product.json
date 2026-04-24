@@ -11,9 +11,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/videomancer",
-  "description": "Videomancer is a real-time FPGA video effects console: a full LZX image-processing instrument in a single box. Patch HDMI, composite, or component, route analog or digital in either direction, and perform with dedicated hardware (knobs, toggles, fader) at sub-frame latency. Ten-bit paths, four audio/CV modulation inputs, class-compliant MIDI, USB, optional microSD program loading, and firmware updates via the free LZX Connect app. In-depth program reference, I/O, specs, and troubleshooting are in the product Manual and Quick Start on this site; use those for every format, table, and FAQ.",
+  "description": "Videomancer is a standalone real-time video effects console: programmable FPGA video processing, hard-mapped front-panel controls, and a large library of programs for color, glitch, keying, patterns, and feedback. HDMI and analog I/O work in both directions with effectively no perceptible latency—what you change with a knob is what you see on the display. Line-level and modular signals, MIDI, and USB (firmware, expansion) are covered end-to-end in the in-site documentation. Unboxing, menus, every program, modulation, and I/O: use the Manual tab. For ports and block diagrams, use Specs.",
   "createdAt": "2025-09-28T22:17:28Z",
-  "updatedAt": "2026-04-21T16:17:59Z",
+  "updatedAt": "2026-04-24T00:49:09Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/10382859010071",
@@ -25,7 +25,7 @@
     }
   ],
   "seo": {
-    "title": null,
-    "description": null
+    "title": "Videomancer | LZX Industries",
+    "description": "Videomancer: standalone FPGA video effects, analog + HDMI, hands-on control. Manual and Specs on lzxindustries.com for programs, I/O, and firmware."
   }
 }

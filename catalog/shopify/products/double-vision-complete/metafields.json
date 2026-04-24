@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697829490711",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Double Vision 168: complete 6U LZX system. Manual, Specs, and hub on lzxindustries.com.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:48:59Z",
+    "compareDigest": "14cad6be737cc9e3628c3c5d112f7f09b3dc21f45a6c07914c5acee3faf2b7be"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697829457943",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Double Vision 168 | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:48:59Z",
+    "compareDigest": "16d799301de90e55e03c644abb640bdf149a79546ebacf1c60d522e2491b1d96"
+  },
+  {
     "id": "gid://shopify/Metafield/37576923578391",
     "namespace": "mc-facebook",
     "key": "google_product_category",

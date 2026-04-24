@@ -1,12 +1,32 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697825394711",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Andor 1: Eurorack video media player for LZX systems. Operation in Manual, I/O on Specs at lzxindustries.com.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:47:57Z",
+    "compareDigest": "cd03196bb80bb737ca1baefb407d707cee271cfc3a965ed50b657c2d56e0a03e"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697825361943",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Andor 1 Media Player | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:47:57Z",
+    "compareDigest": "3c515e3e28f30dd2d94b5a3bfea8d30bde45ee41b2810036b5bbac9e57670fb4"
+  },
+  {
     "id": "gid://shopify/Metafield/13342166056983",
     "namespace": "mc-facebook",
     "key": "google_product_category",
     "type": "string",
     "value": "3712",
     "description": null,
-    "updatedAt": "2021-01-26T15:29:09Z",
+    "updatedAt": "2026-04-24T00:48:23Z",
     "compareDigest": "813e61444be661d8456714abfb911ba4a1ebe11a16b05a0e8ca72a220d1ee0a0"
   }
 ]

@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697825624087",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Chromagnon: patchable matrix video instrument. Manual, Specs, and hub on lzxindustries.com.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:47:58Z",
+    "compareDigest": "3e28ac252239bf85faafb689d6fde8e192f29a867561a7f1a61d72f0ba3056c9"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697825591319",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Chromagnon | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:47:58Z",
+    "compareDigest": "a45ce0b2fb81734404afea1c082c1aa3f02afd3f857802da7a8ea3f6836a2e96"
+  },
+  {
     "id": "gid://shopify/Metafield/13342165630999",
     "namespace": "mc-facebook",
     "key": "google_product_category",

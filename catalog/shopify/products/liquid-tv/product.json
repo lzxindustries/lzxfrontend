@@ -8,9 +8,9 @@
   "tags": [],
   "templateSuffix": "",
   "onlineStoreUrl": null,
-  "description": "The LZX Liquid TV is a full color video monitor with a 3.5” LCD video display. The module’s input jack takes any NTSC/PAL video source signal and displays it on the screen, offering easy previewing before the signal is patched elsewhere. This allows for the easy checking and composing of video sequences in real time. Additionally, three switchable preview inputs convert any voltage signal into a video signal that is subsequently displayed on the screen. Features Full color, 3.5 inch LCD video display. Displays any NTSC/PAL video signals or the output of the internal preview driver. Internal preview driver turns any voltage in your modular synth into a valid video signal for display or output, even without any other video synthesizer modules. Three separate preview channel inputs with pass through jacks. The LCD display may be powered from an external 12V source to ease the drain on your EuroRack power supply.",
+  "description": "Liquid TV is a multi-channel NTSC / PAL / SECAM video input decoder for 1V systems: a practical front-end for off-the-air and composite sources, with CV over selection and a dedicated subcarrier reference path for downstream color work. Where the long-form text lives in community threads, the Manual may resolve to archive; Specs for panel data when published.",
   "createdAt": "2024-09-09T21:53:03Z",
-  "updatedAt": "2026-04-17T00:53:59Z",
+  "updatedAt": "2026-04-24T00:49:02Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/9390163591191",
@@ -23,6 +23,6 @@
   ],
   "seo": {
     "title": "Liquid TV | LZX Industries",
-    "description": "Liquid TV"
+    "description": "Liquid TV: multi-standard RF and composite in for LZX. See Manual (archive) and Specs."
   }
 }

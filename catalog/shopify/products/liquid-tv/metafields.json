@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697829785623",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Liquid TV: multi-standard RF and composite in for LZX. See Manual (archive) and Specs.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:02Z",
+    "compareDigest": "572c921b338e00d22f8e437a857ede69ba115d1b67d1cc9941487dfff08372e2"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697829752855",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Liquid TV | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:02Z",
+    "compareDigest": "362899b2d1f74951f57c630333f2aa651a4a7e61a10a3eb27429d52d34d86fe0"
+  },
+  {
     "id": "gid://shopify/Metafield/36725513519127",
     "namespace": "shopify",
     "key": "color-pattern",

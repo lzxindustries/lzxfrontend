@@ -10,7 +10,7 @@
     "compareAtPrice": "9.00",
     "taxable": true,
     "inventoryPolicy": "DENY",
-    "updatedAt": "2026-01-21T02:06:38Z",
+    "updatedAt": "2026-04-22T22:57:10Z",
     "selectedOptions": [
       {
         "name": "Length",
@@ -29,7 +29,7 @@
     "compareAtPrice": "8.00",
     "taxable": true,
     "inventoryPolicy": "CONTINUE",
-    "updatedAt": "2026-01-21T02:06:39Z",
+    "updatedAt": "2026-04-22T22:57:10Z",
     "selectedOptions": [
       {
         "name": "Length",
@@ -48,7 +48,7 @@
     "compareAtPrice": "7.00",
     "taxable": true,
     "inventoryPolicy": "CONTINUE",
-    "updatedAt": "2026-03-26T17:48:11Z",
+    "updatedAt": "2026-04-22T22:57:09Z",
     "selectedOptions": [
       {
         "name": "Length",

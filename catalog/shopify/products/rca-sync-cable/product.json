@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/rca-sync-cable",
   "description": "Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm.",
   "createdAt": "2018-12-06T18:05:55Z",
-  "updatedAt": "2026-04-17T00:53:48Z",
+  "updatedAt": "2026-04-22T22:57:10Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/2333687382080",
@@ -28,7 +28,7 @@
     }
   ],
   "seo": {
-    "title": "RCA Sync Cable | LZX Industries",
-    "description": "RCA Sync Cable"
+    "title": null,
+    "description": null
   }
 }

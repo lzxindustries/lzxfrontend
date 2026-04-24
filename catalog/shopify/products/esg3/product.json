@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/esg3",
-  "description": "ESG3 is LZX’s third-generation video encoder, sync generator, and per-channel proc amp. Convert 1V modular video levels to SD/HD composite or component, genlock your entire case from a single module, and shape color with per-channel RGB brightness, contrast, invert, and mute. Format switch reference tables, patching, and system integration are in the product Manual tab.",
+  "description": "ESG3 is the Gen3 encoder and sync heart of the LZX system: it generates the master sync reference, encodes 1V patchable color and mono outputs for monitoring and downstream gear, and hands off stable timing to the rest of the case. Encoding modes, rear I/O, and calibration flow are in the Manual. The Specs tab tracks connectors and switch definitions from the module database—avoid duplicating that table in marketing copy here.",
   "createdAt": "2021-08-26T22:06:03Z",
-  "updatedAt": "2026-04-21T09:02:32Z",
+  "updatedAt": "2026-04-24T00:49:00Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/8460564398103",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": null,
-    "description": null
+    "title": "ESG3 | LZX Industries",
+    "description": "ESG3: Gen3 sync + encoder for LZX modular video. Full Manual and Specs on lzxindustries.com."
   }
 }

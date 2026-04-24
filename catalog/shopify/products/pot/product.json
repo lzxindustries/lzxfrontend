@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/pot",
   "description": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.) Learn more about P on our documentation website!",
   "createdAt": "2026-04-21T20:20:39Z",
-  "updatedAt": "2026-04-21T21:00:26Z",
+  "updatedAt": "2026-04-22T08:20:47Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424081943",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "P | LZX Industries",
+    "title": null,
     "description": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (a..."
   }
 }

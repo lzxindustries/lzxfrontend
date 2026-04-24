@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2",
-  "description": "TBC2 is a dual video decoder, genlock, dual encoder, media player, and ramp source for Gen3 LZX systems. Bring SD and HD material in on composite, S-video, or component, optionally extend with the TBC2 Expander for VGA/related paths; genlock, color-correct, and output patchable 1V video, stills from the front microSD, and more. The full sub-module reference, MIDI maps, card compatibility, and firmware and recovery are documented in the product Manual—use that as the source of truth.",
+  "description": "TBC2 is the Gen3 dual video input and time-base correct module: two independent decode paths, a full system sync engine, 1V patchable encoders, and still/sequence playback from the front-panel microSD slot—decoding and reference glue for a modular LZX system in 16 HP. Menu structure, submodules, MicroSD use, and firmware are documented in the Manual. The Specs tab lists connectors and data from the LZX module knowledge base.",
   "createdAt": "2018-12-06T05:55:08Z",
-  "updatedAt": "2026-04-21T09:02:25Z",
+  "updatedAt": "2026-04-24T00:49:04Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/9439115673623",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "TBC2 — dual decoder, genlock & encoders (Gen3) | LZX Industries",
-    "description": "LZX TBC2: timebase, dual inputs, 1V outputs, media & ramp. User manual for formats, expander, firmware, and troubleshooting on lzxindustries.net."
+    "title": "TBC2 | LZX Industries",
+    "description": "TBC2: Gen3 dual video input, time-base correction, sync, and 1V encoders. Full Manual and Specs on lzxindustries.com."
   }
 }

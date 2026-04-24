@@ -4,9 +4,19 @@
     "namespace": "global",
     "key": "description_tag",
     "type": "string",
-    "value": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits w...",
+    "value": "Video Logic: Boolean + comparator for 1V video (LZX Orion). See Manual and Specs.",
     "description": null,
-    "updatedAt": "2026-04-21T20:20:54Z",
-    "compareDigest": "b2ca483bf05a95158537d422bc63741bc52233f6cb37ca144c51e081cfa7caca"
+    "updatedAt": "2026-04-24T00:49:06Z",
+    "compareDigest": "7139e1d4a8767f46c17da632744de11a9a344098edb32f1171a4985a99ca70d3"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697830178839",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Video Logic | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:06Z",
+    "compareDigest": "541aabea4865e9a63d495df3d9c91e057e93118a537d61d7c0cd75a4b8ac3867"
   }
 ]

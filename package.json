@@ -34,6 +34,7 @@
     "content:gen-module-stubs": "node scripts/generate-module-manual-stubs.mjs",
     "content:gen-support-stubs": "node scripts/generate-support-nav-stubs.mjs",
     "content:coverage": "node scripts/fill-missing-seo.mjs && node scripts/generate-module-manual-stubs.mjs && node scripts/generate-support-nav-stubs.mjs && yarn catalog:bootstrap && yarn audit:content",
+    "content:apply-overviews": "node scripts/apply-product-overviews.mjs",
     "catalog:bootstrap": "node scripts/seed-local-from-pulled.mjs",
     "catalog:ingest": "node scripts/ingest-lfs-assets.mjs",
     "catalog:ingest:dry": "node scripts/ingest-lfs-assets.mjs --dry-run",

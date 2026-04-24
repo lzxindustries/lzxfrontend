@@ -24,11 +24,21 @@ This document defines what “full coverage” means for the LZX product hub, ho
 
 2. **Tier B — Editorial**  
    Manuals are technically accurate, on-voice per `content/docs/WRITING_STYLE_GUIDE.md`, and not redundant with Specs. Support FAQs answer *real* recurring questions.  
-   **Tooling:** human + forum mining per `docs/content-audit/COMMUNITY_MINING_SOP.md`.
+   **Tooling:** human + forum mining per `docs/content-audit/COMMUNITY_MINING_SOP.md`. Short **Overview** product bodies for the highest-traffic hub SKUs are authored in `scripts/data/product-overviews.mjs` and applied with `yarn content:apply-overviews` (writes `description.html` + `product.json` + optional `seo.json`).
 
 3. **Tier C — Commerce alignment**  
    Short Overview bodies, metafields, and live Shopify match the tab contract.  
    **Tooling:** Admin + `yarn shopify:sync:diff` / `apply`.
+
+## Live Shopify: backup, review, apply
+
+1. **Backup** the local mirror (optional but recommended before invasive edits): `cp -a catalog/shopify "catalog/shopify.backup.$(date -u +%Y%m%dT%H%M%SZ)"` (gitignored).  
+2. **Pull** from live so the repo matches the store: `yarn shopify:sync:pull` (requires `SHOPIFY_CLIENT_ID`, `SHOPIFY_CLIENT_SECRET`, `PUBLIC_STORE_DOMAIN`).  
+3. Edit `catalog/shopify/products/<handle>/` or run `yarn content:apply-overviews`, then `yarn catalog:bootstrap` and `yarn test`.  
+4. **Diff** against live: `yarn shopify:sync:diff` (or restrict with `--handle <handle>` on `node scripts/shopify-sync.mjs`).  
+5. **Push** to Shopify: `yarn shopify:sync:push --apply` (same script; dry-run is default without `--apply`). Re-pull after a successful apply to confirm parity.
+
+**Shopify `productSet` caveat:** a product with a **single** variant must use `position: 1` in `variants.json`. A lone variant at `position: 2` (seen on some API exports) causes `productSet` to error (“Variant position must be between 1 and the number of variants”). If push fails, `grep '"position": 2' catalog/shopify/products/<handle>/variants.json` and correct to `1` before re-applying.
 
 ## Maintainer commands
 

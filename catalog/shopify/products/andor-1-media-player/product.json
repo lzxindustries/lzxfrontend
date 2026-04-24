@@ -11,9 +11,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/andor-1-media-player",
-  "description": "Andor 1 is a compact standalone HDMI and composite media player for installations, live visuals, and gallery use: USB drives, playlists, MIDI, IR, remote, multi-unit sync, and video-wall modes, with a clean on-screen experience. Co-developed for artists by Paul Slocum. Full codecs, I/O, LZX system compatibility, and long-form playlist and menu behavior are documented in the product Manual tab on lzxindustries.net; read that before interfacing to TBC2 or other LZX decoders and encoders.",
+  "description": "Andor 1 is a front-panel video media player for the Eurorack: load and trigger clips, route video through your patch, and keep playback under voltage and front-panel control alongside the rest of the LZX system. Codec support, I/O, and UI behavior are documented in the Manual; physical connectors and product metadata are on Specs.",
   "createdAt": "2018-12-06T18:11:42Z",
-  "updatedAt": "2026-04-18T08:01:27Z",
+  "updatedAt": "2026-04-24T00:48:58Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/2333774282816",
@@ -25,7 +25,7 @@
     }
   ],
   "seo": {
-    "title": null,
-    "description": null
+    "title": "Andor 1 Media Player | LZX Industries",
+    "description": "Andor 1: Eurorack video media player for LZX systems. Operation in Manual, I/O on Specs at lzxindustries.com."
   }
 }

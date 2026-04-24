@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697830735895",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Vidiot: 3U analog video instrument. Manual, Specs, and hub on lzxindustries.com.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:10Z",
+    "compareDigest": "4397ac49f9dcbb802d2e8f11ab09dab1282c211b6273ea314fda9c8300d6e21a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697830703127",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Vidiot | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:10Z",
+    "compareDigest": "337ad023a0a310cd1ec23e9e1bd31e62b5505c64dda5be7e61e2bfdd71ba88e9"
+  },
+  {
     "id": "gid://shopify/Metafield/36903317798935",
     "namespace": "mc-facebook",
     "key": "google_product_category",

@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": null,
-  "description": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements. 1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output. 1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them.",
+  "description": "Arch is a 3-input voltage controlled summing and keying hub: a central node for matting, additive combinations, and soft routing between sources—intended to sit at the “center” of a color or compositing patch in Orion-series systems. Signal flow, normals, and patch patterns: Manual. I/O: Specs.",
   "createdAt": "2026-04-21T20:20:03Z",
-  "updatedAt": "2026-04-21T20:22:11Z",
+  "updatedAt": "2026-04-24T00:48:58Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079422935063",
@@ -27,6 +27,6 @@
   ],
   "seo": {
     "title": "Arch | LZX Industries",
-    "description": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Bi..."
+    "description": "Arch: 3-input summing and keying (LZX Orion). Manual and Specs on lzxindustries.com."
   }
 }

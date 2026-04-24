@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/rgb-patch-cable",
   "description": "Three standard EuroRack patch cables bonded together. Eases patching of RGB video signals. Available in three lengths: 15cm, 30cm and 60cm.",
   "createdAt": "2018-12-06T18:07:56Z",
-  "updatedAt": "2026-04-17T00:53:48Z",
+  "updatedAt": "2026-04-22T22:57:13Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/2333722705984",
@@ -28,7 +28,7 @@
     }
   ],
   "seo": {
-    "title": "RGB Patch Cable | LZX Industries",
-    "description": "RGB Patch Cable"
+    "title": null,
+    "description": null
   }
 }

@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.",
   "createdAt": "2026-04-21T20:20:29Z",
-  "updatedAt": "2026-04-21T20:22:38Z",
+  "updatedAt": "2026-04-22T08:20:38Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423787031",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Escher Sketch | LZX Industries",
+    "title": null,
     "description": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand..."
   }
 }

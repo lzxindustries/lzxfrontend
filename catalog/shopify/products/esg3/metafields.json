@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697829654551",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "ESG3: Gen3 sync + encoder for LZX modular video. Full Manual and Specs on lzxindustries.com.",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:00Z",
+    "compareDigest": "6698f7c32871618f804ba0c3765259f5c154634b03ec7de621b90295ddfcc248"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697829621783",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "ESG3 | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:00Z",
+    "compareDigest": "8fc2a3f1c74369f23c78527b083748b68e368011d4ae1a650c810a1a7ee29f66"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150041111",
     "namespace": "mc-facebook",
     "key": "condition",

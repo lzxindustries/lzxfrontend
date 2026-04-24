@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.",
   "createdAt": "2026-04-21T20:20:17Z",
-  "updatedAt": "2026-04-21T20:22:19Z",
+  "updatedAt": "2026-04-22T08:20:26Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423361047",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Cadet VII Processor | LZX Industries",
+    "title": null,
     "description": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications."
   }
 }

@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": null,
-  "description": "Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying range may be voltage controlled separately. Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges. Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch. Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center. The circuit is entirely analogue. Specifications Width, 16HP Mounting Depth, 32mm Power +12V @ 200mA Power -12V @ 200mA",
+  "description": "Topogram is a wideband voltage-controlled 2D shape generator with a dedicated voltage-controlled 3D perspective stage: you create geometry in the plane, then foreshorten and skew it in depth using continuous CV—built for 3D-like scenes without a digital framebuffer. Block diagram and full operator guide: Manual. Jack list: Specs.",
   "createdAt": "2026-04-21T20:20:50Z",
-  "updatedAt": "2026-04-21T20:23:04Z",
+  "updatedAt": "2026-04-24T00:49:05Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424409623",
@@ -27,6 +27,6 @@
   ],
   "seo": {
     "title": "Topogram | LZX Industries",
-    "description": "Limited edition black panel SOLD OUT. Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control. Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients. Upper and lower thresholds for the keying rang..."
+    "description": "Topogram: 2D shapes + 3D perspective (LZX Orion). See Manual and Specs."
   }
 }

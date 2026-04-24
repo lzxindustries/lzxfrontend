@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48697829851159",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Memory Palace: digital video memory and color-space for LZX modular. Specs and docs on lzxindustries.com (Manual when product ships).",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:03Z",
+    "compareDigest": "f760bfd31bfd322746ccf6b474a9d4db7236bab232f0bac21b49be522173120d"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697829818391",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Memory Palace | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:03Z",
+    "compareDigest": "2b967028b8d4ae104d3471adf89acdb04d3766c4f7c530f112ad38e0d0200894"
+  },
+  {
     "id": "gid://shopify/Metafield/13342166614039",
     "namespace": "mc-facebook",
     "key": "google_product_category",

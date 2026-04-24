@@ -4,9 +4,19 @@
     "namespace": "global",
     "key": "description_tag",
     "type": "string",
-    "value": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five cha...",
+    "value": "Sensory Translator: 5-channel input acquisition for LZX. Manual and Specs on lzxindustries.com.",
     "description": null,
-    "updatedAt": "2026-04-21T20:20:41Z",
-    "compareDigest": "a1065cc569ad03ceaa459452240cf38a77c08ab2646994db928b63ea2f33db0a"
+    "updatedAt": "2026-04-24T00:49:03Z",
+    "compareDigest": "ae9b97991d384a4cfcf3aa5cbd84ebba14339c6009b9d4b03c1365dad1d3a47c"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697829949463",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Sensory Translator | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:03Z",
+    "compareDigest": "c7194bc108e235ba37855f9e97254d5874e424491aeea5af90cf0931d55ef5f9"
   }
 ]

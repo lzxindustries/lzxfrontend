@@ -4,9 +4,19 @@
     "namespace": "global",
     "key": "description_tag",
     "type": "string",
-    "value": "The video blending matrix is a versatile signal processing module used for mixing input signals in various mathematical input and output modes. cascaded input columns allow each of the vbm’s three 5-channel dc mixers to operate either independently or combined in various input matrix configurations. signal inputs:ea...",
+    "value": "Video Blending Matrix: 6×6 analog video crosspoint (LZX). Manual and Specs on lzxindustries.com.",
     "description": null,
-    "updatedAt": "2026-04-21T20:20:53Z",
-    "compareDigest": "eeefa391b241b90db9d0bb5cdde2ecc1c1f88a0950149b71d26dfebada3014b1"
+    "updatedAt": "2026-04-24T00:49:06Z",
+    "compareDigest": "ae764a6072e30640a8ed631b98975409614689ed96264788a77cd2c6d704eeaf"
+  },
+  {
+    "id": "gid://shopify/Metafield/48697830113303",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Video Blending Matrix | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-04-24T00:49:06Z",
+    "compareDigest": "1838b59ab437191649fb683646d8129dfe6385a99a6c906d2e12ddd75595bac1"
   }
 ]
