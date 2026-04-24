@@ -26,7 +26,10 @@ import type {
 } from './shopify-live.server';
 
 const FALLBACK_CURRENCY = 'USD';
-const ZERO_MONEY: MoneyAmount = {amount: '0.00', currencyCode: FALLBACK_CURRENCY};
+const ZERO_MONEY: MoneyAmount = {
+  amount: '0.00',
+  currencyCode: FALLBACK_CURRENCY,
+};
 
 function hasContent(value: string | null | undefined): value is string {
   return typeof value === 'string' && value.trim().length > 0;
@@ -81,7 +84,12 @@ function buildMediaNodes(record: ProductRecord, lfs: LfsAssetEntry | null) {
 function variantNodeFromCommerceSnippet(
   recordVariant: ProductVariantRecord,
   commerce: CommerceVariantSnippet | null,
-  fallbackImage: {url: string; altText: string; width: number | null; height: number | null} | null,
+  fallbackImage: {
+    url: string;
+    altText: string;
+    width: number | null;
+    height: number | null;
+  } | null,
   productTitle: string,
   productHandle: string,
 ) {
@@ -170,15 +178,14 @@ export function buildHubProductFromLocal(
     commerce && hasContent(commerce.description)
       ? commerce.description
       : record.descriptionPlain;
-  const fallbackImage =
-    mediaNodes[0]?.image
-      ? {
-          url: mediaNodes[0].image.url,
-          altText: mediaNodes[0].image.altText ?? record.title,
-          width: mediaNodes[0].image.width ?? null,
-          height: mediaNodes[0].image.height ?? null,
-        }
-      : null;
+  const fallbackImage = mediaNodes[0]?.image
+    ? {
+        url: mediaNodes[0].image.url,
+        altText: mediaNodes[0].image.altText ?? record.title,
+        width: mediaNodes[0].image.width ?? null,
+        height: mediaNodes[0].image.height ?? null,
+      }
+    : null;
 
   const commerceByVariantId = new Map<string, CommerceVariantSnippet>();
   for (const variant of commerce?.variants ?? []) {

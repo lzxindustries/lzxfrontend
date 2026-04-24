@@ -56,7 +56,8 @@ export default function InstrumentLearn() {
           // Skip videos link if none
           if (card.toKey === 'videos' && videos.length === 0) return null;
           // Skip cards that require a specific doc page
-          if (card.requiresDoc && !docSubPaths.has(card.requiresDoc)) return null;
+          if (card.requiresDoc && !docSubPaths.has(card.requiresDoc))
+            return null;
 
           const href = getLearnCardHref(card, basePath);
 

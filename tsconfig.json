@@ -10,7 +10,14 @@
     "app/**/*.ts",
     "app/**/*.tsx"
   ],
-  "exclude": ["lfs/**", "dist/**", "build/**", "coverage/**", "playwright-report/**", "test-results/**"],
+  "exclude": [
+    "lfs/**",
+    "dist/**",
+    "build/**",
+    "coverage/**",
+    "playwright-report/**",
+    "test-results/**"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
@@ -30,8 +37,7 @@
       "~/*": ["app/*"]
     },
 
-    // Remix takes care of building everything in `./app` with `remix build`.
-    // Wrangler takes care of building everything in `./worker` with `wrangler start` / `wrangler publish`.
+    // Hydrogen builds the Remix app under `./app`; the Oxygen worker entry is `server.ts` (see Shopify CLI / mini-oxygen).
     "noEmit": true
   }
 }

@@ -100,8 +100,7 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
   {
     slug: 'power-sync-entry-12hp',
     name: 'Power & Sync Entry 12HP',
-    subtitle:
-      'OEM power and sync entry assembly for 12HP and larger builds',
+    subtitle: 'OEM power and sync entry assembly for 12HP and larger builds',
     imagePath: '/images/fpga12-and-rear-panel.png',
     isActive: true,
   },
@@ -176,7 +175,8 @@ export const casesAndPowerCategoryConfig: CategoryListingConfig = {
   getRawSections: buildRawSections,
 
   // Filter out pre-release products.
-  filterEntry: (entry) => !((entry as Record<string, unknown>).__isPreRelease as boolean | undefined),
+  filterEntry: (entry) =>
+    !((entry as Record<string, unknown>).__isPreRelease as boolean | undefined),
 
   // Cases & power link to Shopify product pages directly (no internal hub).
   detailHref: (entry) => `/products/${entry.canonical}`,
@@ -190,7 +190,8 @@ export const casesAndPowerCategoryConfig: CategoryListingConfig = {
     return path ? {path} : null;
   },
 
-  resolveBadge: (_entry, ctx) => (ctx.sectionKey === 'legacy' ? 'Legacy' : null),
+  resolveBadge: (_entry, ctx) =>
+    ctx.sectionKey === 'legacy' ? 'Legacy' : null,
 
   // Preserve curated order rather than alphabetizing.
   sortEntries: () => 0,

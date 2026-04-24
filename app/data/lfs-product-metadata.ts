@@ -10,7 +10,11 @@ interface RawManifestObject {
   [key: string]: RawManifestValue;
 }
 
-type RawManifestValue = RawManifestFile[] | RawManifestObject | null | undefined;
+type RawManifestValue =
+  | RawManifestFile[]
+  | RawManifestObject
+  | null
+  | undefined;
 
 type RawLfsProduct = {
   slug?: string;
@@ -140,7 +144,9 @@ const lfsProductDesignFiles = import.meta.glob<string>(
 const LFS_PRODUCTS_ROOT = '../../lfs/library/products';
 
 const SUPPLEMENTAL_PRODUCT_ROOTS: Record<string, string[]> = {
-  'alternate-frontpanel': [`${LFS_PRODUCTS_ROOT}/accessories/alternate-frontpanels`],
+  'alternate-frontpanel': [
+    `${LFS_PRODUCTS_ROOT}/accessories/alternate-frontpanels`,
+  ],
   bitvision: [`${LFS_PRODUCTS_ROOT}/instruments/bitvision`],
   'cadet-ix-vco': [
     `${LFS_PRODUCTS_ROOT}/eurorack-modules/cadet/cadet-ix-voltage-controlled-oscillator`,
@@ -196,9 +202,7 @@ const LEGACY_VISIONARY_LISTING_SLUGS = new Set([
   'video-sync-generator',
 ]);
 
-const LEGACY_VISIONARY_EXCLUDED_SLUGS = new Set([
-  'scroll-position-controller',
-]);
+const LEGACY_VISIONARY_EXCLUDED_SLUGS = new Set(['scroll-position-controller']);
 
 const SUBTITLE_OVERRIDES: Record<string, string> = {
   BAJA: '6 and 3 Phase Unipolar Analog Sine Wave Oscillator',
@@ -235,7 +239,7 @@ const SUBTITLE_OVERRIDES: Record<string, string> = {
   Shapechanger: 'Coordinate Transformation Processor',
   Staircase: 'Five Step Waveshaper',
   'TBC2 Expander': 'Passive VGA Expansion Panel',
-  'Topogram': 'Sequential Soft Key Generator',
+  Topogram: 'Sequential Soft Key Generator',
   'Triple Video Fader & Key Generator':
     'Triple Voltage Controlled Fader and Keyer',
   'Video Blending Matrix': 'Mathematical Signal Mixer',
@@ -298,7 +302,9 @@ function getSupplementalProductRootPaths(slug: string): string[] {
   return SUPPLEMENTAL_PRODUCT_ROOTS[slug] ?? [];
 }
 
-function getOwnedProductSourceDirs(product: Pick<LfsProductMetadata, 'slug' | 'sourcePath'>): string[] {
+function getOwnedProductSourceDirs(
+  product: Pick<LfsProductMetadata, 'slug' | 'sourcePath'>,
+): string[] {
   return uniqueStrings([
     sourceDirFromFilePath(product.sourcePath),
     ...getSupplementalProductRootPaths(product.slug),
@@ -311,11 +317,19 @@ function listInventoryFilesUnderSourceDir(sourceDir: string): string[] {
   );
 }
 
-function resolveProductAssetPath(sourcePath: string, relativePath: string): string {
-  return `${sourceDirFromFilePath(sourcePath)}/${relativePath}`.replace(/\/\.\//g, '/');
+function resolveProductAssetPath(
+  sourcePath: string,
+  relativePath: string,
+): string {
+  return `${sourceDirFromFilePath(sourcePath)}/${relativePath}`.replace(
+    /\/\.\//g,
+    '/',
+  );
 }
 
-function toManifestFiles(value: RawManifestFile[] | undefined): RawManifestFile[] {
+function toManifestFiles(
+  value: RawManifestFile[] | undefined,
+): RawManifestFile[] {
   return Array.isArray(value) ? value : [];
 }
 
@@ -373,7 +387,10 @@ function buildSpecsHtml(
 }
 
 function stripHtml(value: string): string {
-  return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return value
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function humanizeFileName(fileName: string): string {
@@ -445,7 +462,10 @@ function buildAssetCategoryLabel(category: string): string {
   return tokens.join(' / ');
 }
 
-function inferAssetType(fileName: string, explicitExtension: string | null): string {
+function inferAssetType(
+  fileName: string,
+  explicitExtension: string | null,
+): string {
   return (
     explicitExtension?.toUpperCase() ??
     fileName.split('.').pop()?.toUpperCase() ??
@@ -472,7 +492,11 @@ function isGalleryAssetRelativePath(relativePath: string): boolean {
 function resolvePublishedAssetHref(sourcePath: string): string | null {
   // Design sources (.ai) are listed in the archive but intentionally not given
   // a public href (see lfs-product-metadata tests / publishing policy).
-  return lfsProductImageFiles[sourcePath] ?? lfsProductPublishedFiles[sourcePath] ?? null;
+  return (
+    lfsProductImageFiles[sourcePath] ??
+    lfsProductPublishedFiles[sourcePath] ??
+    null
+  );
 }
 
 function isArchivableProductFile(relativePath: string): boolean {
@@ -528,17 +552,21 @@ function buildGalleryImages(
 
   for (const entry of toManifestFiles(raw.file_manifest?.website)) {
     const assetPath = stringValue(entry.path);
-    if (assetPath) sourcePaths.add(resolveProductAssetPath(product.sourcePath, assetPath));
+    if (assetPath)
+      sourcePaths.add(resolveProductAssetPath(product.sourcePath, assetPath));
   }
 
   for (const entry of toManifestFiles(raw.file_manifest?.photos)) {
     const assetPath = stringValue(entry.path);
-    if (assetPath) sourcePaths.add(resolveProductAssetPath(product.sourcePath, assetPath));
+    if (assetPath)
+      sourcePaths.add(resolveProductAssetPath(product.sourcePath, assetPath));
   }
 
   const frontpanelPath = stringValue(raw.images?.frontpanel);
   if (frontpanelPath) {
-    sourcePaths.add(resolveProductAssetPath(product.sourcePath, frontpanelPath));
+    sourcePaths.add(
+      resolveProductAssetPath(product.sourcePath, frontpanelPath),
+    );
   }
 
   for (const sourceDir of sourceDirs) {
@@ -593,7 +621,10 @@ function buildDownloads(
         fileName.split('.').pop()?.toUpperCase() ??
         '';
 
-      const sourcePath = resolveProductAssetPath(product.sourcePath, relativePath);
+      const sourcePath = resolveProductAssetPath(
+        product.sourcePath,
+        relativePath,
+      );
       const href = resolvePublishedAssetHref(sourcePath);
       if (!href) return null;
 
@@ -628,7 +659,9 @@ function buildArchiveAssets(
   for (const entry of manifestEntries) {
     const relativePath = stringValue(entry.path);
     if (relativePath) {
-      seenSourcePaths.add(resolveProductAssetPath(product.sourcePath, relativePath));
+      seenSourcePaths.add(
+        resolveProductAssetPath(product.sourcePath, relativePath),
+      );
     }
   }
 
@@ -670,7 +703,12 @@ function buildArchiveAssets(
         name: humanizeFileName(fileName),
         fileName,
         fileType,
-        description: buildAssetDescription(fileName, fileType, entry.category, note),
+        description: buildAssetDescription(
+          fileName,
+          fileType,
+          entry.category,
+          note,
+        ),
         href,
         sourcePath,
         relativePath,
@@ -682,13 +720,17 @@ function buildArchiveAssets(
       } satisfies LfsProductAsset;
     })
     .filter((entry): entry is LfsProductAsset => entry != null)
-    .sort((left, right) =>
-      left.categoryLabel.localeCompare(right.categoryLabel) ||
-      left.relativePath.localeCompare(right.relativePath),
+    .sort(
+      (left, right) =>
+        left.categoryLabel.localeCompare(right.categoryLabel) ||
+        left.relativePath.localeCompare(right.relativePath),
     );
 }
 
-function deriveSubtitle(name: string, description: string | null): string | null {
+function deriveSubtitle(
+  name: string,
+  description: string | null,
+): string | null {
   const cleaned = cleanDescription(description);
   if (!cleaned) return null;
 
@@ -703,15 +745,23 @@ function deriveSubtitle(name: string, description: string | null): string | null
     return capitalize(match[1].trim());
   }
 
-  const firstSentence = cleaned.split(/(?<=[.!?])\s+/)[0]?.replace(/[.!?]+$/, '');
+  const firstSentence = cleaned
+    .split(/(?<=[.!?])\s+/)[0]
+    ?.replace(/[.!?]+$/, '');
   if (!firstSentence) return null;
 
-  const concise = firstSentence.split(/,\s+(?:featuring|with|which|for)\b/i)[0] ?? firstSentence;
-  return concise.length > 96 ? capitalize(concise.slice(0, 93).trimEnd()) + '...' : capitalize(concise.trim());
+  const concise =
+    firstSentence.split(/,\s+(?:featuring|with|which|for)\b/i)[0] ??
+    firstSentence;
+  return concise.length > 96
+    ? capitalize(concise.slice(0, 93).trimEnd()) + '...'
+    : capitalize(concise.trim());
 }
 
 function legacyVisionarySlugFromSourcePath(sourcePath: string): string | null {
-  const match = sourcePath.match(/\/visionary\/([^/]+)\/modulargrid\/metadata\.md$/);
+  const match = sourcePath.match(
+    /\/visionary\/([^/]+)\/modulargrid\/metadata\.md$/,
+  );
   const slug = match?.[1] ?? null;
 
   if (!slug || LEGACY_VISIONARY_EXCLUDED_SLUGS.has(slug)) return null;
@@ -725,7 +775,9 @@ function parseLegacyVisionaryName(raw: string): string | null {
 }
 
 function parseLegacyVisionaryExternalUrl(raw: string): string | null {
-  const match = raw.match(/\*\*ModularGrid:\*\*\s+\[[^\]]+\]\((https?:\/\/[^)]+)\)/);
+  const match = raw.match(
+    /\*\*ModularGrid:\*\*\s+\[[^\]]+\]\((https?:\/\/[^)]+)\)/,
+  );
   return stringValue(match?.[1] ?? null);
 }
 
@@ -734,10 +786,15 @@ function parseLegacyVisionarySubtitle(raw: string): string | null {
   return stringValue(match?.[1] ?? null);
 }
 
-function extractMarkdownSection(raw: string, sectionHeading: string): string | null {
+function extractMarkdownSection(
+  raw: string,
+  sectionHeading: string,
+): string | null {
   const match = raw.match(
     new RegExp(
-      `##\\s+${escapeRegExp(sectionHeading)}\\s*\\n\\s*([\\s\\S]*?)(?=\\n##\\s+|\\n---\\s*\\n|$)`,
+      `##\\s+${escapeRegExp(
+        sectionHeading,
+      )}\\s*\\n\\s*([\\s\\S]*?)(?=\\n##\\s+|\\n---\\s*\\n|$)`,
       'i',
     ),
   );
@@ -795,7 +852,12 @@ function buildSyntheticArchiveAssets(
         name: humanizeFileName(fileName),
         fileName,
         fileType,
-        description: buildAssetDescription(fileName, fileType, entry.category, null),
+        description: buildAssetDescription(
+          fileName,
+          fileType,
+          entry.category,
+          null,
+        ),
         href,
         sourcePath: entry.sourcePath,
         relativePath: entry.path,
@@ -807,9 +869,10 @@ function buildSyntheticArchiveAssets(
       } satisfies LfsProductAsset;
     })
     .filter((entry): entry is LfsProductAsset => entry != null)
-    .sort((left, right) =>
-      left.categoryLabel.localeCompare(right.categoryLabel) ||
-      left.relativePath.localeCompare(right.relativePath),
+    .sort(
+      (left, right) =>
+        left.categoryLabel.localeCompare(right.categoryLabel) ||
+        left.relativePath.localeCompare(right.relativePath),
     );
 }
 
@@ -963,42 +1026,45 @@ const lfsProducts: LfsProductMetadata[] = Object.entries(lfsProductFiles)
     ];
   });
 
-const legacyVisionaryModuleListings: LegacyVisionaryModuleMetadata[] = Object.entries(
-  legacyVisionaryMetadataFiles,
-)
-  .flatMap(([sourcePath, raw]) => {
-    const slug = legacyVisionarySlugFromSourcePath(sourcePath);
+const legacyVisionaryModuleListings: LegacyVisionaryModuleMetadata[] =
+  Object.entries(legacyVisionaryMetadataFiles)
+    .flatMap(([sourcePath, raw]) => {
+      const slug = legacyVisionarySlugFromSourcePath(sourcePath);
 
-    if (!slug || !LEGACY_VISIONARY_LISTING_SLUGS.has(slug)) return [];
+      if (!slug || !LEGACY_VISIONARY_LISTING_SLUGS.has(slug)) return [];
 
-    const name = parseLegacyVisionaryName(raw);
-    if (!name) return [];
+      const name = parseLegacyVisionaryName(raw);
+      if (!name) return [];
 
-    const descriptionMarkdown = stripLeadingBoldSummary(
-      extractMarkdownSection(raw, 'Description'),
-    );
-    const specsMarkdown = extractMarkdownSection(raw, 'Specifications');
+      const descriptionMarkdown = stripLeadingBoldSummary(
+        extractMarkdownSection(raw, 'Description'),
+      );
+      const specsMarkdown = extractMarkdownSection(raw, 'Specifications');
 
-    return [
-      {
-        slug,
-        name,
-        subtitle: parseLegacyVisionarySubtitle(raw),
-        externalUrl: parseLegacyVisionaryExternalUrl(raw),
-        isHidden: true,
-        descriptionHtml: descriptionMarkdown
-          ? getMarkdownToHTML(descriptionMarkdown)
-          : null,
-        descriptionText: stripMarkdownFormatting(descriptionMarkdown),
-        specsHtml: specsMarkdown ? getMarkdownToHTML(specsMarkdown) : null,
-        sourcePath,
-      } satisfies LegacyVisionaryModuleMetadata,
-    ];
-  })
-  .sort((a, b) => a.name.localeCompare(b.name));
+      return [
+        {
+          slug,
+          name,
+          subtitle: parseLegacyVisionarySubtitle(raw),
+          externalUrl: parseLegacyVisionaryExternalUrl(raw),
+          isHidden: true,
+          descriptionHtml: descriptionMarkdown
+            ? getMarkdownToHTML(descriptionMarkdown)
+            : null,
+          descriptionText: stripMarkdownFormatting(descriptionMarkdown),
+          specsHtml: specsMarkdown ? getMarkdownToHTML(specsMarkdown) : null,
+          sourcePath,
+        } satisfies LegacyVisionaryModuleMetadata,
+      ];
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-const lfsProductsByName = new Map(lfsProducts.map((entry) => [entry.name, entry]));
-const lfsProductsBySlug = new Map(lfsProducts.map((entry) => [entry.slug, entry]));
+const lfsProductsByName = new Map(
+  lfsProducts.map((entry) => [entry.name, entry]),
+);
+const lfsProductsBySlug = new Map(
+  lfsProducts.map((entry) => [entry.slug, entry]),
+);
 const legacyVisionaryMetadataBySlug = new Map(
   legacyVisionaryModuleListings.map((entry) => [entry.slug, entry]),
 );
@@ -1028,8 +1094,7 @@ const productContentBySlug = new Map(
           slug,
           {
             ...product,
-            subtitle:
-              modulargridMetadata?.subtitle ?? product.subtitle ?? null,
+            subtitle: modulargridMetadata?.subtitle ?? product.subtitle ?? null,
             externalUrl:
               product.externalUrl ?? modulargridMetadata?.externalUrl ?? null,
             descriptionHtml,
@@ -1072,24 +1137,29 @@ const syntheticProductContentBySlug = new Map(
       ];
     })
     .concat(
-      Object.entries(SUPPLEMENTAL_PRODUCT_ROOTS).flatMap(([slug, sourceDirs]) => {
-        if (productContentBySlug.has(slug) || modulargridMetadataBySlug.has(slug)) {
-          return [];
-        }
+      Object.entries(SUPPLEMENTAL_PRODUCT_ROOTS).flatMap(
+        ([slug, sourceDirs]) => {
+          if (
+            productContentBySlug.has(slug) ||
+            modulargridMetadataBySlug.has(slug)
+          ) {
+            return [];
+          }
 
-        const sourceDir = sourceDirs[0];
-        if (!sourceDir) return [];
+          const sourceDir = sourceDirs[0];
+          if (!sourceDir) return [];
 
-        return [
-          [
-            slug,
-            buildSyntheticProductContent(slug, {
-              name: humanizeFileName(slug),
-              sourceDir,
-            }),
-          ] as const,
-        ];
-      }),
+          return [
+            [
+              slug,
+              buildSyntheticProductContent(slug, {
+                name: humanizeFileName(slug),
+                sourceDir,
+              }),
+            ] as const,
+          ];
+        },
+      ),
     ),
 );
 
@@ -1122,7 +1192,12 @@ const sharedModuleSeriesArchiveAssets = new Map(
           name: humanizeFileName(fileName),
           fileName,
           fileType,
-          description: buildAssetDescription(fileName, fileType, category, null),
+          description: buildAssetDescription(
+            fileName,
+            fileType,
+            category,
+            null,
+          ),
           href,
           sourcePath,
           relativePath,
@@ -1134,30 +1209,41 @@ const sharedModuleSeriesArchiveAssets = new Map(
         } satisfies LfsProductAsset;
       })
       .filter((entry): entry is LfsProductAsset => entry != null)
-      .sort((left, right) =>
-        left.categoryLabel.localeCompare(right.categoryLabel) ||
-        left.relativePath.localeCompare(right.relativePath),
+      .sort(
+        (left, right) =>
+          left.categoryLabel.localeCompare(right.categoryLabel) ||
+          left.relativePath.localeCompare(right.relativePath),
       );
 
     return [series, assets] as const;
   }),
 );
 
-export function getLfsProductMetadataByName(name: string): LfsProductMetadata | null {
+export function getLfsProductMetadataByName(
+  name: string,
+): LfsProductMetadata | null {
   return lfsProductsByName.get(name) ?? null;
 }
 
-export function getLfsProductMetadataBySlug(slug: string): LfsProductMetadata | null {
+export function getLfsProductMetadataBySlug(
+  slug: string,
+): LfsProductMetadata | null {
   return lfsProductsBySlug.get(slug) ?? null;
 }
 
 export function getLfsProductContentBySlug(
   slug: string,
 ): LfsProductContent | null {
-  return productContentBySlug.get(slug) ?? syntheticProductContentBySlug.get(slug) ?? null;
+  return (
+    productContentBySlug.get(slug) ??
+    syntheticProductContentBySlug.get(slug) ??
+    null
+  );
 }
 
-export function getLfsModuleSeriesArchiveAssets(series: string): LfsProductAsset[] {
+export function getLfsModuleSeriesArchiveAssets(
+  series: string,
+): LfsProductAsset[] {
   return sharedModuleSeriesArchiveAssets.get(series) ?? [];
 }
 
@@ -1197,7 +1283,9 @@ export function getLegacyProductContentBySlug(
   const content = getLfsProductContentBySlug(slug);
   if (content && (content.isHidden || !content.isActive)) return content;
 
-  const metadata = modulargridMetadataBySlug.get(slug) ?? legacyVisionaryMetadataBySlug.get(slug);
+  const metadata =
+    modulargridMetadataBySlug.get(slug) ??
+    legacyVisionaryMetadataBySlug.get(slug);
   if (!metadata) return syntheticProductContentBySlug.get(slug) ?? null;
 
   const lfsProduct = lfsProductsBySlug.get(slug);
@@ -1234,7 +1322,9 @@ export function getLegacyProductContentBySlug(
             externalUrl: metadata.externalUrl,
             isActive: false,
             isHidden: true,
-            sourcePath: `${productRootFromMetadataSourcePath(metadata.sourcePath)}/synthetic.json`,
+            sourcePath: `${productRootFromMetadataSourcePath(
+              metadata.sourcePath,
+            )}/synthetic.json`,
           }),
     downloads: lfsProduct && raw ? buildDownloads(lfsProduct, raw) : [],
     archiveAssets:
@@ -1252,7 +1342,9 @@ export function getLegacyProductContentBySlug(
             externalUrl: metadata.externalUrl,
             isActive: false,
             isHidden: true,
-            sourcePath: `${productRootFromMetadataSourcePath(metadata.sourcePath)}/synthetic.json`,
+            sourcePath: `${productRootFromMetadataSourcePath(
+              metadata.sourcePath,
+            )}/synthetic.json`,
           }),
   } satisfies LegacyProductContent;
 }

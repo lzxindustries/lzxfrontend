@@ -174,7 +174,8 @@ function normalizePost(raw: RawForumPost): ForumArchivePost | null {
   return {
     id,
     postNumber,
-    authorName: stringValue(raw.name) ?? stringValue(raw.username) ?? 'Community Member',
+    authorName:
+      stringValue(raw.name) ?? stringValue(raw.username) ?? 'Community Member',
     authorUsername: stringValue(raw.username) ?? 'community-member',
     createdAt: stringValue(raw.created_at),
     updatedAt: stringValue(raw.updated_at),
@@ -184,7 +185,9 @@ function normalizePost(raw: RawForumPost): ForumArchivePost | null {
     embeddedVideoUrls: extractEmbeddedVideoUrls(html),
     likeCount: Number(raw.like_count) || 0,
     replyToPostNumber:
-      typeof raw.reply_to_post_number === 'number' ? raw.reply_to_post_number : null,
+      typeof raw.reply_to_post_number === 'number'
+        ? raw.reply_to_post_number
+        : null,
     isWiki: raw.is_wiki === true,
   };
 }
@@ -193,7 +196,9 @@ function splitCookedIntoSections(html: string): {
   introHtml: string;
   sections: ForumArchiveSection[];
 } {
-  const headingMatches = [...html.matchAll(/<h[1-3][^>]*>([\s\S]*?)<\/h[1-3]>/gi)];
+  const headingMatches = [
+    ...html.matchAll(/<h[1-3][^>]*>([\s\S]*?)<\/h[1-3]>/gi),
+  ];
 
   if (headingMatches.length === 0) {
     return {introHtml: html.trim(), sections: []};
@@ -268,7 +273,9 @@ function normalizeTopic(raw: RawForumTopic): ForumArchiveTopic | null {
 async function loadForumTopics(): Promise<ForumArchiveTopic[]> {
   if (!forumTopicsPromise) {
     forumTopicsPromise = Promise.all(
-      Object.values(forumTopicModules).map(async (loadTopic) => normalizeTopic(await loadTopic())),
+      Object.values(forumTopicModules).map(async (loadTopic) =>
+        normalizeTopic(await loadTopic()),
+      ),
     ).then((topics) =>
       topics
         .filter((topic): topic is ForumArchiveTopic => topic != null)
@@ -279,7 +286,9 @@ async function loadForumTopics(): Promise<ForumArchiveTopic[]> {
   return forumTopicsPromise;
 }
 
-function parseForumTopicSlugFromUrl(url: string | null | undefined): string | null {
+function parseForumTopicSlugFromUrl(
+  url: string | null | undefined,
+): string | null {
   const value = stringValue(url);
   if (!value) return null;
 
@@ -316,9 +325,16 @@ function getPreferredTopicTags(
   return preferred.length > 0 ? preferred : candidateTagSlugs(productSlug);
 }
 
-function topicMatchScore(topic: ForumArchiveTopic, preferredTags: Set<string>): number {
-  const sharedTagCount = topic.tags.filter((tag) => preferredTags.has(tag)).length;
-  const recency = topic.createdAt ? Date.parse(topic.createdAt) / 1_000_000_000 : 0;
+function topicMatchScore(
+  topic: ForumArchiveTopic,
+  preferredTags: Set<string>,
+): number {
+  const sharedTagCount = topic.tags.filter((tag) =>
+    preferredTags.has(tag),
+  ).length;
+  const recency = topic.createdAt
+    ? Date.parse(topic.createdAt) / 1_000_000_000
+    : 0;
 
   return sharedTagCount * 1000 + topic.postsCount * 10 + topic.views + recency;
 }
@@ -339,7 +355,9 @@ export async function getProductForumArchive(
       .find((topic): topic is ForumArchiveTopic => topic != null) ??
     null;
 
-  const preferredTags = new Set(getPreferredTopicTags(officialTopic, productSlug));
+  const preferredTags = new Set(
+    getPreferredTopicTags(officialTopic, productSlug),
+  );
   const relatedTopics = topics
     .filter((topic) => topic.slug !== officialTopic?.slug)
     .filter((topic) => {
@@ -347,11 +365,15 @@ export async function getProductForumArchive(
       if (sharedTags) return true;
 
       const compactSlug = productSlug.replace(/-/g, '');
-      return topic.slug.includes(productSlug) || topic.slug.includes(compactSlug);
+      return (
+        topic.slug.includes(productSlug) || topic.slug.includes(compactSlug)
+      );
     })
-    .sort((left, right) => topicMatchScore(right, preferredTags) - topicMatchScore(left, preferredTags))
-    ;
-
+    .sort(
+      (left, right) =>
+        topicMatchScore(right, preferredTags) -
+        topicMatchScore(left, preferredTags),
+    );
   return {
     officialTopic,
     relatedTopics,
@@ -382,7 +404,9 @@ function formatArchiveDate(value: string | null): string | null {
 
 function renderForumPost(post: ForumArchivePost): string {
   const replyText =
-    post.replyToPostNumber != null ? ` in reply to #${post.replyToPostNumber}` : '';
+    post.replyToPostNumber != null
+      ? ` in reply to #${post.replyToPostNumber}`
+      : '';
   const dateText = formatArchiveDate(post.createdAt);
 
   return [
@@ -413,12 +437,16 @@ function renderForumTopic(
 
   if (options.includeTopicHeading) {
     parts.push(
-      `<${topicHeadingTag} id="${escapeHtml(topic.slug)}">${escapeHtml(topic.title)}</${topicHeadingTag}>`,
+      `<${topicHeadingTag} id="${escapeHtml(topic.slug)}">${escapeHtml(
+        topic.title,
+      )}</${topicHeadingTag}>`,
     );
   }
 
   parts.push(
-    `<p><a href="${escapeHtml(topic.url)}" target="_blank" rel="noreferrer noopener">Open original thread</a></p>`,
+    `<p><a href="${escapeHtml(
+      topic.url,
+    )}" target="_blank" rel="noreferrer noopener">Open original thread</a></p>`,
   );
 
   if (topic.introHtml) {
@@ -428,13 +456,17 @@ function renderForumTopic(
   for (const section of topic.sections) {
     const sectionId = `${options.sectionIdPrefix}${section.id}`;
     parts.push(
-      `<${sectionHeadingTag} id="${escapeHtml(sectionId)}">${escapeHtml(section.title)}</${sectionHeadingTag}>${section.html}`,
+      `<${sectionHeadingTag} id="${escapeHtml(sectionId)}">${escapeHtml(
+        section.title,
+      )}</${sectionHeadingTag}>${section.html}`,
     );
   }
 
   if (topic.posts.length > 1) {
     parts.push(
-      `<${sectionHeadingTag} id="${escapeHtml(`${options.sectionIdPrefix}thread-replies`)}">Thread Replies</${sectionHeadingTag}>`,
+      `<${sectionHeadingTag} id="${escapeHtml(
+        `${options.sectionIdPrefix}thread-replies`,
+      )}">Thread Replies</${sectionHeadingTag}>`,
     );
     for (const post of topic.posts.slice(1)) {
       parts.push(renderForumPost(post));
@@ -508,10 +540,18 @@ export async function getForumArchiveDocForProduct(
   const htmlParts = [
     '<div class="rounded-lg border border-base-300 bg-base-200/60 p-4 mb-6">',
     topic
-      ? `<p><strong>Archived community reference.</strong> This page preserves the official LZX Community forum thread for ${escapeHtml(productTitle)} inside the new documentation site.</p>`
-      : `<p><strong>Archived community reference.</strong> This page compiles related LZX Community forum discussions for ${escapeHtml(productTitle)} inside the new documentation site.</p>`,
+      ? `<p><strong>Archived community reference.</strong> This page preserves the official LZX Community forum thread for ${escapeHtml(
+          productTitle,
+        )} inside the new documentation site.</p>`
+      : `<p><strong>Archived community reference.</strong> This page compiles related LZX Community forum discussions for ${escapeHtml(
+          productTitle,
+        )} inside the new documentation site.</p>`,
     archive.relatedTopics.length > 0
-      ? `<p>${topic ? 'Additional related discussions are included below.' : 'Related discussions are compiled below.'}</p>`
+      ? `<p>${
+          topic
+            ? 'Additional related discussions are included below.'
+            : 'Related discussions are compiled below.'
+        }</p>`
       : '',
     '</div>',
   ];

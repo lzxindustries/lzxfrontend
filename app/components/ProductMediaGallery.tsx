@@ -86,16 +86,6 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
     };
   }, [media]);
 
-  if (media.length === 0) {
-    return (
-      <div className="w-full lg:w-1/2 card-image">
-        <div className="flex items-center justify-center aspect-square p-6 text-sm opacity-60">
-          Media unavailable for this product.
-        </div>
-      </div>
-    );
-  }
-
   // Scroll active thumbnail into view
   useEffect(() => {
     const container = thumbnailContainerRef.current;
@@ -111,6 +101,16 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
       });
     }
   }, [currentSlide]);
+
+  if (media.length === 0) {
+    return (
+      <div className="w-full lg:w-1/2 card-image">
+        <div className="flex items-center justify-center aspect-square p-6 text-sm opacity-60">
+          Media unavailable for this product.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full lg:w-1/2 card-image">

@@ -78,7 +78,6 @@ export function SignalFlowDiagram({config}: {config: SignalFlowConfig}) {
           const toNode = nodesById[edge.to];
           if (!fromNode || !toNode) return null;
 
-
           const start = getAnchor(fromNode, 'right');
           const end = getAnchor(toNode, 'left');
           const midX = (start.x + end.x) / 2;
@@ -259,7 +258,12 @@ export const VIDEOMANCER_SIGNAL_FLOW: SignalFlowConfig = {
   edges: [
     {from: 'source', to: 'videomancer', label: 'HDMI IN', type: 'hdmi'},
     {from: 'videomancer', to: 'display', label: 'HDMI OUT', type: 'hdmi'},
-    {from: 'eurorack', to: 'videomancer', label: 'CV / Audio', type: 'eurorack'},
+    {
+      from: 'eurorack',
+      to: 'videomancer',
+      label: 'CV / Audio',
+      type: 'eurorack',
+    },
   ],
 };
 

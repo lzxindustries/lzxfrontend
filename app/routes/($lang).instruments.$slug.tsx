@@ -86,14 +86,24 @@ export type InstrumentLayoutLoaderData = InstrumentHubData & {
 
 export default function InstrumentLayout() {
   const data = useLoaderData<typeof loader>();
-  const {product, hasManual, videos, assets, archiveAssets, connectors, controls, features} =
-    data as unknown as InstrumentHubData;
+  const {
+    product,
+    hasManual,
+    videos,
+    assets,
+    archiveAssets,
+    connectors,
+    controls,
+    features,
+  } = data as unknown as InstrumentHubData;
   const slug = (data as unknown as InstrumentHubData).slug;
   const hasSetupContent = (data as unknown as InstrumentLayoutLoaderData)
     .hasSetupContent;
 
   const hasSpecs =
-    connectors.length > 0 || controls.length > 0 || features.length > 0 ||
+    connectors.length > 0 ||
+    controls.length > 0 ||
+    features.length > 0 ||
     (product as any).metafields?.some(
       (m: any) =>
         m?.namespace === 'custom' &&

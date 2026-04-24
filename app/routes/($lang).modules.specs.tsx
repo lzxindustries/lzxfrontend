@@ -206,8 +206,9 @@ export default function ModuleSpecsPage() {
         return false;
       if (syncGenOnly && !r.isSyncGenerator) return false;
       if (q) {
-        const haystack =
-          `${r.name} ${r.subtitle ?? ''} ${r.company}`.toLowerCase();
+        const haystack = `${r.name} ${r.subtitle ?? ''} ${
+          r.company
+        }`.toLowerCase();
         if (!haystack.includes(q)) return false;
       }
       return true;
@@ -383,7 +384,9 @@ export default function ModuleSpecsPage() {
                       {row.status}
                     </span>
                   </td>
-                  <td className="whitespace-nowrap">{seriesLabel(row.series)}</td>
+                  <td className="whitespace-nowrap">
+                    {seriesLabel(row.series)}
+                  </td>
                   <td className="text-right">{fmtNum(row.hp)}</td>
                   <td className="text-right">{fmtNum(row.depthMm)}</td>
                   <td className="text-right">{fmtNum(row.posMa)}</td>

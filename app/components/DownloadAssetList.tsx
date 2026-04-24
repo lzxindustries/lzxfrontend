@@ -22,7 +22,10 @@ function getAssetHref(asset: DownloadAssetLike) {
   return `/assets/${encodeURIComponent(asset.fileName)}`;
 }
 
-function renderAssetRow(asset: DownloadAssetLike, variant: 'product' | 'directory') {
+function renderAssetRow(
+  asset: DownloadAssetLike,
+  variant: 'product' | 'directory',
+) {
   const href = getAssetHref(asset);
 
   if (variant === 'directory') {
@@ -49,7 +52,9 @@ function renderAssetRow(asset: DownloadAssetLike, variant: 'product' | 'director
           )}
           <div className="text-xs text-base-content/50 truncate">
             {asset.fileName || 'File unavailable'}
-            {asset.platform && <span className="ml-2">&middot; {asset.platform}</span>}
+            {asset.platform && (
+              <span className="ml-2">&middot; {asset.platform}</span>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -80,11 +85,15 @@ function renderAssetRow(asset: DownloadAssetLike, variant: 'product' | 'director
           )}
         </div>
         {asset.description && (
-          <div className="text-sm text-base-content/70">{asset.description}</div>
+          <div className="text-sm text-base-content/70">
+            {asset.description}
+          </div>
         )}
         <div className="text-xs text-base-content/50">
           {asset.fileName || 'File unavailable'}
-          {asset.platform && <span className="ml-2">&middot; {asset.platform}</span>}
+          {asset.platform && (
+            <span className="ml-2">&middot; {asset.platform}</span>
+          )}
         </div>
       </div>
       <div className="flex items-center gap-3">
@@ -135,7 +144,9 @@ export function DownloadAssetList<T extends DownloadAssetLike>({
 
           {showOlderVersions ? (
             <div className="mt-3 grid gap-2">
-              {olderFirmwareAssets.map((asset) => renderAssetRow(asset, variant))}
+              {olderFirmwareAssets.map((asset) =>
+                renderAssetRow(asset, variant),
+              )}
             </div>
           ) : null}
         </div>

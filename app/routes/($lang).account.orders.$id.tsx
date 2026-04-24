@@ -254,79 +254,79 @@ export default function OrderRoute() {
                     : null;
                   const displayTitle = localRecord?.title ?? lineItem.title;
                   return (
-                  <tr key={lineItem.variant!.id}>
-                    <td className="w-full py-4 pl-0 pr-3 align-top sm:align-middle max-w-0 sm:w-auto sm:max-w-none">
-                      <div className="flex gap-6">
-                        <Link
-                          to={resolveProductUrl(
-                            lineItem.variant!.product!.handle,
-                          )}
-                        >
-                          {localImage ? (
-                            <div className="w-24 card-image aspect-square">
-                              <img
-                                src={localImage.publicPath}
-                                width={96}
-                                height={96}
-                                alt={displayTitle}
-                                loading="lazy"
-                              />
-                            </div>
-                          ) : (
-                            lineItem?.variant?.image && (
+                    <tr key={lineItem.variant!.id}>
+                      <td className="w-full py-4 pl-0 pr-3 align-top sm:align-middle max-w-0 sm:w-auto sm:max-w-none">
+                        <div className="flex gap-6">
+                          <Link
+                            to={resolveProductUrl(
+                              lineItem.variant!.product!.handle,
+                            )}
+                          >
+                            {localImage ? (
                               <div className="w-24 card-image aspect-square">
-                                <Image
-                                  data={lineItem.variant.image}
+                                <img
+                                  src={localImage.publicPath}
                                   width={96}
                                   height={96}
+                                  alt={displayTitle}
+                                  loading="lazy"
                                 />
                               </div>
-                            )
-                          )}
-                        </Link>
-                        <div className="flex-col justify-center hidden lg:flex">
-                          <Text as="p">{displayTitle}</Text>
-                          <Text size="fine" className="mt-1" as="p">
-                            {lineItem.variant!.title}
-                          </Text>
-                        </div>
-                        <dl className="grid">
-                          <dt className="sr-only">Product</dt>
-                          <dd className="truncate lg:hidden">
-                            <Heading size="copy" format as="h3">
-                              {displayTitle}
-                            </Heading>
-                            <Text size="fine" className="mt-1">
+                            ) : (
+                              lineItem?.variant?.image && (
+                                <div className="w-24 card-image aspect-square">
+                                  <Image
+                                    data={lineItem.variant.image}
+                                    width={96}
+                                    height={96}
+                                  />
+                                </div>
+                              )
+                            )}
+                          </Link>
+                          <div className="flex-col justify-center hidden lg:flex">
+                            <Text as="p">{displayTitle}</Text>
+                            <Text size="fine" className="mt-1" as="p">
                               {lineItem.variant!.title}
                             </Text>
-                          </dd>
-                          <dt className="sr-only">Price</dt>
-                          <dd className="truncate sm:hidden">
-                            <Text size="fine" className="mt-4">
-                              <Money data={lineItem.variant!.price!} />
-                            </Text>
-                          </dd>
-                          <dt className="sr-only">Quantity</dt>
-                          <dd className="truncate sm:hidden">
-                            <Text className="mt-1" size="fine">
-                              Qty: {lineItem.quantity}
-                            </Text>
-                          </dd>
-                        </dl>
-                      </div>
-                    </td>
-                    <td className="hidden px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
-                      <Money data={lineItem.variant!.price!} />
-                    </td>
-                    <td className="hidden px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
-                      {lineItem.quantity}
-                    </td>
-                    <td className="px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
-                      <Text>
-                        <Money data={lineItem.discountedTotalPrice!} />
-                      </Text>
-                    </td>
-                  </tr>
+                          </div>
+                          <dl className="grid">
+                            <dt className="sr-only">Product</dt>
+                            <dd className="truncate lg:hidden">
+                              <Heading size="copy" format as="h3">
+                                {displayTitle}
+                              </Heading>
+                              <Text size="fine" className="mt-1">
+                                {lineItem.variant!.title}
+                              </Text>
+                            </dd>
+                            <dt className="sr-only">Price</dt>
+                            <dd className="truncate sm:hidden">
+                              <Text size="fine" className="mt-4">
+                                <Money data={lineItem.variant!.price!} />
+                              </Text>
+                            </dd>
+                            <dt className="sr-only">Quantity</dt>
+                            <dd className="truncate sm:hidden">
+                              <Text className="mt-1" size="fine">
+                                Qty: {lineItem.quantity}
+                              </Text>
+                            </dd>
+                          </dl>
+                        </div>
+                      </td>
+                      <td className="hidden px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
+                        <Money data={lineItem.variant!.price!} />
+                      </td>
+                      <td className="hidden px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
+                        {lineItem.quantity}
+                      </td>
+                      <td className="px-3 py-4 text-right align-top sm:align-middle sm:table-cell">
+                        <Text>
+                          <Money data={lineItem.discountedTotalPrice!} />
+                        </Text>
+                      </td>
+                    </tr>
                   );
                 })}
               </tbody>

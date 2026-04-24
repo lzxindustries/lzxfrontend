@@ -65,7 +65,11 @@ export function Header({
       <div className="navbar-end">
         <ul className="menu menu-horizontal px-2">
           <li>
-            <button onClick={() => setSearchOpen(true)} aria-label="Search" data-testid="search-toggle">
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              data-testid="search-toggle"
+            >
               <FaSearch size={iconSize} />
             </button>
           </li>

@@ -8,6 +8,7 @@ module.exports = {
     'plugin:hydrogen/typescript',
     'plugin:import/recommended',
   ],
+  // @remix-run/eslint-config enables eslint-plugin-jest; Vitest is compatible enough at rule level.
   settings: {
     jest: {
       version: 29,
@@ -16,7 +17,6 @@ module.exports = {
   rules: {
     'prettier/prettier': 'off',
     'import/first': 'off',
-    'react-hooks/rules-of-hooks': 'off',
     'jsx-a11y/no-noninteractive-tabindex': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'react/no-unescaped-entities': 'off',

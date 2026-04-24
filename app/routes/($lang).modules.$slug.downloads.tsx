@@ -15,7 +15,8 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function ModuleDownloads() {
   const data = useOutletContext<ModuleLayoutLoaderData>();
-  const {assets, archiveAssets, product, slug} = data as unknown as ModuleHubData;
+  const {assets, archiveAssets, product, slug} =
+    data as unknown as ModuleHubData;
   const showGuidedUpdater = shouldShowGuidedUpdaterOnDownloads(slug);
 
   if (assets.length === 0 && archiveAssets.length === 0) {

@@ -1,6 +1,6 @@
 # Contact Information
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 We're here to help. Whether you have a question about your order, need technical support, or just want to say hello, here's how to reach us.
 

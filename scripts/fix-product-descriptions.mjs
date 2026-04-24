@@ -20,7 +20,9 @@ const {
 } = process.env;
 
 if (!PUBLIC_STORE_DOMAIN || !SHOPIFY_CLIENT_ID || !SHOPIFY_CLIENT_SECRET) {
-  console.error('Missing required env vars: PUBLIC_STORE_DOMAIN, SHOPIFY_CLIENT_ID, SHOPIFY_CLIENT_SECRET');
+  console.error(
+    'Missing required env vars: PUBLIC_STORE_DOMAIN, SHOPIFY_CLIENT_ID, SHOPIFY_CLIENT_SECRET',
+  );
   process.exit(1);
 }
 
@@ -29,16 +31,20 @@ const APPLY = process.argv.includes('--apply');
 // ─── Auth ────────────────────────────────────────────────────────────────────
 
 async function getAccessToken() {
-  const res = await fetch(`https://${PUBLIC_STORE_DOMAIN}/admin/oauth/access_token`, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: new URLSearchParams({
-      grant_type: 'client_credentials',
-      client_id: SHOPIFY_CLIENT_ID,
-      client_secret: SHOPIFY_CLIENT_SECRET,
-    }),
-  });
-  if (!res.ok) throw new Error(`OAuth failed ${res.status}: ${await res.text()}`);
+  const res = await fetch(
+    `https://${PUBLIC_STORE_DOMAIN}/admin/oauth/access_token`,
+    {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({
+        grant_type: 'client_credentials',
+        client_id: SHOPIFY_CLIENT_ID,
+        client_secret: SHOPIFY_CLIENT_SECRET,
+      }),
+    },
+  );
+  if (!res.ok)
+    throw new Error(`OAuth failed ${res.status}: ${await res.text()}`);
   return (await res.json()).access_token;
 }
 
@@ -56,7 +62,10 @@ async function adminGql(token, query, variables = {}) {
   );
   if (!res.ok) throw new Error(`Admin API ${res.status}: ${await res.text()}`);
   const json = await res.json();
-  if (json.errors?.length) throw new Error(`GraphQL errors: ${json.errors.map(e => e.message).join('; ')}`);
+  if (json.errors?.length)
+    throw new Error(
+      `GraphQL errors: ${json.errors.map((e) => e.message).join('; ')}`,
+    );
   return json.data;
 }
 
@@ -87,15 +96,22 @@ const FIXES = [
     description: 'Fix /docs/blog link → /blog',
     transform(html) {
       // Fix links pointing to /docs/blog → /blog
-      return html.replace(/href="(https?:\/\/[^"]*)?\/docs\/blog"/gi, 'href="/blog"');
+      return html.replace(
+        /href="(https?:\/\/[^"]*)?\/docs\/blog"/gi,
+        'href="/blog"',
+      );
     },
   },
   {
     handle: 'vidiot',
-    description: 'Remove empty link [](url) rendered as <a href="..."></a> with no text',
+    description:
+      'Remove empty link [](url) rendered as <a href="..."></a> with no text',
     transform(html) {
       // Remove <a> tags that have no inner text/content (empty links)
-      return html.replace(/<a\s+[^>]*href="https?:\/\/www\.lzxindustries\.net\/products\/vidiot"[^>]*>\s*<\/a>/gi, '');
+      return html.replace(
+        /<a\s+[^>]*href="https?:\/\/www\.lzxindustries\.net\/products\/vidiot"[^>]*>\s*<\/a>/gi,
+        '',
+      );
     },
   },
 ];
@@ -103,7 +119,11 @@ const FIXES = [
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log(`Mode: ${APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'}\n`);
+  console.log(
+    `Mode: ${
+      APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'
+    }\n`,
+  );
 
   console.log('Authenticating...');
   const token = await getAccessToken();
@@ -112,8 +132,10 @@ async function main() {
   for (const fix of FIXES) {
     console.log(`━━━ ${fix.handle}: ${fix.description} ━━━`);
 
-    const data = await adminGql(token, FIND_PRODUCTS, {query: `handle:${fix.handle}`});
-    const product = data.products.nodes.find(p => p.handle === fix.handle);
+    const data = await adminGql(token, FIND_PRODUCTS, {
+      query: `handle:${fix.handle}`,
+    });
+    const product = data.products.nodes.find((p) => p.handle === fix.handle);
 
     if (!product) {
       console.log(`  ⚠ Product "${fix.handle}" not found — skipping\n`);
@@ -150,7 +172,11 @@ async function main() {
         input: {id: product.id, descriptionHtml: cleaned},
       });
       if (result.productUpdate.userErrors?.length) {
-        console.log(`  ✗ Failed: ${result.productUpdate.userErrors.map(e => e.message).join('; ')}`);
+        console.log(
+          `  ✗ Failed: ${result.productUpdate.userErrors
+            .map((e) => e.message)
+            .join('; ')}`,
+        );
       } else {
         console.log(`  ✓ Updated`);
       }
@@ -165,7 +191,7 @@ async function main() {
   }
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error('Fatal:', err);
   process.exit(1);
 });

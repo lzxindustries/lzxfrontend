@@ -4,14 +4,14 @@ This directory contains all store policies for lzxindustries.net, ready to paste
 
 ## Files
 
-| File | Shopify Location | Status |
-|---|---|---|
-| `shipping-policy.md` | Settings → Policies → Shipping policy | **New** (currently 404 on site) |
-| `refund-policy.md` | Settings → Policies → Refund policy | **Replaces** existing "no refunds" text |
-| `terms-of-service.md` | Settings → Policies → Terms of service | **Replaces** existing ToS (includes Warranty Policy) |
-| `privacy-policy.md` | Settings → Policies → Privacy policy | **New** (currently missing) |
-| `contact-information.md` | Pages → Contact Information | **New** |
-| `legal-notice.md` | Pages → Legal Notice | **New** |
+| File                     | Shopify Location                       | Status                                               |
+| ------------------------ | -------------------------------------- | ---------------------------------------------------- |
+| `shipping-policy.md`     | Settings → Policies → Shipping policy  | **New** (currently 404 on site)                      |
+| `refund-policy.md`       | Settings → Policies → Refund policy    | **Replaces** existing "no refunds" text              |
+| `terms-of-service.md`    | Settings → Policies → Terms of service | **Replaces** existing ToS (includes Warranty Policy) |
+| `privacy-policy.md`      | Settings → Policies → Privacy policy   | **New** (currently missing)                          |
+| `contact-information.md` | Pages → Contact Information            | **New**                                              |
+| `legal-notice.md`        | Pages → Legal Notice                   | **New**                                              |
 
 Each policy also has a matching `.html` file (e.g., `shipping-policy.html`) formatted for direct paste into Shopify's HTML editor.
 

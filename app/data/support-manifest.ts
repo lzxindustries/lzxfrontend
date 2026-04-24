@@ -216,7 +216,11 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
   'cadet-i-sync-generator': {
     slug: 'cadet-i-sync-generator',
     manuals: [],
-    relatedProductSlugs: ['cadet-ii-rgb-encoder', 'esg3', 'cadet-iv-dual-ramp-generator'],
+    relatedProductSlugs: [
+      'cadet-ii-rgb-encoder',
+      'esg3',
+      'cadet-iv-dual-ramp-generator',
+    ],
   },
   'cadet-ii-rgb-encoder': {
     slug: 'cadet-ii-rgb-encoder',
@@ -235,11 +239,7 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
   'cadet-iv-dual-ramp-generator': {
     slug: 'cadet-iv-dual-ramp-generator',
     manuals: [],
-    relatedProductSlugs: [
-      'cadet-ii-rgb-encoder',
-      'dsg3',
-      'cadet-ix-vco',
-    ],
+    relatedProductSlugs: ['cadet-ii-rgb-encoder', 'dsg3', 'cadet-ix-vco'],
   },
   'cadet-ix-vco': {
     slug: 'cadet-ix-vco',
@@ -253,11 +253,7 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
   'cadet-v-scaler': {
     slug: 'cadet-v-scaler',
     manuals: [],
-    relatedProductSlugs: [
-      'cadet-vi-fader',
-      'cadet-vii-processor',
-      'proc',
-    ],
+    relatedProductSlugs: ['cadet-vi-fader', 'cadet-vii-processor', 'proc'],
   },
   'cadet-vi-fader': {
     slug: 'cadet-vi-fader',
@@ -276,16 +272,16 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
   'cadet-viii-hard-key-generator': {
     slug: 'cadet-viii-hard-key-generator',
     manuals: [],
-    relatedProductSlugs: [
-      'cadet-vii-processor',
-      'cadet-x-multiplier',
-      'fkg3',
-    ],
+    relatedProductSlugs: ['cadet-vii-processor', 'cadet-x-multiplier', 'fkg3'],
   },
   'cadet-x-multiplier': {
     slug: 'cadet-x-multiplier',
     manuals: [],
-    relatedProductSlugs: ['cadet-ix-vco', 'cadet-viii-hard-key-generator', 'smx3'],
+    relatedProductSlugs: [
+      'cadet-ix-vco',
+      'cadet-viii-hard-key-generator',
+      'smx3',
+    ],
   },
 
   // ── Visionary Series ───────────────────────────────────────────────
@@ -297,12 +293,20 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
   'video-blending-matrix': {
     slug: 'video-blending-matrix',
     manuals: [],
-    relatedProductSlugs: ['triple-video-fader-key-generator', 'video-logic', 'smx3'],
+    relatedProductSlugs: [
+      'triple-video-fader-key-generator',
+      'video-logic',
+      'smx3',
+    ],
   },
   'video-logic': {
     slug: 'video-logic',
     manuals: [],
-    relatedProductSlugs: ['triple-video-fader-key-generator', 'video-blending-matrix', 'keychain'],
+    relatedProductSlugs: [
+      'triple-video-fader-key-generator',
+      'video-blending-matrix',
+      'keychain',
+    ],
   },
 
   // ── Castle Series ───────────────────────────────────────────────────

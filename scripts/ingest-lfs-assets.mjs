@@ -34,7 +34,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
 
-const LFS_INDEX = path.join(REPO_ROOT, 'lfs/library/products/product-catalog.json');
+const LFS_INDEX = path.join(
+  REPO_ROOT,
+  'lfs/library/products/product-catalog.json',
+);
 const LFS_PRODUCTS_DIR = path.join(REPO_ROOT, 'lfs/library/products');
 const PUBLIC_ASSETS_DIR = path.join(REPO_ROOT, 'public/assets/products');
 const PUBLIC_DOWNLOADS_DIR = path.join(REPO_ROOT, 'public/downloads/products');
@@ -50,7 +53,14 @@ const RASTER_EXT = new Set(['.png', '.jpg', '.jpeg', '.webp', '.avif']);
 const PASSTHROUGH_IMG_EXT = new Set(['.svg', '.gif']);
 const IMAGE_EXT = new Set([...RASTER_EXT, ...PASSTHROUGH_IMG_EXT]);
 const DOWNLOAD_EXT = new Set([
-  '.pdf', '.zip', '.uf2', '.csv', '.svg', '.sha256', '.txt', '.md',
+  '.pdf',
+  '.zip',
+  '.uf2',
+  '.csv',
+  '.svg',
+  '.sha256',
+  '.txt',
+  '.md',
 ]);
 
 const MAX_LONG_EDGE = 2048;
@@ -146,10 +156,13 @@ async function processImage(filePath, ext) {
   };
 }
 
-
 async function copyAssetsForSlug(slug, productFolder, prevManifest) {
   const sourceWebsite = path.join(LFS_PRODUCTS_DIR, productFolder, 'website');
-  const sourceDownloads = path.join(LFS_PRODUCTS_DIR, productFolder, 'downloads');
+  const sourceDownloads = path.join(
+    LFS_PRODUCTS_DIR,
+    productFolder,
+    'downloads',
+  );
   const destAssets = path.join(PUBLIC_ASSETS_DIR, slug);
   const destDownloads = path.join(PUBLIC_DOWNLOADS_DIR, slug);
 
@@ -176,7 +189,9 @@ async function copyAssetsForSlug(slug, productFolder, prevManifest) {
         !FORCE &&
         prev?.sourceSha256 === sourceSha &&
         prev?.publicPath &&
-        (await exists(path.join(REPO_ROOT, 'public', prev.publicPath.replace(/^\//, ''))));
+        (await exists(
+          path.join(REPO_ROOT, 'public', prev.publicPath.replace(/^\//, '')),
+        ));
 
       let outExt;
       let outBytes;
@@ -191,10 +206,19 @@ async function copyAssetsForSlug(slug, productFolder, prevManifest) {
         outSha = prev.sha256;
         width = prev.width ?? null;
         height = prev.height ?? null;
-        target = path.join(REPO_ROOT, 'public', prev.publicPath.replace(/^\//, ''));
+        target = path.join(
+          REPO_ROOT,
+          'public',
+          prev.publicPath.replace(/^\//, ''),
+        );
       } else {
         const processed = DRY_RUN
-          ? {buf: sourceBuf, ext: PASSTHROUGH_IMG_EXT.has(ext) ? ext.slice(1) : 'webp', width: null, height: null}
+          ? {
+              buf: sourceBuf,
+              ext: PASSTHROUGH_IMG_EXT.has(ext) ? ext.slice(1) : 'webp',
+              width: null,
+              height: null,
+            }
           : await processImage(filePath, ext);
         outExt = processed.ext;
         outBytes = processed.buf.length;
@@ -262,8 +286,12 @@ async function main() {
     index = JSON.parse(await fs.readFile(LFS_INDEX, 'utf8'));
   } catch (err) {
     if (err.code === 'ENOENT' || err.code === 'ENODEV') {
-      console.log('[ingest-lfs] lfs/ not mounted — skipping (build environment).');
-      console.log('[ingest-lfs] any previously committed public/assets/products/** is preserved.');
+      console.log(
+        '[ingest-lfs] lfs/ not mounted — skipping (build environment).',
+      );
+      console.log(
+        '[ingest-lfs] any previously committed public/assets/products/** is preserved.',
+      );
       return;
     }
     throw err;
@@ -273,7 +301,9 @@ async function main() {
   console.log(`[ingest-lfs] lfs catalog reports ${products.length} products`);
 
   if (CLEAN && !DRY_RUN) {
-    console.log('[ingest-lfs] --clean: wiping public/assets/products/ and public/downloads/products/');
+    console.log(
+      '[ingest-lfs] --clean: wiping public/assets/products/ and public/downloads/products/',
+    );
     await rmDir(PUBLIC_ASSETS_DIR);
     await rmDir(PUBLIC_DOWNLOADS_DIR);
   }
@@ -302,7 +332,8 @@ async function main() {
   const skipped = [];
 
   for (const entry of products) {
-    const {slug, folder, name, product_type, category, is_active, is_hidden} = entry;
+    const {slug, folder, name, product_type, category, is_active, is_hidden} =
+      entry;
     if (!slug || !folder) {
       skipped.push(entry);
       continue;
@@ -335,22 +366,43 @@ async function main() {
   }
 
   if (skipped.length) {
-    console.log(`[ingest-lfs] skipped ${skipped.length} entries (no slug/folder)`);
+    console.log(
+      `[ingest-lfs] skipped ${skipped.length} entries (no slug/folder)`,
+    );
   }
 
   const manifestJson = JSON.stringify(manifest, null, 2) + '\n';
 
   if (DRY_RUN) {
-    console.log(`[ingest-lfs] DRY RUN — would copy ${totalImages} images, ${totalDownloads} downloads (${(totalBytes / 1024 / 1024).toFixed(2)} MiB)`);
+    console.log(
+      `[ingest-lfs] DRY RUN — would copy ${totalImages} images, ${totalDownloads} downloads (${(
+        totalBytes /
+        1024 /
+        1024
+      ).toFixed(2)} MiB)`,
+    );
     return;
   }
 
   await fs.mkdir(path.dirname(OUT_MANIFEST), {recursive: true});
   await fs.writeFile(OUT_MANIFEST, manifestJson, 'utf8');
 
-  console.log(`[ingest-lfs] processed ${totalImages} images (${totalCached} cached, ${totalImages - totalCached} re-encoded) → ${path.relative(REPO_ROOT, PUBLIC_ASSETS_DIR)}/`);
-  console.log(`[ingest-lfs] copied ${totalDownloads} downloads → ${path.relative(REPO_ROOT, PUBLIC_DOWNLOADS_DIR)}/`);
-  console.log(`[ingest-lfs] total output bytes: ${(totalBytes / 1024 / 1024).toFixed(2)} MiB`);
+  console.log(
+    `[ingest-lfs] processed ${totalImages} images (${totalCached} cached, ${
+      totalImages - totalCached
+    } re-encoded) → ${path.relative(REPO_ROOT, PUBLIC_ASSETS_DIR)}/`,
+  );
+  console.log(
+    `[ingest-lfs] copied ${totalDownloads} downloads → ${path.relative(
+      REPO_ROOT,
+      PUBLIC_DOWNLOADS_DIR,
+    )}/`,
+  );
+  console.log(
+    `[ingest-lfs] total output bytes: ${(totalBytes / 1024 / 1024).toFixed(
+      2,
+    )} MiB`,
+  );
   console.log(`[ingest-lfs] wrote ${path.relative(REPO_ROOT, OUT_MANIFEST)}`);
 }
 

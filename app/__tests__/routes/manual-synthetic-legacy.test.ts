@@ -11,9 +11,9 @@ vi.mock('~/data/product-slugs', () => ({
 }));
 
 vi.mock('~/data/forum-archive.server', async () => {
-  const actual = await vi.importActual<typeof import('~/data/forum-archive.server')>(
-    '~/data/forum-archive.server',
-  );
+  const actual = await vi.importActual<
+    typeof import('~/data/forum-archive.server')
+  >('~/data/forum-archive.server');
 
   return {
     ...actual,
@@ -36,7 +36,9 @@ describe('synthetic legacy module manual fallback', () => {
     const payload = (await (response as Response).json()) as any;
 
     expect(payload.noManual).toBe(false);
-    expect(payload.doc.frontmatter.title).toBe('Audio Frequency Decoder Reference');
+    expect(payload.doc.frontmatter.title).toBe(
+      'Audio Frequency Decoder Reference',
+    );
     expect(payload.doc.html).toContain('Archived product-library reference');
     expect(payload.doc.html).toContain(
       'audio frequency decoder is an eight channel audio envelope extraction tool',

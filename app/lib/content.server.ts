@@ -129,7 +129,9 @@ function inferFirstInlineImage(content: string): string | undefined {
   );
   if (markdownImageMatch?.[1]) return markdownImageMatch[1];
 
-  const htmlImageMatch = content.match(/<img[^>]*\ssrc=["']([^"']+)["'][^>]*>/i);
+  const htmlImageMatch = content.match(
+    /<img[^>]*\ssrc=["']([^"']+)["'][^>]*>/i,
+  );
   if (htmlImageMatch?.[1]) return htmlImageMatch[1];
 
   return undefined;

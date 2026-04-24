@@ -1,6 +1,6 @@
 # Terms of Service
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 Welcome to LZX Industries. By placing an order or using our website (lzxindustries.net), you agree to these terms. Please read them carefully.
 
@@ -149,12 +149,14 @@ This warranty does not cover:
 To file a warranty claim:
 
 1. **Email us** at **support@lzxindustries.net** with:
+
    - Your order number or proof of purchase.
    - The product name and serial number (if applicable).
    - A description of the issue.
    - Photos or a short video demonstrating the problem.
 
 2. **We will respond** within 1–2 business days with a determination:
+
    - If the issue is covered, we will provide return shipping instructions (or a prepaid label for DOA claims).
    - If we need more information, we will let you know what's needed.
    - If the issue is not covered under warranty, we will explain why and discuss repair options, which may be available for a fee.

@@ -4,7 +4,11 @@ import {accessoriesCategoryConfig} from '~/data/category-configs/accessories.con
 import {partsCategoryConfig} from '~/data/category-configs/parts.config';
 import {merchandiseCategoryConfig} from '~/data/category-configs/merchandise.config';
 
-function collectHandles(config: {getRawSections: () => Array<{groups: Array<{entries: Array<{canonical: string}>}>}>}) {
+function collectHandles(config: {
+  getRawSections: () => Array<{
+    groups: Array<{entries: Array<{canonical: string}>}>;
+  }>;
+}) {
   const handles: string[] = [];
   for (const section of config.getRawSections()) {
     for (const group of section.groups) {

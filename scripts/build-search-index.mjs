@@ -27,8 +27,10 @@ function extractFrontmatter(raw) {
       const key = line.slice(0, idx).trim();
       let val = line.slice(idx + 1).trim();
       // Remove quotes
-      if ((val.startsWith('"') && val.endsWith('"')) ||
-          (val.startsWith("'") && val.endsWith("'"))) {
+      if (
+        (val.startsWith('"') && val.endsWith('"')) ||
+        (val.startsWith("'") && val.endsWith("'"))
+      ) {
         val = val.slice(1, -1);
       }
       meta[key] = val;
@@ -39,14 +41,14 @@ function extractFrontmatter(raw) {
 
 function stripMarkdown(md) {
   return md
-    .replace(/!\[.*?\]\(.*?\)/g, '')           // images
-    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')   // links → text
-    .replace(/#{1,6}\s+/g, '')                  // headings
-    .replace(/[*_~`>]/g, '')                    // formatting
-    .replace(/\|[^\n]*\|/g, '')                 // tables
-    .replace(/---+/g, '')                       // hrs
-    .replace(/:::.*$/gm, '')                    // admonitions
-    .replace(/\n{3,}/g, '\n\n')                 // collapse whitespace
+    .replace(/!\[.*?\]\(.*?\)/g, '') // images
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // links → text
+    .replace(/#{1,6}\s+/g, '') // headings
+    .replace(/[*_~`>]/g, '') // formatting
+    .replace(/\|[^\n]*\|/g, '') // tables
+    .replace(/---+/g, '') // hrs
+    .replace(/:::.*$/gm, '') // admonitions
+    .replace(/\n{3,}/g, '\n\n') // collapse whitespace
     .trim();
 }
 
@@ -96,7 +98,10 @@ function processFile(filePath, urlBase) {
 <body>
   <h1>${escapeHtml(title)}</h1>
   <main data-pagefind-body>
-    ${plainText.split('\n').map(p => `<p>${escapeHtml(p)}</p>`).join('\n    ')}
+    ${plainText
+      .split('\n')
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
+      .join('\n    ')}
   </main>
 </body>
 </html>`;
@@ -197,7 +202,9 @@ function parseProductSlugs() {
   const src = fs.readFileSync(slugsPath, 'utf-8');
 
   // Extract INSTRUMENT_NAMES
-  const instrMatch = src.match(/INSTRUMENT_NAMES\s*(?::\s*string\[\])?\s*=\s*\[([\s\S]*?)\]/);
+  const instrMatch = src.match(
+    /INSTRUMENT_NAMES\s*(?::\s*string\[\])?\s*=\s*\[([\s\S]*?)\]/,
+  );
   const instruments = [];
   if (instrMatch) {
     const entries = instrMatch[1].match(/['"]([^'"]+)['"]/g);
@@ -240,7 +247,11 @@ function writeSyntheticPage(url, title, description, bodyText) {
 <body>
   <h1>${escapeHtml(title)}</h1>
   <main data-pagefind-body>
-    ${bodyText.split('\n').filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('\n    ')}
+    ${bodyText
+      .split('\n')
+      .filter(Boolean)
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
+      .join('\n    ')}
   </main>
 </body>
 </html>`;
@@ -256,14 +267,21 @@ function generateProductHubPages() {
   const moduleNames = getModuleNames();
   let count = 0;
 
-  const instrumentSet = new Set(instruments.map(n =>
-    n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
-  ));
+  const instrumentSet = new Set(
+    instruments.map((n) =>
+      n
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, ''),
+    ),
+  );
 
   for (const [slug, data] of Object.entries(manifest)) {
     const isInstrument = instrumentSet.has(slug);
     const hubType = isInstrument ? 'instruments' : 'modules';
-    const name = moduleNames[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const name =
+      moduleNames[slug] ||
+      slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
     // Overview page
     writeSyntheticPage(
@@ -274,7 +292,7 @@ function generateProductHubPages() {
     );
 
     // Support page
-    const faqText = (data.faqItems || []).map(q => `FAQ: ${q}`).join('\n');
+    const faqText = (data.faqItems || []).map((q) => `FAQ: ${q}`).join('\n');
     writeSyntheticPage(
       `/${hubType}/${slug}/support`,
       `${name} Support | LZX Industries`,

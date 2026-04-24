@@ -110,7 +110,10 @@ export function PredictiveSearch({onClose}: {onClose?: () => void}) {
       </form>
 
       {query.length >= 2 && hasResults && (
-        <div className="mt-1 bg-base-100 border border-base-300 rounded-lg shadow-xl max-h-[70vh] overflow-y-auto" data-testid="predictive-search-results">
+        <div
+          className="mt-1 bg-base-100 border border-base-300 rounded-lg shadow-xl max-h-[70vh] overflow-y-auto"
+          data-testid="predictive-search-results"
+        >
           {results.products.length > 0 && (
             <div className="p-3">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-base-content/50 mb-2">

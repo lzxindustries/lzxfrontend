@@ -10,7 +10,7 @@ sidebar_position: 999
 This page is for **content and web contributors** who touch product hubs
 (`/modules/...`, `/instruments/...`), support snippets, or global docs. It
 does not replace the [Writing Style Guide](./WRITING_STYLE_GUIDE.md); it
-describes *where* copy belongs, not *how* to phrase every sentence.
+describes _where_ copy belongs, not _how_ to phrase every sentence.
 
 For a generated **audit** of catalog copy, manuals (including `draft` front matter), support files, and suggested P0/P1 tiers, run `yarn audit:content` (writes `docs/reports/product-content-audit.md`). See also [P0 criteria](../../docs/content-audit/P0_CRITERIA.md).
 
@@ -33,14 +33,14 @@ customers are not sent to two different mental models for the same word.
 The tab contract is documented in code: each tab must answer a **different**
 user question. In short:
 
-| Tab        | Role |
-|------------|------|
-| Overview   | Buy box, gallery, and product story. |
-| Manual     | Full reference. |
-| Learn      | **Curated** cards only. Shown for instruments with a hand-authored card list — not a second copy of the default hub links. |
-| Setup      | First-run prerequisites, signal-flow, firmware entry points. Hidden when there is nothing beyond generic text. |
-| Patches    | Module-only, recipe-style content from the database. |
-| Videos / Downloads / Specs / Support | As named; Support combines FAQ, forum, troubleshooting, contact. |
+| Tab                                  | Role                                                                                                                       |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| Overview                             | Buy box, gallery, and product story.                                                                                       |
+| Manual                               | Full reference.                                                                                                            |
+| Learn                                | **Curated** cards only. Shown for instruments with a hand-authored card list — not a second copy of the default hub links. |
+| Setup                                | First-run prerequisites, signal-flow, firmware entry points. Hidden when there is nothing beyond generic text.             |
+| Patches                              | Module-only, recipe-style content from the database.                                                                       |
+| Videos / Downloads / Specs / Support | As named; Support combines FAQ, forum, troubleshooting, contact.                                                           |
 
 If you add a new hub tab in code, start by updating the taxonomy comment in
 `hub-tabs.ts` so the next editor does not fork the product IA.
@@ -77,7 +77,7 @@ the hub level — the nav already does that job.
 ## Checklist before you ship
 
 - [ ] Copy matches voice in `content/docs/WRITING_STYLE_GUIDE.md` (we / you, no
-      first-person *I*, no marketing filler).
+      first-person _I_, no marketing filler).
 - [ ] The destination URL is the **canonical** one (hubs, docs, or support).
 - [ ] You did not duplicate a full manual section inside FAQ or support body.
 - [ ] `draft: true` in front matter if the page is not ready for production

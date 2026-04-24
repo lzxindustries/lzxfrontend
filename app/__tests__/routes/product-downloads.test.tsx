@@ -65,7 +65,9 @@ describe('Product downloads routes', () => {
 
     renderWithRouter(<InstrumentDownloads />);
 
-    expect(screen.queryByText('Prefer guided updates?')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('Prefer guided updates?'),
+    ).not.toBeInTheDocument();
     expect(screen.getByText('Firmware')).toBeTruthy();
   });
 
@@ -78,7 +80,9 @@ describe('Product downloads routes', () => {
 
     renderWithRouter(<ModuleDownloads />);
 
-    expect(screen.queryByText('Need a guided updater?')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('Need a guided updater?'),
+    ).not.toBeInTheDocument();
     expect(screen.getByText('Firmware')).toBeTruthy();
   });
 
@@ -124,7 +128,9 @@ describe('Product downloads routes', () => {
     expect(screen.queryByText('TBC2 Firmware 1.0.6')).not.toBeInTheDocument();
     expect(screen.getByText('Quick Start Guide')).toBeTruthy();
 
-    fireEvent.click(screen.getByRole('button', {name: /show older firmware versions/i}));
+    fireEvent.click(
+      screen.getByRole('button', {name: /show older firmware versions/i}),
+    );
 
     expect(screen.getByText('TBC2 Firmware 1.0.6')).toBeTruthy();
   });

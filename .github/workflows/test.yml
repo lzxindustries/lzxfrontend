@@ -16,6 +16,7 @@ jobs:
           node-version: '20'
       - run: corepack enable
       - run: yarn install --immutable
+      - run: yarn format:check
       - run: yarn lint
       - run: yarn typecheck
 

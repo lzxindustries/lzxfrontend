@@ -5,12 +5,8 @@ import {
   MODULE_SIGNAL_FLOW,
   getSignalFlowForProduct,
 } from '~/components/SignalFlowDiagram';
-import {
-  QUICK_START_STEPS,
-} from '~/components/QuickStartPreview';
-import {
-  renderReleaseMarkdown,
-} from '~/components/ReleaseNotes';
+import {QUICK_START_STEPS} from '~/components/QuickStartPreview';
+import {renderReleaseMarkdown} from '~/components/ReleaseNotes';
 import {
   VIDEOMANCER_TROUBLESHOOTING,
   GENERIC_MODULE_TROUBLESHOOTING,
@@ -50,9 +46,7 @@ describe('SignalFlowDiagram configs', () => {
     expect(getSignalFlowForProduct('videomancer')).toBe(
       VIDEOMANCER_SIGNAL_FLOW,
     );
-    expect(getSignalFlowForProduct('chromagnon')).toBe(
-      CHROMAGNON_SIGNAL_FLOW,
-    );
+    expect(getSignalFlowForProduct('chromagnon')).toBe(CHROMAGNON_SIGNAL_FLOW);
     expect(getSignalFlowForProduct('esg3')).toBeNull();
     expect(getSignalFlowForProduct('unknown')).toBeNull();
   });

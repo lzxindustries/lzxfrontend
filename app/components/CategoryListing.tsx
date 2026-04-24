@@ -19,8 +19,7 @@ const FIT_CLASS = {
 } as const;
 
 const SIZES_BY_ASPECT: Record<string, string> = {
-  '1/1':
-    '(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw',
+  '1/1': '(min-width: 1024px) 20vw, (min-width: 768px) 25vw, 50vw',
   '16/9': '(min-width: 768px) 33vw, 100vw',
 };
 
@@ -33,7 +32,7 @@ function CategoryCardImage({entry}: {entry: CategoryListingEntry}) {
     return (
       <img
         src={image.localPath}
-        alt={`${name} product image`}
+        alt={name}
         loading="lazy"
         className={`${aspectClass} w-full rounded bg-base-200 ${fitClass}`}
       />
@@ -141,11 +140,7 @@ function CategoryGroupView({
       ) : null}
       <div className={gridColsClassName}>
         {group.entries.map((entry) => (
-          <CategoryCard
-            key={entry.key}
-            entry={entry}
-            cardSize={cardSize}
-          />
+          <CategoryCard key={entry.key} entry={entry} cardSize={cardSize} />
         ))}
       </div>
       {group.archive ? (

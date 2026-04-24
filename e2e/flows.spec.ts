@@ -33,9 +33,7 @@ test.describe('Search flow', () => {
     await searchInput.first().fill('video');
 
     // Wait for predictive results
-    const results = page.locator(
-      '[data-testid="predictive-search-results"]',
-    );
+    const results = page.locator('[data-testid="predictive-search-results"]');
     await expect(results).toBeVisible({timeout: 5000});
   });
 });
@@ -46,10 +44,7 @@ test.describe('Product browsing flow', () => {
 
     // Find a product card and click it
     const productCard = page.locator('[data-testid="product-card"] a').first();
-    if (
-      (await productCard.count()) > 0 &&
-      (await productCard.isVisible())
-    ) {
+    if ((await productCard.count()) > 0 && (await productCard.isVisible())) {
       const href = await productCard.getAttribute('href');
       await productCard.click();
       // Wait for client-side navigation to complete
@@ -95,7 +90,9 @@ test.describe('Cart flow', () => {
 });
 
 test.describe('Navigation flow', () => {
-  test('desktop mega menu is visible and has dropdown triggers', async ({page}) => {
+  test('desktop mega menu is visible and has dropdown triggers', async ({
+    page,
+  }) => {
     await page.setViewportSize({width: 1280, height: 800});
     await gotoReady(page, '/');
 
@@ -186,10 +183,7 @@ test.describe('Blog browsing flow', () => {
       )
       .first();
 
-    if (
-      (await articleLink.count()) > 0 &&
-      (await articleLink.isVisible())
-    ) {
+    if ((await articleLink.count()) > 0 && (await articleLink.isVisible())) {
       const href = await articleLink.getAttribute('href');
       await articleLink.click();
       if (href) {

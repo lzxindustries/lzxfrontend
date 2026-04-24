@@ -337,7 +337,10 @@ for (const a of assetRecordsData) {
   });
 }
 
-export function inferAssetVersion(name: string, fileName: string): string | null {
+export function inferAssetVersion(
+  name: string,
+  fileName: string,
+): string | null {
   // Match patterns like "RevE", "Rev3", "v1.0.6", "1.0.2-mk1", "1.0.0-rc.4", "Rev.E"
   const normalizedFileName = fileName.replace(/\.[^.]+$/, '');
   const combined = `${name} ${normalizedFileName}`;
@@ -353,18 +356,36 @@ export function inferAssetVersion(name: string, fileName: string): string | null
   return null;
 }
 
-export function inferAssetPlatform(name: string, fileName: string): string | null {
+export function inferAssetPlatform(
+  name: string,
+  fileName: string,
+): string | null {
   const combined = `${name} ${fileName}`.toLowerCase();
-  if (combined.includes('mac') || combined.includes('darwin') || combined.includes('.dmg'))
+  if (
+    combined.includes('mac') ||
+    combined.includes('darwin') ||
+    combined.includes('.dmg')
+  )
     return 'macOS';
-  if (combined.includes('win') || combined.includes('.exe') || combined.includes('.msi'))
+  if (
+    combined.includes('win') ||
+    combined.includes('.exe') ||
+    combined.includes('.msi')
+  )
     return 'Windows';
-  if (combined.includes('linux') || combined.includes('.appimage') || combined.includes('.deb'))
+  if (
+    combined.includes('linux') ||
+    combined.includes('.appimage') ||
+    combined.includes('.deb')
+  )
     return 'Linux';
   return null;
 }
 
-export function generateAssetDescription(name: string, fileType: string): string {
+export function generateAssetDescription(
+  name: string,
+  fileType: string,
+): string {
   const type = fileType.toUpperCase();
   const lowerName = name.toLowerCase();
   if (lowerName.includes('firmware')) return `Firmware update (${type})`;

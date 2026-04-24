@@ -32,11 +32,11 @@ This patch assumes you have followed the module installation instructions above,
 
 Here's what you will need:
 
-*   [ESG3 Encoder & Sync Generator](/modules/esg3) module
-*   [DSG3 Dual Shape Generator](/modules/dsg3) module
-*   An RCA-to-RCA cable for composite video output
-*   A video display with composite video input
-*   Three 3.5mm patch cables
+- [ESG3 Encoder & Sync Generator](/modules/esg3) module
+- [DSG3 Dual Shape Generator](/modules/dsg3) module
+- An RCA-to-RCA cable for composite video output
+- A video display with composite video input
+- Three 3.5mm patch cables
 
 ![/media/GettingStartedKit.jpg](/media/GettingStartedKit.jpg)
 
@@ -68,20 +68,20 @@ Next, let's make the geometry of your pattern capable of more complex results th
 
 _I suspect something is not working. What are some good troubleshooting steps to follow?_
 
-*   Keep it simple. Simplify your patch to the least number of cables or connections that create the issue you're seeing. Sometimes this will reveal the problem. If you jump into more complex theories right away, you may miss simple answers, like a defective patch cable or a missed setting.
-*   Your 12V power supply or EuroRack power supply may not be supplying enough current. Underpowering your system can result in a variety of glitchy behavior. Add up the current consumption required by your LZX modules or by any other modules sharing the same power source, and verify that this is less than the current supplied by your power supply. If it is very close to, or greater than, the supplied current, upgrade your power supply.
-*   Try testing modules in isolation. Disconnect all modules from your system, and connect only the output module, such as ESG3, to the power supply. After verifying it works correctly, power up the next module. Keep going until your issue reappears. If the issue reappears near the power supply's limits, upgrade your power supply. If the issue seems to be connected to a specific module, focus on troubleshooting that module.
+- Keep it simple. Simplify your patch to the least number of cables or connections that create the issue you're seeing. Sometimes this will reveal the problem. If you jump into more complex theories right away, you may miss simple answers, like a defective patch cable or a missed setting.
+- Your 12V power supply or EuroRack power supply may not be supplying enough current. Underpowering your system can result in a variety of glitchy behavior. Add up the current consumption required by your LZX modules or by any other modules sharing the same power source, and verify that this is less than the current supplied by your power supply. If it is very close to, or greater than, the supplied current, upgrade your power supply.
+- Try testing modules in isolation. Disconnect all modules from your system, and connect only the output module, such as ESG3, to the power supply. After verifying it works correctly, power up the next module. Keep going until your issue reappears. If the issue reappears near the power supply's limits, upgrade your power supply. If the issue seems to be connected to a specific module, focus on troubleshooting that module.
 
 _I am seeing my LZX Modular system's video output drop in and out on my video monitor or video recording device, resulting in missing frames._
 
-*   Your video device might be defective. Verify that your video device can display video signals from a different video source of the same video format, using a different set of video cables. If you see the same issue, your device is defective. Contact the manufacturer of your video device for advice on further troubleshooting.
-*   Your video cables might be defective. Try with another set of video cables. If your issue has been resolved with the new cables, your video cables were defective.
-*   Your video cables might be too long. Try with another set of video cables no longer than 2 meters in length. If this resolves your issue, use the shorter cables. If you require a very long cable run, you may need to add a video distribution amplifier to your equipment list.
-*   Your ESG3 module may be defective. If none of the above solutions work, check to see if the issue goes away when you adjust the Contrast controls on your ESG3. If so, does the issue return when you recenter the controls? If so, this is most likely due to a PCB assembly or connector issue, such as a dry or unsoldered pad. The issue can be resolved by service or replacement performed by a qualified technician at LZX.
+- Your video device might be defective. Verify that your video device can display video signals from a different video source of the same video format, using a different set of video cables. If you see the same issue, your device is defective. Contact the manufacturer of your video device for advice on further troubleshooting.
+- Your video cables might be defective. Try with another set of video cables. If your issue has been resolved with the new cables, your video cables were defective.
+- Your video cables might be too long. Try with another set of video cables no longer than 2 meters in length. If this resolves your issue, use the shorter cables. If you require a very long cable run, you may need to add a video distribution amplifier to your equipment list.
+- Your ESG3 module may be defective. If none of the above solutions work, check to see if the issue goes away when you adjust the Contrast controls on your ESG3. If so, does the issue return when you recenter the controls? If so, this is most likely due to a PCB assembly or connector issue, such as a dry or unsoldered pad. The issue can be resolved by service or replacement performed by a qualified technician at LZX.
 
 _My ESG3 doesn't work sometimes when I power my system on. When this happens, both frontpanel indicators are green._
 
-*   Your firmware is not booting under some conditions. This is most likely due to a PCB assembly or connector issue, such as a dry or unsoldered pad. The issue can be resolved by service or replacement performed by a qualified technician at LZX.
+- Your firmware is not booting under some conditions. This is most likely due to a PCB assembly or connector issue, such as a dry or unsoldered pad. The issue can be resolved by service or replacement performed by a qualified technician at LZX.
 
 # Test & Calibration
 
@@ -89,26 +89,26 @@ Many users like to perform regular service and checkups on their analog hardware
 
 ## Basic Testing
 
-*   Power supply capable of 1 amps or more of current at 12 volts DC (EuroRack, Generic Wall Wart Adapter, etc)
-*   A video display with Composite or Component video input
-*   At least three RCA-to-RCA 75 ohms video cables or RCA-to-BNC 75 ohms video cables (use the native connector type present on your display) less than or equal to 2 meters in length
-*   At least three 3.5mm patch cables less than or equal to 1 meter in length
-*   EuroRack module mounting rails, either inside a EuroRack case or a bare rack frame
-*   ESG3 Encoder & Sync Generator module
+- Power supply capable of 1 amps or more of current at 12 volts DC (EuroRack, Generic Wall Wart Adapter, etc)
+- A video display with Composite or Component video input
+- At least three RCA-to-RCA 75 ohms video cables or RCA-to-BNC 75 ohms video cables (use the native connector type present on your display) less than or equal to 2 meters in length
+- At least three 3.5mm patch cables less than or equal to 1 meter in length
+- EuroRack module mounting rails, either inside a EuroRack case or a bare rack frame
+- ESG3 Encoder & Sync Generator module
 
 ## Advanced Testing & User Calibration
 
-*   All items in the Basic Testing Requirements list
-*   A second set of all items in the Basic Testing Requirements list if the test requires it
-*   A dual channel oscilloscope with at least 100 MHz bandwidth and two low voltage signal probes
-*   A multimeter with voltmeter and ammeter functions
-*   Metric and imperial small nut driver and screwdriver sets for module disassembly, reassembly, and trimmer adjustment
+- All items in the Basic Testing Requirements list
+- A second set of all items in the Basic Testing Requirements list if the test requires it
+- A dual channel oscilloscope with at least 100 MHz bandwidth and two low voltage signal probes
+- A multimeter with voltmeter and ammeter functions
+- Metric and imperial small nut driver and screwdriver sets for module disassembly, reassembly, and trimmer adjustment
 
 ## Firmware Programming (ESG3 & DSG3)
 
-*   Lattice HW-USBN-2B Programming Cable
-*   TagConnect TC-LATTICE-10 Programming Cable Adapter
-*   TagConnect TC2050-IDC-NL 10-Pin No-Legs Cable with Ribbon Connector
+- Lattice HW-USBN-2B Programming Cable
+- TagConnect TC-LATTICE-10 Programming Cable Adapter
+- TagConnect TC2050-IDC-NL 10-Pin No-Legs Cable with Ribbon Connector
 
 # Recommended Starter Systems
 
@@ -124,14 +124,14 @@ A list of hardware verified to be fully compatible with LZX Modular. This list i
 
 ## EuroRack Cases & Power Supplies
 
-*   LZX Vessel Case
-*   LZX Capsule Power
-*   TipTop Audio Mantis Case
-*   Arturia Rack Brute
-*   Malekko Power
+- LZX Vessel Case
+- LZX Capsule Power
+- TipTop Audio Mantis Case
+- Arturia Rack Brute
+- Malekko Power
 
 ## Video Capture & Display Devices (SD/HD)
 
-*   Blackmagic Design Analog-to-SDI Mini Converter
-*   Blackmagic Design DeckLink Quad SDI PCI Card
-*   SEETEC P173-9HSD-RM Broadcast Video Monitor
+- Blackmagic Design Analog-to-SDI Mini Converter
+- Blackmagic Design DeckLink Quad SDI PCI Card
+- SEETEC P173-9HSD-RM Broadcast Video Monitor

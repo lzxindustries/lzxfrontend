@@ -121,15 +121,16 @@ function mergeLegacyProductData(
   );
 
   const metafields = [
-    ...((((product as any).metafields as Array<Record<string, unknown> | null>) ??
-      []).filter(Boolean) as Array<Record<string, unknown>>),
+    ...((
+      ((product as any).metafields as Array<Record<string, unknown> | null>) ??
+      []
+    ).filter(Boolean) as Array<Record<string, unknown>>),
   ];
 
   if (
     legacyContent.subtitle &&
     !metafields.some(
-      (field) =>
-        field.namespace === 'descriptors' && field.key === 'subtitle',
+      (field) => field.namespace === 'descriptors' && field.key === 'subtitle',
     )
   ) {
     metafields.push({
@@ -170,12 +171,11 @@ function mergeLegacyProductData(
     },
     seo: {
       ...product.seo,
-      description:
-        hasContent(product.seo?.description)
-          ? product.seo?.description
-          : legacyContent.descriptionText ??
-            legacyContent.subtitle ??
-            product.seo?.description,
+      description: hasContent(product.seo?.description)
+        ? product.seo?.description
+        : legacyContent.descriptionText ??
+          legacyContent.subtitle ??
+          product.seo?.description,
     },
     metafields,
   } as ProductType & {selectedVariant?: ProductVariant};
@@ -197,7 +197,11 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
       },
     });
   }
-  if (canonical && isSystemSlug(productHandle) && !hasProductRecord(productHandle)) {
+  if (
+    canonical &&
+    isSystemSlug(productHandle) &&
+    !hasProductRecord(productHandle)
+  ) {
     // Only bounce canonical system slugs that aren't themselves a
     // Shopify product handle. System product handles (e.g.
     // "double-vision-system") ARE the final destination for
@@ -271,7 +275,10 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   const resolvedProduct = mergeLegacyProductData(product, productHandle);
 
-  const recommended = getRecommendedProducts(context.storefront, resolvedProduct.id);
+  const recommended = getRecommendedProducts(
+    context.storefront,
+    resolvedProduct.id,
+  );
   const firstVariant = resolvedProduct.variants.nodes[0];
   const selectedVariant = resolvedProduct.selectedVariant ?? firstVariant;
 
@@ -329,8 +336,7 @@ export default function Product() {
     legacyDownloads,
     archiveAssets,
     legacyExternalUrl,
-  } =
-    useLoaderData<typeof loader>();
+  } = useLoaderData<typeof loader>();
 
   return (
     <div className="pb-16 md:pb-0">
@@ -507,7 +513,8 @@ export function ProductForm() {
                           replace
                           className={clsx(
                             'flex min-h-[56px] min-w-[8rem] flex-col justify-center rounded-2xl border px-4 py-2 text-left transition-all duration-200',
-                            isActive && !isSoldOut &&
+                            isActive &&
+                              !isSoldOut &&
                               'border-black bg-black text-white shadow-sm ring-2 ring-black ring-offset-2',
                             isActive &&
                               isSoldOut &&
@@ -541,7 +548,8 @@ export function ProductForm() {
                   )}
                 </div>
               </div>
-            )}
+            )
+          }
         </VariantSelector>
 
         {/* Quantity selector */}
@@ -656,9 +664,7 @@ export function ProductForm() {
               className="flex items-center gap-1.5 hover:text-primary transition"
             >
               <FaTruck className="text-sm" />
-              <span>
-                {shippingLabel}
-              </span>
+              <span>{shippingLabel}</span>
             </Link>
           )}
           <span className="flex items-center gap-1.5">

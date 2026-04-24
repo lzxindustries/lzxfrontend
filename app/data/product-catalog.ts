@@ -189,9 +189,7 @@ export function getProductRecordByGid(gid: string): ProductRecord | null {
 /** Convenience: subtitle with fallback to the `descriptors:subtitle` metafield. */
 export function getProductSubtitle(record: ProductRecord): string | null {
   return (
-    record.subtitle ??
-    record.metafields['descriptors:subtitle']?.value ??
-    null
+    record.subtitle ?? record.metafields['descriptors:subtitle']?.value ?? null
   );
 }
 

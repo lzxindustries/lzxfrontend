@@ -15,7 +15,10 @@ export function Footer() {
   const iconSize = 24;
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content" data-testid="footer">
+      <footer
+        className="footer p-10 bg-base-200 text-base-content"
+        data-testid="footer"
+      >
         <div className="max-w-full overflow-hidden">
           <span className="footer-title">Subscribe to our newsletter</span>
           {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}

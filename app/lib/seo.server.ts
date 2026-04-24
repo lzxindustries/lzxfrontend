@@ -29,7 +29,10 @@ type SeoPageLike = {
 };
 
 /** Absolute image/OG URL for social crawlers; leaves http(s) and protocol-relative URLs unchanged. */
-function absolutizeAssetUrl(pageUrl: string, assetPath?: string): string | undefined {
+function absolutizeAssetUrl(
+  pageUrl: string,
+  assetPath?: string,
+): string | undefined {
   if (!assetPath) return undefined;
   if (/^([a-z][a-z0-9+.-]*:|\/\/)/i.test(assetPath)) return assetPath;
   const origin = new URL(pageUrl).origin;
@@ -218,14 +221,15 @@ function collectionJsonLd({
   collection: Collection;
 }): SeoConfig['jsonLd'] {
   const origin = new URL(url).origin;
-  const itemListElement: CollectionPage['mainEntity'] =
-    (collection.products?.nodes ?? []).map((product, index) => {
-      return {
-        '@type': 'ListItem',
-        position: index + 1,
-        url: `${origin}/products/${product.handle}`,
-      };
-    });
+  const itemListElement: CollectionPage['mainEntity'] = (
+    collection.products?.nodes ?? []
+  ).map((product, index) => {
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `${origin}/products/${product.handle}`,
+    };
+  });
 
   return [
     {
@@ -385,7 +389,13 @@ function blog({blog, url}: {blog: Blog; url: Request['url']}): SeoConfig {
   };
 }
 
-function page({page, url}: {page: SeoPageLike; url: Request['url']}): SeoConfig {
+function page({
+  page,
+  url,
+}: {
+  page: SeoPageLike;
+  url: Request['url'];
+}): SeoConfig {
   return {
     description: truncate(page?.seo?.description || ''),
     title: page?.seo?.title,

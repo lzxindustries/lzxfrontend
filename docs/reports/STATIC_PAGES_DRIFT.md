@@ -5,7 +5,7 @@ A snapshot of **legacy Online Store** body HTML (team, dealers, warranty, and si
 **What to do**
 
 1. If that JSON exists on your machine, spot-check a few **handles** (e.g. `about-us`, `dealers`, `warranty-repair-return`, `contact-us`) against:
-   - The live Shopify **Online Store** theme for marketing truth, and  
+   - The live Shopify **Online Store** theme for marketing truth, and
    - The routes and copy in this **Remix** app (footer links, policy routes, and custom pages).
 2. Prefer **one** owner: either the **theme page** in Shopify or a **Remix** route, not two conflicting bodies for the same user-facing page.
 3. If you do not have the library mount, this step is a **manual** Admin review only.

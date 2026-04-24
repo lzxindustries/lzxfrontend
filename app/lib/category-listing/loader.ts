@@ -87,8 +87,7 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
           const lfsImage = getLfsGalleryFirstImage(raw.canonical);
           const commerce = commerceByHandle.get(raw.canonical) ?? null;
 
-          const subtitle =
-            (config.resolveSubtitle?.(raw) ?? null) || null;
+          const subtitle = (config.resolveSubtitle?.(raw) ?? null) || null;
 
           const artwork = config.resolveArtwork?.(raw, ctx) ?? null;
           // Fallback artwork: lfs-managed gallery image (served from

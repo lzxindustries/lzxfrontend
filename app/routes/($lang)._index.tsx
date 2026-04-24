@@ -40,8 +40,8 @@ export function ErrorBoundary() {
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+    ? error.message
+    : 'Unknown error';
   return (
     <PageHeader heading="Error loading page">
       <p>{message}</p>
@@ -49,16 +49,9 @@ export function ErrorBoundary() {
   );
 }
 
-export async function loader({
-  context,
-  request,
-  params,
-}: LoaderFunctionArgs) {
+export async function loader({context, request, params}: LoaderFunctionArgs) {
   const lang = params.lang;
-  if (
-    lang &&
-    !VALID_LOCALE_PATH_SEGMENTS.has(String(lang).toLowerCase())
-  ) {
+  if (lang && !VALID_LOCALE_PATH_SEGMENTS.has(String(lang).toLowerCase())) {
     throw new Response(null, {status: 404});
   }
 
@@ -199,7 +192,9 @@ export default function Home() {
                 className="rounded-lg border border-base-300 bg-base-100 p-4 transition hover:bg-base-300"
               >
                 <p className="text-xs uppercase tracking-wide text-base-content/60">
-                  <time dateTime={post.date}>{formatBlogPostDate(post.date)}</time>
+                  <time dateTime={post.date}>
+                    {formatBlogPostDate(post.date)}
+                  </time>
                 </p>
                 <h3 className="mt-2 text-lg font-semibold leading-tight">
                   {post.frontmatter.title}
@@ -227,19 +222,16 @@ export default function Home() {
             />
           ))}
         </Grid>
-
       </Section>
 
       {/* Getting Started CTA */}
       <section className="bg-contrast px-6 py-16 text-primary md:px-10 lg:px-12">
         <div className="mx-auto max-w-3xl text-center">
           <FaBook className="mx-auto mb-4 text-4xl" />
-          <h2 className="text-3xl font-bold mb-4">
-            New to Video Synthesis?
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">New to Video Synthesis?</h2>
           <p className="mb-6 text-lg opacity-90">
-            Learn how to build your first video synthesis system, understand
-            the fundamentals, and start creating with our step-by-step guides.
+            Learn how to build your first video synthesis system, understand the
+            fundamentals, and start creating with our step-by-step guides.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link

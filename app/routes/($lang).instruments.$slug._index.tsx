@@ -34,8 +34,7 @@ import {rewriteLegacyDocsLinks} from '~/lib/legacy-docs-links';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find(
-    (m) =>
-      m.id.includes('instruments.$slug') || m.id.includes('systems.$slug'),
+    (m) => m.id.includes('instruments.$slug') || m.id.includes('systems.$slug'),
   )?.data as InstrumentLayoutLoaderData | undefined;
   if (!parentData) return [];
   const product = parentData.product as unknown as Product;
@@ -159,7 +158,6 @@ function getGalleryMedia(product: Product): MediaGalleryItem[] {
   return items;
 }
 
-
 // --- Component ---
 
 export default function InstrumentOverview() {
@@ -235,14 +233,14 @@ export default function InstrumentOverview() {
           {QUICK_START_STEPS[slugEntry.canonical] &&
             hasManual &&
             hasQuickStartDoc && (
-            <div className="px-6 pt-4">
-              <QuickStartPreview
-                steps={QUICK_START_STEPS[slugEntry.canonical]!}
-                manualUrl={`/instruments/${slugEntry.canonical}/manual/quick-start`}
-                productTitle={product.title}
-              />
-            </div>
-          )}
+              <div className="px-6 pt-4">
+                <QuickStartPreview
+                  steps={QUICK_START_STEPS[slugEntry.canonical]!}
+                  manualUrl={`/instruments/${slugEntry.canonical}/manual/quick-start`}
+                  productTitle={product.title}
+                />
+              </div>
+            )}
 
           {sections.length > 0 && (
             <div className="border-t border-primary/10 px-6">
@@ -297,8 +295,6 @@ export default function InstrumentOverview() {
           }
         </Await>
       </Suspense>
-
-
     </div>
   );
 }
@@ -379,7 +375,8 @@ function ProductForm({
                           replace
                           className={clsx(
                             'flex min-h-[56px] min-w-[8rem] flex-col justify-center rounded-2xl border px-4 py-2 text-left transition-all duration-200',
-                            isActive && !isSoldOut &&
+                            isActive &&
+                              !isSoldOut &&
                               'border-black bg-black text-white shadow-sm ring-2 ring-black ring-offset-2',
                             isActive &&
                               isSoldOut &&
@@ -413,7 +410,8 @@ function ProductForm({
                   )}
                 </div>
               </div>
-            )}
+            )
+          }
         </VariantSelector>
 
         {selectedVariant && !isOutOfStock && (
@@ -575,9 +573,7 @@ function ProductForm({
               className="flex items-center gap-1.5 hover:text-primary transition"
             >
               <FaTruck className="text-sm" />
-              <span>
-                {shippingLabel}
-              </span>
+              <span>{shippingLabel}</span>
             </Link>
           )}
           <span className="flex items-center gap-1.5">

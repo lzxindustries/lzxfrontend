@@ -56,21 +56,30 @@ export default function ModuleSpecs() {
         <p className="text-base-content/70">
           Technical specifications for the {product.title}
           {(connectors as LzxModuleConnector[]).length > 0 &&
-            `, including ${inputs.length} input${inputs.length !== 1 ? 's' : ''} and ${outputs.length} output${outputs.length !== 1 ? 's' : ''}`}
+            `, including ${inputs.length} input${
+              inputs.length !== 1 ? 's' : ''
+            } and ${outputs.length} output${outputs.length !== 1 ? 's' : ''}`}
           {(controls as LzxModuleControl[]).length > 0 &&
-            ` and ${(controls as LzxModuleControl[]).length} front-panel control${(controls as LzxModuleControl[]).length !== 1 ? 's' : ''}`}
-          .
-          {' '}Use these specs to understand how {product.title} fits into your
+            ` and ${
+              (controls as LzxModuleControl[]).length
+            } front-panel control${
+              (controls as LzxModuleControl[]).length !== 1 ? 's' : ''
+            }`}
+          . Use these specs to understand how {product.title} fits into your
           signal chain and which modules pair well with it.
         </p>
         {(features as LzxModuleFeature[]).length > 0 && (
           <p className="text-base-content/60 text-sm mt-2">
-            {product.title} provides{' '}
-            {(features as LzxModuleFeature[]).length} documented feature
+            {product.title} provides {(features as LzxModuleFeature[]).length}{' '}
+            documented feature
             {(features as LzxModuleFeature[]).length !== 1 ? 's' : ''}.
             {inputs.length > 0 &&
               outputs.length > 0 &&
-              ` Patch from its ${inputs.length} input${inputs.length !== 1 ? 's' : ''} to process signals, or tap its ${outputs.length} output${outputs.length !== 1 ? 's' : ''} to feed other modules in your system.`}
+              ` Patch from its ${inputs.length} input${
+                inputs.length !== 1 ? 's' : ''
+              } to process signals, or tap its ${outputs.length} output${
+                outputs.length !== 1 ? 's' : ''
+              } to feed other modules in your system.`}
           </p>
         )}
       </div>

@@ -51,7 +51,10 @@ vi.mock('@remix-run/react', async () => {
 });
 
 vi.mock('~/components/AddToCartButton', () => ({
-  AddToCartButton: ({children, ...props}: ComponentPropsWithoutRef<'button'>) => (
+  AddToCartButton: ({
+    children,
+    ...props
+  }: ComponentPropsWithoutRef<'button'>) => (
     <button {...props}>{children}</button>
   ),
 }));
@@ -71,7 +74,11 @@ vi.mock('~/components/Button', () => ({
 }));
 
 vi.mock('~/components/Link', () => ({
-  Link: ({children, to, ...props}: ComponentPropsWithoutRef<'a'> & {to?: string}) => (
+  Link: ({
+    children,
+    to,
+    ...props
+  }: ComponentPropsWithoutRef<'a'> & {to?: string}) => (
     <a href={to} {...props}>
       {children}
     </a>

@@ -48,10 +48,7 @@ export function QuickStartPreview({
           </li>
         ))}
       </ol>
-      <Link
-        to={manualUrl}
-        className="btn btn-sm btn-outline"
-      >
+      <Link to={manualUrl} className="btn btn-sm btn-outline">
         Read Full Quick Start Guide &rarr;
       </Link>
     </div>

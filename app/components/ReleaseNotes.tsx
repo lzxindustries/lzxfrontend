@@ -23,13 +23,19 @@ export function renderReleaseMarkdown(md: string): string {
 
       // Headings
       if (trimmed.startsWith('### '))
-        return `<h4 class="font-semibold mt-3 mb-1">${escapeAndInline(trimmed.slice(4))}</h4>`;
+        return `<h4 class="font-semibold mt-3 mb-1">${escapeAndInline(
+          trimmed.slice(4),
+        )}</h4>`;
       if (trimmed.startsWith('## '))
-        return `<h3 class="font-bold mt-4 mb-1">${escapeAndInline(trimmed.slice(3))}</h3>`;
+        return `<h3 class="font-bold mt-4 mb-1">${escapeAndInline(
+          trimmed.slice(3),
+        )}</h3>`;
 
       // Unordered list items
       if (trimmed.startsWith('- ') || trimmed.startsWith('* '))
-        return `<li class="ml-4 list-disc">${escapeAndInline(trimmed.slice(2))}</li>`;
+        return `<li class="ml-4 list-disc">${escapeAndInline(
+          trimmed.slice(2),
+        )}</li>`;
 
       return `<p>${escapeAndInline(trimmed)}</p>`;
     })
@@ -49,7 +55,10 @@ function escapeAndInline(s: string): string {
   // Bold
   out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   // Inline code
-  out = out.replace(/`([^`]+)`/g, '<code class="bg-base-300 px-1 rounded text-xs">$1</code>');
+  out = out.replace(
+    /`([^`]+)`/g,
+    '<code class="bg-base-300 px-1 rounded text-xs">$1</code>',
+  );
   // Links [text](url)
   out = out.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,

@@ -7,10 +7,12 @@ Generated: 2026-04-21T23:15:49.030Z
 This report reflects the current product-library runtime and Shopify seed logic in the repository.
 
 Counted as site integrated:
+
 - Files surfaced directly with a published URL.
 - Files surfaced as indexed archive inventory on product pages.
 
 Counted as Shopify gallery covered:
+
 - Local images discoverable by the current seed path from frontpanel, `website/`, and `photos/` locations, including nested edition photo sets.
 
 ## Executive Summary

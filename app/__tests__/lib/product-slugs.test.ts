@@ -109,9 +109,7 @@ describe('getModulesBySeries', () => {
 
     expect(
       (bySeries.get('gen3') ?? []).map((entry) => entry.canonical),
-    ).toEqual(
-      expect.arrayContaining(['dc-distro-3a', 'dc-distro-5a']),
-    );
+    ).toEqual(expect.arrayContaining(['dc-distro-3a', 'dc-distro-5a']));
     expect(
       (bySeries.get('visionary') ?? []).map((entry) => entry.canonical),
     ).toEqual(
@@ -194,7 +192,9 @@ describe('system URL resolution', () => {
   it('routes Double Vision products to the systems hub', () => {
     expect(isSystemSlug('double-vision')).toBe(true);
     expect(resolveProductUrl('double-vision')).toBe('/systems/double-vision');
-    expect(resolveProductUrl('double-vision-168')).toBe('/systems/double-vision-168');
+    expect(resolveProductUrl('double-vision-168')).toBe(
+      '/systems/double-vision-168',
+    );
     expect(resolveProductUrl('double-vision-expander')).toBe(
       '/systems/double-vision-expander',
     );

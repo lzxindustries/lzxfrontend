@@ -43,7 +43,8 @@ export const DEFAULT_LEARN_CARDS: LearnCard[] = [
   },
   {
     title: 'Videos',
-    description: 'Tutorials, demos, and walkthroughs from LZX and the community.',
+    description:
+      'Tutorials, demos, and walkthroughs from LZX and the community.',
     toKey: 'videos',
     icon: '🎬',
   },
@@ -55,7 +56,8 @@ export const DEFAULT_LEARN_CARDS: LearnCard[] = [
   },
   {
     title: 'Community Forum',
-    description: 'Ask questions, share discoveries, and connect with other artists.',
+    description:
+      'Ask questions, share discoveries, and connect with other artists.',
     to: 'https://community.lzxindustries.net',
     external: true,
     icon: '💬',
@@ -179,7 +181,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',
@@ -203,7 +206,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Support & FAQ',
-      description: 'Troubleshooting, connectivity, and common Vidiot questions.',
+      description:
+        'Troubleshooting, connectivity, and common Vidiot questions.',
       to: 'support',
       icon: '🛟',
     },
@@ -215,7 +219,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',
@@ -251,7 +256,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',
@@ -275,19 +281,22 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Support & FAQ',
-      description: 'Troubleshooting, accessories, and common Double Vision topics.',
+      description:
+        'Troubleshooting, accessories, and common Double Vision topics.',
       to: 'support',
       icon: '🛟',
     },
     {
       title: 'Videos',
-      description: 'Tutorials, demos, and walkthroughs for the Double Vision system.',
+      description:
+        'Tutorials, demos, and walkthroughs for the Double Vision system.',
       toKey: 'videos',
       icon: '🎬',
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',
@@ -311,7 +320,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Support & FAQ',
-      description: 'Troubleshooting, compatibility, and Double Vision 168 topics.',
+      description:
+        'Troubleshooting, compatibility, and Double Vision 168 topics.',
       to: 'support',
       icon: '🛟',
     },
@@ -323,7 +333,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',
@@ -359,7 +370,8 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
     },
     {
       title: 'Community forum',
-      description: 'Project ideas, patch tips, and help from the LZX community.',
+      description:
+        'Project ideas, patch tips, and help from the LZX community.',
       to: 'https://community.lzxindustries.net',
       external: true,
       icon: '💬',

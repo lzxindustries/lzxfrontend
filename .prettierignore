@@ -1,3 +1,22 @@
 node_modules
+.yarn
 build
 dist
+public/build
+.hydrogen
+.cache
+
+# Test / CI artifacts
+coverage
+playwright-report
+test-results
+audit-results
+
+# Large mirrored or generated data (Shopify exports, build inputs)
+catalog
+app/data/generated
+lfs
+ingest
+
+# Local Shopify CLI metadata
+.shopify

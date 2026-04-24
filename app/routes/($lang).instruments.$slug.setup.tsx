@@ -75,12 +75,9 @@ export default function InstrumentSetup() {
             Unbox your {product.title} and check the contents against the
             included packing list.
           </li>
+          <li>Connect your video display to the output using an RCA cable.</li>
           <li>
-            Connect your video display to the output using an RCA cable.
-          </li>
-          <li>
-            Power on the unit and verify you see a video signal on your
-            display.
+            Power on the unit and verify you see a video signal on your display.
           </li>
           {connectSupported && (
             <li>

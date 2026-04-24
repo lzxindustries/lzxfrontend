@@ -7,12 +7,9 @@ import type {ResolvedRelease} from '~/data/github-releases';
 import {CACHE_SHORT} from '~/data/cache';
 import {ReleaseNotes} from '~/components/ReleaseNotes';
 
-export async function loader({}: LoaderFunctionArgs) {
+export async function loader(_args: LoaderFunctionArgs) {
   const release = await getLatestConnectRelease();
-  return json(
-    {release},
-    {headers: {'Cache-Control': CACHE_SHORT}},
-  );
+  return json({release}, {headers: {'Cache-Control': CACHE_SHORT}});
 }
 
 export const meta: MetaFunction = () => {

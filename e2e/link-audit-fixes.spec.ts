@@ -74,10 +74,7 @@ test.describe('Link audit regressions', () => {
     // on a real, purchasable product (two via explicit 301, one via
     // Shopify's storefrontRedirect for the old accessory handle).
     const cases: Array<[string, string]> = [
-      [
-        '/products/2-1mm-dc-jumper-cable',
-        '/products/dc-power-cable',
-      ],
+      ['/products/2-1mm-dc-jumper-cable', '/products/dc-power-cable'],
       [
         '/products/andor-1-media-player-deluxe-accessories-pack',
         '/instruments/andor-1-media-player',

@@ -36,9 +36,7 @@ test.describe('Products API', () => {
 
 test.describe('Predictive Search API', () => {
   test('returns sectioned results for a valid query', async ({request}) => {
-    const response = await request.get(
-      `${URLS.apiPredictiveSearch}?q=video`,
-    );
+    const response = await request.get(`${URLS.apiPredictiveSearch}?q=video`);
     expect(response.status()).toBe(200);
 
     const body = await response.json();

@@ -69,9 +69,7 @@ export default function PatchesIndex() {
     }
 
     if (artistFilter) {
-      result = result.filter(
-        (p) => p.artist && p.artist.name === artistFilter,
-      );
+      result = result.filter((p) => p.artist && p.artist.name === artistFilter);
     }
 
     if (moduleFilter) {

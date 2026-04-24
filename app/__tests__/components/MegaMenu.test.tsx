@@ -7,7 +7,9 @@ describe('DesktopMegaMenu', () => {
   it('includes the Cases & Power, Accessories, Parts, and Merchandise links under Products', () => {
     render(<DesktopMegaMenu url="/" />);
 
-    fireEvent.mouseEnter(screen.getByRole('button', {name: 'Products'}).parentElement!);
+    fireEvent.mouseEnter(
+      screen.getByRole('button', {name: 'Products'}).parentElement!,
+    );
 
     expect(screen.getByRole('link', {name: 'Cases & Power'})).toHaveAttribute(
       'href',

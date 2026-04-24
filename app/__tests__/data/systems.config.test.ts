@@ -18,16 +18,21 @@ describe('systemsCategoryConfig', () => {
     ]);
 
     for (const entry of entries) {
-      expect(systemsCategoryConfig.detailHref(entry, {sectionKey: 'gen3', groupKey: 'gen3'})).toBe(
-        `/systems/${entry.canonical}`,
-      );
+      expect(
+        systemsCategoryConfig.detailHref(entry, {
+          sectionKey: 'gen3',
+          groupKey: 'gen3',
+        }),
+      ).toBe(`/systems/${entry.canonical}`);
     }
   });
 });
 
 describe('getSystemProductHandle', () => {
   it('maps canonical slugs that differ from their Shopify handle', () => {
-    expect(getSystemProductHandle('double-vision')).toBe('double-vision-system');
+    expect(getSystemProductHandle('double-vision')).toBe(
+      'double-vision-system',
+    );
     expect(getSystemProductHandle('double-vision-168')).toBe(
       'double-vision-complete',
     );

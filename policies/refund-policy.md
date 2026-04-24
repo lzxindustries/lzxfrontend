@@ -1,6 +1,6 @@
 # Refund & Return Policy
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 We want you to be happy with your purchase. If something isn't right, we're here to help.
 

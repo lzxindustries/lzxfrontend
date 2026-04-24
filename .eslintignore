@@ -3,3 +3,6 @@ node_modules
 bin
 *.d.ts
 dist
+coverage
+playwright-report
+test-results

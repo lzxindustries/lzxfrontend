@@ -104,7 +104,10 @@ export default function ModuleSupport() {
             </span>
           </Link>
           <a
-            href={forumArchive.officialTopic?.url ?? 'https://community.lzxindustries.net'}
+            href={
+              forumArchive.officialTopic?.url ??
+              'https://community.lzxindustries.net'
+            }
             target="_blank"
             rel="noreferrer"
             className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
@@ -152,7 +155,9 @@ export default function ModuleSupport() {
               >
                 <span className="font-semibold">Downloads & Archive</span>
                 <span className="text-sm opacity-70">
-                  {assets.length} download{assets.length === 1 ? '' : 's'} and {archiveAssets.length} archived file{archiveAssets.length === 1 ? '' : 's'} available on-site.
+                  {assets.length} download{assets.length === 1 ? '' : 's'} and{' '}
+                  {archiveAssets.length} archived file
+                  {archiveAssets.length === 1 ? '' : 's'} available on-site.
                 </span>
               </Link>
             ) : null}
@@ -183,9 +188,7 @@ export default function ModuleSupport() {
       {/* FAQ */}
       {supportContent.faqItems && supportContent.faqItems.length > 0 && (
         <section className="mb-8">
-          <h3 className="text-lg font-bold mb-3">
-            Frequently Asked Questions
-          </h3>
+          <h3 className="text-lg font-bold mb-3">Frequently Asked Questions</h3>
           <div className="space-y-2">
             {supportContent.faqItems.map((item) => (
               <Disclosure key={item.question}>
@@ -194,15 +197,15 @@ export default function ModuleSupport() {
                     <Disclosure.Button className="flex w-full items-center justify-between p-4 text-left font-medium">
                       {item.question}
                       <span
-                        className={`ml-2 transition-transform ${open ? 'rotate-180' : ''}`}
+                        className={`ml-2 transition-transform ${
+                          open ? 'rotate-180' : ''
+                        }`}
                       >
                         ▾
                       </span>
                     </Disclosure.Button>
                     <Disclosure.Panel className="px-4 pb-4 text-sm text-base-content/80">
-                      <span
-                        dangerouslySetInnerHTML={{__html: item.answer}}
-                      />
+                      <span dangerouslySetInnerHTML={{__html: item.answer}} />
                     </Disclosure.Panel>
                   </div>
                 )}

@@ -1,7 +1,4 @@
-import {
-  getModulesBySeries,
-  type SlugEntry,
-} from '~/data/product-slugs';
+import {getModulesBySeries, type SlugEntry} from '~/data/product-slugs';
 import {
   getLegacyVisionaryModuleMetadataBySlug,
   getLfsProductSubtitle,

@@ -104,7 +104,9 @@ export function getProductGridBadges({
   variants: Array<ProductInventoryVariant | null | undefined>;
 }): ProductGridBadge[] {
   const badges: ProductGridBadge[] = [];
-  const hasInStockVariant = variants.some((variant) => isInStockVariant(variant));
+  const hasInStockVariant = variants.some((variant) =>
+    isInStockVariant(variant),
+  );
 
   if (hasInStockVariant) {
     badges.push('In Stock');

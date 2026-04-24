@@ -17,7 +17,8 @@ const remixState: any = {
     features: [],
     slugEntry: {
       canonical: 'color-video-encoder',
-      externalUrl: 'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
+      externalUrl:
+        'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
     },
   },
 };
@@ -39,7 +40,11 @@ vi.mock('~/components/Breadcrumbs', () => ({
 }));
 
 vi.mock('~/components/HubNavBar', () => ({
-  HubNavBar: ({tabs}: {tabs: Array<{label: string; to: string; hidden?: boolean}>}) => (
+  HubNavBar: ({
+    tabs,
+  }: {
+    tabs: Array<{label: string; to: string; hidden?: boolean}>;
+  }) => (
     <nav>
       {tabs
         .filter((tab) => !tab.hidden)

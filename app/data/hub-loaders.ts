@@ -1,4 +1,6 @@
 import type {
+  MediaConnection,
+  Metafield,
   Product as ProductType,
   ProductVariant,
   Shop,
@@ -178,7 +180,8 @@ async function fetchShopifyProduct(
 }> {
   const shop = buildHubShop(request);
 
-  const record = getProductRecord(handle) ??
+  const record =
+    getProductRecord(handle) ??
     (shopifyGid ? getProductRecordByGid(shopifyGid) : null);
   if (!record) {
     return {product: null, shop};
@@ -186,7 +189,10 @@ async function fetchShopifyProduct(
 
   const resolvedHandle = record.handle;
   const lfs = getLfsAssetEntry(resolvedHandle);
-  const commerce = await getCommerceByHandle(context.storefront, resolvedHandle);
+  const commerce = await getCommerceByHandle(
+    context.storefront,
+    resolvedHandle,
+  );
 
   const product = buildHubProductFromLocal({
     record,
@@ -203,7 +209,10 @@ function buildFallbackShop(request: Request): Shop {
 }
 
 function stripHtml(value: string): string {
-  return value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return value
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function hasContent(value: string | null | undefined): value is string {
@@ -249,7 +258,9 @@ function mergeLegacyAssets(
   );
 
   const appended = legacyContent.downloads
-    .filter((download) => !existingFileNames.has(download.fileName.toLowerCase()))
+    .filter(
+      (download) => !existingFileNames.has(download.fileName.toLowerCase()),
+    )
     .map(
       (download) =>
         ({
@@ -264,10 +275,23 @@ function mergeLegacyAssets(
           platform: download.platform,
           releaseDate: download.releaseDate,
           href: download.href,
-        }) as LzxModuleAsset,
+        } as LzxModuleAsset),
     );
 
   return [...assets, ...appended];
+}
+
+type SyntheticMetafield = Pick<
+  Metafield,
+  'key' | 'namespace' | 'value' | 'type'
+>;
+
+function mediaNodeImageUrl(
+  node: MediaConnection['nodes'][number],
+): string | undefined {
+  return node.__typename === 'MediaImage'
+    ? node.image?.url ?? undefined
+    : undefined;
 }
 
 function mergeLegacyProductData(
@@ -280,23 +304,21 @@ function mergeLegacyProductData(
   const existingMediaNodes = product.media?.nodes ?? [];
   const existingImageUrls = new Set(
     existingMediaNodes
-      .map((item: any) => item?.image?.url)
+      .map(mediaNodeImageUrl)
       .filter((url: unknown): url is string => typeof url === 'string'),
   );
   const legacyMediaNodes = buildLegacyMediaNodes(slug).filter(
-    (item: any) => !existingImageUrls.has(item.image.url),
+    (item) => !existingImageUrls.has(item.image.url),
   );
 
-  const metafields = [
-    ...((((product as any).metafields as Array<Record<string, unknown> | null>) ??
-      []).filter(Boolean) as Array<Record<string, unknown>>),
+  const metafields: Array<Metafield | SyntheticMetafield> = [
+    ...(product.metafields?.filter((m): m is Metafield => Boolean(m)) ?? []),
   ];
 
   if (
     legacyContent.subtitle &&
     !metafields.some(
-      (field) =>
-        field.namespace === 'descriptors' && field.key === 'subtitle',
+      (field) => field.namespace === 'descriptors' && field.key === 'subtitle',
     )
   ) {
     metafields.push({
@@ -337,12 +359,11 @@ function mergeLegacyProductData(
     },
     seo: {
       ...product.seo,
-      description:
-        hasContent(product.seo?.description)
-          ? product.seo?.description
-          : legacyContent.descriptionText ??
-            legacyContent.subtitle ??
-            product.seo?.description,
+      description: hasContent(product.seo?.description)
+        ? product.seo?.description
+        : legacyContent.descriptionText ??
+          legacyContent.subtitle ??
+          product.seo?.description,
     },
     metafields,
   } as ProductType & {selectedVariant?: ProductVariant};
@@ -353,7 +374,9 @@ function buildFallbackModuleProduct(
   lzxModule: LzxModule | null,
 ): ProductType & {selectedVariant?: ProductVariant} {
   const lfsProduct = getLfsProductMetadataBySlug(slugEntry.canonical);
-  const legacyProductContent = getLegacyProductContentBySlug(slugEntry.canonical);
+  const legacyProductContent = getLegacyProductContentBySlug(
+    slugEntry.canonical,
+  );
 
   const subtitle =
     legacyProductContent?.subtitle ??
@@ -530,7 +553,8 @@ export async function loadModuleHubData(
   );
   const hasArchivedGuide =
     forumArchive.officialTopic != null || forumArchive.relatedTopics.length > 0;
-  const hasSyntheticManual = hasSyntheticLegacyModuleManualContent(legacyContent);
+  const hasSyntheticManual =
+    hasSyntheticLegacyModuleManualContent(legacyContent);
 
   // Build sidebar for cross-module navigation
   const sidebar = buildSidebar('modules');
@@ -551,7 +575,9 @@ export async function loadModuleHubData(
   }
 
   const resolvedProduct = mergeLegacyProductData(
-    hasShopifyProduct ? product! : buildFallbackModuleProduct(slugEntry, lzxModule),
+    hasShopifyProduct
+      ? product!
+      : buildFallbackModuleProduct(slugEntry, lzxModule),
     slugEntry.canonical,
   );
   const resolvedShop = hasShopifyProduct ? shop : buildFallbackShop(request);

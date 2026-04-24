@@ -111,14 +111,32 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   if (!docPath) {
     return json(
-      {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
+      {
+        noManual: true as const,
+        slug: canonical,
+        doc: null,
+        sidebar: null,
+        prev: null,
+        next: null,
+        currentPath: null,
+        seo: null,
+      },
       {headers: {'Cache-Control': CACHE_LONG}},
     );
   }
 
   if (!doc) {
     return json(
-      {noManual: true as const, slug: canonical, doc: null, sidebar: null, prev: null, next: null, currentPath: null, seo: null},
+      {
+        noManual: true as const,
+        slug: canonical,
+        doc: null,
+        sidebar: null,
+        prev: null,
+        next: null,
+        currentPath: null,
+        seo: null,
+      },
       {headers: {'Cache-Control': CACHE_LONG}},
     );
   }
@@ -167,7 +185,8 @@ export default function ModuleManualPage() {
       sectionHeader={{
         badge: 'Reference Manual',
         contextLabel: product.title,
-        description: 'Technical documentation, setup guidance, and patching workflows.',
+        description:
+          'Technical documentation, setup guidance, and patching workflows.',
         backLink: {label: `${product.title} overview`, to: `/modules/${slug}`},
       }}
       showBreadcrumbs={false}

@@ -80,7 +80,8 @@ const remixState: any = {
     archiveAssets: [],
     slugEntry: {
       canonical: 'color-video-encoder',
-      externalUrl: 'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
+      externalUrl:
+        'https://www.modulargrid.net/e/lzx-industries-color-video-encoder',
     },
   },
 };
@@ -121,7 +122,10 @@ describe('Legacy module hubs', () => {
 
     expect(screen.getByText('Color Video Encoder')).toBeTruthy();
     expect(
-      screen.getByText('Color Video Encoder').closest('a')?.getAttribute('href'),
+      screen
+        .getByText('Color Video Encoder')
+        .closest('a')
+        ?.getAttribute('href'),
     ).toBe('/modules/color-video-encoder');
   });
 
@@ -145,20 +149,25 @@ describe('Legacy module hubs', () => {
 
     renderWithRouter(<ModuleSupport />);
 
-    expect(screen.getByRole('heading', {name: 'Color Video Encoder Support'})).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {name: 'Color Video Encoder Support'}),
+    ).toBeTruthy();
     expect(screen.getByText('Troubleshooting flow')).toBeTruthy();
     expect(
       screen.getByText('Local manual, archive guide, and reference'),
     ).toBeTruthy();
     expect(
-      screen.getByText(/Documentation/).closest('a')?.getAttribute('href'),
+      screen
+        .getByText(/Documentation/)
+        .closest('a')
+        ?.getAttribute('href'),
     ).toBe('/modules/color-video-encoder/manual');
     expect(screen.getByText(/External Reference/)).toBeTruthy();
     expect(screen.getByText('Product Library Resources')).toBeTruthy();
     expect(screen.getByText('Downloads & Archive')).toBeTruthy();
-    expect(screen.getByText('Overview').closest('a')?.getAttribute('href')).toBe(
-      '/modules/color-video-encoder',
-    );
+    expect(
+      screen.getByText('Overview').closest('a')?.getAttribute('href'),
+    ).toBe('/modules/color-video-encoder');
     expect(screen.getByText('Archived Community Guide')).toBeTruthy();
     expect(screen.getByText('Encoding questions')).toBeTruthy();
   });

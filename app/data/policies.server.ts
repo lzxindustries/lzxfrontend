@@ -36,10 +36,22 @@ const STANDARD_POLICIES: Array<{
   handle: string;
   title: string;
 }> = [
-  {shopField: 'shippingPolicy', handle: 'shipping-policy', title: 'Shipping Policy'},
+  {
+    shopField: 'shippingPolicy',
+    handle: 'shipping-policy',
+    title: 'Shipping Policy',
+  },
   {shopField: 'refundPolicy', handle: 'refund-policy', title: 'Refund Policy'},
-  {shopField: 'termsOfService', handle: 'terms-of-service', title: 'Terms of Service'},
-  {shopField: 'privacyPolicy', handle: 'privacy-policy', title: 'Privacy Policy'},
+  {
+    shopField: 'termsOfService',
+    handle: 'terms-of-service',
+    title: 'Terms of Service',
+  },
+  {
+    shopField: 'privacyPolicy',
+    handle: 'privacy-policy',
+    title: 'Privacy Policy',
+  },
 ];
 
 function htmlFor(handle: string): string | null {
@@ -65,9 +77,7 @@ export function listLocalPolicies(): LocalPolicy[] {
   ).filter((p): p is LocalPolicy => p !== null);
 }
 
-export function getLocalPolicyByHandle(
-  handle: string,
-): LocalPolicy | null {
+export function getLocalPolicyByHandle(handle: string): LocalPolicy | null {
   const entry = STANDARD_POLICIES.find((p) => p.handle === handle);
   if (!entry) return null;
   return buildPolicy(entry.handle, entry.title);

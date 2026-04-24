@@ -27,12 +27,12 @@ import {getProductRecord} from './product-catalog';
 // ---------------------------------------------------------------------------
 
 export type StockState =
-  | 'in_stock'        // availableForSale && quantityAvailable > 0
-  | 'low_stock'       // availableForSale && 0 < quantityAvailable <= LOW_STOCK_THRESHOLD
-  | 'preorder'        // availableForSale && quantityAvailable === 0 && inventoryPolicy = CONTINUE
-  | 'backorder'       // !availableForSale && inventoryPolicy = CONTINUE (Shopify allows oversell)
-  | 'out_of_stock'    // !availableForSale
-  | 'unknown';        // Shopify didn't return tracked inventory
+  | 'in_stock' // availableForSale && quantityAvailable > 0
+  | 'low_stock' // availableForSale && 0 < quantityAvailable <= LOW_STOCK_THRESHOLD
+  | 'preorder' // availableForSale && quantityAvailable === 0 && inventoryPolicy = CONTINUE
+  | 'backorder' // !availableForSale && inventoryPolicy = CONTINUE (Shopify allows oversell)
+  | 'out_of_stock' // !availableForSale
+  | 'unknown'; // Shopify didn't return tracked inventory
 
 export interface MoneyAmount {
   amount: string;

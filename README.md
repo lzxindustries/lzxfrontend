@@ -40,6 +40,16 @@ Run development server on local network:
 yarn run dev --host
 ```
 
+### Documentation layout
+
+- **Customer-facing docs** (published on the site) live under [`content/docs/`](content/docs/) and related `content/` trees.
+- **Internal notes and audits** (operators, migration plans, reports) live under [`docs/`](docs/)—for example [`docs/reports/`](docs/reports/) for generated or maintained reports.
+
+### Shopify CLIs (which command do I use?)
+
+- **Product catalog** (products, variants, media, product metafields): use `yarn shopify:sync:*`. Output defaults to `catalog/shopify/products/<handle>/`.
+- **Store-owned content** (shop policies and configured Online Store pages): use `yarn shopify:store-sync:*`. Output defaults to `catalog/shopify/store/`.
+
 ### Shopify Catalog Sync
 
 Bootstrap a local Shopify product mirror into JSON, HTML, and media files:
@@ -50,9 +60,6 @@ yarn shopify:sync:seed
 yarn shopify:sync:pull
 yarn shopify:sync:diff
 yarn shopify:sync:push
-yarn shopify:store-sync:doctor
-yarn shopify:store-sync:seed
-yarn shopify:store-sync:pull
 ```
 
 The sync CLI writes to `catalog/shopify` by default and creates one folder per product handle under `catalog/shopify/products/<handle>/`.

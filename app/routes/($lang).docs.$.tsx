@@ -67,9 +67,8 @@ export async function loader({params, request}: LoaderFunctionArgs) {
   // every onboarding page under two distinct layouts (DocLayout vs
   // MarkdownArticle) and split analytics and SEO.
   if (splat.startsWith('getting-started/') || splat === 'getting-started') {
-    const rest = splat === 'getting-started'
-      ? ''
-      : splat.slice('getting-started/'.length);
+    const rest =
+      splat === 'getting-started' ? '' : splat.slice('getting-started/'.length);
     const target = rest ? `/getting-started/${rest}` : '/getting-started';
     throw new Response(null, {
       status: 301,
@@ -189,7 +188,8 @@ export default function DocsPage() {
           ? {
               badge: 'Reference Manual',
               contextLabel: productHubLink.label,
-              description: 'Technical documentation, setup guidance, and patching workflows.',
+              description:
+                'Technical documentation, setup guidance, and patching workflows.',
               backLink: {
                 label: `${productHubLink.label} product page`,
                 to: productHubLink.to,

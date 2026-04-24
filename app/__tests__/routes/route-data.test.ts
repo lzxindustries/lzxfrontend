@@ -48,17 +48,15 @@ describe('Docs index SECTIONS', () => {
   });
 
   it('includes Videomancer section', () => {
-    const vm = DOCS_SECTIONS.find(
-      (s: {title: string}) =>
-        s.title.toLowerCase().includes('videomancer'),
+    const vm = DOCS_SECTIONS.find((s: {title: string}) =>
+      s.title.toLowerCase().includes('videomancer'),
     );
     expect(vm).toBeDefined();
   });
 
   it('includes Eurorack Modules section', () => {
-    const modules = DOCS_SECTIONS.find(
-      (s: {title: string}) =>
-        s.title.toLowerCase().includes('module'),
+    const modules = DOCS_SECTIONS.find((s: {title: string}) =>
+      s.title.toLowerCase().includes('module'),
     );
     expect(modules).toBeDefined();
   });
@@ -115,9 +113,7 @@ describe('Instrument Learn Cards', () => {
   });
 
   it('default cards include Getting Started card', () => {
-    const gs = DEFAULT_LEARN_CARDS.find(
-      (c) => c.title === 'Getting Started',
-    );
+    const gs = DEFAULT_LEARN_CARDS.find((c) => c.title === 'Getting Started');
     expect(gs).toBeDefined();
   });
 
@@ -147,7 +143,9 @@ describe('Instrument Learn Cards', () => {
 
   it('Videomancer cards include Fault Codes Reference', () => {
     const cards = getLearnCards('videomancer');
-    expect(cards.find((c) => c.title === 'Fault Codes Reference')).toBeDefined();
+    expect(
+      cards.find((c) => c.title === 'Fault Codes Reference'),
+    ).toBeDefined();
   });
 
   it('Videomancer cards include Serial Port Guide', () => {
@@ -157,7 +155,9 @@ describe('Instrument Learn Cards', () => {
 
   it('Videomancer cards include Historic Device References', () => {
     const cards = getLearnCards('videomancer');
-    expect(cards.find((c) => c.title === 'Historic Device References')).toBeDefined();
+    expect(
+      cards.find((c) => c.title === 'Historic Device References'),
+    ).toBeDefined();
   });
 
   it('getLearnCards falls back to defaults for unknown instrument', () => {
@@ -176,9 +176,7 @@ describe('Instrument Learn Cards', () => {
     ] as const) {
       const cards = getLearnCards(slug);
       expect(cards).toBe(INSTRUMENT_LEARN_CARDS[slug]);
-      expect(
-        cards.find((c) => c.title === 'Support & FAQ'),
-      ).toBeDefined();
+      expect(cards.find((c) => c.title === 'Support & FAQ')).toBeDefined();
     }
   });
 });
@@ -228,9 +226,7 @@ describe('getLearnCardHref', () => {
   it('every DEFAULT_LEARN_CARD resolves to an absolute URL or path', () => {
     for (const card of DEFAULT_LEARN_CARDS) {
       const href = getLearnCardHref(card, basePath);
-      expect(
-        href.startsWith('/') || /^https?:\/\//.test(href),
-      ).toBe(true);
+      expect(href.startsWith('/') || /^https?:\/\//.test(href)).toBe(true);
     }
   });
 });

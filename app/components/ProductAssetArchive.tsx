@@ -82,7 +82,9 @@ export function ProductAssetArchive({
                       Open file
                     </a>
                   ) : (
-                    <span className="text-sm text-base-content/60">Indexed only</span>
+                    <span className="text-sm text-base-content/60">
+                      Indexed only
+                    </span>
                   )}
                 </div>
               </div>

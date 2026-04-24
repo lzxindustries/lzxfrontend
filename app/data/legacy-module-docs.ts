@@ -15,7 +15,10 @@ function escapeHtml(value: string): string {
 }
 
 function headingId(label: string): string {
-  return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 function pushSection(
@@ -36,7 +39,7 @@ export function hasSyntheticLegacyModuleManualContent(
 
   return Boolean(
     content.subtitle ||
-    content.descriptionHtml ||
+      content.descriptionHtml ||
       content.specsHtml ||
       content.galleryImages.length > 0 ||
       content.downloads.length > 0 ||
@@ -70,7 +73,9 @@ export function buildSyntheticLegacyModuleManualDoc(
         ? `<li><strong>Published downloads:</strong> ${content.downloads.length}</li>`
         : null,
       content.archiveAssets.some((asset) => !asset.isDownload)
-        ? `<li><strong>Archive inventory:</strong> ${content.archiveAssets.filter((asset) => !asset.isDownload).length} files</li>`
+        ? `<li><strong>Archive inventory:</strong> ${
+            content.archiveAssets.filter((asset) => !asset.isDownload).length
+          } files</li>`
         : null,
     ].filter(Boolean);
 
@@ -97,7 +102,11 @@ export function buildSyntheticLegacyModuleManualDoc(
       .slice(0, 6)
       .map(
         (image) =>
-          `<figure><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || safeTitle)}" /><figcaption>${escapeHtml(image.alt || image.path)}</figcaption></figure>`,
+          `<figure><img src="${escapeHtml(image.src)}" alt="${escapeHtml(
+            image.alt || safeTitle,
+          )}" /><figcaption>${escapeHtml(
+            image.alt || image.path,
+          )}</figcaption></figure>`,
       )
       .join('');
     const remainingCount = Math.max(content.galleryImages.length - 6, 0);
@@ -106,7 +115,15 @@ export function buildSyntheticLegacyModuleManualDoc(
       sections,
       headings,
       'Gallery',
-      `<p>Representative product-library imagery for ${escapeHtml(safeTitle)}.</p><div class="legacy-gallery-grid">${galleryMarkup}</div>${remainingCount > 0 ? `<p>${remainingCount} more image${remainingCount === 1 ? '' : 's'} remain in the product library archive.</p>` : ''}`,
+      `<p>Representative product-library imagery for ${escapeHtml(
+        safeTitle,
+      )}.</p><div class="legacy-gallery-grid">${galleryMarkup}</div>${
+        remainingCount > 0
+          ? `<p>${remainingCount} more image${
+              remainingCount === 1 ? '' : 's'
+            } remain in the product library archive.</p>`
+          : ''
+      }`,
     );
   }
 
@@ -118,37 +135,57 @@ export function buildSyntheticLegacyModuleManualDoc(
         if (download.version) details.push(`Version ${download.version}`);
         if (download.platform) details.push(download.platform);
 
-        return `<li><a href="${escapeHtml(download.href)}">${escapeHtml(download.name)}</a>${details.filter(Boolean).length ? ` — ${escapeHtml(details.filter(Boolean).join(' · '))}` : ''}</li>`;
+        return `<li><a href="${escapeHtml(download.href)}">${escapeHtml(
+          download.name,
+        )}</a>${
+          details.filter(Boolean).length
+            ? ` — ${escapeHtml(details.filter(Boolean).join(' · '))}`
+            : ''
+        }</li>`;
       })
       .join('');
     const moreCount = Math.max(content.downloads.length - 10, 0);
     const moreLine =
       moreCount > 0
-        ? `<li>${moreCount} more download${moreCount === 1 ? '' : 's'} are listed on the <a href="/modules/${escapeHtml(slug)}/downloads">downloads page</a>.</li>`
+        ? `<li>${moreCount} more download${
+            moreCount === 1 ? '' : 's'
+          } are listed on the <a href="/modules/${escapeHtml(
+            slug,
+          )}/downloads">downloads page</a>.</li>`
         : '';
 
     pushSection(
       sections,
       headings,
       'Downloads',
-      `<p>Published files from the product library are available directly on-site.</p><ul>${items}${moreLine}</ul><p><a href="/modules/${escapeHtml(slug)}/downloads">Open the full downloads and archive page</a>.</p>`,
+      `<p>Published files from the product library are available directly on-site.</p><ul>${items}${moreLine}</ul><p><a href="/modules/${escapeHtml(
+        slug,
+      )}/downloads">Open the full downloads and archive page</a>.</p>`,
     );
   }
 
   if (content) {
-    const archiveAssets = content.archiveAssets.filter((asset) => !asset.isDownload);
+    const archiveAssets = content.archiveAssets.filter(
+      (asset) => !asset.isDownload,
+    );
     if (archiveAssets.length > 0) {
-      const indexedOnlyCount = archiveAssets.filter((asset) => !asset.href).length;
+      const indexedOnlyCount = archiveAssets.filter(
+        (asset) => !asset.href,
+      ).length;
       const directCount = archiveAssets.length - indexedOnlyCount;
       const sampleItems = archiveAssets
         .slice(0, 8)
         .map((asset) => {
           const href = asset.href
-            ? `<a href="${escapeHtml(asset.href)}">${escapeHtml(asset.name)}</a>`
+            ? `<a href="${escapeHtml(asset.href)}">${escapeHtml(
+                asset.name,
+              )}</a>`
             : escapeHtml(asset.name);
           const suffix = asset.href ? 'Open file' : 'Indexed only';
 
-          return `<li>${href} — ${escapeHtml(asset.categoryLabel)} · ${escapeHtml(suffix)}</li>`;
+          return `<li>${href} — ${escapeHtml(
+            asset.categoryLabel,
+          )} · ${escapeHtml(suffix)}</li>`;
         })
         .join('');
 
@@ -156,7 +193,17 @@ export function buildSyntheticLegacyModuleManualDoc(
         sections,
         headings,
         'Product Library Archive',
-        `<p>${archiveAssets.length} product-library asset${archiveAssets.length === 1 ? '' : 's'} are attached to this module. ${directCount > 0 ? `${directCount} can be opened directly.` : ''}${indexedOnlyCount > 0 ? ` ${indexedOnlyCount} remain indexed-only source assets.` : ''}</p><ul>${sampleItems}</ul><p><a href="/modules/${escapeHtml(slug)}/downloads">Browse the complete archive inventory</a>.</p>`,
+        `<p>${archiveAssets.length} product-library asset${
+          archiveAssets.length === 1 ? '' : 's'
+        } are attached to this module. ${
+          directCount > 0 ? `${directCount} can be opened directly.` : ''
+        }${
+          indexedOnlyCount > 0
+            ? ` ${indexedOnlyCount} remain indexed-only source assets.`
+            : ''
+        }</p><ul>${sampleItems}</ul><p><a href="/modules/${escapeHtml(
+          slug,
+        )}/downloads">Browse the complete archive inventory</a>.</p>`,
       );
     }
   }
@@ -166,7 +213,9 @@ export function buildSyntheticLegacyModuleManualDoc(
       sections,
       headings,
       'Additional References',
-      `<p>External references remain available when you need the original off-site documentation or catalog entry.</p><p><a href="${escapeHtml(externalUrl)}" rel="noreferrer">Open external reference</a></p>`,
+      `<p>External references remain available when you need the original off-site documentation or catalog entry.</p><p><a href="${escapeHtml(
+        externalUrl,
+      )}" rel="noreferrer">Open external reference</a></p>`,
     );
   }
 

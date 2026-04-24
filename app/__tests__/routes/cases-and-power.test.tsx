@@ -8,7 +8,14 @@ import CasesAndPowerPage, {
 } from '~/routes/($lang).cases-and-power';
 import type {CategoryListingData} from '~/lib/category-listing/types';
 
-const buildEntry = (overrides: Partial<{key: string; name: string; href: string; subtitle: string}> = {}) => ({
+const buildEntry = (
+  overrides: Partial<{
+    key: string;
+    name: string;
+    href: string;
+    subtitle: string;
+  }> = {},
+) => ({
   key: overrides.key ?? 'placeholder',
   name: overrides.name ?? 'Placeholder',
   subtitle: overrides.subtitle ?? null,
@@ -37,7 +44,11 @@ const mockData: CategoryListingData = {
         {
           key: 'active',
           entries: [
-            buildEntry({key: 'vessel-168', name: 'Vessel 168', href: '/products/vessel-168'}),
+            buildEntry({
+              key: 'vessel-168',
+              name: 'Vessel 168',
+              href: '/products/vessel-168',
+            }),
             buildEntry({
               key: 'bus-168-diy-kit',
               name: 'Bus 168 DIY Kit',
@@ -54,8 +65,16 @@ const mockData: CategoryListingData = {
         {
           key: 'legacy',
           entries: [
-            buildEntry({key: 'dc-distro-3a', name: 'DC Distro 3A', href: '/products/dc-distro-3a'}),
-            buildEntry({key: 'rack-84hp', name: 'Rack 84HP', href: '/products/rack-84hp'}),
+            buildEntry({
+              key: 'dc-distro-3a',
+              name: 'DC Distro 3A',
+              href: '/products/dc-distro-3a',
+            }),
+            buildEntry({
+              key: 'rack-84hp',
+              name: 'Rack 84HP',
+              href: '/products/rack-84hp',
+            }),
           ],
         },
       ],
@@ -95,7 +114,9 @@ describe('Cases and power page', () => {
       params: {},
     } as unknown as Parameters<typeof casesAndPowerLoader>[0]);
 
-    const payload = (await (response as Response).json()) as CategoryListingData;
+    const payload = (await (
+      response as Response
+    ).json()) as CategoryListingData;
 
     // The shared category-listing loader no longer issues Storefront
     // GraphQL queries for content. Categories that opt into the live
@@ -135,8 +156,12 @@ describe('Cases and power page', () => {
     expect(
       screen.getByRole('heading', {level: 1, name: 'Cases & Power'}),
     ).toBeTruthy();
-    expect(screen.getByRole('heading', {level: 2, name: 'Active'})).toBeTruthy();
-    expect(screen.getByRole('heading', {level: 2, name: 'Legacy'})).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {level: 2, name: 'Active'}),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {level: 2, name: 'Legacy'}),
+    ).toBeTruthy();
     expect(screen.getByText('Vessel 168')).toBeTruthy();
     expect(screen.getByText('Bus 168 DIY Kit')).toBeTruthy();
     expect(screen.getByText('DC Distro 3A')).toBeTruthy();
@@ -146,14 +171,14 @@ describe('Cases and power page', () => {
   it('links cards to their Shopify product routes', () => {
     renderWithRouter(<CasesAndPowerPage />);
 
-    expect(screen.getByText('Vessel 168').closest('a')?.getAttribute('href')).toBe(
-      '/products/vessel-168',
-    );
+    expect(
+      screen.getByText('Vessel 168').closest('a')?.getAttribute('href'),
+    ).toBe('/products/vessel-168');
     expect(
       screen.getByText('Bus 168 DIY Kit').closest('a')?.getAttribute('href'),
     ).toBe('/products/bus-168-diy-kit');
-    expect(screen.getByText('DC Distro 3A').closest('a')?.getAttribute('href')).toBe(
-      '/products/dc-distro-3a',
-    );
+    expect(
+      screen.getByText('DC Distro 3A').closest('a')?.getAttribute('href'),
+    ).toBe('/products/dc-distro-3a');
   });
 });

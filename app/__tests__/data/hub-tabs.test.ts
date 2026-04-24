@@ -81,9 +81,7 @@ describe('buildInstrumentTabs', () => {
       downloadCount: 0,
       hasSpecs: false,
     });
-    const hidden = new Set(
-      tabs.filter((t) => t.hidden).map((t) => t.label),
-    );
+    const hidden = new Set(tabs.filter((t) => t.hidden).map((t) => t.label));
     expect(hidden.has('Videos')).toBe(true);
     expect(hidden.has('Downloads')).toBe(true);
     expect(hidden.has('Specs')).toBe(true);

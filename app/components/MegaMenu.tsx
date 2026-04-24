@@ -72,13 +72,7 @@ const MENU_GROUPS: MegaMenuGroup[] = [
 
 // --- Desktop Mega Menu ---
 
-function DesktopDropdown({
-  group,
-  url,
-}: {
-  group: MegaMenuGroup;
-  url: string;
-}) {
+function DesktopDropdown({group, url}: {group: MegaMenuGroup; url: string}) {
   const [open, setOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -144,9 +138,7 @@ function DesktopDropdown({
                   isActive
                     ? 'bg-primary/10 text-primary font-medium'
                     : 'hover:bg-base-200',
-                  item.highlight &&
-                    !isActive &&
-                    'text-[#0072BC] font-semibold',
+                  item.highlight && !isActive && 'text-[#0072BC] font-semibold',
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -165,7 +157,11 @@ function DesktopDropdown({
 
 export function DesktopMegaMenu({url}: {url: string}) {
   return (
-    <nav className="hidden lg:flex items-center gap-1" aria-label="Main" data-testid="mega-menu">
+    <nav
+      className="hidden lg:flex items-center gap-1"
+      aria-label="Main"
+      data-testid="mega-menu"
+    >
       <a
         href="/"
         className={clsx(
@@ -229,9 +225,7 @@ function MobileAccordionGroup({
                   isActive
                     ? 'bg-primary/10 text-primary font-medium'
                     : 'hover:bg-base-200',
-                  item.highlight &&
-                    !isActive &&
-                    'text-[#0072BC] font-semibold',
+                  item.highlight && !isActive && 'text-[#0072BC] font-semibold',
                 )}
                 onClick={onNavigate}
               >

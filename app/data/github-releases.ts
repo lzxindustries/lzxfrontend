@@ -72,7 +72,10 @@ export function toDownload(asset: GitHubAsset): PlatformDownload {
 }
 
 /** In-memory cache with TTL */
-const releaseCache = new Map<string, {release: ResolvedRelease; expiry: number}>();
+const releaseCache = new Map<
+  string,
+  {release: ResolvedRelease; expiry: number}
+>();
 const CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
 export async function getLatestRelease(
@@ -89,10 +92,10 @@ export async function getLatestRelease(
     const response = await fetch(
       options.tagPrefix ? RELEASES_URL : LATEST_RELEASE_URL,
       {
-      headers: {
-        Accept: 'application/vnd.github+json',
-        'User-Agent': 'LZX-Industries-Website/1.0',
-      },
+        headers: {
+          Accept: 'application/vnd.github+json',
+          'User-Agent': 'LZX-Industries-Website/1.0',
+        },
       },
     );
 

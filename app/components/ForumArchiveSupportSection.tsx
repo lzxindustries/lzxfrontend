@@ -25,7 +25,8 @@ export function ForumArchiveSupportSection({
   const officialTopic = archive.officialTopic;
   const relatedTopics = archive.relatedTopics;
   const visibleRelatedTopics = relatedTopics.slice(0, 12);
-  const hiddenRelatedTopicCount = relatedTopics.length - visibleRelatedTopics.length;
+  const hiddenRelatedTopicCount =
+    relatedTopics.length - visibleRelatedTopics.length;
 
   return (
     <>
@@ -83,8 +84,12 @@ export function ForumArchiveSupportSection({
           <h3 className="text-lg font-bold mb-3">Related Discussions</h3>
           <p className="mb-3 text-sm text-base-content/70">
             {officialTopic
-              ? `Compiled archive includes ${relatedTopics.length} related discussion${relatedTopics.length === 1 ? '' : 's'}.`
-              : `Compiled archive is built from ${relatedTopics.length} related discussion${relatedTopics.length === 1 ? '' : 's'}.`}
+              ? `Compiled archive includes ${
+                  relatedTopics.length
+                } related discussion${relatedTopics.length === 1 ? '' : 's'}.`
+              : `Compiled archive is built from ${
+                  relatedTopics.length
+                } related discussion${relatedTopics.length === 1 ? '' : 's'}.`}
           </p>
           <div className="grid gap-3">
             {visibleRelatedTopics.map((topic) => (

@@ -144,7 +144,8 @@ export default function InstrumentManualPage() {
       sectionHeader={{
         badge: 'Reference Manual',
         contextLabel: product.title,
-        description: 'Technical documentation, setup guidance, and patching workflows.',
+        description:
+          'Technical documentation, setup guidance, and patching workflows.',
         backLink: {
           label: `${product.title} overview`,
           to: `/instruments/${slug}`,

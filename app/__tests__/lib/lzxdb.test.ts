@@ -64,9 +64,9 @@ describe('generateAssetDescription', () => {
   });
 
   it('identifies BOM by full name', () => {
-    expect(
-      generateAssetDescription('ESG3 Bill of Materials', 'pdf'),
-    ).toBe('Bill of materials (PDF)');
+    expect(generateAssetDescription('ESG3 Bill of Materials', 'pdf')).toBe(
+      'Bill of materials (PDF)',
+    );
   });
 
   it('identifies manual files', () => {
@@ -94,9 +94,7 @@ describe('generateAssetDescription', () => {
   });
 
   it('returns generic description for unknown files', () => {
-    expect(generateAssetDescription('Misc File', 'zip')).toBe(
-      'ZIP download',
-    );
+    expect(generateAssetDescription('Misc File', 'zip')).toBe('ZIP download');
   });
 
   it('uppercases file type in output', () => {
@@ -274,11 +272,18 @@ describe('getVideosForModule', () => {
 
 describe('inferAssetVersion', () => {
   it('extracts RevE from name', () => {
-    expect(inferAssetVersion('Castle 000 Schematic RevE', 'castle-000-schematic_RevE.pdf')).toBe('RevE');
+    expect(
+      inferAssetVersion(
+        'Castle 000 Schematic RevE',
+        'castle-000-schematic_RevE.pdf',
+      ),
+    ).toBe('RevE');
   });
 
   it('extracts semver from filename', () => {
-    expect(inferAssetVersion('Firmware Update', 'firmware-1.0.6.bin')).toBe('v1.0.6');
+    expect(inferAssetVersion('Firmware Update', 'firmware-1.0.6.bin')).toBe(
+      'v1.0.6',
+    );
   });
 
   it('preserves firmware suffixes from filenames', () => {
@@ -288,7 +293,9 @@ describe('inferAssetVersion', () => {
   });
 
   it('extracts Rev3 from name', () => {
-    expect(inferAssetVersion('Schematic Rev3', 'schematic-rev3.pdf')).toBe('Rev3');
+    expect(inferAssetVersion('Schematic Rev3', 'schematic-rev3.pdf')).toBe(
+      'Rev3',
+    );
   });
 
   it('returns null when no version pattern found', () => {
@@ -300,9 +307,9 @@ describe('inferAssetVersion', () => {
   });
 
   it('preserves release candidate suffixes from names', () => {
-    expect(inferAssetVersion('Videomancer Firmware 1.0.0-rc.4', 'firmware.uf2')).toBe(
-      'v1.0.0-rc.4',
-    );
+    expect(
+      inferAssetVersion('Videomancer Firmware 1.0.0-rc.4', 'firmware.uf2'),
+    ).toBe('v1.0.0-rc.4');
   });
 });
 
@@ -324,7 +331,9 @@ describe('inferAssetPlatform', () => {
   });
 
   it('identifies Windows from "win" in name', () => {
-    expect(inferAssetPlatform('Windows Installer', 'installer.zip')).toBe('Windows');
+    expect(inferAssetPlatform('Windows Installer', 'installer.zip')).toBe(
+      'Windows',
+    );
   });
 
   it('identifies Linux from .AppImage extension', () => {

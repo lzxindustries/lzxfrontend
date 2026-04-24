@@ -111,10 +111,7 @@ export type CategoryListingConfig = {
     ctx: CategoryEntryContext,
   ) => boolean;
   /** Optional sort comparator within a group. Defaults to name asc. */
-  sortEntries?: (
-    a: CategorySourceEntry,
-    b: CategorySourceEntry,
-  ) => number;
+  sortEntries?: (a: CategorySourceEntry, b: CategorySourceEntry) => number;
 
   /** Group-level enrichment. */
   resolveGroupLabel?: (groupKey: string) => string | undefined;

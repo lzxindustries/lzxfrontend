@@ -11,6 +11,8 @@ export default defineConfig({
     remix({
       presets: [hydrogen.preset()],
       ignoredRouteFiles: ['**/.*'],
+      // Remix v3 `future` flags: enable one at a time only when the pinned Hydrogen
+      // release supports it, then run `yarn test:e2e` (and smoke) before merging.
       future: {
         v3_fetcherPersist: false,
         v3_lazyRouteDiscovery: false,

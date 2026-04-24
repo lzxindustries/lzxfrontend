@@ -53,7 +53,9 @@ describe('rewriteLegacyDocsLinks', () => {
     const out = rewriteLegacyDocsLinks(
       '<a href="https://docs.lzxindustries.net/docs/instruments/videomancer/modulation-operators">MO</a>',
     );
-    expect(out).toContain('/instruments/videomancer/manual/modulation-operators');
+    expect(out).toContain(
+      '/instruments/videomancer/manual/modulation-operators',
+    );
     expect(out).not.toContain('docs.lzxindustries.net');
   });
 

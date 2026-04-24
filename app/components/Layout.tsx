@@ -36,14 +36,6 @@ export function Layout({
   const location = useLocation();
   const rootMatch = matches.find((match) => match.id === 'root');
 
-  if (!rootMatch) {
-    console.error('Root route not found in matches:', matches);
-    return <div>Error: Root route not found.</div>;
-  }
-
-  const cart = (rootMatch.data as Record<string, any>)?.cart;
-  const isLoggedIn = (rootMatch.data as Record<string, any>)?.isLoggedIn;
-
   const {
     isOpen: isCartOpen,
     openDrawer: openCart,
@@ -61,6 +53,14 @@ export function Layout({
     }
     prevFetcherCount.current = addToCartFetchers.length;
   }, [addToCartFetchers.length, openCart]);
+
+  if (!rootMatch) {
+    console.error('Root route not found in matches:', matches);
+    return <div>Error: Root route not found.</div>;
+  }
+
+  const cart = (rootMatch.data as Record<string, any>)?.cart;
+  const isLoggedIn = (rootMatch.data as Record<string, any>)?.isLoggedIn;
 
   return (
     <>

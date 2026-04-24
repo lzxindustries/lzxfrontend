@@ -54,8 +54,9 @@ export const systemsCategoryConfig: CategoryListingConfig = {
   resolveHasInternalPage: () => true,
 
   resolveSubtitle: (entry) =>
-    (entry.moduleId ? getModuleById(entry.moduleId as string)?.subtitle : null) ??
-    null,
+    (entry.moduleId
+      ? getModuleById(entry.moduleId as string)?.subtitle
+      : null) ?? null,
 
   resolveArtwork: (entry) => {
     const path = getInstrumentArtworkPath(entry.canonical);
@@ -66,5 +67,6 @@ export const systemsCategoryConfig: CategoryListingConfig = {
   sortEntries: () => 0,
 
   resolveGroupLabel: (key) => (key === 'gen3' ? 'Gen3 Series' : undefined),
-  resolveGroupSubtitle: (key) => (key === 'gen3' ? SYSTEMS_SUBTITLE : undefined),
+  resolveGroupSubtitle: (key) =>
+    key === 'gen3' ? SYSTEMS_SUBTITLE : undefined,
 };

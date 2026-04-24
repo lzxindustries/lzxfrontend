@@ -101,7 +101,6 @@ function getGalleryMedia(
   return items;
 }
 
-
 // --- Component ---
 
 export default function ModuleOverview() {
@@ -155,7 +154,8 @@ export default function ModuleOverview() {
     (controls as {length: number}).length,
     (lzxFeatures as {length: number}).length,
   );
-  const metafieldSpecsDuplicatedOnSpecsTab = Boolean(specs) && showSpecsOnHubTab;
+  const metafieldSpecsDuplicatedOnSpecsTab =
+    Boolean(specs) && showSpecsOnHubTab;
   if (product.descriptionHtml) {
     sections.push({
       title: 'Description',
@@ -256,7 +256,10 @@ export default function ModuleOverview() {
                     >
                       <div className="font-semibold">Downloads & Archive</div>
                       <div className="mt-1 text-base-content/70">
-                        {assets.length} download{assets.length === 1 ? '' : 's'} and {archiveAssets.length} archived file{archiveAssets.length === 1 ? '' : 's'} surfaced from the product library.
+                        {assets.length} download{assets.length === 1 ? '' : 's'}{' '}
+                        and {archiveAssets.length} archived file
+                        {archiveAssets.length === 1 ? '' : 's'} surfaced from
+                        the product library.
                       </div>
                     </Link>
                   ) : null}
@@ -409,7 +412,8 @@ function ProductForm({
                           replace
                           className={clsx(
                             'flex min-h-[56px] min-w-[8rem] flex-col justify-center rounded-2xl border px-4 py-2 text-left transition-all duration-200',
-                            isActive && !isSoldOut &&
+                            isActive &&
+                              !isSoldOut &&
                               'border-black bg-black text-white shadow-sm ring-2 ring-black ring-offset-2',
                             isActive &&
                               isSoldOut &&
@@ -443,7 +447,8 @@ function ProductForm({
                   )}
                 </div>
               </div>
-            )}
+            )
+          }
         </VariantSelector>
 
         {selectedVariant && !isOutOfStock && (
@@ -595,9 +600,7 @@ function ProductForm({
               className="flex items-center gap-1.5 hover:text-primary transition"
             >
               <FaTruck className="text-sm" />
-              <span>
-                {shippingLabel}
-              </span>
+              <span>{shippingLabel}</span>
             </Link>
           )}
           <span className="flex items-center gap-1.5">

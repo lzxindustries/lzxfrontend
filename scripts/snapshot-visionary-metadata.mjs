@@ -61,7 +61,10 @@ async function main() {
   await fs.mkdir(path.dirname(OUT), {recursive: true});
   await fs.writeFile(OUT, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
   console.log(
-    `wrote ${Object.keys(files).length} entries to ${path.relative(REPO_ROOT, OUT)}`,
+    `wrote ${Object.keys(files).length} entries to ${path.relative(
+      REPO_ROOT,
+      OUT,
+    )}`,
   );
 }
 

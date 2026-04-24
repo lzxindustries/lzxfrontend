@@ -112,7 +112,8 @@ describe('toDownload', () => {
   it('extracts name, url, and size from a GitHub asset', () => {
     const asset: GitHubAsset = {
       name: 'lzx-connect-1.0.0.dmg',
-      browser_download_url: 'https://github.com/lzxindustries/repo/releases/download/v1.0.0/lzx-connect-1.0.0.dmg',
+      browser_download_url:
+        'https://github.com/lzxindustries/repo/releases/download/v1.0.0/lzx-connect-1.0.0.dmg',
       size: 52428800,
     };
     const download = toDownload(asset);
@@ -258,9 +259,8 @@ describe('getLatestRelease', () => {
     };
     globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
-    const {getLatestConnectRelease: freshGetLatestConnectRelease} = await import(
-      '~/data/github-releases'
-    );
+    const {getLatestConnectRelease: freshGetLatestConnectRelease} =
+      await import('~/data/github-releases');
     const release = await freshGetLatestConnectRelease();
 
     expect(release.tagName).toBe('connect/1.0.1-rc.14');
@@ -285,9 +285,8 @@ describe('getLatestRelease', () => {
     };
     globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
 
-    const {getLatestConnectRelease: freshGetLatestConnectRelease} = await import(
-      '~/data/github-releases'
-    );
+    const {getLatestConnectRelease: freshGetLatestConnectRelease} =
+      await import('~/data/github-releases');
     const release = await freshGetLatestConnectRelease();
 
     expect(release.tagName).toBe('');

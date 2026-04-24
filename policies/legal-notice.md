@@ -1,6 +1,6 @@
 # Legal Notice
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 ## Company Information
 

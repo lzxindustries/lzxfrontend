@@ -98,7 +98,8 @@ const remixState = {
         url: 'https://example.com/connect/linux.AppImage',
         size: 149000000,
       },
-      allReleasesUrl: 'https://github.com/lzxindustries/videomancer-firmware/releases',
+      allReleasesUrl:
+        'https://github.com/lzxindustries/videomancer-firmware/releases',
     },
   },
 };
@@ -141,7 +142,9 @@ describe('Downloads route', () => {
     expect(screen.queryByText('Firmware 1.0.6')).not.toBeInTheDocument();
     expect(screen.getByText('Manual')).toBeTruthy();
 
-    fireEvent.click(screen.getByRole('button', {name: /show older firmware versions/i}));
+    fireEvent.click(
+      screen.getByRole('button', {name: /show older firmware versions/i}),
+    );
 
     expect(screen.getByText('Firmware 1.0.6')).toBeTruthy();
   });

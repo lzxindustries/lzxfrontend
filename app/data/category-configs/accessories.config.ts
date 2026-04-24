@@ -1,7 +1,4 @@
-import {
-  getProductRecord,
-  getProductSubtitle,
-} from '~/data/product-catalog';
+import {getProductRecord, getProductSubtitle} from '~/data/product-catalog';
 import type {
   CategoryListingConfig,
   CategoryRawSection,
@@ -24,10 +21,12 @@ const ORDER_INDEX = new Map<string, number>(
 
 type ProductBucket = 'active' | 'archive';
 
-function toSourceEntry(handle: string): (CategorySourceEntry & {
-  __bucket: ProductBucket;
-  __subtitle: string | null;
-}) | null {
+function toSourceEntry(handle: string):
+  | (CategorySourceEntry & {
+      __bucket: ProductBucket;
+      __subtitle: string | null;
+    })
+  | null {
   const product = getProductRecord(handle);
   if (!product) return null;
 

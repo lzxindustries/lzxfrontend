@@ -153,7 +153,10 @@ const REMOVAL_PATTERNS = [
 const URL_REWRITES = [
   // community.lzxindustries.net → community.lzxindustries.net (keep as-is, it is a valid external site)
   // docs.lzxindustries.net/foo → /docs/foo (server already redirects, but normalize in descriptions)
-  [/https?:\/\/docs\.lzxindustries\.net\/?/gi, 'https://lzxindustries.net/docs/'],
+  [
+    /https?:\/\/docs\.lzxindustries\.net\/?/gi,
+    'https://lzxindustries.net/docs/',
+  ],
   // github lzxdocs → /docs/
   [
     /https?:\/\/github\.com\/lzxindustries\/lzxdocs[^\s<"]*/gi,
@@ -203,10 +206,7 @@ function cleanDescription(html) {
   // Collapse runs of <br> / whitespace
   cleaned = cleaned.replace(/(<br\s*\/?\s*>\s*){3,}/gi, '<br><br>');
   // Remove empty paragraphs
-  cleaned = cleaned.replace(
-    /<p\b[^>]*>\s*(?:&nbsp;|\u00a0)*\s*<\/p>/gi,
-    '',
-  );
+  cleaned = cleaned.replace(/<p\b[^>]*>\s*(?:&nbsp;|\u00a0)*\s*<\/p>/gi, '');
   // Trim leading/trailing whitespace and <br>
   cleaned = cleaned.replace(/^(\s|<br\s*\/?\s*>)+/i, '');
   cleaned = cleaned.replace(/(\s|<br\s*\/?\s*>)+$/i, '');
@@ -233,7 +233,9 @@ async function updateProduct(token, id, descriptionHtml) {
   });
   if (data.productUpdate.userErrors?.length) {
     throw new Error(
-      `Update failed for ${id}: ${data.productUpdate.userErrors.map((e) => e.message).join('; ')}`,
+      `Update failed for ${id}: ${data.productUpdate.userErrors
+        .map((e) => e.message)
+        .join('; ')}`,
     );
   }
   return data.productUpdate.product;
@@ -243,7 +245,9 @@ async function updateProduct(token, id, descriptionHtml) {
 
 async function main() {
   console.log(
-    `Mode: ${APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'}${DOCS_CTA_ONLY ? ' [docs CTA only]' : ''}`,
+    `Mode: ${APPLY ? 'APPLY (writing to Shopify)' : 'DRY RUN (preview only)'}${
+      DOCS_CTA_ONLY ? ' [docs CTA only]' : ''
+    }`,
   );
   console.log('');
 
@@ -285,7 +289,9 @@ async function main() {
 
   if (!APPLY) {
     console.log('─────────────────────────────────────────────');
-    console.log(`Dry run complete. ${changes.length} product(s) would be updated.`);
+    console.log(
+      `Dry run complete. ${changes.length} product(s) would be updated.`,
+    );
     console.log('Run with --apply to write changes to Shopify.');
     return;
   }

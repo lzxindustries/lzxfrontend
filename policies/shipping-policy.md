@@ -1,6 +1,6 @@
 # Shipping Policy
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 At LZX Industries, we work hard to get your order to you as quickly as possible. Here's what to expect when you place an order.
 
@@ -26,33 +26,33 @@ We ship via **USPS** and **UPS**. The available services and estimated delivery 
 
 ### Domestic (United States)
 
-| Carrier | Service | Estimated Delivery (after processing) |
-|---|---|---|
-| USPS | Priority Mail | 2–5 business days |
-| USPS | Ground Advantage | 2–5 business days |
-| UPS | Ground | 1–5 business days |
-| UPS | 3 Day Select | 3 business days |
-| UPS | 2nd Day Air | 2 business days |
-| UPS | Next Day Air Saver | 1 business day |
-| UPS | Next Day Air | 1 business day |
+| Carrier | Service            | Estimated Delivery (after processing) |
+| ------- | ------------------ | ------------------------------------- |
+| USPS    | Priority Mail      | 2–5 business days                     |
+| USPS    | Ground Advantage   | 2–5 business days                     |
+| UPS     | Ground             | 1–5 business days                     |
+| UPS     | 3 Day Select       | 3 business days                       |
+| UPS     | 2nd Day Air        | 2 business days                       |
+| UPS     | Next Day Air Saver | 1 business day                        |
+| UPS     | Next Day Air       | 1 business day                        |
 
 ### Canada
 
-| Carrier | Service | Estimated Delivery (after processing) |
-|---|---|---|
-| USPS | Priority Mail International | 6–10 business days |
-| UPS | Standard (Canada) | 5–8 business days |
-| UPS | Worldwide Expedited | 2–5 business days |
-| UPS | Worldwide Saver | 1–3 business days |
+| Carrier | Service                     | Estimated Delivery (after processing) |
+| ------- | --------------------------- | ------------------------------------- |
+| USPS    | Priority Mail International | 6–10 business days                    |
+| UPS     | Standard (Canada)           | 5–8 business days                     |
+| UPS     | Worldwide Expedited         | 2–5 business days                     |
+| UPS     | Worldwide Saver             | 1–3 business days                     |
 
 ### International
 
-| Carrier | Service | Estimated Delivery (after processing) |
-|---|---|---|
-| USPS | Priority Mail International | 6–21 business days |
-| UPS | Worldwide Expedited | 2–5 business days |
-| UPS | Worldwide Saver | 1–3 business days |
-| UPS | Worldwide Express | 1–3 business days |
+| Carrier | Service                     | Estimated Delivery (after processing) |
+| ------- | --------------------------- | ------------------------------------- |
+| USPS    | Priority Mail International | 6–21 business days                    |
+| UPS     | Worldwide Expedited         | 2–5 business days                     |
+| UPS     | Worldwide Saver             | 1–3 business days                     |
+| UPS     | Worldwide Express           | 1–3 business days                     |
 
 Delivery estimates are provided by the carrier and are not guaranteed. Actual delivery times may vary based on carrier operations, customs processing, and other factors outside our control.
 

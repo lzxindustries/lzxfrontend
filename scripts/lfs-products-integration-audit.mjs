@@ -5,10 +5,15 @@ import path from 'node:path';
 
 const repoRoot = process.cwd();
 const sourceRoot = path.resolve(repoRoot, 'lfs/library/products');
-const outputPath = path.resolve(repoRoot, 'docs/lfs-products-integration-audit.md');
+const outputPath = path.resolve(
+  repoRoot,
+  'docs/lfs-products-integration-audit.md',
+);
 
 const PRODUCT_SUPPLEMENTAL_ROOTS = {
-  'alternate-frontpanel': [path.join(sourceRoot, 'accessories/alternate-frontpanels')],
+  'alternate-frontpanel': [
+    path.join(sourceRoot, 'accessories/alternate-frontpanels'),
+  ],
   bitvision: [path.join(sourceRoot, 'instruments/bitvision')],
   'cadet-ix-vco': [
     path.join(
@@ -67,7 +72,9 @@ function main() {
   );
   const productFiles = collectFilesRecursive(sourceRoot)
     .filter((filePath) => filePath.endsWith('.json'))
-    .filter((filePath) => !filePath.endsWith(`${path.sep}product-catalog.json`));
+    .filter(
+      (filePath) => !filePath.endsWith(`${path.sep}product-catalog.json`),
+    );
   const modulargridMetadataFiles = allFiles.filter(
     (filePath) =>
       filePath.endsWith(`${path.sep}metadata.md`) &&
@@ -78,7 +85,9 @@ function main() {
   const shopifyGalleryCoverage = new Set();
   const ownerMap = new Map();
   const discoveredProductSlugs = new Set();
-  const sharedSeriesRoots = new Set(Object.values(MODULE_SERIES_SHARED_ROOTS).flat());
+  const sharedSeriesRoots = new Set(
+    Object.values(MODULE_SERIES_SHARED_ROOTS).flat(),
+  );
 
   for (const filePath of productFiles.sort()) {
     const raw = JSON.parse(readFileSync(filePath, 'utf8'));
@@ -106,7 +115,11 @@ function main() {
       if (!existsSync(resolvedPath)) continue;
 
       markOwner(ownerMap, resolvedPath, slug, name);
-      markSiteCoverage(siteCoverage, resolvedPath, `manifest:${entry.category}`);
+      markSiteCoverage(
+        siteCoverage,
+        resolvedPath,
+        `manifest:${entry.category}`,
+      );
 
       if (isSeedGalleryImagePath(relativePath)) {
         shopifyGalleryCoverage.add(resolvedPath);
@@ -143,7 +156,9 @@ function main() {
         markOwner(ownerMap, assetPath, slug, name);
         markSiteCoverage(siteCoverage, assetPath, 'supplemental-inventory');
 
-        const relativePath = toPosix(path.relative(supplementalRoot, assetPath));
+        const relativePath = toPosix(
+          path.relative(supplementalRoot, assetPath),
+        );
         if (isSeedGalleryImagePath(relativePath)) {
           shopifyGalleryCoverage.add(assetPath);
         }
@@ -155,7 +170,10 @@ function main() {
     const productRoot = path.dirname(path.dirname(metadataPath));
     const slug = path.basename(productRoot);
 
-    if (discoveredProductSlugs.has(slug) || sharedSeriesRoots.has(productRoot)) {
+    if (
+      discoveredProductSlugs.has(slug) ||
+      sharedSeriesRoots.has(productRoot)
+    ) {
       continue;
     }
 
@@ -179,7 +197,11 @@ function main() {
 
       for (const assetPath of supplementalFiles) {
         markOwner(ownerMap, assetPath, slug, slug);
-        markSiteCoverage(siteCoverage, assetPath, 'synthetic-supplemental-inventory');
+        markSiteCoverage(
+          siteCoverage,
+          assetPath,
+          'synthetic-supplemental-inventory',
+        );
 
         const relativePath = toPosix(path.relative(root, assetPath));
         if (isSeedGalleryImagePath(relativePath)) {
@@ -198,30 +220,38 @@ function main() {
       );
 
       for (const assetPath of sharedFiles) {
-        markOwner(ownerMap, assetPath, `${series}-shared-archive`, `${series} shared archive`);
+        markOwner(
+          ownerMap,
+          assetPath,
+          `${series}-shared-archive`,
+          `${series} shared archive`,
+        );
         markSiteCoverage(siteCoverage, assetPath, 'series-archive');
       }
     }
   }
 
-  const publishedFiles = allFiles.filter((filePath) => isPublishedAsset(filePath));
+  const publishedFiles = allFiles.filter((filePath) =>
+    isPublishedAsset(filePath),
+  );
   const indexedOnlyFiles = allFiles.filter(
     (filePath) => siteCoverage.has(filePath) && !isPublishedAsset(filePath),
   );
-  const missingFiles = allFiles.filter((filePath) => !siteCoverage.has(filePath));
+  const missingFiles = allFiles.filter(
+    (filePath) => !siteCoverage.has(filePath),
+  );
   const galleryCandidateFiles = allFiles.filter((filePath) =>
     isSeedGalleryImagePath(toPosix(path.relative(sourceRoot, filePath))),
   );
-  const coveredGalleryCandidateFiles = galleryCandidateFiles.filter((filePath) =>
-    shopifyGalleryCoverage.has(filePath),
+  const coveredGalleryCandidateFiles = galleryCandidateFiles.filter(
+    (filePath) => shopifyGalleryCoverage.has(filePath),
   );
   const galleryCandidateMisses = galleryCandidateFiles.filter(
     (filePath) => !shopifyGalleryCoverage.has(filePath),
   );
 
-  const indexedByCategory = countBy(
-    indexedOnlyFiles,
-    (filePath) => topLevelCategory(path.relative(sourceRoot, filePath)),
+  const indexedByCategory = countBy(indexedOnlyFiles, (filePath) =>
+    topLevelCategory(path.relative(sourceRoot, filePath)),
   );
 
   const lines = [
@@ -270,13 +300,17 @@ function main() {
     '',
     ...(missingFiles.length === 0
       ? ['- None.']
-      : missingFiles.map((filePath) => `- ${formatOwnedFile(ownerMap, filePath)}`)),
+      : missingFiles.map(
+          (filePath) => `- ${formatOwnedFile(ownerMap, filePath)}`,
+        )),
     '',
     '## Residual Shopify Gallery Misses',
     '',
     ...(galleryCandidateMisses.length === 0
       ? ['- None.']
-      : galleryCandidateMisses.map((filePath) => `- ${formatOwnedFile(ownerMap, filePath)}`)),
+      : galleryCandidateMisses.map(
+          (filePath) => `- ${formatOwnedFile(ownerMap, filePath)}`,
+        )),
   ];
 
   writeFileSync(outputPath, `${lines.join('\n')}\n`, 'utf8');
@@ -315,7 +349,9 @@ function flattenManifestEntries(value, category) {
 }
 
 function stringValue(value) {
-  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : null;
+  return typeof value === 'string' && value.trim().length > 0
+    ? value.trim()
+    : null;
 }
 
 function toPosix(value) {
@@ -363,7 +399,9 @@ function countBy(values, getKey) {
     counts.set(key, (counts.get(key) ?? 0) + 1);
   }
 
-  return [...counts.entries()].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0]));
+  return [...counts.entries()].sort(
+    (left, right) => right[1] - left[1] || left[0].localeCompare(right[0]),
+  );
 }
 
 function formatCountMap(entries) {
@@ -376,9 +414,12 @@ function formatCountMap(entries) {
 
 function formatOwnedFile(ownerMap, filePath) {
   const owners = ownerMap.get(filePath);
-  const ownerLabel = owners && owners.size > 0
-    ? ` (${[...owners.entries()].map(([slug, name]) => `${name} / ${slug}`).join('; ')})`
-    : '';
+  const ownerLabel =
+    owners && owners.size > 0
+      ? ` (${[...owners.entries()]
+          .map(([slug, name]) => `${name} / ${slug}`)
+          .join('; ')})`
+      : '';
 
   return `${toPosix(path.relative(sourceRoot, filePath))}${ownerLabel}`;
 }

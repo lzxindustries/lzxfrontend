@@ -556,7 +556,12 @@ export function CartEmpty({
   };
 
   return (
-    <div ref={scrollRef} className={container[layout]} hidden={hidden} data-testid="cart-empty">
+    <div
+      ref={scrollRef}
+      className={container[layout]}
+      hidden={hidden}
+      data-testid="cart-empty"
+    >
       <section className="grid gap-6">
         <Text format>
           Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you

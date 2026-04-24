@@ -28,8 +28,6 @@ describe('Support hub page', () => {
   it('renders contact section', () => {
     renderWithRouter(<SupportHub />);
     expect(screen.getByText('Contact Us')).toBeTruthy();
-    expect(
-      screen.getByText('support@lzxindustries.net'),
-    ).toBeTruthy();
+    expect(screen.getByText('support@lzxindustries.net')).toBeTruthy();
   });
 });

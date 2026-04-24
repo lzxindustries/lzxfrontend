@@ -86,7 +86,9 @@ export default function InstrumentSupport() {
             <span className="text-sm opacity-70">Common issues and fixes</span>
           </Link>
           <a
-            href={slugEntry.externalUrl ?? 'https://community.lzxindustries.net'}
+            href={
+              slugEntry.externalUrl ?? 'https://community.lzxindustries.net'
+            }
             target="_blank"
             rel="noreferrer"
             className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
@@ -108,18 +110,14 @@ export default function InstrumentSupport() {
       {troubleshootingTree && (
         <section className="mb-8">
           <h3 className="text-lg font-bold mb-3">Troubleshoot an Issue</h3>
-          <TroubleshootingFlow
-            nodes={troubleshootingTree}
-          />
+          <TroubleshootingFlow nodes={troubleshootingTree} />
         </section>
       )}
 
       {/* FAQ */}
       {faqItems.length > 0 && (
         <section className="mb-8">
-          <h3 className="text-lg font-bold mb-3">
-            Frequently Asked Questions
-          </h3>
+          <h3 className="text-lg font-bold mb-3">Frequently Asked Questions</h3>
           <div className="space-y-1">
             {faqItems.map((item, i) => (
               <Disclosure key={i}>
@@ -146,9 +144,7 @@ export default function InstrumentSupport() {
                       </svg>
                     </Disclosure.Button>
                     <Disclosure.Panel className="pb-3 text-sm text-base-content/70">
-                      <div
-                        dangerouslySetInnerHTML={{__html: item.answer}}
-                      />
+                      <div dangerouslySetInnerHTML={{__html: item.answer}} />
                     </Disclosure.Panel>
                   </div>
                 )}

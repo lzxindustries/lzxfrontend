@@ -4,11 +4,11 @@ Use this with [`yarn audit:content`](../reports/product-content-audit.md) (gener
 
 ## Automated tier (in the report)
 
-| Tier | Meaning |
-|------|---------|
-| **P0** | Product is **active and visible** in the catalog, but has **no shippable Manual** in production: missing `content/docs/...` file or front matter is `draft: true`. |
+| Tier   | Meaning                                                                                                                                                                                                              |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **P0** | Product is **active and visible** in the catalog, but has **no shippable Manual** in production: missing `content/docs/...` file or front matter is `draft: true`.                                                   |
 | **P1** | Visible and has a manual, but **SEO fields are empty** in the catalog snapshot, **or** the plain-text description is **longer than 4,000 characters** (usually reference copy that belongs in Manual or metafields). |
-| **P2** | Inactive, not visible, or in good shape for overview + discoverability. |
+| **P2** | Inactive, not visible, or in good shape for overview + discoverability.                                                                                                                                              |
 
 Re-run the audit after `yarn shopify:sync:pull` and `yarn catalog:bootstrap` so Shopify changes flow into the report.
 

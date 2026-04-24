@@ -27,12 +27,13 @@ export function ProductGrid({
   );
   const [products, setProducts] = useState(initialProducts);
 
-  // props have changes, reset component state
-  const productProps = collection?.products?.nodes || [];
-  if (initialProducts !== productProps) {
-    setInitialProducts(productProps);
-    setProducts(productProps);
-  }
+  useEffect(() => {
+    const nextNodes = collection?.products?.nodes ?? [];
+    setInitialProducts(nextNodes);
+    setProducts(nextNodes);
+    setNextPage(collection?.products?.pageInfo?.hasNextPage ?? false);
+    setEndCursor(collection?.products?.pageInfo?.endCursor ?? undefined);
+  }, [collection.id]);
 
   const fetcher = useFetcher();
 
@@ -52,6 +53,23 @@ export function ProductGrid({
 
   const haveProducts = initialProducts.length > 0;
 
+  const sortedProducts = useMemo(() => {
+    if (!haveProducts) {
+      return [];
+    }
+    return [...products].sort((a, b) => {
+      // Pin Videomancer first
+      const aPin = a.handle === 'videomancer' ? 1 : 0;
+      const bPin = b.handle === 'videomancer' ? 1 : 0;
+      if (aPin !== bPin) return bPin - aPin;
+      const aQty = a.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+      const bQty = b.variants?.nodes?.[0]?.quantityAvailable ?? 0;
+      const aInStock = aQty > 0 ? 1 : 0;
+      const bInStock = bQty > 0 ? 1 : 0;
+      return bInStock - aInStock;
+    });
+  }, [haveProducts, products]);
+
   if (!haveProducts) {
     return (
       <>
@@ -62,20 +80,6 @@ export function ProductGrid({
       </>
     );
   }
-
-  const sortedProducts = useMemo(() => {
-    return [...products].sort((a, b) => {
-      // Pin Videomancer first
-      const aPin = (a as any).handle === 'videomancer' ? 1 : 0;
-      const bPin = (b as any).handle === 'videomancer' ? 1 : 0;
-      if (aPin !== bPin) return bPin - aPin;
-      const aQty = (a as any).variants?.nodes?.[0]?.quantityAvailable ?? 0;
-      const bQty = (b as any).variants?.nodes?.[0]?.quantityAvailable ?? 0;
-      const aInStock = aQty > 0 ? 1 : 0;
-      const bInStock = bQty > 0 ? 1 : 0;
-      return bInStock - aInStock;
-    });
-  }, [products]);
 
   return (
     <>

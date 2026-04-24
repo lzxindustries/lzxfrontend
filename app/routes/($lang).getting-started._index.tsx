@@ -70,8 +70,8 @@ export default function GettingStarted() {
         </p>
         <p className="text-base opacity-60 mb-10">
           A video synthesizer is an electronic instrument which creates or
-          processes video images in real time. Whether you are exploring the
-          art form for the first time or setting up your next system, we have a
+          processes video images in real time. Whether you are exploring the art
+          form for the first time or setting up your next system, we have a
           guide for you.
         </p>
 

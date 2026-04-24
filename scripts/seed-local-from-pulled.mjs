@@ -248,7 +248,9 @@ async function main() {
     .map((e) => e.name)
     .sort();
 
-  console.log(`[seed-local] scanning ${handles.length} handles in ${SOURCE_DIR}`);
+  console.log(
+    `[seed-local] scanning ${handles.length} handles in ${SOURCE_DIR}`,
+  );
 
   const products = {};
   const pricing = {};
@@ -299,9 +301,18 @@ async function main() {
 
   if (DRY_RUN) {
     console.log('[seed-local] DRY RUN — no files written');
-    console.log(`[seed-local]   product-catalog.json: ${catalogJson.length} bytes`);
-    console.log(`[seed-local]   pricing.json:         ${pricingJson.length} bytes`);
-    console.log(`[seed-local]   manifest:             sha256=${manifest.catalogSha256.slice(0, 12)}...`);
+    console.log(
+      `[seed-local]   product-catalog.json: ${catalogJson.length} bytes`,
+    );
+    console.log(
+      `[seed-local]   pricing.json:         ${pricingJson.length} bytes`,
+    );
+    console.log(
+      `[seed-local]   manifest:             sha256=${manifest.catalogSha256.slice(
+        0,
+        12,
+      )}...`,
+    );
     return;
   }
 
@@ -313,7 +324,10 @@ async function main() {
   const existingPricing = await readJson(OUT_PRICING);
   if (existingPricing && !FORCE_PRICING) {
     console.log(
-      `[seed-local] ${path.relative(REPO_ROOT, OUT_PRICING)} already exists — keeping (pass --force to regenerate)`,
+      `[seed-local] ${path.relative(
+        REPO_ROOT,
+        OUT_PRICING,
+      )} already exists — keeping (pass --force to regenerate)`,
     );
   } else {
     await fs.writeFile(OUT_PRICING, pricingJson, 'utf8');
@@ -323,7 +337,9 @@ async function main() {
   console.log(`[seed-local] wrote ${path.relative(REPO_ROOT, OUT_CATALOG)}`);
   console.log(`[seed-local] wrote ${path.relative(REPO_ROOT, OUT_MANIFEST)}`);
   console.log(
-    `[seed-local] done — ${Object.keys(products).length} products, sha256=${manifest.catalogSha256.slice(0, 12)}...`,
+    `[seed-local] done — ${
+      Object.keys(products).length
+    } products, sha256=${manifest.catalogSha256.slice(0, 12)}...`,
   );
 }
 

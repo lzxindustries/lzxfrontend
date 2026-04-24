@@ -28,7 +28,9 @@ describe('forum archive helpers', () => {
     expect(archive.officialTopic).toBeNull();
     expect(archive.relatedTopics).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({slug: 'connecting-liquid-tv-to-visual-cortex'}),
+        expect.objectContaining({
+          slug: 'connecting-liquid-tv-to-visual-cortex',
+        }),
       ]),
     );
     expect(
@@ -49,9 +51,7 @@ describe('forum archive helpers', () => {
     expect(doc?.html).toContain('Archived community reference');
     expect(doc?.html).toContain('Palette Selection Reference');
     expect(doc?.headings).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({text: 'Features'}),
-      ]),
+      expect.arrayContaining([expect.objectContaining({text: 'Features'})]),
     );
   });
 

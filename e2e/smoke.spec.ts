@@ -297,7 +297,9 @@ test.describe('SEO meta', () => {
   test('RSS feed is linked from the document head', async ({page}) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    const rss = page.locator('link[rel="alternate"][type="application/rss+xml"]');
+    const rss = page.locator(
+      'link[rel="alternate"][type="application/rss+xml"]',
+    );
     await expect(rss).toHaveCount(1);
     await expect(rss).toHaveAttribute('href', '/blog.rss.xml');
   });

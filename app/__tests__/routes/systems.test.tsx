@@ -25,7 +25,12 @@ const mockData: CategoryListingData = {
               externalUrl: null,
               isExternal: false,
               badge: null,
-              image: {localPath: null, shopify: null, aspectRatio: '1/1', fit: 'contain'},
+              image: {
+                localPath: null,
+                shopify: null,
+                aspectRatio: '1/1',
+                fit: 'contain',
+              },
             },
             {
               key: 'double-vision-168',
@@ -35,7 +40,12 @@ const mockData: CategoryListingData = {
               externalUrl: null,
               isExternal: false,
               badge: null,
-              image: {localPath: null, shopify: null, aspectRatio: '1/1', fit: 'contain'},
+              image: {
+                localPath: null,
+                shopify: null,
+                aspectRatio: '1/1',
+                fit: 'contain',
+              },
             },
             {
               key: 'double-vision-expander',
@@ -45,7 +55,12 @@ const mockData: CategoryListingData = {
               externalUrl: null,
               isExternal: false,
               badge: null,
-              image: {localPath: null, shopify: null, aspectRatio: '1/1', fit: 'contain'},
+              image: {
+                localPath: null,
+                shopify: null,
+                aspectRatio: '1/1',
+                fit: 'contain',
+              },
             },
           ],
         },
@@ -82,8 +97,12 @@ describe('Systems page', () => {
   it('renders the Gen3 systems section with all Double Vision products', () => {
     renderWithRouter(<SystemsPage />);
 
-    expect(screen.getByRole('heading', {level: 1, name: 'Systems'})).toBeTruthy();
-    expect(screen.getByRole('heading', {level: 2, name: 'Gen3 Series'})).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {level: 1, name: 'Systems'}),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole('heading', {level: 2, name: 'Gen3 Series'}),
+    ).toBeTruthy();
     expect(screen.getByText('Double Vision System')).toBeTruthy();
     expect(screen.getByText('Double Vision 168')).toBeTruthy();
     expect(screen.getByText('Double Vision Expander')).toBeTruthy();
@@ -93,13 +112,19 @@ describe('Systems page', () => {
     renderWithRouter(<SystemsPage />);
 
     expect(
-      screen.getByText('Double Vision System').closest('a')?.getAttribute('href'),
+      screen
+        .getByText('Double Vision System')
+        .closest('a')
+        ?.getAttribute('href'),
     ).toBe('/en-gb/systems/double-vision');
     expect(
       screen.getByText('Double Vision 168').closest('a')?.getAttribute('href'),
     ).toBe('/en-gb/systems/double-vision-168');
     expect(
-      screen.getByText('Double Vision Expander').closest('a')?.getAttribute('href'),
+      screen
+        .getByText('Double Vision Expander')
+        .closest('a')
+        ?.getAttribute('href'),
     ).toBe('/en-gb/systems/double-vision-expander');
   });
 

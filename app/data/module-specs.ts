@@ -212,12 +212,17 @@ function parseVisionaryExternalUrl(raw: string): string | null {
 }
 
 function parseVisionarySubtitle(raw: string): string | null {
-  return raw.match(/## Description\s*\n\s*\n\*\*(.+?)\*\*/s)?.[1]?.trim() ?? null;
+  return (
+    raw.match(/## Description\s*\n\s*\n\*\*(.+?)\*\*/s)?.[1]?.trim() ?? null
+  );
 }
 
 /** Pull a numeric value out of a row in the Specifications markdown table. */
 function parseSpecRow(specsBlock: string, label: RegExp): number | null {
-  const re = new RegExp(`\\|\\s*${label.source}\\s*\\|\\s*([^|]+?)\\s*\\|`, 'i');
+  const re = new RegExp(
+    `\\|\\s*${label.source}\\s*\\|\\s*([^|]+?)\\s*\\|`,
+    'i',
+  );
   const match = specsBlock.match(re);
   if (!match) return null;
   const num = match[1].match(/-?\d+(?:\.\d+)?/);
@@ -270,7 +275,6 @@ for (const [slug, raw] of Object.entries(visionaryMetadataFiles)) {
   });
   existingSlugs.add(slug);
 }
-
 
 /** Get all module spec rows for the master comparison table. */
 export function getAllModuleSpecRows(): ModuleSpecRow[] {

@@ -21,7 +21,9 @@ describe('manual archive fallbacks', () => {
   it('builds manual fallbacks from related discussions when no official thread exists', async () => {
     const response = await moduleManualLoader({
       params: {slug: 'liquid-tv'},
-      request: new Request('https://lzxindustries.net/modules/liquid-tv/manual'),
+      request: new Request(
+        'https://lzxindustries.net/modules/liquid-tv/manual',
+      ),
       context: {} as never,
     } as never);
 

@@ -271,7 +271,8 @@ function parseArgs(args) {
 
 function buildConfig(cli) {
   return {
-    apiVersion: process.env.PUBLIC_STOREFRONT_API_VERSION || DEFAULT_API_VERSION,
+    apiVersion:
+      process.env.PUBLIC_STOREFRONT_API_VERSION || DEFAULT_API_VERSION,
     outputDir: path.resolve(
       process.cwd(),
       cli.values['output-dir'] ?? DEFAULT_OUTPUT_DIR,
@@ -304,7 +305,9 @@ async function runDoctor(config, offline) {
   console.log('Shopify store sync doctor');
   console.log(`Output directory: ${config.outputDir}`);
   console.log(`Source directory: ${config.sourceDir}`);
-  console.log(`Credential checks: ${offline ? 'skipped (--offline)' : 'enabled'}`);
+  console.log(
+    `Credential checks: ${offline ? 'skipped (--offline)' : 'enabled'}`,
+  );
   console.log('');
 
   for (const check of checks) {
@@ -314,7 +317,9 @@ async function runDoctor(config, offline) {
 
   if (hasFailure) {
     console.log('');
-    console.log('Doctor failed. Fix the reported issues before running store sync commands.');
+    console.log(
+      'Doctor failed. Fix the reported issues before running store sync commands.',
+    );
     return false;
   }
 
@@ -343,7 +348,11 @@ async function runSeed(config, cli) {
       continue;
     }
 
-    const resourceDir = path.join(config.outputDir, 'policies', definition.handle);
+    const resourceDir = path.join(
+      config.outputDir,
+      'policies',
+      definition.handle,
+    );
     const targetBodyPath = path.join(resourceDir, 'body.html');
     if (existsSync(targetBodyPath)) {
       summary.skipped += 1;
@@ -437,14 +446,20 @@ async function runDiff(config, cli) {
   assertAdminEnv();
 
   const requestedHandles = cli.values.handle ?? [];
-  const localCatalog = await loadLocalStoreCatalog(config.outputDir, requestedHandles);
+  const localCatalog = await loadLocalStoreCatalog(
+    config.outputDir,
+    requestedHandles,
+  );
   if (localCatalog.handles.length === 0) {
     throw new Error(
       'No local store entries found. Run seed or pull first, or provide one or more --handle values.',
     );
   }
 
-  const remoteCatalog = await fetchRemoteStoreCatalog(config, localCatalog.handles);
+  const remoteCatalog = await fetchRemoteStoreCatalog(
+    config,
+    localCatalog.handles,
+  );
   const diff = compareStoreCatalogs(localCatalog, remoteCatalog);
 
   for (const warning of remoteCatalog.warnings) {
@@ -470,14 +485,20 @@ async function runPush(config, cli) {
   assertAdminEnv();
 
   const requestedHandles = cli.values.handle ?? [];
-  const localCatalog = await loadLocalStoreCatalog(config.outputDir, requestedHandles);
+  const localCatalog = await loadLocalStoreCatalog(
+    config.outputDir,
+    requestedHandles,
+  );
   if (localCatalog.handles.length === 0) {
     throw new Error(
       'No local store entries found. Run seed or pull first, or provide one or more --handle values.',
     );
   }
 
-  const remoteCatalog = await fetchRemoteStoreCatalog(config, localCatalog.handles);
+  const remoteCatalog = await fetchRemoteStoreCatalog(
+    config,
+    localCatalog.handles,
+  );
   const plan = buildPushPlan(localCatalog, remoteCatalog, requestedHandles);
   const apply = cli.flags.apply === true;
 
@@ -488,7 +509,9 @@ async function runPush(config, cli) {
   }
 
   if (plan.summary.actionCount === 0) {
-    console.log(apply ? 'Nothing to apply.' : 'Dry run complete. No changes pending.');
+    console.log(
+      apply ? 'Nothing to apply.' : 'Dry run complete. No changes pending.',
+    );
     return true;
   }
 
@@ -500,7 +523,10 @@ async function runPush(config, cli) {
   const changedHandles = await applyPushPlan(config, plan);
   if (changedHandles.length > 0) {
     console.log('Refreshing local store metadata from Shopify...');
-    const remoteCatalogAfterApply = await fetchRemoteStoreCatalog(config, changedHandles);
+    const remoteCatalogAfterApply = await fetchRemoteStoreCatalog(
+      config,
+      changedHandles,
+    );
     await writeRemoteStoreCatalog(config, remoteCatalogAfterApply);
   }
 
@@ -538,11 +564,13 @@ async function fetchRemoteStoreCatalog(config, handles) {
   console.log('Authenticated.');
 
   const policiesResult = shouldFetchPolicies
-    ? (console.log('Downloading store policies...'), await fetchRemotePolicies(client, handles))
+    ? (console.log('Downloading store policies...'),
+      await fetchRemotePolicies(client, handles))
     : {entries: [], warnings: [], available: true};
 
   const pagesResult = shouldFetchPages
-    ? (console.log('Downloading store pages...'), await fetchRemotePages(client, handles))
+    ? (console.log('Downloading store pages...'),
+      await fetchRemotePages(client, handles))
     : {entries: [], warnings: [], available: true};
 
   return {
@@ -588,7 +616,10 @@ async function fetchRemotePolicies(client, handles) {
   for (const policy of shopPolicies) {
     const definition = POLICY_BY_TYPE.get(policy.type);
     if (!definition) continue;
-    if (policyHandles.length > 0 && !policyHandles.includes(definition.handle)) {
+    if (
+      policyHandles.length > 0 &&
+      !policyHandles.includes(definition.handle)
+    ) {
       continue;
     }
 
@@ -617,15 +648,18 @@ async function fetchRemotePages(client, handles) {
     return {entries: [], warnings: [], available: true};
   }
 
-  const queryHandles = pageHandles.length > 0
-    ? pageHandles
-    : PAGE_DEFINITIONS.map((definition) => definition.handle);
+  const queryHandles =
+    pageHandles.length > 0
+      ? pageHandles
+      : PAGE_DEFINITIONS.map((definition) => definition.handle);
 
   if (queryHandles.length === 0) {
     return [];
   }
 
-  const searchQuery = queryHandles.map((handle) => `handle:${handle}`).join(' OR ');
+  const searchQuery = queryHandles
+    .map((handle) => `handle:${handle}`)
+    .join(' OR ');
   const pages = [];
   let after = null;
 
@@ -692,7 +726,9 @@ async function writeRemoteStoreCatalog(config, remoteCatalog) {
   for (const policy of remoteCatalog.policies) {
     const policyDir = path.join(config.outputDir, 'policies', policy.handle);
     await mkdir(policyDir, {recursive: true});
-    const existingSource = await readOptionalText(path.join(policyDir, 'source.md'));
+    const existingSource = await readOptionalText(
+      path.join(policyDir, 'source.md'),
+    );
     await writeJson(path.join(policyDir, 'policy.json'), {
       id: policy.id,
       handle: policy.handle,
@@ -702,9 +738,17 @@ async function writeRemoteStoreCatalog(config, remoteCatalog) {
       createdAt: policy.createdAt,
       updatedAt: policy.updatedAt,
     });
-    await writeFile(path.join(policyDir, 'body.html'), `${policy.body}\n`, 'utf8');
+    await writeFile(
+      path.join(policyDir, 'body.html'),
+      `${policy.body}\n`,
+      'utf8',
+    );
     if (existingSource !== null) {
-      await writeFile(path.join(policyDir, 'source.md'), existingSource, 'utf8');
+      await writeFile(
+        path.join(policyDir, 'source.md'),
+        existingSource,
+        'utf8',
+      );
     }
     await writeJson(path.join(policyDir, 'sync-state.json'), {
       resourceType: 'policy',
@@ -719,7 +763,9 @@ async function writeRemoteStoreCatalog(config, remoteCatalog) {
   for (const page of remoteCatalog.pages) {
     const pageDir = path.join(config.outputDir, 'pages', page.handle);
     await mkdir(pageDir, {recursive: true});
-    const existingSource = await readOptionalText(path.join(pageDir, 'source.md'));
+    const existingSource = await readOptionalText(
+      path.join(pageDir, 'source.md'),
+    );
     await writeJson(path.join(pageDir, 'page.json'), {
       id: page.id,
       handle: page.handle,
@@ -776,13 +822,13 @@ async function loadLocalStoreCatalog(outputDir, requestedHandles) {
     policyHandles.length > 0
       ? policyHandles
       : hasExplicitHandles
-        ? []
+      ? []
       : await listSubdirectoryNames(path.join(outputDir, 'policies'));
   const resolvedPageHandles =
     pageHandles.length > 0
       ? pageHandles
       : hasExplicitHandles
-        ? []
+      ? []
       : await listSubdirectoryNames(path.join(outputDir, 'pages'));
 
   const policies = new Map();
@@ -815,7 +861,8 @@ async function readLocalPolicyEntry(outputDir, handle) {
     return null;
   }
 
-  const policy = (await readOptionalJson(path.join(resourceDir, 'policy.json'))) ?? {};
+  const policy =
+    (await readOptionalJson(path.join(resourceDir, 'policy.json'))) ?? {};
   const definition = POLICY_BY_HANDLE.get(handle);
   if (!definition) {
     throw new Error(`Unknown policy handle in local catalog: ${handle}`);
@@ -828,7 +875,9 @@ async function readLocalPolicyEntry(outputDir, handle) {
     body: await readText(path.join(resourceDir, 'body.html')),
     raw: {
       policy,
-      syncState: await readOptionalJson(path.join(resourceDir, 'sync-state.json')),
+      syncState: await readOptionalJson(
+        path.join(resourceDir, 'sync-state.json'),
+      ),
       sourceMd: await readOptionalText(path.join(resourceDir, 'source.md')),
     },
   };
@@ -840,7 +889,8 @@ async function readLocalPageEntry(outputDir, handle) {
     return null;
   }
 
-  const page = (await readOptionalJson(path.join(resourceDir, 'page.json'))) ?? {};
+  const page =
+    (await readOptionalJson(path.join(resourceDir, 'page.json'))) ?? {};
   const definition = PAGE_BY_HANDLE.get(handle);
 
   return {
@@ -851,7 +901,9 @@ async function readLocalPageEntry(outputDir, handle) {
     templateSuffix: normalizeNullableString(page.templateSuffix),
     raw: {
       page,
-      syncState: await readOptionalJson(path.join(resourceDir, 'sync-state.json')),
+      syncState: await readOptionalJson(
+        path.join(resourceDir, 'sync-state.json'),
+      ),
       sourceMd: await readOptionalText(path.join(resourceDir, 'source.md')),
     },
   };
@@ -871,10 +923,16 @@ function compareStoreCatalogs(localCatalog, remoteCatalog) {
     ]),
   );
   const remotePolicies = new Map(
-    remoteCatalog.policies.map((entry) => [entry.handle, normalizeRemotePolicy(entry)]),
+    remoteCatalog.policies.map((entry) => [
+      entry.handle,
+      normalizeRemotePolicy(entry),
+    ]),
   );
   const remotePages = new Map(
-    remoteCatalog.pages.map((entry) => [entry.handle, normalizeRemotePage(entry)]),
+    remoteCatalog.pages.map((entry) => [
+      entry.handle,
+      normalizeRemotePage(entry),
+    ]),
   );
   const handles = new Set();
 
@@ -899,7 +957,13 @@ function compareStoreCatalogs(localCatalog, remoteCatalog) {
     const remotePage = remotePages.get(handle);
 
     if (localPolicy || remotePolicy) {
-      compareResource(entries, handle, 'policy', comparableLocalPolicy, remotePolicy);
+      compareResource(
+        entries,
+        handle,
+        'policy',
+        comparableLocalPolicy,
+        remotePolicy,
+      );
       continue;
     }
 
@@ -929,62 +993,76 @@ function compareResource(differences, handle, field, localEntry, remoteEntry) {
 }
 
 function buildPushPlan(localCatalog, remoteCatalog, requestedHandles) {
-  const remotePolicies = new Map(remoteCatalog.policies.map((entry) => [entry.handle, entry]));
-  const remotePages = new Map(remoteCatalog.pages.map((entry) => [entry.handle, entry]));
+  const remotePolicies = new Map(
+    remoteCatalog.policies.map((entry) => [entry.handle, entry]),
+  );
+  const remotePages = new Map(
+    remoteCatalog.pages.map((entry) => [entry.handle, entry]),
+  );
   const items = [];
   const errors = [];
   const warnings = [...remoteCatalog.warnings];
   const explicitPageHandles = filterPageHandles(requestedHandles ?? []);
   const explicitPolicyHandles = filterPolicyHandles(requestedHandles ?? []);
 
-  if (remoteCatalog.capabilities.policies === false && explicitPolicyHandles.length > 0) {
-    errors.push('Policy sync was explicitly requested, but Admin legal policy access is unavailable.');
+  if (
+    remoteCatalog.capabilities.policies === false &&
+    explicitPolicyHandles.length > 0
+  ) {
+    errors.push(
+      'Policy sync was explicitly requested, but Admin legal policy access is unavailable.',
+    );
   }
 
-  if (remoteCatalog.capabilities.pages === false && explicitPageHandles.length > 0) {
-    errors.push('Page sync was explicitly requested, but Admin page access is unavailable.');
+  if (
+    remoteCatalog.capabilities.pages === false &&
+    explicitPageHandles.length > 0
+  ) {
+    errors.push(
+      'Page sync was explicitly requested, but Admin page access is unavailable.',
+    );
   }
 
   if (remoteCatalog.capabilities.policies !== false) {
     for (const [handle, localEntry] of localCatalog.policies) {
-    const definition = POLICY_BY_HANDLE.get(handle);
-    if (!definition) {
-      errors.push(`Unknown policy handle: ${handle}`);
-      continue;
+      const definition = POLICY_BY_HANDLE.get(handle);
+      if (!definition) {
+        errors.push(`Unknown policy handle: ${handle}`);
+        continue;
+      }
+
+      const remoteEntry = remotePolicies.get(handle) ?? null;
+      const changed =
+        stableStringify(normalizeLocalPolicy(localEntry)) !==
+        stableStringify(normalizeRemotePolicy(remoteEntry));
+
+      items.push({
+        kind: 'policy',
+        handle,
+        changed,
+        localEntry,
+        remoteEntry,
+        type: definition.type,
+      });
     }
-
-    const remoteEntry = remotePolicies.get(handle) ?? null;
-    const changed =
-      stableStringify(normalizeLocalPolicy(localEntry)) !==
-      stableStringify(normalizeRemotePolicy(remoteEntry));
-
-    items.push({
-      kind: 'policy',
-      handle,
-      changed,
-      localEntry,
-      remoteEntry,
-      type: definition.type,
-    });
-  }
   }
 
   if (remoteCatalog.capabilities.pages !== false) {
     for (const [handle, localEntry] of localCatalog.pages) {
-    const remoteEntry = remotePages.get(handle) ?? null;
-    const changed =
-      stableStringify(normalizeLocalPage(localEntry)) !==
-      stableStringify(normalizeRemotePage(remoteEntry));
+      const remoteEntry = remotePages.get(handle) ?? null;
+      const changed =
+        stableStringify(normalizeLocalPage(localEntry)) !==
+        stableStringify(normalizeRemotePage(remoteEntry));
 
-    items.push({
-      kind: 'page',
-      handle,
-      changed,
-      localEntry,
-      remoteEntry,
-      create: remoteEntry === null,
-    });
-  }
+      items.push({
+        kind: 'page',
+        handle,
+        changed,
+        localEntry,
+        remoteEntry,
+        create: remoteEntry === null,
+      });
+    }
   }
 
   return {
@@ -1025,7 +1103,9 @@ function printPushPlan(plan, apply) {
       continue;
     }
 
-    console.log(`- ${item.handle}: ${item.create ? 'page create' : 'page update'}`);
+    console.log(
+      `- ${item.handle}: ${item.create ? 'page create' : 'page update'}`,
+    );
   }
 }
 
@@ -1067,7 +1147,9 @@ async function applyPolicyUpdate(client, type, body) {
 
   const payload = data.shopPolicyUpdate;
   if (payload.userErrors?.length > 0) {
-    throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+    throw new Error(
+      payload.userErrors.map((error) => error.message).join(', '),
+    );
   }
 }
 
@@ -1084,7 +1166,9 @@ async function applyPageMutation(client, localEntry, remoteEntry) {
     const data = await client.graphql(PAGE_CREATE_MUTATION, {page: pageInput});
     const payload = data.pageCreate;
     if (payload.userErrors?.length > 0) {
-      throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+      throw new Error(
+        payload.userErrors.map((error) => error.message).join(', '),
+      );
     }
     return;
   }
@@ -1098,7 +1182,9 @@ async function applyPageMutation(client, localEntry, remoteEntry) {
   });
   const payload = data.pageUpdate;
   if (payload.userErrors?.length > 0) {
-    throw new Error(payload.userErrors.map((error) => error.message).join(', '));
+    throw new Error(
+      payload.userErrors.map((error) => error.message).join(', '),
+    );
   }
 }
 
@@ -1196,7 +1282,9 @@ async function checkOutputDirectory(outputDir) {
       label: 'Output directory',
       status: 'fail',
       message:
-        error instanceof Error ? error.message : 'Unable to create output directory',
+        error instanceof Error
+          ? error.message
+          : 'Unable to create output directory',
     };
   }
 }
@@ -1291,11 +1379,15 @@ function createAdminClient(config) {
 }
 
 function filterPolicyHandles(handles) {
-  return dedupe(handles.filter((handle) => POLICY_BY_HANDLE.has(handle))).sort();
+  return dedupe(
+    handles.filter((handle) => POLICY_BY_HANDLE.has(handle)),
+  ).sort();
 }
 
 function filterPageHandles(handles) {
-  return dedupe(handles.filter((handle) => !POLICY_BY_HANDLE.has(handle))).sort();
+  return dedupe(
+    handles.filter((handle) => !POLICY_BY_HANDLE.has(handle)),
+  ).sort();
 }
 
 function dedupe(values) {
@@ -1355,7 +1447,9 @@ function normalizeHtml(value) {
 }
 
 function stripTrailingWhitespace(value) {
-  return String(value ?? '').replace(/[ \t]+$/gm, '').trimEnd();
+  return String(value ?? '')
+    .replace(/[ \t]+$/gm, '')
+    .trimEnd();
 }
 
 function normalizeNullableString(value) {

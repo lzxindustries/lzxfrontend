@@ -83,8 +83,7 @@ function buildRawSections(): CategoryRawSection[] {
 
 function getInstrumentListingArtworkPath(slug: string): string | null {
   return (
-    INSTRUMENT_LISTING_ARTWORK_OVERRIDES[slug] ??
-    getInstrumentArtworkPath(slug)
+    INSTRUMENT_LISTING_ARTWORK_OVERRIDES[slug] ?? getInstrumentArtworkPath(slug)
   );
 }
 
@@ -122,7 +121,8 @@ export const instrumentsCategoryConfig: CategoryListingConfig = {
 
   resolveHasInternalPage: (entry) => !entry.externalUrl,
 
-  resolveBadge: (_entry, ctx) => (ctx.sectionKey === 'legacy' ? 'Legacy' : null),
+  resolveBadge: (_entry, ctx) =>
+    ctx.sectionKey === 'legacy' ? 'Legacy' : null,
 
   // Listing serves as a docs index — only entries with a manual or external link.
   filterEntry: (entry) => entry.hasManual || Boolean(entry.externalUrl),

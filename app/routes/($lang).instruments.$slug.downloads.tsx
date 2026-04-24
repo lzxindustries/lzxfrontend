@@ -25,7 +25,8 @@ export const meta = ({matches}: MetaArgs) => {
 
 export default function InstrumentDownloads() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
-  const {assets, archiveAssets, product, slug} = data as unknown as InstrumentHubData;
+  const {assets, archiveAssets, product, slug} =
+    data as unknown as InstrumentHubData;
   const {release} = useLoaderData<typeof loader>();
   const rel = release as unknown as ResolvedRelease;
   const showGuidedUpdater = shouldShowGuidedUpdaterOnDownloads(slug);

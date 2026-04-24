@@ -58,10 +58,7 @@ export default function ModulePatches() {
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <h2 className="text-2xl font-bold">Patches</h2>
-        <Link
-          to="/patches"
-          className="text-sm text-primary hover:underline"
-        >
+        <Link to="/patches" className="text-sm text-primary hover:underline">
           Browse all patches &rarr;
         </Link>
       </div>

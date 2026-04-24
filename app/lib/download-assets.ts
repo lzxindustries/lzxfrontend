@@ -90,10 +90,10 @@ function compareParsedVersions(
   }
 
   const leftRank = left.suffixType
-    ? (SUFFIX_RANK[left.suffixType] ?? SUFFIX_RANK.other)
+    ? SUFFIX_RANK[left.suffixType] ?? SUFFIX_RANK.other
     : 5;
   const rightRank = right.suffixType
-    ? (SUFFIX_RANK[right.suffixType] ?? SUFFIX_RANK.other)
+    ? SUFFIX_RANK[right.suffixType] ?? SUFFIX_RANK.other
     : 5;
 
   if (leftRank !== rightRank) {
@@ -114,7 +114,10 @@ export function compareDownloadAssetVersions(
   left: DownloadAssetLike,
   right: DownloadAssetLike,
 ): number {
-  return compareParsedVersions(parseAssetVersion(left), parseAssetVersion(right));
+  return compareParsedVersions(
+    parseAssetVersion(left),
+    parseAssetVersion(right),
+  );
 }
 
 export function isFirmwareAsset(asset: DownloadAssetLike): boolean {
@@ -128,7 +131,9 @@ export function isFirmwareAsset(asset: DownloadAssetLike): boolean {
 
 export function groupDownloadAssets<T extends DownloadAssetLike>(assets: T[]) {
   const indexedAssets = assets.map((asset, index) => ({asset, index}));
-  const firmwareAssets = indexedAssets.filter(({asset}) => isFirmwareAsset(asset));
+  const firmwareAssets = indexedAssets.filter(({asset}) =>
+    isFirmwareAsset(asset),
+  );
 
   if (firmwareAssets.length <= 1) {
     return {
@@ -138,7 +143,10 @@ export function groupDownloadAssets<T extends DownloadAssetLike>(assets: T[]) {
   }
 
   const latestFirmware = firmwareAssets.reduce((latest, current) => {
-    const comparison = compareDownloadAssetVersions(current.asset, latest.asset);
+    const comparison = compareDownloadAssetVersions(
+      current.asset,
+      latest.asset,
+    );
 
     if (comparison > 0) {
       return current;

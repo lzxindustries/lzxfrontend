@@ -39,7 +39,9 @@ vi.mock('~/components/VideomancyLandingSections', () => ({
 }));
 
 vi.mock('~/components/ProductCard', () => ({
-  ProductCard: ({product}: {product: {title: string}}) => <div>{product.title}</div>,
+  ProductCard: ({product}: {product: {title: string}}) => (
+    <div>{product.title}</div>
+  ),
 }));
 
 function renderWithRouter(ui: React.ReactElement) {

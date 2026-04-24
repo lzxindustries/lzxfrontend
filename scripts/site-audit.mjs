@@ -19,7 +19,8 @@ import {parseStringPromise} from 'xml2js';
 // Config
 // ---------------------------------------------------------------------------
 
-const BASE_URL = process.argv.find((a) => a.startsWith('http')) || 'https://lzxindustries.net';
+const BASE_URL =
+  process.argv.find((a) => a.startsWith('http')) || 'https://lzxindustries.net';
 const SKIP_SCREENSHOTS = process.argv.includes('--skip-screenshots');
 const SKIP_EXTERNAL = process.argv.includes('--skip-external');
 const OUT_DIR = path.resolve('audit-results');
@@ -55,16 +56,40 @@ const EXTRA_ROUTES = [
 // ---------------------------------------------------------------------------
 
 const ARTIFACT_PATTERNS = [
-  {name: 'raw-mdx-import', regex: /^import\s+\w+\s+from\s+['"]/m, target: 'text'},
-  {name: 'unresolved-jsx-responsive-youtube', regex: /<ResponsiveYouTube/i, target: 'html'},
+  {
+    name: 'raw-mdx-import',
+    regex: /^import\s+\w+\s+from\s+['"]/m,
+    target: 'text',
+  },
+  {
+    name: 'unresolved-jsx-responsive-youtube',
+    regex: /<ResponsiveYouTube/i,
+    target: 'html',
+  },
   {name: 'unresolved-jsx-img-src-var', regex: /<img\s+src=\{/i, target: 'html'},
   {name: 'unresolved-jsx-tabs', regex: /<Tab(?:s|Item)[>\s]/i, target: 'html'},
-  {name: 'raw-admonition', regex: /^:::(note|tip|info|warning|caution|danger|important)/m, target: 'text'},
-  {name: 'docusaurus-category-link', regex: /\/docs\/category\//i, target: 'href'},
+  {
+    name: 'raw-admonition',
+    regex: /^:::(note|tip|info|warning|caution|danger|important)/m,
+    target: 'text',
+  },
+  {
+    name: 'docusaurus-category-link',
+    regex: /\/docs\/category\//i,
+    target: 'href',
+  },
   {name: 'frontmatter-leak-title', regex: /^title:\s/m, target: 'text'},
-  {name: 'frontmatter-leak-sidebar', regex: /sidebar_position:\s/m, target: 'text'},
+  {
+    name: 'frontmatter-leak-sidebar',
+    regex: /sidebar_position:\s/m,
+    target: 'text',
+  },
   {name: 'frontmatter-leak-dashes', regex: /^---\s*$/m, target: 'text'},
-  {name: 'raw-export-function', regex: /^export\s+function\s+/m, target: 'text'},
+  {
+    name: 'raw-export-function',
+    regex: /^export\s+function\s+/m,
+    target: 'text',
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -72,10 +97,12 @@ const ARTIFACT_PATTERNS = [
 // ---------------------------------------------------------------------------
 
 function slugify(urlPath) {
-  return urlPath
-    .replace(/^\//, '')
-    .replace(/\//g, '__')
-    .replace(/[^a-zA-Z0-9_-]/g, '_') || 'index';
+  return (
+    urlPath
+      .replace(/^\//, '')
+      .replace(/\//g, '__')
+      .replace(/[^a-zA-Z0-9_-]/g, '_') || 'index'
+  );
 }
 
 function isInternal(href) {
@@ -134,7 +161,9 @@ async function fetchSitemap(baseUrl) {
     }
     const xml = await res.text();
     const parsed = await parseStringPromise(xml);
-    const urls = (parsed.urlset?.url || []).map((u) => u.loc?.[0]).filter(Boolean);
+    const urls = (parsed.urlset?.url || [])
+      .map((u) => u.loc?.[0])
+      .filter(Boolean);
     console.log(`  Found ${urls.length} URLs in sitemap`);
     return urls;
   } catch (e) {
@@ -249,14 +278,16 @@ async function auditPage(page, urlPath, pageIndex, total) {
     // Detect artifacts — check visible text content
     const bodyText = await page.evaluate(() => {
       // Get text from main content area (or body if no article/main)
-      const el = document.querySelector('article') ||
+      const el =
+        document.querySelector('article') ||
         document.querySelector('main') ||
         document.body;
       return el?.innerText || '';
     });
 
     const bodyHtml = await page.evaluate(() => {
-      const el = document.querySelector('article') ||
+      const el =
+        document.querySelector('article') ||
         document.querySelector('main') ||
         document.body;
       return el?.innerHTML || '';
@@ -270,7 +301,9 @@ async function auditPage(page, urlPath, pageIndex, total) {
     if (articleText !== '' && articleText.length < 50) {
       result.artifacts.push({
         type: 'empty-content',
-        detail: `Article content only ${articleText.length} chars: "${articleText.slice(0, 80)}"`,
+        detail: `Article content only ${
+          articleText.length
+        } chars: "${articleText.slice(0, 80)}"`,
       });
     }
 
@@ -314,7 +347,13 @@ async function auditPage(page, urlPath, pageIndex, total) {
 
     const artifactCount = result.artifacts.length;
     const statusIcon = artifactCount > 0 ? '⚠' : '✓';
-    console.log(`  ${statusIcon} ${label} → ${result.status} | ${result.links.length} links | ${result.images.length} imgs${artifactCount > 0 ? ` | ${artifactCount} artifacts` : ''}`);
+    console.log(
+      `  ${statusIcon} ${label} → ${result.status} | ${
+        result.links.length
+      } links | ${result.images.length} imgs${
+        artifactCount > 0 ? ` | ${artifactCount} artifacts` : ''
+      }`,
+    );
   } catch (e) {
     result.error = e.message;
     console.log(`  ✗ ${label} → ERROR: ${e.message.slice(0, 100)}`);
@@ -330,7 +369,10 @@ async function auditPage(page, urlPath, pageIndex, total) {
 async function checkLink(url, isExternal) {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), isExternal ? EXTERNAL_TIMEOUT : 15_000);
+    const timeout = setTimeout(
+      () => controller.abort(),
+      isExternal ? EXTERNAL_TIMEOUT : 15_000,
+    );
 
     const res = await fetch(url, {
       method: 'HEAD',
@@ -355,7 +397,10 @@ async function checkLink(url, isExternal) {
     if (e.name !== 'AbortError') {
       try {
         const controller2 = new AbortController();
-        const timeout2 = setTimeout(() => controller2.abort(), isExternal ? EXTERNAL_TIMEOUT : 15_000);
+        const timeout2 = setTimeout(
+          () => controller2.abort(),
+          isExternal ? EXTERNAL_TIMEOUT : 15_000,
+        );
         const res = await fetch(url, {
           method: 'GET',
           redirect: 'follow',
@@ -426,7 +471,12 @@ async function main() {
           ignoreHTTPSErrors: true,
         });
         const page = await context.newPage();
-        const result = await auditPage(page, urlPath, paths.indexOf(urlPath), paths.length);
+        const result = await auditPage(
+          page,
+          urlPath,
+          paths.indexOf(urlPath),
+          paths.length,
+        );
         await context.close();
         return result;
       }),
@@ -447,7 +497,8 @@ async function main() {
       for (const img of result.images) {
         const normalized = normalizeUrl(img.src, result.url);
         if (!normalized) continue;
-        if (!allImageSrcs.has(normalized)) allImageSrcs.set(normalized, new Set());
+        if (!allImageSrcs.has(normalized))
+          allImageSrcs.set(normalized, new Set());
         allImageSrcs.get(normalized).add(result.path);
       }
     }
@@ -480,7 +531,11 @@ async function main() {
   );
 
   const brokenInternal = internalResults.filter((r) => !r.ok);
-  console.log(`  ✓ Internal: ${internalResults.filter((r) => r.ok).length} ok, ${brokenInternal.length} broken`);
+  console.log(
+    `  ✓ Internal: ${internalResults.filter((r) => r.ok).length} ok, ${
+      brokenInternal.length
+    } broken`,
+  );
 
   // Check external links
   let externalResults = [];
@@ -492,7 +547,11 @@ async function main() {
     );
 
     const brokenExternal = externalResults.filter((r) => !r.ok);
-    console.log(`  ✓ External: ${externalResults.filter((r) => r.ok).length} ok, ${brokenExternal.length} broken/timeout`);
+    console.log(
+      `  ✓ External: ${externalResults.filter((r) => r.ok).length} ok, ${
+        brokenExternal.length
+      } broken/timeout`,
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -572,9 +631,15 @@ async function main() {
     summary: {
       pagesScanned: pageResults.length,
       pagesWithArtifacts: pagesWithArtifacts.length,
-      totalArtifacts: pagesWithArtifacts.reduce((sum, p) => sum + p.artifacts.length, 0),
-      pagesWithErrors: pageResults.filter((r) => r.status >= 400 || r.error).length,
-      pagesWithConsoleErrors: pageResults.filter((r) => r.consoleErrors.length > 0).length,
+      totalArtifacts: pagesWithArtifacts.reduce(
+        (sum, p) => sum + p.artifacts.length,
+        0,
+      ),
+      pagesWithErrors: pageResults.filter((r) => r.status >= 400 || r.error)
+        .length,
+      pagesWithConsoleErrors: pageResults.filter(
+        (r) => r.consoleErrors.length > 0,
+      ).length,
     },
     pages: pagesWithArtifacts.map((r) => ({
       path: r.path,
@@ -632,14 +697,22 @@ async function main() {
   console.log('AUDIT SUMMARY');
   console.log('='.repeat(60));
   console.log(`Pages scanned:         ${pageResults.length}`);
-  console.log(`Pages with errors:     ${artifactReport.summary.pagesWithErrors}`);
-  console.log(`Pages with artifacts:  ${artifactReport.summary.pagesWithArtifacts}`);
-  console.log(`Total artifacts:       ${artifactReport.summary.totalArtifacts}`);
+  console.log(
+    `Pages with errors:     ${artifactReport.summary.pagesWithErrors}`,
+  );
+  console.log(
+    `Pages with artifacts:  ${artifactReport.summary.pagesWithArtifacts}`,
+  );
+  console.log(
+    `Total artifacts:       ${artifactReport.summary.totalArtifacts}`,
+  );
   console.log(`Broken internal links: ${linkReport.summary.brokenInternal}`);
   console.log(`Broken external links: ${linkReport.summary.brokenExternal}`);
   console.log(`Broken images:         ${imageReport.summary.brokenImages}`);
   console.log(`Redirected links:      ${linkReport.redirectedLinks.length}`);
-  console.log(`Console errors:        ${artifactReport.summary.pagesWithConsoleErrors} pages`);
+  console.log(
+    `Console errors:        ${artifactReport.summary.pagesWithConsoleErrors} pages`,
+  );
   console.log('='.repeat(60));
 
   if (brokenInternal.length > 0) {
@@ -677,7 +750,11 @@ async function main() {
   if (errorPages.length > 0) {
     console.log('\n❌ Error pages:');
     for (const p of errorPages) {
-      console.log(`  ${p.status || 'ERR'} ${p.path}${p.error ? ` (${p.error.slice(0, 60)})` : ''}`);
+      console.log(
+        `  ${p.status || 'ERR'} ${p.path}${
+          p.error ? ` (${p.error.slice(0, 60)})` : ''
+        }`,
+      );
     }
   }
 
@@ -688,7 +765,11 @@ async function main() {
   console.log('  artifact-report.json');
   console.log('  full-results.json');
   if (!SKIP_SCREENSHOTS) {
-    console.log(`  screenshots/ (${pageResults.filter((r) => r.screenshotFile).length} files)`);
+    console.log(
+      `  screenshots/ (${
+        pageResults.filter((r) => r.screenshotFile).length
+      } files)`,
+    );
   }
 }
 

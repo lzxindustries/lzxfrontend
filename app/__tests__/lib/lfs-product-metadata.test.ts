@@ -16,9 +16,7 @@ describe('LFS product metadata helpers', () => {
     expect(getLfsProductSubtitle('Video Logic')).toBe(
       'Boolean Video Logic Processor',
     );
-    expect(getLfsProductSubtitle('DC Distro 3A')).toBe(
-      'DC Power Distributor',
-    );
+    expect(getLfsProductSubtitle('DC Distro 3A')).toBe('DC Power Distributor');
     expect(getLfsProductSubtitle('Color Chords')).toBe(
       'Four Channel Summing Matrix',
     );
@@ -88,7 +86,9 @@ describe('LFS product metadata helpers', () => {
       'andor-1-media-player-deluxe-accessories-pack',
     );
 
-    expect(liquidTv?.descriptionHtml).toContain('Liquid TV is a compact color video monitor');
+    expect(liquidTv?.descriptionHtml).toContain(
+      'Liquid TV is a compact color video monitor',
+    );
     expect(liquidTv?.specsHtml).toContain('16 HP');
     expect(liquidTv?.galleryImages.length).toBeGreaterThan(0);
 
@@ -153,7 +153,9 @@ describe('LFS product metadata helpers', () => {
   });
 
   it('merges supplemental product roots into archive and gallery content', () => {
-    const alternateFrontpanel = getLfsProductContentBySlug('alternate-frontpanel');
+    const alternateFrontpanel = getLfsProductContentBySlug(
+      'alternate-frontpanel',
+    );
     const tbc2 = getLfsProductContentBySlug('tbc2');
 
     expect(alternateFrontpanel?.galleryImages).toEqual(
@@ -227,7 +229,9 @@ describe('LFS product metadata helpers', () => {
       expect.arrayContaining([
         expect.objectContaining({
           relativePath: 'packaging/orion_16hp_product_box_fantastapack.pdf',
-          href: expect.stringContaining('orion_16hp_product_box_fantastapack.pdf'),
+          href: expect.stringContaining(
+            'orion_16hp_product_box_fantastapack.pdf',
+          ),
         }),
         expect.objectContaining({
           relativePath: '_ingest/panel-art/lzx_arc_fpn_v1.2.ai',

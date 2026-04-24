@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated: April 16, 2026*
+_Last updated: April 16, 2026_
 
 LZX Industries LLC ("LZX," "we," "us," or "our") respects your privacy and is committed to protecting your personal information. This policy explains what data we collect, how we use it, and your rights regarding that data.
 
@@ -9,6 +9,7 @@ LZX Industries LLC ("LZX," "we," "us," or "our") respects your privacy and is co
 When you visit our website or place an order, we may collect the following information:
 
 **Information you provide directly:**
+
 - Name
 - Email address
 - Shipping and billing address
@@ -17,6 +18,7 @@ When you visit our website or place an order, we may collect the following infor
 - Communications you send to us (support requests, emails)
 
 **Information collected automatically:**
+
 - IP address
 - Browser type and version
 - Device type and operating system
@@ -43,14 +45,14 @@ We do not directly collect, store, or have access to your full credit card numbe
 
 We use the following third-party services that may receive or process your personal information:
 
-| Service | Purpose | Data Shared |
-|---|---|---|
-| **Shopify** | E-commerce platform, order management | Name, address, email, order details |
-| **Shopify Payments / payment processors** | Payment processing | Payment information |
-| **USPS** | Shipping and delivery | Name, shipping address |
-| **UPS** | Shipping and delivery | Name, shipping address, phone number |
-| **Mailchimp** | Email newsletter | Email address (with your consent) |
-| **Analytics providers** | Website analytics | IP address, browsing behavior (anonymized where possible) |
+| Service                                   | Purpose                               | Data Shared                                               |
+| ----------------------------------------- | ------------------------------------- | --------------------------------------------------------- |
+| **Shopify**                               | E-commerce platform, order management | Name, address, email, order details                       |
+| **Shopify Payments / payment processors** | Payment processing                    | Payment information                                       |
+| **USPS**                                  | Shipping and delivery                 | Name, shipping address                                    |
+| **UPS**                                   | Shipping and delivery                 | Name, shipping address, phone number                      |
+| **Mailchimp**                             | Email newsletter                      | Email address (with your consent)                         |
+| **Analytics providers**                   | Website analytics                     | IP address, browsing behavior (anonymized where possible) |
 
 These services have their own privacy policies governing their use of your data. We do not control and are not responsible for their privacy practices.
 

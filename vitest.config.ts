@@ -1,9 +1,10 @@
 /// <reference types="vitest" />
-import {defineConfig} from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import {defineConfig, type UserConfig} from 'vitest/config';
 
 export default defineConfig({
-  plugins: [tsconfigPaths() as any],
+  // `vite-tsconfig-paths` is typed against the app Vite; Vitest bundles another Vite—types do not unify.
+  plugins: [tsconfigPaths() as NonNullable<UserConfig['plugins']>[number]],
   test: {
     globals: true,
     // `jsdom` 29+ pulls `html-encoding-sniffer` 6, which depends on
@@ -16,7 +17,12 @@ export default defineConfig({
     include: ['app/**/*.test.{ts,tsx}'],
     coverage: {
       provider: 'v8',
-      include: ['app/lib/**', 'app/controllers/**', 'app/views/**'],
+      include: [
+        'app/lib/**',
+        'app/data/**',
+        'app/hooks/**',
+        'app/components/**',
+      ],
       exclude: ['app/**/*.test.*'],
     },
   },

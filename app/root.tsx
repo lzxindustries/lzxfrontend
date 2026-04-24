@@ -25,11 +25,7 @@ import {GenericError} from './components/GenericError';
 import {MetaPixel} from './components/MetaPixel';
 import {NotFound} from './components/NotFound';
 import {useAnalytics} from './hooks/useAnalytics';
-import {
-  DEFAULT_LOCALE,
-  getCartId,
-  type EnhancedMenu,
-} from './lib/utils';
+import {DEFAULT_LOCALE, getCartId, type EnhancedMenu} from './lib/utils';
 import {
   SHOP_NAME,
   SHOP_DESCRIPTION,
@@ -122,8 +118,18 @@ export default function App() {
   );
 }
 
+type SeoMetaInput = Parameters<typeof getSeoMeta>[0];
+
 export const meta = ({matches}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(...matches.map((match) => (match.data as any)?.seo));
+  return getSeoMeta(
+    ...matches.map((match) => {
+      const data = match.data;
+      if (!data || typeof data !== 'object') {
+        return undefined;
+      }
+      return 'seo' in data ? (data as {seo: SeoMetaInput}).seo : undefined;
+    }),
+  );
 };
 
 export function ErrorBoundary({error}: {error: Error}) {

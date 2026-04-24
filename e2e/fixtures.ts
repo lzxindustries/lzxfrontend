@@ -95,7 +95,9 @@ export function trackConsoleErrors(page: Page) {
     expectNone() {
       if (errors.length > 0) {
         throw new Error(
-          `Unexpected console errors:\n${errors.map((e) => `  • ${e}`).join('\n')}`,
+          `Unexpected console errors:\n${errors
+            .map((e) => `  • ${e}`)
+            .join('\n')}`,
         );
       }
     },

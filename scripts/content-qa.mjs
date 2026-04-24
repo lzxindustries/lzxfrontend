@@ -33,7 +33,12 @@ for (const file of allFiles) {
   const linkRe = new RegExp(internalLinkRe.source, 'g');
   while ((match = linkRe.exec(content)) !== null) {
     const href = match[2];
-    if (/^https?:\/\//.test(href) || href.startsWith('mailto:') || href.startsWith('#')) continue;
+    if (
+      /^https?:\/\//.test(href) ||
+      href.startsWith('mailto:') ||
+      href.startsWith('#')
+    )
+      continue;
 
     if (href.includes('/docs/category/')) {
       fileIssues.push(`Docusaurus category link: ${href}`);
@@ -53,7 +58,12 @@ for (const file of allFiles) {
       }
     }
 
-    if (href.startsWith('/docs/') && !href.endsWith('.md') && !/\.md[#?]/.test(href) && href.includes('category')) {
+    if (
+      href.startsWith('/docs/') &&
+      !href.endsWith('.md') &&
+      !/\.md[#?]/.test(href) &&
+      href.includes('category')
+    ) {
       fileIssues.push(`Potential broken category link: ${href}`);
     }
   }
@@ -110,7 +120,10 @@ for (const file of allFiles) {
   }
 
   if (fileIssues.length > 0) {
-    filesNeedingEdits.push({file: path.relative('.', file), issues: fileIssues});
+    filesNeedingEdits.push({
+      file: path.relative('.', file),
+      issues: fileIssues,
+    });
   }
 }
 
@@ -129,5 +142,7 @@ if (filesNeedingEdits.length === 0) {
     }
   }
   console.log();
-  console.log(`Total: ${totalIssues} issues in ${filesNeedingEdits.length} files`);
+  console.log(
+    `Total: ${totalIssues} issues in ${filesNeedingEdits.length} files`,
+  );
 }
