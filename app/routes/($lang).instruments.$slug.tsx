@@ -15,29 +15,8 @@ import {buildInstrumentTabs} from '~/data/hub-tabs';
 import {hasCuratedLearnContent} from '~/data/instrument-learn-cards';
 import {loadSupportContent} from '~/data/support-content.server';
 import {SUPPORT_MANIFEST} from '~/data/support-manifest';
-import {getSignalFlowForProduct} from '~/components/SignalFlowDiagram';
 import {getTroubleshootingTree} from '~/components/TroubleshootingFlow';
 import {routeHeaders} from '~/data/cache';
-
-/**
- * True when the Setup tab would have meaningful first-run content for
- * this instrument: authored prerequisites, a signal flow diagram, or
- * a firmware updater entry point. Otherwise the tab would render only
- * a generic template that duplicates material in the Manual.
- *
- * Computed in the loader (not the component) because
- * `loadSupportContent` lives in a `.server.ts` module and cannot be
- * pulled into the client bundle.
- */
-function computeHasSetupContent(slug: string): boolean {
-  const supportContent = loadSupportContent(slug);
-  const supportRecord = SUPPORT_MANIFEST[slug];
-  return (
-    (supportContent.setupPrerequisites?.length ?? 0) > 0 ||
-    Boolean(getSignalFlowForProduct(slug)) ||
-    supportRecord?.connectSupported === true
-  );
-}
 
 /** True when the Support tab should appear in the hub nav (manifest, FAQ, or guided troubleshooting). */
 function computeHasInstrumentSupportNav(slug: string): boolean {
@@ -79,20 +58,17 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
   }
 
   const recommended = getRecommendedProducts(context, data.product.id);
-  const hasSetupContent = computeHasSetupContent(slug);
   const hasSupportNav = computeHasInstrumentSupportNav(slug);
 
   return defer({
     ...data,
     recommended,
-    hasSetupContent,
     hasSupportNav,
   });
 }
 
 export type InstrumentLayoutLoaderData = InstrumentHubData & {
   recommended: ReturnType<typeof getRecommendedProducts>;
-  hasSetupContent: boolean;
   hasSupportNav: boolean;
 };
 
@@ -108,8 +84,6 @@ export default function InstrumentLayout() {
     features,
   } = data as unknown as InstrumentHubData;
   const slug = (data as unknown as InstrumentHubData).slug;
-  const hasSetupContent = (data as unknown as InstrumentLayoutLoaderData)
-    .hasSetupContent;
   const hasSupportNav = (data as unknown as InstrumentLayoutLoaderData)
     .hasSupportNav;
 
@@ -127,7 +101,6 @@ export default function InstrumentLayout() {
     slug,
     hasManual,
     hasCuratedLearn: hasCuratedLearnContent(slug),
-    hasSetupContent,
     downloadCount: assets.length + archiveAssets.length,
     hasSpecs: Boolean(hasSpecs),
     hasSupport: hasSupportNav,

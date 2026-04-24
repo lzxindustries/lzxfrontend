@@ -84,17 +84,17 @@ describe('Getting Started PATHS', () => {
     expect(titles).toContain('Start with Videomancer');
   });
 
-  it('Videomancer path links to instrument setup', () => {
+  it('Videomancer path links to the instrument Quick Start Guide', () => {
     const vm = PATHS.find(
       (p: {title: string}) => p.title === 'Start with Videomancer',
     );
-    expect(vm!.to).toContain('/instruments/videomancer');
+    expect(vm!.to).toBe('/instruments/videomancer/manual/quick-start');
   });
 });
 
 describe('Instrument Learn Cards', () => {
-  it('default cards have at least 5 cards', () => {
-    expect(DEFAULT_LEARN_CARDS.length).toBeGreaterThanOrEqual(5);
+  it('default cards have at least 4 cards', () => {
+    expect(DEFAULT_LEARN_CARDS.length).toBeGreaterThanOrEqual(4);
   });
 
   it('each default card has title, description, and icon', () => {
@@ -112,9 +112,11 @@ describe('Instrument Learn Cards', () => {
     }
   });
 
-  it('default cards include Getting Started card', () => {
-    const gs = DEFAULT_LEARN_CARDS.find((c) => c.title === 'Getting Started');
-    expect(gs).toBeDefined();
+  it('default cards do not include a Getting Started / Setup card', () => {
+    const gs = DEFAULT_LEARN_CARDS.find(
+      (c) => c.title === 'Getting Started' || c.to === 'setup',
+    );
+    expect(gs).toBeUndefined();
   });
 
   it('default cards include Community Forum as external', () => {
@@ -206,12 +208,12 @@ describe('getLearnCardHref', () => {
     expect(href).toBe('/getting-started');
   });
 
-  it('resolves relative `to` against basePath (regression: /learn/setup 404)', () => {
+  it('resolves relative `to` against basePath (regression: /learn/<path> 404)', () => {
     const href = getLearnCardHref(
-      {title: 't', description: 'd', icon: 'i', to: 'setup'},
+      {title: 't', description: 'd', icon: 'i', to: 'support'},
       basePath,
     );
-    expect(href).toBe('/instruments/chromagnon/setup');
+    expect(href).toBe('/instruments/chromagnon/support');
     expect(href).not.toContain('/learn/');
   });
 

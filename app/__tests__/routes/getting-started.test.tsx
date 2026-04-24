@@ -26,7 +26,7 @@ describe('Getting Started index page', () => {
     renderWithRouter(<GettingStarted />);
     expect(screen.getByText('Start Learning')).toBeTruthy();
     expect(screen.getByText('Build Your System')).toBeTruthy();
-    expect(screen.getByText('Set Up Videomancer')).toBeTruthy();
+    expect(screen.getByText('Videomancer Quick Start')).toBeTruthy();
   });
 
   it('links to correct routes', () => {
@@ -41,9 +41,9 @@ describe('Getting Started index page', () => {
       '/getting-started/modular',
     );
 
-    const vmLink = screen.getByText('Set Up Videomancer');
+    const vmLink = screen.getByText('Videomancer Quick Start');
     expect(vmLink.closest('a')?.getAttribute('href')).toBe(
-      '/instruments/videomancer/setup',
+      '/instruments/videomancer/manual/quick-start',
     );
   });
 });

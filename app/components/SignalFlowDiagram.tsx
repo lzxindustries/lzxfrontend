@@ -1,5 +1,5 @@
 /**
- * SVG signal-flow diagram for product setup tabs.
+ * SVG signal-flow diagram for product hubs.
  * Shows how a product connects in a typical video synthesis signal chain.
  */
 import {useState} from 'react';

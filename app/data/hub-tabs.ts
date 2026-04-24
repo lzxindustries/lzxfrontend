@@ -15,7 +15,6 @@
  * |------------|--------------------------------------------------|------------------------------------------------------------|
  * | Overview   | "What is this product and can I buy it?"         | Hero, gallery, subtitle, buy box, recommended products.    |
  * | Learn      | "Where do I start with curated lessons?"         | Curated launchpad cards to key doc pages and tutorials.    |
- * | Setup      | "How do I get first signal from this product?"   | First-run prerequisites, signal flow, quick-start steps.   |
  * | Manual     | "How does this work in detail?"                  | Reference documentation rendered from `content/docs/...`.  |
  * | Patches    | "What example patches exist for this module?"    | Signal routing recipes and example patches from lzxdb.     |
  * | Videos     | "What video tutorials or demos cover this?"      | Curated and community video embeds (module hubs; `/videos` routes remain for instruments). |
@@ -34,14 +33,16 @@
  * - The downloads tab is labelled **Downloads** everywhere. The
  *   legacy "Software & Downloads" variant collapsed into the same
  *   tab.
- * - **Instrument** hubs order tabs: Overview → Learn → Setup → Manual →
- *   Downloads → Specs → Support. Learn/Setup/Manual/Downloads/Specs/Support
+ * - **Instrument** hubs order tabs: Overview → Learn → Manual →
+ *   Downloads → Specs → Support. Learn/Manual/Downloads/Specs/Support
  *   are omitted from the nav when they would be empty; **Overview** is always
  *   shown. Instrument `/videos` URLs stay available but are not a hub tab.
- * - **Learn** and **Setup** are reserved for product lines that have
- *   curated per-product content. The tab builder hides Learn when
- *   only the generic launchpad cards would render, because those
- *   duplicate the rest of the nav.
+ *   First-run instructions belong in the per-instrument Quick Start Guide
+ *   (for Videomancer, `/instruments/videomancer/manual/quick-start`); a
+ *   dedicated Setup tab duplicated that content and has been removed.
+ * - **Learn** is reserved for product lines that have curated per-product
+ *   content. The tab builder hides Learn when only the generic launchpad
+ *   cards would render, because those duplicate the rest of the nav.
  *
  * Adding a new tab: start here. Route file changes without a matching
  * update to this taxonomy are the anti-pattern.
@@ -58,7 +59,6 @@ export interface InstrumentTabContext {
   slug: string;
   hasManual: boolean;
   hasCuratedLearn: boolean;
-  hasSetupContent: boolean;
   downloadCount: number;
   hasSpecs: boolean;
   hasSupport: boolean;
@@ -83,7 +83,6 @@ export function buildInstrumentTabs(ctx: InstrumentTabContext): HubTab[] {
   return [
     {label: 'Overview', to: base},
     {label: 'Learn', to: `${base}/learn`, hidden: !ctx.hasCuratedLearn},
-    {label: 'Setup', to: `${base}/setup`, hidden: !ctx.hasSetupContent},
     {label: MANUAL_LABEL, to: `${base}/manual`, hidden: !ctx.hasManual},
     {
       label: DOWNLOADS_LABEL,
@@ -97,7 +96,7 @@ export function buildInstrumentTabs(ctx: InstrumentTabContext): HubTab[] {
 
 /**
  * Returns the ordered set of tabs for a module hub. Modules do not
- * currently surface Learn or Setup tabs — those content shapes are
+ * currently surface a Learn tab — that content shape is
  * instrument-specific. Patches takes the educational slot for modules.
  */
 export function buildModuleTabs(ctx: ModuleTabContext): HubTab[] {

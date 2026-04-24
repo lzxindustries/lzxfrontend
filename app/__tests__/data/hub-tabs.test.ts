@@ -15,8 +15,10 @@ import {
  *   to the site-wide `/docs` hub.
  * - The downloads tab is always labelled "Downloads" (never
  *   "Software & Downloads").
- * - Learn and Setup surface only when meaningful per-product content
- *   exists. Empty defaults must not promote a tab.
+ * - Learn surfaces only when meaningful per-product content exists.
+ *   Empty defaults must not promote a tab.
+ * - Instrument hubs have no standalone Setup tab; first-run content
+ *   lives in the per-instrument Quick Start Guide inside the Manual.
  * - Instrument hubs omit Manual, Downloads, Specs, and Support from the
  *   nav when empty; Overview is always shown. (No Videos tab — use `/videos` URL.)
  * - Module tab ordering is deterministic with Patches in the educational slot.
@@ -27,7 +29,6 @@ describe('buildInstrumentTabs', () => {
     slug: 'videomancer',
     hasManual: true,
     hasCuratedLearn: true,
-    hasSetupContent: true,
     downloadCount: 2,
     hasSpecs: true,
     hasSupport: true,
@@ -48,12 +49,16 @@ describe('buildInstrumentTabs', () => {
     expect(tabs.map((t) => t.label)).toEqual([
       'Overview',
       'Learn',
-      'Setup',
       'Manual',
       'Downloads',
       'Specs',
       'Support',
     ]);
+  });
+
+  it('does not include a Setup tab', () => {
+    const tabs = buildInstrumentTabs(base);
+    expect(tabs.map((t) => t.label)).not.toContain('Setup');
   });
 
   it('hides Manual when no manual is published', () => {
@@ -66,12 +71,6 @@ describe('buildInstrumentTabs', () => {
     const tabs = buildInstrumentTabs({...base, hasCuratedLearn: false});
     const learn = tabs.find((t) => t.label === 'Learn');
     expect(learn?.hidden).toBe(true);
-  });
-
-  it('hides Setup when no first-run content exists', () => {
-    const tabs = buildInstrumentTabs({...base, hasSetupContent: false});
-    const setup = tabs.find((t) => t.label === 'Setup');
-    expect(setup?.hidden).toBe(true);
   });
 
   it('hides content tabs when their data is empty', () => {
@@ -95,7 +94,6 @@ describe('buildInstrumentTabs', () => {
       slug: 'videomancer',
       hasManual: false,
       hasCuratedLearn: false,
-      hasSetupContent: false,
       downloadCount: 0,
       hasSpecs: false,
       hasSupport: false,

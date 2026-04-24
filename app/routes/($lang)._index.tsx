@@ -289,10 +289,10 @@ export default function Home() {
               Getting Started Guide
             </Link>
             <Link
-              to="/instruments/videomancer/setup"
+              to="/instruments/videomancer/manual/quick-start"
               className="btn btn-lg btn-outline border-primary text-primary hover:bg-primary/10"
             >
-              Set Up Videomancer
+              Videomancer Quick Start
             </Link>
           </div>
         </div>

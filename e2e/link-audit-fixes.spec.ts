@@ -160,18 +160,20 @@ test.describe('Link audit regressions', () => {
     expect(response.status()).toBe(200);
   });
 
-  test('instrument Learn card for setup links to /instruments/<slug>/setup (not /learn/setup)', async ({
+  test('instrument Learn page no longer surfaces the retired Setup card', async ({
     page,
   }) => {
+    // The Setup tab/route was removed in favor of per-instrument Quick Start
+    // guides inside the Manual. The Learn page must not link to any
+    // `/instruments/<slug>/setup` URL (which would 404) nor to the legacy
+    // `/learn/setup` path.
     await page.goto('/instruments/chromagnon/learn', {
       waitUntil: 'domcontentloaded',
     });
-    const setupHref = await page
-      .locator('a', {hasText: /setup/i})
-      .first()
-      .getAttribute('href');
-    expect(setupHref).toBe('/instruments/chromagnon/setup');
-    expect(setupHref).not.toContain('/learn/setup');
+    const setupLinks = await page
+      .locator('a[href$="/setup"], a[href*="/learn/setup"]')
+      .count();
+    expect(setupLinks).toBe(0);
   });
 
   test('chromagnon overview does not link to /manual/quick-start', async ({

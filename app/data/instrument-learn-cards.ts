@@ -8,9 +8,9 @@
  * The Learn tab is **only** surfaced for instruments that have an
  * entry in `INSTRUMENT_LEARN_CARDS`. Default fallback cards exist for
  * the route itself, but at the IA level they duplicate the hub nav
- * (Setup, Manual, Videos, Patches) and would only add redundant
- * noise. The hub tab contract requires per-instrument curation before
- * we promote the tab.
+ * (Manual, Videos, Patches) and would only add redundant noise. The
+ * hub tab contract requires per-instrument curation before we promote
+ * the tab.
  */
 
 export interface LearnCard {
@@ -29,12 +29,6 @@ export interface LearnCard {
 
 /** Fallback cards used for instruments without specific card sets. */
 export const DEFAULT_LEARN_CARDS: LearnCard[] = [
-  {
-    title: 'Getting Started',
-    description: 'Unboxing, connecting, and your first power-on.',
-    to: 'setup',
-    icon: '🚀',
-  },
   {
     title: 'User Manual',
     description: 'Complete reference for controls, connections, and functions.',
@@ -147,18 +141,12 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
   ],
 
   /**
-   * Single-manual instruments: the Learn tab highlights setup, the reference
-   * manual, the Support hub, and community resources. (Patches stay on the
-   * instrument hub nav to avoid a sixth card that mostly duplicates it.)
+   * Single-manual instruments: the Learn tab highlights the reference manual,
+   * the Support hub, and community resources. (Patches stay on the instrument
+   * hub nav to avoid a fifth card that mostly duplicates it.) First-run
+   * instructions live inside the manual itself rather than a dedicated card.
    */
   chromagnon: [
-    {
-      title: 'Getting started',
-      description:
-        'Unbox Chromagnon, connect power and video I/O, and make your first patch.',
-      to: 'setup',
-      icon: '🚀',
-    },
     {
       title: 'User manual',
       description:
@@ -191,13 +179,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
 
   vidiot: [
     {
-      title: 'Getting started',
-      description:
-        'Power, video format, and your first Vidiot patch from the front panel.',
-      to: 'setup',
-      icon: '🚀',
-    },
-    {
       title: 'User manual',
       description:
         'Layout, LFO shape generator, 2D keyer, and full control reference.',
@@ -229,12 +210,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
 
   'andor-1-media-player': [
     {
-      title: 'Getting started',
-      description: 'Cabling, power, and playing your first clip or stream.',
-      to: 'setup',
-      icon: '🚀',
-    },
-    {
       title: 'User manual',
       description:
         'Interface, I/O, storage, and control reference for Andor 1.',
@@ -265,13 +240,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
   ],
 
   'double-vision': [
-    {
-      title: 'Getting started',
-      description:
-        'Rack, power, and the core Double Vision system signal path.',
-      to: 'setup',
-      icon: '🚀',
-    },
     {
       title: 'User manual',
       description:
@@ -305,13 +273,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
 
   'double-vision-168': [
     {
-      title: 'Getting started',
-      description:
-        'Rack, power, and the Double Vision 168 (6U) monitor workflow.',
-      to: 'setup',
-      icon: '🚀',
-    },
-    {
       title: 'User manual',
       description:
         '6U case layout, monitor I/O, and system reference for Double Vision 168.',
@@ -342,13 +303,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
   ],
 
   'double-vision-expander': [
-    {
-      title: 'Getting started',
-      description:
-        'Install the expander, power, and integrate it with your Double Vision rig.',
-      to: 'setup',
-      icon: '🚀',
-    },
     {
       title: 'User manual',
       description:

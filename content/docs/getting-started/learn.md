@@ -37,5 +37,5 @@ Video synthesis borrows terms from modular audio, broadcast video, and analog co
 ## Where to next
 
 - **Set up a system.** [Start with Modular](/getting-started/modular) walks through installation, your first patch, and troubleshooting.
-- **Set up Videomancer.** If you bought the standalone instrument, jump to [Videomancer setup](/instruments/videomancer/setup).
+- **Set up Videomancer.** If you bought the standalone instrument, jump to the [Videomancer Quick Start Guide](/instruments/videomancer/manual/quick-start).
 - **Pick hardware.** Compare every active module at [Module Specs](/modules/specs), or browse [Starter Systems](/systems) for curated builds.

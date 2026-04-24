@@ -56,6 +56,6 @@ describe('Home page', () => {
       screen.getByRole('heading', {name: 'New to Video Synthesis?'}),
     ).toBeTruthy();
     expect(screen.getByText('Getting Started Guide')).toBeTruthy();
-    expect(screen.getByText('Set Up Videomancer')).toBeTruthy();
+    expect(screen.getByText('Videomancer Quick Start')).toBeTruthy();
   });
 });
