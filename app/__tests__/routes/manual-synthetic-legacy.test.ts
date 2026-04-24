@@ -43,6 +43,8 @@ describe('synthetic legacy module manual fallback', () => {
     expect(payload.doc.html).toContain(
       'audio frequency decoder is an eight channel audio envelope extraction tool',
     );
-    expect(payload.doc.html).toContain('Product Library Archive');
+    expect(payload.doc.html).toContain('Gallery');
+    // Panel-art sources remain in LFS but are not listed on the public manual.
+    expect(payload.doc.html).not.toContain('Product Library Archive');
   });
 });

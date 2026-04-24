@@ -387,13 +387,7 @@ describe('Variant selection regression coverage', () => {
         }),
       ]),
     );
-    expect((result as any).data.archiveAssets).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          relativePath: 'website/andor1_screenshot1.jpg',
-          href: expect.stringContaining('andor1_screenshot1.jpg'),
-        }),
-      ]),
-    );
+    // Website screenshots stay in LFS metadata but are not public download rows.
+    expect((result as any).data.archiveAssets).toEqual([]);
   });
 });

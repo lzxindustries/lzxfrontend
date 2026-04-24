@@ -11,6 +11,7 @@ import {
   getSlugEntry,
   resolveHubUrlForSlug,
 } from '~/data/product-slugs';
+import {filterDownloadRowsForPublicSite} from '~/data/download-visibility';
 import {getModuleAssets, getModuleById} from '~/data/lzxdb';
 import {SUPPORT_MANIFEST, type ManualVersion} from '~/data/support-manifest';
 import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
@@ -59,18 +60,20 @@ export async function loader({request}: LoaderFunctionArgs) {
     if (!entry || !entry.moduleId) continue;
 
     const module = getModuleById(entry.moduleId);
-    const assets = getModuleAssets(entry.moduleId)
-      .filter((a) => a.fileName)
-      .map((a) => ({
-        id: a.id,
-        name: a.name || a.fileName,
-        description: a.description,
-        fileName: a.fileName,
-        fileType: a.fileType,
-        href: `/assets/${encodeURIComponent(a.fileName)}`,
-        version: a.version,
-        platform: a.platform,
-      }));
+    const assets = filterDownloadRowsForPublicSite(
+      getModuleAssets(entry.moduleId)
+        .filter((a) => a.fileName)
+        .map((a) => ({
+          id: a.id,
+          name: a.name || a.fileName,
+          description: a.description,
+          fileName: a.fileName,
+          fileType: a.fileType,
+          href: `/assets/${encodeURIComponent(a.fileName)}`,
+          version: a.version,
+          platform: a.platform,
+        })),
+    );
 
     if (assets.length === 0) continue;
 
@@ -98,18 +101,20 @@ export async function loader({request}: LoaderFunctionArgs) {
     if (!entry.moduleId) continue;
 
     const module = getModuleById(entry.moduleId);
-    const assets = getModuleAssets(entry.moduleId)
-      .filter((a) => a.fileName)
-      .map((a) => ({
-        id: a.id,
-        name: a.name || a.fileName,
-        description: a.description,
-        fileName: a.fileName,
-        fileType: a.fileType,
-        href: `/assets/${encodeURIComponent(a.fileName)}`,
-        version: a.version,
-        platform: a.platform,
-      }));
+    const assets = filterDownloadRowsForPublicSite(
+      getModuleAssets(entry.moduleId)
+        .filter((a) => a.fileName)
+        .map((a) => ({
+          id: a.id,
+          name: a.name || a.fileName,
+          description: a.description,
+          fileName: a.fileName,
+          fileType: a.fileType,
+          href: `/assets/${encodeURIComponent(a.fileName)}`,
+          version: a.version,
+          platform: a.platform,
+        })),
+    );
 
     if (assets.length === 0) continue;
 

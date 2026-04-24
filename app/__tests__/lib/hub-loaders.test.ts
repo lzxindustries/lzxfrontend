@@ -113,7 +113,9 @@ describe('loadModuleHubData', () => {
         expect.objectContaining({mediaContentType: 'IMAGE'}),
       ]),
     );
-    expect(data?.archiveAssets.length).toBeGreaterThan(0);
+    // Internal archive inventory (panel art, packaging sources, etc.) is
+    // hidden from the public hub; Liquid TV only had non-public files.
+    expect(data?.archiveAssets.length).toBe(0);
   });
 
   it('returns null for a slug that exists nowhere', async () => {

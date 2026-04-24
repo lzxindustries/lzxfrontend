@@ -2,6 +2,7 @@ import {
   getLegacyProductContentBySlug,
   type LegacyProductContent,
 } from '~/data/lfs-product-metadata';
+import {filterDownloadRowsForPublicSite} from '~/data/download-visibility';
 import type {DocPageFull} from '~/lib/content.server';
 import type {ContentFrontmatter, TocHeading} from '~/lib/markdown.server';
 
@@ -32,6 +33,16 @@ function pushSection(
   sections.push(`<h2 id="${id}">${escapeHtml(title)}</h2>${html}`);
 }
 
+function publicLegacyDownloads(content: LegacyProductContent) {
+  return filterDownloadRowsForPublicSite(content.downloads);
+}
+
+function publicLegacyArchiveAssets(content: LegacyProductContent) {
+  return filterDownloadRowsForPublicSite(
+    content.archiveAssets.filter((asset) => !asset.isDownload),
+  );
+}
+
 export function hasSyntheticLegacyModuleManualContent(
   content: LegacyProductContent | null | undefined,
 ): boolean {
@@ -42,8 +53,8 @@ export function hasSyntheticLegacyModuleManualContent(
       content.descriptionHtml ||
       content.specsHtml ||
       content.galleryImages.length > 0 ||
-      content.downloads.length > 0 ||
-      content.archiveAssets.some((asset) => !asset.isDownload),
+      publicLegacyDownloads(content).length > 0 ||
+      publicLegacyArchiveAssets(content).length > 0,
   );
 }
 
@@ -69,12 +80,14 @@ export function buildSyntheticLegacyModuleManualDoc(
       content.galleryImages.length > 0
         ? `<li><strong>Gallery images:</strong> ${content.galleryImages.length}</li>`
         : null,
-      content.downloads.length > 0
-        ? `<li><strong>Published downloads:</strong> ${content.downloads.length}</li>`
+      publicLegacyDownloads(content).length > 0
+        ? `<li><strong>Published downloads:</strong> ${
+            publicLegacyDownloads(content).length
+          }</li>`
         : null,
-      content.archiveAssets.some((asset) => !asset.isDownload)
+      publicLegacyArchiveAssets(content).length > 0
         ? `<li><strong>Archive inventory:</strong> ${
-            content.archiveAssets.filter((asset) => !asset.isDownload).length
+            publicLegacyArchiveAssets(content).length
           } files</li>`
         : null,
     ].filter(Boolean);
@@ -127,8 +140,8 @@ export function buildSyntheticLegacyModuleManualDoc(
     );
   }
 
-  if (content && content.downloads.length > 0) {
-    const items = content.downloads
+  if (content && publicLegacyDownloads(content).length > 0) {
+    const items = publicLegacyDownloads(content)
       .slice(0, 10)
       .map((download) => {
         const details = [download.description];
@@ -144,7 +157,7 @@ export function buildSyntheticLegacyModuleManualDoc(
         }</li>`;
       })
       .join('');
-    const moreCount = Math.max(content.downloads.length - 10, 0);
+    const moreCount = Math.max(publicLegacyDownloads(content).length - 10, 0);
     const moreLine =
       moreCount > 0
         ? `<li>${moreCount} more download${
@@ -165,9 +178,7 @@ export function buildSyntheticLegacyModuleManualDoc(
   }
 
   if (content) {
-    const archiveAssets = content.archiveAssets.filter(
-      (asset) => !asset.isDownload,
-    );
+    const archiveAssets = publicLegacyArchiveAssets(content);
     if (archiveAssets.length > 0) {
       const indexedOnlyCount = archiveAssets.filter(
         (asset) => !asset.href,

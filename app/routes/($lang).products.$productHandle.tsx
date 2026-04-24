@@ -34,6 +34,7 @@ import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {filterDownloadRowsForPublicSite} from '~/data/download-visibility';
 import {getLfsProductContentBySlug} from '~/data/lfs-product-metadata';
 import {getProductRecord, hasProductRecord} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
@@ -309,9 +310,12 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
     recommended,
     relatedPatches,
     relatedVideos,
-    legacyDownloads: legacyContent?.downloads ?? [],
-    archiveAssets:
+    legacyDownloads: filterDownloadRowsForPublicSite(
+      legacyContent?.downloads ?? [],
+    ),
+    archiveAssets: filterDownloadRowsForPublicSite(
       legacyContent?.archiveAssets.filter((asset) => !asset.isDownload) ?? [],
+    ),
     legacyExternalUrl: legacyContent?.externalUrl ?? null,
     analytics: {
       pageType: AnalyticsPageType.product,

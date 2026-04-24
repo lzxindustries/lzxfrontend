@@ -47,6 +47,7 @@ import {
   getModuleIdForSlug,
   getDocPathForSlug,
 } from '~/data/product-slugs';
+import {filterDownloadRowsForPublicSite} from '~/data/download-visibility';
 import type {SlugEntry} from '~/data/product-slugs';
 import {getMarkdownToHTML} from '~/lib/markdown';
 import {
@@ -534,14 +535,17 @@ export async function loadModuleHubData(
   const connectors = moduleId ? getModuleConnectors(moduleId) : [];
   const controls = moduleId ? getModuleControls(moduleId) : [];
   const features = moduleId ? getModuleFeatures(moduleId) : [];
-  const assets = mergeLegacyAssets(
-    moduleId ? getModuleAssets(moduleId) : [],
-    slugEntry.canonical,
+  const assets = filterDownloadRowsForPublicSite(
+    mergeLegacyAssets(
+      moduleId ? getModuleAssets(moduleId) : [],
+      slugEntry.canonical,
+    ),
   );
-  const archiveAssets =
+  const archiveAssets = filterDownloadRowsForPublicSite(
     getLfsProductContentBySlug(slugEntry.canonical)?.archiveAssets.filter(
       (asset) => !asset.isDownload,
-    ) ?? [];
+    ) ?? [],
+  );
 
   // Doc metadata
   const docPath = getDocPathForSlug(slug);
@@ -645,14 +649,17 @@ export async function loadInstrumentHubData(
   const connectors = moduleId ? getModuleConnectors(moduleId) : [];
   const controls = moduleId ? getModuleControls(moduleId) : [];
   const features = moduleId ? getModuleFeatures(moduleId) : [];
-  const assets = mergeLegacyAssets(
-    moduleId ? getModuleAssets(moduleId) : [],
-    slugEntry.canonical,
+  const assets = filterDownloadRowsForPublicSite(
+    mergeLegacyAssets(
+      moduleId ? getModuleAssets(moduleId) : [],
+      slugEntry.canonical,
+    ),
   );
-  const archiveAssets =
+  const archiveAssets = filterDownloadRowsForPublicSite(
     getLfsProductContentBySlug(slugEntry.canonical)?.archiveAssets.filter(
       (asset) => !asset.isDownload,
-    ) ?? [];
+    ) ?? [],
+  );
 
   // Doc metadata
   const docPath = getDocPathForSlug(slug);
