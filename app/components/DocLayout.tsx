@@ -1,5 +1,6 @@
-import {useRef, useState, type ReactNode} from 'react';
+import {Fragment, useRef, useState, type ReactNode} from 'react';
 import {Link} from '@remix-run/react';
+import {Dialog, Transition} from '@headlessui/react';
 import clsx from 'clsx';
 import {Breadcrumbs} from './Breadcrumbs';
 import {useImageZoom} from '~/hooks/useImageZoom';
@@ -24,7 +25,7 @@ function Sidebar({
       className="w-64 shrink-0 hidden lg:block"
       aria-label="Documentation sidebar"
     >
-      <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-4">
+      <div className="sticky top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto pr-4">
         <SidebarList
           items={items}
           currentPath={currentPath}
@@ -145,7 +146,7 @@ function TableOfContents({headings}: {headings: TocHeading[]}) {
       className="w-56 shrink-0 hidden xl:block"
       aria-label="Table of contents"
     >
-      <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pl-4 border-l border-base-200">
+      <div className="sticky top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto pl-4 border-l border-base-200">
         <p className="text-xs font-bold uppercase tracking-wider mb-3 opacity-60">
           On this page
         </p>
@@ -224,25 +225,70 @@ function MobileSidebar({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="lg:hidden mb-4">
+    <div className="lg:hidden mb-4 px-6 md:px-10">
       <button
-        onClick={() => setOpen(!open)}
-        className="btn btn-sm btn-ghost gap-2"
+        onClick={() => setOpen(true)}
+        className="btn btn-ghost gap-2 min-h-11"
+        aria-label="Open documentation menu"
       >
-        <span className="text-xs">☰</span>
-        <span>Menu</span>
+        <span aria-hidden="true" className="text-lg leading-none">
+          ☰
+        </span>
+        <span>Docs menu</span>
       </button>
-      {open && (
-        <div className="mt-2 p-4 bg-base-200 rounded-lg">
-          <SidebarList
-            items={items}
-            currentPath={currentPath}
-            basePath={basePath}
-            depth={0}
-            linkBuilder={linkBuilder}
-          />
-        </div>
-      )}
+
+      <Transition show={open} as={Fragment}>
+        <Dialog onClose={() => setOpen(false)} className="relative z-50 lg:hidden">
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-200"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-150"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 flex">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-200"
+              enterFrom="-translate-x-full"
+              enterTo="translate-x-0"
+              leave="ease-in duration-150"
+              leaveFrom="translate-x-0"
+              leaveTo="-translate-x-full"
+            >
+              <Dialog.Panel className="relative mr-auto flex h-full w-full max-w-sm flex-col overflow-y-auto bg-base-100 shadow-xl pb-[env(safe-area-inset-bottom,0px)]">
+                <div className="flex items-center justify-between border-b border-base-300 px-4 py-3 sticky top-0 bg-base-100">
+                  <Dialog.Title className="text-lg font-semibold">
+                    Documentation
+                  </Dialog.Title>
+                  <button
+                    type="button"
+                    aria-label="Close menu"
+                    className="inline-flex items-center justify-center w-11 h-11 text-2xl leading-none"
+                    onClick={() => setOpen(false)}
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="p-4" onClick={() => setOpen(false)}>
+                  <SidebarList
+                    items={items}
+                    currentPath={currentPath}
+                    basePath={basePath}
+                    depth={0}
+                    linkBuilder={linkBuilder}
+                  />
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
   );
 }

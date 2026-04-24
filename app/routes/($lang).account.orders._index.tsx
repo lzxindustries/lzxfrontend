@@ -139,7 +139,7 @@ export default function OrdersIndex() {
               {filteredOrders.length !== allOrders.length &&
                 ` (of ${allOrders.length} total)`}
             </Text>
-            <ul className="grid grid-flow-row grid-cols-1 gap-2 gap-y-6 md:gap-4 lg:gap-6 sm:grid-cols-3">
+            <ul className="grid grid-flow-row grid-cols-1 gap-2 gap-y-6 md:gap-4 md:grid-cols-2 lg:gap-6 lg:grid-cols-3">
               {filteredOrders.map((order) => (
                 <OrderCard order={order} key={order.id} />
               ))}

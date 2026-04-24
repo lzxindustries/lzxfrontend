@@ -9,6 +9,32 @@ import {formatAuthorDisplay, formatBlogPostDate} from '~/lib/blog-formatting';
 import type {BlogPost} from '~/lib/content.server';
 import type {TocHeading} from '~/lib/markdown.server';
 
+// --- Pagination helper ---
+
+/**
+ * Collapse page numbers to `1 … current-1 current current+1 … last` while
+ * always keeping the first and last pages visible.  Delta controls how many
+ * neighbours of the current page to keep (default 1).
+ */
+function condensePages(
+  current: number,
+  total: number,
+  delta = 1,
+): Array<number | 'ellipsis'> {
+  if (total <= 7) {
+    return Array.from({length: total}, (_, i) => i + 1);
+  }
+  const pages: Array<number | 'ellipsis'> = [];
+  const left = Math.max(2, current - delta);
+  const right = Math.min(total - 1, current + delta);
+  pages.push(1);
+  if (left > 2) pages.push('ellipsis');
+  for (let i = left; i <= right; i++) pages.push(i);
+  if (right < total - 1) pages.push('ellipsis');
+  pages.push(total);
+  return pages;
+}
+
 // --- Blog Index (listing) ---
 
 export interface BlogIndexProps {
@@ -131,26 +157,36 @@ export function BlogIndex({
           </>
         )}
 
-        {/* Pagination */}
+        {/* Pagination — condensed « 1 … 5 6 7 … 42 » pattern avoids a
+         * 40+ button row wrapping across three lines on phones. */}
         {totalPages > 1 && (
-          <div className="flex justify-center gap-2 mt-10">
+          <div className="flex flex-wrap justify-center items-center gap-2 mt-10">
             {page > 1 && (
               <Link to={`?page=${page - 1}`} className="btn btn-sm btn-outline">
                 ← Previous
               </Link>
             )}
-            {Array.from({length: totalPages}, (_, i) => i + 1).map((p) => (
-              <Link
-                key={p}
-                to={`?page=${p}`}
-                className={clsx(
-                  'btn btn-sm',
-                  p === page ? 'btn-primary' : 'btn-outline',
-                )}
-              >
-                {p}
-              </Link>
-            ))}
+            {condensePages(page, totalPages).map((p, idx) =>
+              p === 'ellipsis' ? (
+                <span
+                  key={`ellipsis-${idx}`}
+                  className="px-1 text-base-content/60"
+                >
+                  …
+                </span>
+              ) : (
+                <Link
+                  key={p}
+                  to={`?page=${p}`}
+                  className={clsx(
+                    'btn btn-sm',
+                    p === page ? 'btn-primary' : 'btn-outline',
+                  )}
+                >
+                  {p}
+                </Link>
+              ),
+            )}
             {page < totalPages && (
               <Link to={`?page=${page + 1}`} className="btn btn-sm btn-outline">
                 Next →

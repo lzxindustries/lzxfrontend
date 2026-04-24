@@ -118,7 +118,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
         <div className="flex items-center relative aspect-square p-1 lg:p-2">
           <button
             onClick={prevSlide}
-            className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+            className="shrink-0 inline-flex items-center justify-center w-11 h-11 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 m-0 lg:m-1"
             aria-label="Previous Slide"
             style={{
               visibility: media.length <= 1 ? 'hidden' : 'visible',
@@ -126,7 +126,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-8"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -139,7 +139,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
               />
             </svg>
           </button>
-          <div className="flex justify-center w-full h-full p-1 lg:p-2 overflow-hidden ">
+          <div className="flex items-center justify-center w-full h-full p-1 lg:p-2 overflow-hidden">
             {media[currentSlide].type === MediaGalleryItemType.IMAGE ? (
               <img
                 src={preCroppedImages[currentSlide] ?? media[currentSlide].src}
@@ -147,21 +147,19 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
                 className="w-full h-full object-contain"
               />
             ) : media[currentSlide].type === MediaGalleryItemType.VIDEO ? (
-              <div className="w-full ">
-                <div className="relative inset-y-[25%]">
-                  <iframe
-                    className="aspect-video w-full "
-                    src={media[currentSlide].src}
-                    title={media[currentSlide].name}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                  />
-                </div>
+              <div className="w-full">
+                <iframe
+                  className="aspect-video w-full"
+                  src={media[currentSlide].src}
+                  title={media[currentSlide].name}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                />
               </div>
             ) : null}
           </div>
           <button
             onClick={nextSlide}
-            className="mb-0 p-0 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 md:p-1 lg:p-1 m-0 lg:m-1"
+            className="shrink-0 inline-flex items-center justify-center w-11 h-11 text-black rounded-full bg-white any-hover:hover:bg-black any-hover:hover:text-white border border-gray-500 transition-colors duration-200 m-0 lg:m-1"
             aria-label="Next Slide"
             style={{
               visibility: media.length <= 1 ? 'hidden' : 'visible',
@@ -169,7 +167,7 @@ const ProductMediaGallery: React.FC<ProductMediaGalleryProps> = ({media}) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-8"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

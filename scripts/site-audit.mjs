@@ -23,11 +23,26 @@ const BASE_URL =
   process.argv.find((a) => a.startsWith('http')) || 'https://lzxindustries.net';
 const SKIP_SCREENSHOTS = process.argv.includes('--skip-screenshots');
 const SKIP_EXTERNAL = process.argv.includes('--skip-external');
+const RESPONSIVE = process.argv.includes('--responsive');
 const OUT_DIR = path.resolve('audit-results');
 const SCREENSHOT_DIR = path.join(OUT_DIR, 'screenshots');
 const CONCURRENCY = 3; // parallel page visits
 const LINK_CHECK_CONCURRENCY = 10;
 const EXTERNAL_TIMEOUT = 10_000;
+
+// Viewports for the --responsive pass.  Chosen to match the storefront's
+// Tailwind breakpoints (mobile, md:768, xl:1280).
+const RESPONSIVE_VIEWPORTS = [
+  {label: 'mobile', width: 375, height: 812},
+  {label: 'tablet', width: 768, height: 1024},
+  {label: 'desktop', width: 1280, height: 900},
+];
+
+// Horizontal overflow below this many px is ignored (scrollbars, rounding).
+const OVERFLOW_TOLERANCE = 20;
+
+// Touch-target minimum per WCAG AAA / Apple HIG.
+const TOUCH_TARGET_MIN = 44;
 
 // Known static routes that may not appear in sitemap.xml
 const EXTRA_ROUTES = [
@@ -429,6 +444,213 @@ async function checkLink(url, isExternal) {
 }
 
 // ---------------------------------------------------------------------------
+// Responsive pass: measure overflow, oversize images, tiny touch targets at
+// three viewports for every URL in the manifest.  Outputs a single
+// responsive-report.json keyed by path.
+// ---------------------------------------------------------------------------
+
+async function measureResponsive(page, viewport) {
+  return page.evaluate(
+    ({vw, touchMin}) => {
+      const docEl = document.documentElement;
+      const scrollWidth = docEl ? docEl.scrollWidth : 0;
+      const clientWidth = docEl ? docEl.clientWidth : 0;
+      const horizontalOverflow = scrollWidth - clientWidth;
+
+      const oversizeImages = [];
+      document.querySelectorAll('img').forEach((img) => {
+        if (img.naturalWidth > 0 && img.clientWidth > vw + 1) {
+          oversizeImages.push({
+            src: img.getAttribute('src') || '',
+            clientWidth: img.clientWidth,
+            naturalWidth: img.naturalWidth,
+          });
+        }
+      });
+
+      let smallTargets = 0;
+      const smallTargetExamples = [];
+      document
+        .querySelectorAll('a, button, [role="button"], input, select, textarea')
+        .forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.width <= 0 || rect.height <= 0) return;
+          if (rect.width < touchMin || rect.height < touchMin) {
+            smallTargets++;
+            if (smallTargetExamples.length < 10) {
+              smallTargetExamples.push({
+                tag: el.tagName.toLowerCase(),
+                width: Math.round(rect.width),
+                height: Math.round(rect.height),
+                text: (el.textContent || '').trim().slice(0, 60),
+                aria: el.getAttribute('aria-label') || '',
+              });
+            }
+          }
+        });
+
+      const overflowingElements = [];
+      document.querySelectorAll('body *').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.width <= 0) return;
+        if (rect.right > vw + 1) {
+          const cs = window.getComputedStyle(el);
+          // Ignore elements that are expected to scroll horizontally.
+          if (cs.overflowX === 'auto' || cs.overflowX === 'scroll') return;
+          // Only keep the outermost offenders to avoid noise.
+          const parent = el.parentElement;
+          if (
+            parent &&
+            parent.getBoundingClientRect().right > vw + 1 &&
+            parent !== document.body
+          ) {
+            return;
+          }
+          if (overflowingElements.length < 15) {
+            overflowingElements.push({
+              tag: el.tagName.toLowerCase(),
+              className:
+                typeof el.className === 'string'
+                  ? el.className.slice(0, 120)
+                  : '',
+              right: Math.round(rect.right),
+              width: Math.round(rect.width),
+            });
+          }
+        }
+      });
+
+      return {
+        scrollWidth,
+        clientWidth,
+        horizontalOverflow,
+        oversizeImages,
+        smallTargets,
+        smallTargetExamples,
+        overflowingElements,
+      };
+    },
+    {vw: viewport.width, touchMin: TOUCH_TARGET_MIN},
+  );
+}
+
+async function runResponsivePass(paths) {
+  console.log('\n📐 Responsive pass: measuring every URL at 3 viewports...');
+  fs.mkdirSync(SCREENSHOT_DIR, {recursive: true});
+
+  const browser = await chromium.launch({headless: true});
+  const report = {
+    timestamp: new Date().toISOString(),
+    baseUrl: BASE_URL,
+    viewports: RESPONSIVE_VIEWPORTS,
+    tolerances: {
+      overflowPx: OVERFLOW_TOLERANCE,
+      touchTargetMinPx: TOUCH_TARGET_MIN,
+    },
+    pages: [],
+  };
+
+  let totalOverflow = 0;
+  let totalOversizeImages = 0;
+  let totalSmallTargets = 0;
+
+  for (let i = 0; i < paths.length; i++) {
+    const urlPath = paths[i];
+    const url = `${BASE_URL}${urlPath}`;
+    const label = `[${i + 1}/${paths.length}] ${urlPath}`;
+    const pageRecord = {path: urlPath, viewports: {}};
+
+    for (const viewport of RESPONSIVE_VIEWPORTS) {
+      const context = await browser.newContext({
+        viewport: {width: viewport.width, height: viewport.height},
+        ignoreHTTPSErrors: true,
+        deviceScaleFactor: 1,
+      });
+      const page = await context.newPage();
+      try {
+        const response = await page.goto(url, {
+          waitUntil: 'networkidle',
+          timeout: 30_000,
+        });
+        const status = response?.status() ?? 0;
+        if (status >= 400) {
+          pageRecord.viewports[viewport.label] = {
+            status,
+            error: `HTTP ${status}`,
+          };
+          await context.close();
+          continue;
+        }
+
+        const measurements = await measureResponsive(page, viewport);
+
+        if (!SKIP_SCREENSHOTS) {
+          const screenshotFile = `${slugify(urlPath)}@${viewport.label}.png`;
+          await page.screenshot({
+            fullPage: true,
+            path: path.join(SCREENSHOT_DIR, screenshotFile),
+          });
+          measurements.screenshotFile = screenshotFile;
+        }
+
+        pageRecord.viewports[viewport.label] = {status, ...measurements};
+
+        if (measurements.horizontalOverflow > OVERFLOW_TOLERANCE) {
+          totalOverflow++;
+        }
+        totalOversizeImages += measurements.oversizeImages.length;
+        totalSmallTargets += measurements.smallTargets;
+      } catch (e) {
+        pageRecord.viewports[viewport.label] = {
+          status: 0,
+          error: e.message.slice(0, 200),
+        };
+      }
+      await context.close();
+    }
+
+    // Quick per-page line: overflow at each viewport + total oversize images.
+    const overflows = RESPONSIVE_VIEWPORTS.map((v) => {
+      const r = pageRecord.viewports[v.label];
+      if (!r || r.error) return `${v.label}:ERR`;
+      const diff = r.horizontalOverflow;
+      const mark = diff > OVERFLOW_TOLERANCE ? '⚠' : '✓';
+      return `${v.label}:${mark}${diff}px`;
+    }).join(' ');
+    console.log(`  ${label} → ${overflows}`);
+
+    report.pages.push(pageRecord);
+  }
+
+  await browser.close();
+
+  report.summary = {
+    pagesScanned: paths.length,
+    viewportsWithOverflow: totalOverflow,
+    oversizeImages: totalOversizeImages,
+    smallTouchTargets: totalSmallTargets,
+  };
+
+  fs.writeFileSync(
+    path.join(OUT_DIR, 'responsive-report.json'),
+    JSON.stringify(report, null, 2),
+  );
+
+  console.log('\n' + '='.repeat(60));
+  console.log('RESPONSIVE SUMMARY');
+  console.log('='.repeat(60));
+  console.log(`Pages scanned:              ${paths.length}`);
+  console.log(`Viewports with overflow:    ${totalOverflow}`);
+  console.log(`Images overflowing viewport: ${totalOversizeImages}`);
+  console.log(`Interactive <${TOUCH_TARGET_MIN}px targets:  ${totalSmallTargets}`);
+  console.log('='.repeat(60));
+  console.log(`\nReport: ${path.join(OUT_DIR, 'responsive-report.json')}`);
+  if (!SKIP_SCREENSHOTS) {
+    console.log(`Screenshots: ${SCREENSHOT_DIR}/<slug>@{mobile,tablet,desktop}.png`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -436,18 +658,28 @@ async function main() {
   console.log(`\n🔍 Site Audit: ${BASE_URL}`);
   console.log(`   Screenshots: ${SKIP_SCREENSHOTS ? 'disabled' : 'enabled'}`);
   console.log(`   External links: ${SKIP_EXTERNAL ? 'skipped' : 'checked'}`);
+  console.log(`   Responsive mode: ${RESPONSIVE ? 'enabled' : 'disabled'}`);
 
   // Ensure output directories
   fs.mkdirSync(SCREENSHOT_DIR, {recursive: true});
 
-  // Phase 1: Build manifest
-  const paths = await buildManifest();
+  // Phase 1: Build manifest (or reuse an existing one when running the
+  // responsive-only pass against a local dev server that doesn't yet expose
+  // a full sitemap).
+  const manifestPath = path.join(OUT_DIR, 'url-manifest.json');
+  let paths;
+  if (RESPONSIVE && fs.existsSync(manifestPath)) {
+    paths = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    console.log(`  Reusing existing manifest (${paths.length} URLs)`);
+  } else {
+    paths = await buildManifest();
+    fs.writeFileSync(manifestPath, JSON.stringify(paths, null, 2));
+  }
 
-  // Write manifest
-  fs.writeFileSync(
-    path.join(OUT_DIR, 'url-manifest.json'),
-    JSON.stringify(paths, null, 2),
-  );
+  if (RESPONSIVE) {
+    await runResponsivePass(paths);
+    return;
+  }
 
   // Phase 2: Visit every page
   console.log('\n📸 Phase 2: Visiting pages...');

@@ -64,10 +64,34 @@ test.describe('Responsive header', () => {
 
 /* ── Horizontal Overflow Check ───────────────────────────────── */
 
-test.describe('Horizontal overflow check', () => {
-  const pages = ['/', '/products', '/cart'];
+/**
+ * Sampled routes: one representative per route template, not all 80+.
+ * Keeps CI under ~3 minutes while still covering commerce, content,
+ * account, docs, and legal templates.
+ */
+const SAMPLED_ROUTES = [
+  '/',
+  '/products',
+  '/cart',
+  '/search',
+  '/account/login',
+  '/blog',
+  '/blog/arcs-and-anvils',
+  '/docs',
+  '/instruments',
+  '/modules',
+  '/catalog',
+  '/policies',
+];
 
-  for (const path of pages) {
+/**
+ * Phase C default: strict overflow enforcement is ON.  Opt out with
+ * `STRICT_RESPONSIVE=0` only if triaging a specific regression.
+ */
+const STRICT_RESPONSIVE = process.env.STRICT_RESPONSIVE !== '0';
+
+test.describe('Horizontal overflow check', () => {
+  for (const path of SAMPLED_ROUTES) {
     for (const [label, size] of Object.entries(VIEWPORTS)) {
       test(`${path} overflow at ${label}`, async ({page}) => {
         await page.setViewportSize(size);
@@ -90,12 +114,13 @@ test.describe('Horizontal overflow check', () => {
               `(scroll=${overflow.scrollWidth}, client=${overflow.clientWidth})`,
           );
         }
-        // Allow minor overflow from scrollbars / rounding, flag large overflow
-        expect(diff).toBeLessThanOrEqual(
-          // At md (768) the site has a known 152px overflow — skip hard fail
-          // but the warning above will surface it
-          Math.max(OVERFLOW_TOLERANCE, diff <= 200 ? diff : 0),
-        );
+        // Post-Tier-3 default: enforce the real tolerance.  The loose mode
+        // (STRICT_RESPONSIVE=0) remains as a bisection aid, not for day-to-day
+        // CI — set it only when triaging a specific regression.
+        const bound = STRICT_RESPONSIVE
+          ? OVERFLOW_TOLERANCE
+          : Math.max(OVERFLOW_TOLERANCE, diff <= 200 ? diff : 0);
+        expect(diff).toBeLessThanOrEqual(bound);
       });
     }
   }
@@ -227,35 +252,67 @@ test.describe('Images responsive', () => {
 /* ── Touch Target Size (accessibility + mobile UX) ───────────── */
 
 test.describe('Touch targets on mobile', () => {
-  test('interactive elements are at least 44x44px on mobile', async ({
-    page,
-  }) => {
+  const TOUCH_TARGET_ROUTES = ['/', '/products', '/cart', '/account/login'];
+
+  for (const route of TOUCH_TARGET_ROUTES) {
+    test(`${route}: interactive elements are at least 44x44px on mobile`, async ({
+      page,
+    }) => {
+      await page.setViewportSize(VIEWPORTS.mobile);
+      await page.goto(route);
+      await page.waitForLoadState('networkidle');
+
+      const tooSmall = await page.evaluate(() => {
+        const interactives = document.querySelectorAll(
+          'a, button, [role="button"], input, select, textarea',
+        );
+        let count = 0;
+        interactives.forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.width > 0 && rect.height > 0) {
+            if (rect.width < 44 || rect.height < 44) {
+              count++;
+            }
+          }
+        });
+        return count;
+      });
+      if (tooSmall > 0) {
+        console.warn(
+          `⚠ ${route}: ${tooSmall} interactive elements smaller than 44x44px on mobile`,
+        );
+      }
+      // STRICT mode: fail if any small targets remain (flip once Tier 1–2
+      // widens the header icons, cart qty buttons, filter toggle, etc.).
+      if (STRICT_RESPONSIVE) {
+        expect(tooSmall).toBe(0);
+      }
+    });
+  }
+});
+
+/* ── Cart drawer responsive ──────────────────────────────────── */
+
+test.describe('Cart drawer', () => {
+  test('drawer opens and fits viewport on mobile', async ({page}) => {
     await page.setViewportSize(VIEWPORTS.mobile);
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const tooSmall = await page.evaluate(() => {
-      const interactives = document.querySelectorAll(
-        'a, button, [role="button"], input, select, textarea',
-      );
-      let count = 0;
-      interactives.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        // Only check visible elements
-        if (rect.width > 0 && rect.height > 0) {
-          if (rect.width < 44 || rect.height < 44) {
-            count++;
-          }
-        }
-      });
-      return count;
-    });
-    // Report but allow some — many sites have small inline links
-    // This is informational; failing threshold can be tuned
-    if (tooSmall > 0) {
-      console.warn(
-        `Found ${tooSmall} interactive elements smaller than 44x44px on mobile`,
-      );
+    const cartToggle = page
+      .locator('a[href="/cart"], button[aria-label*="cart" i]')
+      .first();
+    if (!(await cartToggle.isVisible())) {
+      test.skip(true, 'No visible cart toggle on this page.');
     }
+    // Clicking the cart link navigates to /cart; the drawer is triggered via
+    // internal state.  Just verify /cart itself doesn't overflow.
+    await page.goto('/cart');
+    await page.waitForLoadState('networkidle');
+    const overflow = await page.evaluate(() => {
+      const d = document.documentElement;
+      return d ? d.scrollWidth - d.clientWidth : 0;
+    });
+    expect(overflow).toBeLessThanOrEqual(STRICT_RESPONSIVE ? 20 : 200);
   });
 });

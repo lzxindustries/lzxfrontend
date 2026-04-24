@@ -20,7 +20,7 @@ export function Modal({
       <div className="fixed inset-0 z-50 overflow-y-auto">
         <div className="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
           <div
-            className="relative flex-1 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform rounded shadow-xl bg-white sm:my-12 sm:flex-none sm:w-full sm:max-w-sm sm:p-6"
+            className="relative flex-1 px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform rounded shadow-xl bg-white sm:my-12 sm:flex-none sm:w-full sm:max-w-md sm:p-6"
             role="dialog"
             onClick={(e) => {
               e.stopPropagation();
@@ -30,10 +30,10 @@ export function Modal({
             }}
             tabIndex={0}
           >
-            <div className="absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
+            <div className="absolute top-0 right-0 pt-4 pr-4">
               <Link
                 to={cancelLink}
-                className="p-4 -m-4 transition text-primary hover:text-primary/50"
+                className="inline-flex items-center justify-center w-11 h-11 -m-2 transition text-primary hover:text-primary/50"
               >
                 <IconClose aria-label="Close panel" />
               </Link>

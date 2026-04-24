@@ -158,7 +158,7 @@ function Account({
   return (
     <>
       {showUpdated && (
-        <div className="fixed top-4 right-4 z-50 bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in">
+        <div className="fixed top-4 inset-x-4 md:inset-x-auto md:right-4 md:left-auto md:w-auto z-50 bg-green-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-fade-in">
           <span className="text-sm font-medium">
             Profile updated successfully.
           </span>
@@ -182,7 +182,7 @@ function Account({
 
       {/* Quick Stats */}
       <div className="grid w-full gap-4 p-4 md:p-8 lg:p-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-primary/5 rounded-lg p-4 text-center">
             <Text size="lead" className="font-bold">
               {orders.length}
@@ -320,7 +320,7 @@ function EmptyOrders() {
 
 function Orders({orders}: {orders: Order[]}) {
   return (
-    <ul className="grid grid-flow-row grid-cols-1 gap-2 gap-y-6 md:gap-4 lg:gap-6 false sm:grid-cols-3">
+    <ul className="grid grid-flow-row grid-cols-1 gap-2 gap-y-6 md:gap-4 md:grid-cols-2 lg:gap-6 lg:grid-cols-3">
       {orders.map((order) => (
         <OrderCard order={order} key={order.id} />
       ))}

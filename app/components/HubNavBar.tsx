@@ -21,7 +21,17 @@ export function HubNavBar({tabs}: HubNavBarProps) {
       className="border-b border-base-300 bg-base-100 sticky top-0 z-30"
       data-testid="hub-nav"
     >
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+      <div className="mx-auto max-w-7xl px-6 md:px-10 relative">
+        {/* Edge fade masks hint the horizontal scroll on narrow viewports.
+         * Pointer-events pass through so the tabs stay clickable under them. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-base-100 to-transparent md:hidden"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-base-100 to-transparent md:hidden"
+        />
         <ul className="flex gap-0 overflow-x-auto scrollbar-none -mb-px">
           {visibleTabs.map((tab) => {
             const isActive =

@@ -30,6 +30,7 @@
     "test:e2e:all": "playwright test",
     "search:index": "node scripts/build-search-index.mjs",
     "audit:content": "node scripts/audit-product-content.mjs",
+    "audit:responsive": "node scripts/site-audit.mjs http://localhost:3000 --responsive --skip-external",
     "content:qa": "node scripts/content-qa.mjs",
     "content:qa:strict": "node scripts/content-qa.mjs --strict",
     "content:fill-seo": "node scripts/fill-missing-seo.mjs",

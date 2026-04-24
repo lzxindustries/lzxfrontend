@@ -567,7 +567,7 @@ function EditShippingAddressForm({
         <input type="hidden" name="intent" value="updateShippingAddress" />
         <input type="hidden" name="orderId" value={orderId} />
         <div className="space-y-3">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <input
               className={getInputStyleClasses()}
               name="firstName"
@@ -617,7 +617,7 @@ function EditShippingAddressForm({
             aria-label="Address line 2"
             defaultValue={address?.address2 ?? ''}
           />
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <input
               className={getInputStyleClasses()}
               name="city"
@@ -638,7 +638,7 @@ function EditShippingAddressForm({
               defaultValue={address?.province ?? ''}
             />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <input
               className={getInputStyleClasses()}
               name="zip"
@@ -761,11 +761,11 @@ function OrderTimeline({
               >
                 {step.done ? '✓' : i + 1}
               </div>
-              <span className="mt-1 text-[10px] text-center leading-tight text-primary/60">
+              <span className="mt-1 text-xs text-center leading-tight text-primary/60">
                 {step.label}
               </span>
               {step.detail && (
-                <span className="text-[9px] text-primary/40">
+                <span className="text-[11px] text-primary/40">
                   {step.detail}
                 </span>
               )}

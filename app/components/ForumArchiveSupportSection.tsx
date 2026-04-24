@@ -101,8 +101,8 @@ export function ForumArchiveSupportSection({
                 className="rounded-lg border border-base-300 p-4 transition hover:bg-base-200"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="font-semibold">{topic.title}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold break-words">{topic.title}</p>
                     <p className="text-sm text-base-content/70 mt-1">
                       {topic.excerpt}
                     </p>

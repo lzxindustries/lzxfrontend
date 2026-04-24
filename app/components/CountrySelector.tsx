@@ -53,8 +53,8 @@ export function CountrySelector() {
         className="w-full border rounded border-base-content/20 overflow-clip bg-base-200"
         ref={closeRef}
       >
-        <summary className="flex items-center justify-between w-full px-4 py-2 cursor-pointer text-sm">
-          {selectedLocale.label}
+        <summary className="flex items-center justify-between gap-2 w-full px-4 py-2 cursor-pointer text-sm">
+          <span className="truncate min-w-0">{selectedLocale.label}</span>
         </summary>
         <div className="w-full overflow-auto border-t border-base-content/20 bg-base-100 max-h-36">
           {countries &&

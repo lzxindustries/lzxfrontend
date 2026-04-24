@@ -141,7 +141,7 @@ export function Footer() {
           </select> */}
         </div>
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="footer px-6 sm:px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <Logo size={iconSize} />
           <p>
@@ -151,7 +151,7 @@ export function Footer() {
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
-          <div className="grid grid-flow-col gap-4 flex-wrap">
+          <div className="flex flex-wrap gap-4 justify-start md:justify-end">
             <a
               target="_blank"
               href="https://www.facebook.com/lzxindustries"

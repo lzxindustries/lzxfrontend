@@ -202,13 +202,13 @@ export function VideomancyLandingSections() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 to="/instruments/videomancer"
-                className="rounded-full bg-mystic px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/20 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/35"
+                className="inline-flex items-center justify-center min-h-11 rounded-full bg-mystic px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/20 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/35"
               >
                 {sections.proof.buyLabel}
               </Link>
               <Link
                 to="/instruments/videomancer/manual/user-manual"
-                className="rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/50 any-hover:hover:bg-white/10"
+                className="inline-flex items-center justify-center min-h-11 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/50 any-hover:hover:bg-white/10"
               >
                 {sections.proof.studyLabel}
               </Link>

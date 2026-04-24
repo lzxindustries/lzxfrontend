@@ -97,11 +97,11 @@ function CartDiscounts({
           <Text as="dt">Discount(s)</Text>
           <div className="flex items-center justify-between">
             <UpdateDiscountForm>
-              <button>
-                <IconRemove
-                  aria-hidden="true"
-                  style={{height: 18, marginRight: 4}}
-                />
+              <button
+                aria-label="Remove discount"
+                className="inline-flex items-center justify-center w-11 h-11 -ml-2"
+              >
+                <IconRemove aria-hidden="true" className="h-5 w-5" />
               </button>
             </UpdateDiscountForm>
             <Text as="dd">{codes}</Text>
@@ -114,18 +114,23 @@ function CartDiscounts({
         <div
           className={clsx(
             codes ? 'hidden' : 'flex',
-            'items-center gap-4 justify-between text-copy',
+            'items-center gap-3 justify-between text-copy',
           )}
         >
-          <input
-            className={getInputStyleClasses()}
-            type="text"
-            name="discountCode"
-            placeholder="Discount code"
-            aria-label="Discount code"
-          />
-          <button className="flex justify-end font-medium whitespace-nowrap shrink-0">
-            Apply Discount
+          <div className="flex-1 min-w-0">
+            <input
+              className={getInputStyleClasses()}
+              type="text"
+              name="discountCode"
+              placeholder="Discount code"
+              aria-label="Discount code"
+            />
+          </div>
+          <button
+            type="submit"
+            className="font-medium whitespace-nowrap shrink-0 min-h-11 px-3"
+          >
+            Apply
           </button>
         </div>
       </UpdateDiscountForm>
@@ -487,7 +492,7 @@ function ItemRemoveButton({lineIds}: {lineIds: CartLine['id'][]}) {
       />
       <input type="hidden" name="linesIds" value={JSON.stringify(lineIds)} />
       <button
-        className={`flex items-center justify-center w-10 h-10 border rounded ${
+        className={`flex items-center justify-center w-11 h-11 border rounded ${
           isRemoving ? 'opacity-50' : ''
         }`}
         type="submit"
@@ -516,7 +521,7 @@ function CartLineQuantityAdjust({line}: {line: CartLine}) {
           <button
             name="decrease-quantity"
             aria-label="Decrease quantity"
-            className="w-10 h-10 transition text-primary/50 hover:text-primary disabled:text-primary/10"
+            className="w-11 h-11 transition text-primary/50 hover:text-primary disabled:text-primary/10"
             value={prevQuantity}
             disabled={quantity <= 1}
           >
@@ -524,13 +529,13 @@ function CartLineQuantityAdjust({line}: {line: CartLine}) {
           </button>
         </UpdateCartButton>
 
-        <div className="px-2 text-center" data-test="item-quantity">
+        <div className="px-2 text-center min-w-[2rem]" data-test="item-quantity">
           {quantity}
         </div>
 
         <UpdateCartButton lines={[{id: lineId, quantity: nextQuantity}]}>
           <button
-            className="w-10 h-10 transition text-primary/50 hover:text-primary"
+            className="w-11 h-11 transition text-primary/50 hover:text-primary"
             name="increase-quantity"
             value={nextQuantity}
             aria-label="Increase quantity"

@@ -64,7 +64,7 @@ export function FeaturedProducts({
       <div
         className={clsx([
           `grid grid-cols-2 gap-x-6 gap-y-8`,
-          layout === 'page' ? 'md:grid-cols-4 sm:grid-cols-4' : '',
+          layout === 'page' ? 'md:grid-cols-3 lg:grid-cols-4' : '',
         ])}
       >
         <FeatureProductsContent

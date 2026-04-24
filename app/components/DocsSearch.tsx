@@ -137,7 +137,7 @@ export function DocsSearch() {
         <input
           ref={inputRef}
           type="search"
-          placeholder="Search docs... (⌘K)"
+          placeholder="Search docs..."
           className="input input-bordered input-sm w-full max-w-xs pl-8"
           value={query}
           onFocus={() => {
@@ -163,7 +163,7 @@ export function DocsSearch() {
       </div>
 
       {isOpen && query.length >= 2 && (
-        <div className="absolute top-full mt-1 w-96 max-h-96 overflow-y-auto bg-base-100 border border-base-300 rounded-lg shadow-xl z-50">
+        <div className="absolute top-full mt-1 left-0 right-0 sm:right-auto w-auto sm:w-[min(24rem,calc(100vw-2rem))] max-h-96 overflow-y-auto bg-base-100 border border-base-300 rounded-lg shadow-xl z-50">
           {loading && (
             <div className="p-4 text-center text-base-content/50 text-sm">
               Searching...

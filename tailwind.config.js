@@ -64,8 +64,8 @@ export default {
         fine: ['var(--font-size-fine)', '1.333'],
       },
       maxWidth: {
-        'prose-narrow': '80ch',
-        'prose-wide': '120ch',
+        'prose-narrow': '72ch',
+        'prose-wide': '90ch',
       },
       boxShadow: {
         border: 'inset 0px 0px 0px 1px rgb(var(--color-primary) / 0.08)',

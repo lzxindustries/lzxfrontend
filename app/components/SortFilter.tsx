@@ -1,4 +1,4 @@
-import {Menu, Disclosure} from '@headlessui/react';
+import {Menu, Disclosure, Dialog, Transition} from '@headlessui/react';
 import type {Location} from '@remix-run/react';
 import {
   Link,
@@ -12,10 +12,10 @@ import type {
   Filter,
   Collection,
 } from '@shopify/hydrogen/storefront-api-types';
-import {useMemo, useState} from 'react';
+import {Fragment, useMemo, useState} from 'react';
 import type {SyntheticEvent} from 'react';
 import {useDebounce} from 'react-use';
-import {IconFilters, IconCaret, IconXMark} from '~/components/Icon';
+import {IconFilters, IconCaret, IconXMark, IconClose} from '~/components/Icon';
 import {Heading, Text} from '~/components/Text';
 
 export type AppliedFilter = {
@@ -48,26 +48,34 @@ export function SortFilter({
   children,
   collections = [],
 }: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  // Desktop uses an inline sidebar; mobile opens a full-screen Dialog to
+  // avoid the in-flow accordion pushing the product grid down.
+  const [desktopOpen, setDesktopOpen] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <>
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between w-full gap-2">
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={
-            'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5'
+          onClick={() =>
+            typeof window !== 'undefined' && window.innerWidth >= 768
+              ? setDesktopOpen((v) => !v)
+              : setMobileOpen(true)
           }
+          aria-label="Toggle filters"
+          className="relative flex items-center justify-center w-11 h-11 focus:ring-primary/5"
         >
           <IconFilters />
         </button>
         <SortMenu />
       </div>
+
       <div className="flex flex-col flex-wrap md:flex-row">
         <div
-          className={`transition-all duration-200 ${
-            isOpen
-              ? 'opacity-100 min-w-full md:min-w-[240px] md:w-[240px] md:pr-8 max-h-full'
-              : 'opacity-0 md:min-w-[0px] md:w-[0px] pr-0 max-h-0 md:max-h-full'
+          className={`hidden md:block transition-all duration-200 ${
+            desktopOpen
+              ? 'opacity-100 md:min-w-[240px] md:w-[240px] md:pr-8 max-h-full'
+              : 'opacity-0 md:min-w-[0px] md:w-[0px] pr-0 max-h-0 md:max-h-full overflow-hidden'
           }`}
         >
           <FiltersDrawer
@@ -78,6 +86,60 @@ export function SortFilter({
         </div>
         <div className="flex-1">{children}</div>
       </div>
+
+      <Transition show={mobileOpen} as={Fragment}>
+        <Dialog
+          onClose={() => setMobileOpen(false)}
+          className="relative z-50 md:hidden"
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-200"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-150"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 flex">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-200"
+              enterFrom="translate-x-full"
+              enterTo="translate-x-0"
+              leave="ease-in duration-150"
+              leaveFrom="translate-x-0"
+              leaveTo="translate-x-full"
+            >
+              <Dialog.Panel className="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-base-100 shadow-xl pb-[env(safe-area-inset-bottom,0px)]">
+                <div className="flex items-center justify-between border-b border-base-300 px-4 py-3">
+                  <Dialog.Title className="text-lg font-semibold">
+                    Filters
+                  </Dialog.Title>
+                  <button
+                    type="button"
+                    aria-label="Close filters"
+                    className="inline-flex items-center justify-center w-11 h-11"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <IconClose />
+                  </button>
+                </div>
+                <div className="px-4">
+                  <FiltersDrawer
+                    collections={collections}
+                    filters={filters}
+                    appliedFilters={appliedFilters}
+                  />
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
     </>
   );
 }
@@ -285,24 +347,26 @@ function PriceRangeFilter({max, min}: {max?: number; min?: number}) {
   };
 
   return (
-    <div className="flex flex-col">
-      <label className="mb-4">
-        <span>from</span>
+    <div className="flex flex-col gap-3">
+      <label className="flex flex-col gap-1">
+        <span className="text-sm">from</span>
         <input
           name="maxPrice"
-          className="text-black"
+          className="input input-bordered input-sm w-full text-base"
           type="text"
+          inputMode="numeric"
           defaultValue={min}
           placeholder={'$'}
           onChange={onChangeMin}
         />
       </label>
-      <label>
-        <span>to</span>
+      <label className="flex flex-col gap-1">
+        <span className="text-sm">to</span>
         <input
           name="minPrice"
-          className="text-black"
+          className="input input-bordered input-sm w-full text-base"
           type="number"
+          inputMode="numeric"
           defaultValue={max}
           placeholder={'$'}
           onChange={onChangeMax}
@@ -388,7 +452,7 @@ export default function SortMenu() {
 
       <Menu.Items
         as="nav"
-        className="absolute z-50 bg-white right-0 flex flex-col p-4 text-right rounded-sm"
+        className="absolute z-50 bg-white right-0 flex flex-col p-4 text-right rounded-sm max-h-[70vh] overflow-y-auto shadow-lg border border-base-300"
       >
         {items.map((item) => (
           <Menu.Item key={item.label}>

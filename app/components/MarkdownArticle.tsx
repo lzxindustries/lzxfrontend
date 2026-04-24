@@ -12,7 +12,7 @@ export const MarkdownArticle = ({
   return (
     <>
       <div className="flex flex-auto justify-center">
-        <article className="prose max-w-prose-wide px-8">
+        <article className="prose max-w-prose-wide px-4 sm:px-6 md:px-8">
           <div dangerouslySetInnerHTML={{__html}}></div>
         </article>
       </div>

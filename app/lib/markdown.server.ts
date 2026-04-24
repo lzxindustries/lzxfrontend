@@ -268,6 +268,54 @@ function hasClass(node: Element, className: string): boolean {
   return false;
 }
 
+// --- Iframe responsiveness ---
+// Blog/docs authors frequently embed YouTube with the classic
+// `<iframe width="560" height="315" ...>` snippet.  That fixed 560px width
+// overflows phones and breaks responsive layouts.  Strip width/height,
+// wrap in a 16/9 aspect container, and apply Tailwind's responsive layout
+// utilities so the iframe fills its parent column.
+
+function makeIframesResponsive(): Plugin<[], Root> {
+  return () => {
+    return (tree: Root) => {
+      visitElements(tree, (node) => {
+        if (node.tagName !== 'iframe') return;
+
+        // Skip already-wrapped iframes (e.g. the ResponsiveYouTube substitution
+        // above already provides an aspect-ratio wrapper).
+        const existingStyle =
+          typeof node.properties?.style === 'string'
+            ? node.properties.style
+            : '';
+        if (/width\s*:\s*100%/i.test(existingStyle)) return;
+
+        // Read original dimensions and drop the width/height attributes.
+        const widthAttr = node.properties?.width;
+        const heightAttr = node.properties?.height;
+        const w = Number(widthAttr);
+        const h = Number(heightAttr);
+        const ratio = w > 0 && h > 0 ? `${w} / ${h}` : '16 / 9';
+
+        if (node.properties) {
+          delete node.properties.width;
+          delete node.properties.height;
+          const prior = existingStyle.trim().replace(/;?\s*$/, '');
+          const nextStyle = [
+            prior,
+            'width:100%',
+            `aspect-ratio:${ratio}`,
+            'border:0',
+            'display:block',
+          ]
+            .filter(Boolean)
+            .join(';');
+          node.properties.style = nextStyle;
+        }
+      });
+    };
+  };
+}
+
 // --- Mermaid code block wrapping ---
 
 function wrapMermaidBlocks(): Plugin<[], Root> {
@@ -488,6 +536,7 @@ export async function renderMarkdown(
     .use(stripH1Headings())
     .use(stripLegacySubtitles())
     .use(wrapMermaidBlocks())
+    .use(makeIframesResponsive())
     .use(rewriteInternalPaths(imageBasePath, currentPath))
     .use(extractHeadings(headings))
     .use(rehypeStringify, {allowDangerousHtml: true});

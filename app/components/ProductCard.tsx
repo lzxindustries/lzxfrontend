@@ -111,13 +111,13 @@ export function ProductCard({
                 data={image}
                 alt={image.altText ?? product.title}
                 className="inset-0 w-full h-full object-cover"
-                sizes="(min-width: 768px) 25vw, 50vw"
+                sizes="(min-width: 1536px) 16vw, (min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               />
             )}
           </div>
           <div className="grid gap-1">
             <Text
-              className="w-full font-semibold text-center overflow-hidden whitespace-nowrap text-ellipsis top-0"
+              className="w-full font-semibold text-center line-clamp-2 top-0"
               as="p"
               size="copy"
             >
@@ -125,7 +125,7 @@ export function ProductCard({
             </Text>
             {subtitle ? (
               <Text
-                className="w-full text-center overflow-hidden whitespace-nowrap text-ellipsis text-xs opacity-70"
+                className="w-full text-center line-clamp-2 text-xs opacity-70"
                 as="p"
                 size="copy"
               >
@@ -165,7 +165,7 @@ export function ProductCard({
               </div>
             ) : null}
             <Text
-              className="w-full font-medium text-center overflow-hidden whitespace-nowrap text-ellipsis top-0 mt-0 pt-0"
+              className="w-full font-medium text-center truncate top-0 mt-0 pt-0"
               as="p"
               size="copy"
             >

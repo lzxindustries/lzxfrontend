@@ -23,8 +23,10 @@ export function Header({
   isLoggedIn?: boolean;
   onCartClick?: () => void;
 }) {
-  const iconSize = 16;
-  const logoSize = 24;
+  // 20px gives each icon button a visible ~44x44 hit area under DaisyUI's
+  // default `btn` padding; matches WCAG AAA touch-target guidance.
+  const iconSize = 20;
+  const logoSize = 28;
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -104,7 +106,7 @@ export function Header({
 
       {/* Mobile menu drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[64px] bottom-0 z-[80] lg:hidden">
+        <div className="fixed inset-x-0 top-nav bottom-0 z-[80] lg:hidden">
           <button
             type="button"
             className="absolute inset-0 h-full w-full cursor-default appearance-none border-0 bg-black/30 p-0"
@@ -126,7 +128,7 @@ export function Header({
             <div className="flex justify-end mb-2">
               <button
                 onClick={() => setSearchOpen(false)}
-                className="btn btn-ghost btn-sm btn-circle"
+                className="btn btn-ghost btn-circle min-h-11 h-11 w-11"
                 aria-label="Close search"
               >
                 <FaTimes size={iconSize} />
