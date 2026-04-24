@@ -9,6 +9,7 @@ import {loadModuleHubData, getRecommendedProducts} from '~/data/hub-loaders';
 import type {ModuleHubData} from '~/data/hub-loaders';
 import {getCanonicalSlug, getSlugEntry} from '~/data/product-slugs';
 import {buildModuleTabs} from '~/data/hub-tabs';
+import {moduleHasSpecsTabContent} from '~/lib/module-specs-visibility';
 import {routeHeaders} from '~/data/cache';
 
 export const headers = routeHeaders;
@@ -104,8 +105,12 @@ export default function ModuleLayout() {
   } = data as unknown as ModuleHubData;
   const slug = (data as unknown as ModuleHubData).slug;
 
-  const hasSpecs =
-    connectors.length > 0 || controls.length > 0 || features.length > 0;
+  const hasSpecs = moduleHasSpecsTabContent(
+    product,
+    connectors.length,
+    controls.length,
+    features.length,
+  );
 
   const tabs = buildModuleTabs({
     slug,

@@ -32,6 +32,7 @@ import ProductMediaGallery, {
 import {getModuleArtworkPath} from '~/data/module-artwork';
 import {getProductPurchaseStatus} from '~/lib/product-badges';
 import {rewriteLegacyDocsLinks} from '~/lib/legacy-docs-links';
+import {moduleHasSpecsTabContent} from '~/lib/module-specs-visibility';
 
 export const meta = ({matches}: MetaArgs) => {
   const parentData = matches.find((m) => m.id.includes('modules.$slug'))
@@ -114,6 +115,9 @@ export default function ModuleOverview() {
     isLegacy,
     assets,
     archiveAssets,
+    connectors = [],
+    controls = [],
+    features: lzxFeatures = [],
   } = data as unknown as ModuleHubData;
   const recommended = (data as any).recommended;
   const storeDomain = shop.primaryDomain.url;
@@ -145,6 +149,13 @@ export default function ModuleOverview() {
 
   const sections: {title: string; content: string; defaultOpen?: boolean}[] =
     [];
+  const showSpecsOnHubTab = moduleHasSpecsTabContent(
+    product,
+    (connectors as {length: number}).length,
+    (controls as {length: number}).length,
+    (lzxFeatures as {length: number}).length,
+  );
+  const metafieldSpecsDuplicatedOnSpecsTab = Boolean(specs) && showSpecsOnHubTab;
   if (product.descriptionHtml) {
     sections.push({
       title: 'Description',
@@ -152,11 +163,12 @@ export default function ModuleOverview() {
       defaultOpen: true,
     });
   }
-  if (specs)
+  if (specs && !metafieldSpecsDuplicatedOnSpecsTab) {
     sections.push({
       title: 'Specs',
       content: rewriteLegacyDocsLinks(specs),
     });
+  }
   if (features)
     sections.push({
       title: 'Features',

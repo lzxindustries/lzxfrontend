@@ -1,11 +1,13 @@
 ---
-draft: true
+draft: false
 sidebar_position: 5
 title: 'Andor 1 Media Player'
 description: 'Documentation for Andor 1, a media player designed for use with LZX modular video synthesizer systems.'
 ---
 
 # Andor 1 Media Player
+
+This page documents **Andor 1** operation in LZX and gallery workflows. Firmware features and the downloadable PDF user manual are also described on the manufacturer product pages for Andor 1; treat the product **Overview** for commercial bundle details.
 
 A versatile standalone media player for video art, stage production, video walls, signage, NFT display, and other applications. Plays seamless video loops or shows still images. Media can be easily switched with a single key press on a USB keyboard/remote or MIDI keyboard, or the optional remote control. Multiple units used together can wirelessly synchronize the playback of video files across multiple screens.
 

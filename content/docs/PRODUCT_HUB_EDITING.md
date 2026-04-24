@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: 'Product hub — editing guide'
 description: 'Internal reference for tab naming, support files, and Learn cards so the storefront stays one coherent information system.'
 sidebar_position: 999
@@ -11,6 +11,8 @@ This page is for **content and web contributors** who touch product hubs
 (`/modules/...`, `/instruments/...`), support snippets, or global docs. It
 does not replace the [Writing Style Guide](./WRITING_STYLE_GUIDE.md); it
 describes *where* copy belongs, not *how* to phrase every sentence.
+
+For a generated **audit** of catalog copy, manuals (including `draft` front matter), support files, and suggested P0/P1 tiers, run `yarn audit:content` (writes `docs/reports/product-content-audit.md`). See also [P0 criteria](../../docs/content-audit/P0_CRITERIA.md).
 
 ## Two different “doc” words
 

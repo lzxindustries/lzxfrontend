@@ -1,11 +1,13 @@
 ---
-draft: true
+draft: false
 sidebar_position: 3
 title: 'Double Vision'
 description: 'Documentation for Double Vision, a dual-channel video processing instrument by LZX Industries.'
 ---
 
 # Double Vision
+
+This reference covers the **Double Vision system** as a product line. The **Double Vision 168** complete system and the **Double Vision Expander** have their own short references—see the linked manual pages in the **Manual** nav when you need variant-specific context.
 
 Double Vision is now offered in a fully enclosed 3U EuroRack case, and with the TBC2 Expander included. Are you an existing Double Vision owner who wants an upgrade kit, including this new case and expander module? Contact us for a special offer.
 

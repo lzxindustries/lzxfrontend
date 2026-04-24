@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 sidebar_position: 4
 title: 'Vidiot'
 description: 'Documentation for Vidiot, a compact all-in-one analog video synthesizer instrument by LZX Industries.'
@@ -7,9 +7,8 @@ description: 'Documentation for Vidiot, a compact all-in-one analog video synthe
 
 # Vidiot
 
-:::warning
-This documentation site is a work in progress, and all content is subject to change before the official launch.
-:::
+This web manual is the long-form **Vidiot** reference. For the latest shipping bundle and in-box accessories, see the product **Overview** tab in the shop.
+
 Vidiot is the first standalone video synthesis instrument from LZX Industries, designed in collaboration with video synthesis pioneer Dan Bucciano. Capable of analog shape and pattern generation, external video processing, colorization, audiovisualization, keying, and much more.
 
 A Complete Visual Instrument. Vidiot is a complete instrument for analog video synthesis and processing. Everything you need to connect to a display and create video art is in the box.

@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 sidebar_position: 2
 title: 'Chromagnon'
 description: 'Documentation for Chromagnon, a fully analog video synthesizer and processor instrument by LZX Industries.'
@@ -7,9 +7,7 @@ description: 'Documentation for Chromagnon, a fully analog video synthesizer and
 
 # Chromagnon
 
-:::warning
-This documentation site is a work in progress, and all content is subject to change before the official launch.
-:::
+This web manual is the long-form reference for **Chromagnon** in the Automata series. Shipping contents, current availability, and pack-in accessories are listed on the **Overview** tab for the product; use this page for signal flow, panel behavior, and integration.
 
 We’re proud to announce the beginning of our third generation of analogue video synthesizers with the LZX Automata series. The Automata series instruments continue the precedent set forth by Vidiot as a holistic video synthesis instrument. Beginning with our first release, Chromagnon, each device will be capable of both standalone use or immediate integration into your EuroRack modular.
 
