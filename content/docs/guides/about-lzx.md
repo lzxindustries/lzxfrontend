@@ -3,7 +3,7 @@ draft: false
 title: 'About LZX'
 sidebar_position: 1
 image: /img/guides/about_lxz_workshop.jpg
-description: 'Learn about LZX Industries, creators of modular video synthesizer instruments and tools for real-time visual art.'
+description: 'LZX Industries designs and manufactures modular video synthesizer instruments in Portland, Oregon.'
 ---
 
 import about_lxz_workshop from '/img/guides/about_lxz_workshop.jpg';
@@ -12,21 +12,21 @@ import about_lxz_workshop from '/img/guides/about_lxz_workshop.jpg';
 
 ## Mission
 
-LZX takes creative, experimental video tools to their next levels. We explore an alternate universe, parallel to the mainstream of broadcast equipment, desktop video, and GPU processing. LZX designs are informed and inspired by historical video synthesizers, conventional video production, and less familiar technologies such as analog computing. Our goals are to preserve and expand upon innovative, expressive video tools that have empowered artists ever since the 1960's. Deep commitments to experimental video and the people who create it have motivated our ongoing development of this unique art form. In contrast to working on a computer, working with a video synth is a tactile, embodied, performance-oriented medium, and it's fun!
+LZX designs creative, experimental video instruments as a counterpoint to broadcast equipment, desktop video, and GPU-based image processing. Our work is informed by the historical video synthesizers of the 1960s through 1980s, by conventional video production, and by analog computing. The goal is to preserve and extend a set of tools that have empowered artists for more than half a century, and to keep them accessible to working practitioners rather than big studios. Where software editing is a timeline medium, patching an LZX system is a tactile, embodied, performance medium.
 
 ---
 
 ## History
 
-LZX started as a DIY project in 2008. Over the years, we've developed several generations of modular instrument designs. These series are branded as:
+LZX began as a DIY project in 2008 and has moved through several generations of modular instruments:
 
-- Visionary (2011-2015)
-- Expedition (2015-2018)
-- Orion (2018-2022)
-- Gen3 (2022-present)
-- P-Series (2024-present)
+- Visionary (2011–2015)
+- Expedition (2015–2018)
+- Orion (2018–2022)
+- Gen3 (2022–present)
+- P-Series (2024–present)
 
-LZX products are manufactured in Portland, Oregon at the LZX workshop.
+Instruments are designed and manufactured at the LZX workshop in Portland, Oregon.
 
 <img src={about_lxz_workshop} alt="LZX workshop" />
 
@@ -34,4 +34,4 @@ LZX products are manufactured in Portland, Oregon at the LZX workshop.
 
 ## Documentation credits
 
-This official LZX documentation was authored by Lars Larsen and Aaron F. Ross, with illustrations and animations by Ramin Rahni.
+The LZX technical documentation is authored by Lars Larsen and Aaron F. Ross, with illustrations and animations by Ramin Rahni.

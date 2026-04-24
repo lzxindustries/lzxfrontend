@@ -66,6 +66,30 @@ If you add a new hub tab in code, start by updating the taxonomy comment in
 If you add cross-links in markdown, prefer the canonical path so you do not
 split analytics and SEO across duplicates.
 
+## Module specifications
+
+The cross-module comparison table at `/modules/specs` is the **single source
+of truth** for width, depth, power draw, sync I/O, series, and release and
+discontinuation years. It is driven by `app/data/module-specs.ts`, which
+reads `db/lzxdb.Module.json`. Update specs there, not in markdown.
+
+`content/docs/modules/module-list.md` is an intentional stub that gives the
+module-manual sidebar a **Specs** entry. Do not re-add a manual specs table
+to that file: duplicate data drifts.
+
+Legacy-product firmware and long-term support downloads (historically flagged
+on the old module-list page) are tracked as an open question in
+`docs/reports/PRODUCT_CONTENT_FULL_COVERAGE_PLAN.md`.
+
+## Module manual boilerplate
+
+Module manual markdown under `content/docs/modules/<slug>.md` should end with
+the last **authored** section. Do **not** add a generic `## Community` section
+pointing to the LZX forum: that footer is rendered once for every module
+manual by `app/routes/($lang).modules.$slug.manual._index.tsx`. Module-specific
+forum pointers (e.g. "search for TVFKG and Triple Video Fader") belong
+inline, in the relevant section.
+
 ## Learn tab curation
 
 Instrument learn cards are defined in `app/data/instrument-learn-cards.ts`. Add

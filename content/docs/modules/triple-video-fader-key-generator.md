@@ -29,7 +29,3 @@ Open the **Specs** tab for the full connector list, current draw, and LZXdb feat
 ## Power and size (summary)
 
 **16 HP** · +12V @ 135 mA (reference from the module database; confirm on **Specs** for your revision).
-
-## Community
-
-Search the [LZX community forum](https://community.lzxindustries.net) for patch threads and repair notes on Visionary series modules.

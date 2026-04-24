@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useRef, useState, type ReactNode} from 'react';
 import {Link} from '@remix-run/react';
 import clsx from 'clsx';
 import {Breadcrumbs} from './Breadcrumbs';
@@ -267,6 +267,8 @@ export interface DocLayoutProps {
   currentPath: string;
   /** Custom function for building sidebar/nav links. Defaults to `/docs/${item.path}` */
   linkBuilder?: (item: SidebarItem) => string;
+  /** Optional content rendered after the markdown article and before prev/next navigation. */
+  articleFooter?: ReactNode;
 }
 
 export function DocLayout({
@@ -281,6 +283,7 @@ export function DocLayout({
   frontmatter,
   currentPath,
   linkBuilder,
+  articleFooter,
 }: DocLayoutProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   useImageZoom(contentRef);
@@ -337,6 +340,7 @@ export function DocLayout({
             className="docs-content prose max-w-none"
             dangerouslySetInnerHTML={{__html: html}}
           />
+          {articleFooter}
           <PrevNextNav prev={prev} next={next} linkBuilder={buildLink} />
         </article>
         <TableOfContents headings={headings} />

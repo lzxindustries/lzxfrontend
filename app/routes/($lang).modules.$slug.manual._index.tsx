@@ -177,6 +177,29 @@ export default function ModuleManualPage() {
     return `/modules/${moduleSlug}/manual`;
   };
 
+  const communityQuery = encodeURIComponent(product.title);
+  const articleFooter = (
+    <section
+      aria-label="Community"
+      className="mt-10 border-t border-base-200 pt-6 text-sm text-base-content/75"
+    >
+      <h2 className="text-base font-semibold text-base-content">Community</h2>
+      <p className="mt-2">
+        Search the{' '}
+        <a
+          href={`https://community.lzxindustries.net/search?q=${communityQuery}`}
+          className="link link-primary"
+          rel="noreferrer"
+          target="_blank"
+        >
+          LZX community forum
+        </a>{' '}
+        for build notes, patch ideas, and troubleshooting threads about{' '}
+        {product.title}.
+      </p>
+    </section>
+  );
+
   return (
     <DocLayout
       html={doc.html}
@@ -201,6 +224,7 @@ export default function ModuleManualPage() {
       frontmatter={doc.frontmatter}
       currentPath={currentPath}
       linkBuilder={linkBuilder}
+      articleFooter={articleFooter}
     />
   );
 }

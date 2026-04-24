@@ -70,6 +70,16 @@ Some legacy modules have **no** `content/docs/modules/<slug>.md` on purpose: the
 6. `yarn audit:content`
 7. `yarn search:index` (or `yarn build`)
 
+## Open questions
+
+- **Legacy firmware and downloads.** Legacy modules with ongoing firmware
+  support (e.g. Memory Palace) do not fit in the `/modules/specs` table,
+  which is already full, and each upgrade procedure needs its own
+  instructions. Decision pending: dedicated per-module pages under
+  `content/docs/modules/<slug>/` for firmware-bearing legacy products, or
+  a single `/downloads/legacy-firmware` index. Track the outcome here and
+  link from the relevant module manuals.
+
 ## Success metrics (from audit)
 
 - **P0 = 0** — no visible, active hub product without a shippable manual.

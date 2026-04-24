@@ -18,7 +18,3 @@ Open the **Specs** tab for the full connector list, control definitions, and fea
 
 **4 HP** · +12V @ 0 mA, -12V @ 0 mA.
 Mounting depth (reference): **42 mm**.
-
-## Community
-
-Search the [LZX community forum](https://community.lzxindustries.net) for build notes, patch ideas, and troubleshooting threads mentioning this module.

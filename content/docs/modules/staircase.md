@@ -13,7 +13,3 @@ Limited edition black panel . Ascending the five steps of Staircase can transfor
 ## On the product hub
 
 Open the **Specs** tab for the full connector list, control definitions, and feature bullets (synced from the LZX knowledge base). Use **Overview** for commerce copy and the **Support** tab for triage and community links.
-
-## Community
-
-Search the [LZX community forum](https://community.lzxindustries.net) for build notes, patch ideas, and troubleshooting threads mentioning this module.

@@ -17,7 +17,3 @@ Open the **Specs** tab for the full connector list, control definitions, and fea
 ## Power and size (summary)
 
 **22 HP** · +12V @ 220 mA.
-
-## Community
-
-Search the [LZX community forum](https://community.lzxindustries.net) for build notes, patch ideas, and troubleshooting threads mentioning this module.
