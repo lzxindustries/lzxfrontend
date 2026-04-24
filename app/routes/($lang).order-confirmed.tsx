@@ -1,14 +1,15 @@
-import {useLoaderData, type MetaFunction} from '@remix-run/react';
+import {useLoaderData, useLocation, type MetaFunction} from '@remix-run/react';
 import {flattenConnection} from '@shopify/hydrogen';
 import type {Collection} from '@shopify/hydrogen/storefront-api-types';
 import {defer, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {Suspense} from 'react';
+import {Suspense, useEffect, useMemo} from 'react';
 import {Await} from '@remix-run/react';
 import {getFeaturedData} from './($lang).featured-products';
 import {Link} from '~/components/Link';
 import {FeaturedCollections} from '~/components/FeaturedCollections';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {PageHeader, Text} from '~/components/Text';
+import {trackMetaEvent} from '~/hooks/useMetaPixel';
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,6 +30,61 @@ export async function loader({context}: LoaderFunctionArgs) {
 
 export default function OrderConfirmed() {
   const {featuredData} = useLoaderData<typeof loader>();
+  const location = useLocation();
+  const purchaseEvent = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    const orderId =
+      params.get('order_id') ||
+      params.get('order') ||
+      params.get('checkout_id') ||
+      params.get('checkout') ||
+      params.get('id');
+    const currency =
+      params.get('currency') || params.get('currency_code') || 'USD';
+    const rawValue =
+      params.get('value') ||
+      params.get('amount') ||
+      params.get('total') ||
+      params.get('subtotal');
+    const parsedValue = rawValue ? Number.parseFloat(rawValue) : undefined;
+    const value =
+      typeof parsedValue === 'number' && Number.isFinite(parsedValue)
+        ? parsedValue
+        : undefined;
+    const dedupeKey = orderId
+      ? `meta-purchase:${orderId}`
+      : `meta-purchase:${location.pathname}${location.search}`;
+
+    return {
+      dedupeKey,
+      eventId: orderId ?? undefined,
+      payload: {
+        value,
+        currency: currency.toUpperCase(),
+        order_id: orderId ?? undefined,
+      },
+    };
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hasConversionSignal =
+      Boolean(purchaseEvent.eventId) ||
+      typeof purchaseEvent.payload.value === 'number';
+    if (!hasConversionSignal) return;
+
+    if (window.sessionStorage.getItem(purchaseEvent.dedupeKey)) {
+      return;
+    }
+
+    trackMetaEvent('Purchase', purchaseEvent.payload, {
+      eventId: purchaseEvent.eventId,
+    });
+    window.sessionStorage.setItem(
+      purchaseEvent.dedupeKey,
+      new Date().toISOString(),
+    );
+  }, [purchaseEvent]);
 
   return (
     <div>

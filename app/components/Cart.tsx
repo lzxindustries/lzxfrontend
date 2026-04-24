@@ -1,4 +1,4 @@
-import {useFetcher, useMatches} from '@remix-run/react';
+import {useFetcher, useFetchers, useMatches} from '@remix-run/react';
 import {
   flattenConnection,
   Image,
@@ -196,6 +196,8 @@ function CartCheckoutActions({
   const variantIds = cart?.lines?.edges
     ?.map((edge) => edge.node.merchandise?.id)
     .filter(Boolean) as string[] | undefined;
+  const cartLines = cart?.lines?.edges ?? [];
+  const hasTrackedCheckoutRef = useRef(false);
 
   if (!checkoutUrl) return null;
 
@@ -205,13 +207,34 @@ function CartCheckoutActions({
         href={checkoutUrl}
         target="_self"
         onClick={() => {
+          if (hasTrackedCheckoutRef.current) return;
+
+          const contents = cartLines
+            .map((edge) => {
+              const line = edge.node;
+              const id = line.merchandise?.id;
+              const amount = line.cost?.amountPerQuantity?.amount;
+              return id
+                ? {
+                    id,
+                    quantity: line.quantity,
+                    item_price: amount ? parseFloat(amount) : undefined,
+                  }
+                : null;
+            })
+            .filter(Boolean);
+
           trackMetaEvent('InitiateCheckout', {
-            value: cart?.cost?.subtotalAmount?.amount
-              ? parseFloat(cart.cost.subtotalAmount.amount)
+            value: cart?.cost?.totalAmount?.amount
+              ? parseFloat(cart.cost.totalAmount.amount)
               : undefined,
-            currency: cart?.cost?.subtotalAmount?.currencyCode,
+            currency: cart?.cost?.totalAmount?.currencyCode,
             num_items: cart?.totalQuantity,
+            content_type: 'product',
+            content_ids: variantIds,
+            contents,
           });
+          hasTrackedCheckoutRef.current = true;
         }}
       >
         <Button as="span" width="full">
@@ -225,6 +248,17 @@ function CartCheckoutActions({
           storeDomain={storeDomain}
         />
       )}
+      <div className="rounded border border-primary/15 bg-primary/5 p-3 text-xs text-primary/70">
+        <p className="font-medium text-primary">Secure checkout</p>
+        <p className="mt-1">
+          Shipping and taxes are calculated before payment confirmation. Need
+          help before placing the order? Contact{' '}
+          <Link to="/support" className="underline hover:text-primary">
+            support
+          </Link>
+          .
+        </p>
+      </div>
       <div className="flex items-center justify-center gap-3 text-xs text-primary/50 mt-1">
         <Link
           to="/policies/refund-policy"
@@ -332,8 +366,36 @@ function CartSummary({
           </p>
         )}
       </dl>
+      <CartActionErrors />
       {children}
     </section>
+  );
+}
+
+function CartActionErrors() {
+  const fetchers = useFetchers();
+  const errors = fetchers.flatMap((fetcher) => {
+    const fetcherData = fetcher.data as
+      | {errors?: Array<{message?: string}>}
+      | undefined;
+    return (
+      fetcherData?.errors
+        ?.map((error) => error?.message?.trim())
+        .filter((message): message is string => Boolean(message)) ?? []
+    );
+  });
+
+  if (!errors.length) return null;
+
+  return (
+    <div className="rounded border border-red-300/60 bg-red-50/70 p-3 text-sm text-red-900">
+      <p className="font-medium">Please review before checkout</p>
+      <ul className="mt-1 list-disc pl-4">
+        {errors.map((message, index) => (
+          <li key={`${message}-${index}`}>{message}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

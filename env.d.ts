@@ -39,6 +39,7 @@ declare global {
         | 'Search'
         | 'AddPaymentInfo',
       params?: Record<string, unknown>,
+      options?: {eventID?: string},
     ): void;
     (method: 'init', pixelId: string): void;
   }
