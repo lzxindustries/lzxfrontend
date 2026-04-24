@@ -68,6 +68,20 @@ export default function ArtistsPage() {
     <>
       <Breadcrumbs items={[{label: 'Home', to: '/'}, {label: 'Artists'}]} />
       <div className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
+        <div className="mb-8 rounded-xl border border-base-300 bg-base-200/50 p-4 md:p-5">
+          <p className="text-sm text-base-content/80 md:text-base">
+            Interested in an upcoming blog artist feature?{' '}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfbYgacfHYorGJjFF6B8he6Olj6lFVeO2dB9Rabpcdkkv1cpw/viewform"
+              className="link link-primary font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Submit the artist feature application
+            </a>
+            .
+          </p>
+        </div>
         <h1 className="text-3xl font-bold mb-2">Artists</h1>
         <p className="text-base-content/70 mb-8">
           A growing archive of artists and video creators using LZX tools in
