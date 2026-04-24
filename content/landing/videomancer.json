@@ -1,27 +1,27 @@
 {
   "sections": {
     "beforeAfter": {
-      "heading": "Watch closely",
-      "subheading": "One instrument. One program between ordinary and extraordinary."
+      "heading": "Before and after.",
+      "subheading": "Drag to compare. Each pair is one Videomancer program on the same source — no plugin chain, no laptop."
     },
     "identitySelector": {
-      "heading": "Pick a path, any path",
-      "subheading": "Every creator arrives with a different source and a different intention. The instrument does not care. It is ready for all of them."
+      "heading": "Start where your patch starts.",
+      "subheading": "Live camera, modular signals, HDMI, MIDI, audio — pick the workflow that fits what you already have."
     },
     "hardware": {
-      "heading": "Real hardware",
-      "subheading": "Old school, industrial build quality. Just like broadcast video electronics from the 70s and 80s."
+      "heading": "Real hardware.",
+      "subheading": "Heavy enclosure, panel-mount jacks, solid knobs with end-stop feel. Built in the spirit of broadcast video electronics from the 70s and 80s."
     },
     "bts": {
-      "heading": "Built by video freaks",
-      "subheading": "Assembled by hand in a basement workshop in Portland, Oregon."
+      "heading": "Built by video freaks.",
+      "subheading": "Designed, assembled, and tested by hand in a small workshop in Portland, Oregon."
     },
     "proof": {
-      "heading": "Why Videomancer?",
-      "ctaHeading": "We've been expecting you",
-      "ctaBody": "Pick up the instrument. We built the docs, the programs, and the community so your first session delivers.",
+      "heading": "Why this instrument.",
+      "ctaHeading": "Start patching.",
+      "ctaBody": "Pick up the instrument. Power it on and start patching — the manual, the program library, and the Discord are there when you need them.",
       "buyLabel": "Buy Videomancer",
-      "studyLabel": "Study the workflow"
+      "studyLabel": "Read the manual"
     }
   },
   "segments": [
@@ -29,42 +29,42 @@
       "id": "live-performance",
       "title": "Live Performance",
       "icon": "/icons/videomancy/segment_live_performance.svg",
-      "body": "Turn camera footage into tactile broadcast-style motion graphics live."
+      "body": "Turn any camera or HDMI feed into live motion graphics. Every control on the front panel is mapped — no menu diving."
     },
     {
       "id": "glitch-texture",
       "title": "Glitch & Texture",
       "icon": "/icons/videomancy/segment_glitch_texture.svg",
-      "body": "Add hands-on glitch and color processing to HDMI sources with no laptop plugin chain."
+      "body": "Hands-on glitch, color, and keying on any source. No laptop, no plugin chain."
     },
     {
       "id": "format-bridge",
       "title": "Format Converter",
       "icon": "/icons/videomancy/segment_format_bridge.svg",
-      "body": "Bridge modular video, analog formats, and HDMI from one box."
+      "body": "HDMI, composite, S-Video, component, and LZX 1V modular — convert between any of them."
     },
     {
       "id": "audio-reactive",
       "title": "Audio-Reactive",
       "icon": "/icons/videomancy/segment_audio_reactive.svg",
-      "body": "Bring MIDI, CV, and audio reactivity to real video hardware in minutes."
+      "body": "Patch MIDI, CV, audio, or a USB controller into any of Videomancer's twelve Parameters. Your sound drives the picture."
     }
   ],
   "proofCards": [
     {
       "title": "Plug in and perform",
       "icon": "/icons/videomancy/proof_plug.svg",
-      "body": "Connect any HDMI, composite, or component video source. Load a program. Start creating. No software setup, no plugin chains, no laptop required."
+      "body": "Patch any HDMI, composite, or component source. Load a program. Start patching. No software, no plugin chains, no laptop."
     },
     {
       "title": "An ever-expanding library of effects",
       "icon": "/icons/videomancy/proof_library.svg",
-      "body": "From broadcast color correction to destructive glitch, every program is a new instrument. Regular firmware updates deliver fresh creative tools for free."
+      "body": "Twenty-four programs today — broadcast color correction, keying, feedback, glitch, pattern generators — with more in every firmware release. Every update is free."
     },
     {
       "title": "Open source SDK",
       "icon": "/icons/videomancy/proof_shield.svg",
-      "body": "Build your own video effects with the open source Videomancer SDK. Share programs, get help, and collaborate with a welcoming community of artists and engineers on Discord and GitHub."
+      "body": "Write your own programs with the open source Videomancer SDK. Share patches, trade ideas, and ask questions alongside artists and engineers on Discord and GitHub."
     }
   ],
   "sourcePairs": [

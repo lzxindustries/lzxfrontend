@@ -26,23 +26,23 @@ export function Hero() {
       <div className="relative z-10 mx-auto grid min-h-[100svh] lg:h-full w-full max-w-7xl items-center gap-8 px-6 py-16 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-12">
         <div className="flex flex-col justify-center">
           <p className="vm-reveal mb-5 inline-flex w-fit items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-mystic-light backdrop-blur-sm">
-            Video Effects Console
+            Standalone Video Instrument
           </p>
 
           <Heading
             as="h1"
             className="vm-reveal vm-reveal-delay-1 font-display max-w-[14ch] text-3xl font-black uppercase leading-[1.02] tracking-[0.06em] text-moonwax sm:text-4xl md:text-5xl lg:text-6xl"
           >
-            Something remarkable is about to happen to your video signal
+            Patch any signal. Shape it in real time.
           </Heading>
 
           <Text
             as="p"
             className="vm-reveal vm-reveal-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/75 md:text-lg"
           >
-            Videomancer is a hardware video effects console for live
-            performance, glitch art, format conversion, and audio-reactive
-            workflows.
+            Videomancer is a standalone instrument for video synthesis — FPGA
+            processing, hands-on controls, and a deep library of programs for
+            color, glitch, keying, patterns, and feedback.
           </Text>
 
           <div className="vm-reveal vm-reveal-delay-3 mt-8 hidden flex-wrap items-center gap-3 sm:mt-10 lg:flex">
@@ -50,13 +50,13 @@ export function Hero() {
               to="/instruments/videomancer"
               className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
             >
-              Shop now
+              Shop Videomancer
             </Link>
             <Link
               to="/instruments/videomancer/manual/user-manual"
               className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
             >
-              See docs
+              Read the manual
             </Link>
           </div>
 
@@ -82,13 +82,13 @@ export function Hero() {
               to="/instruments/videomancer"
               className="rounded-full bg-mystic px-8 py-3.5 text-sm font-semibold uppercase tracking-[0.14em] text-moonwax shadow-lg shadow-mystic/25 transition-all duration-200 any-hover:hover:bg-mystic-light any-hover:hover:shadow-mystic/40 sm:px-9 sm:py-4 sm:text-base"
             >
-              Shop now
+              Shop Videomancer
             </Link>
             <Link
               to="/instruments/videomancer/manual/user-manual"
               className="rounded-full border border-white/30 bg-white/5 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all duration-200 any-hover:hover:border-white/60 any-hover:hover:bg-white/10 sm:py-4"
             >
-              See docs
+              Read the manual
             </Link>
           </div>
           <p className="vm-reveal vm-reveal-delay-3 mt-4 text-xs uppercase tracking-[0.18em] text-white/50">

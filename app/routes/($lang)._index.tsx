@@ -122,7 +122,7 @@ export default function Home() {
               Demo Reel
             </p>
             <h2 className="font-display text-xl font-black uppercase tracking-[0.1em] text-moonwax md:text-3xl">
-              See it in action
+              Twenty-four programs, straight from the instrument.
             </h2>
           </div>
           <div className="vm-reveal vm-reveal-delay-1 mt-10">
