@@ -1,15 +1,21 @@
 [
   {
-    "id": "gid://shopify/ExternalVideo/27337667969047",
-    "type": "ExternalVideo",
-    "mediaContentType": "EXTERNAL_VIDEO",
+    "id": "gid://shopify/MediaImage/27159011328023",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
     "status": "READY",
     "alt": "",
-    "embeddedUrl": "https://youtu.be/pmYxqFp5V3o",
-    "host": "YOUTUBE",
-    "originUrl": "https://youtu.be/pmYxqFp5V3o",
-    "image": null,
-    "sources": []
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-top-2048.png?v=1760736345",
+      "altText": "",
+      "width": 2048,
+      "height": 2048
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/videomancer/media/01-videomancer.png"
   },
   {
     "id": "gid://shopify/ExternalVideo/28702802968599",
@@ -20,6 +26,36 @@
     "embeddedUrl": "https://youtu.be/7cY8loTRU78",
     "host": "YOUTUBE",
     "originUrl": "https://youtu.be/7cY8loTRU78",
+    "image": null,
+    "sources": []
+  },
+  {
+    "id": "gid://shopify/MediaImage/27652226023447",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-connectors-and-controls.png?v=1776197755",
+      "altText": "",
+      "width": 1600,
+      "height": 1600
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/videomancer/media/03-videomancer.png"
+  },
+  {
+    "id": "gid://shopify/ExternalVideo/27337667969047",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/pmYxqFp5V3o",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/pmYxqFp5V3o",
     "image": null,
     "sources": []
   },
@@ -37,42 +73,6 @@
       "altText": "",
       "width": 2048,
       "height": 2048
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/videomancer/media/03-videomancer.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/27159011328023",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-top-2048.png?v=1760736345",
-      "altText": "",
-      "width": 2048,
-      "height": 2048
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/videomancer/media/04-videomancer.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/27652226023447",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-connectors-and-controls.png?v=1776197755",
-      "altText": "",
-      "width": 1600,
-      "height": 1600
     },
     "sources": [],
     "localPath": "catalog/shopify/products/videomancer/media/05-videomancer.png"

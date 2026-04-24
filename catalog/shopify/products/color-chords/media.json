@@ -1,5 +1,23 @@
 [
   {
+    "id": "gid://shopify/MediaImage/1571131424791",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_22.jpg?v=1544140045",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/color-chords/media/01-color-chords.jpg"
+  },
+  {
     "id": "gid://shopify/MediaImage/1571131228183",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -15,7 +33,7 @@
       "height": 1024
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/color-chords/media/01-color-chords.png"
+    "localPath": "catalog/shopify/products/color-chords/media/02-color-chords.png"
   },
   {
     "id": "gid://shopify/MediaImage/1571131260951",
@@ -33,24 +51,6 @@
       "height": 1024
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/color-chords/media/02-color-chords.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/1571131424791",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_22.jpg?v=1544140045",
-      "altText": "",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/color-chords/media/03-color-chords.jpg"
+    "localPath": "catalog/shopify/products/color-chords/media/03-color-chords.png"
   }
 ]

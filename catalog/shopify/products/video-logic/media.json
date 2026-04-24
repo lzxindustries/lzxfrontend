@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/28740796874775",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "Video Logic",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-video-logic-front-panel.jpg?v=1776802857",
-      "altText": "Video Logic",
-      "width": 144,
-      "height": 600
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/video-logic/media/01-video-logic.jpg"
-  },
-  {
     "id": "gid://shopify/MediaImage/28740796907543",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -33,6 +15,24 @@
       "height": 2548
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/video-logic/media/02-video-logic-image-2.jpg"
+    "localPath": "catalog/shopify/products/video-logic/media/01-video-logic-image-2.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740796874775",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Video Logic",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-video-logic-front-panel.jpg?v=1776802857",
+      "altText": "Video Logic",
+      "width": 144,
+      "height": 600
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/video-logic/media/02-video-logic.jpg"
   }
 ]

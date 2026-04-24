@@ -1,59 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/20259437543447",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot1.jpg?v=1710180066",
-      "altText": "",
-      "width": 1600,
-      "height": 1072
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/andor-1-media-player/media/01-andor-1-media-player.jpg"
-  },
-  {
-    "id": "gid://shopify/MediaImage/20259437576215",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot2.jpg?v=1710180066",
-      "altText": "",
-      "width": 1600,
-      "height": 1072
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/andor-1-media-player/media/02-andor-1-media-player.jpg"
-  },
-  {
-    "id": "gid://shopify/MediaImage/20259437608983",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot3.jpg?v=1710180066",
-      "altText": "",
-      "width": 1600,
-      "height": 1072
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/andor-1-media-player/media/03-andor-1-media-player.jpg"
-  },
-  {
     "id": "gid://shopify/MediaImage/23608261246999",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -69,7 +15,7 @@
       "height": 1200
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/andor-1-media-player/media/04-andor-1-media-player.png"
+    "localPath": "catalog/shopify/products/andor-1-media-player/media/01-andor-1-media-player.png"
   },
   {
     "id": "gid://shopify/MediaImage/23608261279767",
@@ -87,6 +33,60 @@
       "height": 1200
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/andor-1-media-player/media/05-andor-1-media-player.png"
+    "localPath": "catalog/shopify/products/andor-1-media-player/media/02-andor-1-media-player.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/20259437543447",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot1.jpg?v=1710180066",
+      "altText": "",
+      "width": 1600,
+      "height": 1072
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/andor-1-media-player/media/03-andor-1-media-player.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/20259437576215",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot2.jpg?v=1710180066",
+      "altText": "",
+      "width": 1600,
+      "height": 1072
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/andor-1-media-player/media/04-andor-1-media-player.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/20259437608983",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot3.jpg?v=1710180066",
+      "altText": "",
+      "width": 1600,
+      "height": 1072
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/andor-1-media-player/media/05-andor-1-media-player.jpg"
   }
 ]

@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/scrolls",
   "description": "Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis.",
   "createdAt": "2023-08-29T22:23:50Z",
-  "updatedAt": "2026-04-21T09:02:41Z",
+  "updatedAt": "2026-04-24T16:57:10Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/8898310602775",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Scrolls | LZX Industries",
-    "description": "Scrolls"
+    "title": null,
+    "description": null
   }
 }

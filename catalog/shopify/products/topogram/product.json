@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Topogram is a wideband voltage-controlled 2D shape generator with a dedicated voltage-controlled 3D perspective stage: you create geometry in the plane, then foreshorten and skew it in depth using continuous CV—built for 3D-like scenes without a digital framebuffer. Block diagram and full operator guide: Manual. Jack list: Specs.",
   "createdAt": "2026-04-21T20:20:50Z",
-  "updatedAt": "2026-04-24T00:49:05Z",
+  "updatedAt": "2026-04-24T12:49:10Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424409623",

@@ -30,6 +30,8 @@
     "test:e2e:all": "playwright test",
     "search:index": "node scripts/build-search-index.mjs",
     "audit:content": "node scripts/audit-product-content.mjs",
+    "audit:product-galleries": "node scripts/audit-product-galleries.mjs",
+    "shopify:sync:gallery-apply": "node scripts/shopify-sync.mjs gallery-apply",
     "audit:responsive": "node scripts/site-audit.mjs http://localhost:3000 --responsive --skip-external",
     "content:qa": "node scripts/content-qa.mjs",
     "content:qa:strict": "node scripts/content-qa.mjs --strict",

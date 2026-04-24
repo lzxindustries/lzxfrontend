@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/28740794023959",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "Bridge",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-bridge-front-panel.jpg?v=1776802809",
-      "altText": "Bridge",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/bridge/media/01-bridge.jpg"
-  },
-  {
     "id": "gid://shopify/MediaImage/28740794056727",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -33,7 +15,25 @@
       "height": 550
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/bridge/media/02-bridge-image-2.png"
+    "localPath": "catalog/shopify/products/bridge/media/01-bridge-image-2.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740794023959",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Bridge",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-bridge-front-panel.jpg?v=1776802809",
+      "altText": "Bridge",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/bridge/media/02-bridge.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/28740794089495",

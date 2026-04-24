@@ -144,24 +144,6 @@
     "localPath": "catalog/shopify/products/tbc2-expander/media/08-tbc2-expander-image-8.png"
   },
   {
-    "id": "gid://shopify/MediaImage/28740796547095",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "TBC2 Expander image 9",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/09-tbc2-front-line-art.png?v=1776802852",
-      "altText": "TBC2 Expander image 9",
-      "width": 645,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/tbc2-expander/media/09-tbc2-expander-image-9.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/28740796579863",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -177,24 +159,6 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/tbc2-expander/media/10-tbc2-expander-image-10.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/28740796612631",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "TBC2 Expander image 11",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/11-tbc2ex-fpn-revb-square.png?v=1776802851",
-      "altText": "TBC2 Expander image 11",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/tbc2-expander/media/11-tbc2-expander-image-11.png"
+    "localPath": "catalog/shopify/products/tbc2-expander/media/09-tbc2-expander-image-10.png"
   }
 ]

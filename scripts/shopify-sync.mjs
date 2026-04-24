@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {mkdir, readFile, unlink, writeFile} from 'node:fs/promises';
+import {mkdir, readFile, rm, unlink, writeFile} from 'node:fs/promises';
 import {copyFile, readdir} from 'node:fs/promises';
 import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import path from 'node:path';
@@ -25,6 +25,14 @@ const SUPPORTED_SEED_PRODUCT_TYPES = new Set([
 const SUPPLEMENTAL_SEED_MEDIA_ROOTS = {
   'alternate-frontpanel': ['accessories/alternate-frontpanels'],
 };
+const DEFAULT_GALLERY_PLAN_PATH = 'audit-results/product-gallery-remediation.json';
+const DEFAULT_GALLERY_KINDS = ['delete', 'reorder'];
+const SUPPORTED_GALLERY_KINDS = new Set([
+  'delete',
+  'reorder',
+  'replace',
+  'manual-review',
+]);
 const HELP_TEXT = `Shopify catalog sync CLI
 
 Usage:
@@ -42,6 +50,23 @@ Commands:
   diff      Compare local catalog files against the latest Shopify product data.
   push      Plan or apply local catalog changes back to Shopify.
   sync      Run doctor and then push using the local catalog as the source of truth.
+  gallery-apply
+            Execute gallery remediation operations planned by
+            'yarn audit:product-galleries' (audit-results/product-gallery-remediation.json).
+            Dry-run by default; pass --apply to mutate Shopify Admin. Runs only
+            'delete' and 'reorder' kinds unless overridden with --kinds; 'replace'
+            and 'manual-review' always require a human.
+  product-delete
+            Delete a product in Shopify by handle (--handle) or GID (--id). Dry-run
+            by default; --apply executes productDelete. Prints a safety preview
+            (title, variants, inventory, media count, online URL) before acting.
+  product-archive
+            Set a product's status to ARCHIVED (reversible; keeps order history,
+            URL redirect capability, and customer references). Same preview +
+            dry-run contract as product-delete.
+  media-alt
+            Update a single media item's alt text. Requires --handle and
+            --media-id, plus --alt "<new alt>". Dry-run unless --apply is passed.
 
 Options:
   --output-dir <dir>      Output root. Defaults to catalog/shopify.
@@ -49,6 +74,16 @@ Options:
   --handle <handle>       Restrict export to one product handle. Repeatable.
   --query <search>        Additional Shopify product search filter.
   --apply                 Persist mutations instead of running in dry-run mode.
+  --kinds <list>          Comma-separated op kinds for gallery-apply. Defaults to 'delete,reorder'.
+  --plan <path>           Override the remediation plan JSON path for gallery-apply.
+  --id <gid>              Product GID for product-delete (alternative to --handle).
+  --media-id <gid>        Media GID for media-alt.
+  --alt <text>            New alt text for media-alt.
+  --prune-stale           On 'pull' with a full-catalog fetch, delete any
+                          products/<handle>/ directory whose handle was not in
+                          the Shopify response (deleted/archived upstream, or
+                          never existed there). Without this flag, orphans are
+                          warned about but kept.
   --no-media-download     Skip downloading image assets.
   --offline               Skip Shopify credential checks for doctor.
   --help                  Show this help text.
@@ -112,6 +147,399 @@ const PRODUCT_UPDATE_MEDIA_MUTATION = `
       userErrors {
         field
         message
+      }
+    }
+  }
+`;
+
+const PRODUCT_DELETE_MEDIA_MUTATION = `
+  mutation DeleteProductMedia($mediaIds: [ID!]!, $productId: ID!) {
+    productDeleteMedia(mediaIds: $mediaIds, productId: $productId) {
+      deletedMediaIds
+      deletedProductImageIds
+      mediaUserErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_REORDER_MEDIA_MUTATION = `
+  mutation ReorderProductMedia($id: ID!, $moves: [MoveInput!]!) {
+    productReorderMedia(id: $id, moves: $moves) {
+      job {
+        id
+        done
+      }
+      mediaUserErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_DELETE_MUTATION = `
+  mutation DeleteProduct($input: ProductDeleteInput!) {
+    productDelete(input: $input) {
+      deletedProductId
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_ARCHIVE_MUTATION = `
+  mutation ArchiveProduct($product: ProductUpdateInput!) {
+    productUpdate(product: $product) {
+      product {
+        id
+        status
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_UPDATE_MEDIA_ALT_MUTATION = `
+  mutation UpdateMediaAlt($media: [UpdateMediaInput!]!, $productId: ID!) {
+    productUpdateMedia(media: $media, productId: $productId) {
+      media {
+        id
+        alt
+      }
+      mediaUserErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+const PRODUCT_PREVIEW_QUERY = `
+  query ProductPreview($id: ID, $handle: String) {
+    product(id: $id) @include(if: $byId) {
+      ...ProductPreviewFields
+    }
+    productByHandle(handle: $handle) @include(if: $byHandle) {
+      ...ProductPreviewFields
+    }
+  }
+  fragment ProductPreviewFields on Product {
+    id
+    handle
+    title
+    status
+    vendor
+    productType
+    totalInventory
+    createdAt
+    onlineStoreUrl
+    variants(first: 50) {
+      edges {
+        node {
+          id
+          title
+          sku
+          price
+          inventoryQuantity
+          availableForSale
+        }
+      }
+    }
+    media(first: 100) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+  }
+`;
+
+async function fetchProductPreview(client, {handle, id}) {
+  if (id) {
+    const data = await client.graphql(
+      `query Preview($id: ID!) {
+        product(id: $id) {
+          id handle title status vendor productType totalInventory createdAt onlineStoreUrl
+          variants(first: 50) { edges { node { id title sku price inventoryQuantity availableForSale } } }
+          media(first: 100) { edges { node { id } } }
+        }
+      }`,
+      {id},
+    );
+    return data.product ?? null;
+  }
+  const data = await client.graphql(
+    `query Preview($handle: String!) {
+      productByHandle(handle: $handle) {
+        id handle title status vendor productType totalInventory createdAt onlineStoreUrl
+        variants(first: 50) { edges { node { id title sku price inventoryQuantity availableForSale } } }
+        media(first: 100) { edges { node { id } } }
+      }
+    }`,
+    {handle},
+  );
+  return data.productByHandle ?? null;
+}
+
+async function runProductDelete(config, cli) {
+  const apply = cli.flags.apply === true;
+  const handles = Array.isArray(cli.values.handle) ? cli.values.handle : [];
+  const id = cli.values.id ?? null;
+
+  if (handles.length === 0 && !id) {
+    throw new Error(
+      'product-delete requires --handle <handle> or --id <gid>.',
+    );
+  }
+  if (handles.length > 1) {
+    throw new Error(
+      'product-delete accepts a single product at a time. Call again per handle.',
+    );
+  }
+  const handle = handles[0] ?? null;
+
+  assertAdminEnv();
+  const client = createAdminClient(config);
+  console.log('Authenticating with Shopify Admin API...');
+  await client.getAccessToken();
+  console.log('Authenticated.');
+
+  const product = await fetchProductPreview(client, {handle, id});
+  if (!product) {
+    throw new Error(
+      `Product not found for ${id ? `id=${id}` : `handle=${handle}`}.`,
+    );
+  }
+
+  const variantEdges = product.variants?.edges ?? [];
+  const mediaEdges = product.media?.edges ?? [];
+  const totalInventory = product.totalInventory ?? 0;
+
+  console.log('');
+  console.log('[product-delete] target:');
+  console.log(`  handle:        ${product.handle}`);
+  console.log(`  id:            ${product.id}`);
+  console.log(`  title:         ${product.title}`);
+  console.log(`  status:        ${product.status}`);
+  console.log(`  vendor/type:   ${product.vendor} / ${product.productType}`);
+  console.log(`  created:       ${product.createdAt}`);
+  console.log(`  onlineStoreUrl:${product.onlineStoreUrl ?? '(none)'}`);
+  console.log(`  variants:      ${variantEdges.length}`);
+  for (const edge of variantEdges) {
+    const v = edge.node;
+    console.log(
+      `    - ${v.sku || '(no-sku)'} | ${v.title} | $${v.price} | qty=${v.inventoryQuantity ?? '?'}${v.availableForSale ? '' : ' | unavailable'}`,
+    );
+  }
+  console.log(`  media count:   ${mediaEdges.length}`);
+  console.log(`  totalInventory:${totalInventory}`);
+  console.log('');
+
+  // Guardrails: refuse --apply on products that look live.
+  if (apply) {
+    const hasRealSku = variantEdges.some((e) => Boolean(e.node.sku));
+    const hasInventory = totalInventory > 0;
+    if (hasRealSku && hasInventory) {
+      throw new Error(
+        `Refusing --apply: product has SKUs and inventory (totalInventory=${totalInventory}). ` +
+          `Archive it first via Shopify Admin if you really mean to delete.`,
+      );
+    }
+  }
+
+  if (!apply) {
+    console.log(
+      '[dry-run] productDelete not executed. Re-run with --apply to delete.',
+    );
+    return true;
+  }
+
+  const data = await client.graphql(PRODUCT_DELETE_MUTATION, {
+    input: {id: product.id},
+  });
+  const res = data.productDelete;
+  if (res.userErrors?.length > 0) {
+    throw new Error(
+      `productDelete userErrors: ${res.userErrors.map((e) => `${(e.field ?? []).join('.')}: ${e.message}`).join(' | ')}`,
+    );
+  }
+  console.log(`✓ deleted ${res.deletedProductId}`);
+  console.log(
+    '[next] refresh mirror + audit: yarn shopify:sync:pull && yarn catalog:bootstrap && yarn audit:product-galleries',
+  );
+  return true;
+}
+
+async function runProductArchive(config, cli) {
+  const apply = cli.flags.apply === true;
+  const handles = Array.isArray(cli.values.handle) ? cli.values.handle : [];
+  const id = cli.values.id ?? null;
+
+  if (handles.length === 0 && !id) {
+    throw new Error(
+      'product-archive requires --handle <handle> or --id <gid>.',
+    );
+  }
+  if (handles.length > 1) {
+    throw new Error(
+      'product-archive accepts a single product at a time. Call again per handle.',
+    );
+  }
+  const handle = handles[0] ?? null;
+
+  assertAdminEnv();
+  const client = createAdminClient(config);
+  console.log('Authenticating with Shopify Admin API...');
+  await client.getAccessToken();
+  console.log('Authenticated.');
+
+  const product = await fetchProductPreview(client, {handle, id});
+  if (!product) {
+    throw new Error(
+      `Product not found for ${id ? `id=${id}` : `handle=${handle}`}.`,
+    );
+  }
+
+  if (product.status === 'ARCHIVED') {
+    console.log(
+      `[product-archive] ${product.handle} is already ARCHIVED; nothing to do.`,
+    );
+    return true;
+  }
+
+  const variantEdges = product.variants?.edges ?? [];
+  const mediaEdges = product.media?.edges ?? [];
+  const totalInventory = product.totalInventory ?? 0;
+
+  console.log('');
+  console.log('[product-archive] target:');
+  console.log(`  handle:        ${product.handle}`);
+  console.log(`  id:            ${product.id}`);
+  console.log(`  title:         ${product.title}`);
+  console.log(`  status:        ${product.status} -> ARCHIVED`);
+  console.log(`  vendor/type:   ${product.vendor} / ${product.productType}`);
+  console.log(`  created:       ${product.createdAt}`);
+  console.log(`  onlineStoreUrl:${product.onlineStoreUrl ?? '(none)'}`);
+  console.log(`  variants:      ${variantEdges.length}`);
+  for (const edge of variantEdges) {
+    const v = edge.node;
+    console.log(
+      `    - ${v.sku || '(no-sku)'} | ${v.title} | $${v.price} | qty=${v.inventoryQuantity ?? '?'}${v.availableForSale ? '' : ' | unavailable'}`,
+    );
+  }
+  console.log(`  media count:   ${mediaEdges.length}`);
+  console.log(`  totalInventory:${totalInventory}`);
+  console.log('');
+
+  if (!apply) {
+    console.log(
+      '[dry-run] productUpdate(status=ARCHIVED) not executed. Re-run with --apply to archive.',
+    );
+    return true;
+  }
+
+  const data = await client.graphql(PRODUCT_ARCHIVE_MUTATION, {
+    product: {id: product.id, status: 'ARCHIVED'},
+  });
+  const res = data.productUpdate;
+  if (res.userErrors?.length > 0) {
+    throw new Error(
+      `productUpdate userErrors: ${res.userErrors.map((e) => `${(e.field ?? []).join('.')}: ${e.message}`).join(' | ')}`,
+    );
+  }
+  console.log(`✓ archived ${res.product?.id} (status=${res.product?.status})`);
+  console.log(
+    '[next] refresh mirror + audit: yarn shopify:sync:pull && yarn catalog:bootstrap && yarn audit:product-galleries',
+  );
+  return true;
+}
+
+async function runMediaAlt(config, cli) {
+  const apply = cli.flags.apply === true;
+  const handles = Array.isArray(cli.values.handle) ? cli.values.handle : [];
+  const mediaId = cli.values['media-id'] ?? null;
+  const alt = cli.values.alt;
+
+  if (handles.length === 0) {
+    throw new Error('media-alt requires --handle <handle>.');
+  }
+  if (handles.length > 1) {
+    throw new Error('media-alt accepts a single product at a time.');
+  }
+  if (!mediaId) {
+    throw new Error('media-alt requires --media-id <gid>.');
+  }
+  if (alt === undefined) {
+    throw new Error('media-alt requires --alt "<new alt text>".');
+  }
+
+  assertAdminEnv();
+  const client = createAdminClient(config);
+  console.log('Authenticating with Shopify Admin API...');
+  await client.getAccessToken();
+  console.log('Authenticated.');
+
+  const product = await fetchProductPreview(client, {handle: handles[0]});
+  if (!product) {
+    throw new Error(`Product not found for handle=${handles[0]}.`);
+  }
+  const hasMedia = (product.media?.edges ?? []).some(
+    (e) => e.node.id === mediaId,
+  );
+  if (!hasMedia) {
+    throw new Error(
+      `Media ${mediaId} is not attached to product ${product.handle} (${product.id}).`,
+    );
+  }
+
+  console.log('');
+  console.log('[media-alt] target:');
+  console.log(`  handle:   ${product.handle}`);
+  console.log(`  product:  ${product.id}`);
+  console.log(`  media:    ${mediaId}`);
+  console.log(`  new alt:  ${JSON.stringify(alt)}`);
+  console.log('');
+
+  if (!apply) {
+    console.log('[dry-run] productUpdateMedia not executed. Use --apply.');
+    return true;
+  }
+
+  const data = await client.graphql(PRODUCT_UPDATE_MEDIA_ALT_MUTATION, {
+    productId: product.id,
+    media: [{id: mediaId, alt}],
+  });
+  const res = data.productUpdateMedia;
+  if (res.mediaUserErrors?.length > 0) {
+    throw new Error(
+      `mediaUserErrors: ${res.mediaUserErrors.map((e) => `${(e.field ?? []).join('.')}: ${e.message}`).join(' | ')}`,
+    );
+  }
+  const updated = res.media?.[0];
+  console.log(`✓ updated ${updated?.id} alt=${JSON.stringify(updated?.alt)}`);
+  return true;
+}
+
+const PRODUCT_MEDIA_ORDER_QUERY = `
+  query ProductMediaOrder($id: ID!) {
+    product(id: $id) {
+      id
+      media(first: 100) {
+        edges {
+          node {
+            id
+            mediaContentType
+          }
+        }
       }
     }
   }
@@ -257,6 +685,30 @@ async function main() {
     return;
   }
 
+  if (cli.command === 'gallery-apply') {
+    const ok = await runGalleryApply(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'product-delete') {
+    const ok = await runProductDelete(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'product-archive') {
+    const ok = await runProductArchive(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
+  if (cli.command === 'media-alt') {
+    const ok = await runMediaAlt(config, cli);
+    process.exitCode = ok ? 0 : 1;
+    return;
+  }
+
   throw new Error(`Unknown command: ${cli.command}`);
 }
 
@@ -277,7 +729,8 @@ function parseArgs(args) {
       key === 'help' ||
       key === 'offline' ||
       key === 'no-media-download' ||
-      key === 'apply'
+      key === 'apply' ||
+      key === 'prune-stale'
     ) {
       flags[key] = true;
       continue;
@@ -291,6 +744,8 @@ function parseArgs(args) {
     if (key === 'handle') {
       values.handle = values.handle ?? [];
       values.handle.push(next);
+    } else if (key === 'kinds') {
+      values.kinds = next.split(',').map((s) => s.trim()).filter(Boolean);
     } else {
       values[key] = next;
     }
@@ -371,10 +826,10 @@ async function runPull(config, cli) {
 
   await mkdir(config.outputDir, {recursive: true});
 
-  const searchQuery = buildSearchQuery(
-    cli.values.handle ?? [],
-    cli.values.query,
-  );
+  const handleFilter = cli.values.handle ?? [];
+  const queryFilter = cli.values.query ?? null;
+  const isFullCatalogFetch = handleFilter.length === 0 && !queryFilter;
+  const searchQuery = buildSearchQuery(handleFilter, queryFilter);
   const catalog = await fetchRemoteCatalog(config, searchQuery);
   console.log(`Parsed ${catalog.products.length} product records.`);
 
@@ -385,6 +840,43 @@ async function runPull(config, cli) {
   console.log(`Products exported: ${summary.productCount}`);
   console.log(`Image assets downloaded: ${summary.downloadedImages}`);
   console.log(`Catalog root: ${config.outputDir}`);
+
+  // Orphan detection + optional pruning. Only safe when we fetched the full
+  // catalog; if the user filtered with --handle or --query, dirs outside the
+  // filter are expected to be missing from the response.
+  if (isFullCatalogFetch) {
+    const productsRoot = path.join(config.outputDir, 'products');
+    const onDisk = await listSubdirectoryNames(productsRoot);
+    const exported = new Set(
+      catalog.products.map((entry) => entry.product.handle).filter(Boolean),
+    );
+    const orphans = onDisk.filter((handle) => !exported.has(handle)).sort();
+    if (orphans.length > 0) {
+      if (cli.flags['prune-stale'] === true) {
+        for (const handle of orphans) {
+          const dir = path.join(productsRoot, handle);
+          await rm(dir, {recursive: true, force: true});
+          console.log(`  pruned stale: ${path.relative(process.cwd(), dir)}`);
+        }
+        console.log(`Pruned ${orphans.length} stale product director${orphans.length === 1 ? 'y' : 'ies'}.`);
+      } else {
+        console.log('');
+        console.log(
+          `Found ${orphans.length} product director${orphans.length === 1 ? 'y' : 'ies'} with no matching Shopify product (deleted, archived, or never pushed):`,
+        );
+        for (const handle of orphans) {
+          console.log(`  - ${handle}`);
+        }
+        console.log(
+          'Pass --prune-stale to delete them. Keep in mind: locally seeded products (yarn shopify:sync seed) will be flagged until pushed to Shopify.',
+        );
+      }
+    }
+  } else if (cli.flags['prune-stale'] === true) {
+    console.log(
+      '[warn] --prune-stale ignored: pull was filtered by --handle/--query (would be unsafe to prune).',
+    );
+  }
 }
 
 async function runSeed(config, cli) {
@@ -808,6 +1300,206 @@ function assertAdminEnv() {
   }
 }
 
+async function runGalleryApply(config, cli) {
+  const apply = cli.flags.apply === true;
+  const planPath = path.resolve(
+    process.cwd(),
+    cli.values.plan ?? DEFAULT_GALLERY_PLAN_PATH,
+  );
+  const handleFilter = Array.isArray(cli.values.handle)
+    ? new Set(cli.values.handle)
+    : null;
+
+  const rawKinds = Array.isArray(cli.values.kinds)
+    ? cli.values.kinds
+    : DEFAULT_GALLERY_KINDS;
+  const kinds = rawKinds.filter((k) => SUPPORTED_GALLERY_KINDS.has(k));
+  const unknownKinds = rawKinds.filter((k) => !SUPPORTED_GALLERY_KINDS.has(k));
+  if (unknownKinds.length > 0) {
+    throw new Error(
+      `Unsupported --kinds values: ${unknownKinds.join(', ')}. ` +
+        `Known: ${[...SUPPORTED_GALLERY_KINDS].join(', ')}.`,
+    );
+  }
+  const manualOnly = kinds.every(
+    (k) => k === 'replace' || k === 'manual-review',
+  );
+  if (apply && manualOnly) {
+    throw new Error(
+      `--apply refused: kinds=${kinds.join(',')} only contains human-review ops. ` +
+        `Execute 'delete' and/or 'reorder' here; handle 'replace' and 'manual-review' in Shopify Admin.`,
+    );
+  }
+
+  if (!existsSync(planPath)) {
+    throw new Error(
+      `Remediation plan not found: ${path.relative(process.cwd(), planPath)}. ` +
+        `Run 'yarn audit:product-galleries' first.`,
+    );
+  }
+
+  const plan = JSON.parse(readFileSync(planPath, 'utf8'));
+  const allOps = Array.isArray(plan.operations) ? plan.operations : [];
+  const ops = allOps.filter((op) => {
+    if (handleFilter && !handleFilter.has(op.handle)) return false;
+    if (!kinds.includes(op.kind)) return false;
+    return true;
+  });
+
+  console.log(
+    `[gallery-apply] ${ops.length} operation(s) ready for ${apply ? 'APPLY' : 'dry-run'}` +
+      (allOps.length - ops.length > 0
+        ? ` (${allOps.length - ops.length} skipped by scope filters)`
+        : '') +
+      (handleFilter
+        ? `; handle=${[...handleFilter].join(',')}`
+        : '') +
+      `; kinds=${kinds.join(',')}`,
+  );
+
+  if (ops.length === 0) {
+    console.log('[gallery-apply] nothing to do.');
+    return true;
+  }
+
+  if (apply) {
+    assertAdminEnv();
+  }
+
+  const client = apply ? createAdminClient(config) : null;
+  if (apply) {
+    console.log('Authenticating with Shopify Admin API...');
+    await client.getAccessToken();
+    console.log('Authenticated.');
+  }
+
+  let executed = 0;
+  let dryRun = 0;
+  let skipped = 0;
+  let failed = 0;
+
+  for (const op of ops) {
+    try {
+      if (op.kind === 'delete') {
+        if (!apply) {
+          console.log(
+            `  [dry-run] delete ${op.mediaShopifyIds.length} media from "${op.handle}" (slots ${op.dropSlots.join(', ')}; keep slot ${op.keepSlot})`,
+          );
+          dryRun++;
+        } else {
+          await executeDeleteMedia(client, op);
+          executed++;
+        }
+      } else if (op.kind === 'reorder') {
+        if (!apply) {
+          console.log(
+            `  [dry-run] reorder "${op.handle}": move slot ${op.move.fromSlot} -> ${op.move.toSlot}`,
+          );
+          dryRun++;
+        } else {
+          await executeReorderMedia(client, op);
+          executed++;
+        }
+      } else {
+        console.log(
+          `  skip '${op.kind}' for "${op.handle}" (human-review only)`,
+        );
+        skipped++;
+      }
+    } catch (error) {
+      failed++;
+      console.error(
+        `  ✗ ${op.kind} ${op.handle}: ${error instanceof Error ? error.message : String(error)}`,
+      );
+    }
+  }
+
+  console.log('');
+  console.log(
+    `[gallery-apply] ${apply ? 'applied' : 'dry-run'}: executed=${executed} dry-run=${dryRun} skipped=${skipped} failed=${failed}`,
+  );
+
+  if (!apply) {
+    console.log(
+      "[info] re-run with --apply to execute; scope first, e.g. --handle cadet-series-embroidered-patch --kinds delete",
+    );
+  } else {
+    console.log(
+      '[next] refresh mirror + audit: yarn shopify:sync:pull && yarn catalog:bootstrap && yarn audit:product-galleries',
+    );
+  }
+
+  return failed === 0;
+}
+
+async function executeDeleteMedia(client, op) {
+  if (!op.productShopifyId) {
+    throw new Error(`delete op missing productShopifyId for ${op.handle}`);
+  }
+  if (!Array.isArray(op.mediaShopifyIds) || op.mediaShopifyIds.length === 0) {
+    throw new Error(`delete op missing mediaShopifyIds for ${op.handle}`);
+  }
+
+  const data = await client.graphql(PRODUCT_DELETE_MEDIA_MUTATION, {
+    mediaIds: op.mediaShopifyIds,
+    productId: op.productShopifyId,
+  });
+  const res = data.productDeleteMedia;
+  if (res.mediaUserErrors?.length > 0) {
+    throw new Error(
+      `productDeleteMedia userErrors: ${res.mediaUserErrors
+        .map((e) => `${(e.field ?? []).join('.')}: ${e.message}`)
+        .join(' | ')}`,
+    );
+  }
+  console.log(
+    `  ✓ deleted ${res.deletedMediaIds?.length ?? 0} media from "${op.handle}"`,
+  );
+}
+
+async function executeReorderMedia(client, op) {
+  if (!op.productShopifyId) {
+    throw new Error(`reorder op missing productShopifyId for ${op.handle}`);
+  }
+  if (
+    !op.move ||
+    !Number.isInteger(op.move.fromSlot) ||
+    !Number.isInteger(op.move.toSlot)
+  ) {
+    throw new Error(`reorder op missing valid move for ${op.handle}`);
+  }
+
+  // Resolve media IDs at apply time — slot order may have drifted since the last pull.
+  const data = await client.graphql(PRODUCT_MEDIA_ORDER_QUERY, {
+    id: op.productShopifyId,
+  });
+  const edges = data?.product?.media?.edges ?? [];
+  const currentIds = edges.map((e) => e.node.id);
+  if (op.move.fromSlot < 0 || op.move.fromSlot >= currentIds.length) {
+    throw new Error(
+      `reorder: fromSlot ${op.move.fromSlot} out of range (live media count ${currentIds.length})`,
+    );
+  }
+  const mediaId = currentIds[op.move.fromSlot];
+  const moves = [{id: mediaId, newPosition: String(op.move.toSlot)}];
+
+  const reorderData = await client.graphql(PRODUCT_REORDER_MEDIA_MUTATION, {
+    id: op.productShopifyId,
+    moves,
+  });
+  const res = reorderData.productReorderMedia;
+  if (res.mediaUserErrors?.length > 0) {
+    throw new Error(
+      `productReorderMedia userErrors: ${res.mediaUserErrors
+        .map((e) => `${(e.field ?? []).join('.')}: ${e.message}`)
+        .join(' | ')}`,
+    );
+  }
+  console.log(
+    `  ✓ reorder "${op.handle}" job=${res.job?.id} done=${res.job?.done}`,
+  );
+}
+
 async function fetchRemoteCatalog(config, searchQuery) {
   const client = createAdminClient(config);
 
@@ -1206,12 +1898,16 @@ async function downloadCatalog(url) {
     }
   }
 
+  // Preserve the bulk export's encounter order for media so the mirror
+  // reflects the live gallery display order (what `productReorderMedia`
+  // controls). Diffs still use `normalizeComparableMedia` (ID-sorted) so
+  // local<->remote comparisons remain stable regardless of position.
   const products = [...productsById.values()]
     .map((entry) => ({
       ...entry,
       variants: entry.variants.sort(compareByPositionThenId),
       metafields: entry.metafields.sort(compareMetafields),
-      media: entry.media.sort(compareMedia),
+      media: entry.media,
     }))
     .sort((left, right) =>
       left.product.handle.localeCompare(right.product.handle),

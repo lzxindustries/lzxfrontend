@@ -1,5 +1,23 @@
 [
   {
+    "id": "gid://shopify/MediaImage/22903417077783",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dsg3-front-panel-square.png?v=1683302006",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dsg3/media/01-dsg3.png"
+  },
+  {
     "id": "gid://shopify/MediaImage/21771146887191",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -15,7 +33,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/01-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/02-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771146919959",
@@ -33,7 +51,7 @@
       "height": 862
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/02-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/03-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771146952727",
@@ -51,7 +69,7 @@
       "height": 1059
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/03-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/04-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147018263",
@@ -69,7 +87,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/04-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/05-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147051031",
@@ -87,7 +105,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/05-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/06-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147149335",
@@ -105,7 +123,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/06-dsg3.png"
+    "localPath": "catalog/shopify/products/dsg3/media/07-dsg3.png"
   },
   {
     "id": "gid://shopify/MediaImage/21771147214871",
@@ -123,7 +141,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/07-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/08-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147247639",
@@ -141,7 +159,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/08-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/09-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147313175",
@@ -159,7 +177,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/09-dsg3.jpg"
+    "localPath": "catalog/shopify/products/dsg3/media/10-dsg3.jpg"
   },
   {
     "id": "gid://shopify/MediaImage/21771147378711",
@@ -177,24 +195,6 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/10-dsg3.jpg"
-  },
-  {
-    "id": "gid://shopify/MediaImage/22903417077783",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dsg3-front-panel-square.png?v=1683302006",
-      "altText": "",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/dsg3/media/11-dsg3.png"
+    "localPath": "catalog/shopify/products/dsg3/media/11-dsg3.jpg"
   }
 ]

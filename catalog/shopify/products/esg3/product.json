@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/esg3",
   "description": "ESG3 is the Gen3 encoder and sync heart of the LZX system: it generates the master sync reference, encodes 1V patchable color and mono outputs for monitoring and downstream gear, and hands off stable timing to the rest of the case. Encoding modes, rear I/O, and calibration flow are in the Manual. The Specs tab tracks connectors and switch definitions from the module database—avoid duplicating that table in marketing copy here.",
   "createdAt": "2021-08-26T22:06:03Z",
-  "updatedAt": "2026-04-24T00:49:00Z",
+  "updatedAt": "2026-04-24T12:49:07Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/8460564398103",

@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-010-clock-vco",
   "description": "DIY PCB & Frontpanel Set The Clock VCO is a square wave Voltage Controlled Oscillator with a linear response to CV.",
   "createdAt": "2018-12-06T05:54:58Z",
-  "updatedAt": "2026-04-17T00:53:45Z",
+  "updatedAt": "2026-04-24T19:47:55Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/2320733208640",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Castle 010 Clock VCO | LZX Industries",
-    "description": "Castle 010 Clock VCO"
+    "title": null,
+    "description": null
   }
 }

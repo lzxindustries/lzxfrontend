@@ -1,5 +1,41 @@
 [
   {
+    "id": "gid://shopify/MediaImage/22893817298967",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/StackerSquare.png?v=1682550867",
+      "altText": "",
+      "width": 3036,
+      "height": 3036
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/stacker/media/01-stacker.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22906777108503",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "How do you stack up?",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/PXL_20230509_233228860.jpg?v=1683677738",
+      "altText": "How do you stack up?",
+      "width": 4032,
+      "height": 3024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/stacker/media/02-how-do-you-stack-up.jpg"
+  },
+  {
     "id": "gid://shopify/ExternalVideo/25062807568407",
     "type": "ExternalVideo",
     "mediaContentType": "EXTERNAL_VIDEO",
@@ -34,41 +70,5 @@
     "originUrl": "https://youtu.be/bB_V8DBnVEw",
     "image": null,
     "sources": []
-  },
-  {
-    "id": "gid://shopify/MediaImage/22893817298967",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/StackerSquare.png?v=1682550867",
-      "altText": "",
-      "width": 3036,
-      "height": 3036
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/stacker/media/04-stacker.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/22906777108503",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "How do you stack up?",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/PXL_20230509_233228860.jpg?v=1683677738",
-      "altText": "How do you stack up?",
-      "width": 4032,
-      "height": 3024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/stacker/media/05-how-do-you-stack-up.jpg"
   }
 ]

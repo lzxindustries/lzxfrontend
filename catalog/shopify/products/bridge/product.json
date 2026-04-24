@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
   "createdAt": "2026-04-21T20:20:05Z",
-  "updatedAt": "2026-04-22T08:20:13Z",
+  "updatedAt": "2026-04-24T19:47:53Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423033367",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "Bridge | LZX Industries",
+    "title": null,
     "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing."
   }
 }

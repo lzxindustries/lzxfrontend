@@ -1,17 +1,5 @@
 [
   {
-    "id": "gid://shopify/ExternalVideo/25071637135383",
-    "type": "ExternalVideo",
-    "mediaContentType": "EXTERNAL_VIDEO",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": "https://youtu.be/S744YMZBouI",
-    "host": "YOUTUBE",
-    "originUrl": "https://youtu.be/S744YMZBouI",
-    "image": null,
-    "sources": []
-  },
-  {
     "id": "gid://shopify/MediaImage/21421763788823",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -27,6 +15,18 @@
       "height": 3036
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/sumdist/media/02-sumdist.png"
+    "localPath": "catalog/shopify/products/sumdist/media/01-sumdist.png"
+  },
+  {
+    "id": "gid://shopify/ExternalVideo/25071637135383",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/S744YMZBouI",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/S744YMZBouI",
+    "image": null,
+    "sources": []
   }
 ]

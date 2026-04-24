@@ -90,6 +90,7 @@ Pass criteria:
    - Shop Pay
    - Apple Pay
    - Google Pay
+   - PayPal (confirmed enabled)
 3. Run one mobile checkout test for each available wallet.
 
 Pass criteria:
@@ -175,7 +176,7 @@ Decision rules:
 
 - Ensure shipping cost and ETA are visible before final payment confirmation.
 - Ensure return/refund policy and support path are visible near checkout decisions.
-- Confirm accelerated methods (Shop Pay, Apple Pay, Google Pay where available) are active.
+- Confirm accelerated methods (Shop Pay, Apple Pay, Google Pay, PayPal where available) are active.
 
 ### Day 3-5: flow simplification
 
@@ -227,3 +228,33 @@ Decision rules:
   - duplicate checkout-click tracking guard
   - visible cart action error block
   - purchase-event dedupe support with optional `eventID`
+- Payment providers confirmed active in Shopify Admin: Shop Pay, Apple Pay, Google Pay, PayPal.
+
+## Payment provider recommendations
+
+Current mix covers the big accelerated wallets (Shop Pay, Apple Pay, Google Pay, PayPal). The biggest remaining gap is **financing for high-ticket hardware** — full instruments and multi-module orders regularly clear $1,000-$5,000, which is exactly where buy-now-pay-later lifts conversion.
+
+Prioritized by expected impact vs. operational cost:
+
+### Tier 1 — enable now
+
+- **Shop Pay Installments**: turns on inside Shopify Payments with one toggle. Splits eligible orders ($50-$17,500) into 4 interest-free payments or longer monthly plans for larger carts. Same Shop Pay surface buyers already trust; minimal new support burden.
+- **Affirm**: monthly financing tuned for $500+ purchases. Strong fit for full instrument bundles. US/CA only, 4-6% effective fee — factor into margin on financed orders.
+
+### Tier 2 — evaluate after Tier 1 data lands
+
+- **Klarna**: BNPL with strong EU/UK reach. Worth adding given the European video-art customer base, but only after measuring whether Shop Pay Installments is already absorbing BNPL demand in the US.
+- **Amazon Pay**: accelerated checkout that skips address entry for Amazon buyers. Useful if mobile abandonment data points to form-fill friction.
+
+### Tier 3 — skip for now
+
+- **Afterpay**: overlaps heavily with Shop Pay Installments and Klarna. Stacking BNPL options creates choice paralysis and can suppress conversion.
+- **Meta Pay / Facebook Pay**: negligible standalone usage; accelerated wallets already cover this intent.
+- **Crypto (Coinbase Commerce, BitPay)**: volume does not justify the reconciliation and refund overhead for this catalog.
+
+### Guardrails before adding any provider
+
+- Cap total BNPL options at two. More than that measurably hurts completion.
+- Confirm geo coverage matches active ad-spend markets before enabling; a BNPL button that declines on checkout is worse than no button.
+- Re-run the mobile checkout test matrix (iOS Safari, Android Chrome) after each addition. New payment scripts are a common source of mobile checkout regressions.
+- Watch chargeback and dispute rates for the first 30 days on any new BNPL provider.

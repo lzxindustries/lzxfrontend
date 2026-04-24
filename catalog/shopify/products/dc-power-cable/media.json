@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/22913770946583",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-50cm.png?v=1684446988",
-      "altText": "",
-      "width": 1080,
-      "height": 1080
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/dc-power-cable/media/01-dc-power-cable.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/22913770979351",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -33,25 +15,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dc-power-cable/media/02-dc-power-cable.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/22913771012119",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-90cm.png?v=1684446988",
-      "altText": "",
-      "width": 1080,
-      "height": 1080
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/dc-power-cable/media/03-dc-power-cable.png"
+    "localPath": "catalog/shopify/products/dc-power-cable/media/01-dc-power-cable.png"
   },
   {
     "id": "gid://shopify/MediaImage/22913771044887",
@@ -69,7 +33,25 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dc-power-cable/media/04-dc-power-cable.png"
+    "localPath": "catalog/shopify/products/dc-power-cable/media/02-dc-power-cable.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22913770946583",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-50cm.png?v=1684446988",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-power-cable/media/03-dc-power-cable.png"
   },
   {
     "id": "gid://shopify/MediaImage/22913771077655",
@@ -87,7 +69,7 @@
       "height": 1080
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/dc-power-cable/media/05-dc-power-cable.png"
+    "localPath": "catalog/shopify/products/dc-power-cable/media/04-dc-power-cable.png"
   },
   {
     "id": "gid://shopify/MediaImage/22913771110423",
@@ -100,6 +82,24 @@
     "originUrl": null,
     "image": {
       "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-30cm.png?v=1684446988",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/dc-power-cable/media/05-dc-power-cable.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22913771012119",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-90cm.png?v=1684446988",
       "altText": "",
       "width": 1080,
       "height": 1080

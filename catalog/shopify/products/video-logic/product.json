@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Video Logic is a multi-function Boolean and comparison stage for 1V video-rate signals: you get NAND, OR, and window-style logic, plus a dedicated voltage comparator in one Orion-series module—handy for key shaping, gating, and non-linear control before colorization or mixing. Truth tables, normals, and patch ideas: Manual. Physical layout: Specs.",
   "createdAt": "2026-04-21T20:20:54Z",
-  "updatedAt": "2026-04-24T00:49:06Z",
+  "updatedAt": "2026-04-24T19:47:56Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424507927",

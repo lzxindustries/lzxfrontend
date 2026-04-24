@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/21635928653847",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX3URack.png?v=1660264532",
-      "altText": "",
-      "width": 1798,
-      "height": 1798
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/rack-84hp/media/01-rack-84hp.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/21755678818327",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -31,6 +13,24 @@
       "altText": "",
       "width": 1440,
       "height": 1440
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/rack-84hp/media/01-rack-84hp.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/21635928653847",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX3URack.png?v=1660264532",
+      "altText": "",
+      "width": 1798,
+      "height": 1798
     },
     "sources": [],
     "localPath": "catalog/shopify/products/rack-84hp/media/02-rack-84hp.png"

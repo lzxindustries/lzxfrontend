@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/22913745649687",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-30cm.png?v=1684444562",
-      "altText": "",
-      "width": 1080,
-      "height": 1080
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/rca-sync-cable/media/01-rca-sync-cable.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/22913745682455",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -28,6 +10,24 @@
     "originUrl": null,
     "image": {
       "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-group.png?v=1684444562",
+      "altText": "",
+      "width": 1080,
+      "height": 1080
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/rca-sync-cable/media/01-rca-sync-cable.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22913745649687",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-30cm.png?v=1684444562",
       "altText": "",
       "width": 1080,
       "height": 1080

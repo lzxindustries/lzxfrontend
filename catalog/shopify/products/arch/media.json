@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/28740793860119",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "Arch",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-arch-front-panel.png?v=1776802806",
-      "altText": "Arch",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/arch/media/01-arch.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/28740793892887",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -33,7 +15,25 @@
       "height": 1024
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/arch/media/02-arch-image-2.png"
+    "localPath": "catalog/shopify/products/arch/media/01-arch-image-2.png"
+  },
+  {
+    "id": "gid://shopify/MediaImage/28740793860119",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "Arch",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-arch-front-panel.png?v=1776802806",
+      "altText": "Arch",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/arch/media/02-arch.png"
   },
   {
     "id": "gid://shopify/MediaImage/28740793925655",

@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Sensory Translator is a 5-channel CV and video-rate signal acquisition stage: a bridge between the outside world and your 1V patch, built for control voltages, audio, and light-to-voltage work without treating the module as a generic “interface” box. Input ranges, scaling, and patch ethics: Manual. Specs for hardware.",
   "createdAt": "2026-04-21T20:20:40Z",
-  "updatedAt": "2026-04-24T00:49:03Z",
+  "updatedAt": "2026-04-24T12:49:09Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424114711",

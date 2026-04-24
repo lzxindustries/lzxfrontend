@@ -14,7 +14,7 @@
   "onlineStoreUrl": null,
   "description": "Triple Video Fader & Key Generator (TVFKG) packs three wideband voltage-controlled crossfaders and three high-speed key generators into one Visionary-series panel: you get linked crossfade, luma and chroma keying, and logical combinations of keys without stacking separate utility modules end to end. Front-panel modes select whether CV, key outputs, or a shared master bus drives each fader. The Manual tab carries the long-form block discussion; the Specs tab matches the LZX module database for jacks and current.",
   "createdAt": "2026-04-21T20:20:51Z",
-  "updatedAt": "2026-04-24T00:49:05Z",
+  "updatedAt": "2026-04-24T12:49:11Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079424442391",

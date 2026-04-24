@@ -1,17 +1,5 @@
 [
   {
-    "id": "gid://shopify/ExternalVideo/25071631695895",
-    "type": "ExternalVideo",
-    "mediaContentType": "EXTERNAL_VIDEO",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": "https://youtu.be/w30X8qzvH-k",
-    "host": "YOUTUBE",
-    "originUrl": "https://youtu.be/w30X8qzvH-k",
-    "image": null,
-    "sources": []
-  },
-  {
     "id": "gid://shopify/MediaImage/21421818740759",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -27,6 +15,18 @@
       "height": 3036
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/matte/media/02-matte.png"
+    "localPath": "catalog/shopify/products/matte/media/01-matte.png"
+  },
+  {
+    "id": "gid://shopify/ExternalVideo/25071631695895",
+    "type": "ExternalVideo",
+    "mediaContentType": "EXTERNAL_VIDEO",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": "https://youtu.be/w30X8qzvH-k",
+    "host": "YOUTUBE",
+    "originUrl": "https://youtu.be/w30X8qzvH-k",
+    "image": null,
+    "sources": []
   }
 ]

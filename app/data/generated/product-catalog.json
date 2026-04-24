@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-24T16:45:39.676Z",
+  "generatedAt": "2026-04-24T21:06:54.416Z",
   "source": "catalog/shopify/products",
-  "productCount": 133,
+  "productCount": 132,
   "products": {
     "12v-dc-adapter-3a": {
       "handle": "12v-dc-adapter-3a",
@@ -21,8 +21,8 @@
       "descriptionHtml": "<p>DC wall wart power supply with international plug kit. Output voltage: 12V. Max output current: 3A.</p>",
       "descriptionPlain": "DC wall wart power supply with international plug kit. Output voltage: 12V. Max output current: 3A.",
       "seo": {
-        "title": "12V DC Adapter 3A | LZX Industries",
-        "description": "12V DC Adapter 3A"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -82,8 +82,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "3.5mm Jack | LZX Industries",
-        "description": "3.5mm Jack"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -138,8 +138,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "3.5mm Jack Knurled Nut | LZX Industries",
-        "description": "3.5mm Jack Knurled Nut"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -194,8 +194,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "8GB MicroSD Card | LZX Industries",
-        "description": "8GB MicroSD Card"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -213,7 +213,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429962555415",
           "sku": "960700",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -265,38 +265,11 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1600,
-          "height": 1072,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot1.jpg?v=1710180066",
-          "localPath": "catalog/shopify/products/andor-1-media-player/media/01-andor-1-media-player.jpg",
-          "position": 0
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 1600,
-          "height": 1072,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot2.jpg?v=1710180066",
-          "localPath": "catalog/shopify/products/andor-1-media-player/media/02-andor-1-media-player.jpg",
-          "position": 1
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 1600,
-          "height": 1072,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot3.jpg?v=1710180066",
-          "localPath": "catalog/shopify/products/andor-1-media-player/media/03-andor-1-media-player.jpg",
-          "position": 2
-        },
-        {
-          "type": "image",
-          "alt": "",
           "width": 1200,
           "height": 1200,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/andor_blk_tp1.png?v=1710180066",
-          "localPath": "catalog/shopify/products/andor-1-media-player/media/04-andor-1-media-player.png",
-          "position": 3
+          "localPath": "catalog/shopify/products/andor-1-media-player/media/01-andor-1-media-player.png",
+          "position": 0
         },
         {
           "type": "image",
@@ -304,7 +277,34 @@
           "width": 1200,
           "height": 1200,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/andor_blk_tp2.png?v=1710180066",
-          "localPath": "catalog/shopify/products/andor-1-media-player/media/05-andor-1-media-player.png",
+          "localPath": "catalog/shopify/products/andor-1-media-player/media/02-andor-1-media-player.png",
+          "position": 1
+        },
+        {
+          "type": "image",
+          "alt": "",
+          "width": 1600,
+          "height": 1072,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot1.jpg?v=1710180066",
+          "localPath": "catalog/shopify/products/andor-1-media-player/media/03-andor-1-media-player.jpg",
+          "position": 2
+        },
+        {
+          "type": "image",
+          "alt": "",
+          "width": 1600,
+          "height": 1072,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot2.jpg?v=1710180066",
+          "localPath": "catalog/shopify/products/andor-1-media-player/media/04-andor-1-media-player.jpg",
+          "position": 3
+        },
+        {
+          "type": "image",
+          "alt": "",
+          "width": 1600,
+          "height": 1072,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/andor1_screenshot3.jpg?v=1710180066",
+          "localPath": "catalog/shopify/products/andor-1-media-player/media/05-andor-1-media-player.jpg",
           "position": 4
         }
       ],
@@ -341,7 +341,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/andor-1-media-player",
       "createdAt": "2018-12-06T18:11:42Z",
-      "updatedAt": "2026-04-24T00:48:58Z"
+      "updatedAt": "2026-04-24T12:48:04Z"
     },
     "angles": {
       "handle": "angles",
@@ -362,8 +362,8 @@
       "descriptionHtml": "<p>Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo.</p>",
       "descriptionPlain": "Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo.",
       "seo": {
-        "title": "Angles | LZX Industries",
-        "description": "Angles"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -431,7 +431,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/angles",
       "createdAt": "2023-03-03T22:12:01Z",
-      "updatedAt": "2026-04-21T09:02:40Z"
+      "updatedAt": "2026-04-24T16:57:09Z"
     },
     "arch": {
       "handle": "arch",
@@ -468,20 +468,20 @@
       "gallery": [
         {
           "type": "image",
-          "alt": "Arch",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-arch-front-panel.png?v=1776802806",
-          "localPath": "catalog/shopify/products/arch/media/01-arch.png",
-          "position": 0
-        },
-        {
-          "type": "image",
           "alt": "Arch image 2",
           "width": 1024,
           "height": 1024,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-arch-angle-photo.png?v=1776802807",
-          "localPath": "catalog/shopify/products/arch/media/02-arch-image-2.png",
+          "localPath": "catalog/shopify/products/arch/media/01-arch-image-2.png",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "Arch",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-arch-front-panel.png?v=1776802806",
+          "localPath": "catalog/shopify/products/arch/media/02-arch.png",
           "position": 1
         },
         {
@@ -523,7 +523,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:03Z",
-      "updatedAt": "2026-04-24T00:48:58Z"
+      "updatedAt": "2026-04-24T19:47:53Z"
     },
     "blank-panel": {
       "handle": "blank-panel",
@@ -544,8 +544,8 @@
       "descriptionHtml": "<p>Fill gaps in your EuroRack case with these reversible blank panels. Sizes 4HP and larger include the LZX logo printed on one side.</p>",
       "descriptionPlain": "Fill gaps in your EuroRack case with these reversible blank panels. Sizes 4HP and larger include the LZX logo printed on one side.",
       "seo": {
-        "title": "Blank Panel | LZX Industries",
-        "description": "Blank Panel"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -817,7 +817,7 @@
       "descriptionHtml": "<p>Multi-function utility module including voltage level translation, voltage controlled fader and mixing.</p>",
       "descriptionPlain": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
       "seo": {
-        "title": "Bridge | LZX Industries",
+        "title": null,
         "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing."
       },
       "options": [
@@ -833,20 +833,20 @@
       "gallery": [
         {
           "type": "image",
-          "alt": "Bridge",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-bridge-front-panel.jpg?v=1776802809",
-          "localPath": "catalog/shopify/products/bridge/media/01-bridge.jpg",
-          "position": 0
-        },
-        {
-          "type": "image",
           "alt": "Bridge image 2",
           "width": 172,
           "height": 550,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-bridge-front-photo.png?v=1776802809",
-          "localPath": "catalog/shopify/products/bridge/media/02-bridge-image-2.png",
+          "localPath": "catalog/shopify/products/bridge/media/01-bridge-image-2.png",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "Bridge",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-bridge-front-panel.jpg?v=1776802809",
+          "localPath": "catalog/shopify/products/bridge/media/02-bridge.jpg",
           "position": 1
         },
         {
@@ -893,7 +893,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:05Z",
-      "updatedAt": "2026-04-22T08:20:13Z"
+      "updatedAt": "2026-04-24T19:47:53Z"
     },
     "bus-168-diy-kit": {
       "handle": "bus-168-diy-kit",
@@ -913,8 +913,8 @@
       "descriptionHtml": "<p>A DIY installed version of the power and sync bus board used in our Vessel 168 EuroRack case. Screw terminal power entry supporting up to 10 Amps of current 28 individually filtered 12V power output connectors 14 individually buffered sync distribution outputs Included in the box: Assembled 168HP bus board with screw terminal connections for power input and power switch (optional). Chassis mount 2.5mm DC barrel connector with pigtail leads. 4x M3 8mm mounting screws. Not included: TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering and 2.5mm DC barrel connector Notes: As supplied, all you need to do is connect a 12V power supply and ground to the screw terminal marked for power input. The mounting standoffs can be used with any M3 screws if the supplied screws are too short. The four mounting locations are positioned 4.8 inches (24HP) apart. Optionally, you may remove the jumper link installed in the screw terminal marked for power switch. An external shorting switch may be used -- this connection is a remote control, so a high current switch or wiring is not necessary. You should use a 2.5mm DC connector like the one supplied, if you&#39;re expecting to draw more than 3 amps through the bus board.</p>",
       "descriptionPlain": "A DIY installed version of the power and sync bus board used in our Vessel 168 EuroRack case. Screw terminal power entry supporting up to 10 Amps of current 28 individually filtered 12V power output connectors 14 individually buffered sync distribution outputs Included in the box: Assembled 168HP bus board with screw terminal connections for power input and power switch (optional). Chassis mount 2.5mm DC barrel connector with pigtail leads. 4x M3 8mm mounting screws. Not included: TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering and 2.5mm DC barrel connector Notes: As supplied, all you need to do is connect a 12V power supply and ground to the screw terminal marked for power input. The mounting standoffs can be used with any M3 screws if the supplied screws are too short. The four mounting locations are positioned 4.8 inches (24HP) apart. Optionally, you may remove the jumper link installed in the screw terminal marked for power switch. An external shorting switch may be used -- this connection is a remote control, so a high current switch or wiring is not necessary. You should use a 2.5mm DC connector like the one supplied, if you're expecting to draw more than 3 amps through the bus board.",
       "seo": {
-        "title": "Bus 168 DIY Kit | LZX Industries",
-        "description": "Bus 168 DIY Kit"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -951,7 +951,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429863628823",
           "sku": "940141",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -983,8 +983,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "CABLE-DC21-SPLITTER-8-BLK | LZX Industries",
-        "description": "CABLE-DC21-SPLITTER-8-BLK"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1034,8 +1034,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "CABLE-DC25-TO-WIRE-ASSY | LZX Industries",
-        "description": "CABLE-DC25-TO-WIRE-ASSY"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1085,8 +1085,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "CABLE-IDC16-GRY-BLK-25CM | LZX Industries",
-        "description": "CABLE-IDC16-GRY-BLK-25CM"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1136,8 +1136,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "CABLE-TRRS-AV-BLK-200CM | LZX Industries",
-        "description": "CABLE-TRRS-AV-BLK-200CM"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1196,7 +1196,7 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.",
       "seo": {
-        "title": "Cadet I Sync Generator | LZX Industries",
+        "title": null,
         "description": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer sys..."
       },
       "options": [
@@ -1266,7 +1266,7 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
       "seo": {
-        "title": "Cadet II RGB Encoder | LZX Industries",
+        "title": null,
         "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system."
       },
       "options": [
@@ -1336,7 +1336,7 @@
       "descriptionHtml": "<p>Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.</p>",
       "descriptionPlain": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment.",
       "seo": {
-        "title": "Cadet III Video Input | LZX Industries",
+        "title": null,
         "description": "Cadet III Video Input is an input amplifier for video synthesis systems. The Cadet series brings simple, analog DIY video synthesizer building blocks to the Eurorack modular environment."
       },
       "options": [
@@ -1406,7 +1406,7 @@
       "descriptionHtml": "<p>Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace.</p>",
       "descriptionPlain": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace.",
       "seo": {
-        "title": "Cadet IV Dual Ramp Generator | LZX Industries",
+        "title": null,
         "description": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace."
       },
       "options": [
@@ -1476,7 +1476,7 @@
       "descriptionHtml": "<p>Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.</p>",
       "descriptionPlain": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis.",
       "seo": {
-        "title": "Cadet IX VCO | LZX Industries",
+        "title": null,
         "description": "Cadet IX Voltage Controlled Oscillator is a wideband triangle core VCO designed for video synthesis."
       },
       "options": [
@@ -1545,8 +1545,8 @@
       "descriptionHtml": "<p>In stock. 3 inch embroidered patch. Popular gift item for parents.</p>",
       "descriptionPlain": "In stock. 3 inch embroidered patch. Popular gift item for parents.",
       "seo": {
-        "title": "Cadet Series Embroidered Patch | LZX Industries",
-        "description": "Cadet Series Embroidered Patch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1567,15 +1567,6 @@
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_42.png?v=1544136701",
           "localPath": "catalog/shopify/products/cadet-series-embroidered-patch/media/01-cadet-series-embroidered-patch.png",
           "position": 0
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 1000,
-          "height": 1000,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/NVUNTRXSYKtOUT9eSscx_image__42.png?v=1544136691",
-          "localPath": "catalog/shopify/products/cadet-series-embroidered-patch/media/02-cadet-series-embroidered-patch.png",
-          "position": 1
         }
       ],
       "variants": [
@@ -1603,7 +1594,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/cadet-series-embroidered-patch",
       "createdAt": "2018-12-06T05:54:55Z",
-      "updatedAt": "2026-04-22T22:57:09Z"
+      "updatedAt": "2026-04-24T19:47:55Z"
     },
     "cadet-series-vinyl-sticker": {
       "handle": "cadet-series-vinyl-sticker",
@@ -1623,8 +1614,8 @@
       "descriptionHtml": "<p>In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!</p>",
       "descriptionPlain": "In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!",
       "seo": {
-        "title": "Cadet Series Vinyl Sticker | LZX Industries",
-        "description": "Cadet Series Vinyl Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -1693,7 +1684,7 @@
       "descriptionHtml": "<p>Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.</p>",
       "descriptionPlain": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions.",
       "seo": {
-        "title": "Cadet V Scaler | LZX Industries",
+        "title": null,
         "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions."
       },
       "options": [
@@ -1763,7 +1754,7 @@
       "descriptionHtml": "<p>Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.</p>",
       "descriptionPlain": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.",
       "seo": {
-        "title": "Cadet VI Fader | LZX Industries",
+        "title": null,
         "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module."
       },
       "options": [
@@ -1823,7 +1814,7 @@
       "descriptionHtml": "<p>Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.</p>",
       "descriptionPlain": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications.",
       "seo": {
-        "title": "Cadet VII Processor | LZX Industries",
+        "title": null,
         "description": "Cadet VII Processor is a simple wide bandwidth voltage processor and 2 channel mixer with limitless applications."
       },
       "options": [
@@ -1893,7 +1884,7 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level.",
       "seo": {
-        "title": "Cadet VIII Hard Key Generator | LZX Industries",
+        "title": null,
         "description": "DIY PCB & Frontpanel Set Cadet VIII Hard Key is a wide-band voltage comparator with voltage controlled threshold level."
       },
       "options": [
@@ -1963,7 +1954,7 @@
       "descriptionHtml": "<p>Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.</p>",
       "descriptionPlain": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
       "seo": {
-        "title": "Cadet X Multiplier | LZX Industries",
+        "title": null,
         "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier."
       },
       "options": [
@@ -2031,8 +2022,8 @@
       "descriptionHtml": "<p>Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions</p>",
       "descriptionPlain": "Currently Unavailable Designed for use in the LZX Vessel, Capsule Power is the ultimate low-noise power solution for your Eurorack case. Whether you are building a custom case, or retrofitting an existing case, Capsule Power is the best choice for powering your LZX modules. Each Capsule provides 1A on both positive and negative 12V rails, for 2A of total power for this kit. Kit Includes 2x 30w LZX-built capsule boards, +/- 12V @ 1A each 1x Molex capsule link cable 1x 36” DC barrel 2.1mm jumper cable 1x Dc Distro power entry module with switch (4HP) 1x 100w 2.5mm Cincon power brick 8x 3D printed standoffs for mounting Capsule boards Installation instructions",
       "seo": {
-        "title": "Capsule Power Kit | LZX Industries",
-        "description": "Capsule Power Kit"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2096,8 +2087,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream.",
       "seo": {
-        "title": "Castle 000 ADC | LZX Industries",
-        "description": "Castle 000 ADC"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2161,8 +2152,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Digital to Analog Converter is a dual module to convert two 3-Bit data streams into two Analog approximations.",
       "seo": {
-        "title": "Castle 001 DAC | LZX Industries",
-        "description": "Castle 001 DAC"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2226,8 +2217,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Clock VCO is a square wave Voltage Controlled Oscillator with a linear response to CV.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Clock VCO is a square wave Voltage Controlled Oscillator with a linear response to CV.",
       "seo": {
-        "title": "Castle 010 Clock VCO | LZX Industries",
-        "description": "Castle 010 Clock VCO"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2248,15 +2239,6 @@
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_54.png?v=1544153545",
           "localPath": "catalog/shopify/products/castle-010-clock-vco/media/01-castle-010-clock-vco.png",
           "position": 0
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/SU0tpxIQTalA4XEPrqeD_image__54.png?v=1544153545",
-          "localPath": "catalog/shopify/products/castle-010-clock-vco/media/02-castle-010-clock-vco.png",
-          "position": 1
         }
       ],
       "variants": [
@@ -2279,7 +2261,7 @@
       "metafields": {},
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/castle-010-clock-vco",
       "createdAt": "2018-12-06T05:54:58Z",
-      "updatedAt": "2026-04-17T00:53:45Z"
+      "updatedAt": "2026-04-24T19:47:55Z"
     },
     "castle-011-shift-register": {
       "handle": "castle-011-shift-register",
@@ -2300,8 +2282,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Shift Register is a 4 position memory of sorts.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Shift Register is a 4 position memory of sorts.",
       "seo": {
-        "title": "Castle 011 Shift Register | LZX Industries",
-        "description": "Castle 011 Shift Register"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2370,8 +2352,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs.",
       "seo": {
-        "title": "Castle 100 Multi Gate | LZX Industries",
-        "description": "Castle 100 Multi Gate"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2435,8 +2417,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Quad Gate uses a single quad logic chip and combines them in 4 different ways.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Quad Gate uses a single quad logic chip and combines them in 4 different ways.",
       "seo": {
-        "title": "Castle 101 Quad Gate | LZX Industries",
-        "description": "Castle 101 Quad Gate"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2500,8 +2482,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The Counter is a 4-Bit clock counter/divider.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The Counter is a 4-Bit clock counter/divider.",
       "seo": {
-        "title": "Castle 110 Counter | LZX Industries",
-        "description": "Castle 110 Counter"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2565,8 +2547,8 @@
       "descriptionHtml": "<p>DIY PCB &amp; Frontpanel Set The D Flip Flops are three D type Flip Flops that share a common Clock and Reset.</p>",
       "descriptionPlain": "DIY PCB & Frontpanel Set The D Flip Flops are three D type Flip Flops that share a common Clock and Reset.",
       "seo": {
-        "title": "Castle 111 D Flip Flops | LZX Industries",
-        "description": "Castle 111 D Flip Flops"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2628,8 +2610,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Castle Series Embroidered Patch | LZX Industries",
-        "description": "Castle Series Embroidered Patch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2692,8 +2674,8 @@
       "descriptionHtml": "<p>Out of stock.</p>",
       "descriptionPlain": "Out of stock.",
       "seo": {
-        "title": "Castle Series Vinyl Sticker | LZX Industries",
-        "description": "Castle Series Vinyl Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2774,19 +2756,19 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/chromagnon-front-panel-square.png?v=1683302938",
-          "localPath": "catalog/shopify/products/chromagnon/media/01-chromagnon.png",
+          "width": 2048,
+          "height": 1957,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/lzx.jpg?v=1683302938",
+          "localPath": "catalog/shopify/products/chromagnon/media/01-chromagnon.jpg",
           "position": 0
         },
         {
           "type": "image",
           "alt": "",
-          "width": 2048,
-          "height": 1957,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/lzx.jpg?v=1683302938",
-          "localPath": "catalog/shopify/products/chromagnon/media/02-chromagnon.jpg",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/chromagnon-front-panel-square.png?v=1683302938",
+          "localPath": "catalog/shopify/products/chromagnon/media/02-chromagnon.png",
           "position": 1
         }
       ],
@@ -2823,7 +2805,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/chromagnon",
       "createdAt": "2019-10-29T18:10:08Z",
-      "updatedAt": "2026-04-24T00:48:59Z"
+      "updatedAt": "2026-04-24T19:47:55Z"
     },
     "chromagnon-patch": {
       "handle": "chromagnon-patch",
@@ -2840,8 +2822,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Chromagnon Patch | LZX Industries",
-        "description": "Chromagnon Patch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2859,7 +2841,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41299105841175",
           "sku": "970101",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -2891,8 +2873,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Chromagnon Sticker | LZX Industries",
-        "description": "Chromagnon Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2910,7 +2892,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41299121340439",
           "sku": "970100",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -2944,8 +2926,8 @@
       "descriptionHtml": "<p>Out of production. Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other. Width, 16HP Mounting Depth, 32mm Power +12V @ 60mA Power -12V @ 60mA</p>",
       "descriptionPlain": "Out of production. Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other. Width, 16HP Mounting Depth, 32mm Power +12V @ 60mA Power -12V @ 60mA",
       "seo": {
-        "title": "Color Chords | LZX Industries",
-        "description": "Color Chords"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -2963,8 +2945,8 @@
           "alt": "",
           "width": 1024,
           "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_33.png?v=1544140045",
-          "localPath": "catalog/shopify/products/color-chords/media/01-color-chords.png",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_22.jpg?v=1544140045",
+          "localPath": "catalog/shopify/products/color-chords/media/01-color-chords.jpg",
           "position": 0
         },
         {
@@ -2972,7 +2954,7 @@
           "alt": "",
           "width": 1024,
           "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_32.png?v=1544140045",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_33.png?v=1544140045",
           "localPath": "catalog/shopify/products/color-chords/media/02-color-chords.png",
           "position": 1
         },
@@ -2981,8 +2963,8 @@
           "alt": "",
           "width": 1024,
           "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_22.jpg?v=1544140045",
-          "localPath": "catalog/shopify/products/color-chords/media/03-color-chords.jpg",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_32.png?v=1544140045",
+          "localPath": "catalog/shopify/products/color-chords/media/03-color-chords.png",
           "position": 2
         }
       ],
@@ -3027,8 +3009,8 @@
       "descriptionHtml": "<p>Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module&#39;s filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches.</p>",
       "descriptionPlain": "Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module's filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches.",
       "seo": {
-        "title": "Contour | LZX Industries",
-        "description": "Contour"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3092,7 +3074,7 @@
       "descriptionHtml": "<p>Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.</p>",
       "descriptionPlain": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics.",
       "seo": {
-        "title": "Curtain | LZX Industries",
+        "title": null,
         "description": "Curtain is a video edge processor designed for sharpening, blurring, and outline extraction. Comprised of a wideband voltage controlled filter and multiplier, it is similar to tools used for X-Ray analysis in the era of analog graphics."
       },
       "options": [
@@ -3169,8 +3151,8 @@
       "descriptionHtml": "<p>ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V</p>",
       "descriptionPlain": "ILDA functionality can be found on Chromagnon. Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors. We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries. Width: 16HP Max Depth: 31mm Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V",
       "seo": {
-        "title": "Cyclops | LZX Industries",
-        "description": "Cyclops"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3250,8 +3232,8 @@
       "descriptionHtml": "<p>Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.</p>",
       "descriptionPlain": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
       "seo": {
-        "title": "DC Distro 5A | LZX Industries",
-        "description": "DC Distro 5A"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3342,8 +3324,8 @@
       "descriptionHtml": "<p>The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series modules without having to use a EuroRack power supply. This module distributes power from an included 12V power adapter to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, and Chromagnon. DC Distro supplies up to 3A @ 12V. Three 2.1mm barrel distribution cables are included (one of each length we carry). Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesNumber of output connectors: 9 Included power supply rated for 100-240V input range.</p>",
       "descriptionPlain": "The LZX DC Distro 3A is a 4HP utility module designed to power our Gen3 series modules without having to use a EuroRack power supply. This module distributes power from an included 12V power adapter to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, and Chromagnon. DC Distro supplies up to 3A @ 12V. Three 2.1mm barrel distribution cables are included (one of each length we carry). Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesNumber of output connectors: 9 Included power supply rated for 100-240V input range.",
       "seo": {
-        "title": "DC Distro 3A | LZX Industries",
-        "description": "DC Distro 3A"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3425,7 +3407,7 @@
       "descriptionHtml": "<p>Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.</p>",
       "descriptionPlain": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and Chromagnon. DC Distro supplies up to 5A @ 12V. Three 2.1mm barrel distribution cables are included. Additional DC jumper cables are available separately, in three lengths. Depth requirement: 2.5 inchesIncluded power supply rated for 100-240V input range.",
       "seo": {
-        "title": "DC Distro 5A | LZX Industries",
+        "title": null,
         "description": "Temporarily out of stock. The LZX DC Distro is a passive 4HP utility module designed to relieve your Eurorack power bus of hungry LZX instruments. This module distributes power from an included 12V power brick to modules with rear DC barrel power entry, including all Gen3 modules, Liquid TV, Memory Palace, TBC2, and..."
       },
       "options": [
@@ -3447,15 +3429,6 @@
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-dc-distro-3a-front-panel-square.png?v=1776802827",
           "localPath": "catalog/shopify/products/dc-distro-5a/media/01-dc-distro-5a.png",
           "position": 0
-        },
-        {
-          "type": "image",
-          "alt": "DC Distro 5A image 2",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-dc-distro-3a-front-panel.png?v=1776802827",
-          "localPath": "catalog/shopify/products/dc-distro-5a/media/02-dc-distro-5a-image-2.png",
-          "position": 1
         }
       ],
       "variants": [
@@ -3483,7 +3456,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:24Z",
-      "updatedAt": "2026-04-22T08:20:32Z"
+      "updatedAt": "2026-04-24T19:47:56Z"
     },
     "dc-power-cable": {
       "handle": "dc-power-cable",
@@ -3504,8 +3477,8 @@
       "descriptionHtml": "<p>2.1mm DC jumper cables for module-to-power-distribution connections. Right-angled cables recommended for Orion TBC2 and Memory Palace.</p>",
       "descriptionPlain": "2.1mm DC jumper cables for module-to-power-distribution connections. Right-angled cables recommended for Orion TBC2 and Memory Palace.",
       "seo": {
-        "title": "DC Power Cable | LZX Industries",
-        "description": "DC Power Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3527,7 +3500,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-50cm.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-group.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/01-dc-power-cable.png",
           "position": 0
         },
@@ -3536,7 +3509,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-group.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-25cm.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/02-dc-power-cable.png",
           "position": 1
         },
@@ -3545,7 +3518,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-90cm.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-50cm.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/03-dc-power-cable.png",
           "position": 2
         },
@@ -3554,7 +3527,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-25cm.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-100cm.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/04-dc-power-cable.png",
           "position": 3
         },
@@ -3563,7 +3536,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-100cm.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-30cm.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/05-dc-power-cable.png",
           "position": 4
         },
@@ -3572,7 +3545,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-30cm.png?v=1684446988",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dc-power-cable-right-angle-90cm.png?v=1684446988",
           "localPath": "catalog/shopify/products/dc-power-cable/media/06-dc-power-cable.png",
           "position": 5
         }
@@ -3678,7 +3651,7 @@
       "descriptionHtml": "<p>A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.</p>",
       "descriptionPlain": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.",
       "seo": {
-        "title": "Diver | LZX Industries",
+        "title": null,
         "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator."
       },
       "options": [
@@ -3748,7 +3721,7 @@
       "descriptionHtml": "<p>Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner&#39;s Manual (PDF)</p>",
       "descriptionPlain": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)",
       "seo": {
-        "title": "Doorway | LZX Industries",
+        "title": null,
         "description": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)"
       },
       "options": [
@@ -3887,7 +3860,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/double-vision-complete",
       "createdAt": "2024-11-20T20:01:48Z",
-      "updatedAt": "2026-04-24T00:48:59Z"
+      "updatedAt": "2026-04-24T12:49:05Z"
     },
     "double-vision-expander": {
       "handle": "double-vision-expander",
@@ -3907,8 +3880,8 @@
       "descriptionHtml": "<p>Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack &amp; Power Vessel 168 EuroRack Case w/DC &amp; Sync Distribution Bus Accessories (3) RGB Patch Cable(2) RCA Sync Cable(9) DC Power Cable(10) Patch Cable(1) Video Knob Pin</p>",
       "descriptionPlain": "Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules MatteSum/DistScrollsKeychainProcStackerContourSMX3Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable(2) RCA Sync Cable(9) DC Power Cable(10) Patch Cable(1) Video Knob Pin",
       "seo": {
-        "title": "Double Vision Expander | LZX Industries",
-        "description": "Double Vision Expander"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -3936,7 +3909,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41810151899159",
           "sku": "950067",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -3977,8 +3950,8 @@
       "descriptionHtml": "<p>Now available in either the original 3U case, or an optional 6U case with room to grow!Are you a human from Planet Earth who is desperate for even MORE visual stimulation?! Double Vision System is an 8-module video synthesis bundle capable of analog SD/HD video generation and effects with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Mounting rack, power supply, and all cables are included, so you may start freaking out immediately. 8 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 Rack &amp; Power Vessel 84 EuroRack Case w/DC &amp; Sync Distribution Busor Vessel 168 EuroRack Case w/DC &amp; Sync Distribution Bus Accessories (3) RGB Patch Cable(4) RCA Sync Cable(7) DC Power Cable(6) Patch Cable(3) RCA Video Cable(1) Video Knob Pin</p>",
       "descriptionPlain": "Now available in either the original 3U case, or an optional 6U case with room to grow!Are you a human from Planet Earth who is desperate for even MORE visual stimulation?! Double Vision System is an 8-module video synthesis bundle capable of analog SD/HD video generation and effects with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Mounting rack, power supply, and all cables are included, so you may start freaking out immediately. 8 Modules TBC2TBC2 ExpanderDWO3DSG3StairsRibbonsFKG3ESG3 Rack & Power Vessel 84 EuroRack Case w/DC & Sync Distribution Busor Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable(4) RCA Sync Cable(7) DC Power Cable(6) Patch Cable(3) RCA Video Cable(1) Video Knob Pin",
       "seo": {
-        "title": "Double Vision | LZX Industries",
-        "description": "Double Vision"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4076,8 +4049,8 @@
       "descriptionHtml": "<p>DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways.</p>",
       "descriptionPlain": "DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways.",
       "seo": {
-        "title": "DSG3 | LZX Industries",
-        "description": "DSG3"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4093,11 +4066,20 @@
         {
           "type": "image",
           "alt": "",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dsg3-front-panel-square.png?v=1683302006",
+          "localPath": "catalog/shopify/products/dsg3/media/01-dsg3.png",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "",
           "width": 1920,
           "height": 1080,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/BeltBuckle.jpg?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/01-dsg3.jpg",
-          "position": 0
+          "localPath": "catalog/shopify/products/dsg3/media/02-dsg3.jpg",
+          "position": 1
         },
         {
           "type": "image",
@@ -4105,8 +4087,8 @@
           "width": 1531,
           "height": 862,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/CameraFeedback1.jpg?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/02-dsg3.jpg",
-          "position": 1
+          "localPath": "catalog/shopify/products/dsg3/media/03-dsg3.jpg",
+          "position": 2
         },
         {
           "type": "image",
@@ -4114,15 +4096,6 @@
           "width": 1884,
           "height": 1059,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/CameraFeedback2.jpg?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/03-dsg3.jpg",
-          "position": 2
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 1920,
-          "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ConduitPulse.jpg?v=1683302006",
           "localPath": "catalog/shopify/products/dsg3/media/04-dsg3.jpg",
           "position": 3
         },
@@ -4131,7 +4104,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/DawnSeed.jpg?v=1683302006",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ConduitPulse.jpg?v=1683302006",
           "localPath": "catalog/shopify/products/dsg3/media/05-dsg3.jpg",
           "position": 4
         },
@@ -4140,8 +4113,8 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/face_fx2.png?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/06-dsg3.png",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/DawnSeed.jpg?v=1683302006",
+          "localPath": "catalog/shopify/products/dsg3/media/06-dsg3.jpg",
           "position": 5
         },
         {
@@ -4149,8 +4122,8 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/IsometricChecker.jpg?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/07-dsg3.jpg",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/face_fx2.png?v=1683302006",
+          "localPath": "catalog/shopify/products/dsg3/media/07-dsg3.png",
           "position": 6
         },
         {
@@ -4158,7 +4131,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ReflectedAuras.jpg?v=1683302006",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/IsometricChecker.jpg?v=1683302006",
           "localPath": "catalog/shopify/products/dsg3/media/08-dsg3.jpg",
           "position": 7
         },
@@ -4167,7 +4140,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Sarcophagi.jpg?v=1683302006",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/ReflectedAuras.jpg?v=1683302006",
           "localPath": "catalog/shopify/products/dsg3/media/09-dsg3.jpg",
           "position": 8
         },
@@ -4176,17 +4149,17 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/TubeSigils.jpg?v=1683302006",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Sarcophagi.jpg?v=1683302006",
           "localPath": "catalog/shopify/products/dsg3/media/10-dsg3.jpg",
           "position": 9
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/dsg3-front-panel-square.png?v=1683302006",
-          "localPath": "catalog/shopify/products/dsg3/media/11-dsg3.png",
+          "width": 1920,
+          "height": 1080,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/TubeSigils.jpg?v=1683302006",
+          "localPath": "catalog/shopify/products/dsg3/media/11-dsg3.jpg",
           "position": 10
         }
       ],
@@ -4240,8 +4213,8 @@
       "descriptionHtml": "<p>DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges.</p>",
       "descriptionPlain": "DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges.",
       "seo": {
-        "title": "DWO3 | LZX Industries",
-        "description": "DWO3"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4284,7 +4257,7 @@
       "metafields": {},
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/dwo3",
       "createdAt": "2021-08-27T02:54:48Z",
-      "updatedAt": "2026-04-21T09:02:28Z"
+      "updatedAt": "2026-04-24T19:57:17Z"
     },
     "escher-sketch": {
       "handle": "escher-sketch",
@@ -4305,7 +4278,7 @@
       "descriptionHtml": "<p>Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.</p>",
       "descriptionPlain": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand-drawn LFOs, and complex envelopes. Switchable output range makes Escher Sketch ideal for controlling audio modules, as well. Stylus pen included.",
       "seo": {
-        "title": "Escher Sketch | LZX Industries",
+        "title": null,
         "description": "Infinity-mirror touch-controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs, pressure and directional velocity sensing, voltage recording with flexible playback options, and gate generation. Perfect for creating looped animations, hand..."
       },
       "options": [
@@ -4445,7 +4418,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/esg3",
       "createdAt": "2021-08-26T22:06:03Z",
-      "updatedAt": "2026-04-24T00:49:00Z"
+      "updatedAt": "2026-04-24T12:49:07Z"
     },
     "expedition-series-embroidered-patch": {
       "handle": "expedition-series-embroidered-patch",
@@ -4464,8 +4437,8 @@
       "descriptionHtml": "<p>A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.</p>",
       "descriptionPlain": "A talisman for the brave souls who have embarked with LZX on an unusual vision quest. Equally appropriate for wishful thinkers.",
       "seo": {
-        "title": "Expedition Series Embroidered Patch | LZX Industries",
-        "description": "Expedition Series Embroidered Patch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4531,8 +4504,8 @@
       "descriptionHtml": "<p>Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a &quot;fade to gray&quot;. The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities.</p>",
       "descriptionPlain": "Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a \"fade to gray\". The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities.",
       "seo": {
-        "title": "Factors | LZX Industries",
-        "description": "Factors"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4605,8 +4578,8 @@
       "descriptionHtml": "<p>FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks.</p>",
       "descriptionPlain": "FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks.",
       "seo": {
-        "title": "FKG3 | LZX Industries",
-        "description": "FKG3"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4732,7 +4705,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:31Z",
-      "updatedAt": "2026-04-24T00:49:01Z"
+      "updatedAt": "2026-04-24T12:49:09Z"
     },
     "gift-card": {
       "handle": "gift-card",
@@ -4753,7 +4726,7 @@
       "descriptionHtml": "<p>Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.</p>",
       "descriptionPlain": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees.",
       "seo": {
-        "title": "Gift Card | LZX Industries",
+        "title": null,
         "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! "
       },
       "options": [
@@ -4915,8 +4888,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "HWS15766 Pin Header Pitch 0.1in 2X5 Male Shrouded | LZX Industries",
-        "description": "HWS15766 Pin Header Pitch 0.1in 2X5 Male Shrouded"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4966,8 +4939,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "JXMOX USB C to Micro USB Adapter | LZX Industries",
-        "description": "JXMOX USB C to Micro USB Adapter"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -4985,7 +4958,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41244911632407",
           "sku": "490900",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -5021,8 +4994,8 @@
       "descriptionHtml": "<p>Keychain is a triple hard key generator. Using voltage comparators with a 7ns response time, this module can generate sharp edged stencil shapes from any video or pattern generator source.</p>",
       "descriptionPlain": "Keychain is a triple hard key generator. Using voltage comparators with a 7ns response time, this module can generate sharp edged stencil shapes from any video or pattern generator source.",
       "seo": {
-        "title": "Keychain | LZX Industries",
-        "description": "Keychain"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -5139,7 +5112,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2024-09-09T21:53:03Z",
-      "updatedAt": "2026-04-24T00:49:02Z"
+      "updatedAt": "2026-04-24T12:49:06Z"
     },
     "lnk": {
       "handle": "lnk",
@@ -5160,8 +5133,8 @@
       "descriptionHtml": "<p>LNK is a passive utility module for distributing signals within your patch. Cascaded inputs provide up to fifteen outputs from a single input.LNK is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
       "descriptionPlain": "LNK is a passive utility module for distributing signals within your patch. Cascaded inputs provide up to fifteen outputs from a single input.LNK is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
-        "title": "LNK | LZX Industries",
-        "description": "LNK"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -5274,8 +5247,8 @@
       "descriptionHtml": "<p>Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly.</p>",
       "descriptionPlain": "Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly.",
       "seo": {
-        "title": "Alternate Frontpanel | LZX Industries",
-        "description": "Alternate Frontpanel"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -5622,8 +5595,8 @@
       "descriptionHtml": "<p>Cover up holes in spacetime with this handy adhesive decal.</p>",
       "descriptionPlain": "Cover up holes in spacetime with this handy adhesive decal.",
       "seo": {
-        "title": "LZX Logo Vinyl Sticker | LZX Industries",
-        "description": "LZX Logo Vinyl Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -5687,7 +5660,7 @@
       "descriptionHtml": "<p>No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA</p>",
       "descriptionPlain": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA",
       "seo": {
-        "title": "Mapper | LZX Industries",
+        "title": null,
         "description": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA"
       },
       "options": [
@@ -5747,7 +5720,7 @@
       "descriptionHtml": "<p>Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)</p>",
       "descriptionPlain": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most ambitious compositing module yet. Width, 16HP Mounting Depth, 45mm Power +12V @ 200mA Power -12V @ 185mA Info Sheet (PDF)User Reference Card (PDF)",
       "seo": {
-        "title": "Marble Index | LZX Industries",
+        "title": null,
         "description": "Limited edition black panel SOLD OUT! Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike standard video mixers, which can fade and key between two sources, Marble Index has three layers. With 75 analog switches and 6 wideband faders within its depths, it is our most a..."
       },
       "options": [
@@ -5807,8 +5780,8 @@
       "descriptionHtml": "<p>Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually.</p>",
       "descriptionPlain": "Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually.",
       "seo": {
-        "title": "Matte | LZX Industries",
-        "description": "Matte"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -5822,24 +5795,24 @@
       ],
       "gallery": [
         {
+          "type": "image",
+          "alt": "",
+          "width": 3036,
+          "height": 3036,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX8HPMatteFrontpanelColorGraphicDarkSquare.png?v=1655917013",
+          "localPath": "catalog/shopify/products/matte/media/01-matte.png",
+          "position": 0
+        },
+        {
           "type": "external_video",
           "alt": "",
           "width": null,
           "height": null,
           "shopifyUrl": "https://youtu.be/w30X8qzvH-k",
           "localPath": null,
-          "position": 0,
+          "position": 1,
           "embeddedUrl": "https://youtu.be/w30X8qzvH-k",
           "host": "YOUTUBE"
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 3036,
-          "height": 3036,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX8HPMatteFrontpanelColorGraphicDarkSquare.png?v=1655917013",
-          "localPath": "catalog/shopify/products/matte/media/02-matte.png",
-          "position": 1
         }
       ],
       "variants": [
@@ -5907,19 +5880,19 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/mempal2.png?v=1656949262",
-          "localPath": "catalog/shopify/products/memory-palace/media/01-memory-palace.png",
+          "width": 1200,
+          "height": 1046,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/MEMORYPALACEfront1200.jpg?v=1656949262",
+          "localPath": "catalog/shopify/products/memory-palace/media/01-memory-palace.jpg",
           "position": 0
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1200,
-          "height": 1046,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/MEMORYPALACEfront1200.jpg?v=1656949262",
-          "localPath": "catalog/shopify/products/memory-palace/media/02-memory-palace.jpg",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/mempal2.png?v=1656949262",
+          "localPath": "catalog/shopify/products/memory-palace/media/02-memory-palace.png",
           "position": 1
         },
         {
@@ -5943,20 +5916,11 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1080,
-          "height": 1920,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZXD0036_MP_FW19_IGTVs.00_09_34_16.Still009.jpg?v=1656949262",
-          "localPath": "catalog/shopify/products/memory-palace/media/05-memory-palace.jpg",
-          "position": 4
-        },
-        {
-          "type": "image",
-          "alt": "",
           "width": 1920,
           "height": 1080,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZXD0038_MP_V19.00_08_27_05.Still003.jpg?v=1656949262",
-          "localPath": "catalog/shopify/products/memory-palace/media/06-memory-palace.jpg",
-          "position": 5
+          "localPath": "catalog/shopify/products/memory-palace/media/05-memory-palace.jpg",
+          "position": 4
         },
         {
           "type": "image",
@@ -5964,6 +5928,15 @@
           "width": 1080,
           "height": 1920,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/IMBP__ProjectName_YT.00_03_49_15.Still003.jpg?v=1656949262",
+          "localPath": "catalog/shopify/products/memory-palace/media/06-memory-palace.jpg",
+          "position": 5
+        },
+        {
+          "type": "image",
+          "alt": "",
+          "width": 1440,
+          "height": 1080,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0001_1.mov.00_01_40_10.Still001.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/07-memory-palace.jpg",
           "position": 6
         },
@@ -5972,7 +5945,7 @@
           "alt": "",
           "width": 1440,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0001_1.mov.00_01_40_10.Still001.jpg?v=1656949262",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_01_12_21.Still001.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/08-memory-palace.jpg",
           "position": 7
         },
@@ -5981,7 +5954,7 @@
           "alt": "",
           "width": 1440,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_01_12_21.Still001.jpg?v=1656949262",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_13_03_02.Still003.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/09-memory-palace.jpg",
           "position": 8
         },
@@ -5990,7 +5963,7 @@
           "alt": "",
           "width": 1440,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_13_03_02.Still003.jpg?v=1656949262",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_14_07_19.Still004.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/10-memory-palace.jpg",
           "position": 9
         },
@@ -5999,7 +5972,7 @@
           "alt": "",
           "width": 1440,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0002_1.mov.00_14_07_19.Still004.jpg?v=1656949262",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0004_1.mov.00_14_14_05.Still001.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/11-memory-palace.jpg",
           "position": 10
         },
@@ -6008,16 +5981,16 @@
           "alt": "",
           "width": 1440,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0004_1.mov.00_14_14_05.Still001.jpg?v=1656949262",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0005_1.mov.00_04_23_00.Still001.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/12-memory-palace.jpg",
           "position": 11
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1440,
-          "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Capture0005_1.mov.00_04_23_00.Still001.jpg?v=1656949262",
+          "width": 1080,
+          "height": 1920,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZXD0036_MP_FW19_IGTVs.00_09_34_16.Still009.jpg?v=1656949262",
           "localPath": "catalog/shopify/products/memory-palace/media/13-memory-palace.jpg",
           "position": 12
         }
@@ -6055,7 +6028,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2018-12-06T05:55:04Z",
-      "updatedAt": "2026-04-24T00:49:03Z"
+      "updatedAt": "2026-04-24T12:49:07Z"
     },
     "mlt": {
       "handle": "mlt",
@@ -6076,8 +6049,8 @@
       "descriptionHtml": "<p>MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs.MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
       "descriptionPlain": "MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs.MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
-        "title": "MLT | LZX Industries",
-        "description": "MLT"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6190,7 +6163,7 @@
       "descriptionHtml": "<p>Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner&#39;s Manual (PDF)User Reference Card (PDF)</p>",
       "descriptionPlain": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for experiments in real time topography. Width, 16HP Mounting Depth, 32mm Power +12V @ 130mA Power -12V @ 100mA Owner's Manual (PDF)User Reference Card (PDF)",
       "seo": {
-        "title": "Navigator | LZX Industries",
+        "title": null,
         "description": "Limited edition black panel shipping in mid-February. SOLD OUT Can the math behind coordinate rotation be performed with circuitry? Navigator performs the transformations of a 2D graphics system using analog multipliers and summing blocks. Make shapes and patterns spin and contort! Or hook up an oscilloscope for exp..."
       },
       "options": [
@@ -6256,8 +6229,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "NUT-M7-POT | LZX Industries",
-        "description": "NUT-M7-POT"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6314,8 +6287,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Orion Series Embroidered Patch | LZX Industries",
-        "description": "Orion Series Embroidered Patch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6377,8 +6350,8 @@
       "descriptionHtml": "<p>Looks great on all models of safety helmet.</p>",
       "descriptionPlain": "Looks great on all models of safety helmet.",
       "seo": {
-        "title": "Orion Series Vinyl Sticker | LZX Industries",
-        "description": "Orion Series Vinyl Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6394,18 +6367,18 @@
         {
           "type": "image",
           "alt": "",
-          "width": 334,
-          "height": 322,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/5891.png?v=1544214813",
+          "width": 1000,
+          "height": 1000,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_43.png?v=1544214813",
           "localPath": "catalog/shopify/products/orion-series-vinyl-sticker/media/01-orion-series-vinyl-sticker.png",
           "position": 0
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1000,
-          "height": 1000,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/image_43.png?v=1544214813",
+          "width": 334,
+          "height": 322,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/5891.png?v=1544214813",
           "localPath": "catalog/shopify/products/orion-series-vinyl-sticker/media/02-orion-series-vinyl-sticker.png",
           "position": 1
         }
@@ -6430,7 +6403,7 @@
       "metafields": {},
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/orion-series-vinyl-sticker",
       "createdAt": "2018-12-06T19:31:24Z",
-      "updatedAt": "2026-04-22T22:57:12Z"
+      "updatedAt": "2026-04-24T19:47:55Z"
     },
     "orion-tee-shirt": {
       "handle": "orion-tee-shirt",
@@ -6450,8 +6423,8 @@
       "descriptionHtml": "<p>Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.</p>",
       "descriptionPlain": "Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.",
       "seo": {
-        "title": "Orion Tee Shirt | LZX Industries",
-        "description": "Orion Tee Shirt"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6584,8 +6557,8 @@
       "descriptionHtml": "<p>P (Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot.P is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.)</p>",
       "descriptionPlain": "P (Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot.P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.)",
       "seo": {
-        "title": "P | LZX Industries",
-        "description": "P"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6698,8 +6671,8 @@
       "descriptionHtml": "<p>PAB (Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
       "descriptionPlain": "PAB (Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
-        "title": "PAB | LZX Industries",
-        "description": "PAB"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6812,7 +6785,7 @@
       "descriptionHtml": "<p>No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA</p>",
       "descriptionPlain": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA",
       "seo": {
-        "title": "Passage | LZX Industries",
+        "title": null,
         "description": "No longer available. Passage is a triple channel wideband signal mixer and voltage processor. The signal path is suitable for mixing any type of signal, including video, audio and low frequency sources. Width, 10HP Mounting Depth, 32mm Power +12V @ 40mA Power -12V @ 40mA"
       },
       "options": [
@@ -6880,8 +6853,8 @@
       "descriptionHtml": "<p>Standard EuroRack patch cable.</p>",
       "descriptionPlain": "Standard EuroRack patch cable.",
       "seo": {
-        "title": "Patch Cable | LZX Industries",
-        "description": "Patch Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -6898,18 +6871,18 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1080,
-          "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/patch-cable-15cm-red.png?v=1684465020",
+          "width": 1024,
+          "height": 1024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/patch-cable-group.png?v=1684465020",
           "localPath": "catalog/shopify/products/patch-cable/media/01-patch-cable.png",
           "position": 0
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/patch-cable-group.png?v=1684465020",
+          "width": 1080,
+          "height": 1080,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/patch-cable-15cm-red.png?v=1684465020",
           "localPath": "catalog/shopify/products/patch-cable/media/02-patch-cable.png",
           "position": 1
         },
@@ -6979,7 +6952,7 @@
       "descriptionHtml": "<p>Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 65mA Info Sheet (PDF)User Reference Card (PDF)</p>",
       "descriptionPlain": "Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 65mA Info Sheet (PDF)User Reference Card (PDF)",
       "seo": {
-        "title": "Pendulum | LZX Industries",
+        "title": null,
         "description": "Limited edition black panel SOLD OUT. Behold Pendulum, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, Pendulum delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect. Width, 10HP Mount..."
       },
       "options": [
@@ -7049,8 +7022,8 @@
       "descriptionHtml": "<p>PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting.PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
       "descriptionPlain": "PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting.PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
-        "title": "PGO | LZX Industries",
-        "description": "PGO"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7159,8 +7132,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Pin Header Pitch 0.1in 2X8 Male Shrouded | LZX Industries",
-        "description": "Pin Header Pitch 0.1in 2X8 Male Shrouded"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7214,7 +7187,7 @@
       "descriptionHtml": "<p>No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)</p>",
       "descriptionPlain": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)",
       "seo": {
-        "title": "Polar Fringe | LZX Industries",
+        "title": null,
         "description": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to..."
       },
       "options": [
@@ -7255,85 +7228,6 @@
       "createdAt": "2026-04-21T20:20:38Z",
       "updatedAt": "2026-04-21T20:22:44Z"
     },
-    "pot": {
-      "handle": "pot",
-      "shopifyProductId": "gid://shopify/Product/8803160817687",
-      "title": "P",
-      "vendor": "LZX Industries",
-      "productType": "EuroRack Module",
-      "status": "ACTIVE",
-      "tags": [
-        "Active",
-        "Gen3",
-        "Visible"
-      ],
-      "isActive": true,
-      "isVisible": true,
-      "isBStock": false,
-      "subtitle": null,
-      "descriptionHtml": "<p>P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB &amp; Panel Only) or a Full DIY Kit (all components included.) Learn more about P on our documentation website!</p>",
-      "descriptionPlain": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.) Learn more about P on our documentation website!",
-      "seo": {
-        "title": "P | LZX Industries",
-        "description": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (a..."
-      },
-      "options": [
-        {
-          "id": "gid://shopify/ProductOption/11079424081943",
-          "name": "Title",
-          "position": 1,
-          "values": [
-            "Default Title"
-          ]
-        }
-      ],
-      "gallery": [
-        {
-          "type": "image",
-          "alt": "P",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-pot-fpn.png?v=1776802842",
-          "localPath": "catalog/shopify/products/pot/media/01-p.png",
-          "position": 0
-        },
-        {
-          "type": "image",
-          "alt": "P image 2",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-prm-fpn.png?v=1776802842",
-          "localPath": "catalog/shopify/products/pot/media/02-p-image-2.png",
-          "position": 1
-        }
-      ],
-      "variants": [
-        {
-          "shopifyVariantId": "gid://shopify/ProductVariant/45071202975767",
-          "sku": null,
-          "title": "Default Title",
-          "position": 1,
-          "selectedOptions": [
-            {
-              "name": "Title",
-              "value": "Default Title"
-            }
-          ],
-          "barcode": null,
-          "inventoryPolicy": "DENY",
-          "taxable": true
-        }
-      ],
-      "metafields": {
-        "global:description_tag": {
-          "type": "string",
-          "value": "P ( Potentiometer) is a passive utility module for attenuating low frequency signals within your patch. The module allows you to attenuate in either direction, or crossfade between two signals, using a simple slide pot. P is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (a..."
-        }
-      },
-      "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/pot",
-      "createdAt": "2026-04-21T20:20:39Z",
-      "updatedAt": "2026-04-22T08:20:47Z"
-    },
     "power-entry-module-8hp": {
       "handle": "power-entry-module-8hp",
       "shopifyProductId": "gid://shopify/Product/6890363879447",
@@ -7351,8 +7245,8 @@
       "descriptionHtml": "<p>Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 8HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA</p>",
       "descriptionPlain": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 8HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
       "seo": {
-        "title": "Power Entry 8HP | LZX Industries",
-        "description": "Power Entry 8HP"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7414,8 +7308,8 @@
       "descriptionHtml": "<p>Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 12HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA</p>",
       "descriptionPlain": "Offered for third party manufacturers and intrepid DIYers, this power entry assembly is designed to provide clean +/-5V power rails to a EuroRack module assembly of 12HP or greater in size.Max +5V Current Supplied, 500mAMax -5V Current Supplied, 200mA",
       "seo": {
-        "title": "Power & Sync Entry 12HP | LZX Industries",
-        "description": "Power & Sync Entry 12HP"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7477,8 +7371,8 @@
       "descriptionHtml": "<p>Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Mounting Depth, 32mm</p>",
       "descriptionPlain": "Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Mounting Depth, 32mm",
       "seo": {
-        "title": "Prismatic Ray | LZX Industries",
-        "description": "Prismatic Ray"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7496,8 +7390,8 @@
           "alt": "",
           "width": 1024,
           "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/og398T7iSUOFosRlx8gF_image2.png?v=1569522546",
-          "localPath": "catalog/shopify/products/prismatic-ray/media/01-prismatic-ray.png",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/YDzHY5LcSSKpkqywwHmX_image.jpg?v=1569522546",
+          "localPath": "catalog/shopify/products/prismatic-ray/media/01-prismatic-ray.jpg",
           "position": 0
         },
         {
@@ -7505,8 +7399,8 @@
           "alt": "",
           "width": 1024,
           "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/YDzHY5LcSSKpkqywwHmX_image.jpg?v=1569522546",
-          "localPath": "catalog/shopify/products/prismatic-ray/media/02-prismatic-ray.jpg",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/og398T7iSUOFosRlx8gF_image2.png?v=1569522546",
+          "localPath": "catalog/shopify/products/prismatic-ray/media/02-prismatic-ray.png",
           "position": 1
         }
       ],
@@ -7551,8 +7445,8 @@
       "descriptionHtml": "<p>PRM is a multi-purpose analog operator for rectifying and multiplying signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PRM is capable of many basic processing steps, such as half wave rectification, full wave rectification, four-quadrant multiplication, two-quadrant multiplication, and non-linear wave shaping.PRM is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB &amp; Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.</p>",
       "descriptionPlain": "PRM is a multi-purpose analog operator for rectifying and multiplying signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PRM is capable of many basic processing steps, such as half wave rectification, full wave rectification, four-quadrant multiplication, two-quadrant multiplication, and non-linear wave shaping.PRM is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels.",
       "seo": {
-        "title": "PRM | LZX Industries",
-        "description": "PRM"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7665,8 +7559,8 @@
       "descriptionHtml": "<p>Proc is a triple voltage processor and summing amplifier module that provides continuous control over attenuation, inversion, and bias. It&#39;s a flexible tool in any modular video system that allows voltage control over signal mixing, conversion, and modulation. Proc offers essential functions for combining and transforming video signals and modulation sources.</p>",
       "descriptionPlain": "Proc is a triple voltage processor and summing amplifier module that provides continuous control over attenuation, inversion, and bias. It's a flexible tool in any modular video system that allows voltage control over signal mixing, conversion, and modulation. Proc offers essential functions for combining and transforming video signals and modulation sources.",
       "seo": {
-        "title": "Proc | LZX Industries",
-        "description": "Proc"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7730,8 +7624,8 @@
       "descriptionHtml": "<p>LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19&quot; rack cases and enclosures. Combine it with DC Distro 3A and you&#39;re ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated* Vector rails with threaded M2.5 inserts* 100 M2.5 module mountings screws</p>",
       "descriptionPlain": "LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19\" rack cases and enclosures. Combine it with DC Distro 3A and you're ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated* Vector rails with threaded M2.5 inserts* 100 M2.5 module mountings screws",
       "seo": {
-        "title": "Rack 84HP | LZX Industries",
-        "description": "Rack 84HP"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7747,18 +7641,18 @@
         {
           "type": "image",
           "alt": "",
-          "width": 1798,
-          "height": 1798,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX3URack.png?v=1660264532",
+          "width": 1440,
+          "height": 1440,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Rack84HPIllustration.png?v=1660264532",
           "localPath": "catalog/shopify/products/rack-84hp/media/01-rack-84hp.png",
           "position": 0
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1440,
-          "height": 1440,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/Rack84HPIllustration.png?v=1660264532",
+          "width": 1798,
+          "height": 1798,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX3URack.png?v=1660264532",
           "localPath": "catalog/shopify/products/rack-84hp/media/02-rack-84hp.png",
           "position": 1
         }
@@ -7804,8 +7698,8 @@
       "descriptionHtml": "<p>Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm.</p>",
       "descriptionPlain": "Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm.",
       "seo": {
-        "title": "RCA Sync Cable | LZX Industries",
-        "description": "RCA Sync Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7825,7 +7719,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-30cm.png?v=1684444562",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-group.png?v=1684444562",
           "localPath": "catalog/shopify/products/rca-sync-cable/media/01-rca-sync-cable.png",
           "position": 0
         },
@@ -7834,7 +7728,7 @@
           "alt": "",
           "width": 1080,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-group.png?v=1684444562",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/rca-sync-cable-30cm.png?v=1684444562",
           "localPath": "catalog/shopify/products/rca-sync-cable/media/02-rca-sync-cable.png",
           "position": 1
         },
@@ -7924,8 +7818,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer | LZX Industries",
-        "description": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -7979,8 +7873,8 @@
       "descriptionHtml": "<p>Three standard EuroRack patch cables bonded together. Eases patching of RGB video signals. Available in three lengths: 15cm, 30cm and 60cm.</p>",
       "descriptionPlain": "Three standard EuroRack patch cables bonded together. Eases patching of RGB video signals. Available in three lengths: 15cm, 30cm and 60cm.",
       "seo": {
-        "title": "RGB Patch Cable | LZX Industries",
-        "description": "RGB Patch Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8110,8 +8004,8 @@
       "descriptionHtml": "<p>Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video.</p>",
       "descriptionPlain": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video.",
       "seo": {
-        "title": "Ribbons | LZX Industries",
-        "description": "Ribbons"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8147,7 +8041,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons06.png?v=1682640263",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons07.png?v=1682640266",
           "localPath": "catalog/shopify/products/ribbons/media/03-ribbons.png",
           "position": 2
         },
@@ -8156,7 +8050,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons03.png?v=1682640266",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons10.png?v=1682640266",
           "localPath": "catalog/shopify/products/ribbons/media/04-ribbons.png",
           "position": 3
         },
@@ -8165,7 +8059,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons05.png?v=1682640263",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons02.png?v=1682640266",
           "localPath": "catalog/shopify/products/ribbons/media/05-ribbons.png",
           "position": 4
         },
@@ -8174,7 +8068,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons02.png?v=1682640266",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons03.png?v=1682640266",
           "localPath": "catalog/shopify/products/ribbons/media/06-ribbons.png",
           "position": 5
         },
@@ -8192,7 +8086,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons07.png?v=1682640266",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons06.png?v=1682640263",
           "localPath": "catalog/shopify/products/ribbons/media/08-ribbons.png",
           "position": 7
         },
@@ -8201,7 +8095,7 @@
           "alt": "",
           "width": 1920,
           "height": 1080,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons10.png?v=1682640266",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/ribbons05.png?v=1682640263",
           "localPath": "catalog/shopify/products/ribbons/media/09-ribbons.png",
           "position": 8
         }
@@ -8256,8 +8150,8 @@
       "descriptionHtml": "<p>Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis.</p>",
       "descriptionPlain": "Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis.",
       "seo": {
-        "title": "Scrolls | LZX Industries",
-        "description": "Scrolls"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8309,7 +8203,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/scrolls",
       "createdAt": "2023-08-29T22:23:50Z",
-      "updatedAt": "2026-04-21T09:02:41Z"
+      "updatedAt": "2026-04-24T16:57:10Z"
     },
     "sensory-translator": {
       "handle": "sensory-translator",
@@ -8383,7 +8277,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:40Z",
-      "updatedAt": "2026-04-24T00:49:03Z"
+      "updatedAt": "2026-04-24T12:49:09Z"
     },
     "shapechanger": {
       "handle": "shapechanger",
@@ -8404,7 +8298,7 @@
       "descriptionHtml": "<p>No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)</p>",
       "descriptionPlain": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting Depth, 45mm Power +12V @ 220mA Power -12V @ 220mA User Reference Card (PDF)",
       "seo": {
-        "title": "Shapechanger | LZX Industries",
+        "title": null,
         "description": "No longer available. Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure. Width, 16HP Mounting..."
       },
       "options": [
@@ -8464,8 +8358,8 @@
       "descriptionHtml": "<p>SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources.</p>",
       "descriptionPlain": "SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources.",
       "seo": {
-        "title": "SMX3 | LZX Industries",
-        "description": "SMX3"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8538,8 +8432,8 @@
       "descriptionHtml": "<p>Stacker is a triple quadrilateral key generator and layer-priority encoder for your modular video synthesizer. Feed Stacker horizontal and vertical waveforms from DWO3, DSG3, Scrolls, or Angles to produce three stacked quadrilateral shapes on the outputs.</p>",
       "descriptionPlain": "Stacker is a triple quadrilateral key generator and layer-priority encoder for your modular video synthesizer. Feed Stacker horizontal and vertical waveforms from DWO3, DSG3, Scrolls, or Angles to produce three stacked quadrilateral shapes on the outputs.",
       "seo": {
-        "title": "Stacker | LZX Industries",
-        "description": "Stacker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8553,13 +8447,31 @@
       ],
       "gallery": [
         {
+          "type": "image",
+          "alt": "",
+          "width": 3036,
+          "height": 3036,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/StackerSquare.png?v=1682550867",
+          "localPath": "catalog/shopify/products/stacker/media/01-stacker.png",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "How do you stack up?",
+          "width": 4032,
+          "height": 3024,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/PXL_20230509_233228860.jpg?v=1683677738",
+          "localPath": "catalog/shopify/products/stacker/media/02-how-do-you-stack-up.jpg",
+          "position": 1
+        },
+        {
           "type": "external_video",
           "alt": "",
           "width": null,
           "height": null,
           "shopifyUrl": "https://youtu.be/WBdyM4eI3JQ",
           "localPath": null,
-          "position": 0,
+          "position": 2,
           "embeddedUrl": "https://youtu.be/WBdyM4eI3JQ",
           "host": "YOUTUBE"
         },
@@ -8570,7 +8482,7 @@
           "height": null,
           "shopifyUrl": "https://youtu.be/c17o0oAmknY",
           "localPath": null,
-          "position": 1,
+          "position": 3,
           "embeddedUrl": "https://youtu.be/c17o0oAmknY",
           "host": "YOUTUBE"
         },
@@ -8581,27 +8493,9 @@
           "height": null,
           "shopifyUrl": "https://youtu.be/bB_V8DBnVEw",
           "localPath": null,
-          "position": 2,
+          "position": 4,
           "embeddedUrl": "https://youtu.be/bB_V8DBnVEw",
           "host": "YOUTUBE"
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 3036,
-          "height": 3036,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/StackerSquare.png?v=1682550867",
-          "localPath": "catalog/shopify/products/stacker/media/04-stacker.png",
-          "position": 3
-        },
-        {
-          "type": "image",
-          "alt": "How do you stack up?",
-          "width": 4032,
-          "height": 3024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/PXL_20230509_233228860.jpg?v=1683677738",
-          "localPath": "catalog/shopify/products/stacker/media/05-how-do-you-stack-up.jpg",
-          "position": 4
         }
       ],
       "variants": [
@@ -8654,7 +8548,7 @@
       "descriptionHtml": "<p>Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that grows with you as you build your video synthesis system. Width, 10HP Mounting Depth, 32mm Power +12V @ 70mA Power -12V @ 70mA Owner&#39;s Manual (PDF)User Reference Card (PDF)</p>",
       "descriptionPlain": "Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that grows with you as you build your video synthesis system. Width, 10HP Mounting Depth, 32mm Power +12V @ 70mA Power -12V @ 70mA Owner's Manual (PDF)User Reference Card (PDF)",
       "seo": {
-        "title": "Staircase | LZX Industries",
+        "title": null,
         "description": "Limited edition black panel SOLD OUT. Ascending the five steps of Staircase can transform a simple gradient or video source into a dense cascade of interrelated patterns. Staircase applies the principles of analog waveshaping to create a multi-level continuous solarizer. Wonderful module for starter systems that gro..."
       },
       "options": [
@@ -8724,8 +8618,8 @@
       "descriptionHtml": "<p>Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal.</p>",
       "descriptionPlain": "Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal.",
       "seo": {
-        "title": "Stairs | LZX Industries",
-        "description": "Stairs"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8798,7 +8692,7 @@
       "descriptionHtml": "<p>Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. It allows you to passively combine signals to condense many sources, and send inputs to multiple outputs for broader distribution.</p>",
       "descriptionPlain": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. It allows you to passively combine signals to condense many sources, and send inputs to multiple outputs for broader distribution.",
       "seo": {
-        "title": "SumDist | LZX Industries",
+        "title": null,
         "description": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. "
       },
       "options": [
@@ -8813,24 +8707,24 @@
       ],
       "gallery": [
         {
+          "type": "image",
+          "alt": "",
+          "width": 3036,
+          "height": 3036,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX12HPSumDistFrontpanelColorGraphicDarkSquare.png?v=1655916224",
+          "localPath": "catalog/shopify/products/sumdist/media/01-sumdist.png",
+          "position": 0
+        },
+        {
           "type": "external_video",
           "alt": "",
           "width": null,
           "height": null,
           "shopifyUrl": "https://youtu.be/S744YMZBouI",
           "localPath": null,
-          "position": 0,
+          "position": 1,
           "embeddedUrl": "https://youtu.be/S744YMZBouI",
           "host": "YOUTUBE"
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 3036,
-          "height": 3036,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/LZX12HPSumDistFrontpanelColorGraphicDarkSquare.png?v=1655916224",
-          "localPath": "catalog/shopify/products/sumdist/media/02-sumdist.png",
-          "position": 1
         }
       ],
       "variants": [
@@ -8879,8 +8773,8 @@
       "descriptionHtml": "<p>Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis.</p>",
       "descriptionPlain": "Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis.",
       "seo": {
-        "title": "Swatch | LZX Industries",
-        "description": "Swatch"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -8953,8 +8847,8 @@
       "descriptionHtml": "<p>Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher&#39;s illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities.</p>",
       "descriptionPlain": "Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher's illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities.",
       "seo": {
-        "title": "Switcher | LZX Industries",
-        "description": "Switcher"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9084,7 +8978,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2",
       "createdAt": "2018-12-06T05:55:08Z",
-      "updatedAt": "2026-04-24T00:49:04Z"
+      "updatedAt": "2026-04-24T12:49:11Z"
     },
     "tbc2-expander": {
       "handle": "tbc2-expander",
@@ -9105,7 +8999,7 @@
       "descriptionHtml": "<p>TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.</p>",
       "descriptionPlain": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
       "seo": {
-        "title": "TBC2 Expander | LZX Industries",
+        "title": null,
         "description": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included."
       },
       "options": [
@@ -9193,30 +9087,12 @@
         },
         {
           "type": "image",
-          "alt": "TBC2 Expander image 9",
-          "width": 645,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/09-tbc2-front-line-art.png?v=1776802852",
-          "localPath": "catalog/shopify/products/tbc2-expander/media/09-tbc2-expander-image-9.png",
-          "position": 8
-        },
-        {
-          "type": "image",
           "alt": "TBC2 Expander image 10",
           "width": 684,
           "height": 1080,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/10-tbc2-mk2-front-line-art.png?v=1776802851",
-          "localPath": "catalog/shopify/products/tbc2-expander/media/10-tbc2-expander-image-10.png",
-          "position": 9
-        },
-        {
-          "type": "image",
-          "alt": "TBC2 Expander image 11",
-          "width": 1024,
-          "height": 1024,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/11-tbc2ex-fpn-revb-square.png?v=1776802851",
-          "localPath": "catalog/shopify/products/tbc2-expander/media/11-tbc2-expander-image-11.png",
-          "position": 10
+          "localPath": "catalog/shopify/products/tbc2-expander/media/09-tbc2-expander-image-10.png",
+          "position": 8
         }
       ],
       "variants": [
@@ -9244,7 +9120,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2-expander",
       "createdAt": "2026-04-21T20:20:45Z",
-      "updatedAt": "2026-04-22T08:20:57Z"
+      "updatedAt": "2026-04-24T21:06:53Z"
     },
     "tbc2-mk1-fan-upgrade-kit": {
       "handle": "tbc2-mk1-fan-upgrade-kit",
@@ -9265,8 +9141,8 @@
       "descriptionHtml": "<p>This DIY kit is for TBC2 Mk1 (Orion) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.</p>",
       "descriptionPlain": "This DIY kit is for TBC2 Mk1 (Orion) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.",
       "seo": {
-        "title": "TBC2 Mk1 Fan Upgrade Kit | LZX Industries",
-        "description": "TBC2 Mk1 Fan Upgrade Kit"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9281,11 +9157,11 @@
       "gallery": [
         {
           "type": "image",
-          "alt": "",
+          "alt": "Fan upgrade kit contents (image shown is the Mk2 version; Mk1 kit is visually similar)",
           "width": 1024,
           "height": 1024,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/tbc2_mk2_fan_kit.png?v=1715794413",
-          "localPath": "catalog/shopify/products/tbc2-mk1-fan-upgrade-kit/media/01-tbc2-mk1-fan-upgrade-kit.png",
+          "localPath": "catalog/shopify/products/tbc2-mk1-fan-upgrade-kit/media/01-fan-upgrade-kit-contents-image-shown-is-the-mk2-version-mk1-kit-is-visually-similar.png",
           "position": 0
         }
       ],
@@ -9294,7 +9170,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429817262103",
           "sku": "940140",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9309,7 +9185,7 @@
       "metafields": {},
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2-mk1-fan-upgrade-kit",
       "createdAt": "2024-06-03T19:03:12Z",
-      "updatedAt": "2026-04-17T00:53:58Z"
+      "updatedAt": "2026-04-24T20:54:43Z"
     },
     "tbc2-mk2-fan-upgrade-kit": {
       "handle": "tbc2-mk2-fan-upgrade-kit",
@@ -9330,8 +9206,8 @@
       "descriptionHtml": "<p>This DIY kit is for TBC2 Mk2 (Gen3) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.</p>",
       "descriptionPlain": "This DIY kit is for TBC2 Mk2 (Gen3) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided.",
       "seo": {
-        "title": "TBC2 Mk2 Fan Upgrade Kit | LZX Industries",
-        "description": "TBC2 Mk2 Fan Upgrade Kit"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9346,11 +9222,11 @@
       "gallery": [
         {
           "type": "image",
-          "alt": "",
+          "alt": "Fan upgrade kit contents (image shown is the Mk2 version; Mk1 kit is visually similar)",
           "width": 1024,
           "height": 1024,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/tbc2_mk2_fan_kit.png?v=1715794413",
-          "localPath": "catalog/shopify/products/tbc2-mk2-fan-upgrade-kit/media/01-tbc2-mk2-fan-upgrade-kit.png",
+          "localPath": "catalog/shopify/products/tbc2-mk2-fan-upgrade-kit/media/01-fan-upgrade-kit-contents-image-shown-is-the-mk2-version-mk1-kit-is-visually-similar.png",
           "position": 0
         }
       ],
@@ -9359,7 +9235,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41298940887063",
           "sku": "940010",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9374,7 +9250,7 @@
       "metafields": {},
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/tbc2-mk2-fan-upgrade-kit",
       "createdAt": "2024-05-15T16:03:32Z",
-      "updatedAt": "2026-04-17T00:53:58Z"
+      "updatedAt": "2026-04-24T20:54:43Z"
     },
     "topogram": {
       "handle": "topogram",
@@ -9438,7 +9314,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:50Z",
-      "updatedAt": "2026-04-24T00:49:05Z"
+      "updatedAt": "2026-04-24T12:49:10Z"
     },
     "triple-video-fader-key-generator": {
       "handle": "triple-video-fader-key-generator",
@@ -9512,7 +9388,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:51Z",
-      "updatedAt": "2026-04-24T00:49:05Z"
+      "updatedAt": "2026-04-24T12:49:11Z"
     },
     "vessel-168": {
       "handle": "vessel-168",
@@ -9533,8 +9409,8 @@
       "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories</p>",
       "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories",
       "seo": {
-        "title": "Vessel 168 | LZX Industries",
-        "description": "Vessel 168"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9550,11 +9426,20 @@
         {
           "type": "image",
           "alt": "",
+          "width": 3700,
+          "height": 3700,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/vessel168_photo_top_square.png?v=1715796781",
+          "localPath": "catalog/shopify/products/vessel-168/media/01-vessel-168.png",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "",
           "width": 3848,
           "height": 2480,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/CASE168-BUS208-ASSY-MK1_photo_side_5015465b-6ca1-432d-b602-17ee22e5de31.png?v=1715788427",
-          "localPath": "catalog/shopify/products/vessel-168/media/01-vessel-168.png",
-          "position": 0
+          "localPath": "catalog/shopify/products/vessel-168/media/02-vessel-168.png",
+          "position": 1
         },
         {
           "type": "image",
@@ -9562,15 +9447,6 @@
           "width": 3512,
           "height": 1848,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/CASE168-BUS208-ASSY-MK1_photo_back_b73c7146-6ae1-48f5-a5db-d11c5b1a6e93.png?v=1715788427",
-          "localPath": "catalog/shopify/products/vessel-168/media/02-vessel-168.png",
-          "position": 1
-        },
-        {
-          "type": "image",
-          "alt": "",
-          "width": 3700,
-          "height": 3700,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/vessel168_photo_top_square.png?v=1715796781",
           "localPath": "catalog/shopify/products/vessel-168/media/03-vessel-168.png",
           "position": 2
         }
@@ -9580,7 +9456,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41298748145687",
           "sku": "910010",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9616,8 +9492,8 @@
       "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 208HP of Vector module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 208HP EuroRack case with busboard and lid 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories</p>",
       "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 208HP of Vector module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 208HP EuroRack case with busboard and lid 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories",
       "seo": {
-        "title": "Vessel 208 | LZX Industries",
-        "description": "Vessel 208"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9635,7 +9511,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429909471255",
           "sku": "910142",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9671,8 +9547,8 @@
       "descriptionHtml": "<p>An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 84HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 5 Amps of current with side facing power switch 14 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 7 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 84HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws 12V 5A power supply w/EMI filtering IEC power cable</p>",
       "descriptionPlain": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 84HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 5 Amps of current with side facing power switch 14 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 7 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 84HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws 12V 5A power supply w/EMI filtering IEC power cable",
       "seo": {
-        "title": "Vessel 84 | LZX Industries",
-        "description": "Vessel 84"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9690,7 +9566,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429856616471",
           "sku": "910204",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9726,8 +9602,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "Vessel EuroRack PSU Expander | LZX Industries",
-        "description": "Vessel EuroRack PSU Expander"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9745,7 +9621,7 @@
           "shopifyVariantId": "gid://shopify/ProductVariant/41429952954391",
           "sku": "910149",
           "title": "Default Title",
-          "position": 1,
+          "position": 2,
           "selectedOptions": [
             {
               "name": "Title",
@@ -9768,21 +9644,21 @@
       "title": "TBC2 Expander",
       "vendor": "LZX Industries",
       "productType": "EuroRack Module",
-      "status": "ACTIVE",
+      "status": "ARCHIVED",
       "tags": [
         "Active",
         "Gen3",
         "Visible"
       ],
-      "isActive": true,
+      "isActive": false,
       "isVisible": true,
       "isBStock": false,
       "subtitle": null,
       "descriptionHtml": "<p>TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.</p>",
       "descriptionPlain": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included.",
       "seo": {
-        "title": "TBC2 Expander | LZX Industries",
-        "description": "TBC2 Expander"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -9832,9 +9708,9 @@
           "value": "783"
         }
       },
-      "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/vga-expander",
+      "onlineStoreUrl": null,
       "createdAt": "2019-10-15T22:05:29Z",
-      "updatedAt": "2026-04-17T00:53:50Z"
+      "updatedAt": "2026-04-24T20:22:41Z"
     },
     "video-blending-matrix": {
       "handle": "video-blending-matrix",
@@ -9908,7 +9784,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:53Z",
-      "updatedAt": "2026-04-24T00:49:06Z"
+      "updatedAt": "2026-04-24T12:49:11Z"
     },
     "video-cable": {
       "handle": "video-cable",
@@ -9927,8 +9803,8 @@
       "descriptionHtml": "<p>Standard RCA video cable.</p>",
       "descriptionPlain": "Standard RCA video cable.",
       "seo": {
-        "title": "RCA Video Cable | LZX Industries",
-        "description": "RCA Video Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10025,8 +9901,8 @@
       "descriptionHtml": "<p>Injected molded control knobs for D-Shaft potentiometers. One piece. Pad printed.Note: These knobs will not fit on the detented potentiometers used in some Gen3 modules.</p>",
       "descriptionPlain": "Injected molded control knobs for D-Shaft potentiometers. One piece. Pad printed.Note: These knobs will not fit on the detented potentiometers used in some Gen3 modules.",
       "seo": {
-        "title": "Video Knob | LZX Industries",
-        "description": "Video Knob"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10116,8 +9992,8 @@
       "descriptionHtml": "<p>Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.</p>",
       "descriptionPlain": "Show your support for video synthesizer control knobs with this one inch enamel pin. Clasp included.",
       "seo": {
-        "title": "Video Knob Pin | LZX Industries",
-        "description": "Video Knob Pin"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10202,20 +10078,20 @@
       "gallery": [
         {
           "type": "image",
-          "alt": "Video Logic",
-          "width": 144,
-          "height": 600,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-video-logic-front-panel.jpg?v=1776802857",
-          "localPath": "catalog/shopify/products/video-logic/media/01-video-logic.jpg",
-          "position": 0
-        },
-        {
-          "type": "image",
           "alt": "Video Logic image 2",
           "width": 2286,
           "height": 2548,
           "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/02-video-logic-front-photo.jpg?v=1776802857",
-          "localPath": "catalog/shopify/products/video-logic/media/02-video-logic-image-2.jpg",
+          "localPath": "catalog/shopify/products/video-logic/media/01-video-logic-image-2.jpg",
+          "position": 0
+        },
+        {
+          "type": "image",
+          "alt": "Video Logic",
+          "width": 144,
+          "height": 600,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/01-video-logic-front-panel.jpg?v=1776802857",
+          "localPath": "catalog/shopify/products/video-logic/media/02-video-logic.jpg",
           "position": 1
         }
       ],
@@ -10248,7 +10124,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:54Z",
-      "updatedAt": "2026-04-24T00:49:06Z"
+      "updatedAt": "2026-04-24T19:47:56Z"
     },
     "video-sync-distribution-cable": {
       "handle": "video-sync-distribution-cable",
@@ -10268,8 +10144,8 @@
       "descriptionHtml": "<p>Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules.</p>",
       "descriptionPlain": "Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules.",
       "seo": {
-        "title": "14 Pin Sync Cable | LZX Industries",
-        "description": "14 Pin Sync Cable"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10391,7 +10267,7 @@
       },
       "onlineStoreUrl": null,
       "createdAt": "2026-04-21T20:20:56Z",
-      "updatedAt": "2026-04-24T00:49:07Z"
+      "updatedAt": "2026-04-24T12:49:16Z"
     },
     "videomancer": {
       "handle": "videomancer",
@@ -10426,15 +10302,13 @@
       ],
       "gallery": [
         {
-          "type": "external_video",
+          "type": "image",
           "alt": "",
-          "width": null,
-          "height": null,
-          "shopifyUrl": "https://youtu.be/pmYxqFp5V3o",
-          "localPath": null,
-          "position": 0,
-          "embeddedUrl": "https://youtu.be/pmYxqFp5V3o",
-          "host": "YOUTUBE"
+          "width": 2048,
+          "height": 2048,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-top-2048.png?v=1760736345",
+          "localPath": "catalog/shopify/products/videomancer/media/01-videomancer.png",
+          "position": 0
         },
         {
           "type": "external_video",
@@ -10450,27 +10324,29 @@
         {
           "type": "image",
           "alt": "",
-          "width": 2048,
-          "height": 2048,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-rear-2048.png?v=1776197755",
+          "width": 1600,
+          "height": 1600,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-connectors-and-controls.png?v=1776197755",
           "localPath": "catalog/shopify/products/videomancer/media/03-videomancer.png",
           "position": 2
         },
         {
-          "type": "image",
+          "type": "external_video",
           "alt": "",
-          "width": 2048,
-          "height": 2048,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-top-2048.png?v=1760736345",
-          "localPath": "catalog/shopify/products/videomancer/media/04-videomancer.png",
-          "position": 3
+          "width": null,
+          "height": null,
+          "shopifyUrl": "https://youtu.be/pmYxqFp5V3o",
+          "localPath": null,
+          "position": 3,
+          "embeddedUrl": "https://youtu.be/pmYxqFp5V3o",
+          "host": "YOUTUBE"
         },
         {
           "type": "image",
           "alt": "",
-          "width": 1600,
-          "height": 1600,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-connectors-and-controls.png?v=1776197755",
+          "width": 2048,
+          "height": 2048,
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/videomancer-photo-rear-2048.png?v=1776197755",
           "localPath": "catalog/shopify/products/videomancer/media/05-videomancer.png",
           "position": 4
         }
@@ -10512,7 +10388,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/videomancer",
       "createdAt": "2025-09-28T22:17:28Z",
-      "updatedAt": "2026-04-24T00:49:09Z"
+      "updatedAt": "2026-04-24T12:49:15Z"
     },
     "videomancer-tee": {
       "handle": "videomancer-tee",
@@ -10533,8 +10409,8 @@
       "descriptionHtml": "<p>Your fellow video freaks will love seeing you in this mystical Videomancer design. Two color print on Hanes Beefy Tee in Black or Purple. All shirts will ship in mid-November 2025.</p>",
       "descriptionPlain": "Your fellow video freaks will love seeing you in this mystical Videomancer design. Two color print on Hanes Beefy Tee in Black or Purple. All shirts will ship in mid-November 2025.",
       "seo": {
-        "title": "Videomancer Tee | LZX Industries",
-        "description": "Videomancer Tee"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10565,7 +10441,7 @@
           "alt": "",
           "width": 1338,
           "height": 1338,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Black.png?v=1761523656",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Purple.png?v=1761523656",
           "localPath": "catalog/shopify/products/videomancer-tee/media/01-videomancer-tee.png",
           "position": 0
         },
@@ -10574,7 +10450,7 @@
           "alt": "",
           "width": 1338,
           "height": 1338,
-          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Purple.png?v=1761523656",
+          "shopifyUrl": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/Videomancer-Tee-Black.png?v=1761523656",
           "localPath": "catalog/shopify/products/videomancer-tee/media/02-videomancer-tee.png",
           "position": 1
         }
@@ -10804,8 +10680,8 @@
       "descriptionHtml": "<p>This product has not been released yet, and will be available soon. Decorate your binders and laptops with this 3 inch vinyl sticker featuring the mystical Videomancer.</p>",
       "descriptionPlain": "This product has not been released yet, and will be available soon. Decorate your binders and laptops with this 3 inch vinyl sticker featuring the mystical Videomancer.",
       "seo": {
-        "title": "Videomancer Vinyl Sticker | LZX Industries",
-        "description": "Videomancer Vinyl Sticker"
+        "title": null,
+        "description": null
       },
       "options": [
         {
@@ -10950,7 +10826,7 @@
       },
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/vidiot",
       "createdAt": "2024-09-27T22:15:32Z",
-      "updatedAt": "2026-04-24T00:49:10Z"
+      "updatedAt": "2026-04-24T12:49:16Z"
     },
     "visual-cortex": {
       "handle": "visual-cortex",
@@ -10971,7 +10847,7 @@
       "descriptionHtml": "<p>Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.</p>",
       "descriptionPlain": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.",
       "seo": {
-        "title": "Visual Cortex | LZX Industries",
+        "title": null,
         "description": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositi..."
       },
       "options": [
@@ -11031,7 +10907,7 @@
       "descriptionHtml": "<p>In many European countries television static noise, or &quot;snow&quot;, is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)</p>",
       "descriptionPlain": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)",
       "seo": {
-        "title": "War Of The Ants | LZX Industries",
+        "title": null,
         "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based o..."
       },
       "options": [
@@ -11097,8 +10973,8 @@
       "descriptionHtml": "",
       "descriptionPlain": "",
       "seo": {
-        "title": "WASHER-M7-POT | LZX Industries",
-        "description": "WASHER-M7-POT"
+        "title": null,
+        "description": null
       },
       "options": [
         {

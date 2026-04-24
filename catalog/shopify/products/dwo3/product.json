@@ -14,7 +14,7 @@
   "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/dwo3",
   "description": "DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges.",
   "createdAt": "2021-08-27T02:54:48Z",
-  "updatedAt": "2026-04-21T09:02:28Z",
+  "updatedAt": "2026-04-24T19:57:17Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/8460630163479",
@@ -26,7 +26,7 @@
     }
   ],
   "seo": {
-    "title": "DWO3 | LZX Industries",
-    "description": "DWO3"
+    "title": null,
+    "description": null
   }
 }

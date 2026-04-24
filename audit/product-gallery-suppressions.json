@@ -1,0 +1,77 @@
+{
+  "$schema": "./product-gallery-suppressions.schema.json",
+  "version": 1,
+  "description": "Audit suppressions for scripts/audit-product-galleries.mjs. Entries here are deliberate merchandising choices or accepted shared-asset situations confirmed by a human. Each entry removes a (handle, slot) op from the actionable remediation plan and moves it to the 'suppressed' section of the report, annotated with the reason. Prefer narrow suppressions (add 'kind' to scope to a specific op kind) over broad ones.",
+  "suppressions": [
+    {
+      "handle": "lzx-black-expedition-replacement-panel",
+      "slot": 1,
+      "reason": "Pattern A: Alternate Frontpanel merchandising gallery intentionally reuses each compatible Black Expedition module's panel image.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "passage",
+      "slot": 0,
+      "reason": "Pattern A: Passage's hero panel is intentionally mirrored into the lzx-black-expedition-replacement-panel merchandising gallery.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "pendulum",
+      "slot": 0,
+      "reason": "Pattern A: Pendulum's hero panel is intentionally mirrored into the lzx-black-expedition-replacement-panel merchandising gallery.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "sensory-translator",
+      "slot": 0,
+      "reason": "Pattern A: Sensory Translator's hero panel is intentionally mirrored into the lzx-black-expedition-replacement-panel merchandising gallery.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "staircase",
+      "slot": 0,
+      "reason": "Pattern A: Staircase's hero panel is intentionally mirrored into the lzx-black-expedition-replacement-panel merchandising gallery.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "war-of-the-ants",
+      "slot": 0,
+      "reason": "Pattern A: War Of The Ants' hero panel is intentionally mirrored into the lzx-black-expedition-replacement-panel merchandising gallery.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "tbc2",
+      "slot": 0,
+      "reason": "Pattern C: TBC2 hero panel is intentionally mirrored into the tbc2-expander gallery for pair/context merchandising.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "tbc2-expander",
+      "slot": 2,
+      "reason": "Pattern C reciprocal: tbc2-expander's gallery intentionally shows the TBC2 main-module panel at slot 2 (pair/context merchandising). The tbc2 side is suppressed separately.",
+      "pattern": "merchandising-cross-reference",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "tbc2-mk1-fan-upgrade-kit",
+      "slot": 0,
+      "reason": "Pattern D: No separate Mk1 fan-kit photo exists. The Mk1 product reuses the Mk2 kit photo with explicit disclosure alt text ('image shown is the Mk2 version; Mk1 kit is visually similar'). Revisit if a Mk1 photograph is ever produced.",
+      "pattern": "accepted-shared-asset-with-alt-disclosure",
+      "addedAt": "2026-04-24"
+    },
+    {
+      "handle": "tbc2-mk2-fan-upgrade-kit",
+      "slot": 0,
+      "reason": "Pattern D: Byte-identical flag against the Mk1 fan-kit product is accepted; the Mk2 product legitimately owns the image.",
+      "pattern": "accepted-shared-asset-with-alt-disclosure",
+      "addedAt": "2026-04-24"
+    }
+  ]
+}

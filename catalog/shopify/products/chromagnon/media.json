@@ -1,23 +1,5 @@
 [
   {
-    "id": "gid://shopify/MediaImage/22903469604887",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/chromagnon-front-panel-square.png?v=1683302938",
-      "altText": "",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/chromagnon/media/01-chromagnon.png"
-  },
-  {
     "id": "gid://shopify/MediaImage/5490902302743",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -33,6 +15,24 @@
       "height": 1957
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/chromagnon/media/02-chromagnon.jpg"
+    "localPath": "catalog/shopify/products/chromagnon/media/01-chromagnon.jpg"
+  },
+  {
+    "id": "gid://shopify/MediaImage/22903469604887",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/chromagnon-front-panel-square.png?v=1683302938",
+      "altText": "",
+      "width": 1024,
+      "height": 1024
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/chromagnon/media/02-chromagnon.png"
   }
 ]

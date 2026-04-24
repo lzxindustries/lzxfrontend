@@ -1,5 +1,23 @@
 [
   {
+    "id": "gid://shopify/MediaImage/23973198954519",
+    "type": "MediaImage",
+    "mediaContentType": "IMAGE",
+    "status": "READY",
+    "alt": "",
+    "embeddedUrl": null,
+    "host": null,
+    "originUrl": null,
+    "image": {
+      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/vessel168_photo_top_square.png?v=1715796781",
+      "altText": "",
+      "width": 3700,
+      "height": 3700
+    },
+    "sources": [],
+    "localPath": "catalog/shopify/products/vessel-168/media/01-vessel-168.png"
+  },
+  {
     "id": "gid://shopify/MediaImage/23972021207063",
     "type": "MediaImage",
     "mediaContentType": "IMAGE",
@@ -15,7 +33,7 @@
       "height": 2480
     },
     "sources": [],
-    "localPath": "catalog/shopify/products/vessel-168/media/01-vessel-168.png"
+    "localPath": "catalog/shopify/products/vessel-168/media/02-vessel-168.png"
   },
   {
     "id": "gid://shopify/MediaImage/23972021272599",
@@ -31,24 +49,6 @@
       "altText": "",
       "width": 3512,
       "height": 1848
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/vessel-168/media/02-vessel-168.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/23973198954519",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/files/vessel168_photo_top_square.png?v=1715796781",
-      "altText": "",
-      "width": 3700,
-      "height": 3700
     },
     "sources": [],
     "localPath": "catalog/shopify/products/vessel-168/media/03-vessel-168.png"

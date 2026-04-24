@@ -16,23 +16,5 @@
     },
     "sources": [],
     "localPath": "catalog/shopify/products/castle-010-clock-vco/media/01-castle-010-clock-vco.png"
-  },
-  {
-    "id": "gid://shopify/MediaImage/1571741138967",
-    "type": "MediaImage",
-    "mediaContentType": "IMAGE",
-    "status": "READY",
-    "alt": "",
-    "embeddedUrl": null,
-    "host": null,
-    "originUrl": null,
-    "image": {
-      "url": "https://cdn.shopify.com/s/files/1/0065/5484/5248/products/SU0tpxIQTalA4XEPrqeD_image__54.png?v=1544153545",
-      "altText": "",
-      "width": 1024,
-      "height": 1024
-    },
-    "sources": [],
-    "localPath": "catalog/shopify/products/castle-010-clock-vco/media/02-castle-010-clock-vco.png"
   }
 ]
