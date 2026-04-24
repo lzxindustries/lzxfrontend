@@ -14,7 +14,7 @@ export type CategoryImageFit = 'contain' | 'cover';
  *
  * Most categories source these from `~/data/product-slugs` (`SlugEntry`),
  * but configs may also produce synthetic entries (e.g. external/community
- * links such as VH.S modules or the BitVision legacy entry).
+ * links such as the BitVision legacy entry).
  */
 export type CategorySourceEntry = {
   canonical: string;

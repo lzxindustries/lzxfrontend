@@ -28,14 +28,14 @@ describe('LFS product metadata helpers', () => {
     );
   });
 
-  it('exposes external module listing entries for VH.S products', () => {
+  it('omits Video Headroom (VH.S) products from the external module listing', () => {
     const slugs = getExternalModuleListingEntries().map((entry) => entry.slug);
 
-    expect(slugs).toContain('baja');
-    expect(slugs).toContain('channel');
-    expect(slugs).toContain('crossfade');
-    expect(slugs).toContain('scanners');
-    expect(slugs).toContain('submixer');
+    expect(slugs).not.toContain('baja');
+    expect(slugs).not.toContain('channel');
+    expect(slugs).not.toContain('crossfade');
+    expect(slugs).not.toContain('scanners');
+    expect(slugs).not.toContain('submixer');
   });
 
   it('preserves external URLs for external-only modules', () => {

@@ -1,6 +1,5 @@
 import {getModulesBySeries, type SlugEntry} from '~/data/product-slugs';
 import {
-  getExternalModuleListingEntries,
   getLegacyVisionaryModuleMetadataBySlug,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
@@ -14,7 +13,7 @@ import type {
 
 export const MODULE_LISTING_EXCLUSIONS = new Set(['dc-distro-5a']);
 
-const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'vhs', 'castle'];
+const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'castle'];
 const LEGACY_SERIES_ORDER = [
   'orion',
   'expedition',
@@ -27,7 +26,6 @@ const LEGACY_SERIES_ORDER = [
 const SERIES_LABELS: Record<string, string> = {
   pseries: 'P',
   gen3: 'Gen3',
-  vhs: 'VH.S',
   orion: 'Orion',
   visionary: 'Visionary',
   castle: 'Castle',
@@ -41,7 +39,6 @@ const SERIES_SUBTITLES: Record<string, string> = {
   pseries:
     'Compact utility modules designed to solve everyday patching needs with minimal space and maximum flexibility. These are foundational building blocks for routing, buffering, and distribution.',
   gen3: 'Gen3 defines the modern LZX core: high-precision color, keying, and signal processing modules built for contemporary video synthesis systems. This series is optimized for deep integration and performance.',
-  vhs: 'Third-party modules from Video Headroom Systems built for the LZX Gen3 signal standard. These expand the ecosystem without requiring internal storefront product pages.',
   castle:
     'Castle is a digital logic playground for video-rate pulse structures, counters, gates, and timing experiments. It brings modular logic synthesis into the visual domain with a playful, patch-programmable approach.',
   orion:
@@ -71,20 +68,8 @@ function moduleEntryToSource(entry: SlugEntry): CategorySourceEntry {
 
 function buildRawSections(): CategoryRawSection[] {
   const bySeriesMap = getModulesBySeries();
-  const externalEntries: CategorySourceEntry[] =
-    getExternalModuleListingEntries().map((entry) => ({
-      canonical: entry.slug,
-      name: entry.name,
-      isHidden: entry.isHidden,
-      externalUrl: entry.externalUrl,
-      // Stash subtitle so resolveSubtitle can prefer it.
-      __externalSubtitle: entry.subtitle,
-    }));
 
   const buildGroup = (key: string) => {
-    if (key === 'vhs') {
-      return {key, entries: externalEntries};
-    }
     const entries = (bySeriesMap.get(key) ?? [])
       .filter((e) => !MODULE_LISTING_EXCLUSIONS.has(e.canonical))
       .map(moduleEntryToSource);

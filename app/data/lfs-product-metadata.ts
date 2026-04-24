@@ -1418,6 +1418,10 @@ export function getLfsProductSubtitle(name: string): string | null {
   return getLfsProductMetadataByName(name)?.subtitle ?? null;
 }
 
+/**
+ * Third-party (non–Shopify) modules with an external product URL.
+ * Video Headroom (company `vhs`) is excluded — not surfaced in on-site lists.
+ */
 export function getExternalModuleListingEntries(): LfsProductMetadata[] {
   return lfsProducts
     .filter(
@@ -1425,6 +1429,7 @@ export function getExternalModuleListingEntries(): LfsProductMetadata[] {
         entry.productType === 'eurorack_module' &&
         entry.company != null &&
         entry.company !== 'lzx' &&
+        entry.company !== 'vhs' &&
         entry.externalUrl,
     )
     .sort((a, b) => a.name.localeCompare(b.name));

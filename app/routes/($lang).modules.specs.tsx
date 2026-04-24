@@ -17,7 +17,7 @@ export const headers = routeHeaders;
 
 // Series ordering and labels mirror ($lang).modules._index.tsx so the two
 // pages present the catalog in a consistent order.
-const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'vhs', 'castle'];
+const ACTIVE_SERIES_ORDER = ['pseries', 'gen3', 'castle'];
 const LEGACY_SERIES_ORDER = [
   'orion',
   'expedition',
@@ -31,7 +31,6 @@ const SERIES_ORDER = [...ACTIVE_SERIES_ORDER, ...LEGACY_SERIES_ORDER];
 const SERIES_LABELS: Record<string, string> = {
   pseries: 'P',
   gen3: 'Gen3',
-  vhs: 'VH.S',
   orion: 'Orion',
   visionary: 'Visionary',
   castle: 'Castle',
