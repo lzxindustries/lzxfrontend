@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "rca-sync-cable",
+  "name": "RCA Sync Cable",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1701898846272",
+  "images": {
+    "frontpanel": "website/rca-sync-cable-group.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/rca-sync-cable-15cm.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-sync-cable-30cm.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-sync-cable-60cm.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-sync-cable-group.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-sync-cable.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Standard RCA cable in short lengths for module-to-module video sync connections. Available in three lengths: 15cm, 30cm and 60cm."
+}

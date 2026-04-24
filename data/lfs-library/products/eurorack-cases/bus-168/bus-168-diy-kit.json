@@ -1,0 +1,55 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "bus-168-diy-kit",
+  "name": "Bus 168 DIY Kit",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 84,
+    "mounting_depth_mm": 20
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7214169489431",
+  "images": {
+    "frontpanel": "website/bus208_photo_top.png"
+  },
+  "downloads": [
+    {
+      "name": "Bus 168 Shield Dimensional Drawing RevB",
+      "path": "downloads/BUS168-SHIELD-REVB.pdf",
+      "file_type": "pdf"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/bus208_photo_detail.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/bus208_photo_top.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/BUS168-SHIELD-REVB.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "A DIY installed version of the power and sync bus board used in our Vessel 168 EuroRack case. Screw terminal power entry supporting up to 10 Amps of current 28 individually filtered 12V power output connectors 14 individually buffered sync distribution outputs Included in the box: Assembled 168HP bus board with screw terminal connections for power input and power switch (optional). Chassis mount 2.5mm DC barrel connector with pigtail leads. 4x M3 8mm mounting screws. Not included: TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering and 2.5mm DC barrel connector Notes: As supplied, all you need to do is connect a 12V power supply and ground to the screw terminal marked for power input. The mounting standoffs can be used with any M3 screws if the supplied screws are too short. The four mounting locations are positioned 4.8 inches (24HP) apart. Optionally, you may remove the jumper link installed in the screw terminal marked for power switch. An external shorting switch may be used -- this connection is a remote control, so a high current switch or wiring is not necessary. You should use a 2.5mm DC connector like the one supplied, if you're expecting to draw more than 3 amps through the bus board."
+}

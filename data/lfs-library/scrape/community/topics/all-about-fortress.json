@@ -1,0 +1,41 @@
+{
+  "id": 1392,
+  "title": "All About Fortress",
+  "slug": "all-about-fortress",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 27,
+      "name": "fortress",
+      "slug": "fortress"
+    },
+    {
+      "id": 26,
+      "name": "orion",
+      "slug": "orion"
+    }
+  ],
+  "created_at": "2019-08-12T00:31:37.280Z",
+  "views": 3689,
+  "like_count": 12,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 6268,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-08-12T00:31:37.360Z",
+      "updated_at": "2022-01-02T19:44:27.142Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2cc72c17fa8f8c97e2e4fd4f1ca2a3747a3cb5cd.jpeg\" data-download-href=\"/uploads/short-url/6o7JsDS0mmYE6Y2aWISHD6KsLPT.jpeg?dl=1\" title=\"image_5_2048x2048\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2cc72c17fa8f8c97e2e4fd4f1ca2a3747a3cb5cd.jpeg\" alt=\"image_5_2048x2048\" data-base62-sha1=\"6o7JsDS0mmYE6Y2aWISHD6KsLPT\" width=\"500\" height=\"500\" data-dominant-color=\"575657\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image_5_2048x2048</span><span class=\"informations\">732\u00d7732 57.4 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nFortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory.  The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics.</p>\n<h1><a name=\"p-6268-features-1\" class=\"anchor\" href=\"#p-6268-features-1\" aria-label=\"Heading link\"></a>Features</h1>\n<ul>\n<li>Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns.</li>\n<li>Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators.  An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation.</li>\n<li>4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR.,</li>\n<li>16 Stage Shift Register Delay Line with 8 selectable output taps.</li>\n<li>32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets.</li>\n<li>48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps.</li>\n<li>9-bit RGB DACs with palette memory and 8 selectable color palettes.</li>\n</ul>\n<h1><a name=\"p-6268-specifications-2\" class=\"anchor\" href=\"#p-6268-specifications-2\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 22HP</li>\n<li>Mounting Depth, 42mm</li>\n<li>Power +12V @ 180mA</li>\n<li>Power -12V @ 110mA</li>\n</ul>\n<h1><a name=\"p-6268-designer-notes-3\" class=\"anchor\" href=\"#p-6268-designer-notes-3\" aria-label=\"Heading link\"></a>Designer Notes</h1>\n<p>Fortress is an encapsulation of the design concepts first presented in the LZX Castle DIY module series. It is also the successor to the LZX BitVision video synthesizer, the LZX Visionary logic series modules, and several unreleased  prototypes throughout the years.  It was conceptualized and designed by Phil Baljeu, Jonah Lange and Lars Larsen.</p>\n<p>Historic design references include video synthesizers such as the EMS Spectre, Stephen Beck\u2019s Video Weaver, realtime logic based arcade games such as Pong and Centipede, and the primitive colorizers found in consumer video cameras throughout the 1980s.</p>\n<h1><a name=\"p-6268-palette-selection-reference-4\" class=\"anchor\" href=\"#p-6268-palette-selection-reference-4\" aria-label=\"Heading link\"></a>Palette Selection Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c81802da14d062910d7de4e26cdbbe0f9eb6f1e7.jpeg\" data-download-href=\"/uploads/short-url/sy6W8B0PjOF0XVKlKV6Fnt3Rr5t.jpeg?dl=1\" title=\"fortress-palettes-illustration\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c81802da14d062910d7de4e26cdbbe0f9eb6f1e7.jpeg\" alt=\"fortress-palettes-illustration\" data-base62-sha1=\"sy6W8B0PjOF0XVKlKV6Fnt3Rr5t\" width=\"690\" height=\"483\" data-dominant-color=\"9B928D\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">fortress-palettes-illustration</span><span class=\"informations\">1024\u00d7718 109 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-6268-program-selection-reference-5\" class=\"anchor\" href=\"#p-6268-program-selection-reference-5\" aria-label=\"Heading link\"></a>Program Selection Reference</h1>\n<p>000 \u2013 ARITHMETIC/LOGIC COMPOSITOR \u2013 ADC1 is combined with ADC2 according to an operation selected by ADC3: ADD, SUBTRACT, AND, OR, XOR, NAND, NOR, XNOR.  The output of the ALU is 3 bits wide and goes directly to the DAC output.  The ALU output also selects a 9-bit RGB value from the selected palette.<br>\n100 \u2013 16X3-BIT RGB SHIFT REGISTER \u2013 ADC2 selects a shift register delay length.  The ALU combines the latched and delayed versions of the ADC1 input.<br>\n010 \u2013 32-BIT CELLULAR AUTOMATA \u2013 ADC2 selects a cellular automata ruleset.  The cellular automata pattern is drawn by clocks created by OSC1 and OSC2. The ALU combines the cellular automata pattern with ADC1.<br>\n110 \u2013 48-BIT LINEAR FEEDBACK SHIFT REGISTER \u2013 ADC2 selects a pseudorandom seed value.  The LFSR pattern is drawn by clocks created by OSC1 and OSC2. The ALU combines the LFSR pattern with ADC1.<br>\nxx1 \u2013 OSCILLATOR SLIP SYNC ON \u2013 The last four program select modes are identical to the first four, but with the addition of motion generation through a special chained slip sync mode using OSC1, OSC2, and OSC3.  In this mode, the 2-bit mode switches for OSC2 and OSC3 will select phase modulation directions and OSC2 phase swapping options.</p>\n<h1><a name=\"p-6268-videos-6\" class=\"anchor\" href=\"#p-6268-videos-6\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6KOWF3EaKH37c4uCbO8oZq-&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-6268-other-resources-7\" class=\"anchor\" href=\"#p-6268-other-resources-7\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/fortress\">LZX Community Forum posts tagged #fortress</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

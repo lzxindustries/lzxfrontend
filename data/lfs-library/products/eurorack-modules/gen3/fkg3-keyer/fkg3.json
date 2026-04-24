@@ -1,0 +1,286 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "fkg3",
+  "name": "FKG3",
+  "sku": "LZXFKG3",
+  "subtitle": "Luma & Chroma Keyer",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 200
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6573392003095",
+  "images": {
+    "frontpanel": "website/fkg3-front-panel.png",
+    "legend": "website/fkg3-front-panel.png"
+  },
+  "connectors": [
+    {
+      "name": "R BG",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Threshold CV",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "Softness CV",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 800,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "R FG",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "R Key",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "R",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "G",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "B",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "B Key",
+      "ref_des": "J13",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "B FG",
+      "ref_des": "J12",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "B BG",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "G BG",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "G FG",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "G Key",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1375,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "Edge Mode",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Threshold",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Softness",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Source Mode",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Threshold CV Depth",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Softness CV Depth",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Key Mode",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": 125,
+      "part": null
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for FKG3",
+      "youtube_id": "h32UDIphXuI"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/fkg3-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/fkg3-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/fkg3-mk2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/fkg3-mk2-front-panel-square.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/fkg3_fpn_revb.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/fkg3_fpn_revc.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/lzxgfx_keyer_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "FKG3 Keyer serves a wide range of creative image compositing functions. Analogue logic based keying modes: Luma Key, Chroma Key Red, Chroma Key Green, and Chroma Key Blue. Softness control sweeps edge response from hard transitions to soft gradients. May be expanded by utility modules such as Proc and Matte, becoming the core unit of a color correction and key source processing subsystem. Patch in monochromatic sources seamlessly via switched RGB input jacks. Learn more about FKG3 on our documentation website!"
+}

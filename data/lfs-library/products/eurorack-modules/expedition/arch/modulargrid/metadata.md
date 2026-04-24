@@ -1,0 +1,33 @@
+# Arch
+
+**Manufacturer:** LZX Industries
+**Series:** Expedition
+**ModularGrid:** [https://www.modulargrid.net/e/lzx-industries-arch](https://www.modulargrid.net/e/lzx-industries-arch)
+**MG ID:** 13341
+**Status:** Available
+
+## Specifications
+
+| Spec         | Value |
+| ------------ | ----- |
+| Width        | 8 HP  |
+| +12V Current | 65 mA |
+| -12V Current | 65 mA |
+| +5V Current  | 0 mA  |
+| MSRP         | $179  |
+
+## Description
+
+**Nonlinear Functions**
+
+I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.
+
+2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements.
+
+1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output.
+
+1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them.
+
+---
+
+_Source: [ModularGrid](https://www.modulargrid.net/e/lzx-industries-arch)_

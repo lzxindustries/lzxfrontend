@@ -1,0 +1,77 @@
+{
+  "id": 4186,
+  "title": "ESG3 Trimmer Calibration",
+  "slug": "esg3-trimmer-calibration",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 102,
+      "name": "esg3",
+      "slug": "esg3"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 92,
+      "name": "gen3",
+      "slug": "gen3"
+    }
+  ],
+  "created_at": "2022-11-23T02:47:43.295Z",
+  "views": 575,
+  "like_count": 11,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 29706,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-11-23T02:47:43.387Z",
+      "updated_at": "2022-11-24T01:14:23.588Z",
+      "cooked": "<p>Here is a quick process to trim your ESG3 module if desired.  If your module\u2019s color balance looks good to you, don\u2019t mess with it!  The purpose of the trimmers is to adjust the input range so that a 0V to 1V input scale matches the scale of the black/white level clipping on ESG3\u2019s outputs.</p>\n<ol>\n<li>Patch a Ramp source into the Red input jack.  Leave it there \u2013 the Red input is normalized to the Green and Blue jacks too, if they are left unpatched.</li>\n<li>Set all six control knobs to 50% Center positions.</li>\n<li>Monitor the Component or Composite output on your display.  Zero any Contrast/Gain settings in the display\u2019s menu.</li>\n<li>Engage the Mute toggles for Green and Blue channels (set toggle switches in down position.)</li>\n<li>Adjust the Red Gain &amp; Red Brightness trimmers to maximize the range of your ramp input.  When properly trimmed, the ramp signal will be 0% Red (Black) at the left edge of the screen, and 100% Red at the right edge of the screen.</li>\n<li>Repeat steps 3 and 4 for the other two color channels.  When calibrating Green, mute Red and Blue.  When Calibrating Blue, mute Red and Green.</li>\n<li>After adjusting each channel separately, unmute all channels.  Your output should be very close to Grayscale.  If there is a tint of one color channel, go back and review that channel\u2019s calibration or make a small adjustments.</li>\n</ol>\n<p>Here are some images showing correct and incorrect calibration with an input ramp source.</p>\n<p>This content will be migrated into the docs site soon, but is posted here due to being requested.  I archived some earlier threads about this issue upon posting this to aid in disambiguation and remove redundant info. Please reach out to LZX Support if you have any questions or feedback on the calibration procedure.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/aecaa85d7cff9c0830662f7ff7984494bd2ede24.png\" data-download-href=\"/uploads/short-url/oWhgRhXCup89l8xdaA9kgcbhwB6.png?dl=1\" title=\"ESG3_Calibration_Correct\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/aecaa85d7cff9c0830662f7ff7984494bd2ede24.png\" alt=\"ESG3_Calibration_Correct\" data-base62-sha1=\"oWhgRhXCup89l8xdaA9kgcbhwB6\" width=\"615\" height=\"500\" data-dominant-color=\"8B8B76\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">ESG3_Calibration_Correct</span><span class=\"informations\">640\u00d7520 147 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2d8d55ce64e321d27843109c87683b8b9b3f2a22.png\" data-download-href=\"/uploads/short-url/6uYijvCMfactaxyKJo4fs0EztjI.png?dl=1\" title=\"ESG3_Calibration_High_Brightness\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2d8d55ce64e321d27843109c87683b8b9b3f2a22.png\" alt=\"ESG3_Calibration_High_Brightness\" data-base62-sha1=\"6uYijvCMfactaxyKJo4fs0EztjI\" width=\"615\" height=\"500\" data-dominant-color=\"B2B29E\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">ESG3_Calibration_High_Brightness</span><span class=\"informations\">640\u00d7520 115 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/76056a8773b54d79c8e738352aa362e5f9b608e0.png\" data-download-href=\"/uploads/short-url/gQ3WCz4uQKvCVLCXrEZ4CSGdxqo.png?dl=1\" title=\"ESG3_Calibration_High_Contrast\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/76056a8773b54d79c8e738352aa362e5f9b608e0.png\" alt=\"ESG3_Calibration_High_Contrast\" data-base62-sha1=\"gQ3WCz4uQKvCVLCXrEZ4CSGdxqo\" width=\"615\" height=\"500\" data-dominant-color=\"8A8A76\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">ESG3_Calibration_High_Contrast</span><span class=\"informations\">640\u00d7520 66.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/7a4a70c86b486ff13640f109b27d9bd8275bfddd.png\" data-download-href=\"/uploads/short-url/hrPJQQGgJTqbuMnXGlHWCKJJgTz.png?dl=1\" title=\"ESG3_Calibration_Low_Brightness\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/7a4a70c86b486ff13640f109b27d9bd8275bfddd.png\" alt=\"ESG3_Calibration_Low_Brightness\" data-base62-sha1=\"hrPJQQGgJTqbuMnXGlHWCKJJgTz\" width=\"615\" height=\"500\" data-dominant-color=\"4A4A36\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">ESG3_Calibration_Low_Brightness</span><span class=\"informations\">640\u00d7520 111 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/d3151aee63254df99ae60a8f32d3e26ef748873f.png\" data-download-href=\"/uploads/short-url/u7jXLpBSBhRJIvtTzjraBDq9RIb.png?dl=1\" title=\"ESG3_Calibration_Low_Contrast\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/d3151aee63254df99ae60a8f32d3e26ef748873f.png\" alt=\"ESG3_Calibration_Low_Contrast\" data-base62-sha1=\"u7jXLpBSBhRJIvtTzjraBDq9RIb\" width=\"615\" height=\"500\" data-dominant-color=\"807F6B\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">ESG3_Calibration_Low_Contrast</span><span class=\"informations\">640\u00d7520 140 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 29716,
+      "post_number": 2,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2022-11-23T22:35:51.344Z",
+      "updated_at": "2022-11-23T22:35:51.344Z",
+      "cooked": "<p>Thank you <a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a>. This tuning procedure can be helpful for users without a waveform monitor or vectorscope. Is there a recommended calibration procedure for users who do have the proper test equipment or software?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 29717,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-11-24T00:09:11.983Z",
+      "updated_at": "2022-11-24T01:43:19.774Z",
+      "cooked": "<p>Since we are trimming the input scale range of the 1V DC jacks to match the internal black &amp; white level clipping points, a 0-1V ramp source from inside the LZX system or from some kind of test waveform generator (we use a Rigol for this in house) is the best reference.  The output scale is fixed by the individual Composite/Component output encoders after the clipping circuitry.</p>\n<p>If you want an oscilloscope view, you can set ESG3 to RGB mode, then monitor the individual component output jacks.  It\u2019s a little easier to see the points at which the ramp clips that way than on a video display.  For in house calibration, we use a scope plus test waveform generator, then verify the results on a PVM display.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 29722,
+      "post_number": 4,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2022-11-24T22:21:06.042Z",
+      "updated_at": "2022-11-24T22:21:06.042Z",
+      "cooked": "<p>Awesome, thanks! Maybe I can set my waveform monitor to RGB parade, to see all three channels at once. I will try it!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

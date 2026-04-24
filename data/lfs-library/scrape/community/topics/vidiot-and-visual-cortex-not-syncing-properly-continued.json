@@ -1,0 +1,168 @@
+{
+  "id": 1439,
+  "title": "Vidiot and Visual Cortex not syncing properly... Continued",
+  "slug": "vidiot-and-visual-cortex-not-syncing-properly-continued",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2019-08-15T21:16:05.498Z",
+  "views": 1371,
+  "like_count": 5,
+  "posts_count": 12,
+  "posts": [
+    {
+      "id": 6394,
+      "post_number": 1,
+      "username": "Limpasen",
+      "name": "Goran Hugo Olsson",
+      "created_at": "2019-08-15T21:16:05.565Z",
+      "updated_at": "2019-08-15T21:51:58.061Z",
+      "cooked": "<p>Hi! Would be so incredibly thankful if someone could help me out on this.<br>\nI know there is another topic on his, but it\u2019s not answering it to me.</p>\n<p>I have a Vidiot video signal going into the Visual Cortex. And the Synk flash red, and image are no synk.<br>\nAll other sources I have tried are fine, and stable into the Visual Cortex.<br>\nAnd I can record video from the Vidiot to my Blackmagic Intensity Shuttle, and then from the Shuttle into the Visual Cortex.</p>\n<p>Cheers mates</p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/ec364bbbe41070132e39a71392f6ed854d6d0aac.jpeg\" alt=\"IMG_2395\" data-base62-sha1=\"xHD0HvhOTsbS7hRizllrd5f81IM\" width=\"666\" height=\"500\"> <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/ee713269d2b1ceb9ef1b1390d738b4c4cda39b71.jpeg\" alt=\"IMG_2396\" data-base62-sha1=\"y1m9ZTXgn2Gcm1d7bf8LeKvgJ8t\" width=\"666\" height=\"500\"> <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/851ecdd0c391bc1e85e1a3b098049be5d0ea9f69.jpeg\" alt=\"IMG_2397\" data-base62-sha1=\"iZDv2W6gQkUeCY4VM0EGqy4Xcr7\" width=\"666\" height=\"500\"> <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/dac60546783d158beef8be5ba4a314e9545b4dbd.jpeg\" alt=\"IMG_2398\" data-base62-sha1=\"vdmlr452c2XyjhnrDeefCMaofaR\" width=\"666\" height=\"500\"> <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2c7af4a1e53cae90361e20bb949d04440f6d734f.jpeg\" alt=\"IMG_2399\" data-base62-sha1=\"6lurgM39C1emGYKZAt1tQMzfCHl\" width=\"666\" height=\"500\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6395,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-08-15T21:51:37.187Z",
+      "updated_at": "2019-08-15T21:51:37.187Z",
+      "cooked": "<p>It might be better to slave the Vidiot to the Cortex sync (using the front or back panel Cortex sync connections and sending to the Vidiot\u2019s input section). Also nice in this patch would be to run the Vidiot RGB outs on the back panel to the RGB inputs on the Cortex. That way you get the full color Vidiot signal.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6396,
+      "post_number": 3,
+      "username": "Limpasen",
+      "name": "Goran Hugo Olsson",
+      "created_at": "2019-08-15T22:12:00.226Z",
+      "updated_at": "2019-08-16T13:29:40.055Z",
+      "cooked": "<p>Ok. Thank you ever so much for your promt reply. I will try that. <img src=\"https://emoji.discourse-cdn.com/twitter/pray.png?v=9\" title=\":pray:\" class=\"emoji\" alt=\":pray:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6407,
+      "post_number": 4,
+      "username": "Limpasen",
+      "name": "Goran Hugo Olsson",
+      "created_at": "2019-08-16T13:30:50.302Z",
+      "updated_at": "2019-08-16T13:30:50.302Z",
+      "cooked": "<p>Diid try this. The pattern is looks stable, but not the video\u2026<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e158150378db85d3d83ed6c0a906a5aaa4c70f7d.jpeg\" data-download-href=\"/uploads/short-url/w9u92DdNv3QDDsTbqOlIqf76yJL.jpeg?dl=1\" title=\"IMG_2412.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e158150378db85d3d83ed6c0a906a5aaa4c70f7d.jpeg\" alt=\"IMG_2412\" data-base62-sha1=\"w9u92DdNv3QDDsTbqOlIqf76yJL\" width=\"375\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_2412.jpeg</span><span class=\"informations\">3024\u00d74032 1.89 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 6409,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-08-16T16:57:46.426Z",
+      "updated_at": "2019-08-16T16:57:46.426Z",
+      "cooked": "<p>You have your oscillators synced to the Cortex in this patch, which is how you\u2019ve stabilized the pattern. Could you instead send sync into the 1/8\" video input on the back of the Vidiot? Also, you might want to remove the RCA connection between the two and patch RGB to RGB for full color.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6418,
+      "post_number": 6,
+      "username": "Limpasen",
+      "name": "Goran Hugo Olsson",
+      "created_at": "2019-08-18T16:07:21.339Z",
+      "updated_at": "2019-08-18T16:07:21.339Z",
+      "cooked": "<p>Thank you again for helping. Did you mean like this? Some result though. strange, because I can record the composite signal to BM Shuttle and then feed into the Cortex perfectly.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fb447e15bb79d853efc4836318cd55571fe021fc.jpeg\" data-download-href=\"/uploads/short-url/zQOAywThK2jDZa6s24LFrKQXIuw.jpeg?dl=1\" title=\"IMG_2466.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fb447e15bb79d853efc4836318cd55571fe021fc.jpeg\" alt=\"IMG_2466\" data-base62-sha1=\"zQOAywThK2jDZa6s24LFrKQXIuw\" width=\"375\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_2466.jpg</span><span class=\"informations\">3024\u00d74032 2.66 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 6419,
+      "post_number": 7,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2019-08-18T17:01:22.860Z",
+      "updated_at": "2019-08-23T21:11:00.631Z",
+      "cooked": "<p>I think the idea is like this:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/ae299e96548ec088e41ef1897f61365bb8cd8589.jpeg\" data-download-href=\"/uploads/short-url/oQIfrRVDXQFpWN9lzdWeXF8Dgql.jpeg?dl=1\" title=\"IMG_20190818_103614.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/ae299e96548ec088e41ef1897f61365bb8cd8589.jpeg\" alt=\"IMG_20190818_103614\" data-base62-sha1=\"oQIfrRVDXQFpWN9lzdWeXF8Dgql\" width=\"666\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_20190818_103614.jpg</span><span class=\"informations\">4032\u00d73024 3.77 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>1V RGB outs from the Vidiot -&gt; Visual Cortex colorizer/compositor channel A. One of the VC composite outputs goes to the Vidiot camera input, providing composite sync for the Vidiot to genlock to. The other composite output from VC (gray RCA cable) goes to my display. This should look exactly the same (assuming default VC settings) as connecting that gray RCA cable directly to the composite color output from the Vidiot.</p>\n<p>This sync configuration works for me. Typically I am chaining sync further down, like VC rear sync out -&gt; Vessel RCA connector -&gt; Vidiot -&gt; Cadet I -&gt; Cadet/Castle ramps and VCOs to sync my DIY system to the Vidiot and the Vessel. I have not been successful using the Vidiot as a master sync source, regardless of the position of its loopthru switch \u2013 neither my VC or Cadet I will genlock to any of Vidiot\u2019s 3 RCA outputs. Based on <a href=\"https://community.lzxindustries.net/t/vidiot-cadet-sync/414/5\">this post from Lars</a> I think this is supposed to work, but possibly your Vidiot has the same issue as mine. Since I got a Visual Cortex I just use that as the sync generator and all is groovy.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 6420,
+      "post_number": 8,
+      "username": "Limpasen",
+      "name": "Goran Hugo Olsson",
+      "created_at": "2019-08-18T17:23:29.467Z",
+      "updated_at": "2019-08-18T17:23:29.467Z",
+      "cooked": "<p>Dear You, that worked!!! Cheers mate!<br>\nNot sure its the same thing, but I\u2019m up and running - thanks again.<br>\nIt seems my Vidiot has an issue\u2026<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/beadcfdc3936198c37d30f00754ba26fd5eeefb2.jpeg\" data-download-href=\"/uploads/short-url/rcP6NZx4dn2Zj9DM2tptqmYlKro.jpeg?dl=1\" title=\"IMG_2467.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/beadcfdc3936198c37d30f00754ba26fd5eeefb2.jpeg\" alt=\"IMG_2467\" data-base62-sha1=\"rcP6NZx4dn2Zj9DM2tptqmYlKro\" width=\"375\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_2467.jpg</span><span class=\"informations\">3024\u00d74032 2.6 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 6427,
+      "post_number": 9,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-08-19T14:05:59.522Z",
+      "updated_at": "2019-08-19T14:05:59.522Z",
+      "cooked": "<p>No issue that I can see. This is the correct patch.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6428,
+      "post_number": 10,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-08-19T14:07:23.166Z",
+      "updated_at": "2019-08-19T14:07:23.166Z",
+      "cooked": "<p>Thanks for elaborating. A photo always works best!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 6430,
+      "post_number": 11,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2019-08-19T15:14:34.073Z",
+      "updated_at": "2019-08-19T15:14:34.073Z",
+      "cooked": "<p>I think possibly the perceived issue is this:</p>\n<aside class=\"quote no-group\" data-username=\"Limpasen\" data-post=\"1\" data-topic=\"1439\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/l/fbc32d/48.png\" class=\"avatar\"> Limpasen:</div>\n<blockquote>\n<p>I have a Vidiot video signal going into the Visual Cortex. And the Synk flash red, and image are no synk.<br>\nAll other sources I have tried are fine, and stable into the Visual Cortex.</p>\n</blockquote>\n</aside>\n<p>My impression from other <a href=\"https://community.lzxindustries.net/t/vidiot-cadet-sync/414/5\">posts</a> and the Vidiot manual and so forth has been that this should sync correctly, you will just get monochrome Vidiot output because the VC composite decoder only extracts luma. It seems neither of us have been successful with such a connection, which presents some confusion in getting a working sync configuration.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 6433,
+      "post_number": 12,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-08-19T16:01:14.472Z",
+      "updated_at": "2019-08-23T21:11:00.704Z",
+      "cooked": "<p>When using Vidiot and Visual Cortex together, Visual Cortex should be the master sync generator.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

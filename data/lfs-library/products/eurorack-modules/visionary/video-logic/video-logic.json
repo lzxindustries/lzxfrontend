@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "video-logic",
+  "name": "Video Logic",
+  "description": "The first in our logic series. Extremely fast CMOS logic with high speed comparators on all inputs. Used for boolean logic operations on any type or frequency of input. Logic circuits are capable of pixel rate switching. A familiar arrangement for many modular synthesizers, the module includes two Boolean circuits with AND/OR/XOR outs and two logic inverters. With video logic and even just a couple simple sources, it's easy to turn a relatively simple pattern into many complex geometrically related outputs. Video logic is a high speed digital logic processing module with multiple boolean and inversion functions. It is capable of logical combinations of video rate signals throughout the video bandwidth. Each of the eight inputs includes a high speed comparator which converts any input signal into key logic around a threshold of 0.5 volts. As with all modules in the LZX Visionary line, the inputs can therefore receive any type of signal, not just binary logic pulses. There are two boolean functional blocks with 3 inputs and 3 outputs each. The outputs represent the logical AND, OR, and XOR combinations of the 3 input signals. Additionally, there are two inverter functions. The output of these inverters represents the logical inversion of the input signal. Through patching some signals to the inverters before the boolean functions, NAND, NOR, and XNOR logic functions are made possible. Please note that this product is new-old-stock. VIDEO LOGIC does not adhere to the LZX quality standards developed since the introduction of the Expedition series modules. Some zippering on key edges is normal.",
+  "company": "lzx",
+  "price": "225.00",
+  "product_type": "eurorack_module",
+  "category": "visionary",
+  "specs": {
+    "hp": 6,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 60,
+    "max_neg_12v_ma": 60
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6543062171671",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Video-Logic-front-panel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/video-logic-front-photo.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": 1295,
+  "title": "All About Bridge",
+  "slug": "all-about-bridge",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 34,
+      "name": "bridge",
+      "slug": "bridge"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    }
+  ],
+  "created_at": "2019-07-17T17:56:26.501Z",
+  "views": 2141,
+  "like_count": 4,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 5908,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-17T17:56:26.613Z",
+      "updated_at": "2022-01-02T19:48:28.563Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/f07e58a80a3dc4d4bb3c48c997a9cb8ff366113e.jpeg\" data-download-href=\"/uploads/short-url/yjvhTwlgrJPK03LnRd2FbZyMStw.jpeg?dl=1\" title=\"bridge%20pair\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/f07e58a80a3dc4d4bb3c48c997a9cb8ff366113e.jpeg\" alt=\"bridge%20pair\" data-base62-sha1=\"yjvhTwlgrJPK03LnRd2FbZyMStw\" width=\"367\" height=\"500\" data-dominant-color=\"B2AEAB\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">bridge%20pair</span><span class=\"informations\">404\u00d7550 268 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5908-bridges-between-two-worlds-1\" class=\"anchor\" href=\"#p-5908-bridges-between-two-worlds-1\" aria-label=\"Heading link\"></a>Bridges between two worlds.</h1>\n<p>Bridge at first glance is a modest selection of utility functions, but like the mundane contents of an adventurer\u2019s backpack, the journey can\u2019t progress as far without it. Our goal with this module was to provide a module that was small, low cost, and provided the kind of functions that one can never have too many of. Each functional block here multiplies the potential of every other module in your system by allowing quick access to amplitude modulation, switching, signal mixing, amplification, buffering, and attenuation.</p>\n<ul>\n<li>Dual buffered multiples with three outputs and voltage scaling. In amplify setting, input signals are amplified by a factor of five. In attenuate setting, input signals are attenuated by a factor of five. These scalers allow quick translation between standard EuroRack audio world 5V signal levels and LZX video module 1V signal levels.</li>\n<li>Single wideband voltage controlled crossfader/multiplier with CV inversion switch. It can be patched as a single VCA, a crossfader/switcher between two inputs, or when combined with the mixer section a 4-quadrant multiplier.</li>\n<li>Single three input signal mixer. Two adding inputs and one subtracting input. One adding input can alternately perform a mirrored inversion (1V - input signal.)</li>\n</ul>\n<h1><a name=\"p-5908-specifications-2\" class=\"anchor\" href=\"#p-5908-specifications-2\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 8HP</li>\n<li>Mounting Depth, 32mm</li>\n<li>Power +12V @ 30mA</li>\n<li>Power -12V @ 30mA</li>\n</ul>\n<h1><a name=\"p-5908-user-reference-3\" class=\"anchor\" href=\"#p-5908-user-reference-3\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/27ff41d302589e8267a1ecdcb23595d2ef0b936f.jpeg\" data-download-href=\"/uploads/short-url/5HPvrKbPuICWRsArprlUDjauPDx.jpeg?dl=1\" title=\"bridge%20urc1\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/27ff41d302589e8267a1ecdcb23595d2ef0b936f.jpeg\" alt=\"bridge%20urc1\" data-base62-sha1=\"5HPvrKbPuICWRsArprlUDjauPDx\" width=\"453\" height=\"500\" data-dominant-color=\"CCCDCE\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">bridge%20urc1</span><span class=\"informations\">570\u00d7628 283 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5908-videos-4\" class=\"anchor\" href=\"#p-5908-videos-4\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6J9uM8wZmw3D3IewTvhshzT&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5908-patching-tips-5\" class=\"anchor\" href=\"#p-5908-patching-tips-5\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>One of Bridge\u2019s primary use cases is voltage level translation between EuroRack audio modules and LZX video synthesis modules. LZX modules are tolerant of voltages from audio modules, but the expected voltage range (0 to 1V) is smaller than what is typical from audio modules (0 to 5V or +/-5V.) This means an audio module plugged straight into an LZX module will clip. Sometimes this is desirable.</li>\n<li>Try using the scaler/multiples to amplify a video rate signal, process it with audio modules, and then send it back to video output. This works especially well if you set the Visual Cortex compositor up so that the processed signal is on the A channel and the original signal is on the B channel. You can now do a wet/dry mix between the two versions of the signal.</li>\n<li>Try patching ramps and video sources into the fader and mixer sections and experiment with how the various combinations work. Try audio rate and low frequency sources into these processes as well.</li>\n<li>Use the multiples in unity gain mode to send a single output to multiple destinations at the same time. Parallel processing is incredibly powerful in a video system.</li>\n<li>After setting up a patch you like between other modules, use Bridge\u2019s utility functions to insert more modulation into signals in the patch to add further nuance and visual complexity.</li>\n</ul>\n<h1><a name=\"p-5908-downloads-6\" class=\"anchor\" href=\"#p-5908-downloads-6\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Bridge/Bridge%20Owners%20Manual.pdf\">Bridge Owners Manual [PDF]</a></li>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Bridge/Bridge%20User%20Reference%20Card.pdf\">Bridge User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5908-other-resources-7\" class=\"anchor\" href=\"#p-5908-other-resources-7\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/bridge\">LZX Community Forum posts tagged #bridge</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

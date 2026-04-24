@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "triple-video-fader-key-generator",
+  "name": "Triple Video Fader & Key Generator",
+  "description": "The Triple Video Fader & Key Generator (TVFKG) is a versatile signal processing module which includes three separate voltage-controlled crossfaders and three separate voltage comparators (key generators). cascaded input columns and selectable crossfader control source modes allow complex operation for a variety of purposes such as crossfading, multiplication, luma keying, chroma keying, window comparison, simple comparison and amplitude classification. control voltage inputs and bias controls: control voltage (cv) inputs have corresponding level/inversion controls, allowing both addition or subtraction of the input signal from the additional 1v bias controls. once the cv input and bias level are summed, they control the key generator’s comparator threshold. depending on the crossfader control source mode, they may also directly control the corresponding crossfader. faders: signal inputs to a and b channels of the voltage-controlled crossfaders are accessible via the frontpanel. mode switches allow selection of the control voltage source for the crossfaders. the fade mode enables the summed cv & bias voltages to control the crossfader directly. the key mode enables the the corresponding key generator output to control the crossfader directly. the and mode enables a logical and generated from all three key generators to control the crossfader directly. in addition, crossfaders 2 & 3 can select crossfader 1’s control source for use as a master control. crossfader outputs are accessible on the right side of the frontpanel. Voltage-controlled crossfader with two inputs and one output. When control source is at 0 Volt, channel A is completely on. When control source is at 1 Volt, channel B is completely on. Voltage levels between 0 Volt and 1 Volt represent a proportional mix of channels A & B. With signal inserted to channel B only, the fader behaves as a traditional voltage-controlled amplifier. KEY GENERATOR High speed voltage comparator serving as a key generation source. When the key generator input is greater than the voltage represented by the sum of the CV input and bias controls, the key output is 1 Volt (on). Otherwise, the output is 0 Volt (off). Inversion switches select between non-inverted and inverted versions of this logic signal. CONTROL SOURCE Control voltage (CV) inputs are processed by level and inversion controls and then summed with a variable 0 to 1 Volt bias. This sum serves as the threshold level for the key Generator, and as the control source for the fader while in FADE mode.",
+  "company": "lzx",
+  "price": "599.00",
+  "product_type": "eurorack_module",
+  "category": "visionary",
+  "specs": {
+    "hp": 16,
+    "max_pos_12v_ma": 135
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6544601219095",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/tvfkg-front-panel.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

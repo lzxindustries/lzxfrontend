@@ -1,0 +1,275 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "smx3",
+  "name": "SMX3",
+  "sku": "LZXSMX3",
+  "subtitle": "3x3 Matrix Mixer",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 175
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6575222685719",
+  "images": {
+    "frontpanel": "website/smx3-front-panel.png",
+    "legend": "website/smx3-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "A1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "B1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "C1",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Mixer 1",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "A2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "B2",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "C2",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "Mixer 2",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "A3",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "B3",
+      "ref_des": "J10",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "C3",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Mixer 3",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "A1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "B1",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "C1",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "A2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "B2",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "C2",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "A3",
+      "ref_des": "P7",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "B3",
+      "ref_des": "P8",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "C3",
+      "ref_des": "P9",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": 125,
+      "part": null
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for SMX3",
+      "youtube_id": "DU8fHK7yIzg"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/smx3-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/smx3-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/smx3-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/matrix_mixer.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/smx3_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "SMX3 Matrix Mixer is a 3 X 3 matrix mixer with dedicated active polarizers per input. The mixer provides colorspace conversion, colorspace component mixing, and fine-tuned flexible mixing of monochrome and RGB sources. Learn more about SMX3 on our documentation website!"
+}

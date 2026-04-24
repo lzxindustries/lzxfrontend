@@ -1,0 +1,103 @@
+{
+  "id": 1874,
+  "title": "What is the Vidiot shape knob doing?",
+  "slug": "what-is-the-vidiot-shape-knob-doing",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-05T14:56:10.379Z",
+  "views": 572,
+  "like_count": 15,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 8621,
+      "post_number": 1,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-02-05T14:56:10.451Z",
+      "updated_at": "2020-02-06T16:00:43.860Z",
+      "cooked": "<p>I searched on the form but can\u2019t find a straightforward answer. What exactly is the Vidiot\u2019s shape knob doing?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8623,
+      "post_number": 2,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2020-02-05T19:20:55.418Z",
+      "updated_at": "2020-02-06T16:01:05.748Z",
+      "cooked": "<p>It controls a crossfader between the horizontal and vertical oscillators, using different oscillator outputs for the diamond (triangle outputs) or circle (sine outputs). If you patch the H and V triangle outputs from the Vidiot to a Cadet crossfader and sweep the knob, the result looks identical to sweeping the Vidiot shape knob and looking at the Vidiot diamond output.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8646,
+      "post_number": 3,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-02-06T16:31:43.289Z",
+      "updated_at": "2020-02-06T16:31:43.289Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"csboling\" data-post=\"2\" data-topic=\"1874\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/csboling/48/1353_2.png\" class=\"avatar\"> csboling:</div>\n<blockquote>\n<p>). If you patch the H and V triangle outputs from the Vidiot to a Cadet crossfader and sweep the knob, the result looks identical to sweeping the Vidiot shape knob and looking at the Vidiot diamond output.</p>\n</blockquote>\n</aside>\n<p>CV control over the shape knob seems like an odd omission on the Vidiot, it\u2019s such a effective modifier.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 8649,
+      "post_number": 4,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-02-06T18:57:19.003Z",
+      "updated_at": "2020-02-06T18:57:19.003Z",
+      "cooked": "<p>Totally. Wonder if there\u2019s a way to mod it\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 8651,
+      "post_number": 5,
+      "username": "reverselandfill",
+      "name": "martijn verhallen",
+      "created_at": "2020-02-06T19:05:47.504Z",
+      "updated_at": "2020-02-06T19:05:47.504Z",
+      "cooked": "<p>the shape knob is a rotary switch (if I remember correctly) so CV control is more difficult probably</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8653,
+      "post_number": 6,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-02-06T19:38:08.553Z",
+      "updated_at": "2020-02-06T19:38:08.553Z",
+      "cooked": "<p>The Cadet Fader module does it. If you have any interest in DIY I highly recommend the Cadets as a way to expand the Vidiot. The parts sourcing is not fun but once I had all the parts I had a great time assembling them and learned a whole lot about how the Vidiot and video synthesis works. It also made me appreciate how much value goes into the LZX modules.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 8659,
+      "post_number": 7,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-07T00:01:56.999Z",
+      "updated_at": "2020-02-07T00:01:56.999Z",
+      "cooked": "<p>You could also use the fader in Bridge or Pendulum.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": 1707,
+  "title": "New to Vidiot: Semi-modular Questions",
+  "slug": "new-to-vidiot-semi-modular-questions",
+  "category_id": 1,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-11-27T04:00:55.165Z",
+  "views": 759,
+  "like_count": 10,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 7796,
+      "post_number": 1,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-11-27T04:00:55.238Z",
+      "updated_at": "2019-11-27T04:00:55.238Z",
+      "cooked": "<p>Hello! I just ordered a Vidiot and am excited to begin patching. I\u2019ll be combining the Vidiot with a V4 mixer and C&amp;G ETC to have some fun. I\u2019m aware that the Vidiot is modular friendly and am wondering if a Behringer Neutron and Crave, as well as a 0-Coast will be a good match for their mults, attenuverters/attenuaters, lfos, and envelopes. Have any of you tried using these semi-modulars as utilities? Are they only useful for their audio outputs? Thank you for your guidance <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7797,
+      "post_number": 2,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2019-11-27T06:23:14.995Z",
+      "updated_at": "2019-11-27T06:26:25.195Z",
+      "cooked": "<p>I\u2019m not very familiar with the semi-modulars you mentioned but generally speaking: Passive attenuators and mults should be fine. Active attenuators and mults will often be using audio-rate amplifier ICs that don\u2019t have enough bandwidth to pass video frequencies (up to several MHz for horizontal details). You can often use audio-rate oscillators at vertical frequencies though, this works especially well with oscillators that can be hard-synced. Vidiot\u2019s envelope follower allows allows you to derive an animation signal from the volume of any audio signal. LFOs and envelopes are great but may need to be attenuated down to the 0-1V range (you won\u2019t hurt anything though, all LZX stuff accepts -12V to 12V input, it just generally clips at +/- 1V).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7798,
+      "post_number": 3,
+      "username": "sean",
+      "name": "",
+      "created_at": "2019-11-27T06:48:19.497Z",
+      "updated_at": "2019-11-27T07:13:49.873Z",
+      "cooked": "<p>I\u2019ll add that audio filters can often have interesting results with video images too. Detail smudges to the right, which can create color separation effects beyond what the Vidiot can do on its own. Indeed, sometimes just the slower audio-rate components on any function will create these effects (or other, unpredictable, wave-shaping).</p>\n<p>Vidiot\u2019s detail function also needs more than a 0-1v input signal to sweep its full range, so having some &gt;1v signals in the mix can be helpful there as well (otherwise, it is often hard to tell that it is doing anything at all).</p>\n<p>I\u2019ve found my Mother 32 (similar to a Neutron, I guess) generally more immediately useful than my 0-Coast, but should probably play around more with the latter too. Definitely additional fun to be had by adding multi-functional audio modular gear to a video set-up. But a lot depends on what you want to do.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7810,
+      "post_number": 4,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2019-11-27T19:31:11.330Z",
+      "updated_at": "2019-11-27T19:31:11.330Z",
+      "cooked": "<p>I got a neutron and use it all the time for various patches and experiments. Just one example: one of the really cool functions in the neutron is the digital LFO with retrigger input, and variable shape. These can be controlled and synched with video rate sync signals\u2026<br>\nAnother is the slew limiter that are good for smoothing audio envelope from the vidiot \u2026<br>\nLots og other nice features as well\u2026</p>\n<p>But you will need a lot of scalers, i have 7 cadet 4channel scalers in my system currently.</p>\n<p>/<br>\nLau</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7811,
+      "post_number": 5,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-11-27T19:42:48.121Z",
+      "updated_at": "2019-11-27T19:42:48.121Z",
+      "cooked": "<p>The scalers should be 5v/1v or \u00b15v/1v? The need for them is for better control of the 1v input (in other words, the 10v output of the neutron would not provide fine enough range for the vidiot)? Would the 1v to 5v scalers be necessary to get the signal into the neutron and then the 5v to 1v to get it back into the vidiot? Thank you for your help <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 7813,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-27T20:45:30.305Z",
+      "updated_at": "2019-11-27T20:45:30.305Z",
+      "cooked": "<p>Correct. You can also use Bridge.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7815,
+      "post_number": 7,
+      "username": "sean",
+      "name": "",
+      "created_at": "2019-11-27T22:11:10.309Z",
+      "updated_at": "2019-11-27T22:11:10.309Z",
+      "cooked": "<p>Many Vidiot functions have attentuators, so you can get pretty far without downscaling (though it certainly helps).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7816,
+      "post_number": 8,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2019-11-27T22:45:36.355Z",
+      "updated_at": "2019-11-27T22:45:36.355Z",
+      "cooked": "<p>You can do with using the attenuverter cv inouts on a good many of the inputs on the vidiot, but not all of them. Some will need downscaling. Use the 5v to 1v (which is actually bipolar \u00b15V to bipolar \u00b11V, to make things even more complex).  I seldomly use the  \u00b15V to 1V (bipolar \u00b15V to unipolar 0-1V), and the 1v to \u00b15V even less\u2026</p>\n<p>Even more important you need to upscale (amplify) the vidiot signals to go into the neutron using the 1V to 5V (which is also bipolar to bipolar) to get the right reactions (synching the LFO for instance, controlling cvs on the LFO shapes etc).</p>\n<p>I got both a VIdiot and a 60 module DIY system to infiltrate on my neutron and other stuff, you can probably make do with less scalers then me, if you just have the neutron for now (watch out about that, btw). <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>\n<p>/Lau</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7817,
+      "post_number": 9,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-11-27T23:09:47.135Z",
+      "updated_at": "2019-11-27T23:09:47.135Z",
+      "cooked": "<p>Thanks for all the help! I can tell that Bridge will be almost a necessity, but then I also need a skiff since I\u2019ve been strictly semi-modular. The 4MS Pod looks like a good deal to go with a Bridge and maybe Maths, and maybe also a Staircase. However, that\u2019s another few hundred dollars so I\u2019ll see what I can get away with for now before I expand. <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    }
+  ]
+}

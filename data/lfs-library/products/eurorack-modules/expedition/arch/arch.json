@@ -1,0 +1,222 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "arch",
+  "name": "Arch",
+  "sku": "LZXEAR",
+  "subtitle": "Nonlinear Functions",
+  "description": "I am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.2-input, 5-output wideband analog logic. Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements. 1-input, 3-output full wave rectifier and frequency doubler. We love this circuit -- you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output. 1-input, 2-output gamma processor. An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them. ",
+  "company": "lzx",
+  "price": "179.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 65,
+    "max_neg_12v_ma": 65
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692911730752",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-arch/1305"
+  },
+  "connectors": [
+    {
+      "name": "Logic Input A (0-1 VDC)",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Rectifier Input (0-1 VDC)",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Input B",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Rectifier Mirror Output",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Minimum (OR) Output",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Rectifier Darks Output",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Maximum (AND) Output",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Rectifier Lights Output",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Absolute (XOR) Output",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Gamma Input (0-1 VDC)",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Intersection Output",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Gamma Square (Exponential) Output",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Logic Clip Output",
+      "ref_des": "J15",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Gamma Logarithm Output",
+      "ref_des": "J16",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Logic Negative",
+      "ref_des": "RV2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Gamma Negative",
+      "ref_des": "RV13",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 0,
+      "part": null
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Arch-angle-photo.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Arch-front-legend.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Arch-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [
+      {
+        "path": "packaging/arch_box_label_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/arch_user_reference_card_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": 4931,
+  "title": "I don't have an HD signal with ESG3",
+  "slug": "i-dont-have-an-hd-signal-with-esg3",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 73,
+      "name": "blackmagic",
+      "slug": "blackmagic"
+    },
+    {
+      "id": 102,
+      "name": "esg3",
+      "slug": "esg3"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 106,
+      "name": "hd",
+      "slug": "hd"
+    },
+    {
+      "id": 16,
+      "name": "lzx",
+      "slug": "lzx"
+    }
+  ],
+  "created_at": "2025-01-25T14:32:59.110Z",
+  "views": 192,
+  "like_count": 3,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 35043,
+      "post_number": 1,
+      "username": "VHSFormica",
+      "name": "",
+      "created_at": "2025-01-25T14:32:59.171Z",
+      "updated_at": "2025-01-26T00:38:35.467Z",
+      "cooked": "<p>Hello,</p>\n<p>I\u2019m trying to send the image from my synthesizer using the ESG3 module in HD, but it\u2019s not working, despite the video format switch being configured to 1010xxxx. The indicator light is yellow.</p>\n<p>I\u2019m sending the signal through a Blackmagic Analog to SDI module, then to the UpDownCross HD, and finally to a USB 3.0 capture card to send it to Resolume Avenue. Here is the wiring diagram in the photo.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/b6590defcc6edda2c8f27120023fd58f336a3fb7.jpeg\" data-download-href=\"/uploads/short-url/q17HgEmF9cEZ7ubgJLOtrAIUrmT.jpeg?dl=1\" title=\"IMG_20250126_013356\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/b6590defcc6edda2c8f27120023fd58f336a3fb7.jpeg\" alt=\"IMG_20250126_013356\" data-base62-sha1=\"q17HgEmF9cEZ7ubgJLOtrAIUrmT\" width=\"375\" height=\"500\" data-dominant-color=\"423A24\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">IMG_20250126_013356</span><span class=\"informations\">1536\u00d72048 179 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/9/972e20ca93ebf19c388b9bc5059b34e64f6c1772.jpeg\" data-download-href=\"/uploads/short-url/lzoVts9iisE8WrEN3NcTS06fdui.jpeg?dl=1\" title=\"473740756_965121478888949_3776362593526934242_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/9/972e20ca93ebf19c388b9bc5059b34e64f6c1772.jpeg\" alt=\"473740756_965121478888949_3776362593526934242_n\" data-base62-sha1=\"lzoVts9iisE8WrEN3NcTS06fdui\" width=\"666\" height=\"500\" data-dominant-color=\"423A24\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">473740756_965121478888949_3776362593526934242_n</span><span class=\"informations\">2048\u00d71536 84.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3eea1a8748187110bf06b3c7de9b97d8ed0f0cdc.jpeg\" data-download-href=\"/uploads/short-url/8Yzapjik2S7PppqPnlKTL5rwjKs.jpeg?dl=1\" title=\"474449559_633287842692854_7454926720497252095_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3eea1a8748187110bf06b3c7de9b97d8ed0f0cdc.jpeg\" alt=\"474449559_633287842692854_7454926720497252095_n\" data-base62-sha1=\"8Yzapjik2S7PppqPnlKTL5rwjKs\" width=\"375\" height=\"500\" data-dominant-color=\"948B89\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">474449559_633287842692854_7454926720497252095_n</span><span class=\"informations\">1536\u00d72048 70.2 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6fe18a52e66f2488ab6d962d9c0577773918037b.jpeg\" data-download-href=\"/uploads/short-url/fXKdsHdAhMRpoeF0ITkpuS9Bn63.jpeg?dl=1\" title=\"474138447_3905877139694879_7966880634859721695_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6fe18a52e66f2488ab6d962d9c0577773918037b.jpeg\" alt=\"474138447_3905877139694879_7966880634859721695_n\" data-base62-sha1=\"fXKdsHdAhMRpoeF0ITkpuS9Bn63\" width=\"375\" height=\"500\" data-dominant-color=\"787675\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">474138447_3905877139694879_7966880634859721695_n</span><span class=\"informations\">1536\u00d72048 69.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2c733617da62d20a7a15e958964896c1e88cd05d.jpeg\" data-download-href=\"/uploads/short-url/6ldQyQsuWKn3AbDf2exXeeYWO1D.jpeg?dl=1\" title=\"475054412_631045695940947_5627214038211668714_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/2c733617da62d20a7a15e958964896c1e88cd05d.jpeg\" alt=\"475054412_631045695940947_5627214038211668714_n\" data-base62-sha1=\"6ldQyQsuWKn3AbDf2exXeeYWO1D\" width=\"375\" height=\"500\" data-dominant-color=\"484847\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">475054412_631045695940947_5627214038211668714_n</span><span class=\"informations\">1536\u00d72048 80.7 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6cd308e7887551464e455be8422da5ef8c7864d2.jpeg\" data-download-href=\"/uploads/short-url/fwHHOJh5W0gtt8fuk8JbxX5BzQC.jpeg?dl=1\" title=\"473436527_1165520691896361_4948763614570081663_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6cd308e7887551464e455be8422da5ef8c7864d2.jpeg\" alt=\"473436527_1165520691896361_4948763614570081663_n\" data-base62-sha1=\"fwHHOJh5W0gtt8fuk8JbxX5BzQC\" width=\"375\" height=\"500\" data-dominant-color=\"52514E\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">473436527_1165520691896361_4948763614570081663_n</span><span class=\"informations\">1536\u00d72048 52.8 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e03f1ba12d0196cb97b5eddb0a5930e47ebda0e8.jpeg\" data-download-href=\"/uploads/short-url/vZMa0MiikHbtWh9qfYSYVzpAjSU.jpeg?dl=1\" title=\"474838239_879066114165104_2778427548104492362_n\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e03f1ba12d0196cb97b5eddb0a5930e47ebda0e8.jpeg\" alt=\"474838239_879066114165104_2778427548104492362_n\" data-base62-sha1=\"vZMa0MiikHbtWh9qfYSYVzpAjSU\" width=\"666\" height=\"500\" data-dominant-color=\"413C56\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">474838239_879066114165104_2778427548104492362_n</span><span class=\"informations\">2048\u00d71536 118 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 35045,
+      "post_number": 2,
+      "username": "homegrown",
+      "name": "Adam",
+      "created_at": "2025-01-26T21:29:49.741Z",
+      "updated_at": "2025-01-26T21:29:49.741Z",
+      "cooked": "<p>First thing I always recommend when having this type of issue is to attempt to segment the problem.  If you have a display that accepts a YPbPr signal, first try sending your ESG3 output direct to that display.  If that works, you know the ESG3 isn\u2019t the issue.  And so on with your remaining converters.</p>\n<p>Looking at your ESG3 dip switch configuration, you have it configured to 1080i60 - this isn\u2019t as common of a frame rate as 1080i5994 so that could present some problems in some systems.</p>\n<p>Looking at the Analog to SDI dip switches, it looks like you have switch 5 set to ON, which, according to the diagram on the back, sets your output to composite/s-video rather than component.  These outputs cannot handle HD signals.  Additionally, you have switch 1 set to ON.  This switch has different impacts on the system depending on the amount of times it is cycled.</p>\n<p>Looking at the UP Down Cross HD dips, you have 1, 4, and 8 set to ON, which, according to the diagram on the rear, sets the device to output 1080p30.  Check the compatible resolutions/frame rates on your USB capture card to ensure that format is acceptable.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 35059,
+      "post_number": 3,
+      "username": "VHSFormica",
+      "name": "",
+      "created_at": "2025-02-03T14:05:47.589Z",
+      "updated_at": "2025-02-03T14:05:47.589Z",
+      "cooked": "<p>Hello,</p>\n<p>I just tested with the LZX without the Blackmagic module, and it works in composite. However, as soon as I try to use the different Blackmagic modules, such as Analog to SDI, the UpDownCross from the ESG3, or vice versa (doing UpDownCross HD and Analog to SDI via the TBC2), I receive nothing.</p>\n<p>I have changed the module setup several times, but nothing works.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 35060,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2025-02-03T17:40:09.110Z",
+      "updated_at": "2025-02-03T17:40:09.110Z",
+      "cooked": "<p>Do you have a way to test the BMD boxes with another source? I have heard of them dying, so that could be a possibility.<br>\nAlso, do you have a monitor with a YPbPr input that might allow you to test ESG3\u2019s HD output directly?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 35126,
+      "post_number": 5,
+      "username": "VHSFormica",
+      "name": "",
+      "created_at": "2025-03-20T09:04:42.032Z",
+      "updated_at": "2025-03-20T09:04:42.032Z",
+      "cooked": "<p>Hello, I just tested the ESG 3 module and streamed it directly to the screen in YPbPr. It seems to work. But still the same problem with the Blackmagic Analog to SDI and Up Down Cross modules and the RGBLing capture card.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 35127,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2025-03-20T13:55:18.474Z",
+      "updated_at": "2025-03-20T13:55:18.474Z",
+      "cooked": "<p>Thanks for testing. It sounds like ESG3 is working as intended. Do your conversion boxes have settings that you can change?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 35141,
+      "post_number": 7,
+      "username": "autobodie",
+      "name": "",
+      "created_at": "2025-04-10T16:50:50.428Z",
+      "updated_at": "2025-04-10T16:50:50.428Z",
+      "cooked": "<p>The destination/display could also be an issue. I have a Seetec broadcast monitor that doesn\u2019t cooperate well with ESG3 component outputs. However, it works great if I use a mixer in between.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

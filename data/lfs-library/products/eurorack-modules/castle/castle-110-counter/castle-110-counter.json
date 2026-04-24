@@ -1,0 +1,165 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "castle-110-counter",
+  "name": "Castle 110 Counter",
+  "sku": "LZXCSTL6",
+  "subtitle": "4-Bit Up/Down Counter",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "castle",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 51,
+    "max_pos_12v_ma": 39,
+    "max_neg_12v_ma": 39
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/1692914286656",
+  "images": {
+    "frontpanel": "website/castle-110-front-panel.png",
+    "legend": "website/castle-110-front-panel.png"
+  },
+  "connectors": [
+    {
+      "name": "D1",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D2",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Clock",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Reset",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Up/Down",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "RCO (Ripple Carry Output)",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": -250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D3",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D0",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 250,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "Castle 110 Schematic RevD",
+      "path": "downloads/castle-110-schematic_RevD.pdf",
+      "file_type": "pdf"
+    },
+    {
+      "name": "Castle 110 BOM RevD",
+      "path": "downloads/castle-110-bom_RevD.csv",
+      "file_type": "csv"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/castle-110-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/castle-110-pcb-render-bottom_RevD.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/castle-110-pcb-render-top_RevD.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/image_50.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/castle-110-bom_RevD.csv",
+        "extension": "csv"
+      },
+      {
+        "path": "downloads/castle-110-schematic_RevD.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DIY PCB & Frontpanel Set The Counter is a 4-Bit clock counter/divider."
+}

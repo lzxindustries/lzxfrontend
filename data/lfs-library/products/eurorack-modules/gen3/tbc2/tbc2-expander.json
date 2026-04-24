@@ -1,0 +1,111 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "tbc2-expander",
+  "name": "TBC2 Expander",
+  "sku": "LZXOTBC2X",
+  "company": "lzx",
+  "price": "79.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 42
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/4256056410135",
+  "images": {
+    "frontpanel": "website/tbc2-expander-front-panel-square.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/TBC2EX-FPN-REVB_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-expander-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-expander-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-gen3-frontpanel-only.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2_mk2_fan_kit.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/940010-D0001-tbc2-mk2-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/940020-D0001-tbc2-mk1-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk2.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.3.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.zip",
+        "extension": "zip"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "TBC2 Expander is a passive expansion panel for TBC2 which provides VGA input connectors for both channels. This module enables YPbPr over VGA, as used by some video mixers. Cables for connection to TBC2 are included."
+}

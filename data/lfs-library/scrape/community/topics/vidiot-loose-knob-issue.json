@@ -1,0 +1,55 @@
+{
+  "id": 1928,
+  "title": "Vidiot loose knob issue",
+  "slug": "vidiot-loose-knob-issue",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-23T10:46:38.600Z",
+  "views": 484,
+  "like_count": 1,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 8866,
+      "post_number": 1,
+      "username": "0123K",
+      "name": "Cameron",
+      "created_at": "2020-02-23T10:46:38.669Z",
+      "updated_at": "2020-02-23T11:07:21.345Z",
+      "cooked": "<p>Hey all,<br>\nI have had my vidiot for a few months now and have just noticed that the left top knob for the horizontal is very loose, wobbles around and comes off with no force.<br>\nThis is the only one that i have the issue with! Its been lose since i received the unit, but it only now just slides off with the slightest pull.<br>\nIs this a common problem? and whats the best way to fix it! (Don\u2019t want to find myself losing it at a gig <img src=\"https://emoji.discourse-cdn.com/twitter/cold_sweat.png?v=9\" title=\":cold_sweat:\" class=\"emoji\" alt=\":cold_sweat:\">)</p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/507bc8359716f8f03f38ea118cd2b1838333f7a0.jpeg\" alt=\"87172697_493328604919695_5973731464951365632_n\" data-base62-sha1=\"btZoLElBPIZ1q7OA7IFaa3LoMY8\" width=\"352\" height=\"480\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8871,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-23T16:59:52.699Z",
+      "updated_at": "2020-02-23T16:59:59.309Z",
+      "cooked": "<p>Hello.<br>\nCould you please send an email to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a>?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8874,
+      "post_number": 3,
+      "username": "0123K",
+      "name": "Cameron",
+      "created_at": "2020-02-23T22:02:12.509Z",
+      "updated_at": "2020-02-23T22:02:12.509Z",
+      "cooked": "<p>Sure <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"> ill send one through now</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

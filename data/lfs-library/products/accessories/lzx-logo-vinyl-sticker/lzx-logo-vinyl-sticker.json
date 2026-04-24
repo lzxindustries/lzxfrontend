@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "lzx-logo-vinyl-sticker",
+  "name": "LZX Logo Vinyl Sticker",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1701843599424",
+  "description": "Cover up holes in spacetime with this handy adhesive decal.",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/image_28.jpg",
+        "extension": "jpg"
+      }
+    ]
+  }
+}

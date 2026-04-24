@@ -1,0 +1,67 @@
+{
+  "id": 2011,
+  "title": "Vidiot - no video input :(",
+  "slug": "vidiot-no-video-input",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-04-08T11:48:15.732Z",
+  "views": 695,
+  "like_count": 2,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 9264,
+      "post_number": 1,
+      "username": "lotadilo",
+      "name": "Luke",
+      "created_at": "2020-04-08T11:48:15.815Z",
+      "updated_at": "2020-04-08T11:52:45.858Z",
+      "cooked": "<p>Hi guys,</p>\n<p>Very happy to have snapped up one of the last Vidiots recently, and have loved playing around with it.</p>\n<p>Sadly, I haven\u2019t been able to get the video input to work successfully. I\u2019m using an old Sony  Handycam Vision Video 8 XR (CCD-TRV27E - PAL).</p>\n<p>With the composite in/out cables already connected, I instantly lose the main video output from the Vidiot as soon as the Sony is powered on. With the camera still on, main video out from the Vidiot returns as soon as I take out the video input cable. This happens whether I\u2019m outputting to a TV, or to a Blackmagic interface.</p>\n<p>I\u2019ve tried swapping out composite cables and changing the NTSC/PAL &amp; loop switch positions to no avail. Am I missing something?</p>\n<p>Thanks in advance <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/ce1fc647cb70bcba21a3163568aa2d3d4e128b25.jpeg\" alt=\"IMG_1811\" data-base62-sha1=\"tpsr0ciLb1FhugjYuONi0QqTVAx\" width=\"640\" height=\"480\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9265,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-04-08T15:38:06.423Z",
+      "updated_at": "2020-04-09T01:09:13.278Z",
+      "cooked": "<p>Sorry you are having trouble with Vidiot.<br>\nIf you are using a PAL camera, you will want to switch Vidiot to PAL mode and turn off the sync loop through switch. Then power cycle Vidiot. Are you also using a PAL monitor (or PAL setting on your Blackmagic interface)?<br>\nWhat happens when you plug the camera directly into your monitor or interface?<br>\nIf you aren\u2019t playing prerecorded video from your camera, you will want to open the lens cover (it is closed in the photo).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9266,
+      "post_number": 3,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-04-08T17:16:08.311Z",
+      "updated_at": "2020-04-08T17:16:08.311Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"lotadilo\" data-post=\"1\" data-topic=\"2011\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/l/48db29/48.png\" class=\"avatar\"> lotadilo:</div>\n<blockquote>\n<p>y, and have loved playing around with it.</p>\n<p>Sadly, I haven\u2019t been able to get the video input to work successfully. I\u2019m using an old Sony Handycam Vision Video 8 XR (CCD-TRV27E - PAL).</p>\n</blockquote>\n</aside>\n<p>Definitely set the Vidiot to PAL as the pic appears to show it set to NTSC. It should still display something though.<br>\nDoes the video output fail regardless of which mode the Vidiot is in or only in the eye/camera modes? If it\u2019s the later, have you tried messing with the with the left-most controls to see if it\u2019s simply set to light or dark?<br>\nAlso do you have any other analog video sources to try? Old dvd player, game consoles?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9271,
+      "post_number": 4,
+      "username": "lotadilo",
+      "name": "Luke",
+      "created_at": "2020-04-09T01:14:47.085Z",
+      "updated_at": "2020-04-09T01:15:40.952Z",
+      "cooked": "<p>Hi guys - thank you for your quick responses. Turns out it was mixture of things causing the issue:</p>\n<ul>\n<li>Blackmagic interface wasn\u2019t configured to PAL</li>\n<li>I hadn\u2019t tried power-cycling the Vidiot after changing switch positions</li>\n</ul>\n<p>Vidiot is now switched to PAL will loop switch in the up position, and video input is working as expected - problem solved <img src=\"https://emoji.discourse-cdn.com/twitter/smile.png?v=9\" title=\":smile:\" class=\"emoji\" alt=\":smile:\"> thank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

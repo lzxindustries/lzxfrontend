@@ -1,0 +1,46 @@
+{
+  "id": 46,
+  "title": "Can I use the Andor 1 media player with Vidiot and other video synth modules?",
+  "slug": "can-i-use-the-andor-1-media-player-with-vidiot-and-other-video-synth-modules",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 2,
+      "name": "andor1",
+      "slug": "andor1"
+    },
+    {
+      "id": 6,
+      "name": "cadet3",
+      "slug": "cadet3"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2018-07-17T20:21:39.238Z",
+  "views": 584,
+  "like_count": 0,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 63,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-07-17T20:21:39.313Z",
+      "updated_at": "2018-07-17T22:36:24.647Z",
+      "cooked": "<p>Yes. Andor 1 can send Composite Video (NTSC &amp; PAL) via a 3.5mm TRRS to A/V Cable (included with the deluxe version.)  It may be used to input video to Visual Cortex, Vidiot, and Cadet III Video Input.  Color input can be achieved with the upcoming Orion TBC2 module or with Visual Cortex and an external Composite-to-Component YPbPr video converter.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "blank-panel",
+  "name": "Blank Panel",
+  "company": "lzx",
+  "product_type": "accessory",
+  "specs": {
+    "hp": 2
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6890094067735",
+  "images": {
+    "frontpanel": "website/blank-panels.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/blank-panels.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Fill gaps in your EuroRack case with these reversible blank panels. Sizes 4HP and larger include the LZX logo printed on one side."
+}

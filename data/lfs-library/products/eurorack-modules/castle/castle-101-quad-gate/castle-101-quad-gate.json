@@ -1,0 +1,165 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "castle-101-quad-gate",
+  "name": "Castle 101 Quad Gate",
+  "sku": "LZXCSTL5",
+  "subtitle": "Quad Single Function Logic",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "castle",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 51,
+    "max_pos_12v_ma": 31,
+    "max_neg_12v_ma": 55
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/1692914221120",
+  "images": {
+    "frontpanel": "website/castle-101-front-panel.png",
+    "legend": "website/castle-101-front-panel.png"
+  },
+  "connectors": [
+    {
+      "name": "A1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "OUT1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": -750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "OUT2",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B1 / OUT2 Combination output",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A2 / OUT1 Combination output",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1750,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "Castle 101 Schematic RevE",
+      "path": "downloads/castle-101-schematic_RevE.pdf",
+      "file_type": "pdf"
+    },
+    {
+      "name": "Castle 101 BOM RevE",
+      "path": "downloads/castle-101-bom_RevE.csv",
+      "file_type": "csv"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/castle-101-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/castle-101-pcb-render-bottom_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/castle-101-pcb-render-top_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/image_51.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/castle-101-bom_RevE.csv",
+        "extension": "csv"
+      },
+      {
+        "path": "downloads/castle-101-schematic_RevE.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DIY PCB & Frontpanel Set The Quad Gate uses a single quad logic chip and combines them in 4 different ways."
+}

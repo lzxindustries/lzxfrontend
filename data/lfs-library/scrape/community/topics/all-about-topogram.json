@@ -1,0 +1,185 @@
+{
+  "id": 1773,
+  "title": "All About Topogram",
+  "slug": "all-about-topogram",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 76,
+      "name": "topogram",
+      "slug": "topogram"
+    }
+  ],
+  "created_at": "2019-12-24T17:38:04.666Z",
+  "views": 1952,
+  "like_count": 36,
+  "posts_count": 13,
+  "posts": [
+    {
+      "id": 8137,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-24T17:38:04.744Z",
+      "updated_at": "2022-01-02T19:42:09.896Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3701b0999f739ed006792c31468a424e57065f5d.jpeg\" data-download-href=\"/uploads/short-url/7QBSDU8GXlfbJYqPe9IYZTFgzut.jpeg?dl=1\" title=\"topogram-frontpanel-reva\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3701b0999f739ed006792c31468a424e57065f5d.jpeg\" alt=\"topogram-frontpanel-reva\" data-base62-sha1=\"7QBSDU8GXlfbJYqPe9IYZTFgzut\" width=\"313\" height=\"500\" data-dominant-color=\"A9AAAA\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">topogram-frontpanel-reva</span><span class=\"informations\">643\u00d71024 170 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Topogram is a sequential soft key generator capable of splitting live video and patterns into discrete bands for colorization and control.  Edge transitions feature voltage controlled gain for creating hard edges or smooth gradients.  Upper and lower thresholds for the keying range may be voltage controlled separately.</p>\n<ul>\n<li>Topogram takes simple inputs and slices them up. Six non overlapping regions can be patched out for 6 band colorizer patterns, along with another 8 outputs which group and span multiple ranges.</li>\n<li>Driven with LFOs and low frequency envelopes, Topogram becomes a frequency independent sub-event generator for animation control of your patch.</li>\n<li>Topogram features elevated technical and performance specifications, and is the result of years of research and testing of discrete analogue video circuitry. The signal path is fully active, and CV attenuverters have a deadband range in the center.  The circuit is entirely analogue.</li>\n</ul>\n<h1><a name=\"p-8137-specifications-1\" class=\"anchor\" href=\"#p-8137-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 32mm</li>\n<li>Power +12V @ 200mA</li>\n<li>Power -12V @ 200mA</li>\n</ul>\n<h1><a name=\"p-8137-videos-2\" class=\"anchor\" href=\"#p-8137-videos-2\" aria-label=\"Heading link\"></a>Videos</h1>\n<div class=\"youtube-onebox lazy-video-container\" data-video-id=\"TAWQ-dentJg\" data-video-title=\"LZX Topogram - 3 Patches\" data-video-start-time=\"\" data-provider-name=\"youtube\">\n  <a href=\"https://www.youtube.com/watch?v=TAWQ-dentJg\" target=\"_blank\" class=\"video-thumbnail\" rel=\"noopener\">\n    <img class=\"youtube-thumbnail\" src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6860a85c58008c42ab2d0554e7c6e5c1db12bc89.jpeg\" title=\"LZX Topogram - 3 Patches\" data-dominant-color=\"453D3C\" width=\"480\" height=\"360\">\n  </a>\n</div>\n\n<h1><a name=\"p-8137-other-resources-3\" class=\"anchor\" href=\"#p-8137-other-resources-3\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/topogram\">LZX Community Forum posts tagged #topogram</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 11046,
+      "post_number": 3,
+      "username": "bentoncbainbridge",
+      "name": "Benton C Bainbridge",
+      "created_at": "2020-08-19T19:05:55.160Z",
+      "updated_at": "2020-08-19T19:05:55.160Z",
+      "cooked": "<p>Just received my new Topogram! Just checking - this module doesn\u2019t include the quick-start user manual / guide, correct?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11048,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-08-19T19:33:55.883Z",
+      "updated_at": "2020-08-19T19:33:55.883Z",
+      "cooked": "<p>Correct. Congrats on finding one!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 17387,
+      "post_number": 5,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2021-04-07T18:25:49.447Z",
+      "updated_at": "2021-04-07T18:26:36.615Z",
+      "cooked": "<p>Another few patching nuggets from <a href=\"https://www.facebook.com/groups/lzxindustries/permalink/1791842814320364/\">FB thread</a> for the archives:</p>\n<p>[Lars Larsen]<br>\npatch a single luma video source into \u201cinput\u201d, then patch as many outputs to as many colors as possible-- going to all 6 inputs on Cortex then setting up an additive blend is a good way to get plenty of variety. set the left knob low, the right knob high. try modulating the gain with a video pattern \u2013 very unique function in this case, like modulating 5 doorways in parallel.</p>\n<p>[Robin Burke]<br>\nSend all 6 outs from the Topogram to two Passages &amp; then bring a Senory Translator &amp; other modulation sources into play</p>\n<p>[Luix Bot]<br>\nfeed it a lfo (like pendulum 0v-1v) and convert it into complex multi output LFO</p>\n<p>[Nichole Pichon]<br>\nuse the thru output as feedback into the gain/upper/lower inputs</p>\n<p>polar fringe pos/neg key outs into the upper/lower inputs makes for a crazy colorization patch basis</p>\n<p>topogram thru output goes into doorway source in</p>\n<p>premixing video with slow strobing CV before going to topogram input</p>\n<p>U/V outputs from mapper into upper/lower ins. Y from mapper into source of topogram</p>\n<p>we use a reverselandfill matrix mixer to mix 4 outs from the topogram together.</p>\n<p>sensory translator + topogram outs going into a passage is great fun for audio reactive patching</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 23380,
+      "post_number": 6,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2021-12-10T22:11:54.386Z",
+      "updated_at": "2021-12-10T22:11:54.386Z",
+      "cooked": "<p>If I were theoretically able to get my hands on a Topogram, would it have enough bandwidth to handle 1080i and stay reasonably sharp?</p>\n<p>And will there be a Gen3 equivalent? Looking for a multi-zone CV keyer in the vein of the EAB Videolab, with the ability to plug external video and/or voltages into each zone. I know about the proposed posterizer from Reverse Landfill. Hoping for a module that can handle RGB sources, although I know that\u2019s a big ask. Such a beast would not fit into a Gen3 form factor. It\u2019s just that I don\u2019t relish the thought of three separate modules \u2013 keeping hard key zone edges aligned while under CV control might be impossible.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 23381,
+      "post_number": 7,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2021-12-10T22:15:17.351Z",
+      "updated_at": "2021-12-10T22:17:50.097Z",
+      "cooked": "<p>For reference, here is the sort of thing I want to achieve<br>\n(EAB Videolab II + Fairlight CVI)<br>\n<strong>Warning: intense strobe / epileptic seizure risk</strong></p>\n<p><a href=\"http://www.dr-yo.com/video_lullabye_hfr.html\" class=\"onebox\" target=\"_blank\" rel=\"noopener nofollow ugc\">http://www.dr-yo.com/video_lullabye_hfr.html</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 23382,
+      "post_number": 8,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2021-12-10T22:33:21.298Z",
+      "updated_at": "2021-12-10T22:33:21.298Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"dryodryo\" data-post=\"6\" data-topic=\"1773\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/dryodryo/48/9336_2.png\" class=\"avatar\"> dryodryo:</div>\n<blockquote>\n<p>If I were theoretically able to get my hands on a Topogram, would it have enough bandwidth to handle 1080i and stay reasonably sharp?</p>\n</blockquote>\n</aside>\n<p>Yes.  Twenty additional characters to make the forum bot happy.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 23383,
+      "post_number": 9,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2021-12-10T23:09:43.723Z",
+      "updated_at": "2021-12-10T23:09:43.723Z",
+      "cooked": "<p>Cool beans. If one becomes available I may snatch it up, unless something better is announced.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 23385,
+      "post_number": 10,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2021-12-11T02:05:45.300Z",
+      "updated_at": "2021-12-11T02:05:45.300Z",
+      "cooked": "<p>this might be interesting to your search!</p>\n<p><a href=\"https://docs.google.com/spreadsheets/d/17mzTI1H8ZDVgfa6kyP8qNMzeVJbAJWX5lr9pFxGbe-0/edit#gid=0\">\u201cSolarium\u201d</a>\t<br>\nVideo Colorizer &amp; Sequencer</p>\n<p>Inspirations: classic multiband keyer/colorizers, Topogram, Marble Index, Video Blending Matrix, Amplitude Classifier.</p>\n<p>so this is not set in stone at all in fact the \u201croad map\u201d has had a bunch of deviations from the looks of it already. However topogram being listed as an inspiration is a good sign. So look forward to some kind of automata \u201cvideo colorizer\u201d that will at least pull some inspiration from topogram.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 23420,
+      "post_number": 11,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2021-12-12T18:26:25.229Z",
+      "updated_at": "2021-12-12T18:26:25.229Z",
+      "cooked": "<p>Yeah!! That sounds epic. But it won\u2019t be soon.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 10,
+      "is_wiki": false
+    },
+    {
+      "id": 28106,
+      "post_number": 12,
+      "username": "dryodryo",
+      "name": "Aaron F. Ross",
+      "created_at": "2022-08-15T18:27:57.777Z",
+      "updated_at": "2022-08-15T18:27:57.777Z",
+      "cooked": "<p>Fantastic news, I scored a Topogram on Reverb.</p>\n<p>Is there more documentation other than what\u2019s on this page?</p>\n<p>To turn Topogram into a full-blown colorizer, my plan is to patch the outputs into 2x SMX3, and then sum the outputs of the SMX3s. Is this a viable plan?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 28107,
+      "post_number": 13,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-08-15T18:33:21.524Z",
+      "updated_at": "2022-08-15T18:33:21.524Z",
+      "cooked": "<p>This is all of the documentation currently available for Topogram. 2x SMX3 would be a great destination for all of Topogram\u2019s outputs.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 12,
+      "is_wiki": false
+    },
+    {
+      "id": 28108,
+      "post_number": 14,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-08-15T18:33:27.570Z",
+      "updated_at": "2022-08-15T18:33:27.570Z",
+      "cooked": "",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

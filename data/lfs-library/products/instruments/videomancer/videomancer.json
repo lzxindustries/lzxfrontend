@@ -1,0 +1,611 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "videomancer",
+  "name": "Videomancer",
+  "subtitle": "Video Effects Console",
+  "company": "lzx",
+  "product_type": "instrument",
+  "specs": {
+    "max_pos_12v_ma": 750
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/8186914373655",
+  "editions": [
+    {
+      "slug": "standard",
+      "name": "Standard Edition"
+    },
+    {
+      "slug": "untitled-landscape",
+      "name": "Untitled Landscape Edition"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/VideomancerBTSAssemblyCase.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/VideomancerBTSBoxStack.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/VideomancerBTSPouchDice.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-connectors-and-controls.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-angle-top-front-2048.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-angle-top-rear-2048.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-bottom-2048.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-rear-2048.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-side-2048.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/videomancer-photo-top-2048.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/firmware/videomancer-1.0.0-rc.12.uf2",
+        "extension": "uf2"
+      },
+      {
+        "path": "downloads/program-library/videomancer-program-library-0.0.0.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/program-library/videomancer-program-library-0.0.0.zip.sha256",
+        "extension": "sha256"
+      },
+      {
+        "path": "downloads/program-library/videomancer-program-library-0.1.0-rc.1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/program-library/videomancer-program-library-0.1.0-rc.1.zip.sha256",
+        "extension": "sha256"
+      }
+    ],
+    "brand": {
+      "logos": [
+        {
+          "path": "brand/logos/videomancer_logo.ai",
+          "extension": "ai"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_black_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_native_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_logo_white_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo.ai",
+          "extension": "ai"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_black_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_native_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/videomancer_starfield_logo_white_60.png",
+          "extension": "png"
+        }
+      ],
+      "characters": [
+        {
+          "path": "brand/characters/videomancer-character-hand-wave-animation.procreate",
+          "extension": "procreate"
+        },
+        {
+          "path": "brand/characters/videomancer-character-hand-wave-animation.procreate:Zone.Identifier",
+          "extension": "identifier"
+        },
+        {
+          "path": "brand/characters/videomancer_character.ai",
+          "extension": "ai"
+        },
+        {
+          "path": "brand/characters/videomancer_character.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/characters/videomancer_character_500.png",
+          "extension": "png"
+        }
+      ]
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {
+      "standard": {
+        "panel_art": [
+          {
+            "path": "editions/standard/panel-art/videomancer_bottom_reva_artwork.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/panel-art/videomancer_bottom_revc.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/panel-art/videomancer_top_reva_artwork.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/panel-art/videomancer_top_revb_artwork.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/panel-art/videomancer_top_revc.ai",
+            "extension": "ai"
+          }
+        ],
+        "packaging": [
+          {
+            "path": "editions/standard/packaging/videomancer_box_reva.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/packaging/videomancer_guide_reva.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/standard/packaging/videomancer_top_line_art.ai",
+            "extension": "ai"
+          }
+        ],
+        "photos": [
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-angle-top-front-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-angle-top-rear-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-bottom-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-rear-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-side-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251001-product-photo-session/videomancer-photo-top-2048.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251101-behind-the-scenes/VideomancerBTSAssemblyCase.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251101-behind-the-scenes/VideomancerBTSBoxStack.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20251101-behind-the-scenes/VideomancerBTSBoxes.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20251101-behind-the-scenes/VideomancerBTSPouchDice.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_01.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_02.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_03.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_04.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_05.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_06.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_06.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_07.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/blue/videomancer_blue_08.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/green/videomancer_green_01.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/green/videomancer_green_02.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/green/videomancer_green_03.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/green/videomancer_green_04.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/green/videomancer_green_05.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_01.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_01.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_02.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_03.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_04.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_05.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_05.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_06.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_07.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_08.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_09.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_09.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_10.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_11.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_12.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/normal/videomancer_normal_13.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_01.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_01.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_02.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_02.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_03.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_04.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_05.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_06.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/20260404-pete-appleby-photo-session/red/videomancer_red_07.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_blue_06.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_normal_01.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_normal_05.jpg",
+            "extension": "jpg"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_normal_05.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_normal_05.psd",
+            "extension": "psd"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_normal_09.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_red_01.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/standard/photos/videomancer-photo-pngs/videomancer_red_02.png",
+            "extension": "png"
+          }
+        ],
+        "merchandise": [],
+        "other": []
+      },
+      "untitled-landscape": {
+        "panel_art": [
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_enclosure_panel_art.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_enclosure_panel_art_black_layer.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_enclosure_panel_art_color_layer.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_enclosure_panel_art_white_layer.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_panel_art.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_web_art.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_web_product_images.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_web_product_images_panel_art.png",
+            "extension": "png"
+          },
+          {
+            "path": "editions/untitled-landscape/panel-art/videomancer_untitled_landscape_edition_web_product_images_poster.png",
+            "extension": "png"
+          }
+        ],
+        "packaging": [
+          {
+            "path": "editions/untitled-landscape/packaging/videomancer_untitled_landscape_edition_box_reva.ai",
+            "extension": "ai"
+          },
+          {
+            "path": "editions/untitled-landscape/packaging/videomancer_untitled_landscape_edition_box_reva.png",
+            "extension": "png"
+          }
+        ],
+        "photos": [],
+        "merchandise": [
+          {
+            "path": "editions/untitled-landscape/merchandise/poster/videomancer_untitled_landscape_edition_poster.ai",
+            "extension": "ai"
+          }
+        ],
+        "other": []
+      }
+    },
+    "other": []
+  },
+  "description": "All orders from 2025 have been shipped. Stock from 2026 production is available now and ships in 3-5 days. Bring real-time video effects to your live shows and motion design projects with a compact instrument built for performance and animation. Load programs that blur, enhance, displace, glitch, colorize, key, posterize, and crush both digital and analog signals into entirely new visual dimensions. Tweak every parameter with dedicated hardware controls, or push the instrument further by modulating any setting with audio signals and control voltages from other synthesizers. At its core, Videomancer runs on a unique FPGA architecture that processes video with programmable digital logic. Unlike GPU-based platforms or software plug-ins, this approach delivers ultra-low-latency audio-visualization and responsive motion control. The low-level flexibility of FPGAs makes Videomancer especially well-suited for recreating the character of classic broadcast effects and video gear from the 1980s and 1990s—while opening new possibilities for modern workflows. Comprehensive I/O – HDMI, Composite, Component YPbPr, Component RGB, and 1V DC-coupled RGB. Supports seamless HDMI-to-analog and analog-to-HDMI conversion. Broad Format Support – Compatible with NTSC, PAL, 240p, 288p, 480p, 576p, 720p50/59.94/60, 1080i50/59.94/60, and 1080p23.98/24/25/29.97/30. High-Fidelity Processing – 10-bit color depth across both analog and digital streams for precise colorization and proc-amp effects. Creative Range – From professional-grade processing to destructive glitch, noise, and bit-reduction programs. External Control – Full MIDI control map via TRS Type A jacks plus four Audio/CV inputs supporting both line-level and modular signals. Performance-Ready Presets – Save and recall complete system states for shows and projects, with automatic state retention after power-up. Expandable & Updatable – Update firmware with a single USB cable (no special software required) and use the built-in microSD slot for extra programs and user data. Studio & Stage Ready – Powered by standard 12V DC barrel supply (CCTV/broadcast compatible) in a rugged powder-coated steel enclosure with industrial screen printing. Device Dimensions (in): 9.22 / 7.01 / 2.97 Device Dimensions (mm): 234.2 / 178.1 / 75.44 Included Items: Videomancer Device, 12V DC Wall Adapter with International Plugs Kit, Mystical Velvet Pouch, 12-Sided Oracular Polyhedron, Videomancer Vinyl Sticker, Star Stickers, Fortune Telling Fish, Connectors & Controls Card. Learn more about Videomancer on our documentation website! Or download firmware binaries from our public repository ."
+}

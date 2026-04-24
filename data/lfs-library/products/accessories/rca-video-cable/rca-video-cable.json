@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "rca-video-cable",
+  "name": "RCA Video Cable",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6890363158551",
+  "images": {
+    "frontpanel": "website/rca-video-cable-group.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/rca-video-cable-150cm.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-video-cable-300cm.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rca-video-cable-group.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Standard RCA video cable."
+}

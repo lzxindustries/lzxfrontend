@@ -1,0 +1,62 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "vessel-208",
+  "name": "Vessel 208",
+  "subtitle": "208HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 208,
+    "mounting_depth_mm": 65,
+    "max_pos_12v_ma": 10000
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7214185316375",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/base-system-84-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_back_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_side_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square2.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": [
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_left_diagonal_face.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_right_diagonal_face.ai",
+        "extension": "ai"
+      }
+    ]
+  }
+}

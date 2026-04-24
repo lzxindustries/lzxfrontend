@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "mapper",
+  "name": "Mapper",
+  "sku": "LZXMP",
+  "description": "No longer available Mapper is a complex utility module which translates Hue, Saturation and Brightness voltages into component YUV (Luma, R-Y, B-Y) and RGB (Red, Green, Blue) colorspaces. Width, 10HP Mounting Depth, 45mm Power +12V @ 100mA Power -12V @ 100mA",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692915925056",
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/mapper_frontpanel_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/mapper_user_reference_card_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

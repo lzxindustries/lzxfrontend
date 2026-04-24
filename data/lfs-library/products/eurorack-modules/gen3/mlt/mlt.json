@@ -1,0 +1,52 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "mlt",
+  "name": "MLT",
+  "subtitle": "Passive Multiples",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 42
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7540996833303",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/MLT-FPN.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/mlt_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "MLT is a passive utility module for distributing signals within your patch. The inputs cascade downward, providing up to thirty one outputs of a single input, or up to eight separate multiples with three outputs. MLT is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.) Learn more about MLT on our documentation website!"
+}

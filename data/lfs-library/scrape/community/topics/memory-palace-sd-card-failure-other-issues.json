@@ -1,0 +1,127 @@
+{
+  "id": 4522,
+  "title": "Memory Palace - sd card failure & other issues :[",
+  "slug": "memory-palace-sd-card-failure-other-issues",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2023-07-28T18:42:48.715Z",
+  "views": 583,
+  "like_count": 15,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 32857,
+      "post_number": 1,
+      "username": "kaltwasserTV",
+      "name": "Kalti",
+      "created_at": "2023-07-28T18:42:48.778Z",
+      "updated_at": "2023-07-28T19:31:35.374Z",
+      "cooked": "<p>hi guys,</p>\n<p>got a memory palace lately. it\u2019s was a display unit and seems to had some nasty wigglers on it</p>\n<p>sorry if these problems have already been solved somewhere else, couldn\u2019t find it</p>\n<p>first of all it runs on version 2.0.1</p>\n<p>1st problem:</p>\n<ul>\n<li>SD card is not found<br>\ntried to format it and use some others, but without success</li>\n<li>tried to enter via usb-port, which gives me access to the device folders /jsn with media.jsn &amp; system.jsn</li>\n<li>tried to install a recent firmware but the device crashes at boot time</li>\n<li>also cleaned the SD slot :[<br>\nvisibly the device seems to be in good condition</li>\n</ul>\n<p>                    <a href=\"https://photos.app.goo.gl/pjdJvgSVQPPR799v5\" target=\"_blank\" rel=\"noopener nofollow ugc\" class=\"onebox\">\n            <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/1/135bb5371c7e7beb70c17c029eadcfef1b3f0fee.jpeg\" title=\"New item by Kaltwa\u00dfer\" alt=\"Google Photos\" height=\"315\" width=\"600\" data-dominant-color=\"625142\">\n          </a>\n\n</p>\n<p>2nd problem<br>\nthe faders seem to be out of calibration and wiggle by themselves slightly</p>\n<ul>\n<li>is there any way to recalibrate them? :B</li>\n</ul>\n<p>          <a href=\"https://photos.app.goo.gl/QgKWM8KAuhWZMu388\" target=\"_blank\" rel=\"noopener nofollow ugc\" class=\"onebox\">\n            <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/4/418474ef388ba77dc2acdb5b2a69cf6e34ef8637.jpeg\" title=\"New item by Kaltwa\u00dfer\" alt=\"Google Photos\" height=\"315\" width=\"600\" data-dominant-color=\"5C472E\">\n          </a>\n<br>\n                    <a href=\"https://photos.app.goo.gl/17Ws3aE9hsN4t1Zp6\" target=\"_blank\" rel=\"noopener nofollow ugc\" class=\"onebox\">\n            <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/d4e9a75628831afd9a46a2a645a94e22e53ff2ea.jpeg\" title=\"New item by Kaltwa\u00dfer\" alt=\"Google Photos\" height=\"315\" width=\"600\" data-dominant-color=\"5D472F\">\n          </a>\n\n</p>\n<p>Thank you very much for your tips and advice</p>\n<p>sincerely</p>\n<p>Kaltwa\u00dferTV - Leo</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 32878,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-07-31T14:55:58.658Z",
+      "updated_at": "2023-07-31T14:55:58.658Z",
+      "cooked": "<p>Sorry the MemPal is giving you trouble. What are the specifications of the SD card(s) you are using?<br>\nYou can recalibrate the sliders by selecting <em>Restore Defaults</em> in the System menu. If they are still misbehaving after default restore, please send a message to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> to arrange for repair.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 32905,
+      "post_number": 3,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2023-08-03T03:44:04.171Z",
+      "updated_at": "2023-08-03T06:08:16.778Z",
+      "cooked": "<p>My unit has that same slider behavior when loading default settings.  It appears that the SOFTNESS slider has S Curve setting on Heavy that causes it to sit at 73.48%.  Changing the S Curve to Off puts it at 50% (centered)</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3b3c7068dd606d370c8623d936d86a90f4aeacee.jpeg\" data-download-href=\"/uploads/short-url/8s1EYCqBl8fOC1WZIYL0M8QO50G.jpeg?dl=1\" title=\"20230802_225737\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3b3c7068dd606d370c8623d936d86a90f4aeacee.jpeg\" alt=\"20230802_225737\" data-base62-sha1=\"8s1EYCqBl8fOC1WZIYL0M8QO50G\" width=\"690\" height=\"388\" data-dominant-color=\"615148\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">20230802_225737</span><span class=\"informations\">1920\u00d71080 237 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/30023d099aa0cbe57a814592e6883d8728297bd3.jpeg\" data-download-href=\"/uploads/short-url/6QHIi7nhCPYWdaSQYcuBE3MVixR.jpeg?dl=1\" title=\"20230802_223628\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/30023d099aa0cbe57a814592e6883d8728297bd3.jpeg\" alt=\"20230802_223628\" data-base62-sha1=\"6QHIi7nhCPYWdaSQYcuBE3MVixR\" width=\"690\" height=\"388\" data-dominant-color=\"443F3C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">20230802_223628</span><span class=\"informations\">4080\u00d72296 1.66 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Regarding the my AUX slider, the bottom half of slider is a dead zone.  Only the top half of slider changes the value.  Not sure if this is intended behavior.  Hitting the Yellow button on value screen causes the unit to hard lock too.</p>\n<p>For what its worth, this is serial <span class=\"hashtag-raw\">#35</span> Memory Palace purchased new from pre order has been used lightly and stored carefully over the years.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 32907,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-08-03T14:01:13.653Z",
+      "updated_at": "2023-08-03T14:01:13.653Z",
+      "cooked": "<p>These are definitely firmware issues. The AUX slider bug is on our list of issues to fix in the next firmware. Apologies for the issues\u2013we\u2019re excited to dig back into Memory Palace, leading up to its reintroduction.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 32919,
+      "post_number": 5,
+      "username": "Dr_Rek",
+      "name": "Derek Sajbel",
+      "created_at": "2023-08-04T21:25:52.334Z",
+      "updated_at": "2023-08-04T21:25:52.334Z",
+      "cooked": "<p>feels<br>\n<img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/0edb07e09d36492fd7f491d92d2c2161ba2be0e8.jpeg\" alt=\"16eevc-3174430142\" data-base62-sha1=\"27pXghBjzxR9iv5KcGBYNLoY4MU\" width=\"298\" height=\"403\"></p>\n<p>also very looking forward to it, but it\u2019s painful that we have to wait for mk2 dev to start up for these fixes on something released so long ago. of course I\u2019m understanding and sympathize with all the set backs that have happened, wishing a firmware engineer happens soon <img src=\"https://emoji.discourse-cdn.com/twitter/smiling_face_with_three_hearts.png?v=12\" title=\":smiling_face_with_three_hearts:\" class=\"emoji\" alt=\":smiling_face_with_three_hearts:\" loading=\"lazy\" width=\"20\" height=\"20\"> <img src=\"https://emoji.discourse-cdn.com/twitter/vulcan_salute.png?v=12\" title=\":vulcan_salute:\" class=\"emoji\" alt=\":vulcan_salute:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 32920,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-08-05T00:46:56.026Z",
+      "updated_at": "2023-08-05T00:46:56.026Z",
+      "cooked": "<p>Right there with you. We\u2019ll get there. All the TBC2 development time will make MemPal upgrades so much easier.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 32984,
+      "post_number": 7,
+      "username": "kaltwasserTV",
+      "name": "Kalti",
+      "created_at": "2023-08-08T14:11:10.220Z",
+      "updated_at": "2023-08-08T14:11:10.220Z",
+      "cooked": "<p>yeha, thanks for all the replies. so seems the slider issue is fw based. the softness slider is from time to time completely locked, a \u201crestore defaults\u201d unlocks it again but with the implied misbehavior. <a class=\"mention\" href=\"/u/entropist\">@Entropist</a> S-curve to Off fixes this indeed. The AUX value lock i can also confirm.</p>\n<p>my main problem is still the unfindable sc card <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>\n<p>SD cards i tried:</p>\n<p>San Disk edge 8gb hc1<br>\nsan disk ultra 16gb hc1 (10) A1<br>\nsan disk extreme 32gb v30 hc1 (3)A1<br>\nToshiba 64gb xc1<br>\ntoshiba 8gb hc1 (4)<br>\nnetac 8gb hc (6)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 32992,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-08-08T16:06:55.283Z",
+      "updated_at": "2023-08-08T16:06:55.283Z",
+      "cooked": "<p>In that case, it sounds like a broken SD card slot.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 33043,
+      "post_number": 9,
+      "username": "kaltwasserTV",
+      "name": "Kalti",
+      "created_at": "2023-08-10T11:36:07.843Z",
+      "updated_at": "2023-08-10T11:37:14.278Z",
+      "cooked": "<p><img src=\"https://emoji.discourse-cdn.com/twitter/cowboy_hat_face.png?v=12\" title=\":cowboy_hat_face:\" class=\"emoji only-emoji\" alt=\":cowboy_hat_face:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>\n<p>Its at my dealers place now for repair. Looking forward to finally integrate it to my system. Tbc2 is about to arrive too, hehe.</p>\n<p>Cheers</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    }
+  ]
+}

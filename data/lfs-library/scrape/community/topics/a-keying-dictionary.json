@@ -1,0 +1,147 @@
+{
+  "id": 3909,
+  "title": "A Keying Dictionary",
+  "slug": "a-keying-dictionary",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 35,
+      "name": "doorway",
+      "slug": "doorway"
+    },
+    {
+      "id": 93,
+      "name": "fkg3",
+      "slug": "fkg3"
+    },
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 76,
+      "name": "topogram",
+      "slug": "topogram"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2022-06-05T20:25:56.990Z",
+  "views": 1388,
+  "like_count": 35,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 26730,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-06-05T20:25:57.057Z",
+      "updated_at": "2022-10-07T04:59:41.705Z",
+      "cooked": "<p>Describing the diverse range of activities in a video synthesizer that involve the word <strong>key</strong> can be a challenge.  Here\u2019s a list of definitions that we\u2019ve used \u2013 this is certainly not the only way to categorize or apply these terms, but I hope it makes the intentions behind our own usage of them in relation to LZX modules clear.</p>\n<ul>\n<li>A <strong>key</strong> is any video signal used to control a transition between two or more other video signals.  As such, any signal patched to a key input <em>becomes</em> a key.<br>\n\u2013 A <strong>hard key</strong> is a boolean logic signal which switches between two signals.<br>\n\u2013 A <strong>soft key</strong> is an analog voltage representing the mix ratio between two video signals.</li>\n<li>A <strong>key generator</strong> is a module designed to condition an input for the purpose of keying operations.<br>\n\u2013 A <strong>hard key generator</strong> is typically implemented as a differential analog comparator.<br>\n\u2013 A <strong>soft key generator</strong> is typically implemented as a high gain differential amplifier with black and white level clipping.<br>\n\u2013 A <strong>chroma key generator</strong> processes the chroma components (PbPr) of a component video signal, allowing key extraction based on Hue and Saturation of the video source.<br>\n\u2013 A <strong>luma key generator</strong> processes the luma component (Y) of a component video signal, allowing key extraction based on the overall brightness of the video source.<br>\n\u2013 A <strong>component key generator</strong> acts on one color channel at a time, but still includes the entire colorspace in its output function.  For example \u2013 a red component key is active when areas of red appear in the image in the absence of any green or blue.<br>\n\u2013 A <strong>multi level key generator</strong> produces multiple key signals from a single source, and are often used as the frontend for colorizers and sequencers.<br>\n\u2013 A <strong>window key generator</strong> has dual threshold controls, either Upper/Lower or Span/Center</li>\n<li>A <strong>fader</strong> or switcher is a module which performs a transition between two video sources.  Typically it has a direct key input, without much local control over the key itself.</li>\n<li>A <strong>keyer</strong> is a module which has <strong>both a key generator <em>and</em> a fader</strong> or switcher.  Typically the output of the key generation function is tied directly to the driving circuitry for the fading or switching function.</li>\n<li>A <strong>linear colorizer</strong> or <strong>multi level keyer</strong> combines multiple faders with a multi level key generator function to produce a transition across more than two inputs.  If we feed static color offsets to the inputs, and drive the key input with a video source, this is a linear colorizer.  If other video sources are used instead, it becomes a sequencer or compositor.</li>\n</ul>\n<p>To drill down on some of the relational terms:</p>\n<ul>\n<li>A keyer is both a key generator and a fader.</li>\n<li>Keying is always fading, but fading is not always keying.</li>\n<li>Any signal can be a key, even those not processed by a key generator.</li>\n<li>A key is created whenever any connection is made to a key input.</li>\n<li>Keying is what is happening to a fader\u2019s input signals when the fader is controlled by a key. At the fader\u2019s output, are the keyed results.</li>\n</ul>\n<p>And, to apply these to various LZX modules:</p>\n<p>\u2013 Triple Video Fader &amp; Key Generator (Visionary Series) is a <strong>triple hard key generator + triple  fader</strong>.  Due to its semi-modular signal flow, it can be also used as a <strong>single hard keyer</strong> for RGB signals.<br>\n\u2013 Cadet VIII Hard Key (Cadet Series) is a <strong>single hard key generator</strong>.<br>\n\u2013 Doorway (Expedition Series) is a <strong>single soft keyer</strong>.<br>\n\u2013 FKG Keyer (Gen3 Series) is a <strong>single RGB/Luma soft keyer</strong>.<br>\n\u2013 Topogram (Expedition Series) is a <strong>five band multi-level key generator</strong>.<br>\n\u2013 Visual Cortex (Expedition Series) contains an integrated <strong>single hard keyer / output encoder.</strong><br>\n\u2013 Polar Fringe (Expedition Series) is a <strong>soft chroma key generator</strong><br>\n\u2013 Memory Palace (Orion Series) contains a discrete digital implementation of a <strong>soft window keyer</strong><br>\n\u2013 Keychain is a <strong>triple hard key generator</strong></p>\n<p>Please let me know if I can help clarify or further define the language we\u2019ve used in this context.</p>\n<p>If this seems overwhelming I wouldn\u2019t worry about memorizing all these terms \u2013 these are complicated ways to describe something that\u2019s already probably intuitive to you if you patch the system.  This post is here to serve as a disambiguation guide, so that it\u2019s clear what\u2019s meant across a history of different modules, different series, and different approaches to keying.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 26733,
+      "post_number": 2,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2022-06-05T21:53:14.635Z",
+      "updated_at": "2022-06-05T21:53:14.635Z",
+      "cooked": "<p>I\u2019m now going to have this in my head all morning\u2026<br>\n<em>I\u2019ve got the key, I\u2019ve got the secret<br>\nI\u2019ve got the key to another way\u2026</em></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 26756,
+      "post_number": 3,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2022-06-06T03:41:58.262Z",
+      "updated_at": "2022-06-06T03:41:58.262Z",
+      "cooked": "<p>regarding the window key what kind of math is used for the span/center controls?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 26758,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-06-06T03:48:07.156Z",
+      "updated_at": "2022-06-06T03:48:25.926Z",
+      "cooked": "<blockquote>\n<p>what kind of math is used for the span/center controls?</p>\n</blockquote>\n<p>You need a Span/Center processor that generates the Upper/Lower thresholds.<br>\nUpper Threshold = Center + (Span / 2)<br>\nLower Threshold = Center - (Span / 2)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 28942,
+      "post_number": 5,
+      "username": "phosphenes",
+      "name": "Ollie @martindevices",
+      "created_at": "2022-09-27T11:26:02.449Z",
+      "updated_at": "2022-09-27T11:26:02.449Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"creatorlars\" data-post=\"1\" data-topic=\"3909\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\"> creatorlars:</div>\n<blockquote>\n<p>\u2013 A <strong>soft key generator</strong> is typically implemented as a high gain differential amplifier with black and white level clipping.</p>\n</blockquote>\n</aside>\n<p>Is there any reference circuit for this implementation? Would be interested in breadboarding something!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 28985,
+      "post_number": 6,
+      "username": "monads",
+      "name": "Robert Gutierrez",
+      "created_at": "2022-09-30T02:53:32.539Z",
+      "updated_at": "2022-09-30T02:53:32.539Z",
+      "cooked": "<p>Thank you for posting this Lars!!!  Luckily we have lots of keying module options but sometimes not all transparent regarding the specifics of each? Wondering if a spreadsheet with all the differences or overlap would help?  Nonetheless this post helps clarify differences.  I think I have all the \u2018keys\u2019 for now so I\u2019m good.  <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=12\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 29070,
+      "post_number": 7,
+      "username": "monads",
+      "name": "Robert Gutierrez",
+      "created_at": "2022-10-07T04:18:44.258Z",
+      "updated_at": "2022-10-07T04:18:44.258Z",
+      "cooked": "<p>Can we add to the list above?: \u201cKeychain\u201d (Gen3 Series) is a triple hard key generator.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 29072,
+      "post_number": 8,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-10-07T04:57:32.579Z",
+      "updated_at": "2022-10-07T05:31:21.059Z",
+      "cooked": "<p>I haven\u2019t published a reference circuit, but a block diagram is fairly straightforward.</p>\n<p>Here\u2019s how I do it after trying many ways:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/8322815018c8444014fffafb28c6e6e5f8fa71ce.png\" data-download-href=\"/uploads/short-url/iI4ttV3ab2EfWW8qflpMYkebtT0.png?dl=1\" title=\"image\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/8322815018c8444014fffafb28c6e6e5f8fa71ce.png\" alt=\"image\" data-base62-sha1=\"iI4ttV3ab2EfWW8qflpMYkebtT0\" width=\"690\" height=\"303\" data-dominant-color=\"FAFBFB\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">image</span><span class=\"informations\">920\u00d7404 25.3 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>I tried lots of specialty high gain parts or integrated high gain VCA parts that were expensive and troublesome over the years.  What works best in the end is just doing multiple stages after the VCA block, with 4x - 5x per gain stage, and use a separate op amp per stage.   Two 5x stages in series it gives you a total gain of 25x, which gets a decently hard edge without going too crazy (this is about where Topogram sits for example.)  Cadet II RGB Encoder is a good reference for a precision Black/White clipping circuit.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 29074,
+      "post_number": 9,
+      "username": "phosphenes",
+      "name": "Ollie @martindevices",
+      "created_at": "2022-10-07T08:15:54.932Z",
+      "updated_at": "2022-10-07T08:15:54.932Z",
+      "cooked": "<p>Thanks so much for sharing this, very helpful!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    }
+  ]
+}

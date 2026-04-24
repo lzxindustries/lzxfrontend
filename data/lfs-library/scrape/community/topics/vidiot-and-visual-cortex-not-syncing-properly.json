@@ -1,0 +1,257 @@
+{
+  "id": 1269,
+  "title": "Vidiot and Visual Cortex not syncing properly",
+  "slug": "vidiot-and-visual-cortex-not-syncing-properly",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 20,
+      "name": "sync",
+      "slug": "sync"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2019-07-10T00:30:38.935Z",
+  "views": 1647,
+  "like_count": 14,
+  "posts_count": 19,
+  "posts": [
+    {
+      "id": 5786,
+      "post_number": 1,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-10T00:30:39.013Z",
+      "updated_at": "2019-07-10T00:30:39.013Z",
+      "cooked": "<p>Hello everyone!  Need some help troubleshooting my system.  Just got my Vessel and put everything in and powered it up.  I followed the sample from LZX on a YouTube about running my Vidiot into my Visual Cortex.  When I do it looks like it is having issues syncing with each other.  The NTSC light is on the VC and the Vidiot is set to NTSC, but the lock light flashes.  This creates a flash on the screen that matches the pulse of the lock light.  Not sure if it is a power source issue or something else.  I put a 8 sec video link for reference of the light flashing.  Thanks for any help!  New to all this.  <a href=\"https://vimeo.com/347199329\" rel=\"nofollow noopener\">https://vimeo.com/347199329</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5789,
+      "post_number": 2,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2019-07-10T07:00:31.222Z",
+      "updated_at": "2019-07-10T07:00:31.222Z",
+      "cooked": "<aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"1157\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/wednesdayayay/48/70_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/setting-up-a-system/1157\">Setting up a system</a> <a class=\"badge-category__wrapper \" href=\"/c/forum/modular-systems/11\"><span data-category-id=\"11\" data-parent-category-id=\"13\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"Modular video synthesizer systems and video art studio integration.\"><span class=\"badge-category__name\">Modular Systems</span></span></a>\n  </div>\n  <blockquote>\n    so I\u2019ve just moved my system around and thought it would be nice to write up some general ideas on it as I get it set back up as it may be helpful to someone \n\n<details><summary>System overview</summary>old setup\nthe setup at its simplest is a mixer running into the visual cortex with lots of feedback \n\n\nSignal flow without pictures\n &lt;a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/9/9a7ae0aa38bcc601e023245e7e979c0830672123.png\" data-download-hre\u2026</details>\n  </blockquote>\n</aside>\n<p>\ntake a look here specifically at the sync section<br>\nthere is a vidiot picture that I\u2019ve put up that describes my setup<br>\nmost of the time the issue with the vidiot has to do with a wrong input / output setup</p>\n<p>so the most helpful thing you can do if you aren\u2019t sure would be take a picture of the back of your vidiot with everything plugged in also take a picture of the back of the visual cortex</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5802,
+      "post_number": 3,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-10T18:02:51.420Z",
+      "updated_at": "2019-07-10T18:02:51.420Z",
+      "cooked": "<p>Thank you for the link!  I will try that out.  I was running the video out of the Vidiot into the video in of the VC.  I thought that was how the LZX YouTube video directed set up.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5803,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-11T04:11:11.584Z",
+      "updated_at": "2019-07-11T04:11:11.584Z",
+      "cooked": "<p>You will also want to connect the sync output from the Cortex to the sync input jack on the back of the Vidiot.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5806,
+      "post_number": 5,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-11T16:56:54.431Z",
+      "updated_at": "2019-07-11T16:56:54.431Z",
+      "cooked": "<p>Thanks for the tip!  I should be getting my sync cables in soon!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5812,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-11T19:22:59.705Z",
+      "updated_at": "2019-07-11T19:22:59.705Z",
+      "cooked": "<p>You will only need a 2.5mm (1/8\") cable for the connection.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 5842,
+      "post_number": 7,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-12T20:30:03.028Z",
+      "updated_at": "2019-07-12T20:30:03.028Z",
+      "cooked": "<p>I found some extra cables and got the Vidiot synced.<br>\nNow I noticed a visual issue.  Its not the Vidiot, because I see it with it connected and not, it does it with the Visual Cortex.  It is a line on the left side of the screen and the bottom of the screen that is alway there.  Does anyone know what could cause it?  I wanted to try to have a consistent symmetry with the imagery and this trows it off for me.  It smudges the pattern a bit.  You can see it in this screen shot.  <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/a08c98bb4b9bf7c7f4c7dbf07e30077e33266689.jpeg\" alt=\"ScreenShotLZXTest\" data-base62-sha1=\"mUhCzpqJwNnQvz7TiRPh6ZeOqPn\" width=\"690\" height=\"431\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5843,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-12T20:55:25.654Z",
+      "updated_at": "2019-07-12T20:55:25.654Z",
+      "cooked": "<p>That is odd. Is it there no matter if you are just using the Cortex on its own, patched internally?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5844,
+      "post_number": 9,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-07-12T21:02:44.984Z",
+      "updated_at": "2019-07-12T21:02:44.984Z",
+      "cooked": "<p>Do you see the same issue on multiple displays/recording devices?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5845,
+      "post_number": 10,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-13T00:18:23.934Z",
+      "updated_at": "2019-07-13T00:18:23.934Z",
+      "cooked": "<p>I broke it all down and patched it back up with just the VC and don\u2019t see the lines.  I will run it back again through the Vidiot and see.  Might have bee my Blackmagic too.  That thing is a bit quirky.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5868,
+      "post_number": 11,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-15T20:23:20.292Z",
+      "updated_at": "2019-07-15T20:23:20.292Z",
+      "cooked": "<p>Just received my Memory Palace, very excited, but one quick syncing question.  Do I run sync out from the Visual Cortex to the in/loop thru of the MP then sync out from MP to sync A or B of Vessel?  Also do I set it to external on the MP?  What do I set loop thru/ext sync/terminate to?  I want to be able to also sync my Vidiot to the Vessel A or B sync out for Vidiot use.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5869,
+      "post_number": 12,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2019-07-15T20:38:35.696Z",
+      "updated_at": "2019-07-15T20:44:22.203Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"efp3\" data-post=\"11\" data-topic=\"1269\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/efp3/48/933_2.png\" class=\"avatar\"> efp3:</div>\n<blockquote>\n<p>I run sync out from the Visual Cortex to the in/loop thru of the MP then sync out from MP to sync A or B of Vessel? Also do I set it to external on the MP? What do I set loop thru/ext sync/terminate to? I want to be able to also sync my Vidiot to the Vessel A or B sync out for Vidiot use.</p>\n</blockquote>\n</aside>\n<p>Yes, these are the correct connections to use Visual Cortex as your sync source. You want the MP sync source set to EXTERNAL since it\u2019s coming from VC, and you want the loop switch set to THRU since MP is not terminating the sync signal, you are passing that through to the Vessel bulkhead connector. Note that you want to use the two Loop Sync RCA connectors on the Memory Palace, not the Sync Out, since MP is not generating sync in your configuration. This is the same as my setup, except I\u2019m also going THRU a Prismatic Ray after MP before leaving the Vessel. I also just received my MP today and set it up like this (VC \u2192 MP \u2192 Prismatic Ray \u2192 Vessel sync connector \u2192 Vidiot). Also make sure you center the MP sliders, with them all pulled to the bottom it\u2019s likely that the image will be out of frame.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 11,
+      "is_wiki": false
+    },
+    {
+      "id": 5870,
+      "post_number": 13,
+      "username": "efp3",
+      "name": "Emmett Potter",
+      "created_at": "2019-07-15T21:11:27.277Z",
+      "updated_at": "2019-07-15T21:11:27.277Z",
+      "cooked": "<p>Awesome!  Thank you for the help!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 12,
+      "is_wiki": false
+    },
+    {
+      "id": 8357,
+      "post_number": 14,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2020-01-10T23:45:49.070Z",
+      "updated_at": "2020-01-10T23:45:49.070Z",
+      "cooked": "<p>How do we only need an 1/8\" cable for sync between VC and Vidiot? The Sync on the back of Vidiot is an RCA connection. What am I not understanding? Thanks <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 8366,
+      "post_number": 15,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-01-11T17:18:19.303Z",
+      "updated_at": "2020-01-11T17:18:19.303Z",
+      "cooked": "<p>Apologies, I mis-posted. You\u2019ll want to use the RCA video input. Vidiot cannot receive sync via the 1/8\" luma input on the back.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 14,
+      "is_wiki": false
+    },
+    {
+      "id": 9785,
+      "post_number": 16,
+      "username": "jwsmithwick1",
+      "name": "",
+      "created_at": "2020-05-20T18:11:44.578Z",
+      "updated_at": "2020-05-20T18:11:44.578Z",
+      "cooked": "<p>Hello, I have a few questions I\u2019ve been trying to understand about the syncing the Vidiot\u2019s RCA input and I feel this might be the right thread to ask,</p>\n<p>Is the sync signal that goes into the Vidiot\u2019s RCA video usable? In other words, does it feed into the the Vidiot\u2019s Luma processor, or would I need to feed a different signal into the Luma processor from the dedicated 3.5mm input?</p>\n<p>Also, I noticed in another thread, the second composite output of the Visual Cortex was used to sync to the Vidiot. Could I do the same with a Memory Palace? Additionally, do the rear panel sync signals contain video, or is it only timing code? Finally, would it make sense to sync up a system where the Visual Cortex is synced to the Memory Palace via the rear panel RCA sync jack, and synced to the Vidiot by way of the Visual Cortex\u2019s second composite out?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 15,
+      "is_wiki": false
+    },
+    {
+      "id": 9786,
+      "post_number": 17,
+      "username": "Genlok",
+      "name": "Winston",
+      "created_at": "2020-05-20T18:23:20.477Z",
+      "updated_at": "2020-05-20T18:23:47.466Z",
+      "cooked": "<p>I\u2019ve synced both MP and Vidiot to the Cortex composite output without issues, but I am not sure if this is a \u201csupported\u201d configuration. The downside to syncing Vidiot this way is that the input is a video input\u2026 so the output of Cortex is now going to be feeding into your luma processor. Which I think kind answers your first question? Any video going into either luma input (RCA or 3.5mm) gets mixed together into the luma processor. If it\u2019s only a sync signal then you can patch into the 3.5mm jack to have video+sync together</p>",
+      "like_count": 0,
+      "reply_to_post_number": 16,
+      "is_wiki": false
+    },
+    {
+      "id": 9787,
+      "post_number": 18,
+      "username": "Genlok",
+      "name": "Winston",
+      "created_at": "2020-05-20T18:26:44.222Z",
+      "updated_at": "2020-05-20T18:26:44.222Z",
+      "cooked": "<p>Oh but it should be mentioned that everything has to share common sync, so if Cortex is synced separately from a video source, then you won\u2019t be able to use a second video source going into Vidiot unless the two video sources are externally synced together.</p>\n<p>You can work around this if you have a video mixer, perhaps. Some have the ability to display opposite buses via the \u201cprogram\u201d and \u201cpreview\u201d outs, so what I do is connect Cortex and Vidiot to these different outs, which will be synced, allowing me to use two different video inputs between Cortex and Vidiot while staying synced together.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 17,
+      "is_wiki": false
+    },
+    {
+      "id": 9808,
+      "post_number": 19,
+      "username": "jwsmithwick1",
+      "name": "",
+      "created_at": "2020-05-22T04:08:08.418Z",
+      "updated_at": "2020-05-22T04:08:08.418Z",
+      "cooked": "<p>Awesome! Thank you very much for answering my question so quickly. I really appreciate it.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 17,
+      "is_wiki": false
+    }
+  ]
+}

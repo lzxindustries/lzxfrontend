@@ -1,0 +1,175 @@
+{
+  "id": 2259,
+  "title": "Vectrex Hack for Chromagnon",
+  "slug": "vectrex-hack-for-chromagnon",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    }
+  ],
+  "created_at": "2020-07-30T13:57:35.460Z",
+  "views": 1439,
+  "like_count": 24,
+  "posts_count": 13,
+  "posts": [
+    {
+      "id": 10642,
+      "post_number": 1,
+      "username": "devingreenwood",
+      "name": "Devin Greenwood",
+      "created_at": "2020-07-30T13:57:35.539Z",
+      "updated_at": "2020-07-30T13:57:55.656Z",
+      "cooked": "<p>Hello, I\u2019m getting ready to X-Y hack my Vectrex in preparation for Chromagnon and I\u2019m wondering if it\u2019s best to add 3.5 mm jacks or RCA jacks for pairing with Chromag?</p>\n<p>Any other useful retrofits that will help it pair better?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 10644,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-07-30T15:14:58.729Z",
+      "updated_at": "2020-07-30T15:14:58.729Z",
+      "cooked": "<p>It would be best to use 3.5mm jacks, since Chromagnon\u2019s XY outputs are also 3.5mm.<br>\n<img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/0b19c21c06de92ce0589a9b35897b341880b4e04.png\" alt=\"image\" data-base62-sha1=\"1Acrdk40BN8e1tTHD4C76f54vWI\" width=\"58\" height=\"119\"><br>\nI don\u2019t know enough about Vectrex hacking to advise on other modifications.<br>\nIt\u2019s going to be really exciting to see Chromagnon\u2019s vector applications in action!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 10646,
+      "post_number": 3,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2020-07-30T16:01:02.274Z",
+      "updated_at": "2020-07-30T16:01:02.274Z",
+      "cooked": "<p>Make sure to add 3x switching jacks to tap the Vectrex\u2019s XYZ cartridge signals for processing.  I\u2019m excited for Minestorm regurgitated by Chromagnon. <img src=\"https://emoji.discourse-cdn.com/twitter/stuck_out_tongue.png?v=9\" title=\":stuck_out_tongue:\" class=\"emoji\" alt=\":stuck_out_tongue:\"></p>\n<p>You might also consider adding the spot killer mod on a switch which can help with displaying lower frequency content.  I have left this off of the ones I\u2019ve modded as it increases the chance of burning the phosphor if you\u2019re not careful.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 10662,
+      "post_number": 4,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-07-31T14:27:30.721Z",
+      "updated_at": "2020-08-28T18:10:08.120Z",
+      "cooked": "<p>As <a class=\"mention\" href=\"/u/z0nk0ut\">@Z0NK0UT</a> mentions, 3.5mm jacks is the way to go.<br>\nCurrent LZX gear outputs 0-1v which is much lower than Eurorack and too weak to drive the Vectrex and fill the whole screen. <em>Unless the Chromagnon can scale the output voltage up to eurorack levels which I doubt, you\u2019ll want to bring those levels up with either the LZX Bridge utility or the LZX Cadet V DIY module</em> edit: NEVERMIND <a class=\"mention\" href=\"/u/z0nk0ut\">@Z0NK0UT</a> confirms that it will scale up! I\u2019d go with the Cadet V unit since it has 4 channels vs two on the Bridge and the Vectrex has three inputs, xyz. I also find the LZX Passage (or three Cadet VII Processors) very useful at adjusting positioning and mixing the signals going into the Vectrex.<br>\nWhile waiting for the Chromag, if you have any eurorack hardware, the Vectrex will work great with it. You can connect VCO and CV right into it. Something as simple as the Behringer Neutron will provide tons of fun. Easy patch: Send the LFO to the OSC Shape and then patch each VCO outputs to X and Y of the Vectrex and will get you very cool animations that match the sound waves being played.</p>\n<p>One thing to note with the Vectrex is that it doesn\u2019t sca as fast and can\u2019t keep up with video signals like an oscilloscope can so things like Rutt Etra may not be possible. In my attempts at this the image tends to roll over itself horizontally. It would be neat if the Chromag had a way of adjusting the horizontal refresh rate but my understanding of the subject is not sufficient to know if that\u2019s even possible.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11151,
+      "post_number": 5,
+      "username": "cinema.av",
+      "name": "Evan Henry",
+      "created_at": "2020-08-23T16:15:58.184Z",
+      "updated_at": "2020-08-23T16:15:58.184Z",
+      "cooked": "<p>As it stands, even with a Bridge or Cadet Scaler, LZX output will not take on the full spectrum of a Vectrex, only a small portion. However, any old oscilloscope will be just fine.</p>\n<p>If perhaps the Chromag has some signal boost on top, I\u2019m not sure how compatible the two may be.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11158,
+      "post_number": 6,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2020-08-24T00:20:06.001Z",
+      "updated_at": "2020-08-24T00:20:06.001Z",
+      "cooked": "<p>In all my browsing I haven\u2019t seen the \u201cnominal\u201d input range for a modded Vextrex - is it safe to assume +/-5V or perhaps higher to get FSD?</p>\n<p>I guess one approach could be to use an LZX Cadet Scaler to go from +1V to +/-5V, then another Euro module (ie, my favourite - Befaco AxB+C) for the final gain adjustment?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11159,
+      "post_number": 7,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2020-08-24T00:30:17.838Z",
+      "updated_at": "2020-08-24T00:30:17.838Z",
+      "cooked": "<p>This is exactly what I use with my Vectrex.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 11161,
+      "post_number": 8,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2020-08-24T00:59:50.457Z",
+      "updated_at": "2020-08-24T00:59:50.457Z",
+      "cooked": "<p>Ahh, great to know!<br>\nHave you measured the voltages required to drive the Vextrex, otherwise what gain are you using on the AxB+C?</p>\n<p>Back to the original question - I\u2019d go with switched jacks as suggested above.<br>\nWhen I finally get around to modding my Vectrex, I might even use 6.5mm switched jacks - it\u2019s easy to get a 3.5mm to 6.5mm adapters, and I have a lot more 6.5mm cables in longer lengths than I do 3.5mm\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 11168,
+      "post_number": 9,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-08-24T16:59:00.261Z",
+      "updated_at": "2020-08-24T16:59:00.261Z",
+      "cooked": "<p>Chromagnon will have onboard scaling for the XYZ outputs, since we know they are destined for inputs requiring more than the 1V LZX standard.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11200,
+      "post_number": 10,
+      "username": "bentoncbainbridge",
+      "name": "Benton C Bainbridge",
+      "created_at": "2020-08-27T10:41:52.121Z",
+      "updated_at": "2020-08-27T10:41:52.121Z",
+      "cooked": "<p>\u201cI\u2019d go with switched jacks as suggested above.<br>\nWhen I finally get around to modding my Vectrex, I might even use 6.5mm switched jacks\u201d<br>\n<a href=\"https://community.lzxindustries.net/u/Rik_bS\">Rik_bS</a></p>\n<p>That\u2019s how I\u2019ve modified my Vectrexes <a href=\"https://youtu.be/q3sKZA2r7qk\" rel=\"nofollow noopener\">https://youtu.be/q3sKZA2r7qk</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 12740,
+      "post_number": 11,
+      "username": "Tundra_Tides",
+      "name": "Tundra Tides",
+      "created_at": "2020-10-31T21:36:47.895Z",
+      "updated_at": "2020-10-31T21:36:47.895Z",
+      "cooked": "<p>Did you follow a specific \u2018Hack Tutorial\u2019 for the switchable jacks? I\u2019m a bit of an electrical noob and have only seen Duff\u2019s (very great but) basic tutorial .pdf</p>",
+      "like_count": 0,
+      "reply_to_post_number": 10,
+      "is_wiki": false
+    },
+    {
+      "id": 12741,
+      "post_number": 12,
+      "username": "bentoncbainbridge",
+      "name": "Benton C Bainbridge",
+      "created_at": "2020-10-31T22:03:35.958Z",
+      "updated_at": "2020-10-31T22:03:35.958Z",
+      "cooked": "<p>if you get Switchcraft 12A jacks it\u2019s not too hard to see how to wire them up. if I come across one, I can take a picture and label the tabs you connect to</p>",
+      "like_count": 0,
+      "reply_to_post_number": 11,
+      "is_wiki": false
+    },
+    {
+      "id": 12751,
+      "post_number": 13,
+      "username": "Tundra_Tides",
+      "name": "Tundra Tides",
+      "created_at": "2020-11-01T14:45:37.997Z",
+      "updated_at": "2020-11-01T14:45:37.997Z",
+      "cooked": "<p>i\u2019d really appreciate that, thank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 12,
+      "is_wiki": false
+    }
+  ]
+}

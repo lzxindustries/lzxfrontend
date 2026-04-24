@@ -87,7 +87,7 @@ export interface ForumArchiveDoc {
 }
 
 const forumTopicModules = import.meta.glob<RawForumTopic>(
-  '../../lfs/library/scrape/community/topics/*.json',
+  '../../data/lfs-library/scrape/community/topics/*.json',
   {import: 'default'},
 );
 

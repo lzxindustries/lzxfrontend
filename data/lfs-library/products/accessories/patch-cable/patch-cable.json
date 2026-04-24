@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "patch-cable",
+  "name": "Patch Cable",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/6890363125783",
+  "images": {
+    "frontpanel": "website/patch-cable-group.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/patch-cable-15cm-red.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/patch-cable-30cm-orange.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/patch-cable-group.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Standard EuroRack patch cable."
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-x-multiplier",
+  "name": "Cadet X Multiplier",
+  "sku": "LZXCADT10",
+  "description": "Cadet X Multiplier is a variation on the Cadet VI Fader circuit, configured as a switchable 2-quadrant or 4-quadrant multiplier.",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 40,
+    "max_neg_12v_ma": 40
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692913565760",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20X%20Multiplier"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Cadet-10-front-panel-square.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_c10_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/cadet_x_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_x_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

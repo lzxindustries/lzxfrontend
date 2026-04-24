@@ -1,0 +1,67 @@
+{
+  "id": 3123,
+  "title": "Vidiot loop thru",
+  "slug": "vidiot-loop-thru",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2021-05-22T14:14:23.110Z",
+  "views": 514,
+  "like_count": 1,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 18574,
+      "post_number": 1,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2021-05-22T14:14:23.193Z",
+      "updated_at": "2021-05-24T16:00:35.362Z",
+      "cooked": "<p>Hi all. When I have a camera running into the Vidiot and I toggle the loop thru switch it blows out the highlights, is that normal? The image will look fine when loop thru is off, but when I toggle it on the image image brightness (and maybe contrast?) increase significantly and needs to be adjusted. (Toggling the loop thru without anything plugged into the sync out also creates weird banding.)</p>\n<p>Is this normal operation?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 18625,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-05-24T17:03:30.589Z",
+      "updated_at": "2021-05-24T17:03:35.844Z",
+      "cooked": "<p>That is a normal quirk of Vidiot\u2019s design.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 18626,
+      "post_number": 3,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2021-05-24T17:36:58.290Z",
+      "updated_at": "2021-05-24T17:37:39.745Z",
+      "cooked": "<p>Does the loop thru switch choose whether the loop thru jack\u2019s output is terminated with a 75 ohm resistor to ground or not?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 18664,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-05-26T13:54:57.327Z",
+      "updated_at": "2021-05-26T13:54:57.327Z",
+      "cooked": "<p>Yes, you are correct.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

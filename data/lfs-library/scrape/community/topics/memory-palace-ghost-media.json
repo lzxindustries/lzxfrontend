@@ -1,0 +1,91 @@
+{
+  "id": 3774,
+  "title": "Memory palace ghost media",
+  "slug": "memory-palace-ghost-media",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2022-02-26T11:03:27.905Z",
+  "views": 484,
+  "like_count": 1,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 25187,
+      "post_number": 1,
+      "username": "cburst",
+      "name": "r rose",
+      "created_at": "2022-02-26T11:03:27.983Z",
+      "updated_at": "2022-02-26T11:03:27.983Z",
+      "cooked": "<p>Hi there-</p>\n<p>I\u2019ve been using the RGB inputs for a while and neglected the media loader.<br>\nReturning to the media loader I\u2019ve found that several folders of images no longer work.<br>\nMoreover, they no longer appear on the card.<br>\nI\u2019ve tried to remove (in the hopes of later replacing) the media, but with no luck.<br>\nI\u2019ve formatted the card, refreshed the firmware, and reset to defaults.<br>\nHowever, the references to the \u2018ghost\u2019 media remain.<br>\nAny suggestions?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 25275,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-03-01T15:17:34.780Z",
+      "updated_at": "2022-03-01T15:17:34.780Z",
+      "cooked": "<p>Is it possible that you placed image folders on MemPal\u2019s internal drive?<br>\nHave you tried resetting MemPals defaults and firmware, using the System menu?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 25285,
+      "post_number": 3,
+      "username": "Dr_Rek",
+      "name": "Derek Sajbel",
+      "created_at": "2022-03-01T18:47:53.963Z",
+      "updated_at": "2022-03-01T18:47:53.963Z",
+      "cooked": "<p>I had this happen once too after deleting and adding new media via USB using Window 10, all the deleted folders and images still showed up on the MP menus even though the card showed them gone via USB connection. But in my case, power cycling the MP made the deleted media fully disappear.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 25293,
+      "post_number": 4,
+      "username": "Marizu",
+      "name": "Marizu Okereke",
+      "created_at": "2022-03-02T09:36:07.750Z",
+      "updated_at": "2022-03-02T09:36:07.750Z",
+      "cooked": "<p>Does resetting the defaults or firmware replace the original NTSC images on the card?<br>\nI\u2019d got rid of them for PAL versions but they seem to have come back.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 25296,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-03-02T15:25:08.083Z",
+      "updated_at": "2022-03-02T15:25:08.083Z",
+      "cooked": "<p>Could you try resetting the defaults and/or firmware, to see if it helps?<br>\nAlso, it would be worth checking both the internal drive and MicroSD card to make sure files have been removed from both.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 27076,
+      "post_number": 6,
+      "username": "cburst",
+      "name": "r rose",
+      "created_at": "2022-06-28T07:38:27.671Z",
+      "updated_at": "2022-06-28T07:38:27.671Z",
+      "cooked": "<p>Funny story, took the physical memory card out and all the files were still there. Seems like the drive was just corrupt. Reformatted and back in action.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

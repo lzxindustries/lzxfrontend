@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "fortress",
+  "name": "Fortress",
+  "sku": "LZXOFT",
+  "description": "Fortress is a low rez hi fi video graphics instrument with no CPU, based on analog clock oscillators and high speed comparators. Generate patterns and animation with 3-bit numbers using the techniques of early digital video art pioneers. Digitize and recolorize video sources in real time with internal palette memory. The perfect video synthesis voice module for recreating the cover art of 1970s textbooks and early arcade graphics. Features Horizontal, vertical and low frequency analog clock VCOs with dedicated 3-bit counting DACs and selectable waveform patterns. Three realtime ADCs for 8-level slicing of analog video inputs, based on high speed analog comparators. An intricate Slip Sync mode can chain all three oscillators to create phase scrolling motion for animation. 4 Bit ALU (Arithmetic Logic Unit) with 8 selectable operations including Add, Subtract, AND, OR, XOR, NAND, NOR and XNOR., 16 Stage Shift Register Delay Line with 8 selectable output taps. 32 Bit Cellular Automata generative drawing algorithm with 8 selectable rulesets. 48 Bit Linear Feedback Shift Register for pseudorandom patterned noise with 8 selectable XOR taps. 9-bit RGB DACs with palette memory and 8 selectable color palettes.",
+  "company": "lzx",
+  "price": "699.00",
+  "product_type": "eurorack_module",
+  "category": "orion",
+  "specs": {
+    "hp": 22,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 180,
+    "max_neg_12v_ma": 110
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692915695680",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-fortress/1392"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Fortress-front-panel.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/fortress_frontpanel_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "../../packaging/orion_22hp_product_box_fantastapack.pdf",
+        "extension": "pdf",
+        "note": "Shared Orion 22HP Fantastapack box dieline"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

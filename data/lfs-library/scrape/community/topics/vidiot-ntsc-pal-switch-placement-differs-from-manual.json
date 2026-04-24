@@ -1,0 +1,55 @@
+{
+  "id": 1698,
+  "title": "Vidiot NTSC/Pal Switch placement differs from Manual",
+  "slug": "vidiot-ntsc-pal-switch-placement-differs-from-manual",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-11-24T08:32:44.919Z",
+  "views": 502,
+  "like_count": 1,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 7762,
+      "post_number": 1,
+      "username": "bishbosh",
+      "name": "T",
+      "created_at": "2019-11-24T08:32:44.988Z",
+      "updated_at": "2019-11-24T08:32:44.988Z",
+      "cooked": "<p>Hi all,</p>\n<p>I just got my Vidiot last week and started playing with it.</p>\n<p>I noticed that on my unit, the NTSC/PAL Switch and Video Loop Thru Switch are inverted. The labeling on the back of my unit differs from the Vidiot User manual and the Vidiot photos on the LZX site. I\u2019m including photos of my unit and the manual.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6b710f6d8c1ec6ac2032b0398adb7bdfc040d9d5.jpeg\" data-download-href=\"/uploads/short-url/fktjPsFfTFwcOPtByZ1eFgzX1C5.jpeg?dl=1\" title=\"IMG_6505\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/6b710f6d8c1ec6ac2032b0398adb7bdfc040d9d5.jpeg\" alt=\"IMG_6505\" data-base62-sha1=\"fktjPsFfTFwcOPtByZ1eFgzX1C5\" width=\"667\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_6505</span><span class=\"informations\">2100\u00d71574 592 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/5e5899741c10bdeb42795a672e85345c5127d2db.jpeg\" data-download-href=\"/uploads/short-url/dsCHKpgMdU1qJIuSVO7fTkTLDv5.jpeg?dl=1\" title=\"IMG_6504\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/5e5899741c10bdeb42795a672e85345c5127d2db.jpeg\" alt=\"IMG_6504\" data-base62-sha1=\"dsCHKpgMdU1qJIuSVO7fTkTLDv5\" width=\"667\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_6504</span><span class=\"informations\">2100\u00d71574 478 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>I\u2019m wondering if my unit was mis-painted, the Vidiot specs were revised during manufacturing, or if my unit is defective. Does anyone know how to shed some light on this?</p>\n<p>(I\u2019m new here, so forgive me if this has been answered. It didn\u2019t turn up in a forum search.)</p>\n<p>Is there a simple patch/test I can do to confirm what these switches do?</p>\n<p>Thanks,</p>\n<p>Bishbosh</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7766,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-24T16:27:57.097Z",
+      "updated_at": "2019-11-24T16:28:10.365Z",
+      "cooked": "<p>Your Vidiot is correct; the manual has an error.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7767,
+      "post_number": 3,
+      "username": "bishbosh",
+      "name": "T",
+      "created_at": "2019-11-24T20:35:11.827Z",
+      "updated_at": "2019-11-24T20:35:11.827Z",
+      "cooked": "<p>Thank you for the quick answer!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

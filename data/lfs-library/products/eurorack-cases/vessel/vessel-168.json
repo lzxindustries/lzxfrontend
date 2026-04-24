@@ -1,0 +1,74 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "vessel-168",
+  "name": "Vessel 168",
+  "subtitle": "168HP EuroRack Enclosure With 12V DC Power & Video Sync Distribution",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 168,
+    "mounting_depth_mm": 65,
+    "max_pos_12v_ma": 10000
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7171710189591",
+  "images": {
+    "frontpanel": "website/vessel168_photo_top_square2.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/CASE168-BUS208-ASSY-MK1_photo_back_b73c7146-6ae1-48f5-a5db-d11c5b1a6e93.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/CASE168-BUS208-ASSY-MK1_photo_side_5015465b-6ca1-432d-b602-17ee22e5de31.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/base-system-84-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_back_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_side_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square2.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": [
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_left_diagonal_face.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_right_diagonal_face.ai",
+        "extension": "ai"
+      }
+    ]
+  },
+  "description": "An uncompromising EuroRack enclosure designed specifically for the LZX Industries Gen3 modular series. Carefully designed to ensure every module can receive a dedicated sync and power connection. 168HP of Vector TS169 module mounting rails with M2.5 tapped strips Entirely metal construction from matte black powder coated aluminum and black oxide hardware 6U rack mountable 65mm mounting depth in any mounting location High wattage DC barrel power entry supporting up to 10 Amps of current with side facing power switch 28 individually filtered 12V power output connectors -- enough to fill the entire case with 6HP modules 14 individually buffered sync distribution outputs -- supply video sync to your modules without daisy chaining frustration Two mounting locations for expander busboards VESA mounting footprints Included in the box: Assembled 168HP EuroRack case with busboard 100 pcs M2.5 x 6mm module mounting screws TT Electronics PEAMD120-12-B2 12V 10A power supply w/EMI filtering IEC power cable 7.4 lbs shipping weight with accessories"
+}

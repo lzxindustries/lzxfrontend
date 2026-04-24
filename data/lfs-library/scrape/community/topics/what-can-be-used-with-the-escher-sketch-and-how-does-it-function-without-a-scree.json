@@ -1,0 +1,72 @@
+{
+  "id": 41,
+  "title": "What can be used with the Escher Sketch and how does it function without a screen memory module?",
+  "slug": "what-can-be-used-with-the-escher-sketch-and-how-does-it-function-without-a-screen-memory-module",
+  "category_id": 6,
+  "tags": [
+    {
+      "id": 8,
+      "name": "eschersketch",
+      "slug": "eschersketch"
+    },
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2018-07-17T20:13:37.068Z",
+  "views": 937,
+  "like_count": 8,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 57,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-07-17T20:13:37.145Z",
+      "updated_at": "2018-07-18T00:09:43.319Z",
+      "cooked": "<p><em>Admin note: This question originally asked by Ian Ross on the former LZX Knowledgebase</em></p>\n<p>5 questions regarding the Escher Sketch:</p>\n<ol>\n<li>\n<p>Can I use the Vidiot for brush shape control with the Escher Sketch or would I require other modules as well?</p>\n</li>\n<li>\n<p>Without something to manage frame memory what affect does the Escher Sketch have and is it momentary? If I draw a line or something to that effect would it show up momentarily without something to manage frame memory? And to what extent.</p>\n</li>\n<li>\n<p>Is the Escher Sketch capable of drawing only lines and arcs or can you draw pseudo-geometric shapes with it freehand (without mirroring)?</p>\n</li>\n<li>\n<p>What are the actual limitations of drawing on it?</p>\n</li>\n<li>\n<p>If I got a Vidiot and an Escher Sketch what would be the best thing to mange frame memory? Other than a Memory Palace, what options are there for this function?</p>\n</li>\n</ol>\n<p>Please advise. Thanks.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 58,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-07-17T20:14:05.129Z",
+      "updated_at": "2018-07-17T20:14:05.129Z",
+      "cooked": "<p>Escher Sketch is a control voltage generator module, similar to a joystick or a trackpad.  Its function is to produce control voltages based on XY positions, Pressure, Velocity (movement speed), and gate voltages derived from these parameters, or manually triggered.  It is the first ingredient in a video drawing/painting workflow.</p>\n<p>A video painting workflow needs:</p>\n<p>(1) Position Control aka \u201cThe Paintbrush\u201d.  This is Escher Sketch, but you could also control position with LFOs, joysticks, anything that generates CV.<br>\n(2) Shape/Brush Generator aka \u201cThe Paint/Texture\u201d.  This can be a function of frame memory (i.e., Memory Palace can work this way) but you can also use analog textures, patterns, and other shape generators (like Navigator + Shapechanger) to generate brush shapes.<br>\n(3) Frame Memory aka \u201cThe Canvas\u201d.  This would be a module such as Memory Palace, which has keying based input control</p>\n<p>A basic patch for video painting:<br>\n\u2013 Escher Sketch X Out into Memory Palace X VC In<br>\n\u2013 Escher Sketch Y Out into Memory Palace Y VC In<br>\n\u2013 Escher Sketch Pressure Out into Memory Palace Opacity VC In<br>\n\u2013 If desired, analog shape/texture/key pattern into Memory Palace Alpha In<br>\n\u2013 The pressure of Escher Sketch now controls the transparency of lines being drawn into the buffer.<br>\n\u2013 The \u201cZoom\u201d on Memory Palace controls the size of the brush as applied to the dimensions of the screen.<br>\n\u2013 The Hue/Saturation/Brightness on Memory Palace control the color of the brush shape.</p>\n<p>And here are the answers to your questions:</p>\n<ol>\n<li>\n<p>If combined with Memory Palace (for frame memory and positioning) you could use the Vidiot to generate analog textures that could be used as brush shapes.  Vidiot could also control the color of the brush using its RGB outs.</p>\n</li>\n<li>\n<p>You need frame memory (Memory Palace) in order to do video painting.    You can use the Escher Sketch XY outputs to control any voltage controlled parameter in the system, but Memory Palace is the paper onto which images are drawn and stay on the screen.</p>\n</li>\n<li>\n<p>There is a constrain mode that will snap your movements to 45 degree angle increments while holding the button.  If you want to draw freehand geometric shapes, that can be done by combining it with Memory Palace\u2019s functions for mirror, tiling, etc.  Memory Palace has a mode that applies the effects only to the <em>incoming</em> image stream.  So you can for example mirror your painting movements without changing what\u2019s already in the buffer.</p>\n</li>\n<li>\n<p>I\u2019m going to need more information to answer this question. Escher Sketch itself is quite simple in concept, all the complexity and different drawing modes/limitations come into play when you combine it with Memory Palace and other modules in a video painting application patch.</p>\n</li>\n<li>\n<p>Memory Palace is currently the only option for frame memory and has been designed specifically with this purpose in mind.  We\u2019ve discussed a smaller buffer module, but it will likely be grayscale only and optimized for in-patch-use rather than as the primary interface for a video painting instrument.</p>\n</li>\n</ol>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5316,
+      "post_number": 3,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2019-05-19T16:14:43.432Z",
+      "updated_at": "2019-05-19T16:14:43.432Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a> just to be clear moving forward the opacity control is now AUX on the memory palace right?<br>\nI\u2019ve been having a hard time getting anything to happen with it<br>\nin this video painting context or otherwise</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5319,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-05-19T20:46:33.996Z",
+      "updated_at": "2019-05-19T20:46:33.996Z",
+      "cooked": "<p>Correct, the only aux function is Opacity in the current firmware. You need to have the \u201cAlpha\u201d key mode selected in order to use it this way.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

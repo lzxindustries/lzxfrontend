@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "factors",
+  "name": "Factors",
+  "subtitle": "Triple Four-Quadrant Modulator",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 100
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/6921420800023",
+  "images": {
+    "frontpanel": "website/factors-frontpanel.png",
+    "legend": "website/factors-legend.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/factors-frontpanel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/factors-frontpanel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/factors-legend.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzxgfx_factors_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Factors is a triple 4-quadrant modulator module for your EuroRack video synthesizer. Factors is a symmetrical contrast adjuster. The contrast adjustment is centered on the mid-gray value of 0.5 volts: a \"fade to gray\". The ability to simultaneously set the black point and white point with a single voltage controllable parameter opens up interesting visual possibilities. Learn more about Factors on our documentation website!"
+}

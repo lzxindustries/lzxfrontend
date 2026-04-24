@@ -1,0 +1,96 @@
+{
+  "id": 895,
+  "title": "Connecting Visual Cortex to Memory Palace",
+  "slug": "connecting-visual-cortex-to-memory-palace",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2019-01-31T23:30:43.864Z",
+  "views": 1732,
+  "like_count": 10,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 4008,
+      "post_number": 1,
+      "username": "northerntao",
+      "name": "Josh Reineke",
+      "created_at": "2019-01-31T23:30:43.977Z",
+      "updated_at": "2019-02-07T03:57:59.504Z",
+      "cooked": "<p>There is a DIY thread about a board to expose the RGB levels before encoding on the Visual Cortex output (see below), but what about other methods for the impatient (me) and DIY averse.</p>\n<p>Would a Triple Video Interface (synced to the VC via 14 pin) work to convert component to 1V RGB?</p>\n<p>Any other ideas?</p>\n<p><a href=\"https://community.lzxindustries.net/t/visual-cortex-pre-encoder-expander/367\">Visual Cortex pre-encoder expander</a>:</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4010,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-01T01:30:47.501Z",
+      "updated_at": "2019-02-01T01:30:47.501Z",
+      "cooked": "<p>Yes, TVI would do it if you have one, or a second Cortex.</p>\n<p>But I\u2019m curious why you want to do this.  I would say that the best way to use Memory Palace with Cortex is inside the Cortex compositor.  You could use it to key your original source (dry) over your modified image (wet, from Memory Palace out.)  You can also use it to layer analog gradients and solarization back in with your Memory Palace output (looks wonderful!)  Or to introduce a secondary feedback loop around Memory Palace using the analog compositor.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4011,
+      "post_number": 3,
+      "username": "northerntao",
+      "name": "Josh Reineke",
+      "created_at": "2019-02-01T01:51:29.695Z",
+      "updated_at": "2019-02-01T01:51:29.695Z",
+      "cooked": "<p>Those are all wonderful ideas, and perhaps better than what I had in mind, though I had envisioned the Memory Palace at the end of the chain.  The keyer/animator/compositor on the Cortex is so amazing that I would like to have a second one to run everything through at the end!</p>\n<p>One of the secondary benefits of the Memory Palace is the digital output, so I can hook it up to an HDMI display.  I could always do that externally, with a component to HDMI converter off the Cortex.</p>\n<p>FYI, Analogue Heaven has the TVI in stock.  I ordered one earlier, but I don\u2019t know how many Sean has.  I think it\u2019s the last Visionary module in stock.  I think there was a triple filter until recently, but I missed the boat on that.  Curtains for me!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 4012,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-01T02:34:49.820Z",
+      "updated_at": "2019-02-01T02:34:49.820Z",
+      "cooked": "<p>TVI is a cool module.  We need to get the TBC2 out, and it really solves lots of issues for the system, but TVI will always be best if you have genlockable external sources, like some older cameras.  I used it for a triple monochrome CCTV cam rig for a long while, Pelco MC3710s</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4100,
+      "post_number": 5,
+      "username": "northerntao",
+      "name": "Josh Reineke",
+      "created_at": "2019-02-05T19:52:39.453Z",
+      "updated_at": "2019-02-05T19:52:39.453Z",
+      "cooked": "<p>Sean says the TVI listing was a mistake so that options out. Looks like the Cortex DIY board is the best option for MP last in chain, short of buying another Cortex or TBC(2).  I\u2019ll likely be getting a TBC2, but envision it at the front of the chain</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 4105,
+      "post_number": 6,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-05T23:32:39.386Z",
+      "updated_at": "2019-02-05T23:32:39.386Z",
+      "cooked": "<p>Yeah, TBC2 won\u2019t work for an output module anyway (it\u2019s just an input.)<br>\nMy recommendation is to play around with it with Cortex as your main output first.   You may find it makes most sense that way, and that you use the Memory Palace for preview outputs.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": 1984,
+  "title": "Vidiot as sync generator to MP = B/W analog out image?",
+  "slug": "vidiot-as-sync-generator-to-mp-b-w-analog-out-image",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 20,
+      "name": "sync",
+      "slug": "sync"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-03-22T00:13:25.369Z",
+  "views": 549,
+  "like_count": 1,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 9104,
+      "post_number": 1,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2020-03-22T00:13:25.454Z",
+      "updated_at": "2020-03-22T00:13:25.454Z",
+      "cooked": "<p>Hoping everyone is doing well with all that is going on.</p>\n<p>Got a question on some behavior that seems peculiar.</p>\n<p>When my MP is getting sync from Vidiot with composite or s-video output plugged directly into CRT the image is in black and white.  The DVI/HDMI out is color though.  Unfortunately new MP firmware did not fix this if that is even the issue.</p>\n<p>If I run MP composite output into Structure then have Structure composite plugged into CRT the image is in color.  ?!</p>\n<p>Is this expected and the Vidiot just not a suitable sync generator for MP?  Or is there some kind of trick to make MP output color in this scenario.  I find image quality on s-video notably better and in general would like to use MP as output.  Also, the primary reason I\u2019m using Vidiot as sync generator is to get a camera patched into my system (I don\u2019t have a Cortex &amp; waiting on TBC2)</p>\n<p>Thanks for any help or clarification on this!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9118,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-03-23T16:41:14.165Z",
+      "updated_at": "2020-03-23T16:41:14.165Z",
+      "cooked": "<p>Losing color is a strange behavior. What camera are you using? Do you have Vidiot\u2019s sync loop through turned on? Are you patching the Vidiot rear RGB outputs to the RGB inputs on Memory Palace?<br>\nIf you have Palace set to internal sync, is S-video still black &amp; white?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9121,
+      "post_number": 3,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2020-03-24T08:24:10.485Z",
+      "updated_at": "2020-03-24T08:24:10.485Z",
+      "cooked": "<p>After some more testing tonight, it seems the black and white MP analog video output is caused by using Vidiot as master sync source for MP.  Everything seems fine when Vidiot gets sync from camera(or anything else).</p>\n<p>For example, if my cheap mini security camera is plugged into RCA video in on back of Vidiot with loop thru switch on or off, and system is getting sync from the back panel RCA sync out/loop thru, luma or chroma, MP analog outs are in color.</p>\n<p>If no camera or other sync source is plugged into Vidiot, using it as master sync for system causes MP to be in black and white when analog outs are going directly into TV (but color if patched into Structure)<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/21e385f03eeb72b095c8b64e5bfe38dcee7fd604.jpeg\" data-download-href=\"/uploads/short-url/4PNdO9WX7rRulvSGhOKxWYQkXRy.jpeg?dl=1\" title=\"20200324_005154\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/21e385f03eeb72b095c8b64e5bfe38dcee7fd604.jpeg\" alt=\"20200324_005154\" data-base62-sha1=\"4PNdO9WX7rRulvSGhOKxWYQkXRy\" width=\"666\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">20200324_005154</span><span class=\"informations\">3264\u00d72448 3.35 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\nI have the Vidiot patched to MP with 1vRGB and when internally synced, MP behaves as expected.</p>\n<p>I can certainly work around this if its normal, just seems weird.  Hopefully this explanation makes some sense.  It\u2019s gotten late <img src=\"https://emoji.discourse-cdn.com/twitter/smiley.png?v=9\" title=\":smiley:\" class=\"emoji\" alt=\":smiley:\"></p>\n<p>On a somewhat related note, is it possible to get rid of or adjust the borders around tiled image as seen in attached image?</p>\n<p>Thank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 9123,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-03-24T15:04:07.769Z",
+      "updated_at": "2020-03-24T15:04:07.769Z",
+      "cooked": "<p>Excellent. Glad you found the path!<br>\nAside from the black &amp; white issue, everything sounds normal\u2013including the borders, which are an anomaly of the Vidiot/Memory Palace combo (and are a byproduct of Vidiot\u2019s sync output).</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

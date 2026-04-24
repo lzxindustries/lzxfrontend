@@ -1,0 +1,151 @@
+{
+  "id": 1585,
+  "title": "Memory palace faders settings problems and more",
+  "slug": "memory-palace-faders-settings-problems-and-more",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2019-10-13T21:55:14.891Z",
+  "views": 912,
+  "like_count": 1,
+  "posts_count": 11,
+  "posts": [
+    {
+      "id": 7130,
+      "post_number": 1,
+      "username": "patchouli",
+      "name": "Georges-Etienne Tremblay",
+      "created_at": "2019-10-13T21:55:14.965Z",
+      "updated_at": "2019-10-13T21:55:14.965Z",
+      "cooked": "<p>Hi,<br>\nI\u2019m using the Memory palace sync with a Visual Cortex and some others modulars. Sometimes (\u00b11 time on 5), my Memory Palace bug, it still and show no respond for any control And my visuals are motionless too. When this happens, after I restarted my modular, all my faders settings (DB,SC,ect.) return to the original setting which cause me trouble in some live set I did, cause the faders are very hard to use in it\u2019s original setting.<br>\nDo you have any Idea on what cause this and how I can get over it?<br>\nI\u2019ve tried several version of the program but the problem seem to still there.<br>\nThanks for your help!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7132,
+      "post_number": 2,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2019-10-14T12:19:13.075Z",
+      "updated_at": "2019-10-14T12:21:00.327Z",
+      "cooked": "<p>what is your full sync chain including where it starts and is terminated?<br>\nis your video synth all within one euro case or spread over multiple?<br>\nwhat kind of power supply/supplies are being used?<br>\nwhat firmware is your memory palace currently on?<br>\nis there ventilation in your case?<br>\ncan you check temperatures in the case reliably if this were to happen again?</p>\n<p>I would think it could be an overheating thing but that is just pure speculation</p>\n<p>I don\u2019t think I\u2019ve ever had the MP just freeze up in this way sorry to hear that!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7135,
+      "post_number": 3,
+      "username": "cinema.av",
+      "name": "Evan Henry",
+      "created_at": "2019-10-14T18:28:12.369Z",
+      "updated_at": "2019-10-14T18:28:12.369Z",
+      "cooked": "<p>In it\u2019s current iteration, the memory palace behaves how ever it wants, when ever it wants.</p>\n<p>The only solution rn is to just reboot it and power cycle. Eventually it will work, and cut back out whenever it decides to, even if that means once every 10 to 30 minutes, like at my last gig. thoroughly annoyed, but honestly, it\u2019s whatever. I just use the palace sparingly as possible until the firmware is revised once again.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7152,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-10-17T14:36:55.056Z",
+      "updated_at": "2019-10-17T14:37:09.612Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/cinema.av\">@cinema.av</a> Sounds like you should send us a support ticket, what you are describing is not anything close to normal behavior.  Have you tried augmenting your case\u2019s power with a 12VDC wall wart?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 7159,
+      "post_number": 5,
+      "username": "cinema.av",
+      "name": "Evan Henry",
+      "created_at": "2019-10-17T19:40:09.314Z",
+      "updated_at": "2019-10-17T19:40:09.314Z",
+      "cooked": "<p>it\u2019s not a power thing. only consuming 2875ma of a 3500ma power supply with the full live system. it occasionally acts like it\u2019s missing a sync connection, even though everything is wired up correctly. palace will become unresponsive and drop it\u2019s output whenever, and where ever it sees fit. happened far more often in the hotfix firmware, than the stock, so i reverted back.</p>\n<p>still unpredictable, but from what i understand, far more common with the handful of artists i know who also have a palace in their system.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 7160,
+      "post_number": 6,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-10-17T19:57:50.778Z",
+      "updated_at": "2019-10-17T20:06:09.176Z",
+      "cooked": "<p>Are you feeding sync directly from Visual Cortex?  Have you tried powering it off of an external 12VDC wall wart in augment to your case\u2019s supply?  What\u2019s the power supply?  Many Euro supplies perform horribly when under that high of a load, especially switching supplies with no linear regulation.  We included the 12VDC input option so you can solve problems with Euro supplies. It sounds like power instability to me, or a module that needs to be tested here in the lab to determine if it has a hardware problem.  We\u2019ve seen issues with an occasional latchup that happens after the unit has been on several hours, and also sometimes randomly \u2013 that will be fixed in the next update \u2013 but we\u2019ve also had it running several days at a time with not a single hiccup.  It should definitely not be giving you the trouble you\u2019re describing at all, unless there\u2019s a power issue, a sync issue, or something mechanical about your build that is faulty.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 7162,
+      "post_number": 7,
+      "username": "cinema.av",
+      "name": "Evan Henry",
+      "created_at": "2019-10-17T20:47:50.603Z",
+      "updated_at": "2019-10-17T20:47:50.603Z",
+      "cooked": "<p>It\u2019s literally the last half of that reply. But yea sync passed through the CVE, to the structure, thru to the palace.I\u2019ll try offloading some power at the gig tomorrow though and see if that solves anything.<br>\nUsing one of the last 12u monorocket cases though. Most of the time it is fine. Just somehow it just decided to throw a fit at one show. I had it on for several hours days earlier without fuss.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7186,
+      "post_number": 8,
+      "username": "patchouli",
+      "name": "Georges-Etienne Tremblay",
+      "created_at": "2019-10-19T02:52:54.219Z",
+      "updated_at": "2019-10-19T02:52:54.219Z",
+      "cooked": "<p>It is 12VDC, I have a Malekko power board.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 7187,
+      "post_number": 9,
+      "username": "patchouli",
+      "name": "Georges-Etienne Tremblay",
+      "created_at": "2019-10-19T02:55:24.600Z",
+      "updated_at": "2019-10-19T02:55:24.600Z",
+      "cooked": "<p>the Sync line is : Cortex --&gt; Navigator --&gt; MP</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 7189,
+      "post_number": 10,
+      "username": "patchouli",
+      "name": "Georges-Etienne Tremblay",
+      "created_at": "2019-10-19T02:56:02.558Z",
+      "updated_at": "2019-10-19T02:56:02.558Z",
+      "cooked": "<p>could it be the wallwart ?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 7190,
+      "post_number": 11,
+      "username": "patchouli",
+      "name": "Georges-Etienne Tremblay",
+      "created_at": "2019-10-19T03:00:58.788Z",
+      "updated_at": "2019-10-19T03:00:58.788Z",
+      "cooked": "<p>I can try directly Cortex to Mp to Navigator?<br>\nMP V18.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

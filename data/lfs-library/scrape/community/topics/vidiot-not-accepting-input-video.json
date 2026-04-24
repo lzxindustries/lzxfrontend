@@ -1,0 +1,127 @@
+{
+  "id": 1504,
+  "title": "Vidiot not accepting input video",
+  "slug": "vidiot-not-accepting-input-video",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-09-10T03:29:13.758Z",
+  "views": 688,
+  "like_count": 2,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 6701,
+      "post_number": 1,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-09-10T03:29:13.842Z",
+      "updated_at": "2019-09-10T13:57:40.037Z",
+      "cooked": "<p>I have used the vidiot to process video multiple times before but now it seems to not accepting the signal. When video is sent into the vidiot it just begins scrolling uncontrollably. I\u2019ve read a similar post and thought I had the incorrect position for the loop switch. After checking my loop switch it is in the correct position.</p>\n<p>I\u2019ve recently been using fortress and diver synced to the vidiot and could have possibly had the sync cables routed incorrectly. Is there risk of damaging any of the components of the vidiot when the sync cables are improperly routed?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6702,
+      "post_number": 2,
+      "username": "sean",
+      "name": "",
+      "created_at": "2019-09-10T03:33:12.149Z",
+      "updated_at": "2019-09-10T03:33:12.149Z",
+      "cooked": "<p>PAL/NTSC switch in correct position?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6716,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-09-10T14:00:25.833Z",
+      "updated_at": "2019-09-10T14:00:25.833Z",
+      "cooked": "<p>Sorry to hear you\u2019re having trouble with your Vidiot.<br>\nWhat is the video signal you want to process?<br>\nHow is your sync routed?<br>\nIf you use just Vidiot, without Fortress and Diver connected, does it improve your results?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6717,
+      "post_number": 4,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-09-10T15:30:32.743Z",
+      "updated_at": "2019-09-10T15:30:32.743Z",
+      "cooked": "<p>Yeah, it still occurs even when the vidiot is stand alone. I have the pal/ntsc switched up. I\u2019m using the p10 as my source but other sources produce the same result.</p>\n<p>My sync goes out the vidiot to diver sync then thru to fortress which is switched to terminate. Is the sync port above the thru on the fortress? And the diver sync is to the left of the thru?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6719,
+      "post_number": 5,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-09-10T17:34:49.571Z",
+      "updated_at": "2019-09-11T16:38:39.806Z",
+      "cooked": "<p>I tested it again this morning and after switching my sync routing it worked. Vidiot sync out to fortress sync in (bottom port) then thru to diver sync in (right port) diver sync switch down to terminate. Though my relief was short lived as I powered down and up again and the scrolling returns. So I\u2019m still confused\u2026<br>\nI appreciate you all looking into this.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6737,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-09-11T16:22:16.255Z",
+      "updated_at": "2019-09-11T16:22:16.255Z",
+      "cooked": "<p>You had it working for a second, that\u2019s a good sign.<br>\nCould you try powering things on in this order? Video source, Vidiot, eurorack case.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 6738,
+      "post_number": 7,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-09-11T16:38:01.128Z",
+      "updated_at": "2019-09-11T16:38:01.128Z",
+      "cooked": "<p>I again swapped my sync route and it seems to be working consistently.<br>\nI\u2019ll power on in this order from now on.<br>\nThanks Chad!</p>\n<p>Really digging how fortress and diver pair together by the way.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6753,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-09-11T23:54:57.495Z",
+      "updated_at": "2019-09-11T23:54:57.495Z",
+      "cooked": "<p>Sync is tricky, isn\u2019t it?<br>\nVery good to hear you are taking advantage of Diver + Fortress. Post some pics or videos, when you have a chance?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 6754,
+      "post_number": 9,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-09-12T00:07:41.329Z",
+      "updated_at": "2019-09-12T00:07:41.329Z",
+      "cooked": "<p>It is still something I\u2019m trying to understand but there\u2019s a lot of info on here.<br>\nI\u2019m excited to get memory palace in the mix. I\u2019ll have to do a bit more reading about syncing mp before November.<br>\nWill do!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    }
+  ]
+}

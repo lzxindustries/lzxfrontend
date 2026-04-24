@@ -1,0 +1,79 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-ii-rgb-encoder",
+  "name": "Cadet II RGB Encoder",
+  "sku": "LZXCADT2",
+  "description": "DIY PCB & Frontpanel set comes with SMT AD724 RGB Encoder IC pre-soldered. Cadet II RGB Encoder is an RGB-to-NTSC/PAL composite video encoder for video synthesis systems. For the Cadet series DIY Eurorack analog modular video synthesizer system.",
+  "company": "lzx",
+  "price": "36.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 65,
+    "max_neg_12v_ma": 29
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692912484416",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20II%20RGB%20Encoder"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Cadet-2-front-panel-square.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_c2_frontpanel.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/lzx_industries_cadet_ii_rgb_encoder_bw_illustration.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/lzx_industries_cadet_ii_rgb_encoder_color_illustration.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/cadet_ii_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_ii_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

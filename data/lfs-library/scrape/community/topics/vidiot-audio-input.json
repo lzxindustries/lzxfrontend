@@ -1,0 +1,43 @@
+{
+  "id": 2729,
+  "title": "Vidiot Audio Input",
+  "slug": "vidiot-audio-input",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2021-01-14T21:52:43.578Z",
+  "views": 409,
+  "like_count": 2,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 14673,
+      "post_number": 1,
+      "username": "udenjoe",
+      "name": "Joe W",
+      "created_at": "2021-01-14T21:52:43.645Z",
+      "updated_at": "2021-01-14T21:52:43.645Z",
+      "cooked": "<p>Hello, I have a question about the audio input of the Vidiot. I\u2019ve noticed that if I have a patch going from the ear/audio input to anything, it reacts as if it were a square envelope. There is no smooth movement between modulation. However, when I put a patch jack in loosely I can see more interpolation between modulations. I see a smooth transition/envelope for the modulation. I\u2019ve tried turning down my sound source. This doesn\u2019t help. Does anyone else experience this behavior? It doesn\u2019t seem right. I would expect the modulation to reflect the audio input dynamics with a smoother transition between modulations.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 14676,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-01-14T22:45:46.702Z",
+      "updated_at": "2021-01-14T22:45:46.702Z",
+      "cooked": "<p>It sounds like you might have a jack that is wired backwards. Could you send a message to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> ?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

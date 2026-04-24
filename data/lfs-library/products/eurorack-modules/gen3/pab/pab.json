@@ -1,0 +1,61 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "pab",
+  "name": "PAB",
+  "subtitle": "Programmable Active Buffers",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 50
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7541032321047",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/PAB-FPN.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/pab_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/pab_fpn_revb.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "PAB ( Programmable Active Buffers) is a utility for distributing and delaying signals. Duplicate a clean copy of a signal, or delay it in increments of 16 nanoseconds. With delay times in the range of tens of nanoseconds, the result is an image shifted slightly to the right. Different modules delay signals by different amounts. In complex patches, this can be a problem. When signals are combined, they may be out of horizontal registration. PAB addresses this by inserting strategic delays to make everything line up. PAB is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels. Learn more about PAB on our documentation website!"
+}

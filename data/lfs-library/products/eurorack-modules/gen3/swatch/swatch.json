@@ -1,0 +1,279 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "swatch",
+  "name": "Swatch",
+  "sku": "LZXSWATCH",
+  "subtitle": "Dual Colorspace Converter",
+  "company": "lzx",
+  "price": "249.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 100
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6856020394007",
+  "images": {
+    "frontpanel": "website/swatch-front-panel.png",
+    "legend": "website/swatch-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Y",
+      "ref_des": "J1",
+      "is_input": false,
+      "is_output": true,
+      "x": -400,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Y",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "I+",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": -400,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "I+",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "I-",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": -400,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "I-",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Q+",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": -400,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Q+",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Q-",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": -400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Q+",
+      "ref_des": "J10",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "R",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "R Over",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "R Clamp",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "G Clamp",
+      "ref_des": "J16",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B Clamp",
+      "ref_des": "J19",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "G Over",
+      "ref_des": "J15",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B Over",
+      "ref_des": "J18",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "G",
+      "ref_des": "J14",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B",
+      "ref_des": "J17",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for Swatch",
+      "youtube_id": "CZx8ssyfYds"
+    },
+    {
+      "name": "3 Patches for Swatch",
+      "youtube_id": "CZx8ssyfYds"
+    },
+    {
+      "name": "LZX Swatch: Video Synth Tools & Techniques",
+      "youtube_id": "mrTO6TB_cBg"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/swatch-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/swatch-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/swatch-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/swatch_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/swatch_fpn_reva_uv_printed.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/swatch_fpn_reva_uv_printed_alignment_guide.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/swatch_fpn_reva_uv_printed_color_print.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/swatch_rgbfpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/swatch_rgbfpn_revb.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Swatch is a bidirectional color space converter with RGB-to-YIQ and YIQ-to-RGB functions. It allows you to process the luminance (Y), in-phase (I), and quadrature (Q) values of an incoming signal separately, and then continue to patch that signal as RGB. With Swatch you can explore color palettes otherwise unavailable. It is an essential color processing tool for video synthesis. Learn more about Swatch on our documentation website!"
+}

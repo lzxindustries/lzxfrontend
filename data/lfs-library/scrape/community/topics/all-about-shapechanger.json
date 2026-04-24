@@ -1,0 +1,41 @@
+{
+  "id": 1341,
+  "title": "All About Shapechanger",
+  "slug": "all-about-shapechanger",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 37,
+      "name": "shapechanger",
+      "slug": "shapechanger"
+    }
+  ],
+  "created_at": "2019-07-22T20:29:24.385Z",
+  "views": 1738,
+  "like_count": 1,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 6031,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-22T20:29:24.449Z",
+      "updated_at": "2022-01-02T19:47:07.321Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/06e55a8e502010c2ade79a5d61982155e13450a6.jpeg\" data-download-href=\"/uploads/short-url/Z0fGgG3iCVL3o7VkbffA4S4noW.jpeg?dl=1\" title=\"shape3\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/06e55a8e502010c2ade79a5d61982155e13450a6.jpeg\" alt=\"shape3\" data-base62-sha1=\"Z0fGgG3iCVL3o7VkbffA4S4noW\" width=\"690\" height=\"483\" data-dominant-color=\"B2AFAE\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">shape3</span><span class=\"informations\">1462\u00d71024 517 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Shapechanger is our most ambitious analog computing module to date. Designed to take two continuous input voltages representing X and Y points on a display, Shapechanger processes the size, width, height, aspect ratio, symmetry, and curve of a resulting quadrilateral figure.</p>\n<h1><a name=\"p-6031-specifications-1\" class=\"anchor\" href=\"#p-6031-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 45mm</li>\n<li>Power +12V @ 220mA</li>\n<li>Power -12V @ 220mA</li>\n</ul>\n<h1><a name=\"p-6031-user-reference-2\" class=\"anchor\" href=\"#p-6031-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/70a3c9e6e742cd0b753d9242c67144fe1273d296.jpeg\" data-download-href=\"/uploads/short-url/g4sok4kaCoxYs3ygAbTldC9Ua2y.jpeg?dl=1\" title=\"shape4\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/70a3c9e6e742cd0b753d9242c67144fe1273d296.jpeg\" alt=\"shape4\" data-base62-sha1=\"g4sok4kaCoxYs3ygAbTldC9Ua2y\" width=\"525\" height=\"500\" data-dominant-color=\"C8CACB\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">shape4</span><span class=\"informations\">798\u00d7759 369 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-6031-videos-3\" class=\"anchor\" href=\"#p-6031-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6J-lkPmz59FvdVh98qE282c&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-6031-patching-tips-4\" class=\"anchor\" href=\"#p-6031-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>Use mults to send the same modulation source to multiple VC inputs at once. Use mixer modules (like Passage or Bridge) to mix together many modulation sources.</li>\n<li>Try feedback of the horizontal and vertical outputs back to the VC inputs.</li>\n<li>Try patching multiple Shapechanger modules in parallel, and use a keyer module like Doorway to composite the two resulting shapes together.</li>\n</ul>\n<h1><a name=\"p-6031-downloads-5\" class=\"anchor\" href=\"#p-6031-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Shapechanger/Shapechanger%20User%20Reference%20Card.pdf\">Shapechanger User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-6031-other-resources-6\" class=\"anchor\" href=\"#p-6031-other-resources-6\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/shapechanger\">LZX Community Forum posts tagged #shapechanger</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

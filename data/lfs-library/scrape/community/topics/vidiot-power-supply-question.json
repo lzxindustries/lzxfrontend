@@ -1,0 +1,79 @@
+{
+  "id": 1153,
+  "title": "Vidiot Power Supply Question",
+  "slug": "vidiot-power-supply-question",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-05-09T18:42:05.832Z",
+  "views": 1484,
+  "like_count": 4,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 5253,
+      "post_number": 1,
+      "username": "743v04",
+      "name": "Trevor Blake",
+      "created_at": "2019-05-09T18:42:05.899Z",
+      "updated_at": "2019-05-09T18:42:05.899Z",
+      "cooked": "<p>I am loving my Vidiot first of all, thanks for all of your guys\u2019 hard work! I have several desktop units that I am trying to figure out an integrated power solution for, and I am wondering if there is any leeway in the PSU voltage that the Vidiot is able to safely accept. I searched around and wasn\u2019t able to find any specifics on what kind of internal regulation it might have, any insight would be appreciated!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5300,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-05-15T21:31:48.490Z",
+      "updated_at": "2019-05-15T21:31:48.490Z",
+      "cooked": "<p>Using the Vidiot with any power supply other than the one provided by LZX would pose a risk to the instrument and void the warranty. It wouldn\u2019t be a good idea to send the Vidiot any voltage above 5V.<br>\nA nice power strip and lots of cable ties might be the best solution.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5305,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-05-16T17:50:07.732Z",
+      "updated_at": "2019-05-16T18:36:08.014Z",
+      "cooked": "<p>You could power it from any 1.2Amp 5V source (like a phone charger) and a cable like this!  I\u2019m not sure if that helps.  Definitely don\u2019t power it by a voltage above 5V.</p>\n<aside class=\"onebox amazon\">\n  <header class=\"source\">\n      <a href=\"https://www.amazon.com/StarTech-com-USB-Type-Barrel-Cable/dp/B009C3CJG4\" target=\"_blank\" rel=\"nofollow noopener\">amazon.com</a>\n  </header>\n  <article class=\"onebox-body\">\n    <div class=\"aspect-image\" style=\"--aspect-ratio:488/360;\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/565fe9b8d2ac4f187b1e54e41d2f00f791a37082.jpeg\" class=\"thumbnail\"></div>\n\n<h3><a href=\"https://www.amazon.com/StarTech-com-USB-Type-Barrel-Cable/dp/B009C3CJG4\" target=\"_blank\" rel=\"nofollow noopener\">Amazon.com: StarTech.com 2m USB to Type M Barrel Cable - USB to 5.5mm 5V DC...</a></h3>\n\n\n<p>\n  \n  \n  \n  \n  <strong></strong>\n</p>\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5306,
+      "post_number": 4,
+      "username": "743v04",
+      "name": "Trevor Blake",
+      "created_at": "2019-05-16T18:35:54.899Z",
+      "updated_at": "2019-05-16T18:35:54.899Z",
+      "cooked": "<p>Thanks so much Lars! I had not thought to use USB power for some reason, that\u2019s actually perfect.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 8426,
+      "post_number": 5,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2020-01-18T00:01:24.703Z",
+      "updated_at": "2020-01-18T00:01:24.703Z",
+      "cooked": "<p>just an FYI\u2026</p>\n<p>i have been upgrading my powerstrips with ones that have USB power ports on them.<br>\nlike this:<br>\n<a href=\"https://smile.amazon.com/gp/product/B07V3JZDW7/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1\" class=\"onebox\" target=\"_blank\" rel=\"nofollow noopener\">https://smile.amazon.com/gp/product/B07V3JZDW7/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&amp;psc=1</a></p>\n<p>and also using one of these:<br>\n<a href=\"https://smile.amazon.com/gp/product/B07HK7WWFS/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1\" class=\"onebox\" target=\"_blank\" rel=\"nofollow noopener\">https://smile.amazon.com/gp/product/B07HK7WWFS/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&amp;psc=1</a></p>\n<p>i noticed an issue with my Vidiot creating a ground noise with my main audio output when i was streaming live.</p>\n<p>unplugging it from the USB power port and plugging it into a USB PSU on a regular outlet plug killed the ground noise.</p>\n<p>i also noticed this same problem with my two norns.<br>\none norns can be plugged into the USB power port but the second norns has to be plugged into a USB PSU.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

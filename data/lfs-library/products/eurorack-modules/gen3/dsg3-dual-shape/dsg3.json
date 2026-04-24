@@ -1,0 +1,340 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "dsg3",
+  "name": "DSG3",
+  "sku": "LZXDSG3",
+  "subtitle": "Dual Shape Generator",
+  "company": "lzx",
+  "price": "499.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 350
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6576427204631",
+  "images": {
+    "frontpanel": "website/dsg3-front-panel.png",
+    "legend": "website/dsg3-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "H 1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "V 1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "H 2",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "V 2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": 900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Average 1",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "Minimum 1",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "Average 2",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "Minimum 2",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "Maximum 1",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Absolute 1",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Maximum 2",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Absolute 2",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "H Invert 1",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -900,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "V Invert 1",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -300,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "H Invert 2",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 300,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "V Invert 2",
+      "ref_des": "S4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 900,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "H Fold 1",
+      "ref_des": "S5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -900,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "V Fold 1",
+      "ref_des": "S6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -300,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "H Fold 2",
+      "ref_des": "S7",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 300,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "V Fold 2",
+      "ref_des": "S8",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 900,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "H Curve 1",
+      "ref_des": "S9",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -900,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "V Curve 1",
+      "ref_des": "S10",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -300,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "H Curve 2",
+      "ref_des": "S11",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 300,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "V Curve 2",
+      "ref_des": "S12",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 900,
+      "y": 125,
+      "part": null
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for DSG3",
+      "youtube_id": "hFIWKNjcbPg"
+    },
+    {
+      "name": "LZX DSG3 Dual Shape Generator: Video Synth Tools & Techniques",
+      "youtube_id": "bDng30frWiY"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/BeltBuckle.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/CameraFeedback1.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/CameraFeedback2.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/ConduitPulse.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/DawnSeed.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/IsometricChecker.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/ReflectedAuras.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/Sarcophagi.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/TubeSigils.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/dsg3-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/dsg3-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/dsg3-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/face_fx2.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DSG3 is made up of two identical shape generators that use analog logic to create hundreds of static 2D patterns. Use the internal ramps or input your own signals to manipulate simple operations or generate complex patterns. Process external video signals in new and exciting ways. Learn more about DSG3 on our documentation website!"
+}

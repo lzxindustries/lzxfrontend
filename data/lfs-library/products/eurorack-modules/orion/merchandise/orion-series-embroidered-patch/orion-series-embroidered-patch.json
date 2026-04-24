@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../schemas/product.schema.json",
+  "slug": "orion-series-embroidered-patch",
+  "name": "Orion Series Embroidered Patch",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1702792855616",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/image_44.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

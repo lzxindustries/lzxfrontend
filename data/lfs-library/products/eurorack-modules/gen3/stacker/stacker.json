@@ -1,0 +1,254 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "stacker",
+  "name": "Stacker",
+  "sku": "LZXSTACKER",
+  "subtitle": "Triple Quadrilateral Key Generator",
+  "company": "lzx",
+  "price": "279.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 95
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6886906560535",
+  "images": {
+    "frontpanel": "website/stacker-front-panel.png",
+    "legend": "website/stacker-front-line-art.png"
+  },
+  "features": [
+    {
+      "name": "Generate Squares, Rectangles & Rhombi",
+      "description": "A quadrilateral key generator has 2 inputs (for horizontal and vertical reference waveforms and 4 thresholds (for the top, right, bottom, left borders.) Ratio & Size controls quickly define the 4 thresholds as a group.",
+      "topic": "main"
+    },
+    {
+      "name": "Compose Priority Layered Sprites & Glyphs",
+      "description": "Each key output is subtracted from the lower layers. This nesting doll effect allows programming of simple letterforms and icons.",
+      "topic": "main"
+    },
+    {
+      "name": "Extract Foreground Fragments From Complex Sources",
+      "description": "When fed horizontal and vertical references from wave shapers, video cameras, and other complex sources, Stacker serves as a tool for extracting foreground details, tiles and mosaics.",
+      "topic": "main"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "Horizontal 1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Vertical 1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Quadrilateral Key 1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Horizontal 2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Vertical 2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Quadrilateral Key 2",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Quadrilateral Key 3",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Horizontal 3",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Vertical 3",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Ratio 1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Size 1",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Ratio 2",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Size 2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Ratio 3",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": 125,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Size 3",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": 125,
+      "part": "control-knob-solid-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "Foreground Fragments",
+      "youtube_id": "Uh66oDIjE7Q"
+    },
+    {
+      "name": "Priority Layers",
+      "youtube_id": "WBdyM4eI3JQ"
+    },
+    {
+      "name": "Quadrilateral Stack",
+      "youtube_id": "c17o0oAmknY"
+    },
+    {
+      "name": "Binary Glyphs",
+      "youtube_id": "bB_V8DBnVEw"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/PXL_20230509_233228860.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/StackerSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stacker-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stacker-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stacker-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/stacker_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Stacker is a triple quadrilateral key generator and layer-priority encoder for your modular video synthesizer. Feed Stacker horizontal and vertical waveforms from DWO3, DSG3, Scrolls, or Angles to produce three stacked quadrilateral shapes on the outputs. Learn more about Stacker on our documentation website!"
+}

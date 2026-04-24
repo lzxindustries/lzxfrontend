@@ -1,0 +1,48 @@
+{
+  "id": 1766,
+  "title": "Andor 1 - Vidiot sync issue?",
+  "slug": "andor-1-vidiot-sync-issue",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 2,
+      "name": "andor1",
+      "slug": "andor1"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-12-19T03:36:59.536Z",
+  "views": 496,
+  "like_count": 0,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 8080,
+      "post_number": 1,
+      "username": "bishbosh",
+      "name": "T",
+      "created_at": "2019-12-19T03:36:59.594Z",
+      "updated_at": "2019-12-19T16:51:35.149Z",
+      "cooked": "<p>Hey all,</p>\n<p>I just bought an Andor 1 to serve video clips to my Vidiot. The problem I\u2019m having is that the Vidiot does not seem to lock sync with the video file from the Andor 1.</p>\n<p>I connected it through the video in/out and used the loop function to bypass the Vidiot, however just being plugged into the Vidiot messes up the signal. If I connect directly from the Andor 1 to the projector, everything is fine.</p>\n<p>Can anyone let me know what might be wrong?</p>\n<p>Thank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8090,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-19T16:53:41.522Z",
+      "updated_at": "2019-12-19T16:53:41.522Z",
+      "cooked": "<p>Sorry to hear that the Andor/Vidiot combo is giving you trouble.<br>\nBe sure to turn off \u201cloop through\u201d on Vidiot, since you are not passing sync to another device. Sometimes it helps to power cycle Vidiot after doing this.</p>\n<p>Are both Andor and Vidiot set to the same format (NTSC or PAL) as your monitor/projector?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

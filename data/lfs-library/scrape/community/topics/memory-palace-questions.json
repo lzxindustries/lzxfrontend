@@ -1,0 +1,67 @@
+{
+  "id": 1242,
+  "title": "Memory Palace Questions",
+  "slug": "memory-palace-questions",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-06-28T17:19:05.033Z",
+  "views": 669,
+  "like_count": 2,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 5674,
+      "post_number": 1,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-06-28T17:19:05.129Z",
+      "updated_at": "2019-06-28T17:19:05.129Z",
+      "cooked": "<p>Hello<br>\nI\u2019m wondering if I will need any additional modules to process a video signal sent from the vidiot\u2019s RGB outputs into the memory palace?</p>\n<p>I also am curious about the midi implementation of the memory palace. Is it possible to change the CC#\u2019s that control the sliders of the memory palace?<br>\nUnfortunately the controller I would be using sends specific cc#s and only two(3&amp;9) are able to control the default cc\u2019s for the MP\u2019s sliders.<br>\nThanks!<br>\n-J</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5677,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-06-28T21:10:20.014Z",
+      "updated_at": "2019-06-28T21:10:20.014Z",
+      "cooked": "<p>You can patch right out of Vidiot\u2019s RGB jacks into Memory Palace.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5678,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-06-28T21:20:28.899Z",
+      "updated_at": "2019-06-28T21:20:28.899Z",
+      "cooked": "<p>You won\u2019t be able to change the CC#'s with the current firmware. Later versions may make it possible though.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5679,
+      "post_number": 4,
+      "username": "Luciferg",
+      "name": "",
+      "created_at": "2019-06-28T23:53:02.164Z",
+      "updated_at": "2019-06-28T23:53:02.164Z",
+      "cooked": "<p>That would be perfect for my setup. I\u2019m trying to control my current setup for solo A/V gigs with the MPC Live but seemingly it won\u2019t let assign certain cc#\u2019s.<br>\nDoes LZX have or plan on making more modules with midi implementation?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

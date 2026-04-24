@@ -1,0 +1,48 @@
+{
+  "id": 1910,
+  "title": "Is all Vidiot functionality replicated in the Chromagnon?",
+  "slug": "is-all-vidiot-functionality-replicated-in-the-chromagnon",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-19T18:02:28.078Z",
+  "views": 969,
+  "like_count": 9,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 8805,
+      "post_number": 1,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-02-19T18:02:28.159Z",
+      "updated_at": "2020-02-19T18:55:08.282Z",
+      "cooked": "<p>That\u2019s it. Is all Vidiot functionality replicated in the Chromagnon? I know it has a lot more but does it have all the same functionality as well?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8806,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-19T19:05:40.137Z",
+      "updated_at": "2020-02-19T19:05:40.137Z",
+      "cooked": "<p>It\u2019s a good question.<br>\nChromagnon doesn\u2019t have Vidiot\u2019s independent H&amp;V oscillators, dedicated luma processor or RGB controls, and its keying interface will be different. You will be able to achieve similar results with either instrument, but in different ways. Owning both won\u2019t be redundant.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

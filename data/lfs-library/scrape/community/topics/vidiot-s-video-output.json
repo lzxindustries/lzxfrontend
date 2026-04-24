@@ -1,0 +1,79 @@
+{
+  "id": 682,
+  "title": "Vidiot s-video output",
+  "slug": "vidiot-s-video-output",
+  "category_id": 6,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-11-10T19:13:10.011Z",
+  "views": 1408,
+  "like_count": 12,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 2861,
+      "post_number": 1,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-11-10T19:13:10.105Z",
+      "updated_at": "2018-11-10T19:13:10.105Z",
+      "cooked": "<p>I was hooking up a video mixer today and had a thought about the vidiot\u2026<br>\nit has two outputs<br>\none luma<br>\none color<br>\ns-video adapters allow two RCA outputs (luma,chroma) to come together into a resulting s-video signal</p>\n<p>so why not try to take both vidiot outputs via an <a href=\"https://www.ebay.com/itm/Male-Mini-DIN-S-Video-Monitor-Adapter-to-Male-Female-RCA-for-Atari-800-XL-XE/131599230226?hash=item1ea3ece512:g:rGsAAOSw9r1V79Y1:rk:1:pf:0\" rel=\"nofollow noopener\">adapter</a> into an s-video input</p>\n<p>it seems to work quite well I\u2019ll post up some pictures in a bit<br>\njust thought I\u2019d share</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3000,
+      "post_number": 2,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2018-11-25T21:21:59.457Z",
+      "updated_at": "2018-11-25T21:21:59.457Z",
+      "cooked": "<p>Any luck with this? Good idea <img src=\"https://emoji.discourse-cdn.com/twitter/smiley.png?v=6\" title=\":smiley:\" class=\"emoji\" alt=\":smiley:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3022,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-11-26T18:07:59.532Z",
+      "updated_at": "2018-11-26T18:09:37.563Z",
+      "cooked": "<p><strong>You could try it, but with Vidiot you really have these elements:</strong><br>\nVidiot Colorizer Out = Luma + Chroma + Sync (color video, CVBS)<br>\nVidiot Luma Processor Out = Luma + Sync (black and white video, VS)</p>\n<p><strong>Whereas with S-Video format, you have:</strong><br>\nLuma + Sync (black and white video) on one pin<br>\nChroma (the hue/saturation component of color video) on a separate pin</p>\n<p>So if you tried to use the Vidiot outs with an S-Video adapter, you\u2019d have luma+sync (from the colorizer) appearing on the chroma pin too.  How this ends up being received on the other end just depends on the display or device I\u2019d expect.  Some devices may ignore the colorizer\u2019s luma+sync portions and just take the chroma \u2013 whereas others may sum the luma and chroma directly, resulting in a mixed version of the colorizer\u2019s luma channel with the luma processor\u2019s luma channel.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5278,
+      "post_number": 4,
+      "username": "pixelflowers",
+      "name": "",
+      "created_at": "2019-05-12T16:48:10.336Z",
+      "updated_at": "2019-05-12T16:48:10.336Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"wednesdayayay\" data-post=\"1\" data-topic=\"682\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/wednesdayayay/48/70_2.png\" class=\"avatar\"> wednesdayayay:</div>\n<blockquote>\n<p>so why not try to take both vidiot outputs via an <a href=\"https://www.ebay.com/itm/Male-Mini-DIN-S-Video-Monitor-Adapter-to-Male-Female-RCA-for-Atari-800-XL-XE/131599230226?hash=item1ea3ece512:g:rGsAAOSw9r1V79Y1:rk:1:pf:0\" rel=\"noopener nofollow ugc\">adapter </a></p>\n</blockquote>\n</aside>\n<p>Bump - has anyone played with such adapters? What are the results?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5283,
+      "post_number": 5,
+      "username": "Tremendm_Labs",
+      "name": "Ellis D. Lightful",
+      "created_at": "2019-05-12T20:02:32.627Z",
+      "updated_at": "2019-05-12T22:40:41.596Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/wednesdayayay\">@wednesdayayay</a> We\u2019ve found that some T.V.s generally will accept an s-video signal that\u2019s adapted to yellow composite.</p>\n<p>Our KORG Entrancer has a composite (yellow) and an s-video output port for the main video output, but no preview output. We send the s-video to the capture card and the composite input to the tv because both KPE video outputs always work. Or in other words, connecting one does not disengage the other. That\u2019s our workaround for the lack of a preview out on the KPE.</p>\n<p>On occasion we have added an s-video to composite adapter to the s-video cable to connect the s-video to a composite only t.v., with no problems or corrupted signal.</p>\n<p>The adapter is very simple composite to s-video, no power adapter no converter box.</p>\n<p><a class=\"mention\" href=\"/u/wednesdayayay\">@wednesdayayay</a> Would doing this adapter trick just give you basically a third video output from the Vidiot (but with full output from both luma &amp; chroma channels) ? At the expense of losing the luma Output?</p>\n<p>That\u2019s a crazy find on that obscure dual rca to s-video adapter. It\u2019s like a squirrel-monkey skeleton at the circus, certainly it can\u2019t be real, but I wanna buy one and show it\u2019s weirdness to all my friends.</p>\n<p>Funny story, I think I remember trying to make a cable (Late in the night at a vj gig, at a fest). I put s-vid to comp adapters on both ends of a rca cable to make a s-vid cable, or maybe I did the opposite, either way, it didn\u2019t work - but it probably wasn\u2019t the cables fault, I was fairly haught that night\u2026lol</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

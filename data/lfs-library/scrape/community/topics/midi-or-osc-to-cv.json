@@ -1,0 +1,96 @@
+{
+  "id": 740,
+  "title": "MIDI (or OSC!) to CV?",
+  "slug": "midi-or-osc-to-cv",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 39,
+      "name": "midi",
+      "slug": "midi"
+    }
+  ],
+  "created_at": "2018-11-29T22:48:17.101Z",
+  "views": 1895,
+  "like_count": 11,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 3082,
+      "post_number": 1,
+      "username": "sean",
+      "name": "",
+      "created_at": "2018-11-29T22:48:17.187Z",
+      "updated_at": "2019-02-08T18:03:16.976Z",
+      "cooked": "<p>I notice that Memory Palace has MIDI in. This got me thinking about the possibility of integrating some sort of MIDI CC to CV module into a system to expand modulation possibilities. Or, better yet, OSC to MIDI since that would allow for much greater resolution (though I am surprised that I can\u2019t actually seem to find an audio-focused module that does this at all; maybe I am just getting tripped up because searching for \u201cOSC\u201d brings up a load of oscillators?). Better still: wireless OSC.</p>\n<p>Anyone use MIDI at all in their systems? Or OSC, if possible?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3083,
+      "post_number": 2,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2018-11-30T05:29:25.268Z",
+      "updated_at": "2018-11-30T05:31:03.522Z",
+      "cooked": "<p>AS a VDMX Ninja i have had the Exact same unge: to integrate control for the moduler video synth from my Control setup, using the step sequencers and waveclock audio sync etc\u2026<br>\nBut have found no osc modules(almost impossible to google OSC in the moduler World AS it gives Me all oscillators, so perhaps there is something out there\u2026</p>\n<p>I have had some succes With the befaco MIDI Thing module. It Can be set up to output 4 CV channels, and have midi in on the old DIN connctor.<br>\nBut it is quite a hazzle: from computer to midi usb interface, to midi thing, to skaler, on to the actualmcv input, and Then it only gives about 60 steps of resolution because of the onde octave Per volt principle for the midi thing. But i have 4 CV outs, which is something.</p>\n<p>I have begun developing a usb midi to CV module with a friend. He just  pinged me he have an early breadboard prototype giving 0-1v cv from pitch Bend, which is 12 bit, meaning 4096 steps of resolution, and no scaling  Nessecary.</p>\n<p>A Lot of channels out should be possible in this architecture, but dont yet know If this Will be a private project, or made info a published module yet.</p>\n<p>Making the osc version is beyond my friends knowledge.</p>\n<p>Disclaimer: this written on an iPad with Danish autocorrect turned on, giving all fonds of Strange Words and grammeR infused to the message.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3084,
+      "post_number": 3,
+      "username": "VanTa",
+      "name": "VanTa",
+      "created_at": "2018-11-30T10:11:41.573Z",
+      "updated_at": "2018-11-30T10:11:41.573Z",
+      "cooked": "<p>Theres a couple of modules able to do that.<br>\nOSC: <a href=\"https://www.rebeltech.org/product/open-sound-module/\" rel=\"nofollow noopener\">https://www.rebeltech.org/product/open-sound-module/</a><br>\n<a href=\"https://github.com/hdavid/ports\" rel=\"nofollow noopener\">https://github.com/hdavid/ports</a><br>\nor even: <a href=\"https://github.com/mxmxmx/terminal_tedium\" rel=\"nofollow noopener\">https://github.com/mxmxmx/terminal_tedium</a><br>\nFor MIDI there\u2019s of course many options, CVPal being the cheapest, easiest to build <a href=\"https://www.thonk.co.uk/shop/cvpal-kit/\" rel=\"nofollow noopener\">https://www.thonk.co.uk/shop/cvpal-kit/</a><br>\nI\u2019m developing a small 1u utility as a \u2018midi host\u2019 to Orion Midi converter, meaning connecting a Midi controller and changing parameters internally in the Orion series modules that accept that.<br>\nbtw, <a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a> , theres two Midi TRS standards (A and B) widely used, which one is the one present in Memory Palace. this one i guess: <a href=\"https://www.midi.org/articles-old/trs-specification-adopted-and-released\" rel=\"nofollow noopener\">https://www.midi.org/articles-old/trs-specification-adopted-and-released</a>.<br>\nTo adapt that 1u module as a USB-midi device would be pretty easy.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3085,
+      "post_number": 4,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-11-30T12:17:20.512Z",
+      "updated_at": "2018-11-30T12:17:20.512Z",
+      "cooked": "<p>great idea more 1u modules for the video folk</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 3949,
+      "post_number": 5,
+      "username": "GaelJaton",
+      "name": "Gael JATON",
+      "created_at": "2019-01-28T14:11:44.478Z",
+      "updated_at": "2019-01-28T14:14:42.779Z",
+      "cooked": "<p>Hi, MemPal user manual just release : <a href=\"https://community.lzxindustries.net/t/memory-palace-user-guide/884\" class=\"inline-onebox\">Memory Palace User Guide</a><br>\nCC message will be in high resolution (14 bits) CC hiRes. If someone\u2019s interested, I work on esp8266 (esp12 wifi board / arduino ide compatible), I made Osc controller over wifi (udp for live control) and OSC receiver. It will be relatively easy to make a simple OSC to midi HiRes converter! waiting my memPalace, I will share my work. Here is my git of a close project where I send a kind of \u201csuper Hi res midi\u201d style control (27 bit) to DSP axoloti from OSC message through a esp12 (wemos mini) : <a href=\"https://github.com/gaeljaton/OSC-Esp12-Axoloti\" rel=\"nofollow noopener\">https://github.com/gaeljaton/OSC-Esp12-Axoloti</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3950,
+      "post_number": 6,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-01-28T15:58:06.091Z",
+      "updated_at": "2019-01-28T15:58:06.091Z",
+      "cooked": "<p>For MIDI TRS, Memory Palace has \u201cType A/ Type B\u201d switches for each MIDI jack on the rear of the module.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

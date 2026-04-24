@@ -1,0 +1,201 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "vidiot",
+  "name": "Vidiot",
+  "sku": "LZXVID",
+  "subtitle": "Patchable Analog Video Instrument",
+  "description": "Vidiot production has been discontinued, but LZX will continue to support this powerful all-in-one video synth. Chromagnon is the new LZX standalone analog video synthesizer. Visit the All About Vidiot post on the LZX Community forum for information on this legacy product.",
+  "company": "lzx",
+  "price": "799.00",
+  "product_type": "instrument",
+  "specs": {
+    "hp": 36,
+    "mounting_depth_mm": 80
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692912222272",
+  "images": {
+    "frontpanel": "website/vidiot.PNG"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/vidiot.PNG",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [
+      {
+        "path": "panel-art/ctbc_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/cve_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/ip_diff_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/logic_bool_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/logic_div_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/logic_ff_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/qs_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/sfg_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/tvfkg_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/tvi_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/tvmf_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/tvp_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/vbr_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/vi_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/vrg_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/vsg_fpn.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/vidiot_box_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [
+        {
+          "path": "brand/logos/vidiot_logo.ai",
+          "extension": "ai"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_black_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_native_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/vidiot_logo_white_60.png",
+          "extension": "png"
+        }
+      ],
+      "characters": [
+        {
+          "path": "brand/characters/vidiot_character.ai",
+          "extension": "ai"
+        }
+      ]
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

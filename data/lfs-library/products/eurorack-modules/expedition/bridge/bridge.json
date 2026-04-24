@@ -1,0 +1,83 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "bridge",
+  "name": "Bridge",
+  "sku": "LZXBR",
+  "subtitle": "Scaler, Fader, Mixer, Mult",
+  "description": "Multi-function utility module including voltage level translation, voltage controlled fader and mixing.",
+  "company": "lzx",
+  "price": "199.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 30,
+    "max_neg_12v_ma": 30
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692912058432",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-bridge/1295"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Bridge-angle-photo.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Bridge-front-legend.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Bridge-front-panel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/Bridge-front-photo.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/bridge_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/lzx_br_fpn_v1.1.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/bridge_4_x3_product_box_color_label.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

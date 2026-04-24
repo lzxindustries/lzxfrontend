@@ -1,0 +1,252 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "esg3",
+  "name": "ESG3",
+  "sku": "LZXESG3",
+  "subtitle": "Encoder & Sync Generator",
+  "company": "lzx",
+  "price": "499.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 300
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6576385884183",
+  "images": {
+    "frontpanel": "website/esg3-front-panel.png",
+    "legend": "website/esg3-front-line-art.png"
+  },
+  "features": [
+    {
+      "name": "Default Control Positions",
+      "description": "With nothing patched to the inputs, and all knobs in their center position, the output will be close to black.  When the mute/blanking switches are engaged, there should be a minimal brightness shift in the output.  If Contrast knobs are fully counter-clockwise, at their zero position, the output will be near 50% gray level.",
+      "topic": "system"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "R",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "CVBS",
+      "ref_des": "J2",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "G",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1375,
+      "part": null
+    },
+    {
+      "name": "B",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Y/Gs",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Pb/B",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Pr/R",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "R Contrast",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "G Contrast",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "B Contrast",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "R Brightness",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "G Brightness",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "G Brightness",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Invert/Blank All",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -900,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "R Invert/Blank",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -300,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "G Invert/Blank",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 300,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "B Invert/Blank",
+      "ref_des": "S4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 900,
+      "y": 125,
+      "part": null
+    },
+    {
+      "name": "Format Select",
+      "ref_des": "S5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 875,
+      "part": null
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/esg3-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/esg3-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/esg3-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/evs39_enc_reva_v4.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/syncgen_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "ESG3 Encoder is our third generation of video synthesis core modules, offering everything you need to convert voltages from your EuroRack synthesizer into HD/SD Component and SD Composite video signals. Programmable output and sync reference format: NTSC, PAL, 486p5994, 576p50, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30. HD/SD component and composite video encoding with a fully analogue signal path. RGB proc amp with brightness, contrast, inversion and mute per channel. Learn more about ESG3 on our documentation website! Video Format Switch ESG3's format selection switch determines the module's video output format and video sync standard. Additionally, the user may select between YPbPr and RGB colorspace modes for the Component output encoder. In most cases, the user should select the YPbPr component output mode. Optionally, RGB component output mode may be used with some displays and capture devices if supported. 0 represents the switch's OFF state. 1 represents the switch's ON state. x indicates a position irrelevant to the listed setting. Format Setting NTSC 0000xxxx PAL 1000xxxx 480p5994 0100xxxx 576p50 1100xxxx 1080i5994 0010xxxx 1080i60 1010xxxx 720p5994 0110xxxx 720p60 1110xxxx 1080i50 0001xxxx 1080p2398 1001xxxx 720p50 0101xxxx 1080p2997 1101xxxx 1080p24 0011xxxx 1080p25 1011xxxx 1080p30 0111xxxx RGB Out xxxxxxx1 YPbPr Out xxxxxxx0"
+}

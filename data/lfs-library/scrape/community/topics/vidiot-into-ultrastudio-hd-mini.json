@@ -1,0 +1,101 @@
+{
+  "id": 1665,
+  "title": "Vidiot into Ultrastudio HD mini?",
+  "slug": "vidiot-into-ultrastudio-hd-mini",
+  "category_id": 9,
+  "tags": [
+    {
+      "id": 22,
+      "name": "capture",
+      "slug": "capture"
+    },
+    {
+      "id": 58,
+      "name": "converter",
+      "slug": "converter"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-11-18T15:26:32.330Z",
+  "views": 924,
+  "like_count": 7,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 7588,
+      "post_number": 1,
+      "username": "rnordac",
+      "name": "",
+      "created_at": "2019-11-18T15:26:32.386Z",
+      "updated_at": "2019-11-18T16:09:51.837Z",
+      "cooked": "<p>Hi! Is there a way to go from the composite output on Vidiot into the Blackmagic Ultrastudio HD mini? I see the Ultrastudio\u2019s analog input is component so I wasn\u2019t sure what solution would be required to get one to talk to the other. I understand the bnc connector is not an issue to adapt to from RCA but read that composite and component signals are incompatible.<br>\nI tried looking through the forum and searching online but I am stuck in a loop without a good understanding.<br>\nI am new to this, coming from audio modular synths and a visual art background. Deeply enjoying the Vidiot and am going to pair it with a Memory Palace, so fun!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7589,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-18T16:12:36.172Z",
+      "updated_at": "2019-11-18T16:12:36.172Z",
+      "cooked": "<p>Welcome to the world of video. From what I\u2019ve read online, BMD Ultrastudio HD Mini accepts component and composite. If using composite, just connect to the first (left most) analog video input. I look forward to seeing your work, once you get it captured.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7642,
+      "post_number": 3,
+      "username": "rnordac",
+      "name": "",
+      "created_at": "2019-11-20T03:33:34.330Z",
+      "updated_at": "2019-11-20T03:33:34.330Z",
+      "cooked": "<p>Thanks so much for that info! This box is great, I got it up and running in 15 minutes and captured some of Vidiot\u2019s output which I then quickly layered and keyed in After Effects! Just a first doodle but I\u2019m excited to start incorporating some of my drawings and animation. This rules <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>\n<p><iframe src=\"https://player.vimeo.com/video/374323038\" width=\"695\" height=\"514\" scrolling=\"no\" frameborder=\"0\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7643,
+      "post_number": 4,
+      "username": "rnordac",
+      "name": "",
+      "created_at": "2019-11-20T03:36:03.206Z",
+      "updated_at": "2019-11-20T15:34:36.319Z",
+      "cooked": "<p>It\u2019s not as affordable as the Intensity Shuttle but I highly recommend this capture solution for anyone who wants something that works straight out of the box without too much trouble\u2026 I wasn\u2019t aware it doesn\u2019t up convert to HD and I am have not yet figured out what the best way to compress for web but I\u2019m sure I\u2019ll figure it out</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 7675,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-20T18:34:08.045Z",
+      "updated_at": "2019-11-20T18:34:08.045Z",
+      "cooked": "<p>Looking good!<br>\nHave you watched this?<br>\n<div class=\"lazyYT\" data-youtube-id=\"mVQETn5Mjp4\" data-youtube-title=\"LZX Video Synth Techniques: Post Production Workflow\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7701,
+      "post_number": 6,
+      "username": "rnordac",
+      "name": "",
+      "created_at": "2019-11-22T06:00:35.029Z",
+      "updated_at": "2019-11-22T06:00:35.029Z",
+      "cooked": "<p>Thanks! Yes but I rewatched it and it was helpful for sure. I\u2019m uprezzing my file to 1080 after compositing in the 480i timeline, but I wonder if there is any point to this? I wonder what the benefits / disadvantages to this would be. I will keep experimenting and try not worry too much about it for now since there\u2019s a lot to learn, I considered changing my capture solution to something that can up convert to 1080 but I think I should chill on the spending, it\u2019s getting out of hand quick</p>\n<p><iframe src=\"https://player.vimeo.com/video/374656900\" width=\"695\" height=\"516\" scrolling=\"no\" frameborder=\"0\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

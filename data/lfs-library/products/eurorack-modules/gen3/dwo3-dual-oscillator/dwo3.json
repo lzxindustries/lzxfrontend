@@ -1,0 +1,269 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "dwo3",
+  "name": "DWO3",
+  "sku": "LZXDWO3",
+  "subtitle": "Dual Wideband Oscillator",
+  "company": "lzx",
+  "price": "499.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 230
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6576427565079",
+  "images": {
+    "frontpanel": "website/dwo3-front-panel.png",
+    "legend": "website/dwo3-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Frequency CV 1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -800,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Frequency CV 2",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 800,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Reset 1",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Aux Frequency CV 1",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Reset 2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Aux Frequency CV 2",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": 900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sine 1",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Square 1",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sine 2",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Square 2",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Double Saw 1",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Triangle 1",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Double Saw 2",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Triangle 2",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Frequency 1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Frequency 2",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Frequency CV Depth 1",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -800,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Range 1",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Frequency CV Depth 2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Range 2",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 125,
+      "part": "control-knob-solid-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for DWO3",
+      "youtube_id": "NnavdrDIJQo"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/dwo3-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/dwo3-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/dwo3-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/pvda_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/vda_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DWO3 Dual Oscillator is a dual utility VCO equally at home as a video pattern source as it is as a provider of motion and movement. Two identical discrete analogue triangle core VCOs with frequencies ranging from 2MHz down to several seconds. Classic wave shapes for video synthesis patternmaking: Square, Sine, Parabola, Double Ramp, Triangle. Eight frequency range / video sync modes: Locked Horizontal, Locked Upper Vertical, Locked Lower Vertical, Seconds, Frames, Free Lower Vertical, Free Upper Vertical, Free Horizontal. Exponential CV input covers a 100:1 tuning ratio for each frequency range. External clock inputs can be used to reset the phase while in locked ranges, or as a gated reset in unlocked ranges. Learn more about DWO3 on our documentation website!"
+}

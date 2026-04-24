@@ -1,0 +1,52 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "lnk",
+  "name": "LNK",
+  "subtitle": "Passive Links",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 42
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7540894138391",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LNK-FPN-REVA_8fe8316e-a6af-4c5d-9d85-bc9a59535ed1.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lnk_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "LNK is a passive utility module for distributing signals within your patch. Cascaded inputs provide up to fifteen outputs from a single input. LNK is offered as a Fully Assembled module, Partial DIY Kit (PCB & Panel Only) or a Full DIY Kit (all components included.) Learn more about LNK on our documentation website!"
+}

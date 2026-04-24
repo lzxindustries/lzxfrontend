@@ -1,0 +1,144 @@
+{
+  "id": 3328,
+  "title": "Fortress troubleshooting?",
+  "slug": "fortress-troubleshooting",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 27,
+      "name": "fortress",
+      "slug": "fortress"
+    },
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2021-07-31T04:13:04.936Z",
+  "views": 590,
+  "like_count": 5,
+  "posts_count": 10,
+  "posts": [
+    {
+      "id": 20738,
+      "post_number": 1,
+      "username": "mfrosbot",
+      "name": "Maxwell Rosner",
+      "created_at": "2021-07-31T04:13:05.039Z",
+      "updated_at": "2021-07-31T04:13:05.039Z",
+      "cooked": "<p>Hello,</p>\n<p>I recently added a Fortress to my rack (in addition to a Bridge and a Memory Palace) and cant tell if I\u2019ve missed a step in setup or if I need to configure the Memory Palace a certain way to display the Fortress\u2019s oscillators, but I cannot get the fortress\u2019s oscillators to create any patterns.</p>\n<p>I\u2019ve zeroed all of the switches and faders on the fortress and connected the fortress\u2019s RGB output to the Memory Palace\u2019s RGB inputs but the oscillator faders do not appear to be doing anything (no horizontal or vertical bars from osc 1 / osc 2, no lfo output from osc 3). If I adjust the ADC faders the fortress will output various solid colors but there does not seem to be any pattern generation.</p>\n<p>Is there a way for me to troubleshoot this effectively? I just received the module and don\u2019t want to assume that the unit is faulty and want to believe that I just need to tweak a setting somewhere either on the fortress or MP.</p>\n<p>Thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20740,
+      "post_number": 2,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2021-07-31T04:21:36.496Z",
+      "updated_at": "2021-07-31T04:21:36.496Z",
+      "cooked": "<p>How are you connecting the Sync I/O on the back of Fortress with your Memory Palace?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20742,
+      "post_number": 3,
+      "username": "mfrosbot",
+      "name": "Maxwell Rosner",
+      "created_at": "2021-07-31T06:06:58.158Z",
+      "updated_at": "2021-07-31T06:06:58.158Z",
+      "cooked": "<p>I initially had the sync out from the memory palace (sync source: internal) connected to the upper sync in rca jack on the fortress (loop thru: sync), but have since tried the other sync in jack on the fortress and the other jack/switch options on the memory palace to no avail. Just a white screen when I connect fortress rgb to memory palace rgb. My understanding is that an rca cable is an rca cable and that there aren\u2019t special types, so I swapped out a different cable and still didn\u2019t have any luck. I tried both in PAL and NTSC, same result. Thoughts?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 20748,
+      "post_number": 4,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2021-07-31T13:17:21.633Z",
+      "updated_at": "2021-07-31T23:06:19.758Z",
+      "cooked": "<p>The three ADCs are normalled to the three oscillators, via the attenuator above the slider.<br>\nSet the left two sliders halfway up, third slider down, then turn the 4th and 5th knobs to full - see what you get now.<br>\nYou can also take the separate oscillator outputs and run them in to something else, just to see what they\u2019re doing too.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20749,
+      "post_number": 5,
+      "username": "mfrosbot",
+      "name": "Maxwell Rosner",
+      "created_at": "2021-07-31T15:59:16.127Z",
+      "updated_at": "2021-07-31T15:59:16.127Z",
+      "cooked": "<p>Huh, after trying just about every combo of slider/knob values I could imagine last night, I just shut the rack down and came back this morning, tried what you described and seem to be getting pattern generation. Not sure what changed between last night and this morning but thank you for the suggestion!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 20750,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-07-31T17:15:48.047Z",
+      "updated_at": "2021-07-31T23:06:19.694Z",
+      "cooked": "<p>The correct sync settings are:<br>\nMemory Palace - set to internal sync; sync output to either rear RCA jack on Fortress; in menu, source set to RGB<br>\nFortress - sync from Memory Palace to either input; switch set to terminate</p>\n<p>After that you can patch any of Fortress\u2019s outputs to the RGB inputs on Memory Palace</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20752,
+      "post_number": 7,
+      "username": "mfrosbot",
+      "name": "Maxwell Rosner",
+      "created_at": "2021-07-31T23:05:50.648Z",
+      "updated_at": "2021-07-31T23:05:50.648Z",
+      "cooked": "<p>Thank you! So if I were to flip the switch on fortress from terminate to loop thru and then add another module to my rack that needs to receive a sync input (ie. diver or tbc2), would I be able to use the other sync jack on the fortress as a thru jack to connect to additional modules? How would I go about syncing additional modules? Sorry if this has been covered a million times already!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 20753,
+      "post_number": 8,
+      "username": "jwsmithwick1",
+      "name": "",
+      "created_at": "2021-07-31T23:46:24.070Z",
+      "updated_at": "2021-07-31T23:46:24.070Z",
+      "cooked": "<p>Yes, you are correct. That is one way you could additional modules. You could also add modules between the MP and the Fortress. Some modules send stronger sync signals than others. That is why it is recommended to sync the Fortress to the MP and not the other way around.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 20756,
+      "post_number": 9,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2021-08-01T03:02:34.902Z",
+      "updated_at": "2021-08-01T03:02:34.902Z",
+      "cooked": "<p>Fortress doesn\u2019t generate sync on its own.  It has to receive it from a sync signal and you can then chain it to another module from there.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 20758,
+      "post_number": 10,
+      "username": "jwsmithwick1",
+      "name": "",
+      "created_at": "2021-08-01T06:49:43.518Z",
+      "updated_at": "2021-08-01T07:08:38.805Z",
+      "cooked": "<p>Word. Or no sync at all. <img src=\"https://emoji.discourse-cdn.com/twitter/laughing.png?v=10\" title=\":laughing:\" class=\"emoji\" alt=\":laughing:\"> Because of the termination switch, I keep Fortress at the end of my sync chain. I know it\u2019s not necessary. FWIW, I haven\u2019t had any issues with it set up that way.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    }
+  ]
+}

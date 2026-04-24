@@ -1,0 +1,79 @@
+{
+  "id": 352,
+  "title": "Vidiot stacked knobs sticky",
+  "slug": "vidiot-stacked-knobs-sticky",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-09-05T15:02:15.879Z",
+  "views": 472,
+  "like_count": 0,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 1275,
+      "post_number": 1,
+      "username": "haveahapyday",
+      "name": "",
+      "created_at": "2018-09-05T15:02:15.952Z",
+      "updated_at": "2018-09-05T15:02:15.952Z",
+      "cooked": "<p>hi there! (hopefully this is the right place for this)</p>\n<p>just got my vidiot in yesterday, and I cannot be more excited! one thing i noticed though is that when i twist some of the bottom stacked knobs, the upper knob will also rotate as well. is this something that will go away with use? or do i need to send this back to get looked at?</p>\n<p>thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1276,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-09-05T15:25:41.166Z",
+      "updated_at": "2018-09-05T15:25:41.166Z",
+      "cooked": "<p>Hey there! There\u2019s supposed to be a nylon washer between the two knobs, which prevents this.  In our rush to get units out last week we may have forgotten to install them.  If you could contact us via repair ticket with your address (Contact -&gt; Repair) on the website and description of the issue, we\u2019ll send you some of the washers.  In the meantime, if you slightly pull the top knob up, you should be able to spin them freely (temporary fix until we get you the washers.)</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1303,
+      "post_number": 3,
+      "username": "haveahapyday",
+      "name": "",
+      "created_at": "2018-09-05T21:48:23.157Z",
+      "updated_at": "2018-09-05T21:52:05.979Z",
+      "cooked": "<p>thanks for getting back to me so quick! i don\u2019t see a specific repair section under Contact, should i just submit the ticket using the form under contact us?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1305,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-09-05T22:06:31.835Z",
+      "updated_at": "2018-09-05T22:06:31.835Z",
+      "cooked": "<p>Yes, that\u2019s fine!  Or just send e-mail to <a href=\"mailto:sales@lzxindustries.net\">sales@lzxindustries.net</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 1313,
+      "post_number": 5,
+      "username": "haveahapyday",
+      "name": "",
+      "created_at": "2018-09-06T00:26:53.967Z",
+      "updated_at": "2018-09-06T00:26:53.967Z",
+      "cooked": "<p>ok will do! thank you very much.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

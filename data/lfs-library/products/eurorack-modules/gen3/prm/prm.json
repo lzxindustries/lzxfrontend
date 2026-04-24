@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "prm",
+  "name": "PRM",
+  "subtitle": "Programmable Rectifier & Multiplier",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 75
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7541021147159",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/POT-FPN.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/PRM-FPN.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/pot_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/prm_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "PRM is a multi-purpose analog operator for rectifying and multiplying signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PRM is capable of many basic processing steps, such as half wave rectification, full wave rectification, four-quadrant multiplication, two-quadrant multiplication, and non-linear wave shaping. PRM is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels. Learn more about PRM on our documentation website!"
+}

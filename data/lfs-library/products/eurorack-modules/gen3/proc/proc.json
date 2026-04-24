@@ -1,0 +1,237 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "proc",
+  "name": "Proc",
+  "sku": "LZXPROC",
+  "subtitle": "Triple Voltage Processor",
+  "company": "lzx",
+  "price": "259.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 110
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6766673068055",
+  "images": {
+    "frontpanel": "website/proc-front-panel.png",
+    "legend": "website/proc-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "A1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Proc 1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Proc 2",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A3",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B3",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Proc 3",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "B1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "C1",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "B2",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "C2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "B3",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": 125,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "C3",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": 125,
+      "part": "control-knob-outline-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for Proc",
+      "youtube_id": "FeRNg87wrlY"
+    },
+    {
+      "name": "LZX Proc: Video Synth Tools & Techniques",
+      "youtube_id": "E4a8TNy1OtI"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX8HPProcFrontpanelColorGraphicDarkSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/proc-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/proc-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/proc-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/pcs_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/proc_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/proc_fpn_revb.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/proc_mk2_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Proc is a triple voltage processor and summing amplifier module that provides continuous control over attenuation, inversion, and bias. It's a flexible tool in any modular video system that allows voltage control over signal mixing, conversion, and modulation. Proc offers essential functions for combining and transforming video signals and modulation sources. Learn more about Proc on our documentation website!"
+}

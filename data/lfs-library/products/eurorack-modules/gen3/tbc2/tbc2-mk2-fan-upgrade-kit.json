@@ -1,0 +1,108 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "tbc2-mk2-fan-upgrade-kit",
+  "name": "TBC2 Mk2 Fan Upgrade Kit",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7171722870807",
+  "images": {
+    "frontpanel": "website/tbc2_mk2_fan_kit.png"
+  },
+  "downloads": [
+    {
+      "name": "TBC2 Mk2 Fan Upgrade Kit Instructions",
+      "path": "downloads/940010-D0001-tbc2-mk2-low-noise-fan-upgrade-kit-instructions.pdf",
+      "file_type": "pdf"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/tbc2-expander-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-expander-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-gen3-frontpanel-only.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2_mk2_fan_kit.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/940010-D0001-tbc2-mk2-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/940020-D0001-tbc2-mk1-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk2.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.3.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.zip",
+        "extension": "zip"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "This DIY kit is for TBC2 Mk2 (Gen3) units only. Everything is included to upgrade your fan to this silent version. Illustrated instructions are provided."
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "gift-card",
+  "name": "Gift Card",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1725059989568",
+  "images": {
+    "frontpanel": "website/gift-card.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/gift-card.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/giftcertnew.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Shopping for someone else but not sure what to give them? Interested in supporting an independent company making experimental tools for video synthesis? Buying gift cards is the answer! Gift cards are delivered by email and contain instructions to redeem them at checkout. Our gift cards have no additional processing fees."
+}

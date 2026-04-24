@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../../schemas/product.schema.json",
+  "slug": "alternate-frontpanel",
+  "name": "Alternate Frontpanel",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6690204811287",
+  "images": {
+    "frontpanel": "website/expedition-black-panels-group.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/doorwayfpn_black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/expedition-black-panels-group.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/passage-front-panel-black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/pendulum-front-panel-black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/prismatic-ray-front-panel-black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/sensory-translator-front-panel-black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/staircase-front-panel-black.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-gen3-frontpanel-only_c0d2af46-ba5d-4435-a8f0-f51b1a8523c9.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/war-of-the-ants-front-panel-black.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Alternate front panels for legacy modules. Installation will require a knurled nut driver and experience with electronics disassembly and reassembly."
+}

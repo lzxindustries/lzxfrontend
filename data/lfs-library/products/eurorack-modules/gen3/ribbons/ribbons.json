@@ -1,0 +1,239 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "ribbons",
+  "name": "Ribbons",
+  "sku": "LZXRIBBONS",
+  "subtitle": "3-Bit Digitizer",
+  "company": "lzx",
+  "price": "299.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 125
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6886906134551",
+  "images": {
+    "frontpanel": "website/ribbons-front-panel.png",
+    "legend": "website/ribbons-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Center CV",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Span CV",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Enable",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "DAC",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D0",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Disable",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Inverted DAC",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "ADC",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Window Key",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Center",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": true,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Span",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": true,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Center CV Depth",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": true,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Span CV Depth",
+      "ref_des": "P4",
+      "is_gain": true,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "Lars Explains Ribbons",
+      "youtube_id": "htC_0-INC7k"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/RibbonsSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons-square.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/ribbons02.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons03.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons04.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons05.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons06.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons07.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/ribbons10.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/ribbons_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/ribbons_fpn_revb.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Ribbons is a 3-bit digitizer module for your EuroRack video synthesizer. Slice your video sources and waveforms into eight discrete bands which invoke the look of primitive digital graphics and video colorizers from the 1970s and 1980s. Implemented with 9 high speed analog comparators and CMOS logic, the digitization technique employed by Ribbons lacks any pixel clock or quantized time base. This reveals a surreal and silky quality to the image under modulation, which we feel is absent from modern digital video. Learn more about Ribbons on our documentation website!"
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "double-vision-system",
+  "name": "Double Vision System",
+  "subtitle": "Modular Video Instrument",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 84,
+    "mounting_depth_mm": 42
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/6890355163159",
+  "images": {
+    "frontpanel": "website/double-vision-system-square.png"
+  },
+  "videos": [
+    {
+      "name": "Double Vision For The Future",
+      "youtube_id": "OmpZMzMyfYs"
+    },
+    {
+      "name": "Getting started with video synthesis 📺✨ LZX Double Vision review from a synth guy",
+      "youtube_id": "LN3HPXNjxnk"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/double-vision-expander-168-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-expander-168.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-168-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-168.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-6u-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-6u.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-square_8b246eb5-f3b1-4aa9-a617-446ca6f002f3.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Now available in either the original 3U case, or an optional 6U case with room to grow! Are you a human from Planet Earth who is desperate for even MORE visual stimulation?! Double Vision System is an 8-module video synthesis bundle capable of analog SD/HD video generation and effects with two external input channels. Synthesize analog graphics using multiple oscillators and shape generators. Mounting rack, power supply, and all cables are included, so you may start freaking out immediately. 8 Modules TBC2 TBC2 Expander DWO3 DSG3 Stairs Ribbons FKG3 ESG3 Rack & Power Vessel 84 EuroRack Case w/DC & Sync Distribution Bus or Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable (4) RCA Sync Cable (7) DC Power Cable (6) Patch Cable (3) RCA Video Cable (1) Video Knob Pin"
+}

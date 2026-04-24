@@ -1,0 +1,397 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "switcher",
+  "name": "Switcher",
+  "sku": "LZXSWITCHER",
+  "subtitle": "Dual RGB Multiplexer",
+  "company": "lzx",
+  "price": "499.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 18,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 210
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6886906396695",
+  "images": {
+    "frontpanel": "website/switcher-front-panel.png",
+    "legend": "website/switcher-front-line-art.png"
+  },
+  "features": [
+    {
+      "name": "Route Four Sources to Two Outputs",
+      "description": "A  control block familiar to anyone who has used broadcast consoles and video mixers.  Illuminated pushbuttons allow fast manual selection.  Patch the two outputs to FKG3 to complete an A/B switching workflow -- or think outside the box and define the signal path in any way you choose.",
+      "topic": "main"
+    },
+    {
+      "name": "Make Multi Pane Masks With Video Rate Control",
+      "description": "Behind Switcher's six control inputs are dedicated hard key generators that slice the input signals at 50% gray level.   Use ramps, shapes, and video sources to control the multiplexers and explore a world of multi-panel compositions and texture collages.",
+      "topic": "main"
+    },
+    {
+      "name": "Programmable Routing For Any Part Of The Patch",
+      "description": "When interpreted in arbitrary ways, Switcher can handle many tasks besides switching RGB signals.  Use it to select variations of a modulation bus between oscillators, cycle thru ramp generator angles or wave shapes, or different return paths from a feedback loop.",
+      "topic": "main"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "1R",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -1500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "2R",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "3R",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "4R",
+      "ref_des": "J10",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "AR",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "BR",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 1500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Select A0",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -1500,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Select A1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Select B0",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Select B1",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Disable A",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 900,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Disable B",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": 1500,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "1G",
+      "ref_des": "J13",
+      "is_input": true,
+      "is_output": false,
+      "x": -1500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "2G",
+      "ref_des": "J14",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "3G",
+      "ref_des": "J15",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "4G",
+      "ref_des": "J16",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "AG",
+      "ref_des": "J17",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "BG",
+      "ref_des": "J18",
+      "is_input": false,
+      "is_output": true,
+      "x": 1500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "1B",
+      "ref_des": "J19",
+      "is_input": true,
+      "is_output": false,
+      "x": -1500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "2B",
+      "ref_des": "J20",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "3B",
+      "ref_des": "J21",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "4B",
+      "ref_des": "J22",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "AB",
+      "ref_des": "J23",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "BB",
+      "ref_des": "J24",
+      "is_input": false,
+      "is_output": true,
+      "x": 1500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "A1",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1200,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "A2",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "A3",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "A4",
+      "ref_des": "S4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1200,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "B1",
+      "ref_des": "S5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1200,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "B2",
+      "ref_des": "S6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "B3",
+      "ref_des": "S7",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "B4",
+      "ref_des": "S8",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1200,
+      "y": -875,
+      "part": null
+    }
+  ],
+  "videos": [
+    {
+      "name": "Switched Pattern Collage",
+      "youtube_id": "3rgfR_P0RDc"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/SwitcherSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/switcher-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/switcher-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/switcher-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/switcher_fpn_revb.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/switcher_fpn_revb_uv_printed_color_print.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Switcher is a dual RGB multiplexer inspired by classic broadcast consoles and video mixers. Use Switcher's illuminated buttons or control voltages to select between four sets of three inputs at two separate outputs. Perfect for alternating between inputs or patches in performance, or for combining disparate signals in complex ways. Switcher can act as the last stop before your encoder(s) or the first stop before your processing path--or both. Routing, organizing, and combining signals has never been easier or offered so many creative possibilities. Learn more about Switcher on our documentation website!"
+}

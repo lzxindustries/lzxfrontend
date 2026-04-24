@@ -1,0 +1,163 @@
+{
+  "id": 4827,
+  "title": "ESG3 issue with the picture splitting in two when in 1080p 25fps",
+  "slug": "esg3-issue-with-the-picture-splitting-in-two-when-in-1080p-25fps",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 102,
+      "name": "esg3",
+      "slug": "esg3"
+    }
+  ],
+  "created_at": "2024-08-19T18:27:11.094Z",
+  "views": 285,
+  "like_count": 3,
+  "posts_count": 12,
+  "posts": [
+    {
+      "id": 34757,
+      "post_number": 1,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2024-08-19T18:27:11.159Z",
+      "updated_at": "2024-08-19T18:41:05.027Z",
+      "cooked": "<p>Hi! It\u2019s me again\u2026</p>\n<p>I\u2019ve been trying to get my setup working with the new HD components and as usual the change doesn\u2019t go without struggle.</p>\n<p>The TBC2, ESG3, BMD Desktop Video and Media Express are all set to capture/operate in 1080p 25fps and by setting it up like this the picture gets divided in two and it\u2019s wiggling like a mofo.</p>\n<p>This issue only presents itself in these settings and my only issue with it really is the astronomical file sizes.</p>\n<p>I\u2019m wondering whether this is bcs of the Ultrastudio HD Mini or the ESG3.</p>\n<p>Anyhow, some help wpuld be greatly appreciated.<br>\nHere are some pictures of the settings in case there is something obviously wrong with them.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/04adb51f294120697e28e5620975e12920b7e5ce.jpeg\" data-download-href=\"/uploads/short-url/Fo4K3Kl9jBIZgxAoikTL7gS4RU.jpeg?dl=1\" title=\"60da85dccaf3806008d5ad1e85eaccf82e7a2e91351780551d01f26c33097c0b\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/04adb51f294120697e28e5620975e12920b7e5ce.jpeg\" alt=\"60da85dccaf3806008d5ad1e85eaccf82e7a2e91351780551d01f26c33097c0b\" data-base62-sha1=\"Fo4K3Kl9jBIZgxAoikTL7gS4RU\" width=\"690\" height=\"388\" data-dominant-color=\"726F6C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">60da85dccaf3806008d5ad1e85eaccf82e7a2e91351780551d01f26c33097c0b</span><span class=\"informations\">1600\u00d7900 182 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/df0b77fd375219ee8193a7ca4c785de6ac58c4c2.jpeg\" data-download-href=\"/uploads/short-url/vP92WBdymsjsXscpEnwPymkBtgm.jpeg?dl=1\" title=\"1069e4428b2dbbc8ee9f06e8689dc62dd6134c1240c62418a58a7a3fb8852771\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/df0b77fd375219ee8193a7ca4c785de6ac58c4c2.jpeg\" alt=\"1069e4428b2dbbc8ee9f06e8689dc62dd6134c1240c62418a58a7a3fb8852771\" data-base62-sha1=\"vP92WBdymsjsXscpEnwPymkBtgm\" width=\"690\" height=\"388\" data-dominant-color=\"4F472F\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">1069e4428b2dbbc8ee9f06e8689dc62dd6134c1240c62418a58a7a3fb8852771</span><span class=\"informations\">1600\u00d7900 187 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/093d625ef4bc506f71f05c3aa1d8f3f6ba9646c6.jpeg\" data-download-href=\"/uploads/short-url/1jJOmTtlF6GQt78KiDDW9L6KaKG.jpeg?dl=1\" title=\"660c6eb62335849002f20e395c0c02e38b46b055101714547d5dcef2ee189db3\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/093d625ef4bc506f71f05c3aa1d8f3f6ba9646c6.jpeg\" alt=\"660c6eb62335849002f20e395c0c02e38b46b055101714547d5dcef2ee189db3\" data-base62-sha1=\"1jJOmTtlF6GQt78KiDDW9L6KaKG\" width=\"690\" height=\"388\" data-dominant-color=\"4E4B43\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">660c6eb62335849002f20e395c0c02e38b46b055101714547d5dcef2ee189db3</span><span class=\"informations\">1600\u00d7900 67.4 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/54fecfde160bd9203d38e09f95e53e5ddaa9de8b.jpeg\" data-download-href=\"/uploads/short-url/c7U2sv3prWVPm6luz6XGMgvvANB.jpeg?dl=1\" title=\"621475e373e27d2bcb2f64a40c1dd9a38570fffd3e701c416972f74383114975\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/54fecfde160bd9203d38e09f95e53e5ddaa9de8b.jpeg\" alt=\"621475e373e27d2bcb2f64a40c1dd9a38570fffd3e701c416972f74383114975\" data-base62-sha1=\"c7U2sv3prWVPm6luz6XGMgvvANB\" width=\"690\" height=\"388\" data-dominant-color=\"2E2A24\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">621475e373e27d2bcb2f64a40c1dd9a38570fffd3e701c416972f74383114975</span><span class=\"informations\">1600\u00d7900 191 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/5600ba0363b87cf313f471d51a8be675ef6d6795.jpeg\" data-download-href=\"/uploads/short-url/cgOCoi2k372mgZye8smAWpETddj.jpeg?dl=1\" title=\"eeccc75f74c730f5c393fb5e73fc7e72533a3407c2f1d6224c931a2ad26c9d93\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/5600ba0363b87cf313f471d51a8be675ef6d6795.jpeg\" alt=\"eeccc75f74c730f5c393fb5e73fc7e72533a3407c2f1d6224c931a2ad26c9d93\" data-base62-sha1=\"cgOCoi2k372mgZye8smAWpETddj\" width=\"690\" height=\"388\" data-dominant-color=\"5B5738\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">eeccc75f74c730f5c393fb5e73fc7e72533a3407c2f1d6224c931a2ad26c9d93</span><span class=\"informations\">1600\u00d7900 143 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 34758,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2024-08-20T17:00:40.030Z",
+      "updated_at": "2024-08-20T17:00:40.030Z",
+      "cooked": "<p>This is certainly an unusual result. I haven\u2019t seen the screen splitting that you are getting.<br>\nWhy do you need to stick with 1080p25 if all other formats work correctly? If you use ESG3 as your sync source then it doesn\u2019t matter what format you are sending to TBC2.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 34759,
+      "post_number": 3,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2024-08-20T17:30:05.111Z",
+      "updated_at": "2024-08-20T17:30:05.111Z",
+      "cooked": "<p>It is weird indeed.</p>\n<p>I\u2019ve planned sticking with the 25fps because to me it makes sense as all of my video projects and the source material are in 25fps.</p>\n<p>I tried switching to 2398, 2997, 24, 25, and 30fps and they all split the screen as well.<br>\nNot sure how I missed this before. None of the usable (for me) options are working.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 34760,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2024-08-20T18:58:38.414Z",
+      "updated_at": "2024-08-20T18:58:38.414Z",
+      "cooked": "<p>Does it behave the same if you send a signal other than ESG3 into the UltraStudio HD Mini?<br>\nHow about when you monitor ESG3 using some other device?<br>\nHow are you powering ESG3 and what modules share the power? What is your sync setup?<br>\nHave you tried isolating the ESG3 on DC power and monitoring its output with nothing patched into the front or back?<br>\nWhat is the serial number on the back of your ESG3?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 34788,
+      "post_number": 5,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2024-08-28T16:28:25.089Z",
+      "updated_at": "2024-08-28T16:28:56.836Z",
+      "cooked": "<p>Does the image look split on the TBC2 preview screen?  If so, it\u2019s a problem with your video source.</p>\n<p>If <strong>not</strong>, does the image look split if you patch your ESG3 output directly to a video monitor or TV? If so, it\u2019s a bug with TBC2 that we have not seen.</p>\n<p>It wouldn\u2019t be possible for ESG3 itself to produce an artifact like this.  My guess is it\u2019s an issue with the source playback \u2013 it\u2019s a stereoscopic file or something like that.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 34805,
+      "post_number": 6,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2024-09-04T16:17:35.858Z",
+      "updated_at": "2024-09-04T16:17:35.858Z",
+      "cooked": "<p>Thanks for the replies! I\u2019m too busy atm to check out these tips but I will as soon as possible and report back then.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 35044,
+      "post_number": 7,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2025-01-26T13:15:28.505Z",
+      "updated_at": "2025-01-27T15:58:09.977Z",
+      "cooked": "<p>It\u2019s been a while and I can finally start to trouble shoot this thing. To avoid wasting days if not weeks trying to find a proper order, I\u2019d like to ask if there is a preferable order and way of syncing the modules in a way that would work properly with the HD for external video processing AND with SD for when using the setup for Rutt-Etra type of stuff?</p>\n<p>The modules with sync inputs are the TBC2, VC, ESG3, WOTA and the Navigator.<br>\nAt this point it would be imaginable that some kind of consensus about these things might exist.</p>\n<p>As for the file being stereoscopic etc, that is not the case. It\u2019s a basic video file with nothing special going on and I use the Andor for streaming it.</p>\n<p>I now have only the TBC2 and ESG3 in my setup. The sync is going trom the ESG to the TBC. I have the dip switches set to 10110000 as the manual states is the configuration for 1080 25p. The picture is still divided in two. I have also tried it with different source material and no dice.</p>\n<p>The picture on the TBC\u2019s display is not split in two.</p>\n<p>Here is the setup:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fcfa7f08a88de77393039c3a18d90bad275a748e.jpeg\" data-download-href=\"/uploads/short-url/A5X0vGhhsd3Ieh0T6xUA0TdZauq.jpeg?dl=1\" title=\"e015a9ca6045631a76e138ea1dc0a9265ba2a0b42b4de5746904f1b0f942c8e7-1\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fcfa7f08a88de77393039c3a18d90bad275a748e.jpeg\" alt=\"e015a9ca6045631a76e138ea1dc0a9265ba2a0b42b4de5746904f1b0f942c8e7-1\" data-base62-sha1=\"A5X0vGhhsd3Ieh0T6xUA0TdZauq\" width=\"690\" height=\"388\" data-dominant-color=\"746050\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">e015a9ca6045631a76e138ea1dc0a9265ba2a0b42b4de5746904f1b0f942c8e7-1</span><span class=\"informations\">1600\u00d7900 349 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 35046,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2025-01-27T17:40:39.154Z",
+      "updated_at": "2025-01-27T17:40:39.154Z",
+      "cooked": "<p>Thanks for the update!<br>\nDoes it behave the same if you send a signal other than ESG3 into the UltraStudio HD Mini?<br>\nHow about when you monitor ESG3 using some other device?<br>\nHow are you powering ESG3 and what modules share the power?<br>\nHave you tried isolating the ESG3 on DC power and monitoring its output with nothing patched into the front or back?<br>\nWhat is the serial number on the back of your ESG3?</p>\n<p>There is no preferred order for syncing your modules, so long as ESG3 is supplying the sync. Visual Cortex, Navigator, Shapechanger and WotA are not designed to sync in HD, so you might want to sync them together separately in NTSC\u2013or keep your whole system in NTSC, if you want to patch them with your TBC2 and ESG3.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 35049,
+      "post_number": 9,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2025-01-28T19:51:38.174Z",
+      "updated_at": "2025-01-28T19:51:38.174Z",
+      "cooked": "<p>Unfortunately I don\u2019t have any HD sources besides the ESG3 that I could feed into the UltraStudio HD Mini, or any other way to monitor the ESG3\u2019s output.</p>\n<p>The whole system is powered by the Doepfer 9-U case power supply, I don\u2019t have a DC power supply to try with the ESG3.</p>\n<p>The ESG3 serial number is 0067.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 35050,
+      "post_number": 10,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2025-01-28T20:45:07.167Z",
+      "updated_at": "2025-01-28T20:45:07.167Z",
+      "cooked": "<p>That\u2019s a very early ESG3. Has the firmware ever been updated, to your knowledge?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 35051,
+      "post_number": 11,
+      "username": "Strutter",
+      "name": "Timo Juntunen",
+      "created_at": "2025-01-29T07:52:08.269Z",
+      "updated_at": "2025-01-29T08:12:56.253Z",
+      "cooked": "<p>I have no knowledge about that, other than that I haven\u2019t. I will look into it right now.</p>\n<p>edit: Judging by the stuff chatgpt told me about the procedure I would likely make a better job performing an open-heart surgery than getting this done\u2026</p>\n<p>LZX could provide a video tutorial on how this is done since a lot of people have zero knowledge about this stuff.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 10,
+      "is_wiki": false
+    },
+    {
+      "id": 35054,
+      "post_number": 12,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2025-01-29T16:39:08.827Z",
+      "updated_at": "2025-01-29T16:39:08.827Z",
+      "cooked": "<p>It is a procedure we perform at LZX HQ. Could you send an email to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> to arrange an RMA?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 11,
+      "is_wiki": false
+    }
+  ]
+}

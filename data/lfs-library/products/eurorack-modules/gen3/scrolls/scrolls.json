@@ -1,0 +1,349 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "scrolls",
+  "name": "Scrolls",
+  "subtitle": "Motion Controlled Dual Ramp Generator",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 150
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/6925034356759",
+  "images": {
+    "frontpanel": "website/scrolls-frontpanel.png",
+    "legend": "website/scrolls-legend.png"
+  },
+  "features": [
+    {
+      "name": "Motion Control In Two Dimensions",
+      "description": "Most analog video synthesis patches begin with horizontal and vertical ramp waveforms.  These generators provide the synthesist with a method of identifying 2D coordinates on the screen.  With motion controlled ramps, these 2D coordinates can be repositioned and animated at their source – causing the entire resulting video art pattern to animate.  ",
+      "topic": "main"
+    },
+    {
+      "name": "Dedicated Low Frequency Outputs",
+      "description": "In addition to motion control over the internal video waveforms, Scrolls presents four dedicated low frequency waveform generators.  These signals are synchronous with the movement of the internal ramps, and provide ways to animate other parts of your patch in tempo with the video pattern.",
+      "topic": "main"
+    },
+    {
+      "name": "Autonomous Animation Paths",
+      "description": "Random and Journey modes provide methods for generating the illusion of autonomous entities within the space of your video composition.  Watch your video pattern slowly explore around the screen at random directions, or teleport in strobing patterns of random phases.  In all of these modes, the synthesist has control over a basic clock speed, which allows even chaos to step to the beat.",
+      "topic": "main"
+    },
+    {
+      "name": "HH. Double Horizontal Mode",
+      "description": "Both waveform generators are horizontal ramps with separate phase controls.",
+      "topic": "patch"
+    },
+    {
+      "name": "VV. Double Vertical Mode",
+      "description": "Both waveform generators are vertical ramps with separate phase controls.",
+      "topic": "patch"
+    },
+    {
+      "name": "HV. Horizontal & Vertical Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.",
+      "topic": "patch"
+    },
+    {
+      "name": "PP. Ping Pong Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.  The motion control algorithm uses triangle waveforms, for the bouncing DVD player logo effect.",
+      "topic": "patch"
+    },
+    {
+      "name": "O. Orbital Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.  The motion control algorithm uses a quadrature sine wave generator to animate the ramps in an elliptical orbit.  Phase1 controls motion speed and Phase2 controls motion depth.",
+      "topic": "patch"
+    },
+    {
+      "name": "J. Journey Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.  The motion control algorithm is similar to HV mode, but the manner in which the speed and direction of movement is based on polar instead of cartesian coordinates.  Phase1 controls motion angle and Phase2 controls motion velocity.",
+      "topic": "patch"
+    },
+    {
+      "name": "C. Corner Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.  The motion control algorithm is similar to O mode, but utilizes trapezoidal rather than sinusoidal waveforms.  Phase1 controls motion speed and Phase2 controls motion depth.",
+      "topic": "patch"
+    },
+    {
+      "name": "R?. Random Mode",
+      "description": "The first ramp generator is horizontal and the second ramp generator is vertical.  The motion control algorithm is different depending on whether Phase2 is counter-clockwise or clockwise from it's midpoint. The clockwise position is random position and speed and the counter-clockwise position is  random angle of movement.  Phase1 controls motion speed and Phase2 controls motion depth.",
+      "topic": "patch"
+    },
+    {
+      "name": "Speed Mode",
+      "description": "There are three motion speed modes.  From toggle switch positions, left to right: Motion Disabled, Slow Range, Fast Range.",
+      "topic": "patch"
+    },
+    {
+      "name": "Waveform Mode",
+      "description": "There are three waveform modes. From toggle switch positions, left to right: Wrap, Blank, and Mirror.  In Wrap mode, the ramp phase scrolls continuously, repeating across the screen.  In Blank mode, the ramp phase may be moved entirely off screen.  In Mirror mode, the ramp phase inverts on even numbered cycles, creating an oversized quadrilateral space that is 2x2 screens in size. When used in HD timing formats, there will be a 20ns black line present when the ramp reflects from positive to negative slopes.  This is expected behavior.",
+      "topic": "patch"
+    },
+    {
+      "name": "Should I Update My Firmware?",
+      "description": "If your serial number is below #50, you should update your firmware to version 1.0.1, available for download on this page.  This will fix compatibility issues with progressive sync timings. Firmware update instructions are included in the download.",
+      "topic": "system"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "Phase 1 CV Input",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -800,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Phase 2 CV Input",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 800,
+      "y": 0,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "LFO 1A Output",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "LFO 1B Output",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "LFO 2A Output",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "LFO 2B Output",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Ramp 1 Output",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Pulse 1 Output",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Ramp 2 Output",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Pulse 2 Output",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Saw 1 Output",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Tri 1 Output",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Saw 2 Output",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Tri 2 Output",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Phase 1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": true,
+      "x": -800,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Phase 2",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": true,
+      "x": 800,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Phase CV Depth 1",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": true,
+      "x": -800,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Phase CV Depth 2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": true,
+      "x": 800,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Speed Mode",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Waveform Mode",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1250,
+      "part": null
+    },
+    {
+      "name": "Primary Mode",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": 0,
+      "part": null
+    }
+  ],
+  "downloads": [
+    {
+      "name": "Scrolls Firmware 1.0.1",
+      "path": "downloads/scrolls-1.0.1-stm32f411rc.zip",
+      "file_type": "zip"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/scrolls-frontpanel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/scrolls-frontpanel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/scrolls-legend.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzxgfx_scrolls_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/scrolls-1.0.1-stm32f411rc.zip",
+        "extension": "zip"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Scrolls is a motion controlled dual ramp generator module for EuroRack video synthesizers. It provides the synthesist with full control over the screen positioning of its high precision HD/SD dual video waveform generators. Front panel switches provide access to 72 combinatorial states addressing movement speed, waveform blanking and mirroring. Advanced motion paths are offered, from elliptical orbit to random exploration. Scrolls allows you to animate patterns or keys in new directions with its continuously scrolling ramps. This is a totally unique source of modulation in the world of video synthesis. Learn more about Scrolls on our documentation website!"
+}

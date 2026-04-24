@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "rack-84hp",
+  "name": "Rack 84HP",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6782464294935",
+  "images": {
+    "frontpanel": "website/rack-84.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX3URack.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Rack84HPIllustration.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/rack-84.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "LZX Rack 84HP is a barebones module mounting solution designed for desktop use or mounting into standard 19\" rack cases and enclosures. Combine it with DC Distro 3A and you're ready to install and use any LZX Industries modules. * Sturdy 3mm Aluminum mounting ears, black powder coated * Vector rails with threaded M2.5 inserts * 100 M2.5 module mountings screws"
+}

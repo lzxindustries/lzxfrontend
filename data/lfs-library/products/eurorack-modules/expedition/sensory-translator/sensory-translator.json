@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "sensory-translator",
+  "name": "Sensory Translator",
+  "sku": "LZXST",
+  "description": "The Sensory Translator is a five-channel envelope follower module. Since each of the module’s channels is essentially a band-passed frequency band, the resulting control voltage evolves from the volume of each band. Use the external audio input, microphone, or both at once to turn the sounds around you into five channels of CV control over your patch. Listen to the room. The Sensory Translator comes equipped with an omnidirectional microphone that can hear more than you can! Specs and features: Omnidirectional electret microphone mounted on front panel Three preamp gain settings External audio input selectable between line and modular level voltages 2-input mixer including EQ with Bass and Treble levels Five 4-Pole precision bandpass filters Each bandpass filter has a 2-Octave bandwidth Five envelope followers with three decay speed settings Dedicated LED indicators for each channel Selectable Impulse mode for Beat-to-Trigger detection 16 HP Current draw 80mA +12V, 70mA -12V",
+  "company": "lzx",
+  "price": "299.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1933726187584",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/sensory-translator-front-panel-black.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_sk_fpn_v1.0.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "visual-cortex",
+  "name": "Visual Cortex",
+  "sku": "LZXVC",
+  "description": "Core module with all required functions for EuroRack modular video synthesis. \nThe Sync Generator section is a broadcast specification video sync generator which can operate in NTSC/480i or PAL/576i timing formats. It can provide the master timing reference for an entire video synthesizer system, and its timing may be synchronized to an external video source.\nInput Decoder is an analogue video input amplifier and colorspace converter. This section accepts YPbPr analogue component video, and processes it for patching internally inside a video synthesis system. The Y input can be used with Composite video signals if only grayscale operation is desired.\nOutput Encoder section takes the output of the Colourizer & Compositor section, converting signals inside your video synthesizer into standard video signals which may be displayed and recorded.\nAnimation & Key Generator is a multi-function control voltage generator, designed specifically for controlling transitions between two video images. It can function as a manual controller with slew, a flip-flop based envelope generator, or a low frequency oscillator. The key function enables a high-speed comparator, which generates a hard key image suitable for shape generation or luma keying.\nColorizer & Compositor is a voltage controlled analogue video mixer. It features two RGB input channels, individual RGB controls and several advanced colour processing effects. We designed this section to be capable of addressing all the essential colour mixing required for a small to medium sized modular video synthesis system.\nRamp Generator is a dual synchronized waveform generator. It generates grayscale gradients in horizontal and vertical outputs, with selectable output waveshapes. These signals provide the basis for many shape and pattern generation techniques.\nVisual Cortex contains many connectors accessible via the rear of the module. LZX Industries will not offer technical support or service for use of these headers, but savvy users may be able to tap into them and find them useful for custom applications.",
+  "company": "lzx",
+  "price": "849.00",
+  "product_type": "eurorack_module",
+  "category": "visionary",
+  "specs": {
+    "hp": 26,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 180,
+    "max_neg_12v_ma": 220
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_eurorack_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true,
+    "has_front_video_sync_input": true,
+    "has_front_video_sync_output": true,
+    "has_rear_14_pin_sync_output": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692912582720",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-visual-cortex/1314"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/visual-cortex-front-panel.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

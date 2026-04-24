@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "liquid-tv",
+  "name": "Liquid TV",
+  "sku": "LZXTV",
+  "description": "Limited stock. Liquid TV is a compact color video monitor and preview driver for modular video synthesizers. Monitoring key elements of an intricate video synth composition enables a new level of control in your patches. Width, 16HP Mounting Depth, 32mm Power +12V @ 210mA Power -12V @ 30mA User Reference Card (PDF)",
+  "company": "lzx",
+  "price": "299.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692915761216",
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/liquid_tv_frontpanel_rev_b.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/lzxtv_3_x4_product_box_label.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

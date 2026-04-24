@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-i-sync-generator",
+  "name": "Cadet I Sync Generator",
+  "sku": "LZXCADT1",
+  "description": "DIY PCB & Frontpanel set comes with SMT Voltage Controlled Crystal Oscillator (VCXO) pre-soldered + ATMEGA88P Pre-Programmed. Cadet I Sync Generator (C1) generates the master timing signals required for your modular video synthesizer in both NTSC and PAL formats. For the Cadet series DIY analog video synthesizer system.",
+  "company": "lzx",
+  "price": "35.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 58,
+    "max_pos_12v_ma": 30,
+    "max_neg_12v_ma": 10
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_eurorack_power_entry": true,
+    "has_front_video_sync_input": true,
+    "has_front_video_sync_output": true,
+    "has_rear_14_pin_sync_output": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692912353344",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20I%20Sync%20Generator"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Cadet-1-front-panel-square.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_c1_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/cadet_i_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_i_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

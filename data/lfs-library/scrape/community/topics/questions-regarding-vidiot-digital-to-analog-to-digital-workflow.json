@@ -1,0 +1,127 @@
+{
+  "id": 1662,
+  "title": "Questions regarding Vidiot digital to analog to digital workflow",
+  "slug": "questions-regarding-vidiot-digital-to-analog-to-digital-workflow",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-11-15T12:09:17.504Z",
+  "views": 534,
+  "like_count": 3,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 7572,
+      "post_number": 1,
+      "username": "cjmphotog",
+      "name": "",
+      "created_at": "2019-11-15T12:09:17.593Z",
+      "updated_at": "2019-11-15T12:09:17.593Z",
+      "cooked": "<p>Hi there!</p>\n<p>I\u2019m a director working on a short film that mixes digital and analog effects. I was lucky to find an authorized reseller with Vidiot units in stock, and I\u2019ve been combing through the forums and doing a lot of research on the workflow to get the digital signal converted to analog and back without having to re-record a screen with another camera. I still have several doubts though, and I was hoping the community could provide some insight.</p>\n<p>The theoretical setup would be as follows:</p>\n<ol>\n<li>Signal out from my computer (2013 MacPro) via thunderbolt to a Blackmagic Intensity hub</li>\n<li>Intensity output to Vidiot input</li>\n<li>Vidiot colorizer output to Intensity input</li>\n<li>Intensity back to computer for re-recording via BM recorder software or similar</li>\n</ol>\n<p>Thing is, I\u2019m not 100% sure if this chain will work at all. I\u2019m also not sure what kind of cables I would need to go from one link in the hub to the next and back, asides from the thunderbolt cable to go from the computer to the Intensity. Not sure if I need cables that can convert from composite to thunderbolt or similar, etc.</p>\n<p>Here\u2019s an example of the effect I\u2019m trying to create:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/202ea42a29f79abaee013a172734c33a86397b3e.jpeg\" data-download-href=\"/uploads/short-url/4AHcRFG5CLQMCkVN5RIwxeLOaC2.jpeg?dl=1\" title=\"LUMEN-TEST-03\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/202ea42a29f79abaee013a172734c33a86397b3e.jpeg\" alt=\"LUMEN-TEST-03\" data-base62-sha1=\"4AHcRFG5CLQMCkVN5RIwxeLOaC2\" width=\"690\" height=\"431\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">LUMEN-TEST-03</span><span class=\"informations\">1920\u00d71200 433 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>This was done using Lumen, but I\u2019m really hoping I can find an analog solution with the Vidiot. I think the result will be several orders of magnitude better if I can get it working.</p>\n<p>Thanks in advance. Cheers! -Carlos</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7575,
+      "post_number": 2,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2019-11-15T13:34:18.350Z",
+      "updated_at": "2019-11-15T13:34:18.350Z",
+      "cooked": "<p>from what I can tell you need 2 intensity shuttles as the intensity shuttle will only do 1 direction at a time</p>\n<p>from mac -&gt; thunderbolt cable -&gt; intensity shuttle 1 -&gt; component rca -&gt; vidiot input</p>\n<p>from vidiot output -&gt; component rca -&gt; intensity shuttle 2 -&gt; thunderbolt cable -&gt; mac</p>\n<p>NB I own neither a BM Intensity Shuttle, nor a Vidiot</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7576,
+      "post_number": 3,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-11-15T14:40:49.367Z",
+      "updated_at": "2019-11-15T14:40:49.367Z",
+      "cooked": "<p>Welcome Carlos. Jim is right that the Blackmagic Shuttles can only operate in one direction at a time. To do in/out concurrently with them requires one for each direction needed in your signal path; one for output from the computer to the Vidiot, and one for input back to the computer from Vidiot.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 1,
+      "is_wiki": false
+    },
+    {
+      "id": 7577,
+      "post_number": 4,
+      "username": "cjmphotog",
+      "name": "",
+      "created_at": "2019-11-15T15:16:34.251Z",
+      "updated_at": "2019-11-15T15:16:34.251Z",
+      "cooked": "<p>Hey guys, thanks for the answers.</p>\n<p>Didn\u2019t know that about the shuttles, which certainly complicates things. Not to mention pricey.</p>\n<p>Is anyone aware of a more streamlined solution for this kind of post-production work, i.e. processing ProRes footage?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7578,
+      "post_number": 5,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2019-11-15T16:22:27.607Z",
+      "updated_at": "2019-11-15T16:22:27.607Z",
+      "cooked": "<p>That is the \u2018streamlined solution for this kind of post-production\u2019 work</p>\n<p>cheaper can work but may not be good enough for what you want - everything else is way more expensive</p>\n<p>have a search on this forum there is quite a bit of discussion - links etc</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7579,
+      "post_number": 6,
+      "username": "cjmphotog",
+      "name": "",
+      "created_at": "2019-11-15T17:18:51.127Z",
+      "updated_at": "2019-11-15T17:18:51.127Z",
+      "cooked": "<p>Thanks. Like I said I\u2019m completely new to this type of equipment and I\u2019ve been going through the forums to try and figure out how to get this working. I also contacted LZX to see if they could provide some insight, but I was hoping someone in here might have some experience with what I\u2019m trying to do and could walk me through it.</p>\n<p>When you say \u201ccomponent rca\u201d, what kind of cable are you referring to specifically?</p>\n<p>Also, one of the things I\u2019ve been reading about with the Intensity is that it can be a bit finicky when sending video out to a Vidiot depending on the format, framerate, etc. I\u2019m going to be processing ProRes 4444 files @ 24FPS, any idea if that would be supported?</p>\n<p>I\u2019m sure a lot of these q\u2019s seem like no-brainers, but I just want to make sure I have all my t\u2019s crossed and i\u2019s dotted before making the investment. <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7582,
+      "post_number": 7,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2019-11-15T19:18:39.530Z",
+      "updated_at": "2019-11-15T19:18:39.530Z",
+      "cooked": "<p>you\u2019ll probably need to convert to PAL or NTSC</p>\n<p>component rca cable is a triple rca cable</p>\n<p>you might need composite though</p>\n<p>as I said I have neither of these things</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7660,
+      "post_number": 8,
+      "username": "cjmphotog",
+      "name": "",
+      "created_at": "2019-11-20T14:12:19.511Z",
+      "updated_at": "2019-11-20T14:12:19.511Z",
+      "cooked": "<p>Hey guys, thanks again for the replies and all the help. I\u2019m going to be putting together the setup Agawell suggested: 2x Shuttles, 1x Vidiot. Besides the thunderbolt cables, I wanted to double check this is the correct type of component rca cable I\u2019m gonna need:</p>\n<aside class=\"onebox amazon\">\n  <header class=\"source\">\n      <a href=\"https://www.amazon.es/Velocity-Component-RCA-Type-Combination-componente/dp/B002DR4F5O/ref=asc_df_B002DR4F5O/?tag=googshopes-21&amp;linkCode=df0&amp;hvadid=356513084831&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=8856597782873350766&amp;hvpone&amp;hvptwo&amp;hvqmt&amp;hvdev=c&amp;hvdvcmdl&amp;hvlocint&amp;hvlocphy=9061032&amp;hvtargid=pla-672007019640&amp;psc=1\" target=\"_blank\" rel=\"nofollow noopener\">amazon.es</a>\n  </header>\n  <article class=\"onebox-body\">\n    <div class=\"aspect-image\" style=\"--aspect-ratio:477/400;\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3e2d735ae122cfe5814c5aebd87ffe5b95fc99f5.jpeg\" class=\"thumbnail\"></div>\n\n<h3><a href=\"https://www.amazon.es/Velocity-Component-RCA-Type-Combination-componente/dp/B002DR4F5O/ref=asc_df_B002DR4F5O/?tag=googshopes-21&amp;linkCode=df0&amp;hvadid=356513084831&amp;hvpos=1o1&amp;hvnetw=g&amp;hvrand=8856597782873350766&amp;hvpone&amp;hvptwo&amp;hvqmt&amp;hvdev=c&amp;hvdvcmdl&amp;hvlocint&amp;hvlocphy=9061032&amp;hvtargid=pla-672007019640&amp;psc=1\" target=\"_blank\" rel=\"nofollow noopener\">C2G 0.5m Velocity Component Video/RCA-Type Audio Combination Cable componente...</a></h3>\n\n\n<p>\n  \n  \n  \n  \n  <strong>\n9,37\u00a0\u20ac\n</strong>\n</p>\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7676,
+      "post_number": 9,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-20T18:40:12.672Z",
+      "updated_at": "2019-11-20T18:40:12.672Z",
+      "cooked": "<p>Any type of male RCA cable will work, but I prefer cables that are not bundled together.<br>\n<aside class=\"onebox amazon\">\n  <header class=\"source\">\n      <a href=\"https://www.amazon.es/FosPower-Chapado-Conectores-Premium-Digital/dp/B0184PIVFI\" target=\"_blank\">amazon.es</a>\n  </header>\n  <article class=\"onebox-body\">\n    <div class=\"aspect-image\" style=\"--aspect-ratio:234/400;\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/a779a434bc43971952d85f64b76dfaa093494c06.jpeg\" class=\"thumbnail\"></div>\n\n<h3><a href=\"https://www.amazon.es/FosPower-Chapado-Conectores-Premium-Digital/dp/B0184PIVFI\" target=\"_blank\">FosPower Cable de Audio RCA (0,9m/3ft) RCA Macho a RCA Macho [24K Oro Chapado...</a></h3>\n\n\n<p>\n  \n  \n  \n  \n  <strong>\n7,99\u00a0\u20ac\n</strong>\n</p>\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

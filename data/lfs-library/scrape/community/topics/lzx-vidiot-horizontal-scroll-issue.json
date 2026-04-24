@@ -1,0 +1,96 @@
+{
+  "id": 975,
+  "title": "LZX VIDIOT Horizontal scroll issue",
+  "slug": "lzx-vidiot-horizontal-scroll-issue",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 20,
+      "name": "sync",
+      "slug": "sync"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-02-22T16:57:03.647Z",
+  "views": 1285,
+  "like_count": 4,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 4384,
+      "post_number": 1,
+      "username": "missliz",
+      "name": null,
+      "created_at": "2019-02-22T16:57:03.720Z",
+      "updated_at": "2019-02-23T18:56:43.139Z",
+      "cooked": "<p>How can I stop horizontal scroll of my video image input? I have plugged in a VHS player into my VIDIOT video input and hooked the Vidiot up to a video projector through the chroma monitor output : the image scrolls (spins) horizontally even with both synch buttons on. Suggestions? Thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4387,
+      "post_number": 2,
+      "username": "csboling",
+      "name": "Sam Boling",
+      "created_at": "2019-02-22T18:20:46.740Z",
+      "updated_at": "2019-02-22T19:59:51.543Z",
+      "cooked": "<p>Since you are using a VHS input source, you probably need some kind of time base corrector, such as the upcoming LZX TBC2 or an outboard video mixer. See <a href=\"https://community.lzxindustries.net/t/how-do-i-avoid-glitchy-behavior-when-using-vhs-tapes-as-an-input-source/55\" class=\"inline-onebox\">How do I avoid glitchy behavior when using VHS tapes as an input source?</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4402,
+      "post_number": 3,
+      "username": "missliz",
+      "name": null,
+      "created_at": "2019-02-23T21:09:18.378Z",
+      "updated_at": "2019-02-23T21:09:18.378Z",
+      "cooked": "<p>I was reminded that the Vidiot has a time base corrector built in and there is a switch at the back that enables it above the video input, it has a loop logo , I flipped it up and the scrolling is fixed. Thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4405,
+      "post_number": 4,
+      "username": "leolodreamland",
+      "name": "Leon Trimble",
+      "created_at": "2019-02-24T11:27:00.144Z",
+      "updated_at": "2019-02-24T11:27:00.144Z",
+      "cooked": "<p>I have a different problem in that it\u2019s the vidiot that is scrolling when I plug into The 3trins. Yeah I know there is correction but not enough.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4410,
+      "post_number": 5,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-25T02:39:01.340Z",
+      "updated_at": "2019-02-25T02:39:01.340Z",
+      "cooked": "<p>Does it lock okay if the 3trins output goes into the Vidiot input instead?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 4411,
+      "post_number": 6,
+      "username": "leolodreamland",
+      "name": "Leon Trimble",
+      "created_at": "2019-02-25T05:00:04.291Z",
+      "updated_at": "2019-02-25T05:00:04.291Z",
+      "cooked": "<p>Yes but I\u2019m creating feedback loops.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

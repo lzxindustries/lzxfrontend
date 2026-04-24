@@ -1,0 +1,137 @@
+{
+  "id": 1291,
+  "title": "All About War of the Ants",
+  "slug": "all-about-war-of-the-ants",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 25,
+      "name": "waroftheants",
+      "slug": "waroftheants"
+    }
+  ],
+  "created_at": "2019-07-16T23:27:02.483Z",
+  "views": 1796,
+  "like_count": 55,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 5895,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-16T23:27:02.680Z",
+      "updated_at": "2022-01-02T19:43:05.333Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/9/9873eae326dc91a80c485d9b0221f19daeb74ebd.jpeg\" data-download-href=\"/uploads/short-url/lKEVvXdgUxhV7ZaRXbQ3Co0viTr.jpeg?dl=1\" title=\"War_Of_The_Ants_Frontpanel_1024px\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/9/9873eae326dc91a80c485d9b0221f19daeb74ebd.jpeg\" alt=\"War_Of_The_Ants_Frontpanel_1024px\" data-base62-sha1=\"lKEVvXdgUxhV7ZaRXbQ3Co0viTr\" width=\"500\" height=\"500\" data-dominant-color=\"CACBCC\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">War_Of_The_Ants_Frontpanel_1024px</span><span class=\"informations\">1025\u00d71025 172 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>In many European countries television static noise, or \u201csnow\u201d, is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow.</p>\n<h1><a name=\"p-5895-specifications-1\" class=\"anchor\" href=\"#p-5895-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 32mm</li>\n<li>Power +12V @ 100mA</li>\n<li>Power -12V @ 100mA</li>\n</ul>\n<h1><a name=\"p-5895-user-reference-2\" class=\"anchor\" href=\"#p-5895-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/548c0e37dc92e71a3f547bc265f06896ae14faf4.jpeg\" data-download-href=\"/uploads/short-url/c3WaRbUqPgp6H5tzXPqBWQ6f16k.jpeg?dl=1\" title=\"wota%20urc1\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/548c0e37dc92e71a3f547bc265f06896ae14faf4.jpeg\" alt=\"wota%20urc1\" data-base62-sha1=\"c3WaRbUqPgp6H5tzXPqBWQ6f16k\" width=\"603\" height=\"500\" data-dominant-color=\"C6C8C8\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">wota%20urc1</span><span class=\"informations\">792\u00d7656 316 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5895-videos-3\" class=\"anchor\" href=\"#p-5895-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6LaanMifWgrLaShIJAdwEXi&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5895-patching-tips-4\" class=\"anchor\" href=\"#p-5895-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>Make sure to connect to a sync source to activate the module\u2019s Animation and Speed controls.</li>\n<li>Patch the horizontal and vertical components of your shape,<br>\nwhatever their source, into the horizontal and vertical filter VC<br>\ninputs on War of the Ants. Patch the H and V mix, or a variation of<br>\nit, into the Density VC input. Adjust the VC level controls for the<br>\ndesired look.</li>\n<li>Use a mixer module such as Color Chords, Passage, or Bridge,<br>\nto combine the Texture output with the H and V mixed shape.</li>\n</ul>\n<h1><a name=\"p-5895-downloads-5\" class=\"anchor\" href=\"#p-5895-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/War%20of%20the%20Ants/War%20of%20the%20Ants%20User%20Reference%20Card.pdf\">War of the Ants User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5895-other-resources-6\" class=\"anchor\" href=\"#p-5895-other-resources-6\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/waroftheants\">LZX Community Forum posts tagged #waroftheants</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 21644,
+      "post_number": 2,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2021-09-04T06:43:21.837Z",
+      "updated_at": "2021-09-04T06:43:21.837Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a> Hey Lars,  In the Gen 3 thread you posted that, like Visual Cortex and Fortress, you considered WOTA to be of the instrument class.  Could you expand on that?  It\u2019s always been one of my favorite modules but I\u2019m kinda locked into using it a certain way. Always interested in a different point of view on approach and if you could expand on your idea of it as instrument it would be enlightening.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 21645,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2021-09-04T06:49:53.236Z",
+      "updated_at": "2021-09-04T06:54:35.105Z",
+      "cooked": "<p>I think it, like Cortex and Fortress, are \u201chalf instruments\u201d in a way.</p>\n<p>Expanded into an instrument, I\u2019d see it working as the texture source for what I\u2019ve been calling a \u201cfilter keyer.\u201d  Instead of keying based off a voltage threshold, a \u201cfilter keyer\u201d would key based on source frequency cutoff instead.  So in other words, foreground textures would appear inside the edges and outlines of the source.</p>\n<p>So I\u2019m imagining both filtering the noise (WotA) while also filtering a source \u2013 and keying the noise into the outline.  Unlike war of the ants, this would allow for very subtle effects \u2013 like a burst of noise in peaks, or shimmering edges when a light object moves on top of a dark backdrop.</p>\n<p>Combine all that with an RGB edge solarizer and some motion control and I think it could make a fun instrument.  This is a case where new modules (such as a filter keyer or an edge solarizer) would likely come before an instrument design.  Noise could be an integral source for the filter keyer.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 21646,
+      "post_number": 4,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2021-09-04T07:32:07.693Z",
+      "updated_at": "2021-09-04T07:32:07.693Z",
+      "cooked": "<p>Thanks.  I have always thought of it as a core building block module for a system, much in the same way oscillators work for those that pull shapes.  I\u2019d be curious to hear anyone\u2019s thoughts on what existing modules you would pair with WOTA to create something like the instrument you describe.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 21650,
+      "post_number": 5,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2021-09-04T15:30:23.078Z",
+      "updated_at": "2021-09-04T15:33:54.999Z",
+      "cooked": "<p>Well as a thought experiment, let\u2019s try to imagine a purely Expedition series small system.</p>\n<p><strong>Diaspora of the Ants System</strong></p>\n<ul>\n<li>Visual Cortex, main system IO and RGB compositor.</li>\n<li>Curtain, luma high pass / outliner extractor.</li>\n<li>War of the Ants, static texture source.</li>\n<li>Bridge or Arch or Passage.  Utility mixing, mainly of modulators.</li>\n<li>Pendulum and Prismatic Ray, modulation sources for War of the Ants and Curtain</li>\n<li>An external video source \u2013 this system is all about modifying the edges of something.</li>\n</ul>\n<p><strong>The Patch</strong></p>\n<ul>\n<li>External video source RGB is patched straight to Visual Cortex A channel (the Background.)  And the video source LUMA is patched directly to Curtain input.</li>\n<li>Curtain is either patched to the Key input or the Fade VC input or the Colorize input on Visual Cortex.  Three different worlds to explore there.  Patch it thru a free channel of a Passage to gain some extra fine tuning capabilities.</li>\n<li>War of the Ants is patched to Visual Cortex B channel (the Foreground.)</li>\n<li>After setting up the basic patch, dial in the edge settings until you see the WotA texture appearing inside the edges of your source footage.  Play with Visual Cortex RGB controls and blending mode settings until you like it.</li>\n<li>Now start focusing on the texture synthesis \u2013 modulate War of the Ants with Prismatic Ray and Pendulum, or use utility mixing to combine all the outputs in interesting ways.</li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 21653,
+      "post_number": 6,
+      "username": "emooh",
+      "name": "emooh",
+      "created_at": "2021-09-04T20:55:06.634Z",
+      "updated_at": "2021-09-04T20:55:06.634Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/cbaf332a23abe8367b0910a56043d4127b828e8f.jpeg\" data-download-href=\"/uploads/short-url/t3Si0A2h8touDxAfA66dn1nzIe3.jpeg?dl=1\" title=\"curtain-outline-test\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/cbaf332a23abe8367b0910a56043d4127b828e8f.jpeg\" alt=\"curtain-outline-test\" data-base62-sha1=\"t3Si0A2h8touDxAfA66dn1nzIe3\" width=\"438\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">curtain-outline-test</span><span class=\"informations\">1920\u00d72190 405 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 21656,
+      "post_number": 7,
+      "username": "emooh",
+      "name": "emooh",
+      "created_at": "2021-09-04T21:29:55.505Z",
+      "updated_at": "2021-09-04T21:29:55.505Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/d72a9df0be1a9ca2a0d7a6a11b7eeaf924fb514d.jpeg\" data-download-href=\"/uploads/short-url/uHrXG2P4w5uahIQCKpHndD9uIJT.jpeg?dl=1\" title=\"curtain-fadevc-test\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/d/d72a9df0be1a9ca2a0d7a6a11b7eeaf924fb514d.jpeg\" alt=\"curtain-fadevc-test\" data-base62-sha1=\"uHrXG2P4w5uahIQCKpHndD9uIJT\" width=\"438\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">curtain-fadevc-test</span><span class=\"informations\">1920\u00d72190 335 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 21658,
+      "post_number": 8,
+      "username": "emooh",
+      "name": "emooh",
+      "created_at": "2021-09-05T02:09:47.702Z",
+      "updated_at": "2021-09-05T02:09:47.702Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/7725793b6ee3e08b15cfc904689a520a707a402e.jpeg\" data-download-href=\"/uploads/short-url/h016yoyaBrmAGktP8yAEhtXMLM2.jpeg?dl=1\" title=\"test-art-scale\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/7725793b6ee3e08b15cfc904689a520a707a402e.jpeg\" alt=\"test-art-scale\" data-base62-sha1=\"h016yoyaBrmAGktP8yAEhtXMLM2\" width=\"664\" height=\"499\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">test-art-scale</span><span class=\"informations\">1920\u00d71445 192 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 21660,
+      "post_number": 9,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2021-09-05T02:56:57.948Z",
+      "updated_at": "2021-09-05T02:56:57.948Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a> , Thanks for this.  I\u2019ve been playing with this constellation of modules and it is yielding some great results. Will post something at some point <a class=\"mention\" href=\"/u/emooh\">@emooh</a> is working it well.  I think sharing system ideas could be a really useful exercise. Thanks again.</p>\n<p>Trice</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

@@ -27,6 +27,7 @@ Authoritative source of repo-wide facts. Scoped rules may refine, never contradi
 - `yarn typecheck` / `yarn lint` / `yarn format`
 - `yarn test` / `yarn test:e2e`
 - `yarn shopify:sync:*` / `yarn shopify:store-sync:*` for catalog and store mirroring
+- `yarn catalog:sync-lfs-library` to refresh `data/lfs-library/` from an optional `lfs/` mount
 
 ## Environment
 
@@ -47,7 +48,7 @@ When adding a new env var, update `.env.example`, `env.d.ts`, and `README.md` to
 - Prefer existing patterns; do not introduce new architecture without cause.
 - Preserve Cloudflare Workers compatibility in all server code (no Node-only APIs).
 - Keep changes small, typed, and consistent with neighboring code.
-- Treat `lfs -> /mnt/e/lfs` as optional local asset storage; never rely on it for app runtime.
+- Treat `lfs/` as an optional ingest source only. Runtime code and tests use committed `data/lfs-library/` (refresh via `yarn catalog:sync-lfs-library`).
 
 ## Avoid
 

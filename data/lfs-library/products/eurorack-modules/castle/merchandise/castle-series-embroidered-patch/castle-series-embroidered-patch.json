@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../../../schemas/product.schema.json",
+  "slug": "castle-series-embroidered-patch",
+  "name": "Castle Series Embroidered Patch",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1702828408896",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/image_47_f8c44e31-03d9-4e38-9c5a-014405bbee0d.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

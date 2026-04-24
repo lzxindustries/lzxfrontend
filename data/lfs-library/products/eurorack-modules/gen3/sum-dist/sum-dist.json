@@ -1,0 +1,366 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "sum-dist",
+  "name": "Sum/Dist",
+  "sku": "LZXSUMDIST",
+  "subtitle": "Summing & Distribution Amplifier",
+  "company": "lzx",
+  "price": "249.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 200
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6766668120087",
+  "images": {
+    "frontpanel": "website/sumdist-front-panel.png",
+    "legend": "website/sumdist-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Sum A1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum B1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum C1",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum 1",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum A2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum B2",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum C2",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum 2",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 900,
+      "y": -1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum A3",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum B3",
+      "ref_des": "J10",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum C3",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum 3",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum A4",
+      "ref_des": "J13",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum B4",
+      "ref_des": "J14",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum C4",
+      "ref_des": "J15",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Sum 4",
+      "ref_des": "J16",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist 1",
+      "ref_des": "J17",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist A1",
+      "ref_des": "J18",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist B1",
+      "ref_des": "J19",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist C1",
+      "ref_des": "J20",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist 2",
+      "ref_des": "J21",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist A2",
+      "ref_des": "J22",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist B2",
+      "ref_des": "J23",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist C2",
+      "ref_des": "J24",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist 3",
+      "ref_des": "J25",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist A3",
+      "ref_des": "J26",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist B3",
+      "ref_des": "J27",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist C3",
+      "ref_des": "J28",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist 4",
+      "ref_des": "J29",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist A4",
+      "ref_des": "J30",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist B4",
+      "ref_des": "J31",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Dist C4",
+      "ref_des": "J32",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX12HPSumDistFrontpanelColorGraphicDarkSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/sumdist-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/sumdist-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/sumdist-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/sumdist_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Sum/Dist is an octal function bank including four 3-input summing amplifiers and four 3-output distribution amplifiers. It allows you to passively combine signals to condense many sources, and send inputs to multiple outputs for broader distribution. Learn more about Sum/Dist on our documentation website!"
+}

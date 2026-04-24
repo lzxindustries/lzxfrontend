@@ -1,0 +1,55 @@
+{
+  "id": 1872,
+  "title": "How to make Vidiot output symetrical?",
+  "slug": "how-to-make-vidiot-output-symetrical",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-05T01:27:48.932Z",
+  "views": 518,
+  "like_count": 2,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 8615,
+      "post_number": 1,
+      "username": "SeanKing",
+      "name": "Sean King",
+      "created_at": "2020-02-05T01:27:49.009Z",
+      "updated_at": "2020-02-05T01:52:35.309Z",
+      "cooked": "<p>I\u2019d love to make symmetrical designs with my Vidiot. Mirroring the screen, or a kailedescope style multi-axis design. (Making the output circular somehow would also be nice.) I don\u2019t think there\u2019s a way to achieve this with the Vidiot alone, but if there is I\u2019d love to know. Is there another module or device that can do this? I\u2019m a little lost reading the LZX module descriptions as to what they actually do. I think Diver might do this, and maybe Arch? I\u2019d love to know more.</p>\n<p>EDIT: right after posting this, I watched the excellent 3 patches video for navigator. It seems like that would do what I want. I\u2019m also wondering if Chromagnon has similar capabilities.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8618,
+      "post_number": 2,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2020-02-05T07:46:13.074Z",
+      "updated_at": "2020-02-05T07:46:13.074Z",
+      "cooked": "<p>it will take some outboard gear.<br>\nan Edirol V-4 or V-8 would do that as well as a Roland VR-3EX.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8645,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-06T16:08:40.533Z",
+      "updated_at": "2020-02-06T16:08:40.533Z",
+      "cooked": "<p>You might like Memory Palace!<br>\n</p><div class=\"lazyYT\" data-youtube-id=\"8oUwuMxMal8\" data-youtube-title=\"LZX Memory Palace Tutorial 1: Basic Controls\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

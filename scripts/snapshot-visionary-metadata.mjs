@@ -5,7 +5,7 @@
  *   app/data/generated/visionary-modulargrid-metadata.json
  *
  * This lets `app/data/module-specs.ts` synthesise spec rows for the historical
- * Visionary catalog without depending on `lfs/library/` at runtime/build time.
+ * Visionary catalog from the committed `data/lfs-library/products/` tree.
  *
  * Run when the underlying ModularGrid source changes:
  *   node scripts/snapshot-visionary-metadata.mjs
@@ -17,7 +17,7 @@ import {fileURLToPath} from 'node:url';
 const REPO_ROOT = path.resolve(fileURLToPath(import.meta.url), '../..');
 const VISIONARY_DIR = path.join(
   REPO_ROOT,
-  'lfs/library/products/eurorack-modules/visionary',
+  'data/lfs-library/products/eurorack-modules/visionary',
 );
 const OUT = path.join(
   REPO_ROOT,
@@ -54,7 +54,7 @@ async function main() {
     version: 1,
     generatedAt: new Date().toISOString(),
     source:
-      'lfs/library/products/eurorack-modules/visionary/*/modulargrid/metadata.md',
+      'data/lfs-library/products/eurorack-modules/visionary/*/modulargrid/metadata.md',
     files,
   };
 

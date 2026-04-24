@@ -1,0 +1,233 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "contour",
+  "name": "Contour",
+  "sku": "LZXCONTOUR",
+  "subtitle": "Triple VC High Pass Filter",
+  "company": "lzx",
+  "price": "339.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 110
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6782469046295",
+  "images": {
+    "frontpanel": "website/contour-front-panel.png",
+    "legend": "website/contour-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Cutoff CV 1",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Cutoff CV 2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Cutoff CV 3",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 1",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 2",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 3",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 2",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Filter 3",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Cutoff CV Depth 1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Cutoff 1",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Cutoff 2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Cutoff 3",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": 125,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Cutoff CV Depth 2",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Cutoff CV Depth 3",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": 125,
+      "part": "control-knob-outline-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for Contour",
+      "youtube_id": "o_QThtOTtlk"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX8HPContourFrontpanelColorGraphicDark.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/contour-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/contour-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/contour-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/m400_fpn.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/m400_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/mcp_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/mcp_fpn_reva_v2.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Contour is three separate voltage-controlled, video-rate high pass filters that can be used in series or in parallel. The module's filters allow you to isolate, smear, or blur the edge transitions of your video signals and patterns. Contour is a powerful processor module that adds depth and texture to your video synthesis patches. Learn more about Contour on our documentation website!"
+}

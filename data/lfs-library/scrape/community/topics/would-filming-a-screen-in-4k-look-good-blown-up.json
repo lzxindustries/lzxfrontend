@@ -1,0 +1,60 @@
+{
+  "id": 1883,
+  "title": "Would filming a screen in 4K look good blown up?",
+  "slug": "would-filming-a-screen-in-4k-look-good-blown-up",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 22,
+      "name": "capture",
+      "slug": "capture"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-07T02:11:26.618Z",
+  "views": 592,
+  "like_count": 2,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 8660,
+      "post_number": 1,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-02-07T02:11:26.699Z",
+      "updated_at": "2020-02-07T02:45:20.200Z",
+      "cooked": "<p>Hi. If I filmed the Vidiot\u2019s output, which is 576, off of a large screen with a 4K camera, would that look better blown up on a big screen vs. just outputting the Vidiot to a big screen?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8679,
+      "post_number": 2,
+      "username": "souka",
+      "name": "gui",
+      "created_at": "2020-02-09T21:39:51.650Z",
+      "updated_at": "2020-02-09T21:44:51.387Z",
+      "cooked": "<p>It really depends on what you understand by better. Bear in mind that filming a screen, even if done with a high-resolution camera, doesn\u2019t output the same result as using the actual video from vidiot.</p>\n<p>There are several things to take into account. What type of screen will display the vidiot and how will it affect the original footage? Every screen is different.</p>\n<p>Same thing for the camera. How well does it interact with the screen and what type of characteristics does it add to the video?</p>\n<p>I don\u2019t own a vidiot but from my experience with the Visual Cortex, the output is good enough to be used on a high resolution television without noticeable or damaging artifacts. This naturally depends on the television used.</p>\n<p>In this particular case, the best result is probably obtainable by using hardware upscalers.</p>\n<p>PS: try it out and see for yourself, maybe you will like the result! CRT televisions add glow and lines to the video which can be very appealing. If you do try it share the results here <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8737,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2020-02-14T18:12:12.692Z",
+      "updated_at": "2020-02-14T18:12:12.692Z",
+      "cooked": "<p>I definitely think it would! I\u2019ve had great results rescanning in 4K with my Blackmagic Micro Studio Camera genlocked to the video source.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

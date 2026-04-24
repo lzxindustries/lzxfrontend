@@ -1,0 +1,67 @@
+{
+  "id": 1834,
+  "title": "Vidiot suddenly not powering up",
+  "slug": "vidiot-suddenly-not-powering-up",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-01-18T17:09:44.175Z",
+  "views": 700,
+  "like_count": 3,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 8435,
+      "post_number": 1,
+      "username": "SeanKing",
+      "name": "Sean King",
+      "created_at": "2020-01-18T17:09:44.247Z",
+      "updated_at": "2020-01-18T17:09:44.247Z",
+      "cooked": "<p>Hello, my Vidiot just now stopped powering up.<br>\nIt was powering up less than an hour ago, but I was only getting pure white video output. I tried swapping out cables, then I went through all the switches on the back, double checking NTSC/PAL, etc. This involved multiple on/off power cycles. Suddenly it stopped powering up.</p>\n<p>I was powering it via a USB 5V cable, I tried switching to the factory Vidiot power supply and still no luck.</p>\n<p>Is there anything else I can try at home? Any thoughts what this might be?</p>\n<p>Thanks for any help you can offer.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8447,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-01-19T17:07:40.266Z",
+      "updated_at": "2020-01-19T17:07:40.266Z",
+      "cooked": "<p>Sorry to hear it. Sounds like you have a fried/failed power component.<br>\nPlease send a message to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> to open a support ticket.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8448,
+      "post_number": 3,
+      "username": "SeanKing",
+      "name": "Sean King",
+      "created_at": "2020-01-19T18:21:53.301Z",
+      "updated_at": "2020-01-19T18:21:53.301Z",
+      "cooked": "<p>Thanks, I\u2019ll do that.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 14333,
+      "post_number": 4,
+      "username": "edward72",
+      "name": "edward",
+      "created_at": "2021-01-01T11:53:26.973Z",
+      "updated_at": "2021-01-01T11:54:16.479Z",
+      "cooked": "<p>mine did this too; i assumed it must have got plugged into a 9v supply because i didnt imagine it would just stop working when i was still a new user, but i can\u2019 actually recall that happening. would be interested to know what the issue is or how to fix it because, being a uk customer, seems expensive and long to send it off for repair. it bust just as covid hit, near the end of it\u2019s 1 yr warranty so i just couldn\u2019t get it together to send it off at the time\u2026 hope you get it fixed, best wishes for '21</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "id": 688,
+  "title": "Connecting Liquid TV to Visual Cortex",
+  "slug": "connecting-liquid-tv-to-visual-cortex",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 43,
+      "name": "liquidtv",
+      "slug": "liquidtv"
+    }
+  ],
+  "created_at": "2018-11-12T02:12:47.430Z",
+  "views": 1243,
+  "like_count": 6,
+  "posts_count": 12,
+  "posts": [
+    {
+      "id": 2882,
+      "post_number": 1,
+      "username": "jambirn",
+      "name": "",
+      "created_at": "2018-11-12T02:12:47.522Z",
+      "updated_at": "2019-02-08T18:44:23.667Z",
+      "cooked": "<p>Hello \u2013 I just took my first LZX plunge and ordered a VC and Liquid TV. Can someone confirm whether I need to connect them together via the RCA connections in the rear of the modules for sync purposes?<br>\nJim</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2883,
+      "post_number": 2,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-11-12T04:20:54.465Z",
+      "updated_at": "2018-11-12T04:20:54.465Z",
+      "cooked": "<p>you don\u2019t have to but you can</p>\n<p>if you don\u2019t then you can plug one of the visual cortex RCA outputs into the liquid tv RCA input and then still patch signals into the 1,2,3, inputs</p>\n<p>or if you have the RCA cables connected behind the front panels then you could just freely patch to the 1,2,3 inputs</p>\n<p>for me it mostly depends on if I think I\u2019ll be plugging other external non LZX system sources into the RCA jack on the front</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2884,
+      "post_number": 3,
+      "username": "128harps",
+      "name": "",
+      "created_at": "2018-11-12T04:28:38.212Z",
+      "updated_at": "2018-11-12T04:31:25.609Z",
+      "cooked": "<p>The standard composite input will work without a sync cable. However, In order for the preview driver to function you would need a sync cable to go from both modules (Visual Cortex Sync Out to Liquid TV Sync In).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2890,
+      "post_number": 4,
+      "username": "jambirn",
+      "name": "",
+      "created_at": "2018-11-12T23:39:14.954Z",
+      "updated_at": "2018-11-12T23:39:14.954Z",
+      "cooked": "<p>Hello,<br>\nSo sorry, but I\u2019m still not understanding this\u2026I do appreciate your response, though! If I connect the RCA cable in the rear, what cable(s) do I use to connect the VC to the Liquid TV?<br>\nThank you!<br>\nJim</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 2891,
+      "post_number": 5,
+      "username": "128harps",
+      "name": "",
+      "created_at": "2018-11-12T23:57:38.347Z",
+      "updated_at": "2018-11-12T23:59:47.415Z",
+      "cooked": "<p>The Sync cables I use for my system are available to buy from the LZX website. These cables were designed specifically for Sync. I think you might be able to use standard yellow composite cables, but I\u2019m not 100% sure.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 2893,
+      "post_number": 6,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2018-11-13T00:33:55.280Z",
+      "updated_at": "2018-11-13T00:33:55.280Z",
+      "cooked": "<p>I use standard composite cables with right-angle adaptors.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 2894,
+      "post_number": 7,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-11-13T02:39:50.962Z",
+      "updated_at": "2018-11-13T02:39:50.962Z",
+      "cooked": "<p>nothing special about the cables from LZX (although they are awesome!) you can use regular yellow composite cables.<br>\nkeep the cables as short as possible for best practice <img src=\"https://emoji.discourse-cdn.com/twitter/1st_place_medal.png?v=6\" title=\":1st_place_medal:\" class=\"emoji\" alt=\":1st_place_medal:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2895,
+      "post_number": 8,
+      "username": "128harps",
+      "name": "",
+      "created_at": "2018-11-13T03:55:10.006Z",
+      "updated_at": "2018-11-13T03:55:10.006Z",
+      "cooked": "<p>Yeah, I had a slight feeling that you could use yellow composite cables for sync, but I referred the LZX cables to avoid giving any misleading info that I was unsure about <img src=\"https://emoji.discourse-cdn.com/twitter/wink.png?v=6\" title=\":wink:\" class=\"emoji\" alt=\":wink:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 2896,
+      "post_number": 9,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-11-13T06:35:02.837Z",
+      "updated_at": "2018-11-13T06:35:02.837Z",
+      "cooked": "<p>Have you checked the user reference card? It explains the connections and settings. Let me know if you\u2019re unclear on anything.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3939,
+      "post_number": 10,
+      "username": "northerntao",
+      "name": "Josh Reineke",
+      "created_at": "2019-01-28T02:25:02.726Z",
+      "updated_at": "2019-01-28T02:25:53.031Z",
+      "cooked": "<p>I bought a Liquid TV from Perfect Circuit recently, and I\u2019m having trouble getting the Preview function to work.  The VID function works perfectly, and I\u2019m able to monitor video on the composite input , but none of the Preview slots work when the switch on the top left is set to PVW and I\u2019ve chosen one of the three slots</p>\n<p>I\u2019m syncing it to the Visual Cortex - see the screenshots.  I\u2019ve double checked, and swapped cables, but the Preview still eludes me.  I tried the Reset in the Menu when in VID mode, but same thing.</p>\n<p>I\u2019ve tried patching all sorts of things into the Preview inputs - shapes and ramps from the VC, straight and through Color Chords, output from a Prismatic Ray, luma out from a Vidiot, but no dice.</p>\n<p>When on one of the Preview slots, the screen will flash blue briefly with some text that I don\u2019t have time to read - a microsecond and it\u2019s gone.</p>\n<p>Hopefully I\u2019m missing something simple.  Thoughts?</p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/c42acb953f6bc52aff2a85f371415d42a13f3390.jpeg\" alt=\"IMG_6678\" width=\"375\" height=\"500\"> <img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/cb436badea35b1dfb1683ab4a55e4945d3d32dae.jpeg\" alt=\"IMG_6681\" width=\"375\" height=\"500\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3941,
+      "post_number": 11,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-01-28T03:05:55.253Z",
+      "updated_at": "2019-01-28T03:05:55.253Z",
+      "cooked": "<p>Looks like you have everything set correctly to me.<br>\nIf you switch the sync src to \u201cvideo in\u201d, send the video in (via front) a video signal from cortex, do the preview inputs work now?  In either case, best to arrange an RMA with us.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3959,
+      "post_number": 12,
+      "username": "northerntao",
+      "name": "Josh Reineke",
+      "created_at": "2019-01-29T05:03:46.630Z",
+      "updated_at": "2019-01-29T05:03:46.630Z",
+      "cooked": "<p>When I have the sync switch set to video in, and the composite from the Cortex going to the front of the Liquid TV, everything works, including the preview.</p>\n<p>Is having the Liquid TV syncing in the back to the Cortex a problem when also having the Cortex coming into the front via composite for color monitoring?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "chromagnon",
+  "name": "Chromagnon",
+  "sku": "LZXCHROMAGNON",
+  "subtitle": "Video Synthesizer",
+  "company": "lzx",
+  "price": "1599.00",
+  "product_type": "instrument",
+  "specs": {
+    "hp": 52,
+    "mounting_depth_mm": 55,
+    "max_pos_12v_ma": 1500
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/4319674761239",
+  "images": {
+    "frontpanel": "website/chromagnon-front-panel.PNG",
+    "legend": "website/chromagnon-front-panel.PNG"
+  },
+  "connectors": [
+    {
+      "name": "ILDA",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -4800,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "CVBS",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": -4100,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Y",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -4100,
+      "y": -1250,
+      "part": null
+    },
+    {
+      "name": "Pb",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -4100,
+      "y": -625,
+      "part": null
+    },
+    {
+      "name": "R",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -3400,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "G",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -3400,
+      "y": -1375,
+      "part": null
+    },
+    {
+      "name": "B",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": -3400,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Pr",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": -4100,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Key",
+      "ref_des": "J12",
+      "is_input": true,
+      "is_output": false,
+      "x": -2900,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Motion",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": -2900,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Mod Distance CV",
+      "ref_des": "J14",
+      "is_input": true,
+      "is_output": false,
+      "x": -2000,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "X Position CV",
+      "ref_des": "J15",
+      "is_input": true,
+      "is_output": false,
+      "x": -1500,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Y Position CV",
+      "ref_des": "J16",
+      "is_input": true,
+      "is_output": false,
+      "x": -1000,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Mod Angle CV",
+      "ref_des": "J17",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Luma",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": -3400,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "X",
+      "ref_des": "J10",
+      "is_input": true,
+      "is_output": false,
+      "x": -2900,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Y",
+      "ref_des": "J11",
+      "is_input": true,
+      "is_output": false,
+      "x": -2900,
+      "y": -1375,
+      "part": null
+    },
+    {
+      "name": "Edge CV",
+      "ref_des": "J18",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Rotation CV",
+      "ref_des": "J19",
+      "is_input": true,
+      "is_output": false,
+      "x": 500,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Size CV",
+      "ref_des": "J20",
+      "is_input": true,
+      "is_output": false,
+      "x": 1000,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Skew CV",
+      "ref_des": "J21",
+      "is_input": true,
+      "is_output": false,
+      "x": 1500,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Curve CV",
+      "ref_des": "J22",
+      "is_input": true,
+      "is_output": false,
+      "x": 2000,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "X",
+      "ref_des": "J23",
+      "is_input": false,
+      "is_output": true,
+      "x": 2900,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Y",
+      "ref_des": "J24",
+      "is_input": false,
+      "is_output": true,
+      "x": 2900,
+      "y": -1375,
+      "part": null
+    },
+    {
+      "name": "Shape",
+      "ref_des": "J25",
+      "is_input": false,
+      "is_output": true,
+      "x": 2900,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "H",
+      "ref_des": "J26",
+      "is_input": false,
+      "is_output": true,
+      "x": 2900,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "R",
+      "ref_des": "J27",
+      "is_input": false,
+      "is_output": true,
+      "x": 3400,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "G",
+      "ref_des": "J28",
+      "is_input": false,
+      "is_output": true,
+      "x": 3400,
+      "y": -1375,
+      "part": null
+    },
+    {
+      "name": "B",
+      "ref_des": "J29",
+      "is_input": false,
+      "is_output": true,
+      "x": 3400,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "V",
+      "ref_des": "J30",
+      "is_input": false,
+      "is_output": true,
+      "x": 3400,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "CVBS",
+      "ref_des": "J31",
+      "is_input": false,
+      "is_output": true,
+      "x": 4100,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Pb",
+      "ref_des": "J33",
+      "is_input": false,
+      "is_output": true,
+      "x": 4100,
+      "y": -625,
+      "part": null
+    },
+    {
+      "name": "Pr",
+      "ref_des": "J34",
+      "is_input": false,
+      "is_output": true,
+      "x": 4100,
+      "y": 0,
+      "part": null
+    },
+    {
+      "name": "Y",
+      "ref_des": "J32",
+      "is_input": false,
+      "is_output": true,
+      "x": 4100,
+      "y": -1250,
+      "part": null
+    },
+    {
+      "name": "ILDA",
+      "ref_des": "J35",
+      "is_input": false,
+      "is_output": true,
+      "x": 4800,
+      "y": -875,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "X Position",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -2000,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Y Position",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1000,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Edge",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Size",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1000,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "Skew",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 2000,
+      "y": -1875,
+      "part": null
+    },
+    {
+      "name": "X Position CV Depth",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -2000,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Y Position CV Depth",
+      "ref_des": "P7",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1000,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Edge CV Depth",
+      "ref_des": "P8",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Size CV Depth",
+      "ref_des": "P9",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1000,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Skew CV Depth",
+      "ref_des": "P10",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 2000,
+      "y": -875,
+      "part": null
+    },
+    {
+      "name": "Speed",
+      "ref_des": "P11",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -3000,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Mod Distance CV Depth",
+      "ref_des": "P12",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -2000,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Mod Angle CV Depth",
+      "ref_des": "P13",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -500,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Rotation CV Depth",
+      "ref_des": "P14",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 500,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Curve CV Depth",
+      "ref_des": "P15",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 2000,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Mod Distance",
+      "ref_des": "P16",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -2000,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Mod Angle",
+      "ref_des": "P17",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -500,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Rotation",
+      "ref_des": "P18",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 500,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Curve",
+      "ref_des": "P19",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 2000,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Position Mod",
+      "ref_des": "S6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -4800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Flip",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -4300,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Cycle",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -3800,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Fold",
+      "ref_des": "S4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1250,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Split",
+      "ref_des": "S5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1250,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "Size Mod",
+      "ref_des": "S7",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -4300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Edge Mod",
+      "ref_des": "S8",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -3800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Rotation Mod",
+      "ref_des": "S9",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -3300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Curve Mod",
+      "ref_des": "S10",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -2800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Rotation Spin",
+      "ref_des": "S12",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1250,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Mod Spin",
+      "ref_des": "S11",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -1250,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "HV Mode",
+      "ref_des": "S13",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 2800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "XY Mode",
+      "ref_des": "S14",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 3300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Luma Mode",
+      "ref_des": "S15",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 3800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Chroma Mode",
+      "ref_des": "S16",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 4300,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Composite Mode",
+      "ref_des": "S17",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 4800,
+      "y": 1875,
+      "part": null
+    },
+    {
+      "name": "Source Select",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -4800,
+      "y": 875,
+      "part": null
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/chromagnon-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/chromagnon-front-panel.PNG",
+        "extension": "PNG"
+      },
+      {
+        "path": "website/chromagnonfolk-and-gary.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/lzx.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [
+      {
+        "path": "panel-art/amplifier_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/arrows.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromagnon_acrylic_window_print_black_600_dpi_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromagnon_block_diagram.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromagnon_button_cap_print_sprue_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromagnon_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromagnon_frontpanel_uv_color_overprint_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/chromodular_mockup.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/colorspace_converter_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/dual_rectifier_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/gamma_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/luma_key_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/luma_proc_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/rectifier_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/rotator_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/scrambler_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/solarizer_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/triple_proc_frontpanel_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/chromagnon_lab_manual_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/chromagnon_signal_flow_diagram_1.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [
+        {
+          "path": "brand/logos/chromagnon_logo.ai",
+          "extension": "ai"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_black_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_native_60.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_100.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_150.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_200.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_300.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_40.png",
+          "extension": "png"
+        },
+        {
+          "path": "brand/logos/chromagnon_logo_white_60.png",
+          "extension": "png"
+        }
+      ],
+      "characters": [
+        {
+          "path": "brand/characters/chromagnon_character.ai",
+          "extension": "ai"
+        }
+      ]
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Follow along with Chromagnon production progress on our blog . Chromagnon is a visual instrument designed for real-time image creation and transformation. It combines video sync generation, wideband analog IO, and FPGA-powered signal processing into a single playable device — equally at home as a standalone instrument or as the core of a EuroRack video synthesis system. Standalone and EuroRack out of the box. Includes a sheet metal enclosure for standalone use. Power from EuroRack power header or any 12V DC wall wart. A holistic visual instrument or core module for EuroRack video synthesis. Includes video sync generation, video input, video output, complex cartesian processor and quad waveform generators. Multi format visuals. Chromagnon supports several complete workflows within a simple interface: colorization, chroma keying, quadrilateral figure generation, and arbitrary raster generation for scan processing with ILDA lasers and XY displays. FPGA-powered processing with analog I/O. High-speed signal processing runs on a dedicated FPGA core for true per-pixel bandwidth in HD formats, while analog I/O buffers and CV input circuits maintain high-quality analog signal integrity. Firmware-updatable for future processing modes and features. Analog HD Video Interfaces. Video and sync generation up to 1080i60. Bring your existing LZX video synthesis system into a high resolution era. Included Items: 52HP EuroRack module with standalone sheet metal enclosure and 12V DC wall wart power adapter, lab exercise manual, 5ft composite video cable, 2x 3.5mm patch cables, 12V DC power jumper cable, EuroRack power cable, inflatable club. Front panel design, control layout, and enclosure design are finalized. The rear face of the instrument will also include trimmable adjustments for the XY monitor and ILDA interfaces. Promotional painting of \"Chromagnonfolk with Gary\" by Jason Wayne Barnett ."
+}

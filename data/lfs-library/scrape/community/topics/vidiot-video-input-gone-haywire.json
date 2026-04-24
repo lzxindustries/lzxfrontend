@@ -1,0 +1,175 @@
+{
+  "id": 1203,
+  "title": "Vidiot video input gone haywire?",
+  "slug": "vidiot-video-input-gone-haywire",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-06-08T13:55:55.399Z",
+  "views": 1063,
+  "like_count": 4,
+  "posts_count": 13,
+  "posts": [
+    {
+      "id": 5511,
+      "post_number": 1,
+      "username": "Thomas",
+      "name": "Thomas ",
+      "created_at": "2019-06-08T13:55:55.496Z",
+      "updated_at": "2019-06-08T14:20:39.956Z",
+      "cooked": "<p>Hi all,</p>\n<p>In the past I had a very easy time getting my video camera working with the Vidiot. It was plug and play and super fun.</p>\n<p>Now, I am unable to get a \u2018still\u2019 screen, regardless of what I try. Is my video input module fried or am I missing an obvious \u2018neutral\u2019 setting? (I used another video module as video source earlier, maybe it can have caused damage?)</p>\n<p>The camera has RCA out, and displays fine on my projector if I take the Vidiot out of the chain. I tried still images and video, no difference. The signal is clearly coming through, I can see the image shooting extremely rapidly diagonally across the screen, with all kinds of distortion and craziness. When I unplug the camera, the crazy diagonal movement stops and all is quiet again. I think I tried all possible combinations of settings and patching. I spent many hours trying at least.</p>\n<p>I hooked up my PS2 and it looks fine on my projector, but when the signal goes through Vidiot I can clearly see the menu screen of the game flying diagonally. There are many of them, so many smaller screens flying across diagonally. It\u2019s like an extremely aggressive screensaver basically.</p>\n<p>Edit: Big black diagonal bars also appear as soon as I connect the video camera, these move in the same diagonal direction at the same quick pace.</p>\n<p>I am unable to affect direction or speed of what\u2019s going on except by unhooking the video camera.</p>\n<p>The video module I used is the critter &amp; guitari video scope. Could it damage the Vidiot?</p>\n<p>The identical setup worked flawlessly before, so now I wonder if I damaged my video input? Hopefully it is user error.</p>\n<p>Thanks for any help!</p>\n<p>Thomas</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5512,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-06-08T15:28:59.769Z",
+      "updated_at": "2019-06-08T15:28:59.769Z",
+      "cooked": "<p>It sounds like you have bumped your PAL/NTSC or SYNC LOOP switch. Try switching either of those and power cycle the Vidiot between each change.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5518,
+      "post_number": 3,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2019-06-10T17:31:58.501Z",
+      "updated_at": "2019-06-10T17:31:58.501Z",
+      "cooked": "<p>I\u2019ve done that before while fumbling around blind for the power switch.  Turned it back on later and signal was totally jacked.  Thought i fried it somehow</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 5522,
+      "post_number": 4,
+      "username": "Thomas",
+      "name": "Thomas ",
+      "created_at": "2019-06-12T07:49:29.934Z",
+      "updated_at": "2019-06-12T07:49:29.934Z",
+      "cooked": "<p>Thank you for the advice! When I have time I will sit down and power cycle patiently between changes. I was not aware this was important.</p>\n<p>I come from the world of analog synths where, when I \u201close\u201d the audio I just twist some knobs and flip some switches until I hear sound again. No power cycling:)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 5523,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-06-12T15:39:29.153Z",
+      "updated_at": "2019-06-12T15:39:29.153Z",
+      "cooked": "<p>Video sync doesn\u2019t really have an equivalent in the audio world. Can you imagine having different amp formats that your line level output had to synchronize with, depending on where you live?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 5525,
+      "post_number": 6,
+      "username": "Thomas",
+      "name": "Thomas ",
+      "created_at": "2019-06-12T18:57:47.728Z",
+      "updated_at": "2019-06-12T18:57:47.728Z",
+      "cooked": "<p>Yes, of course it makes sense there is much more going on inside video electronics than with an analog synth, where it\u2019s mostly just voltages.</p>\n<p>The Vidiot is so easy to play, it\u2019s easy to forget there is a complex little guy inside.</p>\n<p>It\u2019s an amazing device, I just invested in a standalone hdmi recorder so I can create music and video without any pc involved. Using audio to affect one of the Vidiot parameters makes for great ambient and noise video scapes!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 5528,
+      "post_number": 7,
+      "username": "tke",
+      "name": "stefan",
+      "created_at": "2019-06-14T09:46:46.074Z",
+      "updated_at": "2019-06-14T09:46:46.074Z",
+      "cooked": "<p>What camera are you using? Can someone please recommend a camcorder or a camera which wouldn\u2019t cost me much? I have the same problem that my video camera input doesn\u2019t sync to the Vidiot, I\u2019m using a very old Panasonic MC6 camera. I feel as if I\u2019m missing out a big part of Vidiot\u2019s capabilities right now.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 5529,
+      "post_number": 8,
+      "username": "transistorcat",
+      "name": "",
+      "created_at": "2019-06-14T10:00:53.495Z",
+      "updated_at": "2019-06-14T10:00:53.495Z",
+      "cooked": "<p>If you\u2019re using PAL, WV-CP474E or equivalent is gen-lockable, cheap and easily available on ebay.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 5530,
+      "post_number": 9,
+      "username": "tke",
+      "name": "stefan",
+      "created_at": "2019-06-14T10:55:12.057Z",
+      "updated_at": "2019-06-14T10:55:12.057Z",
+      "cooked": "<p>thanks <a class=\"mention\" href=\"/u/transistorcat\">@transistorcat</a>, will a \u201cPanasonic WV-CP454E\u201d also be as good as the one you highlighted?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5531,
+      "post_number": 10,
+      "username": "transistorcat",
+      "name": "",
+      "created_at": "2019-06-14T11:21:45.920Z",
+      "updated_at": "2019-06-14T11:21:45.920Z",
+      "cooked": "<p>I haven\u2019t tried it so i can\u2019t really say, but it seems to have mostly the same features.<br>\nThe important thing is to get the -E version to get PAL.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 5667,
+      "post_number": 11,
+      "username": "tke",
+      "name": "stefan",
+      "created_at": "2019-06-28T13:32:18.036Z",
+      "updated_at": "2019-06-28T13:32:18.036Z",
+      "cooked": "<p>Hi <a class=\"mention\" href=\"/u/transistorcat\">@transistorcat</a> , I got my Panasonic camera now, but when I connect it it is still not syncing, do I need to put a cable into the Genlock (is it an input or output?) on the camera - going where?<br>\nThanks very much</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5672,
+      "post_number": 12,
+      "username": "transistorcat",
+      "name": "",
+      "created_at": "2019-06-28T16:22:35.273Z",
+      "updated_at": "2019-06-28T16:22:42.647Z",
+      "cooked": "<p>The genlock input needs to be connected to any video source you want to sync to (typically your other input or the output of your system)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 11,
+      "is_wiki": false
+    },
+    {
+      "id": 13369,
+      "post_number": 13,
+      "username": "Lektricman",
+      "name": "Kent  Cates",
+      "created_at": "2020-11-24T05:55:58.387Z",
+      "updated_at": "2020-11-24T05:55:58.387Z",
+      "cooked": "<p>Ahh , glad to find this post . Was having the same issue at Thomas . Video input having diagonal jagged lines , flipped the ntsc switch and powered off an on Again. Back to normal . Thought something was fried.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

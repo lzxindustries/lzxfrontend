@@ -1,0 +1,53 @@
+{
+  "id": 1313,
+  "title": "All About Marble Index",
+  "slug": "all-about-marble-index",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 7,
+      "name": "marbleindex",
+      "slug": "marbleindex"
+    }
+  ],
+  "created_at": "2019-07-19T15:03:23.248Z",
+  "views": 1652,
+  "like_count": 10,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 5957,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-19T15:03:23.333Z",
+      "updated_at": "2022-01-02T19:45:12.282Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/709ef6212aa4dc79feef63405436c81b8e180c59.jpeg\" data-download-href=\"/uploads/short-url/g4i36fmVdJvGFLtbBrkVwYEUiud.jpeg?dl=1\" title=\"marb3\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/709ef6212aa4dc79feef63405436c81b8e180c59.jpeg\" alt=\"marb3\" data-base62-sha1=\"g4i36fmVdJvGFLtbBrkVwYEUiud\" width=\"665\" height=\"500\" data-dominant-color=\"AAA8AA\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">marb3</span><span class=\"informations\">1362\u00d71024 555 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Depth is an illusion in the world of analog video, and Marble Index is the master of tricks. Unlike<br>\nstandard video mixers, which can fade and key between two sources, Marble Index has three<br>\nlayers. With 75 analog switches and 6 wideband faders within its depths, it is our most<br>\nambitious compositing module yet.</p>\n<ul>\n<li>Triple Layer RGB Video Mixing.  Most video mixers and broadcast consoles are<br>\nstructured around a dual channel structure. Marble Index takes a different approach:<br>\nthree layers stacked on top of each other, like pancakes!</li>\n<li>A Vast World of Blending Modes.  No features have been spared when it comes to the<br>\nfeature set of each compositing operation. Each RGB input channel includes two<br>\ndifferent inversion modes, variable color offsets, and analog effects like solarization.</li>\n<li>Video Rate Voltage Control.  The transitions between the three layers can be<br>\ncontrolled with oscillators or images at video rate speeds, punching windows through the<br>\ncomposition at varying depths.</li>\n</ul>\n<h1><a name=\"p-5957-specifications-1\" class=\"anchor\" href=\"#p-5957-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 45mm</li>\n<li>Power +12V @ 200mA</li>\n<li>Power -12V @ 185mA</li>\n</ul>\n<h1><a name=\"p-5957-user-reference-2\" class=\"anchor\" href=\"#p-5957-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/215d8e23e2d5953d723394cdd98e9c231bebb606.jpeg\" data-download-href=\"/uploads/short-url/4LacfVqKhZBkYFBKz9yHlvzkKEK.jpeg?dl=1\" title=\"marb4\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/2/215d8e23e2d5953d723394cdd98e9c231bebb606.jpeg\" alt=\"marb4\" data-base62-sha1=\"4LacfVqKhZBkYFBKz9yHlvzkKEK\" width=\"690\" height=\"341\" data-dominant-color=\"CFD1D2\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">marb4</span><span class=\"informations\">1040\u00d7515 129 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5957-videos-3\" class=\"anchor\" href=\"#p-5957-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6I-p4UnrU0RCqnD96R9-wt6&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5957-patching-tips-4\" class=\"anchor\" href=\"#p-5957-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>If you patch a monochrome signal into any of the Red input jacks, the signal will be cascaded automatically to the Green and Blue inputs, allowing for black and white input with a single patch cable.</li>\n<li>Solarize mode works great in concert with the RGB offset knobs. Subtract from the input signal on a channel with Solarize on in order to adjust the solarization offset point.</li>\n</ul>\n<h1><a name=\"p-5957-downloads-5\" class=\"anchor\" href=\"#p-5957-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Marble%20Index/Marble%20Index%20User%20Reference%20Card.pdf\">Marble Index User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5957-other-resources-6\" class=\"anchor\" href=\"#p-5957-other-resources-6\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/marbleindex\">LZX Community Forum posts tagged #marbleindex</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 6133,
+      "post_number": 2,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-07-29T17:22:08.153Z",
+      "updated_at": "2019-07-29T17:22:08.153Z",
+      "cooked": "<p>All of these videos and patches are really helpful and interesting, but patch three on this one is pure amaze of epic proportions. Thank you <a class=\"mention\" href=\"/u/johnnywoods\">@Johnnywoods</a> &amp; <a class=\"mention\" href=\"/u/z0nk0ut\">@Z0NK0UT</a>!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

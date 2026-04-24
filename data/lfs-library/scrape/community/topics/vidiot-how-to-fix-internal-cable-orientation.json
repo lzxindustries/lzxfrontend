@@ -1,0 +1,60 @@
+{
+  "id": 566,
+  "title": "Vidiot: How to fix internal cable orientation",
+  "slug": "vidiot-how-to-fix-internal-cable-orientation",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 29,
+      "name": "repair",
+      "slug": "repair"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-10-04T19:35:57.456Z",
+  "views": 1271,
+  "like_count": 2,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 2350,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-10-04T19:35:57.577Z",
+      "updated_at": "2018-10-04T20:08:49.287Z",
+      "cooked": "<p>In late September 2018 we had a batch of Vidiots (we suspect no more than 20-25 units) escape with an incorrect cable orientation inside the unit.  These units will not display any output (DOA behavior) until this issue is corrected.  LZX is authorizing a DIY fix as shown below without voiding your warranty status at all.  But your unit is also covered under warranty and we\u2019re happy to pay to have it shipped back to us and then back to you after performing the fix and verifying proper operation.  If you\u2019d like to initiate the RMA process, please submit a repair ticket at this URL:</p>\n<p><a href=\"https://www.lzxindustries.net/support/ticket/submit\" class=\"onebox\" target=\"_blank\" rel=\"nofollow noopener\">https://www.lzxindustries.net/support/ticket/submit</a></p>\n<p><strong>Step <span class=\"hashtag\">#1</span>. Remove (3) Philips Head <span class=\"hashtag\">#2-56</span> screws.</strong></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5.jpeg\" title=\"2.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5_2_690x387.jpeg\" alt=\"2\" width=\"690\" height=\"387\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5_2_690x387.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5_2_1035x580.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5_2_1380x774.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/4db3884a55e6dc8ac9c21406ea7b770b8fb7efb5_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">2.jpg</span><span class=\"informations\">3756\u00d72112 2.62 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p><strong>Step <span class=\"hashtag\">#2</span>. Remove (3) Philips Head <span class=\"hashtag\">#2-56</span> screws.</strong></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/d723ee765f71c5be12bd69161de575a2efea3aaa.jpeg\" title=\"3.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d723ee765f71c5be12bd69161de575a2efea3aaa_2_690x387.jpeg\" alt=\"3\" width=\"690\" height=\"387\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d723ee765f71c5be12bd69161de575a2efea3aaa_2_690x387.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d723ee765f71c5be12bd69161de575a2efea3aaa_2_1035x580.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d723ee765f71c5be12bd69161de575a2efea3aaa_2_1380x774.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d723ee765f71c5be12bd69161de575a2efea3aaa_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">3.jpg</span><span class=\"informations\">3756\u00d72112 2.83 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p><strong>Step <span class=\"hashtag\">#3</span>. Separate the rear enclosure piece gently, then unplug and reinstall ribbon cable exactly as shown below.  Make sure cable is firmly seated on both ends.</strong></p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/580b3a8058709e6ebef4b517575b495889afd2eb.jpeg\" title=\"12.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/580b3a8058709e6ebef4b517575b495889afd2eb_2_690x387.jpeg\" alt=\"12\" width=\"690\" height=\"387\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/580b3a8058709e6ebef4b517575b495889afd2eb_2_690x387.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/580b3a8058709e6ebef4b517575b495889afd2eb_2_1035x580.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/580b3a8058709e6ebef4b517575b495889afd2eb_2_1380x774.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/580b3a8058709e6ebef4b517575b495889afd2eb_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">12.jpg</span><span class=\"informations\">3756\u00d72112 2.94 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p><strong>Step <span class=\"hashtag\">#4</span>. Reassemble your unit before powering back on.</strong></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2354,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-10-04T20:10:23.920Z",
+      "updated_at": "2018-10-04T20:10:23.920Z",
+      "cooked": "<p>And here\u2019s a nice video showing the fix from <a class=\"mention\" href=\"/u/7pip\">@7pip</a><br>\n</p><div class=\"lazyYT\" data-youtube-id=\"qpiPMf4VLQE\" data-youtube-title=\"7pip: Unf#$!ing the Vidiot! (Quick fix for LZX Industries Vidiot!)\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2678,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-10-24T00:49:30.380Z",
+      "updated_at": "2018-10-24T00:49:30.380Z",
+      "cooked": "",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

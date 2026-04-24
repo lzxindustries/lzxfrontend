@@ -1,0 +1,96 @@
+{
+  "id": 1727,
+  "title": "Navigator Plus Vidiot",
+  "slug": "navigator-plus-vidiot",
+  "category_id": 1,
+  "tags": [
+    {
+      "id": 38,
+      "name": "navigator",
+      "slug": "navigator"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-12-03T20:08:52.538Z",
+  "views": 589,
+  "like_count": 0,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 7900,
+      "post_number": 1,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-12-03T20:08:52.648Z",
+      "updated_at": "2019-12-03T20:08:52.648Z",
+      "cooked": "<p>I\u2019m thinking of adding a navigator to my vidiot and am wondering what to expect from the navigator when processing external video. There\u2019s only one video I found on youtube showing color changing of the external video. I think a bridge and a staircase may also be necessary to get more pattern effects, but I\u2019m trying to do one thing at a time. If you have experience with the vidiot and navigator working together could you please provide your insight? <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7901,
+      "post_number": 2,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-12-03T20:14:42.976Z",
+      "updated_at": "2019-12-03T20:14:42.976Z",
+      "cooked": "<p>Also, tips/insights for patterns generated on the vidiot using only the navigator would be welcomed also. I\u2019m new to video synthesis but I\u2019m excited to be getting into this world. I\u2019ve watched all of the videos on youtube about the navigator, but found most of them to involve several other modules so I\u2019m really trying to get my head around what the pair of vidiot and navigator can do alone. Thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7907,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-04T00:34:33.162Z",
+      "updated_at": "2019-12-04T00:34:33.162Z",
+      "cooked": "<p>It should be a fun pair. Have you seen this?<br>\n</p><div class=\"lazyYT\" data-youtube-id=\"HgzniBE66sI\" data-youtube-title=\"Vidiot Plus Navigator\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7911,
+      "post_number": 4,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-12-04T01:51:52.892Z",
+      "updated_at": "2019-12-04T01:51:52.892Z",
+      "cooked": "<p>Indeed! That\u2019s actually the one that made me buy it, but now I\u2019m looking for more examples/ideas <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 7912,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-04T03:05:36.707Z",
+      "updated_at": "2019-12-04T03:05:36.707Z",
+      "cooked": "<p>Cool. You\u2019ll have fun experimenting with the pair. If you find a novel patch, please post your results.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7931,
+      "post_number": 6,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2019-12-04T17:48:17.565Z",
+      "updated_at": "2019-12-04T17:48:17.565Z",
+      "cooked": "<p>Will do! I picked up a few more modules so I\u2019ll see what I can come up with <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

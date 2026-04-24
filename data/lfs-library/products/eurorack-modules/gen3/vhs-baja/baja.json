@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "baja",
+  "name": "BAJA",
+  "company": "vhs",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 6,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 40,
+    "max_neg_12v_ma": 40
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "https://www.videoheadroom.systems/video-synthesizers/p/baja",
+  "images": {
+    "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/baja"
+  },
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

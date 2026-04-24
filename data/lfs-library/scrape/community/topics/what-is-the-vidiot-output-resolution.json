@@ -1,0 +1,79 @@
+{
+  "id": 1849,
+  "title": "What is the Vidiot output resolution?",
+  "slug": "what-is-the-vidiot-output-resolution",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-01-24T17:05:10.704Z",
+  "views": 1214,
+  "like_count": 2,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 8520,
+      "post_number": 1,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-01-24T17:05:10.778Z",
+      "updated_at": "2020-01-24T17:43:29.711Z",
+      "cooked": "<p>I\u2019m intending to capture the Vidiot\u2019s output to a Macbook (2012) with the Blackmagic Intensity Shuttle\u2019s composite input (assuming that\u2019s the best method). I was unable to find the Vidiot\u2019s output resolution/fps in the manual though. (Also wondering about best capture format etc.)<br>\nThanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8521,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-01-24T17:55:42.775Z",
+      "updated_at": "2020-01-24T17:55:42.775Z",
+      "cooked": "<p>Thanks for the question. Lots of Vidiot + Intensity Shuttle posts on the forum:</p><aside class=\"quote\" data-post=\"1\" data-topic=\"580\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/b/f19dbf/48.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/capturing-vidiot-with-blackmagic-intensity-shuttle-settings/580\">Capturing Vidiot with Blackmagic Intensity Shuttle - Settings?</a> <a class=\"badge-category__wrapper \" href=\"/c/forum/diy/20\"><span data-category-id=\"20\" data-parent-category-id=\"13\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"DIY projects, circuit design, and technical discussions.\"><span class=\"badge-category__name\">DIY</span></span></a>\n  </div>\n  <blockquote>\n    Hi! \nJust got my Vidiot and now I\u2019m trying to capture the output with my Blackmagic Intensity Shuttle (thunderbolt version). Anyone who knows what settings to use? So far I\u2019ve been trying an endless amount of combinations without any luck. \nThanks!\n  </blockquote>\n</aside>\n<aside class=\"quote\" data-post=\"1\" data-topic=\"585\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/b/f19dbf/48.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/vidiot-need-for-tbc/585\">Vidiot - Need for TBC?</a> <a class=\"badge-category__wrapper \" href=\"/c/helpdesk/21\"><span data-category-id=\"21\" data-drop-close=\"true\" class=\"badge-category \" title=\"Questions and answers about issues with your equipment.\"><span class=\"badge-category__name\">Helpdesk</span></span></a>\n  </div>\n  <blockquote>\n    Hi! Is there a need for some kind of TBC when capturing the Vidiot with Blackmagic Intensity Shuttle? I\u2019ve only used the Vidiot this way and I\u2019m experiencing quite a lot of \u201cdrop outs\u201d. Thanks!\n  </blockquote>\n</aside>\n<aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"720\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/wednesdayayay/48/70_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/blackmagic-intensity-shuttle-success-mac/720\">Blackmagic intensity shuttle success mac</a> <a class=\"badge-category__wrapper \" href=\"/c/helpdesk/21\"><span data-category-id=\"21\" data-drop-close=\"true\" class=\"badge-category \" title=\"Questions and answers about issues with your equipment.\"><span class=\"badge-category__name\">Helpdesk</span></span></a>\n  </div>\n  <blockquote>\n    so I found a crazy good deal on black magic intensity thunderbolt shuttles on ebay and bought one \nI\u2019m using mac 10.10.5 \nI downloaded the software here \n<a href=\"https://www.blackmagicdesign.com/support/family/capture-and-playback\" class=\"onebox\" target=\"_blank\" rel=\"noopener\">https://www.blackmagicdesign.com/support/family/capture-and-playback</a> \nfor reference my download was 10.11.4 \nthe shuttle immediately showed up in the desktop video software panel when plugged in via thunderbolt \nthe black magic media express software doesn\u2019t seem to want to open on my operating system (from the download 10.11.4 os is 10.10.5) s\u2026\n  </blockquote>\n</aside>\n\n<p>Vidiot outputs a standard 480i composite signal.</p>\n<p>More capturing tips available in this video:</p><div class=\"youtube-onebox lazy-video-container\" data-video-id=\"mVQETn5Mjp4\" data-video-title=\"LZX Video Synth Techniques: Post Production Workflow\" data-video-start-time=\"\" data-provider-name=\"youtube\">\n  <a href=\"https://www.youtube.com/watch?v=mVQETn5Mjp4\" target=\"_blank\" rel=\"noopener\">\n    <img class=\"youtube-thumbnail\" src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/607eae8c4e5f0e7a67777338d3e6767acc8b9ae0.jpeg\" title=\"LZX Video Synth Techniques: Post Production Workflow\" data-dominant-color=\"83626F\" width=\"690\" height=\"388\">\n  </a>\n</div>\n\n<p>Good luck and have fun!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8522,
+      "post_number": 3,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-01-24T17:57:44.222Z",
+      "updated_at": "2020-01-24T17:57:44.222Z",
+      "cooked": "<p>Thanks, I\u2019ll look through these. FYI I searched the forum twice for vidiot resolution and nothing came up.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 8524,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-01-24T18:16:07.835Z",
+      "updated_at": "2020-01-29T16:27:17.683Z",
+      "cooked": "<p>I think that\u2019s because composite video resolution is standard and not specific to Vidiot.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8525,
+      "post_number": 5,
+      "username": "vidioray",
+      "name": null,
+      "created_at": "2020-01-24T18:25:51.163Z",
+      "updated_at": "2020-01-24T18:25:51.163Z",
+      "cooked": "<p>Got it, I was misinformed by blackmagic\u2019s tech support. They told me the Intensity Shuttle\u2019s Video Standard Settings were resolution:framerate when they\u2019re actually analogresolution:fieldrate</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

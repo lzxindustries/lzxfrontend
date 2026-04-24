@@ -1,0 +1,55 @@
+{
+  "id": 426,
+  "title": "How do I mount Liquid TV in Vessel?",
+  "slug": "how-do-i-mount-liquid-tv-in-vessel",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 28,
+      "name": "liquid-tv",
+      "slug": "liquid-tv"
+    }
+  ],
+  "created_at": "2018-09-11T19:15:11.901Z",
+  "views": 908,
+  "like_count": 4,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 1612,
+      "post_number": 1,
+      "username": "eyesnoface",
+      "name": "Jonah Lange",
+      "created_at": "2018-09-11T19:15:11.994Z",
+      "updated_at": "2018-09-11T19:16:00.831Z",
+      "cooked": "<p>The following photos are to clarify the ability and method we use to mount Liquid TV into one of the Vessel cases we use in our studio. Right angle RCA sync cables connect from the Sync Out on Visual Cortex to Liquid TV and then again from Sync Out on Liquid TV to the Sync Bus board on Vessel.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6.jpeg\" title=\"d4fc01a6325802428b539cc1ca6decd8d5077ad6.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6_2_690x387.jpeg\" alt=\"41542229_329508804470011_703323404643598336_n\" width=\"690\" height=\"387\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6_2_690x387.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6_2_1035x580.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6_2_1380x774.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/d4fc01a6325802428b539cc1ca6decd8d5077ad6_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">d4fc01a6325802428b539cc1ca6decd8d5077ad6.jpeg</span><span class=\"informations\">3548\u00d71995 453 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div> <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/27f535568da2c3749c17b550872df1900ef01d37.jpeg\" title=\"27f535568da2c3749c17b550872df1900ef01d37.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/27f535568da2c3749c17b550872df1900ef01d37_2_690x387.jpeg\" alt=\"41659959_334982663905187_2910415099858518016_n\" width=\"690\" height=\"387\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/27f535568da2c3749c17b550872df1900ef01d37_2_690x387.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/27f535568da2c3749c17b550872df1900ef01d37_2_1035x580.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/27f535568da2c3749c17b550872df1900ef01d37_2_1380x774.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/27f535568da2c3749c17b550872df1900ef01d37_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">27f535568da2c3749c17b550872df1900ef01d37.jpeg</span><span class=\"informations\">3548\u00d71995 524 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1648,
+      "post_number": 2,
+      "username": "128harps",
+      "name": "",
+      "created_at": "2018-09-12T14:50:17.977Z",
+      "updated_at": "2018-09-12T14:50:17.977Z",
+      "cooked": "<p>Hey Jonah!<br>\nIn relation to this subject, the mounting depth for My Liquid TV seems to be a few millimeters off from the length that\u2019s shown on the LZX website. Because of this, my TV doesn\u2019t fit at all on the top right hand corner of my Vessel (next to the fan).<br>\nI\u2019ve provided two side view images below of my TV module. You can see how the Video sockets + the PCB extends out more than the picture that you\u2019ve provided of yours.<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/61185deb5939ff583894b3b26b23751d03b0a601.jpeg\" title=\"IMG_20180909_152457.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/61185deb5939ff583894b3b26b23751d03b0a601_2_375x500.jpeg\" alt=\"IMG_20180909_152457\" width=\"375\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/61185deb5939ff583894b3b26b23751d03b0a601_2_375x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/61185deb5939ff583894b3b26b23751d03b0a601_2_562x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/61185deb5939ff583894b3b26b23751d03b0a601_2_750x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/61185deb5939ff583894b3b26b23751d03b0a601_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_20180909_152457.jpg</span><span class=\"informations\">3024\u00d74032 2.43 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2.jpeg\" title=\"MVIMG_20180912_213330.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2_2_374x500.jpeg\" alt=\"MVIMG_20180912_213330\" width=\"374\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2_2_374x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2_2_561x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2_2_748x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/ef276a239d3cc2dd6dc99dad0fea0863ab5199e2_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">MVIMG_20180912_213330.jpg</span><span class=\"informations\">2138\u00d72851 1.55 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1671,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-09-13T02:01:06.847Z",
+      "updated_at": "2018-09-13T02:01:06.847Z",
+      "cooked": "<p>Your unit definitely looks assembled at more of an angle than I\u2019d like to see.  If it\u2019s a problem for your case definitely request a warranty return and we\u2019ll be happy to swap it out: <a href=\"https://www.lzxindustries.net/support/ticket/submit\">https://www.lzxindustries.net/support/ticket/submit</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

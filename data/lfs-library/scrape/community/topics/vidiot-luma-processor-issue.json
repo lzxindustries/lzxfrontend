@@ -1,0 +1,55 @@
+{
+  "id": 3023,
+  "title": "Vidiot Luma Processor issue",
+  "slug": "vidiot-luma-processor-issue",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2021-04-07T06:55:50.986Z",
+  "views": 504,
+  "like_count": 1,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 17384,
+      "post_number": 1,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2021-04-07T06:55:51.059Z",
+      "updated_at": "2021-04-07T14:26:06.838Z",
+      "cooked": "<p>Hello - I\u2019ve been having an issue where I\u2019m not getting a signal out of the Luma processor RCA output Everything else seems to be working fine. I\u2019ve tried both positions for the Loop Thru switch, but no luck. I have a couple of questions:</p>\n<ol>\n<li>\n<p>Could this be due to the ribbon cable issue I\u2019ve read about on here?</p>\n</li>\n<li>\n<p>The CRT I\u2019m using for a feedback monitor has a black-and-white mode. I\u2019m wondering if taking the output of the \u201cSync Out/Loop Through\u201d RCA jack into the feedback monitor (in black-and-white mode) gives me the same signal I\u2019d get from the Luma Out?</p>\n</li>\n</ol>\n<p>Thanks for any help!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17386,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-04-07T14:25:56.031Z",
+      "updated_at": "2021-04-07T14:25:56.031Z",
+      "cooked": "<p>Sorry to hear you are having trouble.<br>\nWhat is your patch like on the LUMA side? Could you post a photo? Are you seeing only a white screen at the output?<br>\nIf you are unable to see anything at the LUMA out under any conditions it would be best to contact <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> to arrange an RMA.</p>\n<p>At this point no Vidiots should have reversed ribbon cables. You wouldn\u2019t get a coherent output from either output jack if it was reversed.</p>\n<p>The LUMA output is only available from the LUMA output RCA jack. The loop through output is an unprocessed signal.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17424,
+      "post_number": 3,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2021-04-08T19:16:54.126Z",
+      "updated_at": "2021-04-08T19:16:54.126Z",
+      "cooked": "<p>Thanks for the quick reply! I get no output (just a black screen) from the LUMA side no matter the knob/switch settings or what I have patched in. Will send some video via email <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": 4438,
+  "title": "Can TBC2 decode HD source in SD system?",
+  "slug": "can-tbc2-decode-hd-source-in-sd-system",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 14,
+      "name": "tbc2",
+      "slug": "tbc2"
+    }
+  ],
+  "created_at": "2023-04-27T21:36:19.186Z",
+  "views": 775,
+  "like_count": 10,
+  "posts_count": 10,
+  "posts": [
+    {
+      "id": 31984,
+      "post_number": 1,
+      "username": "kristenstewart",
+      "name": "kristenstewart",
+      "created_at": "2023-04-27T21:36:19.262Z",
+      "updated_at": "2023-04-27T21:36:19.262Z",
+      "cooked": "<p>When I use TBC2 to decode HD sources in my SD system the aspect ratio messes up. How do I do this?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 31986,
+      "post_number": 2,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2023-04-27T22:09:01.720Z",
+      "updated_at": "2023-04-27T23:30:31.628Z",
+      "cooked": "<p>The current firmware doesn\u2019t currently provide cropping / scaling options to correct aspect ratios between SD/HD inputs.  It sounds like it\u2019s planned for a future firmware update.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 31987,
+      "post_number": 3,
+      "username": "kristenstewart",
+      "name": "kristenstewart",
+      "created_at": "2023-04-27T22:27:18.793Z",
+      "updated_at": "2023-04-27T22:27:18.793Z",
+      "cooked": "<p>Oh my! In October of 2019 the LZX Newsletter read:</p>\n<blockquote>\n<p>TBC2 is a swiss army knife input module which simplifies the process of getting multiple external video feeds into your LZX modular video synthesis system.  Dual channel frame synchronization with genlock, time base correction, HD downscaling and format conversion, still image/loop playback and color decoding. Composite, S-Video, Component YPbPr and Component RGB inputs.</p>\n</blockquote>\n<p>When do you plan on releasing the HD downscaling and format conversion? I ordered the Orion Series many years ago and updates for Diver or Memory Palace have been sorely lacking.</p>\n<p>I saw this:</p>\n<aside class=\"quote no-group quote-modified\" data-username=\"creatorlars\" data-post=\"112\" data-topic=\"3397\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\"><a href=\"https://community.lzxindustries.net/t/lzx-gen3-modular-releases-2021-2022/3397/112\">LZX Gen3 Modular Releases 2021-2022</a></div>\n<blockquote>\n<p>Yes, Memory Palace Mk2 will follow Chromagnon\u2019s release and be our second Automata instrument. It\u2019s become necessary for supply chain reasons that we combine our hardware for the digital/FPGA heart of all our products to use the same core assembly, so this update will occur before Memory Palace\u2019s next production batch in early 2022.</p>\n<p>A move to standardize the FPGA brain PCBA used across multiple products, and update Memory Palace to Gen3 power expectations. This won\u2019t have any effect on future development \u2013 firmware will be running on the exact same platform (7Z010), so both versions of the hardware will run the same firmware image and have the same functions.</p>\n<p>Usually we completely overhaul things when we revise something, but in the case of Memory Palace we don\u2019t feel the need to make any big changes. So this is more of a form factor update so we can keep it in production and keep developing for it!</p>\n</blockquote>\n</aside>\n<p>I hope there will not be a TBC2 Mk2 before the HD downscaling and format conversion are functional!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 31998,
+      "post_number": 4,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2023-04-28T04:20:27.485Z",
+      "updated_at": "2023-04-28T04:23:44.836Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"kristenstewart\" data-post=\"3\" data-topic=\"4438\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/kristenstewart/48/9882_2.png\" class=\"avatar\"> kristenstewart:</div>\n<blockquote>\n<p>When do you plan on releasing the HD downscaling and format conversion?</p>\n</blockquote>\n</aside>\n<p>I think you misunderstood.  <strong>TBC2 downscales and upscales between HD and SD already</strong>, it can cross convert between any of the input formats to any of the output formats.</p>\n<p>The missing function <a class=\"mention\" href=\"/u/rempesm\">@rempesm</a> is referencing is aspect ratio correction, which is implemented but unreleased.  Right now my focus with TBC2 is on fulfilling all the TBC2 preorders, and getting the second batch production underway.  That\u2019s been ongoing since late January, and has taken forever, but we are nearly there.  Then there will be a firmware release that implements this function and more.<br>\nFollow this thread for the latest status: <a href=\"https://community.lzxindustries.net/t/tbc2-has-been-released/4270/38\" class=\"inline-onebox\">TBC2 has been released! - #38 by meudiademorte</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 32013,
+      "post_number": 6,
+      "username": "monads",
+      "name": "Robert Gutierrez",
+      "created_at": "2023-04-30T02:41:59.709Z",
+      "updated_at": "2023-04-30T02:41:59.709Z",
+      "cooked": "<p>We need that TBC2 \u201cscreensaver\u201d though Lars.   I fear by the time the company fulfills TBC2 pre-orders and second batch??..some of the original TBC2 modules/users will have screen burn-in by the time an update is available to resolve.  Users already have MP screen burn-in still waiting a screensaver update to no avail.  Let\u2019s get the TBC2 screensaver FW ready to deploy at minimum least please.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 32015,
+      "post_number": 7,
+      "username": "yuya",
+      "name": "Yuya Watanabe",
+      "created_at": "2023-04-30T11:25:44.916Z",
+      "updated_at": "2023-04-30T11:25:44.916Z",
+      "cooked": "<p>Since I found out about the Memory Palace\u2019s screen burn-in issue, I try to turn off the power frequently.<br>\nI hope the Memory Palace and TBC2 will implement the screen saver feature soon\u2026 <img src=\"https://emoji.discourse-cdn.com/twitter/pray.png?v=12\" title=\":pray:\" class=\"emoji\" alt=\":pray:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 32016,
+      "post_number": 8,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2023-04-30T13:55:19.796Z",
+      "updated_at": "2023-04-30T13:55:19.796Z",
+      "cooked": "<p>Yes, I switch off my TBC2 when it isn\u2019t in use. However, when I do use it, I\u2019m frequently cycling screens to change settings. Could that help avoid screen burn?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 32017,
+      "post_number": 9,
+      "username": "monads",
+      "name": "Robert Gutierrez",
+      "created_at": "2023-05-01T01:01:48.048Z",
+      "updated_at": "2023-05-01T01:01:48.048Z",
+      "cooked": "<p>Yup!..cycling TBC2 screens is exactly what I do! But I\u2019m kinda tired of doing this and just going to unrack it. I leave mine on for sometimes 5hrs 4days a week!?  It\u2019s going to get screen burn-in just like my MP.  But Lars is focusing on the TBC2 mkII now???  We need that screen saver feature day-1.  Please Lars?? Super please??</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 32018,
+      "post_number": 10,
+      "username": "kristenstewart",
+      "name": "kristenstewart",
+      "created_at": "2023-05-01T01:38:32.019Z",
+      "updated_at": "2023-05-01T01:39:27.518Z",
+      "cooked": "<p>Please do not delay the release of aspect ratio correction. What might be the use of downscaling and upscaling without it?</p>\n<p>The recent April newsletter made this comment all the more fascinating.</p>\n<aside class=\"quote no-group\" data-username=\"creatorlars\" data-post=\"4\" data-topic=\"4438\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\"> creatorlars:</div>\n<blockquote>\n<p>Right now my focus with TBC2 is on fulfilling all the TBC2 preorders, and getting the second batch production underway. That\u2019s been ongoing since late January, and has taken forever, but we are nearly there.</p>\n</blockquote>\n</aside>\n<blockquote>\n<p>TBC2 shipments have reached a momentary pause, as our initial production yield was smaller than expected. Parts ordering for the second batch commences on Monday, after which we will have a better idea of the possible delivery timeline. The second batch will feature slight changes to TBC2\u2019s design that make it fit our current Gen3 production methods. This includes a new design for power and sync entry and new faceplate material. The overall look and performance of the module remain unchanged.</p>\n</blockquote>\n<p><em>Regarding a screensaver:</em></p>\n<p>Support indicated that Memory Palace firmware would not be updated until TBC2 release. It was also said that TBC2 was hardware waiting for firmware for many years. Finally there was mention that TBC2 firmware was long delayed because it was meant to be a portable environment compatible with other LZX digital devices.</p>\n<p>If this were the scope of such a thing, is it not trivial to add a screensaver to Memory Palace firmware?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 32030,
+      "post_number": 11,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-05-01T16:29:57.773Z",
+      "updated_at": "2023-05-01T16:29:57.773Z",
+      "cooked": "",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

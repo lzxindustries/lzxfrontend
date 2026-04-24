@@ -1,0 +1,53 @@
+{
+  "id": 1343,
+  "title": "All About Vessel",
+  "slug": "all-about-vessel",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 55,
+      "name": "eurorackpower",
+      "slug": "eurorackpower"
+    },
+    {
+      "id": 1,
+      "name": "vessel",
+      "slug": "vessel"
+    }
+  ],
+  "created_at": "2019-07-22T21:15:13.516Z",
+  "views": 1961,
+  "like_count": 2,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 6035,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-22T21:15:13.583Z",
+      "updated_at": "2022-01-02T19:46:39.149Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/725c7637fd5c46e35a317119f5f71b79a164a15a.jpeg\" data-download-href=\"/uploads/short-url/gjGwRJeUqjssnT0pRfaOEOBWHH4.jpeg?dl=1\" title=\"vessels\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/725c7637fd5c46e35a317119f5f71b79a164a15a.jpeg\" alt=\"vessels\" data-base62-sha1=\"gjGwRJeUqjssnT0pRfaOEOBWHH4\" width=\"395\" height=\"500\" data-dominant-color=\"D7D5D3\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">vessels</span><span class=\"informations\">878\u00d71110 679 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Vessel is a 208 HP EuroRack enclosure designed to meet the demands of video synthesis modular systems or any EuroRack system requiring laboratory grade performance.  We wanted to create a EuroRack case which embodied the spirit of what we do at LZX Industries: highly functional, fun, and with careful attention to the details.</p>\n<h1><a name=\"p-6035-specifications-1\" class=\"anchor\" href=\"#p-6035-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>208HP of module mounting space with 2.5mm threaded inserts.</li>\n<li>22.25 x 10.5 x 3.375 inches, exact dimensions without modules installed.  When sizing transportation cases allow for up to 1 inch additional clearance for control knobs and other panel mounted components on LZX Industries modules.</li>\n<li>Mounting depth ranges between a minimum of 1.25 inches and a maximum of 2.5 inches.</li>\n<li>Powered by an LZX designed Malekko power supply</li>\n<li>High quality, precision mounting hardware, jacks and switches are utilized throughout the assembly.</li>\n<li>Side bumpers and feet are cast by hand at the LZX workshop out of industrial grade 85A polyurethane rubber. The same type of material is used to make roller skate wheels and traffic cones.  Available in a wide range of colors.</li>\n<li>Solid 1/16\" thick aluminum powder-coated boat enclosure with embedded standoffs and a wide range of mounting nuts.</li>\n<li>Two 40mm cooling fans (intake and exhaust) with wire finger guards and a separate power switch.  Fans are user serviceable and may be upgraded or replaced with standard 40mm PC case fans.  The fans are powered directly from the DC brick rather than the EuroRack power rails for noise free operation.</li>\n<li>Two RCA bulkheads on the right diagonal face allow connection to backplane RCA sync connections, so multiple cases can distribute video sync signals to each other.  The bulkheads could be used for any desired signals, if video sync distribution is not needed.</li>\n<li>Internal 12VDC 2.1mm DC jack connector allows powering peripherals inside the case from the external power brick instead of the EuroRack power rails.  This power output is compatible with Liquid TV.</li>\n<li>Two 3.5mm TRS jacks on the right diagonal face allow distribution of the EuroRack power rail\u2019s CV/Gate buses from case to case using readily available stereo 3.5mm cables.</li>\n</ul>\n<h1><a name=\"p-6035-mounting-depths-2\" class=\"anchor\" href=\"#p-6035-mounting-depths-2\" aria-label=\"Heading link\"></a>Mounting Depths</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/1/18a06e5fdf625d4bc9efbfce8c07ca121d3f64c4.jpeg\" data-download-href=\"/uploads/short-url/3vRbftupmbiIzST7IeymrgBV99G.jpeg?dl=1\" title=\"vessel-vector-illustration-for-patch-documentation-with-mounting-depths\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/1/18a06e5fdf625d4bc9efbfce8c07ca121d3f64c4.jpeg\" alt=\"vessel-vector-illustration-for-patch-documentation-with-mounting-depths\" data-base62-sha1=\"3vRbftupmbiIzST7IeymrgBV99G\" width=\"690\" height=\"322\" data-dominant-color=\"96C77D\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">vessel-vector-illustration-for-patch-documentation-with-mounting-depths</span><span class=\"informations\">2000\u00d7936 145 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-6035-other-resources-3\" class=\"anchor\" href=\"#p-6035-other-resources-3\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/vessel\">LZX Community Forum posts tagged #vessel</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 33422,
+      "post_number": 2,
+      "username": "mrfang",
+      "name": "",
+      "created_at": "2023-09-07T06:04:49.425Z",
+      "updated_at": "2023-09-07T06:04:49.425Z",
+      "cooked": "<p>Cincon TRH100A120-12E12-Level-VI 8.34A 12VDC Power Brick is the recommended one that shipped with Vessels.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

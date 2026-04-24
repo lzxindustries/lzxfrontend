@@ -1,0 +1,165 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "castle-100-multi-gate",
+  "name": "Castle 100 Multi Gate",
+  "sku": "LZXCSTL4",
+  "subtitle": "2 Input Logic Unit",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "castle",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 58,
+    "max_pos_12v_ma": 28,
+    "max_neg_12v_ma": 40
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/1692914090048",
+  "images": {
+    "frontpanel": "website/castle-100-front-panel.png",
+    "legend": "website/castle-100-front-panel.png"
+  },
+  "connectors": [
+    {
+      "name": "A",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "XNOR",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": -750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "XOR",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": -250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "NOR",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "OR",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "NAND",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "AND",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1750,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "Castle 100 Schematic RevE",
+      "path": "downloads/castle-100-schematic_RevE.pdf",
+      "file_type": "pdf"
+    },
+    {
+      "name": "Castle 100 BOM RevE",
+      "path": "downloads/castle-100-bom_RevE.csv",
+      "file_type": "csv"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/castle-100-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/castle-100-pcb-render-bottom_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/castle-100-pcb-render-top_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/image_52.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/castle-100-bom_RevE.csv",
+        "extension": "csv"
+      },
+      {
+        "path": "downloads/castle-100-schematic_RevE.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DIY PCB & Frontpanel Set The Multi-Logic Gate has 2 inputs and XNOR, XOR, NOR, OR, NAND, and AND outputs."
+}

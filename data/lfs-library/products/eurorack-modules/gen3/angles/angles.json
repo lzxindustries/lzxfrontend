@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "angles",
+  "name": "Angles",
+  "sku": "LZXANGLES",
+  "subtitle": "360 Degree Ramps Generator",
+  "company": "lzx",
+  "price": "329.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 12,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 175
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6876230025239",
+  "images": {
+    "frontpanel": "website/angles-front-panel.png",
+    "legend": "website/angles-front-line-art.png"
+  },
+  "features": [
+    {
+      "name": "Break outside the HV box",
+      "description": "Horizontal and vertical waveform generators are an essential ingredient in most generative patches. Due to this, many patches may feel constrained within a box, with the dimensions of shapes and patterns either oriented at 0 or 90 degrees. Angles offers ratio mixes from 0 to 345 degrees in 15 degree increments across 24 ouputs – that’s over 500 different alternatives to HV. Instead of patching HV, you can now pick any 2 angles.",
+      "topic": "main"
+    },
+    {
+      "name": "A protractor for your patch",
+      "description": "In order to synthesize visual elements with complex geometries, such as vanishing point illusions or polygons, one needs parallel access to separate angles at fixed ratios on independent outputs. For this purpose, a single crossfader or mixer does not go very far, and Angles becomes very powerful.",
+      "topic": "main"
+    },
+    {
+      "name": "Waveshape Expander",
+      "description": "Patch your Dual Oscillator outputs or Dual Shape Generator outputs into Angles’ inputs to expand the number of available waveforms.",
+      "topic": "patch"
+    },
+    {
+      "name": "Spatial Reference",
+      "description": "Patch any 2 outputs from Angles into your Dual Shape Generator to completely change the orientation of its generated patterns.",
+      "topic": "patch"
+    },
+    {
+      "name": "Oscillator Protractor",
+      "description": "Patch outputs from Angles into your Dual Oscillator CV inputs to modulate its’ waveforms at different angles.",
+      "topic": "patch"
+    },
+    {
+      "name": "Complex Color Field",
+      "description": "Patch any 3 outputs from Angles into RGB to create a complex color gradient for use as a background or modulation source.",
+      "topic": "patch"
+    },
+    {
+      "name": "Quadrature Expander",
+      "description": "Patch the +/-Sin/Cos outputs from a quadrature oscillator into Angles’ four inputs to create a full spread of 24 different output phases.",
+      "topic": "patch"
+    },
+    {
+      "name": "Hierarchichal Spatial Reference",
+      "description": "Patch any 4 outputs from one Angles to the 4 input on a second Angles module to get a completely different set of 24 perspectives.",
+      "topic": "patch"
+    },
+    {
+      "name": "Pairs well with",
+      "description": "Angles is a great support module to add after your system includes one or more of the following modules: Dual Shape Generator, Dual Wideband Oscillator, Stairs, Keychain. It really shines in 4+ module systems where its outputs can be distributed throughout the patch to multiple destinations.",
+      "topic": "system"
+    }
+  ],
+  "connectors": [
+    {
+      "name": "Horizontal Ramp",
+      "ref_des": "J1",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Vertical Ramp",
+      "ref_des": "J2",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Inverted Horizontal Ramp",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Inverted Vertical Ramp",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": -900,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -300,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "C",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": 300,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": 900,
+      "y": -1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "0 Degrees (100% A)",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": -625,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "90 Degrees (100% B)",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": -625,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "180 Degrees (100% C)",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": -625,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "270 Degrees (100% D)",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -625,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "15 Degrees (83.33% A + 16.67% B)",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": -125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "105 Degrees (83.33% B + 16.67% C)",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": -125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "195 Degrees (83.33% C + 16.67% D)",
+      "ref_des": "J15",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": -125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "285 Degrees (83.33% D + 16.67% A)",
+      "ref_des": "J16",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": -125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "30 Degrees (66.67% A + 33.33% B)",
+      "ref_des": "J17",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "120 Degrees (66.67% B + 33.33% C)",
+      "ref_des": "J18",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "210 Degrees (66.67% B + 33.33% C)",
+      "ref_des": "J19",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "300 Degrees (66.67% D + 33.33% A)",
+      "ref_des": "J20",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "45 Degrees (50% A + 50% B)",
+      "ref_des": "J21",
+      "is_input": true,
+      "is_output": true,
+      "x": -900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "135 Degrees (50% B + 50% C)",
+      "ref_des": "J22",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "315 Degrees (50% D + 50% A)",
+      "ref_des": "J24",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "60 Degrees (33.33% A + 66.67% B)",
+      "ref_des": "J25",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "150 Degrees (33.33% B + 66.67% C)",
+      "ref_des": "J26",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "240 Degrees (33.33% C + 66.67% D)",
+      "ref_des": "J27",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "330 Degrees (33.33% D + 66.67% A)",
+      "ref_des": "J28",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "165 Degrees (16.67% B + 83.33% C)",
+      "ref_des": "J29",
+      "is_input": false,
+      "is_output": true,
+      "x": -900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "165 Degrees (16.67% B + 83.33% C)",
+      "ref_des": "J30",
+      "is_input": false,
+      "is_output": true,
+      "x": -300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "255 Degrees (16.67% C + 83.33% D)",
+      "ref_des": "J31",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "345 Degrees (16.67% D + 83.33% A)",
+      "ref_des": "J32",
+      "is_input": false,
+      "is_output": true,
+      "x": 900,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "225 Degrees (50% C + 50% D)",
+      "ref_des": "J23",
+      "is_input": false,
+      "is_output": true,
+      "x": 300,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for Angles",
+      "youtube_id": "_b633U95ogo"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/angles-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/angles-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/angles-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/navigator_mk2_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Angles is a dual SD/HD ramp waveform generator and 24 output fixed ratio mixer. Synthesizing complex geometries, such as vanishing points or polygons, requires diagonally oriented ramps. Angles accomplishes this by mixing horizontal and vertical ramps in fixed proportions. It lets your patch break out of the box with 24 individual ramps rotated in 15-degree increments. Instead of being limited to 0 and 90 degrees, you can now pick any two angles. The 24 options for each of the two paired ramps gives over 500 creative alternatives to the ordinary HV ramp combo. Learn more about Angles on our documentation website!"
+}

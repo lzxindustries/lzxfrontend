@@ -1,0 +1,48 @@
+{
+  "id": 1481,
+  "title": "Diver plus vidiot",
+  "slug": "diver-plus-vidiot",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 13,
+      "name": "diver",
+      "slug": "diver"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-09-04T01:48:47.930Z",
+  "views": 713,
+  "like_count": 1,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 6597,
+      "post_number": 1,
+      "username": "Gangstalker",
+      "name": "",
+      "created_at": "2019-09-04T01:48:47.991Z",
+      "updated_at": "2019-09-04T16:34:22.010Z",
+      "cooked": "<p>Hi I was wondering if I could  use the Diver with the vidiot?  Thanks</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6619,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-09-04T16:38:25.471Z",
+      "updated_at": "2019-09-04T16:38:25.471Z",
+      "cooked": "<p>Greetings. Diver would be a really fun module to use with Vidiot. You could use it as a ramp generator to make Vidiot\u2019s patterns more complicated. Or use it as a way to visualize audio signals through Vidiot. Have you watched the Diver demo video? You can pretend that Johnny is using Vidiot instead of Prismatic Ray and Visual Cortex. The results with Vidiot would be very similar to what he comes up with in the video.<br>\n</p><div class=\"lazyYT\" data-youtube-id=\"INzBFDMsHqU\" data-youtube-title=\"LZX Diver - 3 Patches\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

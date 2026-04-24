@@ -1,0 +1,77 @@
+{
+  "id": 1314,
+  "title": "All About Visual Cortex",
+  "slug": "all-about-visual-cortex",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2019-07-19T17:33:13.067Z",
+  "views": 4434,
+  "like_count": 13,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 5959,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-19T17:33:13.157Z",
+      "updated_at": "2022-01-02T19:42:26.846Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3536762408e5bb9190e039caf16235552c7a7735.jpeg\" data-download-href=\"/uploads/short-url/7AJZkdVg0mpnAxYtot9EAK4Wcyp.jpeg?dl=1\" title=\"vc3\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3536762408e5bb9190e039caf16235552c7a7735.jpeg\" alt=\"vc3\" data-base62-sha1=\"7AJZkdVg0mpnAxYtot9EAK4Wcyp\" width=\"690\" height=\"341\" data-dominant-color=\"ADAAA8\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">vc3</span><span class=\"informations\">1110\u00d7550 335 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Core module with all required functions for EuroRack modular video synthesis.</p>\n<ul>\n<li>The Sync Generator section is a broadcast specification video sync generator which can operate in NTSC/480i or PAL/576i timing formats. It can provide the master timing reference for an entire video synthesizer system, and its timing may be synchronized to an external video source.</li>\n<li>Input Decoder is an analogue video input amplifier and colorspace converter. This section accepts YPbPr analogue component video, and processes it for patching internally inside a video synthesis system. The Y input can be used with Composite video signals if only grayscale operation is desired.</li>\n<li>Output Encoder section takes the output of the Colourizer &amp; Compositor section, converting signals inside your video synthesizer into standard video signals which may be displayed and recorded.</li>\n<li>Animation &amp; Key Generator is a multi-function control voltage generator, designed specifically for controlling transitions between two video images. It can function as a manual controller with slew, a flip-flop based envelope generator, or a low frequency oscillator. The key function enables a high-speed comparator, which generates a hard key image suitable for shape generation or luma keying.</li>\n<li>Colorizer &amp; Compositor is a voltage controlled analogue video mixer. It features two RGB input channels, individual RGB controls and several advanced colour processing effects. We designed this section to be capable of addressing all the essential colour mixing required for a small to medium sized modular video synthesis system.</li>\n<li>Ramp Generator is a dual synchronized waveform generator. It generates grayscale gradients in horizontal and vertical outputs, with selectable output waveshapes. These signals provide the basis for many shape and pattern generation techniques.</li>\n<li>Visual Cortex contains many connectors accessible via the rear of the module. LZX Industries will not offer technical support or service for use of these headers, but savvy users may be able to tap into them and find them useful for custom applications.</li>\n</ul>\n<h1><a name=\"p-5959-videos-1\" class=\"anchor\" href=\"#p-5959-videos-1\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6JfvRvlNL5d6lOXvOuuCzja&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5959-specifications-2\" class=\"anchor\" href=\"#p-5959-specifications-2\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 26HP</li>\n<li>Mounting Depth, 45mm</li>\n<li>Power +12V @ 180mA</li>\n<li>Power -12V @ 220mA</li>\n</ul>\n<h1><a name=\"p-5959-downloads-3\" class=\"anchor\" href=\"#p-5959-downloads-3\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Visual%20Cortex/Visual%20Cortex%20Technical%20Manual.pdf\">Visual Cortex Technical Manual [PDF]</a></li>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Visual%20Cortex/Visual%20Cortex%20Basic%20Patches.pdf\">Basic Patches Guide [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5959-other-resources-4\" class=\"anchor\" href=\"#p-5959-other-resources-4\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/visualcortex\">LZX Community Forum posts tagged #visualcortex</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 22447,
+      "post_number": 2,
+      "username": "mrfang",
+      "name": "",
+      "created_at": "2021-10-18T16:10:34.814Z",
+      "updated_at": "2021-10-18T21:28:22.823Z",
+      "cooked": "<p>Sharing the images linked below for fellow owners of v1, regarding rework and firmware updates!</p>\n<p>(updated with more complete images)</p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/a40d090ebb60c106947c93fd4e2aede8b54648a1.png\" alt=\"lzx vc rework notes\" data-base62-sha1=\"npgesULBOtmTsikoKb3iy4x29TH\" width=\"493\" height=\"279\"><br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/00dbad07476268d4843f1780092623967615f1ba.jpeg\" data-download-href=\"/uploads/short-url/7AEvMlov6aqZrQwEHaCvK0EfYS.jpeg?dl=1\" title=\"lzx_vc_rework\" rel=\"noopener nofollow ugc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/00dbad07476268d4843f1780092623967615f1ba.jpeg\" alt=\"lzx_vc_rework\" data-base62-sha1=\"7AEvMlov6aqZrQwEHaCvK0EfYS\" width=\"619\" height=\"500\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">lzx_vc_rework</span><span class=\"informations\">1069\u00d7863 157 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 22813,
+      "post_number": 3,
+      "username": "mrfang",
+      "name": "",
+      "created_at": "2021-11-04T20:29:00.659Z",
+      "updated_at": "2021-11-04T20:29:00.659Z",
+      "cooked": "<p>Black level calibration instructions for this module should also be linked:</p>\n<p><a href=\"https://community.lzxindustries.net/t/visual-cortex-black-level-calibration-and-pre-2016-identification/3529\">https://community.lzxindustries.net/t/visual-cortex-black-level-calibration-and-pre-2016-identification/3529</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 27991,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-08-05T22:16:52.970Z",
+      "updated_at": "2022-08-05T22:16:52.970Z",
+      "cooked": "",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

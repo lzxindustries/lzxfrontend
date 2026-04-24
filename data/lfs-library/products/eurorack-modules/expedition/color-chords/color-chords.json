@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "color-chords",
+  "name": "Color Chords",
+  "sku": "LZXCC",
+  "description": "Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other.",
+  "company": "lzx",
+  "price": "299.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 16,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 60,
+    "max_neg_12v_ma": 60
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692914843712",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-color-chords/1297"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Color-Chords-front-legend.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Color-Chords-front-panel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "website/Color-Chords-front-photo.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [
+      {
+        "path": "../../packaging/expedition_16hp_product_box_fantastapack.pdf",
+        "extension": "pdf",
+        "note": "Shared Expedition 16HP Fantastapack box dieline"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

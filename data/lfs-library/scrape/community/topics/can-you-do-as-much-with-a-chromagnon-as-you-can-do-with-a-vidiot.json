@@ -1,0 +1,240 @@
+{
+  "id": 2311,
+  "title": "Can you do as much with a Chromagnon as you can do with a Vidiot?",
+  "slug": "can-you-do-as-much-with-a-chromagnon-as-you-can-do-with-a-vidiot",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-08-20T07:18:10.205Z",
+  "views": 2273,
+  "like_count": 28,
+  "posts_count": 18,
+  "posts": [
+    {
+      "id": 11063,
+      "post_number": 1,
+      "username": "ezzy",
+      "name": "Scott c Wood ",
+      "created_at": "2020-08-20T07:18:10.282Z",
+      "updated_at": "2020-08-20T07:18:10.282Z",
+      "cooked": "<p>I\u2019m not talking in terms of specs, because I know the chromagnon has the Vidiot beat, but in terms of versatility and the complexity of the patterns that the instrument can produce on it\u2019s own. I ask this because the Vidiot seems to have a much more extensive patch bay than the chromagnon. Also, the website doesn\u2019t say if the chromagnon\u2019s different workflows can work alongside one another or not, so that\u2019s a big factor as to whether or not I get one.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11074,
+      "post_number": 2,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2020-08-20T16:16:02.872Z",
+      "updated_at": "2020-08-20T16:19:24.743Z",
+      "cooked": "<p>For someone who has a Vidiot already, they can choose between keeping their Vidiot and adding a Chromagnon or replacing their Vidiot with a Chromagnon.</p>\n<p>I\u2019m not sure buying a Vidiot is an option anymore. So, for someone who doesn\u2019t have a Vidiot, the choice may be much simpler. Either buy a Chromagnon or not. I\u2019m in this position, BTW. The Vidiot never interested me, I didn\u2019t buy one and now I don\u2019t have that option. You may be more fortunate, but I don\u2019t know.</p>\n<p>So, if you <strong>can</strong> still buy a Vidiot then your question makes the most sense. Regardless, I\u2019d recommend waiting until a demo video is posted before making any commitments. You can compare it with the Vidiot demo when that video appears on the LZX YouTube channel.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11075,
+      "post_number": 3,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2020-08-20T16:58:46.032Z",
+      "updated_at": "2020-08-20T16:59:12.393Z",
+      "cooked": "<p>There\u2019s the odd vidiot Comes up for sale used</p>\n<p>I would ignore to some extent the number of available patch points</p>\n<p>The important thing is what you can do with it</p>\n<p>Chromagnon has many apparent advantages over vidiot</p>\n<p>More video inputs - including colour</p>\n<p>High def analog video output</p>\n<p>Image Rotation</p>\n<p>Laser compatibility</p>\n<p>A ton of buttons and switches - some of which may change internal routing of some patch points - idk I am speculating a bit here!</p>\n<p>As nerdware said - wait for the demos and compare - there may be a few more vidiots available used at that time too</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11078,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-08-20T19:21:35.902Z",
+      "updated_at": "2020-08-20T19:21:35.902Z",
+      "cooked": "<p>This thread might give you a better impression of Chromagnon\u2019s capabilities (though wait for a demo video, if you\u2019re still not sure):</p><aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"2273\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/z0nk0ut/48/984_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/chromagnon-synthesis-concepts/2273\">Chromagnon Synthesis Concepts</a> <a class=\"badge-category__wrapper \" href=\"/c/forum/13\"><span data-category-id=\"13\" data-drop-close=\"true\" class=\"badge-category \" title=\"Open discussion about video synthesis techniques, workflow and instruments.\"><span class=\"badge-category__name\">Forum</span></span></a>\n  </div>\n  <blockquote>\n    Ahead of a demo video to show what Chromagnon can do, and in response to questions about how it works, here are some notes from Lars about the new LZX standalone synthesizer. \nSo to explain it compositionally, in a no-input case, it starts with ramp shape selection as the \u201cscene\u201d. You reach over to the right, set it to \u201ctriangle ramps\u201d or whatever you like and then you select \u201cVector\u201d if you want to process the ramps natively or \u201cShape\u201d if you want to process them as a quadrilateral (4 quadrant \u2026\n  </blockquote>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11081,
+      "post_number": 5,
+      "username": "Genlok",
+      "name": "Winston",
+      "created_at": "2020-08-20T19:51:21.514Z",
+      "updated_at": "2020-08-20T19:51:21.514Z",
+      "cooked": "<p>The way I see it Chromagnon will be the best of Vidiot and Visual Cortex (and Navigator, Shapechanger, Mapper, and Staircase) packed into one module. I think the key difference you\u2019re looking for is that the Vidiot excels primarily at making grids of shapes with a pair of oscillators, but can\u2019t do rotating quadrilateral figures or any of the tricks that a Nav+SC combo would give you. From what I gather, Chromagnon is going to have the complexity to make patterns and shapes far above and beyond what Vidiot is capable of, and with wavefolding it will likely be able to generate grid of shapes too, but with many more possibilities for modulation and animation. Also worth noting that Chromagnon has several built in modulation vectors, whereas Vidiot only has scrolling horizontal bars.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11083,
+      "post_number": 6,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2020-08-20T20:41:22.560Z",
+      "updated_at": "2020-08-20T20:43:30.306Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"Agawell\" data-post=\"3\" data-topic=\"2311\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/agawell/48/489_2.png\" class=\"avatar\"> Agawell:</div>\n<blockquote>\n<p>Image Rotation</p>\n</blockquote>\n</aside>\n<p>Can Chromagnon actually rotate an image? I thought it was just the ramps, but perhaps I\u2019ve missed something. Anyway, I don\u2019t recall Vidiot doing any kind of rotating, so Chromagnon definitely wins on that feature. I agree with all your other points. I\u2019d add 1080 component input, too. I think that\u2019s a really big feature.</p>\n<p>So what does Vidiot have that Chromagnon doesn\u2019t? Two oscillators, for a start. It\u2019s small size is another factor, making it easier to carry to gigs etc. One of the suggested Vidiot applications is video feedback using a B/W camera and monitor. I don\u2019t think Chromagnon is so well suited for that.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 11084,
+      "post_number": 7,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2020-08-20T21:46:08.845Z",
+      "updated_at": "2020-08-20T21:47:42.820Z",
+      "cooked": "<p>You\u2019d need Memory Palace or some kind of frame buffer to perform image rotation.  Processing a Luma camera signal using Navigator and Shapechanger (effectively the MK1 versions of what has been described in Chromagnon) will just get you a brighter or darker image.</p>\n<p>Rotating ramps in the context of a scan processing patch displayed on a XY monitor (or ILDA if you have super fast galvos on your laser) would appear to rotate the image as the H/V ramps are defining an arbitrary raster.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 11085,
+      "post_number": 8,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2020-08-20T23:06:46.349Z",
+      "updated_at": "2020-08-20T23:09:07.564Z",
+      "cooked": "<p>Yes, it looks like Chromagnon can instead rotate the chroma part of the signal, not luma.</p>\n<p>Am I right in thinking Chromagnon will let you access the luma part of the input and then feed the result back into Chromagnon to be recombined with the processed chroma part?</p>\n<p>So much of this is speculation! We really need to see that demo video.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 11093,
+      "post_number": 9,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2020-08-21T08:55:03.000Z",
+      "updated_at": "2020-08-21T08:55:03.000Z",
+      "cooked": "<p>as no demo is available yet I guessed that if this is replacing shapeshifter and navigator that it would enable image rotation of some kind\u2026 maybe just wishful thinking on my part - fingers crossed!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 11097,
+      "post_number": 10,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2020-08-21T10:03:54.156Z",
+      "updated_at": "2020-08-21T10:03:54.156Z",
+      "cooked": "<p>Well, a new module like this encourages a degree of wishful thinking! For a short time, I wondered if Chromagnon could process HD video internally. I\u2019ll be really impressed if it can do this, but now I seriously doubt it. I\u2019d like to be wrong, but we\u2019ll see.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 9,
+      "is_wiki": false
+    },
+    {
+      "id": 11100,
+      "post_number": 11,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2020-08-21T11:41:29.004Z",
+      "updated_at": "2020-08-21T11:42:12.301Z",
+      "cooked": "<p>exactly - from what I\u2019ve read I would assume that if you can put HD analogue video in and get HD analogue video out then the entire workflow would work like that - downscaling on the fly adds complications - and I remember reading somewhere that a lot of the expedition modules (staicase etc ) can handle HD analogue - it was just never an option before<br>\nthink about it - it\u2019s really about recognizing the frame and line markers in the stream - so as long as the circuits can handle a  faster signal it shouldn\u2019t be an issue<br>\nbut I might be wrong!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 10,
+      "is_wiki": false
+    },
+    {
+      "id": 11146,
+      "post_number": 12,
+      "username": "Psychoflauge",
+      "name": null,
+      "created_at": "2020-08-23T13:49:47.165Z",
+      "updated_at": "2020-08-23T13:50:05.050Z",
+      "cooked": "<p>I just sold my Vidiot on reverb to pay for my chromagnon preorder.  I\u2019d assume that once chromagnon does drop that people who wish to replace the Vidiot in their setup will put them up for sale. So their may be an influx of used vidiots for sale at that point in time.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11169,
+      "post_number": 13,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-08-24T17:00:47.199Z",
+      "updated_at": "2020-08-24T17:00:47.199Z",
+      "cooked": "<p>Perhaps\u2013but those who keep Vidiot will be rewarded by patching it into Chromagnon.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11193,
+      "post_number": 14,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2020-08-27T03:58:36.847Z",
+      "updated_at": "2020-08-27T03:59:29.360Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"nerdware\" data-post=\"8\" data-topic=\"2311\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/nerdware/48/457_2.png\" class=\"avatar\"> nerdware:</div>\n<blockquote>\n<p>Yes, it looks like Chromagnon can instead rotate the chroma part of the signal, not luma.<br>\nAm I right in thinking Chromagnon will let you access the luma part of the input and then feed the result back into Chromagnon to be recombined with the processed chroma part?</p>\n</blockquote>\n</aside>\n<p>Oh yes. See the Chroma and Luma buttons on the right side?  Those are selecting where the output color converter\u2019s sources come from.  So you could have a gradient shape colorized by the chrominance of input video only, etc.  Or colorize luma video with a gradient created by the XY shape generating chroma, etc.</p>\n<p>Chromagnon can rotate the luma or the chroma.  Luma rotation will look like a continuous solarizer.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    },
+    {
+      "id": 11195,
+      "post_number": 15,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2020-08-27T06:12:41.689Z",
+      "updated_at": "2020-08-27T06:26:27.341Z",
+      "cooked": "<p>Chromagnon will process whatever native format it\u2019s internal sync generator is running in: any of the SD/HD resolutions. The HD image may look a little soft on very hard edges, but this is a machine designed for linear edge processing, so, at worst, in HD it will look like a \u201cvery high quality/organic SD upscale\u201d with a little horizontal filtering.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11198,
+      "post_number": 16,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2020-08-27T06:34:29.231Z",
+      "updated_at": "2020-08-27T06:34:55.152Z",
+      "cooked": "<p>Note that the video inputs (CVBS/Component) are directly into the TBC.   So they go thru the digital subsystem for time base correction before entering the analog signal path.  The frontpanel RGB 1V inputs are direct inputs to the analog path.  All of the outputs (video, laser, 1V) are fully analog.</p>\n<p>The digital subsystem manages sync and TBC \u2013 so the TBC will scale whatever your input video is to whatever your \u201chouse sync\u201d format is automatically.  There\u2019s a lot of auto-detect/auto-switch code in the digital system, so for the most part, it should just work without much worry.</p>\n<p>Video input, auto-sync enabled = \u201chouse sync\u201d matches video input format<br>\nVideo input, auto-sync disabled = \u201chouse sync\u201d matches programmed sync format, and video inputs scale to match<br>\nVideo input + sync input = \u201chouse sync\u201d matches sync input, and video inputs scale to match<br>\nSync input only = \u201chouse sync\u201d matches input sync<br>\nNo input = \u201chouse sync\u201d matches programmed sync format</p>",
+      "like_count": 0,
+      "reply_to_post_number": 15,
+      "is_wiki": false
+    },
+    {
+      "id": 11199,
+      "post_number": 17,
+      "username": "nerdware",
+      "name": "",
+      "created_at": "2020-08-27T07:25:22.349Z",
+      "updated_at": "2020-08-27T08:01:26.502Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"creatorlars\" data-post=\"14\" data-topic=\"2311\" data-full=\"true\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\"> creatorlars:</div>\n<blockquote>\n<p>Oh yes. See the Chroma and Luma buttons on the right side?  Those are selecting where the output color converter\u2019s sources come from.  So you could have a gradient shape colorized by the chrominance of input video only, etc.  Or colorize luma video with a gradient created by the XY shape generating chroma, etc.</p>\n<p>Chromagnon can rotate the luma or the chroma.  Luma rotation will look like a continuous solarizer.</p>\n</blockquote>\n</aside>\n<p>Excellent! That confirms it, thanks. <img src=\"https://emoji.discourse-cdn.com/twitter/+1/2.png?v=12\" title=\":+1:t2:\" class=\"emoji\" alt=\":+1:t2:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 14,
+      "is_wiki": false
+    },
+    {
+      "id": 11467,
+      "post_number": 18,
+      "username": "Psychoflauge",
+      "name": null,
+      "created_at": "2020-09-15T10:24:10.408Z",
+      "updated_at": "2020-09-15T10:24:10.408Z",
+      "cooked": "<p>Don\u2019t make me feel bad! I already miss my little robot!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 13,
+      "is_wiki": false
+    }
+  ]
+}

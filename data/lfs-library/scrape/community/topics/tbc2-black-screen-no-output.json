@@ -1,0 +1,43 @@
+{
+  "id": 4664,
+  "title": "TBC2 Black screen / no output",
+  "slug": "tbc2-black-screen-no-output",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 14,
+      "name": "tbc2",
+      "slug": "tbc2"
+    }
+  ],
+  "created_at": "2024-01-27T09:32:13.402Z",
+  "views": 228,
+  "like_count": 0,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 34139,
+      "post_number": 1,
+      "username": "petro",
+      "name": "chris petro",
+      "created_at": "2024-01-27T09:32:13.453Z",
+      "updated_at": "2024-01-27T09:32:13.453Z",
+      "cooked": "<p>I powered on my system today, TBC2 screen was on but there was no output from ESG3 so I switched everything off, checked connections on the HDMI converter / display and switched the system back on. after this the ESG is working and sending out signal to the converter / display but the TBC has a black screen and is not responsive . anyone know how to fix this ? cheers</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 34147,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2024-01-29T16:13:41.351Z",
+      "updated_at": "2024-01-29T16:13:41.351Z",
+      "cooked": "<p>Sorry for the trouble!<br>\nCould you please send an email to <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a>?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

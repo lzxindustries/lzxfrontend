@@ -1,0 +1,55 @@
+{
+  "id": 777,
+  "title": "Vidiot - slow scrolling wobbly",
+  "slug": "vidiot-slow-scrolling-wobbly",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-12-13T11:48:00.912Z",
+  "views": 610,
+  "like_count": 0,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 3212,
+      "post_number": 1,
+      "username": "jkbh",
+      "name": "joe",
+      "created_at": "2018-12-13T11:48:01.022Z",
+      "updated_at": "2018-12-13T12:01:57.418Z",
+      "cooked": "<p>When I use the right oscillator for scrolling animation, it can become pretty wobbly at slow speeds.</p>\n<p>I\u2019m still getting to know the vidiot, so I\u2019m wondering if this is normal behavior or not?</p>\n<p>example:<br>\n</p><div class=\"lazyYT\" data-youtube-id=\"e3roeEtw1Ck\" data-youtube-title=\"C0010\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>\n<p>(edit: it seems to be connected to what speed the left oscillator is set to, even though I\u2019m not using that oscillator for anything)</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3317,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-12-18T00:32:43.296Z",
+      "updated_at": "2018-12-18T00:32:43.296Z",
+      "cooked": "<p>Seems like an odd issue \u2013 occasionally wobbly drifting speed is normal, but the little jumps you\u2019re seeing here aren\u2019t something I\u2019d expect.  Is this with nothing patched?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3337,
+      "post_number": 3,
+      "username": "jkbh",
+      "name": "joe",
+      "created_at": "2018-12-19T20:49:42.116Z",
+      "updated_at": "2018-12-19T20:50:19.258Z",
+      "cooked": "<p>Here is a picture I took of the patch used when recording the video above:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c.jpeg\" title=\"DSC_0374.JPG\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c_2_374x500.jpeg\" alt=\"DSC_0374\" width=\"374\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c_2_374x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c_2_561x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c_2_748x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/c5ebb82a18d80e5eeb9948f37063988823f1795c_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">DSC_0374.JPG</span><span class=\"informations\">2681\u00d73575 3.01 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

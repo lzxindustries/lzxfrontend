@@ -1,0 +1,65 @@
+{
+  "id": 1297,
+  "title": "All About Color Chords",
+  "slug": "all-about-color-chords",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 40,
+      "name": "colorchords",
+      "slug": "colorchords"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    }
+  ],
+  "created_at": "2019-07-17T22:21:31.483Z",
+  "views": 2146,
+  "like_count": 3,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 5917,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-17T22:21:31.601Z",
+      "updated_at": "2022-01-02T19:43:39.455Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/ad5e151088d39303d04486ba5a9aa5b919bdec10.jpeg\" data-download-href=\"/uploads/short-url/oJGaI3ibFr0OakEcDxp3Uj93aKI.jpeg?dl=1\" title=\"cc1\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/a/ad5e151088d39303d04486ba5a9aa5b919bdec10.jpeg\" alt=\"cc1\" data-base62-sha1=\"oJGaI3ibFr0OakEcDxp3Uj93aKI\" width=\"623\" height=\"500\" data-dominant-color=\"B2B1B1\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">cc1</span><span class=\"informations\">1276\u00d71024 446 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Color Chords is a four channel summing matrix designed to mix shapes, patterns and keys into a color output image. RGB mixing is a foundational building block of video synthesis, and Color Chords introduces a new feature to the traditional workflow with the addition of opacity controls and layer priority. When the opacity of one layer is turned up, the brightness of the previous layers decreases, allowing mix elements to sit on top of, beneath, or in between each other.</p>\n<h1><a name=\"p-5917-specifications-1\" class=\"anchor\" href=\"#p-5917-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 32mm</li>\n<li>Power +12V @ 60mA</li>\n<li>Power -12V @ 60mA</li>\n</ul>\n<h1><a name=\"p-5917-user-reference-2\" class=\"anchor\" href=\"#p-5917-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c1cf5f176e070bfd7c08a5eb554b3767499c20de.jpeg\" data-download-href=\"/uploads/short-url/rEwrtcPFe7p5ET5zzN8fTBulTtA.jpeg?dl=1\" title=\"cc%20urc%201\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c1cf5f176e070bfd7c08a5eb554b3767499c20de.jpeg\" alt=\"cc%20urc%201\" data-base62-sha1=\"rEwrtcPFe7p5ET5zzN8fTBulTtA\" width=\"448\" height=\"500\" data-dominant-color=\"D5D5D4\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">cc%20urc%201</span><span class=\"informations\">787\u00d7878 403 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5917-videos-3\" class=\"anchor\" href=\"#p-5917-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6KU04I2SpFfWGC3VQbuGpgd&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5917-patching-tips-4\" class=\"anchor\" href=\"#p-5917-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>Prismatic Ray makes a great companion for Color Chords, with Color Chords being the key to understanding its \u201cprismatic\u201d nature. Try patching the different waveshape outputs from Prismatic Ray into different layers of Color Chords and assigning each its own RGB value.</li>\n</ul>\n<h1><a name=\"p-5917-downloads-5\" class=\"anchor\" href=\"#p-5917-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Color%20Chords/Color%20Chords%20User%20Reference%20Cards.pdf\">Color Chords User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5917-other-resources-6\" class=\"anchor\" href=\"#p-5917-other-resources-6\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/colorchords\">LZX Community Forum posts tagged #colorchords</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 7957,
+      "post_number": 2,
+      "username": "souka",
+      "name": "gui",
+      "created_at": "2019-12-06T00:37:13.696Z",
+      "updated_at": "2019-12-06T00:37:13.696Z",
+      "cooked": "<p>Just noticed a minor mistake on the Color Chords User Reference card. In the specifications table the title references Navigator instead of Color Chords.</p>\n<p>Width, Depth, and Power draw values in accordance to what is stated above in this post.</p>\n<p><img src=\"https://emoji.discourse-cdn.com/twitter/smiley_cat.png?v=9\" title=\":smiley_cat:\" class=\"emoji\" alt=\":smiley_cat:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7964,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-06T16:01:14.813Z",
+      "updated_at": "2019-12-06T16:01:14.813Z",
+      "cooked": "<p>Thanks for CATching that!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

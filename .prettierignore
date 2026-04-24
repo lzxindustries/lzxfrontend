@@ -15,6 +15,7 @@ audit-results
 # Large mirrored or generated data (Shopify exports, build inputs)
 catalog
 app/data/generated
+data/lfs-library
 lfs
 ingest
 

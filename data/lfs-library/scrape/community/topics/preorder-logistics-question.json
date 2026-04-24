@@ -1,0 +1,72 @@
+{
+  "id": 3360,
+  "title": "Preorder Logistics question",
+  "slug": "preorder-logistics-question",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    },
+    {
+      "id": 14,
+      "name": "tbc2",
+      "slug": "tbc2"
+    }
+  ],
+  "created_at": "2021-08-08T11:24:47.217Z",
+  "views": 742,
+  "like_count": 9,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 20899,
+      "post_number": 1,
+      "username": "Chickenbone",
+      "name": "Jordan",
+      "created_at": "2021-08-08T11:24:47.321Z",
+      "updated_at": "2021-08-08T11:24:47.321Z",
+      "cooked": "<p>I preordered the Chromagnon and the TBC2 via Perfect Circuit. The updated TBC2 estimated delivery times are stated to be not complete until early 2022. So my question is are there any TBC2 modules from a recently completed batch going to be shipped to Perfect Circuit along with a Chromagnon, or am I going to have to wait for a couple months on the Chromagnon and then wait for the TBC2. I just don\u2019t know who gets which batch and when. Does any of the production batch make it to the retailers or is all of the early production stuff go to fulfill in house preorders? Thanks <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=10\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20900,
+      "post_number": 2,
+      "username": "joem",
+      "name": "Joe Miragliuolo",
+      "created_at": "2021-08-08T14:46:36.337Z",
+      "updated_at": "2021-08-09T18:07:13.030Z",
+      "cooked": "<p>I can\u2019t speak for this situation specifically, but usually when a retailer offers pre-orders, that means they\u2019ve already placed orders with the manufacturer. Manufacturers usually fulfill orders in the order they arrived in, and it\u2019s hard to say when PC placed their order. But <em>sometimes</em> smaller (read: Eurorack-size) manufacturers will fulfill all direct customer pre-orders before sending any stock to retailers, if the orders end up needing to be split over multiple batches.</p>\n<p>Further muddying the issue of timing: Some retailers limit the amount of pre-orders available on their site to the number of pre-orders the retailer placed with the manufacturer, while others don\u2019t. Others still might list a product as available for pre-order before they\u2019ve even placed an order with the manufacturer. So no matter what LZX can tell you about when PC is getting a batch, there\u2019s no way to correlate that with when PC will be processing your specific order.</p>\n<p>One thing is for certain, though: Rest assured LZX will be cranking them out as fast as they possibly can!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 20915,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-08-09T16:40:33.336Z",
+      "updated_at": "2021-08-09T16:40:33.336Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"joem\" data-post=\"2\" data-topic=\"3360\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://avatars.discourse-cdn.com/v4/letter/j/0ea827/48.png\" class=\"avatar\"> joem:</div>\n<blockquote>\n<p>So no matter what LZX can tell you about when PC is getting a batch, there\u2019s no way to correlate that with when PC will be processing your specific order.</p>\n<p>One thing is for certain, though: Rest assured LZX will be cranking them out as fast as they possibly can!</p>\n</blockquote>\n</aside>\n<p>Truth.</p>\n<p>Also, to be clear, dealers and direct buyers are in the same queue. Shipments go out by order number sequence.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 20916,
+      "post_number": 4,
+      "username": "Chickenbone",
+      "name": "Jordan",
+      "created_at": "2021-08-09T16:54:07.071Z",
+      "updated_at": "2021-08-09T16:54:07.071Z",
+      "cooked": "<p>Awesome thanks for clearing that up!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

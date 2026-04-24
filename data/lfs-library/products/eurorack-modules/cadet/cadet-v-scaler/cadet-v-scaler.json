@@ -1,0 +1,65 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-v-scaler",
+  "name": "Cadet V Scaler",
+  "sku": "LZXCADT5",
+  "description": "Cadet V Scaler is a 4-channel wide bandwidth voltage scaler which can be ordered or built as a DIY module for the purposes of several different standards conversions. ",
+  "company": "lzx",
+  "price": "12.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 10,
+    "max_neg_12v_ma": 10
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692913172544",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20V%20Scaler"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Cadet-5-front-panel-square.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [
+      {
+        "path": "packaging/cadet_v_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_v_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

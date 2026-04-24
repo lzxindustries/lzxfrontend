@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "visual-cortex",
+  "name": "Visual Cortex",
+  "sku": "LZXVC",
+  "description": "Visual Cortex is an integrated core module with all the essential functions required for modular video synthesis in the EuroRack format. Consolidating several previous LZX Industries modules, it provides a primary sync generator, video input and output (YPbPr component, S-Video, NTSC/PAL), video mixing and compositing, luma and chroma keying, 2D shape and animation generation, automated transition control, and a multi-function analogue RGB colourizer and compositor.",
+  "company": "lzx",
+  "price": "885.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 26,
+    "max_pos_12v_ma": 180,
+    "max_neg_12v_ma": 220,
+    "max_pos_5v_ma": 0
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "images": {
+    "external_url": "https://www.modulargrid.net/e/lzx-industries-visual-cortex"
+  },
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_vc_fpn_rev_b.ai",
+        "extension": "ai",
+        "note": "Visual Cortex front panel artwork Rev B"
+      },
+      {
+        "path": "panel-art/visualcortex_fpn_revb.ai",
+        "extension": "ai",
+        "note": "Visual Cortex front panel artwork Rev B (alternate filename)"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/visual_cortex_sticker_fantastapack.pdf",
+        "extension": "pdf",
+        "note": "Visual Cortex Fantastapack product box sticker"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

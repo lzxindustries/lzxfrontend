@@ -1,0 +1,161 @@
+{
+  "id": 244,
+  "title": "Fortress Dev Blog August 2018",
+  "slug": "fortress-dev-blog-august-2018",
+  "category_id": 25,
+  "tags": [
+    {
+      "id": 15,
+      "name": "castle",
+      "slug": "castle"
+    },
+    {
+      "id": 27,
+      "name": "fortress",
+      "slug": "fortress"
+    },
+    {
+      "id": 26,
+      "name": "orion",
+      "slug": "orion"
+    }
+  ],
+  "created_at": "2018-08-08T07:57:39.933Z",
+  "views": 2034,
+  "like_count": 44,
+  "posts_count": 11,
+  "posts": [
+    {
+      "id": 723,
+      "post_number": 1,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2018-08-08T07:57:40.045Z",
+      "updated_at": "2018-08-08T08:26:40.882Z",
+      "cooked": "<p>I\u2019d like to talk a little bit about Fortress, where it comes from and where it\u2019s going. The concept for Fortress started to form as a back and forth with Lars. Lars had been suggesting a \u2018best of Castle\u2019 module \u2013 something that was a collection of my favorite patches. Lars got me in to CPLD, which is a huge array of logic gates that you can program. After much mucking about I got the Xilinx suite installed on an old laptop. For some reason the software didn\u2019t like my desktop PC, and every time I tried a new install it would just crash. No Joy. I got a dev board from Lars for the CPLD. I started programming the core for a Video Weaver style thing. This is where some ideas really started to form.</p>\n<p>The Castle series is very concise in it\u2019s format. 4HP panel width, a maximum of 8 jacks, a maximum of 2.25\u201d depth, and through hole parts, so all the modules had to be designed with that in mind. With a larger format module we could have more complex operations and greater circuit density with SMD parts.</p>\n<p>Lars asked me to come up with a panel mock up for a proposed Super-Castle. Since I am completely incapable of using Illustrator I came up with this:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae.jpeg\" title=\"36436403_10157574282579972_2862534331996307456_n.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae_2_690x388.jpeg\" alt=\"36436403_10157574282579972_2862534331996307456_n\" width=\"690\" height=\"388\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae_2_690x388.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae_2_1035x582.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae_2_1380x776.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/2a1f6e753310d7857d1f3c9af947e370c659c9ae_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">36436403_10157574282579972_2862534331996307456_n.jpeg</span><span class=\"informations\">3984\u00d72241 589 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>I know, I know\u2026</p>\n<p>Derek Holzer posted some pages from a book on the Vasulkas, it had some images from a digital image processor they had made in the 1970\u2019s. It was Some Analog to Digital Converters (ADC), an Arithmetic Logic Unit (ALU), and a Digital to Analog Converter (DAC). I believe it was 4-bit, but besides that, it was very \u2018Castle\u2019. I was aware of the Vasulkas work with computers in the 1970s, and this was definitely one of the inspirations for Castle, but I hadn\u2019t seen the stuff with ALUs shown in such a way. This really inspired me. You could combine two digitized signals in really interesting and non-linear ways. So with this in my mind, and the Weaver concept, I started to come up with some block diagrams of modes that I thought would make up my perfect incarnation of an all enclosed Castle. Some of the ideas were the Weaver, an ALU, and a 3*64-bit shift register. All of these modes include Clocks and Waveform Generators so the module can be used by itself as a pattern generator, and ADCs to input signals to control or be used as input signals like the Waveform Generators.</p>\n<p>The Video Waver is inspired by Stephen Becks Video Weaver, as seen <a href=\"https://www.youtube.com/watch?v=EjX8aCRQ8Ms\" rel=\"nofollow noopener\">here</a></p>\n<p>The ALU is inspired by the work of the Vasulkas in this area.</p>\n<p>The 3*64-bit shift register is based on my work with the Castles. If you think of the shift register as a bucket brigade, you put a signal in the input and 64 clock cycle later you would get that input at the last tap. It will only let signal in on the start of the clock pulse so it also provides a quantization effect. If you were able to select which tap you were viewing on you could shift the image horizontally. Of course this selecting can be done at video rates, so some real nice wiggles can be made. The registers are 3-bits deep, so you can wiggle a video signal split up in to 8 zones of brightness.</p>\n<p>This is the block diagram I came up with to try and illustrate what Fortress could be:<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b.jpeg\" title=\"37767224_10157651482984972_6580899755952439296_n.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b_2_377x500.jpeg\" alt=\"37767224_10157651482984972_6580899755952439296_n\" width=\"377\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b_2_377x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b_2_565x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b_2_754x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/beb50a3e3c9dba1e5c447c99032c55dc63f7bc6b_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">37767224_10157651482984972_6580899755952439296_n.jpeg</span><span class=\"informations\">1143\u00d71514 105 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>Something I really wanted to do when I was developing concepts for Castle was a Palette swapper. Something you could input your 3-bit values in to and it would assign those 8 values to color values that weren\u2019t just combinations of full red, green, and blue. Something that could give you brown, pink, grey, whatever. Unfortunately the number of inputs and PCB size prohibited this from being a Castle module. But now with Fortress this can be implemented. That\u2019s where the CGA palette comes in. Lars and I are both huge nerds, obviously. We grew up playing computer games. The CGA was a weird thing. It wasn\u2019t designed for gaming really. It was designed for high contrast text like on spreadsheets and stuff. This made for some interesting color choices. Some people hate them, some people might love them. I love them. If you are unfamiliar, there are basically two palettes in CGA, and a half brightness variant of each. The palettes are: Black, Cyan, Magenta, White, and Black, Yellow, Red, and White. The Half brightness variants would make Dark Cyan, Dark Magenta, Grey, etc. A funny thing that IBM did with RGBI monitors, which were used to display CGA was that what would be Dark Yellow would be interpreted in the monitor as Brown. This is something that will be replicated in Fortress, as it\u2019s just a funny thing. I like funny things like that.</p>\n<p>Well, that\u2019s all I have to say for now.</p>\n<p>I\u2019m open to questions if you\u2019ve got any\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 730,
+      "post_number": 2,
+      "username": "destroythings",
+      "name": "Jim",
+      "created_at": "2018-08-08T13:07:53.625Z",
+      "updated_at": "2018-08-08T13:07:53.625Z",
+      "cooked": "<p>Loving how this forum is developing into a wealth of various behind the scenes insights.</p>\n<p>Thanks</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 734,
+      "post_number": 3,
+      "username": "JunkRhythm",
+      "name": "Junk Rhythm",
+      "created_at": "2018-08-08T14:06:08.989Z",
+      "updated_at": "2018-08-08T14:06:08.989Z",
+      "cooked": "<p>I couldn\u2019t agree more. All of the behind the scenes information is extremely inspiring and helpful for folks like myself with limited video experience.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 773,
+      "post_number": 4,
+      "username": "anomad",
+      "name": "JamesC",
+      "created_at": "2018-08-09T03:59:38.565Z",
+      "updated_at": "2018-08-09T03:59:38.565Z",
+      "cooked": "<p>. can\u2019t wait to see this in action! <img src=\"https://emoji.discourse-cdn.com/twitter/smiley.png?v=5\" title=\":smiley:\" class=\"emoji\" alt=\":smiley:\"></p>\n<p>. i\u2019m a big fan of the retro feel as well - have you seen this video on CGA ? as an apple/mac guy, i had no idea how pc video standards worked.  i found the history fascinating.</p>\n<p><a href=\"https://www.youtube.com/watch?v=niKblgZupOc\">https://www.youtube.com/watch?v=niKblgZupOc</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 777,
+      "post_number": 5,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-08-09T07:59:32.728Z",
+      "updated_at": "2018-08-09T07:59:32.728Z",
+      "cooked": "<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/fcc0ea2939b1123e490118180a663ed382fbea41.png\" alt=\"Bugs%20Bunny%20Hare-Brained%20Adventure_2\" width=\"320\" height=\"200\"></p>\n<p>My first CGA memory.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1987,
+      "post_number": 6,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2018-09-20T01:31:36.692Z",
+      "updated_at": "2018-09-20T01:31:36.692Z",
+      "cooked": "<p>Looking at the rendering on the main product page, it looks like the only inputs are the VC inputs horizontally across the top. Is that correct or am I reading the markings incorrectly?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 1988,
+      "post_number": 7,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2018-09-20T01:35:46.335Z",
+      "updated_at": "2018-09-20T01:35:46.335Z",
+      "cooked": "<p>yes, thats correct. there are 3 vco cv inputs, and 3 adc inputs. the adc vc inputs are what you would use to input camera signals and such in to.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 2015,
+      "post_number": 8,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2018-09-21T02:50:50.241Z",
+      "updated_at": "2018-09-21T02:50:50.241Z",
+      "cooked": "<p>Can\u2019t wait to take some full color RGB footage for a walk into this digital territory.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 2880,
+      "post_number": 9,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-11-11T20:35:46.347Z",
+      "updated_at": "2018-11-11T20:35:46.347Z",
+      "cooked": "<p>I can\u2019t wait to see some CGA goodness</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5001,
+      "post_number": 10,
+      "username": "shortsleeves",
+      "name": "",
+      "created_at": "2019-04-08T20:49:33.978Z",
+      "updated_at": "2019-04-08T20:49:33.978Z",
+      "cooked": "<p>I\u2019m pretty sure this will be my first LZX module. Along some necessary utilities, of course. It sounds/looks awfully interesting, as do all your modules, <a class=\"mention\" href=\"/u/pbalj\">@pbalj</a>! Can\u2019t wait for the demos, and for the Fortress to ship.</p>\n<p>Cheers,<br>\nLukasz</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5004,
+      "post_number": 11,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2019-04-08T22:56:02.367Z",
+      "updated_at": "2019-04-08T22:56:02.367Z",
+      "cooked": "<p>fortess will be a blast I\u2019m sure<br>\nI\u2019ve got to get some funds together here to pre order</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

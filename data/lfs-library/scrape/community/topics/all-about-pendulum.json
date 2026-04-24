@@ -1,0 +1,41 @@
+{
+  "id": 1289,
+  "title": "All About Pendulum",
+  "slug": "all-about-pendulum",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 50,
+      "name": "pendulum",
+      "slug": "pendulum"
+    }
+  ],
+  "created_at": "2019-07-16T19:42:35.168Z",
+  "views": 1504,
+  "like_count": 3,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 5893,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-16T19:42:35.245Z",
+      "updated_at": "2022-01-02T19:41:15.596Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/4/46ef19e5358e3a80796ef6ce6b5ae5e560c10631.png\" data-download-href=\"/uploads/short-url/a7vH4M4rIOWD7vnpWLJ2sthd6tb.png?dl=1\" title=\"Pendulum%20Front%20Photo%20550px\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/4/46ef19e5358e3a80796ef6ce6b5ae5e560c10631.png\" alt=\"Pendulum%20Front%20Photo%20550px\" data-base62-sha1=\"a7vH4M4rIOWD7vnpWLJ2sthd6tb\" width=\"196\" height=\"500\" data-dominant-color=\"9B9C9A\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Pendulum%20Front%20Photo%20550px</span><span class=\"informations\">216\u00d7550 200 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div> <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fc686c19ba4e56fdff0e0a099b6911714104a7ea.png\" data-download-href=\"/uploads/short-url/A0U2RHOEhpQnqJyasT5zF62a5x8.png?dl=1\" title=\"Pendulum%20Side%20Photo%20550px\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/f/fc686c19ba4e56fdff0e0a099b6911714104a7ea.png\" alt=\"Pendulum%20Side%20Photo%20550px\" data-base62-sha1=\"A0U2RHOEhpQnqJyasT5zF62a5x8\" width=\"251\" height=\"500\" data-dominant-color=\"96918C\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Pendulum%20Side%20Photo%20550px</span><span class=\"informations\">277\u00d7550 228 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Behold <em>Pendulum</em>, an undulating maelstrom of analogue motion for your video synthesis patches. More than a dual oscillator, <em>Pendulum</em> delivers maximum utility with her signal crossfader and router. Fantastic as both a control voltage source and modulation effect.</p>\n<ul>\n<li><strong>2 low frequency oscillators with Sine, Triangle and Square out.</strong>  Analog circuitry produces continuous waveforms with a frequency range of 45 seconds per cycle up to frame rate. Simple and classic.</li>\n<li><strong>2-input, 2-output voltage-controlled fading and routing.</strong>  You can never have enough crossfaders in a video synthesizer. Pendulum\u2019s fader has two channels which cross over each other when voltage control is applied. This enables flexible patching as a signal router/panner, dual fader, VCA, or inverted VCA.</li>\n<li><strong>Perfect patch-through workflow.</strong>  Pendulum\u2019s LFOs can be mixed with the fader inputs using their dedicated mix controls. This feature allows two video rate signals to be patched through the crossfader with dedicated modulation ready to go!</li>\n</ul>\n<h1><a name=\"p-5893-specifications-1\" class=\"anchor\" href=\"#p-5893-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Format: 3U EuroRack Synth Module</li>\n<li>Width: 10HP</li>\n<li>Mounting Depth: 32mm</li>\n<li>+12V Power Consumption: 80mA</li>\n<li>-12V Power Consumption: 65mA</li>\n<li>Price: $219 USD</li>\n</ul>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/376863a965a7040fdcf1d8d17371c93184b738a0.png\" alt=\"Pendulum_Product_Icon_280dpi_small\" data-base62-sha1=\"7U9UF8aBXYfmjpTJqbLQaq5eTrq\" width=\"38\" height=\"38\"></p>\n<h1><a name=\"p-5893-user-reference-2\" class=\"anchor\" href=\"#p-5893-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/b6869141a8e270b7732a0a2ab91a95d8523003f0.jpeg\" data-download-href=\"/uploads/short-url/q2HcXfYbBpZ5ISCGjszL9c1opRC.jpeg?dl=1\" title=\"PendulumUserReference\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/b/b6869141a8e270b7732a0a2ab91a95d8523003f0.jpeg\" alt=\"PendulumUserReference\" data-base62-sha1=\"q2HcXfYbBpZ5ISCGjszL9c1opRC\" width=\"455\" height=\"500\" data-dominant-color=\"D1D3D4\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">PendulumUserReference</span><span class=\"informations\">1800\u00d71974 433 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5893-videos-3\" class=\"anchor\" href=\"#p-5893-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6LR32qzy2m2h8R62M_z4xo-&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5893-patching-tips-4\" class=\"anchor\" href=\"#p-5893-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<p>Pendulum\u2019s crossfader can operate in several modes, depending on how it\u2019s patched.</p>\n<p><em>Voltage Controlled Amplifier (VCA)</em></p>\n<p>Patch your source to A In. Take your output from D Out. The Cross control and VC input will now control the gain of your input signal.</p>\n<p><em>2-Input Crossfader</em></p>\n<p>Patch your sources to A In and B In. Take your output from D Out. The Cross control will now control a crossfade between the signals at the A and B inputs.</p>\n<p><em>1-Input, 2-Output Router/Panner</em></p>\n<p>Patch your sources to A In. Take your outputs from C Out and D Out. The Cross control will now move the signal from the C Output to the D Output as it is adjusted</p>\n<p><em>2-Input, 2-Output Double Fader</em></p>\n<p>This one works great when processing H and V ramp signals to perform 90 degree rotation. Patch your sources to A In and B In. Take your outputs from C Out and D Out. The Cross control will now fade between the A and B inputs in opposite directions on each output.</p>\n<h1><a name=\"p-5893-downloads-5\" class=\"anchor\" href=\"#p-5893-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Pendulum/Pendulum%20User%20Reference%20Card.pdf\">Pendulum User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5893-production-6\" class=\"anchor\" href=\"#p-5893-production-6\" aria-label=\"Heading link\"></a>Production</h1>\n<ul>\n<li>Q4 2018, 200 units, no known issues</li>\n</ul>\n<h1><a name=\"p-5893-other-resources-7\" class=\"anchor\" href=\"#p-5893-other-resources-7\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/pendulum\">LZX Community forum posts tagged #pendulum</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

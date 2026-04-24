@@ -1,0 +1,96 @@
+{
+  "id": 2715,
+  "title": "Interference / distortion with either Visual Cortex or Memory Palace",
+  "slug": "interference-distortion-with-either-visual-cortex-or-memory-palace",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2021-01-09T20:10:29.186Z",
+  "views": 582,
+  "like_count": 1,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 14541,
+      "post_number": 1,
+      "username": "bleunuitvideo",
+      "name": "",
+      "created_at": "2021-01-09T20:10:29.259Z",
+      "updated_at": "2021-01-09T20:10:29.259Z",
+      "cooked": "<p>I seem to be getting scrolling horizontal lines with my LZX setup, which just consists of the Visual Cortex and Memory Palace. I can\u2019t tell where the interference is coming from\u2014 is it the component inputs on the Memory Palace, something happening with the sync between the two, etc?</p>\n<p>I was hoping maybe someone here has seen this before and knows what the issue is.</p>\n<aside class=\"onebox googledrive\">\n  <header class=\"source\">\n      <a href=\"https://drive.google.com/file/d/11weiPRtRYhxdURx-6kQlNZp1GKgWVk0Q/view?usp=sharing\" target=\"_blank\" rel=\"noopener nofollow ugc\">drive.google.com</a>\n  </header>\n  <article class=\"onebox-body\">\n    \n<div class=\"aspect-image\" style=\"--aspect-ratio:690/362;\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/562bfac83e513b24225c3dce11630feeb3aea4fe.jpeg\" class=\"thumbnail\" width=\"690\" height=\"362\"></div>\n\n<h3><a href=\"https://drive.google.com/file/d/11weiPRtRYhxdURx-6kQlNZp1GKgWVk0Q/view?usp=sharing\" target=\"_blank\" rel=\"noopener nofollow ugc\">20210108_222922.mp4 (video)</a></h3>\n\n<p>Google Drive file.</p>\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 14547,
+      "post_number": 2,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2021-01-10T00:08:26.678Z",
+      "updated_at": "2021-01-10T00:08:26.678Z",
+      "cooked": "<p>Likely culprit is power. What is your power supply?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 14561,
+      "post_number": 3,
+      "username": "bleunuitvideo",
+      "name": "",
+      "created_at": "2021-01-10T01:53:15.498Z",
+      "updated_at": "2021-01-10T01:53:15.498Z",
+      "cooked": "<p>TipTop Happy Ending rack.</p>\n<pre><code>1 x \u00b5zeus 4hp psu with 2 x flying bus boards\n1 x 15v DC 1000ma Triad external power adapter (for 110v only)</code></pre>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 14564,
+      "post_number": 4,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2021-01-10T12:08:27.714Z",
+      "updated_at": "2021-01-10T12:08:27.714Z",
+      "cooked": "<p>I\u2019ve used uZeus before and it gives really unsatisfactory results for video synthesis, unfortunately.  Their Studio Bus solution works pretty well.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 14591,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-01-11T14:23:52.800Z",
+      "updated_at": "2021-01-11T14:23:52.800Z",
+      "cooked": "<p>Could you share a photo of your patch?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 15661,
+      "post_number": 6,
+      "username": "bleunuitvideo",
+      "name": "",
+      "created_at": "2021-02-14T23:24:19.607Z",
+      "updated_at": "2021-02-16T23:11:04.431Z",
+      "cooked": "<p>Hey y\u2019all, just want you to know that I solved this problem!<br>\nThe uZeus supports two ribbons, I had a second ribbon plugged into the uZeus with nothing else attached to said ribbon. I removed it, no more distortion.<br>\nDid I mention I\u2019m new to the whole video synthesis thing? I\u2019m new to the whole video synthesis thing.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

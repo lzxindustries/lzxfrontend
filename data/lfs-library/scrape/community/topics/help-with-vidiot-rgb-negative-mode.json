@@ -1,0 +1,67 @@
+{
+  "id": 236,
+  "title": "Help with Vidiot RGB Negative Mode",
+  "slug": "help-with-vidiot-rgb-negative-mode",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-08-07T04:53:17.562Z",
+  "views": 878,
+  "like_count": 2,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 681,
+      "post_number": 1,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2018-08-07T04:53:17.654Z",
+      "updated_at": "2018-08-07T04:53:17.654Z",
+      "cooked": "<p>Please pardon this question if its something painfully noob-ish and simple.  Just want to make sure everything is in good working order.  Vidiot is my first video synth so still in the process of learning it.  Is there a simple Vidiot-only patch anyone would recommend that demonstrates the RGB Negative Mode in action?  (bullet points 61 and 71 on p.12 of manual)  My assumption is that it inverts that color only in the image, but so far I have not been able to get it do anything.</p>\n<p>I have tried patching external gate and CV into it in addition to various out\u2019s from the Vidiot\u2019s patch points.  I have used attenuators on a Moog CP-251 to lower or boost the CV but i still don\u2019t notice any results from any of the three settings.  The same CV or gate signals that I was sending out were working fine to trigger the threshold on the Color Negative without a problem though.</p>\n<p>If it helps at all, I am running the included RCA video cable from Vidiot\u2019s color video out into a LCD tv.</p>\n<p>Thank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 713,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-08-08T02:35:56.089Z",
+      "updated_at": "2018-08-08T05:23:34.525Z",
+      "cooked": "<p>It sounds like you\u2019re doing everything right!  Please submit a repair request on the main website when you\u2019re ready, we\u2019ll get a prepaid return label sent to you so we can fix the issue here in house.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 720,
+      "post_number": 3,
+      "username": "Entropist",
+      "name": "B C",
+      "created_at": "2018-08-08T05:11:43.000Z",
+      "updated_at": "2018-08-08T05:11:56.165Z",
+      "cooked": "<p>Had a feeling something was off.  I will get on that asap.</p>\n<p>thanks for the quick response!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 4303,
+      "post_number": 4,
+      "username": "Apfelmann",
+      "name": "Ernst",
+      "created_at": "2019-02-18T12:44:43.566Z",
+      "updated_at": "2019-02-18T12:44:43.566Z",
+      "cooked": "<p>so after two weeks of \u201cvidioting\u201d i ran into the same problem. at first i thought its just lack of knowledge and i\u00b4ll figure out how this works. still not shure if its a user error but there is no noticeable change when using the input and/or the switch.</p>\n<p>do i need to send it in? or is there a quickfix?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

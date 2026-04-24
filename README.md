@@ -67,7 +67,7 @@ The sync CLI writes to `catalog/shopify` by default and creates one folder per p
 Current implementation:
 
 - `doctor` validates Node version, output directory access, and required Shopify Admin env vars.
-- `seed` builds missing local product entries from `lfs/library/products`, including website images and basic lifecycle-aware defaults for legacy versus active modules.
+- `seed` builds missing local product entries from `data/lfs-library/products` (synced from a full `lfs/` tree via `yarn catalog:sync-lfs-library`), including website images and basic lifecycle-aware defaults for legacy versus active modules.
 - `pull` exports product core fields, description HTML, SEO, variants, metafields, and media manifests.
 - `diff` compares local catalog files against the latest Shopify export and exits nonzero when drift is detected.
 - `push` plans Shopify mutations from local files and only writes when `--apply` is provided.

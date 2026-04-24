@@ -1,0 +1,79 @@
+{
+  "id": 3827,
+  "title": "Use trigger input to load next image",
+  "slug": "use-trigger-input-to-load-next-image",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2022-04-08T08:30:38.703Z",
+  "views": 586,
+  "like_count": 14,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 25779,
+      "post_number": 1,
+      "username": "3Li",
+      "name": "",
+      "created_at": "2022-04-08T08:30:38.788Z",
+      "updated_at": "2022-04-08T08:30:38.788Z",
+      "cooked": "<p>Hello!</p>\n<p>I\u2019m looking for some guidance on using the trigger input on the memory palace to step through images loaded in memory. For a little context, I am working on a live A/V set with a friend and I\u2019m hoping to use their kick drum to trigger loading of the next image in a folder. I\u2019m getting their midi kick sequence and converting it into a step function and can hit the trigger input just fine; my issue is what to do with the trigger in the memory palace settings.</p>\n<p>The closest path I\u2019ve found is triggering the A/B param in ghost mode, but this less than ideal for two reasons. First is that it\u2019s not actually stepping through images; it\u2019s restarting playback every other beat. The second is it looks pretty awkward. The memory palace doesn\u2019t persist the last displayed image when the param is toggled off, and instead jumps back to the first image in the folder (or wherever the delay slider is positioned).</p>\n<p>I also tried leaving A/B toggled on while triggering the Freeze param in ghost mode, but that just straight up doesn\u2019t work. If I press the Freeze button by hand I\u2019m able to freeze on basically a random frame, but the trigger input doesn\u2019t seem to work on Freeze. This would actually be an okay workaround; I\u2019d lose any sense of order in the folder, but I could at least update the displayed image to the beat of the kick.</p>\n<p>I found this older <a href=\"https://community.lzxindustries.net/t/memory-palace-feature-request-slideshow-cv-triggered-image-change/1517\">post</a> that seems to be asking for the same feature, but the thread is dead with no resolution. It gives me hope that there is a way to do this, or at least a better way than what I\u2019ve tried.</p>\n<p>Any help would be much appreciated. Cheers!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 25780,
+      "post_number": 2,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2022-04-08T08:48:51.154Z",
+      "updated_at": "2022-04-08T20:24:37.313Z",
+      "cooked": "<p>Skip the trigger input on Memory Palace altogether for this use case.</p>\n<p>You need to route that trigger into a sequencer and then route the sequencer\u2019s output into the Delay CV input on Memory Palace in the modes that support frame sequencing (Paint, Ghost, Scene).  It will take a good bit of tweaking to hit the intended frame, especially if the number of frames per folder is different.  The less images per folder, the less precise you have to be in making sure your sequencer\u2019s voltages hit that voltage window for each frame.  Ideally you can scale your sequencer\u2019s output to 0-1V range.</p>\n<p>You could also consider running your trigger into an AND circuit along with Frame Sync so the trigger always hits at the top of a frame update.  It may not matter with how MP updates on a new image load, though.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 25792,
+      "post_number": 3,
+      "username": "3Li",
+      "name": "",
+      "created_at": "2022-04-08T21:07:40.975Z",
+      "updated_at": "2022-04-08T21:07:40.975Z",
+      "cooked": "<p>That makes a lot of sense, although it\u2019s admittedly a bit frustrating that it takes another bit of gear to get this effect out of something as comprehensive as the memory palace. Thanks for the advice!</p>\n<p>That said\u2026 I\u2019m also not sure if I\u2019ll be able to procure a sequencer in time, so I\u2019d be open to other workarounds. Any idea on why triggering the Freeze param doesn\u2019t work? It would be a great alternative, but I\u2019ve fiddled around quite a bit and as far as I can tell the trigger just doesn\u2019t actually toggle Freeze.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 25795,
+      "post_number": 4,
+      "username": "rempesm",
+      "name": "",
+      "created_at": "2022-04-08T21:40:23.258Z",
+      "updated_at": "2022-04-08T21:42:09.522Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"3Li\" data-post=\"3\" data-topic=\"3827\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/3li/48/7228_2.png\" class=\"avatar\"> 3Li:</div>\n<blockquote>\n<p>That makes a lot of sense, although it\u2019s admittedly a bit frustrating that it takes another bit of gear to get this effect out of something as comprehensive as the memory palace. Thanks for the advice!</p>\n</blockquote>\n</aside>\n<p>Sure, I feel you on that.  It would be wonderful if that was implemented in the firmware at some point but that\u2019s what the feature set is for now.  I don\u2019t think it\u2019s been advertised anywhere that you can frame sequence with the trigger input.  Definitely one of the joys and woes of modular gear, there\u2019s always that one extra function you need\u2026</p>\n<p>I haven\u2019t messed with this myself but have you attempted to control Memory Palace with MIDI?  If you can get the Delay parameter under MIDI control, then you may be able to avoid having to procure a modular format sequencer for now and use whatever hardware/software MIDI controllers you can get your hands on.</p>\n<p>Not sure about the issue you\u2019re having with the trigger input routed to Freeze in Ghost mode as I haven\u2019t tried that myself, sorry.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 25799,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2022-04-09T12:46:05.941Z",
+      "updated_at": "2022-04-09T12:46:05.941Z",
+      "cooked": "<p>Freeze works in tandem with Clear, so externally triggering the Freeze button alone doesn\u2019t have the same effect. It\u2019s not ideal. There is some discussion about Freeze, Clear, and triggering in the <a href=\"https://community.lzxindustries.net/t/suggestion-for-memory-palace-sw/3225/36\">firmware suggestions thread</a>, so we should see some better options for those functions in the forthcoming firmware update.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

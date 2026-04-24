@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "doorway",
+  "name": "Doorway",
+  "sku": "LZXDW",
+  "description": "Doorway is a linear video key generator and compositor, also known as a soft keyer. Width, 10HP Mounting Depth, 32mm Power +12V @ 80mA Power -12V @ 80mA Owner's Manual (PDF)",
+  "company": "lzx",
+  "price": "249.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 10,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 80,
+    "max_neg_12v_ma": 80
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692915269696",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-doorway/1307"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Doorway-front-legend.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/Doorway-front-panel.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/doorway_frontpanel_rev_a.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/lzx_dw_fpn_v1.1.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

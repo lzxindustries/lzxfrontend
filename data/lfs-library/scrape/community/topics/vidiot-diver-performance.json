@@ -1,0 +1,132 @@
+{
+  "id": 2013,
+  "title": "Vidiot + Diver performance",
+  "slug": "vidiot-diver-performance",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 13,
+      "name": "diver",
+      "slug": "diver"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-04-09T14:16:35.727Z",
+  "views": 1008,
+  "like_count": 10,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 9272,
+      "post_number": 1,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-09T14:16:35.787Z",
+      "updated_at": "2020-04-09T14:18:09.571Z",
+      "cooked": "<p>Using Vidiot together with Diver, the quality of the edges seems to be quite poor. In the images you see Diver\u2019s output patched into Vidiot\u2019s key 2 input. In the Vidiot + Diver tutorial video with this exact patch it doesn\u2019t seem to be so bad, so my main question is if this is normal or what I can consider to improve it.</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/09472ff3da5a95e62c34feedd39e2e75c860bc68.jpeg\" data-download-href=\"/uploads/short-url/1k4OydhahXlIWZVFzokgpwVjY5a.jpeg?dl=1\" title=\"diag\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/0/09472ff3da5a95e62c34feedd39e2e75c860bc68.jpeg\" alt=\"diag\" data-base62-sha1=\"1k4OydhahXlIWZVFzokgpwVjY5a\" width=\"333\" height=\"250\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">diag</span><span class=\"informations\">4032\u00d73024 1.19 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div> <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c3ad9403fb78fa3ec585d1f7d6c7728895659cd5.jpeg\" data-download-href=\"/uploads/short-url/rV2ZLIIhDllz41jiIoJz5fLhIfX.jpeg?dl=1\" title=\"diam\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c3ad9403fb78fa3ec585d1f7d6c7728895659cd5.jpeg\" alt=\"diam\" data-base62-sha1=\"rV2ZLIIhDllz41jiIoJz5fLhIfX\" width=\"333\" height=\"250\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">diam</span><span class=\"informations\">4032\u00d73024 1.02 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>Also, is it true that Diver is an NTSC device? So it is never possible to use Diver + PAL camera + Vidiot?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9273,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-04-09T16:08:00.387Z",
+      "updated_at": "2020-04-09T16:08:38.023Z",
+      "cooked": "<p>Dirty edges like that usually indicate a noisy power supply. What power solution are you using?<br>\nSince there is no video encoding or decoding going on in the module, Diver works with Vidiot no matter if it is set to PAL or NTSC.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9274,
+      "post_number": 3,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-09T16:28:27.748Z",
+      "updated_at": "2020-04-09T16:28:27.748Z",
+      "cooked": "<p>For power I am using a Doepfer A-100LC1.</p>\n<p>Ok. The Diver input only looks normal when Vidiot is set to NTSC, if set to PAL the diver input looks like my PAL camera looks when setting Vidiot to NTSC\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 9276,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-04-09T16:46:01.496Z",
+      "updated_at": "2020-04-09T16:46:01.496Z",
+      "cooked": "<p>Are you sending the camera into Vidiot and looping the sync through to Diver?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 9277,
+      "post_number": 5,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-09T17:14:05.388Z",
+      "updated_at": "2020-04-09T17:25:13.769Z",
+      "cooked": "<p>Yes that is the way I\u2019m doing it. But even without the camera connected, Diver only seems to work when Vidiot is set to NTSC.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 9278,
+      "post_number": 6,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-09T19:06:13.067Z",
+      "updated_at": "2020-04-09T20:07:50.924Z",
+      "cooked": "<p>Ok I didn\u2019t connect the sync cable properly <img src=\"https://emoji.discourse-cdn.com/twitter/disappointed.png?v=9\" title=\":disappointed:\" class=\"emoji\" alt=\":disappointed:\">. I reattached it to the back of the Diver and now it also works when the Vidiot is set to PAL.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 12961,
+      "post_number": 7,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2020-11-09T22:02:11.881Z",
+      "updated_at": "2020-11-09T22:02:11.881Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/mauiey\">@mauiey</a> Did you ever figure out why you were getting the rough edges with Diver? I\u2019m having this issue as well, and I don\u2019t think it\u2019s the PSU giving the issue\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 12975,
+      "post_number": 8,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-11-10T08:56:23.894Z",
+      "updated_at": "2020-11-10T08:56:23.894Z",
+      "cooked": "<p>I upgraded my power supply to a Doepfer PSU3, which helped. I now also have a V4 (for a different issue described <a href=\"https://community.lzxindustries.net/t/do-i-need-an-upscaler/2045\">here</a>) in the chain. Probably it does nothing for the edges but the Vidiot + Diver performance is much better now.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 12983,
+      "post_number": 9,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2020-11-10T18:49:43.111Z",
+      "updated_at": "2020-11-10T18:49:43.111Z",
+      "cooked": "<p>Ah interesting, thanks for letting me know. Strange that my Diver\u2019s edges seem much rougher than other modules on the same PSU, but maybe it\u2019s more sensitive because of its particular circuitry.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

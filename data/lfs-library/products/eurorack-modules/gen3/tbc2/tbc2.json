@@ -1,0 +1,418 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "tbc2",
+  "name": "TBC2",
+  "sku": "LZXOTBC2",
+  "subtitle": "Dual Video Input",
+  "company": "lzx",
+  "price": "999.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 16,
+    "mounting_depth_mm": 55,
+    "max_pos_12v_ma": 600
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true,
+    "has_front_video_sync_input": true,
+    "has_front_video_sync_output": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/1692918218816",
+  "images": {
+    "frontpanel": "website/tbc2-mk2-front-panel.png",
+    "legend": "website/tbc2-mk2-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "Sync",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": -1750,
+      "part": null
+    },
+    {
+      "name": "Sync",
+      "ref_des": "J2",
+      "is_input": false,
+      "is_output": true,
+      "x": -600,
+      "y": -1750,
+      "part": null
+    },
+    {
+      "name": "Y/Gs 1",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": -1000,
+      "part": null
+    },
+    {
+      "name": "Y/Gs 2",
+      "ref_des": "J4",
+      "is_input": true,
+      "is_output": false,
+      "x": -600,
+      "y": -1000,
+      "part": null
+    },
+    {
+      "name": "Pb/B 1",
+      "ref_des": "J5",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": -375,
+      "part": null
+    },
+    {
+      "name": "Pb/B 2",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -600,
+      "y": -375,
+      "part": null
+    },
+    {
+      "name": "Pr/R 1",
+      "ref_des": "J7",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": 250,
+      "part": null
+    },
+    {
+      "name": "Pr/R 2",
+      "ref_des": "J8",
+      "is_input": true,
+      "is_output": false,
+      "x": -600,
+      "y": 250,
+      "part": null
+    },
+    {
+      "name": "CVBS 1",
+      "ref_des": "J15",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "CVBS 2",
+      "ref_des": "J16",
+      "is_input": true,
+      "is_output": false,
+      "x": -600,
+      "y": 875,
+      "part": null
+    },
+    {
+      "name": "YC 1",
+      "ref_des": "J20",
+      "is_input": true,
+      "is_output": false,
+      "x": -1200,
+      "y": 1500,
+      "part": null
+    },
+    {
+      "name": "YC 2",
+      "ref_des": "J21",
+      "is_input": true,
+      "is_output": false,
+      "x": -600,
+      "y": 1500,
+      "part": null
+    },
+    {
+      "name": "MIDI",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 250,
+      "part": null
+    },
+    {
+      "name": "Y 1",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 600,
+      "y": 250,
+      "part": null
+    },
+    {
+      "name": "Y 2",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": 1200,
+      "y": 250,
+      "part": null
+    },
+    {
+      "name": "MIDI",
+      "ref_des": "J12",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 750,
+      "part": null
+    },
+    {
+      "name": "R 1",
+      "ref_des": "J13",
+      "is_input": false,
+      "is_output": true,
+      "x": 600,
+      "y": 750,
+      "part": null
+    },
+    {
+      "name": "R 2",
+      "ref_des": "J14",
+      "is_input": false,
+      "is_output": true,
+      "x": 1200,
+      "y": 750,
+      "part": null
+    },
+    {
+      "name": "USB",
+      "ref_des": "J17",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1250,
+      "part": null
+    },
+    {
+      "name": "G 1",
+      "ref_des": "J18",
+      "is_input": false,
+      "is_output": true,
+      "x": 600,
+      "y": 1250,
+      "part": null
+    },
+    {
+      "name": "G 2",
+      "ref_des": "J19",
+      "is_input": false,
+      "is_output": true,
+      "x": 1200,
+      "y": 1250,
+      "part": null
+    },
+    {
+      "name": "Trigger",
+      "ref_des": "J22",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 1750,
+      "part": null
+    },
+    {
+      "name": "B 1",
+      "ref_des": "J23",
+      "is_input": false,
+      "is_output": true,
+      "x": 600,
+      "y": 1750,
+      "part": null
+    },
+    {
+      "name": "B 2",
+      "ref_des": "J24",
+      "is_input": false,
+      "is_output": true,
+      "x": 1200,
+      "y": 1750,
+      "part": null
+    },
+    {
+      "name": "MicroSD",
+      "ref_des": "J25",
+      "is_input": true,
+      "is_output": false,
+      "x": 1400,
+      "y": -875,
+      "part": null
+    }
+  ],
+  "controls": [
+    {
+      "name": "Cancel",
+      "ref_des": "S1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 0,
+      "y": -1750,
+      "part": null
+    },
+    {
+      "name": "Up",
+      "ref_des": "S2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1750,
+      "part": null
+    },
+    {
+      "name": "Down",
+      "ref_des": "S3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 800,
+      "y": -1750,
+      "part": null
+    },
+    {
+      "name": "Confirm",
+      "ref_des": "S4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 1200,
+      "y": -1750,
+      "part": null
+    }
+  ],
+  "downloads": [
+    {
+      "name": "TBC2 Firmware 1.0",
+      "path": "downloads/tbc2-firmware_1.0.zip",
+      "file_type": "zip"
+    },
+    {
+      "name": "TBC2 Firmware 1.0.1",
+      "path": "downloads/tbc2-firmware_1.0.1.zip",
+      "file_type": "zip"
+    },
+    {
+      "name": "TBC2 Firmware 1.0.2-mk1 (Orion Panel)",
+      "path": "downloads/tbc2-firmware_1.0.2-mk1.zip",
+      "file_type": "zip"
+    },
+    {
+      "name": "TBC2 Firmware 1.0.2-mk2 (Gen3 Panel)",
+      "path": "downloads/tbc2-firmware_1.0.2-mk2.zip",
+      "file_type": "zip"
+    },
+    {
+      "name": "TBC2 Firmware 1.0.3",
+      "path": "downloads/tbc2-firmware_1.0.3.zip",
+      "file_type": "zip"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for TBC2",
+      "youtube_id": "S_R12TJsYic"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/tbc2-expander-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-expander-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-gen3-frontpanel-only.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2-mk2-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/tbc2_mk2_fan_kit.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/940010-D0001-tbc2-mk2-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/940020-D0001-tbc2-mk1-low-noise-fan-upgrade-kit-instructions.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk1.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.2-mk2.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.3.zip",
+        "extension": "zip"
+      },
+      {
+        "path": "downloads/tbc2-firmware_1.0.zip",
+        "extension": "zip"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "TBC2 is a dual video input module for your LZX modular system. Supported are Composite, Component & S-Video inputs capable of SD/HD video decoding and frame synchronization. Learn more about TBC2 on our documentation website! SD/HD Video Sync Generator supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 sync formats Dual SD/HD Video Decoders supporting NTSC, PAL, 480p, 576p, 720p50, 720p5994, 720p60, 1080i50, 1080i5994, 1080i60, 1080p2398, 1080p24, 1080p25, 1080p2997, 1080p30 input sources VESA/VGA input up to 1024x768 with optional 10HP VGA+SCART expander. Playback of still images and looping sequences loaded from frontpanel MicroSD card slot SD color correction controls for each input: Hue, Saturation, Contrast & Brightness Auto upscaling and downscaling modes for both inputs MIDI input for remote parameter control Submodules Decoder TBC2 has two input decoder submodules. Each supports Component (YPbPr/RGsB), Composite (CVBS) and S-Video (YC) inputs. With the addition of the VGA/SCART expander, it supports VGA (RGBHV) and SCART (CVBS/RGsB) inputs. Input Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 640x480p60 800x600p60 1024x768p60 Genlock TBC2 has one genlock submodule. This module controls the timing of the output encoders. It is a full featured Sync Generator with front and rear outputs for video sync. Output Standard NTSC PAL 480p 576p 720p50 720p5994 720p60 1080i50 1080i5994 1080i60 1080p2398 1080p24 1080p25 1080p2997 1080p30 Encoder TBC2 has two output encoder submodules. Each supports Patchable 1V (YRGB) outputs. The output video standard follows the setting of the Genlock Module. Media TBC2 has one media submodule. This module is capable of loading still images (JPG, PNG, BMP) from the front MicroSD card socket. The output video standard follows the setting of the Genlock Module. To use the media module, copy your images into a subfolder of a compatible MicroSD card. For example: /media/folder/frame1.JPG We recommend preparing media in a size matching your system's output video standard in JPG or PNG formats. For example, for NTSC video, prepare media at 720 (W) x 486 (H) dimensions. Always eject or insert your MicroSD card only when your system is powered off. Keep remote backups of any data on your MicroSD card. The maximum number of images per media folder is determined by the current output video standard, with a minimum of 24 frames in 1920 (W) x 1080 (H) media sizes. Ramp Generator TBC2 has one Ramp Generator submodule. The output video standard follows the setting of the Genlock Module. The Ramp Generator is a low speed software renderer designed to generate programmable gradients and other patterns. After any settings change, this module will render a new output frame. MicroSD Card Compatibility TBC2 is compatible with some, but not all MicroSD cards. When you acquire a MicroSD card to use with TBC2, we recommend selecting from the specific brands and models we have tested to be hassle free, listed below. Always purchase MicroSD cards from a trusted vendor with name brand packaging to protect yourself against counterfeits. To prepare your MicroSD card for use with TBC2, please format the card as FAT32 with default sector size. Brand / Series Size SanDisk 8GB, 16GB SanDisk EDGE 8GB MIDI Control Change Map CC Module Parameter 0 Encoder A Crossfade 1 Decoder A SD Processor Hue 2 Decoder A SD Processor Saturation 3 Decoder A SD Processor Brightness 4 Decoder A SD Processor Contrast 16 Encoder B Crossfade 17 Decoder B SD Processor Hue 18 Decoder B SD Processor Saturation 19 Decoder B SD Processor Brightness 20 Decoder B SD Processor Contrast Firmware Update Download the latest firmware package from the releases section, and unzip the files. Find BOOT.bin and copy it to your MicroSD card. Power down your TBC2 and insert the MicroSD card. Power on your system and wait for TBC2 to finish booting, then activate the Update Firmware button on the System page. Wait for firmware update to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the correct version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Factory Reset To reset your TBC2 firmware to the version shipped from the factory, activate the Reset Firmware button on the System page. Wait for firmware reset to complete, until you see the System Restart prompt. Activate the Confirm button to restart your system. Confirm that your TBC2 boots to the factory installed version by comparing version numbers on the System Page. Power off / power on your system if you see the wrong version initially. Troubleshooting If the module is receiving power, but the screen is blank, complete the following procedure: Format a Micro SD card, sized 16gb or smaller. Copy the current TBC2 firmware (available below) onto the card. With the module powered off, install the card in the slot in the front of the module. There are two buttons on the back edge of the module's circuit board. Hold down the top one (labeled \"Boot from SD\" on early units) and power up the module. Once the module has powered on, select \"update firmware\" in the menu and let the module complete that process. Once complete, power cycle the module. If the issue persists, please make a service request at the bottom of this page."
+}

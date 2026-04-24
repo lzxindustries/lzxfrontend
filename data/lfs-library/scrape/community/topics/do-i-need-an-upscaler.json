@@ -1,0 +1,77 @@
+{
+  "id": 2045,
+  "title": "Do I need an upscaler",
+  "slug": "do-i-need-an-upscaler",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 22,
+      "name": "capture",
+      "slug": "capture"
+    },
+    {
+      "id": 58,
+      "name": "converter",
+      "slug": "converter"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-04-22T19:49:28.982Z",
+  "views": 703,
+  "like_count": 4,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 9423,
+      "post_number": 1,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-22T19:49:29.062Z",
+      "updated_at": "2020-04-22T19:49:29.062Z",
+      "cooked": "<p>With the following setup I get an unstable video signal (see below):</p>\n<p><strong>Vidiot &gt; BMD Mini Converter Analog to SDI &gt; BMD Video Assist 4K</strong></p>\n<p>But this setup works very good:</p>\n<p><strong>Vidiot &gt; BMD Mini Converter Analog to SDI &gt; Edirol V4 &gt; BMD Video Assist 4K</strong></p>\n<p>I know using an upscaler after the Analog to SDI converter is recommended, but I prefer not to buy one because I figured it would be useless when my Chromagnon arrives with its HD output.</p>\n<p><a class=\"mention\" href=\"/u/z0nk0ut\">@Z0NK0UT</a> do you already know if it is still recommended to use an upscaler when the Chromagnon is here? Not for the resolution but could it be the V4/upscaler create some sort of stability?</p>\n<p>Main reason I\u2019m asking is because I\u2019d rather get rid of the V4 and get an upscaler as soon as possible, for portability reasons and because then I don\u2019t need to wait with recording in HD until Chromagnon arrives. But even then I\u2019m not even sure if an upscaler could fix this problem?</p>\n<p>The artifacts I get when not using the V4:<br>\n<img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c056d48f2ffeddf40418f6bd3848e3def460d772.gif\" alt=\"Capture0028\" data-base62-sha1=\"rrvHRgVv9fCv44QLqm1ceNEQPPc\" width=\"360\" height=\"288\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9430,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-04-23T18:43:14.438Z",
+      "updated_at": "2020-04-23T18:43:14.438Z",
+      "cooked": "<p>I think the V4 is contributing frame synchronization and stabilizing some Vidiot timing that Video Assist doesn\u2019t like. Vidiot is a rowdy little box. Chromagnon should adopt the role your V4 is playing in this instance.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9432,
+      "post_number": 3,
+      "username": "Genlok",
+      "name": "Winston",
+      "created_at": "2020-04-23T20:22:00.199Z",
+      "updated_at": "2020-06-29T15:04:10.878Z",
+      "cooked": "<p>What if you sync the Vidiot to the V-4? Simple as putting one of the V-4 outputs into the Vidiot input. I find that my Vidiot has trouble generating stable sync by itself, but it locks to incoming sync better.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9435,
+      "post_number": 4,
+      "username": "mauiey",
+      "name": "",
+      "created_at": "2020-04-24T10:07:49.014Z",
+      "updated_at": "2020-04-24T10:07:49.014Z",
+      "cooked": "<p>Allright, thanks <a class=\"mention\" href=\"/u/z0nk0ut\">@Z0NK0UT</a> then I\u2019ll wait it out.</p>\n<p><a class=\"mention\" href=\"/u/genlok\">@Genlok</a> that also works!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

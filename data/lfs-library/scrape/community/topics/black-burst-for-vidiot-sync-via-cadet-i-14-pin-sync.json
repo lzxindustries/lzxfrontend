@@ -1,0 +1,137 @@
+{
+  "id": 739,
+  "title": "Black Burst for Vidiot sync - via Cadet I 14 pin sync?",
+  "slug": "black-burst-for-vidiot-sync-via-cadet-i-14-pin-sync",
+  "category_id": 20,
+  "tags": [
+    {
+      "id": 11,
+      "name": "cadet1",
+      "slug": "cadet1"
+    },
+    {
+      "id": 20,
+      "name": "sync",
+      "slug": "sync"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-11-29T14:09:46.436Z",
+  "views": 1794,
+  "like_count": 1,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 3079,
+      "post_number": 1,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2018-11-29T14:09:46.533Z",
+      "updated_at": "2019-02-09T12:52:43.367Z",
+      "cooked": "<p>Hey There.</p>\n<p>I have a vidiot and a semisize cadet+Castle system (33 modules so far).</p>\n<p>With 3 cadet III, and 3 Cadet II in the system, it already makes the syncronization of ins and out a rather complex task. But i manage using TBCs and referenced sources from my hackingtosh via lots of black magic  and a genlocked scanconverter etc\u2026</p>\n<p>But in order to get the vidiot to play along in sync with the system without having an active video input showing, I for now use an old Syncronicing pulse generator that i had on a shelf for years, for making a Black Burst ie a synchronized signal that have no image that i can input to the vidiot. (Plan is to setup a small 2 input one output switch with the blackburst on one, and whatever source i want to put into the vidiot on the other.)<br>\nBut i would rather not have to carry the sync generator along for gigs, and have wondered if there is a Black Burst already generated somewhere int the system that could be used\u2026</p>\n<p>Recently i followed the sync busboard design thread, and learned that there indeed is something on pin 7 of the 14 pin sync header bus, mentioned as burst in that schematic thread. But there is also a composite sync, as far as i can see. In the owners manual of the Cadet I the pin 7 output is labeled Burst Gate.</p>\n<p>So my question here is, is the burst gate the same signal type as the black burst that my rackmount synchronizing pulse generator sends out, or something different?</p>\n<p>And from the same part of the soup in my head: what is then composite sync, if not blackburst?</p>\n<p>If long technical precisions is not on the to do list for now, then please just tell me if its possible, and what pins I should  connect to generate a black sync signal for my vidiot?</p>\n<p>Best Lau!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3094,
+      "post_number": 2,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-12-01T01:26:06.798Z",
+      "updated_at": "2018-12-01T01:26:06.798Z",
+      "cooked": "<p>Hey Lau!! Vidiot does not output.</p>\n<p>To answer your technical question, black burst basically means \u201cblack video signal with color burst and sync\u201d. It\u2019s a standard normal video signal that\u2019s just black.  The sync output from Vidiot is more like \u201cblack + sync\u201d.  It is black video and sync but without any colorburst.   You can use any video source that is synchronized to your main system as the video input to Vidiot, and it will sync.  Vidiot already has the same genlockable sync converter circuit as found in Cadet I.</p>\n<p>Does this answer your question in full?  Love having technical discussions, so make sure all your questions are answered.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3095,
+      "post_number": 3,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2018-12-01T14:01:14.168Z",
+      "updated_at": "2018-12-01T14:01:14.168Z",
+      "cooked": "<p>Thanks for the explanation <a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a>, but its not exactly what im after. <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=6\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\">  I will try to rephrase my question and give a little background.</p>\n<p>I know that the sync generators, both the cadet I and the vidiot outputs a black sync signal from the out RCAs when no signal is plugget to the input, but what im after is some output (in the 14 pin sync bus) of a proper sync signal which is black, nomatter if a video signal (with an image) is plugget into the input of the sync generator.</p>\n<p>Usually i sync my cadet I sync generator to a signal coming from either a camera, that does not take genlock, or from one of my blackmagic capture cards (that have no genlock,) and then genlock all the other signals i have before inputting them to the cadet video inputs and the vidiot. (i have 3 Cadet Vidio inputs and the vidiot so that means that i often use 4 different sources into the system at once) I then route all the synched signals around in my analog composite system  (containing the synth, V8, mx50s etc\u2026)using a matrix router. This is all pretty simple. (for me at least <img src=\"https://emoji.discourse-cdn.com/twitter/wink.png?v=6\" title=\":wink:\" class=\"emoji\" alt=\":wink:\">  )</p>\n<p>But what im after is synching my vidiot to the cadet system, without getting a visible video input into the vidiot. (because the video signal is then always present in the luma section of the vidiot, whichI sometimes want, sometimes dont want).</p>\n<p>For now i generate such a black signal outside the lzx system and use this to sync the vidiot to the rest of the system, without inputting an actual visible video stream into the vidiot. I would like to ditch the rackmount sync generator, and use a signal already present in the sync bus to sync the vidiot, if possible.</p>\n<p>Is there a black sync signal generated inside the cadet I sync generator, which is sent through the 14 pin sync bus outputs that could be used to sync the vidiot to the cadet I:</p>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/2d5c9c228b9d9fb878a58c0d42c954163f353f06.png\" alt=\"image\" width=\"498\" height=\"482\"></p>\n<p>I would of course have to DIY some kind of adaptor from the sync header to RCA, that could be input into the RCA input on the vidiot, but this seems pretty doable <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=6\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>\n<p>In other words will my vidiot slave itself to the sync generator, if i feed the vidiot with Burst Gate, C sync, or any of the other signals present here?</p>\n<p>This all relies on the assumption that what the sync generator sends out through this header is only sync signals without any image information. This might be a wrong understanding?</p>\n<p>Hope this makes sense? And thanks for the explanations!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 3097,
+      "post_number": 4,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2018-12-01T20:18:17.398Z",
+      "updated_at": "2018-12-01T20:20:07.375Z",
+      "cooked": "<p>you might be able to use c sync out to the vidiot. not sure that it would need color burst or not, since it only gets luma on the input, i wonder if the sync generation is similar to the cadet in that it will generate a colorburst (<strong>edit: nevermind that, sync gen doesnt generate colorburst, the output encoder generates the colorburst. everywhere in between is just rgb signals</strong>). give it a shot anyway.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 3100,
+      "post_number": 5,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-12-02T01:47:42.130Z",
+      "updated_at": "2018-12-02T01:47:42.130Z",
+      "cooked": "<p>For what you want, just build another C2 RGB Encoder for your Cadet system and don\u2019t patch anything to the inputs.  This will give you black video output and serve as a black burst generator.</p>\n<p>The other option would be to make a DIY circuit that attenuates and buffers the CSYNC on your sync bus and drives it thru a video op amp buffer.  <a class=\"mention\" href=\"/u/reverselandfill\">@reverselandfill</a> has incorporated this approach into his sync busboard design, with the full thread located here:</p><aside class=\"quote\" data-post=\"52\" data-topic=\"602\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/reverselandfill/48/1569_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/sync-busboard-design-for-cadet-diy-systems/602/52\">Sync busboard design - for Cadet DIY systems</a> <a class=\"badge-category__wrapper \" href=\"/c/forum/diy/20\"><span data-category-id=\"20\" data-parent-category-id=\"13\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"DIY projects, circuit design, and technical discussions.\"><span class=\"badge-category__name\">DIY</span></span></a>\n  </div>\n  <blockquote>\n    ok, the pcb\u2019s are ordered.\n  </blockquote>\n</aside>\n\n<p>Alternately, you can drive the Vidiot from Visual Cortex\u2019s sync out chain on the rear of the module.</p>\n<p>The CSYNC on the 14-pin sync bus is TTL level (5V logic).  When you attenuate it to 0.6V, buffer with video opamp, and drive thru 75R resistor, it is now \u201cblack video.\u201d  (Not quite black burst, which also includes subcarrier embedded along with CSYNC, but that\u2019s a different topic.)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 3141,
+      "post_number": 6,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2018-12-05T15:05:23.790Z",
+      "updated_at": "2018-12-05T15:05:23.790Z",
+      "cooked": "<p>Thanks Lars. Seems a little more complex than i had hoped for. Had not grasped it in my first read through of the sync busboard thread.</p>\n<p>Making a full C2 module just for a black video signal seems a little over the top for me, and I have no Visual Cortex (module that is! ) so i think i will go for some kind of diy solution as described.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 4155,
+      "post_number": 7,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-08T22:22:00.425Z",
+      "updated_at": "2019-02-08T22:22:00.425Z",
+      "cooked": "<p>You could also go with something like this:<br>\n<a href=\"https://www.markertek.com/product/bmd-convmsync/blackmagic-design-convmsync-sync-generator-mini-converter?cvsfa=3786&amp;cvsfe=2&amp;cvsfhu=424d442d434f4e564d53594e43&amp;ne_ppc_id=1629435546&amp;gclid=CjwKCAiA7vTiBRAqEiwA4NTO65g3w55KZjeLZovH8muY_071orkAzsIRVFx3oqEqenxbXKoDK_-S-BoCPxkQAvD_BwE\" class=\"onebox\" target=\"_blank\" rel=\"nofollow noopener\">https://www.markertek.com/product/bmd-convmsync/blackmagic-design-convmsync-sync-generator-mini-converter?cvsfa=3786&amp;cvsfe=2&amp;cvsfhu=424d442d434f4e564d53594e43&amp;ne_ppc_id=1629435546&amp;gclid=CjwKCAiA7vTiBRAqEiwA4NTO65g3w55KZjeLZovH8muY_071orkAzsIRVFx3oqEqenxbXKoDK_-S-BoCPxkQAvD_BwE</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 4156,
+      "post_number": 8,
+      "username": "LauLindqvist",
+      "name": "Lau Lindqvist",
+      "created_at": "2019-02-08T23:18:44.568Z",
+      "updated_at": "2019-02-08T23:18:44.568Z",
+      "cooked": "<p>Oh, yeah, thanks. That is indeed smaller for the rig, not bad! (but still a bit pricy)</p>\n<p>Think im going for Martijns Sync bus board that have an rca sync output though.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    },
+    {
+      "id": 4159,
+      "post_number": 9,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-02-09T02:19:26.626Z",
+      "updated_at": "2019-02-09T02:19:26.626Z",
+      "cooked": "<p>The RCA sync busboard is the obvious solution!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 8,
+      "is_wiki": false
+    }
+  ]
+}

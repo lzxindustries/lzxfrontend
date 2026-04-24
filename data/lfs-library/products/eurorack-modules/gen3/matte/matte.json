@@ -1,0 +1,215 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "matte",
+  "name": "Matte",
+  "sku": "LZXMATTE",
+  "subtitle": "Static Offset Generator",
+  "company": "lzx",
+  "price": "239.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 50
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6766673952791",
+  "images": {
+    "frontpanel": "website/matte-front-panel.png",
+    "legend": "website/matte-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "A1",
+      "ref_des": "J1",
+      "is_input": false,
+      "is_output": true,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A1 & B1 Average",
+      "ref_des": "J2",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A2",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A2 & B2 Average",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B2",
+      "ref_des": "J6",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A3",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "A3 & B3 Average",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B3",
+      "ref_des": "J9",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "A1",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "B1",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "A2",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "B2",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "A3",
+      "ref_des": "P5",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": 125,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "B3",
+      "ref_des": "P6",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": 125,
+      "part": "control-knob-solid-arrow"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX8HPMatteFrontpanelColorGraphicDarkSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/matte-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/matte-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/matte-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/matte_fpn_reva.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Matte is a DC offset generator that offers nine control voltage outputs from six knobs. The module is optimized for selection of three RGB colors, but allows you to send knob-adjustable voltages to the inputs of any of your other modules. By adjusting two knobs you can generate three distinct voltages ideal for manipulating multiple inputs simultaneously. Matte is perfect for administering macro changes to different parts of your patch without having to adjust several modules individually. Learn more about Matte on our documentation website!"
+}

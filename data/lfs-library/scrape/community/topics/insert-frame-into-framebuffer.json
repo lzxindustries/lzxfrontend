@@ -1,0 +1,43 @@
+{
+  "id": 1781,
+  "title": "Insert frame into framebuffer",
+  "slug": "insert-frame-into-framebuffer",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2019-12-28T03:27:24.550Z",
+  "views": 757,
+  "like_count": 3,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 8169,
+      "post_number": 1,
+      "username": "cburst",
+      "name": "r rose",
+      "created_at": "2019-12-28T03:27:24.617Z",
+      "updated_at": "2019-12-28T03:27:24.617Z",
+      "cooked": "<p>Hi there-</p>\n<p>I was just watching the Jones framebuffer DVD from the ETC \u2018Early video instruments\u2019 set. One interesting feature is the ability to add a single image into a specific frame of the frame buffer (i.e., frame 12/30, repeating once each second). I\u2019m going to start trying the new memory palace firmware beta today, but I was wondering if the ability to insert a frame into the framebuffer is a possible future firmware feature.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8194,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-12-28T17:50:23.305Z",
+      "updated_at": "2019-12-28T17:50:23.305Z",
+      "cooked": "<p>Moved your comment here:</p><aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"1774\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/memory-palace-v19-beta-dec-2019/1774\">Memory Palace V19 Beta Dec 2019</a> <a class=\"badge-category__wrapper \" href=\"/c/news/lzxindustries/25\"><span data-category-id=\"25\" data-parent-category-id=\"24\" data-drop-close=\"true\" class=\"badge-category --has-parent\" title=\"Official communications with the LZX Industries team.\"><span class=\"badge-category__name\">LZX Industries</span></span></a>\n  </div>\n  <blockquote>\n    As promised, we have a new version of Memory Palace firmware for you all to try.  At this time, there are some rough edges and still a lot of work to do.  We plan to have V19 wrapped up at the same time TBC2 ships, since they will share a common code base.  If you\u2019re happy with the current firmware and don\u2019t want to disturb any projects or performances in progress, you should stick with V18 until we get to that point. \nBUT! If you\u2019re anxious for some really powerful new features and performance \u2026\n  </blockquote>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

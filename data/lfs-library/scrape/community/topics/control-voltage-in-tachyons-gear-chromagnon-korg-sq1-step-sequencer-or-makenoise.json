@@ -1,0 +1,91 @@
+{
+  "id": 2325,
+  "title": "Control Voltage in Tachyons+ Gear: Chromagnon, Korg SQ1 Step Sequencer, or MakeNoise Wogglebug?",
+  "slug": "control-voltage-in-tachyons-gear-chromagnon-korg-sq1-step-sequencer-or-makenoise-wogglebug",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    }
+  ],
+  "created_at": "2020-08-26T10:57:24.273Z",
+  "views": 892,
+  "like_count": 18,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 11176,
+      "post_number": 1,
+      "username": "guerrillasuite",
+      "name": "Oliver Chappel",
+      "created_at": "2020-08-26T10:57:24.372Z",
+      "updated_at": "2020-08-26T10:57:24.372Z",
+      "cooked": "<p>Hello!</p>\n<p>I currently have a Tachyons+ Psycheniser, which has two CV inputs (-5V, +5V) which I would like to make use of.<br>\nLogan recommends the MakeNoise Wogglebug ($450AUD) for some wild, crazy signals to animate the gear\u2019s glitch effects.<br>\nI saw someone used the Korg S10 step sequencer ($190AUD) with their Psycheniser and achieved what they wanted (I\u2019m assuming a more uniform beat/pulse?).</p>\n<p>Now I\u2019m wondering, which of the two should I get? What is a step sequencer and how would it apply to this?</p>\n<p>I have a Chromagnon on pre-order also, does that have any CV outputs?</p>\n<p>Thanks heaps!<br>\n(-:</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11177,
+      "post_number": 2,
+      "username": "jwsmithwick1",
+      "name": "",
+      "created_at": "2020-08-26T11:44:58.077Z",
+      "updated_at": "2020-08-26T11:44:58.077Z",
+      "cooked": "<p>The Wogglebug outputs random voltages at a clocked rate, whereas the sequencer outputs user-defined voltages at a clocked rate.</p>\n<p>I would recommend starting with the sequencer because it allows you to program voltage patterns that you can send to both audio and video synthesizers.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11178,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-08-26T15:20:19.308Z",
+      "updated_at": "2020-08-26T15:20:19.308Z",
+      "cooked": "<p>The Korg SQ1 is nice because it can send out voltage scaled to an LZX-friendly 0-1V. Also, it\u2019s standalone and battery powered. If you get a Wogglebug, you will have to get a Eurorack case to use it.<br>\nChromagnon will have control voltage inputs and outputs to patch with SQ1 and your Tachyons gear.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 11213,
+      "post_number": 4,
+      "username": "guerrillasuite",
+      "name": "Oliver Chappel",
+      "created_at": "2020-08-28T12:37:59.007Z",
+      "updated_at": "2020-08-28T12:37:59.007Z",
+      "cooked": "<p>Thanks for the reply!</p>\n<p>On the Korg website, under the CV Out Voltage it says \u201c1V, 2V, 5V (Oct) 8V (Hz/V)\u201d</p>\n<p>The T+ gear operates at a -5, +5 V range so I\u2019m assuming this will be fine, but what does Oct mean in this context?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 11215,
+      "post_number": 5,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2020-08-28T14:18:04.080Z",
+      "updated_at": "2020-08-28T14:18:04.080Z",
+      "cooked": "<p>Octave</p>\n<p>1v/octave<br>\n2v/octave etc</p>\n<p>8V(Hz/V) is for buchla synthesizers iirc</p>\n<p>normal eurorack audio oscillators track at 1v/oct - each note is represented by a 1/12 of an octave offset from the octave do for example c3 might be 3V, c1 would be 1V, c4 would be 4V - d3 would be 3.1667V etc etc</p>\n<p>you may only get +ve values out of sq1</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 11219,
+      "post_number": 6,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-08-28T18:04:51.844Z",
+      "updated_at": "2020-08-28T18:04:51.844Z",
+      "cooked": "<p>Whoa I just realized that I can sequence within the 1st octave of my sequencer to stay in 0-1v LZX range. Thanks,</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

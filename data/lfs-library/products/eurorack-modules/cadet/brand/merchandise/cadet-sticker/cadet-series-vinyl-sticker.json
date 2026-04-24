@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../../schemas/product.schema.json",
+  "slug": "cadet-series-vinyl-sticker",
+  "name": "Cadet Series Vinyl Sticker",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1702700220480",
+  "description": "In stock. 3 inch sticker on screen printed vinyl. Video synthesis Cadet status included!",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/5890.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

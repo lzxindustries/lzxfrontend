@@ -1,0 +1,41 @@
+{
+  "id": 1315,
+  "title": "All About Polar Fringe",
+  "slug": "all-about-polar-fringe",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    },
+    {
+      "id": 24,
+      "name": "polarfringe",
+      "slug": "polarfringe"
+    }
+  ],
+  "created_at": "2019-07-19T18:59:30.552Z",
+  "views": 1505,
+  "like_count": 4,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 5962,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-19T18:59:30.681Z",
+      "updated_at": "2022-01-02T19:47:43.623Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3445f1eb90d56ad40735755c872a9c4b87dbe578.jpeg\" data-download-href=\"/uploads/short-url/7sqGsTtFhNdXxYrYNhiVTuNWiqA.jpeg?dl=1\" title=\"pf3\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3445f1eb90d56ad40735755c872a9c4b87dbe578.jpeg\" alt=\"pf3\" data-base62-sha1=\"7sqGsTtFhNdXxYrYNhiVTuNWiqA\" width=\"659\" height=\"500\" data-dominant-color=\"9B999B\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">pf3</span><span class=\"informations\">1350\u00d71024 473 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div><br>\nPolar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it\u2019s hard to draw the line hard line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe.</p>\n<h1><a name=\"p-5962-specifications-1\" class=\"anchor\" href=\"#p-5962-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 16HP</li>\n<li>Mounting Depth, 36mm</li>\n<li>Power +12V @ 125mA</li>\n<li>Power -12V @ 130mA</li>\n</ul>\n<h1><a name=\"p-5962-user-reference-2\" class=\"anchor\" href=\"#p-5962-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3fd6b91385359548324ed4d32a206ce4cb114796.jpeg\" data-download-href=\"/uploads/short-url/96K7AGfTXIWK5awcuGlxYXitCDQ.jpeg?dl=1\" title=\"pf%20urc1\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/3/3fd6b91385359548324ed4d32a206ce4cb114796.jpeg\" alt=\"pf%20urc1\" data-base62-sha1=\"96K7AGfTXIWK5awcuGlxYXitCDQ\" width=\"436\" height=\"500\" data-dominant-color=\"D2D3D2\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">pf%20urc1</span><span class=\"informations\">804\u00d7922 417 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5962-patching-tips-3\" class=\"anchor\" href=\"#p-5962-patching-tips-3\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>THE CHROMA KEY PATCH<br>\nSet all controls and switches to the default settings shown on<br>\nthe frontpanel illustration to the left.<br>\nPatch your RGB image source into the source inputs. Patch the<br>\nRGB Thru outputs to your compositor module\u2019s RGB inputs<br>\n(such as Visual Cortex or Marble Index.)<br>\nNext, patch one of the Key outputs to the voltage control input<br>\non your compositor module (Visual Cortex or Marble Index.)<br>\nNow you can use the joystick, Diameter, and Fringe controls to<br>\nchange the color and quality of the resulting key.</li>\n<li>Try thinking outside the box with how you include it in a patch \u2013 for example, feeding ramp signals or horizontal and vertical waveshapes into the RGB inputs will transform it into a capable shape and pattern generator!</li>\n</ul>\n<h1><a name=\"p-5962-downloads-4\" class=\"anchor\" href=\"#p-5962-downloads-4\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Polar%20Fringe/Polar%20Fringe%20User%20Reference%20Card.pdf\">Polar Fringe User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5962-other-resources-5\" class=\"anchor\" href=\"#p-5962-other-resources-5\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/polarfringe\">LZX Community Forum posts tagged #polarfringe</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

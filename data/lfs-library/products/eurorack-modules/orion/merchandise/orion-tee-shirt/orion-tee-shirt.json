@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/product.schema.json",
+  "slug": "orion-tee-shirt",
+  "name": "Orion Tee Shirt",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/4295175766039",
+  "description": "Your very favorite LZX Orion logo, silk screened on a medium weight black tee shirt.",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/orion_tee.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

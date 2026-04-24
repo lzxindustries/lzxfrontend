@@ -1,0 +1,91 @@
+{
+  "id": 4568,
+  "title": "KnobCon \u201823 Chromagnon news or first look",
+  "slug": "knobcon-23-chromagnon-news-or-first-look",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 79,
+      "name": "chromagnon",
+      "slug": "chromagnon"
+    }
+  ],
+  "created_at": "2023-09-11T18:29:15.606Z",
+  "views": 657,
+  "like_count": 23,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 33441,
+      "post_number": 1,
+      "username": "Wyatt_Derp",
+      "name": "",
+      "created_at": "2023-09-11T18:29:15.657Z",
+      "updated_at": "2023-09-11T18:29:15.657Z",
+      "cooked": "<p>Any footage to share of the prototype or just news in general on lzx at knobcon 23 ?</p>\n<p>Getting excited for nov-dec release and read an email about the prototype debuting at the show, just checking here to see if anyone attended and knows more than I do.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 33442,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2023-09-11T21:29:09.907Z",
+      "updated_at": "2023-09-11T21:29:09.907Z",
+      "cooked": "<p>Everything went up on our Instagram, some immortalized in highlights:<br>\n<a href=\"https://www.instagram.com/p/CxDd95pOpvF/?hl=en\" class=\"onebox\" target=\"_blank\" rel=\"noopener\">https://www.instagram.com/p/CxDd95pOpvF/?hl=en</a><br>\n<a href=\"https://www.instagram.com/stories/highlights/17867300924461938/?hl=en\" class=\"onebox\" target=\"_blank\" rel=\"noopener\">https://www.instagram.com/stories/highlights/17867300924461938/?hl=en</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 33444,
+      "post_number": 3,
+      "username": "Wyatt_Derp",
+      "name": "",
+      "created_at": "2023-09-12T13:36:58.197Z",
+      "updated_at": "2023-09-12T13:36:58.197Z",
+      "cooked": "<p>Thank you! This was exactly the fix I needed. It looks amazing!!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 33457,
+      "post_number": 4,
+      "username": "Dr_Rek",
+      "name": "Derek Sajbel",
+      "created_at": "2023-09-15T00:19:58.735Z",
+      "updated_at": "2023-09-15T00:19:58.735Z",
+      "cooked": "<p>Nov-dec would be awesome. <img src=\"https://emoji.discourse-cdn.com/twitter/partying_face.png?v=12\" title=\":partying_face:\" class=\"emoji\" alt=\":partying_face:\" loading=\"lazy\" width=\"20\" height=\"20\"> But always give LZX release windows a +/- 5 years variance range in your expectations <img src=\"https://emoji.discourse-cdn.com/twitter/rofl.png?v=12\" title=\":rofl:\" class=\"emoji\" alt=\":rofl:\" loading=\"lazy\" width=\"20\" height=\"20\"><img src=\"https://emoji.discourse-cdn.com/twitter/heart_hands.png?v=12\" title=\":heart_hands:\" class=\"emoji\" alt=\":heart_hands:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 33459,
+      "post_number": 5,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2023-09-15T10:08:13.074Z",
+      "updated_at": "2023-09-15T10:08:13.074Z",
+      "cooked": "<p>Needs to be scaled down to 0-1 year <img src=\"https://emoji.discourse-cdn.com/twitter/eyes.png?v=12\" title=\":eyes:\" class=\"emoji\" alt=\":eyes:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 33460,
+      "post_number": 6,
+      "username": "giantmecha",
+      "name": "evan",
+      "created_at": "2023-09-15T16:23:43.060Z",
+      "updated_at": "2023-09-15T16:23:43.060Z",
+      "cooked": "<p>20 characters of clapping emoji</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

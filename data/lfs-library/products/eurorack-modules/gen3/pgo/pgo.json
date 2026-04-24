@@ -1,0 +1,80 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "pgo",
+  "name": "PGO",
+  "subtitle": "Programmable Gain & Offset",
+  "company": "lzx",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 42,
+    "max_pos_12v_ma": 50
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7414310109207",
+  "images": {
+    "frontpanel": "website/pgo-front-panel.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/pgo-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/pgo-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/pgo_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/pgo_fpn_reva_silkscreen.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/pgo_fpn_reva_strokes.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/pgo_fpn_reva_strokes_engravings.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "panel-art/pgo_fpn_reva_template.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "PGO is a multi-purpose analog operator for adding and subtracting signals. It is designed to cover as much functional territory as possible, while also remaining compact and intuitive. PGO is capable of many basic processing steps, such as amplification, attenuation, inversion, addition, subtraction, averaging, and level shifting. PGO is offered as a Fully Assembled module, Partial DIY Kit (SMT Assembled PCB & Panel Only) or a Full DIY Kit (all components included.) All variants include black, red, green and blue front panels. Learn more about PGO on our documentation website!"
+}

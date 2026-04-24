@@ -1,0 +1,127 @@
+{
+  "id": 858,
+  "title": "Liquid TV Question",
+  "slug": "liquid-tv-question",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 43,
+      "name": "liquidtv",
+      "slug": "liquidtv"
+    }
+  ],
+  "created_at": "2019-01-13T19:14:33.007Z",
+  "views": 1226,
+  "like_count": 5,
+  "posts_count": 9,
+  "posts": [
+    {
+      "id": 3704,
+      "post_number": 1,
+      "username": "Fallinggirl",
+      "name": "The Falling Girl",
+      "created_at": "2019-01-13T19:14:33.098Z",
+      "updated_at": "2019-02-08T19:19:26.859Z",
+      "cooked": "<p>I just received the Liquid TV module and had a quick question. I have tried it in three Euroracks and cannot get the monitor to so much as flicker when powered on. I have tried pressing the menu button but nothing appears on the screen. Granted I am still waiting on the video looper that I ordered from you, but should I see the screen light up when I power on the Eurorack or press the menu button? I\u2019m so sorry if this is a premature question and the looper is on its way. I am just so excited to use it when the looper arrives and want to make sure it\u2019s working right. Oh, and I checked the switches on the back. Any responses would be so great <img src=\"https://emoji.discourse-cdn.com/twitter/pray/2.png?v=6\" title=\":pray:t2:\" class=\"emoji\" alt=\":pray:t2:\"><img src=\"https://emoji.discourse-cdn.com/twitter/blush.png?v=6\" title=\":blush:\" class=\"emoji\" alt=\":blush:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3705,
+      "post_number": 2,
+      "username": "destroythings",
+      "name": "Jim",
+      "created_at": "2019-01-13T19:43:41.716Z",
+      "updated_at": "2019-01-13T19:43:41.716Z",
+      "cooked": "<p>What have you got to sync the Liquid TV?</p>\n<p>If you dont have any source to sync to and want to run in standalone mode and change the setting on back of module.</p>\n<aside class=\"onebox pdf\">\n  <header class=\"source\">\n      <a href=\"https://github.com/lzxindustries/documentation/blob/master/Liquid%20TV/Liquid%20TV%20User%20Reference%20Card.pdf\" target=\"_blank\" rel=\"nofollow noopener\">github.com</a>\n  </header>\n  <article class=\"onebox-body\">\n    <a href=\"https://github.com/lzxindustries/documentation/blob/master/Liquid%20TV/Liquid%20TV%20User%20Reference%20Card.pdf\" target=\"_blank\" rel=\"nofollow noopener\"><span class=\"pdf-onebox-logo\"></span></a>\n<h3><a href=\"https://github.com/lzxindustries/documentation/blob/master/Liquid%20TV/Liquid%20TV%20User%20Reference%20Card.pdf\" target=\"_blank\" rel=\"nofollow noopener\">Liquid%20TV%20User%20Reference%20Card.pdf</a></h3>\n\n\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3706,
+      "post_number": 3,
+      "username": "Fallinggirl",
+      "name": "The Falling Girl",
+      "created_at": "2019-01-13T19:57:33.897Z",
+      "updated_at": "2019-01-13T19:57:33.897Z",
+      "cooked": "<p>Thanks so much for the response. I have it in standalone mode. And I just tried hooking it up to my iPad and MacBook through an HDMI to composit converter and saw a flicker, yay <img src=\"https://emoji.discourse-cdn.com/twitter/grinning.png?v=9\" title=\":grinning:\" class=\"emoji\" alt=\":grinning:\">, but no video, boo <img src=\"https://emoji.discourse-cdn.com/twitter/unamused.png?v=9\" title=\":unamused:\" class=\"emoji\" alt=\":unamused:\">. I\u2019m Probably going to have to wait for the looper with the dedicated composit output to arrive to truly know what\u2019s going on. I have a feeling this hdmi converter might not be up to the challenge. I\u2019m praying this little screen works. It looks so cool in my rack. <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000.jpeg\" title=\"241BE9DE-B00C-4514-95B5-7568B697D697.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000_2_666x500.jpeg\" alt=\"image\" width=\"666\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000_2_666x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000_2_999x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000_2_1332x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e4b53d9291d9dcbc4f56f3bb14567d981dced000_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">241BE9DE-B00C-4514-95B5-7568B697D697.jpeg</span><span class=\"informations\">3264\u00d72448 1.61 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 3711,
+      "post_number": 4,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2019-01-13T21:16:03.542Z",
+      "updated_at": "2019-01-13T21:16:03.542Z",
+      "cooked": "<p>Could it be that your PSU isn\u2019t providing enough current? Do you have another PSU you can try it with?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3790,
+      "post_number": 5,
+      "username": "Fallinggirl",
+      "name": "The Falling Girl",
+      "created_at": "2019-01-19T11:10:38.423Z",
+      "updated_at": "2019-01-19T11:10:38.423Z",
+      "cooked": "<p>I\u2019ve tried it on three PSUs now. Each has adaquate power for the stated power requirements of the screen. I now have the LZX screen on its own power rail that has over 1amp of power (see screen shot of specs). I cannot so much as make the screen flicker or access a menu. I\u2019m assuming it\u2019s defective. I wouldn\u2019t be adverse to powering it from a power adapter but what do I buy? Is it AC/DC (assuming DC) 12v, right? But how many amps? I really want this to work to rotate my logo at my shows. Can you please help or let me know how to return it for a replacement. I just got it this week from Perfect Circuit. I also bought the Andor 1. But without a screen it\u2019s worthless. Thanks so much. <a href=\"mailto:Set2stun@gmail.com\">Set2stun@gmail.com</a><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250.jpeg\" title=\"943D6366-418D-4182-917A-3BB8358FE110.jpeg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250_2_666x500.jpeg\" alt=\"image\" width=\"666\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250_2_666x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250_2_999x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250_2_1332x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/e9cb9b4fab625e721533f9666c2bab8a3d68d250_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">943D6366-418D-4182-917A-3BB8358FE110.jpeg</span><span class=\"informations\">3264\u00d72448 1.21 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div> <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/34ad6d17986749a54717d63857b21ff5f95eec49.png\" title=\"E9B373B8-EBE1-4FAA-895D-F84DA83CAB22.png\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/34ad6d17986749a54717d63857b21ff5f95eec49_2_375x500.png\" alt=\"image\" width=\"375\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/34ad6d17986749a54717d63857b21ff5f95eec49_2_375x500.png, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/34ad6d17986749a54717d63857b21ff5f95eec49_2_562x750.png 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/34ad6d17986749a54717d63857b21ff5f95eec49_2_750x1000.png 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/34ad6d17986749a54717d63857b21ff5f95eec49_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">E9B373B8-EBE1-4FAA-895D-F84DA83CAB22.png</span><span class=\"informations\">1536\u00d72048 243 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 3853,
+      "post_number": 9,
+      "username": "otoskope",
+      "name": "Palle Dahlstedt",
+      "created_at": "2019-01-23T21:49:53.903Z",
+      "updated_at": "2019-01-23T21:49:53.903Z",
+      "cooked": "<p>I received a new LiquidTV a week or two ago, and installed it today when my new case (Mantis) arrived. It also appears to be dead. The screen was somewhat loose from the panel when I opened the box, and after testing it (with negative results) I carefully inspected the back of the module. The ribbon cable between the PCB and the display didn\u2019t look properly inserted - a little angled, not fully in in one end. I tried to push it in very gently but it didn\u2019t help. I have sufficient power (have tried with most other modules disconnected, and with external power), and i have tried all sync options. And double-checked that it receives valid signals. I already talked to my distributor (PatchPoint), and it will be returned on warranty.</p>\n<p>When I saw your troubles, i just wanted to mention this - maybe there has been a bad batch?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3859,
+      "post_number": 10,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-01-24T00:14:55.792Z",
+      "updated_at": "2019-01-24T00:16:48.524Z",
+      "cooked": "<p>If those of you who are having issues with this module could please take a photo of the rear of the module (all the switch settings) and the front of the module (switch settings and cables you\u2019re using) then I can tell you if it should be working or if there\u2019s something misconfigured with the installation.</p>\n<p>Everything is tested before being shipped of course, but the display we\u2019re using is an OEM one in Liquid TV, and we\u2019ve had some fails of that assembly occasionally (less than 3 out of the 250 pc production run.)   It can be a difficult module to know how to set up correctly, so lets make sure you\u2019ve got it configured right.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3860,
+      "post_number": 11,
+      "username": "otoskope",
+      "name": "Palle Dahlstedt",
+      "created_at": "2019-01-24T00:18:55.376Z",
+      "updated_at": "2019-01-24T00:18:55.376Z",
+      "cooked": "<p>Thanks - I can certainly do that, but going to bed now <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=6\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"> so maybe tomorrow. However, I can assure you that I have tried all possible combinations. And I think I know what I\u2019m doing (but you never know, of course). Still, not a single sign of life.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3875,
+      "post_number": 12,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-01-24T17:33:29.383Z",
+      "updated_at": "2019-01-24T17:33:29.383Z",
+      "cooked": "<p>OK! If you suspect any LZX product is faulty we\u2019re happy to receive it here for warranty repair/replacement any time.  Just e-mail <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> or fill out the form on the website.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

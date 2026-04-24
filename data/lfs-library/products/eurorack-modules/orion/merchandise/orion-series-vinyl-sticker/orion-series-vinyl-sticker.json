@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../../schemas/product.schema.json",
+  "slug": "orion-series-vinyl-sticker",
+  "name": "Orion Series Vinyl Sticker",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1702781059136",
+  "description": "Looks great on all models of safety helmet.",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/5891.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/image_43.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

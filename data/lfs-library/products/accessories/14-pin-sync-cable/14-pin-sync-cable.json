@@ -1,0 +1,36 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "14-pin-sync-cable",
+  "name": "14 Pin Sync Cable",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1974680092736",
+  "images": {
+    "frontpanel": "website/14-pin-video-sync-distribution-cable.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/14-pin-video-sync-distribution-cable.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Only used to distribute video synchronization signals from 14-Pin Sync Outputs to 14-Pin Sync Inputs on Visual Cortex, Cadet DIY, and legacy Visionary series modules. Not for use with Expedition, Orion, or Gen3 series modules."
+}

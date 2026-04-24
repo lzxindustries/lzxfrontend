@@ -1,0 +1,103 @@
+{
+  "id": 1293,
+  "title": "Settings for Memory Palace passthrough?",
+  "slug": "settings-for-memory-palace-passthrough",
+  "category_id": 13,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2019-07-17T14:59:15.928Z",
+  "views": 788,
+  "like_count": 17,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 5900,
+      "post_number": 1,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-07-17T14:59:15.983Z",
+      "updated_at": "2019-07-17T14:59:15.983Z",
+      "cooked": "<p>Is it possible to have Memory Palace not effect anything that is being input to it? IE a dry, unaffected passthrough of the original signal being input into it?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5909,
+      "post_number": 2,
+      "username": "brownshoesonly",
+      "name": "",
+      "created_at": "2019-07-17T17:58:48.549Z",
+      "updated_at": "2019-07-18T14:29:17.774Z",
+      "cooked": "<p>Yes. kinda<br>\nYou want to move most settings to the middle. The display will give you feedback of the levels.(you can also adjust the deadband for these settings so its easier to find the middle, on page 2 of the menu).</p>\n<p>for instance.<br>\n<strong>Hue</strong> = 0 <em>centered</em><br>\n<strong>Saturation</strong> = 100 <em>centered</em><br>\n<strong>Contrast</strong> = 100 <em>centered</em><br>\n<strong>Width and Center</strong> are the ones I can\u2019t recall off top of my head. but try to put them at opposite extremes. These adjust the keying. and you don\u2019t want any keying for pass through<br>\n<strong>Softness</strong> =  *ultimately doesn\u2019t matter, this affects the key softness, and our aim is no key<br>\n<strong>Delay</strong> = *ultimately doesn\u2019t matter, this affects the delay of the keyed buffer<br>\n<strong>Zoom</strong> = <em>centered</em> (cant remember how the value is referenced)<br>\n<strong>Aspect</strong> = <em>centered</em> (cant remember how the value is referenced)<br>\n<strong>Rotation</strong> = <em>centered</em> 0<br>\n<strong>X position</strong> = <em>centered</em> 0<br>\n<strong>Y position</strong> = <em>centered</em> 0</p>\n<p>IIRC this is the closest to a pass-through. although the signal will have been digitized (ADC to DAC). so technically not a pass-through i think?</p>\n<p>please feel to correct my mistakes, and i will update</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5912,
+      "post_number": 4,
+      "username": "brownshoesonly",
+      "name": "",
+      "created_at": "2019-07-17T18:46:36.721Z",
+      "updated_at": "2019-07-17T18:46:36.721Z",
+      "cooked": "<p>Best way to do this is with Cortex. send your main feed to cortex and send it to MemPal. Then send the output of MemPal to the other side of the cortex</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 5979,
+      "post_number": 6,
+      "username": "JonasBers",
+      "name": "Jonas Bers",
+      "created_at": "2019-07-20T10:32:28.000Z",
+      "updated_at": "2019-07-20T10:32:39.359Z",
+      "cooked": "<p>what about just using a cadet crossfader?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 5980,
+      "post_number": 7,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-07-20T13:24:32.502Z",
+      "updated_at": "2019-07-20T13:24:32.502Z",
+      "cooked": "<p>Cadet crossfader solution would need to be triplicated to support and RGB signal path though right?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 6180,
+      "post_number": 8,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-07-31T08:39:53.890Z",
+      "updated_at": "2019-07-31T08:39:53.890Z",
+      "cooked": "<p>Additional details from Facebook thread:</p>\n<p><a href=\"https://www.facebook.com/creatorlars\">Lars Larsen</a><a href=\"https://www.facebook.com/groups/316132448558082/badge_member_list/?badge_type=ADMIN\"><img src=\"https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/oJUaDQAiBQe.png?_nc_x=F4HyjfDaNsT\" alt=\"\" width=\"24\" height=\"24\"></a> \u201cHit restore defaults from second menu page and set all bipolar sliders at 50%\u201d</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6188,
+      "post_number": 9,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-08-01T18:23:31.986Z",
+      "updated_at": "2019-08-01T18:29:46.979Z",
+      "cooked": "<p>You can use the opacity/aux slider to fade between dry and wet signals when in Alpha key mode with softness set fully 100%, and modulate the aux input to add video rate crossfading as well.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

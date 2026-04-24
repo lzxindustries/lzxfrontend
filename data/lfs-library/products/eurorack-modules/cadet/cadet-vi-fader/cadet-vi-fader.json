@@ -1,0 +1,69 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-vi-fader",
+  "name": "Cadet VI Fader",
+  "sku": "LZXCADT6",
+  "subtitle": "Wide Bandwidth Crossfader",
+  "description": "Cadet VI Fader is a 2-input, 1-output voltage controlled crossfader module.\n\n",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 45,
+    "max_pos_12v_ma": 20,
+    "max_neg_12v_ma": 20
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false,
+    "release_date": "2015-01-01",
+    "discontinued_date": "2020-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/1692913336384",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20VI%20Fader",
+    "frontpanel": "website/cadet-6-front-panel.jpg"
+  },
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_c6_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/cadet_vi_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_vi_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

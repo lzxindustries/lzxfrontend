@@ -10,7 +10,7 @@ import readline from 'node:readline';
 
 const DEFAULT_API_VERSION = '2025-04';
 const DEFAULT_OUTPUT_DIR = 'catalog/shopify';
-const DEFAULT_SOURCE_DIR = 'lfs/library/products';
+const DEFAULT_SOURCE_DIR = 'data/lfs-library/products';
 const REQUIRED_ENV_VARS = [
   'PUBLIC_STORE_DOMAIN',
   'SHOPIFY_CLIENT_ID',
@@ -45,7 +45,7 @@ Commands:
 
 Options:
   --output-dir <dir>      Output root. Defaults to catalog/shopify.
-  --source-dir <dir>      Local LFS product source root. Defaults to lfs/library/products.
+  --source-dir <dir>      Local product library root. Defaults to data/lfs-library/products (use lfs/library/products when syncing from a full mount).
   --handle <handle>       Restrict export to one product handle. Repeatable.
   --query <search>        Additional Shopify product search filter.
   --apply                 Persist mutations instead of running in dry-run mode.

@@ -1,4 +1,10 @@
 import {getMarkdownToHTML} from '~/lib/markdown';
+import {
+  COMMITTED_LFS_PRODUCTS_ROOT as LFS_PRODUCTS_ROOT,
+  getLfsAssetEntry,
+  getManifestPublicUrlForSourcePath,
+  manifestSourceToViteGlobKey,
+} from '~/data/lfs-assets';
 
 type RawManifestFile = {
   path?: string;
@@ -121,27 +127,25 @@ export interface LfsProductContent extends LfsProductMetadata {
 export type LegacyProductContent = LfsProductContent;
 
 const lfsProductFiles = import.meta.glob<RawLfsProduct>(
-  '../../lfs/library/products/**/*.json',
+  '../../data/lfs-library/products/**/*.json',
   {eager: true, import: 'default'},
 );
 
 const lfsProductImageFiles = import.meta.glob<string>(
-  '../../lfs/library/products/**/*.{avif,AVIF,gif,GIF,jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}',
+  '../../data/lfs-library/products/**/*.{avif,AVIF,gif,GIF,jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}',
   {eager: true, import: 'default', query: '?url'},
 );
 
 const lfsProductPublishedFiles = import.meta.glob<string>(
-  '../../lfs/library/products/**/*.{csv,CSV,pdf,PDF,sha256,SHA256,svg,SVG,uf2,UF2,zip,ZIP}',
+  '../../data/lfs-library/products/**/*.{csv,CSV,pdf,PDF,sha256,SHA256,svg,SVG,uf2,UF2,zip,ZIP}',
   {eager: true, import: 'default', query: '?url'},
 );
 
 /** Illustrator sources — served as static URLs for archive downloads. */
 const lfsProductDesignFiles = import.meta.glob<string>(
-  '../../lfs/library/products/**/*.{ai,AI}',
+  '../../data/lfs-library/products/**/*.{ai,AI}',
   {eager: true, import: 'default', query: '?url'},
 );
-
-const LFS_PRODUCTS_ROOT = '../../lfs/library/products';
 
 const SUPPLEMENTAL_PRODUCT_ROOTS: Record<string, string[]> = {
   'alternate-frontpanel': [
@@ -172,12 +176,12 @@ const MODULE_SERIES_SHARED_ROOTS: Record<string, string[]> = {
 };
 
 const modulargridMetadataFiles = import.meta.glob<string>(
-  '../../lfs/library/products/**/modulargrid/metadata.md',
+  '../../data/lfs-library/products/**/modulargrid/metadata.md',
   {eager: true, import: 'default', query: '?raw'},
 );
 
 const legacyVisionaryMetadataFiles = import.meta.glob<string>(
-  '../../lfs/library/products/eurorack-modules/visionary/**/modulargrid/metadata.md',
+  '../../data/lfs-library/products/eurorack-modules/visionary/**/modulargrid/metadata.md',
   {eager: true, import: 'default', query: '?raw'},
 );
 
@@ -489,14 +493,169 @@ function isGalleryAssetRelativePath(relativePath: string): boolean {
   );
 }
 
-function resolvePublishedAssetHref(sourcePath: string): string | null {
-  // Design sources (.ai) are listed in the archive but intentionally not given
-  // a public href (see lfs-product-metadata tests / publishing policy).
+function resolvePublishedAssetHref(
+  productSlug: string | null | undefined,
+  sourcePath: string,
+): string | null {
+  // Design sources (.ai) stay href-null in the archive unless published as
+  // a non-design asset; do not add `lfsProductDesignFiles` here.
   return (
     lfsProductImageFiles[sourcePath] ??
     lfsProductPublishedFiles[sourcePath] ??
-    null
+    getManifestPublicUrlForSourcePath(productSlug ?? null, sourcePath)
   );
+}
+
+function resolveImagePreviewSrc(
+  productSlug: string | null | undefined,
+  sourcePath: string,
+): string | null {
+  return (
+    lfsProductImageFiles[sourcePath] ??
+    getManifestPublicUrlForSourcePath(productSlug ?? null, sourcePath)
+  );
+}
+
+function mergeGalleryFromManifest(
+  product: LfsProductMetadata,
+  images: LfsProductGalleryImage[],
+): LfsProductGalleryImage[] {
+  const entry = getLfsAssetEntry(product.slug);
+  if (!entry?.gallery?.length) return images;
+
+  const seenSrc = new Set(images.map((i) => i.src));
+  const seenPath = new Set(images.map((i) => i.path));
+  const extra: LfsProductGalleryImage[] = [];
+
+  for (const item of entry.gallery) {
+    const path = manifestSourceToViteGlobKey(item.sourcePath);
+    if (seenSrc.has(item.publicPath) || seenPath.has(path)) continue;
+    seenSrc.add(item.publicPath);
+    seenPath.add(path);
+    const fileName = item.sourcePath.split('/').pop() ?? product.name;
+    extra.push({
+      src: item.publicPath,
+      path,
+      alt: `${product.name} ${humanizeFileName(fileName)}`,
+    });
+  }
+
+  return [...images, ...extra];
+}
+
+function mergeArchiveAssetsFromManifest(
+  product: LfsProductMetadata,
+  assets: LfsProductAsset[],
+): LfsProductAsset[] {
+  const entry = getLfsAssetEntry(product.slug);
+  if (!entry) return assets;
+
+  const seen = new Set(
+    assets.map((a) => `${a.sourcePath}::${a.relativePath}`),
+  );
+  let index = assets.length;
+  const extra: LfsProductAsset[] = [];
+  const folderPrefix = `lfs/library/products/${entry.sourceFolder}/`;
+
+  const push = (
+    relativePath: string,
+    sourcePathVite: string,
+    manifestPublicPath: string,
+    fileName: string,
+    category: string,
+    isDownload: boolean,
+  ) => {
+    const key = `${sourcePathVite}::${relativePath}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    const fileType = inferAssetType(fileName, null);
+    const href =
+      resolvePublishedAssetHref(product.slug, sourcePathVite) ??
+      manifestPublicPath;
+    const previewSrc = isImageAssetPath(relativePath)
+      ? resolveImagePreviewSrc(product.slug, sourcePathVite) ?? href
+      : null;
+    extra.push({
+      id: `lfs-asset:${product.slug}:${index++}`,
+      name: humanizeFileName(fileName),
+      fileName,
+      fileType,
+      description: buildAssetDescription(
+        fileName,
+        fileType,
+        category,
+        null,
+      ),
+      href,
+      sourcePath: sourcePathVite,
+      relativePath,
+      category,
+      categoryLabel: buildAssetCategoryLabel(category),
+      previewSrc,
+      note: null,
+      isDownload,
+    });
+  };
+
+  for (const g of entry.gallery) {
+    if (!g.sourcePath.startsWith(folderPrefix)) continue;
+    const relativePath = g.sourcePath.slice(folderPrefix.length);
+    const fileName = relativePath.split('/').pop() ?? relativePath;
+    const vitePath = manifestSourceToViteGlobKey(g.sourcePath);
+    const category = inferArchiveCategoryFromRelativePath(relativePath);
+    push(relativePath, vitePath, g.publicPath, fileName, category, false);
+  }
+
+  for (const d of entry.downloads) {
+    if (!d.sourcePath.startsWith(folderPrefix)) continue;
+    const relativePath = d.sourcePath.slice(folderPrefix.length);
+    const fileName = relativePath.split('/').pop() ?? relativePath;
+    const vitePath = manifestSourceToViteGlobKey(d.sourcePath);
+    push(relativePath, vitePath, d.publicPath, fileName, 'downloads', true);
+  }
+
+  return [...assets, ...extra].sort(
+    (left, right) =>
+      left.categoryLabel.localeCompare(right.categoryLabel) ||
+      left.relativePath.localeCompare(right.relativePath),
+  );
+}
+
+function mergeDownloadsFromManifest(
+  product: LfsProductMetadata,
+  downloads: LfsProductDownload[],
+): LfsProductDownload[] {
+  const entry = getLfsAssetEntry(product.slug);
+  if (!entry?.downloads?.length) return downloads;
+
+  const seenHref = new Set(downloads.map((d) => d.href));
+  let nextIndex = downloads.length;
+  const extra: LfsProductDownload[] = [];
+
+  for (const item of entry.downloads) {
+    if (seenHref.has(item.publicPath)) continue;
+    seenHref.add(item.publicPath);
+    const fileName = item.sourcePath.split('/').pop();
+    if (!fileName) continue;
+
+    const fileType =
+      fileName.split('.').pop()?.toUpperCase() ?? ('FILE' as string);
+    const sourcePath = manifestSourceToViteGlobKey(item.sourcePath);
+    extra.push({
+      id: `lfs-download:${product.slug}:${nextIndex++}`,
+      name: humanizeFileName(fileName),
+      fileName,
+      fileType,
+      description: buildDownloadDescription(fileName, fileType || 'FILE'),
+      version: inferDownloadVersion(fileName),
+      platform: inferDownloadPlatform(fileName),
+      releaseDate: null as string | null,
+      href: item.publicPath,
+      sourcePath,
+    });
+  }
+
+  return [...downloads, ...extra];
 }
 
 function isArchivableProductFile(relativePath: string): boolean {
@@ -582,16 +741,16 @@ function buildGalleryImages(
     for (const sourceDir of sourceDirs) {
       for (const extension of ['jpg', 'jpeg', 'png', 'webp']) {
         const modulargridFrontpanel = `${sourceDir}/modulargrid/frontpanel.${extension}`;
-        if (lfsProductImageFiles[modulargridFrontpanel]) {
+        if (resolveImagePreviewSrc(product.slug, modulargridFrontpanel)) {
           sourcePaths.add(modulargridFrontpanel);
         }
       }
     }
   }
 
-  return [...sourcePaths]
+  const fromInventory = [...sourcePaths]
     .map((sourcePath) => {
-      const src = lfsProductImageFiles[sourcePath];
+      const src = resolveImagePreviewSrc(product.slug, sourcePath);
       if (!src) return null;
 
       const fileName = sourcePath.split('/').pop() ?? product.name;
@@ -602,13 +761,15 @@ function buildGalleryImages(
       } satisfies LfsProductGalleryImage;
     })
     .filter((entry): entry is LfsProductGalleryImage => entry != null);
+
+  return mergeGalleryFromManifest(product, fromInventory);
 }
 
 function buildDownloads(
   product: LfsProductMetadata,
   raw: RawLfsProduct,
 ): LfsProductDownload[] {
-  return toManifestFiles(raw.file_manifest?.downloads)
+  const fromManifestJson = toManifestFiles(raw.file_manifest?.downloads)
     .map<LfsProductDownload | null>((entry, index) => {
       const relativePath = stringValue(entry.path);
       if (!relativePath) return null;
@@ -625,7 +786,7 @@ function buildDownloads(
         product.sourcePath,
         relativePath,
       );
-      const href = resolvePublishedAssetHref(sourcePath);
+      const href = resolvePublishedAssetHref(product.slug, sourcePath);
       if (!href) return null;
 
       return {
@@ -642,6 +803,8 @@ function buildDownloads(
       } satisfies LfsProductDownload;
     })
     .filter((entry): entry is LfsProductDownload => entry != null);
+
+  return mergeDownloadsFromManifest(product, fromManifestJson);
 }
 
 function buildArchiveAssets(
@@ -678,7 +841,7 @@ function buildArchiveAssets(
       })),
   ];
 
-  return entries
+  const built = entries
     .map<LfsProductAsset | null>((entry, index) => {
       const relativePath = stringValue(entry.path);
       if (!relativePath) return null;
@@ -692,9 +855,9 @@ function buildArchiveAssets(
       if (!fileName) return null;
 
       const fileType = inferAssetType(fileName, stringValue(entry.extension));
-      const href = resolvePublishedAssetHref(sourcePath);
+      const href = resolvePublishedAssetHref(product.slug, sourcePath);
       const previewSrc = isImageAssetPath(relativePath)
-        ? lfsProductImageFiles[sourcePath] ?? null
+        ? resolveImagePreviewSrc(product.slug, sourcePath)
         : null;
       const note = stringValue(entry.note);
 
@@ -725,6 +888,8 @@ function buildArchiveAssets(
         left.categoryLabel.localeCompare(right.categoryLabel) ||
         left.relativePath.localeCompare(right.relativePath),
     );
+
+  return mergeArchiveAssetsFromManifest(product, built);
 }
 
 function deriveSubtitle(
@@ -836,15 +1001,15 @@ function inferProductTypeFromSourceDir(sourceDir: string): string {
 function buildSyntheticArchiveAssets(
   product: LfsProductMetadata,
 ): LfsProductAsset[] {
-  return extraArchiveAssetPaths(product)
+  const built = extraArchiveAssetPaths(product)
     .map<LfsProductAsset | null>((entry, index) => {
       const fileName = entry.path.split('/').pop();
       if (!fileName) return null;
 
       const fileType = inferAssetType(fileName, null);
-      const href = resolvePublishedAssetHref(entry.sourcePath);
+      const href = resolvePublishedAssetHref(product.slug, entry.sourcePath);
       const previewSrc = isImageAssetPath(entry.path)
-        ? lfsProductImageFiles[entry.sourcePath] ?? null
+        ? resolveImagePreviewSrc(product.slug, entry.sourcePath)
         : null;
 
       return {
@@ -874,6 +1039,8 @@ function buildSyntheticArchiveAssets(
         left.categoryLabel.localeCompare(right.categoryLabel) ||
         left.relativePath.localeCompare(right.relativePath),
     );
+
+  return mergeArchiveAssetsFromManifest(product, built);
 }
 
 function buildSyntheticGalleryImages(
@@ -890,19 +1057,22 @@ function buildSyntheticGalleryImages(
     }
   }
 
-  return [...sourcePaths]
-    .map((sourcePath) => {
-      const src = lfsProductImageFiles[sourcePath];
-      if (!src) return null;
+  return mergeGalleryFromManifest(
+    product,
+    [...sourcePaths]
+      .map((sourcePath) => {
+        const src = resolveImagePreviewSrc(product.slug, sourcePath);
+        if (!src) return null;
 
-      const fileName = sourcePath.split('/').pop() ?? product.name;
-      return {
-        src,
-        path: sourcePath,
-        alt: `${product.name} ${humanizeFileName(fileName)}`,
-      } satisfies LfsProductGalleryImage;
-    })
-    .filter((entry): entry is LfsProductGalleryImage => entry != null);
+        const fileName = sourcePath.split('/').pop() ?? product.name;
+        return {
+          src,
+          path: sourcePath,
+          alt: `${product.name} ${humanizeFileName(fileName)}`,
+        } satisfies LfsProductGalleryImage;
+      })
+      .filter((entry): entry is LfsProductGalleryImage => entry != null),
+  );
 }
 
 function buildSyntheticProductContent(
@@ -1181,9 +1351,9 @@ const sharedModuleSeriesArchiveAssets = new Map(
         if (!fileName) return null;
 
         const fileType = inferAssetType(fileName, null);
-        const href = resolvePublishedAssetHref(sourcePath);
+        const href = resolvePublishedAssetHref(null, sourcePath);
         const previewSrc = isImageAssetPath(relativePath)
-          ? lfsProductImageFiles[sourcePath] ?? null
+          ? resolveImagePreviewSrc(null, sourcePath)
           : null;
         const category = inferArchiveCategoryFromRelativePath(relativePath);
 

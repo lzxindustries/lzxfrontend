@@ -1,0 +1,55 @@
+{
+  "id": 1711,
+  "title": "Memory Palace Image Buffer Problem",
+  "slug": "memory-palace-image-buffer-problem",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2019-11-30T04:42:55.613Z",
+  "views": 587,
+  "like_count": 0,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 7838,
+      "post_number": 1,
+      "username": "jikankaji",
+      "name": "Shusaku Kaji",
+      "created_at": "2019-11-30T04:42:55.714Z",
+      "updated_at": "2021-02-15T15:47:43.274Z",
+      "cooked": "<p>2weeks ago,My MP was  go bad.<br>\nKeyed-out images buffer are not output when the SCAL option is CAM. And cannot use zoom.Only one color is displayed at the keyed-out location, not a continuous image.<br>\nI tried resetting and updating the firmware, but it did not improve.<br>\nDoes anyone know a solution to this problem?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7840,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-30T16:54:45.775Z",
+      "updated_at": "2019-11-30T16:54:45.775Z",
+      "cooked": "<p>Sorry to hear you\u2019re having trouble. What case/power supply are you using? Are you monitoring directly from the Memory Palace? PAL or NTSC? What is your sync source?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7842,
+      "post_number": 3,
+      "username": "jikankaji",
+      "name": "Shusaku Kaji",
+      "created_at": "2019-12-01T01:35:05.033Z",
+      "updated_at": "2019-12-01T01:35:05.033Z",
+      "cooked": "<p>Thank you for reply.<br>\nI use MP for 6 month.<br>\nCase/Power:TIPTOP \u03bcZeus(MP only)<br>\nUsing NTSC<br>\nSync from VisualCoretex(Another Power supply)</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

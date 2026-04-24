@@ -1,0 +1,155 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "castle-000-adc",
+  "name": "Castle 000 ADC",
+  "sku": "LZXCSTL0",
+  "subtitle": "Analog to Digital Converter",
+  "company": "lzx",
+  "price": "20.00",
+  "product_type": "eurorack_module",
+  "category": "castle",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 56,
+    "max_pos_12v_ma": 21,
+    "max_neg_12v_ma": 28
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/1692913729600",
+  "images": {
+    "frontpanel": "website/castle-000-front-panel.png",
+    "legend": "website/castle-000-front-panel.png"
+  },
+  "connectors": [
+    {
+      "name": null,
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": 0,
+      "y": 250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D1",
+      "ref_des": "J3",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1250,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D2",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1750,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "D0",
+      "ref_des": "J2",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 750,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Bias",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": true,
+      "x": 0,
+      "y": -1750,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Gain",
+      "ref_des": "P2",
+      "is_gain": true,
+      "is_bias": false,
+      "x": 0,
+      "y": -750,
+      "part": "control-knob-outline-arrow"
+    }
+  ],
+  "downloads": [
+    {
+      "name": "Castle 000 Schematic RevE",
+      "path": "downloads/castle-000-schematic_RevE.pdf",
+      "file_type": "pdf"
+    },
+    {
+      "name": "Castle 000 BOM RevE",
+      "path": "downloads/castle-000-bom_RevE.csv",
+      "file_type": "csv"
+    }
+  ],
+  "videos": [
+    {
+      "name": "Castle 000 ADC Overview",
+      "youtube_id": "WFjMQdSPDog"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/castle-000-front-panel.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/castle-000-pcb-render-bottom_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/castle-000-pcb-render-top_RevE.svg",
+        "extension": "svg"
+      },
+      {
+        "path": "website/image_57_1.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/castle-000-bom_RevE.csv",
+        "extension": "csv"
+      },
+      {
+        "path": "downloads/castle-000-schematic_RevE.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DIY PCB & Frontpanel Set The Analog to Digital Converter is used to change an analog input signal in to a 3-Bit data stream."
+}

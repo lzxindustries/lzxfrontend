@@ -1,0 +1,84 @@
+{
+  "id": 4429,
+  "title": "ESG3 Composite Video Output Issue",
+  "slug": "esg3-composite-video-output-issue",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 102,
+      "name": "esg3",
+      "slug": "esg3"
+    },
+    {
+      "id": 20,
+      "name": "sync",
+      "slug": "sync"
+    }
+  ],
+  "created_at": "2023-04-14T22:18:09.191Z",
+  "views": 509,
+  "like_count": 0,
+  "posts_count": 5,
+  "posts": [
+    {
+      "id": 31864,
+      "post_number": 1,
+      "username": "sean",
+      "name": "",
+      "created_at": "2023-04-14T22:18:09.263Z",
+      "updated_at": "2023-04-14T22:21:25.033Z",
+      "cooked": "<p>So when I filled up my <a href=\"https://community.lzxindustries.net/t/cases-power-portability/284/169\">new case</a> and started it up, everything worked power-wise (yay!).</p>\n<p>However, I did find that my ESG3 was not outputting NTSC <strong>composite video</strong> that either the TBC2 or a digital monitor would display correctly. It was outputting <em>something</em>, but not something stable. Very much not stable, in fact.</p>\n<p>Component output, however, seemed 100% fine.</p>\n<p>Sync chain was Visual Cortex &gt; TBC2 &gt; MemPal &gt; ESG3 &gt; FKG3.</p>\n<p>Both LEDs were green.</p>\n<p>Anyway, I certainly need to do more testing to try to isolate the issue (try on an analog monitor, adjust my sync chain, test on its own, document problem with photos/videos, etc.), but wondering if, in advance of all that (for which it will probably realistically take me a few days to have time), there are any particular things I should think about/keep an eye on? Or if anyone else has had similar issues?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 31865,
+      "post_number": 2,
+      "username": "sean",
+      "name": "",
+      "created_at": "2023-04-14T22:31:50.936Z",
+      "updated_at": "2023-04-14T22:31:50.936Z",
+      "cooked": "<p>Realized I hadn\u2019t actually searched the forum for a possible answer yet and well, crap, I guess I had completely forgotten that <a href=\"https://community.lzxindustries.net/t/esg3-sync-issue/4090/1\">I had had problems with my ESG before</a> and already sent it in for service once.</p>\n<p>Ugh. Yeah.</p>\n<p>Guess that goes to show how rarely I\u2019ve been using my system lately. Things have been pretty torn apart since I started to build an audio rack as well (and cannibalized one of my cases for that for that last 6\u20139 months).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 31866,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2023-04-14T22:36:34.928Z",
+      "updated_at": "2023-04-14T22:36:34.928Z",
+      "cooked": "<p>If you are in NTSC/PAL modes, Composite output should be active.  If it\u2019s not, it could be the CVBS input on your display or a bad cable.  If you\u2019re still having problems, contact <a href=\"mailto:support@lzxindustries.net\">support@lzxindustries.net</a> for repair or replacement.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 31867,
+      "post_number": 4,
+      "username": "sean",
+      "name": "",
+      "created_at": "2023-04-15T00:51:56.025Z",
+      "updated_at": "2023-04-15T00:51:56.025Z",
+      "cooked": "<p>Ah, good call on making sure to test out multiple cables. Will include that on my list for further testing. Thanks.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 31869,
+      "post_number": 5,
+      "username": "Jesse",
+      "name": "Jesse Weideman",
+      "created_at": "2023-04-15T03:25:28.854Z",
+      "updated_at": "2023-04-15T03:25:28.854Z",
+      "cooked": "<p>DIP switches are in the right arrangement?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    }
+  ]
+}

@@ -3,20 +3,19 @@
  * ingest-lfs-assets.mjs
  *
  * Build-time pipeline that copies web-shippable product assets from the
- * local-only `lfs/library/products/` mount into the deployed site:
+ * committed `data/lfs-library/products/` tree (or an optional full `lfs/`
+ * mount via env) into the deployed site:
  *
- *   lfs/library/products/<...>/<slug>/website/   → public/assets/products/<slug>/
- *   lfs/library/products/<...>/<slug>/downloads/ → public/downloads/products/<slug>/
+ *   .../products/<...>/<slug>/website/   → public/assets/products/<slug>/
+ *   .../products/<...>/<slug>/downloads/ → public/downloads/products/<slug>/
  *
  * It also emits an asset manifest at
  *   app/data/generated/lfs-asset-manifest.json
  * keyed by product slug, so the rest of the app can resolve gallery
  * images and download lists without a second filesystem walk.
  *
- * `lfs/` is a developer-only mount (gitignored, never deployed). When
- * the mount is missing this script logs and exits 0, leaving any
- * previously committed assets and manifest in place. That is the
- * intended behaviour on Cloudflare Pages / Oxygen build runners.
+ * When the products directory is missing or empty, this script logs and
+ * exits 0, leaving any previously committed assets and manifest in place.
  *
  * Usage:
  *   node scripts/ingest-lfs-assets.mjs              # copy + write manifest
@@ -24,7 +23,7 @@
  *   node scripts/ingest-lfs-assets.mjs --clean      # wipe public outputs first
  */
 
-import {promises as fs} from 'node:fs';
+import {existsSync, promises as fs} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -34,11 +33,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
 
-const LFS_INDEX = path.join(
+const COMMITTED_PRODUCTS_DIR = path.join(
   REPO_ROOT,
-  'lfs/library/products/product-catalog.json',
+  'data/lfs-library/products',
 );
-const LFS_PRODUCTS_DIR = path.join(REPO_ROOT, 'lfs/library/products');
+const LEGACY_LFS_PRODUCTS_DIR = path.join(REPO_ROOT, 'lfs/library/products');
+const LFS_PRODUCTS_DIR =
+  process.env.LFS_PRODUCTS_SOURCE === 'mount' &&
+  existsSync(LEGACY_LFS_PRODUCTS_DIR)
+    ? LEGACY_LFS_PRODUCTS_DIR
+    : COMMITTED_PRODUCTS_DIR;
+const LFS_INDEX = path.join(LFS_PRODUCTS_DIR, 'product-catalog.json');
 const PUBLIC_ASSETS_DIR = path.join(REPO_ROOT, 'public/assets/products');
 const PUBLIC_DOWNLOADS_DIR = path.join(REPO_ROOT, 'public/downloads/products');
 const OUT_MANIFEST = path.join(

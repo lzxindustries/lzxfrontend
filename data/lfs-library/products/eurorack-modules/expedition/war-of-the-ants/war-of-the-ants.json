@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "war-of-the-ants",
+  "name": "War Of The Ants",
+  "sku": "LZXTX",
+  "description": "In many European countries television static noise, or \"snow\", is described using the visual metaphor of a war between swarms of black and white insects. War Of The Ants is our first dedicated noise and texture generation instrument for video synthesis. At its core is a wideband full spectrum noise generator based on amplification of the avalanche noise characteristic found within certain diodes. With the ability to modify and filter the separate spectral characteristics of horizontal, vertical, and low frequency noise, War Of The Ants is capable of generating textures that range from blinking starfields to buzzing grayscale grain to thrashing clipped snow. Width, 16HP Mounting Depth, 32mm Power +12V @ 100mA Power -12V @ 100mA User Reference Card (PDF)",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "specs": {
+    "hp": 16,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 110,
+    "max_neg_12v_ma": 100
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692912746560",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-war-of-the-ants/1291"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/war-of-the-ants-front-panel-black.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/war_of_the_ants_frontpanel_rev_a.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "../../packaging/expedition_16hp_product_box_fantastapack.pdf",
+        "extension": "pdf",
+        "note": "Shared Expedition 16HP Fantastapack box dieline"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

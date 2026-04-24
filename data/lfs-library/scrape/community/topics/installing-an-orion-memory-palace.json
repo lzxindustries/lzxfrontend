@@ -1,0 +1,108 @@
+{
+  "id": 1692,
+  "title": "installing an Orion Memory Palace",
+  "slug": "installing-an-orion-memory-palace",
+  "category_id": 1,
+  "tags": [
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2019-11-23T16:38:12.543Z",
+  "views": 1260,
+  "like_count": 2,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 7726,
+      "post_number": 1,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2019-11-23T16:38:12.605Z",
+      "updated_at": "2019-11-23T16:38:12.605Z",
+      "cooked": "<p>Question\u2026</p>\n<p>i am considering acquiring a Memory Palace and i was wondering if anyone could tell me if there are any issues with installing it into a somewhat standard modular case.</p>\n<p>i have an old 6U Enclave case that looks like it has more than the required 50mm worth of depth for the Memory Palace requirment.</p>\n<p>but of course\u2026i need to consider the space lost by an Intellijel PSU.</p>\n<p>any insight regarding any issues anyone has had installing one would be very helpful!</p>\n<p>thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7729,
+      "post_number": 2,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-11-23T18:51:48.710Z",
+      "updated_at": "2019-11-23T18:53:38.355Z",
+      "cooked": "<p>The issues to consider are mounting depth and most importantly, clean power headroom.</p>\n<p>Personally, I\u2019ve had no issues installing it into three different cases: Vessel, Doepfer, &amp; a Goike custom. Each of them has properly specified power supplies that are on the LZX approved power supply list which you can refer to here:</p>\n<aside class=\"quote quote-modified\" data-post=\"1\" data-topic=\"50\">\n  <div class=\"title\">\n    <div class=\"quote-controls\"></div>\n    <img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/creatorlars/48/65_2.png\" class=\"avatar\">\n    <a href=\"https://community.lzxindustries.net/t/eurorack-case-and-power-supply-options/50\">EuroRack case and power supply options</a> <a class=\"badge-category__wrapper \" href=\"/c/legacy-docs/5\"><span data-category-id=\"5\" data-drop-close=\"true\" class=\"badge-category \" title=\"Learning resources, documentation and technical references.\"><span class=\"badge-category__name\">Legacy Docs</span></span></a>\n  </div>\n  <blockquote>\n    Our modules are compatible with the same EuroRack cases, and power supplies used for audio synthesizers, though they draw slightly more power on average than audio modules.  A good budget for your EuroRack power supply is 10 mA per HP unit width of your case, per +/-12V power rails. Additionally(and maybe most importantly), having a clean, low-noise power solution can greatly improve your experience as high frequency noise or voltage ripple can become visibly represented in your video compositio\u2026\n  </blockquote>\n</aside>\n\n<p>An added wrinkle is that the Vessel makes it easy to power the MP from an auxiliary 12v DC power connector on a barrel jack between the Vessel power supply and the MP. This removes the MP power draw from the Eurorack power bus.</p>\n<p>A word of warning: Intellijel power supplies have been reported by some users to NOT be ideal for video synthesis with noise issues being a primary concern. Read this thread for more details:</p>\n<p><a href=\"https://community.lzxindustries.net/t/cases-power-portability/284/4\">https://community.lzxindustries.net/t/cases-power-portability/284/4</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7731,
+      "post_number": 3,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2019-11-23T21:09:00.056Z",
+      "updated_at": "2019-11-23T21:09:00.056Z",
+      "cooked": "<p>thanks for the thorough response!</p>\n<p>ugh\u2026<br>\nmodular keeps costing me more and more\u2026<br>\n<img src=\"https://emoji.discourse-cdn.com/twitter/stuck_out_tongue.png?v=9\" title=\":stuck_out_tongue:\" class=\"emoji\" alt=\":stuck_out_tongue:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 9075,
+      "post_number": 4,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2020-03-17T07:22:56.130Z",
+      "updated_at": "2020-03-17T07:22:56.130Z",
+      "cooked": "<p>so after a few months of trying to be patient\u2026my Memory Palace arrived!<br>\nWOO!!!</p>\n<p>weird initial question\u2026<br>\n(i may have a few more soon as well)<br>\n<img src=\"https://emoji.discourse-cdn.com/twitter/stuck_out_tongue.png?v=9\" title=\":stuck_out_tongue:\" class=\"emoji only-emoji\" alt=\":stuck_out_tongue:\"><br>\ni have a DU-NTSC in the system and when i turn it on the Memory Palace will reboot.<br>\nthis case has the Malekko Power power in it.<br>\nany ideas as to what is going on?</p>\n<p>here is a Modular Grid pic of the setup:</p>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/8a02f00916c2127dfcfa6a442482b91eaaf64037.jpeg\" data-download-href=\"/uploads/short-url/jGUbsj9TZMbvkN82iDhcdlEffq7.jpeg?dl=1\" title=\"Screen Shot 2020-03-17 at 2.19.25 AM\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/8a02f00916c2127dfcfa6a442482b91eaaf64037.jpeg\" alt=\"Screen Shot 2020-03-17 at 2.19.25 AM\" data-base62-sha1=\"jGUbsj9TZMbvkN82iDhcdlEffq7\" width=\"690\" height=\"401\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">Screen Shot 2020-03-17 at 2.19.25 AM</span><span class=\"informations\">2328\u00d71356 1.12 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9078,
+      "post_number": 5,
+      "username": "Agawell",
+      "name": "Jim",
+      "created_at": "2020-03-17T09:48:34.214Z",
+      "updated_at": "2020-03-17T09:48:34.214Z",
+      "cooked": "<p>a link to the actual rack in modulargrid is 10000 times more useful</p>\n<p>I suspect the problem is related to power - maybe you are trying to use too much</p>\n<p>doesn\u2019t memory palace have an external power socket? have you tried that?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9081,
+      "post_number": 6,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-03-17T16:20:45.877Z",
+      "updated_at": "2020-03-17T16:20:45.877Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"SPIKE\" data-post=\"4\" data-topic=\"1692\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/spike/48/1715_2.png\" class=\"avatar\"> SPIKE:</div>\n<blockquote>\n<p>DU-NTSC</p>\n</blockquote>\n</aside>\n<p>Hmm. I wonder what the DU-NTSC is doing that the Palace is sensitive to.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9083,
+      "post_number": 7,
+      "username": "SPIKE",
+      "name": "SPIKE the Percussionist",
+      "created_at": "2020-03-17T19:39:31.287Z",
+      "updated_at": "2020-03-18T22:17:58.066Z",
+      "cooked": "<p>i haven\u2019t tried the additional PSU connection.<br>\nthanks for the suggestion!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

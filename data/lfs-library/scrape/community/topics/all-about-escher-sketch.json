@@ -1,0 +1,118 @@
+{
+  "id": 1345,
+  "title": "All About Escher Sketch",
+  "slug": "all-about-escher-sketch",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 8,
+      "name": "eschersketch",
+      "slug": "eschersketch"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 64,
+      "name": "legacy",
+      "slug": "legacy"
+    },
+    {
+      "id": 26,
+      "name": "orion",
+      "slug": "orion"
+    }
+  ],
+  "created_at": "2019-07-22T22:12:46.199Z",
+  "views": 1860,
+  "like_count": 7,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 6038,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-22T22:12:46.281Z",
+      "updated_at": "2022-01-02T19:42:49.412Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c8ba6436c559395f0602ae150ca0c021eaa2a1d3.jpeg\" data-download-href=\"/uploads/short-url/sDIPPoVUA1HzqF7WHlopyYuW1pN.jpeg?dl=1\" title=\"escher\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/c8ba6436c559395f0602ae150ca0c021eaa2a1d3.jpeg\" alt=\"escher\" data-base62-sha1=\"sDIPPoVUA1HzqF7WHlopyYuW1pN\" width=\"679\" height=\"500\" data-dominant-color=\"483832\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">escher</span><span class=\"informations\">1024\u00d7754 427 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Touch/stylus pen controller interface for video synthesis, featuring a high resolution 5.7 inch drawing surface. Provides XY positioning voltage outputs as well as pressure and directional velocity sensing. Stylus pen included.<br>\nThe Escher Sketch uses a classic resistive touchpanel in order to replicate the feeling of video painting devices and early trackpads from the 1980\u2019s through the 1990\u2019s. A point is registered when enough pressure is applied to the touchpanel surface, either by a finger tip or using a stylus with a hard or spring-loaded nib. The included stylus has a fixed, hard nib, but we encourage you to explore other stylus options to find what suits you best as an artist.<br>\nEscher Sketch\u2019s touchpanel sits atop an \u201cinfinity mirror\u201d optical illusion, created with over 300 surface-mounted LEDs, reflective mirror foil, 2-way acrylic mirror glass, a 3D printed frame, and diffraction grating film. The light from the LEDs bounces between the two mirrors and then passes through the diffraction grating.</p>\n<ul>\n<li>A voltage scale switch on the rear of the module can be set to either 5V or 1V. This adapts the module\u2019s inputs and outputs for usage as a CV controller in Eurorack audio Systems.</li>\n<li>MIDI output is passed on a TRS stereo 3.5mm jack. A switch on the module\u2019s rear can select between the two different pinout standards (type A or B).</li>\n</ul>\n<h1><a name=\"p-6038-specifications-1\" class=\"anchor\" href=\"#p-6038-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 36HP</li>\n<li>Mounting Depth, 50mm</li>\n<li>Power +12V @ 180mA</li>\n<li>Power -12V @ 30mA</li>\n</ul>\n<h1><a name=\"p-6038-user-reference-2\" class=\"anchor\" href=\"#p-6038-user-reference-2\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/773c94399a93a252ea1ef8832a777b43ad507b35.jpeg\" data-download-href=\"/uploads/short-url/h0OBKC7uTvMW5SNJSdwXseVoZYF.jpeg?dl=1\" title=\"escher%20urc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/7/773c94399a93a252ea1ef8832a777b43ad507b35.jpeg\" alt=\"escher%20urc\" data-base62-sha1=\"h0OBKC7uTvMW5SNJSdwXseVoZYF\" width=\"658\" height=\"500\" data-dominant-color=\"7F7069\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">escher%20urc</span><span class=\"informations\">776\u00d7589 69.1 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<ol>\n<li>Outputs voltage from stylus movement along the X axis.</li>\n<li>Sends a voltage pulse when the Gate 1 button is pressed.</li>\n<li>Sends a voltage pulse when the Gate 2 button is pressed or stylus pressure is applied.</li>\n<li>Outputs voltage from stylus movement along the Y axis.</li>\n<li>Outputs voltage from applied stylus pressure.</li>\n<li>Outputs voltage from the speed of stylus movement.</li>\n<li>Accepts a voltage pulse to initiate playback.</li>\n<li>Adjusts slew of voltages available at X and Y outputs.</li>\n<li>Adjusts sensitivity of the touch screen.</li>\n<li>MIDI output.</li>\n<li>Adjusts playback speed of recorded stylus movement.</li>\n<li>Adjusts the pressure required to send a gate pulse to Gate 2 Out.</li>\n<li>Loops playback of recorded stylus movement.</li>\n<li>Records stylus movement.</li>\n<li>Constrains voltage output to a single axis when held.</li>\n<li>Starts playback of recorded stylus movement.</li>\n<li>Sends a voltage pulse to Gate 1 Out when pressed.</li>\n<li>Sends a voltage pulse to Gate 2 Out when pressed.</li>\n<li>Used to register stylus movement.</li>\n</ol>\n<h1><a name=\"p-6038-videos-3\" class=\"anchor\" href=\"#p-6038-videos-3\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6LSY7Vnj_-hwNlQ7DUf89S4&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-6038-downloads-4\" class=\"anchor\" href=\"#p-6038-downloads-4\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Escher%20Sketch/Escher%20Sketch%20User%20Reference%20Sheet.pdf\">Escher Sketch User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-6038-other-resources-5\" class=\"anchor\" href=\"#p-6038-other-resources-5\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/eschersketch\">LZX Community Forum posts tagged #eschersketch</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 8138,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2019-12-24T17:39:03.050Z",
+      "updated_at": "2019-12-24T17:39:03.050Z",
+      "cooked": "<p>This is a known issue, but yes, it\u2019s fixable!  We\u2019ll have new firmware for Escher Sketch early in the new year.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 22087,
+      "post_number": 4,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2021-09-26T19:48:08.241Z",
+      "updated_at": "2021-09-26T19:48:08.241Z",
+      "cooked": "<p>Is there a chance ES will ever to be able to  \u201c<em>State Save on power cycle!</em>\u201d?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 22090,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-09-27T14:56:51.245Z",
+      "updated_at": "2021-09-27T14:56:51.245Z",
+      "cooked": "<p>As Escher Sketch has now been discontinued, it won\u2019t be able to do anything new or different in the future.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 22096,
+      "post_number": 6,
+      "username": "a_digital_index",
+      "name": "Christopher Trice",
+      "created_at": "2021-09-27T19:31:41.650Z",
+      "updated_at": "2021-09-27T19:31:41.650Z",
+      "cooked": "<p>Copy that.  DIdn\u2019t realize it was Discontinued for some reason.  Thanks.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 22099,
+      "post_number": 7,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2021-09-28T01:08:58.107Z",
+      "updated_at": "2021-09-28T01:08:58.107Z",
+      "cooked": "<p>so just to be clear even the known issue lars was talking about above where the output wasn\u2019t going all the way to 1v won\u2019t be fixed?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    },
+    {
+      "id": 22109,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-09-28T13:49:07.624Z",
+      "updated_at": "2021-09-28T13:49:07.624Z",
+      "cooked": "<p>That is correct. There won\u2019t be any further revisions of Escher Sketch.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 7,
+      "is_wiki": false
+    }
+  ]
+}

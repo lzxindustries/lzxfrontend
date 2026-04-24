@@ -1,0 +1,29 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "8gb-microsd-card",
+  "name": "8GB MicroSD Card",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7214199439383",
+  "images": {
+    "frontpanel": "website/8gb_microsd_card.png"
+  },
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

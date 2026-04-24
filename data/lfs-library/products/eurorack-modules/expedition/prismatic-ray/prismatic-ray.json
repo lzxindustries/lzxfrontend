@@ -1,0 +1,55 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "prismatic-ray",
+  "name": "Prismatic Ray",
+  "sku": "LZXPR",
+  "description": "﻿No longer available. Prismatic Ray is the next generation of the LZX Industries analogue wide range Voltage Controlled Oscillator design. With a max frequency range into the megahertz and hard sync input with phase stability, it is uniquely qualified for video synthesis techniques. Width, 16HP Mounting Depth, 32mm Power +12V @ 120mA Power -12V @ 90mA Owner's Manual (PDF)User Reference Card (PDF)",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692917071936",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/prismatic-ray-front-panel-black.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [
+      {
+        "path": "packaging/prismatic_ray_sticker_fantastapack.pdf",
+        "extension": "pdf"
+      },
+      {
+        "path": "../../packaging/expedition_16hp_product_box_fantastapack.pdf",
+        "extension": "pdf",
+        "note": "Shared Expedition 16HP Fantastapack box dieline"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

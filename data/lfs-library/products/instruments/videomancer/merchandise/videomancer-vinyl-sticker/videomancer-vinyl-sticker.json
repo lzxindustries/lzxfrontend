@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../../schemas/product.schema.json",
+  "slug": "videomancer-vinyl-sticker",
+  "name": "Videomancer Vinyl Sticker",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/8199823786007",
+  "description": "This product has not been released yet, and will be available soon. Decorate your binders and laptops with this 3 inch vinyl sticker featuring the mystical Videomancer.",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/VIDEOMANCER-STICKER-REVA.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

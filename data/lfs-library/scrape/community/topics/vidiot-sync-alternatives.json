@@ -1,0 +1,48 @@
+{
+  "id": 1446,
+  "title": "Vidiot sync alternatives?",
+  "slug": "vidiot-sync-alternatives",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    },
+    {
+      "id": 3,
+      "name": "visualcortex",
+      "slug": "visualcortex"
+    }
+  ],
+  "created_at": "2019-08-19T14:17:53.702Z",
+  "views": 679,
+  "like_count": 2,
+  "posts_count": 2,
+  "posts": [
+    {
+      "id": 6429,
+      "post_number": 1,
+      "username": "Msb",
+      "name": null,
+      "created_at": "2019-08-19T14:17:53.766Z",
+      "updated_at": "2019-08-19T14:19:03.617Z",
+      "cooked": "<p>Hi everyone!<br>\nWell, i\u00b4m using vidiot and visual cortex. i use VC as a master and Vidiot as a slave. I can synchronize them without problem but i would like to know if there is a possibility to use the 1/8\u00a8 video jack input (luma input jack) in the rear panel of vidiot to receive sync signal from VC.<br>\nActually vidiot receive sync signal from VC through the video RCA input, and i would prefer to use this input for other things like feed a videocamera to do feedback.</p>\n<p>is possible to use the luma input jack to sync ??<br>\nthank you!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6449,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-08-21T19:09:16.104Z",
+      "updated_at": "2019-08-21T19:14:45.790Z",
+      "cooked": "<p>Vidiot can receive sync signal from Cortex by using any of Cortex\u2019s 3 video outputs (2x CVBS Composite or Y/Luma).</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

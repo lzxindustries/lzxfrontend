@@ -1,0 +1,72 @@
+{
+  "id": 1308,
+  "title": "Memory Palace Micro SD Connector",
+  "slug": "memory-palace-micro-sd-connector",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    },
+    {
+      "id": 68,
+      "name": "microsd",
+      "slug": "microsd"
+    }
+  ],
+  "created_at": "2019-07-19T04:23:36.106Z",
+  "views": 814,
+  "like_count": 6,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 5947,
+      "post_number": 1,
+      "username": "Nathan",
+      "name": "Nathan",
+      "created_at": "2019-07-19T04:23:36.220Z",
+      "updated_at": "2019-07-19T16:15:58.586Z",
+      "cooked": "<p>I was unsuccessful with updating the firmware on my MP, on boot up it stalls on the opening screen. System recovery needed I suppose.<br>\nThe manual explains the system recovery procedure as having to remove the MicroSD card from the back of the MP and manually downloading the update onto the card through a reader connected to my computer.<br>\nI cannot seem to work out how to remove the card from its connector in the MP.<br>\nManual states:<br>\n\u201cremove the MicroSD card from its hinged connector. To do this, push gently upward on the hinged connector (away from the power connector), and then lift it upwards to access the MicroSD card.\u201d<br>\nIve pushed in all directions (including away from the power connector) and need assistance with which way is \u201cup\u201d when looking at the back of MP. Im used to the regular sliding card connectors.<br>\nId really like to get to using my Memory Palace and don\u2019t want to brick it beforehand.</p>\n<p>Any help?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5952,
+      "post_number": 2,
+      "username": "337is",
+      "name": "Leslie Rollins",
+      "created_at": "2019-07-19T11:47:13.745Z",
+      "updated_at": "2019-07-19T11:47:13.745Z",
+      "cooked": "<p>Here\u2019s a link to a thread on the FB group page which may be of use to you:</p>\n<aside class=\"onebox whitelistedgeneric\">\n  <header class=\"source\">\n      <img src=\"https://static.xx.fbcdn.net/rsrc.php/yz/r/KFyVIAWzntM.ico\" class=\"site-icon\" width=\"16\" height=\"16\">\n      <a href=\"https://www.facebook.com/groups/lzxindustries/permalink/1243912192446765?sfns=xmwa\" target=\"_blank\">facebook.com</a>\n  </header>\n  <article class=\"onebox-body\">\n    <img src=\"https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-1/p200x200/69262421_10157622615673669_6544874231698554880_n.jpg?_nc_cat=108&amp;_nc_sid=bbed71&amp;_nc_oc=AQmGkOlRCcb-L3boGjV-JxB73YRiFG4GfzhH_zEiJFSlPg9dcM1ZMbG4_drQ1ktqJqJt0_eADMJuq37Ujn2wj-ue&amp;_nc_ht=scontent-sjc3-1.xx&amp;_nc_tp=6&amp;oh=3bb27492fa5d88f4d24db0aedf42ca81&amp;oe=5EEC621F\" class=\"thumbnail onebox-avatar\" width=\"200\" height=\"200\">\n\n<h3><a href=\"https://www.facebook.com/groups/lzxindustries/permalink/1243912192446765?sfns=xmwa\" target=\"_blank\">Stefan Goodchild</a></h3>\n\n<p>Anyone got any tips on how to get the Memory Palace SD card out? I very nearly bricked mine trying to do a firmware update and want to try the brute force way but can't seem to work out how to open...</p>\n\n\n  </article>\n  <div class=\"onebox-metadata\">\n    \n    \n  </div>\n  <div style=\"clear: both\"></div>\n</aside>\n",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 5958,
+      "post_number": 3,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-19T16:13:37.464Z",
+      "updated_at": "2019-07-19T16:13:37.464Z",
+      "cooked": "<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/5/5ed259eee0a279eb7dce36ff824083bdcba61963.png\" alt=\"image\" data-base62-sha1=\"dwPyAcVOMAoxAxEj2sEQocHBhth\" width=\"471\" height=\"477\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6047,
+      "post_number": 4,
+      "username": "Nathan",
+      "name": "Nathan",
+      "created_at": "2019-07-23T05:23:12.288Z",
+      "updated_at": "2019-07-23T05:23:12.288Z",
+      "cooked": "<p>Thanks.<br>\nLeslies tip with the fingernail on the metal casing did the trick.<br>\nThe problem previously was that I was pushing on the actual card\u2026 the card doesnt move at all hense the concern something might break.<br>\nThe metal outer casing moves quite easily however.<br>\nCheers</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

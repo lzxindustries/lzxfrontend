@@ -4,7 +4,7 @@ import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import path from 'node:path';
 
 const repoRoot = process.cwd();
-const sourceRoot = path.resolve(repoRoot, 'lfs/library/products');
+const sourceRoot = path.resolve(repoRoot, 'data/lfs-library/products');
 const outputPath = path.resolve(
   repoRoot,
   'docs/lfs-products-integration-audit.md',

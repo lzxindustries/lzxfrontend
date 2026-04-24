@@ -1,0 +1,39 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "submixer",
+  "name": "SUBMIXER",
+  "company": "vhs",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 120
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "https://www.videoheadroom.systems/video-synthesizers/p/submixer",
+  "images": {
+    "external_url": "https://www.videoheadroom.systems/video-synthesizers/p/submixer"
+  },
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

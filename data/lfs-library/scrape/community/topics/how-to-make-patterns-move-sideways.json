@@ -1,0 +1,103 @@
+{
+  "id": 632,
+  "title": "How to make patterns move sideways?",
+  "slug": "how-to-make-patterns-move-sideways",
+  "category_id": 6,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-10-24T21:36:10.660Z",
+  "views": 1198,
+  "like_count": 10,
+  "posts_count": 7,
+  "posts": [
+    {
+      "id": 2690,
+      "post_number": 1,
+      "username": "Bengt",
+      "name": "Bengt Rahn",
+      "created_at": "2018-10-24T21:36:10.745Z",
+      "updated_at": "2018-11-06T21:45:15.485Z",
+      "cooked": "<p>Hi,<br>\nHow do I (with the Vidiot) make patterns, lets say a simple line, move from side to side on the screen? It\u2019s easy to make it move from top to bottom or the other way around by just pushing the Horizontal Sync Switch (LED indicator lit) and turning the Symmetry control all the way to the left. <div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf.jpeg\" title=\"IMG_5356.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf_2_653x500.jpeg\" alt=\"IMG_5356\" width=\"653\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf_2_653x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf_2_979x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf_2_1306x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/b2b5f9bdf8151a67a6d503f4bb37ac777b2d8daf_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_5356.jpg</span><span class=\"informations\">3927\u00d73005 2.44 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>But doing the other way around, pushing just the Vertical Sync Switch (LED indicator lit) and turning the Symmetry control all the way to the right results in moving DIAGONAL lines\u2026<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07.jpeg\" title=\"IMG_5358.jpg\" rel=\"nofollow noopener\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07_2_666x500.jpeg\" alt=\"IMG_5358\" width=\"666\" height=\"500\" srcset=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07_2_666x500.jpeg, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07_2_999x750.jpeg 1.5x, https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07_2_1332x1000.jpeg 2x\" data-small-upload=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/optimized/1X/8a3c0d5d6d91495b62e87737dc8eef98e0d70d07_2_10x10.png\"><div class=\"meta\">\n<svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#far-image\"></use></svg><span class=\"filename\">IMG_5358.jpg</span><span class=\"informations\">3874\u00d72906 2.29 MB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use xlink:href=\"#discourse-expand\"></use></svg>\n</div></a></div></p>\n<p>Also the sweet spot is EXTREMLY hard to find when in the second case. Most of the time it\u2019s just chaos on the screen\u2026 <img src=\"https://emoji.discourse-cdn.com/twitter/wink.png?v=9\" title=\":wink:\" class=\"emoji\" alt=\":wink:\"><br>\nThanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2698,
+      "post_number": 2,
+      "username": "drumasaurusrex",
+      "name": "Zach Michels",
+      "created_at": "2018-10-25T15:08:37.263Z",
+      "updated_at": "2018-10-25T15:08:37.263Z",
+      "cooked": "<p>I\u2019m not sure that what you want to do is possible with only the Vidiot. I intended to explain here but am getting pulled back to work and so I don\u2019t have the time at the moment to go into more detail \u2014 perhaps someone else will before I get back to it. The gist is that horizontal vs vertical lines require different frequency ranges and different sync timings.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2703,
+      "post_number": 3,
+      "username": "sector",
+      "name": "alberto zanotti",
+      "created_at": "2018-10-25T16:56:04.569Z",
+      "updated_at": "2018-10-25T16:56:04.569Z",
+      "cooked": "<p>yes, check in the manual what frequency range you need to move the vertical and horizontal. try with a very wide range lfo, one that can go from sub harmonic to overaudible frequencies</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 2704,
+      "post_number": 4,
+      "username": "drumasaurusrex",
+      "name": "Zach Michels",
+      "created_at": "2018-10-25T17:08:43.422Z",
+      "updated_at": "2018-10-25T17:08:43.422Z",
+      "cooked": "<p>But the suggestion to modulate the frequency will not simply translate/scroll the lines\u2026 it will change the number of lines on the screen (and yes thereby shift them when changing frequency), but it won\u2019t simply scroll the existing number of lines.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 2707,
+      "post_number": 5,
+      "username": "sector",
+      "name": "alberto zanotti",
+      "created_at": "2018-10-25T20:55:38.070Z",
+      "updated_at": "2018-10-25T20:55:38.070Z",
+      "cooked": "<p>yeah you\u00b4re right i totally misunderstood the question. it is then a matter of the voltage you input in the horizontal and vertical sync right?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2709,
+      "post_number": 6,
+      "username": "pbalj",
+      "name": "Phil Baljeu",
+      "created_at": "2018-10-25T22:15:59.985Z",
+      "updated_at": "2018-10-25T22:15:59.985Z",
+      "cooked": "<p>scrolling across the horizontal axis is pretty difficult to achieve in analog. you need a very stable oscillator with a very small frequency offset from some multiple of the line rate to scroll horizontally. digital oscillators are really good for this as they are rock solid without any drift. analog oscillators will drift which causes the crazy fluctuations even if you hit a sweet spot.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2724,
+      "post_number": 7,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-10-27T06:41:21.815Z",
+      "updated_at": "2018-10-27T06:41:21.815Z",
+      "cooked": "<p>The Diver module I\u2019m working on now is a different kind of video oscillator that does this. For analog VCO cores like Vidiot you need to reset the sync pulse to move the phase of the waveform. On Vidiot try getting creative with what external image you feed into the horizontal oscillators sync input.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

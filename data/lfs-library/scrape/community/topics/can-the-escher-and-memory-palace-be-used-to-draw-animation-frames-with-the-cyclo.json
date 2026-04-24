@@ -1,0 +1,77 @@
+{
+  "id": 38,
+  "title": "Can the Escher and Memory palace be used to draw animation frames with the Cyclops?",
+  "slug": "can-the-escher-and-memory-palace-be-used-to-draw-animation-frames-with-the-cyclops",
+  "category_id": 6,
+  "tags": [
+    {
+      "id": 4,
+      "name": "cyclops",
+      "slug": "cyclops"
+    },
+    {
+      "id": 8,
+      "name": "eschersketch",
+      "slug": "eschersketch"
+    },
+    {
+      "id": 9,
+      "name": "memorypalace",
+      "slug": "memorypalace"
+    }
+  ],
+  "created_at": "2018-07-17T20:05:22.166Z",
+  "views": 952,
+  "like_count": 4,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 51,
+      "post_number": 1,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2018-07-17T20:05:22.265Z",
+      "updated_at": "2019-07-19T22:01:02.054Z",
+      "cooked": "<p>I imagine saving animated xy info with the memory palace and feeding to a cyclops could be used to produce a cohesive laser drawing? And if so could it be each drawn  image be saved as a \u201cframe\u201d and played back for laser animations?</p>\n<p><em>Admin note: This question was originally asked by alexk on the former LZX Knowledgebase</em></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6845,
+      "post_number": 2,
+      "username": "Zifor",
+      "name": "George Redpath",
+      "created_at": "2019-09-16T12:25:52.479Z",
+      "updated_at": "2019-09-16T12:25:52.479Z",
+      "cooked": "<p>Very cool <img src=\"https://emoji.discourse-cdn.com/twitter/slight_smile.png?v=9\" title=\":slight_smile:\" class=\"emoji\" alt=\":slight_smile:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 6878,
+      "post_number": 3,
+      "username": "luix",
+      "name": "Luis",
+      "created_at": "2019-09-18T12:14:52.745Z",
+      "updated_at": "2019-09-18T12:14:52.745Z",
+      "cooked": "<p>Check out this <a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a> <a href=\"https://vimeo.com/65929618\" rel=\"nofollow noopener\">https://vimeo.com/65929618</a></p>\n<p>there is some openframeworks code here <a href=\"https://github.com/memo/ofxEtherdream\" rel=\"nofollow noopener\">https://github.com/memo/ofxEtherdream</a></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9981,
+      "post_number": 4,
+      "username": "pkapka",
+      "name": "pekka",
+      "created_at": "2020-06-11T13:58:06.984Z",
+      "updated_at": "2020-06-11T13:58:06.984Z",
+      "cooked": "<p>Has anyone tried this? Blanking is always an issue with shapes, though</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

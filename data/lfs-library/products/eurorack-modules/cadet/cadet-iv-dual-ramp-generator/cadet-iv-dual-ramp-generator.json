@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "cadet-iv-dual-ramp-generator",
+  "name": "Cadet IV Dual Ramp Generator",
+  "sku": "LZXCADT4",
+  "description": "Cadet IV Dual Ramp Generator is a dual waveform generator which creates 3 different fixed frequency ramp waveforms locked to the horizontal and vertical dimensions of a video display. The Cadet series of DIY Eurorack modules brings simple, analog DIY video synthesizer building blocks to your modular workspace. ",
+  "company": "lzx",
+  "price": "16.00",
+  "product_type": "eurorack_module",
+  "category": "cadet",
+  "specs": {
+    "hp": 4,
+    "mounting_depth_mm": 65,
+    "max_pos_12v_ma": 48,
+    "max_neg_12v_ma": 29
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692912844864",
+  "images": {
+    "external_url": "https://github.com/lzxindustries/lzxdocs/tree/master/Cadet%20IV%20Dual%20Ramp%20Generator"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/Cadet-4-front-panel-square.jpg",
+        "extension": "jpg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzx_c4_frontpanel.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [
+      {
+        "path": "packaging/cadet_iv_pcb_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "packaging/cadet_iv_pcbfpn_product_label_2.75_x2.125.ai",
+        "extension": "ai"
+      }
+    ],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

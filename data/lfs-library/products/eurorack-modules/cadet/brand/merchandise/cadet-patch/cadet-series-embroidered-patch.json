@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../../../schemas/product.schema.json",
+  "slug": "cadet-series-embroidered-patch",
+  "name": "Cadet Series Embroidered Patch",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/1692913041472",
+  "description": "﻿In stock. 3 inch embroidered patch. Popular gift item for parents.",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/NVUNTRXSYKtOUT9eSscx_image__42.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/image_42.png",
+        "extension": "png"
+      }
+    ]
+  }
+}

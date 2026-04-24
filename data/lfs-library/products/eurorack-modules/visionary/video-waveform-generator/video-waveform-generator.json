@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "video-waveform-generator",
+  "name": "Video Waveform Generator",
+  "description": "What your ear may hear as a subtle difference, your eye may see as a huge one. since the end results in video synthesis are visual: texture, pattern, and shape instead of audio, there are a number of features and controls in this vco design that take into consideration this unique application. features: wide range vco with 6 selectable frequency ranges from 30 seconds to 2mhz, coarse and fine tuning controls. expanded hard sync circuit designed for accurate synchronization to video sync signals. selection switch allows normalization to sync bus signals distributed through the power header from the lzx visionary video sync generator module. precision video op-amps used in all circuitry for accurate high speed frequency and waveshape modulation. five simultaneous waveform outputs: triangle, sawtooth, square, pulse (rectangle) & shaped sine. two independent waveshapers with cv inputs, cv attenuverters and bias controls: pulsewidth modulator & sine shaper. control pulsewidth and sine shape from 0% to 100%. two frequency cv inputs with cv attenuverters. jumper-configurable options for input scaling (visionary or 1v/oct standard) and linear or exponential input. attenuversion controls on all signal inputs allow attenuation and inversion of any input signal. frequency notification led. no external +5v power rail necessary, user configurable jumper allows selection between onboard +5v regulator or +5v rail on standard power header. Specifications: width: 16hp maximum current draw: 140ma",
+  "company": "lzx",
+  "price": "399.00",
+  "product_type": "eurorack_module",
+  "category": "visionary",
+  "specs": {
+    "hp": 16,
+    "max_pos_12v_ma": 140
+  },
+  "sync_and_power": {
+    "is_sync_ref_required": true,
+    "has_eurorack_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_front_video_sync_input": true
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6544603349015",
+  "images": {
+    "external_url": "https://community.lzxindustries.net/t/all-about-visionary-series-legacy/1352/2"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/vwg-front-photo.jpeg",
+        "extension": "jpeg"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "vessel-eurorack-psu-expander",
+  "name": "Vessel EuroRack PSU Expander",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 104,
+    "mounting_depth_mm": 22
+  },
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/7214197440535",
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/base-system-84-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_back_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_side_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/vessel168_photo_top_square2.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": [
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_left_diagonal_face.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "b6/panel-art/lzx_b6_silkscreen_right_diagonal_face.ai",
+        "extension": "ai"
+      }
+    ]
+  }
+}

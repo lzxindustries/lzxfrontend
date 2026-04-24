@@ -1,0 +1,229 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "stairs",
+  "name": "Stairs",
+  "sku": "LZXSTAIRS",
+  "subtitle": "6 Stage Wavefolder",
+  "company": "lzx",
+  "price": "279.00",
+  "product_type": "eurorack_module",
+  "category": "gen3",
+  "specs": {
+    "hp": 8,
+    "mounting_depth_mm": 32,
+    "max_pos_12v_ma": 210
+  },
+  "sync_and_power": {
+    "has_eurorack_power_entry": true,
+    "has_dc_barrel_power_entry": true
+  },
+  "status": {
+    "is_active": true,
+    "release_date": "2022-01-01"
+  },
+  "shopify_id": "gid://shopify/Product/6766671396887",
+  "images": {
+    "frontpanel": "website/stairs-front-panel.png",
+    "legend": "website/stairs-front-line-art.png"
+  },
+  "connectors": [
+    {
+      "name": "R",
+      "ref_des": "J3",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "2X",
+      "ref_des": "J4",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "4X",
+      "ref_des": "J5",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "G",
+      "ref_des": "J6",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "8X",
+      "ref_des": "J7",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "16X",
+      "ref_des": "J8",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1375,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "B",
+      "ref_des": "J9",
+      "is_input": true,
+      "is_output": false,
+      "x": -500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "32X",
+      "ref_des": "J10",
+      "is_input": false,
+      "is_output": true,
+      "x": 0,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "64X",
+      "ref_des": "J11",
+      "is_input": false,
+      "is_output": true,
+      "x": 500,
+      "y": 1875,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Steps CV",
+      "ref_des": "J1",
+      "is_input": true,
+      "is_output": false,
+      "x": -400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    },
+    {
+      "name": "Phase CV",
+      "ref_des": "J2",
+      "is_input": true,
+      "is_output": false,
+      "x": 400,
+      "y": 125,
+      "part": "vertical-3.5mm-jack"
+    }
+  ],
+  "controls": [
+    {
+      "name": "Steps",
+      "ref_des": "P1",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -1875,
+      "part": "control-knob-solid-arrow"
+    },
+    {
+      "name": "Phase",
+      "ref_des": "P2",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -1875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Steps CV Depth",
+      "ref_des": "P3",
+      "is_gain": false,
+      "is_bias": false,
+      "x": -400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    },
+    {
+      "name": "Phase CV Depth",
+      "ref_des": "P4",
+      "is_gain": false,
+      "is_bias": false,
+      "x": 400,
+      "y": -875,
+      "part": "control-knob-outline-arrow"
+    }
+  ],
+  "videos": [
+    {
+      "name": "3 Patches for Stairs",
+      "youtube_id": "XM4kiY9Yd4g"
+    }
+  ],
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/LZX8HPStairsFrontpanelColorGraphicDarkSquare.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stairs-front-line-art.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stairs-front-panel-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/stairs-front-panel.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/staircase_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/stairs_fpn_reva.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "panel-art/stairs_fpn_reva_uv_printed.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Stairs is a six stage waveshaper, voltage controlled amplifier, and frequency multiplier. It enables multiband colorization and concentric shapes by combining the multiplied outputs of your incoming signal. Learn more about Stairs on our documentation website!"
+}

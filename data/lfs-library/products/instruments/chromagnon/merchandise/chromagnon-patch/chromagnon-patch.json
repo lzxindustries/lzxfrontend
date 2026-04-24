@@ -1,0 +1,26 @@
+{
+  "$schema": "../../../../schemas/product.schema.json",
+  "slug": "chromagnon-patch",
+  "name": "Chromagnon Patch",
+  "company": "lzx",
+  "product_type": "instrument",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/7171731587095",
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

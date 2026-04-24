@@ -1,0 +1,91 @@
+{
+  "id": 1938,
+  "title": "Differences in monitor/screen types for use with Vidiot?",
+  "slug": "differences-in-monitor-screen-types-for-use-with-vidiot",
+  "category_id": 9,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2020-02-25T23:58:55.821Z",
+  "views": 986,
+  "like_count": 3,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 8901,
+      "post_number": 1,
+      "username": "slidingmodirop",
+      "name": "",
+      "created_at": "2020-02-25T23:58:55.913Z",
+      "updated_at": "2020-02-26T18:30:21.487Z",
+      "cooked": "<p>Hey so I recently picked up a Vidiot and was trying to just follow along with the intro video for it on the LZX youtube channel and noticed certain things looked different and I wondered if my TV was the issue. Any time my patterns got too dense, it would tend to look blurry and fuzzy rather than simply a dense pattern.</p>\n<p>The TV i\u2019m using is an LED Samsung TV (like 32\" or something, just had it in a closet and it\u2019s the only screen I own with input other than HDMI). I never changed any aspect ratio settings in case that makes a difference. I was using composite (I just ordered a set of component cables after reading here that it is higher quality).</p>\n<p>I noticed that most people use CRT monitors or LCD screens. The former is more money than I\u2019d like to spend unless I have to (I\u2019d rather spend the money on a camera or DVD/VHS player unless I manage to find a tube screen locally for under $100)  so I\u2019m debating trying to find a barebones LCD just to have more excuses to lose a few hours to the Vidiot or figure out if my current TV can work.</p>\n<p>Can anyone share some insight on the advantages/disadvantages of screen types and/or ways to mitigate the downfalls of less-than-ideal devices? Sorry if this has been asked. I tried searching for \u201cmonitor\u201d and \u201ctelevision\u201d and \u201cled\u201d and wasn\u2019t able to figure out the answer to my question. tia</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8907,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-26T17:18:22.992Z",
+      "updated_at": "2020-02-26T17:18:22.992Z",
+      "cooked": "<p>Thanks for posting. Where are you located? I see free CRTs on the curb and cheap ones at thrift stores all the time in Texas. Check out the free section of your local Craigslist!<br>\n<img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/8/83ed98de910bbe4525e33e6de2c2ceddad3cfd38.jpeg\" alt=\"image\" data-base62-sha1=\"iP5B5lR3BQ7CdySNAwHVNCu0xo4\" width=\"630\" height=\"308\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 8909,
+      "post_number": 3,
+      "username": "slidingmodirop",
+      "name": "",
+      "created_at": "2020-02-26T18:05:04.591Z",
+      "updated_at": "2020-02-26T18:05:04.591Z",
+      "cooked": "<p>Hey thanks! I tried searching \u201ccrt monitor\u201d in my area (Cleveland) and didn\u2019t find what I was looking for nor did I find anything at my local thrift store but it looks like there\u2019s quite a few on the free section!</p>\n<p>Is that going to give me a picture more similar to the LZX demo videos of the Vidiot? Is using the composite cable included fine?</p>\n<p>Appreciate the suggestion. Looks like I\u2019ll have to snag myself a tube TV and get back to toying around</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 8910,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2020-02-26T18:29:44.602Z",
+      "updated_at": "2020-02-26T18:29:44.602Z",
+      "cooked": "<p>Most people giving away CRT monitors just think of them as OLD TV\u2019s! Hope you find a good one.<br>\nThe Vidiot demos on Youtube are captured digitally (Blackmagic Terranex Mini- SDI out to Blackmagic Hyperdeck Shuttle 2), but there are lots of people rescanning CRT screens.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 8911,
+      "post_number": 5,
+      "username": "Vdot",
+      "name": "",
+      "created_at": "2020-02-26T21:14:36.451Z",
+      "updated_at": "2020-02-26T21:14:36.451Z",
+      "cooked": "<p>Try looking for terms that were more common to CRT owners and brands/models that were more common on CRT models, these are terms I\u2019ve used successfully:<br>\n13\" TV - a common size of small CRTs that is rare for HDTVs.<br>\nTrinitron, Wega - popular lines of Sony CRTs<br>\nJVC - Brand that didn\u2019t make a lot of HDTVs.<br>\nPVM - Try your luck! Sony\u2019s professional CRTs are extremely sought-after by retro gamers and video artists alike for their exceptional image quality.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 8915,
+      "post_number": 6,
+      "username": "sean",
+      "name": "",
+      "created_at": "2020-02-26T22:43:51.682Z",
+      "updated_at": "2020-02-26T22:51:59.705Z",
+      "cooked": "<p>I\u2019ve found the most reliable search term for cheap CRTs is definitely \u201ctube TV.\u201d</p>\n<p>That\u2019s what people who don\u2019t realize they might be worth something seem to call them.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

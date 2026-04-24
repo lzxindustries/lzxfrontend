@@ -1,0 +1,41 @@
+{
+  "id": 1305,
+  "title": "All About Arch",
+  "slug": "all-about-arch",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 36,
+      "name": "arch",
+      "slug": "arch"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    }
+  ],
+  "created_at": "2019-07-18T21:50:45.720Z",
+  "views": 2050,
+  "like_count": 6,
+  "posts_count": 1,
+  "posts": [
+    {
+      "id": 5941,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-18T21:50:45.810Z",
+      "updated_at": "2022-01-02T19:55:09.147Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e1089815ef0b1ea68a360496dfc3a6e678a3497b.jpeg\" data-download-href=\"/uploads/short-url/w6JQiLIYFLEievlQ0cJW4LgMsqv.jpeg?dl=1\" title=\"arch1\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/e/e1089815ef0b1ea68a360496dfc3a6e678a3497b.jpeg\" alt=\"arch1\" data-base62-sha1=\"w6JQiLIYFLEievlQ0cJW4LgMsqv\" width=\"398\" height=\"500\" data-dominant-color=\"B6B3B0\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">arch1</span><span class=\"informations\">816\u00d71024 292 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5941-nonlinear-functions-1\" class=\"anchor\" href=\"#p-5941-nonlinear-functions-1\" aria-label=\"Heading link\"></a>Nonlinear Functions</h1>\n<p><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/6/611aace289f74cb806d5736d27148952933ea278.png\" alt=\"\" data-base62-sha1=\"dR1sUkL59uLajFpDFq6BspR16rK\" role=\"presentation\" width=\"76\" height=\"76\"><br>\nI am Arch. I span the thoroughfares of your video instrument with my continuous lines and splendid ornamentation. I can show you new routes! Over, atop and between your well worn paths: join, constrain, bend and split shape and form with the magic of my nonlinear processes.</p>\n<ul>\n<li>\n<p>2-input, 5-output wideband analog logic.**  Binary logic can only see two colors: black and white. Analog logic processes the continuous grayscale range of your analog signal path, enabling organic combinations of video images and patternmaking elements.</p>\n</li>\n<li>\n<p>1-input, 3-output full wave rectifier and frequency doubler.**  We love this circuit \u2013 you can find it in the signal paths of Staircase, Shapechanger and Navigator. With an input triangle wave, you get a triangle wave at double the frequency at your output.</p>\n</li>\n<li>\n<p>1-input, 2-output gamma processor.**  An infinitely usable function, gamma processing adjusts the brightness of mid-gray level while keeping black and white points consistent. The square function darkens grays, and the log function brightens them.</p>\n</li>\n</ul>\n<h1><a name=\"p-5941-specifications-2\" class=\"anchor\" href=\"#p-5941-specifications-2\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width, 8HP</li>\n<li>Mounting Depth, 32mm</li>\n<li>Power +12V @ 65mA</li>\n<li>Power -12V @ 65mA</li>\n</ul>\n<h1><a name=\"p-5941-user-reference-3\" class=\"anchor\" href=\"#p-5941-user-reference-3\" aria-label=\"Heading link\"></a>User Reference</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/ccae3d8fe1b3011cf72c0bf32017f86f0516e341.jpeg\" data-download-href=\"/uploads/short-url/tcGIaJQYqMl4B590heZ8c9azwdP.jpeg?dl=1\" title=\"arch%20urc\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/ccae3d8fe1b3011cf72c0bf32017f86f0516e341.jpeg\" alt=\"arch%20urc\" data-base62-sha1=\"tcGIaJQYqMl4B590heZ8c9azwdP\" width=\"690\" height=\"379\" data-dominant-color=\"D3D6D8\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">arch%20urc</span><span class=\"informations\">1004\u00d7552 97.6 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<h1><a name=\"p-5941-patching-tips-4\" class=\"anchor\" href=\"#p-5941-patching-tips-4\" aria-label=\"Heading link\"></a>Patching Tips</h1>\n<ul>\n<li>Logic processing is a great way to create new shape variations. At any point in your shape generation patch, patch the H and V ramp signals into Arch\u2019s analog logic section and use the outputs to create shapes and keys.</li>\n<li>The Square and Log outputs are complementary functions. If you patch them into the A and B inputs of a crossfader module, you can achieve the full Log-to-Linear-to-Exponential morph, which is a powerful technique.</li>\n</ul>\n<h1><a name=\"p-5941-downloads-5\" class=\"anchor\" href=\"#p-5941-downloads-5\" aria-label=\"Heading link\"></a>Downloads</h1>\n<ul>\n<li><a href=\"https://github.com/lzxindustries/documentation/raw/master/Arch/Arch%20User%20Reference%20Card.pdf\">Arch User Reference Card [PDF]</a></li>\n</ul>\n<h1><a name=\"p-5941-other-resources-6\" class=\"anchor\" href=\"#p-5941-other-resources-6\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/arch\">LZX Community Forum posts tagged #arch</a></li>\n</ul>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    }
+  ]
+}

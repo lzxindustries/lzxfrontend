@@ -1,0 +1,77 @@
+{
+  "id": 1319,
+  "title": "All About Cyclops",
+  "slug": "all-about-cyclops",
+  "category_id": 5,
+  "tags": [
+    {
+      "id": 4,
+      "name": "cyclops",
+      "slug": "cyclops"
+    },
+    {
+      "id": 65,
+      "name": "eurorack",
+      "slug": "eurorack"
+    },
+    {
+      "id": 17,
+      "name": "expedition",
+      "slug": "expedition"
+    }
+  ],
+  "created_at": "2019-07-19T21:57:56.873Z",
+  "views": 1934,
+  "like_count": 7,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 5973,
+      "post_number": 1,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-07-19T21:57:56.995Z",
+      "updated_at": "2022-01-02T19:44:57.356Z",
+      "cooked": "<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/4/45da3d12323bf6f913c5eee64f73eece8210eee2.jpeg\" data-download-href=\"/uploads/short-url/9XWwcDCbRrSr1AAFbdqf6WoSKLU.jpeg?dl=1\" title=\"cy3\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/4/45da3d12323bf6f913c5eee64f73eece8210eee2.jpeg\" alt=\"cy3\" data-base62-sha1=\"9XWwcDCbRrSr1AAFbdqf6WoSKLU\" width=\"649\" height=\"500\" data-dominant-color=\"ADACAC\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">cy3</span><span class=\"informations\">1330\u00d71024 481 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>\n<p>Cyclops is an interface module which converts Eurorack modular signals to the International Laser Display Association (ILDA) specification for laser show projectors.   We recommend connecting Cyclops to a Eurorack modular system rich in VCOs (especially quadrature sources), multipliers, and signal mixers in order to synthesize a full range of oscillographic patterns and lissajous geometries.</p>\n<h1><a name=\"p-5973-specifications-1\" class=\"anchor\" href=\"#p-5973-specifications-1\" aria-label=\"Heading link\"></a>Specifications</h1>\n<ul>\n<li>Width: 16HP</li>\n<li>Max Depth: 31mm</li>\n<li>Power: 60mA@ +12V , 50mA@ -12V , 0mA@ +5V</li>\n</ul>\n<h1><a name=\"p-5973-videos-2\" class=\"anchor\" href=\"#p-5973-videos-2\" aria-label=\"Heading link\"></a>Videos</h1>\n<p>            <iframe src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6JJ4Im-r5Hr3_hrX71e8aXK&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" width=\"480\" height=\"360\" frameborder=\"0\" allowfullscreen=\"\" class=\"youtube-onebox\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>\n<h1><a name=\"p-5973-other-resources-3\" class=\"anchor\" href=\"#p-5973-other-resources-3\" aria-label=\"Heading link\"></a>Other Resources</h1>\n<ul>\n<li><a href=\"https://community.lzxindustries.net/tags/cyclops\">LZX Community Forum posts tagged #cyclops</a></li>\n</ul>\n<h1><a name=\"p-5973-prototype-4\" class=\"anchor\" href=\"#p-5973-prototype-4\" aria-label=\"Heading link\"></a>Prototype</h1>\n<p><div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/ccca6cfcb18376cc5ed764ac219c449b26a92391.jpeg\" data-download-href=\"/uploads/short-url/tdF68WdO9G8YfKHbZIW2H6z3Dwt.jpeg?dl=1\" title=\"laser\"><img src=\"https://canada1.discourse-cdn.com/flex031/uploads/lzxindustries/original/2X/c/ccca6cfcb18376cc5ed764ac219c449b26a92391.jpeg\" alt=\"laser\" data-base62-sha1=\"tdF68WdO9G8YfKHbZIW2H6z3Dwt\" width=\"156\" height=\"500\" data-dominant-color=\"9F9D9A\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">laser</span><span class=\"informations\">476\u00d71518 151 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": true
+    },
+    {
+      "id": 30088,
+      "post_number": 2,
+      "username": "Pagoda",
+      "name": "Ian",
+      "created_at": "2022-12-20T15:31:29.430Z",
+      "updated_at": "2022-12-20T15:31:29.430Z",
+      "cooked": "<p><a class=\"mention\" href=\"/u/creatorlars\">@creatorlars</a>, Will the future possibly see a Gen3 equal of Cyclops or is Cromagnon the only option? My Gen3 system is getting nice and healthy so I\u2019m not sure I <em>need</em> Cromagnon, but If it gets me in the laser game then this is the way.<br>\nThanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 30090,
+      "post_number": 3,
+      "username": "creatorlars",
+      "name": "Lars Larsen",
+      "created_at": "2022-12-20T17:22:51.913Z",
+      "updated_at": "2022-12-20T17:22:51.913Z",
+      "cooked": "<aside class=\"quote no-group\" data-username=\"Pagoda\" data-post=\"2\" data-topic=\"1319\">\n<div class=\"title\">\n<div class=\"quote-controls\"></div>\n<img loading=\"lazy\" alt=\"\" width=\"24\" height=\"24\" src=\"https://yyz1.discourse-cdn.com/flex031/user_avatar/community.lzxindustries.net/pagoda/48/8532_2.png\" class=\"avatar\"> Pagoda:</div>\n<blockquote>\n<p>Will the future possibly see a Gen3 equal of Cyclops or is Cromagnon the only option? My Gen3 system is getting nice and healthy so I\u2019m not sure I <em>need</em> Cromagnon, but If it gets me in the laser game then this is the way.<br>\nThanks!</p>\n</blockquote>\n</aside>\n<p>I\u2019d like to do ILDA interface modules in the Gen3 series, but it\u2019s not in active development right now.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 30091,
+      "post_number": 4,
+      "username": "Pagoda",
+      "name": "Ian",
+      "created_at": "2022-12-20T17:58:28.664Z",
+      "updated_at": "2022-12-20T17:58:28.664Z",
+      "cooked": "<p>For sure the best reply I was crossing my fingers for.<br>\nNot to say I won\u2019t grab a Cromagnon at the first chance I get!<br>\n<img src=\"https://emoji.discourse-cdn.com/twitter/+1.png?v=12\" title=\":+1:\" class=\"emoji only-emoji\" alt=\":+1:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": 3046,
+  "title": "Fortress Not Syncing",
+  "slug": "fortress-not-syncing",
+  "category_id": 1,
+  "tags": [
+    {
+      "id": 27,
+      "name": "fortress",
+      "slug": "fortress"
+    }
+  ],
+  "created_at": "2021-04-17T21:40:52.108Z",
+  "views": 576,
+  "like_count": 5,
+  "posts_count": 6,
+  "posts": [
+    {
+      "id": 17741,
+      "post_number": 1,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2021-04-17T21:40:52.171Z",
+      "updated_at": "2021-04-17T21:40:52.171Z",
+      "cooked": "<p>I just got Fortress and it doesn\u2019t seem to sync properly. The modules after Fortress sync just fine, but my Fortress itself is completely unstable. For example, patching oscillator 1 out into Cortex I just get wild, out of sync kind of scrolling. With the Osc 1 fader all the way down I can see some scrolling horizontal bars, and using the trim pot I can kind of slow down the scrolling, but with the fader above the bottom it just freaks out. In the three patches video the same output gave typical vertical bars that multiply or divide in number depending on fader position. Has anyone else had this problem? I tried the sync switch in both positions and the terminate position has a negative effect on modules down stream, so it\u2019s set back to sync thru. I tried both sync jacks, swapping back and forth. I also removed several modules just to be sure it wasn\u2019t a lack of -12v power. Are there any known issues with Fortress sync?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17743,
+      "post_number": 2,
+      "username": "Rik_bS",
+      "name": "Rik",
+      "created_at": "2021-04-18T09:58:43.492Z",
+      "updated_at": "2021-04-18T09:58:43.492Z",
+      "cooked": "<p>Gotta check the basics, excuse me for asking this if you already have\u2026 are the Program switches D0, D1 and D2 all down?<br>\nAnd does changing the Count switches change the shape of the waveform at all?</p>\n<p>Any chance of taking some video to share?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17745,
+      "post_number": 3,
+      "username": "Dewb",
+      "name": "Michael Dewberry",
+      "created_at": "2021-04-18T20:37:43.589Z",
+      "updated_at": "2021-04-18T20:37:43.589Z",
+      "cooked": "<p>Another good information-gathering test if you haven\u2019t done it already: reduce your sync chain to just Cortex and Fortress, and see if that works.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17846,
+      "post_number": 4,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2021-04-22T15:51:14.544Z",
+      "updated_at": "2021-04-22T15:51:14.544Z",
+      "cooked": "<p>Well, I\u2019m happy to report that hooked directly to Visual Cortex, Fortress is working as expected. The only modules before Fortress previously were Memory Palace and Escher Sketch. Memory Palace is set to external sync and sync thru and Escher Sketch is set to sync thru. Are there any known issues with this signal flow?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 17856,
+      "post_number": 5,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-04-22T19:42:36.007Z",
+      "updated_at": "2021-04-22T19:42:49.384Z",
+      "cooked": "<p>Shouldn\u2019t be any issues. You might try putting MemPal and ES back into the chain individually to see which one is not passing sync. Whichever one is causing the blockage can be put last in the chain.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 18199,
+      "post_number": 6,
+      "username": "analogbrainsurgeon",
+      "name": "E",
+      "created_at": "2021-05-05T19:08:13.075Z",
+      "updated_at": "2021-05-05T19:09:59.928Z",
+      "cooked": "<p>All set! I previously had sync running from VC to MemPal, Escher, then out into a second case to Fortress, Diver, Navigator, PRay <span class=\"hashtag\">#2</span>, and WotA. For some reason either MemPal (prob not) or Eshcer Sketch (my best guess) were messing up the sync chain. Now I have VC going straight out into the second case, then back into the first to MemPal and Escher and everything is behaving as it should.</p>\n<p>My plan is to leave this setup alone and insert TBC2 before MemPal, receiving sync as it comes back into the case. For Chromag I\u2019ll insert it between the two cases, meaning that Escher Sketch will be the planned termination point. I remember reading a while ago that Escher Sketch is best at the end of the chain, and with the current setup my sync problems have disappeared, so I\u2019m a happy camper.</p>\n<p>As a side note, PRay <span class=\"hashtag\">#1</span> syncs just fine in my Mantis being plugged in on the same sub-bus as Visual Cortex, for anyone that might wonder about that in the future.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 5,
+      "is_wiki": false
+    }
+  ]
+}

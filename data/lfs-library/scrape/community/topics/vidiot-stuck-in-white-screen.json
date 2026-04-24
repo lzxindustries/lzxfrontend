@@ -1,0 +1,67 @@
+{
+  "id": 1632,
+  "title": "Vidiot stuck in white screen",
+  "slug": "vidiot-stuck-in-white-screen",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2019-11-07T16:26:15.961Z",
+  "views": 460,
+  "like_count": 1,
+  "posts_count": 4,
+  "posts": [
+    {
+      "id": 7416,
+      "post_number": 1,
+      "username": "robotnik",
+      "name": "",
+      "created_at": "2019-11-07T16:26:16.041Z",
+      "updated_at": "2019-11-07T17:02:33.709Z",
+      "cooked": "<p>hello,</p>\n<p>we are stuck in white with an brand new vidiot device.<br>\nthe first minutes after unpacking it reacted quite well also with camera input but after an couple of minutes we got stuck in an white screen. no mater what ever we do.<br>\nthe center led indicator is always on.<br>\nvery very rarely we get a picture by it self, the center led indicator turns of. but this state wont last long.<br>\nwe tried to  repatch this example <a href=\"https://www.youtube.com/watch?time_continue=6&amp;v=Lngn4w46EdA\" rel=\"nofollow noopener\">https://www.youtube.com/watch?time_continue=6&amp;v=Lngn4w46EdA</a> without successes.<br>\nwe haven\u2019t attached any external device yet.  except one camera to the dedicated cinch input.<br>\nwe tried the included patch-cables with the device itself considering input/output directions.</p>\n<p>so we come to the conclusion something must be wrong ? maybe a bad contact in the normalization chain or a bad solder joint ?</p>\n<p>thanks for any help in advance !</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7417,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-07T17:04:34.692Z",
+      "updated_at": "2019-11-07T17:04:34.692Z",
+      "cooked": "<p>Sorry to hear of your Vidiot troubles!<br>\nWhere are you located? What sort of monitor are you using? Have you tried switching between NTSC and PAL formats?</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7430,
+      "post_number": 3,
+      "username": "robotnik",
+      "name": "",
+      "created_at": "2019-11-08T22:15:22.200Z",
+      "updated_at": "2019-11-08T22:15:22.200Z",
+      "cooked": "<p>thank you for your reply.<br>\nit\u2019s an old professional sony video monitor with composite input.<br>\nyes. we tried ntsc and pal.<br>\nits erratic behavior (suddenly showing an picture and suddenly falling back to white) feels like an loose connection.<br>\nwe are located in germany.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7479,
+      "post_number": 4,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-12T20:16:23.715Z",
+      "updated_at": "2020-09-29T15:28:20.639Z",
+      "cooked": "<p>Thanks for the info. It seems best to open a support ticket. Could you send an email via the LZX website?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    }
+  ]
+}

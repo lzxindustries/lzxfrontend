@@ -1,0 +1,86 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "double-vision-expander",
+  "name": "Double Vision Expander",
+  "subtitle": "Modular Video Instrument Expander",
+  "company": "lzx",
+  "product_type": "eurorack_case",
+  "specs": {
+    "hp": 168,
+    "mounting_depth_mm": 42
+  },
+  "sync_and_power": {
+    "is_sync_generator": true,
+    "has_dc_barrel_power_entry": true,
+    "has_rear_video_sync_input": true,
+    "has_rear_video_sync_output": true
+  },
+  "status": {
+    "is_active": true
+  },
+  "shopify_id": "gid://shopify/Product/7415503716375",
+  "images": {
+    "frontpanel": "website/double-vision-expander-168-square.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/double-vision-expander-168-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-expander-168.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "website/double-vision-expander-168.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-168-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-168.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "website/double-vision-system-168.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-6u-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-6u.ai",
+        "extension": "ai"
+      },
+      {
+        "path": "website/double-vision-system-6u.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/double-vision-system.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "Are you an LZX artist who is desperate for even MORE visual stimulation?! The Double Vision Expander is an 9-module video synthesis bundle capable of expanding your modular video synthesizer. Unlock the capabilities of your current system by adding these powerful tools for processing external video and creating elaborate animated patterns. Mounting rack, power supply, and all cables are included, just add Double Vision 84 (or other video i/o) to start freaking out. 9 Modules Matte Sum/Dist Scrolls Keychain Proc Stacker Contour SMX3 Swatch Rack & Power Vessel 168 EuroRack Case w/DC & Sync Distribution Bus Accessories (3) RGB Patch Cable (2) RCA Sync Cable (9) DC Power Cable (10) Patch Cable (1) Video Knob Pin"
+}

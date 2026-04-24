@@ -1,0 +1,35 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "12v-dc-adapter-3a",
+  "name": "12V DC Adapter 3A",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false
+  },
+  "shopify_id": "gid://shopify/Product/6890556129303",
+  "images": {
+    "frontpanel": "website/12v-dc-wall-wart-adapter-set.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/12v-dc-wall-wart-adapter-set.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  },
+  "description": "DC wall wart power supply with international plug kit. Output voltage: 12V. Max output current: 3A."
+}

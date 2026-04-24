@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/product.schema.json",
+  "slug": "andor-1-media-player-deluxe-accessories-pack",
+  "name": "Andor 1 Media Player Deluxe Accessories Pack",
+  "description": "For use with the Andor 1 Media Player.\n\n Included items: \n\nWireless remote for navigating menus\n\nA/V cable for composite video and stereo RCA audio connections\n\n8GB USB flash drive\n\n6' HDMI cable\n\nMounting screws",
+  "company": "lzx",
+  "product_type": "accessory",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/6628981997591",
+  "images": {
+    "frontpanel": "website/andor-1-accessories.png"
+  },
+  "file_manifest": {
+    "website": [
+      {
+        "path": "website/andor-1-accessories.PNG",
+        "extension": "png"
+      },
+      {
+        "path": "website/andor-1-photo-square.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/andor_blk_tp1.png",
+        "extension": "png"
+      },
+      {
+        "path": "website/andor_blk_tp2.png",
+        "extension": "png"
+      }
+    ],
+    "modulargrid": [],
+    "panel_art": [],
+    "packaging": [],
+    "downloads": [
+      {
+        "path": "downloads/andor-1-user-manual.pdf",
+        "extension": "pdf"
+      }
+    ],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}

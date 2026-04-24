@@ -1,0 +1,166 @@
+{
+  "id": 519,
+  "title": "Vidiot + '?' - Next Module?",
+  "slug": "vidiot-next-module",
+  "category_id": 11,
+  "tags": [
+    {
+      "id": 36,
+      "name": "arch",
+      "slug": "arch"
+    },
+    {
+      "id": 47,
+      "name": "curtain",
+      "slug": "curtain"
+    },
+    {
+      "id": 44,
+      "name": "staircase",
+      "slug": "staircase"
+    },
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2018-09-26T11:34:16.421Z",
+  "views": 2124,
+  "like_count": 16,
+  "posts_count": 11,
+  "posts": [
+    {
+      "id": 2110,
+      "post_number": 1,
+      "username": "mrmodularus",
+      "name": "Jay Brunker",
+      "created_at": "2018-09-26T11:34:16.508Z",
+      "updated_at": "2019-02-08T18:55:28.085Z",
+      "cooked": "<p>Just asking for suggestions, but if you were starting out with the Vidiot \u2026<br>\nwhat would be your next choice for a LZX module?</p>\n<p>*thanks in advance.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2113,
+      "post_number": 2,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-09-26T11:54:49.790Z",
+      "updated_at": "2018-09-26T11:54:49.790Z",
+      "cooked": "<p>staircase, pendulum, arch are my favorites that don\u2019t require sync and are on the cheaper side</p>\n<p>if you end up getting a couple of those and are still enjoying video synthesis</p>\n<p>start considering what kind of things you want to make</p>\n<p>that should inform your module purchases</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2115,
+      "post_number": 3,
+      "username": "mrmodularus",
+      "name": "Jay Brunker",
+      "created_at": "2018-09-26T12:05:23.108Z",
+      "updated_at": "2018-09-26T12:05:23.108Z",
+      "cooked": "<p>I really appreciate the speedy response here, and from everyone that has replied to my various posts. Good advice. I\u2019ve been interested in video synthesis for quite a while, but have just recently decided to dip my toes in the water. Got a Vidiot on order, so am looking around for ways to supplement it. Thanks!</p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    },
+    {
+      "id": 2116,
+      "post_number": 4,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-09-26T14:51:35.840Z",
+      "updated_at": "2018-09-26T14:51:35.840Z",
+      "cooked": "<div class=\"lazyYT\" data-youtube-id=\"IEPKp3NYSvo\" data-youtube-title=\"LZX vidiot explorer\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>\n<div class=\"lazyYT\" data-youtube-id=\"hkDZjhtlCDM\" data-youtube-title=\"vidiot &amp;amp; friends pt. 3\" data-width=\"480\" data-height=\"270\" data-parameters=\"feature=oembed&amp;wmode=opaque\"></div>\n<p>in these two videos the vidiot is getting combined with the larger system<br>\nthere are more of these kind of videos on my account there</p>\n<p>the vidiot is a great starting point but has gotten so much more integral now that I finally got it setup like I want</p>\n<p>sync coming out of the vessel case into the composite in on the vidiot then I can use visual cortex as the \u201csync master\u201d and just patch in and out of the vidiot with RCA or 1/8 outputs</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 2646,
+      "post_number": 5,
+      "username": "wiatrob",
+      "name": "Bill Wiatroski",
+      "created_at": "2018-10-19T18:56:16.372Z",
+      "updated_at": "2018-10-19T18:56:16.372Z",
+      "cooked": "<p>I\u2019ve recently grabbed my Vidiot and begun to really put some time in with it again. <strong>CURTAIN!</strong> My current recommendation is Pendulum + Curtain.  Curtain can really add some subtleties and depth, especially when patched into the LumaProc CVs\u2026</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 3217,
+      "post_number": 6,
+      "username": "jo_dem",
+      "name": "joseph demeter",
+      "created_at": "2018-12-13T16:44:45.857Z",
+      "updated_at": "2018-12-13T16:44:45.857Z",
+      "cooked": "<p>any of the DIY lzx modules you would recommend for adding to the vidiot?</p>",
+      "like_count": 0,
+      "reply_to_post_number": 4,
+      "is_wiki": false
+    },
+    {
+      "id": 3220,
+      "post_number": 7,
+      "username": "wednesdayayay",
+      "name": "Respirator",
+      "created_at": "2018-12-13T16:58:53.047Z",
+      "updated_at": "2018-12-13T16:58:53.047Z",
+      "cooked": "<p>the closest to DIY modules that I have are the sandin IP function generator and differentiator</p>\n<p>function generator in combination with the luma processor of the vidiot is just golden</p>\n<p>the differentiator is good fun too but I haven\u2019t used it specifically with the vidiot just yet I don\u2019t think</p>",
+      "like_count": 0,
+      "reply_to_post_number": 6,
+      "is_wiki": false
+    },
+    {
+      "id": 7372,
+      "post_number": 8,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2019-11-04T19:58:02.531Z",
+      "updated_at": "2019-11-04T19:58:02.531Z",
+      "cooked": "<p>This video series might not make the choice any easier. Vidiot plus ANYTHING is pretty fun.<br>\n            <iframe width=\"480\" height=\"360\" src=\"https://www.youtube.com/embed/videoseries?list=PLBj_H2oHy-6KDtRgpbkIT9GTP4p-wqdUA&amp;wmode=transparent&amp;rel=0&amp;autohide=1&amp;showinfo=1&amp;enablejsapi=1\" frameborder=\"0\" allowfullscreen=\"\" seamless=\"seamless\" sandbox=\"allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation\"></iframe>\n</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 7389,
+      "post_number": 9,
+      "username": "hdd",
+      "name": "",
+      "created_at": "2019-11-05T15:46:46.742Z",
+      "updated_at": "2019-11-05T15:46:46.742Z",
+      "cooked": "<p>vidiot + fader if you have some external audio eurorack modules.<br>\nIt will allow you to have more control on your vidiot.</p>\n<p>Vidiot + curtain is my favorite pick. Then the pendulum, and then the staircase.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 9027,
+      "post_number": 10,
+      "username": "Psychoflauge",
+      "name": null,
+      "created_at": "2020-03-10T13:43:23.049Z",
+      "updated_at": "2020-03-10T13:43:23.049Z",
+      "cooked": "<p>Hey there, I picked up a bridge after I got a vidiot so it could talk to my circuit bent video mixers but I\u2019m real curious as to what direction you decided to branch out in.  I seem to be in a similar location and want to build upon the video synthesis aspects of my videos.  I was looking at Pendulum or Staircase but I haven\u2019t been able to decide.</p>",
+      "like_count": 0,
+      "reply_to_post_number": 3,
+      "is_wiki": false
+    },
+    {
+      "id": 9618,
+      "post_number": 11,
+      "username": "FranzKappa",
+      "name": null,
+      "created_at": "2020-05-09T19:50:10.718Z",
+      "updated_at": "2020-05-09T19:50:10.718Z",
+      "cooked": "<p>For me it was the diver module,after that i\u2019ve added a curtain and that\u2019s it so far.</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    }
+  ]
+}

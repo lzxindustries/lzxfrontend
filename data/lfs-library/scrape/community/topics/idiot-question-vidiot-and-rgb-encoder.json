@@ -1,0 +1,55 @@
+{
+  "id": 2806,
+  "title": "IDIOT QUESTION: Vidiot and RGB Encoder",
+  "slug": "idiot-question-vidiot-and-rgb-encoder",
+  "category_id": 21,
+  "tags": [
+    {
+      "id": 5,
+      "name": "vidiot",
+      "slug": "vidiot"
+    }
+  ],
+  "created_at": "2021-02-12T08:02:12.870Z",
+  "views": 573,
+  "like_count": 5,
+  "posts_count": 3,
+  "posts": [
+    {
+      "id": 15562,
+      "post_number": 1,
+      "username": "Fallinggirl",
+      "name": "The Falling Girl",
+      "created_at": "2021-02-12T08:02:12.944Z",
+      "updated_at": "2021-02-12T15:36:17.137Z",
+      "cooked": "<p>Just to get this one thing out of the way first, I\u2019M NOT SMART! So please forgive me if this is a stupid question.</p>\n<p>Ok, I have the Vidiot as my main LZX \u201cmodule.\u201d I don\u2019t have an RGB Encoder do I? I noticed on Visual Cortex and Chromagnon that there are separate RGB ins. The Vidiot only has separate RGB outs and RGB cv inputs. I have some modules that seem to require RGB ins. What can I do? Is there a module I can buy (like Mapper or 3rd Party) that will give me these RGB ins?</p>\n<p>Please don\u2019t be shy if the answer is obvious because I don\u2019t see it. In fact, most of the video stuff confuses me to no end. Please help.</p>\n<p>Thanks <img src=\"https://emoji.discourse-cdn.com/twitter/blush.png?v=9\" title=\":blush:\" class=\"emoji\" alt=\":blush:\"><img src=\"https://emoji.discourse-cdn.com/twitter/pray/2.png?v=9\" title=\":pray:t2:\" class=\"emoji\" alt=\":pray:t2:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 15590,
+      "post_number": 2,
+      "username": "Z0NK0UT",
+      "name": "Chad @ LZX Industries",
+      "created_at": "2021-02-12T15:35:45.569Z",
+      "updated_at": "2021-02-12T15:35:45.569Z",
+      "cooked": "<p>Vidiot\u2019s frontpanel RGB CV inputs are just like any RGB inputs (since all RGB inputs are CV inputs). Just patch into Vidiot\u2019s RGB inputs with the knob position at 12 o\u2019clock and adjust the attenuation rings to taste (fully clockwise and the RGB inputs behave like jacks without attenuation). Have fun!</p>",
+      "like_count": 0,
+      "reply_to_post_number": null,
+      "is_wiki": false
+    },
+    {
+      "id": 15593,
+      "post_number": 3,
+      "username": "Fallinggirl",
+      "name": "The Falling Girl",
+      "created_at": "2021-02-12T16:32:34.504Z",
+      "updated_at": "2021-02-12T16:32:34.504Z",
+      "cooked": "<p>Awesome! Thank you so much <img src=\"https://emoji.discourse-cdn.com/twitter/slightly_smiling_face.png?v=9\" title=\":slightly_smiling_face:\" class=\"emoji\" alt=\":slightly_smiling_face:\"><img src=\"https://emoji.discourse-cdn.com/twitter/pray/2.png?v=9\" title=\":pray:t2:\" class=\"emoji\" alt=\":pray:t2:\"></p>",
+      "like_count": 0,
+      "reply_to_post_number": 2,
+      "is_wiki": false
+    }
+  ]
+}

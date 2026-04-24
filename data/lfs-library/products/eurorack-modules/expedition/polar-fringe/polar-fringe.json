@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../schemas/product.schema.json",
+  "slug": "polar-fringe",
+  "name": "Polar Fringe",
+  "sku": "LZXPF",
+  "description": "No longer available. Polar Fringe is an analog chroma key generator with a continuously variable soft edge surrounding its location the colorspace. With wide bandwidth voltage control over all four parameters, it’s hard to draw the line between chroma keyer, a complex 2D processor, or even a de-colorizer. Welcome to the fringe. Width, 16HP Mounting Depth, 36mm Power +12V @ 125mA Power -12V @ 130mA Info Sheet (PDF)User Reference Cards (PDF)",
+  "company": "lzx",
+  "price": "449.00",
+  "product_type": "eurorack_module",
+  "category": "expedition",
+  "status": {
+    "is_active": false,
+    "is_hidden": true
+  },
+  "shopify_id": "gid://shopify/Product/1692916908096",
+  "file_manifest": {
+    "website": [],
+    "modulargrid": [
+      {
+        "path": "modulargrid/frontpanel.jpg",
+        "extension": "jpg"
+      },
+      {
+        "path": "modulargrid/metadata.md",
+        "extension": "md"
+      }
+    ],
+    "panel_art": [
+      {
+        "path": "panel-art/lzxpr_frontpanel_rev_b.ai",
+        "extension": "ai"
+      }
+    ],
+    "packaging": [],
+    "downloads": [],
+    "brand": {
+      "logos": [],
+      "characters": []
+    },
+    "photos": [],
+    "merchandise": [],
+    "editions": {},
+    "other": []
+  }
+}
