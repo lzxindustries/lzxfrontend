@@ -464,10 +464,19 @@ export function buildSidebar(section: string): SidebarItem[] {
   const folders = new Map<string, SidebarItem>();
 
   for (const doc of docs) {
-    // Calculate relative path within section
-    const relativePath = doc.path.startsWith(section + '/')
-      ? doc.path.slice(section.length + 1)
-      : doc.path;
+    // Section root (e.g. content/docs/instruments/videomancer/index.md
+    // when section === 'instruments/videomancer'). Without this branch
+    // the multi-segment doc path falls through to the folder logic below
+    // and produces a redundant wrapper (e.g. an "Instruments" folder
+    // inside a sidebar that's already scoped to Videomancer). Collapse
+    // the section root to a single top-level leaf so it behaves as a
+    // "back to manual root" link instead.
+    const relativePath =
+      doc.path === section
+        ? doc.slug
+        : doc.path.startsWith(section + '/')
+        ? doc.path.slice(section.length + 1)
+        : doc.path;
 
     const parts = relativePath.split('/');
     const docPosition = doc.frontmatter.sidebar_position ?? 999;

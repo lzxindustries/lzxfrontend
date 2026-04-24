@@ -90,4 +90,21 @@ describe('content.server blog and docs integration', () => {
     );
     expect(nav.prev || nav.next).toBeTruthy();
   });
+
+  it('does not wrap the Videomancer section-root in a bogus Instruments folder', () => {
+    const sidebar = buildSidebar('instruments/videomancer');
+
+    // Before the fix, the root index.md surfaced as
+    //   Instruments (folder) → Videomancer Manual (leaf)
+    // in a sidebar already scoped to Videomancer. Keep the section root
+    // as a top-level leaf and ensure no wrapper folder is emitted.
+    const topLabels = sidebar.map((item) => item.label);
+    expect(topLabels).not.toContain('Instruments');
+
+    const rootItem = sidebar.find(
+      (item) => item.path === 'instruments/videomancer',
+    );
+    expect(rootItem).toBeDefined();
+    expect(rootItem?.children).toBeUndefined();
+  });
 });
