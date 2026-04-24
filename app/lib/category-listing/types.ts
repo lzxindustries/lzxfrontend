@@ -1,4 +1,3 @@
-import type {LfsProductAsset} from '~/data/lfs-product-metadata';
 import type {CommerceSnippet} from '~/data/shopify-live.server';
 
 // NOTE: The legacy `CategoryListingProduct` type and the
@@ -116,9 +115,6 @@ export type CategoryListingConfig = {
   /** Group-level enrichment. */
   resolveGroupLabel?: (groupKey: string) => string | undefined;
   resolveGroupSubtitle?: (groupKey: string) => string | undefined;
-  resolveGroupArchive?: (
-    groupKey: string,
-  ) => {assets: LfsProductAsset[]; title?: string} | null | undefined;
 };
 
 /* ----------------------- Serializable loader payload ---------------------- */
@@ -156,7 +152,6 @@ export type CategoryListingGroup = {
   label?: string;
   subtitle?: string;
   entries: CategoryListingEntry[];
-  archive?: {assets: LfsProductAsset[]; title?: string} | null;
 };
 
 export type CategoryListingSection = {

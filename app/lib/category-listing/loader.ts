@@ -23,6 +23,9 @@ import type {
 const DEFAULT_GRID_COLS =
   'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4';
 
+/** Entire "Archive" product sections (e.g. parts/accessories) are not shown. */
+const HIDDEN_CATEGORY_SECTION_KEY = 'archive';
+
 /**
  * Build a Remix loader for a category overview page from a declarative
  * `CategoryListingConfig`. See `app/data/category-configs/*` for examples.
@@ -37,6 +40,7 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
     // Collect every entry so we can batch downstream lookups.
     const allEntries: CategorySourceEntry[] = [];
     for (const section of rawSections) {
+      if (section.key === HIDDEN_CATEGORY_SECTION_KEY) continue;
       for (const group of section.groups) {
         for (const entry of group.entries) allEntries.push(entry);
       }
@@ -62,6 +66,7 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
 
     const sections: CategoryListingSection[] = [];
     for (const rawSection of rawSections) {
+      if (rawSection.key === HIDDEN_CATEGORY_SECTION_KEY) continue;
       const groups: CategoryListingGroup[] = [];
       for (const rawGroup of rawSection.groups) {
         const ctx = {sectionKey: rawSection.key, groupKey: rawGroup.key};
@@ -136,14 +141,11 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
 
         if (enriched.length === 0) continue;
 
-        const archive = config.resolveGroupArchive?.(rawGroup.key) ?? null;
-
         groups.push({
           key: rawGroup.key,
           label: config.resolveGroupLabel?.(rawGroup.key),
           subtitle: config.resolveGroupSubtitle?.(rawGroup.key),
           entries: enriched,
-          archive: archive && archive.assets.length > 0 ? archive : null,
         });
       }
 

@@ -1,6 +1,5 @@
 import {Image} from '@shopify/hydrogen';
 import {Link} from '~/components/Link';
-import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import type {
   CategoryListingData,
   CategoryListingEntry,
@@ -143,14 +142,6 @@ function CategoryGroupView({
           <CategoryCard key={entry.key} entry={entry} cardSize={cardSize} />
         ))}
       </div>
-      {group.archive ? (
-        <div className="mt-8">
-          <ProductAssetArchive
-            assets={group.archive.assets}
-            title={group.archive.title}
-          />
-        </div>
-      ) : null}
     </section>
   );
 }

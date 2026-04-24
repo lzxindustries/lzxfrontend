@@ -2,7 +2,6 @@ import {getModulesBySeries, type SlugEntry} from '~/data/product-slugs';
 import {
   getExternalModuleListingEntries,
   getLegacyVisionaryModuleMetadataBySlug,
-  getLfsModuleSeriesArchiveAssets,
   getLfsProductSubtitle,
 } from '~/data/lfs-product-metadata';
 import {getModuleArtworkPath} from '~/data/module-artwork';
@@ -149,12 +148,4 @@ export const modulesCategoryConfig: CategoryListingConfig = {
   resolveGroupLabel: (key) =>
     SERIES_LABELS[key] ? `${SERIES_LABELS[key]} Series` : undefined,
   resolveGroupSubtitle: (key) => SERIES_SUBTITLES[key],
-  resolveGroupArchive: (key) => {
-    const assets = getLfsModuleSeriesArchiveAssets(key).filter(
-      (a) => !a.isDownload,
-    );
-    if (assets.length === 0) return null;
-    const label = SERIES_LABELS[key] ?? key;
-    return {assets, title: `${label} Series Archive`};
-  },
 };
