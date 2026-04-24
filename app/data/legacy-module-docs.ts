@@ -241,6 +241,7 @@ export function buildSyntheticLegacyModuleManualDoc(
   return {
     slug,
     path: `modules/${slug}/manual`,
+    urlPath: `modules/${slug}/manual`,
     frontmatter,
     html: sections.join(''),
     headings,

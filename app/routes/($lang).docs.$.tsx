@@ -36,6 +36,26 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 
   const splat = rawSplat;
 
+  // Redirect Docusaurus-only category URLs to their canonical
+  // destinations on the apex. These don't exist as pages on the new
+  // site and were only real on docs.lzxindustries.net. The subdomain
+  // handler in server.ts already remaps them for legacy host traffic;
+  // this block covers direct apex hits from external backlinks so
+  // they land on a meaningful page instead of 404ing.
+  const categoryRedirects: Record<string, string> = {
+    'category/program-guides': '/docs',
+    'category/videomancer': '/instruments/videomancer/manual/quick-start',
+  };
+  if (categoryRedirects[splat]) {
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: categoryRedirects[splat],
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   // Redirect /docs/modules/* → /modules/*/manual
   if (splat.startsWith('modules/')) {
     const rest = splat.slice('modules/'.length);

@@ -57,6 +57,28 @@ describe('canonical URL redirects', () => {
     }
   });
 
+  describe('legacy Docusaurus category URLs → canonical apex targets', () => {
+    const cases: Array<[string, string]> = [
+      ['category/program-guides', '/docs'],
+      [
+        'category/videomancer',
+        '/instruments/videomancer/manual/quick-start',
+      ],
+    ];
+
+    for (const [splat, expected] of cases) {
+      it(`redirects /docs/${splat} → ${expected}`, async () => {
+        const response = await readRedirect(
+          docsSplatLoader,
+          `https://lzxindustries.net/docs/${splat}`,
+          {'*': splat},
+        );
+        expect(response.status).toBe(301);
+        expect(response.headers.get('Location')).toBe(expected);
+      });
+    }
+  });
+
   describe('/glossary → /docs/guides/glossary', () => {
     it('redirects with a 301 and preserves query strings', async () => {
       const response = await readRedirect(

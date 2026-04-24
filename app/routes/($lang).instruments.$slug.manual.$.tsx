@@ -125,13 +125,17 @@ export default function InstrumentManualPage() {
 
   const linkBuilder = (item: SidebarItem) => {
     const prefix = `instruments/${slug}`;
+    // Prefer the URL-facing path from frontmatter `slug:` when it
+    // differs from the filesystem path (e.g. Videomancer programs
+    // under `programs/` render at flat `/instruments/videomancer/<slug>`).
+    const routePath = item.urlPath ?? item.path;
     // The instrument's own index.md is represented with path === prefix and
     // slug === <instrument> (slugFromDocPath takes the last segment). Map
     // that to the hub manual root so prev/next nav doesn't produce
     // `/instruments/<slug>/manual/<slug>` (which 404s).
-    if (item.path === prefix) return `/instruments/${slug}/manual`;
-    const relative = item.path.startsWith(prefix + '/')
-      ? item.path.slice(prefix.length + 1)
+    if (routePath === prefix) return `/instruments/${slug}/manual`;
+    const relative = routePath.startsWith(prefix + '/')
+      ? routePath.slice(prefix.length + 1)
       : item.slug;
     return `/instruments/${slug}/manual${relative ? '/' + relative : ''}`;
   };

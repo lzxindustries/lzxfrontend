@@ -4,6 +4,7 @@ import {
   getBlogPost,
   getDocPage,
   getPrevNext,
+  hasDocPagePath,
   listBlogPosts,
 } from '~/lib/content.server';
 
@@ -63,5 +64,30 @@ describe('content.server blog and docs integration', () => {
     expect(sidebar.length).toBeGreaterThan(0);
     expect(nav.prev).not.toBeNull();
     expect(nav.next).not.toBeNull();
+  });
+
+  it('resolves Videomancer program pages via their frontmatter slug alias', async () => {
+    const doc = await getDocPage('instruments/videomancer/bitcullis');
+
+    expect(doc).not.toBeNull();
+    expect(doc?.frontmatter.title).toContain('Bitcullis');
+    expect(doc?.urlPath).toBe('instruments/videomancer/bitcullis');
+    expect(hasDocPagePath('instruments/videomancer/bitcullis')).toBe(true);
+  });
+
+  it('resolves the year-in-review blog post to its own content', async () => {
+    const post = await getBlogPost('the-year-in-review');
+    expect(post).not.toBeNull();
+    expect(post?.slug).toBe('the-year-in-review');
+    expect(post?.frontmatter.title).toBe('The Year In Review');
+    expect(post?.date).toBe('2023-12-30');
+  });
+
+  it('finds Videomancer program pages in the hub sidebar prev/next', () => {
+    const nav = getPrevNext(
+      'instruments/videomancer',
+      'instruments/videomancer/bitcullis',
+    );
+    expect(nav.prev || nav.next).toBeTruthy();
   });
 });

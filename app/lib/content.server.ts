@@ -24,6 +24,13 @@ export interface BlogPostFull extends BlogPost {
 export interface DocPage {
   slug: string;
   path: string;
+  /**
+   * URL-facing docPath. Equals `path` unless the frontmatter declares
+   * an explicit `slug:` that relocates the file to a different URL
+   * (e.g. Videomancer program guides live under `programs/` on disk
+   * but render at `/instruments/videomancer/<slug>` per frontmatter).
+   */
+  urlPath: string;
   frontmatter: ContentFrontmatter;
 }
 
@@ -37,6 +44,11 @@ export interface SidebarItem {
   label: string;
   slug: string;
   path: string;
+  /**
+   * URL-facing docPath for the item (see `DocPage.urlPath`). When
+   * undefined, consumers should fall back to `path`.
+   */
+  urlPath?: string;
   position: number;
   children?: SidebarItem[];
 }
@@ -88,6 +100,47 @@ function extractDocPathFromFilePath(filepath: string): string {
   const cleaned = match[1].replace(/\/index$/, '');
   // Normalize top-level docs/index.md to docs root
   return cleaned === 'index' ? '' : cleaned;
+}
+
+function normalizeFrontmatterSlug(value: unknown): string {
+  if (typeof value !== 'string') return '';
+  const trimmed = value.trim();
+  if (!trimmed) return '';
+  return trimmed.replace(/^\/+/, '').replace(/\/+$/, '');
+}
+
+function urlPathForDoc(docPath: string, slug: unknown): string {
+  const normalized = normalizeFrontmatterSlug(slug);
+  return normalized || docPath;
+}
+
+/**
+ * Map of URL-facing docPath → filesystem docPath, built from any
+ * frontmatter `slug:` that relocates a file to a different URL. Used
+ * by `getDocPage` / `hasDocPagePath` to resolve Docusaurus-style
+ * slug overrides (e.g. Videomancer program guides in `programs/`
+ * that render at flat `/instruments/videomancer/<slug>` URLs).
+ */
+let _docSlugAliasIndex: Map<string, string> | null = null;
+function getDocSlugAliasIndex(): Map<string, string> {
+  if (_docSlugAliasIndex) return _docSlugAliasIndex;
+  const index = new Map<string, string>();
+  for (const [filepath, raw] of Object.entries(docFiles)) {
+    const docPath = extractDocPathFromFilePath(filepath);
+    try {
+      const parsed = matter(raw);
+      const urlKey = normalizeFrontmatterSlug(
+        (parsed.data as ContentFrontmatter).slug,
+      );
+      if (urlKey && urlKey !== docPath) {
+        index.set(urlKey, docPath);
+      }
+    } catch {
+      // skip unreadable frontmatter
+    }
+  }
+  _docSlugAliasIndex = index;
+  return index;
 }
 
 function slugFromDocPath(docPath: string): string {
@@ -306,6 +359,7 @@ export function listDocsInSection(section: string): DocPage[] {
     docs.push({
       slug: slugFromDocPath(docPath),
       path: docPath,
+      urlPath: urlPathForDoc(docPath, frontmatter.slug),
       frontmatter,
     });
   }
@@ -324,46 +378,60 @@ export function listDocsInSection(section: string): DocPage[] {
 export async function getDocPage(docPath: string): Promise<DocPageFull | null> {
   const isProduction = isProductionRuntime();
 
-  // Try exact path, then with /index suffix
-  const candidates = [
-    `../../content/docs/${docPath}.md`,
-    `../../content/docs/${docPath}/index.md`,
-  ];
+  const lookupPaths = [docPath];
+  const aliasTarget = getDocSlugAliasIndex().get(docPath);
+  if (aliasTarget && aliasTarget !== docPath) {
+    lookupPaths.push(aliasTarget);
+  }
 
-  for (const candidate of candidates) {
-    const raw = docFiles[candidate];
-    if (!raw) continue;
+  for (const lookupPath of lookupPaths) {
+    // Try exact path, then with /index suffix
+    const candidates = [
+      `../../content/docs/${lookupPath}.md`,
+      `../../content/docs/${lookupPath}/index.md`,
+    ];
 
-    const section = sectionFromDocPath(docPath);
-    const imageBasePath = `/docs/img/${section}`;
-    const normalizedDocPath = docPath.replace(/\/index$/, '');
-    const currentPath = normalizedDocPath
-      ? `/docs/${normalizedDocPath}`
-      : '/docs';
-    const parsed = await renderMarkdown(raw, imageBasePath, currentPath);
+    for (const candidate of candidates) {
+      const raw = docFiles[candidate];
+      if (!raw) continue;
 
-    if (isProduction && parsed.frontmatter.draft) {
-      return null;
+      const section = sectionFromDocPath(docPath);
+      const imageBasePath = `/docs/img/${section}`;
+      const normalizedDocPath = docPath.replace(/\/index$/, '');
+      const currentPath = normalizedDocPath
+        ? `/docs/${normalizedDocPath}`
+        : '/docs';
+      const parsed = await renderMarkdown(raw, imageBasePath, currentPath);
+
+      if (isProduction && parsed.frontmatter.draft) {
+        return null;
+      }
+
+      return {
+        slug: slugFromDocPath(docPath),
+        path: lookupPath,
+        urlPath: urlPathForDoc(lookupPath, parsed.frontmatter.slug),
+        frontmatter: parsed.frontmatter,
+        html: parsed.html,
+        headings: parsed.headings,
+        readingTime: parsed.readingTime,
+      };
     }
-
-    return {
-      slug: slugFromDocPath(docPath),
-      path: docPath,
-      frontmatter: parsed.frontmatter,
-      html: parsed.html,
-      headings: parsed.headings,
-      readingTime: parsed.readingTime,
-    };
   }
 
   return null;
 }
 
 export function hasDocPagePath(docPath: string): boolean {
-  const candidates = [
-    `../../content/docs/${docPath}.md`,
-    `../../content/docs/${docPath}/index.md`,
-  ];
+  const lookupPaths = [docPath];
+  const aliasTarget = getDocSlugAliasIndex().get(docPath);
+  if (aliasTarget && aliasTarget !== docPath) {
+    lookupPaths.push(aliasTarget);
+  }
+  const candidates = lookupPaths.flatMap((p) => [
+    `../../content/docs/${p}.md`,
+    `../../content/docs/${p}/index.md`,
+  ]);
 
   const isProduction = isProductionRuntime();
 
@@ -410,6 +478,7 @@ export function buildSidebar(section: string): SidebarItem[] {
         label: doc.frontmatter.title ?? doc.slug,
         slug: doc.slug,
         path: doc.path,
+        urlPath: doc.urlPath,
         position: docPosition,
       });
     } else {
@@ -444,6 +513,7 @@ export function buildSidebar(section: string): SidebarItem[] {
         label: doc.frontmatter.title ?? doc.slug,
         slug: doc.slug,
         path: doc.path,
+        urlPath: doc.urlPath,
         position: docPosition,
       });
     }
@@ -473,7 +543,9 @@ export function getPrevNext(
 ): {prev: SidebarItem | null; next: SidebarItem | null} {
   const sidebar = buildSidebar(section);
   const flat = flattenSidebar(sidebar);
-  const idx = flat.findIndex((item) => item.path === currentPath);
+  const idx = flat.findIndex(
+    (item) => item.path === currentPath || item.urlPath === currentPath,
+  );
 
   return {
     prev: idx > 0 ? flat[idx - 1] : null,
