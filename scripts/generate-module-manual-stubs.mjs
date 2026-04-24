@@ -77,6 +77,9 @@ const CATALOG_HANDLE_BY_CANONICAL = {
   pot: 'p',
 };
 
+/** Manual tab uses `getForumArchiveDocForProduct` when no doc file exists; do not add a thin stub. */
+const SKIP_STUB_SLUGS = new Set(['fortress', 'liquid-tv']);
+
 function isExcludedFromSiteData(raw) {
   const externalUrl = (raw.external_url ?? '').toLowerCase();
   return EXCLUDED_EXTERNAL_URL_PATTERNS.some((p) => externalUrl.includes(p));
@@ -159,9 +162,7 @@ function buildBody({name, subtitle, lzx, catalogPlain}) {
     lines.push(`*${subtitle}*`);
     lines.push('');
   }
-  const intro = cleanDesc(
-    lzx.description || catalogPlain || '',
-  );
+  const intro = cleanDesc(lzx.description || catalogPlain || '');
   if (intro) {
     lines.push('## Overview');
     lines.push('');
@@ -181,20 +182,20 @@ function buildBody({name, subtitle, lzx, catalogPlain}) {
     'Open the **Specs** tab for the full connector list, control definitions, and feature bullets (synced from the LZX knowledge base). Use **Overview** for commerce copy and the **Support** tab for triage and community links.',
   );
   lines.push('');
-  if (
-    lzx.hp ||
-    lzx.max_pos_12v_ma != null ||
-    lzx.max_neg_12v_ma != null
-  ) {
+  if (lzx.hp || lzx.max_pos_12v_ma != null || lzx.max_neg_12v_ma != null) {
     lines.push('## Power and size (summary)');
     lines.push('');
     const hp = lzx.hp != null ? `**${lzx.hp} HP**` : null;
-    const pos = lzx.max_pos_12v_ma != null ? `+12V @ ${lzx.max_pos_12v_ma} mA` : null;
-    const neg = lzx.max_neg_12v_ma != null ? `-12V @ ${lzx.max_neg_12v_ma} mA` : null;
+    const pos =
+      lzx.max_pos_12v_ma != null ? `+12V @ ${lzx.max_pos_12v_ma} mA` : null;
+    const neg =
+      lzx.max_neg_12v_ma != null ? `-12V @ ${lzx.max_neg_12v_ma} mA` : null;
     const bits = [hp, [pos, neg].filter(Boolean).join(', ')].filter(Boolean);
     if (bits.length) lines.push(bits.join(' · ') + '.');
     if (lzx.mounting_depth_mm) {
-      lines.push(`Mounting depth (reference): **${lzx.mounting_depth_mm} mm**.`);
+      lines.push(
+        `Mounting depth (reference): **${lzx.mounting_depth_mm} mm**.`,
+      );
     }
     lines.push('');
   }
@@ -218,6 +219,7 @@ function main() {
   const entries = buildHubModuleEntries();
   let created = 0;
   for (const entry of entries) {
+    if (SKIP_STUB_SLUGS.has(entry.canonical)) continue;
     const d = docFileStatus(entry.relPath);
     if (d.hasFile) continue;
 
@@ -252,13 +254,11 @@ description: ${yamlEscape(description)}
 ${body}
 `;
 
-    const outPath = path.join(
-      REPO_ROOT,
-      'content/docs',
-      entry.relPath + '.md',
-    );
+    const outPath = path.join(REPO_ROOT, 'content/docs', entry.relPath + '.md');
     if (DRY) {
-      console.log(`[dry-run] would create ${path.relative(REPO_ROOT, outPath)}`);
+      console.log(
+        `[dry-run] would create ${path.relative(REPO_ROOT, outPath)}`,
+      );
       created++;
       continue;
     }
@@ -267,8 +267,9 @@ ${body}
     created++;
   }
   console.log(
-    DRY ? `[dry-run] ${created} stub(s) would be created.`
-    : `Wrote ${created} module manual stub(s).`,
+    DRY
+      ? `[dry-run] ${created} stub(s) would be created.`
+      : `Wrote ${created} module manual stub(s).`,
   );
 }
 

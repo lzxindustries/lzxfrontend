@@ -46,6 +46,10 @@ This document defines what “full coverage” means for the LZX product hub, ho
 - **Stubs** (Tier A) exist so the Manual tab is never empty for catalog-backed modules: short overview, power/width when data exists, and a pointer to the **Specs** tab for lzxdb-backed connectors/controls.  
 - **Authored** (Tier B) replace stubs over time; do not delete structural pointers until the long-form doc subsumes them.
 
+### Forum-archive primaries (no thin stub)
+
+Some legacy modules have **no** `content/docs/modules/<slug>.md` on purpose: the Manual route synthesizes a doc from the community forum archive (`getForumArchiveDocForProduct`). `scripts/generate-module-manual-stubs.mjs` **skips** those slugs (e.g. `fortress`, `liquid-tv`) so the archive remains the manual surface; do not add a placeholder `.md` for them without migrating archive content into authored docs first.
+
 ## Re-running after pulls
 
 1. `yarn shopify:sync:pull` (or your store sync)  

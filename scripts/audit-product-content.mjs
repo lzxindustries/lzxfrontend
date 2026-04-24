@@ -11,7 +11,13 @@
  *   node scripts/audit-product-content.mjs --format=csv   # TSV to stdout
  */
 
-import {readFileSync, writeFileSync, mkdirSync, existsSync} from 'node:fs';
+import {
+  readFileSync,
+  writeFileSync,
+  mkdirSync,
+  existsSync,
+  readdirSync,
+} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import matter from 'gray-matter';
@@ -195,8 +201,34 @@ function tsvLine(fields) {
     .join('\t');
 }
 
+function countSeoGapsInCatalogMirror() {
+  const base = path.join(REPO_ROOT, 'catalog/shopify/products');
+  let missing = 0;
+  const examples = [];
+  if (!existsSync(base)) return {missing, examples: []};
+  for (const name of readdirSync(base, {withFileTypes: true})) {
+    if (!name.isDirectory()) continue;
+    const h = name.name;
+    const seoPath = path.join(base, h, 'seo.json');
+    if (!existsSync(seoPath)) {
+      missing++;
+      if (examples.length < 15) examples.push(h);
+      continue;
+    }
+    const seo = JSON.parse(readFileSync(seoPath, 'utf8'));
+    const t = seo?.title && String(seo.title).trim();
+    const d = seo?.description && String(seo.description).trim();
+    if (!t || !d) {
+      missing++;
+      if (examples.length < 15) examples.push(h);
+    }
+  }
+  return {missing, examples};
+}
+
 function main() {
-  const format = process.argv.find((a) => a.startsWith('--format='))?.split('=')[1] || 'md';
+  const format =
+    process.argv.find((a) => a.startsWith('--format='))?.split('=')[1] || 'md';
 
   const catalog = loadJson('app/data/generated/product-catalog.json');
   const products = catalog.products;
@@ -296,6 +328,7 @@ function main() {
   const outFile = path.join(outDir, 'product-content-audit.md');
 
   const p0 = dataRows.filter((r) => r.tier === 'P0');
+  const seoGaps = countSeoGapsInCatalogMirror();
   const lines = [
     '# Product content audit (generated)',
     '',
@@ -310,6 +343,13 @@ function main() {
     `- Hub products in registry: **${dataRows.length}**`,
     `- P0 (visible + active, no shippable manual in prod): **${p0.length}**`,
     `- Catalog record missing (handle map or sync): **${noCatalog.length}**`,
+    `- SEO gaps in \`catalog/shopify/products/<handle>/seo.json\` (missing title and/or description): **${
+      seoGaps.missing
+    }**${
+      seoGaps.examples.length
+        ? ` (e.g. ${seoGaps.examples.map((e) => `\`${e}\``).join(', ')})`
+        : ''
+    }`,
     '',
     '## Table',
     '',
@@ -341,18 +381,20 @@ function main() {
   lines.push('');
   for (const s of [...supportManifestSlugs].sort()) {
     if (!supportFile(s)) {
-      lines.push(`- \`${s}\` (optional; add only when you have product-specific FAQ or setup prerequisites per content/support README)`);
+      lines.push(
+        `- \`${s}\` (optional; add only when you have product-specific FAQ or setup prerequisites per content/support README)`,
+      );
     }
   }
 
   if (noCatalog.length) {
     lines.push('');
-    lines.push('## No catalog product for resolved handle (fix map or `yarn shopify:sync:pull`)');
+    lines.push(
+      '## No catalog product for resolved handle (fix map or `yarn shopify:sync:pull`)',
+    );
     lines.push('');
     for (const e of noCatalog) {
-      lines.push(
-        `- \`${e.canonical}\` → tried \`${e.handle}\` (${e.name})`,
-      );
+      lines.push(`- \`${e.canonical}\` → tried \`${e.handle}\` (${e.name})`);
     }
   }
 

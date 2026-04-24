@@ -84,9 +84,9 @@ function main() {
     const next = {
       title: seo.title && String(seo.title).trim() ? seo.title : title,
       description:
-        seo.description && String(seo.description).trim() ?
-          seo.description
-        : description,
+        seo.description && String(seo.description).trim()
+          ? seo.description
+          : description,
     };
 
     if (DRY) {
@@ -105,8 +105,9 @@ function main() {
   }
 
   console.log(
-    DRY ? `[dry-run] ${updated} product(s) would be updated.`
-    : `Updated SEO for ${updated} product(s).`,
+    DRY
+      ? `[dry-run] ${updated} product(s) would be updated.`
+      : `Updated SEO for ${updated} product(s).`,
   );
 }
 

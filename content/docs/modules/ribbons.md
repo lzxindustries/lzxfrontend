@@ -24,6 +24,7 @@ return () => window.removeEventListener('resize', updateHeight);
 }, []);
 
 return (
+
 <iframe
 ref={iframeRef}
 width="100%"
