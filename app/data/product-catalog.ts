@@ -131,6 +131,17 @@ export function getProductRecord(handle: string): ProductRecord | null {
   return CATALOG.products[handle] ?? null;
 }
 
+/**
+ * True when the Shopify product carries the "AI" tag (matched case-insensitively).
+ * Used to omit such products from product category (overview) pages.
+ */
+export function productHasAiTag(
+  record: ProductRecord | null | undefined,
+): boolean {
+  if (!record?.tags?.length) return false;
+  return record.tags.some((t) => t.toLowerCase() === 'ai');
+}
+
 export function hasProductRecord(handle: string): boolean {
   return Object.prototype.hasOwnProperty.call(CATALOG.products, handle);
 }

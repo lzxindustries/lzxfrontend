@@ -4,7 +4,7 @@ import type {Collection} from '@shopify/hydrogen/storefront-api-types';
 import {seoPayload} from '~/lib/seo.server';
 import {hasDocPagePath} from '~/lib/content.server';
 import {getDocPathForSlug} from '~/data/product-slugs';
-import {getProductRecord} from '~/data/product-catalog';
+import {getProductRecord, productHasAiTag} from '~/data/product-catalog';
 import {getLfsGalleryFirstImage} from '~/data/lfs-assets';
 import {
   getCommerceByHandles,
@@ -84,6 +84,9 @@ export function createCategoryListingLoader(config: CategoryListingConfig) {
           }
 
           const shopifyProduct = getProductRecord(raw.canonical);
+          if (productHasAiTag(shopifyProduct)) {
+            continue;
+          }
           const lfsImage = getLfsGalleryFirstImage(raw.canonical);
           const commerce = commerceByHandle.get(raw.canonical) ?? null;
 
