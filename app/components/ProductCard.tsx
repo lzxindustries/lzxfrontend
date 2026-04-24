@@ -109,7 +109,7 @@ export function ProductCard({
             {image && (
               <Image
                 data={image}
-                alt={`${product.title} product`}
+                alt={image.altText ?? product.title}
                 className="inset-0 w-full h-full object-cover"
                 sizes="(min-width: 768px) 25vw, 50vw"
               />

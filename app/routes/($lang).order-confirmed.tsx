@@ -11,7 +11,15 @@ import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {PageHeader, Text} from '~/components/Text';
 
 export const meta: MetaFunction = () => {
-  return [{title: 'Order Confirmed'}];
+  return [
+    {title: 'Order Confirmed | LZX Industries'},
+    {
+      name: 'description',
+      content:
+        'Your LZX Industries order has been placed. Expect shipping updates by email while we prepare your instruments and modules for dispatch.',
+    },
+    {name: 'robots', content: 'noindex, nofollow'},
+  ];
 };
 
 export async function loader({context}: LoaderFunctionArgs) {

@@ -30,6 +30,8 @@
     "test:e2e:all": "playwright test",
     "search:index": "node scripts/build-search-index.mjs",
     "audit:content": "node scripts/audit-product-content.mjs",
+    "content:qa": "node scripts/content-qa.mjs",
+    "content:qa:strict": "node scripts/content-qa.mjs --strict",
     "content:fill-seo": "node scripts/fill-missing-seo.mjs",
     "content:gen-module-stubs": "node scripts/generate-module-manual-stubs.mjs",
     "content:gen-support-stubs": "node scripts/generate-support-nav-stubs.mjs",

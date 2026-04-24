@@ -29,7 +29,7 @@ export function FeaturedCollections({
                 <div className="card-image bg-primary/5 aspect-[3/2]">
                   {collection?.image && (
                     <Image
-                      alt={`Image of ${collection.title}`}
+                      alt={collection.image.altText ?? collection.title}
                       data={collection.image}
                       sizes="(max-width: 32em) 100vw, 33vw"
                       aspectRatio="3/2"

@@ -26,10 +26,14 @@ export async function loader({request, params, context}: LoaderFunctionArgs) {
   // through to Shopify so admin-managed pages keep working.
   const localPage = getLocalPageByHandle(params.pageHandle);
   if (localPage) {
+    // Omit `seo.description` here so `seoPayload.page` can derive a
+    // plain-text description from the rendered body. Explicitly
+    // setting `description: ''` would short-circuit that fallback and
+    // ship an empty meta description to search and social crawlers.
     const normalizedPage = {
       ...localPage,
       body: normalizePageBody(localPage.body),
-      seo: {title: localPage.title, description: ''},
+      seo: {title: localPage.title},
     } as unknown as PageType;
     const seo = seoPayload.page({page: normalizedPage, url: request.url});
     return json(

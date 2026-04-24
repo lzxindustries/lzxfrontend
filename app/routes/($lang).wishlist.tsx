@@ -7,7 +7,15 @@ import {PageHeader, Text} from '~/components/Text';
 import {useWishlist} from '~/hooks/useWishlist';
 
 export const meta: MetaFunction = () => {
-  return [{title: 'Wishlist'}];
+  return [
+    {title: 'Wishlist | LZX Industries'},
+    {
+      name: 'description',
+      content:
+        'Products you have saved for later. Keep track of modules, instruments, and accessories you plan to add to your system.',
+    },
+    {name: 'robots', content: 'noindex, follow'},
+  ];
 };
 
 export default function Wishlist() {

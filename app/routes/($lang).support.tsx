@@ -88,7 +88,9 @@ export default function SupportHub() {
               to={section.to}
               className="card bg-base-200 hover:bg-base-300 transition-colors p-6"
             >
-              <span className="text-3xl mb-3">{section.icon}</span>
+              <span className="text-3xl mb-3" aria-hidden="true">
+                {section.icon}
+              </span>
               <h2 className="text-xl font-bold mb-2">{section.title}</h2>
               <p className="text-sm opacity-70">{section.description}</p>
             </Link>

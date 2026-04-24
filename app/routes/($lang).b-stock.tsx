@@ -1,6 +1,17 @@
 import {json, redirect} from '@shopify/remix-oxygen';
-import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaFunction} from '@shopify/remix-oxygen';
 import {SITE_DECISIONS} from '~/config/site-decisions';
+
+export const meta: MetaFunction = () => {
+  return [
+    {title: 'B-Stock | LZX Industries'},
+    {
+      name: 'description',
+      content:
+        'Discounted B-Stock modules and instruments from LZX Industries. Cosmetically imperfect units with full functionality and standard warranty coverage.',
+    },
+  ];
+};
 
 export async function loader({params, context}: LoaderFunctionArgs) {
   const handle = SITE_DECISIONS.collections.bStock;

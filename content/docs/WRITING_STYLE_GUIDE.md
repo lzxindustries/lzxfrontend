@@ -1,6 +1,16 @@
 ---
-draft: false
+draft: true
+title: 'Writing style guide (internal)'
+description: 'Internal voice, tone, and style reference for LZX technical manual authoring.'
+sidebar_position: 998
 ---
+
+<!--
+  Contributor-only reference. `draft: true` excludes this page from
+  production rendering, the docs sidebar, the sitemap, and the search
+  index (see `app/lib/content.server.ts`). Contributors and AI tools
+  read this file from the repository, not from the live site.
+-->
 
 # LZX Technical Manual — Writing Style Guide
 

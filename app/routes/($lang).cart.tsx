@@ -4,6 +4,7 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from '@remix-run/react';
+import type {MetaFunction} from '@shopify/remix-oxygen';
 import type {
   Cart as CartType,
   CartInput,
@@ -193,6 +194,18 @@ export async function action({request, context}: ActionFunctionArgs) {
     {status, headers},
   );
 }
+
+export const meta: MetaFunction = () => {
+  return [
+    {title: 'Cart | LZX Industries'},
+    {
+      name: 'description',
+      content:
+        'Review items in your cart and continue to secure checkout. Free US shipping on qualifying orders.',
+    },
+    {name: 'robots', content: 'noindex, follow'},
+  ];
+};
 
 export default function CartRoute() {
   const [root] = useMatches();

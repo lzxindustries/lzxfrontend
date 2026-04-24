@@ -1,9 +1,18 @@
 ---
-draft: false
+draft: true
 title: 'Product hub — editing guide'
 description: 'Internal reference for tab naming, support files, and Learn cards so the storefront stays one coherent information system.'
 sidebar_position: 999
 ---
+
+<!--
+  Contributor-only reference. `draft: true` excludes this page from
+  production rendering, the docs sidebar, the sitemap, and the search
+  index (see `app/lib/content.server.ts`). Contributors read this file
+  directly from the repository / GitHub, not on the live site.
+-->
+
+
 
 # Product hub — editing guide
 

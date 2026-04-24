@@ -22,6 +22,7 @@ import type {
 
 type SeoPageLike = {
   title: string;
+  body?: string | null;
   seo?: {
     title?: string | null;
     description?: string | null;
@@ -93,7 +94,7 @@ function home({origin}: {origin: string}): SeoConfig {
     title: 'LZX Industries — Video Synthesis Instruments',
     titleTemplate: '%s',
     description:
-      'Real-time FPGA video effects for live performance, glitch art, format conversion, and audio-reactive visuals. Connect your video source and start creating.',
+      'Hardware video synthesis instruments and Eurorack modules for live performance, glitch art, format conversion, and audio-reactive visuals. Built in Portland, Oregon.',
     url: origin,
     robots: {
       noIndex: false,
@@ -102,7 +103,7 @@ function home({origin}: {origin: string}): SeoConfig {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Home page',
+      name: 'LZX Industries — Video Synthesis Instruments',
       url: origin,
     },
   };
@@ -396,10 +397,18 @@ function page({
   page: SeoPageLike;
   url: Request['url'];
 }): SeoConfig {
+  const bodyDescription =
+    typeof (page as {body?: unknown})?.body === 'string'
+      ? htmlToPlainText((page as {body: string}).body)
+      : '';
+  const description =
+    (page?.seo?.description && page.seo.description.trim()) ||
+    bodyDescription ||
+    '';
   return {
-    description: truncate(page?.seo?.description || ''),
-    title: page?.seo?.title,
-    titleTemplate: '%s | Page',
+    description: truncate(description),
+    title: page?.seo?.title || page.title,
+    titleTemplate: '%s | LZX Industries',
     url,
     jsonLd: {
       '@context': 'https://schema.org',
@@ -417,9 +426,9 @@ function policy({
   url: Request['url'];
 }): SeoConfig {
   return {
-    description: truncate(policy?.body ?? ''),
+    description: truncate(htmlToPlainText(policy?.body ?? '')),
     title: policy?.title,
-    titleTemplate: '%s | Policy',
+    titleTemplate: '%s | LZX Industries',
     url,
   };
 }
@@ -666,4 +675,29 @@ function truncate(str: string, num = 155): string {
     return str;
   }
   return str.slice(0, num - 3) + '...';
+}
+
+/**
+ * Strip HTML tags and decode a small set of common entities so meta
+ * descriptions derived from page/policy bodies read as plain sentences
+ * instead of truncated markup. Used for `description` meta tags and
+ * social snippets — not for on-page rendering.
+ */
+function htmlToPlainText(value: string): string {
+  if (typeof value !== 'string') return '';
+  return value
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;|&apos;/gi, "'")
+    .replace(/&(?:hellip|#8230);/gi, '…')
+    .replace(/&(?:mdash|#8212);/gi, '—')
+    .replace(/&(?:ndash|#8211);/gi, '–')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
