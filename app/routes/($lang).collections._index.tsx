@@ -1,6 +1,5 @@
 import {useLoaderData} from '@remix-run/react';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {Image, getSeoMeta} from '@shopify/hydrogen';
+import {Image} from '@shopify/hydrogen';
 import type {
   Collection,
   CollectionConnection,
@@ -14,6 +13,7 @@ import {Pagination, getPaginationVariables} from '~/components/Pagination';
 import {Heading, PageHeader, Section} from '~/components/Text';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {getImageLoadingPriority} from '~/lib/const';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
 
 const PAGINATION_SIZE = 8;
@@ -53,7 +53,7 @@ export const loader = async ({
 };
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function Collections() {

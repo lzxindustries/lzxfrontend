@@ -1,8 +1,8 @@
 import {useMemo, useState} from 'react';
 import {useLoaderData, Link} from '@remix-run/react';
+import type {SeoConfig} from '@shopify/hydrogen';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
@@ -11,6 +11,7 @@ import {
   type ModuleSpecRow,
   type ModuleStatus,
 } from '~/data/module-specs';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export const headers = routeHeaders;
 
@@ -83,7 +84,7 @@ export async function loader({request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 // --- UI ---

@@ -1,5 +1,4 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
@@ -11,6 +10,7 @@ import {
   hasDocPagePath,
 } from '~/lib/content.server';
 import {DocLayout} from '~/components/DocLayout';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export async function loader({params, request}: LoaderFunctionArgs) {
   const rawSplat = params['*'];
@@ -172,7 +172,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function DocsPage() {

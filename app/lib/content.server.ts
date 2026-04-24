@@ -1,6 +1,7 @@
 import {renderMarkdown} from './markdown.server';
 import matter from 'gray-matter';
 import type {ContentFrontmatter, TocHeading} from './markdown.server';
+import {trimPlainExcerpt} from './plain-excerpt';
 
 export type {TocHeading} from './markdown.server';
 
@@ -185,14 +186,16 @@ export function listBlogPosts(tag?: string): BlogPost[] {
       truncateIdx >= 0
         ? contentAfterFm.slice(0, truncateIdx)
         : contentAfterFm.slice(0, 300);
-    const excerpt = excerptRaw
-      .replace(/!\[.*?\]\(.*?\)/g, '')
-      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-      .replace(/#{1,6}\s+/g, '')
-      .replace(/[*_~`>]/g, '')
-      .replace(/\n+/g, ' ')
-      .trim()
-      .slice(0, 200);
+    const excerpt = trimPlainExcerpt(
+      excerptRaw
+        .replace(/!\[.*?\]\(.*?\)/g, '')
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+        .replace(/#{1,6}\s+/g, '')
+        .replace(/[*_~`>]/g, '')
+        .replace(/\n+/g, ' ')
+        .trim(),
+      200,
+    );
 
     const wordCount = contentAfterFm.trim().split(/\s+/).length;
     const readingTime = Math.max(1, Math.ceil(wordCount / 200));

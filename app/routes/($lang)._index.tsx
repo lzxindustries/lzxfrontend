@@ -4,8 +4,7 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {AnalyticsPageType, getSeoMeta} from '@shopify/hydrogen';
+import {AnalyticsPageType} from '@shopify/hydrogen';
 import type {Collection as CollectionType} from '@shopify/hydrogen/storefront-api-types';
 import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
@@ -20,6 +19,7 @@ import {
 import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
 import {LiteYouTube} from '~/components/LiteYouTube';
+import {NotFound} from '~/components/NotFound';
 import {ProductCard} from '~/components/ProductCard';
 import {VideomancyLandingSections} from '~/components/VideomancyLandingSections';
 import {Section, PageHeader} from '~/components/Text';
@@ -27,15 +27,21 @@ import {CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getImageLoadingPriority} from '~/lib/const';
 import {listBlogPosts} from '~/lib/content.server';
+import {formatBlogPostDate} from '~/lib/blog-formatting';
+import {VALID_LOCALE_PATH_SEGMENTS} from '~/lib/locale-paths';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
 
 export function ErrorBoundary() {
   const error = useRouteError();
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return <NotFound type="page" />;
+  }
   const message = isRouteErrorResponse(error)
     ? `${error.status} ${error.data}`
     : error instanceof Error
-    ? error.message
-    : 'Unknown error';
+      ? error.message
+      : 'Unknown error';
   return (
     <PageHeader heading="Error loading page">
       <p>{message}</p>
@@ -43,8 +49,21 @@ export function ErrorBoundary() {
   );
 }
 
-export async function loader({context}: LoaderFunctionArgs) {
-  const seo = seoPayload.home();
+export async function loader({
+  context,
+  request,
+  params,
+}: LoaderFunctionArgs) {
+  const lang = params.lang;
+  if (
+    lang &&
+    !VALID_LOCALE_PATH_SEGMENTS.has(String(lang).toLowerCase())
+  ) {
+    throw new Response(null, {status: 404});
+  }
+
+  const origin = new URL(request.url).origin;
+  const seo = seoPayload.home({origin});
   const recentPosts = listBlogPosts().slice(0, 3);
 
   const {storefront} = context;
@@ -81,7 +100,7 @@ export async function loader({context}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function Home() {
@@ -180,7 +199,7 @@ export default function Home() {
                 className="rounded-lg border border-base-300 bg-base-100 p-4 transition hover:bg-base-300"
               >
                 <p className="text-xs uppercase tracking-wide text-base-content/60">
-                  {post.date}
+                  <time dateTime={post.date}>{formatBlogPostDate(post.date)}</time>
                 </p>
                 <h3 className="mt-2 text-lg font-semibold leading-tight">
                   {post.frontmatter.title}

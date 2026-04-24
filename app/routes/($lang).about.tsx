@@ -1,12 +1,12 @@
 import {json} from '@shopify/remix-oxygen';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {Link} from '@remix-run/react';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {MarkdownArticle} from '~/components/MarkdownArticle';
 import {CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
 import aboutContent from '../../content/pages/about.md?raw';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export async function loader({request}: LoaderFunctionArgs) {
   const seo = seoPayload.page({
@@ -25,7 +25,7 @@ export async function loader({request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function AboutPage() {

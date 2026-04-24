@@ -28,7 +28,17 @@ type SeoPageLike = {
   } | null;
 };
 
+/** Absolute image/OG URL for social crawlers; leaves http(s) and protocol-relative URLs unchanged. */
+function absolutizeAssetUrl(pageUrl: string, assetPath?: string): string | undefined {
+  if (!assetPath) return undefined;
+  if (/^([a-z][a-z0-9+.-]*:|\/\/)/i.test(assetPath)) return assetPath;
+  const origin = new URL(pageUrl).origin;
+  const path = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
+  return `${origin}${path}`;
+}
+
 function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
+  const origin = new URL(url).origin;
   return {
     title: shop?.name,
     titleTemplate: '%s | LZX Industries',
@@ -52,7 +62,7 @@ function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
         'https://x.com/lzxindustries',
         'https://www.tiktok.com/@lzxindustries',
       ],
-      url,
+      url: origin,
       address: {
         '@type': 'PostalAddress',
         streetAddress: '3955 SE Ankeny St',
@@ -68,19 +78,20 @@ function root({shop, url}: {shop: Shop; url: Request['url']}): SeoConfig {
       },
       potentialAction: {
         '@type': 'SearchAction',
-        target: `${url}search?q={search_term}`,
+        target: `${origin}/search?q={search_term}`,
         query: "required name='search_term'",
       },
     },
   };
 }
 
-function home(): SeoConfig {
+function home({origin}: {origin: string}): SeoConfig {
   return {
     title: 'LZX Industries — Video Synthesis Instruments',
     titleTemplate: '%s',
     description:
       'Real-time FPGA video effects for live performance, glitch art, format conversion, and audio-reactive visuals. Connect your video source and start creating.',
+    url: origin,
     robots: {
       noIndex: false,
       noFollow: false,
@@ -89,6 +100,7 @@ function home(): SeoConfig {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
       name: 'Home page',
+      url: origin,
     },
   };
 }
@@ -550,18 +562,21 @@ function blogPost({
   author: string;
   url: string;
 }): SeoConfig {
+  const absoluteImage = absolutizeAssetUrl(url, image);
   return {
     title,
     titleTemplate: '%s | LZX Blog',
     description: truncate(description),
     url,
-    media: image ? {type: 'image', url: image, altText: title} : undefined,
+    media: absoluteImage
+      ? {type: 'image', url: absoluteImage, altText: title}
+      : undefined,
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'BlogPosting',
       headline: title,
       description: truncate(description),
-      image: image || undefined,
+      image: absoluteImage || undefined,
       datePublished: publishedAt,
       author: {
         '@type': 'Person',

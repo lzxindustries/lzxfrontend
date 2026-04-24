@@ -1,6 +1,5 @@
 import {useEffect, useState} from 'react';
-
-const CONSENT_KEY = 'lzx-cookie-consent';
+import {ADVERTISING_CONSENT_STORAGE_KEY} from '~/lib/advertising-consent';
 
 export function CookieConsent({
   onConsent,
@@ -10,7 +9,7 @@ export function CookieConsent({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY);
+    const stored = localStorage.getItem(ADVERTISING_CONSENT_STORAGE_KEY);
     if (stored === null) {
       setVisible(true);
     } else {
@@ -19,13 +18,13 @@ export function CookieConsent({
   }, [onConsent]);
 
   function accept() {
-    localStorage.setItem(CONSENT_KEY, 'true');
+    localStorage.setItem(ADVERTISING_CONSENT_STORAGE_KEY, 'true');
     onConsent(true);
     setVisible(false);
   }
 
   function decline() {
-    localStorage.setItem(CONSENT_KEY, 'false');
+    localStorage.setItem(ADVERTISING_CONSENT_STORAGE_KEY, 'false');
     onConsent(false);
     setVisible(false);
   }
@@ -37,7 +36,14 @@ export function CookieConsent({
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4">
         <p className="text-sm flex-1">
           We use cookies for analytics and to improve your experience. You can
-          accept or decline non-essential cookies.
+          accept or decline non-essential cookies. See our{' '}
+          <a
+            className="link link-primary whitespace-nowrap"
+            href="/policies/privacy-policy"
+          >
+            Privacy Policy
+          </a>{' '}
+          for details.
         </p>
         <div className="flex gap-2 shrink-0">
           <button onClick={decline} className="btn btn-sm btn-ghost">

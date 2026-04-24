@@ -56,6 +56,12 @@ export const links: LinksFunction = () => {
       href: 'https://shop.app',
     },
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
+    {
+      rel: 'alternate',
+      type: 'application/rss+xml',
+      title: 'LZX Blog',
+      href: '/blog.rss.xml',
+    },
   ];
 };
 
@@ -90,14 +96,16 @@ export default function App() {
 
   useAnalytics(hasUserConsent, locale);
 
+  const htmlLang = locale.language.toLowerCase();
+
   return (
-    <html lang={locale.language}>
+    <html lang={htmlLang}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <MetaPixel />
+        <MetaPixel enabled={hasUserConsent} />
       </head>
       <body>
         <Layout
@@ -130,11 +138,15 @@ export function ErrorBoundary({error}: {error: Error}) {
 
   if (isRouteError) {
     title = 'Not found';
-    if (routeError.status === 404) pageType = routeError.data || pageType;
+    if (routeError.status === 404) {
+      pageType = 'page';
+    }
   }
 
+  const htmlLang = locale.language.toLowerCase();
+
   return (
-    <html lang={locale.language}>
+    <html lang={htmlLang}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />

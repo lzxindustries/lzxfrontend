@@ -18,7 +18,7 @@ const ACCESSORIES_HANDLES = [
   '8gb-microsd-card',
 ] as const;
 
-const ORDER_INDEX = new Map(
+const ORDER_INDEX = new Map<string, number>(
   ACCESSORIES_HANDLES.map((handle, index) => [handle, index]),
 );
 

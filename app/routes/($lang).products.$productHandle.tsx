@@ -4,14 +4,9 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import type {
-  SeoConfig,
-  ShopifyAnalyticsProduct,
-  Storefront,
-} from '@shopify/hydrogen';
+import type {ShopifyAnalyticsProduct, Storefront} from '@shopify/hydrogen';
 import {
   AnalyticsPageType,
-  getSeoMeta,
   Money,
   ShopPayButton,
   VariantSelector,
@@ -53,14 +48,15 @@ import {
   getVideosForModule,
 } from '~/data/lzxdb';
 import type {LzxPatch, LzxVideo} from '~/data/lzxdb';
-import {seoPayload} from '~/lib/seo.server.js';
-import {getProductPurchaseStatus} from '~/lib/product-badges';
 import {
   isModuleSlug,
   isInstrumentSlug,
   isSystemSlug,
   getCanonicalSlug,
 } from '~/data/product-slugs';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
+import {seoPayload} from '~/lib/seo.server.js';
+import {getProductPurchaseStatus} from '~/lib/product-badges';
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -321,13 +317,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  // When the loader throws (e.g. 404 for an unknown product handle that
-  // neither the catalog nor the legacy LFS content recognises) Remix
-  // still renders the document with this meta. `data` is undefined in
-  // that case; skip the seo payload rather than crashing the render
-  // with `undefined.seo`, which previously surfaced as a 500.
-  if (!data?.seo) return [];
-  return getSeoMeta(data.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function Product() {

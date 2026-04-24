@@ -1,12 +1,13 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json, redirect} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 import {CACHE_LONG} from '~/data/cache';
+import {formatAuthorDisplay} from '~/lib/blog-formatting';
 import {seoPayload} from '~/lib/seo.server';
 import {getBlogPost} from '~/lib/content.server';
 import {BlogPostView} from '~/components/BlogLayout';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export async function loader({params, request}: LoaderFunctionArgs) {
   const {slug} = params;
@@ -38,7 +39,9 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     description: post.frontmatter.description ?? post.excerpt,
     image: heroImage,
     publishedAt: post.date,
-    author: (post.frontmatter.authors as string[])?.[0] ?? 'LZX Industries',
+    author: formatAuthorDisplay(
+      (post.frontmatter.authors as string[])?.[0] ?? 'LZX Industries',
+    ),
     url: new URL(request.url).origin + `/blog/${slug}`,
   });
 
@@ -46,7 +49,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function BlogPostPage() {

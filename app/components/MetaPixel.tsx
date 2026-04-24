@@ -20,16 +20,16 @@ fbq('track', 'PageView');
  *
  * Deferred to the client via useEffect to avoid SSR/CSR hydration mismatch —
  * the server does not render the script tag, and the client injects it after
- * hydration completes.
+ * hydration completes. Loads only when `enabled` (cookie consent) is true.
  */
-export function MetaPixel() {
+export function MetaPixel({enabled}: {enabled: boolean}) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !enabled) return null;
 
   return (
     <>

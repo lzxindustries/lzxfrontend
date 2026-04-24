@@ -14,7 +14,9 @@ const PARTS_HANDLES = [
   'video-knob',
 ] as const;
 
-const ORDER_INDEX = new Map(PARTS_HANDLES.map((handle, index) => [handle, index]));
+const ORDER_INDEX = new Map<string, number>(
+  PARTS_HANDLES.map((handle, index) => [handle, index]),
+);
 
 type ProductBucket = 'active' | 'archive';
 

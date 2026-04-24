@@ -25,7 +25,7 @@ const MERCHANDISE_HANDLES = [
   'videomancer-vinyl-sticker',
 ] as const;
 
-const ORDER_INDEX = new Map(
+const ORDER_INDEX = new Map<string, number>(
   MERCHANDISE_HANDLES.map((handle, index) => [handle, index]),
 );
 

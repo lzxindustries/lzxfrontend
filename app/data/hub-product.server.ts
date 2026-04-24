@@ -162,12 +162,14 @@ export function buildHubProductFromLocal(
 ): ProductType & {selectedVariant?: ProductVariant} {
   const {record, commerce, lfs, selectedOptions} = input;
   const mediaNodes = buildMediaNodes(record, lfs);
-  const descriptionHtml = hasContent(commerce?.descriptionHtml)
-    ? commerce.descriptionHtml
-    : record.descriptionHtml;
-  const description = hasContent(commerce?.description)
-    ? commerce.description
-    : record.descriptionPlain;
+  const descriptionHtml =
+    commerce && hasContent(commerce.descriptionHtml)
+      ? commerce.descriptionHtml
+      : record.descriptionHtml;
+  const description =
+    commerce && hasContent(commerce.description)
+      ? commerce.description
+      : record.descriptionPlain;
   const fallbackImage =
     mediaNodes[0]?.image
       ? {

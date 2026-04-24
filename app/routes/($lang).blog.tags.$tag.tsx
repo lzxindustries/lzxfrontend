@@ -1,5 +1,4 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
@@ -7,6 +6,7 @@ import {CACHE_LONG} from '~/data/cache';
 import {seoPayload} from '~/lib/seo.server';
 import {listBlogPosts, getAllTags} from '~/lib/content.server';
 import {BlogIndex} from '~/components/BlogLayout';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 const POSTS_PER_PAGE = 10;
 
@@ -46,7 +46,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function BlogTagPage() {

@@ -21,6 +21,7 @@ import rehypeStringify from 'rehype-stringify';
 import matter from 'gray-matter';
 import type {Root, Element} from 'hast';
 import type {Plugin} from 'unified';
+import {trimPlainExcerpt} from '~/lib/plain-excerpt';
 
 // --- Types ---
 
@@ -310,15 +311,15 @@ function extractExcerpt(raw: string): string {
   const idx = raw.search(truncateMarker);
   const content = idx >= 0 ? raw.slice(0, idx) : raw.slice(0, 300);
   // Strip markdown syntax for a plain-text excerpt
-  return content
+  const stripped = content
     .replace(/^---[\s\S]*?---\s*/, '') // Remove frontmatter
     .replace(/!\[.*?\]\(.*?\)/g, '') // Remove images
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // Links → text
     .replace(/#{1,6}\s+/g, '') // Remove headings
     .replace(/[*_~`>]/g, '') // Remove emphasis/formatting
     .replace(/\n+/g, ' ') // Collapse newlines
-    .trim()
-    .slice(0, 200);
+    .trim();
+  return trimPlainExcerpt(stripped, 200);
 }
 
 // Remove `export function` blocks using brace counting so nested `}` don't

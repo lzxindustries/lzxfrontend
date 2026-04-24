@@ -5,8 +5,7 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from '@remix-run/react';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {flattenConnection, getSeoMeta} from '@shopify/hydrogen';
+import {flattenConnection} from '@shopify/hydrogen';
 import type {
   Collection,
   CollectionConnection,
@@ -30,6 +29,7 @@ import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {trackMetaEvent} from '~/hooks/useMetaPixel';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -100,7 +100,7 @@ export async function loader({
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function Search() {

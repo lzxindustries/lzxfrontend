@@ -293,4 +293,25 @@ test.describe('SEO meta', () => {
       expect(href?.length).toBeGreaterThan(0);
     }
   });
+
+  test('RSS feed is linked from the document head', async ({page}) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+    const rss = page.locator('link[rel="alternate"][type="application/rss+xml"]');
+    await expect(rss).toHaveCount(1);
+    await expect(rss).toHaveAttribute('href', '/blog.rss.xml');
+  });
+});
+
+test.describe('Invalid locale / soft 404', () => {
+  test('unknown top-level slug returns 404 (not duplicate homepage)', async ({
+    page,
+  }) => {
+    const path = '/not-a-valid-locale-nor-product-slug-abc123';
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(404);
+    await expect(
+      page.getByRole('heading', {name: /lost this page/i}),
+    ).toBeVisible();
+  });
 });

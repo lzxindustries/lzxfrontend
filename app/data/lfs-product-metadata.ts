@@ -131,8 +131,10 @@ const lfsProductPublishedFiles = import.meta.glob<string>(
   {eager: true, import: 'default', query: '?url'},
 );
 
-const lfsProductInventoryFiles = Object.keys(
-  import.meta.glob('../../lfs/library/products/**/*', {eager: false}),
+/** Illustrator sources — served as static URLs for archive downloads. */
+const lfsProductDesignFiles = import.meta.glob<string>(
+  '../../lfs/library/products/**/*.{ai,AI}',
+  {eager: true, import: 'default', query: '?url'},
 );
 
 const LFS_PRODUCTS_ROOT = '../../lfs/library/products';
@@ -172,6 +174,18 @@ const legacyVisionaryMetadataFiles = import.meta.glob<string>(
   '../../lfs/library/products/eurorack-modules/visionary/**/modulargrid/metadata.md',
   {eager: true, import: 'default', query: '?raw'},
 );
+
+/** Product paths for gallery + archive discovery (merged known globs; avoids a catch-all tree walk in Vite). */
+const lfsProductInventoryFiles = [
+  ...new Set([
+    ...Object.keys(lfsProductFiles),
+    ...Object.keys(lfsProductImageFiles),
+    ...Object.keys(lfsProductPublishedFiles),
+    ...Object.keys(lfsProductDesignFiles),
+    ...Object.keys(modulargridMetadataFiles),
+    ...Object.keys(legacyVisionaryMetadataFiles),
+  ]),
+];
 
 const LEGACY_VISIONARY_LISTING_SLUGS = new Set([
   'color-video-encoder',
@@ -456,6 +470,8 @@ function isGalleryAssetRelativePath(relativePath: string): boolean {
 }
 
 function resolvePublishedAssetHref(sourcePath: string): string | null {
+  // Design sources (.ai) are listed in the archive but intentionally not given
+  // a public href (see lfs-product-metadata tests / publishing policy).
   return lfsProductImageFiles[sourcePath] ?? lfsProductPublishedFiles[sourcePath] ?? null;
 }
 

@@ -7,9 +7,40 @@ import {
 // Virtual entry point for the app
 // eslint-disable-next-line import/no-unresolved
 import * as remixBuild from 'virtual:remix/server-build';
-import {CACHE_SHORT} from '~/data/cache';
+import {CACHE_LONG} from '~/data/cache';
 import {AppSession} from '~/lib/session.server';
 import {getLocaleFromRequest} from '~/lib/utils';
+
+const SECURITY_HEADERS: ReadonlyArray<[string, string]> = [
+  ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+  [
+    'Permissions-Policy',
+    'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+  ],
+  [
+    'Content-Security-Policy',
+    [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net",
+      "style-src 'self' 'unsafe-inline' https://cdn.shopify.com",
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data: https://cdn.shopify.com",
+      "connect-src 'self' https: wss:",
+      "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://*.shopify.com https://shop.app https://checkout.shopify.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self' https://checkout.shopify.com https://*.myshopify.com https://shopify.com",
+      "frame-ancestors 'none'",
+      'upgrade-insecure-requests',
+    ].join('; '),
+  ],
+];
+
+function applySecurityHeaders(response: Response) {
+  for (const [key, value] of SECURITY_HEADERS) {
+    response.headers.set(key, value);
+  }
+}
 
 /**
  * Export a fetch handler in module format.
@@ -163,6 +194,7 @@ export default {
         if (redirectResponse.status === 404) {
           redirectResponse.headers.set('X-Robots-Tag', 'noindex');
         }
+        applySecurityHeaders(redirectResponse);
         return redirectResponse;
       }
 
@@ -173,7 +205,7 @@ export default {
         !urlPathname.endsWith('/account') &&
         !urlPathname.includes('/account/')
       ) {
-        response.headers.set('Cache-Control', CACHE_SHORT);
+        response.headers.set('Cache-Control', CACHE_LONG);
         response.headers.set(
           'Oxygen-Cache-Control',
           'public, max-age=3600, stale-while-revalidate=259200',
@@ -181,6 +213,7 @@ export default {
         response.headers.set('Vary', 'Accept-Encoding');
       }
 
+      applySecurityHeaders(response);
       return response;
     } catch (error) {
       console.error(error);

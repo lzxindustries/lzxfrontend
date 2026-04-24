@@ -6,14 +6,14 @@ import {
   FaUserCheck,
   FaTimes,
 } from 'react-icons/fa';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Logo from './Logo';
 import {PredictiveSearch} from './PredictiveSearch';
 import {DocsSearch} from './DocsSearch';
 import {DesktopMegaMenu, MobileMegaMenu} from './MegaMenu';
 
 export function Header({
-  cartCount = 13,
+  cartCount = 0,
   url = '',
   isLoggedIn = false,
   onCartClick,
@@ -27,6 +27,16 @@ export function Header({
   const logoSize = 24;
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [mobileMenuOpen]);
+
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
 
@@ -74,22 +84,27 @@ export function Header({
           </li>
           <li>
             <button
-              className={isCart ? 'active' : ''}
+              type="button"
+              className={`indicator ${isCart ? 'active' : ''}`}
               onClick={onCartClick}
-              aria-label="Cart"
+              aria-label={
+                cartCount > 0 ? `Cart, ${cartCount} items` : 'Cart, empty'
+              }
             >
+              <span className="indicator-item badge badge-sm">{cartCount}</span>
               <FaShoppingCart size={iconSize} />
             </button>
           </li>
-          <span className="badge badge-sm indicator-item">{cartCount}</span>
         </ul>
       </div>
 
       {/* Mobile menu drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-x-0 top-[64px] bottom-0 z-[80] lg:hidden">
-          <div
-            className="absolute inset-0 bg-black/30"
+          <button
+            type="button"
+            className="absolute inset-0 h-full w-full cursor-default appearance-none border-0 bg-black/30 p-0"
+            aria-label="Close menu"
             onClick={() => setMobileMenuOpen(false)}
           />
           <div className="relative w-64 max-h-full overflow-y-auto bg-base-100 shadow-xl">

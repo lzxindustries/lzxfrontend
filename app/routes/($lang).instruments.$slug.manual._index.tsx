@@ -1,7 +1,6 @@
 import {useOutletContext} from '@remix-run/react';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
-import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
 
@@ -18,6 +17,7 @@ import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG} from '~/data/cache';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export async function loader({params, request}: LoaderFunctionArgs) {
   const {slug} = params;
@@ -118,7 +118,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function InstrumentManualIndex() {

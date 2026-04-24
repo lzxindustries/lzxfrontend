@@ -1,10 +1,10 @@
 import type {MetaArgs} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData, Link} from '@remix-run/react';
 import {CACHE_LONG} from '~/data/cache';
 import {Breadcrumbs} from '~/components/Breadcrumbs';
 import {DocsSearch} from '~/components/DocsSearch';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export const SECTIONS = [
   {
@@ -75,7 +75,7 @@ export async function loader() {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function DocsIndex() {

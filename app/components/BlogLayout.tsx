@@ -5,6 +5,7 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {useImageZoom} from '~/hooks/useImageZoom';
 import {useMermaid} from '~/hooks/useMermaid';
 import {Breadcrumbs} from './Breadcrumbs';
+import {formatAuthorDisplay, formatBlogPostDate} from '~/lib/blog-formatting';
 import type {BlogPost} from '~/lib/content.server';
 import type {TocHeading} from '~/lib/markdown.server';
 
@@ -192,9 +193,14 @@ function BlogCard({post}: {post: BlogPost}) {
       <div className="card-body p-4">
         <h2 className="card-title text-lg">{post.frontmatter.title}</h2>
         <div className="flex items-center gap-3 text-xs opacity-60">
-          <time>{formatDate(post.date)}</time>
+          <time dateTime={post.date}>{formatBlogPostDate(post.date)}</time>
           {post.frontmatter.authors && (
-            <span>by {(post.frontmatter.authors as string[]).join(', ')}</span>
+            <span>
+              by{' '}
+              {(post.frontmatter.authors as string[])
+                .map(formatAuthorDisplay)
+                .join(', ')}
+            </span>
           )}
           <span>{post.readingTime} min read</span>
         </div>
@@ -265,8 +271,10 @@ export function BlogPostView({
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{title}</h1>
 
         <div className="flex flex-wrap items-center gap-3 text-sm opacity-60 mb-8">
-          <time>{formatDate(date)}</time>
-          {authors.length > 0 && <span>by {authors.join(', ')}</span>}
+          <time dateTime={date}>{formatBlogPostDate(date)}</time>
+          {authors.length > 0 && (
+            <span>by {authors.map(formatAuthorDisplay).join(', ')}</span>
+          )}
           <span>{readingTime} min read</span>
         </div>
 
@@ -294,16 +302,3 @@ export function BlogPostView({
   );
 }
 
-// --- Utility ---
-
-function formatDate(dateStr: string): string {
-  try {
-    return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  } catch {
-    return dateStr;
-  }
-}

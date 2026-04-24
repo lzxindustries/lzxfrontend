@@ -1,5 +1,4 @@
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {type SeoConfig, getSeoMeta} from '@shopify/hydrogen';
 import {json} from '@shopify/remix-oxygen';
 import {Link, useLoaderData} from '@remix-run/react';
 import invariant from 'tiny-invariant';
@@ -10,6 +9,7 @@ import {getPatchBySlug} from '~/data/lzxdb';
 import {resolveProductUrl} from '~/data/product-slugs';
 import {seoPayload} from '~/lib/seo.server';
 import {CACHE_LONG} from '~/data/cache';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 
 export async function loader({params}: LoaderFunctionArgs) {
   const {patchSlug} = params;
@@ -43,7 +43,7 @@ export async function loader({params}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function PatchDetail() {

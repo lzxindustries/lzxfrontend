@@ -1,10 +1,5 @@
 import {useLoaderData} from '@remix-run/react';
-import type {SeoConfig} from '@shopify/hydrogen';
-import {
-  flattenConnection,
-  AnalyticsPageType,
-  getSeoMeta,
-} from '@shopify/hydrogen';
+import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
 import type {
   Collection as CollectionType,
   CollectionConnection,
@@ -19,6 +14,7 @@ import type {AppliedFilter, SortParam} from '~/components/SortFilter';
 import {PageHeader, Section, Text} from '~/components/Text';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
 
 export const headers = routeHeaders;
@@ -168,7 +164,7 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function Collection() {

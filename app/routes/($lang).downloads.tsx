@@ -1,6 +1,5 @@
 import {json} from '@shopify/remix-oxygen';
 import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
-import {getSeoMeta, type SeoConfig} from '@shopify/hydrogen';
 import {Link, useLoaderData} from '@remix-run/react';
 import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
 import {DownloadAssetList} from '~/components/DownloadAssetList';
@@ -14,6 +13,7 @@ import {
 } from '~/data/product-slugs';
 import {getModuleAssets, getModuleById} from '~/data/lzxdb';
 import {SUPPORT_MANIFEST, type ManualVersion} from '~/data/support-manifest';
+import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
 
 type DownloadEntry = {
@@ -156,7 +156,7 @@ export async function loader({request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return getSeoMeta(data!.seo as SeoConfig);
+  return seoMetaFromLoaderData(data);
 };
 
 export default function DownloadsPage() {

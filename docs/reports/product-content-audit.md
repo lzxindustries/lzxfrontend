@@ -1,6 +1,6 @@
 # Product content audit (generated)
 
-Generated: 2026-04-24T00:25:59.706Z
+Generated: 2026-04-24T00:35:08.150Z
 
 Source: `app/data/generated/product-catalog.json` and `db/lzxdb.Module.json` (registry mirrors `app/data/product-slugs.ts`).
 
