@@ -10,11 +10,15 @@ import {json} from '@shopify/remix-oxygen';
 import type {MetaArgs, LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {
+  FaBolt,
   FaBook,
-  FaCubes,
-  FaSuitcase,
-  FaPuzzlePiece,
   FaComments,
+  FaCubes,
+  FaDesktop,
+  FaLayerGroup,
+  FaPlug,
+  FaPuzzlePiece,
+  FaStore,
 } from 'react-icons/fa';
 import {Grid} from '~/components/Grid';
 import {Hero} from '~/components/Hero';
@@ -142,7 +146,18 @@ export default function Home() {
           <h2 className="mb-8 text-center text-3xl font-bold">
             Explore Our Products
           </h2>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Link
+              to="/instruments"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaDesktop className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Instruments</h3>
+              <p className="text-sm opacity-70">
+                All-in-one video synthesizers like Videomancer — ready to patch
+                right out of the box.
+              </p>
+            </Link>
             <Link
               to="/modules"
               className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
@@ -155,10 +170,43 @@ export default function Home() {
               </p>
             </Link>
             <Link
+              to="/systems"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaLayerGroup className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Systems</h3>
+              <p className="text-sm opacity-70">
+                Curated module bundles that cover a complete video synthesis
+                workflow.
+              </p>
+            </Link>
+            <Link
+              to="/accessories"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaPlug className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Accessories</h3>
+              <p className="text-sm opacity-70">
+                Cables, adapters, and everything else you need to connect and
+                expand your rig.
+              </p>
+            </Link>
+            <Link
+              to="/cases-and-power"
+              className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
+            >
+              <FaBolt className="mx-auto mb-4 text-4xl text-primary" />
+              <h3 className="text-xl font-bold mb-2">Cases &amp; Power</h3>
+              <p className="text-sm opacity-70">
+                Eurorack cases and power supplies sized for modular video
+                systems.
+              </p>
+            </Link>
+            <Link
               to="/catalog"
               className="group card bg-base-200 hover:bg-base-300 transition-colors p-8 text-center"
             >
-              <FaSuitcase className="mx-auto mb-4 text-4xl text-primary" />
+              <FaStore className="mx-auto mb-4 text-4xl text-primary" />
               <h3 className="text-xl font-bold mb-2">Shop All</h3>
               <p className="text-sm opacity-70">
                 Browse our full catalog of instruments, modules, cases, and
