@@ -3,14 +3,14 @@ slug: artist-feature-alex-carro
 title: 'Artist Feature: Alex Carro'
 authors: [kat]
 tags: [community]
-image: ./alex_carro_01.png
+image: ./alex_carro_01.jpeg
 ---
 
 Alex Carro is a video artist whose curiosity about analog video began just before 2020. Although he wanted to pick up the hobby, he found himself lacking the money and time to invest. When COVID struck, he found himself with more time on his hands than ever before. "With the world paused, it felt like the perfect moment to finally take the leap."
 
 <!--truncate-->
 
-![Alex Carro](./alex_carro_01.png)
+![Alex Carro](./alex_carro_01.jpeg)
 
 ![Alex Carro](./alex_carro_02.png)
 
@@ -18,7 +18,7 @@ Alex Carro is a video artist whose curiosity about analog video began just befor
 
 Quickly, he ordered his first modules and began his experimentation. What started as a hobby became a quick obsession. He taught himself the language of voltage and frequency modulation, and soon enough the signal began to feel more second nature than learning a musical instrument. "The tactile nature of analog video — turning knobs, patching cables, watching the signal collapse and reassemble — hooked me immediately. From that point on, it stopped being something I was dabbling in and became a core part of how I think and create."
 
-![Alex Carro](./alex_carro_03.png)
+![Alex Carro](./alex_carro_03.jpeg)
 
 ## Process
 
