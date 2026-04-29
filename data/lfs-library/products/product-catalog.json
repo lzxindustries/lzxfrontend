@@ -473,7 +473,7 @@
       "company": "lzx",
       "product_type": "eurorack_module",
       "category": "gen3",
-      "is_active": false,
+      "is_active": true,
       "is_hidden": false,
       "folder": "eurorack-modules/gen3/dc-distro"
     },
