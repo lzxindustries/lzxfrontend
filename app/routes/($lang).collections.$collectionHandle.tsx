@@ -14,6 +14,7 @@ import type {AppliedFilter, SortParam} from '~/components/SortFilter';
 import {PageHeader, Section, Text} from '~/components/Text';
 import {CACHE_LONG, routeHeaders} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
 
@@ -136,6 +137,13 @@ export async function loader({params, request, context}: LoaderFunctionArgs) {
 
   if (!collection) {
     throw new Response('collection', {status: 404});
+  }
+
+  // Drop unreleased / embargoed products from the collection.
+  if (collection.products?.nodes) {
+    collection.products.nodes = collection.products.nodes.filter(
+      (p) => !isHiddenProductHandle(p.handle),
+    );
   }
 
   const collectionNodes = flattenConnection(collections);

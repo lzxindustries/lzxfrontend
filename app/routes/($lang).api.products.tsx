@@ -3,6 +3,7 @@ import type {ProductConnection} from '@shopify/hydrogen/storefront-api-types';
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 
 /**
  * Fetch a given set of products from the storefront API
@@ -59,7 +60,9 @@ export async function loader({
   invariant(products, 'No data returned from top products query');
 
   return json({
-    products: flattenConnection(products),
+    products: flattenConnection(products).filter(
+      (p) => !isHiddenProductHandle(p.handle),
+    ),
   });
 }
 

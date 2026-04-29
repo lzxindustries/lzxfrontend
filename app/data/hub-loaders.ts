@@ -7,7 +7,7 @@ import type {
 } from '@shopify/hydrogen/storefront-api-types';
 import type {AppLoadContext} from '@shopify/remix-oxygen';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {getProductRecord, getProductRecordByGid} from '~/data/product-catalog';
+import {getProductRecord, getProductRecordByGid, isHiddenProductHandle} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
 import {
   buildHubProductFromLocal,
@@ -496,7 +496,8 @@ export async function getRecommendedProducts(
     .filter(
       (value, index, array) =>
         array.findIndex((v2) => v2.id === value.id) === index,
-    );
+    )
+    .filter((p) => !isHiddenProductHandle(p.handle));
 
   const idx = mergedProducts.findIndex((item) => item.id === productId);
   if (idx >= 0) mergedProducts.splice(idx, 1);

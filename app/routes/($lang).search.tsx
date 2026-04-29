@@ -26,6 +26,7 @@ import {ProductGrid} from '~/components/ProductGrid';
 import {ProductSwimlane} from '~/components/ProductSwimlane';
 import {Heading, Section, Text, PageHeader} from '~/components/Text';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 import {PAGINATION_SIZE} from '~/lib/const';
 import {seoPayload} from '~/lib/seo.server';
 import {trackMetaEvent} from '~/hooks/useMetaPixel';
@@ -67,6 +68,11 @@ export async function loader({
 
   invariant(data, 'No data returned from Shopify API');
   const {products} = data;
+
+  // Drop unreleased / embargoed products from search results.
+  products.nodes = products.nodes.filter(
+    (p) => !isHiddenProductHandle(p.handle),
+  );
 
   const getRecommendations = !searchTerm || products?.nodes?.length === 0;
   const seoCollection = {

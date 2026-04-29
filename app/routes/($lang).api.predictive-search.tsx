@@ -5,6 +5,7 @@ import type {
   PageConnection,
   ArticleConnection,
 } from '@shopify/hydrogen/storefront-api-types';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 
 export async function loader({request, context}: LoaderFunctionArgs) {
   const url = new URL(request.url);
@@ -29,7 +30,7 @@ export async function loader({request, context}: LoaderFunctionArgs) {
     });
 
   return json({
-    products: products.nodes,
+    products: products.nodes.filter((p) => !isHiddenProductHandle(p.handle)),
     collections: collections.nodes,
     pages: pages.nodes,
     articles: articles.nodes,

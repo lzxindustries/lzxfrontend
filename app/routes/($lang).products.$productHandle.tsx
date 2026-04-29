@@ -36,7 +36,7 @@ import {useWishlist} from '~/hooks/useWishlist';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {filterDownloadRowsForPublicSite} from '~/data/download-visibility';
 import {getLfsProductContentBySlug} from '~/data/lfs-product-metadata';
-import {getProductRecord, hasProductRecord} from '~/data/product-catalog';
+import {getProductRecord, hasProductRecord, isHiddenProductHandle} from '~/data/product-catalog';
 import {getLfsAssetEntry} from '~/data/lfs-assets';
 import {getCommerceByHandle} from '~/data/shopify-live.server';
 import {
@@ -185,6 +185,11 @@ function mergeLegacyProductData(
 export async function loader({params, request, context}: LoaderFunctionArgs) {
   const {productHandle} = params;
   invariant(productHandle, 'Missing productHandle param, check route filename');
+
+  // Unreleased / embargoed products are hidden from the storefront.
+  if (isHiddenProductHandle(productHandle)) {
+    throw new Response('product', {status: 404});
+  }
 
   // Redirect module/instrument products to their hub pages
   const canonical = getCanonicalSlug(productHandle);
@@ -862,7 +867,8 @@ export async function getRecommendedProducts(
     .filter(
       (value, index, array) =>
         array.findIndex((value2) => value2.id === value.id) === index,
-    );
+    )
+    .filter((p) => !isHiddenProductHandle(p.handle));
 
   const originalProduct = mergedProducts
     .map((item: ProductType) => item.id)

@@ -13,6 +13,7 @@ import {ProductCard} from '~/components/ProductCard';
 import {Section, PageHeader} from '~/components/Text';
 import {routeHeaders, CACHE_LONG} from '~/data/cache';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 import {getImageLoadingPriority} from '~/lib/const';
 import {seoMetaFromLoaderData} from '~/lib/seo-meta-route';
 import {seoPayload} from '~/lib/seo.server';
@@ -38,6 +39,11 @@ export async function loader({
   });
 
   invariant(data, 'No data returned from Shopify API');
+
+  // Drop unreleased / embargoed products from listings.
+  data.products.nodes = data.products.nodes.filter(
+    (p) => !isHiddenProductHandle(p.handle),
+  );
 
   const seoCollection = {
     id: 'all-products',

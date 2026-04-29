@@ -127,6 +127,22 @@ export function getProductCatalog(): ProductCatalog {
   return CATALOG;
 }
 
+/**
+ * Product handles that exist in the Shopify catalog but should be
+ * hidden from the storefront entirely (unreleased, embargoed, etc.).
+ *
+ * The product detail route returns 404 for these, `listProductRecords`
+ * excludes them, and recommended-products surfaces drop them.
+ */
+const HIDDEN_PRODUCT_HANDLES: ReadonlySet<string> = new Set([
+  // Unreleased — keep hidden until launch.
+  'vessel-84',
+]);
+
+export function isHiddenProductHandle(handle: string): boolean {
+  return HIDDEN_PRODUCT_HANDLES.has(handle);
+}
+
 export function getProductRecord(handle: string): ProductRecord | null {
   return CATALOG.products[handle] ?? null;
 }
@@ -174,6 +190,7 @@ export function listProductRecords(
 
   const out: ProductRecord[] = [];
   for (const record of Object.values(CATALOG.products)) {
+    if (HIDDEN_PRODUCT_HANDLES.has(record.handle)) continue;
     if (activeOnly && !record.isActive) continue;
     if (visibleOnly && !record.isVisible) continue;
     if (bStockOnly && !record.isBStock) continue;

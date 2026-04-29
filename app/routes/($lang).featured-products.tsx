@@ -6,6 +6,7 @@ import type {
 import {json, type LoaderFunctionArgs} from '@shopify/remix-oxygen';
 import invariant from 'tiny-invariant';
 import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {isHiddenProductHandle} from '~/data/product-catalog';
 
 export async function loader({context: {storefront}}: LoaderFunctionArgs) {
   return json(await getFeaturedData(storefront));
@@ -28,7 +29,9 @@ export async function getFeaturedData(
 
   return {
     featuredCollections: flattenConnection(data.featuredCollections),
-    featuredProducts: flattenConnection(data.featuredProducts),
+    featuredProducts: flattenConnection(data.featuredProducts).filter(
+      (p) => !isHiddenProductHandle(p.handle),
+    ),
   };
 }
 
