@@ -1,19 +1,5 @@
-## What We Make
+LZX Industries designs and manufactures electronic instruments for real-time video synthesis. Founded in 2010 in Denton, Texas by Lars Larsen, Jonah Lange, and Ed Leckie, the company relocated to Portland, Oregon in 2015 and has shipped 97 products across eight product lines — from the foundational [Visionary Series](/legacy) Eurorack modules to the current flagship, [Videomancer](/instruments/videomancer).
 
-Our tools bridge the worlds of modular synthesis, live visuals, and video signal processing. We design systems that let artists shape color, sync, keying, modulation, and motion as a playable medium rather than a post-production workflow.
+Videomancer is an FPGA-based standalone video synthesizer offering ultra-low-latency processing, analog and HDMI I/O, MIDI and control voltage integration, and an open-source development SDK. It is designed for visual artists, live performers, and experimenters who want dedicated hardware for creating and manipulating video in real time.
 
-The result is an ecosystem of [Eurorack modules](/modules), [standalone instruments](/instruments), [patches](/patches), [guides](/docs/guides), and [technical documentation](/docs) built around performable image generation.
-
-## Built in Portland
-
-LZX Industries designs and manufactures instruments in Portland, Oregon. The goal is straightforward: make serious tools for video artists while keeping the documentation, support resources, and technical depth strong enough for long-term use.
-
-We care about stable signal paths, deep experimentation, and systems that reward users who want to keep learning.
-
-## How the Site Fits In
-
-The storefront is not just a catalog. It is the support layer for the products: [product manuals](/docs), [downloads](/downloads), [patches](/patches), a [glossary](/docs/guides/glossary) of video-synthesis terminology, [blog updates](/blog), and [LZX Connect](/connect) for a unified firmware workflow.
-
-## Start Here
-
-New to the ecosystem? Start with the [getting-started guide](/getting-started), browse our [starter systems](/systems), then move into [patches](/patches) and [product manuals](/docs). When you hit an unfamiliar term, the [glossary](/docs/guides/glossary) is the fastest way back to solid ground.
+LZX's design philosophy combines broadcast-grade signal processing with an approachable, joyful aesthetic inspired by educational television, public access broadcasting, and classic analog video art. Video synthesis is for everyone.
