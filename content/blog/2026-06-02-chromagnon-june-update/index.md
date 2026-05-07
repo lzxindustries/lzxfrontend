@@ -1,13 +1,13 @@
 ---
-slug: chromagnon-may-update
-title: 'Chromagnon Update: May 2026'
+slug: chromagnon-june-update
+title: 'Chromagnon Update: June 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
 # image: ./chromagnon-validation.jpg
 ---
 
-Monthly Chromagnon update for May 2026.
+Monthly Chromagnon update for June 2026.
 
 <!--truncate-->
 

@@ -1,13 +1,13 @@
 ---
-slug: chromagnon-september-update
-title: 'Chromagnon Fulfillment: September 2026'
+slug: chromagnon-october-update
+title: 'Chromagnon Fulfillment: October 2026'
 authors: [lars]
 tags: [chromagnon, manufacturing]
 draft: true
 # image: ./chromagnon-shipping.jpg
 ---
 
-Monthly Chromagnon fulfillment update for September 2026.
+Monthly Chromagnon fulfillment update for October 2026.
 
 <!--truncate-->
 
