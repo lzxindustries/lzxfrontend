@@ -103,6 +103,12 @@ invariant(product, 'Product not found');
 
 Docs under `content/docs/` follow `content/docs/WRITING_STYLE_GUIDE.md`. Practitioner-expert voice, no marketing language, no first-person singular, present tense and active voice.
 
+## Blog Posts
+
+- Posts live in `content/blog/YYYY-MM-DD-slug/index.md`. The folder date drives publish date; the `slug` frontmatter drives the URL (`/blog/<slug>`).
+- Drafts use `draft: true` in frontmatter and are excluded from production builds.
+- Relative image refs (`./img.png`) in post markdown are rewritten to `/docs/blog/<slug>/img.png` and **served from `public/docs/blog/<slug>/`** — not from `content/blog/`. When adding or renaming a post with images, mirror every referenced image into `public/docs/blog/<slug>/` or it will 404 in production. No build step copies these automatically.
+
 ## Repo-Local Assets
 
 - A symlink `lfs -> /mnt/e/lfs` may provide large, local-only assets; it is gitignored and optional.
