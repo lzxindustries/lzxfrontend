@@ -5,7 +5,7 @@ import type {
 } from '~/lib/category-listing/types';
 
 const PAGE_SUBTITLE =
-  'Cases, racks, busboards, and external power hardware for building, powering, and expanding LZX modular systems.';
+  'Everything you need to start your Eurorack setup, including cases, racks, busboards, and external power hardware for building, powering, and expanding your modular systems.';
 
 const ACTIVE_SECTION_SUBTITLE =
   'Current enclosures and busboards for Gen3 systems, from compact racks to larger Vessel builds.';

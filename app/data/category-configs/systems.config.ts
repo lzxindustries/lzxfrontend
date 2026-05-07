@@ -14,7 +14,7 @@ const SYSTEM_SLUGS = [
 ] as const;
 
 const SYSTEMS_SUBTITLE =
-  'Double Vision brings the modern Gen3 video synthesis platform into complete instruments and expandable system formats, from the base desktop configuration to larger racks and companion expansion.';
+  'Our modular systems bring singular modules from our various series into a complete instrument with expandable system formats from the base desktop configuration to larger rack enclosures.';
 
 function entryToSource(entry: SlugEntry): CategorySourceEntry {
   return {

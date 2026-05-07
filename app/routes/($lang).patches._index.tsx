@@ -105,9 +105,11 @@ export default function PatchesIndex() {
       <Section padding="x">
         <div className="mx-auto max-w-6xl pb-16">
           <p className="mb-6 text-lg leading-relaxed">
-            Explore patch ideas and recipes contributed by the LZX community.
-            Each patch shows a diagram, the modules used, and a video demo when
-            available.
+            Access and explore various community created patch ideas, recipes,
+            and demos to get your creative juices flowing! Each section
+            includes a diagram of how to recreate the artist&apos;s patch and a
+            video demo of the final output. Use these patches as a jumping off
+            point in creating your perfect visual masterpiece.
           </p>
 
           {/* Search and filters */}

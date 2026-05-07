@@ -90,6 +90,8 @@ function getInstrumentListingArtworkPath(slug: string): string | null {
 export const instrumentsCategoryConfig: CategoryListingConfig = {
   key: 'instruments',
   pageTitle: 'Instruments',
+  pageSubtitle:
+    'Our standalone consoles and instruments are a great way to start creating without the complexity and setup process of eurorack modules.',
   seoTitle: 'Instruments',
   seoDescription: 'LZX Industries standalone video instruments',
   sectionLabels: {active: 'Active', legacy: 'Legacy'},

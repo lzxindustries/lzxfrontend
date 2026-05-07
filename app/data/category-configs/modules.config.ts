@@ -37,7 +37,7 @@ const SERIES_LABELS: Record<string, string> = {
 
 const SERIES_SUBTITLES: Record<string, string> = {
   pseries:
-    'Compact utility modules designed to solve everyday patching needs with minimal space and maximum flexibility. These are foundational building blocks for routing, buffering, and distribution.',
+    'Our compact utility modules are the perfect building blocks in creating your perfect video setup! Solve your everyday patching needs with minimal space and maximum flexibility, specializing in routing, buffering, and distribution.',
   gen3: 'Gen3 defines the modern LZX core: high-precision color, keying, and signal processing modules built for contemporary video synthesis systems. This series is optimized for deep integration and performance.',
   castle:
     'Castle is a digital logic playground for video-rate pulse structures, counters, gates, and timing experiments. It brings modular logic synthesis into the visual domain with a playful, patch-programmable approach.',

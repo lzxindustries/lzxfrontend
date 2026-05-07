@@ -72,7 +72,7 @@ export const accessoriesCategoryConfig: CategoryListingConfig = {
   key: 'accessories',
   pageTitle: 'Accessories',
   pageSubtitle:
-    'Patch, sync, video, and power cables along with SD storage accessories for LZX systems.',
+    'Everything you need to patch and create with your new video gear! Find cables of all sizes and types along with any storage accessories for your new LZX device.',
   seoTitle: 'Accessories',
   seoDescription:
     'Cables and SD card accessories for patching, sync distribution, and media workflows.',

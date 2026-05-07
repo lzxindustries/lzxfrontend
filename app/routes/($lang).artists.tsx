@@ -84,8 +84,11 @@ export default function ArtistsPage() {
         </div>
         <h1 className="text-3xl font-bold mb-2">Artists</h1>
         <p className="text-base-content/70 mb-8">
-          A growing archive of artists and video creators using LZX tools in
-          their work.
+          Join us as we give back to our community via our weekly artist
+          highlights! Once a week, we honor our community&apos;s talented
+          creators by featuring their art, stories, and upcoming creations in
+          our newsletter and blog posts. Our customers inspire us, let them
+          inspire you!
         </p>
 
         {artistPosts.length === 0 ? (

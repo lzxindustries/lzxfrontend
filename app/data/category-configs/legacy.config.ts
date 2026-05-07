@@ -12,7 +12,7 @@ import type {
 } from '~/lib/category-listing/types';
 
 const PAGE_SUBTITLE =
-  'These modules are no longer in active production, but documentation and downloads remain available for existing owners and users.';
+  'This page includes past modules that we no longer have in active production and are not available for purchase. All modules include documentation and download information for existing owners and users.';
 
 function entryToSource(entry: SlugEntry): CategorySourceEntry {
   return {
