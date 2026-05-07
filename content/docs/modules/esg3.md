@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'ESG3'
+subtitle: 'Encoder & Sync Generator'
 image: /img/modules/esg3/esg3-diagrams/esg3_frontpanel.png
 description: 'Documentation for ESG3, a combined encoder, sync generator, and processing amplifier for SD and HD modular video synthesis.'
 ---
@@ -10,8 +11,6 @@ import esg3_frontpanel from '/img/modules/esg3/esg3-diagrams/esg3_frontpanel.png
 import esg3_line_art_labeled from '/img/modules/esg3/esg3-diagrams/esg3_line_art_labeled_496x1024.png';
 
 # ESG3
-
-<span class="head2_nolink">Encoder & Sync Generator</span>
 
 <img src={esg3_frontpanel} alt="ESG3 front panel" />
 

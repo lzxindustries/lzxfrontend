@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'ANGLES'
+subtitle: 'Fixed Ratio Mixer & Dual Ramp Generator'
 image: /img/modules/angles/angles-diagrams/angles_frontpanel.png
 description: 'Documentation for ANGLES, a dual horizontal/vertical ramp generator and 24-output fixed ratio mixer for dynamic video compositions.'
 ---
@@ -55,8 +56,6 @@ import angles_triangle from '/img/modules/angles/angles-diagrams/angles_triangle
 import angles_line_art_labeled from '/img/modules/angles/angles-diagrams/angles_line_art_labeled_496x1024.png';
 
 # ANGLES
-
-<span class="head2_nolink">Fixed Ratio Mixer & Dual Ramp Generator</span>
 
 <!-- AFR note: these two diagrams freak me out because they show connecting multiple outputs to a single input. I thought that dirty mixing was bad practice. I'm commenting the diagrams out for now. -->
 

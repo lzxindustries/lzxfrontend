@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'FACTORS'
+subtitle: 'Triple Four-Quadrant Multiplier'
 image: /img/modules/factors/factors-diagrams/factors_front_panel.png
 description: 'Documentation for FACTORS, a triple four-quadrant multiplier and modulator for amplitude modulation and contrast control.'
 ---
@@ -20,8 +21,6 @@ import factors_line_art_labeled from '/img/modules/factors/factors-diagrams/fact
 -->
 
 # FACTORS
-
-<span class="head2_nolink">Triple Four-Quadrant Multiplier</span>
 
 <img src={factors_front_panel} alt="Factors front panel" />
 

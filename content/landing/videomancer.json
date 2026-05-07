@@ -54,16 +54,19 @@
     {
       "title": "Plug in and perform",
       "icon": "/icons/videomancy/proof_plug.svg",
+      "href": "/instruments/videomancer",
       "body": "Patch any HDMI, composite, or component source. Load a program. Start patching. No software, no plugin chains, no laptop."
     },
     {
       "title": "An ever-expanding library of effects",
       "icon": "/icons/videomancy/proof_library.svg",
+      "href": "/patches",
       "body": "Twenty-four programs today — broadcast color correction, keying, feedback, glitch, pattern generators — with more in every firmware release. Every update is free."
     },
     {
       "title": "Open source SDK",
       "icon": "/icons/videomancy/proof_shield.svg",
+      "href": "/downloads",
       "body": "Write your own programs with the open source Videomancer SDK. Share patches, trade ideas, and ask questions alongside artists and engineers on Discord and GitHub."
     }
   ],

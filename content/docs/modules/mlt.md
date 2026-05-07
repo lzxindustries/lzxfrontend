@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'MLT'
+subtitle: 'Passive Multiples'
 image: /img/modules/mlt/mlt-diagrams/mlt_front-panel.png
 description: 'Documentation for MLT, a passive multiples utility module for splitting signals in a modular video system.'
 ---
@@ -12,8 +13,6 @@ import mlt_mults from '/img/modules/mlt/mlt-diagrams/mlt_mults.png';
 import mlt_understanding_cascading_input_jacks from '/img/modules/mlt/mlt-diagrams/mlt_understanding-cascading-input-jacks.png';
 
 # MLT
-
-<span class="head2_nolink">Passive Multiples</span>
 
 <img src={mlt_frontpanel} alt="mlt_frontpanel"/>
 

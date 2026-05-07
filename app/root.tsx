@@ -37,6 +37,7 @@ import katexStyles from 'katex/dist/katex.min.css?url';
 import hljsStyles from 'highlight.js/styles/github.css?url';
 import favicon from '~/assets/favicon.svg';
 import {Layout} from '~/components/Layout';
+import {LIGHT_THEME, themeInitScript} from '~/components/ThemeToggle';
 import {seoPayload} from '~/lib/seo.server';
 export const links: LinksFunction = () => {
   return [
@@ -95,12 +96,17 @@ export default function App() {
   const htmlLang = locale.language.toLowerCase();
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} data-theme={LIGHT_THEME} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        {/* Set theme before paint to avoid FOUC. */}
+        <script
+          dangerouslySetInnerHTML={{__html: themeInitScript}}
+          suppressHydrationWarning
+        />
         <MetaPixel enabled={hasUserConsent} />
       </head>
       <body>
@@ -152,13 +158,17 @@ export function ErrorBoundary({error}: {error: Error}) {
   const htmlLang = locale.language.toLowerCase();
 
   return (
-    <html lang={htmlLang}>
+    <html lang={htmlLang} data-theme={LIGHT_THEME} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>{title}</title>
         <Meta />
         <Links />
+        <script
+          dangerouslySetInnerHTML={{__html: themeInitScript}}
+          suppressHydrationWarning
+        />
       </head>
       <body>
         <Layout

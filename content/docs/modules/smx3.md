@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'SMX3'
+subtitle: 'Summing Matrix Mixer'
 image: /img/modules/smx3/smx3-diagrams/SMX3_frontpanel.png
 description: 'Documentation for SMX3, a nine-input three-output summing matrix mixer with per-input gain control from -2x to +2x.'
 ---
@@ -44,8 +45,6 @@ import smx3_frontpanel from '/img/modules/smx3/smx3-diagrams/SMX3_frontpanel.png
 import smx3_line_art_labeled from '/img/modules/smx3/smx3-diagrams/smx3_line_art_labeled_496x1024.png';
 
 # SMX3
-
-<span class="head2_nolink">Summing Matrix Mixer</span>
 
 <img src={smx3_frontpanel} alt="SMX3 front panel" />
 

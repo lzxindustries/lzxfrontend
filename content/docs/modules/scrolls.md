@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'SCROLLS'
+subtitle: 'Dual Motion Controlled Ramp Generator'
 image: /img/modules/scrolls/scrolls-diagrams/scrolls_frontpanel.png
 description: 'Documentation for SCROLLS, a dual motion controlled ramp generator for SD and HD modular video synthesis.'
 ---
@@ -27,8 +28,6 @@ import scrolls_synchronous_lfos from '/img/modules/scrolls/scrolls-diagrams/scro
 import scrolls_line_art_labeled from '/img/modules/scrolls/scrolls-diagrams/scrolls_line_art_labeled_496x1024.png';
 
 # SCROLLS
-
-<span class="head2_nolink">Dual Motion Controlled Ramp Generator</span>
 
 <img src={scrolls_frontpanel} alt="Scrolls front panel" />
 

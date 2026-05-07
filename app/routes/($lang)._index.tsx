@@ -345,6 +345,12 @@ export default function Home() {
               synthesis and visual art. Every product is engineered, assembled,
               and tested in-house.
             </p>
+            <Link
+              to="/about"
+              className="mt-3 inline-block text-sm font-semibold text-primary hover:underline"
+            >
+              Learn more about LZX →
+            </Link>
           </div>
 
           <div>
@@ -360,6 +366,12 @@ export default function Home() {
               real time. The result is a live, performable visual instrument
               that responds to hands-on control and external audio.
             </p>
+            <Link
+              to="/docs"
+              className="mt-3 inline-block text-sm font-semibold text-primary hover:underline"
+            >
+              Explore the documentation →
+            </Link>
           </div>
         </div>
       </section>

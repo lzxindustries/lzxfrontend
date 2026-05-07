@@ -379,10 +379,16 @@ export function DocLayout({
             </div>
           )}
           {frontmatter.title && (
-            <h1 className="text-heading font-bold mb-6 uppercase tracking-wide">
+            <h1 className="text-heading font-bold mb-2 uppercase tracking-wide">
               {frontmatter.title}
             </h1>
           )}
+          {typeof frontmatter.subtitle === 'string' &&
+            frontmatter.subtitle.trim() && (
+              <p className="mt-0 mb-6 text-xl font-medium text-base-content/70">
+                {frontmatter.subtitle}
+              </p>
+            )}
           <div
             ref={contentRef}
             className="docs-content prose max-w-none"

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'PAB'
+subtitle: 'Programmable Active Buffers'
 image: /img/modules/pab/pab-diagrams/pab_front-panel.png
 description: 'Documentation for PAB, a programmable active buffer for distributing and delaying signals in 16-nanosecond increments.'
 ---
@@ -12,8 +13,6 @@ import pab_controls_connectors_indicators from '/img/modules/pab/pab-diagrams/pa
 import pab_understanding_cascading_input_jacks from '/img/modules/pab/pab-diagrams/pab_understanding-cascading-input-jacks.png';
 
 # PAB
-
-<span class="head2_nolink">Programmable Active Buffers</span>
 
 <img src={pab_front_panel} alt="pab_front_panel" />
 

@@ -11,6 +11,7 @@ import Logo from './Logo';
 import {PredictiveSearch} from './PredictiveSearch';
 import {DocsSearch} from './DocsSearch';
 import {DesktopMegaMenu, MobileMegaMenu} from './MegaMenu';
+import {ThemeToggle} from './ThemeToggle';
 
 export function Header({
   cartCount = 0,
@@ -66,6 +67,9 @@ export function Header({
       </div>
       <div className="navbar-end">
         <ul className="menu menu-horizontal px-2">
+          <li>
+            <ThemeToggle iconSize={iconSize} />
+          </li>
           <li>
             <button
               onClick={() => setSearchOpen(true)}

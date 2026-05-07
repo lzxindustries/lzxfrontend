@@ -51,8 +51,15 @@ const MENU_GROUPS: MegaMenuGroup[] = [
   {
     label: 'Community',
     items: [
+      {
+        label: 'Community Hub',
+        to: '/community',
+        highlight: true,
+        description: 'Socials, forum, Discord, and newsletter',
+      },
       {label: 'Blog', to: '/blog'},
       {label: 'Patches', to: '/patches'},
+      {label: 'Artists', to: '/artists'},
       {
         label: 'Forum',
         to: 'https://community.lzxindustries.net',
@@ -64,7 +71,6 @@ const MENU_GROUPS: MegaMenuGroup[] = [
     label: 'About',
     items: [
       {label: 'About LZX', to: '/about'},
-      {label: 'Artists', to: '/artists'},
       {label: 'Legacy Modules', to: '/legacy'},
     ],
   },

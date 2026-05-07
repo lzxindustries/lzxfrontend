@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'SUM/DIST'
+subtitle: 'Summing & Distribution Amplifiers'
 image: /img/modules/sum-dist/sum-dist-diagrams/sum-dist_frontpanel.png
 description: 'Documentation for SUM/DIST, a function bank of summing and distribution amplifiers for adding and distributing video signals.'
 ---
@@ -44,8 +45,6 @@ import sumdist_frontpanel from '/img/modules/sum-dist/sum-dist-diagrams/sum-dist
 import sumdist_line_art_labeled from '/img/modules/sum-dist/sum-dist-diagrams/sum-dist_line_art_labeled_496x1024.png';
 
 # SUM/DIST
-
-<span class="head2_nolink">Summing & Distribution Amplifiers</span>
 
 <img src={sumdist_frontpanel} alt="Sum/Dist front panel" />
 

@@ -33,8 +33,6 @@ import videomancer_routing_diagram_dual_in from '/img/instruments/videomancer/vi
 
 # Videomancer
 
-<span class="head2_nolink">User Manual</span>
-
 <img src={videomancer_frontpanel} alt="Videomancer front panel"/>
 
 <img src={videomancer_rearpanel} alt="Videomancer rear connections"/>

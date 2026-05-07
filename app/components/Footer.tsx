@@ -1,15 +1,7 @@
-import {
-  FaInstagram,
-  FaDiscord,
-  FaTwitch,
-  FaYoutube,
-  FaFacebook,
-  FaTiktok,
-  FaTwitter,
-} from 'react-icons/fa';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {CountrySelector} from './CountrySelector';
 import Logo from './Logo';
+import {SOCIAL_LINKS} from '~/data/social-links';
 
 export function Footer() {
   const iconSize = 24;
@@ -56,6 +48,9 @@ export function Footer() {
           </a>
           <a className="link link-hover" href="/connect">
             LZX Connect
+          </a>
+          <a className="link link-hover" href="/community">
+            Community Hub
           </a>
           <a
             className="link link-hover"
@@ -152,62 +147,17 @@ export function Footer() {
         </div>
         <div className="md:place-self-center md:justify-self-end">
           <div className="flex flex-wrap gap-4 justify-start md:justify-end">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on Facebook"
-            >
-              <FaFacebook size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on Instagram"
-            >
-              <FaInstagram size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://discord.gg/7xzD4XzhGn"
-              rel="noreferrer"
-              aria-label="LZX on Discord"
-            >
-              <FaDiscord size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.twitch.tv/lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on Twitch"
-            >
-              <FaTwitch size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.youtube.com/lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on YouTube"
-            >
-              <FaYoutube size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.tiktok.com/@lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on TikTok"
-            >
-              <FaTiktok size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://x.com/lzxindustries"
-              rel="noreferrer"
-              aria-label="LZX on X"
-            >
-              <FaTwitter size={iconSize} />
-            </a>
+            {SOCIAL_LINKS.map(({id, href, ariaLabel, icon: Icon}) => (
+              <a
+                key={id}
+                target="_blank"
+                href={href}
+                rel="noreferrer"
+                aria-label={ariaLabel}
+              >
+                <Icon size={iconSize} />
+              </a>
+            ))}
           </div>
         </div>
       </footer>

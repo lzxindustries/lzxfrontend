@@ -168,27 +168,45 @@ export function VideomancyLandingSections() {
               {sections.proof.heading}
             </Heading>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
-              {proofCards.map((card, index) => (
-                <article
-                  key={card.title}
-                  className="vm-reveal rounded-2xl border border-white/10 bg-[#111] p-5"
-                  style={{animationDelay: `${120 + index * 90}ms`}}
-                >
-                  <img
-                    src={card.icon}
-                    alt=""
-                    width={56}
-                    height={56}
-                    className="mb-3 h-14 w-14"
-                  />
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-moonwax">
-                    {card.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/65">
-                    {card.body}
-                  </p>
-                </article>
-              ))}
+              {proofCards.map((card, index) => {
+                const href = (card as {href?: string}).href;
+                const cardInner = (
+                  <>
+                    <img
+                      src={card.icon}
+                      alt=""
+                      width={56}
+                      height={56}
+                      className="mb-3 h-14 w-14"
+                    />
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-moonwax">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-white/65">
+                      {card.body}
+                    </p>
+                  </>
+                );
+                const style = {animationDelay: `${120 + index * 90}ms`};
+                return href ? (
+                  <Link
+                    key={card.title}
+                    to={href}
+                    className="vm-reveal group rounded-2xl border border-white/10 bg-[#111] p-5 transition-all duration-300 any-hover:hover:border-mystic/60 any-hover:hover:bg-[#161420]"
+                    style={style}
+                  >
+                    {cardInner}
+                  </Link>
+                ) : (
+                  <article
+                    key={card.title}
+                    className="vm-reveal rounded-2xl border border-white/10 bg-[#111] p-5"
+                    style={style}
+                  >
+                    {cardInner}
+                  </article>
+                );
+              })}
             </div>
           </div>
 

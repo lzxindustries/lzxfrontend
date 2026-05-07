@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'FKG3'
+subtitle: 'Fader & Key Generating Compositor'
 image: /img/modules/fkg3/fkg3-diagrams/fkg3_frontpanel.png
 description: 'Documentation for FKG3, a fader and key generating compositor for layering two RGB sources with internal or external keying.'
 ---
@@ -44,8 +45,6 @@ import fkg3_frontpanel from '/img/modules/fkg3/fkg3-diagrams/fkg3_frontpanel.png
 import fkg3_panel_labeled from '/img/modules/fkg3/fkg3-diagrams/fkg3_panel_labeled_496x1024.png';
 
 # FKG3
-
-<span class="head2_nolink">Fader & Key Generating Compositor</span>
 
 <img src={fkg3_frontpanel} alt="FKG3 front panel" />
 

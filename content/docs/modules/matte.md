@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'MATTE'
+subtitle: 'Static Voltage Generator & Control Panel'
 image: /img/modules/matte/matte-diagrams/matte_frontpanel.png
 description: 'Documentation for MATTE, a static voltage generator and control panel optimized for RGB color selection in video synthesis.'
 ---
@@ -44,8 +45,6 @@ import matte_frontpanel from '/img/modules/matte/matte-diagrams/matte_frontpanel
 import matte_line_art_labeled from '/img/modules/matte/matte-diagrams/matte_line_art_labeled_336x1024.png';
 
 # MATTE
-
-<span class="head2_nolink">Static Voltage Generator & Control Panel</span>
 
 <img src={matte_frontpanel} alt="Matte front panel" />
 

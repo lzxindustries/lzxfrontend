@@ -33,6 +33,7 @@ export interface TocHeading {
 
 export interface ContentFrontmatter {
   title: string;
+  subtitle?: string;
   slug?: string;
   description?: string;
   image?: string;

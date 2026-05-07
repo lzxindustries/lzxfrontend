@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'KEYCHAIN'
+subtitle: 'Triple Hard Key Generator'
 image: /img/modules/keychain/keychain-diagrams/keychain_frontpanel.png
 description: 'Documentation for KEYCHAIN, a triple hard key generator using ultra-fast voltage comparators for SD and HD video synthesis.'
 ---
@@ -53,8 +54,6 @@ import dsg3_dsg3_keychain from '/img/modules/dsg3/dsg3-diagrams/dsg3_dsg3-keycha
 import keychain_line_art_labeled from '/img/modules/keychain/keychain-diagrams/keychain_line_art_labeled_336x1024.png';
 
 # KEYCHAIN
-
-<span class="head2_nolink">Triple Hard Key Generator</span>
 
 <img src={keychain_frontpanel} alt="Keychain front panel" />
 

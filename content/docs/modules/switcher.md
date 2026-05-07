@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'SWITCHER'
+subtitle: 'Dual 4x3 Multiplexer'
 image: /img/modules/switcher/switcher-diagrams/switcher_frontpanel.png
 description: 'Documentation for SWITCHER, a dual 4x3 multiplexer router with illuminated buttons for RGB source selection.'
 ---
@@ -10,8 +11,6 @@ import switcher_frontpanel from '/img/modules/switcher/switcher-diagrams/switche
 import switcher_line_art_labeled from '/img/modules/switcher/switcher-diagrams/switcher_line_art_labeled_736x1024.png';
 
 # SWITCHER
-
-<span class="head2_nolink">Dual 4x3 Multiplexer</span>
 
 <img src={switcher_frontpanel} alt="Switcher front panel" />
 

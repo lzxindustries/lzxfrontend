@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'PRM'
+subtitle: 'Programmable Rectifier & Multiplier'
 image: /img/modules/prm/prm-diagrams/prm_front-panel.png
 description: 'Documentation for PRM, a programmable rectifier and multiplier for modifying and combining analog video signals.'
 ---
@@ -27,8 +28,6 @@ import prm_analog_logic_xor from '/img/modules/prm/prm-diagrams/prm_analog-logic
 import prm_voltage_limiter from '/img/modules/prm/prm-diagrams/prm_voltage-limiter.png';
 
 # PRM
-
-<span class="head2_nolink">Programmable Rectifier & Multiplier</span>
 
 <img src={prm_front_panel} alt="prm_front_panel" />
 

@@ -16,8 +16,6 @@ import videomancer_LCD_parameter from '/img/instruments/videomancer/videomancer_
 
 # Videomancer
 
-<span class="head2_nolink">Quick Start Guide</span>
-
 :::tip Before You Begin
 This guide gets you up and running with Videomancer in minutes. For complete documentation on all features, connections, and capabilities, see the **[User Manual](/docs/instruments/videomancer/user-manual)**.
 :::

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'SWATCH'
+subtitle: 'Dual Color Space Converter'
 image: /img/modules/swatch/swatch-diagrams/swatch_front_panel.png
 description: 'Documentation for SWATCH, a dual bidirectional color space converter for manipulating video color beyond the RGB color space.'
 ---
@@ -81,8 +82,6 @@ Ideally, this would be an animation showing the results of adjusting the Proc Ga
 -->
 
 # Swatch
-
-<span class="head2_nolink">Dual Color Space Converter</span>
 
 <img src={swatch_front_panel} alt="swatch front panel" />
 

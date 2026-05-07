@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'LNK'
+subtitle: 'Passive Links'
 image: /img/modules/lnk/lnk-diagrams/lnk_front-panel.png
 description: 'Documentation for LNK, a passive linking utility module for connecting and distributing signals in a modular video system.'
 ---
@@ -12,8 +13,6 @@ import lnk_mults from '/img/modules/lnk/lnk-diagrams/lnk_mults.png';
 import lnk_understanding_cascading_input_jacks from '/img/modules/lnk/lnk-diagrams/lnk_understanding-cascading-input-jacks.png';
 
 # LNK
-
-<span class="head2_nolink">Passive Links</span>
 
 <img src={lnk_front_panel} alt="lnk_front_panel" />
 

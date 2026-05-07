@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'PGO'
+subtitle: 'Programmable Gain & Offset'
 image: /img/modules/pgo/pgo-diagrams/pgo_front-panel.png
 description: 'Documentation for PGO, a programmable gain and offset utility for adding and subtracting video signals in a compact 4HP module.'
 ---
@@ -36,8 +37,6 @@ import pgo_differential_to_single_ended from '/img/modules/pgo/pgo-diagrams/pgo_
 import pgo_single_ended_to_differential from '/img/modules/pgo/pgo-diagrams/pgo_single-ended-to-differential.png';
 
 # PGO
-
-<span class="head2_nolink">Programmable Gain & Offset</span>
 
 <img src={pgo_front_panel} alt="pgo_front_panel" />
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'DSG3'
+subtitle: 'Dual Shape Generator'
 image: /img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png
 description: 'Documentation for DSG3, a dual shape generator with waveshaping, blending, and logic functions for creating 2D shapes in video synthesis.'
 ---
@@ -57,8 +58,6 @@ import dsg3_signal_path from '/img/modules/dsg3/dsg3-diagrams/dsg3_signal-path.p
 import dsg3_line_art_labeled from '/img/modules/dsg3/dsg3-diagrams/dsg3_line_art_labeled_496x1024.png';
 
 # DSG3
-
-<span class="head2_nolink">Dual Shape Generator</span>
 
 <img src={dsg3_frontpanel} alt="DSG3 front panel" />
 

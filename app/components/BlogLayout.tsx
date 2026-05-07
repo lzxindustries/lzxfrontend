@@ -1,7 +1,6 @@
 import {useRef} from 'react';
 import {Link} from '@remix-run/react';
 import clsx from 'clsx';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {useImageZoom} from '~/hooks/useImageZoom';
 import {useMermaid} from '~/hooks/useMermaid';
 import {Breadcrumbs} from './Breadcrumbs';
@@ -127,29 +126,9 @@ export function BlogIndex({
                   <h2 className="text-2xl font-semibold mb-4">{year}</h2>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {yearPosts.map((post, index) => {
-                      const showNewsletter =
-                        yearIndex === 0 && index === 1 && posts.length > 2;
-
-                      return (
-                        <div key={post.slug}>
-                          <BlogCard post={post} />
-                          {showNewsletter ? (
-                            <div className="mt-4 rounded-lg border border-base-300 bg-base-200 p-4">
-                              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                                Newsletter
-                              </p>
-                              <p className="mt-1 mb-3 text-sm text-base-content/70">
-                                Get release updates, firmware notes, and
-                                workshop news.
-                              </p>
-                              {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
-                              <MailchimpSubscribe url="https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0" />
-                            </div>
-                          ) : null}
-                        </div>
-                      );
-                    })}
+                    {yearPosts.map((post) => (
+                      <BlogCard key={post.slug} post={post} />
+                    ))}
                   </div>
                 </section>
               );

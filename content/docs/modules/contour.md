@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'CONTOUR'
+subtitle: 'Triple Detail Extractor'
 image: /img/modules/contour/contour-diagrams/contour_frontpanel.png
 description: 'Documentation for CONTOUR, a triple voltage-controlled high-pass filter for extracting edge transitions from video images and patterns.'
 ---
@@ -43,8 +44,6 @@ import contour_frontpanel from '/img/modules/contour/contour-diagrams/contour_fr
 import contour_line_art_labeled from '/img/modules/contour/contour-diagrams/contour_line_art_labeled_336x1024.png';
 
 # Contour
-
-<span class="head2_nolink">Triple Detail Extractor</span>
 
 <img src={contour_frontpanel} alt="Contour front panel" />
 

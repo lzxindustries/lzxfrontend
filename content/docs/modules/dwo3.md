@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'DWO3'
+subtitle: 'Dual Wideband Oscillator'
 image: /img/modules/dwo3/dwo3-diagrams/dwo3_frontpanel.png
 description: 'Documentation for DWO3, a dual wideband oscillator capable of generating high frequency waveforms for SD and HD video pattern generation.'
 ---
@@ -44,8 +45,6 @@ import dwo3_frontpanel from '/img/modules/dwo3/dwo3-diagrams/dwo3_frontpanel.png
 import dwo3_line_art_labeled from '/img/modules/dwo3/dwo3-diagrams/dwo3_line_art_labeled_496x1024.png';
 
 # DWO3
-
-<span class="head2_nolink">Dual Wideband Oscillator</span>
 
 <img src={dwo3_frontpanel} alt="DWO3 front panel" />
 

@@ -1,6 +1,7 @@
 ---
 draft: false
 title: 'TBC2'
+subtitle: 'Dual Video Input'
 image: /img/modules/tbc2/tbc2-diagrams/tbc2_frontpanel.png
 description: 'Documentation for TBC2, a dual video input module for bringing multiple video sources into a modular video synthesizer.'
 ---
@@ -44,8 +45,6 @@ import tbc2_frontpanel from '/img/modules/tbc2/tbc2-diagrams/tbc2_frontpanel.png
 import tbc2_line_art_labeled from '/img/modules/tbc2/tbc2-diagrams/tbc2_line_art_labeled_654x1024.png';
 
 # TBC2
-
-<span class="head2_nolink">Dual Video Input</span>
 
 <img src={tbc2_frontpanel} alt="TBC2 front panel" />
 
