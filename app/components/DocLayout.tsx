@@ -379,7 +379,9 @@ export function DocLayout({
             </div>
           )}
           {frontmatter.title && (
-            <h1 className="text-heading font-bold mb-6">{frontmatter.title}</h1>
+            <h1 className="text-heading font-bold mb-6 uppercase tracking-wide">
+              {frontmatter.title}
+            </h1>
           )}
           <div
             ref={contentRef}

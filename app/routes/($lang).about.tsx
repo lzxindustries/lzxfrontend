@@ -38,13 +38,8 @@ export default function AboutPage() {
             LZX Industries
           </p>
           <h1 className="text-4xl font-black tracking-tight md:text-5xl">
-            Creative instruments for video synthesis
+            About LZX
           </h1>
-          <p className="mt-4 max-w-3xl text-base-content/75 md:text-lg">
-            LZX Industries builds analog and digital instruments for real-time
-            image processing, modular video synthesis, and performance-driven
-            visual experimentation.
-          </p>
         </header>
 
         <MarkdownArticle content={aboutContent} />

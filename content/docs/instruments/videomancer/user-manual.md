@@ -459,45 +459,45 @@ On the other hand, there's no issue at all when integrating a modular system usi
 
 The following outline illustrates the overall structure of the Videomancer menus. Specific options per menu are listed or described in the corresponding sections of this User Guide, or in supplemental documents such as the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md).
 
-- **SYSTEM**, **MOTION**, and **STATE** menus are chosen by pressing the labeled white Button, indicated by a circled bullet character: &nbsp;<span class="system-ui">◉</span>
-- **Parameter** menus are chosen by repeatedly pressing a black Parameter Button, labeled **1** through **\*** (12), indicated by a hollow bullet character: &nbsp;<span class="system-ui">○</span>
-- Most menus are chosen by turning the Rotary Encoder, indicated by a left-right horizontal arrow: &nbsp;<span class="system-ui">&harr;</span>
-- Any menu accessed by pressing the Rotary Encoder is indicated by a down arrow: &nbsp;<span class="system-ui">&darr;</span>
+- **SYSTEM**, **MOTION**, and **STATE** menus are chosen by pressing the labeled white Button, indicated by a circled bullet character: `◉`
+- **Parameter** menus are chosen by repeatedly pressing a black Parameter Button, labeled **1** through **\*** (12), indicated by a hollow bullet character: `○`
+- Most menus are chosen by turning the Rotary Encoder, indicated by a left-right horizontal arrow: `↔`
+- Any menu accessed by pressing the Rotary Encoder is indicated by a down arrow: `↓`
 
-<span class="code-like-block-vm">
+```text
 Videomancer
 │
 ├── SYSTEM ◉
-│   ├─ Current Program, Video In, and format <span class="system-ui">&harr;</span>
-|   |   └─ Program Selection ↓
-│   ├─ Video Route Mode <span class="system-ui">&harr;</span>
-│   ├─ Analog In Mode <span class="system-ui">&harr;</span>
-│   ├─ Analog Out Mode <span class="system-ui">&harr;</span>
-│   ├─ HDMI Out Mode <span class="system-ui">&harr;</span>
-│   ├─ MIDI Channel <span class="system-ui">&harr;</span>
-│   ├─ MIDI Out Mode <span class="system-ui">&harr;</span>
-│   ├─ Developer Mode <span class="system-ui">&harr;</span>
-│   ├─ Soft Pickup <span class="system-ui">&harr;</span>
-│   ├─ Language <span class="system-ui">&harr;</span>
-│   ├─ Preferred Timing <span class="system-ui">&harr;</span>
-|   └─ Escape to Parameter menu ◉
+│   ├─ Current Program, Video In, and format ↔
+│   │   └─ Program Selection ↓
+│   ├─ Video Route Mode ↔
+│   ├─ Analog In Mode ↔
+│   ├─ Analog Out Mode ↔
+│   ├─ HDMI Out Mode ↔
+│   ├─ MIDI Channel ↔
+│   ├─ MIDI Out Mode ↔
+│   ├─ Developer Mode ↔
+│   ├─ Soft Pickup ↔
+│   ├─ Language ↔
+│   ├─ Preferred Timing ↔
+│   └─ Escape to Parameter menu ◉
 │
 ├── MOTION ◉
 │   ├─ Timecode & Beats Per Minute
 │   ├─ Motion Overview ◉
-|   └─ Escape to Parameter menu ◉
+│   └─ Escape to Parameter menu ◉
 │
 ├── STATE ◉
-│   ├─ Presets <span class="system-ui">&harr;</span>
-|   └─ Escape to Parameter menu ◉
+│   ├─ Presets ↔
+│   └─ Escape to Parameter menu ◉
 │
 └── Parameter ○
-&nbsp;   ├─ Manual ○
-&nbsp;   ├─ Time ○
-&nbsp;   ├─ Space ○
-&nbsp;   ├─ Slope ○
-&nbsp;   └─ Modulation Selection ○ <span class="system-ui">&harr;</span>
-</span>
+    ├─ Manual ○
+    ├─ Time ○
+    ├─ Space ○
+    ├─ Slope ○
+    └─ Modulation Selection ○ ↔
+```
 
 ---
 
@@ -774,7 +774,7 @@ The top row lists all active Modulation Operators. Each character or symbol to t
 
 | Symbol                                | Modulation Operator | Symbol | Modulation Operator |
 | :------------------------------------ | :------------------ | :----- | :------------------ |
-| <span class="system-ui">&bull;</span> | Disabled            | K      | Comparator          |
+| `•`                                   | Disabled            | K      | Comparator          |
 | L                                     | Free LFO            | N      | Pendulum            |
 | S                                     | Sync LFO            | W      | Drift               |
 | C                                     | CV Input            | \*     | Ring Mod            |

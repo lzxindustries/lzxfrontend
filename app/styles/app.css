@@ -611,8 +611,17 @@
 .docs-content {
   @apply text-base leading-relaxed;
 
+  /*
+   * Heading hierarchy: H1 (page title, rendered in DocLayout) and H2 are
+   * uppercased via CSS so major headings remain visually dominant. This
+   * matches the legacy Docusaurus presentation and prevents H3 button-label
+   * headings (e.g. `### SYSTEM`, `### MOTION`) — which are written in caps
+   * because they refer to physical buttons — from outshouting their parent
+   * sections. Do not remove without also normalizing the literal-caps H3s
+   * in the source markdown.
+   */
   h2 {
-    @apply text-xl font-bold mt-8 mb-4;
+    @apply text-xl font-bold mt-8 mb-4 uppercase tracking-wide;
   }
 
   h3 {
