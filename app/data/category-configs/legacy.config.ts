@@ -10,9 +10,22 @@ import type {
   CategoryRawSection,
   CategorySourceEntry,
 } from '~/lib/category-listing/types';
+import {MODULE_LISTING_EXCLUSIONS} from '~/data/category-configs/modules.config';
 
 const PAGE_SUBTITLE =
   'This page includes past modules that we no longer have in active production and are not available for purchase. All modules include documentation and download information for existing owners and users.';
+
+// Series considered "legacy" on the /modules listing. Keep in sync with
+// LEGACY_SERIES_ORDER in modules.config.ts so /legacy lists every module
+// that /modules surfaces under its Legacy section.
+const LEGACY_SERIES = new Set([
+  'orion',
+  'expedition',
+  'cadet',
+  'visionary',
+  'legacy',
+  'other',
+]);
 
 function entryToSource(entry: SlugEntry): CategorySourceEntry {
   return {
@@ -27,7 +40,13 @@ function entryToSource(entry: SlugEntry): CategorySourceEntry {
 
 function buildRawSections(): CategoryRawSection[] {
   const all = [...getModulesBySeries().values()].flat();
-  const legacy = all.filter((e) => e.isHidden).map(entryToSource);
+  const legacy = all
+    .filter(
+      (e) =>
+        !MODULE_LISTING_EXCLUSIONS.has(e.canonical) &&
+        (e.isHidden || LEGACY_SERIES.has(e.series ?? 'other')),
+    )
+    .map(entryToSource);
   return [
     {
       key: 'all',
