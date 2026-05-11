@@ -115,6 +115,17 @@ function deriveVideoSyncIO(raw: Record<string, unknown>): string {
 
 // --- Build rows ---
 
+// Series considered "Active" on the modules landing page
+// (`app/data/category-configs/modules.config.ts`). Everything else is
+// surfaced under the Legacy section, so the specs table mirrors that
+// classification rather than relying on lzxdb's `is_hidden` /
+// `discontinuedDate` fields, which are stale for many catalog entries.
+const ACTIVE_SERIES = new Set(['pseries', 'gen3', 'castle']);
+
+function statusForSeries(series: string | null): ModuleStatus {
+  return series && ACTIVE_SERIES.has(series) ? 'Active' : 'Legacy';
+}
+
 function buildRows(): ModuleSpecRow[] {
   const rows: ModuleSpecRow[] = [];
 
@@ -133,11 +144,11 @@ function buildRows(): ModuleSpecRow[] {
     const companyRef = raw.company as {$oid: string} | undefined;
     const company = companyRef ? companyById.get(companyRef.$oid) ?? '' : '';
 
-    const isHidden = !!raw.is_hidden;
     const discontinuedYear = yearOf(raw.discontinuedDate);
     const releaseYear = yearOf(raw.releaseDate);
-    const status: ModuleStatus =
-      isHidden || discontinuedYear !== null ? 'Legacy' : 'Active';
+    // Active vs Legacy is sourced from series classification so it stays in
+    // sync with the modules landing page sections.
+    const status: ModuleStatus = statusForSeries(slugEntry.series);
 
     rows.push({
       id,

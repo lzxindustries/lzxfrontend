@@ -186,7 +186,10 @@ export default function ModuleSpecsPage() {
 
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>('asc');
-  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
+  // Default to Active so the specs table mirrors the modules landing page
+  // (`/modules`) where Active products are shown first. Users can opt into
+  // Legacy or All via the Status filter below.
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('Active');
   const [seriesFilter, setSeriesFilter] = useState<Set<string>>(new Set());
   const [syncGenOnly, setSyncGenOnly] = useState(false);
   const [search, setSearch] = useState('');
@@ -241,7 +244,7 @@ export default function ModuleSpecsPage() {
   };
 
   const clearFilters = () => {
-    setStatusFilter('all');
+    setStatusFilter('Active');
     setSeriesFilter(new Set());
     setSyncGenOnly(false);
     setSearch('');
