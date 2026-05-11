@@ -290,9 +290,22 @@ type SyntheticMetafield = Pick<
 function mediaNodeImageUrl(
   node: MediaConnection['nodes'][number],
 ): string | undefined {
-  return node.__typename === 'MediaImage'
-    ? node.image?.url ?? undefined
-    : undefined;
+  // Accept both the live Storefront API shape (`__typename: 'MediaImage'`)
+  // and the locally-synthesized shape from `buildHubProductFromLocal`,
+  // which carries `mediaContentType: 'IMAGE'` and no `__typename`. Without
+  // this, the dedupe set below is always empty for hub-built products and
+  // every legacy gallery image gets appended on top of the LFS gallery
+  // (visible as "2 of every image" duplicates on instrument/module/system
+  // hub pages).
+  const anyNode = node as {
+    __typename?: string;
+    mediaContentType?: string;
+    image?: {url?: string | null} | null;
+  };
+  const isImage =
+    anyNode.__typename === 'MediaImage' || anyNode.mediaContentType === 'IMAGE';
+  if (!isImage) return undefined;
+  return anyNode.image?.url ?? undefined;
 }
 
 function mergeLegacyProductData(

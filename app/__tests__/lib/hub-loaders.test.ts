@@ -193,4 +193,39 @@ describe('loadInstrumentHubData', () => {
       expect(data?.product.id).toMatch(/^gid:\/\/shopify\/Product\//);
     }
   });
+
+  it('does not duplicate gallery images when the LFS gallery already covers the legacy gallery', async () => {
+    // Regression: `mergeLegacyProductData` previously gated dedupe on
+    // `node.__typename === 'MediaImage'`, but `buildHubProductFromLocal`
+    // synthesizes nodes without `__typename` (uses `mediaContentType:
+    // 'IMAGE'`), so the existing-URL set was always empty and every legacy
+    // gallery image was appended on top of the LFS gallery — visible as
+    // "2 of every image" duplicates on hub pages (videomancer, contour,
+    // dsg3, ribbons, vessel-168, etc.).
+    const context = createContext();
+    const cases: Array<[string, (slug: string) => Promise<unknown>]> = [
+      ['videomancer', (slug) => loadInstrumentHubData(slug, context, new Request(`https://www.lzxindustries.net/instruments/${slug}`))],
+      ['chromagnon', (slug) => loadInstrumentHubData(slug, context, new Request(`https://www.lzxindustries.net/instruments/${slug}`))],
+      ['contour', (slug) => loadModuleHubData(slug, context, new Request(`https://www.lzxindustries.net/modules/${slug}`))],
+      ['ribbons', (slug) => loadModuleHubData(slug, context, new Request(`https://www.lzxindustries.net/modules/${slug}`))],
+    ];
+    for (const [slug, loader] of cases) {
+      const data = (await loader(slug)) as
+        | {product: {media?: {nodes?: unknown[]}}}
+        | null;
+      expect(data, `loader returned data for ${slug}`).not.toBeNull();
+      const urls = (data?.product.media?.nodes ?? [])
+        .map((n: any) => n?.image?.url)
+        .filter((u: any): u is string => typeof u === 'string');
+      const seen = new Set<string>();
+      const duplicates: string[] = [];
+      for (const url of urls) {
+        if (seen.has(url)) duplicates.push(url);
+        seen.add(url);
+      }
+      expect(duplicates, `${slug} should not duplicate gallery URLs`).toEqual(
+        [],
+      );
+    }
+  });
 });
