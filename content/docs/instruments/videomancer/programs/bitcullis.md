@@ -224,6 +224,37 @@ Dithering is a technique for improving the subjective dynamic range of media wit
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. Luma Invert            (optional bitwise complement)
+│   ├─ 2. Luma to Hori Modulation   (luminance controls H-decimation frequency)
+│   ├─ 3. Vertical Decimation    (sample-and-hold per scan line)
+│   ├─ 4. Horizontal Decimation  (sample-and-hold per pixel, modulated by Y)
+│   ├─ 5. Dithering              (ordered Bayer or random LFSR, optional)
+│   ├─ 6. Luma Posterization     (quantizer — bit-depth reduction)
+│   ├─ 7. Bit Order Reversal     (optional bit permutation)
+│   └─ 8. Threshold Key          (luminance threshold → black below cutoff)
+│
+├── U/V Channels ───────────────────────────────────────────────
+│   │
+│   ├─ 1. Luma to Chroma Modulation (luminance controls UV saturation)
+│   ├─ 2. Vertical Decimation    (same frequency as Y)
+│   ├─ 3. Horizontal Decimation  (same frequency as Y, modulated by Y)
+│   ├─ 4. Dithering              (same pattern as Y)
+│   ├─ 5. Chroma Posterization   (quantizer — independent of Y)
+│   ├─ 6. Bit Order Reversal     (optional, same as Y)
+│   └─ 7. Threshold Key          (keyed to neutral when Y below threshold)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ Pass-through (hsync, vsync, field, avid)
+│
+└── Bypass ─────────────────────────────────────────────────────
+    └─ Select original or processed signal
+```
+
 ### Signal Flow Notes
 
 Two key interactions:

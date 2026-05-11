@@ -218,6 +218,44 @@ The bounce angle is determined by where the ball strikes the paddle. A hit near 
 
 ## Signal Flow
 
+```text
+Timing Generator → Pixel Counter → Rendering Pipeline → Interpolator → Output
+
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │  GAME STATE (updated once per vsync)                               │
+   │                                                                     │
+   │  Pots/Toggles ──→ Paddle Target Pre-compute (2-stage pipeline)     │
+   │                         │                                           │
+   │  vsync ──→ Physics FSM (8-phase)                                   │
+   │              │  Phase 0: Register inputs, update paddles            │
+   │              │  Phase 1: Wall bounce                                │
+   │              │  Phase 2-3: P1 hit detect + angle                   │
+   │              │  Phase 4-5: P2 hit detect + angle                   │
+   │              │  Phase 6: Score check                                │
+   │              └─ Phase 7: Commit → ball_x/y, ball_vx/vy, scores    │
+   └───────────────────────────┬─────────────────────────────────────────┘
+                               │ game state signals
+                               ▼
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │  RENDERING PIPELINE (runs every pixel clock, 7 stages)             │
+   │                                                                     │
+   │  Stage 1: Register pixel coordinates + boundary pre-computation    │
+   │  Stage 2: Individual comparison flags (register-to-register)       │
+   │  Stage 3: Combine flags (ball, pad1, pad2, net, border, score Δ)  │
+   │  Stage 4: Score digit font ROM lookup (5×7 at 4× scale)          │
+   │  Stage 5: Color mux (foreground / net / border / background)       │
+   └───────────────────────────┬─────────────────────────────────────────┘
+                               │ rendered YUV
+                               ▼
+   ┌─────────────────────────────────────────────────────────────────────┐
+   │  INTERPOLATOR (4 clocks)                                           │
+   │  Blends rendered court with delayed input video via Mix fader      │
+   └───────────────────────────┬─────────────────────────────────────────┘
+                               │
+                               ▼
+   IO Alignment (2 clocks) → Output YUV 4:4:4
+```
+
 ### Signal Flow Notes
 
 The architecture splits cleanly into two domains. The **game state** domain runs once per frame at vsync, computing ball position, paddle positions, collision detection, and scores. The **rendering** domain runs every pixel clock, testing each pixel coordinate against the game state to determine its color.

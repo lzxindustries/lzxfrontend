@@ -234,6 +234,37 @@ Videomancer's warp implementation uses a single-BRAM line buffer. Each scan line
 
 ## Signal Flow
 
+```text
+Scroll DDS (X/Y Offsets, per-frame update)
+│
+├── Warp BRAM Pre-Read (previous line's noise at this column)
+│
+S1:  Warped Coordinates = pixel + scroll_offset + warp_feedback
+│
+S2:  Scaled Coordinates = warped × scale_multiplier
+│
+S3:  Cell/Frac Extraction + 8-Corner XOR-Fold Hash (oct1 × 4, oct2 × 4)
+│
+S4:  Cubic Smoothstep — Squarers  (fx², fy²)
+S5:  Cubic Smoothstep — Factor    (384 - 2t)
+S6:  Cubic Smoothstep — Product   (sx, sy) + Gradient Dot Products (oct1)
+│                                           + Value Noise (oct2)
+S7:  Register sx/sy, dots, values
+│
+S8–S10:  Bilinear Lerp — Horizontal then Vertical (oct1 + oct2)
+S11–S13: Bilinear Lerp — Vertical sums → noise1, noise2
+│
+S14: Octave Blend + Ridge Fold + Palette Index + Warp BRAM Write
+│
+S15: Palette BRAM Read → YUV (8-bit → 10-bit expansion)
+│
+S16: Contrast Enhancement (1.125×) + Video Multiply (optional)
+│
+S17–S19: Wet/Dry Mix (3-stage pipelined crossfade)
+│
+Output (YUV 4:4:4 30-bit)
+```
+
 ### Signal Flow Notes
 
 Three key interactions define Perlin's behaviour:

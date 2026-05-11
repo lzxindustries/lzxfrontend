@@ -234,6 +234,32 @@ Real thermal cameras use **_automatic gain control_** to stretch the sensor's ou
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. IIR Horizontal Smoothing    (shift-based low-pass filter)
+│   ├─ 2. Auto-Range Tracking         (IIR min/max envelope per frame)
+│   ├─ 3. Gain + Centering            (auto: normalise to tracked range;
+│   │                                   manual: contrast × input + brightness)
+│   ├─ 4. Posterize + Invert          (bitmask LSB truncation, palette flip)
+│   ├─ 5. Palette Lookup              (16-key piecewise-linear → YCbCr)
+│   ├─ 6. Contour Line Generation     (power-of-2 bitmask compare)
+│   ├─ 7. HUD Overlay                 (crosshair + corner brackets)
+│   └─ 8. Wet/Dry Mix                 (interpolator_u crossfade)
+│
+├── Cb/Cr Channels ─────────────────────────────────────────────
+│   └─ Palette output replaces original chroma (no chroma input processing)
+│       └─ Wet/Dry Mix               (interpolator_u crossfade with dry Cb/Cr)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 13-clock delay pipeline (hsync, vsync, field, avid)
+│
+└── Output ─────────────────────────────────────────────────────
+    └─ Mixed YUV 4:4:4
+```
+
 ### Signal Flow Notes
 
 The key architectural decision is that **the entire palette mapping operates on the Y (luminance) channel only**. The input Cb and Cr channels are not processed at all: they are delayed and available only for the dry side of the wet/dry mix. The "color" in the false-color output comes entirely from the palette lookup, which outputs all three channels (Y, Cb, Cr) as a function of the single luminance input.

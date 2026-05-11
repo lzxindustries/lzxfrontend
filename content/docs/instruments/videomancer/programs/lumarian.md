@@ -219,6 +219,34 @@ Edge enhancement, also called **_unsharp masking_** in photography, sharpens an 
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. Proc Amp              (Contrast gain + Brightness offset)
+│   ├─ 2. Gamma                  (Exponential/Log curve crossfade)
+│   ├─ 3. Edge Enhance           (High-pass filter → Rectifier → Gain)
+│   │      ├─ Variable Filter    (adjustable cutoff, high-pass output)
+│   │      ├─ Rectifier          (8-mode: invert/half/full-wave)
+│   │      └─ Diff Multiplier    (edge gain blend with original)
+│   ├─ 4. Luma Invert            (optional bitwise complement)
+│   └─ 5. Threshold Key          (below threshold → black)
+│
+├── U/V Channels ───────────────────────────────────────────────
+│   │
+│   ├─ 1. Chroma Invert          (optional bitwise complement)
+│   ├─ 2. Saturation Proc Amp    (chroma gain, fixed offset at 512)
+│   ├─ 3. Delay                  (33-stage pipeline alignment)
+│   └─ 4. Threshold Key          (keyed to neutral when Y below cutoff)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 47-stage shift register delay + IO alignment
+│
+└── Output ─────────────────────────────────────────────────────
+    └─ 3-stage IO alignment registers → data_out
+```
+
 ### Signal Flow Notes
 
 Two key structural details:

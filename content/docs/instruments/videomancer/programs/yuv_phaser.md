@@ -220,6 +220,40 @@ After displacement, each channel passes through an **_interpolator_** that cross
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. Y Flip                  (optional bitwise inversion)
+│   ├─ 2. Delay Computation       (Y Phase + pixel × Y Displace >> 10)
+│   ├─ 3. Variable Delay          (BRAM, up to 2048 pixels)
+│   ├─ 4. Fade Interpolation      (crossfade to black or white)
+│   └─ 5. IO Alignment            (1 clock register)
+│
+├── U Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. U Flip                  (optional bitwise inversion)
+│   ├─ 2. Delay Computation       (U Phase + pixel × U Displace >> 10)
+│   ├─ 3. Variable Delay          (BRAM, up to 2048 pixels)
+│   ├─ 4. Fade Interpolation      (crossfade to neutral 512)
+│   └─ 5. IO Alignment            (1 clock register)
+│
+├── V Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. V Flip                  (optional bitwise inversion)
+│   ├─ 2. Delay Computation       (V Phase + pixel × V Displace >> 10)
+│   ├─ 3. Variable Delay          (BRAM, up to 2048 pixels)
+│   ├─ 4. Fade Interpolation      (crossfade to neutral 512)
+│   └─ 5. IO Alignment            (1 clock register)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ Delay pipeline (7 clocks, matched to processing)
+│
+└── Bypass ─────────────────────────────────────────────────────
+    └─ Select original or processed signal (dry path delay-matched)
+```
+
 ### Signal Flow Notes
 
 The three channels are fully independent: each has its own delay line, its own delay computation, and its own fade interpolator. The only shared elements are the Fade Color toggle (which sets Y's fade target but doesn't affect U/V) and the Bypass switch.

@@ -219,6 +219,30 @@ Each layer has its own **_phase accumulator_**: a counter that advances by the S
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Processing Path ────────────────────────────────────────────
+│   │
+│   ├─ 1. Parameter Latch       (register inputs on clock edge)
+│   ├─ 2. Sine Argument         (freq × axis + phase, per layer)
+│   ├─ 3. Sine LUT Read         (quarter-wave lookup → full sine)
+│   ├─ 4. Amplitude Scaling     (sine × amplitude → pixel offset)
+│   ├─ 5. Line Buffer A Read    (stage 1: read input with offset)
+│   ├─ 6. Line Buffer B Read    (stage 2: read stage 1 with offset)
+│   └─ 7. Wet Output            (cascaded distortion result)
+│
+├── Cascade Order Mux ──────────────────────────────────────────
+│   └─ L1>L2: stage1=L1, stage2=L2
+│      L2>L1: stage1=L2, stage2=L1
+│
+├── Sync Delay Pipeline ────────────────────────────────────────
+│   └─ Match processing latency (14 clocks sync, 10 clocks data)
+│
+└── Wet/Dry Mix ────────────────────────────────────────────────
+    └─ interpolator_u × 3 (Y, U, V) → blended output
+```
+
 ### Signal Flow Notes
 
 Two line buffers form the backbone of the cascade. **Line Buffer A** stores the raw input. Stage 1 reads from Buffer A with a displaced address, producing the first layer of distortion. **Line Buffer B** stores the output of Stage 1. Stage 2 reads from Buffer B with its own displaced address, applying the second layer of distortion to the already-warped signal.

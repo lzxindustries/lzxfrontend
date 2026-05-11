@@ -224,6 +224,70 @@ Mycelium seeds its simulation through two complementary mechanisms. The primary 
 
 ## Signal Flow
 
+```text
+Input Video (Y channel — used for seeding)
+│
+Three-Species Reaction-Diffusion Core
+├─────────────────────────────────────────────────────────
+│
+│  ┌─────────────────────────────────────────────────────┐
+│  │  Line Buffers (3 × 10 BRAMs = 30 total)             │
+│  │  U north, V north, W north (dual-bank ping-pong)    │
+│  └──────────┬──────────────────────────────────────────┘
+│             │                                  (2 clk)
+│  LB Output Registration                       (1 clk)
+│             │
+│  Stage 1: State Load + NW Capture              (1 clk)
+│  ├── Left neighbors (previous pixel output)
+│  ├── NW neighbors (previous clock's north)
+│  ├── Laplacian partial: left + NW - 3·center
+│  └── W growth/decay pre-register
+│             │
+│  Stage 2: Laplacian + Reaction + W Update       (1 clk)
+│  ├── UV Laplacian: partial + north
+│  ├── UV diffusion scaling (shift-based)
+│  ├── Feed/kill approximation
+│  ├── W update: cur + growth - decay → writeback
+│  └── Launch v² multiplier ────────────────┐
+│                                            │
+│  v² Multiplier (Radix-4 Booth)            (8 clk)
+│  ├── Companion pipe carries state          │
+│  └── Launch u·v² multiplier ──────────────┤
+│                                            │
+│  u·v² Multiplier (Radix-4 Booth)          (8 clk)
+│  └── Companion pipe2 carries state ───────┤
+│                                            │
+│  UV Assembly + Clamp                       (1 clk)
+│  ├── U_new = U + Du·lap(U) - u·v² + F·(1-U)
+│  └── V_new = V + Dv·lap(V) + u·v² - (F+k)·V
+│             │
+│  Seed Injection                            (1 clk)
+│  ├── Video seed: Y > threshold → inject V
+│  ├── LFSR autonomous seed (sparse noise)
+│  └── One-Shot / Continuous mode select
+│             │
+│  Writeback U, V to Line Buffers
+│
+├─────────────────────────────────────────────────────────
+│
+│  Color Mapping (16-zone triplex palette)    (1 clk)
+│  ├── Display: UV Tips (V→luma) or Web (W→luma)
+│  ├── Turbo: invert all three species
+│  ├── 8 palettes from Color Map knob
+│  └── Saturation composite: V/2 + W/4 + U/8
+│             │
+│  Luma + Chroma Delay Registers              (1 clk)
+│             │
+│  Wet/Dry Mix (3× interpolator_u)            (4 clk)
+│  ├── Y channel
+│  ├── U channel
+│  └── V channel
+│             │
+└── Output Video (YUV 4:4:4)
+
+Sync: hsync, vsync, field pass through 29-clock delay
+```
+
 ### Signal Flow Notes
 
 The simulation core runs three parallel species updates using shared line buffers and a common Laplacian computation. The critical path is the U and V update, which requires two sequential 8-cycle multiplier stages for v² and u·v². The W species avoids this bottleneck entirely: its growth and decay are computed with shift operations in Stage 2 and written back via a separate 2-clock address pipe, finishing 20 clocks before U and V.

@@ -229,6 +229,46 @@ The displacement engine needs to read pixels at arbitrary horizontal positions w
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Per-Line Warp Generator ────────────────────────────────────
+│   │
+│   ├─ 1. H DDS Phase Accumulator  (advances per scanline, resets per field)
+│   ├─ 2. Animation DDS             (advances per frame when Animate=On)
+│   ├─ 3. Combined Phase            (H phase + animation phase)
+│   ├─ 4. Quarter-Wave Sine LUT     (64-entry table, symmetric indexing)
+│   ├─ 5. Waveshape Selection       (sine / triangle / sawtooth / square)
+│   ├─ 6. V DDS + Triangle Wave     (vertical wave for V-warp + cross-mod)
+│   ├─ 7. Amplitude Pre-compute     (abs of V-wave, pipeline registers)
+│   ├─ 8. Cross-Mod Factor          (V-wave abs × Cross-Mod, 10×10 multiply)
+│   ├─ 9. Amplitude Modulation      (H Amplitude × cross-mod factor)
+│   └─ 10. Displacement Scale       (waveshape × modulated amplitude)
+│
+├── Per-Pixel Data Path (14 clk processing) ────────────────────
+│   │
+│   ├─ 1. Read Address Addition     (pixel counter + scaled displacement)
+│   ├─ 2. Read Address Clamp/Wrap   (edge mode selection)
+│   ├─ 3. Delay Line Address Reg    (BRAM address register)
+│   ├─ 4. Delay Line BRAM Read      (ping-pong bank read)
+│   ├─ 5. Delay Line Output Mux     (bank selection)
+│   ├─ 6. Unpack + V-Warp           (YUV unpack, line skip for V-warp)
+│   └─ 7. Wet Path Alignment        (6-clock delay to match dry path)
+│
+├── Wet/Dry Mix (4 clk) ───────────────────────────────────────
+│   └─ 3× interpolator_u            (Y, U, V independent crossfade)
+│
+├── IO Alignment (2 clk) ──────────────────────────────────────
+│   └─ 2 registered output stages
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 18-clock shift register      (hsync, vsync, field, avid)
+│
+└── V-Warp Decision ───────────────────────────────────────────
+    ├─ Stage 1: V-wave × V Amplitude (threshold multiply)
+    └─ Stage 2: Threshold compare    (> 512 → skip line → black)
+```
+
 ### Signal Flow Notes
 
 Two key architectural features define Elastica's behavior:

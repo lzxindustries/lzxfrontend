@@ -230,6 +230,37 @@ The luma and chroma crush controls are independent, so Y can be posterized clean
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Angle Path ─────────────────────────────────────────────────
+│   └─ proc_amp_inst_0: angle = Y × Luma_to_Hue + Hue
+│      (10 clk latency)
+│
+├── Y Path ─────────────────────────────────────────────────────
+│   ├─ proc_amp_inst_1: Y' = Y × Luma_Gain + Brightness
+│   │  (10 clk latency)
+│   ├─ Y delay line (24 clk to align with UV path)
+│   ├─ Luma Invert (optional bitwise NOT)
+│   └─ Posterize: Y_out = Y' AND/XOR Posterize_mask
+│
+├── UV Path ────────────────────────────────────────────────────
+│   ├─ Colorize mux (replace UV with neutral gray if enabled)
+│   ├─ UV delay (10 clk to align with angle)
+│   ├─ chroma_proc: hue rotation via sin/cos LUT + 2×2 matrix
+│   │  (14 clk latency)
+│   ├─ proc_amp_inst_2/3: UV' = rotated_UV × Saturation + 512
+│   │  (10 clk latency)
+│   ├─ Chroma Invert (optional bitwise NOT)
+│   └─ Chroma Crush: UV_out = UV' AND/XOR Crush_mask
+│
+├── Sync ───────────────────────────────────────────────────────
+│   └─ 34-stage shift register + 2 IO alignment registers
+│
+└── Bypass ─────────────────────────────────────────────────────
+    └─ BRAM circular buffer (36 clk delay) → mux at output
+```
+
 ### Signal Flow Notes
 
 The pipeline is carefully aligned so that all three channels arrive at the output simultaneously after 36 clock cycles. The angle computation and luma processing both take 10 clocks through their respective proc amps, but the UV path then passes through the 14-clock chroma rotation and another 10-clock saturation scaling: a total of 34 clocks from input to processed UV. The Y path compensates with a 24-clock shift register after its 10-clock proc amp.

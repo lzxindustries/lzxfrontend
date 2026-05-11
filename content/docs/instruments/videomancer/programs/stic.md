@@ -219,6 +219,46 @@ The Color Stack is a four-entry rotating register that assigns background colors
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Stage 1: Input Register + Timing + Tile Tracking ──────────
+│   ├─ Sync edge detection (hsync/vsync falling edges)
+│   ├─ Cell width from Tile Size (4–35 px)
+│   ├─ Tile-boundary sample-and-hold (whole-tile for ColorStk)
+│   ├─ Quadrant sub-sample (half-cell for ClrSqrs)
+│   ├─ Color Stack advance logic (phase accumulator)
+│   ├─ Foreground/background threshold decision
+│   ├─ Grid, scanline, and sprite flicker flag generation
+│   └─ Frame counter (for 20 Hz flicker cycle)
+│
+├── Stage 2: Palette Distance (all 16 in parallel) ────────────
+│   └─ Manhattan distance per palette entry (6-bit truncated)
+│
+├── Stage 3: 16→4 Group Reduction ─────────────────────────────
+│   └─ Four independent 4-way minimum comparisons
+│
+├── Stage 4: 4→1 Final Reduction ──────────────────────────────
+│   └─ Tournament bracket → winner index (4 bits)
+│
+├── Stage 5: Palette ROM Lookup + Mode Mux ────────────────────
+│   ├─ Foreground: palette color at winner index
+│   └─ Background: Color Stack entry (threshold-based split)
+│
+├── Stages 6–9: Brightness + Saturation + Effects ─────────────
+│   ├─ Brightness multiply (Y × Brightness >> 9)
+│   ├─ Saturation scale ((UV − 512) × Saturation >> 9 + 512)
+│   ├─ Grid overlay (Y=64, neutral UV at tile edges)
+│   ├─ Scanline dimming (75% or 50% on odd lines)
+│   └─ Sprite flicker (50% on every 3rd frame)
+│
+├── Interpolator: Wet/Dry Mix (4 clocks) ──────────────────────
+│   └─ 3× interpolator_u (Y, U, V crossfade)
+│
+└── Sync Delay Pipeline ───────────────────────────────────────
+    └─ 14-clock shift register (avid, hsync, vsync, field, YUV)
+```
+
 ### Signal Flow Notes
 
 The pipeline has two key architectural features:

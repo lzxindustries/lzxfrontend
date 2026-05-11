@@ -237,6 +237,46 @@ The **Phase Wrap** toggle enables the same XOR coupling used in the original For
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Stage 0-1: Input Registration (2 cycles)
+│
+├── Phase Accumulators ──────────────────────────────────────
+│   ├─ H Accumulator  (H Rate, H Lock → pulse)
+│   ├─ V Accumulator  (V Rate, V Lock → pulse)
+│   └─ Anim Accumulator (Anim Rate → phase)
+│
+├── Stage 2: Luma Edge Detection ────────────────────────────
+│   └─ MSB crossing → decimation pulse (when Luma Src = Video)
+│
+├── Stage 3: H Decimation ──────────────────────────────────
+│   └─ Sample-and-hold YUV, clocked by H pulse or luma edge
+│
+├── Stage 4: Depth Blend ───────────────────────────────────
+│   └─ Coarse 4-level crossfade: raw ←→ decimated (Depth)
+│
+├── Stage 5: Phase Wrap Combine ────────────────────────────
+│   └─ XOR anim phase with depth-blended YUV (when enabled)
+│
+├── Stage 6: Feedback Mixer ────────────────────────────────
+│   └─ Saturating add: current Y + delayed Y × Feedback
+│
+├── Stages 7-8: BRAM Delay Line (Y only, 512 pixels) ──────
+│   └─ variable_delay_u → delayed luma → feeds back to Stage 6
+│
+├── Stage 9: V Decimation ─────────────────────────────────
+│   └─ Register sample-and-hold per scanline (V pulse)
+│
+├── Stage 10: Invert ──────────────────────────────────────
+│   └─ Optional 1023−value inversion (all channels)
+│
+├── Mix Interpolator ──────────────────────────────────────
+│   └─ Dry/wet crossfade: raw input ←→ processed (Mix fader)
+│
+└── Output (YUV 4:4:4 + delayed sync)
+```
+
 ### Signal Flow Notes
 
 Three key architectural details shape the sound of Fauxtress:

@@ -215,6 +215,47 @@ Because Technicolor's three dye layers were physically stacked during imbibition
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4 30-bit)
+│
+├── Stage 1 (a/b/c): YUV → RGB ─────────────────────────────────
+│   └─ UV sign conversion → matrix multiply → sum + clamp
+│
+├── Stage 2 (a/b): Strip Exposure ───────────────────────────────
+│   └─ Per-channel gain (R×RedExp, G×avg(R,B), B×BlueExp) → clamp
+│
+├── Stage 3: H&D Film Response Curve ───────────────────────────
+│   └─ Piecewise S-curve: toe(½ gain + lift) / straight / shoulder(⅛ gain)
+│
+├── Stage 4: Dye Registration Fringe ───────────────────────────
+│   └─ R shift-register forward, B shift-register backward, G undelayed
+│
+├── Stage 5 (a/b): Matrix Bleed + Film Fade ────────────────────
+│   └─ Inter-channel contamination → sum + clamp
+│   └─ Film Fade: halve R channel (aged magenta loss)
+│
+├── Stage 6: Y Computation ─────────────────────────────────────
+│   └─ Y ≈ R/4 + 5G/8 + B/8 (shift-add approximation)
+│   └─ Mono Sep: use G directly as Y
+│
+├── Stage 7 (a/b): UV Computation ──────────────────────────────
+│   └─ RGB → UV matrix products → combine
+│   └─ Mono Sep: zero UV
+│
+├── Stage 8: Saturation Boost ──────────────────────────────────
+│   └─ UV × saturation gain → offset to unsigned → clamp
+│
+├── Stage 9: Negative + Dry/Wet Mix ────────────────────────────
+│   └─ Optional inversion (1023−value) on wet signal
+│   └─ 4-bit alpha crossfade: dry + (wet − dry) × mix
+│
+├── Sync Delay ─────────────────────────────────────────────────
+│   └─ 14-stage shift register (hsync, vsync, field, Y, U, V)
+│
+└── IO Alignment (2 stages) ────────────────────────────────────
+    └─ Total: 14 processing + 2 IO = 16 clocks (÷4 aligned)
+```
+
 ### Signal Flow Notes
 
 The pipeline decomposes input YUV into RGB for per-channel film simulation, then re-encodes back to YUV for output. This round-trip is essential because the Technicolor process operates on separated color channels, not luminance and chrominance.

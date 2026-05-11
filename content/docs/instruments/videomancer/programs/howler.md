@@ -230,6 +230,11 @@ where _k_ is the drift coefficient derived from the **Color Drift** knob. This s
 
 ## Signal Flow
 
+```text
+U' = U - V × k / 512
+V' = V + U × k / 512
+```
+
 ### Signal Flow Notes
 
 The feedback loop is the core interaction: the BRAM buffer holds the previous frame's processed output, and the address pipeline determines _where_ in that buffer each pixel reads from. The zoom factor transforms the read address relative to the horizontal center, so pixels near the center read from nearby addresses (low distortion) while pixels near the edges read from distant addresses (high distortion). This center-outward magnification is what produces the tunnel geometry.

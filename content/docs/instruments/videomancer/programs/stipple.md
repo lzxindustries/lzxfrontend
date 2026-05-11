@@ -219,6 +219,33 @@ Stipple's pixel doubling and scanline features reproduce the visual characterist
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1a. Contrast Scaling      (shift-add multiply, top 3 bits)
+│   ├─ 1b. Brightness Offset     (DC add + clamp)
+│   ├─ 1b. Invert                (optional 1023 − Y)
+│   ├─ 2a. Dither Value Lookup   (Bayer matrix or LFSR noise)
+│   ├─ 2b. Dither Offset         (shift-add: (bayer−32) × amt)
+│   ├─ 2c. Dither + Quantize     (Y + offset → 4-bit index)
+│   ├─ 3a. Palette ROM Lookup    (index → YUV from platform palette)
+│   ├─ 3b. Saturation Scaling    (U/V scale: 0%/50%/100%/150%)
+│   └─ 4.  Pixel Dbl + Scanlines (hold-2 + line darkening)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 12-clock delay pipeline (hsync, vsync, field, Y/U/V dry)
+│
+├── Mix ────────────────────────────────────────────────────────
+│   └─ Interpolator ×3 (Y/U/V wet↔dry crossfade, 4 clocks)
+│
+├── IO Align ───────────────────────────────────────────────────
+│   └─ 4-stage register chain (total: 12 + 4 = 16 clocks)
+│
+└── Output (YUV 4:4:4)
+```
+
 ### Signal Flow Notes
 
 The pipeline runs entirely on the luminance channel until palette lookup. Input Y is contrast-scaled and brightness-offset in two pipelined stages, then optionally inverted. The adjusted Y value enters the dither-and-quantize section, where a Bayer matrix value (or LFSR noise) is scaled by the dither amount and added as an offset before the value is divided into a 4-bit palette index. That index addresses one of the eight platform color tables, producing a full YUV triplet from the palette ROM. The U and V channels of the _input_ video are never used (all output color comes from the palette.)

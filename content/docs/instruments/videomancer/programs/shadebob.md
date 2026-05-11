@@ -215,6 +215,36 @@ Shadebob's visual character comes from the interplay between **_additive composi
 
 ## Signal Flow
 
+```text
+Lissajous Engine (per vsync)
+│
+├── Phase accumulators (X, Y) ← Speed, Ratio
+├── Sine lookup (quarter-wave LUT) → bob center (cx, cy)
+├── Dual bob (optional: mirror at opposite phase)
+│
+├── Decay pass: each cell -= decay_step (if > 0)
+├── Stamp pass: cells within bob_radius += flat stamp value
+│   ├── Distance: Euclidean ROM or Manhattan ← Shape
+│   └── Hue FB write: latch current hue_phase ← Hue Speed
+└── Reset: clear both framebuffers ← Reset toggle
+
+Rendering Pipeline (per pixel, 16 clocks)
+│
+├─ 1. Position counters → cell address
+├─ 2. Framebuffer BRAM read
+├─ 3. BRAM pipeline register
+├─ 4. Nearest-neighbor stage 1
+├─ 5. Nearest-neighbor stage 2 + engine mask
+├─ 6. R1: Palette index (hue mode or luma mode) ← Decay mode
+├─ 7. R2: Palette ROM lookup (256-entry rainbow)
+├─ 8. R3a: Palette pipeline register
+├─ 9. R3b: Gamma precompute (intensity²)
+├─ 10. R3.5: Intensity scaling (Y*gamma, UV→neutral fade)
+├─ 11. R4: Brightness multiply ← Bright
+├─ 12. R5: Video modulation ← Mod Vid
+└─ 13–16. Interpolator mix (wet/dry, 4 clocks) ← Mix
+```
+
 ### Signal Flow Notes
 
 The architecture splits into two domains that operate in different time scales. The **_Lissajous engine_** runs once per vertical sync, during the blanking interval. It first decays every non-zero cell, then stamps the bob (and optionally a second bob) onto the framebuffer using additive compositing with distance-based range checking. The **_rendering pipeline_** runs continuously at the pixel clock, reading the framebuffer and converting cell values through the palette, gamma correction, brightness scaling, and mix stages.

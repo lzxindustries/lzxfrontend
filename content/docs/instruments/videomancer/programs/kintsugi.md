@@ -217,6 +217,36 @@ The **Emboss** toggle replaces shard source Y with a relief value computed from 
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Edge Detection ─────────────────────────────────────────────
+│   ├─ 1. Input register + delay tap latch (1 clk)
+│   ├─ 2. Horizontal |dY|, |dU|, |dV| + 8-pixel lookback |dY|  (1 clk)
+│   ├─ 3. Vertical |dY| (BRAM line buffer) + threshold compare  (1 clk)
+│   └─ 4. Edge combine + fill counter + fade shift + persistence (1 clk)
+│
+├── Compose ────────────────────────────────────────────────────
+│   ├─ 5. Pre-compose: gold target UV, dithered brightness,
+│   │      emboss base Y, patina amount                          (1 clk)
+│   ├─ 6. Apply compose: edge→gold blend, non-edge→patina       (1 clk)
+│   ├─ 7-15. Alignment delay chain (9 clk, matches proc amp)
+│   └─ 16. Final select: edge Y from compose, non-edge Y from
+│          proc amp; UV from compose for both paths              (1 clk)
+│
+├── Proc Amp (parallel) ────────────────────────────────────────
+│   └─ Non-edge shard darkening via Radix-4 Booth multiplier    (9 clk)
+│
+├── Mix ────────────────────────────────────────────────────────
+│   └─ 3× interpolator_u: wet/dry crossfade per channel         (4 clk)
+│
+├── Sync Delay ─────────────────────────────────────────────────
+│   └─ 24-clock delay (16 processing + 4 interpolator
+│      + 4 crack centering offset)
+│
+└── Output (YUV 4:4:4)
+```
+
 ### Signal Flow Notes
 
 The architecture has two parallel processing paths that reunite at Stage 16. Edge pixels follow the compose path: brightness is blended toward the dithered gold target with a fade shift determined by the fill counter, and chrominance is replaced with the gold/platinum UV target. Non-edge pixels are routed through a pipelined proc amp for darkening. Stage 6 generates both compose and proc amp inputs simultaneously; the nine-stage alignment delay chain ensures they arrive at the final select multiplexer at the same clock cycle.

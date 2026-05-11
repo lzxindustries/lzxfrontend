@@ -223,6 +223,37 @@ Each channel can be independently inverted before entering the proc amp. Inversi
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4 30-bit)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. Y Invert        (optional bitwise complement, 1 clk)
+│   ├─ 2. Proc Amp Y      (gain + offset, 9 clks)
+│   ├─ 3. Fade Interpolator Y  (lerp toward black/white, 4 clks)
+│   └─ 4. IO Align        (output register, 1 clk)
+│
+├── U Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. U Invert        (optional bitwise complement, 1 clk)
+│   ├─ 2. Proc Amp U      (gain + offset, 9 clks)
+│   ├─ 3. Fade Interpolator U  (lerp toward neutral 512, 4 clks)
+│   └─ 4. IO Align        (output register, 1 clk)
+│
+├── V Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. V Invert        (optional bitwise complement, 1 clk)
+│   ├─ 2. Proc Amp V      (gain + offset, 9 clks)
+│   ├─ 3. Fade Interpolator V  (lerp toward neutral 512, 4 clks)
+│   └─ 4. IO Align        (output register, 1 clk)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ Delay pipeline (hsync, vsync, field — 16 clk delay)
+│
+└── Bypass ─────────────────────────────────────────────────────
+    └─ Mux: select delayed original or processed signal
+```
+
 ### Signal Flow Notes
 
 All three channels share the same pipeline structure: inversion, proc amp, and fade interpolation. The three channels are processed in parallel: they are three independent instances of the same circuit running simultaneously. The only cross-channel interaction is the **Fade Color** toggle, which sets the Y fade target to black (0) or white (1023) while U and V always fade toward neutral (512).

@@ -211,6 +211,39 @@ When **Equidensity** is enabled, the solarization dip is doubled and clamped bef
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y Channel ──────────────────────────────────────────────────
+│   │
+│   ├─ 1. Polarity               (optional complement: 1023 − Y)
+│   ├─ 2. Proximity Calculation   (distance from midtone; S or W curve)
+│   ├─ 3. Proximity × Y Inversion (multiply + normalize)
+│   ├─ 4. Equidensity + Dip Sub   (optional doubling + subtraction + clamp → solar Y)
+│   ├─ 5. Gradient Delay Pipeline  (2-pixel delay for gradient detection)
+│   ├─ 6. Gradient Detection       (|solar_y[n] − solar_y[n−2]|)
+│   ├─ 7. Threshold Gate           (suppress gradients below threshold)
+│   ├─ 8. Mackie Gain Multiply     (amplify surviving gradients)
+│   ├─ 9. IIR Width Spread         (lowpass → bloom)
+│   ├─ 10. Additive Overlay        (solar Y + Mackie glow, clamped)
+│   ├─ 11. Tint Multiply           (luminance × tint amount)
+│   └─ 12. Tint Apply              (Y passes through)
+│
+├── U/V Channels ───────────────────────────────────────────────
+│   │
+│   ├─ 5. Proximity Calculation    (distance from midpoint per channel)
+│   ├─ 6. Proximity × UV Inversion (multiply + normalize, if Channel=YUV)
+│   ├─ 7. Dip Subtraction + Clamp  (UV solar complete, if Channel=YUV)
+│   ├─ 10. Pass-through             (no Mackie overlay on chroma)
+│   └─ 12. Tint Apply               (U + tint_shift, V − tint_shift, clamped)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 16-clock delay pipeline (hsync, vsync, field, avid)
+│
+└── Mix ────────────────────────────────────────────────────────
+    └─ Interpolator: dry/wet crossfade (4 clocks)
+```
+
 ### Signal Flow Notes
 
 The pipeline is deeply pipelined at 16 clocks (12 processing + 4 for the mix interpolator) to meet timing closure at 74.25 MHz. Two key interactions define the sound of Sabattier:

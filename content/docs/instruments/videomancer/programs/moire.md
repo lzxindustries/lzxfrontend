@@ -226,6 +226,45 @@ Each grid's angle is applied by rotating the screen coordinates through a 2D rot
 
 ## Signal Flow
 
+```text
+Screen Coordinates (H, V)
+│
+├── Grid A ─────────────────────────────────────────────────────
+│   │
+│   ├─ 1. Coordinate Rotation     (angle A via 32-entry trig LUT)
+│   ├─ 2. Shape Selection         (sine lines: rotated X only)
+│   │                             (ellipses: distance with Y×2 stretch)
+│   ├─ 3. Distance Approximation  (alpha-max-beta-min)
+│   ├─ 4. Frequency Scale         (dist × freq_a → 8-bit address)
+│   ├─ 5. Sine LUT Read           (256-entry BRAM → smooth 10-bit)
+│   └─ Grid A Pattern (0..1023)
+│
+├── Grid B ─────────────────────────────────────────────────────
+│   │
+│   ├─ 1. Coordinate Rotation     (angle B via 32-entry trig LUT)
+│   ├─ 2. Video Modulation        (input Y offsets rotated X)
+│   ├─ 3. Distance Approximation  (alpha-max-beta-min)
+│   ├─ 4. Frequency Scale         (dist × freq_b → 8-bit address)
+│   ├─ 5. Sine LUT Read           (256-entry BRAM → smooth 10-bit)
+│   ├─ 6. Arc Fade                (cosine window on negative Y, if arcs)
+│   └─ Grid B Pattern (0..1023)
+│
+├── Animation DDS ──────────────────────────────────────────────
+│   └─ Phase offset added to both sine LUT addresses per frame
+│
+├── Interference Combination ───────────────────────────────────
+│   └─ Pattern A × Pattern B → Moire (via toggle-selected mode)
+│
+├── Output Composite ───────────────────────────────────────────
+│   └─ Y = Moire, U = 512, V = 512 (grayscale synthesis)
+│
+├── Wet/Dry Mix (3× interpolator_u) ────────────────────────────
+│   └─ Crossfade between delayed input YUV and composite
+│
+└── Sync Delay Pipeline ────────────────────────────────────────
+    └─ Pass-through (hsync, vsync, field, avid) — 10 clk delay
+```
+
 ### Signal Flow Notes
 
 Two key architectural choices shape the sound of this program:

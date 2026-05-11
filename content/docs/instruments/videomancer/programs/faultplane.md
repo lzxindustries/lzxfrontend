@@ -225,6 +225,44 @@ The vertical accumulator's output feeds both proc amps, so the displacement ampl
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4, 30-bit)
+│
+├── Timing ──────────────────────────────────────────────────────
+│   │
+│   ├─ video_timing_generator    (extract timing from input sync)
+│   ├─ timing_acc A: Vertical    (freq = Pot 3 "Vert Freq")
+│   │   └─ outputs: acc_out_a (ramp), acc_clk_a (clock)
+│   └─ timing_acc B: Horizontal  (freq = Pot 6 "Horiz Freq")
+│       └─ outputs: acc_out_b (ramp), acc_clk_b (clock)
+│
+├── Displacement Calculation ────────────────────────────────────
+│   │
+│   ├─ proc_amp A (Bot):  input=acc_out_a, gain=Pot5, offset=Pot4
+│   │   └─ rd_offset_a = contrast_out_a << 1
+│   └─ proc_amp B (Top):  input=acc_out_a, gain=Pot2, offset=Pot1
+│       └─ rd_offset_b = contrast_out_b << 1
+│
+├── Bank Selection ──────────────────────────────────────────────
+│   └─ ab_sel = acc_clk_a XOR acc_clk_b
+│
+├── Mirror Delay Line (dual-BRAM ping-pong) ─────────────────────
+│   │
+│   ├─ Bank A (Bot): mirror=Sw8, invert=Sw10, offset=rd_offset_a
+│   ├─ Bank B (Top): mirror=Sw7, invert=Sw9,  offset=rd_offset_b
+│   └─ Output: selected by ab_sel
+│
+├── Blanking ────────────────────────────────────────────────────
+│   └─ If both acc_out_a & acc_out_b < threshold (Fader 12):
+│       blank output (Y=0, U=512, V=512)
+│       Blank Invert (Sw11) reverses the logic
+│
+├── Sync Signals ────────────────────────────────────────────────
+│   └─ Pass-through (hsync, vsync, avid, field)
+│
+└── Output (YUV 4:4:4, 30-bit)
+```
+
 ### Signal Flow Notes
 
 Two key architectural details distinguish Faultplane's signal chain:

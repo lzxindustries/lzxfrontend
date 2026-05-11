@@ -213,6 +213,31 @@ Real analog scramblers didn't just shuffle pixels: they also attacked the synchr
 
 ## Signal Flow
 
+```text
+Input Video (YUV 4:4:4)
+│
+├── Y/U/V Channels ─────────────────────────────────────────────
+│   │
+│   ├─ 1. Line Buffer Write      (sequential pixel write, 1 clk)
+│   ├─ 2. LFSR / Sawtooth        (per-line cut-point generation, 1 clk)
+│   │      ├─ Cut Depth scaling
+│   │      ├─ Decode offset subtraction
+│   │      ├─ Drift offset (if Drift enabled)
+│   │      ├─ Luma Mod offset (if enabled)
+│   │      └─ Double scramble offset (if enabled)
+│   ├─ 3. Line Buffer Read       (offset address → cut-and-rotate, 1 clk)
+│   ├─ 4. H Jitter               (LFSR-based address perturbation)
+│   ├─ 5. Video Inversion        (periodic Y/UV negation, 1 clk)
+│   ├─ 6. Out-of-Range Check     (black fill for displaced reads)
+│   └─ 7. Interpolator Mix       (dry/wet crossfade, 4 clks)
+│
+├── Sync Signals ───────────────────────────────────────────────
+│   └─ 8-clock delay pipeline (hsync, vsync, field, avid)
+│
+└── Output ─────────────────────────────────────────────────────
+    └─ Mixed Y/U/V + delayed sync
+```
+
 ### Signal Flow Notes
 
 The processing pipeline is dominated by the line buffer and its address computation. Each scanline is written sequentially into BRAM. On readback, six offsets are combined to form the read address: the LFSR or sawtooth cut point (scaled by Cut Depth), the Decode subtraction, the Drift accumulator, optional Luma Mod, optional Double scramble, and Jitter noise. All six additions and subtractions happen in unsigned arithmetic and naturally wrap around the buffer.

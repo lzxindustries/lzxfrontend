@@ -231,6 +231,10 @@ The proc amp positions and scales the input signal within the folding range. A n
 
 ## Signal Flow
 
+```text
+output = (input − 512) × Span / 512 + Offset
+```
+
 ### Signal Flow Notes
 
 The most important architectural feature of Corollas is that input U and V channels are **_not used_**. The output is constructed entirely from the input luminance. This makes Corollas a luminance-to-color converter: it reads brightness and writes brightness, hue, and saturation.
