@@ -42,7 +42,7 @@ PRM performs many basic processing steps, including:
 - Two- and four-quadrant multiplication
 - Antisine/exponential waveshaping
 
-In combination with [PGO](/docs/modules/pgo) Programmable Gain and Offset, and/or [PAB](/docs/modules/pab) Programmable Active Buffers, PRM modules can also perform complex functions such as:
+In combination with [PGO](/modules/pgo/manual) Programmable Gain and Offset, and/or [PAB](/modules/pab/manual) Programmable Active Buffers, PRM modules can also perform complex functions such as:
 
 - One-quadrant multiplication
 - Linear and parabolic frequency doubling
@@ -97,7 +97,7 @@ The PRM design was informed by years of studying interfaces common to the buildi
 
 ## Operation
 
-P-series modules are precision instruments. DIY PRM modules must be calibrated before use. Assembled PRM modules are calibrated at LZX HQ, but may need adjustment from time to time. See the [Calibration](/docs/modules/prm#calibration) section below.
+P-series modules are precision instruments. DIY PRM modules must be calibrated before use. Assembled PRM modules are calibrated at LZX HQ, but may need adjustment from time to time. See the [Calibration](/modules/prm/manual#calibration) section below.
 
 ---
 
@@ -444,7 +444,7 @@ PRM-RevD Interactive Bill of Materials
 
 PRM is available as an assembled module, a full DIY kit, or a partial DIY kit.
 
-Downloads for the complete schematic and an interactive HTML Bill of Materials are found in the [Hardware Revisions](/docs/modules/prm#hardware-revisions) section above.
+Downloads for the complete schematic and an interactive HTML Bill of Materials are found in the [Hardware Revisions](/modules/prm/manual#hardware-revisions) section above.
 
 ### Partial DIY Components
 
@@ -464,4 +464,4 @@ This assembly job is recommended for intermediate level DIYers who are comfortab
 1. Mount and solder rear-facing through hole parts first, in this order: pin header, DC/DC converter, DC barrel jack.
 2. Mount and solder front-facing jacks.
 3. Attach the front panel and secure it with mounting nuts for the jacks.
-4. Calibrate the module according to the [Calibration](/docs/modules/prm#calibration) procedure above.
+4. Calibrate the module according to the [Calibration](/modules/prm/manual#calibration) procedure above.

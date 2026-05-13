@@ -31,11 +31,11 @@ Grab the `videomancer_1.0.0-rc.4.uf2` build from the [Videomancer downloads page
 
 Power off your Videomancer. Hold the **BOOT** button while connecting USB-C to your computer. The device will appear as a USB drive. Drag and drop the `.uf2` file onto the drive. The device will reboot automatically when the transfer completes.
 
-See the [Videomancer documentation](/docs/instruments/videomancer/user-manual) for full details.
+See the [Videomancer documentation](/instruments/videomancer/manual/user-manual) for full details.
 
 ## Documentation
 
 Updated modulation operator documentation is available:
 
-- [Videomancer User Manual](/docs/instruments/videomancer/user-manual)
-- [Modulation Operators](/docs/instruments/videomancer/modulation-operators)
+- [Videomancer User Manual](/instruments/videomancer/manual/user-manual)
+- [Modulation Operators](/instruments/videomancer/manual/modulation-operators)

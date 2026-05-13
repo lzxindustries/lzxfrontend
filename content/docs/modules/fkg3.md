@@ -114,7 +114,7 @@ The RGB input triplets, from left to right, are **Background**, **Foreground**, 
 
 Background and Foreground are merely convenient labels for the inputs. The priority of layering is not fixed. Either the Background and Foreground can be assigned as the visually "top" or "front" layer, depending on the settings of the **Key Source** and **Key Invert** switches, described below.
 
-The Key input triplet allows an external source to define the key. Any image, gradient, or low frequency signal can provide the basis for the mask. The behavior of the Key inputs is different depending on the **Key Mode** setting, as explained in the [Operation](/docs/modules/fkg3#operation) section below.
+The Key input triplet allows an external source to define the key. Any image, gradient, or low frequency signal can provide the basis for the mask. The behavior of the Key inputs is different depending on the **Key Mode** setting, as explained in the [Operation](/modules/fkg3/manual#operation) section below.
 
 Key Threshold and Softness can be modulated by video-rate control voltages supplied to the **Threshold CV** and **Softness CV** inputs.
 
@@ -142,9 +142,9 @@ Two rotary switches and one toggle switch define the settings for the key polari
 
 The most important control is the **Key Source** rotary switch. This chooses which set of inputs is sent to the key generator to cut the stencil. It's labeled with three icons: a black rectangle for the Background inputs, a white rectangle for the Foreground inputs, and a skeleton key for the external Key inputs.
 
-The other rotary switch chooses the **Key Mode**, determining which color channel(s) are used to cut the key. The white rectangle chooses **Luminance Key** mode. In this mode, the RGB channels of the Key Source are summed according to the luminance formula described in the [Operation](/docs/modules/fkg3#operation) section below. The summed luminance value is sent to the key generator.
+The other rotary switch chooses the **Key Mode**, determining which color channel(s) are used to cut the key. The white rectangle chooses **Luminance Key** mode. In this mode, the RGB channels of the Key Source are summed according to the luminance formula described in the [Operation](/modules/fkg3/manual#operation) section below. The summed luminance value is sent to the key generator.
 
-The Red, Green, and Blue settings of the Key Mode switch choose the color channel for **Chroma Key** mode. A key is cut based on the values of the RGB primaries. A detailed explanation follows in the [Operation](/docs/modules/fkg3#operation) section. The short version is that the chosen color primary is knocked out. The key generator sets the key to a low value wherever that primary is pure. The compositor then makes that area transparent.
+The Red, Green, and Blue settings of the Key Mode switch choose the color channel for **Chroma Key** mode. A key is cut based on the values of the RGB primaries. A detailed explanation follows in the [Operation](/modules/fkg3/manual#operation) section. The short version is that the chosen color primary is knocked out. The key generator sets the key to a low value wherever that primary is pure. The compositor then makes that area transparent.
 
 The toggle switch at the upper left has three positions. In the center, default position, the key is not inverted. The key is cut based on the brightest values of the Key Source. When the switch is set to its upper position, the polarity is inverted, and the key is cut based on the darker values of the Key Source. By adjusting both the Key Source and the polarity, we can achieve the visual effect of placing the Foreground input "on top" or "in front" of the Background input, or vice versa.
 

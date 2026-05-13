@@ -17,7 +17,7 @@ import videomancer_LCD_parameter from '/img/instruments/videomancer/videomancer_
 # Videomancer
 
 :::tip Before You Begin
-This guide gets you up and running with Videomancer in minutes. For complete documentation on all features, connections, and capabilities, see the **[User Manual](/docs/instruments/videomancer/user-manual)**.
+This guide gets you up and running with Videomancer in minutes. For complete documentation on all features, connections, and capabilities, see the **[User Manual](/instruments/videomancer/manual/user-manual)**.
 :::
 
 <img src={videomancer_frontpanel} alt="Videomancer front panel" />
@@ -32,7 +32,7 @@ This guide gets you up and running with Videomancer in minutes. For complete doc
 - **Two HDMI cables** — standard full-size HDMI on both ends
 
 :::note Analog Connections
-This guide covers HDMI connections only. Videomancer also supports composite, S-Video, component YPbPr, RGB with sync on green, and the LZX 1V modular standard. For analog setup procedures, see the [Signal Paths](/docs/instruments/videomancer/user-manual#signal-paths) section of the User Manual.
+This guide covers HDMI connections only. Videomancer also supports composite, S-Video, component YPbPr, RGB with sync on green, and the LZX 1V modular standard. For analog setup procedures, see the [Signal Paths](/instruments/videomancer/manual/user-manual#signal-paths) section of the User Manual.
 :::
 
 ---
@@ -133,11 +133,11 @@ Every Program responds differently. Turn knobs, flip switches, and move the slid
 :::tip Keep Exploring
 You've connected Videomancer, loaded a Program, and explored its Parameters. Here's where to go next:
 
-**Motion Control** — Press the **START** button to activate the transport and unlock time-based modulation. Your Parameters come alive with oscillators, sequencers, and generative algorithms. See [MOTION](/docs/instruments/videomancer/user-manual#motion) in the User Manual.
+**Motion Control** — Press the **START** button to activate the transport and unlock time-based modulation. Your Parameters come alive with oscillators, sequencers, and generative algorithms. See [MOTION](/instruments/videomancer/manual/user-manual#motion) in the User Manual.
 
-**Modulation** — Assign any of 39 Modulation Operators to any Parameter: oscillators, audio reactivity, envelope followers, random generators, physics simulations, USB game controllers, and more. See the [Modulation Guide](/docs/instruments/videomancer/modulation-operators).
+**Modulation** — Assign any of 39 Modulation Operators to any Parameter: oscillators, audio reactivity, envelope followers, random generators, physics simulations, USB game controllers, and more. See the [Modulation Guide](/instruments/videomancer/manual/modulation-operators).
 
-**Save States** — Save and recall your favorite settings as Presets. See [STATE Presets](/docs/instruments/videomancer/user-manual#state-presets) in the User Manual.
+**Save States** — Save and recall your favorite settings as Presets. See [STATE Presets](/instruments/videomancer/manual/user-manual#state-presets) in the User Manual.
 
 **Programs** — Videomancer includes many embedded Programs. Program-specific behavior is summarized in firmware release notes and expanded over time in the main documentation.
 :::

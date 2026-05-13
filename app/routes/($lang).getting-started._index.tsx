@@ -49,7 +49,7 @@ export const PATHS = [
   {
     title: 'Start with Videomancer',
     description:
-      'Unbox, connect, and start using Videomancer — our standalone video effects console. No modular experience needed.',
+      'Unbox, connect, and start using Videomancer — our standalone video synthesizer. No modular experience needed.',
     to: '/instruments/videomancer/manual/quick-start',
     icon: '🎛️',
     cta: 'Videomancer Quick Start',

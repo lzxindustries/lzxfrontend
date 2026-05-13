@@ -10,4 +10,4 @@ image: /img/modules/dsg3/dsg3-diagrams/dsg3_frontpanel.png
 
 The cross-module comparison table lives at **[`/modules/specs`](/modules/specs)**. It is rendered from the module database (`app/data/module-specs.ts` → `db/lzxdb.Module.json`) and supports sorting, filtering, and status/series scopes.
 
-This page exists only to keep a **Specs** entry in the module-manual sidebar; `/docs/modules/module-list` redirects to `/modules/specs`.
+This page exists only to keep a **Specs** entry in the module-manual sidebar; the live comparison table uses **`/modules/specs`**.

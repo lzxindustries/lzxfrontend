@@ -147,7 +147,7 @@ Conventional usage of Swatch is to patch the red, green, and blue components of 
 
 ### YIQ Outputs
 
-RGB inputs are converted to YIQ components and output from five jacks on the upper left. Y is luminance, and I and Q are the color difference channels, described in the [Operation](/docs/modules/swatch#operation) section below. I and Q outputs come in two flavors, positive and negative. I+ and Q+ are the color difference channels transcoded from the incoming RGB components. I- and Q- are phase inverted versions of the color difference channels. The inverted color channels provide immediate creative possibilities by merely patching Swatch to itself. Double the saturation, invert the chrominance, or mutate color in unfamiliar ways. For details, check the [Example Patches](/docs/modules/swatch#example-patches) section below.
+RGB inputs are converted to YIQ components and output from five jacks on the upper left. Y is luminance, and I and Q are the color difference channels, described in the [Operation](/modules/swatch/manual#operation) section below. I and Q outputs come in two flavors, positive and negative. I+ and Q+ are the color difference channels transcoded from the incoming RGB components. I- and Q- are phase inverted versions of the color difference channels. The inverted color channels provide immediate creative possibilities by merely patching Swatch to itself. Double the saturation, invert the chrominance, or mutate color in unfamiliar ways. For details, check the [Example Patches](/modules/swatch/manual#example-patches) section below.
 
 Color coding of the YIQ jacks indicates the actual colors of those components. Positive I is orange, positive Q is purple. Negative I is blueish cyan, negative Q is yellowish green. None of the raw IQ colors exactly line up with RGB primaries.
 
@@ -157,7 +157,7 @@ The inputs and outputs of Swatch are phase-aligned with high precision. This is 
 
 ### YIQ Inputs
 
-On the upper right of the module are five YIQ inputs. Anything patched into any of those inputs is converted to RGB and appears at the RGB outputs below. For example, patching static voltages from Proc into the YIQ inputs makes Swatch into an intuitive [color picker](/docs/modules/swatch#pick-yiq-color). Or patch one or more of the YIQ outputs to other modules, then return those signals back to the Swatch YIQ inputs.
+On the upper right of the module are five YIQ inputs. Anything patched into any of those inputs is converted to RGB and appears at the RGB outputs below. For example, patching static voltages from Proc into the YIQ inputs makes Swatch into an intuitive [color picker](/modules/swatch/manual#pick-yiq-color). Or patch one or more of the YIQ outputs to other modules, then return those signals back to the Swatch YIQ inputs.
 
 :::tip
 YIQ signals can be routed through different modules without introducing obvious horizontal misalignment. For example, let's say we send Y through one module, and I and Q through some other module. The two modules have different delay times, knocking the components out of horizontal registration. Luckily, due to the limitations of our vision, only an extreme misalignment would be visible. If registration is off by a few pixels, it will probably go unnoticed.
@@ -171,7 +171,7 @@ $$
 
 In that scenario, Swatch would effectively do nothing to the incoming RGB signals. Significantly, colors pass through Swatch with near perfect fidelity. RGB components go through multiple stages of buffering and two stages of color space conversion, with no visible alteration. You decide exactly how color is mutated.
 
-The I- and Q- inputs are not internally normalled to the I- and Q- outputs. Anything patched into the I- and Q- inputs is subracted from the I+ and Q+ inputs. This enables simple operations such as [doubling the saturation](/docs/modules/swatch#double-saturation), and more complex operations such as layered modulation of color channels by utilizing more than two IQ inputs at once.
+The I- and Q- inputs are not internally normalled to the I- and Q- outputs. Anything patched into the I- and Q- inputs is subracted from the I+ and Q+ inputs. This enables simple operations such as [doubling the saturation](/modules/swatch/manual#double-saturation), and more complex operations such as layered modulation of color channels by utilizing more than two IQ inputs at once.
 
 The internal operations of the Y, I and Q inputs look like this:
 
@@ -186,7 +186,7 @@ $$
 Swatch features two sets of RGB outputs: **Over** and **Clamped**. These give us options in situations arising from the differences between YIQ and RGB color spaces. YIQ can represent a greater range of colors than RGB. The technical description of this is that YIQ has a wider _gamut_.
 
 :::note
-For an introduction to YIQ, see the [Operation](/docs/modules/swatch#operation) section below.
+For an introduction to YIQ, see the [Operation](/modules/swatch/manual#operation) section below.
 :::
 
 Swatch gives us options for resolving the mismatch between YIQ and RGB gamuts. It's trivially easy to specify impossible colors by sending moderately high or low voltages into the YIQ inputs of Swatch. The expected range of the I and Q inputs is +0.5 to -0.5 volts. Anything above or below that is outside of the YIQ gamut. But even within the +0.5 to -0.5 range, it's possible to specify colors that are outside of the RGB gamut.
@@ -223,7 +223,7 @@ The table below shows how YUV is calculated, and the names of its channels as im
 
 |                            | Luminance (Y)                                                                                 | Color difference ch 1 | Color difference ch 2 |
 | -------------------------- | --------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
-| **Formula**                | 0.299R + 0.587G + 0.114B<br />(see [TBC2](/docs/modules/tbc2#1v-video-outputs) documentation) | R - Y                 | B - Y                 |
+| **Formula**                | 0.299R + 0.587G + 0.114B<br />(see [TBC2](/modules/tbc2/manual#1v-video-outputs) documentation) | R - Y                 | B - Y                 |
 | **Generic name**           | Y                                                                                             | U                     | V                     |
 | **Analog composite & Y/C** | Y                                                                                             | I                     | Q                     |
 | **Analog component**       | Y                                                                                             | Pb                    | Pr                    |

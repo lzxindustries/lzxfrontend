@@ -94,7 +94,7 @@ Stairs features three primary signal inputs, two control voltage inputs, and six
 
 The signal inputs at the lower left are color-coded for red, green, and blue color primaries, but as always, that's just a suggestion. Any signals, including low frequency modulators, can be patched into the RGB inputs.
 
-The RGB inputs are internally self-normalled, allowing a signal patched into a jack to flow downward to the other inputs. The inputs are weighted and summed, as described in the [Operation](/docs/modules/stairs#operation) section below.
+The RGB inputs are internally self-normalled, allowing a signal patched into a jack to flow downward to the other inputs. The inputs are weighted and summed, as described in the [Operation](/modules/stairs/manual#operation) section below.
 
 Stairs has two voltage-controlled parameters: **Steps** and **Phase**. Each can be manually adjusted by the corresponding potentiometer on the top row. Additionally, any signal may be patched into the **Steps CV** or **Phase CV** jacks in the center of the module. The gain of those incoming control voltages is adjusted with the corresponding **Depth** attenuverters. Counterclockwise rotation, to the left of 12 o'clock, inverts the incoming control signal.
 
@@ -115,7 +115,7 @@ $$
 
 ### RGB Signal Inputs
 
-RGB inputs are weighted and summed according to the luminance formula fully explained in the [TBC2](/docs/modules/tbc2#1v-video-outputs) documentation. Patch an RGB signal triplet into the corresponding color-coded inputs to convert RGB to luminance before it hits the wavefolder circuit.
+RGB inputs are weighted and summed according to the luminance formula fully explained in the [TBC2](/modules/tbc2/manual#1v-video-outputs) documentation. Patch an RGB signal triplet into the corresponding color-coded inputs to convert RGB to luminance before it hits the wavefolder circuit.
 
 $$
 Y = 0.299R + 0.587G + 0.114B

@@ -25,7 +25,7 @@ The desktop app [LZX Connect](https://github.com/lzxindustries/videomancer-firmw
 
 ## Videomancer Update
 
-Reception for the Videomancer pre-releases has been great. Many users are enjoying the 17 new programs, and we've been uploading weekly builds with improvements and fixes. The [Videomancer documentation](/docs/instruments/videomancer/user-manual) has been fully revised with new diagrams:
+Reception for the Videomancer pre-releases has been great. Many users are enjoying the 17 new programs, and we've been uploading weekly builds with improvements and fixes. The [Videomancer documentation](/instruments/videomancer/manual/user-manual) has been fully revised with new diagrams:
 
 ![Videomancer Dual In Routing Diagram](/img/instruments/videomancer/videomancer_routing_diagram_dual_in.png)
 

@@ -140,7 +140,7 @@ ESG3 features four toggle switches, each with three positions, to invert or mute
 
 At the top of the module are six potentiometer knobs, controlling the **Contrast** and **Brightness** of each RGB channel.
 
-To the left of each RGB switch are two small recessed trim potentiometers. These are calibration controls. Their usage is described in the [Calibration](/docs/modules/esg3#calibration) section below.
+To the left of each RGB switch are two small recessed trim potentiometers. These are calibration controls. Their usage is described in the [Calibration](/modules/esg3/manual#calibration) section below.
 
 :::note
 Early production units of ESG3 featured detent knob positions. For those units, calibration is more important because the knobs "want" to go to a center, default value. If the unit isn't calibrated, those default positions result in outputs that aren't at unity gain relative to the signal inputs.

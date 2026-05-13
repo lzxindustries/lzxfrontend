@@ -312,7 +312,7 @@ export default function DownloadsPage() {
                   Product
                 </Link>
                 <Link to={entry.docsUrl} className="btn btn-sm btn-outline">
-                  Docs
+                  Manual
                 </Link>
               </div>
             </div>

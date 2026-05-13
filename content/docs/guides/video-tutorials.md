@@ -64,105 +64,105 @@ Over the years, LZX product designers and artists have produced many tutorials a
 ### Angles
 
 [3 Patches for Angles](https://youtu.be/_b633U95ogo)
-<br />demonstrating the Gen3 series [Angles](/docs/modules/angles) module
+<br />demonstrating the Gen3 series [Angles](/modules/angles) module
 <br />presented by Johnny Woods
 
 ### Contour
 
 [3 Patches for Contour](https://youtu.be/o_QThtOTtlk)
-<br />demonstrating the Gen3 series [Contour](/docs/modules/contour) module
+<br />demonstrating the Gen3 series [Contour](/modules/contour) module
 <br />presented by Johnny Woods
 
 ### DSG3
 
 [3 Patches for DSG3](https://youtu.be/hFIWKNjcbPg)
-<br />demonstrating the Gen3 series [DSG3](/docs/modules/dsg3) module
+<br />demonstrating the Gen3 series [DSG3](/modules/dsg3) module
 <br />presented by Johnny Woods
 
 [LZX DSG3: Video Synth Tools & Techniques](https://youtu.be/bDng30frWiY)
-<br />demonstrating the Gen3 series [DSG3](/docs/modules/dsg3) module
+<br />demonstrating the Gen3 series [DSG3](/modules/dsg3) module
 <br />presented by Aaron F. Ross
 
 ### DWO3
 
 [3 Patches for DWO3](https://youtu.be/NnavdrDIJQo)
-<br />demonstrating the Gen3 series [DWO3](/docs/modules/dwo3) module
+<br />demonstrating the Gen3 series [DWO3](/modules/dwo3) module
 <br />presented by Johnny Woods
 
 ### FKG3
 
 [3 Patches for FKG3](https://youtu.be/h32UDIphXuI)
-<br />demonstrating the Gen3 series [FKG3](/docs/modules/fkg3) module
+<br />demonstrating the Gen3 series [FKG3](/modules/fkg3) module
 <br />presented by Johnny Woods
 
 ### Keychain
 
 [3 Patches for Keychain](https://youtu.be/q0O5YDxWHac)
-<br />demonstrating the Gen3 series [Keychain](/docs/modules/keychain) module
+<br />demonstrating the Gen3 series [Keychain](/modules/keychain) module
 <br />presented by Johnny Woods
 
 ### Matte
 
 [3 Patches for LZX Matte](https://youtu.be/w30X8qzvH-k)
-<br />demonstrating the Gen3 series [Matte](/docs/modules/matte) module
+<br />demonstrating the Gen3 series [Matte](/modules/matte) module
 <br />presented by Johnny Woods
 
 ### Proc
 
 [3 Patches for Proc](https://youtu.be/FeRNg87wrlY)
-<br />demonstrating the Gen3 series [Proc](/docs/modules/proc) module
+<br />demonstrating the Gen3 series [Proc](/modules/proc) module
 <br />presented by Johnny Woods
 
 [LZX Proc: Video Synth Tools & Techniques](https://youtu.be/E4a8TNy1OtI)
-<br />demonstrating the Gen3 series [Proc](/docs/modules/proc) module
+<br />demonstrating the Gen3 series [Proc](/modules/proc) module
 <br />presented by Aaron F. Ross
 
 ### Ribbons
 
 [LZX Ribbons 3-Bit Digitizer | Lars Explains](https://youtu.be/htC_0-INC7k)
-<br />demonstrating the Gen3 series [Ribbons](/docs/modules/ribbons) module
+<br />demonstrating the Gen3 series [Ribbons](/modules/ribbons) module
 <br />presented by Lars Larsen
 
 [Dobbels Demos Ribbons](https://youtu.be/maxfR128_Ec)
-<br />demonstrating the Gen3 series [Ribbons](/docs/modules/ribbons) module
+<br />demonstrating the Gen3 series [Ribbons](/modules/ribbons) module
 <br />presented by Andrew Dobbels
 
 ### SMX3
 
 [3 Patches for SMX3](https://youtu.be/DU8fHK7yIzg)
-<br />demonstrating the Gen3 series [SMX3](/docs/modules/smx3) module
+<br />demonstrating the Gen3 series [SMX3](/modules/smx3) module
 <br />presented by Johnny Woods
 
 ### Stairs
 
 [3 Patches for Stairs](https://youtu.be/XM4kiY9Yd4g)
-<br />demonstrating the Gen3 series [Stairs](/docs/modules/stairs) module
+<br />demonstrating the Gen3 series [Stairs](/modules/stairs) module
 <br />presented by Johnny Woods
 
 ### Sum/Dist
 
 [3 Patches for LZX Sum/Dist](https://youtu.be/S744YMZBouI)
-<br />demonstrating the Gen3 series [Sum/Dist](/docs/modules/sumdist) module
+<br />demonstrating the Gen3 series [Sum/Dist](/modules/sumdist) module
 <br />presented by Johnny Woods
 
 ### Swatch
 
 [3 Patches for Swatch](https://youtu.be/CZx8ssyfYds)
-<br />demonstrating the Gen3 series [Swatch](/docs/modules/swatch) module
+<br />demonstrating the Gen3 series [Swatch](/modules/swatch) module
 <br />presented by Johnny Woods
 
 [LZX Swatch: Video Synth Tools & Techniques](https://youtu.be/mrTO6TB_cBg)
-<br />demonstrating the Gen3 series [Swatch](/docs/modules/swatch) module
+<br />demonstrating the Gen3 series [Swatch](/modules/swatch) module
 <br />presented by Aaron F. Ross
 
 ### TBC2
 
 [3 Patches for TBC2](https://youtu.be/S_R12TJsYic)
-<br />demonstrating the Orion/Gen3 series [TBC2](/docs/modules/tbc2) module
+<br />demonstrating the Orion/Gen3 series [TBC2](/modules/tbc2) module
 <br />presented by Johnny Woods
 
 [How To Replace Your TBC2 Frontpanel](https://youtu.be/ENGGhRdtPlk)
-<br />demonstrating updating the [TBC2](/docs/modules/tbc2) front panel from Orion to Gen3
+<br />demonstrating updating the [TBC2](/modules/tbc2) front panel from Orion to Gen3
 
 ---
 

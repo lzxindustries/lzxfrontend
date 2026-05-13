@@ -119,13 +119,13 @@ The TBC2 front panel essentially breaks down to inputs on the left, and outputs 
 
 ### Decoder Inputs
 
-The two left-most columns of jacks are labeled **A** and **B**, corresponding to the two Decoder submodule inputs, described in the [Decoder](/docs/modules/tbc2#decoder) section below. For each Decoder you wish to use, patch a video source into the three RCA component inputs, an RCA composite input, or an S-Video input. Only one of those three inputs can be active at a time.
+The two left-most columns of jacks are labeled **A** and **B**, corresponding to the two Decoder submodule inputs, described in the [Decoder](/modules/tbc2/manual#decoder) section below. For each Decoder you wish to use, patch a video source into the three RCA component inputs, an RCA composite input, or an S-Video input. Only one of those three inputs can be active at a time.
 
 ---
 
 ### Front Panel Sync In and Out
 
-At the top left are RCA jacks for video **Sync Input** and **Sync Output**. As explained in the [Genlock](/docs/modules/tbc2#genlock) section below, TBC2 is not designed as the ultimate source of sync in a modular system. It should receive sync from a dedicated sync generator module via the rear RCA connections. Alternatively, the TBC2 front panel sync input enables it to be installed in a different enclosure than the sync generator. More commonly, TBC2's front panel sync output is useful to send sync to another enclosure.
+At the top left are RCA jacks for video **Sync Input** and **Sync Output**. As explained in the [Genlock](/modules/tbc2/manual#genlock) section below, TBC2 is not designed as the ultimate source of sync in a modular system. It should receive sync from a dedicated sync generator module via the rear RCA connections. Alternatively, the TBC2 front panel sync input enables it to be installed in a different enclosure than the sync generator. More commonly, TBC2's front panel sync output is useful to send sync to another enclosure.
 
 ---
 
@@ -139,7 +139,7 @@ The TBC2 MIDI jacks use the **Type B** TRS standard: a three-conductor tip-ring-
 The official MIDI standard is **Type A**, but this was adopted long after hardware manufacturers started using mini jacks. If you wish to interface TBC2 MIDI with other Eurorack modules, consult their hardware documentation. You may need an adapter. For example, Expert Sleepers modules use a tip-ring (mono) jack, called **Type C**. The shield conductor is omitted because over short patch cable runs there is no practical need for shielding from radio frequency interference.
 :::
 
-TBC2 accepts MIDI Continuous Controller messages to remotely control the Encoder crossfader and SD color correction parameters listed in the [MIDI Implementation](/docs/modules/tbc2#midi-implementation) section below.
+TBC2 accepts MIDI Continuous Controller messages to remotely control the Encoder crossfader and SD color correction parameters listed in the [MIDI Implementation](/modules/tbc2/manual#midi-implementation) section below.
 
 ---
 
@@ -157,9 +157,9 @@ At the bottom center of the front panel is a **Trigger In** mini-jack. This is n
 
 ### 1v Video Outputs
 
-On the right side of the front panel are eight jacks for 0 to +1v patchable video outputs: four for each of the A and B [Encoder](/docs/modules/tbc2#encoder) submodules, described below.
+On the right side of the front panel are eight jacks for 0 to +1v patchable video outputs: four for each of the A and B [Encoder](/modules/tbc2/manual#encoder) submodules, described below.
 
-The bottom pair of three video output jacks are color-coded to Red, Green and Blue, corresponding to the RGB color components of each Encoder channel. But the individual RGB jacks can also be assigned to internally-generated horizontal and vertical ramps, described in the [Ramp Generator](/docs/modules/tbc2#ramp-generator) section below.
+The bottom pair of three video output jacks are color-coded to Red, Green and Blue, corresponding to the RGB color components of each Encoder channel. But the individual RGB jacks can also be assigned to internally-generated horizontal and vertical ramps, described in the [Ramp Generator](/modules/tbc2/manual#ramp-generator) section below.
 
 The top video output jacks are dedicated to luminance signals, also known as **Y**. The RGB components of the Decoder or Media submodules are summed. However, the RGB components do not contribute to luminance in equal amounts. RGB components are weighted according to the formula set by the CCIR-601 video standard. This unequal weighting accounts for the human perception of brightness as a function of hue. Green looks brighter than red, red looks brighter than blue. The result of the RGB summing formula is that a black and white luminance image appears to have the same approximate value tones as a full color image.
 
@@ -336,7 +336,7 @@ TBC2 has one **Media** submodule. It loads still images from a MicroSD card inse
 To minimize risk of data loss, always eject or insert a MicroSD card only when TBC2 is powered off. Keep remote backups of any data on the MicroSD card.
 :::
 
-Images can be displayed as stills, or played back at the current frame rate as a motion picture sequence. See the [Image Sequences](/docs/modules/tbc2#image-sequences) section below.
+Images can be displayed as stills, or played back at the current frame rate as a motion picture sequence. See the [Image Sequences](/modules/tbc2/manual#image-sequences) section below.
 
 Media Player output video standard follows the Genlock Module.
 

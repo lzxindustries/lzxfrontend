@@ -25,7 +25,7 @@ A category of circuits that perform logical operations on continuous analog sign
 
 A signal that may include both positive and negative voltages. Compare to [unipolar](/docs/guides/glossary#unipolar), which only includes positive voltages. In LZX systems, the final video output to the encoder is unipolar only.
 
-Many modules can only handle unipolar signals. However, some modules such as [Swatch](/docs/modules/swatch) require bipolar signals. Others, such as [DSG3](/docs/modules/dsg3) and [Contour](/docs/modules/contour), can optionally accept bipolar signals, but can only output unipolar signals. Utility modules such as [Proc](/docs/modules/proc) and [PGO](/docs/modules/pgo) can convert between unipolar and bipolar signals.
+Many modules can only handle unipolar signals. However, some modules such as [Swatch](/modules/swatch) require bipolar signals. Others, such as [DSG3](/modules/dsg3) and [Contour](/modules/contour), can optionally accept bipolar signals, but can only output unipolar signals. Utility modules such as [Proc](/modules/proc) and [PGO](/modules/pgo) can convert between unipolar and bipolar signals.
 
 ### Blending
 
@@ -49,7 +49,7 @@ A binary output circuit that compares two signals. Usually this takes the form o
 
 ### Component key generator
 
-A type of [chroma key](/docs/guides/glossary#chroma-key) generator that acts on a single color channel. Conventional production chroma keyers allow the user to dial in any hue as the key source. A component key generator such as [FKG3](/docs/modules/fkg3) can only key a mask off of a pure red, green, or blue color channel.
+A type of [chroma key](/docs/guides/glossary#chroma-key) generator that acts on a single color channel. Conventional production chroma keyers allow the user to dial in any hue as the key source. A component key generator such as [FKG3](/modules/fkg3) can only key a mask off of a pure red, green, or blue color channel.
 
 ### Compositing
 
@@ -59,7 +59,7 @@ A type of [layering](/docs/guides/glossary#layering) in which two or more images
 
 An _encoder module_ accepts arbitrary signals in the zero to one volt range and outputs conventional, standard video. An encoder is required to convert modular signals to legal video that can be displayed or recorded.
 
-In the context of the LZX [TBC2](/docs/modules/tbc2) module, _encoder_ has a different meaning. The Encoder submodule of TBC2 accepts digital video from one of various sources, converts it to analog, and outputs LZX 1 volt patchable signals.
+In the context of the LZX [TBC2](/modules/tbc2) module, _encoder_ has a different meaning. The Encoder submodule of TBC2 accepts digital video from one of various sources, converts it to analog, and outputs LZX 1 volt patchable signals.
 
 ### Exponential amplifier
 
@@ -81,7 +81,7 @@ A circuit that doubles the frequency of a signal. Also known as a rectifier or s
 
 A process, state, or connection in which a video device is externally synchronized to some other device. The term _genlock_ is commonly used as a verb or an adjective. In a historical video studio, all devices have _genlock inputs_ and are _genlocked_ to _house sync_. All devices are synchronized to a single reference, so that their signals can be combined seamlessly and free of glitches.
 
-The same situation applies to the internal workings of a modular video synthesizer. All modules that require sync must be genlocked to the same reference timing, provided by the sync generator module such as [ESG3](/docs/modules/esg3). To send a video signal into the synthesizer, either the external device must be genlocked to the sync generator, or the sync generator must be genlocked to the external device. For multiple video sources, everything must be genlocked to a single reference. But today, only the most advanced professional video equipment has genlock capability. Ordinary consumer cameras, VCRs, etc. can't be genlocked. The [TBC2](/docs/modules/tbc2) module solves this problem by sampling two incoming video streams with [frame synchronizers](/docs/guides/glossary#frame-synchronizer).
+The same situation applies to the internal workings of a modular video synthesizer. All modules that require sync must be genlocked to the same reference timing, provided by the sync generator module such as [ESG3](/modules/esg3). To send a video signal into the synthesizer, either the external device must be genlocked to the sync generator, or the sync generator must be genlocked to the external device. For multiple video sources, everything must be genlocked to a single reference. But today, only the most advanced professional video equipment has genlock capability. Ordinary consumer cameras, VCRs, etc. can't be genlocked. The [TBC2](/modules/tbc2) module solves this problem by sampling two incoming video streams with [frame synchronizers](/docs/guides/glossary#frame-synchronizer).
 
 ### Hard key generator
 

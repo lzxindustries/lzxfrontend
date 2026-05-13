@@ -91,7 +91,7 @@ export const instrumentsCategoryConfig: CategoryListingConfig = {
   key: 'instruments',
   pageTitle: 'Instruments',
   pageSubtitle:
-    'Our standalone consoles and instruments are a great way to start creating without the complexity and setup process of eurorack modules.',
+    'Standalone video synthesizers you can use on their own or alongside Eurorack video modules.',
   seoTitle: 'Instruments',
   seoDescription: 'LZX Industries standalone video instruments',
   sectionLabels: {active: 'Active', legacy: 'Legacy'},

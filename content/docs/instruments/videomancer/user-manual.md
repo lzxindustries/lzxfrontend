@@ -88,7 +88,7 @@ Videomancer's firmware is part of a code base shared with other instruments in d
 
 **Economics**
 
-LZX is committed to making video synthesis affordable to working artists, not just big studios. To keep costs down, Videomancer's design requires very little volatile memory. It can only hold a few lines of video in memory at a time. That's enough for certain effects that are impossible in the analog domain, such as vertical blurring. But it's not enough to store an entire frame, so Videomancer isn't a frame store. It can't convert resolutions or frame rates, or sync one video signal to another. For those capabilites, we offer the [TBC2 Dual Video Input](/docs/modules/tbc2) Eurorack module.
+LZX is committed to making video synthesis affordable to working artists, not just big studios. To keep costs down, Videomancer's design requires very little volatile memory. It can only hold a few lines of video in memory at a time. That's enough for certain effects that are impossible in the analog domain, such as vertical blurring. But it's not enough to store an entire frame, so Videomancer isn't a frame store. It can't convert resolutions or frame rates, or sync one video signal to another. For those capabilites, we offer the [TBC2 Dual Video Input](/modules/tbc2/manual) Eurorack module.
 
 ### Legacy
 
@@ -119,7 +119,7 @@ Videomancer is the second standalone instrument released by LZX, the first being
 
 - **HDMI** digital video/audio in and out
   - Full-size HDMI jacks
-  - Supporting a wide range of digital video [formats](/docs/instruments/videomancer/user-manual#supported-formats-and-standards)
+  - Supporting a wide range of digital video [formats](/instruments/videomancer/manual/user-manual#supported-formats-and-standards)
   - Output configurable as HDMI YCbCr or DVI RGB
 - **Multi-format Analog** video in and out
   - Triple RCA jacks configurable as:
@@ -196,7 +196,7 @@ Videomancer is the second standalone instrument released by LZX, the first being
 
 - **Power** switch
 - **Boot** button
-  - For [firmware update](/docs/instruments/videomancer/user-manual#firmware-update)
+  - For [firmware update](/instruments/videomancer/manual/user-manual#firmware-update)
 
 ---
 
@@ -251,7 +251,7 @@ Videomancer genlocks to incoming video, assuming the timing, resolution, and fra
 
 ---
 
-Videomancer can't convert resolutions or frame rates, but it **_can_** convert between color spaces and color encoding formats. Choose the input and output options via the System menu, as described in [Video Route Modes](/docs/instruments/videomancer/user-manual#video-route-modes) below.
+Videomancer can't convert resolutions or frame rates, but it **_can_** convert between color spaces and color encoding formats. Choose the input and output options via the System menu, as described in [Video Route Modes](/instruments/videomancer/manual/user-manual#video-route-modes) below.
 
 | Color formats                        |
 | :----------------------------------- |
@@ -455,7 +455,7 @@ On the other hand, there's no issue at all when integrating a modular system usi
 
 ### Menu Structure
 
-The following outline illustrates the overall structure of the Videomancer menus. Specific options per menu are listed or described in the corresponding sections of this User Guide, or in supplemental documents such as the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md).
+The following outline illustrates the overall structure of the Videomancer menus. Specific options per menu are listed or described in the corresponding sections of this User Guide, or in supplemental documents such as the [Modulation Guide](/instruments/videomancer/manual/modulation-operators).
 
 - **SYSTEM**, **MOTION**, and **STATE** menus are chosen by pressing the labeled white Button, indicated by a circled bullet character: `◉`
 - **Parameter** menus are chosen by repeatedly pressing a black Parameter Button, labeled **1** through **\*** (12), indicated by a hollow bullet character: `○`
@@ -519,7 +519,7 @@ Turn the Rotary Encoder to cycle through the System menus:
 | **Developer Mode**     | Developer Mode  | Disabled, Enabled                                                                                                                                                |
 | **Soft Pickup**        | Soft Pickup     | Disabled, Enabled                                                                                                                                                |
 | **Language**           | Language        | English, Deustch, Francais, Espanol, Dansk, Svenska, Suomi, Italiano, Portugues, Indonesia, Nederlands, Norsk, Turkce, Catala, Polski, Hrvatski, Romana, Cestina |
-| **Preferred Timing**   | Pref. Timing    | [Video Formats and Standards](/docs/instruments/videomancer/user-manual#supported-formats-and-standards)                                                         |
+| **Preferred Timing**   | Pref. Timing    | [Video Formats and Standards](/instruments/videomancer/manual/user-manual#supported-formats-and-standards)                                                         |
 
 **System settings procedure:**
 
@@ -595,7 +595,7 @@ $$
 
 #### Modulation Operators
 
-Videomancer features dozens of **Modulation Operators** of various types, ranging from raw control voltage input to generative algorithms. Modulation Operators are documented in full in the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md).
+Videomancer features dozens of **Modulation Operators** of various types, ranging from raw control voltage input to generative algorithms. Modulation Operators are documented in full in the [Modulation Guide](/instruments/videomancer/manual/modulation-operators).
 
 :::note
 **MOTION** transport playback usually needs to be running to apply modulation. Press the **PLAY** button to enable all Modulation Operators.
@@ -642,7 +642,7 @@ Modulation Operator properties are adjusted with the **Time**, **Space**, and **
 
 **Space** controls the **Gain** or amplitude of modulation. The range of the Gain property depends on the current Modulation Operator. For example, **LFO** modulators have a maximum Gain of 100%. **CV** and **Audio** modulators have a maximum Gain of 400% to accommodate sources with different voltage ranges.
 
-**Time** and **Slope** knobs perform different functions depending on the active Modulation Operator, as described in the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md). For example, Time adjusts the period of an oscillator, and Slope chooses the waveform type.
+**Time** and **Slope** knobs perform different functions depending on the active Modulation Operator, as described in the [Modulation Guide](/instruments/videomancer/manual/modulation-operators). For example, Time adjusts the period of an oscillator, and Slope chooses the waveform type.
 
 <img src={videomancer_LCD_slope_wave_sine} alt="Videomancer Slope display" />
 *Slope display showing Sine LFO waveform selection*
@@ -697,7 +697,7 @@ Within a Modulation property page, the current mode is indicated by the followin
 
 ### MIDI Modulation
 
-All Parameters can be additionally controlled via MIDI Continuous Controllers or MIDI Note messages. MIDI Modulation is documented in full in the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md). Controller and Note numbers can be assigned to Parameters manually or automatically via MIDI Learn. Any incoming MIDI is added to the Manual control value, and to any active Modulation Operator.
+All Parameters can be additionally controlled via MIDI Continuous Controllers or MIDI Note messages. MIDI Modulation is documented in full in the [Modulation Guide](/instruments/videomancer/manual/modulation-operators). Controller and Note numbers can be assigned to Parameters manually or automatically via MIDI Learn. Any incoming MIDI is added to the Manual control value, and to any active Modulation Operator.
 
 There's no Modulation operator for MIDI, it's always enabled.
 
@@ -727,7 +727,7 @@ Press the **MOTION** button to display the current values of Timecode (**TC**) a
 <img src={videomancer_LCD_timecode_bpm} alt="Videomancer Timecode and BPM display" />
 *Timecode and Beats Per Minute*
 
-Modulation within Videomancer is usually linked to the Timecode displayed in MOTION mode. Videomancer can generate timecode internally, or [synchronize to MIDI](/docs/instruments/videomancer/user-manual#midi-synchronization).
+Modulation within Videomancer is usually linked to the Timecode displayed in MOTION mode. Videomancer can generate timecode internally, or [synchronize to MIDI](/instruments/videomancer/manual/user-manual#midi-synchronization).
 
 Modulation is deterministic based on Videomancer's timecode. For example, oscillators begin with a phase of zero at timecode value `00:00:00:00`. If the Time properties of Modulation Operators don't change, then the exact same Modulation patterns are generated each time playback begins from zero.
 
@@ -740,7 +740,7 @@ Press the **STOP** button to deactivate playback of internal Timecode. The time 
 When the transport is stopped, a left arrow ( **&larr;** )appears on the lower left of the display. When the transport is running, a right arrow ( **&rarr;** ) is displayed.
 
 :::note
-Videomancer does not have a manual pause button. Stopping playback sends the timecode value to zero, resetting all modulation. Use [MIDI Timecode](/docs/instruments/videomancer/user-manual#midi-synchronization) if you wish to pause and resume playback.
+Videomancer does not have a manual pause button. Stopping playback sends the timecode value to zero, resetting all modulation. Use [MIDI Timecode](/instruments/videomancer/manual/user-manual#midi-synchronization) if you wish to pause and resume playback.
 :::
 
 #### Internal BPM Tempo
@@ -854,7 +854,7 @@ Programs can include up to eight Factory Presets, indicated by the letter **F**.
 
 **MIDI Program Change**
 
-Presets can be recalled remotely with MIDI Program Change messages, as described in the [Modulation Guide](/docs/instruments/videomancer/modulation-operators.md).
+Presets can be recalled remotely with MIDI Program Change messages, as described in the [Modulation Guide](/instruments/videomancer/manual/modulation-operators).
 
 ---
 
@@ -875,7 +875,7 @@ Presently, microSD card storage is limited to Programs and Presets. Additional f
 At boot time, Videomancer scans internal flash storage and microSD card for Program files with the extension `.vmprog`. In the case of duplicate filenames, Videomancer loads the highest version number, or the internally stored version.
 
 :::note
-By default, Videomancer ignores third party Programs or those with version numbers lower than 1.0.0. To load Programs developed by third parties, or currently in alpha or beta development stage, [Developer Mode](/docs/instruments/videomancer/user-manual#developer-mode) must be enabled. See below.
+By default, Videomancer ignores third party Programs or those with version numbers lower than 1.0.0. To load Programs developed by third parties, or currently in alpha or beta development stage, [Developer Mode](/instruments/videomancer/manual/user-manual#developer-mode) must be enabled. See below.
 :::
 
 Currently, Videomancer recursively scans the entire file system of the microSD card, looking for `.vmprog` files. You can organize Programs in any folder structure you like, and Videomancer will find them. However, be aware that the number of files and folders affects the time it takes for Videomancer to boot up. We recommend keeping the microSD card free of any extraneous data to minimize boot times.

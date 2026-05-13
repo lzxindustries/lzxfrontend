@@ -161,7 +161,7 @@ PAB-REVB Interactive Bill of Materials
 
 PAB is available as an assembled module, a full DIY kit, or a partial DIY kit.
 
-Downloads for the complete schematic and an interactive HTML Bill of Materials are found in the [Hardware Revisions](/docs/modules/pab#hardware-revisions) section above.
+Downloads for the complete schematic and an interactive HTML Bill of Materials are found in the [Hardware Revisions](/modules/pab/manual#hardware-revisions) section above.
 
 ### Partial DIY Components
 

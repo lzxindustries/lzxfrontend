@@ -35,7 +35,7 @@ Total surfaces inspected:
 | Marketing routes (`app/routes/**/*.tsx`) | ~25 customer-facing |
 | Category configs (subtitles, group blurbs) | 8 |
 | Landing JSON (`content/landing/`) | 2 |
-| Per-product support (`content/support/`) | 55 |
+| Per-product support (`content/support/`) | 15 (+ README) |
 | Module manuals (`content/docs/modules/`) | 60 |
 | Instrument manuals (`content/docs/instruments/`) | 12 |
 | Site guides (`content/docs/guides/`) | 9 |
@@ -197,6 +197,10 @@ all have `draft: true` index.md files and are unaffected.
 
 ## P1 — editorial drift / IA standards
 
+> **Status (2026-05-12):** P1.1–P1.3, P1.7, P1.9, P1.10, and P1.13 are
+> resolved in repo as of the same date. Open: P1.4–P1.6, P1.8, P1.11–P1.12,
+> P1.14–P1.15.
+
 ### P1.1 Non-canonical doc URLs scattered through markdown
 
 `content/docs/PRODUCT_HUB_EDITING.md` explicitly mandates canonical
@@ -230,6 +234,14 @@ through the redirect. Recommend a one-shot sweep that rewrites:
   if the link was meant for the hub overview)
 - `/docs/getting-started/<rest>` → `/getting-started/<rest>`
 
+**Resolution:** Sweep complete for authored links under `content/` (24
+markdown files): instrument links now use `/instruments/<slug>/manual/...`;
+module links in manuals and blog posts use `/modules/<slug>/manual` (with
+anchors preserved). **`content/docs/guides/`** module links use **`/modules/<slug>`**
+(hub overview), including glossary, `video-tutorials.md`, and
+`installing-modules.md`. `content/docs/modules/module-list.md` prose now
+references **`/modules/specs`** only.
+
 ### P1.2 Glossary internal references point at the manual tab when the overview tab is what's meant
 
 `content/docs/guides/glossary.md` cross-references modules with
@@ -239,6 +251,9 @@ context, a reader clicking from "Swatch" or "TBC2" almost always wants
 the module's overview tab (`/modules/<slug>`), not page 1 of a
 multi-section manual. Choose deliberately for each reference and
 prefer the overview hub for read-once links.
+
+**Resolution:** Implemented with the P1.1 sweep — glossary and the other
+guide pages under `content/docs/guides/` link modules at **`/modules/<slug>`**.
 
 ### P1.3 73% of per-product support files are boilerplate stubs
 
@@ -267,6 +282,10 @@ Recommended action:
   videomancer, vidiot, andor-1-media-player, esg3, fkg3, dsg3-with-content,
   proc, smx3, tbc2, dc-distro-3a, plus the four already without
   prerequisites, etc.).
+
+**Resolution:** Deleted the 40 boilerplate support markdown files; 15
+authored files remain, plus `README.md`. `SUPPORT_MANIFEST` is unchanged;
+missing files still yield empty FAQ/setup via `loadSupportContent()`.
 
 ### P1.4 `content/docs/case-and-power/` is effectively empty
 
@@ -326,6 +345,10 @@ Two issues:
   as anti-marketing for the modular line on a site that sells both
   side-by-side.
 
+**Resolution:** Updated `instruments.config.ts` `pageSubtitle` to describe
+standalone video synthesizers usable on their own or with Eurorack video
+modules (no "consoles" wording, no negative comparison).
+
 ### P1.8 Voice drift in category subtitles
 
 Per `WRITING_STYLE_GUIDE.md` the site voice "Never uses buzzwords,
@@ -384,6 +407,9 @@ the program is (weekly featured artist on the blog and newsletter, open
 submissions) and links to the application form. Keep the form CTA that
 already exists; replace the body copy.
 
+**Resolution:** Replaced the body copy in `app/routes/($lang).artists.tsx`
+with a single direct paragraph; kept the application form callout above it.
+
 ### P1.10 `/getting-started` calls Videomancer a "video effects console"
 
 `app/routes/($lang).getting-started._index.tsx` card description:
@@ -395,6 +421,9 @@ Every other surface (about, hero, manual, landing JSON) calls
 Videomancer a "standalone video synthesizer." Pick one term and use
 it everywhere. The about page wording ("FPGA-based standalone video
 synthesizer") is the strongest.
+
+**Resolution:** The Videomancer card on `/getting-started` already uses
+**standalone video synthesizer**; no further change required.
 
 ### P1.11 `/cases-and-power` (plural) vs `/docs/case-and-power` (singular)
 
@@ -438,6 +467,9 @@ The button is not literally a tab, but it's a primary nav element on a
 hub product card sending the user to a Manual route. Rename to
 **"Manual"** to stay consistent with the hub tab name and the editing
 rule.
+
+**Resolution:** Button label updated from **Docs** to **Manual** in
+`app/routes/($lang).downloads.tsx`.
 
 ### P1.14 `quick-start.md` references `/docs/instruments/videomancer/downloads`
 
