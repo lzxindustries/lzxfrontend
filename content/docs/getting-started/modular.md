@@ -12,7 +12,7 @@ Installing a new module in your system should be done in the following steps. Al
 
 ### Connecting Power
 
-Your power supply must be connected to either the 12V DC input jack or the EuroRack power connector. Do not use both connectors at the same time.
+Your power supply must be connected to either the 12V DC input jack or the Eurorack power connector. Do not use both connectors at the same time.
 
 ### Connecting Video Sync
 
@@ -22,7 +22,7 @@ For each module with a Video Sync In on the rear, it must be connected to your [
 
 ### Mounting
 
-Secure the module to your EuroRack mounting rails using the screws provided by your EuroRack case provider.
+Secure the module to your Eurorack mounting rails using the screws provided by your Eurorack case provider.
 
 ![/media/GettingStartedScrewMounting.jpg](/media/GettingStartedScrewMounting.jpg)
 
@@ -60,7 +60,7 @@ Patch any three of DSG3's eight outputs to your ESG3's Red, Green & Blue input j
 
 ### Adding Complexity
 
-Next, let's make the geometry of your pattern capable of more complex results through series processing. Patch two outputs from DSG3's first shape generator, to the inputs of it's second shape generator. Now take your RGB pattern from the second shape generator's outputs.
+Next, let's make the geometry of your pattern capable of more complex results through series processing. Patch two outputs from DSG3's first shape generator to the inputs of its second shape generator. Now take your RGB pattern from the second shape generator's outputs.
 
 ![/media/GettingStartedPatch02.jpg](/media/GettingStartedPatch02.jpg) ![/media/GettingStartedPatch03.jpg](/media/GettingStartedPatch03.jpg)
 
@@ -69,7 +69,7 @@ Next, let's make the geometry of your pattern capable of more complex results th
 _I suspect something is not working. What are some good troubleshooting steps to follow?_
 
 - Keep it simple. Simplify your patch to the least number of cables or connections that create the issue you're seeing. Sometimes this will reveal the problem. If you jump into more complex theories right away, you may miss simple answers, like a defective patch cable or a missed setting.
-- Your 12V power supply or EuroRack power supply may not be supplying enough current. Underpowering your system can result in a variety of glitchy behavior. Add up the current consumption required by your LZX modules or by any other modules sharing the same power source, and verify that this is less than the current supplied by your power supply. If it is very close to, or greater than, the supplied current, upgrade your power supply.
+- Your 12V power supply or Eurorack power supply may not be supplying enough current. Underpowering your system can result in a variety of glitchy behavior. Add up the current consumption required by your LZX modules or by any other modules sharing the same power source, and verify that this is less than the current supplied by your power supply. If it is very close to, or greater than, the supplied current, upgrade your power supply.
 - Try testing modules in isolation. Disconnect all modules from your system, and connect only the output module, such as ESG3, to the power supply. After verifying it works correctly, power up the next module. Keep going until your issue reappears. If the issue reappears near the power supply's limits, upgrade your power supply. If the issue seems to be connected to a specific module, focus on troubleshooting that module.
 
 _I am seeing my LZX Modular system's video output drop in and out on my video monitor or video recording device, resulting in missing frames._
@@ -89,11 +89,11 @@ Many users like to perform regular service and checkups on their analog hardware
 
 ## Basic Testing
 
-- Power supply capable of 1 amps or more of current at 12 volts DC (EuroRack, Generic Wall Wart Adapter, etc)
+- Power supply capable of **1 A** or more of current at 12 volts DC (Eurorack, generic wall adapter, etc.)
 - A video display with Composite or Component video input
 - At least three RCA-to-RCA 75 ohms video cables or RCA-to-BNC 75 ohms video cables (use the native connector type present on your display) less than or equal to 2 meters in length
 - At least three 3.5mm patch cables less than or equal to 1 meter in length
-- EuroRack module mounting rails, either inside a EuroRack case or a bare rack frame
+- Eurorack module mounting rails, either inside a Eurorack case or a bare rack frame
 - ESG3 Encoder & Sync Generator module
 
 ## Advanced Testing & User Calibration
@@ -118,7 +118,7 @@ Not sure where to begin? Our [Starter Systems](/systems) page offers curated mod
 
 # Compatibility
 
-## EuroRack Cases & Power Supplies
+## Eurorack Cases & Power Supplies
 
 For LZX cases and power hardware, see [Cases & Power](/cases-and-power).
 

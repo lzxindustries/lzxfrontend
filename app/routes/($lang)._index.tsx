@@ -338,12 +338,9 @@ export default function Home() {
           <div>
             <h2 className="mb-4 text-2xl font-bold">About LZX Industries</h2>
             <p className="leading-relaxed">
-              LZX Industries designs and manufactures analog and digital video
-              synthesis instruments in Portland, Oregon. Our Eurorack-format
-              modules give artists, musicians, and VJs real-time control over
-              color, pattern, and motion — bridging the worlds of modular
-              synthesis and visual art. Every product is engineered, assembled,
-              and tested in-house.
+              Modular and standalone video synthesis instruments, designed and
+              built in Portland, Oregon. For history, product lines, and the
+              flagship Videomancer, visit our About page.
             </p>
             <Link
               to="/about"

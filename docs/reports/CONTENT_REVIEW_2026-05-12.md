@@ -529,6 +529,13 @@ give the fallback a more concrete label ("Discontinued" / "Archive").
 
 ## P2 — copy nits and small typos
 
+> **Status (2026-05-12):** All P2 items in this section have been addressed in
+> the follow-up commit batch (copy fixes, image rename, actionable
+> order-confirmed links, policy email/label, home About teaser, downloads
+> accuracy, removal of redundant DIY kit sentences from P-series module
+> manuals). **P2.5** (MLT “February 2025” revision line) left unchanged —
+> it matches the hardware revision table in the same manual.
+
 ### P2.1 `content/docs/guides/standards.md`
 
 - Line 24: `"The zero to one volt range range is slightly greater…"` —
@@ -572,11 +579,17 @@ give the fallback a more concrete label ("Discontinued" / "Archive").
   the brand spelling is wrong on the disk file. Rename the file and
   fix the reference together.
 
+**Resolution:** Renamed to **`about_lzx_workshop.jpg`** and updated
+`about-lzx.md` frontmatter, import, and `<img>`.
+
 ### P2.5 `content/docs/modules/mlt.md`
 
 - Line 115 `"Initial production version, February 2025"` — fine if
   accurate, but worth confirming for an "active" current-gen module
   whose only spec table still shows 4 HP (see P0.1).
+
+**Resolution:** P0.1 corrected MLT width; the revision caption matches the
+hardware revision section. No wording change.
 
 ### P2.6 `app/routes/($lang).order-confirmed.tsx`
 
@@ -586,6 +599,10 @@ Order", "Need Help?" together restate "you'll get an email," with no
 new actions. Either turn them into actionable links (track order →
 `/account/orders/<id>`, help → `mailto:`) or drop them.
 
+**Resolution:** Each card now ends with an explicit link to
+**`/account`**, **`/account/orders`**, or **`/support`** plus tightened
+body copy.
+
 ### P2.7 `content/docs/instruments/videomancer/quick-start.md`
 
 The Step-by-step is solid; one place to tighten: line 78
@@ -593,6 +610,8 @@ The Step-by-step is solid; one place to tighten: line 78
 to your display."` and the immediately following `:::tip` saying
 "Videomancer remembers this setting." can collapse into one sentence —
 the tip just restates the previous paragraph's implication.
+
+**Resolution:** Collapsed the redundant `:::tip` into the preceding paragraph.
 
 ### P2.8 `policies/refund-policy.md` vs the rest of the policies
 
@@ -602,6 +621,9 @@ through `support@lzxindustries.net`. Unify (probably to
 `support@…`, which is the address the support route already promotes
 for technical help and which the terms-of-service page also uses).
 
+**Resolution:** Preorder cancellation email is **`support@lzxindustries.net`**
+throughout.
+
 ### P2.9 `policies/terms-of-service.md`
 
 Line 48 link text: `[docs.lzxindustries.net](/docs)` — the href is
@@ -609,6 +631,9 @@ correct but the label is the legacy subdomain we migrated away from
 (see `docs-subdomain-migration.md`). Rename the label to "our
 documentation" so the policy doesn't preserve a subdomain that no
 longer answers.
+
+**Resolution:** Link text is now **[our documentation](/docs)** (no legacy
+subdomain label).
 
 ### P2.10 Repeated body copy on the home page
 
@@ -629,6 +654,10 @@ block be a one-line teaser and link out, or de-duplicate the wording
 ("we design and manufacture …" / "in-house") so the two paragraphs
 don't read like A/B variants on the same prose.
 
+**Resolution:** Home About block is a short teaser pointing readers to **`/about`**
+for history and flagship detail; removed duplicate “designs and manufactures /
+in-house” framing.
+
 ### P2.11 `app/routes/($lang).downloads.tsx`
 
 > "Manuals, firmware, and support files for all supported LZX products."
@@ -637,6 +666,9 @@ don't read like A/B variants on the same prose.
 to products with at least one asset in `getModuleAssets()`. Be honest:
 "Firmware, manuals, schematics, and BOMs for every LZX product with
 downloadable assets."
+
+**Resolution:** Intro copy now states downloads are for products with **catalog
+assets** (firmware, manuals, schematics, BOMs).
 
 ### P2.12 Module manual MLT — duplicate sentence about DIY availability
 
@@ -650,18 +682,22 @@ Module manuals are not the place to advertise variants — keep this in
 the product hub overview tab. (Same pattern repeats on a few P-series
 manuals.)
 
+**Resolution:** Removed the redundant “available as assembled / DIY …” line from
+**MLT, PRM, POT, PGO, LNK, PAB** DIY sections.
+
 ---
 
 ## Suggested next steps
 
-1. **Same-day fixes**: P0.1 (MLT HP), P0.5 (videomancer setupPrerequisites),
-   P0.6 (orphan blog asset folders) — small, scoped, and break trust
-   if left.
-2. **One-shot script pass**: P1.1 canonical URL rewrite across the 24
-   files identified. Mechanical, reviewable as one PR.
-3. **Editorial pass**: P1.7, P1.8, P1.9, P1.10, P2.10 — most of the
-   marketing-tone misses are in 5–6 strings inside `app/data/category-configs/*.config.ts`
-   and `app/routes/($lang).{artists,getting-started}._index*.tsx`. A
-   single PR rewrites them against `WRITING_STYLE_GUIDE.md`.
-4. **Cleanup**: P1.3 support stubs removed; P1.4 + P1.11 `cases-and-power` docs + `/docs` hub tile addressed.
-5. **Verification**: P0.2 Discord URL; P1.12 Connect copy; P0.4 product count — complete unless stakeholders revise framing.
+> **Note:** P0 / P1 / P2 findings in this report were addressed in follow-up
+> work. Retain this section as a **template** for future audits, not a backlog.
+
+1. **Triage** — same P0 / P1 / P2 tiers for the next full-site sweep.
+2. **Canonical URLs** — keep new markdown on hub/manual paths per
+   `PRODUCT_HUB_EDITING.md`.
+3. **Voice** — spot-check category configs and landing routes against
+   `WRITING_STYLE_GUIDE.md`.
+4. **Hygiene** — avoid support-file stubs; keep policy emails consistent
+   (`support@…`).
+5. **Stakeholder** — revisits for counts, release milestones, and legal when
+   offerings change.

@@ -39,7 +39,7 @@ We offer exchanges within the applicable return window (30 days for assembled mo
 
 ## Preorder & Backorder Cancellations
 
-You may cancel a preorder or backorder at any time before the item ships in exchange for **store credit**. Simply contact us at **sales@lzxindustries.net** with your order number. Preorder and backorder cancellations are not eligible for refund to the original payment method.
+You may cancel a preorder or backorder at any time before the item ships in exchange for **store credit**. Simply contact us at **support@lzxindustries.net** with your order number. Preorder and backorder cancellations are not eligible for refund to the original payment method.
 
 Your store credit can be applied toward any other product in our store — including items currently in stock for immediate shipment. Store credit is issued within 3 business days and does not expire.
 

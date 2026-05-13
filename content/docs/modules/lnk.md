@@ -132,8 +132,6 @@ LNK-RevA Interactive Bill of Materials
 
 ## DIY
 
-LNK is available as an assembled module, a full DIY kit, or a partial DIY kit.
-
 Downloads for the complete schematic and an interactive HTML Bill of Materials are found in the [Hardware Revisions](/modules/lnk/manual#hardware-revisions) section above.
 
 ### Partial DIY Components

@@ -196,7 +196,8 @@ export default function DownloadsPage() {
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
       <h1 className="text-3xl font-bold mb-2">Downloads</h1>
       <p className="text-base-content/70 mb-6">
-        Manuals, firmware, and support files for all supported LZX products.
+        Firmware, manuals, schematics, and BOMs for every LZX product with
+        downloadable assets in our catalog.
       </p>
 
       <div className="mb-8 rounded-lg border border-base-300 bg-base-200 p-4 md:p-5">

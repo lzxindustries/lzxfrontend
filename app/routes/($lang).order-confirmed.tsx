@@ -115,23 +115,42 @@ export default function OrderConfirmed() {
                 We&apos;ll send you shipping updates via email as your order
                 progresses.
               </Text>
+              <Link
+                to="/account"
+                className="mt-3 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                Account overview →
+              </Link>
             </div>
             <div className="p-4 border border-primary/10 rounded-lg">
               <Text as="h3" className="font-bold mb-2">
                 Track Your Order
               </Text>
               <Text size="fine" color="subtle">
-                Sign in to your account to view order status and tracking
-                information.
+                Sign in to view order status, history, and tracking when
+                available.
               </Text>
+              <Link
+                to="/account/orders"
+                className="mt-3 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                Order history →
+              </Link>
             </div>
             <div className="p-4 border border-primary/10 rounded-lg">
               <Text as="h3" className="font-bold mb-2">
                 Need Help?
               </Text>
               <Text size="fine" color="subtle">
-                Contact us if you have any questions about your order.
+                Questions about your order, shipping, or a product? Reach us
+                through support.
               </Text>
+              <Link
+                to="/support"
+                className="mt-3 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                Support →
+              </Link>
             </div>
           </div>
           <div className="flex gap-4 justify-center">

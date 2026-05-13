@@ -2,11 +2,11 @@
 draft: false
 title: 'About LZX'
 sidebar_position: 1
-image: /img/guides/about_lxz_workshop.jpg
+image: /img/guides/about_lzx_workshop.jpg
 description: 'LZX Industries designs and manufactures modular video synthesizer instruments in Portland, Oregon.'
 ---
 
-import about_lxz_workshop from '/img/guides/about_lxz_workshop.jpg';
+import about_lzx_workshop from '/img/guides/about_lzx_workshop.jpg';
 
 # About LZX
 
@@ -30,7 +30,7 @@ LZX began as a DIY project in 2008. The company was founded in 2010 in Denton, T
 
 For a short public overview of the company and flagship products, see the [About](/about) page.
 
-<img src={about_lxz_workshop} alt="LZX workshop" />
+<img src={about_lzx_workshop} alt="LZX workshop" />
 
 ---
 

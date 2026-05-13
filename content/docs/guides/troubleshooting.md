@@ -7,7 +7,7 @@ description: 'Troubleshooting guide for diagnosing and resolving common issues w
 
 # Troubleshooting
 
-## Halp!
+## When something seems wrong
 
 **_I suspect something isn't working. How should I troubleshoot the system?_**
 
@@ -21,7 +21,7 @@ Keep it simple. Simplify your patch to the least number of cables or connections
 
 ## Insufficient power?
 
-**The system may be drawing more current than the 12V barrel or Euroack power supply can provide.**
+**The system may be drawing more current than the 12 V barrel or Eurorack power supply can provide.**
 
 Underpowering the system can result in a variety of glitchy behavior &mdash; not the good kind of glitch. Add up the current consumption required by all modules sharing the same power source. Verify that this is less than the current supplied by the power supply. If total consumption is close to or greater than the supplied current, the system is underpowered. Upgrade the power supply, or add another one to power some modules. A common configuration is to power all audio modules with a standard Eurorack power supply, and all LZX modules with **DC Distro** or **Bus 168**.
 

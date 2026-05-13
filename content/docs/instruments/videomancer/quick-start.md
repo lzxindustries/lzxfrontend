@@ -75,11 +75,7 @@ Tell Videomancer to process your HDMI input. From the system status screen:
 
 <img src={videomancer_LCD_vid_route_HDMI} alt="Videomancer display showing HDMI Video Route Mode selection" />
 
-Your source video now passes through Videomancer's processor and out to your display.
-
-:::tip
-Videomancer remembers this setting. You only need to set the Video Route Mode once.
-:::
+Your source video now passes through Videomancer's processor and out to your display. Videomancer remembers **Vid Route Mode**, so you normally set it once.
 
 ---
 
