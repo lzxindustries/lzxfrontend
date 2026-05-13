@@ -39,7 +39,7 @@ Total surfaces inspected:
 | Module manuals (`content/docs/modules/`) | 60 |
 | Instrument manuals (`content/docs/instruments/`) | 12 |
 | Site guides (`content/docs/guides/`) | 9 |
-| Case & power docs (`content/docs/case-and-power/`) | 6 |
+| Case & power docs (`content/docs/cases-and-power/`) | 6 |
 | Getting-started docs (`content/docs/getting-started/`) | 2 |
 | Blog posts (`content/blog/`) | 68 directories |
 | Policies (`policies/`) | 5 documents (`.md` + `.html`) |
@@ -197,9 +197,9 @@ all have `draft: true` index.md files and are unaffected.
 
 ## P1 — editorial drift / IA standards
 
-> **Status (2026-05-12):** P1.1–P1.3, P1.7, P1.9, P1.10, and P1.13 are
-> resolved in repo as of the same date. Open: P1.4–P1.6, P1.8, P1.11–P1.12,
-> P1.14–P1.15.
+> **Status (2026-05-12):** All P1 items tracked in this report are resolved
+> in repo as of the same date (latest batch completes P1.4–P1.6, P1.8,
+> P1.11–P1.15; P1.14 verified).
 
 ### P1.1 Non-canonical doc URLs scattered through markdown
 
@@ -301,6 +301,13 @@ for cases and power" hits a four-line placeholder. Either write the
 pages or remove the docs landing tile and link directly to
 `/cases-and-power`.
 
+**Resolution:** Renamed docs tree to **`content/docs/cases-and-power/`**
+with canonical URLs `/docs/cases-and-power`; **301** from
+`/docs/case-and-power` and nested paths. The `/docs` landing tile now
+targets **`/cases-and-power`** (store category) with copy that points readers
+to supplemental docs. The section index links to the shop and
+`/getting-started/modular`.
+
 ### P1.5 `docs/guides/about-lzx.md` is missing two series
 
 The site says it has **eight** product lines (matches
@@ -316,6 +323,10 @@ Castle and Cadet are absent. These two are still actively listed at
 series and their year ranges; otherwise either this page or the about
 landing is wrong.
 
+**Resolution:** History now includes **Cadet** and **Castle** with year
+ranges and lists all seven narrative generations through **P-Series**
+(`about-lzx.md`).
+
 ### P1.6 About page vs docs guide disagree on founding framing
 
 - `content/pages/about.md`: "Founded in 2010 in Denton, Texas by Lars
@@ -327,6 +338,11 @@ landing is wrong.
 Both can be true (DIY 2008 → company 2010 → first products 2011 → move
 2015) but the two surfaces tell different stories. Either unify the
 narrative or have each page link to the other so the timelines reconcile.
+
+**Resolution:** `about-lzx.md` opens with DIY **2008**, founding **2010**
+Denton, and Portland **2015**; `about.md` adds the DIY **2008** clause and
+cross-links to [About LZX](/docs/guides/about-lzx); `about-lzx.md` links to
+[About](/about).
 
 ### P1.7 Instruments listing subtitle disparages the rest of the line
 
@@ -390,6 +406,11 @@ rare. Multiple category subtitles break this:
   re-author the SKUs to actually feature a mascot or rewrite this blurb
   to describe what the merch actually shows.
 
+**Resolution:** Rewrote `pageSubtitle` strings in `accessories.config.ts`,
+`parts.config.ts`, `merchandise.config.ts`, and the **P-series** group blurb in
+`modules.config.ts` for direct, on-voice catalog tone (no exclamation-led
+fluff; merchandise describes series artwork SKUs accurately).
+
 ### P1.9 `/artists` page tone is off voice
 
 `app/routes/($lang).artists.tsx`:
@@ -422,8 +443,8 @@ Videomancer a "standalone video synthesizer." Pick one term and use
 it everywhere. The about page wording ("FPGA-based standalone video
 synthesizer") is the strongest.
 
-**Resolution:** The Videomancer card on `/getting-started` already uses
-**standalone video synthesizer**; no further change required.
+**Resolution:** Card copy updated to **standalone video synthesizer**
+(`getting-started._index.tsx`).
 
 ### P1.11 `/cases-and-power` (plural) vs `/docs/case-and-power` (singular)
 
@@ -434,6 +455,10 @@ under the title **"Power and House Your System"**. Two URL slugs and
 three different labels for the same topic across the IA. Pick one
 canonical slug (plural matches every other category in the registry)
 and rename the docs folder + index link.
+
+**Resolution:** Docs content lives under **`content/docs/cases-and-power/`**
+with **`/docs/cases-and-power`** URLs; legacy **`/docs/case-and-power`**
+paths **301** to the new slug; `/docs` hub tile points at **`/cases-and-power`**.
 
 ### P1.12 `/connect` page status vs. `/downloads` status
 
@@ -452,6 +477,11 @@ calls Videomancer support "pre-release" twice — but the latest
 Videomancer firmware in blog (`videomancer-firmware-1.0.0`) is a stable
 1.0 release. Verify with engineering whether LZX Connect for Videomancer
 is still pre-release; if not, soften everywhere.
+
+**Resolution:** Aligned `/connect` hero, meta description, Supported Devices
+list, and `/downloads` LZX Connect blurb: Videomancer is supported in
+current releases; Chromagnon support is in development (no “pre-release”
+wording for Videomancer).
 
 ### P1.13 `/downloads` "Docs" button violates the IA guide
 
@@ -479,6 +509,10 @@ downloads route is `/instruments/videomancer/downloads` (the file
 exists at `app/routes/($lang).instruments.$slug.downloads.tsx`) so this
 one works, but verify after the canonical-URL sweep in P1.1.
 
+**Resolution:** Re-checked after P1.1: the preview post still links to
+`/instruments/videomancer/downloads`, which matches
+`($lang).instruments.$slug.downloads.tsx`.
+
 ### P1.15 Module list page (`/modules`) "Other" group label
 
 `modules.config.ts` registers a `legacy` and `other` series in
@@ -490,7 +524,8 @@ appears, it surfaces a meaningless "Other Series" group title to
 customers. Either drop the `other` key from `LEGACY_SERIES_ORDER` or
 give the fallback a more concrete label ("Discontinued" / "Archive").
 
----
+**Resolution:** Renamed the fallback bucket label from **Other** to **Archive**
+(`SERIES_LABELS.other`); tightened the group subtitle copy.
 
 ## P2 — copy nits and small typos
 
@@ -628,8 +663,5 @@ manuals.)
    marketing-tone misses are in 5–6 strings inside `app/data/category-configs/*.config.ts`
    and `app/routes/($lang).{artists,getting-started}._index*.tsx`. A
    single PR rewrites them against `WRITING_STYLE_GUIDE.md`.
-4. **Cleanup**: P1.3 delete the 40 boilerplate support stubs; P1.4
-   either fill in `case-and-power/` or remove its tile.
-5. **Verification**: P0.2 Discord vanity URL, P1.12 LZX Connect
-   release status, P0.4 product-count framing — these all want
-   stakeholder input before a code change.
+4. **Cleanup**: P1.3 support stubs removed; P1.4 + P1.11 `cases-and-power` docs + `/docs` hub tile addressed.
+5. **Verification**: P0.2 Discord URL; P1.12 Connect copy; P0.4 product count — complete unless stakeholders revise framing.

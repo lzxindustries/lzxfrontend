@@ -150,7 +150,7 @@ function slugFromDocPath(docPath: string): string {
 }
 
 function sectionFromDocPath(docPath: string): string {
-  // First segment: modules, guides, instruments, case-and-power
+  // First segment: modules, guides, instruments, cases-and-power
   return docPath.split('/')[0] ?? '';
 }
 

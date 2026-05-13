@@ -56,6 +56,22 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     });
   }
 
+  // Legacy singular slug → canonical plural (matches /cases-and-power shop category).
+  if (splat === 'case-and-power' || splat.startsWith('case-and-power/')) {
+    const rest =
+      splat === 'case-and-power' ? '' : splat.slice('case-and-power/'.length);
+    const target = rest
+      ? `/docs/cases-and-power/${rest}`
+      : '/docs/cases-and-power';
+    throw new Response(null, {
+      status: 301,
+      headers: {
+        Location: new URL(target, request.url).toString(),
+        'Cache-Control': 'public, max-age=31536000',
+      },
+    });
+  }
+
   // Redirect /docs/modules/* → /modules/*/manual
   if (splat.startsWith('modules/')) {
     const rest = splat.slice('modules/'.length);
@@ -161,7 +177,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     }
   } else if (section === 'guides') {
     // Guides are standalone — no product back-link
-  } else if (section === 'case-and-power') {
+  } else if (section === 'cases-and-power') {
     // Case/power docs are standalone
   }
 

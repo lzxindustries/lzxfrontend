@@ -32,12 +32,12 @@ const SERIES_LABELS: Record<string, string> = {
   cadet: 'Cadet',
   expedition: 'Expedition',
   legacy: 'Legacy',
-  other: 'Other',
+  other: 'Archive',
 };
 
 const SERIES_SUBTITLES: Record<string, string> = {
   pseries:
-    'Our compact utility modules are the perfect building blocks in creating your perfect video setup! Solve your everyday patching needs with minimal space and maximum flexibility, specializing in routing, buffering, and distribution.',
+    'Compact utility modules for routing, buffering, and distribution when rack space is tight. P-series modules focus on everyday patch problems with minimal depth.',
   gen3: 'Gen3 defines the modern LZX core: high-precision color, keying, and signal processing modules built for contemporary video synthesis systems. This series is optimized for deep integration and performance.',
   castle:
     'Castle is a digital logic playground for video-rate pulse structures, counters, gates, and timing experiments. It brings modular logic synthesis into the visual domain with a playful, patch-programmable approach.',
@@ -52,7 +52,7 @@ const SERIES_SUBTITLES: Record<string, string> = {
   legacy:
     'Archival modules preserved for historical continuity and documentation access. These products are no longer active but remain important to legacy system owners.',
   other:
-    'Special-case and archival modules that do not map cleanly to a single historical family. This section preserves discoverability for less common products.',
+    'Modules that do not map to a named series in the registry. Check each product page for status and documentation.',
 };
 
 function moduleEntryToSource(entry: SlugEntry): CategorySourceEntry {

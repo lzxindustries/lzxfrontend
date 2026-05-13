@@ -36,10 +36,10 @@ export const SECTIONS = [
     icon: '📖',
   },
   {
-    title: 'Power and House Your System',
+    title: 'Cases & Power',
     description:
-      'Power supply specifications, case options, and enclosure documentation.',
-    to: '/docs/case-and-power',
+      'Shop Vessel cases, DC distribution, and power for Eurorack video systems. Supplemental technical notes also live under Documentation.',
+    to: '/cases-and-power',
     icon: '⚡',
   },
   {

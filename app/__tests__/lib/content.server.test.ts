@@ -58,8 +58,8 @@ describe('content.server blog and docs integration', () => {
   });
 
   it('builds sidebar navigation and computes prev/next links', () => {
-    const sidebar = buildSidebar('case-and-power');
-    const nav = getPrevNext('case-and-power', 'case-and-power/dc-distro');
+    const sidebar = buildSidebar('cases-and-power');
+    const nav = getPrevNext('cases-and-power', 'cases-and-power/dc-distro');
 
     expect(sidebar.length).toBeGreaterThan(0);
     expect(nav.prev).not.toBeNull();

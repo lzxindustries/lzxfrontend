@@ -79,7 +79,7 @@ export const merchandiseCategoryConfig: CategoryListingConfig = {
   key: 'merchandise',
   pageTitle: 'Merchandise',
   pageSubtitle:
-    'Our artist-made brand merchandise featuring our lovable mascot Vidiot in all his forms. Support us, our creative team, and rock out unique designs created by and for video nerds.',
+    'Patches, stickers, shirts, and pins featuring LZX series artwork and logos.',
   seoTitle: 'Merchandise',
   seoDescription:
     'LZX merchandise including stickers, patches, shirts, and pins.',

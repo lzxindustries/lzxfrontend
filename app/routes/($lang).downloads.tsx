@@ -202,8 +202,9 @@ export default function DownloadsPage() {
       <div className="mb-8 rounded-lg border border-base-300 bg-base-200 p-4 md:p-5">
         <p className="font-semibold">Prefer guided firmware updates?</p>
         <p className="mt-1 text-sm text-base-content/70">
-          LZX Connect provides a unified desktop updater for Videomancer (with
-          Chromagnon support coming soon).
+          LZX Connect is the desktop app for guided firmware updates.
+          Videomancer is supported in current releases; Chromagnon support is
+          in development.
         </p>
         <Link to="/connect" className="btn btn-sm btn-primary mt-3">
           Open LZX Connect

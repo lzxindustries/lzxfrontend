@@ -68,7 +68,7 @@ export const partsCategoryConfig: CategoryListingConfig = {
   key: 'parts',
   pageTitle: 'Parts',
   pageSubtitle:
-    'Find specific parts and performance control components for LZX hardware. Missing pieces and quick fixes can be accessed here for at-home repair.',
+    'Replacement knobs, power entry boards, and other hardware for builds and maintenance.',
   seoTitle: 'Parts',
   seoDescription:
     'Power entry boards and knob components for custom builds, maintenance, and upgrades.',

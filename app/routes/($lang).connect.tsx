@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
     {
       name: 'description',
       content:
-        'LZX Connect is the desktop app for guided firmware updates for Videomancer and upcoming Chromagnon releases.',
+        'LZX Connect is the desktop app for guided firmware updates — Videomancer today, Chromagnon in development.',
     },
   ];
 };
@@ -37,9 +37,9 @@ export default function ConnectPage() {
           LZX Connect
         </h1>
         <p className="mt-4 max-w-3xl text-base-content/80 md:text-lg">
-          LZX Connect is a unified desktop updater for LZX instruments. It is
-          currently in pre-release for Videomancer and is being prepared for
-          Chromagnon support.
+          LZX Connect is the desktop app for guided firmware updates.
+          Videomancer is supported in current releases; Chromagnon support is
+          in development.
         </p>
       </header>
 
@@ -137,8 +137,8 @@ export default function ConnectPage() {
         <article className="rounded-xl border border-base-300 p-6">
           <h2 className="text-xl font-bold">Supported Devices</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-base-content/80">
-            <li>Videomancer (pre-release support available now)</li>
-            <li>Chromagnon (integration in progress)</li>
+            <li>Videomancer</li>
+            <li>Chromagnon (in development)</li>
           </ul>
           <p className="mt-4 text-sm text-base-content/70">
             Prefer manual updates? Firmware files remain available from each

@@ -1,0 +1,9 @@
+{
+  "label": "Cases & Power",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Cases, power distribution, and enclosure documentation.",
+    "image": "/img/social-card.jpg"
+  }
+}

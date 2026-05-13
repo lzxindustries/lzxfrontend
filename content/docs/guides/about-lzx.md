@@ -18,15 +18,17 @@ LZX designs creative, experimental video instruments as a counterpoint to broadc
 
 ## History
 
-LZX began as a DIY project in 2008 and has moved through several generations of modular instruments:
+LZX began as a DIY project in 2008. The company was founded in 2010 in Denton, Texas (Lars Larsen, Jonah Lange, and Ed Leckie) and relocated to Portland, Oregon in 2015—where instruments are designed and manufactured today. The line has moved through several generations of modular instruments:
 
 - Visionary (2011–2015)
+- Cadet (2013–2019)
 - Expedition (2015–2018)
+- Castle (2017–present)
 - Orion (2018–2022)
 - Gen3 (2022–present)
 - P-Series (2024–present)
 
-Instruments are designed and manufactured at the LZX workshop in Portland, Oregon.
+For a short public overview of the company and flagship products, see the [About](/about) page.
 
 <img src={about_lxz_workshop} alt="LZX workshop" />
 
