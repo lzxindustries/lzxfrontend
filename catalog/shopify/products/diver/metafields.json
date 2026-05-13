@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:26Z",
     "compareDigest": "2e4dd591038283800b3868e1b37bc4af52dca3c8d7972344216a0de9454fce43"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073877015",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Diver | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:59Z",
+    "compareDigest": "6ce7cabf1e8692d9527c1c9c828431619381ac7a25309536afba7b77c4531f02"
   }
 ]

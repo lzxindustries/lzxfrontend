@@ -12,9 +12,9 @@
   ],
   "templateSuffix": "",
   "onlineStoreUrl": null,
-  "description": "A new concept in pattern generation for video synthesizers. Diver is a single axis waveform sampler, ramps generator and digital effects buffer which translates audio signals to the 2D space of the analog video frame. Add scrolling motion to your patches and transform any audio source into a powerful shape generator.",
+  "description": "",
   "createdAt": "2026-04-21T20:20:26Z",
-  "updatedAt": "2026-04-22T08:20:33Z",
+  "updatedAt": "2026-05-13T01:14:59Z",
   "options": [
     {
       "id": "gid://shopify/ProductOption/11079423655959",

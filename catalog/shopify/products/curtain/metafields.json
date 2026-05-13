@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:22Z",
     "compareDigest": "8f4b86f079ba44247bce35ddea7ce4509f2bc3576555630d26b069b1ae8e9386"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073385495",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Curtain | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:55Z",
+    "compareDigest": "5878f2a974a061db823df098f31c1224ca072a638000aa15a27b894d86383615"
   }
 ]

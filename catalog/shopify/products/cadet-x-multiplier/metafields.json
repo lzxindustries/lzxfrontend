@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:20Z",
     "compareDigest": "e24049cd1d6b02d4268c2a0c93d6b7c0fad381aecbfb5d4e634eeacf1760304d"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071779863",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet X Multiplier | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:44Z",
+    "compareDigest": "5438b509f5544213719046d01b0418f836359181b6c6d791522d7accde750233"
   }
 ]

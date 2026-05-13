@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:11Z",
     "compareDigest": "dcec1453abae4d83528352b26629db105627409861c9a269a7e35eb6f40cf8c4"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071353879",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet III Video Input | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:39Z",
+    "compareDigest": "5edf167717c0a9a4318d2de767e1b08154e5271b5d883b04a7ab3581688e1c6f"
   }
 ]

@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:08Z",
     "compareDigest": "59adffa2009065ffdb8b23df03ad8cf79025109ce690ee56bb91b1f407300814"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071124503",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet I Sync Generator | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:38Z",
+    "compareDigest": "9dbba9a498399f320769bdc3e7c04ad081877deb307af8cf4292ab4cf408f8e5"
   }
 ]

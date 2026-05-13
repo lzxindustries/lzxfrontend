@@ -5,12 +5,12 @@
     "title": "Default Title",
     "sku": "940010",
     "barcode": "",
-    "position": 2,
+    "position": 1,
     "price": "19.00",
     "compareAtPrice": null,
     "taxable": true,
     "inventoryPolicy": "CONTINUE",
-    "updatedAt": "2025-11-04T02:17:30Z",
+    "updatedAt": "2026-05-13T01:15:55Z",
     "selectedOptions": [
       {
         "name": "Title",

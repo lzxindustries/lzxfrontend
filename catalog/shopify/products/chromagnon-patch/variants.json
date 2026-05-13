@@ -5,12 +5,12 @@
     "title": "Default Title",
     "sku": "970101",
     "barcode": "",
-    "position": 2,
+    "position": 1,
     "price": "0.00",
     "compareAtPrice": null,
     "taxable": true,
     "inventoryPolicy": "DENY",
-    "updatedAt": "2024-05-15T16:32:53Z",
+    "updatedAt": "2026-05-13T01:14:53Z",
     "selectedOptions": [
       {
         "name": "Title",

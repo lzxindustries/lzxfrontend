@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985073352727",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Contour",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:55Z",
+    "compareDigest": "98fdd8a5958c838fa05dd0da089fdcd8c2689e8bdf1b12286769f9e630ac344a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073319959",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Contour | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:55Z",
+    "compareDigest": "327a6e51292061c26e03163fe061695735f3b40955f32a012c4cbfb81a812a5d"
+  }
+]

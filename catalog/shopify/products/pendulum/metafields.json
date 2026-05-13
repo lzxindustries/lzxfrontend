@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:37Z",
     "compareDigest": "660a651cac2ab3a2c0ebdb87995100aa4d56c46d2b1cf24edf47240da8d099e2"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076498455",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Pendulum | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:36Z",
+    "compareDigest": "3c322e01fe66774b001eb6bed5461cd157a9e4d099f4f9cf33c2b98cf78fb19c"
   }
 ]

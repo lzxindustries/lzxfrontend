@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:12Z",
     "compareDigest": "a77593fd0a14c011f91fde920a3514f528988101fec418ecd94e517f4410bae9"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071386647",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet IV Dual Ramp Generator | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:39Z",
+    "compareDigest": "0303dd271cfd4875c8722a808d6015ba50daea45742fd7ca7ae16d8717538461"
   }
 ]

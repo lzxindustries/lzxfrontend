@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985076891671",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Power & Sync Entry 12HP",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:39Z",
+    "compareDigest": "62af5c144d8f38d965ef947de1f3ed952c3a83f1d843287835a7c9e6803a4728"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076858903",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Power & Sync Entry 12HP | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:39Z",
+    "compareDigest": "36f65b80c27e62a888f7aae2b195ed1b40fea6b6e7927f54cf39c683a75cdab3"
+  }
+]

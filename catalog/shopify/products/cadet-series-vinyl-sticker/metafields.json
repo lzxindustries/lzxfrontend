@@ -1,12 +1,32 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985071550487",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet Series Vinyl Sticker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:41Z",
+    "compareDigest": "a886d222f5d01112491cf42b5c60d2c4b5a89c6a6c311a075e78a12a47333ee9"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071517719",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet Series Vinyl Sticker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:41Z",
+    "compareDigest": "74ad8913a5438f6cc312358ad15b97b207a11a34ebd2eb3c676f4602f2e19b62"
+  },
+  {
     "id": "gid://shopify/Metafield/13342167400471",
     "namespace": "mc-facebook",
     "key": "google_product_category",
     "type": "string",
     "value": "5613",
     "description": null,
-    "updatedAt": "2021-01-26T15:29:17Z",
+    "updatedAt": "2026-05-13T01:15:15Z",
     "compareDigest": "e5173d0b77d3ae4d3e4057f5f1e304953cdcbab7259eb729b5ad57d8813e984e"
   }
 ]

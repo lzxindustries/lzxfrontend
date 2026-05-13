@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985073713175",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "DC Distro 3A",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:57Z",
+    "compareDigest": "be927bf73e6872206fbfa22899571c34c29fb007a036ec9eee456284f2de47ee"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073680407",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "DC Distro 3A | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:57Z",
+    "compareDigest": "ab7406978059864eb2f46d5bcc4497050f27a9a7846a4484220b1e69f566b97a"
+  },
+  {
     "id": "gid://shopify/Metafield/21435149910039",
     "namespace": "mc-facebook",
     "key": "condition",

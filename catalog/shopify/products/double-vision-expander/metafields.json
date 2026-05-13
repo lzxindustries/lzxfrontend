@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985074171927",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Double Vision Expander",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:00Z",
+    "compareDigest": "1b92396d67e6b675d93468610cddc967350ce59d3754a2edcff0e8799f02ce7f"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074139159",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Double Vision Expander | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:00Z",
+    "compareDigest": "32c0be8d46e58614837f04b725a32d97cb576ffe9e22c706464a644df8194091"
+  },
+  {
     "id": "gid://shopify/Metafield/37576920203287",
     "namespace": "mc-facebook",
     "key": "google_product_category",

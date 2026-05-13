@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985073123351",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Chromagnon Sticker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:53Z",
+    "compareDigest": "e01dfc8e5847527b8ddc8639e8b610f6bfd80c8ea0ecc36af64497adb08c74dc"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073090583",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Chromagnon Sticker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:53Z",
+    "compareDigest": "7d1a8c33fff693bc4cf968c88e29c18d5d88f4cc99ef31714c37e82919dcbd94"
+  }
+]

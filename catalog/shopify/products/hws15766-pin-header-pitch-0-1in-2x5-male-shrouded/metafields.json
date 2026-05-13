@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985075056663",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "HWS15766 Pin Header Pitch 0.1in 2X5 Male Shrouded",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:23Z",
+    "compareDigest": "d7c549fe87865897d5f60ec0c99ef45a1c08eb5059406edca52bad1b7f99b011"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075023895",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "HWS15766 Pin Header Pitch 0.1in 2X5 Male Shrouded | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:23Z",
+    "compareDigest": "ff5788ee0cdf28e4943f93edc9052a3ba9afe0932fbd7572f966a49924f091d8"
+  }
+]

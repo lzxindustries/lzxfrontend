@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:35Z",
     "compareDigest": "056564bbe6d4987b4ea13acde1c5bdb32fda58ae955d734afcca688a92a2fdac"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076334615",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Passage | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:35Z",
+    "compareDigest": "71a8d52a4eb6a04087dde4a51e6f2ef6c8b902fc6143fca6bf0b51988fd4b267"
   }
 ]

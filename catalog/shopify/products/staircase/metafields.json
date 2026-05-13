@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:43Z",
     "compareDigest": "58607487027c4b0f1a81806716b9a32bd8d5a0f687eb1c496c48cefbcad55e38"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078726679",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Staircase | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:49Z",
+    "compareDigest": "107da17bbef9d799f2d76a4be1d77fe67234994bb888ba6126f11db9acc6128a"
   }
 ]

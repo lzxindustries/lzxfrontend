@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072828439",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 111 D Flip Flops",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:51Z",
+    "compareDigest": "40a9c143b7016dbd2cc3707db9d222e1ee1d5bc927e9c3d9c0e7bcbbe55bc530"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072795671",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 111 D Flip Flops | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:51Z",
+    "compareDigest": "5140f003be1a7a207f3c1ced542bd6e40d21cc905931b30baa671524d50820f6"
+  }
+]

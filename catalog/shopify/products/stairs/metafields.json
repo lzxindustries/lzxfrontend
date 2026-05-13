@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985078792215",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Stairs",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:49Z",
+    "compareDigest": "971fde03dfed660d75e4656845ab22f228d62640db44621572c7207f8b1407c0"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078759447",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Stairs | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:49Z",
+    "compareDigest": "15bc7ab58b31fba9d3380bd6acf7bd8ccf4a0bd19866328f1bce970d6f1621be"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150499863",
     "namespace": "mc-facebook",
     "key": "condition",

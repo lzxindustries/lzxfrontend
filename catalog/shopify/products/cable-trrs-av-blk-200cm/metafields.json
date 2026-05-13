@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985071058967",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "CABLE-TRRS-AV-BLK-200CM",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:37Z",
+    "compareDigest": "bb776c38a1c6815669a5963cd8e64b468dd617ae9aa3b6bc5fb2373e011ed9e5"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071026199",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "CABLE-TRRS-AV-BLK-200CM | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:37Z",
+    "compareDigest": "cc6abae6eb987f25a445df0edfc73086825740f4f3f2fc1162896ef072d6c9ce"
+  },
+  {
     "id": "gid://shopify/Metafield/40049326063639",
     "namespace": "mc-facebook",
     "key": "google_product_category",

@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:32Z",
     "compareDigest": "db426bc095812d6698cf98fbb5506aae1a075c0dc454dac46a01fbf2a3ecb2ff"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075646487",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Mapper | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:28Z",
+    "compareDigest": "4a5fc39b8af778502f8d74cea5260c0fe22717e22d70e176cd22d598918fd708"
   }
 ]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072369687",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 001 DAC",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:46Z",
+    "compareDigest": "488472b8ed9480adf974ecc1b6058f67e1883e412b5d9f15f2e06388ccb100e1"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072336919",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 001 DAC | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:46Z",
+    "compareDigest": "eb5ee33ef183198b9dd987fba73ced9bd9e4ee2e7446888612499bb98d5cef1e"
+  }
+]

@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985074827287",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Factors",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:21Z",
+    "compareDigest": "3fbc7cad8251c35a0ed8ef6f3f35d67babfdbece21d7001ace8b4ca2a6338b7d"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074794519",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Factors | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:21Z",
+    "compareDigest": "4b9d2239e422b215a14f89fb4f80a6d13a309e2e96a32fd486b9824c3fd8e3d4"
+  },
+  {
     "id": "gid://shopify/Metafield/21621927739415",
     "namespace": "mc-facebook",
     "key": "condition",

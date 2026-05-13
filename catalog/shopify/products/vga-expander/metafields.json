@@ -10,6 +10,26 @@
     "compareDigest": "e67a9c4536256f1ec7495a146b5442fa7c0ed99e258a08260a4a244fa31c7c61"
   },
   {
+    "id": "gid://shopify/Metafield/48985080266775",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "TBC2 Expander",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:58Z",
+    "compareDigest": "b0fa3b0ce8e695df1815b668c4077ddcce1e73cfe2c8f5bf60c6bdeb95615b97"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985080234007",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "TBC2 Expander | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:58Z",
+    "compareDigest": "da0c1f3be89d854cc40c2641817b54a93bd89afbb943a6bdaa0737258edaa8c4"
+  },
+  {
     "id": "gid://shopify/Metafield/13342167105559",
     "namespace": "mc-facebook",
     "key": "google_product_category",

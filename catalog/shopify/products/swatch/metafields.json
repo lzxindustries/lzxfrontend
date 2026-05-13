@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985079349271",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Swatch",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:51Z",
+    "compareDigest": "c6b109880021bdd499b1c1a1ada63aaf8fec61974323cdd0e01b127b881b959a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985079316503",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Swatch | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:51Z",
+    "compareDigest": "b30b27a0b6847912b81ff953106a8ca1fb348d3d5cd283b4a2170a8f55e0d679"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150434327",
     "namespace": "mc-facebook",
     "key": "condition",

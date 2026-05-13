@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985081020439",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Videomancer Tee",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:04Z",
+    "compareDigest": "8dd431b2f87eb6f15267a808631f8f111f31213d11d7c48cd128758c51b0078a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985080987671",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Videomancer Tee | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:04Z",
+    "compareDigest": "091c288abdfcc210b948dbc87e75f84ebf79cf6fe9b147ddfb21d45c26e17202"
+  },
+  {
     "id": "gid://shopify/Metafield/44184381620247",
     "namespace": "shopify",
     "key": "color-pattern",

@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:34Z",
     "compareDigest": "abfd5aa0e33552f579b0ded9c84af32cf89b87ce803c6b9af7d6d2afaecc8698"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075843095",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Navigator | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:30Z",
+    "compareDigest": "6377d871d3a2cc89208043563d4116f0cda01729188ee75fd7148073da27dbc3"
   }
 ]

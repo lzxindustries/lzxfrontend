@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:27Z",
     "compareDigest": "a18346cac9556c8db84307aa93dd169115d84caf58ccb9df57759c64773ba4bc"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074106391",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Doorway | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:00Z",
+    "compareDigest": "b401bc8a29f840c5f8bedbd3f544c8392a5d482218f11d6259db668a15e63433"
   }
 ]

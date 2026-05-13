@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985077940247",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:44Z",
+    "compareDigest": "d614ca3ce37e108cf297bf1cf1350e7125cb8714f52959ed49c61a3f0d796231"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985077907479",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "RD901F-40-15F-B10K-00D Alpha B10K Potentiometer | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:44Z",
+    "compareDigest": "fa58d6361cf7a23e9efd1c7b27b6d7f4de7ec501ef19d64f14cbc0555e119e02"
+  }
+]

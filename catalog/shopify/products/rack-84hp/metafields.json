@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985077678103",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Rack 84HP",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:43Z",
+    "compareDigest": "ee3a1662362dd59a18b582a1becb1a4d648973910663211110562f3baf4f16ce"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985077645335",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Rack 84HP | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:43Z",
+    "compareDigest": "6e3719b67527027293d20e9788149be2264fcc00f24f19bc826864d690097d72"
+  }
+]

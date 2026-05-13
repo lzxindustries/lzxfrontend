@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985070927895",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "CABLE-IDC16-GRY-BLK-25CM",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:37Z",
+    "compareDigest": "117cc7773f4a6010595fd2ac2ef4363676cb62f32c7007a72d64110c44793b6e"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070895127",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "CABLE-IDC16-GRY-BLK-25CM | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:37Z",
+    "compareDigest": "f71b0ae3d4f8486fdfdf5e6ac24d2ced9ee79f25707b9710191d7c8863aa2847"
+  }
+]

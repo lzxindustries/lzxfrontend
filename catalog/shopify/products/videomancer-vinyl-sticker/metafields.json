@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985081151511",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Videomancer Vinyl Sticker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:06Z",
+    "compareDigest": "c3ad0d200cf41d7ef840d7a95730ab22f671fc992e605c141bd722a3046f94fc"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985081118743",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Videomancer Vinyl Sticker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:06Z",
+    "compareDigest": "48b3e1d38ac1fd588fca784453472951d6e628b8124c2dacd5ac95a6822f08f9"
+  },
+  {
     "id": "gid://shopify/Metafield/43964427206679",
     "namespace": "shopify",
     "key": "adhesive-type",

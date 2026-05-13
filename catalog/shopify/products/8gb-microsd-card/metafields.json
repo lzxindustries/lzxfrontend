@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985069912087",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "8GB MicroSD Card",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:32Z",
+    "compareDigest": "29d10527fc6ccb1290bd27dd246be71fbb95d4969eb152d06e421e4df42f619e"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985069879319",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "8GB MicroSD Card | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:32Z",
+    "compareDigest": "5c7efafe960e639a31ae45bb5e0c8eeb465f205f8df92cdb047d6fe1d99d5124"
+  }
+]

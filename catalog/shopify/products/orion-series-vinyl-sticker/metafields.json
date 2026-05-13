@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985076072471",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Orion Series Vinyl Sticker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:32Z",
+    "compareDigest": "350066a336b9994f77ac43a42c068619eb5c86dcce664066002f0c68edefacdf"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076039703",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Orion Series Vinyl Sticker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:32Z",
+    "compareDigest": "098faea7f00209612030f25b5e9f7eb469991d377234edb8f48bd0c148dbdb94"
+  }
+]

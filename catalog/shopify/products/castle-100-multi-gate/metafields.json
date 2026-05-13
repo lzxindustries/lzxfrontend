@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072599063",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 100 Multi Gate",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:49Z",
+    "compareDigest": "82be1a30bc14c474ea2553dc2f055d7d0fa9ad5f4856ed40f17e8e29c04184fa"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072566295",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 100 Multi Gate | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:49Z",
+    "compareDigest": "f2fb582441a35e25f79be4a07faecba28271a992c2c4f9eaab2cf7b6a4f5b32a"
+  }
+]

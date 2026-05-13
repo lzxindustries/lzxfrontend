@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2023-05-11T17:52:59Z",
     "compareDigest": "04caf9f1e7129eec07a58bda465614e16c86dece5347fe77b00e7c4a97e8f100"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074958359",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Gift Card | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:23Z",
+    "compareDigest": "1900e90c13984c5e93b3f38dd9d7649098e782a9b3c4719809aa425c32037e13"
   }
 ]

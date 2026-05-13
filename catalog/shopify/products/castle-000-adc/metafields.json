@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985071943703",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 000 ADC",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:45Z",
+    "compareDigest": "bea8186f9a3a327d477d052a1bd61ae26e4613ddec10125355f4b8c6ce652d52"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071910935",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 000 ADC | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:45Z",
+    "compareDigest": "23c385adadd047d8e59639eedf92cf6cce87863f0644562fbed851df5a4f2cbe"
+  }
+]

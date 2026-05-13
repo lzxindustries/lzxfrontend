@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2023-05-08T21:27:48Z",
     "compareDigest": "e25048ce512954651365145a01638aa0acf8a6b437ed03becdbc0a004edaa0bf"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985079250967",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "SumDist | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:50Z",
+    "compareDigest": "c69f6af0949547b9270b03559a5c0e8680898b507368ef48fbbc6c21c823661a"
   }
 ]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985073057815",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Chromagnon Patch",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:53Z",
+    "compareDigest": "9befb6f65094e762955677f2895add4d942460f34524e49f18d0691e2410c435"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073025047",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Chromagnon Patch | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:53Z",
+    "compareDigest": "6dfb4c5020608a8d63e65b118770447360d7e64a4ccc3c03539621e71e59148e"
+  }
+]

@@ -1,12 +1,32 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985071484951",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Cadet Series Embroidered Patch",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:41Z",
+    "compareDigest": "d14d6436cd5a2c21182b14262e30ca1da893d5aa6c3a51a2154bc4f6ec6450f8"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071452183",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet Series Embroidered Patch | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:41Z",
+    "compareDigest": "b690e196f19448167e0ded7379c4f34d7ea97a06f9be903b534dfc4fdf06ce0d"
+  },
+  {
     "id": "gid://shopify/Metafield/13342167236631",
     "namespace": "mc-facebook",
     "key": "google_product_category",
     "type": "string",
     "value": "166",
     "description": null,
-    "updatedAt": "2021-01-26T15:29:16Z",
+    "updatedAt": "2026-05-13T01:15:15Z",
     "compareDigest": "050d0674e3bb1024df49d9554b18d64ddab4e9fd517c615a8d25e3e92c57e309"
   }
 ]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072893975",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle Series Embroidered Patch",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:52Z",
+    "compareDigest": "c8fd5144080300b9e1c8c85892912d7acb8f04191fc637a2d456de1a4eab576b"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072861207",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle Series Embroidered Patch | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:52Z",
+    "compareDigest": "7fae42c8991ac19b387ff12d09f65c1cdba29f05ca878d993076c83eb039293e"
+  }
+]

@@ -40,6 +40,26 @@
     "compareDigest": "4d067153ac729a4a7e8220c97935ffba67487860d58298ceeb23864369867d9f"
   },
   {
+    "id": "gid://shopify/Metafield/48985070043159",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Angles",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:33Z",
+    "compareDigest": "a7e744c35781f7ca7000d328c7291fe1221780b8b744b02a53573d373a26df57"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070010391",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Angles | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:33Z",
+    "compareDigest": "cd06ab0a44b9751a19ea0bf5d0206b0e10c069ec43f205d6ed0e6318c79d03d0"
+  },
+  {
     "id": "gid://shopify/Metafield/21435149942807",
     "namespace": "mc-facebook",
     "key": "condition",

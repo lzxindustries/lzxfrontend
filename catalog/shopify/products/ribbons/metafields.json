@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985078202391",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Ribbons",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:45Z",
+    "compareDigest": "c02b3efc52e50f41fe6bb3fbb5e0da3340194eb1347a00e28b396e826aa76709"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078169623",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Ribbons | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:45Z",
+    "compareDigest": "d701c78bffcad3045449bd60507dd62d605a71d4b5539b272c7fd9dda679e934"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150237719",
     "namespace": "mc-facebook",
     "key": "condition",

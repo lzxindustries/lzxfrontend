@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:33Z",
     "compareDigest": "45f30897958f75ef43ae1b5b92d1699a19c6f94cdb7017bdd70041602cab201f"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075679255",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Marble Index | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:28Z",
+    "compareDigest": "1fcb0e983f8617f416c45c44edd9de3500d215a15a1311a35aba6973c231c1c7"
   }
 ]

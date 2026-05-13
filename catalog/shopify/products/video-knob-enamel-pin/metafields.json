@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985080659991",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Video Knob Pin",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:01Z",
+    "compareDigest": "0677c987268d69aef249e0dc0c346ac0c4febcaad86d1665ef80739771587968"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985080627223",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Video Knob Pin | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:01Z",
+    "compareDigest": "3a35e275ef968ffced1da4d72e812c78e5677ba91265b6329e5687944e3a82b3"
+  },
+  {
     "id": "gid://shopify/Metafield/20929215463447",
     "namespace": "mc-facebook",
     "key": "google_product_category",

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985070731287",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "CABLE-DC21-SPLITTER-8-BLK",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:36Z",
+    "compareDigest": "211f39bdb79abd9399f9d2fb5fe7b963e03e4f2a16cb71f06cdb8497e3535d29"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070698519",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "CABLE-DC21-SPLITTER-8-BLK | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:36Z",
+    "compareDigest": "a3276465e47fb927f02bd7803136ad21507216caa559cdebda70cae73cbb4d2b"
+  }
+]

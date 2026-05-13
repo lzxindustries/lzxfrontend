@@ -5,12 +5,12 @@
     "title": "Default Title",
     "sku": "960700",
     "barcode": "",
-    "position": 2,
+    "position": 1,
     "price": "19.00",
     "compareAtPrice": null,
     "taxable": true,
     "inventoryPolicy": "DENY",
-    "updatedAt": "2025-01-14T22:07:27Z",
+    "updatedAt": "2026-05-13T01:14:32Z",
     "selectedOptions": [
       {
         "name": "Title",

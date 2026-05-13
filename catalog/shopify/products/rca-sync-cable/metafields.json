@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985077776407",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "RCA Sync Cable",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:44Z",
+    "compareDigest": "e69ed4b856d73f26ba0b1e030e5b5175099744e63ad240308d8c637b78298596"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985077743639",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "RCA Sync Cable | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:43Z",
+    "compareDigest": "2300b73956734ccf3a3ac0293060e8351bd82516b3587b426f6928b834b2acde"
+  }
+]

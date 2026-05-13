@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985069355031",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "3.5mm Jack Knurled Nut",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:17Z",
+    "compareDigest": "c7e0579777aafd5903f95d289ddd477bf153ee6ed30f2b18a119e7d82044b9dc"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985069322263",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "3.5mm Jack Knurled Nut | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:17Z",
+    "compareDigest": "51abe60ce6b2005a062b93af8044651e70f9a649759a04b29f43f839f564b708"
+  },
+  {
     "id": "gid://shopify/Metafield/38460845228055",
     "namespace": "mc-facebook",
     "key": "google_product_category",

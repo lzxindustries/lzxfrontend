@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985079742487",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "TBC2 Mk2 Fan Upgrade Kit",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:54Z",
+    "compareDigest": "ead03ae69c393eda5d64fe4de76bf6fe82ae444ab8b270f5c9f4a5d9875aa3a7"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985079709719",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "TBC2 Mk2 Fan Upgrade Kit | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:54Z",
+    "compareDigest": "9a01120c40b115af3ab6630067b897b039c16e801875b814014e9574d65cc07a"
+  }
+]

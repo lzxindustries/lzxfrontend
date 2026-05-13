@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:09Z",
     "compareDigest": "6044e284fd3555a3e8858ed7209a476f03195d0a312bafbf65b3bc71c00abe40"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071321111",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet II RGB Encoder | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:38Z",
+    "compareDigest": "d5fe26de498a9dfa6cbe582cef4bb64a85fa53048afe93a1149d9c37bbbcaad7"
   }
 ]

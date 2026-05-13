@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985076727831",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Pin Header Pitch 0.1in 2X8 Male Shrouded",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:37Z",
+    "compareDigest": "8ea5e1377b6161e3e236a9a5a0035cec5444a0da6e3414193813fc22c55e8230"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076695063",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Pin Header Pitch 0.1in 2X8 Male Shrouded | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:37Z",
+    "compareDigest": "c0b9a8388eeb2e1cd169cadd2df8be097f69daaeb093e23c8818648732b84bbe"
+  }
+]

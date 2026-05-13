@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985077514263",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "PRM",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:41Z",
+    "compareDigest": "d86f0ddcdc8862e974b4c8cf5441a495af371c437a3ceffa769e6016eb55f9a7"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985077481495",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "PRM | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:41Z",
+    "compareDigest": "f6f0babc84b7952208c6488bf5b89b9afb854b631adec88c28cf84c677aa24c4"
+  },
+  {
     "id": "gid://shopify/Metafield/39080266203159",
     "namespace": "mc-facebook",
     "key": "google_product_category",

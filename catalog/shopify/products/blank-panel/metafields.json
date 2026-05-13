@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985070206999",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Blank Panel",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:34Z",
+    "compareDigest": "dcdf7b3f145daecf7dc0c64d3ab89c1e1fd1a6c186f20e03ae67c5cfeb7b264e"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070174231",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Blank Panel | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:34Z",
+    "compareDigest": "7ca419bec310d27bab71b3b656be93e5b7e33f83579704494f884b5eb9f21c73"
+  }
+]

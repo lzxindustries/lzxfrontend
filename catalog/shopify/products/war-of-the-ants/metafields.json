@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:58Z",
     "compareDigest": "ecdd03c5fb223826ded0679ae6fadae77238af6a5f24f8db56fa43bf432f9bc1"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985081217047",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "War Of The Ants | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:07Z",
+    "compareDigest": "1f4201ab6833c576bf25363928e561a7416538a4aaef0ba204132bb912797ca3"
   }
 ]

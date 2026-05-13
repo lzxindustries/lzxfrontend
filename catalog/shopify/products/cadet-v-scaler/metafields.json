@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:15Z",
     "compareDigest": "5e33b03664faeef45e65d88b6d8fdc8ad3452af7fdea1d11bf1c58da36cbf3e1"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071616023",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet V Scaler | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:42Z",
+    "compareDigest": "36bd07048a9bb0a194116f26a0afd369b3c64b11ff965ce8f7097c599f57d21e"
   }
 ]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072435223",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 010 Clock VCO",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:47Z",
+    "compareDigest": "5784b08abd0982413be7684f0322806d8993c77393b9911623e12b7ffcf437e6"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072402455",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 010 Clock VCO | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:47Z",
+    "compareDigest": "a207b60f298b04658a5ca0a86e21d16a670952a20a54bb853be25374e72a759d"
+  }
+]

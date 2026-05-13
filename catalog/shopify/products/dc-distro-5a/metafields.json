@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:24Z",
     "compareDigest": "6dd7c065330f813fc6245542ee8963474c62b4ff9d6329a7bbf771b1ccb51b68"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073745943",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "DC Distro 5A | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:58Z",
+    "compareDigest": "ffb83c4798d76fbf4d3934d63b25e348cee22dd4c3f452f1f4e61ca8a2c6e6bf"
   }
 ]

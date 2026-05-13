@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985076138007",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Orion Tee Shirt",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:32Z",
+    "compareDigest": "fd84e7e1d8a845d79af86d0ae4ae86a8b55f9977b350bd5484777a8e091f262c"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076105239",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Orion Tee Shirt | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:32Z",
+    "compareDigest": "292f4ce0b9d65b8ba9aaef95f23ad40733712631f32d64104a0e2367eba6d7db"
+  },
+  {
     "id": "gid://shopify/Metafield/18868579401751",
     "namespace": "mc-facebook",
     "key": "google_product_category",

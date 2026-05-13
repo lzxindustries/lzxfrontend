@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072959511",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle Series Vinyl Sticker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:52Z",
+    "compareDigest": "c3a08dd86a125815662925a8a7dc1b4dd412de27b64cad030db009265944cb24"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072926743",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle Series Vinyl Sticker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:52Z",
+    "compareDigest": "b48214558567d5d375d5a6bd32e7e8aea55850cd03dd54e4a289b7dd9086cfc5"
+  }
+]

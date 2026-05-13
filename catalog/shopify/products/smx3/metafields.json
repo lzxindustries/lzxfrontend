@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985078562839",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "SMX3",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:47Z",
+    "compareDigest": "0bb42813c4038cd61538ac320abaaf25800d51a5e76609503b88cab3377a119a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078530071",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "SMX3 | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:47Z",
+    "compareDigest": "88c2288d4a4e0d2682485ffe3f2a7fc36faadfc5931e5b1d3da7a54994aa9e5d"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150336023",
     "namespace": "mc-facebook",
     "key": "condition",

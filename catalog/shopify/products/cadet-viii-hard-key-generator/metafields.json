@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:19Z",
     "compareDigest": "64d01a5e499dc13e1337f30f3613b17f534df3c42862d4f8113680bf0875a27b"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071747095",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet VIII Hard Key Generator | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:43Z",
+    "compareDigest": "351fefdf1e14a3c0ca572408f54ed640e869a3c2ee82588b110cfb0174bda032"
   }
 ]

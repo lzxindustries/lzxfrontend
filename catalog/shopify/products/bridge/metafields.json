@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:05Z",
     "compareDigest": "16a10a752c056313933041d73cc7a8e79eac1579cf0bf9f8014d408d8c17c8d6"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070370839",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Bridge | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:35Z",
+    "compareDigest": "ad38e8eedcf08df51e24a1be55d0582aad8f37628f93afa78aa39a6003e82c95"
   }
 ]

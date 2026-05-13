@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:45Z",
     "compareDigest": "fe230117d77607828c50197251dd16b2400d0e6059bafc3e428fb079c17e1670"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985079578647",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "TBC2 Expander | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:53Z",
+    "compareDigest": "da0c1f3be89d854cc40c2641817b54a93bd89afbb943a6bdaa0737258edaa8c4"
   }
 ]

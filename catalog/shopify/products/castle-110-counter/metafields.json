@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985072762903",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 110 Counter",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:50Z",
+    "compareDigest": "18a32db8ecfe4d61054d08ee467bc3533ecc6b0f2a5537435dec342c156b75f0"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072730135",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 110 Counter | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:50Z",
+    "compareDigest": "328e0e9958bbe413e2c92e110ce7eef402c087e4daa22cd554062c8004b9c2ee"
+  }
+]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985076432919",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Patch Cable",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:35Z",
+    "compareDigest": "2673787b27bf82eea770a3e81edc26806a017935cb1a90ee503c01e8c763bf76"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076400151",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Patch Cable | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:35Z",
+    "compareDigest": "3c387ff319311a403f4c637035859109576b92d865488114905a0bdd4b516b82"
+  }
+]

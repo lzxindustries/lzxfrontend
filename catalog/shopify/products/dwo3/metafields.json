@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985074663447",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "DWO3",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:19Z",
+    "compareDigest": "93909da7a634fe686f6815c009e361ab0bdefcfe9e317457ff1a39876df78d84"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074630679",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "DWO3 | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:19Z",
+    "compareDigest": "ddb1d195e768cc87695e89cb43f7cb250d2dae6459c22d293baff06f2549274d"
+  }
+]

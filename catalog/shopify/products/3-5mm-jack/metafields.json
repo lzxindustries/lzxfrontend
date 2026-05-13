@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985069289495",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "3.5mm Jack",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:16Z",
+    "compareDigest": "92186c830d47e12d8e15d027832d3cf9225c08a19934432c2f688efc1498a658"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985069256727",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "3.5mm Jack | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:16Z",
+    "compareDigest": "2f05fea0e9209ecc6e9fc6b0d1cc314c58ff5883c150dec85983892cf6e19502"
+  },
+  {
     "id": "gid://shopify/Metafield/38460859711511",
     "namespace": "mc-facebook",
     "key": "google_product_category",

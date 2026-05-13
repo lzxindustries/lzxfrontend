@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:17Z",
     "compareDigest": "cf6f2b41e65c227ef09278e11511c94e3e78c4d36277481172cfdb5923ef0da3"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071681559",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Cadet VII Processor | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:43Z",
+    "compareDigest": "1404df0b0d0f736beb776f2e85953be9ba5a2945dc2128acbf1352fef5238f01"
   }
 ]

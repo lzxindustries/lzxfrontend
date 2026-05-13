@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985078628375",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Stacker",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:48Z",
+    "compareDigest": "2ad2e257d5bb6f5c3a9d726f4eb38c1ed06cd2059658f008153fb3e2a526154f"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078595607",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Stacker | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:48Z",
+    "compareDigest": "a078d29b4e950d7b726cf0ab1b69d7d7cd9ed266c822455fec25b81ed7c61589"
+  },
+  {
     "id": "gid://shopify/Metafield/21435150368791",
     "namespace": "mc-facebook",
     "key": "condition",

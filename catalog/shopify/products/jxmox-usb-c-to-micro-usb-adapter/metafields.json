@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985075122199",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "JXMOX USB C to Micro USB Adapter",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:24Z",
+    "compareDigest": "2cf200fbe8007ddffef787f99d7e2e284f79cd28b222ffd750c947b9fd966951"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075089431",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "JXMOX USB C to Micro USB Adapter | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:24Z",
+    "compareDigest": "4cfcb8d827a933a78abe6bfc7a0f3e83eabf1de086ae3bef490141c9bb482b6c"
+  }
+]

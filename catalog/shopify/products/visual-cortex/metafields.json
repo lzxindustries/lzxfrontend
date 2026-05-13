@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:58Z",
     "compareDigest": "6c8a1ee101d523efc25999aacd304fbd2ed0ed793182703010fae8ddd95c7a4a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985081184279",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Visual Cortex | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:07Z",
+    "compareDigest": "f8d7fb5027f82e953ca76bb60e8757179f9e44d8f933d081cb131e31adb5494d"
   }
 ]

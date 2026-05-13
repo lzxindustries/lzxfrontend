@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985081282583",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "WASHER-M7-POT",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:08Z",
+    "compareDigest": "9bc87db98d04d3df6227e7eb4c510b31fab6ba10a7813bc2382fd500f52e532f"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985081249815",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "WASHER-M7-POT | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:08Z",
+    "compareDigest": "0919b7630e6a59cf9c2e553dd3eee4f13e501db5dce3a5cef19608f054cd461f"
+  }
+]

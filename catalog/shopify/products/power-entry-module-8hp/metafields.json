@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985076826135",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Power Entry 8HP",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:38Z",
+    "compareDigest": "f32792c56ffe4239b7de747e2f31049cd4a0684a4efaf5ad804b9d0c46999e29"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076793367",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Power Entry 8HP | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:38Z",
+    "compareDigest": "b7444b1a26b5b4a0f9b3713ef5f1f64701119a9b47bda2ad6d8d11b3d396f9b3"
+  }
+]

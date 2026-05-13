@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985070862359",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "CABLE-DC25-TO-WIRE-ASSY",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:36Z",
+    "compareDigest": "566607255f533a7d2c41290de6e75cd9462440b547121701d20944dc936d3d35"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985070829591",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "CABLE-DC25-TO-WIRE-ASSY | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:36Z",
+    "compareDigest": "bcb2da50c8b07c1a4148140db2de0c9a1d01b61e0f1aeb11d675176c90d7ed2f"
+  }
+]

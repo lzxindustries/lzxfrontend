@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985080397847",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Video Knob",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:00Z",
+    "compareDigest": "28cdd82cc7389a15eeab865913c755875d2fc4ae51c8c21d4f17fb5b09fbcf17"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985080365079",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Video Knob | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:16:00Z",
+    "compareDigest": "48e47f4128b69984218e0ab6ca6e577a8dfb579b0bc35f5c1356a2d82642e2c7"
+  }
+]

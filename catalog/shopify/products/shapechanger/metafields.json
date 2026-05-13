@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:42Z",
     "compareDigest": "7b0c571ce06c5146df92b5f27fe494c1af144f0ac8b8fa1786b95c9a6ca2278d"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078497303",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Shapechanger | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:47Z",
+    "compareDigest": "f2971a52253a74833b7a3c74f9093dbbab2fe1f312b789decf2db0a4a3bc09bd"
   }
 ]

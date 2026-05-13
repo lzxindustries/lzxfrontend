@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985077579799",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Proc",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:42Z",
+    "compareDigest": "9d79340d40feb941d0d35b5bd0b44c58d37626cb9472ddee14a6b26926fdb24a"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985077547031",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Proc | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:42Z",
+    "compareDigest": "975b30a6ea17afd96d564b6c46d1bf6603cdf22e097dd581c9f21d765f0e1a17"
+  }
+]

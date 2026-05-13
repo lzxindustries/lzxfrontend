@@ -1,12 +1,32 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985072500759",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Castle 011 Shift Register",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:48Z",
+    "compareDigest": "a2fa4cdb63484dee26b2ded9008dd09c1559d9accd2cf59b77b2706c528ce083"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985072467991",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Castle 011 Shift Register | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:48Z",
+    "compareDigest": "12a4af606e10ef8313de961c77ad3d136438842d5b30c78f8c1562e482af1b20"
+  },
+  {
     "id": "gid://shopify/Metafield/18823015825431",
     "namespace": "mc-facebook",
     "key": "google_product_category",
     "type": "string",
     "value": "222",
     "description": null,
-    "updatedAt": "2021-03-19T04:06:30Z",
+    "updatedAt": "2026-05-13T01:15:16Z",
     "compareDigest": "fd8af86f14f3aefb935e4fb7d0a509054af046af7fa442644ff099f9b94ddeca"
   }
 ]

@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985078038551",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "RGB Patch Cable",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:45Z",
+    "compareDigest": "5b0ee616e95565501df2050392134d7c163aa9e7d72ef27b471a9bc841a166c7"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985078005783",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "RGB Patch Cable | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:45Z",
+    "compareDigest": "0e851aaaca53d87fd7d9b09c3412b621cbd16d3516e29e51394f2f33aff8808a"
+  },
+  {
     "id": "gid://shopify/Metafield/18825008676887",
     "namespace": "mc-facebook",
     "key": "google_product_category",

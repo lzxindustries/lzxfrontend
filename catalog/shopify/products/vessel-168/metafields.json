@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985079906327",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Vessel 168",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:55Z",
+    "compareDigest": "7602150069db1ab071ca336457a60c6dc0452159b003e57bd4a18231c56c1ade"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985079873559",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Vessel 168 | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:55Z",
+    "compareDigest": "1548ca2c87a090af1f5fd6712c07044607a9a828f3ea0fd68f9ac88594515ff7"
+  }
+]

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985069191191",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "12V DC Adapter 3A",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:16Z",
+    "compareDigest": "dd45cd77790d420f5b4c8b511d1bdd86432cf118e4e5dc58d869fa3bd07b8d67"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985069158423",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "12V DC Adapter 3A | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:16Z",
+    "compareDigest": "63a8953d009fcb7d3b860cfc43dfcce1f70b0aca19d437bfc6961293aa316557"
+  }
+]

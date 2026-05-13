@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:38Z",
     "compareDigest": "1d19ad5a90077813005f62832a71f0a48275c5946bc1998009da02a41f23a9cc"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076760599",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Polar Fringe | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:38Z",
+    "compareDigest": "6a5e3e6ff0816252752bb350b35351f7bc7b77f5b2d81cec10b65105be47144c"
   }
 ]

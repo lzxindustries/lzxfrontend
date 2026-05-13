@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985076563991",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "PGO",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:37Z",
+    "compareDigest": "aab94135c9d44f0bbc8d59b19c6bf43cd251e3ffca24a6d1b494357146d8168f"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985076531223",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "PGO | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:37Z",
+    "compareDigest": "cb4d5402498f8d4016bff1038201a9c4f9d43e1a5f216e9292681cdc3edbf484"
+  },
+  {
     "id": "gid://shopify/Metafield/37554343378967",
     "namespace": "mc-facebook",
     "key": "google_product_category",

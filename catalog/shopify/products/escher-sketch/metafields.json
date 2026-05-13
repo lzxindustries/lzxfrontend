@@ -8,5 +8,15 @@
     "description": null,
     "updatedAt": "2026-04-21T20:20:29Z",
     "compareDigest": "501d0409900709bbc33154df327019022b9ad29c2d2f0cbe371d549c815e2027"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985074696215",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Escher Sketch | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:20Z",
+    "compareDigest": "df9bf3a78d85e9dcb9d78f92477795f5944d698327441038f0eab054fd5ae818"
   }
 ]

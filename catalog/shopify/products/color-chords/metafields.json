@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985073188887",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Color Chords",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:54Z",
+    "compareDigest": "d39b6481e0c3aebca4956945fd130b988ccdf9d01adf8c708366bc64c0a413b4"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985073156119",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Color Chords | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:54Z",
+    "compareDigest": "0c35ed2a5267946a3b520f2457bc89510f29e16f2494207111255b77ecd9b96a"
+  }
+]

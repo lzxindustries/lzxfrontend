@@ -1,5 +1,25 @@
 [
   {
+    "id": "gid://shopify/Metafield/48985075908631",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "NUT-M7-POT",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:30Z",
+    "compareDigest": "678dc9440d9136a146ea3298f4f39aea0cdf724f101ece705ab39fbdc82b43f9"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985075875863",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "NUT-M7-POT | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:15:30Z",
+    "compareDigest": "3d23f5f7177da9d76040fbba54419c425f6715576886e00e6203023799b06d6c"
+  },
+  {
     "id": "gid://shopify/Metafield/38501050646551",
     "namespace": "mc-facebook",
     "key": "google_product_category",

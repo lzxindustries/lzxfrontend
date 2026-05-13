@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "gid://shopify/Metafield/48985071878167",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Capsule Power Kit",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:45Z",
+    "compareDigest": "0b0b6e30b2c21e6b029ef637a50894f3679d3f87751a7c7d26390d8aaa45b497"
+  },
+  {
+    "id": "gid://shopify/Metafield/48985071845399",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Capsule Power Kit | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-13T01:14:45Z",
+    "compareDigest": "2c986d44a1a598780f52d0375d334d21cf961e88d9cf68d6526a9835cca9af54"
+  }
+]
