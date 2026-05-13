@@ -2,15 +2,18 @@
 
 Manual cross-sweep across every customer-visible content surface in the
 repo: marketing pages, route-level copy, product manuals, support
-files, site documentation, blog posts, and policies. Accuracy claims
-are cross-checked against `db/lzxdb.Module.json`, `app/data/module-specs.ts`,
-`app/data/product-slugs.ts`, the category configs in
+files, site documentation, blog posts, and policies. Findings were
+tiered by impact using **P0/P1/P2** (_editorial_ severity for that pass). For
+**script tiers** (`yarn audit:content`) plus **P3/P4** maintenance definitions,
+see [`docs/content-audit/P0_CRITERIA.md`](../content-audit/P0_CRITERIA.md).
+
+Accuracy claims are cross-checked against `db/lzxdb.Module.json`,
+`app/data/module-specs.ts`, `app/data/product-slugs.ts`, the category configs in
 `app/data/category-configs/`, and the LFS metadata under
 `data/lfs-library/`.
 
-This is a **read-only audit**. No content was edited. Findings are
-tiered by impact using the same P0/P1/P2 conventions as
-[docs/content-audit/P0_CRITERIA.md](../content-audit/P0_CRITERIA.md):
+This document began as a **read-only audit**; findings were later resolved in
+repo (see per-item **Resolution** notes).
 
 - **P0** — factually wrong, broken, or contradicts the canonical data
   source the site itself uses. Fix before next deploy.
@@ -684,6 +687,19 @@ manuals.)
 
 **Resolution:** Removed the redundant “available as assembled / DIY …” line from
 **MLT, PRM, POT, PGO, LNK, PAB** DIY sections.
+
+## P3 / P4 (extended maintenance)
+
+The **May 2026 review** above uses **P0–P2** for *editorial* severity. For ongoing
+**catalog automation** tiers (`yarn audit:content`), mirror hygiene, and
+commerce/editorial depth, see **[`docs/content-audit/P0_CRITERIA.md`](../content-audit/P0_CRITERIA.md)** — it now defines **P3** (SEO mirror closure, bootstrap,
+repo sync) and **P4** (Tier B/C coverage plan, Shopify apply, authored FAQs).
+
+**Done in the P3 pass (2026-05-13):** `fill-missing-seo.mjs` across the local
+mirror, `yarn catalog:bootstrap`, regenerated `product-content-audit.md`
+(**SEO gaps = 0**), `DocLayout` frontmatter typing for optional `subtitle`,
+`standards.md` bipolar notation, `refund-policy.html` preorder email aligned
+with `refund-policy.md`.
 
 ---
 

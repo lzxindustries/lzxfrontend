@@ -309,7 +309,7 @@ export interface DocLayoutProps {
   showBreadcrumbs?: boolean;
   prev: SidebarItem | null;
   next: SidebarItem | null;
-  frontmatter: {title?: string; description?: string};
+  frontmatter: {title?: string; description?: string; subtitle?: string};
   currentPath: string;
   /** Custom function for building sidebar/nav links. Defaults to `/docs/${item.path}` */
   linkBuilder?: (item: SidebarItem) => string;

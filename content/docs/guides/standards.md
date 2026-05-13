@@ -26,7 +26,7 @@ In the LZX patchable standard, signals generally range from zero volts to one vo
 The LZX voltage range is much less than most audio synths, which are typically 0 to 10 V or ±5 V. LZX modules are tolerant of any voltage produced by a Eurorack system. There's no risk incurred by connecting audio modules directly to video modules. A voltage divider gives best results when incorporating audio modules in an LZX system. Many LZX modules can accept bipolar signals with negative voltages, but visible picture information is usually constrained to the zero to one volt range.
 
 - Unipolar Scale: 0 to +1 V
-- Bipolar Scale: +/-1 V
+- Bipolar Scale: ±1 V
 - Minimum Bandwidth: 5 MHz
 - Input Impedance: 100K ohms
 - Video range: 0 IRE (black) and 100 IRE (white) are scaled to the 0 to +1 V unipolar range

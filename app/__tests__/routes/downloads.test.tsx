@@ -140,7 +140,9 @@ describe('Downloads route', () => {
 
     expect(screen.getByText('Firmware 1.0.7')).toBeTruthy();
     expect(screen.queryByText('Firmware 1.0.6')).not.toBeInTheDocument();
-    expect(screen.getByText('Manual')).toBeTruthy();
+    expect(screen.getAllByRole('link', {name: 'Manual'}).length).toBeGreaterThan(
+      0,
+    );
 
     fireEvent.click(
       screen.getByRole('button', {name: /show older firmware versions/i}),
