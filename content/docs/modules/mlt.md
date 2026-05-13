@@ -22,7 +22,7 @@ import mlt_understanding_cascading_input_jacks from '/img/modules/mlt/mlt-diagra
 
 |                   |      |
 | ----------------- | ---- |
-| Mounting Width    | 4 HP |
+| Mounting Width    | 8 HP |
 | Power Consumption | None |
 | Power Connectors  | None |
 | Video Sync        | None |
@@ -79,10 +79,10 @@ MLT uses switched, or normalled, connections between some of its input jacks. 
 
 |                     |                                        |
 | ------------------- | -------------------------------------- |
-| Mounting Width      | 4 HP                                   |
+| Mounting Width      | 8 HP                                   |
 | Mounting Hole Count | 2                                      |
 | Power Consumption   | n/a                                    |
-| Module Width        | 20.32 mm                               |
+| Module Width        | 40.64 mm                               |
 | Module Height       | 128.5 mm                               |
 | Product Box Width   | 4 in / 101.6 mm                        |
 | Product Box Height  | 2 in / 50.8 mm                         |

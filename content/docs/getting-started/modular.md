@@ -118,17 +118,9 @@ Not sure where to begin? Our [Starter Systems](/systems) page offers curated mod
 
 # Compatibility
 
-_Do you have a compatibility issue to report?_ Please submit our form at [https://forms.gle/y9FktKrRbMK1paRE6](https://forms.gle/y9FktKrRbMK1paRE6)
-
-A list of hardware verified to be fully compatible with LZX Modular. This list is far from extensive, and is only intended to communicate the results of testing conducted by the development team at LZX, in the LZX lab.
-
 ## EuroRack Cases & Power Supplies
 
-- LZX Vessel Case
-- LZX Capsule Power
-- TipTop Audio Mantis Case
-- Arturia Rack Brute
-- Malekko Power
+For LZX cases and power hardware, see [Cases & Power](/cases-and-power).
 
 ## Video Capture & Display Devices (SD/HD)
 

@@ -67,4 +67,4 @@ Lars
 
 ---
 
-_Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/lzx)._
+_Questions about your order? Email **sales@lzxindustries.net**. For general discussion, join us on [Discord](https://discord.gg/7xzD4XzhGn)._

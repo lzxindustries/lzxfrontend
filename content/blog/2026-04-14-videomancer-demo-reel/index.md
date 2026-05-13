@@ -19,7 +19,7 @@ To make this demo, I cut together some stock footage of playing cards to a music
 
 I then processed the edit using Videomancer -- one complete pass for each of the programs. At this point I re-imported the effects takes into DaVinci resolve, aligned them to the original timeline, and chopped them up at the same cut marks as the original edit. The whole process took about 3 hours, which I was quite happy with.
 
-I realize a lot of folks using Videomancer and our other equipment don't have a video production or film school background -- and that's great! Drop in the [Discord](https://discord.gg/lzx) if you need any help getting started with projects like this.
+I realize a lot of folks using Videomancer and our other equipment don't have a video production or film school background -- and that's great! Drop in the [Discord](https://discord.gg/7xzD4XzhGn) if you need any help getting started with projects like this.
 
 :::note
 For the latest Videomancer news, product details, and ordering info, visit [lzxindustries.net](https://lzxindustries.net).

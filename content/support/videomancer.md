@@ -1,9 +1,10 @@
 ---
 slug: videomancer
 setupPrerequisites:
-  - 'A display with composite or component video input'
-  - 'RCA cables for video connections'
-  - 'USB-C cable for firmware updates'
+  - 'HDMI source device (camera, media player, computer, console, or other HDMI output)'
+  - 'Display, monitor, or capture device with HDMI input'
+  - 'Two standard full-size HDMI cables'
+  - 'Included 12V DC power supply'
 faqItems:
   - question: 'How do I update Videomancer firmware?'
     answer: |
@@ -13,6 +14,12 @@ faqItems:
     answer: |
       Videomancer supports HDMI, Composite (CVBS), S-Video, Component (YPbPr & RGB SOG)
       and 1V RGB video input and output in NTSC and PAL formats.
+  - question: 'Can I use Videomancer with analog sources (composite, component, S-Video, RGB)?'
+    answer: |
+      Yes. The Quick Start covers the HDMI path; analog setup is documented in the
+      [Signal Paths](/instruments/videomancer/manual/user-manual#signal-paths) section
+      of the User Manual. Videomancer accepts composite (CVBS), S-Video, component
+      YPbPr, RGB with sync on green, and the LZX 1V modular standard, in NTSC and PAL.
   - question: 'Can I use Videomancer with eurorack modules?'
     answer: |
       Yes. Videomancer works standalone or alongside LZX eurorack modules via its
