@@ -33,5 +33,3 @@ is the manual's table of contents, not the product landing.
 - [Serial Command Guide](/instruments/videomancer/manual/serial-command-guide) —
   USB serial interface for program management, presets, and MIDI
   monitoring.
-- [Historic Device References](/instruments/videomancer/manual/historic-device-references) —
-  programs inspired by classic broadcast and art hardware.

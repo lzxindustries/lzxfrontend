@@ -109,14 +109,6 @@ export const INSTRUMENT_LEARN_CARDS: Record<string, LearnCard[]> = {
       requiresDoc: 'serial-command-guide',
     },
     {
-      title: 'Historic Device References',
-      description:
-        '72 programs inspired by hardware from the Fairlight CVI and Quantel Paintbox to Atari and classic broadcast systems.',
-      toKey: 'manual/historic-device-references',
-      icon: '🏛️',
-      requiresDoc: 'historic-device-references',
-    },
-    {
       title: 'Videos',
       description:
         'Tutorials, demos, and walkthroughs from LZX and the community.',

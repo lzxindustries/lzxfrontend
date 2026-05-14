@@ -79,12 +79,24 @@ export default {
         return Response.redirect(requestUrl.toString(), 301);
       }
 
+      // Historic device references guide was removed; keep old backlinks
+      // on a useful landing page instead of a chain into a 404.
+      const historicRefsRedirectPaths = new Set([
+        '/instruments/videomancer/historic-device-references',
+        '/instruments/videomancer/manual/historic-device-references',
+      ]);
+      const pathnameNoTrailingSlash = requestUrl.pathname.replace(/\/$/, '');
+      if (historicRefsRedirectPaths.has(pathnameNoTrailingSlash)) {
+        requestUrl.pathname = '/instruments/videomancer/manual';
+        return Response.redirect(requestUrl.toString(), 301);
+      }
+
       // Legacy Docusaurus slugs (e.g. /instruments/videomancer/user-manual)
       // are still referenced by external backlinks. Canonical URLs now
       // live under /instruments/<slug>/manual/<page>; redirect the
       // flat form to the new structure so the link-juice follows.
       const legacyDocsSlugMatch = requestUrl.pathname.match(
-        /^\/instruments\/([^/]+)\/(user-manual|quick-start|modulation-operators|historic-device-references|fault-codes-reference|serial-command-guide)\/?$/,
+        /^\/instruments\/([^/]+)\/(user-manual|quick-start|modulation-operators|fault-codes-reference|serial-command-guide)\/?$/,
       );
       if (legacyDocsSlugMatch) {
         const [, slug, page] = legacyDocsSlugMatch;

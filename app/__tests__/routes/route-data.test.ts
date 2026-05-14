@@ -155,13 +155,6 @@ describe('Instrument Learn Cards', () => {
     expect(cards.find((c) => c.title === 'Serial Port Guide')).toBeDefined();
   });
 
-  it('Videomancer cards include Historic Device References', () => {
-    const cards = getLearnCards('videomancer');
-    expect(
-      cards.find((c) => c.title === 'Historic Device References'),
-    ).toBeDefined();
-  });
-
   it('getLearnCards falls back to defaults for unknown instrument', () => {
     const cards = getLearnCards('some-unknown-instrument');
     expect(cards).toBe(DEFAULT_LEARN_CARDS);

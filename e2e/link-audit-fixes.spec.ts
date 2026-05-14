@@ -136,10 +136,6 @@ test.describe('Link audit regressions', () => {
         '/instruments/videomancer/modulation-operators',
         '/instruments/videomancer/manual/modulation-operators',
       ],
-      [
-        '/instruments/videomancer/historic-device-references',
-        '/instruments/videomancer/manual/historic-device-references',
-      ],
     ];
 
     for (const [from, to] of cases) {
@@ -151,13 +147,19 @@ test.describe('Link audit regressions', () => {
     }
   });
 
-  test('historic device references page (no longer draft) returns 200', async ({
-    request,
+  test('removed Videomancer historic device references redirects to manual hub', async ({
+    page,
   }) => {
-    const response = await request.get(
+    for (const path of [
+      '/instruments/videomancer/historic-device-references',
       '/instruments/videomancer/manual/historic-device-references',
-    );
-    expect(response.status()).toBe(200);
+    ]) {
+      const response = await page.goto(path, {waitUntil: 'domcontentloaded'});
+      expect(response?.status(), path).toBeLessThan(400);
+      expect(new URL(page.url()).pathname, path).toBe(
+        '/instruments/videomancer/manual',
+      );
+    }
   });
 
   test('instrument Learn page no longer surfaces the retired Setup card', async ({
