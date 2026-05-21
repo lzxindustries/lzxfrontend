@@ -241,9 +241,14 @@ with firmware releases or available as a separate library download from the
 firmware 1.x.x, distributed through the videomancer-community-programs
 repository. Signed releases load without Developer Mode.
 
-**Installation method 1 — Manual SD card copy:** …
+**Installation method 1 — Manual SD card copy:** Download the library archive,
+extract it, and copy the `.vmprog` files into the `programs/` folder (or a
+subdirectory within it) on the microSD card. Power cycle Videomancer to rescan.
 
-**Installation method 2 — LZX Connect:** …
+**Installation method 2 — LZX Connect:** Open [LZX Connect](/connect), connect
+Videomancer via USB-C, and select **Install Program Library**. Choose the library
+archive; LZX Connect copies the files to the SD card and triggers a rescan on
+the next boot.
 ```
 
 ---
