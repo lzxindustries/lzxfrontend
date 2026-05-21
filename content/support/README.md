@@ -42,8 +42,16 @@ setupPrerequisites:
 faqItems:
   - question: 'How do I update Videomancer firmware?'
     answer: |
-      Use the LZX Connect desktop app to perform guided firmware
-      updates. Download it from the [LZX Connect](/connect) page.
+      The answer depends on which firmware version is currently installed.
+
+      **If Videomancer is running firmware 0.1.8:** Use the manual BOOT button
+      method for the initial upgrade to 1.x.x. LZX Connect cannot perform this
+      upgrade. See [Firmware Update](/instruments/videomancer/manual/user-manual#firmware-update)
+      in the User Manual for step-by-step instructions.
+
+      **If Videomancer is already running firmware 1.x.x:** Open
+      [LZX Connect](/connect), connect Videomancer via USB-C, and click
+      Check for Updates.
 ---
 
 # Videomancer Support

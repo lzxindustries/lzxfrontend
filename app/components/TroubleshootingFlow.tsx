@@ -148,6 +148,7 @@ export const VIDEOMANCER_TROUBLESHOOTING: TroubleshootingNode[] = [
       {label: 'No video output / black screen', nextId: 'no-video'},
       {label: 'Display shows "No Signal"', nextId: 'no-signal'},
       {label: 'Firmware update issues', nextId: 'firmware'},
+      {label: 'Program or library issues', nextId: 'programs'},
       {label: 'Controls not responding', nextId: 'controls'},
       {
         label: 'Something else',
@@ -250,8 +251,8 @@ export const VIDEOMANCER_TROUBLESHOOTING: TroubleshootingNode[] = [
         label: 'LZX Connect does not detect Videomancer',
         nextId: null,
         resolution:
-          'Ensure you are using a USB-C data cable (not a charge-only cable). Try a different USB port. On Windows, try running LZX Connect as Administrator. Make sure Videomancer is powered on before connecting USB.',
-        link: {label: 'Download LZX Connect', url: '/connect'},
+          'If Videomancer is running firmware 0.1.8, LZX Connect cannot connect to it — this is expected. Use the manual BOOT button method to upgrade to firmware 1.x.x first, then LZX Connect will work for future updates. If you are already on 1.x.x: ensure you are using a USB-C data cable (not a charge-only cable), try a different USB port, and on Windows try running LZX Connect as Administrator. Make sure Videomancer is powered on before connecting USB.',
+        link: {label: 'Firmware Downloads', url: '/instruments/videomancer/downloads'},
       },
       {
         label: 'Firmware update fails midway',
@@ -267,8 +268,15 @@ export const VIDEOMANCER_TROUBLESHOOTING: TroubleshootingNode[] = [
         label: 'Not sure which firmware version to use',
         nextId: null,
         resolution:
-          'LZX Connect automatically selects the correct firmware version. Always use the latest stable release unless instructed otherwise by LZX support.',
-        link: {label: 'Open LZX Connect', url: '/connect'},
+          'Check your current firmware version in SYSTEM → About. If you are on firmware 0.1.8, use the manual BOOT button method to upgrade to 1.x.x — LZX Connect cannot perform this initial upgrade. Firmware 1.x.x is currently pre-release; download the .UF2 file from the Downloads page (look for builds labeled Pre-release). If you are already on 1.x.x, enable Show pre-releases in LZX Connect settings to find and install the latest pre-release builds.',
+        link: {label: 'Firmware Downloads', url: '/instruments/videomancer/downloads'},
+      },
+      {
+        label: 'I want to upgrade from firmware 0.1.8',
+        nextId: null,
+        resolution:
+          'The upgrade from 0.1.8 to 1.x.x requires the manual BOOT button method — LZX Connect cannot perform this initial upgrade. Close LZX Connect before starting. Firmware 1.x.x is currently pre-release — download the .UF2 file from the Downloads page (it will be labeled Pre-release). Hold the BOOT button while powering on, then copy the file to the detected USB drive. See the Firmware Update section of the User Manual for full step-by-step instructions.',
+        link: {label: 'Firmware Downloads', url: '/instruments/videomancer/downloads'},
       },
     ],
   },
@@ -295,6 +303,39 @@ export const VIDEOMANCER_TROUBLESHOOTING: TroubleshootingNode[] = [
         resolution:
           'CV and audio modulation inputs require an external signal source. Ensure your source is outputting at the expected voltage level. Check that the modulation routing is configured in the current program. See the User Manual for modulation details.',
         link: {label: 'User Manual', url: '/instruments/videomancer/manual'},
+      },
+    ],
+  },
+  {
+    id: 'programs',
+    question: 'What program or library issue are you experiencing?',
+    options: [
+      {
+        label: 'Programs on SD card are not showing up after install',
+        nextId: null,
+        resolution:
+          'Videomancer scans the `programs/` folder on the microSD card at boot. Copy `.vmprog` files into `programs/` or a vendor subdirectory within it (e.g. `programs/vendor-name/program.vmprog`), then power cycle Videomancer to rescan. Ensure the card is formatted FAT32. If the card is not detected at all, try reseating it while Videomancer is powered off.',
+        link: {
+          label: 'MicroSD Card Reference',
+          url: '/instruments/videomancer/manual/user-manual#microsd-card',
+        },
+      },
+      {
+        label: 'LZX Connect "Install Program Library" fails or stalls',
+        nextId: null,
+        resolution:
+          'Ensure Videomancer is powered on and connected via a USB-C data cable (not a charge-only cable) before starting. On Windows, try running LZX Connect as Administrator. If the transfer stalls, power cycle Videomancer and retry. As a fallback, copy .vmprog files directly to the programs/ folder on the SD card.',
+        link: {label: 'Download LZX Connect', url: '/connect'},
+      },
+      {
+        label: 'I need to find community programs to download',
+        nextId: null,
+        resolution:
+          'Community programs for Videomancer are distributed from the videomancer-community-programs GitHub repository. Download a release archive and copy the .vmprog files to the programs/ folder on your microSD card, or use LZX Connect \u2192 Install Program Library. Signed releases load without Developer Mode on firmware 1.x.x.',
+        link: {
+          label: 'Community Programs',
+          url: 'https://github.com/lzxindustries/videomancer-community-programs/releases',
+        },
       },
     ],
   },

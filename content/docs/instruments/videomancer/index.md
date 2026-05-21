@@ -17,6 +17,10 @@ sequence, deep-dive picks) visit the
 [Videomancer Learn page](/instruments/videomancer/learn). This page
 is the manual's table of contents, not the product landing.
 
+:::note Pre-release firmware
+Firmware 1.x.x is currently **pre-release** — the current stable release is 0.1.8. Pre-release firmware unlocks new programs and [LZX Connect](/connect) compatibility. [Downloads](/instruments/videomancer/downloads) has firmware files for manual BOOT button installs. If already on 1.x.x, LZX Connect handles updates — enable **Show pre-releases** in settings to see pre-release builds.
+:::
+
 ## Manual sections
 
 - [Quick Start Guide](/instruments/videomancer/manual/quick-start) —
@@ -33,3 +37,7 @@ is the manual's table of contents, not the product landing.
 - [Serial Command Guide](/instruments/videomancer/manual/serial-command-guide) —
   USB serial interface for program management, presets, and MIDI
   monitoring.
+- [Downloads](/instruments/videomancer/downloads) —
+  firmware files, program library archives, and manual update instructions.
+- [LZX Connect Guide](/docs/guides/lzx-connect) —
+  guided firmware updates and program library management for firmware 1.x.x.

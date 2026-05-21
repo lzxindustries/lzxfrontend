@@ -135,5 +135,5 @@ You've connected Videomancer, loaded a Program, and explored its Parameters. Her
 
 **Save States** — Save and recall your favorite settings as Presets. See [STATE Presets](/instruments/videomancer/manual/user-manual#state-presets) in the User Manual.
 
-**Programs** — Videomancer includes many embedded Programs. Program-specific behavior is summarized in firmware release notes and expanded over time in the main documentation.
+**Firmware & Programs** — Firmware 1.x.x is currently **pre-release** and unlocks new programs and LZX Connect compatibility. See [Downloads](/instruments/videomancer/downloads) for firmware files and program library archives. If already on 1.x.x, use [LZX Connect](/connect) to update and manage programs — enable **Show pre-releases** in LZX Connect settings to get pre-release updates.
 :::

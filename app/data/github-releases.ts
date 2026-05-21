@@ -9,6 +9,7 @@ const LATEST_RELEASE_URL = `${GITHUB_API_BASE}/${REPO}/releases/latest`;
 const RELEASES_URL = `${GITHUB_API_BASE}/${REPO}/releases?per_page=100`;
 const ALL_RELEASES_URL = `https://github.com/${REPO}/releases`;
 const CONNECT_RELEASE_PREFIX = 'connect/';
+const VIDEOMANCER_RELEASE_PREFIX = 'videomancer/';
 
 export interface PlatformDownload {
   name: string;
@@ -145,6 +146,10 @@ export async function getLatestRelease(
 
 export function getLatestConnectRelease(): Promise<ResolvedRelease> {
   return getLatestRelease({tagPrefix: CONNECT_RELEASE_PREFIX});
+}
+
+export function getLatestVideomancerRelease(): Promise<ResolvedRelease> {
+  return getLatestRelease({tagPrefix: VIDEOMANCER_RELEASE_PREFIX});
 }
 
 async function resolveLatestTaggedRelease(

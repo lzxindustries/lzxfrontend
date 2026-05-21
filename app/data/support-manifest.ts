@@ -19,6 +19,8 @@ export interface ProductSupportRecord {
   relatedProductSlugs: string[];
   connectSupported?: boolean;
   showGuidedUpdaterOnDownloads?: boolean;
+  /** Tag prefix used to fetch the latest firmware release from GitHub (e.g. 'videomancer/'). */
+  firmwareTagPrefix?: string;
 }
 
 export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
@@ -34,6 +36,8 @@ export const SUPPORT_MANIFEST: Record<string, ProductSupportRecord> = {
     ],
     relatedProductSlugs: ['double-vision', 'tbc2', 'lnk'],
     connectSupported: true,
+    showGuidedUpdaterOnDownloads: true,
+    firmwareTagPrefix: 'videomancer/',
     // FAQ items and setup prerequisites are sourced from
     // content/support/videomancer.md frontmatter via loadSupportContent().
   },

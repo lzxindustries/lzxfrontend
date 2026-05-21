@@ -75,7 +75,7 @@ export default function InstrumentSupport() {
               className="card bg-base-200 hover:bg-base-300 transition-colors p-4"
             >
               <span className="font-semibold">🔗 LZX Connect</span>
-              <span className="text-sm opacity-70">Firmware updates</span>
+              <span className="text-sm opacity-70">Firmware updates &amp; program management</span>
             </Link>
           )}
           <Link

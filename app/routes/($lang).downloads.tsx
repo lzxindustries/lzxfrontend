@@ -4,7 +4,7 @@ import {Link, useLoaderData} from '@remix-run/react';
 import {FaApple, FaDownload, FaLinux, FaWindows} from 'react-icons/fa';
 import {DownloadAssetList} from '~/components/DownloadAssetList';
 import {CACHE_SHORT} from '~/data/cache';
-import {getLatestRelease} from '~/data/github-releases';
+import {getLatestConnectRelease} from '~/data/github-releases';
 import {
   getAllInstrumentEntries,
   getAllModuleSlugs,
@@ -49,7 +49,7 @@ function formatFileSize(size: number) {
 }
 
 export async function loader({request}: LoaderFunctionArgs) {
-  const release = await getLatestRelease();
+  const release = await getLatestConnectRelease();
   const moduleSlugs = getAllModuleSlugs();
   const instrumentEntries = getAllInstrumentEntries();
 

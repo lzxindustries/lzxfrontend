@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => {
     {
       name: 'description',
       content:
-        'LZX Connect is the desktop app for guided firmware updates — Videomancer today, Chromagnon in development.',
+        'LZX Connect is the desktop companion app for guided firmware updates and program library management. Supports Videomancer; Chromagnon in development.',
     },
   ];
 };
@@ -37,9 +37,24 @@ export default function ConnectPage() {
           LZX Connect
         </h1>
         <p className="mt-4 max-w-3xl text-base-content/80 md:text-lg">
-          LZX Connect is the desktop app for guided firmware updates.
-          Videomancer is supported in current releases; Chromagnon support is
-          in development.
+          LZX Connect is the desktop companion app for Videomancer firmware
+          updates and program library management. Connect Videomancer via USB-C
+          and update firmware or install program libraries without opening the
+          instrument or handling SD cards.
+        </p>
+        <p className="mt-3 max-w-3xl text-sm text-base-content/60">
+          Requires Videomancer firmware 1.x.x or later. Firmware 1.x.x is
+          currently <strong>pre-release</strong>. If your device is on firmware
+          0.1.8,{' '}
+          <a
+            href="/instruments/videomancer/manual/user-manual#firmware-update"
+            className="link"
+          >
+            use the manual BOOT button method
+          </a>{' '}
+          to upgrade to 1.x.x first. Once on 1.x.x, enable{' '}
+          <strong>Show pre-releases</strong> in LZX Connect settings to see and
+          install pre-release firmware updates.
         </p>
       </header>
 
@@ -128,10 +143,30 @@ export default function ConnectPage() {
         <article className="rounded-xl border border-base-300 p-6">
           <h2 className="text-xl font-bold">What It Does</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-base-content/80">
-            <li>Guided firmware updates with a simplified workflow</li>
-            <li>Version tracking for supported devices</li>
-            <li>A shared update path for current and upcoming instruments</li>
+            <li>
+              <strong>Firmware updates</strong> — guided updates for 1.x.x
+              → newer 1.x.x with a simplified one-click workflow
+            </li>
+            <li>
+              <strong>Install Program Library</strong> — installs the official
+              LZX or community program library to Videomancer&apos;s microSD
+              card over USB; no card reader needed
+            </li>
+            <li>
+              <strong>Load VMPROG File</strong> — streams a single{' '}
+              <code>.vmprog</code> to device RAM over USB for development
+              sideloading; not persistent across reboots
+            </li>
+            <li>Version tracking for connected devices</li>
           </ul>
+          <p className="mt-4">
+            <a
+              href="/docs/guides/lzx-connect"
+              className="link link-primary text-sm"
+            >
+              Full documentation → LZX Connect Guide
+            </a>
+          </p>
         </article>
 
         <article className="rounded-xl border border-base-300 p-6">

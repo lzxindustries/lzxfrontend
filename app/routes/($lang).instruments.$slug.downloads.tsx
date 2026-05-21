@@ -1,5 +1,5 @@
 import {Link, useLoaderData, useOutletContext} from '@remix-run/react';
-import type {MetaArgs} from '@shopify/remix-oxygen';
+import type {LoaderFunctionArgs, MetaArgs} from '@shopify/remix-oxygen';
 import {json} from '@shopify/remix-oxygen';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
 import type {InstrumentHubData} from '~/data/hub-loaders';
@@ -9,10 +9,12 @@ import {DownloadAssetList} from '~/components/DownloadAssetList';
 import {ProductAssetArchive} from '~/components/ProductAssetArchive';
 import {ReleaseNotes} from '~/components/ReleaseNotes';
 import {CACHE_SHORT} from '~/data/cache';
-import {shouldShowGuidedUpdaterOnDownloads} from '~/data/support-manifest';
+import {shouldShowGuidedUpdaterOnDownloads, SUPPORT_MANIFEST} from '~/data/support-manifest';
 
-export async function loader() {
-  const release = await getLatestRelease();
+export async function loader({params}: LoaderFunctionArgs) {
+  const slug = params.slug ?? '';
+  const prefix = SUPPORT_MANIFEST[slug]?.firmwareTagPrefix;
+  const release = await getLatestRelease(prefix ? {tagPrefix: prefix} : {});
   return json({release}, {headers: {'Cache-Control': CACHE_SHORT}});
 }
 
@@ -52,11 +54,44 @@ export default function InstrumentDownloads() {
           &larr; Back to {product.title} overview
         </Link>
       </div>
+
+      {slug === 'videomancer' && (
+        <div className="mb-6 space-y-3">
+          <div className="rounded-lg border border-info/30 bg-info/10 p-4">
+            <p className="font-semibold">About these downloads</p>
+            <p className="mt-1 text-sm text-base-content/80">
+              Firmware 1.x.x is currently{' '}
+              <strong>pre-release</strong> — the current stable release is
+              0.1.8. Pre-release firmware unlocks new programs and LZX Connect
+              compatibility, but may contain bugs. Downloads use the{' '}
+              <strong>manual BOOT button method</strong>; if already on 1.x.x,
+              use{' '}
+              <a href="/connect" className="link link-primary">
+                LZX Connect
+              </a>{' '}
+              with <strong>Show pre-releases</strong> enabled in settings.
+            </p>
+          </div>
+          <div className="rounded-lg border border-warning/30 bg-warning/10 p-4">
+            <p className="font-semibold">Upgrading from firmware 0.1.8?</p>
+            <p className="mt-1 text-sm text-base-content/80">
+              The initial upgrade from 0.1.8 to 1.x.x{' '}
+              <strong>requires the manual BOOT button method</strong> below.
+              LZX Connect cannot perform this upgrade. Close LZX Connect before
+              starting — having it open while entering BOOT mode can interfere
+              with the process.
+            </p>
+          </div>
+        </div>
+      )}
       {showGuidedUpdater ? (
         <div className="mb-6 rounded-lg border border-base-300 bg-base-200 p-4">
-          <p className="font-semibold">Prefer guided updates?</p>
+          <p className="font-semibold">Already on firmware 1.x.x?</p>
           <p className="mt-1 text-sm text-base-content/70">
-            LZX Connect provides guided firmware updates for supported modules.
+            LZX Connect provides guided firmware updates and program library
+            management without the BOOT button. Since 1.x.x is currently
+            pre-release, enable <strong>Show pre-releases</strong> in LZX
+            Connect settings before clicking Check for Updates.
           </p>
           <a href="/connect" className="btn btn-sm btn-primary mt-3">
             Open LZX Connect
@@ -87,6 +122,51 @@ export default function InstrumentDownloads() {
               },
             ]}
           />
+        </div>
+      )}
+
+      {slug === 'videomancer' && (
+        <div className="mt-8 rounded-xl border border-base-300 bg-base-200 p-6">
+          <h3 className="text-xl font-bold mb-2">Program Libraries</h3>
+          <p className="text-sm text-base-content/70 mb-4">
+            Programs are <code>.vmprog</code> files stored on Videomancer&apos;s
+            microSD card. Two libraries are available:
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 mb-4">
+            <div>
+              <h4 className="font-semibold mb-1">Official LZX Library</h4>
+              <p className="text-sm text-base-content/70">
+                Programs curated by LZX Industries, bundled with firmware or
+                available as a separate library download from this page.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-1">Community Programs Library</h4>
+              <p className="text-sm text-base-content/70 mb-2">
+                Third-party programs signed for Videomancer 1.x.x. Load without
+                Developer Mode. Available from the community programs repository.
+              </p>
+              <a
+                href="https://github.com/lzxindustries/videomancer-community-programs/releases"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-sm btn-outline"
+              >
+                Community Programs Releases
+              </a>
+            </div>
+          </div>
+          <p className="text-sm text-base-content/70">
+            <strong>Install via SD card:</strong> Copy{' '}
+            <code>.vmprog</code> files to the <code>programs/</code> folder on
+            the microSD card. Power cycle Videomancer to rescan.
+            <br />
+            <strong>Install via LZX Connect:</strong>{' '}
+            <a href="/connect" className="link link-primary">
+              LZX Connect
+            </a>{' '}
+            → Install Program Library transfers files to the card over USB.
+          </p>
         </div>
       )}
     </div>

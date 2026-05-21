@@ -5,11 +5,43 @@ setupPrerequisites:
   - 'Display, monitor, or capture device with HDMI input'
   - 'Two standard full-size HDMI cables'
   - 'Included 12V DC power supply'
+  - 'USB-C data cable (for firmware updates and LZX Connect — charge-only cables will not work)'
 faqItems:
   - question: 'How do I update Videomancer firmware?'
     answer: |
-      Use the LZX Connect desktop app to perform guided firmware updates.
-      Download it from the [LZX Connect](/connect) page.
+      The answer depends on which firmware version is currently installed.
+
+      **If Videomancer is running firmware 0.1.8:** Use the manual BOOT button
+      method for the initial upgrade to 1.x.x. LZX Connect cannot perform this
+      upgrade. Close LZX Connect before starting. See
+      [Firmware Update](/instruments/videomancer/manual/user-manual#firmware-update)
+      in the User Manual for step-by-step instructions.
+
+      **If Videomancer is already running firmware 1.x.x:** Open
+      [LZX Connect](/connect), connect Videomancer via USB-C, and click
+      Check for Updates. Firmware 1.x.x is currently pre-release — enable
+      **Show pre-releases** in LZX Connect settings to see available
+      pre-release updates.
+  - question: 'How do I add new programs to Videomancer?'
+    answer: |
+      Programs are `.vmprog` files loaded from Videomancer's microSD card at
+      boot. Two libraries are available:
+
+      - **Official LZX Program Library** — bundled with firmware or available
+        from the [Downloads](/instruments/videomancer/downloads) page.
+      - **Community Programs Library** — third-party programs signed for
+        firmware 1.x.x, available from the
+        [community programs releases](https://github.com/lzxindustries/videomancer-community-programs/releases).
+
+      To install: copy `.vmprog` files to the `programs/` folder on the SD
+      card, or use [LZX Connect](/connect) → Install Program Library to
+      transfer directly over USB. Videomancer rescans on the next boot.
+  - question: 'Do community programs require Developer Mode?'
+    answer: |
+      No. Signed community `.vmprog` releases from the official community
+      programs repository load without Developer Mode on firmware 1.x.x.
+      Developer Mode is only needed for unsigned programs with version numbers
+      below 1.0.0, typically during active development.
   - question: 'What video formats does Videomancer support?'
     answer: |
       Videomancer supports HDMI, Composite (CVBS), S-Video, Component (YPbPr & RGB SOG)

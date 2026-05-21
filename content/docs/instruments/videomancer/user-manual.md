@@ -605,9 +605,23 @@ Modulation Operator sample rate is latched to the current video format. Values a
 
 **Modulation Operators include:**
 
-- External signals - Audio - Control voltages - Envelopes & Followers - Clocks and Logic
-- Internal generative algorithms - Oscillators - Sequencing & Rhythm - Random & Chaos - Physics - Spatial
-- USB devices - Mouse - Graphics tablet - Game controller - Joystick - Sensor
+- External signals
+  - Audio
+  - Control voltages
+  - Envelopes & Followers
+  - Clocks and Logic
+- Internal generative algorithms
+  - Oscillators
+  - Sequencing & Rhythm
+  - Random & Chaos
+  - Physics
+  - Spatial
+- USB devices
+  - Mouse
+  - Graphics tablet
+  - Game controller
+  - Joystick
+  - Sensor
 
 <img src={videomancer_LCD_modulation_selection} alt="Videomancer Modulation Selection display" />
 *Modulation Selection*
@@ -745,11 +759,18 @@ Videomancer does not have a manual pause button. Stopping playback sends the tim
 
 #### Internal BPM Tempo
 
-To change the **BPM** value numerically: - Press the **MOTION** button - Turn the Rotary Encoder
+To change the **BPM** value numerically:
+- Press the **MOTION** button
+- Turn the Rotary Encoder
 
-To change the **BPM** value rhythmically while playback is stopped: - Press the **MOTION** button - Press the **TAP** button once to begin sampling the tempo - Press the **TAP** button again to finish sampling the tempo
+To change the **BPM** value rhythmically while playback is stopped:
+- Press the **MOTION** button
+- Press the **TAP** button once to begin sampling the tempo
+- Press the **TAP** button again to finish sampling the tempo
 
-To change the **BPM** value rhythmically during playback: - Press the **TAP** button once to begin sampling the tempo - Press the **TAP** button again to finish sampling the tempo
+To change the **BPM** value rhythmically during playback:
+- Press the **TAP** button once to begin sampling the tempo
+- Press the **TAP** button again to finish sampling the tempo
 
 The new tempo takes effect immediately.
 
@@ -870,15 +891,36 @@ Format the microSD card on a personal computer. The FAT32 file system is recomme
 
 #### Functionality
 
-Presently, microSD card storage is limited to Programs and Presets. Additional functionality is planned, and intended to be integrated with the **LZX Connect** desktop application.
+MicroSD card storage supports Programs and Presets. [LZX Connect](/connect) can install program libraries directly to the card over USB.
 
 At boot time, Videomancer scans internal flash storage and microSD card for Program files with the extension `.vmprog`. In the case of duplicate filenames, Videomancer loads the highest version number, or the internally stored version.
 
 :::note
-By default, Videomancer ignores third party Programs or those with version numbers lower than 1.0.0. To load Programs developed by third parties, or currently in alpha or beta development stage, [Developer Mode](/instruments/videomancer/manual/user-manual#developer-mode) must be enabled. See below.
+By default, Videomancer ignores Programs with version numbers lower than 1.0.0 and unsigned third-party Programs. Signed community Programs from the [Community Programs Library](https://github.com/lzxindustries/videomancer-community-programs/releases) load without Developer Mode on firmware 1.x.x. [Developer Mode](/instruments/videomancer/manual/user-manual#developer-mode) is only needed for unsigned Programs or those currently in development (version below 1.0.0).
 :::
 
-Currently, Videomancer recursively scans the entire file system of the microSD card, looking for `.vmprog` files. You can organize Programs in any folder structure you like, and Videomancer will find them. However, be aware that the number of files and folders affects the time it takes for Videomancer to boot up. We recommend keeping the microSD card free of any extraneous data to minimize boot times.
+Videomancer scans the `programs/` folder on the microSD card for `.vmprog` files. Place programs directly in `programs/` or in a vendor subdirectory:
+
+```
+programs/
+  program.vmprog
+  vendor-name/
+    program.vmprog
+```
+
+Vendor subdirectories are optional and useful for keeping library releases organized. Be aware that the number of files and folders affects boot time — keep the microSD card free of extraneous data to minimize boot times.
+
+#### Program Libraries
+
+Two program libraries are available for Videomancer:
+
+**Official LZX Program Library** — Programs curated by LZX Industries, bundled with firmware releases or available as a separate library download from the [Videomancer Downloads](/instruments/videomancer/downloads) page.
+
+**Community Programs Library** — Third-party Programs signed for Videomancer firmware 1.x.x, distributed through the [videomancer-community-programs](https://github.com/lzxindustries/videomancer-community-programs/releases) repository. Signed releases load without Developer Mode.
+
+**Installation method 1 — Manual SD card copy:** Download the library archive, extract it, and copy the `.vmprog` files into the `programs/` folder (or a subdirectory within it) on the microSD card. Power cycle Videomancer to rescan.
+
+**Installation method 2 — LZX Connect:** Open [LZX Connect](/connect), connect Videomancer via USB-C, and select **Install Program Library**. Choose the library archive; LZX Connect copies the files to the SD card and triggers a rescan on the next boot.
 
 #### Presets
 
@@ -898,25 +940,47 @@ Any Programs in development may not have full functionality, will probably have 
 
 ## Firmware Update
 
-Keeping Videomancer updated with the latest firmware ensures access to the latest programs, features, and bug fixes. The process is very simple and only takes a few minutes. It can be performed manually through the computer's file browser, or via the **LZX Connect** desktop application.
+Keeping Videomancer updated with the latest firmware ensures access to the latest programs, features, and bug fixes. Firmware files are available from the [Videomancer Downloads](/instruments/videomancer/downloads) page.
 
-### Requirements
+:::caution Upgrading from firmware 0.1.8?
+The initial upgrade from firmware 0.1.8 to 1.x.x **requires the manual BOOT button method** below. LZX Connect cannot perform this upgrade. Close LZX Connect (and any other software that opens serial ports) before entering BOOT mode — having it open while the device is in BOOT mode can interfere with the process.
+:::
+
+### Manual Update (required for 0.1.8 → 1.x.x; fallback for any version)
+
+This method works for all firmware versions and is the only path for the initial 0.1.8 → 1.x.x upgrade.
+
+**Requirements:**
 
 - Videomancer and power supply
-- Windows, Mac or Linux computer
+- Windows, Mac, or Linux computer
 - USB-A to USB-C cable
 
-### Manual Update Procedure
+**Steps:**
 
-- Download the desired firmware `.UF2` file from the Videomancer [firmware repository](https://github.com/lzxindustries/videomancer-firmware/releases) on GitHub
-- Connect Videomancer to power supply and switch power to the **OFF** position
-- Connect the computer's USB-A port to Videomancer's USB-C **Device** port (not the Host port)
-- Hold down Videomancer **BOOT** button
-- Switch Videomancer power to the **ON** position
-- Release the **BOOT** button
-- A new USB storage device is listed in the computer's file system. It shows up as a Raspberry Pi, because that's the control system for Videomancer's USB ports.
-- Copy the firmware `.UF2` file to the newly detected storage device. Wait a few minutes for the transfer to complete.
-- Videomancer automatically reboots into the new firmware and displays the currently installed version
+1. Download the firmware `.UF2` file from the [Videomancer Downloads](/instruments/videomancer/downloads) page.
+2. Connect Videomancer to its power supply and switch power to the **OFF** position.
+3. Connect the computer's USB port to Videomancer's USB-C **Device** port (not the Host port).
+4. Hold down the **BOOT** button on Videomancer.
+5. Switch Videomancer power to the **ON** position.
+6. Release the **BOOT** button.
+7. A new USB storage device appears in the computer's file system (it shows up as a Raspberry Pi — this is the RP2040 that manages Videomancer's USB ports).
+8. Copy the firmware `.UF2` file to the detected drive. Wait for the transfer to complete.
+9. Videomancer automatically reboots into the new firmware and displays the installed version on the LCD.
+
+### Update via LZX Connect (1.x.x → newer 1.x.x)
+
+If Videomancer is already running firmware 1.x.x, [LZX Connect](/connect) provides a simpler guided update workflow without the BOOT button.
+
+1. Open LZX Connect and connect Videomancer via USB-C.
+2. The device card shows the currently installed firmware version.
+3. Click **Check for Updates** — LZX Connect downloads and installs the latest available release automatically.
+
+:::note Pre-release firmware
+Firmware 1.x.x is currently **pre-release**. If LZX Connect shows no available updates, enable **Show pre-releases** in LZX Connect settings and check again.
+:::
+
+For installation instructions and troubleshooting, see the [LZX Connect Guide](/docs/guides/lzx-connect).
 
 ---
 

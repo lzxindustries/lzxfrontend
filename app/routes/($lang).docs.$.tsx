@@ -187,6 +187,11 @@ export async function loader({params, request}: LoaderFunctionArgs) {
     url: new URL(request.url).origin + `/docs/${splat}`,
   });
 
+  const robots =
+    typeof doc.frontmatter.robots === 'string'
+      ? (doc.frontmatter.robots as string)
+      : null;
+
   return json(
     {
       doc,
@@ -197,6 +202,7 @@ export async function loader({params, request}: LoaderFunctionArgs) {
       currentPath: splat,
       productHubLink,
       seo,
+      robots,
     },
     {
       headers: {
@@ -207,7 +213,11 @@ export async function loader({params, request}: LoaderFunctionArgs) {
 }
 
 export const meta = ({data}: MetaArgs<typeof loader>) => {
-  return seoMetaFromLoaderData(data);
+  const tags = seoMetaFromLoaderData(data) ?? [];
+  if (data?.robots) {
+    tags.push({name: 'robots', content: data.robots});
+  }
+  return tags;
 };
 
 export default function DocsPage() {
