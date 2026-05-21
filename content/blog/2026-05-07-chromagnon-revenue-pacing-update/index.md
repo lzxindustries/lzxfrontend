@@ -43,8 +43,8 @@ Firmware integration on dev hardware continued throughout April, and the Videoma
 | Milestone                             | Previous Target           | New Target               | Status                              |
 | ------------------------------------- | ------------------------- | ------------------------ | ----------------------------------- |
 | RevI prototype fabricated & delivered | Late April–Early May 2026 | Late May–Early June 2026 | PCB orders placing next week        |
-| First demo content                    | May 2026                  | June 2026                | —                                   |
 | Hardware validation & firmware on RevI | May–June 2026            | June–July 2026           | —                                   |
+| First demo content                    | May 2026                  | July 2026                | —                                   |
 | **Production-ready milestone**        | **June 2026**             | **July 2026**            | —                                   |
 | Production order placed & manufacturing | June–July 2026          | July–August 2026         | —                                   |
 | First batch assembly & QC             | August 2026               | September 2026           | —                                   |
