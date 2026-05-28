@@ -1,0 +1,22 @@
+[
+  {
+    "id": "gid://shopify/Metafield/49355613241367",
+    "namespace": "global",
+    "key": "description_tag",
+    "type": "string",
+    "value": "Rack Ears 3U Set",
+    "description": null,
+    "updatedAt": "2026-05-28T17:06:54Z",
+    "compareDigest": "0a397ab820a78156e333ae7d7149274ff7a5fabf85a8a45cd366c2e995553140"
+  },
+  {
+    "id": "gid://shopify/Metafield/49355613208599",
+    "namespace": "global",
+    "key": "title_tag",
+    "type": "string",
+    "value": "Rack Ears 3U Set | LZX Industries",
+    "description": null,
+    "updatedAt": "2026-05-28T17:06:54Z",
+    "compareDigest": "29708ebbe0f019d7d82a69923d6fc71ec7c0066ca78cc12c7a1e9875712293cd"
+  }
+]

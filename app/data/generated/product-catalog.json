@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generatedAt": "2026-05-13T01:16:41.987Z",
+  "generatedAt": "2026-05-28T17:07:08.563Z",
   "source": "catalog/shopify/products",
-  "productCount": 132,
+  "productCount": 133,
   "products": {
     "12v-dc-adapter-3a": {
       "handle": "12v-dc-adapter-3a",
@@ -8305,6 +8305,70 @@
       "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/rack-84hp",
       "createdAt": "2022-07-25T21:12:24Z",
       "updatedAt": "2026-05-13T01:15:43Z"
+    },
+    "rack-ears-3u-set": {
+      "handle": "rack-ears-3u-set",
+      "shopifyProductId": "gid://shopify/Product/8844148277271",
+      "title": "Rack Ears 3U Set",
+      "vendor": "LZX Industries",
+      "productType": "Accessories",
+      "status": "ACTIVE",
+      "tags": [
+        "Accessories",
+        "Active",
+        "Visible"
+      ],
+      "isActive": true,
+      "isVisible": true,
+      "isBStock": false,
+      "subtitle": null,
+      "descriptionHtml": "",
+      "descriptionPlain": "",
+      "seo": {
+        "title": "Rack Ears 3U Set | LZX Industries",
+        "description": "Rack Ears 3U Set"
+      },
+      "options": [
+        {
+          "id": "gid://shopify/ProductOption/11135111233559",
+          "name": "Title",
+          "position": 1,
+          "values": [
+            "Default Title"
+          ]
+        }
+      ],
+      "gallery": [],
+      "variants": [
+        {
+          "shopifyVariantId": "gid://shopify/ProductVariant/45178700595223",
+          "sku": "963004",
+          "title": "Default Title",
+          "position": 1,
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "barcode": null,
+          "inventoryPolicy": "DENY",
+          "taxable": true
+        }
+      ],
+      "metafields": {
+        "global:description_tag": {
+          "type": "string",
+          "value": "Rack Ears 3U Set"
+        },
+        "global:title_tag": {
+          "type": "string",
+          "value": "Rack Ears 3U Set | LZX Industries"
+        }
+      },
+      "onlineStoreUrl": "https://lzx-industries.myshopify.com/products/rack-ears-3u-set",
+      "createdAt": "2026-05-28T15:53:31Z",
+      "updatedAt": "2026-05-28T17:06:54Z"
     },
     "rca-sync-cable": {
       "handle": "rca-sync-cable",

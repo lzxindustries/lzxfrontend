@@ -1,44 +1,14 @@
 {
-  "pulledAt": "2026-05-13T01:16:34.535Z",
+  "pulledAt": "2026-05-28T17:06:57.701Z",
   "apiVersion": "2025-04",
-  "query": "(handle:arch OR handle:chromagnon OR handle:esg3 OR handle:tbc2 OR handle:video-logic OR handle:videomancer)",
-  "productCount": 6,
+  "query": "(handle:rack-ears-3u-set)",
+  "productCount": 1,
   "products": [
     {
-      "id": "gid://shopify/Product/8803159834647",
-      "handle": "arch",
-      "title": "Arch",
-      "updatedAt": "2026-04-25T07:47:58Z"
-    },
-    {
-      "id": "gid://shopify/Product/4319674761239",
-      "handle": "chromagnon",
-      "title": "Chromagnon",
-      "updatedAt": "2026-04-25T07:48:02Z"
-    },
-    {
-      "id": "gid://shopify/Product/6576385884183",
-      "handle": "esg3",
-      "title": "ESG3",
-      "updatedAt": "2026-05-12T20:23:06Z"
-    },
-    {
-      "id": "gid://shopify/Product/1692918218816",
-      "handle": "tbc2",
-      "title": "TBC2",
-      "updatedAt": "2026-05-07T19:08:28Z"
-    },
-    {
-      "id": "gid://shopify/Product/8803161145367",
-      "handle": "video-logic",
-      "title": "Video Logic",
-      "updatedAt": "2026-04-25T07:48:02Z"
-    },
-    {
-      "id": "gid://shopify/Product/8186914373655",
-      "handle": "videomancer",
-      "title": "Videomancer",
-      "updatedAt": "2026-05-12T10:00:38Z"
+      "id": "gid://shopify/Product/8844148277271",
+      "handle": "rack-ears-3u-set",
+      "title": "Rack Ears 3U Set",
+      "updatedAt": "2026-05-28T17:06:54Z"
     }
   ]
 }

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "gid://shopify/ProductVariant/45178700595223",
+    "displayName": "Rack Ears 3U Set - Default Title",
+    "title": "Default Title",
+    "sku": "963004",
+    "barcode": null,
+    "position": 1,
+    "price": "29.00",
+    "compareAtPrice": null,
+    "taxable": true,
+    "inventoryPolicy": "DENY",
+    "updatedAt": "2026-05-28T16:17:38Z",
+    "selectedOptions": [
+      {
+        "name": "Title",
+        "value": "Default Title"
+      }
+    ]
+  }
+]

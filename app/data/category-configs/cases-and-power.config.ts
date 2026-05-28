@@ -91,6 +91,13 @@ const CURATED_CASES_AND_POWER_ENTRIES: readonly CuratedEntry[] = [
     isActive: true,
   },
   {
+    slug: 'rack-ears-3u-set',
+    name: 'Rack Ears 3U Set',
+    subtitle: 'Rack ear mounting hardware for 3U Eurorack cases',
+    imagePath: null,
+    isActive: true,
+  },
+  {
     slug: 'power-entry-8hp',
     name: 'Power Entry 8HP',
     subtitle: 'OEM power entry assembly for 8HP and larger builds',
