@@ -28,6 +28,22 @@ export interface ResolvedRelease {
   allReleasesUrl: string;
 }
 
+/** A single firmware release entry for the downloads table. */
+export interface FirmwareRelease {
+  tagName: string;
+  version: string;
+  publishedAt: string;
+  prerelease: boolean;
+  releaseNotesUrl: string;
+  uf2: {name: string; url: string} | null;
+}
+
+export interface FirmwareReleaseSummary {
+  stableLatest: FirmwareRelease | null;
+  prereleaseLatest: FirmwareRelease | null;
+  allReleases: FirmwareRelease[];
+}
+
 export interface GitHubAsset {
   name: string;
   browser_download_url: string;
@@ -76,6 +92,10 @@ export function toDownload(asset: GitHubAsset): PlatformDownload {
 const releaseCache = new Map<
   string,
   {release: ResolvedRelease; expiry: number}
+>();
+const firmwareReleasesCache = new Map<
+  string,
+  {summary: FirmwareReleaseSummary; expiry: number}
 >();
 const CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
@@ -150,6 +170,95 @@ export function getLatestConnectRelease(): Promise<ResolvedRelease> {
 
 export function getLatestVideomancerRelease(): Promise<ResolvedRelease> {
   return getLatestRelease({tagPrefix: VIDEOMANCER_RELEASE_PREFIX});
+}
+
+/**
+ * Fetches all firmware releases for a given tag prefix, filtering to only
+ * those that include a .uf2 asset. Returns a summary with stableLatest,
+ * prereleaseLatest, and the full list sorted newest-first.
+ */
+export async function getAllFirmwareReleases(
+  tagPrefix: string,
+): Promise<FirmwareReleaseSummary> {
+  const cacheKey = `all:${tagPrefix}`;
+  const cached = firmwareReleasesCache.get(cacheKey);
+  const now = Date.now();
+  if (cached && now < cached.expiry) {
+    return cached.summary;
+  }
+
+  const empty: FirmwareReleaseSummary = {
+    stableLatest: null,
+    prereleaseLatest: null,
+    allReleases: [],
+  };
+
+  try {
+    const response = await fetch(RELEASES_URL, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        'User-Agent': 'LZX-Industries-Website/1.0',
+      },
+    });
+
+    if (!response.ok) {
+      return cached?.summary ?? empty;
+    }
+
+    const releases = (await response.json()) as Array<{
+      tag_name: string;
+      published_at: string;
+      prerelease: boolean;
+      html_url: string;
+      assets: GitHubAsset[];
+    }>;
+
+    const firmwareReleases: FirmwareRelease[] = releases
+      .filter(
+        (r) =>
+          !r.tag_name.startsWith(CONNECT_RELEASE_PREFIX) &&
+          r.assets.some((a) => a.name.toLowerCase().endsWith('.uf2')),
+      )
+      .sort(
+        (a, b) =>
+          Date.parse(b.published_at) - Date.parse(a.published_at),
+      )
+      .map((r) => {
+        const uf2Asset = r.assets.find((a) =>
+          a.name.toLowerCase().endsWith('.uf2'),
+        );
+        // Strip the prefix from the tag to get the display version
+        const version = r.tag_name.startsWith(tagPrefix)
+          ? r.tag_name.slice(tagPrefix.length)
+          : r.tag_name;
+        return {
+          tagName: r.tag_name,
+          version,
+          publishedAt: r.published_at,
+          prerelease: r.prerelease,
+          releaseNotesUrl: r.html_url,
+          uf2: uf2Asset
+            ? {name: uf2Asset.name, url: uf2Asset.browser_download_url}
+            : null,
+        };
+      });
+
+    const stableLatest =
+      firmwareReleases.find((r) => !r.prerelease) ?? null;
+    const prereleaseLatest =
+      firmwareReleases.find((r) => r.prerelease) ?? null;
+
+    const summary: FirmwareReleaseSummary = {
+      stableLatest,
+      prereleaseLatest,
+      allReleases: firmwareReleases,
+    };
+
+    firmwareReleasesCache.set(cacheKey, {summary, expiry: now + CACHE_TTL_MS});
+    return summary;
+  } catch {
+    return cached?.summary ?? empty;
+  }
 }
 
 async function resolveLatestTaggedRelease(

@@ -26,11 +26,10 @@ const remixState = {
     slug: 'videomancer',
   },
   loaderData: {
-    release: {
-      tagName: 'v1.0.0',
-      publishedAt: '2026-01-01T00:00:00.000Z',
-      prerelease: false,
-      body: '',
+    firmwareReleases: null as null | {
+      stableLatest: null;
+      prereleaseLatest: null;
+      allReleases: Array<Record<string, unknown>>;
     },
   },
 };
@@ -47,10 +46,6 @@ vi.mock('@remix-run/react', async () => {
   };
 });
 
-vi.mock('~/components/ReleaseNotes', () => ({
-  ReleaseNotes: () => null,
-}));
-
 function renderWithRouter(ui: React.ReactElement) {
   return render(<MemoryRouter>{ui}</MemoryRouter>);
 }
@@ -62,6 +57,7 @@ describe('Product downloads routes', () => {
       product: {title: 'Videomancer'},
       slug: 'videomancer',
     };
+    remixState.loaderData = {firmwareReleases: null};
 
     renderWithRouter(<InstrumentDownloads />);
 
@@ -133,5 +129,71 @@ describe('Product downloads routes', () => {
     );
 
     expect(screen.getByText('TBC2 Firmware 1.0.6')).toBeTruthy();
+  });
+
+  it('renders GitHub firmware releases when local assets are empty', () => {
+    remixState.outletContext = {
+      assets: [],
+      archiveAssets: [],
+      product: {title: 'Videomancer'},
+      slug: 'videomancer',
+    };
+    remixState.loaderData = {
+      firmwareReleases: {
+        stableLatest: {
+          tagName: '0.1.8',
+          version: '0.1.8',
+          publishedAt: '2026-02-21T00:00:00Z',
+          prerelease: false,
+          releaseNotesUrl: 'https://github.com/lzxindustries/videomancer-firmware/releases/tag/0.1.8',
+          uf2: {
+            name: 'videomancer_0.1.8.uf2',
+            url: 'https://github.com/lzxindustries/videomancer-firmware/releases/download/0.1.8/videomancer_0.1.8.uf2',
+          },
+        } as any,
+        prereleaseLatest: {
+          tagName: 'videomancer/1.0.0-rc.26',
+          version: '1.0.0-rc.26',
+          publishedAt: '2026-05-22T00:00:00Z',
+          prerelease: true,
+          releaseNotesUrl: 'https://github.com/lzxindustries/videomancer-firmware/releases/tag/videomancer%2F1.0.0-rc.26',
+          uf2: {
+            name: 'videomancer-1.0.0-rc.26.uf2',
+            url: 'https://github.com/lzxindustries/videomancer-firmware/releases/download/videomancer/1.0.0-rc.26/videomancer-1.0.0-rc.26.uf2',
+          },
+        } as any,
+        allReleases: [
+          {
+            tagName: 'videomancer/1.0.0-rc.26',
+            version: '1.0.0-rc.26',
+            publishedAt: '2026-05-22T00:00:00Z',
+            prerelease: true,
+            releaseNotesUrl: 'https://github.com/lzxindustries/videomancer-firmware/releases/tag/videomancer%2F1.0.0-rc.26',
+            uf2: {name: 'videomancer-1.0.0-rc.26.uf2', url: 'https://example.com/rc26.uf2'},
+          },
+          {
+            tagName: '0.1.8',
+            version: '0.1.8',
+            publishedAt: '2026-02-21T00:00:00Z',
+            prerelease: false,
+            releaseNotesUrl: 'https://github.com/lzxindustries/videomancer-firmware/releases/tag/0.1.8',
+            uf2: {name: 'videomancer_0.1.8.uf2', url: 'https://example.com/018.uf2'},
+          },
+        ],
+      },
+    };
+
+    renderWithRouter(<InstrumentDownloads />);
+
+    // Hero cards visible (version appears in multiple places — just confirm presence)
+    expect(screen.getAllByText('0.1.8').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('1.0.0-rc.26').length).toBeGreaterThan(0);
+    // Release table
+    expect(screen.getByText('videomancer-1.0.0-rc.26.uf2')).toBeTruthy();
+    expect(screen.getByText('videomancer_0.1.8.uf2')).toBeTruthy();
+    // NOT showing empty state
+    expect(
+      screen.queryByText('No downloads available for Videomancer.'),
+    ).not.toBeInTheDocument();
   });
 });

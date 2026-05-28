@@ -293,3 +293,163 @@ describe('getLatestRelease', () => {
     expect(release.windows).toBeNull();
   });
 });
+
+describe('getAllFirmwareReleases', () => {
+  const originalFetch = globalThis.fetch;
+
+  beforeEach(() => {
+    vi.resetModules();
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  it('returns stable and prerelease heroes and full list filtered to .uf2 assets', async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => [
+        {
+          tag_name: 'videomancer/1.0.0-rc.26',
+          published_at: '2026-05-22T00:00:00Z',
+          prerelease: true,
+          html_url:
+            'https://github.com/lzxindustries/videomancer-firmware/releases/tag/videomancer%2F1.0.0-rc.26',
+          assets: [
+            {
+              name: 'videomancer-1.0.0-rc.26.uf2',
+              browser_download_url:
+                'https://github.com/lzxindustries/videomancer-firmware/releases/download/videomancer/1.0.0-rc.26/videomancer-1.0.0-rc.26.uf2',
+              size: 500000,
+            },
+          ],
+        },
+        {
+          tag_name: '0.1.8',
+          published_at: '2026-02-21T00:00:00Z',
+          prerelease: false,
+          html_url:
+            'https://github.com/lzxindustries/videomancer-firmware/releases/tag/0.1.8',
+          assets: [
+            {
+              name: 'videomancer_0.1.8.uf2',
+              browser_download_url:
+                'https://github.com/lzxindustries/videomancer-firmware/releases/download/0.1.8/videomancer_0.1.8.uf2',
+              size: 490000,
+            },
+          ],
+        },
+        {
+          tag_name: 'connect/1.0.1',
+          published_at: '2026-04-01T00:00:00Z',
+          prerelease: false,
+          html_url: 'https://github.com/example',
+          assets: [
+            {
+              name: 'LZX.Connect_1.0.1.exe',
+              browser_download_url: 'https://example.com/connect.exe',
+              size: 200000,
+            },
+          ],
+        },
+        {
+          tag_name: 'videomancer/1.0.0-rc.25',
+          published_at: '2026-05-15T00:00:00Z',
+          prerelease: true,
+          html_url: 'https://github.com/example/rc25',
+          assets: [],
+        },
+      ],
+    };
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    const {getAllFirmwareReleases: freshGetAll} = await import(
+      '~/data/github-releases'
+    );
+    const summary = await freshGetAll('videomancer/');
+
+    // connect/ release excluded; rc.25 excluded (no .uf2)
+    expect(summary.allReleases).toHaveLength(2);
+
+    // Sorted newest-first
+    expect(summary.allReleases[0].version).toBe('1.0.0-rc.26');
+    expect(summary.allReleases[1].version).toBe('0.1.8');
+
+    // Hero cards
+    expect(summary.prereleaseLatest?.version).toBe('1.0.0-rc.26');
+    expect(summary.stableLatest?.version).toBe('0.1.8');
+
+    // .uf2 asset attached
+    expect(summary.stableLatest?.uf2?.name).toBe('videomancer_0.1.8.uf2');
+    expect(summary.prereleaseLatest?.uf2?.name).toBe(
+      'videomancer-1.0.0-rc.26.uf2',
+    );
+  });
+
+  it('returns empty summary when API returns no matching releases', async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => [
+        {
+          tag_name: 'connect/1.0.1',
+          published_at: '2026-04-01T00:00:00Z',
+          prerelease: false,
+          html_url: 'https://github.com/example',
+          assets: [],
+        },
+      ],
+    };
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    const {getAllFirmwareReleases: freshGetAll} = await import(
+      '~/data/github-releases'
+    );
+    const summary = await freshGetAll('videomancer/');
+
+    expect(summary.allReleases).toHaveLength(0);
+    expect(summary.stableLatest).toBeNull();
+    expect(summary.prereleaseLatest).toBeNull();
+  });
+
+  it('returns empty summary when fetch fails', async () => {
+    globalThis.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
+
+    const {getAllFirmwareReleases: freshGetAll} = await import(
+      '~/data/github-releases'
+    );
+    const summary = await freshGetAll('videomancer/');
+
+    expect(summary.allReleases).toHaveLength(0);
+    expect(summary.stableLatest).toBeNull();
+  });
+
+  it('strips the tag prefix from the version display string', async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => [
+        {
+          tag_name: 'videomancer/1.0.0-rc.26',
+          published_at: '2026-05-22T00:00:00Z',
+          prerelease: true,
+          html_url: 'https://github.com/example',
+          assets: [
+            {
+              name: 'videomancer-1.0.0-rc.26.uf2',
+              browser_download_url: 'https://example.com/rc26.uf2',
+              size: 500000,
+            },
+          ],
+        },
+      ],
+    };
+    globalThis.fetch = vi.fn().mockResolvedValue(mockResponse);
+
+    const {getAllFirmwareReleases: freshGetAll} = await import(
+      '~/data/github-releases'
+    );
+    const summary = await freshGetAll('videomancer/');
+
+    expect(summary.allReleases[0].version).toBe('1.0.0-rc.26');
+    expect(summary.allReleases[0].tagName).toBe('videomancer/1.0.0-rc.26');
+  });
+});
