@@ -1,4 +1,5 @@
 import {useOutletContext} from '@remix-run/react';
+import {Link} from '@remix-run/react';
 import type {MetaArgs} from '@shopify/remix-oxygen';
 import type {Metafield} from '@shopify/hydrogen/storefront-api-types';
 import type {InstrumentLayoutLoaderData} from './($lang).instruments.$slug';
@@ -25,10 +26,149 @@ export function rewriteLegacyDocsLinks(html: string): string {
   return rewritten;
 }
 
+// ── Videomancer static specs ──────────────────────────────────────────────────
+
+function VideomancerSpecs() {
+  return (
+    <div className="mx-auto max-w-3xl px-6 py-8 md:px-10 space-y-10">
+      {/* Physical & power */}
+      <section>
+        <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
+          Physical &amp; Power
+        </h3>
+        <table className="w-full text-sm border-collapse">
+          <thead>
+            <tr className="border-b border-base-300">
+              <th className="text-left py-2 pr-6 font-semibold text-xs uppercase tracking-wide text-base-content/60 w-1/2">
+                Parameter
+              </th>
+              <th className="text-left py-2 font-semibold text-xs uppercase tracking-wide text-base-content/60">
+                Value
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-base-200">
+            <tr>
+              <td className="py-2 pr-6">Dimensions (mm)</td>
+              <td className="py-2">234.2 W &times; 178.1 D &times; 75.44 H</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">Dimensions (inch)</td>
+              <td className="py-2">9.22 &times; 7.01 &times; 2.97</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">Power</td>
+              <td className="py-2">12 V DC, 500 mA typical (750 mA max)</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">Connector</td>
+              <td className="py-2">2.1 mm barrel, center positive</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">Included</td>
+              <td className="py-2">International 12 V power supply</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      {/* Connectors */}
+      <section>
+        <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-3">
+          Connectors
+        </h3>
+        <p className="text-sm mb-3">
+          HDMI In/Out &middot; Multi-format analog In/Out (CVBS, S-Video,
+          YPbPr, RGB SoG) &middot; 1V RGB In/Out &middot; Audio/CV (4 ch)
+          &middot; MIDI In/Out (TRS Type A) &middot; USB{' '}
+          <strong>Device</strong> (PC / firmware / Connect) &middot; USB{' '}
+          <strong>Host</strong> (MIDI/HID) &middot; microSD &middot; Sync out
+          &middot; BOOT
+        </p>
+        <div className="rounded-lg bg-warning/10 border border-warning/30 p-3 text-sm">
+          Firmware updates and LZX Connect use the <strong>Device</strong> port
+          only.
+        </div>
+      </section>
+
+      {/* Supported video formats */}
+      <section>
+        <h3 className="text-xs font-bold uppercase tracking-widest text-base-content/50 mb-4">
+          Supported Video Formats
+        </h3>
+        <table className="w-full text-sm border-collapse mb-4">
+          <thead>
+            <tr className="border-b border-base-300">
+              <th className="text-left py-2 pr-6 font-semibold text-xs uppercase tracking-wide text-base-content/60 w-1/3">
+                Category
+              </th>
+              <th className="text-left py-2 font-semibold text-xs uppercase tracking-wide text-base-content/60">
+                Formats
+              </th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-base-200">
+            <tr>
+              <td className="py-2 pr-6">Interlaced</td>
+              <td className="py-2">NTSC 486i59, PAL 576i50</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">Progressive SD</td>
+              <td className="py-2">480p29, 576p25</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">720p</td>
+              <td className="py-2">720p50, 720p59, 720p60</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">1080i</td>
+              <td className="py-2">1080i50, 1080i59, 1080i60</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-6">1080p</td>
+              <td className="py-2">1080p23, 1080p24, 1080p25, 1080p29, 1080p30</td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="rounded-lg bg-error/10 border border-error/30 p-3 text-sm mb-3">
+          <strong>Not supported:</strong> 1080p50 &middot; 1080p60 &middot;
+          resolution conversion &middot; frame-rate conversion &middot;
+          upscaling/downscaling
+        </div>
+        <p className="text-sm text-base-content/70">
+          Videomancer genlocks to incoming timing and does not convert formats.
+        </p>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <Link
+            to="/instruments/videomancer/support#flow-no-signal"
+            className="btn btn-sm btn-outline"
+          >
+            Troubleshoot: No Signal
+          </Link>
+          <Link
+            to="/instruments/videomancer/manual/user-manual"
+            className="btn btn-sm btn-outline"
+          >
+            Manual: Signal Paths
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
+
 export default function InstrumentSpecs() {
   const data = useOutletContext<InstrumentLayoutLoaderData>();
   const {product, connectors, controls, features} =
     data as unknown as InstrumentHubData;
+  const slug = (data as unknown as InstrumentHubData).slug;
+
+  // Videomancer has a dedicated static specs section
+  if (slug === 'videomancer') {
+    return <VideomancerSpecs />;
+  }
 
   const metafields = (product as any).metafields as
     | (Metafield | null)[]

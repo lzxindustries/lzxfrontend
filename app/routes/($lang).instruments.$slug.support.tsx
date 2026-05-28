@@ -13,6 +13,7 @@ import {
   TroubleshootingFlow,
   getTroubleshootingTree,
 } from '~/components/TroubleshootingFlow';
+import {VideomancerGuidedFlows} from '~/components/VideomancerGuidedFlows';
 
 export async function loader({params}: LoaderFunctionArgs) {
   const canonical = getCanonicalSlug(params.slug ?? '') ?? params.slug ?? '';
@@ -107,11 +108,18 @@ export default function InstrumentSupport() {
       />
 
       {/* Guided Troubleshooting */}
-      {troubleshootingTree && (
+      {slug === 'videomancer' ? (
         <section className="mb-8">
           <h3 className="text-lg font-bold mb-3">Troubleshoot an Issue</h3>
-          <TroubleshootingFlow nodes={troubleshootingTree} />
+          <VideomancerGuidedFlows />
         </section>
+      ) : (
+        troubleshootingTree && (
+          <section className="mb-8">
+            <h3 className="text-lg font-bold mb-3">Troubleshoot an Issue</h3>
+            <TroubleshootingFlow nodes={troubleshootingTree} />
+          </section>
+        )
       )}
 
       {/* FAQ */}
@@ -120,9 +128,12 @@ export default function InstrumentSupport() {
           <h3 className="text-lg font-bold mb-3">Frequently Asked Questions</h3>
           <div className="space-y-1">
             {faqItems.map((item, i) => (
-              <Disclosure key={i}>
+              <Disclosure key={item.id ?? i}>
                 {({open}) => (
-                  <div className="border-b border-base-300">
+                  <div
+                    id={item.id}
+                    className="border-b border-base-300"
+                  >
                     <Disclosure.Button className="flex w-full items-center justify-between py-3 text-left">
                       <span className="text-sm font-medium">
                         {item.question}
@@ -155,7 +166,7 @@ export default function InstrumentSupport() {
       )}
 
       {/* Contact */}
-      <section className="rounded-xl border border-base-300 bg-base-200 p-6">
+      <section id="contact" className="rounded-xl border border-base-300 bg-base-200 p-6">
         <h3 className="text-lg font-bold mb-3">Contact Us</h3>
         <p className="text-sm text-base-content/70 mb-4">
           Can&apos;t find what you need? Our team is here to help.

@@ -15,6 +15,8 @@ import matter from 'gray-matter';
 import {getMarkdownToHTML} from '~/lib/markdown';
 
 export interface SupportFaqItem {
+  /** Optional stable anchor ID (e.g. 'faq-firmware-update') for deep-link targets. */
+  id?: string;
   question: string;
   /** Pre-rendered HTML (from markdown source). */
   answer: string;
@@ -28,7 +30,7 @@ export interface SupportContent {
 interface SupportFrontmatter {
   slug?: string;
   setupPrerequisites?: string[];
-  faqItems?: Array<{question: string; answer: string}>;
+  faqItems?: Array<{id?: string; question: string; answer: string}>;
 }
 
 const supportFiles = import.meta.glob<string>('../../content/support/*.md', {
@@ -73,6 +75,7 @@ export function loadSupportContent(slug: string): SupportContent {
   const result: SupportContent = {
     setupPrerequisites: frontmatter.setupPrerequisites,
     faqItems: frontmatter.faqItems?.map((item) => ({
+      id: item.id,
       question: item.question,
       answer: getMarkdownToHTML(normalizeAnswer(item.answer)),
     })),
