@@ -1,7 +1,7 @@
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 
-const PUBLIC_COMMUNITY = join(process.cwd(), 'public', 'community');
+const PUBLIC_FORUM = join(process.cwd(), 'public', 'forum');
 
 function contentType(assetPath: string): string {
   const lower = assetPath.toLowerCase();
@@ -19,10 +19,10 @@ function contentType(assetPath: string): string {
 }
 
 /**
- * Serve prebuilt Discourse archive files from public/community/.
+ * Serve prebuilt Discourse archive files from public/forum/.
  * Resource routes call this so archive HTML is not wrapped in storefront Layout.
  */
-export async function loadCommunityArchiveAsset(
+export async function loadForumArchiveAsset(
   request: Request,
   relativePath: string,
 ): Promise<Response> {
@@ -31,7 +31,7 @@ export async function loadCommunityArchiveAsset(
 
   if (process.env.NODE_ENV === 'development') {
     try {
-      const body = await readFile(join(PUBLIC_COMMUNITY, assetPath));
+      const body = await readFile(join(PUBLIC_FORUM, assetPath));
       return new Response(body, {
         headers: {
           'Content-Type': contentType(assetPath),
@@ -43,7 +43,7 @@ export async function loadCommunityArchiveAsset(
     }
   }
 
-  const url = new URL(`/community/${assetPath}`, request.url);
+  const url = new URL(`/forum/${assetPath}`, request.url);
   const response = await fetch(url.toString());
   if (response.ok) {
     return new Response(response.body, {
@@ -52,5 +52,5 @@ export async function loadCommunityArchiveAsset(
     });
   }
 
-  throw new Response('Community archive page not found', {status: 404});
+  throw new Response('Forum archive page not found', {status: 404});
 }

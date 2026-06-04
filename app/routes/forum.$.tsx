@@ -1,5 +1,5 @@
 import type {LoaderFunctionArgs} from '@shopify/remix-oxygen';
-import {loadCommunityArchiveAsset} from '~/lib/communityArchive.server';
+import {loadForumArchiveAsset} from '~/lib/forumArchive.server';
 
 export async function loader({request, params}: LoaderFunctionArgs) {
   const splat = params['*'] ?? '';
@@ -9,5 +9,5 @@ export async function loader({request, params}: LoaderFunctionArgs) {
   } else if (!path.split('/').pop()?.includes('.')) {
     path = `${path}/index.html`;
   }
-  return loadCommunityArchiveAsset(request, path);
+  return loadForumArchiveAsset(request, path);
 }

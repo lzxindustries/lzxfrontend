@@ -259,7 +259,7 @@ export function getLocaleFromRequest(request: Request): I18nLocale {
   const firstPathPart =
     '/' + url.pathname.substring(1).split('/')[0].toLowerCase();
 
-  if (firstPathPart === '/community') {
+  if (firstPathPart === '/forum') {
     return {...countries['default'], pathPrefix: ''};
   }
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Build the LZX Discourse static archive into public/community/.
+ * Build the LZX Discourse static archive into public/forum/.
  *
- * Requires the KiCad workspace scrape at ../kicad/archive/discourse.
+ * Requires the KiCad workspace scrape at ../lzxindustries/kicad/archive/discourse.
  */
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
@@ -23,5 +23,5 @@ if (result.status !== 0) {
   process.exit(result.status ?? 1);
 }
 
-console.log('\nCommunity archive ready under public/community/');
-console.log('Preview: yarn dev → http://localhost:3000/community/');
+console.log('\nForum archive ready under public/forum/');
+console.log('Preview: yarn dev → http://localhost:3000/forum/');

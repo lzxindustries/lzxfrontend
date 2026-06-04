@@ -164,7 +164,7 @@ export function Header({
           {/* </ul>
           </li> */}
         </ul>
-        <a className="px-2" href="/community" title="Community forum archive">
+        <a className="px-2" href="/forum" title="Community forum archive">
           <MdForum size={iconSize} />
         </a>
         <a
