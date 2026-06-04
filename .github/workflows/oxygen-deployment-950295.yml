@@ -38,8 +38,15 @@ jobs:
       - name: Install dependencies
         id: install-dependencies
         run: yarn
+      - name: Configure AWS credentials
+        if: ${{ secrets.AWS_ACCESS_KEY_ID != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
       - name: Sync forum archive from S3
-        if: env.FORUM_ARCHIVE_S3_URI != ''
+        if: ${{ secrets.FORUM_ARCHIVE_S3_URI != '' }}
         env:
           FORUM_ARCHIVE_S3_URI: ${{ secrets.FORUM_ARCHIVE_S3_URI }}
         run: |
