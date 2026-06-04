@@ -13,9 +13,19 @@ function contentType(assetPath: string): string {
   return 'text/html; charset=utf-8';
 }
 
+const DEFAULT_FORUM_CDN =
+  'https://lzx-community-archive-prod.s3.us-east-1.amazonaws.com/forum';
+
+function forumCdnBase(): string {
+  const fromEnv =
+    typeof process !== 'undefined' && process.env?.FORUM_ARCHIVE_PUBLIC_BASE
+      ? process.env.FORUM_ARCHIVE_PUBLIC_BASE
+      : '';
+  return (fromEnv || DEFAULT_FORUM_CDN).replace(/\/$/, '');
+}
+
 /**
- * Serve prebuilt Discourse archive files from public/forum/.
- * Resource routes call this so archive HTML is not wrapped in storefront Layout.
+ * Serve prebuilt Discourse archive (production: S3/HTTPS; dev: local public/forum).
  */
 export async function loadForumArchiveAsset(
   request: Request,
@@ -24,26 +34,35 @@ export async function loadForumArchiveAsset(
   const safe = relativePath.replace(/^\/+/, '').replace(/\.\./g, '');
   const assetPath = safe || 'index.html';
 
-  try {
-    const {readFile} = await import('node:fs/promises');
-    const {join} = await import('node:path');
-    const body = await readFile(join(process.cwd(), 'public', 'forum', assetPath));
-    return new Response(body, {
-      headers: {
-        'Content-Type': contentType(assetPath),
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
-  } catch {
-    // Oxygen may also expose static assets; last resort same-origin fetch
+  if (process.env.NODE_ENV === 'development') {
+    try {
+      const {readFile} = await import('node:fs/promises');
+      const {join} = await import('node:path');
+      const body = await readFile(
+        join(process.cwd(), 'public', 'forum', assetPath),
+      );
+      return new Response(body, {
+        headers: {
+          'Content-Type': contentType(assetPath),
+          'Cache-Control': 'public, max-age=60',
+        },
+      });
+    } catch {
+      // fall through to CDN
+    }
   }
 
-  const url = new URL(`/forum/${assetPath}`, request.url);
-  const response = await fetch(url.toString());
+  const cdnUrl = `${forumCdnBase()}/${assetPath}`;
+  const response = await fetch(cdnUrl);
   if (response.ok) {
     return new Response(response.body, {
       status: response.status,
-      headers: response.headers,
+      headers: {
+        'Content-Type':
+          response.headers.get('Content-Type') ||
+          contentType(assetPath),
+        'Cache-Control': 'public, max-age=3600',
+      },
     });
   }
 
