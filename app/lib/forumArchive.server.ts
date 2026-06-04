@@ -24,22 +24,18 @@ export async function loadForumArchiveAsset(
   const safe = relativePath.replace(/^\/+/, '').replace(/\.\./g, '');
   const assetPath = safe || 'index.html';
 
-  if (process.env.NODE_ENV === 'development') {
-    try {
-      const {readFile} = await import('node:fs/promises');
-      const {join} = await import('node:path');
-      const body = await readFile(
-        join(process.cwd(), 'public', 'forum', assetPath),
-      );
-      return new Response(body, {
-        headers: {
-          'Content-Type': contentType(assetPath),
-          'Cache-Control': 'public, max-age=60',
-        },
-      });
-    } catch {
-      // fall through to origin fetch
-    }
+  try {
+    const {readFile} = await import('node:fs/promises');
+    const {join} = await import('node:path');
+    const body = await readFile(join(process.cwd(), 'public', 'forum', assetPath));
+    return new Response(body, {
+      headers: {
+        'Content-Type': contentType(assetPath),
+        'Cache-Control': 'public, max-age=3600',
+      },
+    });
+  } catch {
+    // Oxygen may also expose static assets; last resort same-origin fetch
   }
 
   const url = new URL(`/forum/${assetPath}`, request.url);
