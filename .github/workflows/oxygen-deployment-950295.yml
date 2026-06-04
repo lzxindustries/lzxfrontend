@@ -38,18 +38,16 @@ jobs:
       - name: Install dependencies
         id: install-dependencies
         run: yarn
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
       - name: Sync forum archive from S3
+        continue-on-error: true
         env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION || 'us-east-1' }}
           FORUM_ARCHIVE_S3_URI: ${{ secrets.FORUM_ARCHIVE_S3_URI }}
         run: |
-          if [ -z "$FORUM_ARCHIVE_S3_URI" ]; then
-            echo "FORUM_ARCHIVE_S3_URI not set — skipping forum sync"
+          if [ -z "$FORUM_ARCHIVE_S3_URI" ] || [ -z "$AWS_ACCESS_KEY_ID" ]; then
+            echo "::warning::Forum S3 sync skipped — set FORUM_ARCHIVE_S3_URI, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
             exit 0
           fi
           aws s3 sync "$FORUM_ARCHIVE_S3_URI" public/forum --delete
