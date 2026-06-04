@@ -1,8 +1,3 @@
-import {readFile} from 'node:fs/promises';
-import {join} from 'node:path';
-
-const PUBLIC_FORUM = join(process.cwd(), 'public', 'forum');
-
 function contentType(assetPath: string): string {
   const lower = assetPath.toLowerCase();
   if (lower.endsWith('.css')) return 'text/css; charset=utf-8';
@@ -31,7 +26,11 @@ export async function loadForumArchiveAsset(
 
   if (process.env.NODE_ENV === 'development') {
     try {
-      const body = await readFile(join(PUBLIC_FORUM, assetPath));
+      const {readFile} = await import('node:fs/promises');
+      const {join} = await import('node:path');
+      const body = await readFile(
+        join(process.cwd(), 'public', 'forum', assetPath),
+      );
       return new Response(body, {
         headers: {
           'Content-Type': contentType(assetPath),
