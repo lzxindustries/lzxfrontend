@@ -61,7 +61,7 @@ jobs:
           else
             FLAGS="--preview"
           fi
-          BUILD_CMD="yarn run build"
+          BUILD_CMD='yarn run build && (test -d public/forum && mkdir -p dist/client/forum && cp -a public/forum/. dist/client/forum/ && echo "Copied forum into dist/client/forum") || echo "::warning::public/forum missing"'
           if [ -f public/forum/index.html ]; then
             echo "Forum archive present in public/forum"
           else
