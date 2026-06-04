@@ -10,7 +10,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy to Oxygen
-    timeout-minutes: 30
+    timeout-minutes: 45
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -61,11 +61,12 @@ jobs:
           else
             FLAGS="--preview"
           fi
-          BUILD_CMD='yarn run build && (test -d public/forum && mkdir -p dist/client/forum && cp -a public/forum/. dist/client/forum/ && echo "Copied forum into dist/client/forum") || echo "::warning::public/forum missing"'
+          # Forum HTML is served at runtime from S3 CDN (forumArchive.server.ts), not bundled in dist.
+          BUILD_CMD='yarn run build'
           if [ -f public/forum/index.html ]; then
-            echo "Forum archive present in public/forum"
+            echo "Forum archive synced to public/forum (runtime CDN; not copied into dist)"
           else
-            echo "::warning::public/forum missing — /forum will 404 until archive is synced (S3 secret or local deploy)"
+            echo "::warning::public/forum missing — CI S3 sync may have failed"
           fi
           yarn run shopify hydrogen deploy --build-command "$BUILD_CMD" $FLAGS
         env:
