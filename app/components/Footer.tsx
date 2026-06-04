@@ -24,12 +24,7 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Resources</span>
-          <a
-            className="link link-hover"
-            target="_blank"
-            href="https://community.lzxindustries.net"
-            rel="noreferrer"
-          >
+          <a className="link link-hover" href="/community">
             Community Forum
           </a>
           <a

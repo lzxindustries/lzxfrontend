@@ -60,10 +60,7 @@ export function Hero({
         </Link>{' '}
         to add video output to your EuroRack audio synthesizer. When you&apos;d
         like to engage with our community, visit our{' '}
-        <Link
-          className={' underline text-blue-500'}
-          to={`https://community.lzxindustries.net`}
-        >
+        <Link className={' underline text-blue-500'} to="/community">
           forum
         </Link>
         ,{' '}

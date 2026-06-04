@@ -164,12 +164,7 @@ export function Header({
           {/* </ul>
           </li> */}
         </ul>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://community.lzxindustries.net"
-          rel="noreferrer"
-        >
+        <a className="px-2" href="/community" title="Community forum archive">
           <MdForum size={iconSize} />
         </a>
         <a
