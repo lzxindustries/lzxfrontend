@@ -14,7 +14,7 @@ function contentType(assetPath: string): string {
 }
 
 const DEFAULT_FORUM_CDN =
-  'https://lzx-community-archive-prod.s3.us-east-1.amazonaws.com/forum';
+  'https://lzx-community-archive-prod.s3.us-east-2.amazonaws.com/forum';
 
 function forumCdnBase(): string {
   const fromEnv =
