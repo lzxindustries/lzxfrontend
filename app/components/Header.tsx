@@ -3,281 +3,151 @@ import {
   FaShoppingCart,
   FaSearch,
   FaUser,
-  FaInstagram,
-  FaDiscord,
-  FaTwitch,
-  FaYoutube,
-  FaFacebook,
+  FaUserCheck,
+  FaTimes,
 } from 'react-icons/fa';
-import {MdForum} from 'react-icons/md';
+import {useEffect, useState} from 'react';
 import Logo from './Logo';
+import {PredictiveSearch} from './PredictiveSearch';
+import {DocsSearch} from './DocsSearch';
+import {DesktopMegaMenu, MobileMegaMenu} from './MegaMenu';
+import {ThemeToggle} from './ThemeToggle';
 
 export function Header({
-  cartCount = 13,
+  cartCount = 0,
   url = '',
+  isLoggedIn = false,
+  onCartClick,
 }: {
   cartCount: number;
   url?: string;
+  isLoggedIn?: boolean;
+  onCartClick?: () => void;
 }) {
-  const iconSize = 16;
-  const logoSize = 24;
-  const isPatches = url.includes('/patches');
-  const isModules = url.includes('/modules');
+  // 20px gives each icon button a visible ~44x44 hit area under DaisyUI's
+  // default `btn` padding; matches WCAG AAA touch-target guidance.
+  const iconSize = 20;
+  const logoSize = 28;
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [mobileMenuOpen]);
+
   const isCart = url.includes('/cart');
   const isAccount = url.includes('/account');
-  const isSearch = url.includes('/search');
-  const isGettingStarted = url.includes('https://docs.lzxindustries.net');
-  const isDealers = url.includes('/dealers');
-  const isBlog = url.includes('https://docs.lzxindustries.net/blog');
-  const isInStock = url.includes('/?available=true');
-  const isCatalog =
-    !isPatches &&
-    !isModules &&
-    !isCart &&
-    !isAccount &&
-    !isSearch &&
-    !isGettingStarted &&
-    !isInStock &&
-    !isDealers &&
-    !isBlog;
 
   return (
-    <div className="navbar bg-base-100 sticky top-0 z-50">
+    <div className="navbar bg-base-100 sticky top-0 z-50" data-testid="header">
       <div className="navbar-start">
-        <div className="dropdown">
-          <button tabIndex={-1} className="btn btn-ghost lg:hidden">
+        <button
+          className="btn btn-ghost lg:hidden"
+          aria-label="Open menu"
+          data-testid="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <FaTimes size={iconSize} />
+          ) : (
             <FaList size={iconSize} />
-          </button>
-          <ul
-            tabIndex={-1}
-            className="menu menu-compact dropdown-content mt-0 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li key="catalog">
-              <a className={isCatalog ? 'active' : ''} href="/">
-                Catalog
-              </a>
-            </li>
-            {/* <li><a className={isInStock ? "active" : ""} href="/?available=true">In Stock</a></li> */}
-            <li key="patches">
-              <a className={isPatches ? 'active' : ''} href="/patches">
-                Patches
-              </a>
-            </li>
-            {/* <li tabIndex={0}>
-              <a className="justify-between">
-                Docs
-                <FaAngleRight size={iconSize} />
-              </a>
-              <ul className="p-2"> */}
-            <li key="getting-started">
-              <a
-                className={isGettingStarted ? 'active' : ''}
-                href="https://docs.lzxindustries.net"
-              >
-                Docs
-              </a>
-            </li>
-            {/* <li key="modules">
-              <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
-                Module List
-              </a>
-            </li> */}
-            <li key="dealers">
-              <a className={isDealers ? 'active' : ''} href="/dealers">
-                Dealers
-              </a>
-            </li>
-            <li key="blog">
-              <a
-                className={isBlog ? 'active' : ''}
-                href="https://docs.lzxindustries.net/blog"
-              >
-                Blog
-              </a>
-            </li>
-            {/* <li key="firmware">
-              <a
-                className={''}
-                href="https://github.com/lzxindustries/firmware"
-              >
-                Firmware
-              </a>
-            </li> */}
-            {/* </ul>
-            </li> */}
-          </ul>
-        </div>
-        <a className="px-2" href="/">
+          )}
+        </button>
+        <a className="px-2" href="/" aria-label="LZX Industries home">
           <Logo size={logoSize} />
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-2">
-          <li>
-            <a className={isCatalog ? 'active' : ''} href="/">
-              Catalog
-            </a>
-          </li>
-          {/* <li><a className={isInStock ? "active" : ""} href="/?available=true">In Stock</a></li> */}
-          <li>
-            <a className={isPatches ? 'active' : ''} href="/patches">
-              Patches
-            </a>
-          </li>
-          {/* <li tabIndex={0}>
-            <a>
-              Docs
-              <FaAngleDown size={iconSize} />
-            </a>
-            <ul className="p-2"> */}
-          <li>
-            <a
-              className={isGettingStarted ? 'active' : ''}
-              href="https://docs.lzxindustries.net"
-            >
-              Docs
-            </a>
-          </li>
-          {/* <li>
-            <a className={isModules ? 'active' : ''} href="https://docs.lzxindustries.net/docs/modules/module-list">
-              Module List
-            </a>
-          </li> */}
-          <li>
-            <a className={isDealers ? 'active' : ''} href="/dealers">
-              Dealers
-            </a>
-          </li>
-          <li>
-            <a
-              className={isBlog ? 'active' : ''}
-              href="https://docs.lzxindustries.net/blog"
-            >
-              Blog
-            </a>
-          </li>
-          {/* <li>
-            <a className={''} href="https://github.com/lzxindustries/firmware">
-              Firmware
-            </a>
-          </li> */}
-          {/* </ul>
-          </li> */}
-        </ul>
-        <a className="px-2" href="/forum" title="Community forum archive">
-          <MdForum size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.facebook.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaFacebook size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.instagram.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaInstagram size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://discord.gg/7xzD4XzhGn"
-          rel="noreferrer"
-        >
-          <FaDiscord size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.twitch.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaTwitch size={iconSize} />
-        </a>
-        <a
-          className="px-2"
-          target="_blank"
-          href="https://www.youtube.com/lzxindustries"
-          rel="noreferrer"
-        >
-          <FaYoutube size={iconSize} />
-        </a>
+      <div className="navbar-center">
+        <DesktopMegaMenu url={url} />
       </div>
       <div className="navbar-end">
-        {/* <div className="form-control px-2">
-          <input type="text" placeholder="Search" className="input input-bordered px-6" />
-        </div> */}
-
         <ul className="menu menu-horizontal px-2">
           <li>
-            <a className={isSearch ? 'active' : ''} href="/search">
+            <ThemeToggle iconSize={iconSize} />
+          </li>
+          <li>
+            <button
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search"
+              data-testid="search-toggle"
+            >
               <FaSearch size={iconSize} />
+            </button>
+          </li>
+          <li>
+            <a
+              className={isAccount ? 'active' : ''}
+              href="/account"
+              aria-label={isLoggedIn ? 'My Account' : 'Sign in'}
+            >
+              {isLoggedIn ? (
+                <FaUserCheck size={iconSize} />
+              ) : (
+                <FaUser size={iconSize} />
+              )}
             </a>
           </li>
           <li>
-            <a className={isAccount ? 'active' : ''} href="/account">
-              <FaUser size={iconSize} />
-            </a>
-          </li>
-          <li>
-            <a className={isCart ? ' active' : ''} href="/cart">
+            <button
+              type="button"
+              className={`indicator ${isCart ? 'active' : ''}`}
+              onClick={onCartClick}
+              aria-label={
+                cartCount > 0 ? `Cart, ${cartCount} items` : 'Cart, empty'
+              }
+            >
+              <span className="indicator-item badge badge-sm">{cartCount}</span>
               <FaShoppingCart size={iconSize} />
-            </a>
+            </button>
           </li>
-          {/* {cartCount !== 0 ? <span className="badge badge-sm indicator-item">{cartCount}</span> : ''} */}
-          <span className="badge badge-sm indicator-item">{cartCount}</span>
         </ul>
       </div>
+
+      {/* Mobile menu drawer */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-x-0 top-nav bottom-0 z-[80] lg:hidden">
+          <button
+            type="button"
+            className="absolute inset-0 h-full w-full cursor-default appearance-none border-0 bg-black/30 p-0"
+            aria-label="Close menu"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <div className="relative w-64 max-h-full overflow-y-auto bg-base-100 shadow-xl">
+            <MobileMegaMenu
+              url={url}
+              onNavigate={() => setMobileMenuOpen(false)}
+            />
+          </div>
+        </div>
+      )}
+
+      {searchOpen && (
+        <div className="fixed inset-0 z-[90] bg-black/50 flex items-start justify-center pt-20">
+          <div className="w-full max-w-lg mx-4">
+            <div className="flex justify-end mb-2">
+              <button
+                onClick={() => setSearchOpen(false)}
+                className="btn btn-ghost btn-circle min-h-11 h-11 w-11"
+                aria-label="Close search"
+              >
+                <FaTimes size={iconSize} />
+              </button>
+            </div>
+            <PredictiveSearch onClose={() => setSearchOpen(false)} />
+            <div className="mt-4 rounded-lg bg-base-100 p-4 shadow">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide opacity-60">
+                Search docs and blog
+              </p>
+              <DocsSearch />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
-// function Header({ title, menu }: { title: string; menu?: EnhancedMenu }) {
-//   const isHome = useIsHomePath();
-
-//   const {
-//     isOpen: isCartOpen,
-//     openDrawer: openCart,
-//     closeDrawer: closeCart,
-//   } = useDrawer();
-
-//   const {
-//     isOpen: isMenuOpen,
-//     openDrawer: openMenu,
-//     closeDrawer: closeMenu,
-//   } = useDrawer();
-
-//   const addToCartFetchers = useCartFetchers('ADD_TO_CART');
-
-//   // toggle cart drawer when adding to cart
-//   useEffect(() => {
-//     if (isCartOpen || !addToCartFetchers.length) return;
-//     openCart();
-//   }, [addToCartFetchers, isCartOpen, openCart]);
-
-//   return (
-//     <>
-//       <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
-//       {menu && (
-//         <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu} />
-//       )}
-//       <DesktopHeader
-//         isHome={isHome}
-//         title={title}
-//         menu={menu}
-//         openCart={openCart}
-//       />
-//       <MobileHeader
-//         isHome={isHome}
-//         title={title}
-//         openCart={openCart}
-//         openMenu={openMenu}
-//       />
-//     </>
-//   );
-// }

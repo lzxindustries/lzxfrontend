@@ -1,21 +1,19 @@
-import {
-  FaInstagram,
-  FaDiscord,
-  FaTwitch,
-  FaYoutube,
-  FaFacebook,
-} from 'react-icons/fa';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import {CountrySelector} from './CountrySelector';
 import Logo from './Logo';
+import {SOCIAL_LINKS} from '~/data/social-links';
 
 export function Footer() {
   const iconSize = 24;
   return (
     <div>
-      <footer className="footer p-10 bg-base-200 text-base-content">
-        <div>
+      <footer
+        className="footer p-10 bg-base-200 text-base-content"
+        data-testid="footer"
+      >
+        <div className="max-w-full overflow-hidden">
           <span className="footer-title">Subscribe to our newsletter</span>
+          {/* @ts-expect-error react-mailchimp-subscribe types incompatible with React 18 */}
           <MailchimpSubscribe url="https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0" />
           {/* <div className="form-control">
             <input type="text" placeholder="Your e-mail" className="input w-full max-w-xs" />
@@ -24,8 +22,35 @@ export function Footer() {
         </div>
         <div>
           <span className="footer-title">Resources</span>
+          <a className="link link-hover" href="/instruments/videomancer">
+            Videomancer Product Page
+          </a>
+          <a
+            className="link link-hover"
+            href="/instruments/videomancer/manual/user-manual"
+          >
+            Videomancer Docs
+          </a>
+          <a className="link link-hover" href="/modules">
+            All Modules
+          </a>
+          <a className="link link-hover" href="/blog">
+            Blog
+          </a>
+          <a className="link link-hover" href="/artists">
+            Artists
+          </a>
+          <a className="link link-hover" href="/about">
+            About
+          </a>
+          <a className="link link-hover" href="/downloads">
+            Downloads
+          </a>
+          <a className="link link-hover" href="/connect">
+            LZX Connect
+          </a>
           <a className="link link-hover" href="/forum">
-            Community Forum
+            Community Forum Archive
           </a>
           <a
             className="link link-hover"
@@ -56,70 +81,75 @@ export function Footer() {
           </a>
         </div>
         <div>
+          <span className="footer-title">Explore</span>
+          <a className="link link-hover" href="/docs/guides/glossary">
+            Glossary
+          </a>
+          <a className="link link-hover" href="/systems">
+            Starter Systems
+          </a>
+          <a className="link link-hover" href="/b-stock">
+            B-Stock
+          </a>
+          <a className="link link-hover" href="/accessories">
+            Accessories
+          </a>
+          <a className="link link-hover" href="/legacy">
+            Legacy Modules
+          </a>
+        </div>
+        <div>
           <span className="footer-title">Policies</span>
           <a className="link link-hover" href="/policies/terms-of-service">
             Terms of Service
           </a>
+          <a
+            className="link link-hover"
+            href="/policies/terms-of-service#warranty"
+          >
+            Warranty
+          </a>
           <a className="link link-hover" href="/policies/refund-policy">
             Refund Policy
           </a>
+          <a className="link link-hover" href="/policies/shipping-policy">
+            Shipping Policy
+          </a>
+          <a className="link link-hover" href="/policies/privacy-policy">
+            Privacy Policy
+          </a>
         </div>
         <div>
-          <span className="footer-title w-64">Country</span>
+          <span className="footer-title">Country</span>
           <CountrySelector />
-          <div className="h-8" />
           {/* <select className="select select-bordered w-full max-w-xs">
             <option selected>United States</option>
             <option>Canada</option>
           </select> */}
         </div>
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <footer className="footer px-6 sm:px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
         <div className="items-center grid-flow-col">
           <Logo size={iconSize} />
           <p>
-            © 2023 LZX Industries LLC <br />
+            © 2026 LZX Industries LLC <br />
             Creative instruments for video synthesis and analog image
             processing.
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
-          <div className="grid grid-flow-col gap-4">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/lzxindustries"
-              rel="noreferrer"
-            >
-              <FaFacebook size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/lzxindustries"
-              rel="noreferrer"
-            >
-              <FaInstagram size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://discord.gg/7xzD4XzhGn"
-              rel="noreferrer"
-            >
-              <FaDiscord size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.twitch.com/lzxindustries"
-              rel="noreferrer"
-            >
-              <FaTwitch size={iconSize} />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.youtube.com/lzxindustries"
-              rel="noreferrer"
-            >
-              <FaYoutube size={iconSize} />
-            </a>
+          <div className="flex flex-wrap gap-4 justify-start md:justify-end">
+            {SOCIAL_LINKS.map(({id, href, ariaLabel, icon: Icon}) => (
+              <a
+                key={id}
+                target="_blank"
+                href={href}
+                rel="noreferrer"
+                aria-label={ariaLabel}
+              >
+                <Icon size={iconSize} />
+              </a>
+            ))}
           </div>
         </div>
       </footer>

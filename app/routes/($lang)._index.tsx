@@ -316,9 +316,7 @@ export default function Home() {
               </p>
             </Link>
             <a
-              href="https://community.lzxindustries.net"
-              target="_blank"
-              rel="noreferrer"
+              href="/forum"
               className="card bg-base-200 hover:bg-base-300 transition-colors p-6 text-center"
             >
               <FaComments className="mx-auto mb-3 text-3xl text-primary" />

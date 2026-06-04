@@ -52,19 +52,14 @@ const MENU_GROUPS: MegaMenuGroup[] = [
     label: 'Community',
     items: [
       {
-        label: 'Community Hub',
-        to: '/community',
+        label: 'Forum Archive',
+        to: '/forum',
         highlight: true,
-        description: 'Socials, forum, Discord, and newsletter',
+        description: 'Read-only archive of the LZX community forum',
       },
       {label: 'Blog', to: '/blog'},
       {label: 'Patches', to: '/patches'},
       {label: 'Artists', to: '/artists'},
-      {
-        label: 'Forum',
-        to: 'https://community.lzxindustries.net',
-        external: true,
-      },
     ],
   },
   {

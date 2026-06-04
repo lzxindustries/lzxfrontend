@@ -84,7 +84,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const COMMUNITY_LINKS = {
-  forum: 'https://community.lzxindustries.net',
+  forum: 'https://lzxindustries.net/forum/',
   newsletterSignup:
     'https://lzxindustries.us11.list-manage.com/subscribe/post?u=7da8b11822c70e5b64240e14f&amp;id=352bd533b6&amp;f_id=0076a2e0f0',
   newsletterArchive:
