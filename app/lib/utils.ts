@@ -1,4 +1,4 @@
-import {useLocation, useMatches} from '@remix-run/react';
+import {useMatches} from '@remix-run/react';
 import type {
   MenuItem,
   Menu,
@@ -7,9 +7,9 @@ import type {
 
 // @ts-expect-error types not available
 import typographicBase from 'typographic-base';
+// @ts-expect-error types not available
 import {parse as parseCookie} from 'worktop/cookie';
 import type {I18nLocale} from './type';
-import {Locale} from './type';
 import {countries} from '~/data/countries';
 
 export interface EnhancedMenuItem extends MenuItem {
@@ -142,26 +142,40 @@ function parseItem(customPrefixes = {}) {
   return function (item: MenuItem): EnhancedMenuItem {
     if (!item?.url || !item?.type) {
       console.warn('Invalid menu item.  Must include a url and type.');
-      // @ts-ignore
-      return;
+      return {
+        ...item,
+        isExternal: false,
+        target: '_self',
+        to: '/',
+        items: [],
+      } as EnhancedMenuItem;
     }
 
     // extract path from url because we don't need the origin on internal to attributes
-    const {pathname} = new URL(item.url);
+    const {hostname, pathname} = new URL(item.url);
 
     /*
       Currently the MenuAPI only returns online store urls e.g — xyz.myshopify.com/..
       Note: update logic when API is updated to include the active qualified domain
     */
-    const isInternalLink = /\.myshopify\.com/g.test(item.url);
+    const isMyShopifyLink = /\.myshopify\.com/g.test(item.url);
+    const isOwnDomain = /^(docs\.|www\.)?lzxindustries\.net$/.test(hostname);
 
-    const parsedItem = isInternalLink
-      ? // internal links
+    const parsedItem = isMyShopifyLink
+      ? // internal Shopify links — resolve via menu type
         {
           ...item,
           isExternal: false,
           target: '_self',
           to: resolveToFromType({type: item.type, customPrefixes, pathname}),
+        }
+      : isOwnDomain
+      ? // links to our own domains — use pathname directly
+        {
+          ...item,
+          isExternal: false,
+          target: '_self',
+          to: pathname,
         }
       : // external links
         {
@@ -204,6 +218,24 @@ export const getInputStyleClasses = (isError?: string | null) => {
     isError ? 'border-red-500' : 'border-primary/20'
   }`;
 };
+
+export function financialStatusMessage(status: string) {
+  const translations: Record<string, string> = {
+    AUTHORIZED: 'Authorized',
+    EXPIRED: 'Expired',
+    PAID: 'Paid',
+    PARTIALLY_PAID: 'Partially Paid',
+    PARTIALLY_REFUNDED: 'Partially Refunded',
+    PENDING: 'Pending',
+    REFUNDED: 'Refunded',
+    VOIDED: 'Voided',
+  };
+  try {
+    return translations?.[status] ?? status;
+  } catch (error) {
+    return status;
+  }
+}
 
 export function statusMessage(status: string) {
   const translations: Record<string, string> = {
@@ -276,19 +308,12 @@ export function getLocaleFromRequest(request: Request): I18nLocale {
 
 export function usePrefixPathWithLocale(path: string) {
   const [root] = useMatches();
-  const selectedLocale = root.data?.selectedLocale ?? DEFAULT_LOCALE;
+  const selectedLocale =
+    (root.data as Record<string, any>)?.selectedLocale ?? DEFAULT_LOCALE;
 
   return `${selectedLocale.pathPrefix}${
     path.startsWith('/') ? path : '/' + path
   }`;
-}
-
-export function useIsHomePath() {
-  const {pathname} = useLocation();
-  const [root] = useMatches();
-  const selectedLocale = root.data?.selectedLocale ?? DEFAULT_LOCALE;
-  const strippedPathname = pathname.replace(selectedLocale.pathPrefix, '');
-  return strippedPathname === '/';
 }
 
 /**
@@ -326,109 +351,114 @@ export async function cropImageByTransparency(src: string): Promise<string> {
     const img = new Image();
     img.crossOrigin = 'Anonymous';
     img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return resolve(src);
-      ctx.drawImage(img, 0, 0);
-      const {data, width, height} = ctx.getImageData(
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-      );
-
-      const hasAtleastOneTransparentCorner = () => {
-        const topLeft = data[3];
-        const topRight = data[(width - 1) * 4 + 3];
-        const bottomLeft = data[(height - 1) * width * 4 + 3];
-        const bottomRight = data[((height - 1) * width + (width - 1)) * 4 + 3];
-        return (
-          topLeft === 0 ||
-          topRight === 0 ||
-          bottomLeft === 0 ||
-          bottomRight === 0
+      try {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return resolve(src);
+        ctx.drawImage(img, 0, 0);
+        const {data, width, height} = ctx.getImageData(
+          0,
+          0,
+          canvas.width,
+          canvas.height,
         );
-      };
 
-      if (!hasAtleastOneTransparentCorner()) {
+        const hasAtleastOneTransparentCorner = () => {
+          const topLeft = data[3];
+          const topRight = data[(width - 1) * 4 + 3];
+          const bottomLeft = data[(height - 1) * width * 4 + 3];
+          const bottomRight =
+            data[((height - 1) * width + (width - 1)) * 4 + 3];
+          return (
+            topLeft === 0 ||
+            topRight === 0 ||
+            bottomLeft === 0 ||
+            bottomRight === 0
+          );
+        };
+
+        if (!hasAtleastOneTransparentCorner()) {
+          resolve(src);
+          return;
+        }
+
+        const hasAtleastOneTransparentEdge = () => {
+          let topTransparent = true;
+          for (let x = 0; x < width; x++) {
+            if (data[x * 4 + 3] !== 0) {
+              topTransparent = false;
+              break;
+            }
+          }
+          if (topTransparent) return true;
+          let bottomTransparent = true;
+          for (let x = 0; x < width; x++) {
+            if (data[(x + (height - 1) * width) * 4 + 3] !== 0) {
+              bottomTransparent = false;
+              break;
+            }
+          }
+          if (bottomTransparent) return true;
+          let leftTransparent = true;
+          for (let y = 0; y < height; y++) {
+            if (data[y * width * 4 + 3] !== 0) {
+              leftTransparent = false;
+              break;
+            }
+          }
+          if (leftTransparent) return true;
+          let rightTransparent = true;
+          for (let y = 0; y < height; y++) {
+            if (data[(width - 1 + y * width) * 4 + 3] !== 0) {
+              rightTransparent = false;
+              break;
+            }
+          }
+          if (rightTransparent) return true;
+          return false;
+        };
+
+        if (!hasAtleastOneTransparentEdge()) {
+          resolve(src);
+          return;
+        }
+
+        let top = height,
+          left = width,
+          right = 0,
+          bottom = 0;
+        for (let i = 3; i < data.length; i += 4) {
+          if (data[i] !== 0) {
+            const x = (i / 4) % width;
+            const y = Math.floor(i / 4 / width);
+            if (x < left) left = x;
+            if (x > right) right = x;
+            if (y < top) top = y;
+            if (y > bottom) bottom = y;
+          }
+        }
+
+        const croppedWidth = right - left + 1;
+        const croppedHeight = bottom - top + 1;
+        if (croppedWidth > 0 && croppedHeight > 0) {
+          const croppedData = ctx.getImageData(
+            left,
+            top,
+            croppedWidth,
+            croppedHeight,
+          );
+          const croppedCanvas = document.createElement('canvas');
+          croppedCanvas.width = croppedWidth;
+          croppedCanvas.height = croppedHeight;
+          croppedCanvas.getContext('2d')?.putImageData(croppedData, 0, 0);
+          return resolve(croppedCanvas.toDataURL());
+        }
         resolve(src);
-        return;
-      }
-
-      const hasAtleastOneTransparentEdge = () => {
-        let topTransparent = true;
-        for (let x = 0; x < width; x++) {
-          if (data[x * 4 + 3] !== 0) {
-            topTransparent = false;
-            break;
-          }
-        }
-        if (topTransparent) return true;
-        let bottomTransparent = true;
-        for (let x = 0; x < width; x++) {
-          if (data[(x + (height - 1) * width) * 4 + 3] !== 0) {
-            bottomTransparent = false;
-            break;
-          }
-        }
-        if (bottomTransparent) return true;
-        let leftTransparent = true;
-        for (let y = 0; y < height; y++) {
-          if (data[y * width * 4 + 3] !== 0) {
-            leftTransparent = false;
-            break;
-          }
-        }
-        if (leftTransparent) return true;
-        let rightTransparent = true;
-        for (let y = 0; y < height; y++) {
-          if (data[(width - 1 + y * width) * 4 + 3] !== 0) {
-            rightTransparent = false;
-            break;
-          }
-        }
-        if (rightTransparent) return true;
-        return false;
-      };
-
-      if (!hasAtleastOneTransparentEdge()) {
+      } catch {
         resolve(src);
-        return;
       }
-
-      let top = height,
-        left = width,
-        right = 0,
-        bottom = 0;
-      for (let i = 3; i < data.length; i += 4) {
-        if (data[i] !== 0) {
-          const x = (i / 4) % width;
-          const y = Math.floor(i / 4 / width);
-          if (x < left) left = x;
-          if (x > right) right = x;
-          if (y < top) top = y;
-          if (y > bottom) bottom = y;
-        }
-      }
-
-      const croppedWidth = right - left + 1;
-      const croppedHeight = bottom - top + 1;
-      if (croppedWidth > 0 && croppedHeight > 0) {
-        const croppedData = ctx.getImageData(
-          left,
-          top,
-          croppedWidth,
-          croppedHeight,
-        );
-        const croppedCanvas = document.createElement('canvas');
-        croppedCanvas.width = croppedWidth;
-        croppedCanvas.height = croppedHeight;
-        croppedCanvas.getContext('2d')?.putImageData(croppedData, 0, 0);
-        return resolve(croppedCanvas.toDataURL());
-      }
-      resolve(src);
     };
     img.onerror = () => resolve(src);
     img.src = src;
