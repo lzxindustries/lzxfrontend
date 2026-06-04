@@ -38,6 +38,12 @@ jobs:
       - name: Install dependencies
         id: install-dependencies
         run: yarn
+      - name: Sync forum archive from S3
+        if: env.FORUM_ARCHIVE_S3_URI != ''
+        env:
+          FORUM_ARCHIVE_S3_URI: ${{ secrets.FORUM_ARCHIVE_S3_URI }}
+        run: |
+          aws s3 sync "$FORUM_ARCHIVE_S3_URI" public/forum --delete
       - name: Build and Publish to Oxygen
         id: deploy
         run: |
@@ -48,7 +54,13 @@ jobs:
           else
             FLAGS="--preview"
           fi
-          yarn run shopify hydrogen deploy --build-command "yarn run build" $FLAGS
+          BUILD_CMD="yarn run build"
+          if [ -f public/forum/index.html ]; then
+            echo "Forum archive present in public/forum"
+          else
+            echo "::warning::public/forum missing — /forum will 404 until archive is synced (S3 secret or local deploy)"
+          fi
+          yarn run shopify hydrogen deploy --build-command "$BUILD_CMD" $FLAGS
         env:
           SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: '${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}'
       - name: Print deployment log

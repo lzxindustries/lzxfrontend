@@ -41,3 +41,4 @@ public/docs/**/Overlord/
 .shopify
 # Local timestamped copies of catalog/shopify before risky edits (large)
 catalog/shopify.backup.*/
+/public/forum
