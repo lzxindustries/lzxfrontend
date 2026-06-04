@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         id: install-dependencies
         run: yarn
-      - name: Sync forum archive from S3
+      - name: Verify forum archive on S3
         continue-on-error: true
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -47,10 +47,12 @@ jobs:
           FORUM_ARCHIVE_S3_URI: ${{ secrets.FORUM_ARCHIVE_S3_URI }}
         run: |
           if [ -z "$FORUM_ARCHIVE_S3_URI" ] || [ -z "$AWS_ACCESS_KEY_ID" ]; then
-            echo "::warning::Forum S3 sync skipped — set FORUM_ARCHIVE_S3_URI, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
+            echo "::warning::Forum S3 check skipped — set FORUM_ARCHIVE_S3_URI, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
             exit 0
           fi
-          aws s3 sync "$FORUM_ARCHIVE_S3_URI" public/forum --delete
+          # Do not sync into public/forum — Vite copies public/ into dist and blows up the Oxygen bundle.
+          aws s3 ls "${FORUM_ARCHIVE_S3_URI}index.html" || aws s3 ls "$FORUM_ARCHIVE_S3_URI" | head -5
+          echo "Forum archive reachable on S3 (served at runtime via CDN loaders)"
       - name: Build and Publish to Oxygen
         id: deploy
         run: |
@@ -61,13 +63,8 @@ jobs:
           else
             FLAGS="--preview"
           fi
-          # Forum HTML is served at runtime from S3 CDN (forumArchive.server.ts), not bundled in dist.
+          # Forum HTML is served at runtime from S3 CDN (forumArchive.server.ts), not from public/forum.
           BUILD_CMD='yarn run build'
-          if [ -f public/forum/index.html ]; then
-            echo "Forum archive synced to public/forum (runtime CDN; not copied into dist)"
-          else
-            echo "::warning::public/forum missing — CI S3 sync may have failed"
-          fi
           yarn run shopify hydrogen deploy --build-command "$BUILD_CMD" $FLAGS
         env:
           SHOPIFY_HYDROGEN_DEPLOYMENT_TOKEN: '${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_950295 }}'
